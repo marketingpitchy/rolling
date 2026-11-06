@@ -1,7 +1,7 @@
 <!--@page contact|Contact-->
 {{entete}}
 <main id="contenu-contact">
-  <section class="section" style="padding:96px 0 124px" aria-labelledby="h1-contact">
+  <section class="section" style="--hero-haut:96px;padding-bottom:124px" aria-labelledby="h1-contact">
     <div class="halo-lilas" aria-hidden="true" style="left:-360px;top:-380px"></div>
     <div class="halo-peche" aria-hidden="true" style="right:-420px;bottom:-300px;opacity:.6"></div>
     <div class="conteneur" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:56px;align-items:start" id="contact-grille">
@@ -29,8 +29,8 @@
   </section>
   <section class="section section-lilas" style="padding-top:40px" aria-labelledby="h2-faq-contact">
     <div class="conteneur conteneur-etroit">
-      <div class="entete-section"><h2 id="h2-faq-contact" class="titre-md">Avant de dire <span class="degrade-promesse">«&nbsp;trop beau pour être vrai&nbsp;»</span></h2></div>
-      {{faq}}
+      <div class="entete-section"><h2 id="h2-faq-contact" class="titre-md">Vos questions <span class="degrade-promesse">sur l'échange.</span></h2></div>
+      {{faq-contact}}
     </div>
   </section>
 </main>
@@ -39,7 +39,7 @@
 <!--@page landing|Landing Google Ads-->
 {{entete-landing}}
 <main id="contenu-landing">
-  <section class="section" style="padding:72px 0 56px" aria-labelledby="h1-landing">
+  <section class="section" style="--hero-haut:72px;padding-bottom:56px" aria-labelledby="h1-landing">
     <div class="halo-lilas" aria-hidden="true" style="left:-380px;top:-420px"></div>
     <div class="halo-peche" aria-hidden="true" style="right:-380px;top:-200px;opacity:.7"></div>
     <div class="conteneur" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px;align-items:center" id="landing-hero">
@@ -108,10 +108,10 @@
       <p class="label landing-etape">4 · Preuve sociale</p>
       <h2 id="h2-preuve" class="titre-md" style="margin-bottom:40px">Née chez <span class="degrade-promesse">Pitchy.</span></h2>
       <div class="grille-4" style="margin-bottom:28px">
-        <div class="carte-verre carte-chiffre"><img class="picto-verre" src="{{img:n10}}" alt="10" height="62" style="height:62px;width:auto"><p class="texte-petit">ans de vidéo pour les entreprises</p></div>
-        <div class="carte-verre carte-chiffre"><img class="picto-verre" src="{{img:n500}}" alt="500+" height="62" style="height:62px;width:auto"><p class="texte-petit">grandes entreprises équipées</p></div>
-        <div class="carte-verre carte-chiffre"><img class="picto-verre" src="{{img:n1c}}" alt="1" height="62" style="height:62px;width:auto"><p class="texte-petit">studio motion &amp; tournage intégré</p></div>
-        <div class="carte-verre carte-chiffre"><img class="picto-verre" src="{{img:n1c}}" alt="1" height="62" style="height:62px;width:auto"><p class="texte-petit">plateforme de production propriétaire</p></div>
+        <div class="carte-verre carte-chiffre"><p class="valeur"><span class="chiffre-verre" aria-hidden="true"><img src="{{img:n1}}" alt="" height="62"><img src="{{img:n0}}" alt="" height="62"></span><span class="sr">10</span><span class="unite">ans</span></p><p class="texte-petit">de vidéo pour les entreprises</p></div>
+        <div class="carte-verre carte-chiffre"><p class="valeur"><span class="chiffre-verre" aria-hidden="true"><img src="{{img:n500}}" alt="" height="62"></span><span class="sr">500+</span></p><p class="texte-petit">grandes entreprises équipées</p></div>
+        <div class="carte-verre carte-chiffre"><p class="valeur"><span class="chiffre-verre" aria-hidden="true"><img src="{{img:n1c}}" alt="" height="62"></span><span class="sr">1</span></p><p class="texte-petit">studio motion &amp; tournage intégré</p></div>
+        <div class="carte-verre carte-chiffre"><p class="valeur"><span class="chiffre-verre" aria-hidden="true"><img src="{{img:n1c}}" alt="" height="62"></span><span class="sr">1</span></p><p class="texte-petit">plateforme de production propriétaire</p></div>
       </div>
       {{citation-sans-bouton}}
     </div>
@@ -146,7 +146,7 @@
 <!--@page erreur|404-->
 {{entete}}
 <main id="contenu-erreur">
-  <section class="section section-sombre" style="padding:140px 0 150px;min-height:72vh" aria-labelledby="h1-404">
+  <section class="section section-sombre" style="--hero-haut:140px;padding-bottom:150px;min-height:72vh" aria-labelledby="h1-404">
     <div class="fond-grille" aria-hidden="true"></div>
     <div class="halo-peche" aria-hidden="true" style="left:50%;top:50%;margin:-430px 0 0 -430px"></div>
     <div class="conteneur" style="text-align:center">

@@ -4,6 +4,9 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
 
 ## Statut
 
+- Dossier de travail de la session : /workspace (non git). Le dépôt git est /home/user/rolling (lien /workspace/rolling).
+  Les fichiers à envoyer à la cliente vont dans /workspace.
+
 - Phase 0 (sans code) : questions répondues (voir plus bas), listes des blocs et des classes envoyées. Maquettes HTML en cours.
   **En attente de validation de la cliente avant d'écrire du code.**
 - Le WordPress de production existe déjà chez la cliente : on livre seulement le thème (zip à importer).
@@ -108,6 +111,11 @@ image, texte, « À lire aussi » ; colonne latérale = temps de lecture, partag
   réglables par la cliente. Les animations en boucle de la maquette (halos, flottement, anneau, REC, défilement
   des logos) restent en CSS du thème.
 - Le logo renvoie à l'accueil ; pas de lien « Accueil » dans le menu.
+- Chiffres en verre : **nouveau jeu de la cliente** (chiffres-verre_1.zip : 0-9, +, %, k, M, 500-plus ; style ballon rose-violet),
+  à la place de ceux de la maquette. Un nombre = chiffres composés côte à côte (ex. « 1 » + « 0 »), images décoratives
+  (alt vide) + texte réel masqué pour les lecteurs d'écran. Coche des listes : **check-glass.svg** de la cliente.
+- L'en-tête (pilule en verre, collant) se pose sur le hero : les halos passent dessous, pas de coupure.
+- Page Contact : FAQ propre à l'échange (5 questions, réponses [À confirmer]), pas la FAQ de l'accueil.
 
 - Labels en 12 px (pas 11).
 - Les illustrations uniques de la maquette (mini-email, mini-article, module PPT, carte convention,
@@ -172,7 +180,9 @@ Sources dans `maquettes/` (sans images). Fichiers à ouvrir : `maquette-logos-ec
 
 - `maquette-pages.html` : 10 pages (Offres, Réalisations, Réalisation, Témoignages, Témoignage = cas client,
   Blog, Article, Contact, Landing, 404), en-tête avec menu burger, pied de page 3 colonnes. axe 0 à 1440 et 390.
-  Textes marqués [Texte d'exemple] / [À compléter] à fournir par la cliente. En attente de validation.
+  Textes marqués [Texte d'exemple] / [À compléter] à fournir par la cliente (témoignages : elle les ajoute).
+  Retours tour 1 appliqués (chiffres, coche, en-tête landing, FAQ contact). Question ouverte : répétition
+  Offres / Accueil (proposition : accueil = version courte de l'offre, tableau complet seulement sur Offres).
 
 - `maquette-logos-ecran.html` (hors git, contient les logos clients) : **validée**.
   - Logos : le défilement s'active / se coupe **depuis Elementor** (réglage de la cliente). Côté visiteur,

@@ -42,6 +42,18 @@
   #blog-une > div { padding: 0 12px !important; }
 }
 
+/* Chiffres en verre composés (ex. 1 + 0) */
+.carte-chiffre .valeur { align-self: flex-start; display: flex; align-items: flex-end; gap: 10px; }
+.chiffre-verre { display: inline-flex; align-items: flex-end; gap: 2px; filter: drop-shadow(0 8px 14px rgba(91,59,234,.25)); }
+.chiffre-verre img { height: 62px; width: auto; }
+.carte-chiffre .unite { padding-bottom: 6px; }
+.picto-verre { align-self: flex-start; }
+/* L'en-tête se pose sur le hero : les halos passent dessous, sans coupure */
+.entete { height: 86px; margin-bottom: -86px; }
+.page main > section:first-child, .page main > article > section:first-child { padding-top: calc(86px + var(--hero-haut, 72px)) !important; }
+
+article > .conteneur:first-child { padding-top: calc(86px + 56px) !important; }
+
 /* ==== Outils de la maquette (pas dans le site) ==== */
 .page { display: none; }
 .page.visible { display: block; }

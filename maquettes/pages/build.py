@@ -19,10 +19,10 @@ def data_uri(path, w=None, fmt='WEBP', q=72):
 
 IMGS = {
     'logo': C + 'logos-rolling/rolling-logo-couleur.svg', 'logo-negatif': C + 'logos-rolling/rolling-logo-couleur-negatif.svg',
-    'coche': A + 'a92deeaa83cd07a67776e8c81604a349.png',
-    'n1': A + 'e2e991200fb831f56d04a511c0e286e0.png', 'n2': A + 'b12d8bc7168a1e74b6f27e4c0200d9c3.png',
-    'n3': A + 'd0c590bd06633a2ba49ddf6831c0b948.png', 'n4': A + '807a20bc4c0b64d8ef00f861ca4c3efb.png',
-    'n10': A + 'ec03bcd295064ff1ed1738eb28818cbe.png', 'n500': A + '4f9d484d0bcba5b1b448921f1b698411.png', 'n1c': A + 'ee26639fa694cce44eecb265b9ed3a33.png',
+    'coche': S + '/chiffres2/check-glass.svg',
+    'n1': S + '/chiffres2/chiffre-1.png', 'n2': S + '/chiffres2/chiffre-2.png', 'n0': S + '/chiffres2/chiffre-0.png',
+    'n3': S + '/chiffres2/chiffre-3.png', 'n4': S + '/chiffres2/chiffre-4.png',
+    'n500': S + '/chiffres2/chiffre-500-plus.png', 'n1c': S + '/chiffres2/chiffre-1.png',
     'tournage': A + '14709dc17edfdbe8dac7a32700d88158.jpg', 'laptop': A + 'fa155c7d0fc750858043c8a956f1eb8c.jpg',
     'interview': A + '90874b8a645df060e10c4161152d8bcd.jpg', 'camera': A + 'cafdb76bd47293bb6aac26987a509625.jpg',
     'poster': A + 'd087d181a1a758466c53ee5d13cb4174.jpg', 'julie': A + '831a4d0e7cbe35c6a0b5a91ffd9f6d67.jpg',
@@ -33,7 +33,7 @@ IMGS = {
     'cap-fnac': I + 'cap-FNACDARTY.png', 'cap-sncf': I + 'cap-SNCF.png', 'cap-weenect': I + 'cap-WEENECT.png',
     'cap-veolia': I + 'cap-VEOLIA.png', 'cap-groupama': I + 'cap-Groupama.png', 'cap-article': I + 'cap-ARTICLEBLOG.png',
 }
-WIDTH = {'coche': 64, 'n1': 120, 'n2': 120, 'n3': 120, 'n4': 120, 'n10': 200, 'n500': 360, 'n1c': 90, 'julie': 240, 'thomas': 160,
+WIDTH = {'n0': 90, 'n1': 90, 'n2': 90, 'n3': 90, 'n4': 90, 'n500': 360, 'n1c': 90, 'julie': 240, 'thomas': 160,
          'av-a': 80, 'av-b': 80, 'av-c': 80, 'av-d': 80}
 cache = {}
 def img(k):
