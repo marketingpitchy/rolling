@@ -1,0 +1,96 @@
+<!--@fleche--><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg>
+<!--@lecture--><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.14v13.72c0 .79.87 1.27 1.54.84l10.68-6.86a1 1 0 0 0 0-1.68L9.54 4.3A1 1 0 0 0 8 5.14z"/></svg>
+<!--@transfo--><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg>
+<!--@non--><span class="non"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg><span class="sr">Non inclus</span></span>
+<!--@oui--><img class="coche" src="{{img:coche}}" alt="Inclus" width="26" height="26" style="margin:0 auto">
+<!--@coche--><img class="coche" src="{{img:coche}}" alt="" width="26" height="26">
+<!--@entete-->
+<a class="aller-contenu" href="#contenu-{{page}}">Aller au contenu</a>
+<header class="entete">
+  <div class="conteneur">
+    <nav class="entete-barre" aria-label="Navigation principale">
+      <a class="logo" href="#accueil-placeholder" aria-label="Rolling, retour à l'accueil"><img src="{{img:logo}}" alt="Rolling" width="123" height="28"></a>
+      <ul class="menu" id="menu-{{page}}">
+        <li><a href="#offres"{{cur:offres}}>Offres</a></li>
+        <li><a href="#realisations"{{cur:realisations}}>Réalisations</a></li>
+        <li><a href="#temoignages"{{cur:temoignages}}>Témoignages</a></li>
+        <li><a href="#blog"{{cur:blog}}>Blog</a></li>
+        <li class="menu-cta"><a class="bouton-principal bouton-petit" href="#contact">Réserver un échange</a></li>
+      </ul>
+      <a class="bouton-principal bouton-petit" href="#contact">Réserver un échange</a>
+      <button class="burger" type="button" aria-expanded="false" aria-controls="menu-{{page}}"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span class="sr">Ouvrir le menu</span></button>
+    </nav>
+  </div>
+</header>
+<!--@entete-landing-->
+<a class="aller-contenu" href="#contenu-{{page}}">Aller au contenu</a>
+<header class="entete entete-landing">
+  <div class="conteneur">
+    <div class="entete-barre"><span class="logo"><img src="{{img:logo}}" alt="Rolling" width="123" height="28"></span></div>
+  </div>
+</header>
+<!--@pied-->
+<footer class="pied">
+  <div class="conteneur">
+    <div class="pied-haut">
+      <div>
+        <a class="logo" href="#accueil-placeholder" aria-label="Rolling, retour à l'accueil"><img src="{{img:logo-negatif}}" alt="Rolling" width="123" height="28"></a>
+        <p style="margin-top:16px;max-width:34ch">Votre agence vidéo illimitée, pour les équipes com, RH et formation.</p>
+        <p style="margin-top:6px">Une marque Pitchy</p>
+      </div>
+      <nav aria-label="Pied de page : pages">
+        <p class="label">Navigation</p>
+        <ul><li><a href="#offres">Offres</a></li><li><a href="#realisations">Réalisations</a></li><li><a href="#temoignages">Témoignages</a></li><li><a href="#blog">Blog</a></li><li><a href="#contact">Réserver un échange</a></li></ul>
+      </nav>
+      <nav aria-label="Pied de page : informations">
+        <p class="label">Informations</p>
+        <ul><li><a href="#mentions">Mentions légales</a></li><li><a href="#mentions">Politique de confidentialité</a></li><li><a href="#mentions">CGV</a></li><li><a href="#contact">Contact</a></li></ul>
+      </nav>
+    </div>
+    <div class="pied-bas"><span>© 2026 Rolling</span><span>agence-rolling.fr</span></div>
+  </div>
+</footer>
+<!--@pied-landing-->
+<footer class="pied">
+  <div class="conteneur">
+    <div class="pied-bas" style="border-top:0;align-items:center">
+      <img src="{{img:logo-negatif}}" alt="Rolling" width="105" height="24">
+      <nav aria-label="Informations légales"><ul class="rangee" style="list-style:none;gap:4px 22px"><li><a href="#mentions">Mentions légales</a></li><li><a href="#mentions">Politique de confidentialité</a></li><li><a href="#mentions">CGV</a></li></ul></nav>
+    </div>
+  </div>
+</footer>
+<!--@cta-->
+<section class="section section-sombre" style="background:var(--encre);padding:150px 0 160px;text-align:center" aria-labelledby="cta-{{page}}">
+  <div class="halo-peche" aria-hidden="true" style="left:50%;top:50%;margin:-430px 0 0 -430px"></div>
+  <div class="conteneur">
+    <h2 id="cta-{{page}}" class="titre-lg">Vos vidéos&nbsp;? Nous nous en occupons.<br><span class="degrade-clair">Sans limite.</span></h2>
+    <p class="texte-intro" style="margin:30px auto 0;max-width:600px">30 minutes pour passer en revue vos contenus et vos projets. Vous repartez avec votre stratégie vidéo et vos 3&nbsp;premières vidéos à produire.</p>
+    <div style="margin-top:38px;display:flex;justify-content:center"><a href="#contact" class="bouton-soleil">Réserver un échange {{fleche}}</a></div>
+  </div>
+</section>
+<!--@logos-->
+<div class="grille-6-logos" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px">{{logos6}}</div>
+<!--@faq-->
+<div class="pile" style="gap:14px">
+  <article class="carte-verre carte-question"><h3 class="titre-xs"><span class="point point-bleu"></span>«&nbsp;Illimité&nbsp;», vraiment&nbsp;?</h3><p class="texte">Oui : nous ne comptons pas les vidéos. Nous traitons un projet à fond à la fois, puis nous enchaînons sur le suivant. C'est ce qui rend l'illimité possible, avec une qualité garantie sur chaque vidéo.</p></article>
+  <article class="carte-verre carte-question"><h3 class="titre-xs"><span class="point"></span>La captation, vraiment offerte&nbsp;?</h3><p class="texte">Oui, avec la formule Création + Tournage. Nos équipes se déplacent partout en France pour filmer vos collaborateurs, vos événements et vos produits, un projet à la fois.</p></article>
+  <article class="carte-verre carte-question"><h3 class="titre-xs"><span class="point"></span>Le meilleur de l'humain et de l'IA, concrètement&nbsp;?</h3><p class="texte">Nos IA accélèrent tout ce qui peut l'être : pistes créatives, voix off, sous-titres, traductions, déclinaisons. Nos créas gardent la direction artistique, l'animation à la main et la validation finale. C'est ce qui permet l'illimité, sans rien lâcher sur la qualité.</p></article>
+  <article class="carte-verre carte-question"><h3 class="titre-xs"><span class="point point-bleu"></span>Et nos nouveaux projets&nbsp;?</h3><p class="texte">Bien sûr. Lancements, événements, campagnes : tout nouveau projet entre dans le même flux, avec la même équipe et la même charte.</p></article>
+  <article class="carte-verre carte-question"><h3 class="titre-xs"><span class="point point-bleu"></span>Et si nous avons déjà nos propres images&nbsp;?</h3><p class="texte">Envoyez-nous vos rushs : leur montage entre dans l'illimité, dès la formule Création.</p></article>
+  <article class="carte-verre carte-question"><h3 class="titre-xs"><span class="point" style="background:var(--encre);box-shadow:0 0 0 4px rgba(15,15,18,.12)"></span>Que devons-nous fournir&nbsp;?</h3><p class="texte">Vos contenus, vos idées de projets et votre charte graphique. Nous nous occupons de tout le reste, de la stratégie vidéo annuelle jusqu'à la livraison.</p></article>
+</div>
+<!--@citation-->
+<figure class="carte-verre grand-bloc citation" style="background:linear-gradient(120deg,rgba(237,230,255,.9),rgba(255,241,231,.9))">
+  <img class="portrait" src="{{img:julie}}" alt="" width="120" height="120" style="width:120px;height:120px">
+  <div>
+    <blockquote><p>«&nbsp;On n'avait pas la bande passante, et on n'avait pas l'expertise. Donc on devait absolument faire appel à quelqu'un qui avait le savoir-faire et qui était professionnel et l'équipe Rolling (ex Pitchy Studio) nous a tout de suite rassuré sur leur accompagnement sur mesure si bien de l'expression des besoins jusqu'à la livraison des vidéos.&nbsp;»</p></blockquote>
+    <figcaption><strong>Julie Charlemagne</strong> — Responsable Fonctionnel SIRH, Groupement Mousquetaires</figcaption>
+  </div>
+  <a class="bouton-principal bouton-petit" href="#temoignage">Voir le cas client {{fleche}}</a>
+</figure>
+<!--@badges-->
+<ul class="rangee" style="list-style:none">
+  <li class="badge-securite"><i aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></i>IA sécurisée</li>
+  <li class="badge-securite"><i aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></i>Données hébergées en Europe</li>
+  <li class="badge-securite"><i aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></i>Conforme RGPD</li>
+</ul>

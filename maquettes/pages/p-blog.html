@@ -1,0 +1,116 @@
+<!--@page blog|Blog-->
+{{entete}}
+<main id="contenu-blog">
+  <section class="section" style="padding:96px 0 48px" aria-labelledby="h1-blog">
+    <div class="halo-lilas" aria-hidden="true" style="left:-340px;top:-420px"></div>
+    <div class="conteneur">
+      <p class="pastille"><span class="point point-bleu"></span>Le blog</p>
+      <h1 id="h1-blog" class="titre-lg" style="margin-top:26px;max-width:900px">Des conseils vidéo <span class="degrade-promesse">pour vos équipes.</span></h1>
+      <p class="texte-intro" style="margin-top:22px;max-width:680px">Communication interne, RH, formation, marketing : nos méthodes pour que vos contenus soient enfin regardés.</p>
+    </div>
+  </section>
+  <section class="section" style="padding-top:0" aria-label="Articles">
+    <div class="conteneur">
+      <nav aria-label="Catégories du blog" style="margin-bottom:40px"><ul class="rangee" style="list-style:none"><li><a class="chip-neutre" href="#blog" aria-current="page">Tous les articles</a></li><li><a class="chip-orange" href="#blog">Communication interne</a></li><li><a class="chip-orange" href="#blog">RH &amp; marque employeur</a></li><li><a class="chip-orange" href="#blog">Formation</a></li><li><a class="chip-bleu" href="#blog">Marketing vidéo</a></li><li><a class="chip-bleu" href="#blog">IA &amp; vidéo</a></li></ul></nav>
+      <article class="carte-verre" style="display:grid;grid-template-columns:1.15fr 1fr;gap:36px;align-items:center;padding:12px 40px 12px 12px" id="blog-une">
+        <a href="#article" class="cadre-photo" style="display:block;aspect-ratio:16/10;border-radius:20px" tabindex="-1" aria-hidden="true"><img src="{{img:laptop}}" alt="" width="1200" height="799" fetchpriority="high"></a>
+        <div class="pile" style="gap:14px;padding:20px 0">
+          <p class="rangee"><span class="tag-orange">Formation</span><span class="texte-petit">6 min de lecture · 3 novembre 2026</span></p>
+          <h2 class="titre-md" style="font-size:36px"><a href="#article" style="color:inherit;text-decoration:none">Comment transformer un module de formation en 5 vidéos de microlearning&nbsp;?</a></h2>
+          <p class="texte">Un module de 40 slides que personne ne finit ? Découpé en 5 vidéos de 60 secondes, il est enfin suivi jusqu'au bout.</p>
+          <a class="bouton-principal bouton-petit" style="align-self:flex-start" href="#article">Lire l'article sur le microlearning {{fleche}}</a>
+        </div>
+      </article>
+      <div class="grille-3" style="margin-top:44px;row-gap:44px">{{art:1}}{{art:2}}{{art:3}}{{art:4}}{{art:5}}{{art:6}}</div>
+      <nav aria-label="Pagination" style="margin-top:56px"><ul class="rangee" style="list-style:none;justify-content:center"><li><a class="chip-neutre" href="#blog" aria-current="page">1</a></li><li><a class="chip-neutre" href="#blog">2</a></li><li><a class="chip-neutre" href="#blog">3</a></li><li><a class="chip-neutre" href="#blog">Articles suivants</a></li></ul></nav>
+    </div>
+  </section>
+  {{cta}}
+</main>
+{{pied}}
+
+<!--@page article|Article-->
+{{entete}}
+<main id="contenu-article">
+  <article>
+    <div class="conteneur" style="padding-top:56px">
+      <div class="article-grille">
+        <div class="article-principal">
+          <nav class="ariane" aria-label="Fil d'Ariane"><ol><li><a href="#accueil-placeholder">Accueil</a></li><li><a href="#blog">Blog</a></li><li><a href="#blog">Formation</a></li><li aria-current="page">Module de formation en microlearning</li></ol></nav>
+          <h1 class="titre-lg" style="margin-top:24px;font-size:clamp(32px,3.8vw,52px)">Comment transformer un module de formation en 5&nbsp;vidéos de microlearning&nbsp;?</h1>
+          <p class="rangee" style="margin-top:20px"><a class="tag-orange" href="#blog" style="text-decoration:none">Formation</a><span class="texte-petit">Publié le <time datetime="2026-11-03">3 novembre 2026</time></span><span class="texte-petit article-temps-mobile">· 6 min de lecture</span></p>
+          <figure class="cadre-photo" style="margin-top:28px;aspect-ratio:16/9;border-radius:26px"><img src="{{img:laptop}}" alt="Mains sur le clavier d'un ordinateur portable, pendant la préparation d'un module de formation" width="1200" height="799" fetchpriority="high"></figure>
+
+          <details class="carte-verre article-sommaire-mobile" style="margin-top:28px;padding:18px 24px"><summary class="titre-xs" style="font-size:19px;cursor:pointer">Sommaire</summary><ol class="sommaire" style="margin-top:12px">{{sommaire}}</ol></details>
+
+          <aside class="carte-verre" style="margin-top:32px;background:linear-gradient(120deg,rgba(237,230,255,.95),rgba(255,241,231,.9))" aria-labelledby="enbref">
+            <h2 id="enbref" class="label label-violet">En bref</h2>
+            <ul class="liste-coches" style="margin-top:14px">
+              <li class="ligne-coche">{{coche}}<span class="texte">Un module long se découpe en vidéos de 60 secondes, une idée par vidéo.</span></li>
+              <li class="ligne-coche">{{coche}}<span class="texte">Le fond existe déjà : il ne manque que le format.</span></li>
+              <li class="ligne-coche">{{coche}}<span class="texte">Comptez 5 étapes, du découpage à la diffusion sur votre LMS.</span></li>
+            </ul>
+          </aside>
+
+          <div class="article-texte">
+            <p>Vous avez un module de formation de 40 slides. Il est complet, validé par les experts. Pourtant, il est rarement suivi jusqu'au bout. Le <strong>microlearning</strong> en vidéo change la donne : le même contenu, en courtes séquences, au bon moment.</p>
+            <h2 id="pourquoi">Pourquoi le microlearning fonctionne.</h2>
+            <p>[Texte d'exemple] Une vidéo courte demande peu d'effort pour démarrer. Elle se regarde entre deux réunions, sur mobile ou sur votre LMS.</p>
+            <h3 id="attention">Une idée par vidéo.</h3>
+            <p>[Texte d'exemple] Au-delà de 90 secondes, l'attention baisse. Une vidéo = un geste, une règle, un réflexe.</p>
+            <h2 id="etapes">Les 5 étapes pour passer du module à la vidéo.</h2>
+            <ol class="article-etapes">
+              <li><strong>Découpez</strong> votre module en idées clés.</li>
+              <li><strong>Priorisez</strong> ce qui part en vidéo en premier.</li>
+              <li><strong>Écrivez</strong> un script court par idée.</li>
+              <li><strong>Produisez</strong> en motion, en tournage ou avec un avatar.</li>
+              <li><strong>Diffusez</strong> sur votre LMS, votre intranet et vos réseaux.</li>
+            </ol>
+            <figure class="cadre-photo" style="aspect-ratio:16/9;border-radius:22px;margin:32px 0"><img src="{{img:interview}}" alt="Une formatrice explique un geste face caméra, en tournage vidéo" width="1200" height="800" loading="lazy"></figure>
+            <h2 id="avis">Notre avis.</h2>
+            <div class="carte-pleine rangee" style="gap:18px;align-items:flex-start;flex-wrap:nowrap"><img class="portrait portrait-petit" src="{{img:thomas}}" alt="" width="56" height="56"><div><p class="texte">[Texte d'exemple] Le plus dur n'est pas de produire : c'est de choisir. Commencez par le module le plus consulté, pas le plus récent.</p><p class="texte-petit" style="margin-top:8px"><strong>Thomas</strong>, Directeur Artistique chez Rolling</p></div></div>
+            <p>Pour aller plus loin, découvrez <a href="#offres">nos offres de production vidéo à prix fixe</a>, ou lisez notre article sur <a href="#article">la vidéo dans l'onboarding de vos nouveaux collaborateurs</a>.</p>
+            <aside class="carte-verre" style="margin-top:36px;background:linear-gradient(120deg,rgba(255,241,231,.95),rgba(255,224,206,.7))" aria-labelledby="aretenir">
+              <h2 id="aretenir" class="titre-xs" style="margin:0">À retenir.</h2>
+              <ul class="liste-coches" style="margin-top:14px">
+                <li class="ligne-coche">{{coche}}<span class="texte">60 secondes, une idée par vidéo</span></li>
+                <li class="ligne-coche">{{coche}}<span class="texte">Partir du contenu existant</span></li>
+                <li class="ligne-coche">{{coche}}<span class="texte">Diffuser là où vos équipes sont déjà</span></li>
+              </ul>
+            </aside>
+          </div>
+        </div>
+
+        <aside class="article-cote" aria-label="Outils de l'article">
+          <div class="article-cote-colle pile" style="gap:16px">
+            <div class="carte-verre" style="padding:20px 22px">
+              <p class="label">Temps de lecture</p>
+              <p class="titre-xs" style="margin-top:6px">6 minutes</p>
+              <p class="label" style="margin-top:20px">Sommaire</p>
+              <ol class="sommaire" style="margin-top:8px">{{sommaire}}</ol>
+            </div>
+            <div class="carte-verre" style="padding:20px 22px">
+              <p class="label">Partager l'article</p>
+              <ul class="partage" style="margin-top:12px">{{partage}}</ul>
+              <p class="label" style="margin-top:20px">Résumer avec</p>
+              <ul class="rangee" style="list-style:none;margin-top:12px;gap:8px">{{resumer}}</ul>
+            </div>
+            <div class="carte-verre section-sombre" style="padding:24px;background:linear-gradient(160deg,#1C1730,#0F0F12)">
+              <p class="titre-xs" style="color:#fff">Et si ce module devenait <span class="degrade-clair">une vidéo&nbsp;?</span></p>
+              <p class="texte-petit" style="margin-top:10px">30 minutes pour passer en revue vos contenus. Vous repartez avec vos 3 premières vidéos à produire.</p>
+              <a class="bouton-principal bouton-petit" style="margin-top:16px;width:100%" href="#contact">Réserver un échange {{fleche}}</a>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </article>
+  <section class="section section-lilas" aria-labelledby="h2-alire">
+    <div class="conteneur">
+      <h2 id="h2-alire" class="titre-sm" style="margin-bottom:36px">À lire <span class="degrade-promesse">aussi.</span></h2>
+      <div class="grille-3">{{art3:2}}{{art3:3}}{{art3:4}}</div>
+    </div>
+  </section>
+  {{cta}}
+</main>
+{{pied}}

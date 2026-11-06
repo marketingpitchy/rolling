@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rolling · maquettes logos et écran</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root { --ink:#0F0F12; --surface:#FAF9F7; --muted:#6E6B7B; --violet:#5B3BEA; --lilas:#C4B5FD; --peche:#FF8A5B; --peche-doux:#FFD1BF; }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--surface); color: var(--ink); font-family: 'Hanken Grotesk', system-ui, sans-serif; }
+h1, h2, p { margin: 0; }
+.jk { font-family: 'Bricolage Grotesque', system-ui, sans-serif; }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.conteneur { max-width: 1240px; margin: 0 auto; padding: 0 28px; }
+:focus-visible { outline: 2px solid var(--violet); outline-offset: 2px; }
+.intro { padding: 48px 0 8px; }
+.intro h1 { font-size: 28px; letter-spacing: -0.03em; font-weight: 650; }
+.intro p { margin-top: 8px; font-size: 16px; color: #4A4858; max-width: 70ch; line-height: 1.55; }
+.repere { display: inline-block; margin-bottom: 14px; padding: 5px 12px; border-radius: 999px; font-size: 12px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: #4A2BB8; background: #EDE6FF; }
+
+/* ===== 1. Logos qui défilent ===== */
+.logos { position: relative; padding: 56px 0 104px; overflow: hidden; }
+.logos .halo { position: absolute; left: 50%; top: -40%; width: 900px; height: 600px; margin-left: -450px; border-radius: 50%; background: radial-gradient(closest-side, rgba(196,181,253,.45), rgba(196,181,253,0)); pointer-events: none; }
+.label { font-size: 12px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); text-align: center; }
+.defile { position: relative; margin-top: 22px; -webkit-mask: linear-gradient(90deg, transparent 0, #000 8%, #000 92%, transparent 100%); mask: linear-gradient(90deg, transparent 0, #000 8%, #000 92%, transparent 100%); }
+.piste { display: flex; width: max-content; animation: defile 46s linear infinite; }
+.piste ul { display: flex; gap: 12px; margin: 0; padding: 14px 12px 30px 0; list-style: none; }
+.defile.pause .piste, .defile:hover .piste, .defile:focus-within .piste { animation-play-state: paused; }
+@keyframes defile { to { transform: translateX(-50%); } }
+.tuile-logo { position: relative; display: flex; align-items: center; justify-content: center; width: 196px; min-height: 86px; padding: 0 14px; border-radius: 18px;
+  background: radial-gradient(70% 50% at 18% 0%, rgba(255,255,255,.95), rgba(255,255,255,0) 72%), linear-gradient(150deg, rgba(255,255,255,.74) 0%, rgba(255,255,255,.42) 55%, rgba(255,255,255,.6) 100%);
+  -webkit-backdrop-filter: blur(28px) saturate(180%); backdrop-filter: blur(28px) saturate(180%);
+  box-shadow: inset 0 1px 0 #FFF, inset 0 -1px 0 rgba(255,255,255,.5), 0 1px 2px rgba(15,15,18,.04), 0 30px 70px -34px rgba(76,48,170,.34); }
+.tuile-logo img { display: block; width: auto; max-width: 88%; filter: grayscale(1) contrast(1.05); opacity: .72; transition: filter .3s ease, opacity .3s ease; }
+.tuile-logo:hover img { filter: none; opacity: 1; }
+.commande { display: flex; justify-content: center; margin-top: 4px; }
+.btn-pause { display: inline-flex; align-items: center; gap: 9px; min-height: 44px; padding: 0 18px 0 14px; border: 0; border-radius: 999px; font: inherit; font-size: 14px; font-weight: 700; color: var(--ink); cursor: pointer;
+  background: rgba(255,255,255,.62); -webkit-backdrop-filter: blur(18px) saturate(170%); backdrop-filter: blur(18px) saturate(170%);
+  box-shadow: inset 0 1px 0 #FFF, inset 0 0 0 1px rgba(15,15,18,.08), 0 10px 26px -16px rgba(76,48,170,.4); }
+.btn-pause:hover { box-shadow: inset 0 1px 0 #FFF, inset 0 0 0 1px rgba(91,59,234,.35), 0 10px 26px -16px rgba(76,48,170,.5); }
+.btn-pause svg { flex-shrink: 0; }
+.btn-pause .i-lecture { display: none; }
+.btn-pause[aria-pressed="true"] .i-pause { display: none; }
+.btn-pause[aria-pressed="true"] .i-lecture { display: block; }
+
+/* ===== 2. Écran interactif 00:05 ===== */
+.ia { position: relative; overflow: hidden; padding: 104px 0 124px; color: #FAF9F7; background: linear-gradient(180deg, #0F0E1E 0%, #131230 52%, #0F0F12 100%); }
+.ia .grille { position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,.055) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.055) 1px, transparent 1px); background-size: 48px 48px; pointer-events: none; }
+.ia .repere { color: #E9E2FF; background: rgba(255,255,255,.1); }
+.ia .intro p { color: #C9C3DE; }
+.ecran-zone { position: relative; margin: 40px auto 0; max-width: 620px; }
+.barre { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 18px; margin-bottom: 18px; }
+.groupe { display: inline-flex; align-items: center; gap: 4px; padding: 4px; border-radius: 999px; background: rgba(255,255,255,.08); box-shadow: inset 0 1px 0 rgba(255,255,255,.16), inset 0 0 0 1px rgba(255,255,255,.1); }
+.groupe .nom { padding: 0 8px 0 10px; font-size: 12px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: #B6B0CC; }
+.choix { min-width: 44px; min-height: 32px; padding: 0 12px; border: 0; border-radius: 999px; font: inherit; font-size: 13px; font-weight: 800; letter-spacing: .02em; color: #FAF9F7; background: transparent; cursor: pointer; font-variant-numeric: tabular-nums; }
+.choix:hover { background: rgba(255,255,255,.12); }
+.choix[aria-pressed="true"] { background: #FFFFFF; color: #1B1820; }
+.ia :focus-visible { outline-color: #C4B5FD; }
+.scene { position: relative; height: 388px; display: flex; align-items: center; justify-content: center; }
+.cadre { position: relative; width: 620px; height: 369px; border-radius: 30px; padding: 10px; transition: width .6s cubic-bezier(.2,.8,.2,1), height .6s cubic-bezier(.2,.8,.2,1);
+  background: linear-gradient(160deg, rgba(40,34,80,.92) 0%, rgba(18,16,34,.96) 100%); box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 50px 110px -30px rgba(91,59,234,.75); }
+@property --ang { syntax: '<angle>'; inherits: false; initial-value: 0deg; }
+.cadre::after { content: ''; position: absolute; inset: -1.5px; border-radius: inherit; padding: 2px; background: conic-gradient(from var(--ang), #8B5CF6, #C4B5FD, #FF8A5B, #FFD1BF, #FF8A5B, #8B5CF6); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; animation: ang 8s linear infinite; pointer-events: none; }
+@keyframes ang { to { --ang: 360deg; } }
+.cadre[data-format="9:16"] { width: 218px; height: 388px; }
+.cadre[data-format="1:1"] { width: 388px; height: 388px; }
+.video { position: relative; width: 100%; height: 100%; border-radius: 22px; overflow: hidden; color: #FFF; background: radial-gradient(130% 120% at 85% 15%, #9C7BF5 0%, #5C4BEE 34%, #3434E0 62%, #1C1C8E 100%); }
+.v-halo { position: absolute; right: -6%; top: -26%; width: 56%; height: 150%; border-radius: 50%; background: radial-gradient(closest-side, rgba(255,180,140,.9), rgba(255,138,91,.4) 50%, rgba(255,138,91,0) 100%); }
+.bulle { position: absolute; border-radius: 50%; background: rgba(255,255,255,.22); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); box-shadow: inset 0 1px 0 rgba(255,255,255,.9), 0 20px 40px -18px rgba(20,10,80,.6); animation: flotte 8s ease-in-out infinite; transition: right .6s, top .6s, width .6s, height .6s; }
+.b1 { right: 14%; top: 24%; width: 118px; height: 118px; }
+.b2 { right: 37%; top: 58%; width: 46px; height: 46px; border-radius: 14px; --r: 14deg; background: rgba(255,209,191,.5); animation-delay: -3s; }
+@keyframes flotte { 0%, 100% { transform: translate3d(0,0,0) rotate(var(--r,0deg)); } 50% { transform: translate3d(0,-12px,0) rotate(var(--r,0deg)); } }
+.v-haut { position: absolute; left: 22px; right: 20px; top: 18px; font-size: 12px; font-weight: 700; letter-spacing: .08em; }
+.v-titre { position: absolute; left: 24px; right: 20px; top: 64px; font-size: 48px; line-height: .98; font-weight: 650; letter-spacing: -.045em; text-shadow: 0 2px 14px rgba(10,10,60,.35); transition: font-size .6s; }
+.v-titre span { color: var(--peche-doux); }
+.v-sous { position: absolute; left: 50%; bottom: 30px; transform: translateX(-50%); width: max-content; max-width: calc(100% - 120px); padding: 6px 13px; border-radius: 8px; background: rgba(12,10,30,.72); font-size: 14px; font-weight: 600; line-height: 1.35; text-align: center; }
+.v-play { position: absolute; right: 18px; bottom: 22px; width: 46px; height: 46px; border-radius: 50%; display: flex; align-items: center; justify-content: center; padding-left: 3px; background: var(--peche); color: var(--ink); box-shadow: 0 8px 20px -6px rgba(255,138,91,.9); }
+.v-prog { position: absolute; left: 0; bottom: 0; width: 100%; height: 5px; background: rgba(255,255,255,.2); }
+.v-prog i { display: block; width: 42%; height: 100%; background: var(--peche-doux); }
+/* Le contenu s'adapte au format */
+.cadre[data-format="9:16"] .v-titre { top: 56px; font-size: 32px; }
+.cadre[data-format="9:16"] .v-sous { left: 14px; right: 14px; bottom: 82px; max-width: none; width: auto; transform: none; font-size: 13px; }
+.cadre[data-format="9:16"] .v-play { right: 50%; margin-right: -23px; }
+.cadre[data-format="9:16"] .b1 { right: -12%; top: 40%; width: 96px; height: 96px; }
+.cadre[data-format="9:16"] .b2 { right: 68%; top: 47%; }
+.cadre[data-format="1:1"] .v-titre { top: 64px; font-size: 44px; }
+.cadre[data-format="1:1"] .v-sous { left: 18px; right: 76px; max-width: none; width: auto; transform: none; }
+.cadre[data-format="1:1"] .b1 { right: 8%; top: 34%; }
+.legende { margin-top: 20px; text-align: center; font-size: 20px; font-weight: 650; letter-spacing: -.02em; }
+.degrade-clair { background-image: linear-gradient(95deg, #C9BBFF 0%, #EBB0F2 45%, #FFA27A 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.legende-2 { margin-top: 4px; text-align: center; font-size: 15px; color: #B6B0CC; }
+.note { margin: 48px auto 0; max-width: 620px; font-size: 15px; line-height: 1.6; color: #C9C3DE; }
+.note li + li { margin-top: 6px; }
+
+@media (max-width: 980px) {
+  .scene { height: 420px; }
+  .cadre { width: 100%; height: auto; aspect-ratio: 16 / 9; }
+  .cadre[data-format="9:16"] { width: 236px; height: 420px; aspect-ratio: auto; }
+  .cadre[data-format="1:1"] { width: min(100%, 360px); height: auto; aspect-ratio: 1 / 1; }
+  .v-titre { font-size: 34px; top: 52px; }
+  .cadre[data-format="1:1"] .v-titre { font-size: 36px; }
+}
+@media (max-width: 640px) {
+  .scene { height: 420px; }
+  .cadre[data-format="16:9"] .v-titre { font-size: 24px; top: 42px; }
+  .cadre[data-format="16:9"] .v-sous { bottom: 16px; font-size: 12px; max-width: calc(100% - 90px); left: 14px; transform: none; }
+  .cadre[data-format="16:9"] .v-play { width: 38px; height: 38px; right: 12px; bottom: 14px; }
+  .cadre[data-format="16:9"] .b1 { width: 70px; height: 70px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  .piste { width: auto; }
+  .piste ul { flex-wrap: wrap; justify-content: center; padding-right: 0; }
+  .piste ul[aria-hidden] { display: none; }
+  .defile { -webkit-mask: none; mask: none; }
+  .commande { display: none; }
+}
+</style>
+</head>
+<body>
+<main>
+  <div class="conteneur intro">
+    <span class="repere">Maquette 1</span>
+    <h1 class="jk">Les logos clients qui défilent.</h1>
+    <p>Les 9 logos défilent en continu. Le défilement s'arrête au survol, au clavier et avec le bouton. En gris à 72 %, la couleur revient au survol. Si le visiteur a choisi de réduire les animations, rien ne bouge : les logos s'affichent en grille et le bouton disparaît.</p>
+  </div>
+
+  <section class="logos" aria-labelledby="t-logos">
+    <div class="halo" aria-hidden="true"></div>
+    <div class="conteneur">
+      <p id="t-logos" class="label">Ils nous font confiance</p>
+    </div>
+    <div class="defile" id="defile">
+      <div class="piste">
+        <ul>__LOGOS__</ul>
+        <ul aria-hidden="true">__LOGOS_COPIE__</ul>
+      </div>
+    </div>
+    <div class="commande">
+      <button type="button" class="btn-pause" id="btn-pause" aria-pressed="false" aria-controls="defile">
+        <svg class="i-pause" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>
+        <svg class="i-lecture" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.14v13.72c0 .79.87 1.27 1.54.84l10.68-6.86a1 1 0 0 0 0-1.68L9.54 4.3A1 1 0 0 0 8 5.14z"/></svg>
+        <span class="txt">Arrêter le défilement</span>
+      </button>
+    </div>
+  </section>
+
+  <section class="ia" aria-labelledby="t-ecran">
+    <div class="grille" aria-hidden="true"></div>
+    <div class="conteneur intro">
+      <span class="repere">Maquette 2</span>
+      <h2 id="t-ecran" class="jk" style="font-size:28px;letter-spacing:-.03em;font-weight:650;">L'écran « Votre vidéo » de la section 00:05.</h2>
+      <p>Cliquez sur un format ou une langue : l'écran change de taille et ses textes changent de langue. Les boutons sont au-dessus de l'écran : à l'intérieur, ils n'auraient pas tenu en 9:16 ni sur mobile.</p>
+    </div>
+
+    <div class="conteneur">
+      <div class="ecran-zone">
+        <div class="barre">
+          <div class="groupe" role="group" aria-label="Format de la vidéo">
+            <span class="nom" aria-hidden="true">Format</span>
+            <button type="button" class="choix" data-format="16:9" aria-pressed="true" aria-label="Format horizontal 16:9">16:9</button>
+            <button type="button" class="choix" data-format="9:16" aria-pressed="false" aria-label="Format vertical 9:16">9:16</button>
+            <button type="button" class="choix" data-format="1:1" aria-pressed="false" aria-label="Format carré 1:1">1:1</button>
+          </div>
+          <div class="groupe" role="group" aria-label="Langue de la vidéo">
+            <span class="nom" aria-hidden="true">Langue</span>
+            <button type="button" class="choix" data-langue="fr" aria-pressed="true" aria-label="Version française">FR</button>
+            <button type="button" class="choix" data-langue="en" aria-pressed="false" aria-label="Version anglaise">EN</button>
+            <button type="button" class="choix" data-langue="es" aria-pressed="false" aria-label="Version espagnole">ES</button>
+          </div>
+        </div>
+
+        <div class="scene">
+          <div class="cadre" id="cadre" data-format="16:9">
+            <div class="video">
+              <div class="v-halo" aria-hidden="true"></div>
+              <div class="bulle b1" aria-hidden="true"></div>
+              <div class="bulle b2" aria-hidden="true"></div>
+              <!-- Chaque langue est un groupe d'éléments séparés, modifiables dans Elementor -->
+              <div data-version="fr" lang="fr">
+                <p class="v-haut">VOTRE VIDÉO · 1:28</p>
+                <p class="v-titre jk">Bienvenue<br><span>chez nous.</span></p>
+                <p class="v-sous">«&nbsp;Votre premier jour commence ici.&nbsp;»</p>
+              </div>
+              <div data-version="en" lang="en" hidden>
+                <p class="v-haut">YOUR VIDEO · 1:28</p>
+                <p class="v-titre jk">Welcome<br><span>aboard.</span></p>
+                <p class="v-sous">“Your first day starts here.”</p>
+              </div>
+              <div data-version="es" lang="es" hidden>
+                <p class="v-haut">TU VÍDEO · 1:28</p>
+                <p class="v-titre jk">Bienvenido<br><span>a bordo.</span></p>
+                <p class="v-sous">«&nbsp;Tu primer día empieza aquí.&nbsp;»</p>
+              </div>
+              <span class="v-play" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.14v13.72c0 .79.87 1.27 1.54.84l10.68-6.86a1 1 0 0 0 0-1.68L9.54 4.3A1 1 0 0 0 8 5.14z"/></svg></span>
+              <div class="v-prog" aria-hidden="true"><i></i></div>
+            </div>
+          </div>
+        </div>
+        <p class="sr" id="annonce" aria-live="polite"></p>
+
+        <p class="legende jk">Votre vidéo, <span class="degrade-clair">prête à publier.</span></p>
+        <p class="legende-2">Tous les formats, toutes les langues, à votre charte.</p>
+      </div>
+
+      <ul class="note">
+        <li>Les trois versions (FR, EN, ES) sont des textes séparés dans Elementor : vous les modifiez comme les autres.</li>
+        <li>Tous les textes sont dans le HTML de la page : Google les lit, avec la bonne langue déclarée.</li>
+        <li>La zone garde la même hauteur quand le format change : rien ne saute dans la page.</li>
+        <li>Au clavier : Tab pour aller sur un bouton, Entrée pour choisir. Un lecteur d'écran annonce le changement.</li>
+      </ul>
+    </div>
+  </section>
+</main>
+<script>
+(function () {
+  var btn = document.getElementById('btn-pause'), zone = document.getElementById('defile');
+  btn.addEventListener('click', function () {
+    var p = btn.getAttribute('aria-pressed') !== 'true';
+    btn.setAttribute('aria-pressed', p ? 'true' : 'false');
+    zone.classList.toggle('pause', p);
+    btn.querySelector('.txt').textContent = p ? 'Relancer le défilement' : 'Arrêter le défilement';
+  });
+
+  var cadre = document.getElementById('cadre'), annonce = document.getElementById('annonce');
+  var noms = { '16:9': 'horizontal 16:9', '9:16': 'vertical 9:16', '1:1': 'carré 1:1', fr: 'française', en: 'anglaise', es: 'espagnole' };
+  var etat = { format: '16:9', langue: 'fr' };
+  function choisir(groupe, cle, valeur) {
+    groupe.querySelectorAll('.choix').forEach(function (b) { b.setAttribute('aria-pressed', b.dataset[cle] === valeur ? 'true' : 'false'); });
+  }
+  document.querySelectorAll('.choix').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var g = b.closest('.groupe');
+      if (b.dataset.format) { etat.format = b.dataset.format; cadre.dataset.format = etat.format; choisir(g, 'format', etat.format); }
+      if (b.dataset.langue) {
+        etat.langue = b.dataset.langue; choisir(g, 'langue', etat.langue);
+        cadre.querySelectorAll('[data-version]').forEach(function (v) { v.hidden = v.dataset.version !== etat.langue; });
+      }
+      annonce.textContent = 'Vidéo au format ' + noms[etat.format] + ', version ' + noms[etat.langue] + '.';
+    });
+  });
+})();
+</script>
+</body>
+</html>

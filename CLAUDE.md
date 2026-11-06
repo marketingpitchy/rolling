@@ -168,6 +168,12 @@ image, texte, « À lire aussi » ; colonne latérale = temps de lecture, partag
 
 ## Maquettes HTML
 
+Sources dans `maquettes/` (sans images). Fichiers à ouvrir : `maquette-logos-ecran.html`, `maquette-pages.html` (hors git).
+
+- `maquette-pages.html` : 10 pages (Offres, Réalisations, Réalisation, Témoignages, Témoignage = cas client,
+  Blog, Article, Contact, Landing, 404), en-tête avec menu burger, pied de page 3 colonnes. axe 0 à 1440 et 390.
+  Textes marqués [Texte d'exemple] / [À compléter] à fournir par la cliente. En attente de validation.
+
 - `maquette-logos-ecran.html` (hors git, contient les logos clients) : **validée**.
   - Logos : le défilement s'active / se coupe **depuis Elementor** (réglage de la cliente). Côté visiteur,
     on garde l'arrêt au survol/clavier et le bouton pause (WCAG 2.2.2 : tout contenu qui bouge plus de 5 s

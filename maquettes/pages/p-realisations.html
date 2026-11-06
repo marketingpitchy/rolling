@@ -1,0 +1,82 @@
+<!--@page realisations|Réalisations-->
+{{entete}}
+<main id="contenu-realisations">
+  <section class="section" style="padding:96px 0 56px" aria-labelledby="h1-rea">
+    <div class="halo-lilas" aria-hidden="true" style="right:-300px;top:-420px"></div>
+    <div class="conteneur">
+      <p class="note-main masquer-mobile" aria-hidden="true" style="position:absolute;right:60px;top:10px;transform:rotate(-3deg)">ce que nous faisons, en vrai</p>
+      <p class="pastille"><span class="point"></span>Réalisations</p>
+      <h1 id="h1-rea" class="titre-lg" style="margin-top:26px;max-width:880px">Nos réalisations, <span class="degrade-promesse">du contenu à la vidéo.</span></h1>
+      <p class="texte-intro" style="margin-top:22px;max-width:680px">Articles, modules de formation, événements, lancements : voici ce que nos clients nous ont confié, et ce que notre <strong>agence vidéo</strong> en a fait. Chaque vidéo indique son contenu de départ.</p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0" aria-label="Liste des réalisations">
+    <div class="conteneur">
+      <nav aria-label="Filtrer les réalisations" class="pile" style="gap:12px;margin-bottom:40px">
+        <ul class="rangee" style="list-style:none"><li><a class="chip-neutre" href="#realisations" aria-current="page">Toutes</a></li><li><a class="chip-bleu" href="#realisations">Marketing &amp; communication</a></li><li><a class="chip-orange" href="#realisations">Com interne · RH · Formation</a></li></ul>
+        <ul class="rangee" style="list-style:none"><li><a class="chip-neutre" href="#realisations">Motion design</a></li><li><a class="chip-neutre" href="#realisations">Tournage</a></li><li><a class="chip-neutre" href="#realisations">Interview</a></li><li><a class="chip-neutre" href="#realisations">Démo produit</a></li><li><a class="chip-neutre" href="#realisations">Événement</a></li></ul>
+      </nav>
+      <div class="grille-3" style="row-gap:44px">
+        {{rea:fnac}}{{rea:sncf}}{{rea:weenect}}{{rea:veolia}}{{rea:groupama}}{{rea:article}}
+      </div>
+      <nav aria-label="Pagination" style="margin-top:56px"><ul class="rangee" style="list-style:none;justify-content:center"><li><a class="chip-neutre" href="#realisations" aria-current="page">1</a></li><li><a class="chip-neutre" href="#realisations">2</a></li><li><a class="chip-neutre" href="#realisations">3</a></li><li><a class="chip-neutre" href="#realisations">Réalisations suivantes</a></li></ul></nav>
+      <div class="carte-verre grand-bloc rangee" style="margin-top:72px;justify-content:center;gap:18px 28px;text-align:center">
+        <p class="titre-xs" style="font-size:28px">Et avec vos contenus, <span class="degrade-promesse">ça donnerait quoi&nbsp;?</span></p>
+        <a class="bouton-principal" href="#contact">Réserver un échange {{fleche}}</a>
+      </div>
+    </div>
+  </section>
+  {{cta}}
+</main>
+{{pied}}
+
+<!--@page realisation|Réalisation (fiche)-->
+{{entete}}
+<main id="contenu-realisation">
+  <article>
+    <section class="section" style="padding:72px 0 56px" aria-labelledby="h1-rea1">
+      <div class="halo-peche" aria-hidden="true" style="right:-420px;top:-300px;opacity:.6"></div>
+      <div class="conteneur">
+        <nav class="ariane" aria-label="Fil d'Ariane"><ol><li><a href="#accueil-placeholder">Accueil</a></li><li><a href="#realisations">Réalisations</a></li><li aria-current="page">Fnac Darty</li></ol></nav>
+        <div class="rangee" style="margin-top:28px"><span class="etiquette-metier-orange"><span class="point"></span>Com interne · RH · Formation</span><span class="chip-neutre">Tournage</span><span class="chip-neutre">Événement</span></div>
+        <h1 id="h1-rea1" class="titre-lg" style="margin-top:22px;max-width:960px">Fnac Darty&nbsp;: 13 jours de formation, <span class="degrade-humain">une seule vidéo.</span></h1>
+        <p class="avant-apres" style="margin-top:20px"><span class="tag-orange">Programme du séminaire</span>{{transfo}}<span>aftermovie de 2&nbsp;min et 3 formats courts</span></p>
+      </div>
+    </section>
+    <section class="section" style="padding-top:0" aria-label="La vidéo et sa fiche">
+      <div class="conteneur" style="display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:28px;align-items:start" id="rea-grille">
+        <div class="vignette-video" style="padding:10px">
+          <div class="cadre-photo" style="aspect-ratio:16/9;border-radius:20px"><img src="{{img:cap-fnac}}" alt="Salle de formation Fnac Darty pendant le séminaire, vendeurs réunis" width="1369" height="766" fetchpriority="high"><span class="bandeau-video"><span class="point-rec"></span>Événement</span><span class="duree">2:04</span><button class="bouton-lecture bouton-lecture-grand" type="button">{{lecture}}<span class="sr">Lire la vidéo : Fnac Darty, 13 jours de formation</span></button><span class="barre-progression" aria-hidden="true"><i style="width:0"></i></span></div>
+        </div>
+        <div class="carte-verre">
+          <h2 id="fiche-titre" class="label">La fiche</h2>
+          <dl class="pile" style="gap:14px;margin-top:16px">
+            <div><dt class="texte-petit">Client</dt><dd style="font-weight:700">Fnac Darty</dd></div>
+            <div><dt class="texte-petit">Contenu de départ</dt><dd style="font-weight:700">Programme du séminaire de formation</dd></div>
+            <div><dt class="texte-petit">Vidéos produites</dt><dd style="font-weight:700">1 aftermovie, 3 formats courts</dd></div>
+            <div><dt class="texte-petit">Formats</dt><dd style="font-weight:700">16:9, 9:16</dd></div>
+            <div><dt class="texte-petit">Formule</dt><dd style="font-weight:700">Création + Tournage</dd></div>
+          </dl>
+          <a class="bouton-principal bouton-petit" style="margin-top:22px;width:100%" href="#contact">Réserver un échange {{fleche}}</a>
+        </div>
+      </div>
+      <div class="conteneur conteneur-etroit" style="margin-top:64px">
+        <div class="pile" style="gap:40px">
+          <div><h2 class="titre-sm">Le besoin.</h2><p class="texte" style="margin-top:14px">[Texte d'exemple] 1&nbsp;057 vendeurs, 13 jours de formation : l'équipe voulait garder une trace de ce moment, et la partager avec ceux qui n'étaient pas là.</p></div>
+          <div><h2 class="titre-sm">Ce que nous avons produit.</h2><ul class="liste-coches" style="margin-top:18px"><li class="ligne-coche">{{coche}}<span class="texte">Un tournage sur place, un projet à la fois</span></li><li class="ligne-coche">{{coche}}<span class="texte">Un aftermovie de 2 minutes, à votre charte</span></li><li class="ligne-coche">{{coche}}<span class="texte">Trois formats courts pour l'intranet et LinkedIn</span></li></ul></div>
+          <div><h2 class="titre-sm">Le résultat.</h2><p class="texte" style="margin-top:14px">[Texte d'exemple] Une vidéo diffusée à tout le réseau, et des formats courts réutilisés pour la marque employeur.</p></div>
+          <details class="carte-pleine"><summary class="titre-xs" style="cursor:pointer;font-size:19px">Lire la transcription de la vidéo</summary><p class="texte" style="margin-top:14px">[Transcription d'exemple] Bienvenue au séminaire de formation…</p></details>
+        </div>
+      </div>
+    </section>
+    <section class="section section-lilas" style="padding-top:40px" aria-labelledby="h2-autres">
+      <div class="conteneur">
+        <h2 id="h2-autres" class="titre-sm" style="margin-bottom:36px">D'autres <span class="degrade-promesse">réalisations.</span></h2>
+        <div class="grille-3">{{rea3:sncf}}{{rea3:weenect}}{{rea3:veolia}}</div>
+      </div>
+    </section>
+  </article>
+  {{cta}}
+</main>
+{{pied}}

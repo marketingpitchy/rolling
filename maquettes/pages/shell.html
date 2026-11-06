@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rolling · maquettes des pages</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600..700&family=Hanken+Grotesk:wght@400;500;600;700;800&family=Caveat:wght@700&display=swap" rel="stylesheet">
+<style>/*CSS*/</style>
+</head>
+<body>
+<!--PAGES-->
+<div class="outil-maquette" role="region" aria-label="Outils de la maquette">
+  <label for="choix-page">Page</label>
+  <select id="choix-page"><!--OPTIONS--></select>
+  <button type="button" id="btn-classes" aria-pressed="false">Voir les classes</button>
+</div>
+<div class="bulle-classe" id="bulle" hidden></div>
+<script>
+(function () {
+  var CLASSES = /*CLASSES*/;
+  var pages = [].slice.call(document.querySelectorAll('.page')), select = document.getElementById('choix-page');
+  function montrer(id, ancre) {
+    pages.forEach(function (p) { p.classList.toggle('visible', p.id === id); });
+    select.value = id; document.title = 'Rolling · ' + document.getElementById(id).dataset.titre;
+    if (ancre) { var a = document.getElementById(ancre); if (a) { a.scrollIntoView(); return; } }
+    window.scrollTo(0, 0);
+  }
+  function route() {
+    var h = decodeURIComponent(location.hash.slice(1));
+    if (!h) return montrer(pages[0].id);
+    var el = document.getElementById(h);
+    if (!el) return;
+    if (el.classList.contains('page')) return montrer(h);
+    var p = el.closest('.page'); if (p) montrer(p.id, h);
+  }
+  window.addEventListener('hashchange', route); route();
+  select.addEventListener('change', function () { location.hash = select.value; });
+  document.querySelectorAll('.burger').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var o = b.getAttribute('aria-expanded') !== 'true';
+      b.setAttribute('aria-expanded', o); b.closest('.entete').classList.toggle('ouvert', o);
+      b.querySelector('.sr').textContent = o ? 'Fermer le menu' : 'Ouvrir le menu';
+    });
+  });
+  document.querySelectorAll('.partage-copier').forEach(function (b) {
+    b.addEventListener('click', function () { try { navigator.clipboard.writeText(location.href); } catch (e) {} b.title = 'Lien copié'; });
+  });
+  var btn = document.getElementById('btn-classes'), bulle = document.getElementById('bulle'), actuel = null;
+  btn.addEventListener('click', function () {
+    var on = btn.getAttribute('aria-pressed') !== 'true';
+    btn.setAttribute('aria-pressed', on); document.body.classList.toggle('voir-classes', on);
+    if (!on) { bulle.hidden = true; if (actuel) actuel.classList.remove('survol-classe'); }
+  });
+  document.addEventListener('mousemove', function (e) {
+    if (!document.body.classList.contains('voir-classes')) return;
+    var el = e.target, trouve = null, noms = [];
+    while (el && el !== document.body) {
+      noms = [].filter.call(el.classList || [], function (c) { return CLASSES.indexOf(c) > -1; });
+      if (noms.length) { trouve = el; break; }
+      el = el.parentElement;
+    }
+    if (actuel && actuel !== trouve) actuel.classList.remove('survol-classe');
+    if (!trouve) { bulle.hidden = true; return; }
+    actuel = trouve; trouve.classList.add('survol-classe');
+    bulle.innerHTML = 'Classe : <b>' + noms.join('</b> + <b>') + '</b>';
+    bulle.hidden = false; bulle.style.left = Math.min(e.clientX + 14, innerWidth - 360) + 'px'; bulle.style.top = (e.clientY + 18) + 'px';
+  });
+  var liens = document.querySelectorAll('.article-cote .sommaire a');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (es) { es.forEach(function (en) { if (en.isIntersecting) liens.forEach(function (l) { l.classList.toggle('actif', l.getAttribute('href') === '#' + en.target.id); }); }); }, { rootMargin: '-20% 0px -70% 0px' });
+    ['pourquoi', 'etapes', 'avis', 'aretenir'].forEach(function (i) { var t = document.getElementById(i); if (t) io.observe(t); });
+  }
+})();
+</script>
+</body>
+</html>
