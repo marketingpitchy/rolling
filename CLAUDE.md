@@ -146,11 +146,16 @@ image, texte, « À lire aussi » ; colonne latérale = temps de lecture, partag
   Le thème videra aussi ce cache à sa mise à jour s'il est présent.
 - Pied de page : validé = reprend le menu principal + 2e menu « Pied de page » (liens légaux). Mise en page
   à montrer dans les maquettes HTML des pages.
-- Menu du haut : la maquette pointe vers des ancres de l'accueil (Pourquoi, Méthode…). Proposé : pages
-  (Offres, Réalisations, Témoignages, Blog) + bouton « Réserver un échange ». En attente.
+- Menu du haut (validé) : pages Offres, Réalisations, Témoignages, Blog + bouton « Réserver un échange ».
+  La cliente ajoutera elle-même des liens vers les sections de l'accueil (ancres). Les blocs gardent les
+  ancres de la maquette : #vague (Pourquoi), #methode, #exemples, #ia, #offres, #contact (+ #humain).
+- Activation du thème : crée une seule fois les pages manquantes (vides) et les deux menus
+  (« Menu principal », « Pied de page »), placés aux bons emplacements. Ne les retouche plus ensuite.
+- WP Super Cache installé chez la cliente.
 - Partage article : Instagram = bouton « Copier le lien » (validé).
 - Classes : validées dans le principe, à affiner plus tard avec la cliente.
-- Zips Elementor 4.3.6 et Elementor Pro 4.3.3 pour les tests locaux.
+- Elementor Pro 4.3.3 : zip reçu (gardé hors git, dossier scratchpad/plugins). Elementor 4.3.6 : zip à recevoir
+  (bouton « Télécharger » de la page principale de l'extension = dernière version).
 
 ## Maquettes HTML
 
@@ -159,4 +164,4 @@ image, texte, « À lire aussi » ; colonne latérale = temps de lecture, partag
     on garde l'arrêt au survol/clavier et le bouton pause (WCAG 2.2.2 : tout contenu qui bouge plus de 5 s
     doit pouvoir être arrêté).
   - Écran 00:05 : validé tel quel. Ajouter une image de fond remplaçable dans Elementor (voile violet
-    gardé pour la lisibilité). Une image commune ou une par format : en attente de réponse.
+    gardé pour la lisibilité). Choix A validé : une seule image, recadrée selon le format.
