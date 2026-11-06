@@ -12,10 +12,13 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
 
 - WordPress 7.1.4, Elementor 4.3.6, Elementor Pro (One) : oui. Administration en français.
 - Site : agence-rolling.fr. Langue : fr (anglais plus tard : prévoir hreflang).
-- Test local : image Docker `wordpress:7.1.4-php8.3-apache` (Docker Hub accessible).
-  wordpress.org est bloqué par le réseau de la session : le zip d'Elementor 4.3.6
-  (et celui de Pro) doit être fourni par la cliente ou le domaine autorisé.
-- Capture de l'écran Extensions : annoncée mais pas reçue (à redemander).
+- Copie de test (scratchpad/wp, docker compose : mariadb 11.4, wordpress:7.1.4-php8.3-apache,
+  wordpress:cli-2.12.0-php8.3) : WordPress 7.1.4 fr_FR, Hello Elementor 3.5.2, Elementor 4.3.6, Elementor Pro 4.3.3
+  (zips de la cliente, hors git, scratchpad/plugins), ACF 6.8.11. http://localhost:8080 (admin / admin).
+  Démarrer dockerd à la main (`dockerd &`) si le socket manque. Les conteneurs n'ont pas le proxy :
+  télécharger sur l'hôte puis `docker compose cp`.
+- Environnement cloud « rolling » (personnel) : autorise api.wordpress.org, downloads.wordpress.org, wordpress.org.
+- Elementor Pro n'a pas de traduction sur wordpress.org : une partie de l'interface Pro reste en anglais (comme chez la cliente).
 
 ## Méthode imposée
 
@@ -98,6 +101,14 @@ image, texte, « À lire aussi » ; colonne latérale = temps de lecture, partag
 
 ## Décisions
 
+- Elementor 4.3.6 : jusqu'à 1000 classes globales (pas de contrainte de nombre). Éléments atomiques
+  disponibles : heading, paragraph, button, image, svg, divider, list (vraie liste ul/li), div-block, flexbox,
+  grid, youtube, self-hosted-video, background-video, tabs, accordion, form, collection-loop, template-renderer.
+  Module « Interactions » (moteur Motion JS) = le « Motion » du cahier des charges : apparitions fade/slide/scale
+  réglables par la cliente. Les animations en boucle de la maquette (halos, flottement, anneau, REC, défilement
+  des logos) restent en CSS du thème.
+- Le logo renvoie à l'accueil ; pas de lien « Accueil » dans le menu.
+
 - Labels en 12 px (pas 11).
 - Les illustrations uniques de la maquette (mini-email, mini-article, module PPT, carte convention,
   résultat de recherche, carte intranet, storyboard, schéma IA Factory) sont des éléments Elementor
@@ -154,8 +165,6 @@ image, texte, « À lire aussi » ; colonne latérale = temps de lecture, partag
 - WP Super Cache installé chez la cliente.
 - Partage article : Instagram = bouton « Copier le lien » (validé).
 - Classes : validées dans le principe, à affiner plus tard avec la cliente.
-- Elementor Pro 4.3.3 : zip reçu (gardé hors git, dossier scratchpad/plugins). Elementor 4.3.6 : zip à recevoir
-  (bouton « Télécharger » de la page principale de l'extension = dernière version).
 
 ## Maquettes HTML
 
