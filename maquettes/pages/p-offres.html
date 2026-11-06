@@ -1,3 +1,56 @@
+<!--@page accueil-offre|Accueil · L'offre en version courte-->
+{{entete}}
+<main id="contenu-accueil-offre">
+  <section class="section" style="--hero-haut:56px;padding-bottom:124px" aria-labelledby="h2-offre-courte">
+    <div class="halo-lilas" aria-hidden="true" style="left:-380px;top:-200px"></div>
+    <div class="halo-peche" aria-hidden="true" style="right:-420px;bottom:-300px;opacity:.6"></div>
+    <div class="conteneur">
+      <p class="label landing-etape">Extrait de l'accueil : la section 00:07, à la place du tableau complet</p>
+      <div class="entete-section"><p class="sur-titre"><span class="timecode">00:07</span><span>L'offre</span></p>
+        <h2 id="h2-offre-courte" class="titre-lg" style="margin-top:20px">Un prix fixe. <span class="degrade-promesse">Des vidéos sans fin.</span></h2>
+        <p class="texte-intro">Deux formules, un abonnement annuel, une qualité garantie. <strong>Et comme le prix est fixe, plus vous faites de vidéos, moins chacune vous coûte.</strong></p></div>
+      <div class="grille-2" style="align-items:stretch">
+        <article class="carte-pleine pile" style="padding:34px;gap:18px">
+          <h3 class="titre-xs" style="font-size:26px">Création illimitée</h3>
+          <p class="offres-prix" style="font-size:46px">1&nbsp;250&nbsp;€<small> / mois</small></p>
+          <p class="texte-petit" style="margin-top:-10px">Soit 15&nbsp;000&nbsp;€ / an</p>
+          <p class="offres-resume" style="background:var(--lilas-doux);color:var(--violet-fonce);margin:0">Tous vos contenus et vos projets, en vidéo</p>
+          <ul class="liste-coches">
+            <li class="ligne-coche">{{coche}}<span class="texte">Vos écrits, vos vidéos et vos nouveaux projets</span></li>
+            <li class="ligne-coche">{{coche}}<span class="texte">Motion design 2D et 3D, montage, voix off</span></li>
+            <li class="ligne-coche">{{coche}}<span class="texte">Sous-titres, langues et tous les formats</span></li>
+            <li class="ligne-coche">{{coche}}<span class="texte">Un directeur artistique et un chef de projet dédiés</span></li>
+          </ul>
+        </article>
+        <article class="carte-pleine pile section-sombre" style="padding:34px;gap:18px;background:radial-gradient(90% 30% at 85% 0%,rgba(255,138,91,.35),rgba(255,138,91,0) 70%),linear-gradient(180deg,#1C1730 0%,#0F0F12 100%)">
+          <span class="offres-badge" style="right:30px">Le plus complet</span>
+          <h3 class="titre-xs" style="font-size:26px">Création + Tournage</h3>
+          <p class="offres-prix degrade-clair" style="font-size:46px">2&nbsp;080&nbsp;€<small style="-webkit-text-fill-color:var(--sombre-legende)"> / mois</small></p>
+          <p class="texte-petit" style="margin-top:-10px">Soit 25&nbsp;000&nbsp;€ / an</p>
+          <p class="offres-resume" style="background:rgba(255,255,255,.08);color:#ECE8F7;box-shadow:inset 0 0 0 1px rgba(255,255,255,.14);margin:0">Tout Création, plus le tournage et le motion fait main</p>
+          <ul class="liste-coches">
+            <li class="ligne-coche">{{coche}}<span class="texte">Captation offerte, partout en France</span></li>
+            <li class="ligne-coche">{{coche}}<span class="texte">Interviews, témoignages et événements</span></li>
+            <li class="ligne-coche">{{coche}}<span class="texte">Avatars et vidéos produit</span></li>
+            <li class="ligne-coche">{{coche}}<span class="texte">Motion 100&nbsp;% fait main, sans IA</span></li>
+          </ul>
+        </article>
+      </div>
+      <div class="carte-verre grand-bloc" style="margin-top:28px;background:linear-gradient(120deg,rgba(255,241,231,.95),rgba(255,224,206,.7))">
+        <h3 class="titre-xs">L'illimité qui tient ses promesses&nbsp;:</h3>
+        <ol class="grille-4" style="list-style:none;margin-top:22px">
+          <li class="ligne-coche"><img class="picto-verre" src="{{img:n1}}" alt="" height="40" style="height:40px"><span class="texte-petit"><strong>Un projet traité à fond</strong> à la fois</span></li>
+          <li class="ligne-coche"><img class="picto-verre" src="{{img:n2}}" alt="" height="40" style="height:40px"><span class="texte-petit"><strong>1 projet = 1 vidéo livrée</strong>, prête à publier</span></li>
+          <li class="ligne-coche"><img class="picto-verre" src="{{img:n3}}" alt="" height="40" style="height:40px"><span class="texte-petit"><strong>Des allers-retours cadrés</strong>, pour livrer vite</span></li>
+          <li class="ligne-coche"><img class="picto-verre" src="{{img:n4}}" alt="" height="40" style="height:40px"><span class="texte-petit"><strong>1 abonnement = 1 équipe métier</strong></span></li>
+        </ol>
+      </div>
+      <div class="rangee" style="margin-top:36px;justify-content:center"><a class="bouton-principal" href="#contact">Réserver un échange {{fleche}}</a><a class="bouton-verre" href="#offres">Voir les offres</a></div>
+    </div>
+  </section>
+</main>
+{{pied}}
+
 <!--@page offres|Offres-->
 {{entete}}
 <main id="contenu-offres">
@@ -6,8 +59,8 @@
     <div class="halo-peche" aria-hidden="true" style="right:-380px;top:-200px;opacity:.7"></div>
     <div class="conteneur">
       <p class="pastille"><span class="point"></span>Deux formules, un abonnement annuel</p>
-      <h1 id="h1-offres" class="titre-lg" style="margin-top:26px;max-width:900px">Un prix fixe. <span class="degrade-promesse">Des vidéos sans fin.</span></h1>
-      <p class="texte-intro" style="margin-top:22px;max-width:640px">Deux formules, un abonnement annuel, une qualité garantie. <strong>Et comme le prix est fixe, plus vous faites de vidéos, moins chacune vous coûte.</strong></p>
+      <h1 id="h1-offres" class="titre-lg" style="margin-top:26px;max-width:900px">Nos formules d'agence vidéo, <span class="degrade-promesse">à prix fixe.</span></h1>
+      <p class="texte-intro" style="margin-top:22px;max-width:640px">Tous vos contenus et vos projets en vidéo, ou le tournage en plus. Un abonnement annuel, une équipe dédiée, <strong>des vidéos en illimité</strong>.</p>
       <div class="rangee" style="margin-top:32px"><a class="bouton-principal" href="#contact">Réserver un échange {{fleche}}</a><a class="bouton-verre" href="#comparer">Comparer les formules</a></div>
     </div>
   </section>
@@ -83,8 +136,8 @@
 
   <section class="section" style="padding-top:20px" aria-labelledby="h2-faq-offres">
     <div class="conteneur conteneur-etroit">
-      <div class="entete-section"><p class="sur-titre"><span class="timecode">00:03</span><span>Les questions que vous nous posez</span></p><h2 id="h2-faq-offres" class="titre-md" style="margin-top:20px">Avant de dire <span class="degrade-promesse">«&nbsp;trop beau pour être vrai&nbsp;»</span></h2></div>
-      {{faq}}
+      <div class="entete-section"><p class="sur-titre"><span class="timecode">00:03</span><span>L'abonnement</span></p><h2 id="h2-faq-offres" class="titre-md" style="margin-top:20px">Vos questions <span class="degrade-promesse">sur l'abonnement.</span></h2></div>
+      {{faq-offres}}
     </div>
   </section>
   {{cta}}

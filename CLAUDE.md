@@ -181,8 +181,13 @@ Sources dans `maquettes/` (sans images). Fichiers à ouvrir : `maquette-logos-ec
 - `maquette-pages.html` : 10 pages (Offres, Réalisations, Réalisation, Témoignages, Témoignage = cas client,
   Blog, Article, Contact, Landing, 404), en-tête avec menu burger, pied de page 3 colonnes. axe 0 à 1440 et 390.
   Textes marqués [Texte d'exemple] / [À compléter] à fournir par la cliente (témoignages : elle les ajoute).
-  Retours tour 1 appliqués (chiffres, coche, en-tête landing, FAQ contact). Question ouverte : répétition
-  Offres / Accueil (proposition : accueil = version courte de l'offre, tableau complet seulement sur Offres).
+  Retours tour 1 appliqués (chiffres, coche, en-tête landing, FAQ contact).
+- **Validé : Accueil ≠ Offres.** Accueil, section 00:07 = version courte (2 cartes prix + 4 coches chacune,
+  promesses de l'illimité, boutons « Réserver un échange » + « Voir les offres ») : page « Accueil · L'offre en
+  version courte » de la maquette. Page Offres = tableau complet + Création + Tournage + FAQ de l'abonnement
+  (réponses [À fournir] par la cliente). H1 Offres : « Nos formules d'agence vidéo, à prix fixe. »
+  (le H2 de l'accueil garde « Un prix fixe. Des vidéos sans fin. »).
+- Landing, comparatif : « En interne avec Canva » (pas « stagiaire »). Ce libellé vaut partout.
 
 - `maquette-logos-ecran.html` (hors git, contient les logos clients) : **validée**.
   - Logos : le défilement s'active / se coupe **depuis Elementor** (réglage de la cliente). Côté visiteur,

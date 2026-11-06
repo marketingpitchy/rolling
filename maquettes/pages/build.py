@@ -127,7 +127,7 @@ def fill(t, page):
 pages = []
 for f in ['p-offres.html', 'p-realisations.html', 'p-temoignages.html', 'p-blog.html', 'p-autres.html']:
     src = open(D + f, encoding='utf8').read()
-    for m in re.finditer(r'<!--@page (\w+)\|([^>]*)-->(.*?)(?=<!--@page|\Z)', src, re.S):
+    for m in re.finditer(r'<!--@page ([\w-]+)\|([^>]*)-->(.*?)(?=<!--@page|\Z)', src, re.S):
         pages.append((m.group(1), m.group(2), fill(m.group(3), m.group(1))))
 
 # Espaces insécables avant ? ! : ; dans les textes (pas dans les attributs, styles ni scripts)
