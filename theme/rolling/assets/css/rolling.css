@@ -1,0 +1,97 @@
+/*
+ * Rolling : CSS du thème.
+ * Contient seulement ce qu'Elementor ne peut pas porter : polices, animations nommées, réglages
+ * d'accessibilité, en-tête et pied de page (parties du thème). Le style des blocs vit dans Elementor.
+ */
+
+/* Polices hébergées (licence OFL) */
+@font-face { font-family: "Bricolage Grotesque"; src: url("../fonts/bricolage-grotesque-variable.woff2") format("woff2"); font-weight: 200 800; font-stretch: 75% 100%; font-style: normal; font-display: swap; }
+@font-face { font-family: "Hanken Grotesk"; src: url("../fonts/hanken-grotesk-variable.woff2") format("woff2"); font-weight: 100 900; font-style: normal; font-display: swap; }
+@font-face { font-family: "Caveat"; src: url("../fonts/caveat-bold.woff2") format("woff2"); font-weight: 700; font-style: normal; font-display: swap; }
+
+/* Base */
+html { scroll-behavior: smooth; scroll-padding-top: 110px; }
+body { margin: 0; background: #FAF9F7; color: #0F0F12; font-family: "Hanken Grotesk", system-ui, sans-serif; font-size: 17px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+img, svg, video { max-width: 100%; }
+:focus-visible { outline: 2px solid var(--rl-focus, #5B3BEA); outline-offset: 2px; }
+.page-content > .elementor, .site-main { max-width: none; }
+.site-main.page { margin: 0; padding: 0; max-width: none; }
+.skip-link.screen-reader-text:focus { position: fixed; left: 16px; top: 12px; z-index: 100000; width: auto; height: auto; clip: auto; padding: 10px 18px; border-radius: 999px; background: #0F0F12; color: #FFFFFF; font-weight: 700; text-decoration: none; }
+
+/* Animations nommées, utilisées par les classes Elementor (CSS personnalisé des classes) */
+@keyframes rl-derive { 0%, 100% { transform: translate3d(0, 0, 0) scale(1); } 50% { transform: translate3d(4%, -3%, 0) scale(1.06); } }
+@keyframes rl-flotte { 0%, 100% { transform: translate3d(0, 0, 0); } 50% { transform: translate3d(0, -12px, 0); } }
+@keyframes rl-clignote { 0%, 55% { opacity: 1; } 70%, 100% { opacity: 0.2; } }
+@keyframes rl-defile { to { transform: translateX(-50%); } }
+@property --rl-angle { syntax: "<angle>"; inherits: false; initial-value: 0deg; }
+@keyframes rl-anneau { to { --rl-angle: 360deg; } }
+
+/* Rien ne bouge pour qui a choisi de réduire les animations, ni dans l'éditeur Elementor */
+@media (prefers-reduced-motion: reduce) {
+	*, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
+body.elementor-editor-active *, body.elementor-editor-active *::before, body.elementor-editor-active *::after,
+body.elementor-editor-preview *, body.elementor-editor-preview *::before, body.elementor-editor-preview *::after { animation: none !important; }
+
+/* Défilement des logos : copie ajoutée par le script, arrêt au survol et au clavier */
+.rl-defile-pause, .rl-defile-zone:hover .rl-defile, .rl-defile-zone:focus-within .rl-defile { animation-play-state: paused !important; }
+.rl-defile-statique { flex-wrap: wrap !important; width: auto !important; justify-content: center; animation: none !important; }
+
+/* ---------------------------------------------------------------- */
+/* En-tête du thème                                                  */
+/* ---------------------------------------------------------------- */
+.rl-entete { position: sticky; top: 0; z-index: 50; height: 86px; margin-bottom: -86px; padding-top: 18px; box-sizing: border-box; pointer-events: none; }
+.admin-bar .rl-entete { top: 32px; }
+.rl-entete__barre { pointer-events: auto; position: relative; display: flex; align-items: center; justify-content: space-between; gap: 18px; box-sizing: border-box; max-width: 1184px; min-height: 68px; margin: 0 auto; padding: 8px 9px 8px 26px; border-radius: 999px;
+	background: radial-gradient(70% 50% at 18% 0%, rgba(255,255,255,0.95), rgba(255,255,255,0) 72%), linear-gradient(150deg, rgba(255,255,255,0.86) 0%, rgba(255,255,255,0.66) 55%, rgba(255,255,255,0.78) 100%);
+	-webkit-backdrop-filter: blur(28px) saturate(180%); backdrop-filter: blur(28px) saturate(180%);
+	box-shadow: inset 0 1px 0 #FFFFFF, 0 1px 2px rgba(15,15,18,0.04), 0 30px 70px -34px rgba(76,48,170,0.34); }
+.rl-entete__logo { display: inline-flex; align-items: center; min-height: 44px; }
+.rl-entete__logo img { display: block; width: auto; height: 28px; }
+.rl-entete__nav { display: flex; align-items: center; gap: 28px; }
+.rl-menu { display: flex; align-items: center; gap: 28px; margin: 0; padding: 0; list-style: none; }
+.rl-menu a { display: inline-flex; align-items: center; min-height: 44px; font-size: 15px; font-weight: 500; color: #4A4858; text-decoration: none; }
+.rl-menu a:hover, .rl-menu .current-menu-item > a, .rl-menu .current_page_item > a { color: #5B3BEA; }
+.rl-menu .current-menu-item > a, .rl-menu .current_page_item > a { font-weight: 700; }
+.rl-bouton { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 48px; padding: 0 22px; border-radius: 999px; font-size: 15px; font-weight: 600; line-height: 1; color: #FFFFFF; background: #0F0F12; text-decoration: none; box-shadow: inset 0 1px 0 rgba(255,255,255,0.18), 0 16px 34px -14px rgba(15,15,18,0.55); transition: transform 0.3s ease; }
+.rl-bouton:hover { color: #FFFFFF; transform: translateY(-2px); }
+.rl-bouton svg { flex-shrink: 0; }
+.rl-burger { display: none; align-items: center; justify-content: center; width: 48px; height: 48px; padding: 0; border: 0; border-radius: 50%; background: #0F0F12; color: #FFFFFF; cursor: pointer; }
+.rl-entete--logo-seul .rl-entete__barre { justify-content: center; max-width: 260px; padding: 8px 26px; }
+@media (max-width: 980px) {
+	.rl-entete { padding: 14px 20px 0; }
+	.rl-burger { display: inline-flex; }
+	.rl-entete__barre { padding-left: 20px; }
+	.rl-entete__nav { display: none; position: absolute; left: 0; right: 0; top: calc(100% + 12px); flex-direction: column; align-items: stretch; gap: 8px; padding: 12px; border-radius: 26px; background: #FFFFFF; box-shadow: 0 30px 70px -30px rgba(76,48,170,0.45); }
+	.rl-entete--ouvert .rl-entete__nav { display: flex; }
+	.rl-menu { flex-direction: column; align-items: stretch; gap: 0; }
+	.rl-menu a { min-height: 52px; padding: 0 16px; font-size: 17px; }
+	.rl-entete__nav .rl-bouton { min-height: 52px; }
+}
+@media (max-width: 782px) { .admin-bar .rl-entete { top: 46px; } }
+
+/* ---------------------------------------------------------------- */
+/* Pied de page du thème                                             */
+/* ---------------------------------------------------------------- */
+.rl-pied { background: #0F0F12; color: #FAF9F7; border-top: 1px solid rgba(255,255,255,0.08); --rl-focus: #C4B5FD; }
+.rl-pied__conteneur { box-sizing: border-box; max-width: 1240px; margin: 0 auto; padding: 0 28px; }
+.rl-pied__haut { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 40px; padding: 64px 0 40px; }
+.rl-pied__logo img { display: block; width: auto; height: 28px; }
+.rl-pied p, .rl-pied li { margin: 0; font-size: 15px; line-height: 1.6; color: #B6B0CC; }
+.rl-pied__presentation { margin-top: 16px !important; max-width: 34ch; }
+.rl-pied__marque { margin-top: 6px !important; }
+.rl-pied__titre { margin: 0 0 14px !important; font-size: 12px !important; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #B6B0CC; }
+.rl-pied ul { display: grid; gap: 4px; margin: 0; padding: 0; list-style: none; }
+.rl-pied a { display: inline-flex; align-items: center; min-height: 32px; color: #C9C3DE; text-decoration: none; }
+.rl-pied a:hover { color: #FFFFFF; text-decoration: underline; }
+.rl-pied__bas { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; padding: 22px 0 30px; border-top: 1px solid rgba(255,255,255,0.08); font-size: 14px; color: #B6B0CC; }
+.rl-pied--simple .rl-pied__bas { border-top: 0; align-items: center; }
+.rl-pied--simple ul { display: flex; flex-wrap: wrap; gap: 4px 22px; }
+@media (max-width: 980px) {
+	.rl-pied__haut { grid-template-columns: 1fr 1fr; }
+	.rl-pied__haut > :first-child { grid-column: 1 / -1; }
+}
+@media (max-width: 640px) {
+	.rl-pied__conteneur { padding: 0 20px; }
+	.rl-pied__haut { grid-template-columns: 1fr; }
+}

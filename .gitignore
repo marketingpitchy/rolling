@@ -1,1 +1,4 @@
+# Médias : jamais dans git (photos clients, logos clients)
+*.zip
 maquette-*.html
+theme/rolling/assets/medias/

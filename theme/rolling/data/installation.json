@@ -1,0 +1,86 @@
+{
+  "pages": [
+    {
+      "cle": "accueil",
+      "titre": "Accueil",
+      "slug": "accueil"
+    },
+    {
+      "cle": "offres",
+      "titre": "Offres",
+      "slug": "offres"
+    },
+    {
+      "cle": "realisations",
+      "titre": "Réalisations",
+      "slug": "realisations"
+    },
+    {
+      "cle": "temoignages",
+      "titre": "Témoignages",
+      "slug": "temoignages"
+    },
+    {
+      "cle": "blog",
+      "titre": "Blog",
+      "slug": "blog"
+    },
+    {
+      "cle": "contact",
+      "titre": "Contact",
+      "slug": "contact"
+    },
+    {
+      "cle": "mentions",
+      "titre": "Mentions légales",
+      "slug": "mentions-legales"
+    },
+    {
+      "cle": "cgv",
+      "titre": "CGV",
+      "slug": "cgv"
+    },
+    {
+      "cle": "landing",
+      "titre": "Landing Google Ads",
+      "slug": "agence-video",
+      "modele": "modeles/landing.php"
+    }
+  ],
+  "menus": [
+    {
+      "nom": "Menu principal",
+      "emplacement": "principal",
+      "pages": [
+        "offres",
+        "realisations",
+        "temoignages",
+        "blog"
+      ]
+    },
+    {
+      "nom": "Informations",
+      "emplacement": "pied",
+      "pages": [
+        "mentions",
+        "confidentialite",
+        "cgv",
+        "contact"
+      ]
+    }
+  ],
+  "reglages": {
+    "rolling_cta_texte": "Réserver un échange",
+    "rolling_libelle_menu_ouvrir": "Ouvrir le menu",
+    "rolling_libelle_menu_fermer": "Fermer le menu",
+    "rolling_pied_presentation": "Votre agence vidéo illimitée, pour les équipes com, RH et formation.",
+    "rolling_pied_marque": "Une marque Pitchy",
+    "rolling_pied_titre_navigation": "Navigation",
+    "rolling_pied_titre_informations": "Informations",
+    "rolling_pied_copyright": "© {annee} Rolling",
+    "rolling_pied_mention": "agence-rolling.fr"
+  },
+  "kit": {
+    "viewport_tablet": 980
+  }
+}

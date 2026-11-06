@@ -1,0 +1,252 @@
+[
+    {
+        "id": "e-gv-e19d620",
+        "label": "encre",
+        "type": "global-color-variable",
+        "value": {
+            "$$type": "color",
+            "value": "#0F0F12"
+        },
+        "description": "Titres et texte principal sur fond clair. Fond des sections sombres."
+    },
+    {
+        "id": "e-gv-be71c80",
+        "label": "blanc-chaud",
+        "type": "global-color-variable",
+        "value": {
+            "$$type": "color",
+            "value": "#FAF9F7"
+        },
+        "description": "Fond des pages claires. Texte sur fond sombre."
+    },
+    {
+        "id": "e-gv-0600aec",
+        "label": "blanc",
+        "type": "global-color-variable",
+        "value": {
+            "$$type": "color",
+            "value": "#FFFFFF"
+        },
+        "description": "Surfaces pleines (tableau des offres, tuiles)."
+    },
+    {
+        "id": "e-gv-a71c41e",
+        "label": "peche-pale",
+        "type": "global-color-variable",
+        "value": {
+            "$$type": "color",
+            "value": "#FFF1E7"
+        },
+        "description": "Fond teinté des sections « humain »."
+    },
+    {
+        "id": "e-gv-e4ea04a",
+        "label": "nuit",
+        "type": "global-color-variable",
+        "value": {
+            "$$type": "color",
+            "value": "#17112C"
+        },
+        "description": "Haut du dégradé des sections sombres."
+    },
+    {
+        "id": "e-gv-c6a232b",
+        "label": "nuit-2",
+        "type": "global-color-variable",
+        "value": {
+            "$$type": "color",
+            "value": "#1C1730"
+        },
+        "description": "Surface pleine sur fond sombre (colonne Création + Tournage)."
+    },
+    {
+        "id": "e-gv-d6873fe",
+        "label": "paragraphe",
+        "type": "global-color-variable",
+        "value": {
+            "$$type": "color",
+            "value": "#4A4858"
+        },
+        "description": "Paragraphes et chapôs sur fond clair."
+    },
+    {
+        "id": "e-gv-ff12e70",
+        "label": "legende",
+        "type": "global-color-variable",
+        "value": {
+            "$$type": "color",
+            "value": "#6E6B7B"
+        },
+        "description": "Légendes, mentions et petits labels sur fond clair."
+    },
+    {
+        "id": "e-gv-35c9fa2",
+        "label": "eteint",
+        "type": "global-color-variable",
+        "value": {
+            "$$type": "color",
+            "value": "#8F89A8"
+        },
+        "description": "Partie éteinte d'un grand titre (24 px et plus seulement)."
+    },
+    {
+        "id": "e-gv-4ce9474",
+        "label": "violet",
+        "type": "global-color-variable",
+        "value": {
+            "$$type": "color",
+            "value": "#5B3BEA"
+        },
+        "description": "Accent principal : mots-clés, timecodes, liens, chiffres."
+    },
+    {
+        "id": "e-gv-1fb4fc9",
+        "label": "violet-fonce",
+        "type": "global-color-variable",
+        "value": {
+            "$$type": "color",
+            "value": "#4A2BB8"
+        },
+        "description": "Texte des pastilles et étiquettes violettes."
+    },
+    {
+        "id": "e-gv-4b68995",
+        "label": "lilas",
+        "type": "global-color-variable",
+        "value": {
+            "$$type": "color",
+            "value": "#C4B5FD"
+        },
+        "description": "Accent violet sur fond sombre."
+    },
+    {
+        "id": "e-gv-91e2ca3",
+        "label": "lilas-doux",
+        "type": "global-color-variable",
+        "value": {
+            "$$type": "color",
+            "value": "#EDE6FF"
+        },
+        "description": "Fond doux violet (tuiles, résumés)."
+    },
+    {
+        "id": "e-gv-5fff88b",
+        "label": "bleu",
+        "type": "global-color-variable",
+        "value": {
+            "$$type": "color",
+            "value": "#3434E0"
+        },
+        "description": "IA et Marketing & communication."
+    },
+    {
+        "id": "e-gv-2ce5880",
+        "label": "bleu-fonce",
+        "type": "global-color-variable",
+        "value": {
+            "$$type": "color",
+            "value": "#2A2AB8"
+        },
+        "description": "Petit texte bleu (chips, tags marketing)."
+    },
+    {
+        "id": "e-gv-0d1db12",
+        "label": "orange",
+        "type": "global-color-variable",
+        "value": {
+            "$$type": "color",
+            "value": "#E0562A"
+        },
+        "description": "Humain et Com interne · RH · Formation (24 px et plus sur fond clair)."
+    },
+    {
+        "id": "e-gv-47f1132",
+        "label": "orange-fonce",
+        "type": "global-color-variable",
+        "value": {
+            "$$type": "color",
+            "value": "#A63C14"
+        },
+        "description": "Petit texte orange (chips, tags internes)."
+    },
+    {
+        "id": "e-gv-0bd713d",
+        "label": "note",
+        "type": "global-color-variable",
+        "value": {
+            "$$type": "color",
+            "value": "#D9531F"
+        },
+        "description": "Annotations manuscrites (27 px et plus)."
+    },
+    {
+        "id": "e-gv-122f56e",
+        "label": "peche",
+        "type": "global-color-variable",
+        "value": {
+            "$$type": "color",
+            "value": "#FF8A5B"
+        },
+        "description": "Bouton lecture, soulignés, bouton principal sur fond sombre. Jamais du texte sur fond clair."
+    },
+    {
+        "id": "e-gv-9c2f759",
+        "label": "peche-doux",
+        "type": "global-color-variable",
+        "value": {
+            "$$type": "color",
+            "value": "#FFD1BF"
+        },
+        "description": "Deuxième ligne des titres sur vidéo, barres de progression, badge « Le plus complet »."
+    },
+    {
+        "id": "e-gv-16e0665",
+        "label": "sombre-paragraphe",
+        "type": "global-color-variable",
+        "value": {
+            "$$type": "color",
+            "value": "#C9C3DE"
+        },
+        "description": "Paragraphes sur fond sombre."
+    },
+    {
+        "id": "e-gv-ca174a2",
+        "label": "sombre-legende",
+        "type": "global-color-variable",
+        "value": {
+            "$$type": "color",
+            "value": "#B6B0CC"
+        },
+        "description": "Légendes et labels sur fond sombre."
+    },
+    {
+        "id": "e-gv-713521c",
+        "label": "police-titre",
+        "type": "global-font-variable",
+        "value": {
+            "$$type": "string",
+            "value": "Bricolage Grotesque"
+        },
+        "description": "Titres, chapôs, étiquettes métiers."
+    },
+    {
+        "id": "e-gv-58819d5",
+        "label": "police-texte",
+        "type": "global-font-variable",
+        "value": {
+            "$$type": "string",
+            "value": "Hanken Grotesk"
+        },
+        "description": "Texte, boutons, labels."
+    },
+    {
+        "id": "e-gv-f74c97d",
+        "label": "police-main",
+        "type": "global-font-variable",
+        "value": {
+            "$$type": "string",
+            "value": "Caveat"
+        },
+        "description": "Annotations manuscrites seulement."
+    }
+]

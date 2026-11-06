@@ -1,0 +1,122 @@
+[
+  {
+    "cle": "logo-rolling",
+    "fichier": "logo-rolling.png",
+    "alt": "Rolling",
+    "titre": "Logo Rolling"
+  },
+  {
+    "cle": "logo-rolling-negatif",
+    "fichier": "logo-rolling-negatif.png",
+    "alt": "Rolling",
+    "titre": "Logo Rolling, version fond sombre"
+  },
+  {
+    "cle": "coche-verre",
+    "fichier": "coche-verre.png",
+    "alt": "",
+    "titre": "Coche en verre (puce des listes)"
+  },
+  {
+    "cle": "hero-tournage",
+    "fichier": "hero-tournage.jpg",
+    "alt": "Une caméra sur trépied, en plein tournage dans des bureaux",
+    "titre": "Tournage en entreprise"
+  },
+  {
+    "cle": "hero-interview",
+    "fichier": "hero-interview.jpg",
+    "alt": "Une experte filmée en interview",
+    "titre": "Interview"
+  },
+  {
+    "cle": "hero-demo-produit",
+    "fichier": "hero-demo-produit.jpg",
+    "alt": "Un pot de crème ouvert flotte au-dessus d’une pierre",
+    "titre": "Démo produit"
+  },
+  {
+    "cle": "showreel-affiche",
+    "fichier": "showreel-affiche.jpg",
+    "alt": "",
+    "titre": "Affiche du showreel"
+  },
+  {
+    "cle": "visage-1",
+    "fichier": "visage-1.jpg",
+    "alt": "",
+    "titre": "Visage équipe 1"
+  },
+  {
+    "cle": "visage-2",
+    "fichier": "visage-2.jpg",
+    "alt": "",
+    "titre": "Visage équipe 2"
+  },
+  {
+    "cle": "visage-3",
+    "fichier": "visage-3.jpg",
+    "alt": "",
+    "titre": "Visage équipe 3"
+  },
+  {
+    "cle": "visage-4",
+    "fichier": "visage-4.jpg",
+    "alt": "",
+    "titre": "Visage équipe 4"
+  },
+  {
+    "cle": "logo-groupement-mousquetaires",
+    "fichier": "logo-groupement-mousquetaires.png",
+    "alt": "Groupement Mousquetaires",
+    "titre": "Logo Groupement Mousquetaires"
+  },
+  {
+    "cle": "logo-club-med",
+    "fichier": "logo-club-med.png",
+    "alt": "Club Med",
+    "titre": "Logo Club Med"
+  },
+  {
+    "cle": "logo-sncf",
+    "fichier": "logo-sncf.png",
+    "alt": "SNCF",
+    "titre": "Logo SNCF"
+  },
+  {
+    "cle": "logo-loccitane",
+    "fichier": "logo-loccitane.png",
+    "alt": "L’Occitane en Provence",
+    "titre": "Logo L’Occitane en Provence"
+  },
+  {
+    "cle": "logo-air-france",
+    "fichier": "logo-air-france.png",
+    "alt": "Air France",
+    "titre": "Logo Air France"
+  },
+  {
+    "cle": "logo-bnp-paribas",
+    "fichier": "logo-bnp-paribas.png",
+    "alt": "BNP Paribas",
+    "titre": "Logo BNP Paribas"
+  },
+  {
+    "cle": "logo-fnac-darty",
+    "fichier": "logo-fnac-darty.png",
+    "alt": "Fnac Darty",
+    "titre": "Logo Fnac Darty"
+  },
+  {
+    "cle": "logo-groupama",
+    "fichier": "logo-groupama.png",
+    "alt": "Groupama",
+    "titre": "Logo Groupama"
+  },
+  {
+    "cle": "logo-veolia",
+    "fichier": "logo-veolia.png",
+    "alt": "Veolia",
+    "titre": "Logo Veolia"
+  }
+]
