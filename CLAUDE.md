@@ -7,8 +7,9 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
 - Dossier de travail de la session : /workspace (non git). Le dépôt git est /home/user/rolling (lien /workspace/rolling).
   Les fichiers à envoyer à la cliente vont dans /workspace.
 
-- Phase 0 (sans code) : questions répondues (voir plus bas), listes des blocs et des classes envoyées. Maquettes HTML en cours.
-  **En attente de validation de la cliente avant d'écrire du code.**
+- Phase 0 terminée. **Maquettes HTML validées par la cliente** (logos/écran + 11 pages).
+- Phase 1 en cours : écriture du thème enfant.
+- FAQ : la cliente ajoute elle-même les réponses ; garder les questions telles quelles.
 - Le WordPress de production existe déjà chez la cliente : on livre seulement le thème (zip à importer).
 
 ## Environnement de la cliente
