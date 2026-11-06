@@ -583,6 +583,292 @@
             ]
         },
         {
+            "id": "g-d6cb92c",
+            "label": "titre-vignette-sombre",
+            "groupe": "Vidéo et images",
+            "description": "À ajouter à « titre-vignette » sur un fond clair ou orange : texte encre, deuxième ligne blanche.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "color": {
+                            "$$type": "color",
+                            "value": "#0F0F12"
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "dGV4dC1zaGFkb3c6IG5vbmU7ICYgc3BhbiB7IGNvbG9yOiAjRkZGRkZGOyB0ZXh0LXNoYWRvdzogMCAxcHggNnB4IHJnYmEoMTYwLDUwLDEwLDAuNDUpOyB9"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-97d1d35",
+            "label": "bouton-lecture-verre",
+            "groupe": "Vidéo et images",
+            "description": "À ajouter à « bouton-lecture » : petit bouton lecture en verre, posé dans une plaque (34 px).",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "width": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 34,
+                                "unit": "px"
+                            }
+                        },
+                        "height": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 34,
+                                "unit": "px"
+                            }
+                        },
+                        "position": {
+                            "$$type": "string",
+                            "value": "relative"
+                        },
+                        "color": {
+                            "$$type": "color",
+                            "value": "#FFFFFF"
+                        },
+                        "background": {
+                            "$$type": "background",
+                            "value": {
+                                "color": {
+                                    "$$type": "color",
+                                    "value": "transparent"
+                                },
+                                "background-overlay": {
+                                    "$$type": "background-overlay",
+                                    "value": [
+                                        {
+                                            "$$type": "background-gradient-overlay",
+                                            "value": {
+                                                "type": {
+                                                    "$$type": "string",
+                                                    "value": "linear"
+                                                },
+                                                "stops": {
+                                                    "$$type": "gradient-color-stop",
+                                                    "value": [
+                                                        {
+                                                            "$$type": "color-stop",
+                                                            "value": {
+                                                                "color": {
+                                                                    "$$type": "color",
+                                                                    "value": "rgba(255,255,255,0.62)"
+                                                                },
+                                                                "offset": {
+                                                                    "$$type": "number",
+                                                                    "value": 0
+                                                                }
+                                                            }
+                                                        },
+                                                        {
+                                                            "$$type": "color-stop",
+                                                            "value": {
+                                                                "color": {
+                                                                    "$$type": "color",
+                                                                    "value": "rgba(255,255,255,0.2)"
+                                                                },
+                                                                "offset": {
+                                                                    "$$type": "number",
+                                                                    "value": 100
+                                                                }
+                                                            }
+                                                        }
+                                                    ]
+                                                },
+                                                "angle": {
+                                                    "$$type": "number",
+                                                    "value": 165
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        "box-shadow": {
+                            "$$type": "box-shadow",
+                            "value": [
+                                {
+                                    "$$type": "shadow",
+                                    "value": {
+                                        "hOffset": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 0,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "vOffset": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 1,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "blur": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 0,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "spread": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 0,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "color": {
+                                            "$$type": "color",
+                                            "value": "#FFFFFF"
+                                        },
+                                        "position": {
+                                            "$$type": "string",
+                                            "value": "inset"
+                                        }
+                                    }
+                                },
+                                {
+                                    "$$type": "shadow",
+                                    "value": {
+                                        "hOffset": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 0,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "vOffset": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 0,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "blur": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 0,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "spread": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 1,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "color": {
+                                            "$$type": "color",
+                                            "value": "rgba(255,255,255,0.5)"
+                                        },
+                                        "position": {
+                                            "$$type": "string",
+                                            "value": "inset"
+                                        }
+                                    }
+                                },
+                                {
+                                    "$$type": "shadow",
+                                    "value": {
+                                        "hOffset": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 0,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "vOffset": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 6,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "blur": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 14,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "spread": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": -6,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "color": {
+                                            "$$type": "color",
+                                            "value": "rgba(10,6,30,0.55)"
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        "backdrop-filter": {
+                            "$$type": "backdrop-filter",
+                            "value": [
+                                {
+                                    "$$type": "css-filter-func",
+                                    "value": {
+                                        "func": {
+                                            "$$type": "string",
+                                            "value": "blur"
+                                        },
+                                        "args": {
+                                            "$$type": "blur",
+                                            "value": {
+                                                "size": {
+                                                    "$$type": "size",
+                                                    "value": {
+                                                        "size": 10,
+                                                        "unit": "px"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        "inset-inline-end": {
+                            "$$type": "size",
+                            "value": {
+                                "size": null,
+                                "unit": "auto"
+                            }
+                        },
+                        "inset-block-end": {
+                            "$$type": "size",
+                            "value": {
+                                "size": null,
+                                "unit": "auto"
+                            }
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "Jjo6YmVmb3JlIHsgYm9yZGVyLWxlZnQtd2lkdGg6IDEwcHg7IGJvcmRlci10b3Atd2lkdGg6IDZweDsgYm9yZGVyLWJvdHRvbS13aWR0aDogNnB4OyB9"
+                    }
+                }
+            ]
+        },
+        {
             "id": "g-84364f8",
             "label": "logos-defilants",
             "groupe": "Décors et mouvement",
@@ -648,7 +934,7 @@
                         }
                     },
                     "custom_css": {
-                        "raw": "d2lkdGg6IG1heC1jb250ZW50OyBhbmltYXRpb246IHJsLWRlZmlsZSA0NnMgbGluZWFyIGluZmluaXRlOw=="
+                        "raw": "d2lkdGg6IG1heC1jb250ZW50OyAmID4gKiB7IGZsZXg6IDAgMCAxODZweDsgfSBhbmltYXRpb246IHJsLWRlZmlsZSA0NnMgbGluZWFyIGluZmluaXRlOw=="
                     }
                 }
             ]
@@ -1716,38 +2002,6 @@
             "variants": [
                 {
                     "meta": {
-                        "breakpoint": "tablet",
-                        "state": null
-                    },
-                    "props": {
-                        "font-size": {
-                            "$$type": "size",
-                            "value": {
-                                "size": 52,
-                                "unit": "px"
-                            }
-                        }
-                    },
-                    "custom_css": null
-                },
-                {
-                    "meta": {
-                        "breakpoint": "mobile",
-                        "state": null
-                    },
-                    "props": {
-                        "font-size": {
-                            "$$type": "size",
-                            "value": {
-                                "size": 42,
-                                "unit": "px"
-                            }
-                        }
-                    },
-                    "custom_css": null
-                },
-                {
-                    "meta": {
                         "breakpoint": "desktop",
                         "state": null
                     },
@@ -1759,8 +2013,8 @@
                         "font-size": {
                             "$$type": "size",
                             "value": {
-                                "size": 72,
-                                "unit": "px"
+                                "size": "clamp(42px, 5vw, 72px)",
+                                "unit": "custom"
                             }
                         },
                         "letter-spacing": {
@@ -1796,38 +2050,6 @@
             "variants": [
                 {
                     "meta": {
-                        "breakpoint": "tablet",
-                        "state": null
-                    },
-                    "props": {
-                        "font-size": {
-                            "$$type": "size",
-                            "value": {
-                                "size": 44,
-                                "unit": "px"
-                            }
-                        }
-                    },
-                    "custom_css": null
-                },
-                {
-                    "meta": {
-                        "breakpoint": "mobile",
-                        "state": null
-                    },
-                    "props": {
-                        "font-size": {
-                            "$$type": "size",
-                            "value": {
-                                "size": 34,
-                                "unit": "px"
-                            }
-                        }
-                    },
-                    "custom_css": null
-                },
-                {
-                    "meta": {
                         "breakpoint": "desktop",
                         "state": null
                     },
@@ -1839,8 +2061,8 @@
                         "font-size": {
                             "$$type": "size",
                             "value": {
-                                "size": 58,
-                                "unit": "px"
+                                "size": "clamp(34px, 4.15vw, 58px)",
+                                "unit": "custom"
                             }
                         },
                         "letter-spacing": {
@@ -1876,38 +2098,6 @@
             "variants": [
                 {
                     "meta": {
-                        "breakpoint": "tablet",
-                        "state": null
-                    },
-                    "props": {
-                        "font-size": {
-                            "$$type": "size",
-                            "value": {
-                                "size": 38,
-                                "unit": "px"
-                            }
-                        }
-                    },
-                    "custom_css": null
-                },
-                {
-                    "meta": {
-                        "breakpoint": "mobile",
-                        "state": null
-                    },
-                    "props": {
-                        "font-size": {
-                            "$$type": "size",
-                            "value": {
-                                "size": 30,
-                                "unit": "px"
-                            }
-                        }
-                    },
-                    "custom_css": null
-                },
-                {
-                    "meta": {
                         "breakpoint": "desktop",
                         "state": null
                     },
@@ -1919,8 +2109,8 @@
                         "font-size": {
                             "$$type": "size",
                             "value": {
-                                "size": 48,
-                                "unit": "px"
+                                "size": "clamp(30px, 3.4vw, 48px)",
+                                "unit": "custom"
                             }
                         },
                         "letter-spacing": {
@@ -1956,38 +2146,6 @@
             "variants": [
                 {
                     "meta": {
-                        "breakpoint": "tablet",
-                        "state": null
-                    },
-                    "props": {
-                        "font-size": {
-                            "$$type": "size",
-                            "value": {
-                                "size": 34,
-                                "unit": "px"
-                            }
-                        }
-                    },
-                    "custom_css": null
-                },
-                {
-                    "meta": {
-                        "breakpoint": "mobile",
-                        "state": null
-                    },
-                    "props": {
-                        "font-size": {
-                            "$$type": "size",
-                            "value": {
-                                "size": 28,
-                                "unit": "px"
-                            }
-                        }
-                    },
-                    "custom_css": null
-                },
-                {
-                    "meta": {
                         "breakpoint": "desktop",
                         "state": null
                     },
@@ -1999,8 +2157,8 @@
                         "font-size": {
                             "$$type": "size",
                             "value": {
-                                "size": 42,
-                                "unit": "px"
+                                "size": "clamp(28px, 2.9vw, 42px)",
+                                "unit": "custom"
                             }
                         },
                         "letter-spacing": {
@@ -2084,22 +2242,6 @@
             "variants": [
                 {
                     "meta": {
-                        "breakpoint": "mobile",
-                        "state": null
-                    },
-                    "props": {
-                        "font-size": {
-                            "$$type": "size",
-                            "value": {
-                                "size": 19,
-                                "unit": "px"
-                            }
-                        }
-                    },
-                    "custom_css": null
-                },
-                {
-                    "meta": {
                         "breakpoint": "desktop",
                         "state": null
                     },
@@ -2115,8 +2257,8 @@
                         "font-size": {
                             "$$type": "size",
                             "value": {
-                                "size": 22,
-                                "unit": "px"
+                                "size": "clamp(18px, 1.65vw, 22px)",
+                                "unit": "custom"
                             }
                         },
                         "letter-spacing": {
@@ -2345,7 +2487,7 @@
                         }
                     },
                     "custom_css": {
-                        "raw": "Y29sb3I6IHZhcigtLXJsLWxlZ2VuZGUsIHZhcigtLWxlZ2VuZGUpKTsgJjo6YmVmb3JlIHsgY29udGVudDogJyc7IHdpZHRoOiAyOHB4OyBoZWlnaHQ6IDFweDsgYmFja2dyb3VuZDogdmFyKC0tcmwtZmlsZXQsIHJnYmEoMTUsMTUsMTgsMC4xOCkpOyB9"
+                        "raw": "d2lkdGg6IGZpdC1jb250ZW50OyBjb2xvcjogdmFyKC0tcmwtbGVnZW5kZSwgdmFyKC0tbGVnZW5kZSkpOyAmOjpiZWZvcmUgeyBjb250ZW50OiAnJzsgb3JkZXI6IDE7IHdpZHRoOiAyOHB4OyBoZWlnaHQ6IDFweDsgYmFja2dyb3VuZDogdmFyKC0tcmwtZmlsZXQsIHJnYmEoMTUsMTUsMTgsMC4xOCkpOyB9ICYgPiA6bGFzdC1jaGlsZCB7IG9yZGVyOiAyOyB9"
                     }
                 }
             ]
@@ -2499,7 +2641,7 @@
                         }
                     },
                     "custom_css": {
-                        "raw": "d2hpdGUtc3BhY2U6IG5vd3JhcDs="
+                        "raw": "d2lkdGg6IGZpdC1jb250ZW50OyB3aGl0ZS1zcGFjZTogbm93cmFwOw=="
                     }
                 }
             ]
@@ -2508,7 +2650,7 @@
             "id": "g-975bfc3",
             "label": "bouton-principal",
             "groupe": "Boutons",
-            "description": "Action principale (« Réserver un échange ») : encre sur fond clair, pêche sur fond sombre. Un seul par écran.",
+            "description": "Action principale (« Réserver un échange ») avec sa flèche : encre sur fond clair, pêche sur fond sombre. Un seul par écran.",
             "variants": [
                 {
                     "meta": {
@@ -2685,7 +2827,7 @@
                         }
                     },
                     "custom_css": {
-                        "raw": "YmFja2dyb3VuZDogdmFyKC0tcmwtYm91dG9uLWZvbmQsICMwRjBGMTIpOyBib3gtc2hhZG93OiB2YXIoLS1ybC1ib3V0b24tb21icmUsIGluc2V0IDAgMXB4IDAgcmdiYSgyNTUsMjU1LDI1NSwwLjE4KSwgMCAxNnB4IDM0cHggLTE0cHggcmdiYSgxNSwxNSwxOCwwLjU1KSk7IGNvbG9yOiB2YXIoLS1ybC1ib3V0b24tdGV4dGUsICNGRkZGRkYpOw=="
+                        "raw": "d2lkdGg6IGZpdC1jb250ZW50OyBiYWNrZ3JvdW5kOiB2YXIoLS1ybC1ib3V0b24tZm9uZCwgIzBGMEYxMik7IGJveC1zaGFkb3c6IHZhcigtLXJsLWJvdXRvbi1vbWJyZSwgaW5zZXQgMCAxcHggMCByZ2JhKDI1NSwyNTUsMjU1LDAuMTgpLCAwIDE2cHggMzRweCAtMTRweCByZ2JhKDE1LDE1LDE4LDAuNTUpKTsgY29sb3I6IHZhcigtLXJsLWJvdXRvbi10ZXh0ZSwgI0ZGRkZGRik7ICY6OmFmdGVyIHsgY29udGVudDogJyc7IGZsZXgtc2hyaW5rOiAwOyB3aWR0aDogMThweDsgaGVpZ2h0OiAxOHB4OyBiYWNrZ3JvdW5kLWNvbG9yOiBjdXJyZW50Q29sb3I7IC13ZWJraXQtbWFzazogdXJsKCJkYXRhOmltYWdlL3N2Zyt4bWwsJTNDc3ZnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zycgdmlld0JveD0nMCAwIDI0IDI0JyBmaWxsPSdub25lJyBzdHJva2U9JyUyMzAwMCcgc3Ryb2tlLXdpZHRoPScyLjQnIHN0cm9rZS1saW5lY2FwPSdyb3VuZCcgc3Ryb2tlLWxpbmVqb2luPSdyb3VuZCclM0UlM0NwYXRoIGQ9J001IDEyaDE0Jy8lM0UlM0NwYXRoIGQ9J00xMyA2bDYgNi02IDYnLyUzRSUzQy9zdmclM0UiKSBjZW50ZXIgLyBjb250YWluIG5vLXJlcGVhdDsgbWFzazogdXJsKCJkYXRhOmltYWdlL3N2Zyt4bWwsJTNDc3ZnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zycgdmlld0JveD0nMCAwIDI0IDI0JyBmaWxsPSdub25lJyBzdHJva2U9JyUyMzAwMCcgc3Ryb2tlLXdpZHRoPScyLjQnIHN0cm9rZS1saW5lY2FwPSdyb3VuZCcgc3Ryb2tlLWxpbmVqb2luPSdyb3VuZCclM0UlM0NwYXRoIGQ9J001IDEyaDE0Jy8lM0UlM0NwYXRoIGQ9J00xMyA2bDYgNi02IDYnLyUzRSUzQy9zdmclM0UiKSBjZW50ZXIgLyBjb250YWluIG5vLXJlcGVhdDsgfQ=="
                     }
                 }
             ]
@@ -2918,7 +3060,7 @@
                         }
                     },
                     "custom_css": {
-                        "raw": "YmFja2dyb3VuZDogdmFyKC0tcmwtdmVycmUtYm91dG9uLWZvbmQsIHJnYmEoMjU1LDI1NSwyNTUsMC42MikpOyBib3gtc2hhZG93OiB2YXIoLS1ybC12ZXJyZS1ib3V0b24tb21icmUsIGluc2V0IDAgMXB4IDAgI0ZGRkZGRiwgaW5zZXQgMCAwIDAgMXB4IHJnYmEoMTUsMTUsMTgsMC4wOCksIDAgMTBweCAyNnB4IC0xNnB4IHJnYmEoNzYsNDgsMTcwLDAuNCkpOyBjb2xvcjogdmFyKC0tcmwtdmVycmUtYm91dG9uLXRleHRlLCAjMEYwRjEyKTs="
+                        "raw": "d2lkdGg6IGZpdC1jb250ZW50OyBiYWNrZ3JvdW5kOiB2YXIoLS1ybC12ZXJyZS1ib3V0b24tZm9uZCwgcmdiYSgyNTUsMjU1LDI1NSwwLjYyKSk7IGJveC1zaGFkb3c6IHZhcigtLXJsLXZlcnJlLWJvdXRvbi1vbWJyZSwgaW5zZXQgMCAxcHggMCAjRkZGRkZGLCBpbnNldCAwIDAgMCAxcHggcmdiYSgxNSwxNSwxOCwwLjA4KSwgMCAxMHB4IDI2cHggLTE2cHggcmdiYSg3Niw0OCwxNzAsMC40KSk7IGNvbG9yOiB2YXIoLS1ybC12ZXJyZS1ib3V0b24tdGV4dGUsICMwRjBGMTIpOw=="
                     }
                 }
             ]
@@ -3257,7 +3399,27 @@
                             "value": "center"
                         }
                     },
-                    "custom_css": null
+                    "custom_css": {
+                        "raw": "d2lkdGg6IGZpdC1jb250ZW50OyAmOjphZnRlciB7IGNvbnRlbnQ6ICcnOyBmbGV4LXNocmluazogMDsgd2lkdGg6IDE4cHg7IGhlaWdodDogMThweDsgYmFja2dyb3VuZC1jb2xvcjogY3VycmVudENvbG9yOyAtd2Via2l0LW1hc2s6IHVybCgiZGF0YTppbWFnZS9zdmcreG1sLCUzQ3N2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCAyNCAyNCcgZmlsbD0nbm9uZScgc3Ryb2tlPSclMjMwMDAnIHN0cm9rZS13aWR0aD0nMi40JyBzdHJva2UtbGluZWNhcD0ncm91bmQnIHN0cm9rZS1saW5lam9pbj0ncm91bmQnJTNFJTNDcGF0aCBkPSdNNSAxMmgxNCcvJTNFJTNDcGF0aCBkPSdNMTMgNmw2IDYtNiA2Jy8lM0UlM0Mvc3ZnJTNFIikgY2VudGVyIC8gY29udGFpbiBuby1yZXBlYXQ7IG1hc2s6IHVybCgiZGF0YTppbWFnZS9zdmcreG1sLCUzQ3N2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCAyNCAyNCcgZmlsbD0nbm9uZScgc3Ryb2tlPSclMjMwMDAnIHN0cm9rZS13aWR0aD0nMi40JyBzdHJva2UtbGluZWNhcD0ncm91bmQnIHN0cm9rZS1saW5lam9pbj0ncm91bmQnJTNFJTNDcGF0aCBkPSdNNSAxMmgxNCcvJTNFJTNDcGF0aCBkPSdNMTMgNmw2IDYtNiA2Jy8lM0UlM0Mvc3ZnJTNFIikgY2VudGVyIC8gY29udGFpbiBuby1yZXBlYXQ7IH0="
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-229f43a",
+            "label": "bascule-libelles",
+            "groupe": "Boutons",
+            "description": "Bouton à deux libellés (deux <span> : « Arrêter… » puis « Relancer… ») : seul le premier s'affiche, le script échange au clic.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": [],
+                    "custom_css": {
+                        "raw": "JiBzcGFuICsgc3BhbiB7IGRpc3BsYXk6IG5vbmU7IH0="
+                    }
                 }
             ]
         },
@@ -3348,7 +3510,7 @@
                         }
                     },
                     "custom_css": {
-                        "raw": "Zm9udC12YXJpYW50LW51bWVyaWM6IHRhYnVsYXItbnVtczsgYmFja2dyb3VuZDogdmFyKC0tcmwtZXRpcXVldHRlLWZvbmQsIGxpbmVhci1ncmFkaWVudCgxNzBkZWcsIHJnYmEoMjU1LDI1NSwyNTUsMC45NSksIHJnYmEoMjU1LDI1NSwyNTUsMC41NSkpKTsgYm94LXNoYWRvdzogdmFyKC0tcmwtZXRpcXVldHRlLW9tYnJlLCBpbnNldCAwIDFweCAwICNGRkZGRkYsIGluc2V0IDAgMCAwIDFweCByZ2JhKDkxLDU5LDIzNCwwLjE2KSwgMCA2cHggMTZweCAtMTBweCByZ2JhKDkxLDU5LDIzNCwwLjUpKTsgY29sb3I6IHZhcigtLXJsLXRpbWVjb2RlLXRleHRlLCB2YXIoLS1ybC1ldGlxdWV0dGUtdGV4dGUsICM1QjNCRUEpKTs="
+                        "raw": "d2lkdGg6IGZpdC1jb250ZW50OyBmb250LXZhcmlhbnQtbnVtZXJpYzogdGFidWxhci1udW1zOyBiYWNrZ3JvdW5kOiB2YXIoLS1ybC1ldGlxdWV0dGUtZm9uZCwgbGluZWFyLWdyYWRpZW50KDE3MGRlZywgcmdiYSgyNTUsMjU1LDI1NSwwLjk1KSwgcmdiYSgyNTUsMjU1LDI1NSwwLjU1KSkpOyBib3gtc2hhZG93OiB2YXIoLS1ybC1ldGlxdWV0dGUtb21icmUsIGluc2V0IDAgMXB4IDAgI0ZGRkZGRiwgaW5zZXQgMCAwIDAgMXB4IHJnYmEoOTEsNTksMjM0LDAuMTYpLCAwIDZweCAxNnB4IC0xMHB4IHJnYmEoOTEsNTksMjM0LDAuNSkpOyBjb2xvcjogdmFyKC0tcmwtdGltZWNvZGUtdGV4dGUsIHZhcigtLXJsLWV0aXF1ZXR0ZS10ZXh0ZSwgIzVCM0JFQSkpOw=="
                     }
                 }
             ]
@@ -3491,7 +3653,7 @@
                         }
                     },
                     "custom_css": {
-                        "raw": "YmFja2dyb3VuZDogdmFyKC0tcmwtZXRpcXVldHRlLWZvbmQsIGxpbmVhci1ncmFkaWVudCgxNjVkZWcsIHJnYmEoMjU1LDI1NSwyNTUsMC42OCkgMCUsIHJnYmEoMjU1LDI1NSwyNTUsMC4zKSA1MCUsIHJnYmEoMjU1LDI1NSwyNTUsMC40OCkgMTAwJSkpOyBib3gtc2hhZG93OiB2YXIoLS1ybC1ldGlxdWV0dGUtb21icmUsIGluc2V0IDAgMS41cHggMCAjRkZGRkZGLCBpbnNldCAwIDAgMCAxcHggcmdiYSgyNTUsMjU1LDI1NSwwLjM1KSwgMCAyOHB4IDY0cHggLTMycHggcmdiYSg3MCw0MCwxNTAsMC4zMikpOyBjb2xvcjogdmFyKC0tcmwtZXRpcXVldHRlLXRleHRlLCAjNEEyQkI4KTs="
+                        "raw": "d2lkdGg6IGZpdC1jb250ZW50OyBiYWNrZ3JvdW5kOiB2YXIoLS1ybC1ldGlxdWV0dGUtZm9uZCwgbGluZWFyLWdyYWRpZW50KDE2NWRlZywgcmdiYSgyNTUsMjU1LDI1NSwwLjY4KSAwJSwgcmdiYSgyNTUsMjU1LDI1NSwwLjMpIDUwJSwgcmdiYSgyNTUsMjU1LDI1NSwwLjQ4KSAxMDAlKSk7IGJveC1zaGFkb3c6IHZhcigtLXJsLWV0aXF1ZXR0ZS1vbWJyZSwgaW5zZXQgMCAxLjVweCAwICNGRkZGRkYsIGluc2V0IDAgMCAwIDFweCByZ2JhKDI1NSwyNTUsMjU1LDAuMzUpLCAwIDI4cHggNjRweCAtMzJweCByZ2JhKDcwLDQwLDE1MCwwLjMyKSk7IGNvbG9yOiB2YXIoLS1ybC1ldGlxdWV0dGUtdGV4dGUsICM0QTJCQjgpOw=="
                     }
                 }
             ]
@@ -3807,7 +3969,7 @@
                         }
                     },
                     "custom_css": {
-                        "raw": "Zm9udC13ZWlnaHQ6IDY1MDsgd2hpdGUtc3BhY2U6IG5vd3JhcDsgYmFja2dyb3VuZC1pbWFnZTogcmFkaWFsLWdyYWRpZW50KDgwJSAxMjAlIGF0IDEyJSAwJSwgcmdiYSgyNTUsMjU1LDI1NSwwLjMyKSwgcmdiYSgyNTUsMjU1LDI1NSwwKSA2MCUpLCBsaW5lYXItZ3JhZGllbnQoMTAwZGVnLCAjMzQzNEUwIDAlLCAjNUIzQkVBIDYyJSwgIzdCNERGMiAxMDAlKTs="
+                        "raw": "d2lkdGg6IGZpdC1jb250ZW50OyBmb250LXdlaWdodDogNjUwOyB3aGl0ZS1zcGFjZTogbm93cmFwOyBiYWNrZ3JvdW5kLWltYWdlOiByYWRpYWwtZ3JhZGllbnQoODAlIDEyMCUgYXQgMTIlIDAlLCByZ2JhKDI1NSwyNTUsMjU1LDAuMzIpLCByZ2JhKDI1NSwyNTUsMjU1LDApIDYwJSksIGxpbmVhci1ncmFkaWVudCgxMDBkZWcsICMzNDM0RTAgMCUsICM1QjNCRUEgNjIlLCAjN0I0REYyIDEwMCUpOw=="
                     }
                 }
             ]
@@ -4011,7 +4173,7 @@
                         }
                     },
                     "custom_css": {
-                        "raw": "Zm9udC13ZWlnaHQ6IDY1MDsgd2hpdGUtc3BhY2U6IG5vd3JhcDsgYmFja2dyb3VuZC1pbWFnZTogcmFkaWFsLWdyYWRpZW50KDgwJSAxMjAlIGF0IDEyJSAwJSwgcmdiYSgyNTUsMjU1LDI1NSwwLjM2KSwgcmdiYSgyNTUsMjU1LDI1NSwwKSA2MCUpLCBsaW5lYXItZ3JhZGllbnQoMTAwZGVnLCAjQzI0MTBDIDAlLCAjRTA1NjJBIDEwMCUpOw=="
+                        "raw": "d2lkdGg6IGZpdC1jb250ZW50OyBmb250LXdlaWdodDogNjUwOyB3aGl0ZS1zcGFjZTogbm93cmFwOyBiYWNrZ3JvdW5kLWltYWdlOiByYWRpYWwtZ3JhZGllbnQoODAlIDEyMCUgYXQgMTIlIDAlLCByZ2JhKDI1NSwyNTUsMjU1LDAuMzYpLCByZ2JhKDI1NSwyNTUsMjU1LDApIDYwJSksIGxpbmVhci1ncmFkaWVudCgxMDBkZWcsICNDMjQxMEMgMCUsICNFMDU2MkEgMTAwJSk7"
                     }
                 }
             ]
@@ -4295,7 +4457,9 @@
                             "value": "center"
                         }
                     },
-                    "custom_css": null
+                    "custom_css": {
+                        "raw": "d2lkdGg6IGZpdC1jb250ZW50Ow=="
+                    }
                 }
             ]
         },
@@ -4578,7 +4742,9 @@
                             "value": "center"
                         }
                     },
-                    "custom_css": null
+                    "custom_css": {
+                        "raw": "d2lkdGg6IGZpdC1jb250ZW50Ow=="
+                    }
                 }
             ]
         },
@@ -4861,7 +5027,9 @@
                             "value": "center"
                         }
                     },
-                    "custom_css": null
+                    "custom_css": {
+                        "raw": "d2lkdGg6IGZpdC1jb250ZW50Ow=="
+                    }
                 }
             ]
         },
@@ -5126,7 +5294,9 @@
                             "value": "inline-block"
                         }
                     },
-                    "custom_css": null
+                    "custom_css": {
+                        "raw": "d2lkdGg6IGZpdC1jb250ZW50Ow=="
+                    }
                 }
             ]
         },
@@ -5391,7 +5561,9 @@
                             "value": "inline-block"
                         }
                     },
-                    "custom_css": null
+                    "custom_css": {
+                        "raw": "d2lkdGg6IGZpdC1jb250ZW50Ow=="
+                    }
                 }
             ]
         },
@@ -5469,6 +5641,15 @@
                                 "unit": "px"
                             }
                         },
+                        "background": {
+                            "$$type": "background",
+                            "value": {
+                                "color": {
+                                    "$$type": "color",
+                                    "value": "transparent"
+                                }
+                            }
+                        },
                         "display": {
                             "$$type": "string",
                             "value": "inline-flex"
@@ -5486,7 +5667,7 @@
                         }
                     },
                     "custom_css": {
-                        "raw": "YmFja2dyb3VuZDogdmFyKC0tcmwtdmVycmUtYm91dG9uLWZvbmQsIHJnYmEoMjU1LDI1NSwyNTUsMC43KSk7IGJveC1zaGFkb3c6IHZhcigtLXJsLXZlcnJlLWJvdXRvbi1vbWJyZSwgaW5zZXQgMCAxcHggMCAjRkZGRkZGLCBpbnNldCAwIDAgMCAxcHggcmdiYSg5MSw1OSwyMzQsMC4xNCkpOyBjb2xvcjogdmFyKC0tcmwtdGV4dGUsICMwRjBGMTIpOw=="
+                        "raw": "d2lkdGg6IGZpdC1jb250ZW50OyBiYWNrZ3JvdW5kOiB2YXIoLS1ybC12ZXJyZS1ib3V0b24tZm9uZCwgcmdiYSgyNTUsMjU1LDI1NSwwLjcpKTsgYm94LXNoYWRvdzogdmFyKC0tcmwtdmVycmUtYm91dG9uLW9tYnJlLCBpbnNldCAwIDFweCAwICNGRkZGRkYsIGluc2V0IDAgMCAwIDFweCByZ2JhKDkxLDU5LDIzNCwwLjE0KSk7IGNvbG9yOiB2YXIoLS1ybC10ZXh0ZSwgIzBGMEYxMik7"
                     }
                 }
             ]
@@ -5955,6 +6136,10 @@
                         "background": {
                             "$$type": "background",
                             "value": {
+                                "color": {
+                                    "$$type": "color",
+                                    "value": "transparent"
+                                },
                                 "background-overlay": {
                                     "$$type": "background-overlay",
                                     "value": [
@@ -6317,6 +6502,366 @@
                     },
                     "custom_css": {
                         "raw": "Y29sb3I6IHZhcigtLXJsLXRleHRlLCB2YXIoLS1lbmNyZSkpOw=="
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-07fada9",
+            "label": "cadre-verre",
+            "groupe": "Surfaces",
+            "description": "Cadre en verre épais autour d'une photo ou d'une vignette (14 px de verre, rayon 32 px).",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "position": {
+                            "$$type": "string",
+                            "value": "relative"
+                        },
+                        "padding": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 14,
+                                "unit": "px"
+                            }
+                        },
+                        "border-radius": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 32,
+                                "unit": "px"
+                            }
+                        },
+                        "background": {
+                            "$$type": "background",
+                            "value": {
+                                "background-overlay": {
+                                    "$$type": "background-overlay",
+                                    "value": [
+                                        {
+                                            "$$type": "background-gradient-overlay",
+                                            "value": {
+                                                "type": {
+                                                    "$$type": "string",
+                                                    "value": "linear"
+                                                },
+                                                "stops": {
+                                                    "$$type": "gradient-color-stop",
+                                                    "value": [
+                                                        {
+                                                            "$$type": "color-stop",
+                                                            "value": {
+                                                                "color": {
+                                                                    "$$type": "color",
+                                                                    "value": "rgba(255,255,255,0.36)"
+                                                                },
+                                                                "offset": {
+                                                                    "$$type": "number",
+                                                                    "value": 0
+                                                                }
+                                                            }
+                                                        },
+                                                        {
+                                                            "$$type": "color-stop",
+                                                            "value": {
+                                                                "color": {
+                                                                    "$$type": "color",
+                                                                    "value": "rgba(255,255,255,0.11)"
+                                                                },
+                                                                "offset": {
+                                                                    "$$type": "number",
+                                                                    "value": 40
+                                                                }
+                                                            }
+                                                        },
+                                                        {
+                                                            "$$type": "color-stop",
+                                                            "value": {
+                                                                "color": {
+                                                                    "$$type": "color",
+                                                                    "value": "rgba(255,255,255,0.05)"
+                                                                },
+                                                                "offset": {
+                                                                    "$$type": "number",
+                                                                    "value": 62
+                                                                }
+                                                            }
+                                                        },
+                                                        {
+                                                            "$$type": "color-stop",
+                                                            "value": {
+                                                                "color": {
+                                                                    "$$type": "color",
+                                                                    "value": "rgba(255,255,255,0.22)"
+                                                                },
+                                                                "offset": {
+                                                                    "$$type": "number",
+                                                                    "value": 100
+                                                                }
+                                                            }
+                                                        }
+                                                    ]
+                                                },
+                                                "angle": {
+                                                    "$$type": "number",
+                                                    "value": 150
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        "box-shadow": {
+                            "$$type": "box-shadow",
+                            "value": [
+                                {
+                                    "$$type": "shadow",
+                                    "value": {
+                                        "hOffset": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 0,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "vOffset": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 1.5,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "blur": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 0,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "spread": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 0,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "color": {
+                                            "$$type": "color",
+                                            "value": "rgba(255,255,255,0.95)"
+                                        },
+                                        "position": {
+                                            "$$type": "string",
+                                            "value": "inset"
+                                        }
+                                    }
+                                },
+                                {
+                                    "$$type": "shadow",
+                                    "value": {
+                                        "hOffset": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 1.5,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "vOffset": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 0,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "blur": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 0,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "spread": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 0,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "color": {
+                                            "$$type": "color",
+                                            "value": "rgba(255,255,255,0.6)"
+                                        },
+                                        "position": {
+                                            "$$type": "string",
+                                            "value": "inset"
+                                        }
+                                    }
+                                },
+                                {
+                                    "$$type": "shadow",
+                                    "value": {
+                                        "hOffset": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 0,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "vOffset": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": -1.5,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "blur": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 0,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "spread": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 0,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "color": {
+                                            "$$type": "color",
+                                            "value": "rgba(255,255,255,0.42)"
+                                        },
+                                        "position": {
+                                            "$$type": "string",
+                                            "value": "inset"
+                                        }
+                                    }
+                                },
+                                {
+                                    "$$type": "shadow",
+                                    "value": {
+                                        "hOffset": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 0,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "vOffset": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 0,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "blur": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 30,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "spread": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 0,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "color": {
+                                            "$$type": "color",
+                                            "value": "rgba(255,255,255,0.16)"
+                                        },
+                                        "position": {
+                                            "$$type": "string",
+                                            "value": "inset"
+                                        }
+                                    }
+                                },
+                                {
+                                    "$$type": "shadow",
+                                    "value": {
+                                        "hOffset": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 0,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "vOffset": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 32,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "blur": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 64,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "spread": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": -24,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "color": {
+                                            "$$type": "color",
+                                            "value": "rgba(10,6,30,0.62)"
+                                        }
+                                    }
+                                },
+                                {
+                                    "$$type": "shadow",
+                                    "value": {
+                                        "hOffset": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 0,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "vOffset": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 10,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "blur": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 22,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "spread": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": -12,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "color": {
+                                            "$$type": "color",
+                                            "value": "rgba(10,6,30,0.42)"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "aXNvbGF0aW9uOiBpc29sYXRlOyBiYWNrZHJvcC1maWx0ZXI6IGJsdXIoMjJweCkgc2F0dXJhdGUoMTkwJSkgYnJpZ2h0bmVzcygxLjEyKTsgJjo6YmVmb3JlIHsgY29udGVudDogJyc7IHBvc2l0aW9uOiBhYnNvbHV0ZTsgdG9wOiAwOyByaWdodDogMDsgYm90dG9tOiAwOyBsZWZ0OiAwOyBib3JkZXItcmFkaXVzOiBpbmhlcml0OyBwYWRkaW5nOiAxLjZweDsgYmFja2dyb3VuZDogbGluZWFyLWdyYWRpZW50KDEzNWRlZywgI0ZGRkZGRiAwJSwgcmdiYSgyNTUsMjU1LDI1NSwwLjMyKSAyNiUsIHJnYmEoMjU1LDI1NSwyNTUsMC4wNikgNTAlLCByZ2JhKDI1NSwyNTUsMjU1LDAuMykgNzQlLCByZ2JhKDI1NSwyNTUsMjU1LDAuOTUpIDEwMCUpOyAtd2Via2l0LW1hc2s6IGxpbmVhci1ncmFkaWVudCgjMDAwIDAgMCkgY29udGVudC1ib3gsIGxpbmVhci1ncmFkaWVudCgjMDAwIDAgMCk7IC13ZWJraXQtbWFzay1jb21wb3NpdGU6IHhvcjsgbWFzay1jb21wb3NpdGU6IGV4Y2x1ZGU7IHBvaW50ZXItZXZlbnRzOiBub25lOyB6LWluZGV4OiA0OyB9"
                     }
                 }
             ]
@@ -6731,7 +7276,9 @@
                             "value": "center"
                         }
                     },
-                    "custom_css": null
+                    "custom_css": {
+                        "raw": "d2lkdGg6IGZpdC1jb250ZW50OyB3aGl0ZS1zcGFjZTogbm93cmFwOw=="
+                    }
                 }
             ]
         },
@@ -6846,7 +7393,7 @@
                         }
                     },
                     "custom_css": {
-                        "raw": "Zm9udC12YXJpYW50LW51bWVyaWM6IHRhYnVsYXItbnVtczs="
+                        "raw": "d2lkdGg6IGZpdC1jb250ZW50OyBmb250LXZhcmlhbnQtbnVtZXJpYzogdGFidWxhci1udW1zOw=="
                     }
                 }
             ]
@@ -7007,7 +7554,9 @@
                             "value": "center"
                         }
                     },
-                    "custom_css": null
+                    "custom_css": {
+                        "raw": "Jjo6YmVmb3JlIHsgY29udGVudDogJyc7IHdpZHRoOiAwOyBoZWlnaHQ6IDA7IGJvcmRlci1sZWZ0OiAxM3B4IHNvbGlkIGN1cnJlbnRDb2xvcjsgYm9yZGVyLXRvcDogOHB4IHNvbGlkIHRyYW5zcGFyZW50OyBib3JkZXItYm90dG9tOiA4cHggc29saWQgdHJhbnNwYXJlbnQ7IH0="
+                    }
                 }
             ]
         },
@@ -7477,7 +8026,7 @@
                         }
                     },
                     "custom_css": {
-                        "raw": "JiBpbWcgeyB3aWR0aDogMzZweDsgaGVpZ2h0OiAzNnB4OyBib3JkZXItcmFkaXVzOiA1MCU7IG9iamVjdC1maXQ6IGNvdmVyOyBib3gtc2hhZG93OiAwIDAgMCAyLjVweCAjRkZGRkZGOyB9ICYgaW1nICsgaW1nLCAmID4gKiArICogeyBtYXJnaW4tbGVmdDogLTEwcHg7IH0="
+                        "raw": "d2lkdGg6IGZpdC1jb250ZW50OyAmIGltZyB7IHdpZHRoOiAzNnB4OyBoZWlnaHQ6IDM2cHg7IGJvcmRlci1yYWRpdXM6IDUwJTsgb2JqZWN0LWZpdDogY292ZXI7IGJveC1zaGFkb3c6IDAgMCAwIDIuNXB4ICNGRkZGRkY7IH0gJiBpbWcgKyBpbWcsICYgPiAqICsgKiB7IG1hcmdpbi1sZWZ0OiAtMTBweDsgfQ=="
                     }
                 }
             ]
@@ -7648,6 +8197,681 @@
                     },
                     "custom_css": {
                         "raw": "JiBpbWcgeyBoZWlnaHQ6IDYycHg7IHdpZHRoOiBhdXRvOyB9"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-801aa66",
+            "label": "titre-vignette",
+            "groupe": "Vidéo et images",
+            "description": "Titre sur une vignette vidéo (deux lignes) : la deuxième ligne, dans un <span>, passe en pêche doux.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "font-family": {
+                            "$$type": "global-font-variable",
+                            "value": "e-gv-713521c"
+                        },
+                        "font-size": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 15.5,
+                                "unit": "px"
+                            }
+                        },
+                        "color": {
+                            "$$type": "color",
+                            "value": "#FFFFFF"
+                        },
+                        "letter-spacing": {
+                            "$$type": "size",
+                            "value": {
+                                "size": -0.035,
+                                "unit": "em"
+                            }
+                        },
+                        "line-height": {
+                            "$$type": "size",
+                            "value": {
+                                "size": "1.02",
+                                "unit": "custom"
+                            }
+                        },
+                        "display": {
+                            "$$type": "string",
+                            "value": "block"
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "Zm9udC13ZWlnaHQ6IDY1MDsgdGV4dC1zaGFkb3c6IDAgMXB4IDhweCByZ2JhKDIwLDEwLDYwLDAuMzUpOyAmIHNwYW4geyBjb2xvcjogI0ZGRDFCRjsgfQ=="
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-6d9a92a",
+            "label": "fond-video-violet",
+            "groupe": "Vidéo et images",
+            "description": "Fond d'une vignette sans photo : violet profond lumineux.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": [],
+                    "custom_css": {
+                        "raw": "YmFja2dyb3VuZC1pbWFnZTogcmFkaWFsLWdyYWRpZW50KDEzMCUgMTIwJSBhdCA4NSUgMTUlLCAjOUM3QkY1IDAlLCAjNUM0QkVFIDM0JSwgIzM0MzRFMCA2MiUsICMxQzFDOEUgMTAwJSk7"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-4c549ea",
+            "label": "fond-video-orange",
+            "groupe": "Vidéo et images",
+            "description": "Fond d'une vignette sans photo : orange chaud.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": [],
+                    "custom_css": {
+                        "raw": "YmFja2dyb3VuZC1pbWFnZTogcmFkaWFsLWdyYWRpZW50KDEyMCUgMTIwJSBhdCAyMCUgMTAlLCAjRkZFNkQ4IDAlLCAjRkZDMkEwIDMwJSwgI0ZGOEE1QiA2NCUsICNFMDU2MkEgMTAwJSk7"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-48e3f84",
+            "label": "fond-video-nuit",
+            "groupe": "Vidéo et images",
+            "description": "Fond d'une vignette sans photo : nuit.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": [],
+                    "custom_css": {
+                        "raw": "YmFja2dyb3VuZC1pbWFnZTogcmFkaWFsLWdyYWRpZW50KDEyMCUgMTIwJSBhdCA4MCUgMTAlLCAjM0EyRjZCIDAlLCAjMUMxNzMwIDU1JSwgIzBGMEYxMiAxMDAlKTs="
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-ea5e78f",
+            "label": "piste-lecture",
+            "groupe": "Vidéo et images",
+            "description": "Piste de lecture d'un lecteur vidéo dessiné ; l'élément à l'intérieur est la partie déjà lue.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "height": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 5,
+                                "unit": "px"
+                            }
+                        },
+                        "position": {
+                            "$$type": "string",
+                            "value": "relative"
+                        },
+                        "padding": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 0,
+                                "unit": "px"
+                            }
+                        },
+                        "border-radius": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 999,
+                                "unit": "px"
+                            }
+                        },
+                        "background": {
+                            "$$type": "background",
+                            "value": {
+                                "color": {
+                                    "$$type": "color",
+                                    "value": "rgba(255,255,255,0.3)"
+                                }
+                            }
+                        },
+                        "flex": {
+                            "$$type": "flex",
+                            "value": {
+                                "flexGrow": {
+                                    "$$type": "number",
+                                    "value": 1
+                                },
+                                "flexShrink": {
+                                    "$$type": "number",
+                                    "value": 1
+                                },
+                                "flexBasis": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": "auto",
+                                        "unit": "custom"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "JiA+ICogeyBwb3NpdGlvbjogYWJzb2x1dGU7IHRvcDogMDsgYm90dG9tOiAwOyBsZWZ0OiAwOyB3aWR0aDogNTglOyBwYWRkaW5nOiAwOyBib3JkZXItcmFkaXVzOiA5OTlweDsgYmFja2dyb3VuZDogI0ZGRkZGRjsgfQ=="
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-e25752c",
+            "label": "barres-graphique",
+            "groupe": "Vidéo et images",
+            "description": "Petit graphique en barres dessiné (motion design) : quatre éléments vides à l'intérieur, du plus petit au plus grand.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "height": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 74,
+                                "unit": "px"
+                            }
+                        },
+                        "padding": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 0,
+                                "unit": "px"
+                            }
+                        },
+                        "display": {
+                            "$$type": "string",
+                            "value": "flex"
+                        },
+                        "flex-direction": {
+                            "$$type": "string",
+                            "value": "row"
+                        },
+                        "gap": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 6,
+                                "unit": "px"
+                            }
+                        },
+                        "align-items": {
+                            "$$type": "string",
+                            "value": "flex-end"
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "d2lkdGg6IGZpdC1jb250ZW50OyAmID4gKiB7IHdpZHRoOiAxNXB4OyBwYWRkaW5nOiAwOyBib3JkZXItcmFkaXVzOiA1cHggNXB4IDJweCAycHg7IGJhY2tncm91bmQ6IHJnYmEoMjU1LDI1NSwyNTUsMC42KTsgYm94LXNoYWRvdzogaW5zZXQgMCAxcHggMCAjRkZGRkZGOyB9ICYgPiA6bnRoLWNoaWxkKDEpIHsgaGVpZ2h0OiAzOCU7IH0gJiA+IDpudGgtY2hpbGQoMikgeyBoZWlnaHQ6IDU2JTsgfSAmID4gOm50aC1jaGlsZCgzKSB7IGhlaWdodDogNzQlOyBiYWNrZ3JvdW5kOiByZ2JhKDI1NSwyNTUsMjU1LDAuNzgpOyB9ICYgPiA6bnRoLWNoaWxkKDQpIHsgaGVpZ2h0OiAxMDAlOyBiYWNrZ3JvdW5kOiAjMEYwRjEyOyBib3gtc2hhZG93OiBub25lOyB9"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-a6468f7",
+            "label": "bouton-son",
+            "groupe": "Vidéo et images",
+            "description": "Bouton « Activer le son » posé sur une vidéo, avec l'icône du haut-parleur.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "mobile",
+                        "state": null
+                    },
+                    "props": {
+                        "inset-block-start": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 12,
+                                "unit": "px"
+                            }
+                        },
+                        "inset-inline-end": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 12,
+                                "unit": "px"
+                            }
+                        }
+                    },
+                    "custom_css": null
+                },
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": "hover"
+                    },
+                    "props": {
+                        "background": {
+                            "$$type": "background",
+                            "value": {
+                                "background-overlay": {
+                                    "$$type": "background-overlay",
+                                    "value": [
+                                        {
+                                            "$$type": "background-gradient-overlay",
+                                            "value": {
+                                                "type": {
+                                                    "$$type": "string",
+                                                    "value": "linear"
+                                                },
+                                                "stops": {
+                                                    "$$type": "gradient-color-stop",
+                                                    "value": [
+                                                        {
+                                                            "$$type": "color-stop",
+                                                            "value": {
+                                                                "color": {
+                                                                    "$$type": "color",
+                                                                    "value": "rgba(255,255,255,0.46)"
+                                                                },
+                                                                "offset": {
+                                                                    "$$type": "number",
+                                                                    "value": 0
+                                                                }
+                                                            }
+                                                        },
+                                                        {
+                                                            "$$type": "color-stop",
+                                                            "value": {
+                                                                "color": {
+                                                                    "$$type": "color",
+                                                                    "value": "rgba(255,255,255,0.2)"
+                                                                },
+                                                                "offset": {
+                                                                    "$$type": "number",
+                                                                    "value": 100
+                                                                }
+                                                            }
+                                                        }
+                                                    ]
+                                                },
+                                                "angle": {
+                                                    "$$type": "number",
+                                                    "value": 165
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    },
+                    "custom_css": null
+                },
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "min-height": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 44,
+                                "unit": "px"
+                            }
+                        },
+                        "position": {
+                            "$$type": "string",
+                            "value": "absolute"
+                        },
+                        "inset-block-start": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 22,
+                                "unit": "px"
+                            }
+                        },
+                        "inset-inline-end": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 22,
+                                "unit": "px"
+                            }
+                        },
+                        "z-index": {
+                            "$$type": "number",
+                            "value": 3
+                        },
+                        "font-family": {
+                            "$$type": "global-font-variable",
+                            "value": "e-gv-58819d5"
+                        },
+                        "font-weight": {
+                            "$$type": "string",
+                            "value": "700"
+                        },
+                        "font-size": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 14,
+                                "unit": "px"
+                            }
+                        },
+                        "color": {
+                            "$$type": "color",
+                            "value": "#FFFFFF"
+                        },
+                        "line-height": {
+                            "$$type": "size",
+                            "value": {
+                                "size": "1",
+                                "unit": "custom"
+                            }
+                        },
+                        "padding": {
+                            "$$type": "dimensions",
+                            "value": {
+                                "block-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 0,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 18,
+                                        "unit": "px"
+                                    }
+                                },
+                                "block-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 0,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 14,
+                                        "unit": "px"
+                                    }
+                                }
+                            }
+                        },
+                        "border-radius": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 999,
+                                "unit": "px"
+                            }
+                        },
+                        "background": {
+                            "$$type": "background",
+                            "value": {
+                                "color": {
+                                    "$$type": "color",
+                                    "value": "transparent"
+                                },
+                                "background-overlay": {
+                                    "$$type": "background-overlay",
+                                    "value": [
+                                        {
+                                            "$$type": "background-gradient-overlay",
+                                            "value": {
+                                                "type": {
+                                                    "$$type": "string",
+                                                    "value": "linear"
+                                                },
+                                                "stops": {
+                                                    "$$type": "gradient-color-stop",
+                                                    "value": [
+                                                        {
+                                                            "$$type": "color-stop",
+                                                            "value": {
+                                                                "color": {
+                                                                    "$$type": "color",
+                                                                    "value": "rgba(255,255,255,0.34)"
+                                                                },
+                                                                "offset": {
+                                                                    "$$type": "number",
+                                                                    "value": 0
+                                                                }
+                                                            }
+                                                        },
+                                                        {
+                                                            "$$type": "color-stop",
+                                                            "value": {
+                                                                "color": {
+                                                                    "$$type": "color",
+                                                                    "value": "rgba(255,255,255,0.12)"
+                                                                },
+                                                                "offset": {
+                                                                    "$$type": "number",
+                                                                    "value": 100
+                                                                }
+                                                            }
+                                                        }
+                                                    ]
+                                                },
+                                                "angle": {
+                                                    "$$type": "number",
+                                                    "value": 165
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        "box-shadow": {
+                            "$$type": "box-shadow",
+                            "value": [
+                                {
+                                    "$$type": "shadow",
+                                    "value": {
+                                        "hOffset": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 0,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "vOffset": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 1,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "blur": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 0,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "spread": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 0,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "color": {
+                                            "$$type": "color",
+                                            "value": "rgba(255,255,255,0.85)"
+                                        },
+                                        "position": {
+                                            "$$type": "string",
+                                            "value": "inset"
+                                        }
+                                    }
+                                },
+                                {
+                                    "$$type": "shadow",
+                                    "value": {
+                                        "hOffset": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 0,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "vOffset": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 0,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "blur": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 0,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "spread": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 1,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "color": {
+                                            "$$type": "color",
+                                            "value": "rgba(255,255,255,0.5)"
+                                        },
+                                        "position": {
+                                            "$$type": "string",
+                                            "value": "inset"
+                                        }
+                                    }
+                                },
+                                {
+                                    "$$type": "shadow",
+                                    "value": {
+                                        "hOffset": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 0,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "vOffset": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 10,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "blur": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 24,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "spread": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": -12,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "color": {
+                                            "$$type": "color",
+                                            "value": "rgba(0,0,0,0.6)"
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        "backdrop-filter": {
+                            "$$type": "backdrop-filter",
+                            "value": [
+                                {
+                                    "$$type": "css-filter-func",
+                                    "value": {
+                                        "func": {
+                                            "$$type": "string",
+                                            "value": "blur"
+                                        },
+                                        "args": {
+                                            "$$type": "blur",
+                                            "value": {
+                                                "size": {
+                                                    "$$type": "size",
+                                                    "value": {
+                                                        "size": 16,
+                                                        "unit": "px"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "$$type": "css-filter-func",
+                                    "value": {
+                                        "func": {
+                                            "$$type": "string",
+                                            "value": "saturate"
+                                        },
+                                        "args": {
+                                            "$$type": "intensity",
+                                            "value": {
+                                                "size": {
+                                                    "$$type": "size",
+                                                    "value": {
+                                                        "size": 180,
+                                                        "unit": "%"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        "display": {
+                            "$$type": "string",
+                            "value": "inline-flex"
+                        },
+                        "gap": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 9,
+                                "unit": "px"
+                            }
+                        },
+                        "align-items": {
+                            "$$type": "string",
+                            "value": "center"
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "d2lkdGg6IGZpdC1jb250ZW50OyB0ZXh0LXNoYWRvdzogMCAxcHggNHB4IHJnYmEoMTIsOCw0MCwwLjQpOyAmOjpiZWZvcmUgeyBjb250ZW50OiAnJzsgZmxleC1zaHJpbms6IDA7IHdpZHRoOiAxNnB4OyBoZWlnaHQ6IDE2cHg7IGJhY2tncm91bmQtY29sb3I6IGN1cnJlbnRDb2xvcjsgLXdlYmtpdC1tYXNrOiB1cmwoImRhdGE6aW1hZ2Uvc3ZnK3htbCwlM0NzdmcgeG1sbnM9J2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJyB2aWV3Qm94PScwIDAgMjQgMjQnIGZpbGw9J25vbmUnIHN0cm9rZT0nJTIzMDAwJyBzdHJva2Utd2lkdGg9JzInIHN0cm9rZS1saW5lY2FwPSdyb3VuZCcgc3Ryb2tlLWxpbmVqb2luPSdyb3VuZCclM0UlM0NwYXRoIGQ9J00xMSA1IDYgOUgydjZoNGw1IDR6Jy8lM0UlM0NwYXRoIGQ9J20yMyA5LTYgNicvJTNFJTNDcGF0aCBkPSdtMTcgOSA2IDYnLyUzRSUzQy9zdmclM0UiKSBjZW50ZXIgLyBjb250YWluIG5vLXJlcGVhdDsgbWFzazogdXJsKCJkYXRhOmltYWdlL3N2Zyt4bWwsJTNDc3ZnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zycgdmlld0JveD0nMCAwIDI0IDI0JyBmaWxsPSdub25lJyBzdHJva2U9JyUyMzAwMCcgc3Ryb2tlLXdpZHRoPScyJyBzdHJva2UtbGluZWNhcD0ncm91bmQnIHN0cm9rZS1saW5lam9pbj0ncm91bmQnJTNFJTNDcGF0aCBkPSdNMTEgNSA2IDlIMnY2aDRsNSA0eicvJTNFJTNDcGF0aCBkPSdtMjMgOS02IDYnLyUzRSUzQ3BhdGggZD0nbTE3IDkgNiA2Jy8lM0UlM0Mvc3ZnJTNFIikgY2VudGVyIC8gY29udGFpbiBuby1yZXBlYXQ7IH0="
                     }
                 }
             ]

@@ -14,7 +14,6 @@
 // phpcs:disable WordPress.WP.AlternativeFunctions, WordPress.PHP.DiscouragedPHPFunctions
 
 use Elementor\Plugin;
-use Elementor\Modules\GlobalClasses\Global_Classes_Repository;
 
 wp_set_current_user( 1 );
 
@@ -22,7 +21,7 @@ $source = $args[0] ?? '/tmp/rolling/source';
 $sortie = $args[1] ?? '/tmp/rolling/data';
 
 // Les classes prioritaires (modificateurs) passent avant les classes de base.
-$prioritaires = array( 'logos-defilants', 'conteneur-etroit', 'label-violet', 'titre-eteint', 'bouton-petit', 'point-bleu', 'point-orange', 'grand-bloc', 'carte-chiffre', 'carte-question', 'portrait-petit', 'image-couvrante' );
+$prioritaires = array( 'logos-defilants', 'conteneur-etroit', 'label-violet', 'titre-eteint', 'bouton-petit', 'point-bleu', 'point-orange', 'grand-bloc', 'carte-chiffre', 'carte-question', 'portrait-petit', 'image-couvrante', 'bouton-lecture-verre', 'titre-vignette-sombre' );
 
 /**
  * Id stable d'une variable ou d'une classe.
@@ -81,112 +80,71 @@ echo 'Variables : ' . count( $sortie_variables ) . "\n";
 /* 2. Classes -------------------------------------------------------------- */
 
 $definition = json_decode( file_get_contents( $source . '/classes.json' ), true );
-$depot      = Global_Classes_Repository::make();
 
-/**
- * Supprime toutes les classes globales (copie de test seulement).
- *
- * @param Global_Classes_Repository $depot Dépôt.
- */
-function rolling_vider_classes( $depot ) {
-	$ids = array_keys( $depot->all( true )->get_items()->all() );
-
-	if ( $ids ) {
-		$depot->apply_changes( array(), array( 'added' => array(), 'modified' => array(), 'deleted' => $ids, 'order' => true ), array() );
-	}
-}
-
-rolling_vider_classes( $depot );
-delete_option( 'rolling_classes' );
-
-$liste = array();
-
-foreach ( $definition['groupes'] as $groupe ) {
-	foreach ( $groupe['classes'] as $classe ) {
-		$classe['groupe'] = $groupe['nom'];
-		$liste[]          = $classe;
-	}
-}
-
-$ability = wp_get_ability( 'elementor/manage-classes' );
-$erreurs = 0;
-
-foreach ( array_chunk( $liste, 40 ) as $lot ) {
-	$operations = array();
-
-	foreach ( $lot as $classe ) {
-		$operations[] = array(
-			'action' => 'create',
-			'label'  => $classe['label'],
-			'css'    => $classe['css'],
-		);
-	}
-
-	$resultat = $ability->execute( array( 'operations' => $operations ) );
-
-	if ( is_wp_error( $resultat ) ) {
-		echo 'ERREUR : ' . $resultat->get_error_message() . "\n";
-		exit( 1 );
-	}
-
-	foreach ( $resultat['results'] ?? array() as $r ) {
-		if ( 'ok' !== ( $r['status'] ?? '' ) ) {
-			++$erreurs;
-			echo 'Classe en erreur : ' . wp_json_encode( $r, JSON_UNESCAPED_UNICODE ) . "\n";
-		}
-	}
-
-	foreach ( $resultat['errors'] ?? array() as $r ) {
-		++$erreurs;
-		echo 'Erreur : ' . wp_json_encode( $r, JSON_UNESCAPED_UNICODE ) . "\n";
-	}
-}
-
-$converties = array();
-
-foreach ( Global_Classes_Repository::make()->all( true )->get_items()->all() as $item ) {
-	$converties[ $item['label'] ] = $item;
-}
-
+// Convertisseur officiel d'Elementor (celui de l'outil manage-classes), sans rien enregistrer en base.
+$outil      = new \Elementor\Modules\Mcp\Abilities\Manage_Classes_Ability();
+$methode    = new ReflectionMethod( $outil, 'get_css_converter' );
+$methode->setAccessible( true );
+$convertir  = function () use ( $outil, $methode ) {
+	return $methode->invoke( $outil );
+};
+$points     = Plugin::$instance->breakpoints->get_active_devices_list();
+$resultats  = new \Elementor\Modules\Mcp\Abilities\Utils\Bulk_Operations_Result();
+$merger     = '\Elementor\Modules\Mcp\Abilities\Utils\Style_Variants_Merger';
+$erreurs    = 0;
 $sortie_classes = array();
 
-foreach ( $liste as $classe ) {
-	if ( ! isset( $converties[ $classe['label'] ] ) ) {
-		echo 'Absente après conversion : ' . $classe['label'] . "\n";
-		++$erreurs;
-		continue;
-	}
+foreach ( $definition['groupes'] as $groupe ) {
+	foreach ( $groupe['classes'] as $index => $classe ) {
+		$analyse = $merger::parse_css_string( $classe['css'], $points, $index, 'create', $resultats, $convertir );
 
-	$variants = $converties[ $classe['label'] ]['variants'];
+		if ( null === $analyse ) {
+			echo 'ERREUR de CSS : ' . $classe['label'] . "\n";
+			++$erreurs;
+			continue;
+		}
 
-	if ( ! empty( $classe['brut'] ) ) {
-		$trouve = false;
+		$variants = $merger::build_variants( $analyse['breakpoint_blocks'], $convertir() );
 
 		foreach ( $variants as &$variant ) {
-			if ( 'desktop' === ( $variant['meta']['breakpoint'] ?? '' ) && null === ( $variant['meta']['state'] ?? null ) ) {
-				$existant              = isset( $variant['custom_css']['raw'] ) ? base64_decode( $variant['custom_css']['raw'] ) : '';
-				$variant['custom_css'] = array( 'raw' => base64_encode( trim( $existant . ' ' . $classe['brut'] ) ) );
-				$trouve                = true;
-			}
+			unset( $variant['null_props'] );
 		}
 		unset( $variant );
 
-		if ( ! $trouve ) {
-			$variants[] = array(
-				'meta'       => array( 'breakpoint' => 'desktop', 'state' => null ),
-				'props'      => array(),
-				'custom_css' => array( 'raw' => base64_encode( $classe['brut'] ) ),
-			);
-		}
-	}
+		if ( ! empty( $classe['brut'] ) ) {
+			$trouve = false;
 
-	$sortie_classes[] = array(
-		'id'          => rolling_id( 'g-', $classe['label'] ),
-		'label'       => $classe['label'],
-		'groupe'      => $classe['groupe'],
-		'description' => $classe['description'],
-		'variants'    => $variants,
-	);
+			foreach ( $variants as &$variant ) {
+				if ( 'desktop' === ( $variant['meta']['breakpoint'] ?? '' ) && null === ( $variant['meta']['state'] ?? null ) ) {
+					$existant              = isset( $variant['custom_css']['raw'] ) ? base64_decode( $variant['custom_css']['raw'] ) : '';
+					$variant['custom_css'] = array( 'raw' => base64_encode( trim( $existant . ' ' . $classe['brut'] ) ) );
+					$trouve                = true;
+				}
+			}
+			unset( $variant );
+
+			if ( ! $trouve ) {
+				$variants[] = array(
+					'meta'       => array( 'breakpoint' => 'desktop', 'state' => null ),
+					'props'      => array(),
+					'custom_css' => array( 'raw' => base64_encode( $classe['brut'] ) ),
+				);
+			}
+		}
+
+		$sortie_classes[] = array(
+			'id'          => rolling_id( 'g-', $classe['label'] ),
+			'label'       => $classe['label'],
+			'groupe'      => $groupe['nom'],
+			'description' => $classe['description'],
+			'variants'    => $variants,
+		);
+	}
+}
+
+foreach ( $resultats->to_array()['errors'] ?? array() as $e ) {
+	echo 'Erreur : ' . wp_json_encode( $e, JSON_UNESCAPED_UNICODE ) . "\n";
+	++$erreurs;
 }
 
 usort(
@@ -195,8 +153,6 @@ usort(
 		return (int) ! in_array( $a['label'], $prioritaires, true ) <=> (int) ! in_array( $b['label'], $prioritaires, true );
 	}
 );
-
-rolling_vider_classes( Global_Classes_Repository::make() );
 
 $groupes = array_map(
 	function ( $g ) {

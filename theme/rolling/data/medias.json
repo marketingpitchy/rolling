@@ -18,6 +18,12 @@
     "titre": "Coche en verre (puce des listes)"
   },
   {
+    "cle": "fleche-annotation",
+    "fichier": "fleche-annotation.png",
+    "alt": "",
+    "titre": "Flèche dessinée (annotation)"
+  },
+  {
     "cle": "hero-tournage",
     "fichier": "hero-tournage.jpg",
     "alt": "Une caméra sur trépied, en plein tournage dans des bureaux",

@@ -1,0 +1,284 @@
+{
+ "cle": "01-hero",
+ "titre": "Rolling · 01 Hero",
+ "type": "e-flexbox",
+ "composition": {
+  "xml_structure": "<e-flexbox configuration-id=\"Hero\"><e-div-block configuration-id=\"Halo lilas\"></e-div-block><e-div-block configuration-id=\"Halo pêche\"></e-div-block><e-flexbox configuration-id=\"Hero · contenu\"><e-flexbox configuration-id=\"Promesse\"><e-flexbox configuration-id=\"Pastille\"><e-div-block configuration-id=\"Pastille · point\"></e-div-block><e-paragraph configuration-id=\"Pastille · texte\"></e-paragraph></e-flexbox><e-heading configuration-id=\"Titre H1\"></e-heading><e-paragraph configuration-id=\"Chapô\"></e-paragraph><e-flexbox configuration-id=\"Boutons\"><e-button configuration-id=\"Bouton principal\"></e-button><e-button configuration-id=\"Bouton secondaire\"></e-button></e-flexbox><e-flexbox configuration-id=\"Preuve\"><e-flexbox configuration-id=\"Visages\"><e-image configuration-id=\"Visage 1\"></e-image><e-image configuration-id=\"Visage 2\"></e-image><e-image configuration-id=\"Visage 3\"></e-image><e-image configuration-id=\"Visage 4\"></e-image></e-flexbox><e-paragraph configuration-id=\"Preuve · texte\"></e-paragraph></e-flexbox></e-flexbox><e-div-block configuration-id=\"Visuels\"><e-div-block configuration-id=\"Visuels · lueur\"></e-div-block><e-div-block configuration-id=\"Tournage\"><e-div-block configuration-id=\"Tournage · photo\"><e-image configuration-id=\"Tournage · image\"></e-image><e-flexbox configuration-id=\"Tournage · bandeau\"><e-div-block configuration-id=\"Tournage · bandeau · point\"></e-div-block><e-paragraph configuration-id=\"Tournage · bandeau · texte\"></e-paragraph></e-flexbox></e-div-block></e-div-block><e-div-block configuration-id=\"Interview\"><e-div-block configuration-id=\"Interview · vidéo\"><e-image configuration-id=\"Interview · image\"></e-image><e-flexbox configuration-id=\"Interview · bandeau\"><e-div-block configuration-id=\"Interview · bandeau · point\"></e-div-block><e-paragraph configuration-id=\"Interview · bandeau · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Interview · plaque\"><e-paragraph configuration-id=\"Interview · titre\"></e-paragraph><e-div-block configuration-id=\"Interview · lecture\"></e-div-block></e-flexbox></e-div-block></e-div-block><e-div-block configuration-id=\"Démo produit\"><e-div-block configuration-id=\"Démo produit · vidéo\"><e-image configuration-id=\"Démo produit · image\"></e-image><e-flexbox configuration-id=\"Démo produit · bandeau\"><e-div-block configuration-id=\"Démo produit · bandeau · point\"></e-div-block><e-paragraph configuration-id=\"Démo produit · bandeau · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Démo produit · lecteur\"><e-div-block configuration-id=\"Démo produit · lecture\"></e-div-block><e-div-block configuration-id=\"Démo produit · piste\"><e-div-block configuration-id=\"Démo produit · progression\"></e-div-block></e-div-block></e-flexbox></e-div-block></e-div-block><e-div-block configuration-id=\"Motion design\"><e-div-block configuration-id=\"Motion design · vidéo\"><e-div-block configuration-id=\"Motion design · bulle\"></e-div-block><e-flexbox configuration-id=\"Motion design · barres\"><e-div-block configuration-id=\"Barre 1\"></e-div-block><e-div-block configuration-id=\"Barre 2\"></e-div-block><e-div-block configuration-id=\"Barre 3\"></e-div-block><e-div-block configuration-id=\"Barre 4\"></e-div-block></e-flexbox><e-flexbox configuration-id=\"Motion design · bandeau\"><e-div-block configuration-id=\"Motion design · point\"></e-div-block><e-paragraph configuration-id=\"Motion design · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Motion design · plaque\"><e-paragraph configuration-id=\"Motion design · titre\"></e-paragraph><e-div-block configuration-id=\"Motion design · lecture\"></e-div-block></e-flexbox></e-div-block></e-div-block></e-div-block></e-flexbox></e-flexbox>",
+  "element_config": {
+   "Hero": {
+    "tag": "section"
+   },
+   "Pastille · texte": {
+    "paragraph": "Votre agence vidéo illimitée"
+   },
+   "Titre H1": {
+    "tag": "h1",
+    "title": "Le meilleur <u>de l'humain.</u><br>Le meilleur <b>de l'IA.</b>"
+   },
+   "Chapô": {
+    "paragraph": "Vos clients, vos candidats, vos collaborateurs s'informent tous en vidéo. Mais vos équipes n'ont pas le temps d'en faire ? La nôtre s'en charge, à prix fixe, <u>en illimité.</u>"
+   },
+   "Bouton principal": {
+    "text": "Réserver un échange",
+    "link": {
+     "destination": "/contact/"
+    }
+   },
+   "Bouton secondaire": {
+    "text": "Voir les offres",
+    "link": {
+     "destination": "/offres/"
+    }
+   },
+   "Visage 1": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/visage-1.jpg"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "Visage 2": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/visage-2.jpg"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "Visage 3": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/visage-3.jpg"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "Visage 4": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/visage-4.jpg"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "Preuve · texte": {
+    "paragraph": "Par les équipes de <strong>Pitchy</strong> — 10 ans de vidéo, 500+ grandes entreprises."
+   },
+   "Tournage · image": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/hero-tournage.jpg",
+      "alt": "Une caméra sur trépied, en plein tournage dans des bureaux"
+     },
+     "size": "full"
+    }
+   },
+   "Tournage · bandeau · texte": {
+    "paragraph": "Tournage"
+   },
+   "Interview · image": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/hero-interview.jpg",
+      "alt": "Une experte filmée en interview"
+     },
+     "size": "full"
+    }
+   },
+   "Interview · bandeau · texte": {
+    "paragraph": "Interview"
+   },
+   "Interview · titre": {
+    "paragraph": "3 gestes<br><span>qui sauvent</span>"
+   },
+   "Démo produit · image": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/hero-demo-produit.jpg",
+      "alt": "Un pot de crème ouvert flotte au-dessus d'une pierre"
+     },
+     "size": "full"
+    }
+   },
+   "Démo produit · bandeau · texte": {
+    "paragraph": "Démo produit"
+   },
+   "Motion design · texte": {
+    "paragraph": "Motion design"
+   },
+   "Motion design · titre": {
+    "paragraph": "Résultats<br><span>2026</span>"
+   }
+  },
+  "classes": {
+   "Hero": [
+    "section"
+   ],
+   "Halo lilas": [
+    "halo-lilas"
+   ],
+   "Halo pêche": [
+    "halo-peche"
+   ],
+   "Hero · contenu": [
+    "conteneur"
+   ],
+   "Promesse": [
+    "pile"
+   ],
+   "Pastille": [
+    "pastille"
+   ],
+   "Pastille · point": [
+    "point"
+   ],
+   "Titre H1": [
+    "titre-lg"
+   ],
+   "Chapô": [
+    "chapo"
+   ],
+   "Boutons": [
+    "rangee"
+   ],
+   "Bouton principal": [
+    "bouton-principal"
+   ],
+   "Bouton secondaire": [
+    "bouton-verre"
+   ],
+   "Preuve": [
+    "rangee"
+   ],
+   "Visages": [
+    "visages"
+   ],
+   "Preuve · texte": [
+    "texte-petit"
+   ],
+   "Tournage": [
+    "cadre-verre"
+   ],
+   "Tournage · photo": [
+    "cadre-photo"
+   ],
+   "Tournage · image": [
+    "image-couvrante"
+   ],
+   "Tournage · bandeau": [
+    "bandeau-video"
+   ],
+   "Tournage · bandeau · point": [
+    "point-rec"
+   ],
+   "Interview": [
+    "cadre-verre"
+   ],
+   "Interview · vidéo": [
+    "cadre-photo"
+   ],
+   "Interview · image": [
+    "image-couvrante"
+   ],
+   "Interview · bandeau": [
+    "bandeau-video"
+   ],
+   "Interview · plaque": [
+    "plaque-verre"
+   ],
+   "Interview · titre": [
+    "titre-vignette"
+   ],
+   "Interview · lecture": [
+    "bouton-lecture",
+    "bouton-lecture-verre"
+   ],
+   "Démo produit": [
+    "cadre-verre"
+   ],
+   "Démo produit · vidéo": [
+    "cadre-photo"
+   ],
+   "Démo produit · image": [
+    "image-couvrante"
+   ],
+   "Démo produit · bandeau": [
+    "bandeau-video"
+   ],
+   "Démo produit · lecteur": [
+    "plaque-verre"
+   ],
+   "Démo produit · lecture": [
+    "bouton-lecture",
+    "bouton-lecture-verre"
+   ],
+   "Démo produit · piste": [
+    "piste-lecture"
+   ],
+   "Motion design": [
+    "cadre-verre"
+   ],
+   "Motion design · vidéo": [
+    "fond-video-orange"
+   ],
+   "Motion design · barres": [
+    "barres-graphique"
+   ],
+   "Motion design · bandeau": [
+    "bandeau-video"
+   ],
+   "Motion design · plaque": [
+    "plaque-verre"
+   ],
+   "Motion design · titre": [
+    "titre-vignette",
+    "titre-vignette-sombre"
+   ],
+   "Motion design · lecture": [
+    "bouton-lecture",
+    "bouton-lecture-verre"
+   ]
+  },
+  "style": {
+   "Hero": "padding: 104px 0 70px; @media(--tablet) { padding: 116px 0 56px; } @media(--mobile) { padding: 124px 0 48px; }",
+   "Halo lilas": "left: -300px; top: -380px;",
+   "Halo pêche": "right: -380px; top: -200px; opacity: 0.7;",
+   "Hero · contenu": "display: flex; flex-direction: row; flex-wrap: wrap; align-items: center; gap: 48px; z-index: 2;",
+   "Promesse": "flex: 1 1 560px; min-width: 0; gap: 0; padding-top: 40px; @media(--tablet) { padding-top: 0; }",
+   "Titre H1": "margin-top: 26px;",
+   "Chapô": "margin-top: 26px; max-width: 620px;",
+   "Boutons": "margin-top: 40px;",
+   "Preuve": "margin-top: 24px;",
+   "Preuve · texte": "font-size: 14px; color: var(--legende);",
+   "Visuels": "position: relative; flex: 1 1 460px; min-width: 0; height: 680px; padding: 0; @media(--tablet) { height: auto; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; } @media(--mobile) { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }",
+   "Visuels · lueur": "position: absolute; left: -40px; right: -40px; top: -20px; bottom: -40px; padding: 0; background: radial-gradient(closest-side, rgba(255,162,122,0.6), rgba(255,209,191,0.3) 55%, rgba(250,249,247,0) 100%); @media(--tablet) { display: none; }",
+   "Tournage": "position: absolute; left: 0; right: 0; top: 0; border-radius: 42px; @media(--tablet) { position: relative; grid-column: 1 / -1; }",
+   "Tournage · photo": "height: 652px; border-radius: 29px; @media(--tablet) { height: 420px; } @media(--mobile) { height: 280px; }",
+   "Tournage · image": "object-position: 56% 50%;",
+   "Tournage · bandeau": "top: 18px; left: 18px;",
+   "Interview": "position: absolute; left: 28px; top: 252px; width: 208px; z-index: 2; border-radius: 34px; @media(--tablet) { position: relative; left: auto; top: auto; width: auto; }",
+   "Interview · vidéo": "aspect-ratio: 9 / 16; border-radius: 21px; background: #3F2BB8;",
+   "Interview · image": "object-position: 53% 28%;",
+   "Interview · bandeau": "top: 10px; left: 10px;",
+   "Interview · bandeau · point": "width: 6px; height: 6px; min-width: 6px; padding: 0; border-radius: 50%; background: #FFD1BF; box-shadow: 0 0 0 3px rgba(255,209,191,0.3);",
+   "Interview · plaque": "position: absolute; z-index: 2; left: 8px; right: 8px; bottom: 8px; width: auto; justify-content: space-between; padding: 10px 8px 10px 12px;",
+   "Démo produit": "position: absolute; right: 28px; top: 24px; width: 294px; z-index: 2; @media(--tablet) { position: relative; right: auto; top: auto; width: auto; align-self: start; } @media(--mobile) { grid-column: 1 / -1; order: 3; }",
+   "Démo produit · vidéo": "aspect-ratio: 16 / 9; border-radius: 19px;",
+   "Démo produit · image": "object-position: 50% 40%;",
+   "Démo produit · bandeau": "top: 10px; left: 10px;",
+   "Démo produit · bandeau · point": "width: 6px; height: 6px; min-width: 6px; padding: 0; border-radius: 50%; background: #FFD1BF; box-shadow: 0 0 0 3px rgba(255,209,191,0.3);",
+   "Démo produit · lecteur": "position: absolute; z-index: 2; left: 8px; right: 8px; bottom: 8px; width: auto; gap: 12px; padding: 6px 14px 6px 6px; border-radius: 999px;",
+   "Démo produit · lecture": "width: 30px; height: 30px;",
+   "Motion design": "position: absolute; right: 28px; top: 432px; width: 208px; z-index: 2; @media(--tablet) { position: relative; right: auto; top: auto; width: auto; align-self: start; }",
+   "Motion design · vidéo": "position: relative; aspect-ratio: 1 / 1; overflow: hidden; padding: 0; border-radius: 19px;",
+   "Motion design · bulle": "position: absolute; left: 18px; top: 54px; width: 62px; height: 62px; padding: 0; border-radius: 50%; background: radial-gradient(circle at 32% 28%, #FFFFFF 0%, rgba(255,255,255,0.75) 40%, rgba(255,255,255,0.25) 100%); box-shadow: 0 10px 22px -10px rgba(160,50,10,0.6);",
+   "Motion design · barres": "position: absolute; right: 16px; top: 46px;",
+   "Motion design · bandeau": "top: 10px; left: 10px; color: #0F0F12; background: linear-gradient(165deg, rgba(255,255,255,0.72) 0%, rgba(255,255,255,0.32) 100%);",
+   "Motion design · point": "width: 6px; height: 6px; min-width: 6px; padding: 0; border-radius: 50%; background: #E0562A; box-shadow: 0 0 0 3px rgba(224,86,42,0.22);",
+   "Motion design · plaque": "position: absolute; z-index: 2; left: 8px; right: 8px; bottom: 8px; width: auto; justify-content: space-between; padding: 10px 8px 10px 12px; color: #0F0F12;",
+   "Motion design · titre": "font-size: 17px; line-height: 0.98; letter-spacing: -0.04em;"
+  }
+ },
+ "brut": {}
+}

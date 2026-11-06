@@ -92,14 +92,28 @@
 		} );
 
 		if ( bouton ) {
+			// Deux libellés dans le bouton (deux <span>) : « Arrêter… » puis « Relancer… ».
+			var libelles = bouton.querySelectorAll( 'span' );
+			var enPause = false;
+
 			enBouton( bouton );
-			bouton.setAttribute( 'aria-pressed', 'false' );
 			bouton.setAttribute( 'aria-controls', bande.id );
+
+			if ( libelles.length < 2 ) {
+				bouton.setAttribute( 'aria-pressed', 'false' );
+			}
+
 			bouton.addEventListener( 'click', function ( e ) {
 				e.preventDefault();
-				var pause = bouton.getAttribute( 'aria-pressed' ) !== 'true';
-				bouton.setAttribute( 'aria-pressed', pause ? 'true' : 'false' );
-				bande.classList.toggle( 'rl-defile-pause', pause );
+				enPause = ! enPause;
+				bande.classList.toggle( 'rl-defile-pause', enPause );
+
+				if ( libelles.length >= 2 ) {
+					libelles[ 0 ].style.display = enPause ? 'none' : 'inline';
+					libelles[ 1 ].style.display = enPause ? 'inline' : 'none';
+				} else {
+					bouton.setAttribute( 'aria-pressed', enPause ? 'true' : 'false' );
+				}
 			} );
 		}
 	} );
