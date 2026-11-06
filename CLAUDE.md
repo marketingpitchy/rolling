@@ -142,11 +142,21 @@ image, texte, « À lire aussi » ; colonne latérale = temps de lecture, partag
 - Extension SEO : la cliente pense à Slim SEO. Si elle l'installe, c'est **lui** l'outil unique des métas
   (title, description, canonical, OG, sitemap) et le thème n'en sort aucune ; le thème ajoute seulement ce
   que Slim SEO ne fait pas (VideoObject des réalisations). En attente de sa décision.
-- Cache : dépend de l'hébergeur (demandé).
-- Pied de page : 2e menu « Pied de page » dans Apparence > Menus (recommandé) ou liens dans Personnaliser.
+- Hébergement OVH (offre Pro ou Performance). Pas de cache de pages côté OVH : recommandé WP Super Cache.
+  Le thème videra aussi ce cache à sa mise à jour s'il est présent.
+- Pied de page : validé = reprend le menu principal + 2e menu « Pied de page » (liens légaux). Mise en page
+  à montrer dans les maquettes HTML des pages.
+- Menu du haut : la maquette pointe vers des ancres de l'accueil (Pourquoi, Méthode…). Proposé : pages
+  (Offres, Réalisations, Témoignages, Blog) + bouton « Réserver un échange ». En attente.
+- Partage article : Instagram = bouton « Copier le lien » (validé).
+- Classes : validées dans le principe, à affiner plus tard avec la cliente.
 - Zips Elementor 4.3.6 et Elementor Pro 4.3.3 pour les tests locaux.
 
 ## Maquettes HTML
 
-- `maquette-logos-ecran.html` (hors git, contient les logos clients) : logos qui défilent + écran 00:05
-  interactif (boutons au-dessus de l'écran). En attente de validation.
+- `maquette-logos-ecran.html` (hors git, contient les logos clients) : **validée**.
+  - Logos : le défilement s'active / se coupe **depuis Elementor** (réglage de la cliente). Côté visiteur,
+    on garde l'arrêt au survol/clavier et le bouton pause (WCAG 2.2.2 : tout contenu qui bouge plus de 5 s
+    doit pouvoir être arrêté).
+  - Écran 00:05 : validé tel quel. Ajouter une image de fond remplaçable dans Elementor (voile violet
+    gardé pour la lisibilité). Une image commune ou une par format : en attente de réponse.
