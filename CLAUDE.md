@@ -4,7 +4,7 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
 
 ## Statut
 
-- Phase 0 (sans code) : analyse faite, questions + liste des blocs + liste des classes envoyées.
+- Phase 0 (sans code) : questions répondues (voir plus bas), listes des blocs et des classes envoyées. Maquettes HTML en cours.
   **En attente de validation de la cliente avant d'écrire du code.**
 - Le WordPress de production existe déjà chez la cliente : on livre seulement le thème (zip à importer).
 
@@ -114,6 +114,39 @@ image, texte, « À lire aussi » ; colonne latérale = temps de lecture, partag
 - axe sur la maquette : 0 problème de contraste mesurable ; manquent `<main>` et les repères (landmarks).
   Les textes en dégradé et sur photo ne sont pas mesurables par axe : contrôle manuel prévu.
 
-## Questions en attente (phase 0)
+## Réponses de la cliente (phase 0, tour 2)
 
-Voir le message de phase 0 dans la conversation ; reporter ici les réponses dès qu'elles arrivent.
+- Extensions installées : Activity Log, ACF 6.8.11, Angie, Cookie Consent (Elementor), Elementor 4.3.6,
+  **Elementor Pro 4.3.3**, Image Optimization, Manage, Web Accessibility (Ally : injecte un widget, à
+  vérifier avec axe). Pas encore d'extension SEO ni de cache.
+- Pro utilisé : Theme Builder (modèles article, 404, réalisation, témoignage) et Loop Grid (cartes des listes).
+- Médias : la cliente importe elle-même ses médias (dont le showreel) dans WordPress. Photos hors de git.
+- Logos clients : modèle Elementor avec **défilement continu + bouton pour l'arrêter** (maquette HTML faite).
+- **Pas de packs de tokens.** Offres : s'en tenir strictement à la maquette (2 formules).
+- Animations : en CSS seulement (pas de bibliothèque JS).
+- L'illimité est assumé. Textes de la maquette gardés tels quels (« Création + Tournage », « Choisir Complet »).
+  Intitulés de poste avec capitales partout (« Directeur Artistique », « Directeur Technique »…). « Inès ».
+- « Réserver un échange » → page Contact (la cliente y met son calendrier HubSpot).
+- Article : partage LinkedIn, Facebook, Instagram, X, WhatsApp, e-mail ; « Résumer avec » ChatGPT, Claude,
+  Perplexity, Le Chat ; sommaire dans la colonne latérale qui suit le défilement.
+  Instagram n'a pas de lien de partage web : bouton = partage natif du téléphone, sinon copie du lien.
+- Landing : l'indexation est gérée par la cliente avec son extension SEO (le thème ne s'en occupe pas).
+- Robots IA : autoriser recherche/citation, bloquer entraînement. Liens obligatoires (règle 1.12) adaptés :
+  /offres/ et « Réserver un échange » au lieu des pages Pitchy.
+- Maquette HTML d'abord pour chaque page sans maquette (Offres, Réalisations, Témoignages, Blog, Article,
+  Contact, Landing, 404).
+- Polices hébergées dans le thème.
+
+## Questions encore ouvertes
+
+- Extension SEO : la cliente pense à Slim SEO. Si elle l'installe, c'est **lui** l'outil unique des métas
+  (title, description, canonical, OG, sitemap) et le thème n'en sort aucune ; le thème ajoute seulement ce
+  que Slim SEO ne fait pas (VideoObject des réalisations). En attente de sa décision.
+- Cache : dépend de l'hébergeur (demandé).
+- Pied de page : 2e menu « Pied de page » dans Apparence > Menus (recommandé) ou liens dans Personnaliser.
+- Zips Elementor 4.3.6 et Elementor Pro 4.3.3 pour les tests locaux.
+
+## Maquettes HTML
+
+- `maquette-logos-ecran.html` (hors git, contient les logos clients) : logos qui défilent + écran 00:05
+  interactif (boutons au-dessus de l'écran). En attente de validation.
