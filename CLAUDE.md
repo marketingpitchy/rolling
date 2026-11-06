@@ -40,6 +40,39 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
 - Jamais de vidéos ni de photos clients dans le dépôt git.
 - Répondre en français, simplement et court.
 
+## Architecture technique (constatée dans Elementor 4.3.6, à respecter)
+
+- **Classes globales** : stockées comme posts (`Global_Classes_Repository`), données = `variants[]`
+  (`meta.breakpoint` desktop/tablet/mobile…, `meta.state` null/hover…, `props` typés `$$type`, `custom_css.raw` en base64
+  pour ce qu'Elementor ne convertit pas). Libellé = nom de classe dans le HTML (`class="titre-lg"`), l'élément référence
+  l'id (`g-xxxx`). Libellés : `[a-zA-Z0-9_-]`, pas de chiffre au début, pas d'accent. Limite 1000.
+  CSS généré : `.elementor .titre-lg{…}` ; `:hover` devient `:hover,:focus-visible`.
+- **Variables** : `--libellé` (ex. `var(--encre)`), ids `e-gv-xxxx`. Couleur et police en gratuit ; taille = Pro
+  (bloqué sur ma copie sans licence). Police = nom Google Fonts seul ; le thème héberge les polices et coupe Google Fonts.
+- **Outils officiels utilisés au build** (abilities, option `elementor_mcp_enabled` = 1 sur MA copie seulement) :
+  `elementor/manage-global-variable`, `elementor/manage-classes` (CSS brut → props natives), `elementor/build-composition`
+  (XML + config + classes + style → `_elementor_data`), `get-widget-schema`. Il faut une visite admin pour créer les
+  capacités Elementor. Scripts d'essai : scratchpad/wp/essais.
+- **Le thème n'appelle pas ces outils chez la cliente** : il embarque les données natives exportées (classes, variables,
+  éléments JSON) et les installe via les API Elementor (repository des classes/variables, `templates_manager` source
+  local `save_item`, ids fixes pour pouvoir mettre à jour).
+- **Fenêtre « Choisissez comment appliquer les styles »** (insertion d'un modèle) : `match_site` (« Adopter le style de
+  ce site »), `keep_create` (« Conserver les styles du modèle » + case « Ajouter les classes et variables… »),
+  `keep_flatten` (même choix, case décochée : les classes sont **recopiées en styles locaux**, leur nom disparaît).
+  ⇒ Règle : **tout le visuel est dans les styles Elementor** (props ou `custom_css` des classes), jamais dans du CSS du
+  thème accroché à un nom de classe. Contexte sombre : la classe `section-sombre` pose des propriétés CSS
+  (`--rl-…`) héritées par les enfants, les composants lisent `var(--rl-…, valeur claire)`.
+  CSS du thème limité à : @font-face, @keyframes `rl-…`, réinitialisations, « réduire les animations », gel des
+  animations dans l'éditeur, en-tête et pied de page (parties PHP du thème).
+  Les animations sont posées en `custom_css` des classes (le convertisseur supprime `animation`).
+- **Types de modèles** : `e-flexbox`, `e-div-block`, `e-grid`, `container`, `page`, `section` (Pro), `loop-item`,
+  `single-post`, `archive`, `error-404`, `header`, `footer`. Composants v4 : `elementor_component`.
+- Éléments atomiques : e-flexbox, e-div-block, e-grid, e-heading, e-paragraph, e-button, e-image, e-svg, e-divider,
+  e-list (pas géré par build-composition), e-youtube, e-self-hosted-video, e-background-video, e-tabs, e-accordion,
+  e-form… Pro : e-checklist, e-anchor. Le texte accepte b, strong, span, em, a, br…
+- **Licence Pro** : ma copie n'a pas de licence ⇒ balises dynamiques et variables de taille Pro bloquées. On ne
+  contourne pas la licence. Ce qui en dépend se teste chez la cliente (ou thème = balises dynamiques maison).
+
 ## Exigences du thème
 
 1. Tout se modifie dans Elementor 4 (éléments atomiques, classes globales, variables) : aucun texte ni
