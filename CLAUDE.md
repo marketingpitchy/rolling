@@ -145,6 +145,9 @@ image, texte, « À lire aussi » ; colonne latérale = temps de lecture, partag
   réglables par la cliente. Les animations en boucle de la maquette (halos, flottement, anneau, REC, défilement
   des logos) restent en CSS du thème.
 - Le logo renvoie à l'accueil ; pas de lien « Accueil » dans le menu.
+- **Balises dynamiques : option A** (balises maison du thème, testées chez moi, ~15 balises dans ~8 modèles du site).
+  Exception B : si une balise demande plus (ex. un cas avancé), utiliser celle de Pro et **dire à la cliente laquelle
+  tester chez elle**.
 - Chiffres en verre : **nouveau jeu de la cliente** (chiffres-verre_1.zip : 0-9, +, %, k, M, 500-plus ; style ballon rose-violet),
   à la place de ceux de la maquette. Un nombre = chiffres composés côte à côte (ex. « 1 » + « 0 »), images décoratives
   (alt vide) + texte réel masqué pour les lecteurs d'écran. Coche des listes : **check-glass.svg** de la cliente.
