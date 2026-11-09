@@ -412,7 +412,7 @@
         {
           "label": "etiquette-carte",
           "description": "Petite étiquette en capitales en haut d'une carte sombre (« Déjà écrit »), avec un point lilas.",
-          "css": "display: inline-flex; width: fit-content; align-self: flex-start; align-items: center; gap: 8px; padding: 5px 12px 5px 10px; border-radius: 999px; font-family: Hanken Grotesk; font-size: 12px; line-height: 1.3; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #E4DFF2; background: rgba(255,255,255,0.08); box-shadow: inset 0 1px 0 rgba(255,255,255,0.16), inset 0 0 0 1px rgba(255,255,255,0.1); &::before { position: relative; top: auto; right: auto; bottom: auto; left: auto; height: auto; opacity: 1; mix-blend-mode: normal; border: 0; content: ''; flex-shrink: 0; width: 7px; height: 7px; border-radius: 50%; background: #C4B5FD; }"
+          "css": "display: inline-flex; width: fit-content; align-self: flex-start; align-items: center; gap: 8px; padding: 5px 12px 5px 10px; border-radius: 999px; font-family: Hanken Grotesk; font-size: 12px; line-height: 1.3; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #E4DFF2; background: rgba(20,14,46,0.55); backdrop-filter: blur(12px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.16), inset 0 0 0 1px rgba(255,255,255,0.1); &::before { position: relative; top: auto; right: auto; bottom: auto; left: auto; height: auto; opacity: 1; mix-blend-mode: normal; border: 0; content: ''; flex-shrink: 0; width: 7px; height: 7px; border-radius: 50%; background: #C4B5FD; }"
         },
         {
           "label": "etiquette-rec",

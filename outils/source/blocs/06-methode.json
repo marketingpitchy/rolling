@@ -22,7 +22,7 @@
    "Étape 1 · chiffre": {
     "image": {
      "src": {
-      "url": "https://media.rolling.invalid/chiffre-1.png"
+      "url": "https://media.rolling.invalid/chiffre-1.webp"
      },
      "size": "medium"
     }
@@ -37,7 +37,7 @@
    "Étape 2 · chiffre": {
     "image": {
      "src": {
-      "url": "https://media.rolling.invalid/chiffre-2.png"
+      "url": "https://media.rolling.invalid/chiffre-2.webp"
      },
      "size": "medium"
     }
@@ -52,7 +52,7 @@
    "Étape 3 · chiffre": {
     "image": {
      "src": {
-      "url": "https://media.rolling.invalid/chiffre-3.png"
+      "url": "https://media.rolling.invalid/chiffre-3.webp"
      },
      "size": "medium"
     }

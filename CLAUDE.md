@@ -15,8 +15,11 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
 - **Retours livraison 1** (test B fait par la cliente : rendu cassé en « case décochée » ; poignées des sections absentes ;
   étiquettes coupées en mobile ; pas de bouton « Arrêter le défilement ») ⇒ **0.1.1** corrige tout (voir Leçons).
   **0.1.1 validée par la cliente.** Elle insère toujours avec « Adopter le style de ce site ».
-  Prochaines : 2 = blocs de l'accueil 00:01 → fin + Page complète ; 3 = contenus admin + modèles du site (balises maison) ;
-  4 = pages Offres, Contact, landing…, SEO (VideoObject), contrôle final.
+- **Livraison 2 envoyée (0.2.0)** : blocs 04 à 13 de l'accueil + « Page complète (accueil) ». Vérifié : 1440/1024/390/360
+  vs maquette, axe 0, contrastes sur photo (outil au rectangle du texte), PHPCS 0, SEO (1 H1, titres sans saut, alt,
+  dimensions, sizes="auto" sur les images différées), insertion Page complète (identique au site), case décochée
+  (310/310 styles gardés), mise à jour 0.1.1 → 0.2.0 par téléversement (zip 2,9 Mo ; limite d'envoi à surveiller chez OVH).
+  Prochaines : 3 = contenus admin + modèles du site (balises maison) ; 4 = pages Offres, Contact, landing…, SEO, contrôle final.
 - FAQ : la cliente ajoute elle-même les réponses ; garder les questions telles quelles.
 - Le WordPress de production existe déjà chez la cliente : on livre seulement le thème (zip à importer).
 

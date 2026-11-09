@@ -27,7 +27,7 @@
    "Ans · chiffre 1": {
     "image": {
      "src": {
-      "url": "https://media.rolling.invalid/chiffre-1.png"
+      "url": "https://media.rolling.invalid/chiffre-1.webp"
      },
      "size": "medium"
     }
@@ -35,7 +35,7 @@
    "Ans · chiffre 0": {
     "image": {
      "src": {
-      "url": "https://media.rolling.invalid/chiffre-0.png"
+      "url": "https://media.rolling.invalid/chiffre-0.webp"
      },
      "size": "medium"
     }
@@ -52,7 +52,7 @@
    "Entreprises · chiffre 500-plus": {
     "image": {
      "src": {
-      "url": "https://media.rolling.invalid/chiffre-500-plus.png"
+      "url": "https://media.rolling.invalid/chiffre-500-plus.webp"
      },
      "size": "medium_large"
     }
@@ -66,7 +66,7 @@
    "Studio · chiffre 1": {
     "image": {
      "src": {
-      "url": "https://media.rolling.invalid/chiffre-1.png"
+      "url": "https://media.rolling.invalid/chiffre-1.webp"
      },
      "size": "medium"
     }
@@ -80,7 +80,7 @@
    "Plateforme · chiffre 1": {
     "image": {
      "src": {
-      "url": "https://media.rolling.invalid/chiffre-1.png"
+      "url": "https://media.rolling.invalid/chiffre-1.webp"
      },
      "size": "medium"
     }

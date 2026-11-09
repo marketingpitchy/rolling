@@ -152,7 +152,7 @@
    "Promesse 1 · chiffre": {
     "image": {
      "src": {
-      "url": "https://media.rolling.invalid/chiffre-1.png"
+      "url": "https://media.rolling.invalid/chiffre-1.webp"
      },
      "size": "medium"
     }
@@ -163,7 +163,7 @@
    "Promesse 2 · chiffre": {
     "image": {
      "src": {
-      "url": "https://media.rolling.invalid/chiffre-2.png"
+      "url": "https://media.rolling.invalid/chiffre-2.webp"
      },
      "size": "medium"
     }
@@ -174,7 +174,7 @@
    "Promesse 3 · chiffre": {
     "image": {
      "src": {
-      "url": "https://media.rolling.invalid/chiffre-3.png"
+      "url": "https://media.rolling.invalid/chiffre-3.webp"
      },
      "size": "medium"
     }
@@ -185,7 +185,7 @@
    "Promesse 4 · chiffre": {
     "image": {
      "src": {
-      "url": "https://media.rolling.invalid/chiffre-4.png"
+      "url": "https://media.rolling.invalid/chiffre-4.webp"
      },
      "size": "medium"
     }

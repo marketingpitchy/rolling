@@ -9708,7 +9708,7 @@
                             "value": {
                                 "color": {
                                     "$$type": "color",
-                                    "value": "rgba(255,255,255,0.08)"
+                                    "value": "rgba(20,14,46,0.55)"
                                 }
                             }
                         },
@@ -9794,6 +9794,32 @@
                                         "position": {
                                             "$$type": "string",
                                             "value": "inset"
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        "backdrop-filter": {
+                            "$$type": "backdrop-filter",
+                            "value": [
+                                {
+                                    "$$type": "css-filter-func",
+                                    "value": {
+                                        "func": {
+                                            "$$type": "string",
+                                            "value": "blur"
+                                        },
+                                        "args": {
+                                            "$$type": "blur",
+                                            "value": {
+                                                "size": {
+                                                    "$$type": "size",
+                                                    "value": {
+                                                        "size": 12,
+                                                        "unit": "px"
+                                                    }
+                                                }
+                                            }
                                         }
                                     }
                                 }

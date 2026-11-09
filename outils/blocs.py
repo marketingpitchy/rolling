@@ -362,7 +362,7 @@ pour_qui = F('Pour qui', ['section', 'halos-cotes'], tag='section', enfants=[
 
 def etape(n, titre, texte):
     return F('Étape %d' % n, ['carte-verre', 'carte-etape'], enfants=[
-        I('Étape %d · chiffre' % n, 'chiffre-%d.png' % n, cls=['picto-verre'], style='height: 80px; align-self: flex-start;', taille='medium'),
+        I('Étape %d · chiffre' % n, 'chiffre-%d.webp' % n, cls=['picto-verre'], style='height: 80px; align-self: flex-start;', taille='medium'),
         H('Étape %d · titre' % n, titre, 'h3', ['titre-xs']),
         P('Étape %d · texte' % n, texte, ['texte']),
     ])
@@ -588,7 +588,7 @@ offre = F("L'offre", ['section', 'halos-offre'], tag='section', ancre='offres', 
             H('Promesses · titre', "L'illimité qui tient ses promesses&nbsp;:", 'h3', ['titre-xs']),
             F('Promesses · liste', ['grille-4'], 'margin-top: 8px;', enfants=[
                 F('Promesse %d' % n, ['ligne-coche'], enfants=[
-                    I('Promesse %d · chiffre' % n, 'chiffre-%d.png' % n, cls=['picto-verre'], style='height: 40px;', taille='medium'),
+                    I('Promesse %d · chiffre' % n, 'chiffre-%d.webp' % n, cls=['picto-verre'], style='height: 40px;', taille='medium'),
                     P('Promesse %d · texte' % n, t, ['texte-petit']),
                 ]) for n, t in enumerate(['<strong>Un projet traité à fond</strong> à la fois', '<strong>1 projet = 1 vidéo livrée</strong>, prête à publier', '<strong>Des allers-retours cadrés</strong>, pour livrer vite', '<strong>1 abonnement = 1 équipe métier</strong>'], 1)
             ]),
@@ -605,7 +605,7 @@ offre = F("L'offre", ['section', 'halos-offre'], tag='section', ancre='offres', 
 # --------------------------------------------------------------------------------------------
 
 def carte_chiffre(nom, chiffres, lu, libelle, unite=None):
-    nombre = [I(nom + ' · chiffre ' + c, 'chiffre-' + c + '.png', taille='medium_large' if c == '500-plus' else 'medium') for c in chiffres]
+    nombre = [I(nom + ' · chiffre ' + c, 'chiffre-' + c + '.webp', taille='medium_large' if c == '500-plus' else 'medium') for c in chiffres]
     nombre.append(P(nom + ' · valeur lue', lu, ['texte-masque']))
     if unite:
         nombre.append(P(nom + ' · unité', unite, ['unite-chiffre']))

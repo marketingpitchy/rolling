@@ -25,6 +25,7 @@ class Rolling_Ressources {
 		add_filter( 'hello_elementor_page_title', array( __CLASS__, 'titre_de_page' ) );
 		add_action( 'after_setup_theme', array( __CLASS__, 'supports' ) );
 		add_filter( 'wp_content_img_tag', array( __CLASS__, 'image_principale' ), 20 );
+		add_filter( 'wp_content_img_tag', array( __CLASS__, 'tailles_automatiques' ), 25 );
 	}
 
 	/**
@@ -104,6 +105,21 @@ class Rolling_Ressources {
 		}
 
 		return $balise;
+	}
+
+	/**
+	 * Images chargées en différé : le navigateur télécharge la taille réellement affichée (sizes="auto").
+	 * Les images d'Elementor 4 ont un srcset sans sizes : sans cela, il prend la plus grande.
+	 *
+	 * @param string $balise Balise <img>.
+	 * @return string
+	 */
+	public static function tailles_automatiques( $balise ) {
+		if ( is_admin() || false === strpos( $balise, ' srcset=' ) || false !== strpos( $balise, ' sizes=' ) || false === strpos( $balise, 'loading="lazy"' ) ) {
+			return $balise;
+		}
+
+		return str_replace( '<img ', '<img sizes="auto, 100vw" ', $balise );
 	}
 
 	/**
