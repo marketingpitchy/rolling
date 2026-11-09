@@ -42,7 +42,15 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   titre avec « agence vidéo » (correspondance avec l'annonce), 2e showreel remplacé par des résultats chiffrés
   [à fournir] + appel au milieu, preuve sociale = plaque de chiffres + 3 témoignages courts (dont 1 vidéo), calendrier
   HubSpot dans la page, objections du premier contact (engagement, délais, si le résultat ne plaît pas, droits) [réponses
-  à confirmer]. En attente de validation.
+  à confirmer]. Témoignages « pas mal » ⇒ animations demandées.
+- **Tour suivant (maquette)** : animations (apparition au défilement = module Interactions d'Elementor dans le thème ;
+  cartes qui se soulèvent ; logos gris → couleur au survol ; bande de logos qui défile sur la landing ; visuel du hero qui
+  flotte ; onde autour du bouton lecture), tout arrêté avec « réduire les animations ».
+  Fiche témoignage : chiffres clés **en nombre libre (0 à n)**, saisis en texte (« 87 % », « 2 500+ ») et affichés en
+  chiffres en verre par le thème (0-9, +, %, k, M ; les mots vont dans le libellé, pas d'unité à part) ; sections
+  « Le contexte. », « Leur besoin. », « Notre accompagnement. », « Les vidéos. » (bloc absent si pas de vidéo diffusable).
+  Deux pages de maquette : cas complet et cas sans chiffres ni vidéo. Landing : timecodes 00:01 à 00:05 en sur-titres ;
+  les étiquettes en pointillés de la maquette sont des annotations (pas sur le site).
   Prochaines : 3 = contenus admin (réalisations, témoignages, logos, offres, articles, guides, webinars) + modèles du site
   (balises maison) + sous-menu ; 4 = pages Offres, Réalisations, Témoignages, Blog, Guides, Webinars, Replays, Contact,
   landing, 404, SEO, contrôle final.

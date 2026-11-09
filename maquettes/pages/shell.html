@@ -59,6 +59,19 @@
       if (!m.contains(e.target)) { m.classList.remove('ouvert'); m.querySelector('.menu-ouvrir').setAttribute('aria-expanded', 'false'); }
     });
   });
+  // Apparitions au défilement (dans le thème : module « Interactions » d'Elementor, réglable par vous)
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches && 'IntersectionObserver' in window) {
+    var cibles = document.querySelectorAll('.page main .carte-verre, .page main .carte-pleine, .page main .temoin, .page main .plaque-chiffres > div, .page main .grille-3 > *, .page main .grille-4 > *, .page main .titre-lg, .page main .titre-md, .page main .entete-section, .page main .webinar, .page main .apparait');
+    var vue = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('vu'); vue.unobserve(e.target); } });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    cibles.forEach(function (el) {
+      if (el.closest('.entete') || el.closest('.pied')) return;
+      var rang = Array.prototype.indexOf.call(el.parentElement.children, el);
+      el.classList.add('apparait'); el.style.setProperty('--delai', ((rang % 4) * 0.08) + 's');
+      vue.observe(el);
+    });
+  }
   document.querySelectorAll('.partage-copier').forEach(function (b) {
     b.addEventListener('click', function () { try { navigator.clipboard.writeText(location.href); } catch (e) {} b.title = 'Lien copié'; });
   });

@@ -23,6 +23,9 @@ IMGS = {
     'n1': S + '/chiffres2/chiffre-1.png', 'n2': S + '/chiffres2/chiffre-2.png', 'n0': S + '/chiffres2/chiffre-0.png',
     'n3': S + '/chiffres2/chiffre-3.png', 'n4': S + '/chiffres2/chiffre-4.png',
     'n500': S + '/chiffres2/chiffre-500-plus.png', 'n1c': S + '/chiffres2/chiffre-1.png',
+    'n5': S + '/chiffres2/chiffre-5.png', 'n6': S + '/chiffres2/chiffre-6.png', 'n7': S + '/chiffres2/chiffre-7.png',
+    'n8': S + '/chiffres2/chiffre-8.png', 'n9': S + '/chiffres2/chiffre-9.png', 'nplus': S + '/chiffres2/chiffre-plus.png',
+    'npourcent': S + '/chiffres2/chiffre-pourcent.png', 'nk': S + '/chiffres2/chiffre-k.png', 'nM': S + '/chiffres2/chiffre-M.png',
     'tournage': A + '14709dc17edfdbe8dac7a32700d88158.jpg', 'laptop': A + 'fa155c7d0fc750858043c8a956f1eb8c.jpg',
     'interview': A + '90874b8a645df060e10c4161152d8bcd.jpg', 'camera': A + 'cafdb76bd47293bb6aac26987a509625.jpg',
     'poster': A + 'd087d181a1a758466c53ee5d13cb4174.jpg', 'julie': A + '831a4d0e7cbe35c6a0b5a91ffd9f6d67.jpg',
@@ -33,7 +36,7 @@ IMGS = {
     'cap-fnac': I + 'cap-FNACDARTY.png', 'cap-sncf': I + 'cap-SNCF.png', 'cap-weenect': I + 'cap-WEENECT.png',
     'cap-veolia': I + 'cap-VEOLIA.png', 'cap-groupama': I + 'cap-Groupama.png', 'cap-article': I + 'cap-ARTICLEBLOG.png',
 }
-WIDTH = {'n0': 90, 'n1': 90, 'n2': 90, 'n3': 90, 'n4': 90, 'n500': 360, 'n1c': 90, 'julie': 240, 'thomas': 160,
+WIDTH = {'n5': 90, 'n6': 90, 'n7': 90, 'n8': 90, 'n9': 90, 'nplus': 90, 'npourcent': 110, 'nk': 90, 'nM': 110, 'n0': 90, 'n1': 90, 'n2': 90, 'n3': 90, 'n4': 90, 'n500': 360, 'n1c': 90, 'julie': 240, 'thomas': 160,
          'av-a': 80, 'av-b': 80, 'av-c': 80, 'av-d': 80}
 cache = {}
 def img(k):
@@ -108,6 +111,19 @@ for m in re.finditer(r'<!--@([\w-]+)-->(.*?)(?=<!--@|\Z)', raw, re.S):
 P['citation-sans-bouton'] = re.sub(r'\s*<a class="bouton-principal bouton-petit" href="#temoignage">.*?</a>', '', P['citation'], flags=re.S).replace('grid-template-columns', 'x')
 P['cta-landing'] = P['cta'].replace('href="#contact"', 'href="#landing-rdv"')
 
+def verre(texte):
+    # « 87 % » ou « 2 500+ » en chiffres en verre ; le texte réel reste lu par les lecteurs d'écran.
+    noms = {'+': 'nplus', '%': 'npourcent', 'k': 'nk', 'M': 'nM'}
+    imgs = ''
+    for c in texte:
+        if c.isdigit():
+            imgs += f'<img src="{img("n" + c)}" alt="" height="60">'
+        elif c in noms:
+            imgs += f'<img src="{img(noms[c])}" alt="" height="60">'
+        elif c in ' \u00a0\u202f':
+            imgs += '<i class="espace-verre"></i>'
+    return f'<span class="chiffre-verre" aria-hidden="true">{imgs}</span><span class="sr">{html.escape(texte)}</span>'
+
 def fill(t, page):
     for _ in range(4):
         t = t.replace('{{page}}', page)
@@ -118,6 +134,8 @@ def fill(t, page):
         t = re.sub(r'\{\{art:(\d)\}\}', lambda m: art_card(int(m.group(1)), 'h2'), t)
         t = re.sub(r'\{\{art3:(\d)\}\}', lambda m: art_card(int(m.group(1)), 'h3'), t)
         t = re.sub(r'\{\{logo:([^}]+)\}\}', lambda m: logo(m.group(1)), t)
+        t = re.sub(r'\{\{verre:([^}]+)\}\}', lambda m: verre(m.group(1)), t)
+        t = t.replace('{{logos-defile}}', '<div class="bande-logos" aria-label="Ils nous font confiance"><div class="piste-logos">' + logos6() + '</div><div class="piste-logos" aria-hidden="true">' + logos6().replace(' alt="', ' data-alt="').replace('<img ', '<img alt="" ') + '</div></div>')
         t = t.replace('{{logos}}', P['logos']).replace('{{logos6}}', logos6())
         t = t.replace('{{sommaire}}', SOMMAIRE).replace('{{partage}}', partage()).replace('{{resumer}}', RESUMER)
         for k, v in P.items():

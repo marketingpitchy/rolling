@@ -20,34 +20,28 @@
 </main>
 {{pied}}
 
-<!--@page temoignage|Témoignage (cas client)-->
+<!--@page temoignage|Témoignage (cas client, complet)-->
 {{entete}}
 <main id="contenu-temoignage">
   <article>
-    <section class="section" style="--hero-haut:72px;padding-bottom:56px" aria-labelledby="h1-cas">
+    <section class="section" style="--hero-haut:72px;padding-bottom:48px" aria-labelledby="h1-temoignage">
       <div class="halo-lilas" aria-hidden="true" style="right:-360px;top:-360px"></div>
       <div class="conteneur">
         <nav class="ariane" aria-label="Fil d'Ariane"><ol><li><a href="#accueil-placeholder">Accueil</a></li><li><a href="#temoignages">Témoignages</a></li><li aria-current="page">Groupement Mousquetaires</li></ol></nav>
-        <div class="rangee" style="margin-top:28px"><span class="etiquette-metier-orange"><span class="point"></span>Com interne · RH · Formation</span></div>
-        <h1 id="h1-cas" class="titre-lg" style="margin-top:22px;max-width:980px">Groupement Mousquetaires&nbsp;: l'expertise vidéo <span class="degrade-humain">qui manquait à l'équipe SIRH.</span></h1>
+        <div class="rangee" style="margin-top:28px;gap:14px"><span class="tuile-logo cas-logo"><img src="{{logo:Groupement Mousquetaires}}" alt="Groupement Mousquetaires" height="40"></span><span class="etiquette-metier-orange"><span class="point"></span>Com interne · RH · Formation</span></div>
+        <h1 id="h1-temoignage" class="titre-lg" style="margin-top:22px;max-width:980px">Groupement Mousquetaires&nbsp;: l'expertise vidéo <span class="degrade-humain">qui manquait à l'équipe SIRH.</span></h1>
+        <p class="texte-intro" style="margin-top:20px;max-width:760px">[Texte à compléter] En deux phrases : qui ils sont, ce que nous avons fait ensemble.</p>
       </div>
     </section>
-    <section class="section" style="padding-top:0" aria-label="Le témoignage">
-      <div class="conteneur">{{citation-sans-bouton}}</div>
-      <div class="conteneur" style="display:grid;grid-template-columns:300px minmax(0,1fr);gap:48px;margin-top:64px;align-items:start" id="cas-grille">
-        <div class="carte-pleine">
-          <div class="tuile-logo" style="min-height:96px;background:var(--blanc-chaud)"><img src="{{logo:Groupement Mousquetaires}}" alt="Groupement Mousquetaires" height="56" style="height:56px"></div>
-          <h2 id="cas-fiche" class="label" style="margin-top:22px">Le projet</h2>
-          <dl class="pile" style="gap:12px;margin-top:12px">
-            <div><dt class="texte-petit">Équipe</dt><dd style="font-weight:700">SIRH</dd></div>
-            <div><dt class="texte-petit">Contenus de départ</dt><dd style="font-weight:700">[À compléter]</dd></div>
-            <div><dt class="texte-petit">Vidéos produites</dt><dd style="font-weight:700">[À compléter]</dd></div>
-          </dl>
-        </div>
-        <div class="pile" style="gap:40px">
-          <div><h2 class="titre-sm">Le contexte.</h2><p class="texte" style="margin-top:14px">[Texte à compléter] L'équipe SIRH devait expliquer un nouvel outil à des milliers de collaborateurs, sans équipe vidéo en interne.</p></div>
-          <div><h2 class="titre-sm">Notre accompagnement.</h2><ul class="liste-coches" style="margin-top:18px"><li class="ligne-coche">{{coche}}<span class="texte">L'expression des besoins, avec votre chef de projet dédié</span></li><li class="ligne-coche">{{coche}}<span class="texte">Le scénario et la direction artistique, à votre charte</span></li><li class="ligne-coche">{{coche}}<span class="texte">La production et la livraison, tous formats</span></li></ul></div>
-          <div><h2 class="titre-sm">Les vidéos.</h2><div class="grille-2" style="margin-top:22px">{{rea3:groupama}}{{rea3:article}}</div></div>
+    <section class="section section-serree" style="padding-top:0" aria-labelledby="chiffres-temoignage"><div class="conteneur"><h2 id="chiffres-temoignage" class="label label-violet" style="margin-bottom:18px">En chiffres</h2><div class="plaque-chiffres plaque-libre"><div class="chiffre-cle"><p class="valeur">{{verre:13}}</p><p class="texte-petit">vidéos produites [à compléter]</p></div><div class="chiffre-cle"><p class="valeur">{{verre:87 %}}</p><p class="texte-petit">des collaborateurs ont vu la vidéo jusqu’au bout [à compléter]</p></div><div class="chiffre-cle"><p class="valeur">{{verre:3}}</p><p class="texte-petit">mois de projet [à compléter]</p></div><div class="chiffre-cle"><p class="valeur">{{verre:2 500+}}</p><p class="texte-petit">collaborateurs formés [à compléter]</p></div><div class="chiffre-cle"><p class="valeur">{{verre:4}}</p><p class="texte-petit">langues [à compléter]</p></div></div></div></section>
+    <section class="section" style="padding-top:32px" aria-label="Le cas client">
+      <div class="conteneur cas-grille">
+        <figure class="carte-verre temoin temoin-une cas-citation"><span class="temoin-guillemet" aria-hidden="true">“</span><blockquote><p>On n'avait pas la bande passante, et on n'avait pas l'expertise. […] L'équipe Rolling nous a tout de suite rassuré sur leur accompagnement sur mesure, de l'expression des besoins jusqu'à la livraison des vidéos.</p></blockquote><figcaption class="temoin-auteur"><img class="portrait portrait-petit" src="{{img:julie}}" alt="" width="56" height="56"><p class="texte-petit"><strong>Julie Charlemagne</strong><br>Responsable Fonctionnel SIRH, Groupement Mousquetaires</p></figcaption></figure>
+        <div class="pile cas-recit" style="gap:44px">
+          <div class="apparait"><h2 class="titre-sm">Le contexte.</h2><p class="texte" style="margin-top:14px">[Texte à compléter] L'équipe SIRH devait expliquer un nouvel outil à des milliers de collaborateurs, sans équipe vidéo en interne.</p></div>
+          <div class="apparait"><h2 class="titre-sm">Leur besoin.</h2><p class="texte" style="margin-top:14px">[Texte à compléter] Pourquoi ils ont fait appel à nous : pas le temps, pas l'expertise, un délai court, des contenus trop longs que personne ne lisait…</p></div>
+          <div class="apparait"><h2 class="titre-sm">Notre accompagnement.</h2><ul class="liste-coches" style="margin-top:18px"><li class="ligne-coche">{{coche}}<span class="texte">L'expression des besoins, avec votre chef de projet dédié</span></li><li class="ligne-coche">{{coche}}<span class="texte">Le scénario et la direction artistique, à votre charte</span></li><li class="ligne-coche">{{coche}}<span class="texte">La production et la livraison, tous formats</span></li></ul></div>
+          <div class="apparait"><h2 class="titre-sm">Les vidéos.</h2><div class="grille-2" style="margin-top:22px">{{rea3:groupama}}{{rea3:article}}</div></div>
         </div>
       </div>
     </section>
@@ -55,3 +49,34 @@
   {{cta}}
 </main>
 {{pied}}
+
+<!--@page temoignage-court|Témoignage (sans chiffres ni vidéo)-->
+{{entete}}
+<main id="contenu-temoignage-court">
+  <article>
+    <section class="section" style="--hero-haut:72px;padding-bottom:48px" aria-labelledby="h1-temoignage-court">
+      <div class="halo-lilas" aria-hidden="true" style="right:-360px;top:-360px"></div>
+      <div class="conteneur">
+        <nav class="ariane" aria-label="Fil d'Ariane"><ol><li><a href="#accueil-placeholder">Accueil</a></li><li><a href="#temoignages">Témoignages</a></li><li aria-current="page">SNCF</li></ol></nav>
+        <div class="rangee" style="margin-top:28px;gap:14px"><span class="tuile-logo cas-logo"><img src="{{logo:SNCF}}" alt="SNCF" height="40"></span><span class="etiquette-metier-orange"><span class="point"></span>Communication interne</span></div>
+        <h1 id="h1-temoignage-court" class="titre-lg" style="margin-top:22px;max-width:980px">SNCF&nbsp;: [titre du cas] <span class="degrade-humain">[en une phrase].</span></h1>
+        <p class="texte-intro" style="margin-top:20px;max-width:760px">[Texte à compléter] Ce cas n'a ni chiffres clés ni vidéo diffusable : la page reste équilibrée.</p>
+      </div>
+    </section>
+    
+    <section class="section" style="padding-top:0" aria-label="Le cas client">
+      <div class="conteneur cas-grille">
+        <figure class="carte-verre temoin temoin-une cas-citation"><span class="temoin-guillemet" aria-hidden="true">“</span><blockquote><p>[Citation à ajouter : 2 à 3 phrases, mot pour mot.]</p></blockquote><figcaption class="temoin-auteur"><span class="portrait portrait-petit portrait-initiales" aria-hidden="true">PN</span><p class="texte-petit"><strong>[Prénom Nom]</strong><br>[Poste], SNCF</p></figcaption></figure>
+        <div class="pile cas-recit" style="gap:44px">
+          <div class="apparait"><h2 class="titre-sm">Le contexte.</h2><p class="texte" style="margin-top:14px">[Texte à compléter] Le contexte.</p></div>
+          <div class="apparait"><h2 class="titre-sm">Leur besoin.</h2><p class="texte" style="margin-top:14px">[Texte à compléter] Leur besoin : pourquoi ils ont fait appel à nous.</p></div>
+          <div class="apparait"><h2 class="titre-sm">Notre accompagnement.</h2><ul class="liste-coches" style="margin-top:18px"><li class="ligne-coche">{{coche}}<span class="texte">[Étape 1 de l'accompagnement]</span></li><li class="ligne-coche">{{coche}}<span class="texte">[Étape 2]</span></li><li class="ligne-coche">{{coche}}<span class="texte">[Étape 3]</span></li></ul></div>
+          
+        </div>
+      </div>
+    </section>
+  </article>
+  {{cta}}
+</main>
+{{pied}}
+
