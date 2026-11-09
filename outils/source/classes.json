@@ -20,6 +20,11 @@
           "css": "padding: 0 0 104px; @media(--tablet) { padding: 0 0 72px; } @media(--mobile) { padding: 0 0 72px; }"
         },
         {
+          "label": "section-finale",
+          "description": "À ajouter à une section sombre : appel final, grandes marges, tout centré.",
+          "css": "padding: 170px 0 180px; text-align: center; background: #0F0F12; @media(--tablet) { padding: 120px 0 130px; } @media(--mobile) { padding: 96px 0 104px; }"
+        },
+        {
           "label": "section-sombre",
           "description": "Fond nuit. Les textes, cartes en verre, boutons et étiquettes à l'intérieur passent seuls en version sombre.",
           "css": "color: var(--blanc-chaud); background: linear-gradient(180deg, var(--nuit) 0%, var(--encre) 100%); --rl-texte: #FAF9F7; --rl-paragraphe: #C9C3DE; --rl-legende: #B6B0CC; --rl-accent: #C4B5FD; --rl-filet: rgba(255,255,255,0.12); --rl-degrade: linear-gradient(95deg, #C9BBFF 0%, #EBB0F2 45%, #FFA27A 100%); --rl-verre-fond: radial-gradient(70% 50% at 18% 0%, rgba(255,255,255,0.14), rgba(255,255,255,0) 72%), linear-gradient(150deg, rgba(255,255,255,0.09) 0%, rgba(255,255,255,0.03) 60%, rgba(255,255,255,0.06) 100%); --rl-verre-ombre: inset 0 1px 0 rgba(255,255,255,0.18), 0 40px 90px -46px rgba(0,0,0,0.8); --rl-verre-bord: linear-gradient(140deg, rgba(255,255,255,0.5), rgba(255,255,255,0.06) 32%, rgba(196,181,253,0.12) 62%, rgba(255,162,122,0.45)); --rl-bouton-fond: #FF8A5B; --rl-bouton-texte: #0F0F12; --rl-bouton-ombre: 0 18px 44px -14px rgba(255,138,91,0.6); --rl-verre-bouton-fond: rgba(255,255,255,0.1); --rl-verre-bouton-texte: #FFFFFF; --rl-verre-bouton-ombre: inset 0 1px 0 rgba(255,255,255,0.25), inset 0 0 0 1px rgba(255,255,255,0.14); --rl-etiquette-texte: #E9E2FF; --rl-etiquette-fond: linear-gradient(170deg, rgba(255,255,255,0.18), rgba(255,255,255,0.05)); --rl-etiquette-ombre: inset 0 1px 0 rgba(255,255,255,0.4), inset 0 0 0 1px rgba(255,255,255,0.12); --rl-focus: #C4B5FD;"
@@ -140,6 +145,21 @@
           "css": "display: block; font-family: Bricolage Grotesque; font-size: 23px; line-height: 1.2; letter-spacing: -0.035em; font-weight: 650; color: var(--rl-texte, var(--encre)); & em, & i { font-style: normal; color: var(--rl-accent, #5B3BEA); }"
         },
         {
+          "label": "titre-question",
+          "description": "Question de FAQ (20 px), précédée d'un point de couleur.",
+          "css": "position: relative; display: block; font-family: Bricolage Grotesque; font-size: 20px; line-height: 1.3; font-weight: 650; letter-spacing: -0.03em; color: var(--rl-texte, var(--encre)); &::before { content: ''; position: absolute; left: -30px; top: 6px; width: 12px; height: 12px; border-radius: 50%; background: var(--rl-point, #3434E0); box-shadow: 0 0 0 5px var(--rl-point-halo, rgba(52,52,224,0.14)); } @media(--mobile) { font-size: 18px; &::before { left: -26px; top: 5px; } }"
+        },
+        {
+          "label": "titre-souligne",
+          "description": "À ajouter à un grand titre : la partie en italique (dégradé) est soulignée à la main en orange.",
+          "css": "& em, & i { position: relative; display: inline-block; padding-bottom: 0.08em; } & em::after, & i::after { content: ''; position: absolute; left: 0; right: 0; bottom: -14px; height: 22px; pointer-events: none; background: url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 22' preserveAspectRatio='none' fill='none' stroke='%23FF8A5B' stroke-linecap='round'%3E%3Cpath d='M4 15 C 70 5, 190 3, 296 10' stroke-width='5'/%3E%3Cpath d='M40 20 C 110 14, 200 13, 262 16' stroke-width='3' opacity='0.55'/%3E%3C/svg%3E\") center / 100% 100% no-repeat; }"
+        },
+        {
+          "label": "texte-appel",
+          "description": "Phrase d'un bandeau d'appel (20 px). Italique = violet.",
+          "css": "display: block; font-family: Bricolage Grotesque; font-size: 20px; line-height: 1.3; font-weight: 650; letter-spacing: -0.03em; color: var(--rl-texte, var(--encre)); & em, & i { font-style: normal; color: var(--rl-accent, #5B3BEA); }"
+        },
+        {
           "label": "chapo",
           "description": "Chapô sous le H1 (22 px, Bricolage). Souligné = mot écrit et souligné à la main (une fois par page).",
           "css": "display: block; font-family: Bricolage Grotesque; font-size: clamp(18px, 1.65vw, 22px); line-height: 1.45; letter-spacing: -0.02em; font-weight: 600; color: var(--rl-texte, var(--encre)); & u { font-family: Caveat; font-weight: 700; font-size: 1.22em; line-height: 1; letter-spacing: 0; color: #D9531F; text-decoration: none; padding-bottom: 6px; background: url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 22' preserveAspectRatio='none'%3E%3Cpath d='M4 15 C 70 5, 190 3, 296 10' fill='none' stroke='%23FF8A5B' stroke-width='5' stroke-linecap='round'/%3E%3C/svg%3E\") left bottom / 100% 10px no-repeat; }"
@@ -203,6 +223,31 @@
           "label": "poste-membre",
           "description": "Intitulé de poste sous le prénom (capitales aux mots principaux).",
           "css": "display: block; font-family: Hanken Grotesk; font-size: 14px; line-height: 1.4; color: var(--rl-legende, var(--legende));"
+        },
+        {
+          "label": "prix",
+          "description": "Prix d'une formule (46 px). « / mois » se met en petit : sélectionnez-le et appliquez la mise en forme « span » (code).",
+          "css": "display: block; font-family: Bricolage Grotesque; font-size: 46px; line-height: 1.1; font-weight: 650; letter-spacing: -0.04em; color: var(--rl-texte, var(--encre)); & span { font-family: Hanken Grotesk; font-size: 14px; font-weight: 600; letter-spacing: 0; color: var(--rl-legende, var(--legende)); -webkit-text-fill-color: var(--rl-legende, var(--legende)); } @media(--mobile) { font-size: 40px; }"
+        },
+        {
+          "label": "prix-degrade",
+          "description": "À ajouter à « prix » : chiffres en dégradé clair (formule mise en avant, fond sombre).",
+          "css": "background-image: linear-gradient(95deg, #C9BBFF 0%, #EBB0F2 45%, #FFA27A 100%); -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent;"
+        },
+        {
+          "label": "unite-chiffre",
+          "description": "Unité après un chiffre en verre (« ans »), en violet.",
+          "css": "display: block; padding-bottom: 7px; font-family: Bricolage Grotesque; font-size: 26px; line-height: 1; font-weight: 650; letter-spacing: -0.04em; color: var(--rl-accent, #5B3BEA);"
+        },
+        {
+          "label": "resume-offre",
+          "description": "Résumé d'une formule en une ligne, sur fond lilas.",
+          "css": "display: block; padding: 8px 10px; border-radius: 12px; font-family: Hanken Grotesk; font-size: 13px; line-height: 1.35; font-weight: 600; color: #4A2BB8; background: #EDE6FF;"
+        },
+        {
+          "label": "resume-offre-sombre",
+          "description": "À ajouter à « resume-offre » : version sur fond sombre.",
+          "css": "color: #ECE8F7; background: rgba(255,255,255,0.08); box-shadow: inset 0 0 0 1px rgba(255,255,255,0.14);"
         },
         {
           "label": "texte-legende",
@@ -350,6 +395,11 @@
           "css": "display: inline-flex; width: fit-content; align-items: center; gap: 11px; padding: 8px 20px 8px 8px; border-radius: 999px; font-family: Hanken Grotesk; font-size: 15px; line-height: 1.2; font-weight: 700; color: var(--rl-texte, #0F0F12); background: var(--rl-verre-bouton-fond, rgba(255,255,255,0.7)); box-shadow: var(--rl-verre-bouton-ombre, inset 0 1px 0 #FFFFFF, inset 0 0 0 1px rgba(91,59,234,0.14)); background-color: transparent;"
         },
         {
+          "label": "badge-offre",
+          "description": "Badge pêche posé sur le bord haut d'une carte (« Le plus complet »).",
+          "css": "position: absolute; z-index: 3; top: -14px; right: 30px; width: fit-content; padding: 6px 14px; border-radius: 999px; font-family: Hanken Grotesk; font-size: 12px; line-height: 1.2; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: #0F0F12; background: #FFD1BF; @media(--mobile) { right: 18px; padding: 5px 10px; }"
+        },
+        {
           "label": "pastille-bleue",
           "css": "&::before { background: #3434E0; box-shadow: 0 0 0 4px rgba(52,52,224,0.16); }",
           "description": "À ajouter à « pastille » : point bleu (IA, marketing)."
@@ -374,6 +424,11 @@
           "label": "pilule-flux",
           "description": "Pilule claire en haut du schéma (« Vos contenus & vos briefs »), avec la flèche en pointillés vers le centre. Cachée sous 980 px.",
           "css": "position: relative; display: inline-flex; width: fit-content; align-items: center; gap: 9px; margin-bottom: 46px; padding: 9px 16px; border-radius: 999px; white-space: nowrap; font-family: Hanken Grotesk; font-size: 14px; line-height: 1.2; font-weight: 700; color: #1B1820; background: linear-gradient(165deg, rgba(255,255,255,0.96) 0%, rgba(255,255,255,0.82) 100%); box-shadow: inset 0 1px 0 #FFFFFF, 0 10px 26px -14px rgba(0,0,0,0.6); &::after { content: ''; position: absolute; left: 50%; top: 100%; width: 14px; height: 86px; margin-left: -7px; pointer-events: none; background: url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 9' fill='none' stroke='%23C4B5FD' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M1.5 1.5 L7 7 L12.5 1.5'/%3E%3C/svg%3E\") center bottom / 12px 8px no-repeat, repeating-linear-gradient(180deg, #C4B5FD 0 6px, rgba(0,0,0,0) 6px 12px) center top / 2px calc(100% - 4px) no-repeat; } @media(--tablet) { display: none; }"
+        },
+        {
+          "label": "pilule-label",
+          "description": "Pilule en verre clair avec un point violet et un libellé en capitales (« Direction artistique »).",
+          "css": "display: inline-flex; width: fit-content; align-items: center; gap: 9px; padding: 8px 15px 8px 12px; border-radius: 999px; font-family: Hanken Grotesk; font-size: 12px; line-height: 1.2; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #4A2BB8; background: linear-gradient(165deg, rgba(255,255,255,0.86) 0%, rgba(255,255,255,0.5) 100%); box-shadow: inset 0 1px 0 #FFFFFF, inset 0 0 0 1px rgba(91,59,234,0.14), 0 10px 26px -18px rgba(70,40,150,0.4); &::before { content: ''; flex-shrink: 0; width: 8px; height: 8px; border-radius: 50%; background: #5B3BEA; box-shadow: 0 0 0 4px rgba(91,59,234,0.16); }"
         },
         {
           "label": "groupe-choix",
@@ -419,6 +474,11 @@
           "label": "carte-humain",
           "description": "À ajouter à une carte en verre sombre : carte de l'équipe créa, lueur pêche en haut à droite.",
           "css": "padding: 30px 30px 24px; border-radius: 32px; gap: 20px; background: radial-gradient(90% 34% at 86% 0%, rgba(255,138,91,0.32), rgba(255,138,91,0) 70%), linear-gradient(200deg, rgba(255,138,91,0.15) 0%, rgba(255,255,255,0.04) 58%, rgba(255,209,191,0.08) 100%); @media(--mobile) { padding: 24px 20px 18px; }"
+        },
+        {
+          "label": "carte-contact",
+          "description": "Pilule en verre clair qui présente une personne : petite photo ronde, prénom et rôle.",
+          "css": "display: inline-flex; width: fit-content; flex-direction: row; align-items: center; gap: 14px; padding: 9px 22px 9px 9px; border-radius: 999px; background: linear-gradient(165deg, rgba(255,255,255,0.86) 0%, rgba(255,255,255,0.5) 100%); backdrop-filter: blur(20px) saturate(180%); box-shadow: inset 0 1px 0 #FFFFFF, inset 0 0 0 1px rgba(255,255,255,0.5), 0 22px 44px -26px rgba(70,40,150,0.45);"
         },
         {
           "label": "halo-lilas",
@@ -472,6 +532,26 @@
           "css": "position: relative; display: flex; flex-direction: column; gap: 14px; padding: 28px; border-radius: 26px; background: #FFFFFF; box-shadow: 0 1px 2px rgba(15,15,18,0.05), 0 24px 50px -30px rgba(76,48,170,0.3);"
         },
         {
+          "label": "carte-prix",
+          "description": "À ajouter à « carte-pleine » : carte d'une formule (nom, prix, résumé, coches).",
+          "css": "padding: 34px; gap: 18px; @media(--mobile) { padding: 26px 22px; }"
+        },
+        {
+          "label": "carte-prix-sombre",
+          "description": "À ajouter à « carte-prix » avec « section-sombre » : formule mise en avant, fond nuit et lueur pêche.",
+          "css": "background: radial-gradient(90% 30% at 85% 0%, rgba(255,138,91,0.35), rgba(255,138,91,0) 70%), linear-gradient(180deg, #1C1730 0%, #0F0F12 100%);"
+        },
+        {
+          "label": "carte-promesses",
+          "description": "À ajouter à une carte en verre : bandeau pêche des promesses (« L'illimité qui tient ses promesses »).",
+          "css": "background: linear-gradient(120deg, rgba(255,241,231,0.95), rgba(255,224,206,0.7));"
+        },
+        {
+          "label": "carte-citation",
+          "description": "À ajouter à une carte en verre avec « citation » : grand encart de témoignage, lilas vers pêche.",
+          "css": "padding: 44px 48px; border-radius: 34px; background: radial-gradient(70% 60% at 10% 0%, rgba(255,255,255,0.95), rgba(255,255,255,0) 72%), linear-gradient(160deg, rgba(237,230,255,0.85) 0%, rgba(255,226,212,0.6) 100%); @media(--mobile) { padding: 28px 22px; border-radius: 28px; }"
+        },
+        {
           "label": "panneau",
           "description": "Panneau intérieur dans une carte (« Le constat »), rayon 18 px.",
           "css": "display: flex; flex-direction: column; gap: 8px; padding: 18px 20px; border-radius: 18px; background: rgba(255,255,255,0.72); box-shadow: inset 0 1px 0 #FFFFFF, 0 10px 30px -20px rgba(76,48,170,0.35);"
@@ -493,8 +573,13 @@
         },
         {
           "label": "carte-question",
-          "description": "À ajouter à « carte-verre » : question de FAQ.",
-          "css": "padding: 24px 28px; gap: 10px;"
+          "description": "À ajouter à « carte-verre » : question de FAQ (titre « titre-question » avec son point, puis la réponse).",
+          "css": "padding: 26px 30px 26px 60px; gap: 8px; @media(--mobile) { padding: 22px 20px 22px 46px; }"
+        },
+        {
+          "label": "carte-appel",
+          "description": "À ajouter à une carte en verre : bandeau d'appel, une phrase et un bouton côte à côte.",
+          "css": "flex-direction: row; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px; padding: 24px 30px;"
         },
         {
           "label": "citation",
@@ -603,6 +688,11 @@
           "css": "box-shadow: 0 0 0 3px rgba(255,255,255,0.26), 0 0 0 10px rgba(255,255,255,0.05), 0 26px 50px -24px rgba(0,0,0,0.85);"
         },
         {
+          "label": "portrait-moyen",
+          "description": "À ajouter à « portrait » : portrait de 96 px (témoignage).",
+          "css": "width: 96px; height: 96px; margin: 0; box-shadow: 0 0 0 5px rgba(255,255,255,0.8), 0 18px 34px -16px rgba(70,40,150,0.6);"
+        },
+        {
           "label": "membre-equipe",
           "description": "Un membre de l'équipe : portrait, prénom, poste, centrés. Se soulève au survol.",
           "css": "display: flex; flex-direction: column; align-items: center; gap: 0; padding: 0; text-align: center; transition: transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1); &:hover { transform: translateY(-5px); }"
@@ -678,6 +768,17 @@
           "label": "illustration-hub",
           "description": "Illustration centrale du schéma (« Votre espace projet »), avec sa marge d'ombre.",
           "css": "display: block; width: 348px; max-width: calc(100% + 48px); height: auto; margin: -24px;"
+        },
+        {
+          "label": "illustration-cadre",
+          "description": "Grande illustration (vidéo annotée…) avec sa marge d'ombre, sur toute la largeur de sa colonne.",
+          "css": "display: block; width: calc(100% + 64px); max-width: none; height: auto; margin: -32px;"
+        },
+        {
+          "label": "decor-flottant",
+          "description": "Décor en verre posé sur le bord droit d'une section (verre cannelé), légèrement penché. Caché sous 1200 px.",
+          "css": "position: absolute; z-index: 0; right: 3.5%; top: 30%; display: block; width: 270px; height: auto; pointer-events: none;",
+          "brut": "@media (max-width: 1199px) { display: none; }"
         },
         {
           "label": "icone-liste",
@@ -791,6 +892,11 @@
           "css": "display: flex; flex-direction: column; gap: 0; padding: 0; & > * + * { border-top: 1px solid var(--rl-filet-doux, rgba(255,255,255,0.07)); }"
         },
         {
+          "label": "liste-questions",
+          "description": "Liste de questions (FAQ) : cartes empilées ; la couleur du point change d'une question à l'autre.",
+          "css": "display: flex; flex-direction: column; gap: 14px; padding: 0; & > :nth-child(6n+2) { --rl-point: #FFA27A; --rl-point-halo: rgba(255,162,122,0.2); } & > :nth-child(6n+3) { --rl-point: #FF8A5B; --rl-point-halo: rgba(255,138,91,0.18); } & > :nth-child(6n+4) { --rl-point: #8B5CF6; --rl-point-halo: rgba(139,92,246,0.16); } & > :nth-child(6n+5) { --rl-point: #5B3BEA; --rl-point-halo: rgba(91,59,234,0.14); } & > :nth-child(6n) { --rl-point: #0F0F12; --rl-point-halo: rgba(15,15,18,0.1); }"
+        },
+        {
           "label": "ligne-icone",
           "description": "Une ligne de liste à icône : l'icône, puis le texte.",
           "css": "display: flex; flex-direction: row; align-items: center; gap: 12px; padding: 7px 0;"
@@ -852,6 +958,29 @@
           "description": "À ajouter à une section sombre : halo bleu à gauche, halo pêche à droite (section IA). Ils dérivent lentement.",
           "css": "&::before { position: relative; top: auto; right: auto; bottom: auto; left: auto; height: auto; opacity: 1; mix-blend-mode: normal; border: 0; content: ''; position: absolute; z-index: -1; width: 820px; height: 820px; border-radius: 50%; pointer-events: none; left: -12%; top: 8%; background: radial-gradient(closest-side, rgba(52,52,224,0.5), rgba(15,15,18,0) 100%); } &::after { content: ''; position: absolute; z-index: -1; width: 860px; height: 860px; border-radius: 50%; pointer-events: none; right: -14%; top: 18%; background: radial-gradient(closest-side, rgba(255,138,91,0.3), rgba(15,15,18,0) 100%); }",
           "brut": "&::before, &::after { animation: rl-derive 20s ease-in-out infinite; } &::after { animation-delay: -9s; }"
+        },
+        {
+          "label": "halos-chauds",
+          "description": "À ajouter à une section chaude : halo pêche en haut à droite, halo orange doux à gauche. Ils dérivent lentement.",
+          "css": "&::before { position: relative; top: auto; right: auto; bottom: auto; left: auto; height: auto; opacity: 1; mix-blend-mode: normal; border: 0; content: ''; position: absolute; z-index: -1; width: 900px; height: 900px; border-radius: 50%; pointer-events: none; right: -12%; top: -8%; background: radial-gradient(closest-side, rgba(255,162,122,0.5), rgba(255,209,191,0.34) 50%, rgba(255,241,231,0) 100%); } &::after { content: ''; position: absolute; z-index: -1; width: 820px; height: 820px; border-radius: 50%; pointer-events: none; left: -16%; top: 38%; background: radial-gradient(closest-side, rgba(255,196,150,0.42), rgba(255,241,231,0) 100%); }",
+          "brut": "&::before, &::after { animation: rl-derive 20s ease-in-out infinite; } &::after { animation-delay: -8s; }"
+        },
+        {
+          "label": "halos-offre",
+          "description": "À ajouter à une section claire : halo lilas en haut à gauche, halo pêche en bas à droite. Ils dérivent lentement.",
+          "css": "&::before { position: relative; top: auto; right: auto; bottom: auto; left: auto; height: auto; opacity: 1; mix-blend-mode: normal; border: 0; content: ''; position: absolute; z-index: -1; width: 860px; height: 860px; border-radius: 50%; pointer-events: none; left: -380px; top: -200px; background: radial-gradient(closest-side, rgba(196,181,253,0.5), rgba(196,181,253,0)); } &::after { content: ''; position: absolute; z-index: -1; width: 860px; height: 860px; border-radius: 50%; pointer-events: none; right: -420px; bottom: -300px; opacity: 0.6; background: radial-gradient(closest-side, rgba(255,162,122,0.5), rgba(255,162,122,0)); }",
+          "brut": "&::before, &::after { animation: rl-derive 20s ease-in-out infinite; }"
+        },
+        {
+          "label": "halo-lilas-doux",
+          "description": "À ajouter à une section claire : halo lilas doux au centre (FAQ).",
+          "css": "&::before { position: relative; top: auto; right: auto; bottom: auto; left: auto; height: auto; opacity: 1; mix-blend-mode: normal; border: 0; content: ''; position: absolute; z-index: -1; left: 50%; top: 20%; width: 900px; height: 700px; margin-left: -450px; border-radius: 50%; pointer-events: none; background: radial-gradient(closest-side, rgba(196,181,253,0.4), rgba(250,249,247,0) 100%); }"
+        },
+        {
+          "label": "decors-final",
+          "description": "À ajouter à l'appel final : sphère bleue en bas à gauche (grands écrans seulement).",
+          "css": "&::after { content: ''; position: absolute; z-index: 0; left: 9%; bottom: 16%; width: 150px; height: 150px; border-radius: 50%; pointer-events: none; background: radial-gradient(circle at 34% 28%, #A9ABFF 0%, #5C5EF4 22%, #3434E0 46%, #1F1FA6 78%, #13136E 100%); box-shadow: 0 30px 60px -20px rgba(52,52,224,0.6); }",
+          "brut": "@media (max-width: 1199px) { &::after { display: none; } }"
         },
         {
           "label": "halo-centre",

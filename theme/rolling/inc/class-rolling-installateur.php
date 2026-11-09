@@ -281,9 +281,17 @@ class Rolling_Installateur {
 			}
 		}
 
-		if ( $ajoutees || $modifiees ) {
-			$nouvel_ordre = self::ordre_classes( $ordre, array_merge( $ids_theme, $obsoletes ), array(), $actuels );
+		// Ordre : celui des données du thème (les premières l'emportent), après les classes de la cliente.
+		// Il est appliqué même si aucune classe n'a changé : une priorité peut évoluer d'une version à l'autre.
+		$presentes    = array_values(
+			array_filter(
+				array_merge( $ids_theme, $obsoletes ),
+				fn( $id ) => isset( $actuels[ $id ] ) || in_array( $id, $ajoutees, true )
+			)
+		);
+		$nouvel_ordre = self::ordre_classes( $ordre, $presentes, array(), $actuels );
 
+		if ( $ajoutees || $modifiees || $nouvel_ordre !== $ordre ) {
 			$depot->apply_changes(
 				$touchees,
 				array(

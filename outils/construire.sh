@@ -25,6 +25,7 @@ preparer() {
 	dc cp "$ICI/construire-styles.php" cli:/tmp/rolling/ >/dev/null 2>&1
 	dc cp "$ICI/construire-blocs.php" cli:/tmp/rolling/ >/dev/null 2>&1
 	dc cp "$THEME/data/classes.json" cli:/tmp/rolling/data/classes.json >/dev/null 2>&1
+	dc cp "$THEME/data/blocs/." cli:/tmp/rolling/data/blocs/ >/dev/null 2>&1
 	dc exec -T -u 0 cli chown -R 33:33 /tmp/rolling
 }
 

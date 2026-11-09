@@ -14,7 +14,7 @@ $suivi   = get_option( 'rolling_modeles', array() );
 $contenu = array();
 
 foreach ( $cles as $cle ) {
-	if ( empty( $suivi[ $cle ]['post_id'] ) ) {
+	if ( empty( $suivi[ $cle ]['post_id'] ) || 0 === strpos( $cle, '99-' ) ) {
 		continue;
 	}
 	$doc     = \Elementor\Plugin::$instance->documents->get( $suivi[ $cle ]['post_id'], false );

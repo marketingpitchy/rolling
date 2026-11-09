@@ -1,0 +1,175 @@
+{
+ "cle": "12-faq",
+ "titre": "Rolling · 12 FAQ",
+ "type": "e-flexbox",
+ "composition": {
+  "xml_structure": "<e-flexbox configuration-id=\"FAQ\"><e-flexbox configuration-id=\"FAQ · contenu\"><e-flexbox configuration-id=\"FAQ · en-tête\"><e-flexbox configuration-id=\"FAQ · repère\"><e-paragraph configuration-id=\"FAQ · timecode\"></e-paragraph><e-paragraph configuration-id=\"FAQ · sur-titre\"></e-paragraph></e-flexbox><e-heading configuration-id=\"FAQ · titre\"></e-heading></e-flexbox><e-flexbox configuration-id=\"FAQ · questions\"><e-flexbox configuration-id=\"Question 1\"><e-heading configuration-id=\"Question 1 · titre\"></e-heading><e-paragraph configuration-id=\"Question 1 · réponse\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Question 2\"><e-heading configuration-id=\"Question 2 · titre\"></e-heading><e-paragraph configuration-id=\"Question 2 · réponse\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Question 3\"><e-heading configuration-id=\"Question 3 · titre\"></e-heading><e-paragraph configuration-id=\"Question 3 · réponse\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Question 4\"><e-heading configuration-id=\"Question 4 · titre\"></e-heading><e-paragraph configuration-id=\"Question 4 · réponse\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Question 5\"><e-heading configuration-id=\"Question 5 · titre\"></e-heading><e-paragraph configuration-id=\"Question 5 · réponse\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Question 6\"><e-heading configuration-id=\"Question 6 · titre\"></e-heading><e-paragraph configuration-id=\"Question 6 · réponse\"></e-paragraph></e-flexbox></e-flexbox><e-flexbox configuration-id=\"FAQ · appel\"><e-paragraph configuration-id=\"FAQ · appel · texte\"></e-paragraph><e-button configuration-id=\"FAQ · appel · bouton\"></e-button></e-flexbox></e-flexbox></e-flexbox>",
+  "element_config": {
+   "FAQ": {
+    "tag": "section"
+   },
+   "FAQ · timecode": {
+    "paragraph": "00:09"
+   },
+   "FAQ · sur-titre": {
+    "paragraph": "Les questions que vous nous posez"
+   },
+   "FAQ · titre": {
+    "tag": "h2",
+    "title": "Avant de dire <em>«&nbsp;trop beau pour être vrai&nbsp;»</em>"
+   },
+   "Question 1 · titre": {
+    "tag": "h3",
+    "title": "«&nbsp;Illimité&nbsp;», vraiment&nbsp;?"
+   },
+   "Question 1 · réponse": {
+    "paragraph": "Oui&nbsp;: nous ne comptons pas les vidéos. Nous traitons un projet à fond à la fois, puis nous enchaînons sur le suivant. C'est ce qui rend l'illimité possible, avec une qualité garantie sur chaque vidéo."
+   },
+   "Question 2 · titre": {
+    "tag": "h3",
+    "title": "La captation, vraiment offerte&nbsp;?"
+   },
+   "Question 2 · réponse": {
+    "paragraph": "Oui, avec la formule Création&nbsp;+&nbsp;Tournage. Nos équipes se déplacent partout en France pour filmer vos collaborateurs, vos événements et vos produits, un projet à la fois."
+   },
+   "Question 3 · titre": {
+    "tag": "h3",
+    "title": "Le meilleur de l'humain et de l'IA, concrètement&nbsp;?"
+   },
+   "Question 3 · réponse": {
+    "paragraph": "Nos IA accélèrent tout ce qui peut l'être&nbsp;: pistes créatives, voix off, sous-titres, traductions, déclinaisons. Nos créas gardent la direction artistique, l'animation à la main et la validation finale. C'est ce qui permet l'illimité, sans rien lâcher sur la qualité."
+   },
+   "Question 4 · titre": {
+    "tag": "h3",
+    "title": "Et nos nouveaux projets&nbsp;?"
+   },
+   "Question 4 · réponse": {
+    "paragraph": "Bien sûr. Lancements, événements, campagnes&nbsp;: tout nouveau projet entre dans le même flux, avec la même équipe et la même charte."
+   },
+   "Question 5 · titre": {
+    "tag": "h3",
+    "title": "Et si nous avons déjà nos propres images&nbsp;?"
+   },
+   "Question 5 · réponse": {
+    "paragraph": "Envoyez-nous vos rushs&nbsp;: leur montage entre dans l'illimité, dès la formule Création."
+   },
+   "Question 6 · titre": {
+    "tag": "h3",
+    "title": "Que devons-nous fournir&nbsp;?"
+   },
+   "Question 6 · réponse": {
+    "paragraph": "Vos contenus, vos idées de projets et votre charte graphique. Nous nous occupons de tout le reste, de la stratégie vidéo annuelle jusqu'à la livraison."
+   },
+   "FAQ · appel · texte": {
+    "paragraph": "Une autre question&nbsp;? <em>Nous y répondons en 30&nbsp;minutes.</em>"
+   },
+   "FAQ · appel · bouton": {
+    "text": "Réserver un échange",
+    "link": {
+     "destination": "/contact/"
+    }
+   }
+  },
+  "classes": {
+   "FAQ": [
+    "section",
+    "halo-lilas-doux"
+   ],
+   "FAQ · contenu": [
+    "conteneur",
+    "conteneur-etroit"
+   ],
+   "FAQ · en-tête": [
+    "entete-section"
+   ],
+   "FAQ · repère": [
+    "sur-titre"
+   ],
+   "FAQ · timecode": [
+    "timecode"
+   ],
+   "FAQ · titre": [
+    "titre-md"
+   ],
+   "FAQ · questions": [
+    "liste-questions"
+   ],
+   "Question 1": [
+    "carte-verre",
+    "carte-question"
+   ],
+   "Question 1 · titre": [
+    "titre-question"
+   ],
+   "Question 1 · réponse": [
+    "texte"
+   ],
+   "Question 2": [
+    "carte-verre",
+    "carte-question"
+   ],
+   "Question 2 · titre": [
+    "titre-question"
+   ],
+   "Question 2 · réponse": [
+    "texte"
+   ],
+   "Question 3": [
+    "carte-verre",
+    "carte-question"
+   ],
+   "Question 3 · titre": [
+    "titre-question"
+   ],
+   "Question 3 · réponse": [
+    "texte"
+   ],
+   "Question 4": [
+    "carte-verre",
+    "carte-question"
+   ],
+   "Question 4 · titre": [
+    "titre-question"
+   ],
+   "Question 4 · réponse": [
+    "texte"
+   ],
+   "Question 5": [
+    "carte-verre",
+    "carte-question"
+   ],
+   "Question 5 · titre": [
+    "titre-question"
+   ],
+   "Question 5 · réponse": [
+    "texte"
+   ],
+   "Question 6": [
+    "carte-verre",
+    "carte-question"
+   ],
+   "Question 6 · titre": [
+    "titre-question"
+   ],
+   "Question 6 · réponse": [
+    "texte"
+   ],
+   "FAQ · appel": [
+    "carte-verre",
+    "carte-appel"
+   ],
+   "FAQ · appel · texte": [
+    "texte-appel"
+   ],
+   "FAQ · appel · bouton": [
+    "bouton-principal",
+    "bouton-petit"
+   ]
+  },
+  "style": {
+   "FAQ · contenu": "display: flex; flex-direction: column; gap: 0;",
+   "FAQ · appel": "margin-top: 26px;"
+  }
+ },
+ "brut": {}
+}

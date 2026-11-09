@@ -128,6 +128,31 @@ $rang   = array_flip( array_column( json_decode( file_get_contents( dirname( $so
 foreach ( glob( $source . '/*.json' ) as $fichier ) {
 	$bloc = json_decode( file_get_contents( $fichier ), true );
 
+	// « Page complète » : les blocs déjà construits, à la suite (toujours refaite, même avec un filtre).
+	if ( ! empty( $bloc['assemble'] ) ) {
+		$contenu = array();
+
+		foreach ( $bloc['assemble'] as $cle ) {
+			$construit = json_decode( (string) file_get_contents( $sortie . '/' . $cle . '.json' ), true );
+			$contenu   = array_merge( $contenu, $construit['contenu'] ?? array() );
+		}
+
+		file_put_contents(
+			$sortie . '/' . $bloc['cle'] . '.json',
+			wp_json_encode(
+				array(
+					'cle'     => $bloc['cle'],
+					'titre'   => $bloc['titre'],
+					'type'    => $bloc['type'],
+					'contenu' => $contenu,
+				),
+				JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES
+			) . "\n"
+		);
+		echo 'Page complète : ' . count( $contenu ) . " sections.\n";
+		continue;
+	}
+
 	if ( $filtre && false === strpos( $bloc['cle'], $filtre ) ) {
 		continue;
 	}

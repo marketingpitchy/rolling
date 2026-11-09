@@ -1,0 +1,66 @@
+{
+ "cle": "13-final",
+ "titre": "Rolling · 13 Appel final",
+ "type": "e-flexbox",
+ "composition": {
+  "xml_structure": "<e-flexbox configuration-id=\"Appel final\"><e-image configuration-id=\"Final · verre cannelé\"></e-image><e-flexbox configuration-id=\"Final · contenu\"><e-heading configuration-id=\"Final · titre\"></e-heading><e-paragraph configuration-id=\"Final · texte\"></e-paragraph><e-flexbox configuration-id=\"Final · bouton\"><e-button configuration-id=\"Final · réserver\"></e-button></e-flexbox></e-flexbox></e-flexbox>",
+  "element_config": {
+   "Appel final": {
+    "_cssid": "contact",
+    "tag": "section"
+   },
+   "Final · verre cannelé": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/final-verre-cannele.webp"
+     },
+     "size": "medium_large"
+    }
+   },
+   "Final · titre": {
+    "tag": "h2",
+    "title": "Vos vidéos&nbsp;? Nous nous en occupons.<br><em>Sans limite.</em>"
+   },
+   "Final · texte": {
+    "paragraph": "30 minutes pour passer en revue vos contenus et vos projets. Vous repartez avec votre stratégie vidéo et vos 3&nbsp;premières vidéos à produire."
+   },
+   "Final · réserver": {
+    "text": "Réserver un échange",
+    "link": {
+     "destination": "/contact/"
+    }
+   }
+  },
+  "classes": {
+   "Appel final": [
+    "section",
+    "section-sombre",
+    "section-finale",
+    "halo-centre",
+    "decors-final"
+   ],
+   "Final · verre cannelé": [
+    "decor-flottant"
+   ],
+   "Final · contenu": [
+    "conteneur"
+   ],
+   "Final · titre": [
+    "titre-lg",
+    "titre-souligne"
+   ],
+   "Final · texte": [
+    "texte-intro"
+   ],
+   "Final · réserver": [
+    "bouton-soleil"
+   ]
+  },
+  "style": {
+   "Final · contenu": "display: flex; flex-direction: column; gap: 0; align-items: center; z-index: 1;",
+   "Final · texte": "margin-top: 34px; max-width: 600px;",
+   "Final · bouton": "display: flex; justify-content: center; margin-top: 38px; padding: 0;"
+  }
+ },
+ "brut": {}
+}

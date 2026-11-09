@@ -520,5 +520,59 @@
   "fichier": "ia-espace-projet.webp",
   "alt": "Votre espace projet : notre IA propose, nos créas corrigent. Vous suivez, échangez et validez.",
   "titre": "Schéma : votre espace projet"
+ },
+ {
+  "cle": "equipe-thomas",
+  "fichier": "equipe-thomas.jpg",
+  "alt": "Thomas, Directeur Artistique",
+  "titre": "Portrait : Thomas, Directeur Artistique"
+ },
+ {
+  "cle": "equipe-alex",
+  "fichier": "equipe-alex.jpg",
+  "alt": "Alex, Responsable Équipe Motion Design",
+  "titre": "Portrait : Alex, Responsable Équipe Motion Design"
+ },
+ {
+  "cle": "equipe-victor",
+  "fichier": "equipe-victor.jpg",
+  "alt": "Victor, Motion Designer",
+  "titre": "Portrait : Victor, Motion Designer"
+ },
+ {
+  "cle": "equipe-vincent",
+  "fichier": "equipe-vincent.jpg",
+  "alt": "Vincent, Cadreur",
+  "titre": "Portrait : Vincent, Cadreur"
+ },
+ {
+  "cle": "equipe-marion-t",
+  "fichier": "equipe-marion-t.jpg",
+  "alt": "Marion, Responsable Studio",
+  "titre": "Portrait : Marion, Responsable Studio"
+ },
+ {
+  "cle": "equipe-sophie",
+  "fichier": "equipe-sophie.jpg",
+  "alt": "Sophie, Chef de Projet",
+  "titre": "Portrait : Sophie, Chef de Projet"
+ },
+ {
+  "cle": "humain-direction",
+  "fichier": "humain-direction.webp",
+  "alt": "Une vidéo en motion 2D, « La semaine de 4 jours », annotée par le directeur artistique : titre et logo entourés.",
+  "titre": "Illustration : vidéo annotée par le directeur artistique"
+ },
+ {
+  "cle": "temoin-julie-charlemagne",
+  "fichier": "temoin-julie-charlemagne.jpg",
+  "alt": "Julie Charlemagne",
+  "titre": "Témoignage : Julie Charlemagne, Groupement Mousquetaires"
+ },
+ {
+  "cle": "final-verre-cannele",
+  "fichier": "final-verre-cannele.webp",
+  "alt": "",
+  "titre": "Décor : verre cannelé"
  }
 ]

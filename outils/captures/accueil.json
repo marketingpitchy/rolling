@@ -220,5 +220,17 @@
   "rang": 0,
   "fichier": "ia-espace-projet.png",
   "marge": 24
+ },
+ {
+  "selecteur": "#humain .lg",
+  "rang": 0,
+  "fichier": "humain-direction.png",
+  "marge": 32
+ },
+ {
+  "selecteur": "#contact .edge",
+  "rang": 0,
+  "fichier": "final-verre-cannele.png",
+  "marge": 40
  }
 ]

@@ -126,6 +126,17 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
 - Les classes **modificatrices** d'un `::before` (couleur d'un point) ne contiennent pas la remise à zéro (elle écrasait
   la taille posée par la classe de base).
 - `.e-con::before` reçoit aussi `width: 100%` d'Elementor : un `::before` calé par top/right/bottom/left pose `width: auto`.
+- Ordre des classes (priorité) : l'installateur le réapplique **même si aucune classe n'a changé** (bug corrigé en 0.2.0 :
+  une nouvelle priorité n'était pas prise en compte). Toute classe modificatrice va dans `$prioritaires`.
+- Illustrations de fausses interfaces (mails, cartes, schéma « espace projet », vignettes d'exemples) = **images capturées
+  dans la maquette** (`outils/capturer-maquette.js` + `outils/captures/accueil.json`, puis `vers-webp.py`), alt vide si
+  décoratives, alt descriptif sinon. Raison : pas de faux textes lus par Google ni par les lecteurs d'écran ; la cliente
+  remplace l'image dans Elementor. Les vrais textes (titres, listes, légendes) restent des éléments Elementor.
+- Tailles d'image : « thumbnail » = carré recadré ⇒ seulement pour des images carrées ; chiffres et flèches en « medium ».
+- `<small>` est retiré du texte riche ; `<span>` (sans classe) et `<sup>` passent : `prix` met le `span` en petit.
+- Écran « Votre vidéo » : boutons = liens `#rl-format-9-16`, `#rl-langue-en` ; cadre d'id `rl-ecran` (data-format posé
+  par rolling.js) ; versions d'id `rl-version-fr/en/es` (lang posé par rolling.js) ; tailles par variables `--rl-…`.
+- « Page complète » : `99-page-complete` assemble les blocs construits (type page), refaite à chaque construction.
 - Aperçu mobile de l'éditeur = 360 px : tester aussi à 360.
 - Logos : pas de bouton pause (choix cliente) ; défilement arrêté au survol / au clavier et avec « réduire les animations » ;
   la cliente coupe le défilement en retirant la classe `logos-defilants`.
@@ -217,7 +228,8 @@ image, texte, « À lire aussi » ; colonne latérale = temps de lecture, partag
 
 - Labels en 12 px (pas 11).
 - Les illustrations uniques de la maquette sont des éléments Elementor modifiables ; styles locaux seulement s'ils sont
-  natifs (sinon une classe dédiée, cf. « Leçons de construction »).
+  natifs (sinon une classe dédiée, cf. « Leçons de construction »). Exception (livraison 2) : les fausses interfaces
+  décoratives sont des images capturées (voir Leçons).
 - Écran « Votre vidéo » de la section 00:05 : rendu interactif (16:9, 9:16, 1:1 et FR, EN, ES) —
   maquette HTML à faire valider avant intégration.
 

@@ -1,0 +1,427 @@
+{
+ "cle": "10-offre",
+ "titre": "Rolling · 10 L'offre",
+ "type": "e-flexbox",
+ "composition": {
+  "xml_structure": "<e-flexbox configuration-id=\"L'offre\"><e-flexbox configuration-id=\"Offre · contenu\"><e-flexbox configuration-id=\"Offre · en-tête\"><e-flexbox configuration-id=\"Offre · repère\"><e-paragraph configuration-id=\"Offre · timecode\"></e-paragraph><e-paragraph configuration-id=\"Offre · sur-titre\"></e-paragraph></e-flexbox><e-heading configuration-id=\"Offre · titre\"></e-heading><e-paragraph configuration-id=\"Offre · introduction\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Offre · formules\"><e-flexbox configuration-id=\"Formule · Création illimitée\"><e-heading configuration-id=\"Création illimitée · nom\"></e-heading><e-paragraph configuration-id=\"Création illimitée · prix\"></e-paragraph><e-paragraph configuration-id=\"Création illimitée · annuel\"></e-paragraph><e-paragraph configuration-id=\"Création illimitée · résumé\"></e-paragraph><e-flexbox configuration-id=\"Création illimitée · coches wrap\"><e-flexbox configuration-id=\"Création illimitée · coches\"><e-flexbox configuration-id=\"Création illimitée · coches · ligne 1\"><e-image configuration-id=\"Création illimitée · coches · coche 1\"></e-image><e-paragraph configuration-id=\"Création illimitée · coches · texte 1\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Création illimitée · coches · ligne 2\"><e-image configuration-id=\"Création illimitée · coches · coche 2\"></e-image><e-paragraph configuration-id=\"Création illimitée · coches · texte 2\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Création illimitée · coches · ligne 3\"><e-image configuration-id=\"Création illimitée · coches · coche 3\"></e-image><e-paragraph configuration-id=\"Création illimitée · coches · texte 3\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Création illimitée · coches · ligne 4\"><e-image configuration-id=\"Création illimitée · coches · coche 4\"></e-image><e-paragraph configuration-id=\"Création illimitée · coches · texte 4\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Formule · Création + Tournage\"><e-paragraph configuration-id=\"Création + Tournage · badge\"></e-paragraph><e-heading configuration-id=\"Création + Tournage · nom\"></e-heading><e-paragraph configuration-id=\"Création + Tournage · prix\"></e-paragraph><e-paragraph configuration-id=\"Création + Tournage · annuel\"></e-paragraph><e-paragraph configuration-id=\"Création + Tournage · résumé\"></e-paragraph><e-flexbox configuration-id=\"Création + Tournage · coches wrap\"><e-flexbox configuration-id=\"Création + Tournage · coches\"><e-flexbox configuration-id=\"Création + Tournage · coches · ligne 1\"><e-image configuration-id=\"Création + Tournage · coches · coche 1\"></e-image><e-paragraph configuration-id=\"Création + Tournage · coches · texte 1\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Création + Tournage · coches · ligne 2\"><e-image configuration-id=\"Création + Tournage · coches · coche 2\"></e-image><e-paragraph configuration-id=\"Création + Tournage · coches · texte 2\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Création + Tournage · coches · ligne 3\"><e-image configuration-id=\"Création + Tournage · coches · coche 3\"></e-image><e-paragraph configuration-id=\"Création + Tournage · coches · texte 3\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Création + Tournage · coches · ligne 4\"><e-image configuration-id=\"Création + Tournage · coches · coche 4\"></e-image><e-paragraph configuration-id=\"Création + Tournage · coches · texte 4\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Offre · promesses\"><e-heading configuration-id=\"Promesses · titre\"></e-heading><e-flexbox configuration-id=\"Promesses · liste\"><e-flexbox configuration-id=\"Promesse 1\"><e-image configuration-id=\"Promesse 1 · chiffre\"></e-image><e-paragraph configuration-id=\"Promesse 1 · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Promesse 2\"><e-image configuration-id=\"Promesse 2 · chiffre\"></e-image><e-paragraph configuration-id=\"Promesse 2 · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Promesse 3\"><e-image configuration-id=\"Promesse 3 · chiffre\"></e-image><e-paragraph configuration-id=\"Promesse 3 · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Promesse 4\"><e-image configuration-id=\"Promesse 4 · chiffre\"></e-image><e-paragraph configuration-id=\"Promesse 4 · texte\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Offre · boutons\"><e-button configuration-id=\"Offre · bouton principal\"></e-button><e-button configuration-id=\"Offre · bouton secondaire\"></e-button></e-flexbox></e-flexbox></e-flexbox>",
+  "element_config": {
+   "L'offre": {
+    "_cssid": "offres",
+    "tag": "section"
+   },
+   "Offre · timecode": {
+    "paragraph": "00:07"
+   },
+   "Offre · sur-titre": {
+    "paragraph": "L'offre"
+   },
+   "Offre · titre": {
+    "tag": "h2",
+    "title": "Un prix fixe. <em>Des vidéos sans fin.</em>"
+   },
+   "Offre · introduction": {
+    "paragraph": "Deux formules, un abonnement annuel, une qualité garantie. <strong>Et comme le prix est fixe, plus vous faites de vidéos, moins chacune vous coûte.</strong>"
+   },
+   "Formule · Création illimitée": {
+    "tag": "article"
+   },
+   "Création illimitée · nom": {
+    "tag": "h3",
+    "title": "Création illimitée"
+   },
+   "Création illimitée · prix": {
+    "paragraph": "1&nbsp;250&nbsp;€<span> / mois</span>"
+   },
+   "Création illimitée · annuel": {
+    "paragraph": "Soit 15&nbsp;000&nbsp;€ / an"
+   },
+   "Création illimitée · résumé": {
+    "paragraph": "Tous vos contenus et vos projets, en vidéo"
+   },
+   "Création illimitée · coches · coche 1": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/coche-verre.png"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "Création illimitée · coches · texte 1": {
+    "paragraph": "Vos écrits, vos vidéos et vos nouveaux projets"
+   },
+   "Création illimitée · coches · coche 2": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/coche-verre.png"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "Création illimitée · coches · texte 2": {
+    "paragraph": "Motion design 2D et 3D, montage, voix off"
+   },
+   "Création illimitée · coches · coche 3": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/coche-verre.png"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "Création illimitée · coches · texte 3": {
+    "paragraph": "Sous-titres, langues et tous les formats"
+   },
+   "Création illimitée · coches · coche 4": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/coche-verre.png"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "Création illimitée · coches · texte 4": {
+    "paragraph": "Un directeur artistique et un chef de projet dédiés"
+   },
+   "Formule · Création + Tournage": {
+    "tag": "article"
+   },
+   "Création + Tournage · badge": {
+    "paragraph": "Le plus complet"
+   },
+   "Création + Tournage · nom": {
+    "tag": "h3",
+    "title": "Création + Tournage"
+   },
+   "Création + Tournage · prix": {
+    "paragraph": "2&nbsp;080&nbsp;€<span> / mois</span>"
+   },
+   "Création + Tournage · annuel": {
+    "paragraph": "Soit 25&nbsp;000&nbsp;€ / an"
+   },
+   "Création + Tournage · résumé": {
+    "paragraph": "Tout Création, plus le tournage et le motion fait main"
+   },
+   "Création + Tournage · coches · coche 1": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/coche-verre.png"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "Création + Tournage · coches · texte 1": {
+    "paragraph": "Captation offerte, partout en France"
+   },
+   "Création + Tournage · coches · coche 2": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/coche-verre.png"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "Création + Tournage · coches · texte 2": {
+    "paragraph": "Interviews, témoignages et événements"
+   },
+   "Création + Tournage · coches · coche 3": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/coche-verre.png"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "Création + Tournage · coches · texte 3": {
+    "paragraph": "Avatars et vidéos produit"
+   },
+   "Création + Tournage · coches · coche 4": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/coche-verre.png"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "Création + Tournage · coches · texte 4": {
+    "paragraph": "Motion 100&nbsp;% fait main, sans IA"
+   },
+   "Promesses · titre": {
+    "tag": "h3",
+    "title": "L'illimité qui tient ses promesses&nbsp;:"
+   },
+   "Promesse 1 · chiffre": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/chiffre-1.png"
+     },
+     "size": "medium"
+    }
+   },
+   "Promesse 1 · texte": {
+    "paragraph": "<strong>Un projet traité à fond</strong> à la fois"
+   },
+   "Promesse 2 · chiffre": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/chiffre-2.png"
+     },
+     "size": "medium"
+    }
+   },
+   "Promesse 2 · texte": {
+    "paragraph": "<strong>1 projet = 1 vidéo livrée</strong>, prête à publier"
+   },
+   "Promesse 3 · chiffre": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/chiffre-3.png"
+     },
+     "size": "medium"
+    }
+   },
+   "Promesse 3 · texte": {
+    "paragraph": "<strong>Des allers-retours cadrés</strong>, pour livrer vite"
+   },
+   "Promesse 4 · chiffre": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/chiffre-4.png"
+     },
+     "size": "medium"
+    }
+   },
+   "Promesse 4 · texte": {
+    "paragraph": "<strong>1 abonnement = 1 équipe métier</strong>"
+   },
+   "Offre · bouton principal": {
+    "text": "Réserver un échange",
+    "link": {
+     "destination": "/contact/"
+    }
+   },
+   "Offre · bouton secondaire": {
+    "text": "Voir les offres",
+    "link": {
+     "destination": "/offres/"
+    }
+   }
+  },
+  "classes": {
+   "L'offre": [
+    "section",
+    "halos-offre"
+   ],
+   "Offre · contenu": [
+    "conteneur"
+   ],
+   "Offre · en-tête": [
+    "entete-section"
+   ],
+   "Offre · repère": [
+    "sur-titre"
+   ],
+   "Offre · timecode": [
+    "timecode"
+   ],
+   "Offre · titre": [
+    "titre-lg"
+   ],
+   "Offre · introduction": [
+    "texte-intro"
+   ],
+   "Offre · formules": [
+    "grille-2"
+   ],
+   "Formule · Création illimitée": [
+    "carte-pleine",
+    "carte-prix"
+   ],
+   "Création illimitée · nom": [
+    "titre-xs"
+   ],
+   "Création illimitée · prix": [
+    "prix"
+   ],
+   "Création illimitée · annuel": [
+    "texte-petit"
+   ],
+   "Création illimitée · résumé": [
+    "resume-offre"
+   ],
+   "Création illimitée · coches": [
+    "liste-coches"
+   ],
+   "Création illimitée · coches · ligne 1": [
+    "ligne-coche"
+   ],
+   "Création illimitée · coches · coche 1": [
+    "coche"
+   ],
+   "Création illimitée · coches · texte 1": [
+    "texte-petit"
+   ],
+   "Création illimitée · coches · ligne 2": [
+    "ligne-coche"
+   ],
+   "Création illimitée · coches · coche 2": [
+    "coche"
+   ],
+   "Création illimitée · coches · texte 2": [
+    "texte-petit"
+   ],
+   "Création illimitée · coches · ligne 3": [
+    "ligne-coche"
+   ],
+   "Création illimitée · coches · coche 3": [
+    "coche"
+   ],
+   "Création illimitée · coches · texte 3": [
+    "texte-petit"
+   ],
+   "Création illimitée · coches · ligne 4": [
+    "ligne-coche"
+   ],
+   "Création illimitée · coches · coche 4": [
+    "coche"
+   ],
+   "Création illimitée · coches · texte 4": [
+    "texte-petit"
+   ],
+   "Formule · Création + Tournage": [
+    "carte-pleine",
+    "carte-prix",
+    "section-sombre",
+    "carte-prix-sombre"
+   ],
+   "Création + Tournage · badge": [
+    "badge-offre"
+   ],
+   "Création + Tournage · nom": [
+    "titre-xs"
+   ],
+   "Création + Tournage · prix": [
+    "prix",
+    "prix-degrade"
+   ],
+   "Création + Tournage · annuel": [
+    "texte-petit"
+   ],
+   "Création + Tournage · résumé": [
+    "resume-offre",
+    "resume-offre-sombre"
+   ],
+   "Création + Tournage · coches": [
+    "liste-coches"
+   ],
+   "Création + Tournage · coches · ligne 1": [
+    "ligne-coche"
+   ],
+   "Création + Tournage · coches · coche 1": [
+    "coche"
+   ],
+   "Création + Tournage · coches · texte 1": [
+    "texte-petit"
+   ],
+   "Création + Tournage · coches · ligne 2": [
+    "ligne-coche"
+   ],
+   "Création + Tournage · coches · coche 2": [
+    "coche"
+   ],
+   "Création + Tournage · coches · texte 2": [
+    "texte-petit"
+   ],
+   "Création + Tournage · coches · ligne 3": [
+    "ligne-coche"
+   ],
+   "Création + Tournage · coches · coche 3": [
+    "coche"
+   ],
+   "Création + Tournage · coches · texte 3": [
+    "texte-petit"
+   ],
+   "Création + Tournage · coches · ligne 4": [
+    "ligne-coche"
+   ],
+   "Création + Tournage · coches · coche 4": [
+    "coche"
+   ],
+   "Création + Tournage · coches · texte 4": [
+    "texte-petit"
+   ],
+   "Offre · promesses": [
+    "carte-verre",
+    "grand-bloc",
+    "carte-promesses"
+   ],
+   "Promesses · titre": [
+    "titre-xs"
+   ],
+   "Promesses · liste": [
+    "grille-4"
+   ],
+   "Promesse 1": [
+    "ligne-coche"
+   ],
+   "Promesse 1 · chiffre": [
+    "picto-verre"
+   ],
+   "Promesse 1 · texte": [
+    "texte-petit"
+   ],
+   "Promesse 2": [
+    "ligne-coche"
+   ],
+   "Promesse 2 · chiffre": [
+    "picto-verre"
+   ],
+   "Promesse 2 · texte": [
+    "texte-petit"
+   ],
+   "Promesse 3": [
+    "ligne-coche"
+   ],
+   "Promesse 3 · chiffre": [
+    "picto-verre"
+   ],
+   "Promesse 3 · texte": [
+    "texte-petit"
+   ],
+   "Promesse 4": [
+    "ligne-coche"
+   ],
+   "Promesse 4 · chiffre": [
+    "picto-verre"
+   ],
+   "Promesse 4 · texte": [
+    "texte-petit"
+   ],
+   "Offre · boutons": [
+    "rangee"
+   ],
+   "Offre · bouton principal": [
+    "bouton-principal"
+   ],
+   "Offre · bouton secondaire": [
+    "bouton-verre"
+   ]
+  },
+  "style": {
+   "Offre · contenu": "display: flex; flex-direction: column; gap: 0;",
+   "Offre · introduction": "max-width: 820px;",
+   "Offre · formules": "align-items: stretch;",
+   "Création illimitée · annuel": "margin-top: -10px;",
+   "Création illimitée · coches wrap": "padding: 0;",
+   "Création + Tournage · annuel": "margin-top: -10px;",
+   "Création + Tournage · coches wrap": "padding: 0;",
+   "Offre · promesses": "margin-top: 28px;",
+   "Promesses · liste": "margin-top: 8px;",
+   "Promesse 1 · chiffre": "height: 40px;",
+   "Promesse 2 · chiffre": "height: 40px;",
+   "Promesse 3 · chiffre": "height: 40px;",
+   "Promesse 4 · chiffre": "height: 40px;",
+   "Offre · boutons": "justify-content: center; margin-top: 36px;"
+  }
+ },
+ "brut": {}
+}

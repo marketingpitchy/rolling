@@ -1,0 +1,407 @@
+{
+ "cle": "09-humain",
+ "titre": "Rolling · 09 Le meilleur de l'humain",
+ "type": "e-flexbox",
+ "composition": {
+  "xml_structure": "<e-flexbox configuration-id=\"Le meilleur de l'humain\"><e-flexbox configuration-id=\"Humain · contenu\"><e-flexbox configuration-id=\"Humain · en-tête\"><e-flexbox configuration-id=\"Humain · repère\"><e-paragraph configuration-id=\"Humain · timecode\"></e-paragraph><e-paragraph configuration-id=\"Humain · sur-titre\"></e-paragraph></e-flexbox><e-heading configuration-id=\"Humain · titre\"></e-heading><e-paragraph configuration-id=\"Humain · introduction\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Humain · direction artistique\"><e-div-block configuration-id=\"DA · visuel\"><e-paragraph configuration-id=\"DA · note accroche\"></e-paragraph><e-image configuration-id=\"DA · flèche\"></e-image><e-image configuration-id=\"DA · vidéo annotée\"></e-image><e-paragraph configuration-id=\"DA · note rythme\"></e-paragraph><e-paragraph configuration-id=\"DA · note charte\"></e-paragraph></e-div-block><e-flexbox configuration-id=\"DA · colonne texte\"><e-paragraph configuration-id=\"DA · étiquette\"></e-paragraph><e-heading configuration-id=\"DA · titre\"></e-heading><e-paragraph configuration-id=\"DA · texte\"></e-paragraph><e-flexbox configuration-id=\"DA · liste wrap\"><e-flexbox configuration-id=\"DA · liste\"><e-flexbox configuration-id=\"DA · liste · ligne 1\"><e-image configuration-id=\"DA · liste · coche 1\"></e-image><e-paragraph configuration-id=\"DA · liste · texte 1\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"DA · liste · ligne 2\"><e-image configuration-id=\"DA · liste · coche 2\"></e-image><e-paragraph configuration-id=\"DA · liste · texte 2\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"DA · liste · ligne 3\"><e-image configuration-id=\"DA · liste · coche 3\"></e-image><e-paragraph configuration-id=\"DA · liste · texte 3\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"DA · liste · ligne 4\"><e-image configuration-id=\"DA · liste · coche 4\"></e-image><e-paragraph configuration-id=\"DA · liste · texte 4\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox><e-flexbox configuration-id=\"DA · contact\"><e-image configuration-id=\"DA · contact · photo\"></e-image><e-paragraph configuration-id=\"DA · contact · texte\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Humain · équipe\"><e-heading configuration-id=\"Équipe · titre\"></e-heading><e-flexbox configuration-id=\"Équipe · portraits\"><e-flexbox configuration-id=\"Équipe · Thomas\"><e-image configuration-id=\"Équipe · Thomas · photo\"></e-image><e-paragraph configuration-id=\"Équipe · Thomas · prénom\"></e-paragraph><e-paragraph configuration-id=\"Équipe · Thomas · poste\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Équipe · Alex\"><e-image configuration-id=\"Équipe · Alex · photo\"></e-image><e-paragraph configuration-id=\"Équipe · Alex · prénom\"></e-paragraph><e-paragraph configuration-id=\"Équipe · Alex · poste\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Équipe · Victor\"><e-image configuration-id=\"Équipe · Victor · photo\"></e-image><e-paragraph configuration-id=\"Équipe · Victor · prénom\"></e-paragraph><e-paragraph configuration-id=\"Équipe · Victor · poste\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Équipe · Vincent\"><e-image configuration-id=\"Équipe · Vincent · photo\"></e-image><e-paragraph configuration-id=\"Équipe · Vincent · prénom\"></e-paragraph><e-paragraph configuration-id=\"Équipe · Vincent · poste\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Équipe · Marion\"><e-image configuration-id=\"Équipe · Marion · photo\"></e-image><e-paragraph configuration-id=\"Équipe · Marion · prénom\"></e-paragraph><e-paragraph configuration-id=\"Équipe · Marion · poste\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Équipe · Sophie\"><e-image configuration-id=\"Équipe · Sophie · photo\"></e-image><e-paragraph configuration-id=\"Équipe · Sophie · prénom\"></e-paragraph><e-paragraph configuration-id=\"Équipe · Sophie · poste\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox></e-flexbox></e-flexbox>",
+  "element_config": {
+   "Le meilleur de l'humain": {
+    "_cssid": "humain",
+    "tag": "section"
+   },
+   "Humain · timecode": {
+    "paragraph": "00:06"
+   },
+   "Humain · sur-titre": {
+    "paragraph": "Derrière chaque vidéo"
+   },
+   "Humain · titre": {
+    "tag": "h2",
+    "title": "Le meilleur <em>de l'humain.</em>"
+   },
+   "Humain · introduction": {
+    "paragraph": "<strong>L'IA va vite. Nos créatifs font la différence.</strong> Une équipe créa derrière chaque vidéo pour un résultat qui accroche et respecte votre charte."
+   },
+   "DA · note accroche": {
+    "paragraph": "accroche dès la 1<sup>re</sup> seconde"
+   },
+   "DA · flèche": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/fleche-annotation.png"
+     },
+     "size": "medium"
+    }
+   },
+   "DA · vidéo annotée": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/humain-direction.webp",
+      "alt": "Une vidéo en motion 2D, « La semaine de 4 jours », annotée par le directeur artistique : titre et logo entourés."
+     },
+     "size": "full"
+    }
+   },
+   "DA · note rythme": {
+    "paragraph": "plus de rythme ici"
+   },
+   "DA · note charte": {
+    "paragraph": "charte respectée"
+   },
+   "DA · étiquette": {
+    "paragraph": "Direction artistique"
+   },
+   "DA · titre": {
+    "tag": "h3",
+    "title": "Votre directeur artistique <b>dédié.</b>"
+   },
+   "DA · texte": {
+    "paragraph": "Il connaît votre charte par cœur et la fait vivre&nbsp;: chaque vidéo accroche dès la première seconde, garde le rythme et reste fidèle à votre marque."
+   },
+   "DA · liste · coche 1": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/coche-verre.png"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "DA · liste · texte 1": {
+    "paragraph": "Un directeur artistique dédié à votre compte"
+   },
+   "DA · liste · coche 2": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/coche-verre.png"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "DA · liste · texte 2": {
+    "paragraph": "Une direction créative exigeante sur chaque livrable"
+   },
+   "DA · liste · coche 3": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/coche-verre.png"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "DA · liste · texte 3": {
+    "paragraph": "Un interlocuteur qui connaît vos enjeux et votre charte"
+   },
+   "DA · liste · coche 4": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/coche-verre.png"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "DA · liste · texte 4": {
+    "paragraph": "Le regard final, toujours humain"
+   },
+   "DA · contact · photo": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/equipe-thomas.jpg",
+      "alt": "Thomas, votre directeur artistique"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "DA · contact · texte": {
+    "paragraph": "<strong>Thomas</strong><br>votre directeur artistique"
+   },
+   "Équipe · titre": {
+    "tag": "h3",
+    "title": "Le réseau de talents qui <em>sublime vos vidéos.</em>"
+   },
+   "Équipe · Thomas · photo": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/equipe-thomas.jpg",
+      "alt": "Thomas, Directeur Artistique"
+     },
+     "size": "medium"
+    }
+   },
+   "Équipe · Thomas · prénom": {
+    "paragraph": "Thomas"
+   },
+   "Équipe · Thomas · poste": {
+    "paragraph": "Directeur Artistique"
+   },
+   "Équipe · Alex · photo": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/equipe-alex.jpg",
+      "alt": "Alex, Responsable Équipe Motion Design"
+     },
+     "size": "medium"
+    }
+   },
+   "Équipe · Alex · prénom": {
+    "paragraph": "Alex"
+   },
+   "Équipe · Alex · poste": {
+    "paragraph": "Responsable Équipe Motion Design"
+   },
+   "Équipe · Victor · photo": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/equipe-victor.jpg",
+      "alt": "Victor, Motion Designer"
+     },
+     "size": "medium"
+    }
+   },
+   "Équipe · Victor · prénom": {
+    "paragraph": "Victor"
+   },
+   "Équipe · Victor · poste": {
+    "paragraph": "Motion Designer"
+   },
+   "Équipe · Vincent · photo": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/equipe-vincent.jpg",
+      "alt": "Vincent, Cadreur"
+     },
+     "size": "medium"
+    }
+   },
+   "Équipe · Vincent · prénom": {
+    "paragraph": "Vincent"
+   },
+   "Équipe · Vincent · poste": {
+    "paragraph": "Cadreur"
+   },
+   "Équipe · Marion · photo": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/equipe-marion-t.jpg",
+      "alt": "Marion, Responsable Studio"
+     },
+     "size": "medium"
+    }
+   },
+   "Équipe · Marion · prénom": {
+    "paragraph": "Marion"
+   },
+   "Équipe · Marion · poste": {
+    "paragraph": "Responsable Studio"
+   },
+   "Équipe · Sophie · photo": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/equipe-sophie.jpg",
+      "alt": "Sophie, Chef de Projet"
+     },
+     "size": "medium"
+    }
+   },
+   "Équipe · Sophie · prénom": {
+    "paragraph": "Sophie"
+   },
+   "Équipe · Sophie · poste": {
+    "paragraph": "Chef de Projet"
+   }
+  },
+  "classes": {
+   "Le meilleur de l'humain": [
+    "section",
+    "section-chaude",
+    "halos-chauds"
+   ],
+   "Humain · contenu": [
+    "conteneur"
+   ],
+   "Humain · en-tête": [
+    "entete-section"
+   ],
+   "Humain · repère": [
+    "sur-titre"
+   ],
+   "Humain · timecode": [
+    "timecode"
+   ],
+   "Humain · titre": [
+    "titre-xl"
+   ],
+   "Humain · introduction": [
+    "texte-intro"
+   ],
+   "Humain · direction artistique": [
+    "colonnes-media"
+   ],
+   "DA · note accroche": [
+    "note-main"
+   ],
+   "DA · vidéo annotée": [
+    "illustration-cadre"
+   ],
+   "DA · note rythme": [
+    "note-main"
+   ],
+   "DA · note charte": [
+    "note-main"
+   ],
+   "DA · étiquette": [
+    "pilule-label"
+   ],
+   "DA · titre": [
+    "titre-sm"
+   ],
+   "DA · texte": [
+    "texte"
+   ],
+   "DA · liste": [
+    "liste-coches"
+   ],
+   "DA · liste · ligne 1": [
+    "ligne-coche"
+   ],
+   "DA · liste · coche 1": [
+    "coche"
+   ],
+   "DA · liste · texte 1": [
+    "texte-petit"
+   ],
+   "DA · liste · ligne 2": [
+    "ligne-coche"
+   ],
+   "DA · liste · coche 2": [
+    "coche"
+   ],
+   "DA · liste · texte 2": [
+    "texte-petit"
+   ],
+   "DA · liste · ligne 3": [
+    "ligne-coche"
+   ],
+   "DA · liste · coche 3": [
+    "coche"
+   ],
+   "DA · liste · texte 3": [
+    "texte-petit"
+   ],
+   "DA · liste · ligne 4": [
+    "ligne-coche"
+   ],
+   "DA · liste · coche 4": [
+    "coche"
+   ],
+   "DA · liste · texte 4": [
+    "texte-petit"
+   ],
+   "DA · contact": [
+    "carte-contact"
+   ],
+   "DA · contact · photo": [
+    "portrait",
+    "portrait-petit"
+   ],
+   "DA · contact · texte": [
+    "texte-petit"
+   ],
+   "Équipe · titre": [
+    "titre-sm"
+   ],
+   "Équipe · portraits": [
+    "grille-equipe"
+   ],
+   "Équipe · Thomas": [
+    "membre-equipe"
+   ],
+   "Équipe · Thomas · photo": [
+    "portrait"
+   ],
+   "Équipe · Thomas · prénom": [
+    "nom-membre"
+   ],
+   "Équipe · Thomas · poste": [
+    "poste-membre"
+   ],
+   "Équipe · Alex": [
+    "membre-equipe"
+   ],
+   "Équipe · Alex · photo": [
+    "portrait"
+   ],
+   "Équipe · Alex · prénom": [
+    "nom-membre"
+   ],
+   "Équipe · Alex · poste": [
+    "poste-membre"
+   ],
+   "Équipe · Victor": [
+    "membre-equipe"
+   ],
+   "Équipe · Victor · photo": [
+    "portrait"
+   ],
+   "Équipe · Victor · prénom": [
+    "nom-membre"
+   ],
+   "Équipe · Victor · poste": [
+    "poste-membre"
+   ],
+   "Équipe · Vincent": [
+    "membre-equipe"
+   ],
+   "Équipe · Vincent · photo": [
+    "portrait"
+   ],
+   "Équipe · Vincent · prénom": [
+    "nom-membre"
+   ],
+   "Équipe · Vincent · poste": [
+    "poste-membre"
+   ],
+   "Équipe · Marion": [
+    "membre-equipe"
+   ],
+   "Équipe · Marion · photo": [
+    "portrait"
+   ],
+   "Équipe · Marion · prénom": [
+    "nom-membre"
+   ],
+   "Équipe · Marion · poste": [
+    "poste-membre"
+   ],
+   "Équipe · Sophie": [
+    "membre-equipe"
+   ],
+   "Équipe · Sophie · photo": [
+    "portrait"
+   ],
+   "Équipe · Sophie · prénom": [
+    "nom-membre"
+   ],
+   "Équipe · Sophie · poste": [
+    "poste-membre"
+   ]
+  },
+  "style": {
+   "Humain · contenu": "display: flex; flex-direction: column; gap: 0;",
+   "Humain · introduction": "max-width: 820px;",
+   "Humain · direction artistique": "margin-top: 14px;",
+   "DA · visuel": "position: relative; padding: 50px 0 60px; @media(--tablet) { padding: 0; }",
+   "DA · note accroche": "position: absolute; left: 6px; top: 0; z-index: 2;",
+   "DA · flèche": "position: absolute; left: 300px; top: 14px; z-index: 2; width: 46px; @media(--tablet) { display: none; }",
+   "DA · note rythme": "position: absolute; left: 30px; bottom: 6px; z-index: 2;",
+   "DA · note charte": "position: absolute; right: 4px; bottom: 6px; z-index: 2;",
+   "DA · colonne texte": "display: flex; flex-direction: column; gap: 0;",
+   "DA · titre": "margin-top: 18px;",
+   "DA · texte": "margin-top: 14px;",
+   "DA · liste wrap": "padding: 0; margin-top: 20px;",
+   "DA · contact": "margin-top: 26px;",
+   "Humain · équipe": "display: flex; flex-direction: column; gap: 0; margin-top: 110px;",
+   "Équipe · portraits": "margin-top: 36px;"
+  }
+ },
+ "brut": {}
+}

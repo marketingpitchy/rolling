@@ -517,6 +517,178 @@ ia = F("Le meilleur de l'IA", ['section', 'section-sombre', 'fond-grille', 'halo
     ]),
 ])
 
+# --------------------------------------------------------------------------------------------
+# 00:06 Le meilleur de l'humain
+# --------------------------------------------------------------------------------------------
+
+humain = F("Le meilleur de l'humain", ['section', 'section-chaude', 'halos-chauds'], tag='section', ancre='humain', enfants=[
+    F('Humain · contenu', ['conteneur'], COLONNE, enfants=[
+        entete('Humain', '00:06', 'Derrière chaque vidéo', [("Le meilleur <em>de l'humain.</em>", 'h2', ['titre-xl'])],
+               intro="<strong>L'IA va vite. Nos créatifs font la différence.</strong> Une équipe créa derrière chaque vidéo pour un résultat qui accroche et respecte votre charte."),
+        F('Humain · direction artistique', ['colonnes-media'], 'margin-top: 14px;', enfants=[
+            D('DA · visuel', None, 'position: relative; padding: 50px 0 60px; @media(--tablet) { padding: 0; }', enfants=[
+                P('DA · note accroche', 'accroche dès la 1<sup>re</sup> seconde', ['note-main'], 'position: absolute; left: 6px; top: 0; z-index: 2;'),
+                I('DA · flèche', 'fleche-annotation.png', style='position: absolute; left: 300px; top: 14px; z-index: 2; width: 46px; @media(--tablet) { display: none; }', taille='medium'),
+                I('DA · vidéo annotée', 'humain-direction.webp', "Une vidéo en motion 2D, « La semaine de 4 jours », annotée par le directeur artistique : titre et logo entourés.", ['illustration-cadre']),
+                P('DA · note rythme', 'plus de rythme ici', ['note-main'], 'position: absolute; left: 30px; bottom: 6px; z-index: 2;'),
+                P('DA · note charte', 'charte respectée', ['note-main'], 'position: absolute; right: 4px; bottom: 6px; z-index: 2;'),
+            ]),
+            F('DA · colonne texte', None, COLONNE, enfants=[
+                P('DA · étiquette', 'Direction artistique', ['pilule-label']),
+                H('DA · titre', 'Votre directeur artistique <b>dédié.</b>', 'h3', ['titre-sm'], 'margin-top: 18px;'),
+                P('DA · texte', "Il connaît votre charte par cœur et la fait vivre&nbsp;: chaque vidéo accroche dès la première seconde, garde le rythme et reste fidèle à votre marque.", ['texte'], 'margin-top: 14px;'),
+                F('DA · liste wrap', None, 'padding: 0; margin-top: 20px;', enfants=[liste_coches('DA · liste', ['Un directeur artistique dédié à votre compte', 'Une direction créative exigeante sur chaque livrable', 'Un interlocuteur qui connaît vos enjeux et votre charte', 'Le regard final, toujours humain'])]),
+                F('DA · contact', ['carte-contact'], 'margin-top: 26px;', enfants=[
+                    I('DA · contact · photo', 'equipe-thomas.jpg', 'Thomas, votre directeur artistique', ['portrait', 'portrait-petit'], taille='thumbnail'),
+                    P('DA · contact · texte', '<strong>Thomas</strong><br>votre directeur artistique', ['texte-petit']),
+                ]),
+            ]),
+        ]),
+        F('Humain · équipe', None, COLONNE + ' margin-top: 110px;', enfants=[
+            H('Équipe · titre', 'Le réseau de talents qui <em>sublime vos vidéos.</em>', 'h3', ['titre-sm']),
+            F('Équipe · portraits', ['grille-equipe'], 'margin-top: 36px;', enfants=[
+                membre('Équipe', 'thomas', 'Thomas', 'Directeur Artistique'),
+                membre('Équipe', 'alex', 'Alex', 'Responsable Équipe Motion Design'),
+                membre('Équipe', 'victor', 'Victor', 'Motion Designer'),
+                membre('Équipe', 'vincent', 'Vincent', 'Cadreur'),
+                membre('Équipe', 'marion-t', 'Marion', 'Responsable Studio'),
+                membre('Équipe', 'sophie', 'Sophie', 'Chef de Projet'),
+            ]),
+        ]),
+    ]),
+])
+
+# --------------------------------------------------------------------------------------------
+# 00:07 L'offre (version courte de l'accueil)
+# --------------------------------------------------------------------------------------------
+
+def formule(nom, cls, prix, prix_cls, annuel, resume, resume_cls, lignes, badge=None):
+    enfants = [P(nom + ' · badge', badge, ['badge-offre'])] if badge else []
+    enfants += [
+        H(nom + ' · nom', nom, 'h3', ['titre-xs']),
+        P(nom + ' · prix', prix, ['prix'] + prix_cls),
+        P(nom + ' · annuel', annuel, ['texte-petit'], 'margin-top: -10px;'),
+        P(nom + ' · résumé', resume, ['resume-offre'] + resume_cls),
+        F(nom + ' · coches wrap', None, 'padding: 0;', enfants=[liste_coches(nom + ' · coches', lignes)]),
+    ]
+    return F('Formule · ' + nom, ['carte-pleine', 'carte-prix'] + cls, enfants=enfants, tag='article')
+
+
+offre = F("L'offre", ['section', 'halos-offre'], tag='section', ancre='offres', enfants=[
+    F('Offre · contenu', ['conteneur'], COLONNE, enfants=[
+        entete('Offre', '00:07', "L'offre", [('Un prix fixe. <em>Des vidéos sans fin.</em>', 'h2', ['titre-lg'])],
+               intro='Deux formules, un abonnement annuel, une qualité garantie. <strong>Et comme le prix est fixe, plus vous faites de vidéos, moins chacune vous coûte.</strong>'),
+        F('Offre · formules', ['grille-2'], 'align-items: stretch;', enfants=[
+            formule('Création illimitée', [], '1&nbsp;250&nbsp;€<span> / mois</span>', [], 'Soit 15&nbsp;000&nbsp;€ / an', 'Tous vos contenus et vos projets, en vidéo', [],
+                    ['Vos écrits, vos vidéos et vos nouveaux projets', 'Motion design 2D et 3D, montage, voix off', 'Sous-titres, langues et tous les formats', 'Un directeur artistique et un chef de projet dédiés']),
+            formule('Création + Tournage', ['section-sombre', 'carte-prix-sombre'], '2&nbsp;080&nbsp;€<span> / mois</span>', ['prix-degrade'], 'Soit 25&nbsp;000&nbsp;€ / an', 'Tout Création, plus le tournage et le motion fait main', ['resume-offre-sombre'],
+                    ['Captation offerte, partout en France', 'Interviews, témoignages et événements', 'Avatars et vidéos produit', 'Motion 100&nbsp;% fait main, sans IA'], badge='Le plus complet'),
+        ]),
+        F('Offre · promesses', ['carte-verre', 'grand-bloc', 'carte-promesses'], 'margin-top: 28px;', enfants=[
+            H('Promesses · titre', "L'illimité qui tient ses promesses&nbsp;:", 'h3', ['titre-xs']),
+            F('Promesses · liste', ['grille-4'], 'margin-top: 8px;', enfants=[
+                F('Promesse %d' % n, ['ligne-coche'], enfants=[
+                    I('Promesse %d · chiffre' % n, 'chiffre-%d.png' % n, cls=['picto-verre'], style='height: 40px;', taille='medium'),
+                    P('Promesse %d · texte' % n, t, ['texte-petit']),
+                ]) for n, t in enumerate(['<strong>Un projet traité à fond</strong> à la fois', '<strong>1 projet = 1 vidéo livrée</strong>, prête à publier', '<strong>Des allers-retours cadrés</strong>, pour livrer vite', '<strong>1 abonnement = 1 équipe métier</strong>'], 1)
+            ]),
+        ]),
+        F('Offre · boutons', ['rangee'], 'justify-content: center; margin-top: 36px;', enfants=[
+            B('Offre · bouton principal', 'Réserver un échange', '/contact/', ['bouton-principal']),
+            B('Offre · bouton secondaire', 'Voir les offres', '/offres/', ['bouton-verre']),
+        ]),
+    ]),
+])
+
+# --------------------------------------------------------------------------------------------
+# 00:08 L'équipe (Née chez Pitchy)
+# --------------------------------------------------------------------------------------------
+
+def carte_chiffre(nom, chiffres, lu, libelle, unite=None):
+    nombre = [I(nom + ' · chiffre ' + c, 'chiffre-' + c + '.png', taille='medium_large' if c == '500-plus' else 'medium') for c in chiffres]
+    nombre.append(P(nom + ' · valeur lue', lu, ['texte-masque']))
+    if unite:
+        nombre.append(P(nom + ' · unité', unite, ['unite-chiffre']))
+    return F('Chiffre · ' + nom, ['carte-verre', 'carte-chiffre'], enfants=[
+        F(nom + ' · nombre', ['chiffre-verre'], enfants=nombre),
+        P(nom + ' · libellé', libelle, ['texte-petit']),
+    ])
+
+
+entete_equipe = entete('Équipe', '00:08', "L'équipe", [('Née chez <em>Pitchy.</em>', 'h2', ['titre-lg'])])
+entete_equipe.enfants += [
+    P('Équipe · texte 1', "Rolling est lancée par les équipes de Pitchy, la plateforme française de création vidéo qui équipe les grandes entreprises depuis 10&nbsp;ans. Même exigence, nouvelle promesse&nbsp;: <strong>cette fois, c'est nous qui produisons.</strong>", ['texte']),
+    P('Équipe · texte 2', 'Un studio motion intégré, une équipe tech qui industrialise la production, et dix ans passés à comprendre comment les grands comptes font — et regardent — de la vidéo.', ['texte']),
+]
+
+equipe = F('Née chez Pitchy', ['section'], tag='section', enfants=[
+    F('Équipe · contenu', ['conteneur'], COLONNE, enfants=[
+        F('Équipe · haut', None, 'display: flex; flex-direction: row; flex-wrap: wrap; align-items: flex-start; gap: 48px; padding: 0;', enfants=[
+            F('Équipe · présentation', None, 'flex: 1 1 440px; min-width: 0; padding: 0;', enfants=[entete_equipe]),
+            D('Équipe · chiffres', ['lueur-peche'], 'flex: 1 1 420px; min-width: 0; padding: 0;', enfants=[
+                F('Chiffres · grille', None, 'display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 14px; padding: 0;', enfants=[
+                    carte_chiffre('Ans', ['1', '0'], '10', 'de vidéo pour les entreprises', unite='ans'),
+                    carte_chiffre('Entreprises', ['500-plus'], '500+', 'grandes entreprises équipées'),
+                    carte_chiffre('Studio', ['1'], '1', 'studio motion &amp; tournage intégré'),
+                    carte_chiffre('Plateforme', ['1'], '1', 'plateforme de production propriétaire'),
+                ]),
+            ]),
+        ]),
+        F('Équipe · témoignage', ['carte-verre', 'citation', 'carte-citation'], 'margin-top: 64px;', enfants=[
+            I('Témoignage · photo', 'temoin-julie-charlemagne.jpg', 'Julie Charlemagne', ['portrait', 'portrait-moyen'], taille='thumbnail'),
+            F('Témoignage · texte', None, COLONNE, enfants=[
+                P('Témoignage · citation', "«&nbsp;On n'avait pas la bande passante, et on n'avait pas l'expertise. Donc on devait absolument faire appel à quelqu'un qui avait le savoir-faire et qui était professionnel et l'équipe Rolling (ex Pitchy Studio) nous a tout de suite rassuré sur leur accompagnement sur mesure si bien de l'expression des besoins jusqu'à la livraison des vidéos.&nbsp;»", ['texte-citation']),
+                P('Témoignage · auteur', '<strong>Julie Charlemagne</strong> — Responsable Fonctionnel SIRH, Groupement Mousquetaires', ['texte-petit'], 'margin-top: 16px;'),
+            ]),
+            B('Témoignage · bouton', 'Voir le cas client', '/temoignages/', ['bouton-principal', 'bouton-petit']),
+        ]),
+    ]),
+])
+
+# --------------------------------------------------------------------------------------------
+# 00:09 FAQ
+# --------------------------------------------------------------------------------------------
+
+QUESTIONS = [
+    ('«&nbsp;Illimité&nbsp;», vraiment&nbsp;?', "Oui&nbsp;: nous ne comptons pas les vidéos. Nous traitons un projet à fond à la fois, puis nous enchaînons sur le suivant. C'est ce qui rend l'illimité possible, avec une qualité garantie sur chaque vidéo."),
+    ('La captation, vraiment offerte&nbsp;?', 'Oui, avec la formule Création&nbsp;+&nbsp;Tournage. Nos équipes se déplacent partout en France pour filmer vos collaborateurs, vos événements et vos produits, un projet à la fois.'),
+    ("Le meilleur de l'humain et de l'IA, concrètement&nbsp;?", "Nos IA accélèrent tout ce qui peut l'être&nbsp;: pistes créatives, voix off, sous-titres, traductions, déclinaisons. Nos créas gardent la direction artistique, l'animation à la main et la validation finale. C'est ce qui permet l'illimité, sans rien lâcher sur la qualité."),
+    ('Et nos nouveaux projets&nbsp;?', 'Bien sûr. Lancements, événements, campagnes&nbsp;: tout nouveau projet entre dans le même flux, avec la même équipe et la même charte.'),
+    ('Et si nous avons déjà nos propres images&nbsp;?', "Envoyez-nous vos rushs&nbsp;: leur montage entre dans l'illimité, dès la formule Création."),
+    ('Que devons-nous fournir&nbsp;?', "Vos contenus, vos idées de projets et votre charte graphique. Nous nous occupons de tout le reste, de la stratégie vidéo annuelle jusqu'à la livraison."),
+]
+
+faq = F('FAQ', ['section', 'halo-lilas-doux'], tag='section', enfants=[
+    F('FAQ · contenu', ['conteneur', 'conteneur-etroit'], COLONNE, enfants=[
+        entete('FAQ', '00:09', 'Les questions que vous nous posez', [('Avant de dire <em>«&nbsp;trop beau pour être vrai&nbsp;»</em>', 'h2', ['titre-md'])], style=None),
+        F('FAQ · questions', ['liste-questions'], enfants=[
+            F('Question %d' % n, ['carte-verre', 'carte-question'], enfants=[
+                H('Question %d · titre' % n, q, 'h3', ['titre-question']),
+                P('Question %d · réponse' % n, r, ['texte']),
+            ]) for n, (q, r) in enumerate(QUESTIONS, 1)
+        ]),
+        F('FAQ · appel', ['carte-verre', 'carte-appel'], 'margin-top: 26px;', enfants=[
+            P('FAQ · appel · texte', 'Une autre question&nbsp;? <em>Nous y répondons en 30&nbsp;minutes.</em>', ['texte-appel']),
+            B('FAQ · appel · bouton', 'Réserver un échange', '/contact/', ['bouton-principal', 'bouton-petit']),
+        ]),
+    ]),
+])
+
+# --------------------------------------------------------------------------------------------
+# Appel final (#contact)
+# --------------------------------------------------------------------------------------------
+
+final = F('Appel final', ['section', 'section-sombre', 'section-finale', 'halo-centre', 'decors-final'], tag='section', ancre='contact', enfants=[
+    I('Final · verre cannelé', 'final-verre-cannele.webp', cls=['decor-flottant'], taille='medium_large'),
+    F('Final · contenu', ['conteneur'], COLONNE + ' align-items: center; z-index: 1;', enfants=[
+        H('Final · titre', 'Vos vidéos&nbsp;? Nous nous en occupons.<br><em>Sans limite.</em>', 'h2', ['titre-lg', 'titre-souligne']),
+        P('Final · texte', '30 minutes pour passer en revue vos contenus et vos projets. Vous repartez avec votre stratégie vidéo et vos 3&nbsp;premières vidéos à produire.', ['texte-intro'], 'margin-top: 34px; max-width: 600px;'),
+        F('Final · bouton', None, 'display: flex; justify-content: center; margin-top: 38px; padding: 0;', enfants=[
+            B('Final · réserver', 'Réserver un échange', '/contact/', ['bouton-soleil']),
+        ]),
+    ]),
+])
+
 BLOCS = [
     ('01-hero', 'Rolling · 01 Hero', hero),
     ('02-logos', 'Rolling · 02 Ils nous font confiance', logos),
@@ -526,14 +698,25 @@ BLOCS = [
     ('06-methode', 'Rolling · 06 La méthode', methode),
     ('07-exemples', 'Rolling · 07 Avant Après', exemples),
     ('08-ia', "Rolling · 08 Le meilleur de l'IA", ia),
+    ('09-humain', "Rolling · 09 Le meilleur de l'humain", humain),
+    ('10-offre', "Rolling · 10 L'offre", offre),
+    ('11-equipe', 'Rolling · 11 Née chez Pitchy', equipe),
+    ('12-faq', 'Rolling · 12 FAQ', faq),
+    ('13-final', 'Rolling · 13 Appel final', final),
 ]
 
 if __name__ == '__main__':
     dossier = os.path.join(ICI, 'source', 'blocs')
     os.makedirs(dossier, exist_ok=True)
+    cles = []
     for cle, titre, racine in BLOCS:
         composition, brut = composer(racine)
         donnees = {'cle': cle, 'titre': titre, 'type': 'e-flexbox', 'composition': composition, 'brut': brut}
+        cles.append(cle)
         with open(os.path.join(dossier, cle + '.json'), 'w', encoding='utf8') as f:
             json.dump(donnees, f, ensure_ascii=False, indent=1)
         print(cle, len(donnees['composition']['xml_structure']), 'caractères de XML')
+    # « Page complète » : tous les blocs de l'accueil à la suite, dans un modèle de type page.
+    with open(os.path.join(dossier, '99-page-complete.json'), 'w', encoding='utf8') as f:
+        json.dump({'cle': '99-page-complete', 'titre': 'Rolling · Page complète (accueil)', 'type': 'page', 'assemble': cles}, f, ensure_ascii=False, indent=1)
+    print('99-page-complete :', len(cles), 'blocs')

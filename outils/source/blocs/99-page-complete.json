@@ -1,0 +1,20 @@
+{
+ "cle": "99-page-complete",
+ "titre": "Rolling · Page complète (accueil)",
+ "type": "page",
+ "assemble": [
+  "01-hero",
+  "02-logos",
+  "03-showreel",
+  "04-pourquoi",
+  "05-pour-qui",
+  "06-methode",
+  "07-exemples",
+  "08-ia",
+  "09-humain",
+  "10-offre",
+  "11-equipe",
+  "12-faq",
+  "13-final"
+ ]
+}
