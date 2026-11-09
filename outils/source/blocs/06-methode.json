@@ -1,0 +1,139 @@
+{
+ "cle": "06-methode",
+ "titre": "Rolling · 06 La méthode",
+ "type": "e-flexbox",
+ "composition": {
+  "xml_structure": "<e-flexbox configuration-id=\"La méthode\"><e-flexbox configuration-id=\"Méthode · contenu\"><e-flexbox configuration-id=\"Méthode · en-tête\"><e-flexbox configuration-id=\"Méthode · repère\"><e-paragraph configuration-id=\"Méthode · timecode\"></e-paragraph><e-paragraph configuration-id=\"Méthode · sur-titre\"></e-paragraph></e-flexbox><e-heading configuration-id=\"Méthode · titre\"></e-heading></e-flexbox><e-flexbox configuration-id=\"Méthode · étapes\"><e-flexbox configuration-id=\"Étape 1\"><e-image configuration-id=\"Étape 1 · chiffre\"></e-image><e-heading configuration-id=\"Étape 1 · titre\"></e-heading><e-paragraph configuration-id=\"Étape 1 · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Étape 2\"><e-image configuration-id=\"Étape 2 · chiffre\"></e-image><e-heading configuration-id=\"Étape 2 · titre\"></e-heading><e-paragraph configuration-id=\"Étape 2 · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Étape 3\"><e-image configuration-id=\"Étape 3 · chiffre\"></e-image><e-heading configuration-id=\"Étape 3 · titre\"></e-heading><e-paragraph configuration-id=\"Étape 3 · texte\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox></e-flexbox>",
+  "element_config": {
+   "La méthode": {
+    "_cssid": "methode",
+    "tag": "section"
+   },
+   "Méthode · timecode": {
+    "paragraph": "00:03"
+   },
+   "Méthode · sur-titre": {
+    "paragraph": "La méthode"
+   },
+   "Méthode · titre": {
+    "tag": "h2",
+    "title": "Vous avez le fond. <em>Nous produisons la forme.</em>"
+   },
+   "Étape 1 · chiffre": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/chiffre-1.png"
+     },
+     "size": "medium"
+    }
+   },
+   "Étape 1 · titre": {
+    "tag": "h3",
+    "title": "Partagez vos contenus et vos projets."
+   },
+   "Étape 1 · texte": {
+    "paragraph": "Articles, présentations, modules de formation, vos propres rushs, mais aussi lancements ou événements à tourner&nbsp;: nous priorisons ensemble ce qui part en vidéo en premier."
+   },
+   "Étape 2 · chiffre": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/chiffre-2.png"
+     },
+     "size": "medium"
+    }
+   },
+   "Étape 2 · titre": {
+    "tag": "h3",
+    "title": "Nous produisons, un projet à la fois."
+   },
+   "Étape 2 · texte": {
+    "paragraph": "Motion, habillage ou tournage, selon le projet et votre formule — à votre charte, sous l'œil d'un directeur artistique dédié. Traité à fond, livré, nous enchaînons."
+   },
+   "Étape 3 · chiffre": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/chiffre-3.png"
+     },
+     "size": "medium"
+    }
+   },
+   "Étape 3 · titre": {
+    "tag": "h3",
+    "title": "Vous diffusez. Partout."
+   },
+   "Étape 3 · texte": {
+    "paragraph": "Des vidéos prêtes à l'emploi, déclinées dans tous les formats&nbsp;: horizontal, vertical, carré. Pour vos réseaux, vos sites, votre intranet et vos formations."
+   }
+  },
+  "classes": {
+   "La méthode": [
+    "section",
+    "section-lilas"
+   ],
+   "Méthode · contenu": [
+    "conteneur"
+   ],
+   "Méthode · en-tête": [
+    "entete-section"
+   ],
+   "Méthode · repère": [
+    "sur-titre"
+   ],
+   "Méthode · timecode": [
+    "timecode"
+   ],
+   "Méthode · titre": [
+    "titre-lg"
+   ],
+   "Méthode · étapes": [
+    "grille-etapes"
+   ],
+   "Étape 1": [
+    "carte-verre",
+    "carte-etape"
+   ],
+   "Étape 1 · chiffre": [
+    "picto-verre"
+   ],
+   "Étape 1 · titre": [
+    "titre-xs"
+   ],
+   "Étape 1 · texte": [
+    "texte"
+   ],
+   "Étape 2": [
+    "carte-verre",
+    "carte-etape"
+   ],
+   "Étape 2 · chiffre": [
+    "picto-verre"
+   ],
+   "Étape 2 · titre": [
+    "titre-xs"
+   ],
+   "Étape 2 · texte": [
+    "texte"
+   ],
+   "Étape 3": [
+    "carte-verre",
+    "carte-etape"
+   ],
+   "Étape 3 · chiffre": [
+    "picto-verre"
+   ],
+   "Étape 3 · titre": [
+    "titre-xs"
+   ],
+   "Étape 3 · texte": [
+    "texte"
+   ]
+  },
+  "style": {
+   "Méthode · contenu": "display: flex; flex-direction: column; gap: 0;",
+   "Étape 1 · chiffre": "height: 80px; align-self: flex-start;",
+   "Étape 2 · chiffre": "height: 80px; align-self: flex-start;",
+   "Étape 3 · chiffre": "height: 80px; align-self: flex-start;"
+  }
+ },
+ "brut": {}
+}

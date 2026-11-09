@@ -1,0 +1,212 @@
+{
+ "cle": "04-pourquoi",
+ "titre": "Rolling · 04 Pourquoi la vidéo",
+ "type": "e-flexbox",
+ "composition": {
+  "xml_structure": "<e-flexbox configuration-id=\"Pourquoi la vidéo\"><e-flexbox configuration-id=\"Pourquoi · contenu\"><e-flexbox configuration-id=\"Pourquoi · en-tête\"><e-flexbox configuration-id=\"Pourquoi · repère\"><e-paragraph configuration-id=\"Pourquoi · timecode\"></e-paragraph><e-paragraph configuration-id=\"Pourquoi · sur-titre\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Pourquoi · titres\"><e-paragraph configuration-id=\"Pourquoi · titre 1\"></e-paragraph><e-heading configuration-id=\"Pourquoi · titre 2\"></e-heading></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Pourquoi · cartes\"><e-flexbox configuration-id=\"Carte · Emails\"><e-paragraph configuration-id=\"Emails · étiquette\"></e-paragraph><e-image configuration-id=\"Emails · illustration\"></e-image><e-flexbox configuration-id=\"Emails · texte\"><e-paragraph configuration-id=\"Emails · question\"></e-paragraph><e-paragraph configuration-id=\"Emails · réponse\"></e-paragraph></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Carte · Blog\"><e-paragraph configuration-id=\"Blog · étiquette\"></e-paragraph><e-image configuration-id=\"Blog · illustration\"></e-image><e-flexbox configuration-id=\"Blog · texte\"><e-paragraph configuration-id=\"Blog · question\"></e-paragraph><e-paragraph configuration-id=\"Blog · réponse\"></e-paragraph></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Carte · Modules\"><e-paragraph configuration-id=\"Modules · étiquette\"></e-paragraph><e-image configuration-id=\"Modules · illustration\"></e-image><e-flexbox configuration-id=\"Modules · texte\"><e-paragraph configuration-id=\"Modules · question\"></e-paragraph><e-paragraph configuration-id=\"Modules · réponse\"></e-paragraph></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Carte · Événements\"><e-paragraph configuration-id=\"Événements · étiquette\"></e-paragraph><e-image configuration-id=\"Événements · illustration\"></e-image><e-flexbox configuration-id=\"Événements · texte\"><e-paragraph configuration-id=\"Événements · question\"></e-paragraph><e-paragraph configuration-id=\"Événements · réponse\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox><e-paragraph configuration-id=\"Pourquoi · chute\"></e-paragraph></e-flexbox></e-flexbox>",
+  "element_config": {
+   "Pourquoi la vidéo": {
+    "_cssid": "vague",
+    "tag": "section"
+   },
+   "Pourquoi · timecode": {
+    "paragraph": "00:01"
+   },
+   "Pourquoi · sur-titre": {
+    "paragraph": "Pourquoi la vidéo"
+   },
+   "Pourquoi · titre 1": {
+    "paragraph": "Hier, une entreprise sans site web n'existait pas."
+   },
+   "Pourquoi · titre 2": {
+    "tag": "h2",
+    "title": "Demain, sans vidéo, <em>elle sera ignorée.</em>"
+   },
+   "Emails · étiquette": {
+    "paragraph": "Déjà écrit"
+   },
+   "Emails · illustration": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/constat-email.png"
+     },
+     "size": "full"
+    }
+   },
+   "Emails · question": {
+    "paragraph": "Vos emails internes&nbsp;?"
+   },
+   "Emails · réponse": {
+    "paragraph": "Ignorés."
+   },
+   "Blog · étiquette": {
+    "paragraph": "Déjà écrit"
+   },
+   "Blog · illustration": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/constat-blog.png"
+     },
+     "size": "full"
+    }
+   },
+   "Blog · question": {
+    "paragraph": "Vos articles de blog&nbsp;?"
+   },
+   "Blog · réponse": {
+    "paragraph": "Survolés."
+   },
+   "Modules · étiquette": {
+    "paragraph": "Déjà écrit"
+   },
+   "Modules · illustration": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/constat-module.png"
+     },
+     "size": "full"
+    }
+   },
+   "Modules · question": {
+    "paragraph": "Vos modules PowerPoint&nbsp;?"
+   },
+   "Modules · réponse": {
+    "paragraph": "Subis."
+   },
+   "Événements · étiquette": {
+    "paragraph": "À tourner"
+   },
+   "Événements · illustration": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/constat-evenement.png"
+     },
+     "size": "full"
+    }
+   },
+   "Événements · question": {
+    "paragraph": "Vos événements&nbsp;?"
+   },
+   "Événements · réponse": {
+    "paragraph": "Oubliés."
+   },
+   "Pourquoi · chute": {
+    "paragraph": "Vous n'avez pas le temps&nbsp;? <strong>C'est notre métier&nbsp;: nous nous en occupons, sans limite.</strong>"
+   }
+  },
+  "classes": {
+   "Pourquoi la vidéo": [
+    "section",
+    "section-sombre",
+    "halos-nuit"
+   ],
+   "Pourquoi · contenu": [
+    "conteneur"
+   ],
+   "Pourquoi · en-tête": [
+    "entete-section"
+   ],
+   "Pourquoi · repère": [
+    "sur-titre"
+   ],
+   "Pourquoi · timecode": [
+    "timecode"
+   ],
+   "Pourquoi · titre 1": [
+    "titre-lg",
+    "titre-eteint"
+   ],
+   "Pourquoi · titre 2": [
+    "titre-lg"
+   ],
+   "Pourquoi · cartes": [
+    "grille-4"
+   ],
+   "Carte · Emails": [
+    "carte-verre",
+    "carte-constat"
+   ],
+   "Emails · étiquette": [
+    "etiquette-carte"
+   ],
+   "Emails · illustration": [
+    "illustration-ui"
+   ],
+   "Emails · question": [
+    "question-carte"
+   ],
+   "Emails · réponse": [
+    "mot-choc"
+   ],
+   "Carte · Blog": [
+    "carte-verre",
+    "carte-constat",
+    "halo-lilas"
+   ],
+   "Blog · étiquette": [
+    "etiquette-carte"
+   ],
+   "Blog · illustration": [
+    "illustration-ui"
+   ],
+   "Blog · question": [
+    "question-carte"
+   ],
+   "Blog · réponse": [
+    "mot-choc"
+   ],
+   "Carte · Modules": [
+    "carte-verre",
+    "carte-constat",
+    "halo-bleu"
+   ],
+   "Modules · étiquette": [
+    "etiquette-carte"
+   ],
+   "Modules · illustration": [
+    "illustration-ui"
+   ],
+   "Modules · question": [
+    "question-carte"
+   ],
+   "Modules · réponse": [
+    "mot-choc"
+   ],
+   "Carte · Événements": [
+    "carte-verre",
+    "carte-constat",
+    "halo-orange"
+   ],
+   "Événements · étiquette": [
+    "etiquette-carte",
+    "etiquette-rec"
+   ],
+   "Événements · illustration": [
+    "illustration-ui"
+   ],
+   "Événements · question": [
+    "question-carte"
+   ],
+   "Événements · réponse": [
+    "mot-choc"
+   ],
+   "Pourquoi · chute": [
+    "phrase-chute"
+   ]
+  },
+  "style": {
+   "Pourquoi · contenu": "display: flex; flex-direction: column; gap: 0;",
+   "Pourquoi · titres": "display: flex; flex-direction: column; gap: 0; padding: 0;",
+   "Emails · texte": "display: flex; flex-direction: column; gap: 0; margin-top: auto;",
+   "Emails · réponse": "color: #FFD1BF;",
+   "Blog · texte": "display: flex; flex-direction: column; gap: 0; margin-top: auto;",
+   "Blog · réponse": "color: #D9CFFF;",
+   "Modules · texte": "display: flex; flex-direction: column; gap: 0; margin-top: auto;",
+   "Modules · réponse": "color: #C8CBFF;",
+   "Événements · texte": "display: flex; flex-direction: column; gap: 0; margin-top: auto;",
+   "Événements · réponse": "color: #FFB48C;",
+   "Pourquoi · chute": "margin-top: 52px;"
+  }
+ },
+ "brut": {}
+}

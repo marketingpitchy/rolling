@@ -1,0 +1,613 @@
+{
+ "cle": "05-pour-qui",
+ "titre": "Rolling · 05 Pour qui",
+ "type": "e-flexbox",
+ "composition": {
+  "xml_structure": "<e-flexbox configuration-id=\"Pour qui\"><e-flexbox configuration-id=\"Pour qui · contenu\"><e-flexbox configuration-id=\"Pour qui · en-tête\"><e-flexbox configuration-id=\"Pour qui · repère\"><e-paragraph configuration-id=\"Pour qui · timecode\"></e-paragraph><e-paragraph configuration-id=\"Pour qui · sur-titre\"></e-paragraph></e-flexbox><e-heading configuration-id=\"Pour qui · titre\"></e-heading></e-flexbox><e-flexbox configuration-id=\"Chapitre · Marketing\"><e-div-block configuration-id=\"Marketing · photo\"><e-image configuration-id=\"Marketing · image\"></e-image><e-image configuration-id=\"Marketing · illustration\"></e-image></e-div-block><e-flexbox configuration-id=\"Marketing · texte\"><e-flexbox configuration-id=\"Marketing · haut\"><e-paragraph configuration-id=\"Marketing · étiquette\"></e-paragraph><e-image configuration-id=\"Marketing · picto\"></e-image></e-flexbox><e-heading configuration-id=\"Marketing · titre\"></e-heading><e-flexbox configuration-id=\"Marketing · constat\"><e-paragraph configuration-id=\"Marketing · constat · label\"></e-paragraph><e-paragraph configuration-id=\"Marketing · constat · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Marketing · listes\"><e-flexbox configuration-id=\"Marketing · contenus\"><e-paragraph configuration-id=\"Marketing · contenus · titre\"></e-paragraph><e-flexbox configuration-id=\"Marketing · contenus · liste\"><e-flexbox configuration-id=\"Marketing · contenus · liste · ligne 1\"><e-image configuration-id=\"Marketing · contenus · liste · coche 1\"></e-image><e-paragraph configuration-id=\"Marketing · contenus · liste · texte 1\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Marketing · contenus · liste · ligne 2\"><e-image configuration-id=\"Marketing · contenus · liste · coche 2\"></e-image><e-paragraph configuration-id=\"Marketing · contenus · liste · texte 2\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Marketing · contenus · liste · ligne 3\"><e-image configuration-id=\"Marketing · contenus · liste · coche 3\"></e-image><e-paragraph configuration-id=\"Marketing · contenus · liste · texte 3\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Marketing · projets\"><e-paragraph configuration-id=\"Marketing · projets · titre\"></e-paragraph><e-flexbox configuration-id=\"Marketing · projets · liste\"><e-flexbox configuration-id=\"Marketing · projets · liste · ligne 1\"><e-image configuration-id=\"Marketing · projets · liste · coche 1\"></e-image><e-paragraph configuration-id=\"Marketing · projets · liste · texte 1\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Marketing · projets · liste · ligne 2\"><e-image configuration-id=\"Marketing · projets · liste · coche 2\"></e-image><e-paragraph configuration-id=\"Marketing · projets · liste · texte 2\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Marketing · projets · liste · ligne 3\"><e-image configuration-id=\"Marketing · projets · liste · coche 3\"></e-image><e-paragraph configuration-id=\"Marketing · projets · liste · texte 3\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Marketing · canaux\"><e-paragraph configuration-id=\"Marketing · canal · SEO\"></e-paragraph><e-paragraph configuration-id=\"Marketing · canal · GEO / IA\"></e-paragraph><e-paragraph configuration-id=\"Marketing · canal · YouTube\"></e-paragraph><e-paragraph configuration-id=\"Marketing · canal · TikTok\"></e-paragraph><e-paragraph configuration-id=\"Marketing · canal · LinkedIn\"></e-paragraph></e-flexbox><e-button configuration-id=\"Marketing · bouton\"></e-button></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Chapitre · Interne\"><e-flexbox configuration-id=\"Interne · texte\"><e-flexbox configuration-id=\"Interne · haut\"><e-paragraph configuration-id=\"Interne · étiquette\"></e-paragraph><e-image configuration-id=\"Interne · picto\"></e-image></e-flexbox><e-heading configuration-id=\"Interne · titre\"></e-heading><e-flexbox configuration-id=\"Interne · constat\"><e-paragraph configuration-id=\"Interne · constat · label\"></e-paragraph><e-paragraph configuration-id=\"Interne · constat · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Interne · listes\"><e-flexbox configuration-id=\"Interne · contenus\"><e-paragraph configuration-id=\"Interne · contenus · titre\"></e-paragraph><e-flexbox configuration-id=\"Interne · contenus · liste\"><e-flexbox configuration-id=\"Interne · contenus · liste · ligne 1\"><e-image configuration-id=\"Interne · contenus · liste · coche 1\"></e-image><e-paragraph configuration-id=\"Interne · contenus · liste · texte 1\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Interne · contenus · liste · ligne 2\"><e-image configuration-id=\"Interne · contenus · liste · coche 2\"></e-image><e-paragraph configuration-id=\"Interne · contenus · liste · texte 2\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Interne · contenus · liste · ligne 3\"><e-image configuration-id=\"Interne · contenus · liste · coche 3\"></e-image><e-paragraph configuration-id=\"Interne · contenus · liste · texte 3\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Interne · contenus · liste · ligne 4\"><e-image configuration-id=\"Interne · contenus · liste · coche 4\"></e-image><e-paragraph configuration-id=\"Interne · contenus · liste · texte 4\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Interne · projets\"><e-paragraph configuration-id=\"Interne · projets · titre\"></e-paragraph><e-flexbox configuration-id=\"Interne · projets · liste\"><e-flexbox configuration-id=\"Interne · projets · liste · ligne 1\"><e-image configuration-id=\"Interne · projets · liste · coche 1\"></e-image><e-paragraph configuration-id=\"Interne · projets · liste · texte 1\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Interne · projets · liste · ligne 2\"><e-image configuration-id=\"Interne · projets · liste · coche 2\"></e-image><e-paragraph configuration-id=\"Interne · projets · liste · texte 2\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Interne · projets · liste · ligne 3\"><e-image configuration-id=\"Interne · projets · liste · coche 3\"></e-image><e-paragraph configuration-id=\"Interne · projets · liste · texte 3\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Interne · canaux\"><e-paragraph configuration-id=\"Interne · canal · Onboarding\"></e-paragraph><e-paragraph configuration-id=\"Interne · canal · Microlearning\"></e-paragraph><e-paragraph configuration-id=\"Interne · canal · Marque employeur\"></e-paragraph><e-paragraph configuration-id=\"Interne · canal · Actu interne\"></e-paragraph></e-flexbox><e-button configuration-id=\"Interne · bouton\"></e-button></e-flexbox><e-div-block configuration-id=\"Interne · photo\"><e-image configuration-id=\"Interne · image\"></e-image><e-paragraph configuration-id=\"Interne · rec\"></e-paragraph><e-paragraph configuration-id=\"Interne · durée\"></e-paragraph><e-image configuration-id=\"Interne · illustration\"></e-image></e-div-block></e-flexbox></e-flexbox></e-flexbox>",
+  "element_config": {
+   "Pour qui": {
+    "tag": "section"
+   },
+   "Pour qui · timecode": {
+    "paragraph": "00:02"
+   },
+   "Pour qui · sur-titre": {
+    "paragraph": "Pour qui"
+   },
+   "Pour qui · titre": {
+    "tag": "h2",
+    "title": "Ce que la vidéo <em>va vous apporter.</em>"
+   },
+   "Chapitre · Marketing": {
+    "tag": "article"
+   },
+   "Marketing · image": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/pourqui-marketing.jpg",
+      "alt": "Des mains tapent sur le clavier d'un ordinateur portable"
+     },
+     "size": "full"
+    }
+   },
+   "Marketing · illustration": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/pourqui-recherche.png"
+     },
+     "size": "full"
+    }
+   },
+   "Marketing · étiquette": {
+    "paragraph": "Marketing &amp; communication"
+   },
+   "Marketing · picto": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/picto-megaphone.png"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "Marketing · titre": {
+    "tag": "h3",
+    "title": "Soyez vus là où vos clients vous <b>cherchent.</b>"
+   },
+   "Marketing · constat · label": {
+    "paragraph": "Le constat"
+   },
+   "Marketing · constat · texte": {
+    "paragraph": "Google et les IA privilégient, dans leurs réponses, les marques qui ont des vidéos. Et YouTube ou TikTok sont devenus des moteurs de recherche à part entière."
+   },
+   "Marketing · contenus · titre": {
+    "paragraph": "À partir de vos contenus"
+   },
+   "Marketing · contenus · liste · coche 1": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/coche-verre.png"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "Marketing · contenus · liste · texte 1": {
+    "paragraph": "Vos pages produit, en démos vidéo"
+   },
+   "Marketing · contenus · liste · coche 2": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/coche-verre.png"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "Marketing · contenus · liste · texte 2": {
+    "paragraph": "Vos articles, en vidéos de 90&nbsp;s"
+   },
+   "Marketing · contenus · liste · coche 3": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/coche-verre.png"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "Marketing · contenus · liste · texte 3": {
+    "paragraph": "Votre étude annuelle, en série"
+   },
+   "Marketing · projets · titre": {
+    "paragraph": "Pour vos nouveaux projets"
+   },
+   "Marketing · projets · liste · coche 1": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/coche-verre.png"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "Marketing · projets · liste · texte 1": {
+    "paragraph": "Lancements produit"
+   },
+   "Marketing · projets · liste · coche 2": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/coche-verre.png"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "Marketing · projets · liste · texte 2": {
+    "paragraph": "Salons &amp; événements"
+   },
+   "Marketing · projets · liste · coche 3": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/coche-verre.png"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "Marketing · projets · liste · texte 3": {
+    "paragraph": "Campagnes LinkedIn"
+   },
+   "Marketing · canal · SEO": {
+    "paragraph": "SEO"
+   },
+   "Marketing · canal · GEO / IA": {
+    "paragraph": "GEO / IA"
+   },
+   "Marketing · canal · YouTube": {
+    "paragraph": "YouTube"
+   },
+   "Marketing · canal · TikTok": {
+    "paragraph": "TikTok"
+   },
+   "Marketing · canal · LinkedIn": {
+    "paragraph": "LinkedIn"
+   },
+   "Marketing · bouton": {
+    "text": "Parlons de vos vidéos marketing",
+    "link": {
+     "destination": "#contact"
+    }
+   },
+   "Chapitre · Interne": {
+    "tag": "article"
+   },
+   "Interne · étiquette": {
+    "paragraph": "Com interne · RH · Formation"
+   },
+   "Interne · picto": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/picto-equipe.png"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "Interne · titre": {
+    "tag": "h3",
+    "title": "Soyez enfin <u>regardés.</u>"
+   },
+   "Interne · constat · label": {
+    "paragraph": "Le constat"
+   },
+   "Interne · constat · texte": {
+    "paragraph": "Livrets d'accueil, procédures, formations, notes internes&nbsp;: vous avez des centaines de pages que personne ne lit. Le fond est déjà là, il ne lui manque que la vidéo."
+   },
+   "Interne · contenus · titre": {
+    "paragraph": "À partir de vos contenus"
+   },
+   "Interne · contenus · liste · coche 1": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/coche-verre.png"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "Interne · contenus · liste · texte 1": {
+    "paragraph": "Votre livret d'accueil, en série d'onboarding"
+   },
+   "Interne · contenus · liste · coche 2": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/coche-verre.png"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "Interne · contenus · liste · texte 2": {
+    "paragraph": "Vos procédures, en tutoriels courts"
+   },
+   "Interne · contenus · liste · coche 3": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/coche-verre.png"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "Interne · contenus · liste · texte 3": {
+    "paragraph": "Vos formations, en microlearning de 60&nbsp;s"
+   },
+   "Interne · contenus · liste · coche 4": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/coche-verre.png"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "Interne · contenus · liste · texte 4": {
+    "paragraph": "Vos notes internes, en rendez-vous vidéo"
+   },
+   "Interne · projets · titre": {
+    "paragraph": "Pour vos nouveaux projets"
+   },
+   "Interne · projets · liste · coche 1": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/coche-verre.png"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "Interne · projets · liste · texte 1": {
+    "paragraph": "Séminaires &amp; conventions"
+   },
+   "Interne · projets · liste · coche 2": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/coche-verre.png"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "Interne · projets · liste · texte 2": {
+    "paragraph": "Témoignages collaborateurs"
+   },
+   "Interne · projets · liste · coche 3": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/coche-verre.png"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "Interne · projets · liste · texte 3": {
+    "paragraph": "Projets de transformation"
+   },
+   "Interne · canal · Onboarding": {
+    "paragraph": "Onboarding"
+   },
+   "Interne · canal · Microlearning": {
+    "paragraph": "Microlearning"
+   },
+   "Interne · canal · Marque employeur": {
+    "paragraph": "Marque employeur"
+   },
+   "Interne · canal · Actu interne": {
+    "paragraph": "Actu interne"
+   },
+   "Interne · bouton": {
+    "text": "Parlons de vos contenus internes",
+    "link": {
+     "destination": "#contact"
+    }
+   },
+   "Interne · image": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/pourqui-interne.jpg",
+      "alt": "Une collaboratrice, souriante, filmée pour une vidéo interne"
+     },
+     "size": "full"
+    }
+   },
+   "Interne · rec": {
+    "paragraph": "REC"
+   },
+   "Interne · durée": {
+    "paragraph": "00:00:58"
+   },
+   "Interne · illustration": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/pourqui-intranet.png"
+     },
+     "size": "full"
+    }
+   }
+  },
+  "classes": {
+   "Pour qui": [
+    "section",
+    "halos-cotes"
+   ],
+   "Pour qui · contenu": [
+    "conteneur"
+   ],
+   "Pour qui · en-tête": [
+    "entete-section"
+   ],
+   "Pour qui · repère": [
+    "sur-titre"
+   ],
+   "Pour qui · timecode": [
+    "timecode"
+   ],
+   "Pour qui · titre": [
+    "titre-lg"
+   ],
+   "Chapitre · Marketing": [
+    "chapitre",
+    "chapitre-colle"
+   ],
+   "Marketing · photo": [
+    "cadre-photo",
+    "photo-chapitre"
+   ],
+   "Marketing · image": [
+    "image-couvrante"
+   ],
+   "Marketing · illustration": [
+    "illustration-photo"
+   ],
+   "Marketing · texte": [
+    "colonne-chapitre"
+   ],
+   "Marketing · étiquette": [
+    "etiquette-metier-bleu"
+   ],
+   "Marketing · picto": [
+    "picto-verre"
+   ],
+   "Marketing · titre": [
+    "titre-md"
+   ],
+   "Marketing · constat": [
+    "panneau"
+   ],
+   "Marketing · constat · label": [
+    "label",
+    "label-violet"
+   ],
+   "Marketing · constat · texte": [
+    "texte-fort"
+   ],
+   "Marketing · contenus": [
+    "pile"
+   ],
+   "Marketing · contenus · titre": [
+    "label"
+   ],
+   "Marketing · contenus · liste": [
+    "liste-coches"
+   ],
+   "Marketing · contenus · liste · ligne 1": [
+    "ligne-coche"
+   ],
+   "Marketing · contenus · liste · coche 1": [
+    "coche"
+   ],
+   "Marketing · contenus · liste · texte 1": [
+    "texte-petit"
+   ],
+   "Marketing · contenus · liste · ligne 2": [
+    "ligne-coche"
+   ],
+   "Marketing · contenus · liste · coche 2": [
+    "coche"
+   ],
+   "Marketing · contenus · liste · texte 2": [
+    "texte-petit"
+   ],
+   "Marketing · contenus · liste · ligne 3": [
+    "ligne-coche"
+   ],
+   "Marketing · contenus · liste · coche 3": [
+    "coche"
+   ],
+   "Marketing · contenus · liste · texte 3": [
+    "texte-petit"
+   ],
+   "Marketing · projets": [
+    "pile"
+   ],
+   "Marketing · projets · titre": [
+    "label"
+   ],
+   "Marketing · projets · liste": [
+    "liste-coches"
+   ],
+   "Marketing · projets · liste · ligne 1": [
+    "ligne-coche"
+   ],
+   "Marketing · projets · liste · coche 1": [
+    "coche"
+   ],
+   "Marketing · projets · liste · texte 1": [
+    "texte-petit"
+   ],
+   "Marketing · projets · liste · ligne 2": [
+    "ligne-coche"
+   ],
+   "Marketing · projets · liste · coche 2": [
+    "coche"
+   ],
+   "Marketing · projets · liste · texte 2": [
+    "texte-petit"
+   ],
+   "Marketing · projets · liste · ligne 3": [
+    "ligne-coche"
+   ],
+   "Marketing · projets · liste · coche 3": [
+    "coche"
+   ],
+   "Marketing · projets · liste · texte 3": [
+    "texte-petit"
+   ],
+   "Marketing · canaux": [
+    "rangee"
+   ],
+   "Marketing · canal · SEO": [
+    "chip-bleu"
+   ],
+   "Marketing · canal · GEO / IA": [
+    "chip-bleu"
+   ],
+   "Marketing · canal · YouTube": [
+    "chip-bleu"
+   ],
+   "Marketing · canal · TikTok": [
+    "chip-bleu"
+   ],
+   "Marketing · canal · LinkedIn": [
+    "chip-bleu"
+   ],
+   "Marketing · bouton": [
+    "bouton-principal",
+    "bouton-petit"
+   ],
+   "Chapitre · Interne": [
+    "chapitre",
+    "chapitre-peche"
+   ],
+   "Interne · texte": [
+    "colonne-chapitre"
+   ],
+   "Interne · étiquette": [
+    "etiquette-metier-orange"
+   ],
+   "Interne · picto": [
+    "picto-verre"
+   ],
+   "Interne · titre": [
+    "titre-md"
+   ],
+   "Interne · constat": [
+    "panneau"
+   ],
+   "Interne · constat · label": [
+    "label",
+    "label-orange"
+   ],
+   "Interne · constat · texte": [
+    "texte-fort"
+   ],
+   "Interne · contenus": [
+    "pile"
+   ],
+   "Interne · contenus · titre": [
+    "label"
+   ],
+   "Interne · contenus · liste": [
+    "liste-coches"
+   ],
+   "Interne · contenus · liste · ligne 1": [
+    "ligne-coche"
+   ],
+   "Interne · contenus · liste · coche 1": [
+    "coche"
+   ],
+   "Interne · contenus · liste · texte 1": [
+    "texte-petit"
+   ],
+   "Interne · contenus · liste · ligne 2": [
+    "ligne-coche"
+   ],
+   "Interne · contenus · liste · coche 2": [
+    "coche"
+   ],
+   "Interne · contenus · liste · texte 2": [
+    "texte-petit"
+   ],
+   "Interne · contenus · liste · ligne 3": [
+    "ligne-coche"
+   ],
+   "Interne · contenus · liste · coche 3": [
+    "coche"
+   ],
+   "Interne · contenus · liste · texte 3": [
+    "texte-petit"
+   ],
+   "Interne · contenus · liste · ligne 4": [
+    "ligne-coche"
+   ],
+   "Interne · contenus · liste · coche 4": [
+    "coche"
+   ],
+   "Interne · contenus · liste · texte 4": [
+    "texte-petit"
+   ],
+   "Interne · projets": [
+    "pile"
+   ],
+   "Interne · projets · titre": [
+    "label"
+   ],
+   "Interne · projets · liste": [
+    "liste-coches"
+   ],
+   "Interne · projets · liste · ligne 1": [
+    "ligne-coche"
+   ],
+   "Interne · projets · liste · coche 1": [
+    "coche"
+   ],
+   "Interne · projets · liste · texte 1": [
+    "texte-petit"
+   ],
+   "Interne · projets · liste · ligne 2": [
+    "ligne-coche"
+   ],
+   "Interne · projets · liste · coche 2": [
+    "coche"
+   ],
+   "Interne · projets · liste · texte 2": [
+    "texte-petit"
+   ],
+   "Interne · projets · liste · ligne 3": [
+    "ligne-coche"
+   ],
+   "Interne · projets · liste · coche 3": [
+    "coche"
+   ],
+   "Interne · projets · liste · texte 3": [
+    "texte-petit"
+   ],
+   "Interne · canaux": [
+    "rangee"
+   ],
+   "Interne · canal · Onboarding": [
+    "chip-orange"
+   ],
+   "Interne · canal · Microlearning": [
+    "chip-orange"
+   ],
+   "Interne · canal · Marque employeur": [
+    "chip-orange"
+   ],
+   "Interne · canal · Actu interne": [
+    "chip-orange"
+   ],
+   "Interne · bouton": [
+    "bouton-principal",
+    "bouton-petit"
+   ],
+   "Interne · photo": [
+    "cadre-photo",
+    "photo-chapitre",
+    "viseur"
+   ],
+   "Interne · image": [
+    "image-couvrante"
+   ],
+   "Interne · rec": [
+    "rec-libelle"
+   ],
+   "Interne · durée": [
+    "rec-libelle",
+    "rec-droite"
+   ],
+   "Interne · illustration": [
+    "illustration-photo"
+   ]
+  },
+  "style": {
+   "Pour qui · contenu": "display: flex; flex-direction: column; gap: 0;",
+   "Marketing · image": "object-position: 42% 55%;",
+   "Marketing · haut": "display: flex; flex-direction: row; align-items: center; justify-content: space-between; gap: 16px; padding: 0;",
+   "Marketing · picto": "height: 76px; margin: -10px -8px -10px 0;",
+   "Marketing · listes": "display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 22px; padding: 0;",
+   "Chapitre · Interne": "margin-top: 28px; z-index: 2;",
+   "Interne · haut": "display: flex; flex-direction: row; align-items: center; justify-content: space-between; gap: 16px; padding: 0;",
+   "Interne · picto": "height: 76px; margin: -10px -8px -10px 0;",
+   "Interne · listes": "display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 22px; padding: 0;",
+   "Interne · image": "object-position: 56% 30%;"
+  }
+ },
+ "brut": {}
+}

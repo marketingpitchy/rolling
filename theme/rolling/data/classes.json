@@ -365,6 +365,27 @@
             ]
         },
         {
+            "id": "g-3cd2001",
+            "label": "label-orange",
+            "groupe": "Textes",
+            "description": "À ajouter à « label » : label en orange foncé.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "color": {
+                            "$$type": "color",
+                            "value": "#B4461C"
+                        }
+                    },
+                    "custom_css": null
+                }
+            ]
+        },
+        {
             "id": "g-c908b7d",
             "label": "titre-eteint",
             "groupe": "Textes",
@@ -522,6 +543,355 @@
             ]
         },
         {
+            "id": "g-b008770",
+            "label": "etiquette-rec",
+            "groupe": "Étiquettes",
+            "description": "À ajouter à « etiquette-carte » : texte pêche et point rouge qui clignote (« À tourner »).",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "color": {
+                            "$$type": "color",
+                            "value": "#FFD1BF"
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "Jjo6YmVmb3JlIHsgd2lkdGg6IDhweDsgaGVpZ2h0OiA4cHg7IGJhY2tncm91bmQ6ICNGRjNCMzA7IGJveC1zaGFkb3c6IDAgMCAwIDNweCByZ2JhKDI1NSw1OSw0OCwwLjI1KTsgfSAmOjpiZWZvcmUgeyBhbmltYXRpb246IHJsLWNsaWdub3RlIDEuNnMgZWFzZS1pbi1vdXQgaW5maW5pdGU7IH0="
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-19a9280",
+            "label": "carte-constat",
+            "groupe": "Surfaces",
+            "description": "À ajouter à une carte en verre : carte haute, contenu calé en bas, halo coloré en haut (pêche ; halo-lilas, halo-bleu, halo-orange pour changer). Se soulève au survol.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "mobile",
+                        "state": null
+                    },
+                    "props": {
+                        "min-height": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 340,
+                                "unit": "px"
+                            }
+                        }
+                    },
+                    "custom_css": null
+                },
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": "hover"
+                    },
+                    "props": {
+                        "transform": {
+                            "$$type": "transform",
+                            "value": {
+                                "transform-functions": {
+                                    "$$type": "transform-functions",
+                                    "value": [
+                                        {
+                                            "$$type": "transform-move",
+                                            "value": {
+                                                "x": {
+                                                    "$$type": "size",
+                                                    "value": {
+                                                        "size": 0,
+                                                        "unit": "px"
+                                                    }
+                                                },
+                                                "y": {
+                                                    "$$type": "size",
+                                                    "value": {
+                                                        "size": -5,
+                                                        "unit": "px"
+                                                    }
+                                                },
+                                                "z": {
+                                                    "$$type": "size",
+                                                    "value": {
+                                                        "size": 0,
+                                                        "unit": "px"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    },
+                    "custom_css": null
+                },
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "min-height": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 380,
+                                "unit": "px"
+                            }
+                        },
+                        "overflow": {
+                            "$$type": "string",
+                            "value": "hidden"
+                        },
+                        "padding": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 26,
+                                "unit": "px"
+                            }
+                        },
+                        "border-radius": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 28,
+                                "unit": "px"
+                            }
+                        },
+                        "transition": {
+                            "$$type": "transition",
+                            "value": [
+                                {
+                                    "$$type": "selection-size",
+                                    "value": {
+                                        "selection": {
+                                            "$$type": "key-value",
+                                            "value": {
+                                                "key": {
+                                                    "$$type": "string",
+                                                    "value": "transform"
+                                                },
+                                                "value": {
+                                                    "$$type": "string",
+                                                    "value": "transform"
+                                                }
+                                            }
+                                        },
+                                        "size": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 0.45,
+                                                "unit": "s"
+                                            }
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        "gap": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 22,
+                                "unit": "px"
+                            }
+                        },
+                        "justify-content": {
+                            "$$type": "string",
+                            "value": "flex-end"
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "aXNvbGF0aW9uOiBpc29sYXRlOyAmOjphZnRlciB7IGNvbnRlbnQ6ICcnOyBwb3NpdGlvbjogYWJzb2x1dGU7IHotaW5kZXg6IC0xOyBsZWZ0OiA1MCU7IHRvcDogLTk2cHg7IHdpZHRoOiAyODBweDsgaGVpZ2h0OiAyODBweDsgbWFyZ2luLWxlZnQ6IC0xNDBweDsgYm9yZGVyLXJhZGl1czogNTAlOyBwb2ludGVyLWV2ZW50czogbm9uZTsgYmFja2dyb3VuZDogcmFkaWFsLWdyYWRpZW50KGNsb3Nlc3Qtc2lkZSwgdmFyKC0tcmwtaGFsby0xLCByZ2JhKDI1NSwxNjIsMTIyLDAuODUpKSwgdmFyKC0tcmwtaGFsby0yLCByZ2JhKDI1NSwxMzgsOTEsMC4zKSkgNTAlLCByZ2JhKDI1NSwxMzgsOTEsMCkgMTAwJSk7IH0="
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-8b8fb7f",
+            "label": "carte-etape",
+            "groupe": "Surfaces",
+            "description": "À ajouter à une carte en verre : étape de la méthode (chiffre en verre, titre, texte), flèche orange vers l'étape suivante. Se soulève au survol.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "tablet",
+                        "state": null
+                    },
+                    "props": {
+                        "padding": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 28,
+                                "unit": "px"
+                            }
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "Jjpub3QoOmxhc3QtY2hpbGQpOjphZnRlciB7IGRpc3BsYXk6IG5vbmU7IH0="
+                    }
+                },
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": "hover"
+                    },
+                    "props": {
+                        "transform": {
+                            "$$type": "transform",
+                            "value": {
+                                "transform-functions": {
+                                    "$$type": "transform-functions",
+                                    "value": [
+                                        {
+                                            "$$type": "transform-move",
+                                            "value": {
+                                                "x": {
+                                                    "$$type": "size",
+                                                    "value": {
+                                                        "size": 0,
+                                                        "unit": "px"
+                                                    }
+                                                },
+                                                "y": {
+                                                    "$$type": "size",
+                                                    "value": {
+                                                        "size": -5,
+                                                        "unit": "px"
+                                                    }
+                                                },
+                                                "z": {
+                                                    "$$type": "size",
+                                                    "value": {
+                                                        "size": 0,
+                                                        "unit": "px"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    },
+                    "custom_css": null
+                },
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "padding": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 36,
+                                "unit": "px"
+                            }
+                        },
+                        "border-radius": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 30,
+                                "unit": "px"
+                            }
+                        },
+                        "transition": {
+                            "$$type": "transition",
+                            "value": [
+                                {
+                                    "$$type": "selection-size",
+                                    "value": {
+                                        "selection": {
+                                            "$$type": "key-value",
+                                            "value": {
+                                                "key": {
+                                                    "$$type": "string",
+                                                    "value": "transform"
+                                                },
+                                                "value": {
+                                                    "$$type": "string",
+                                                    "value": "transform"
+                                                }
+                                            }
+                                        },
+                                        "size": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 0.45,
+                                                "unit": "s"
+                                            }
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "Jjpub3QoOmxhc3QtY2hpbGQpOjphZnRlciB7IGNvbnRlbnQ6ICcnOyBwb3NpdGlvbjogYWJzb2x1dGU7IHotaW5kZXg6IDI7IHJpZ2h0OiAtNTRweDsgdG9wOiA0NnB4OyB3aWR0aDogNjRweDsgaGVpZ2h0OiA0MHB4OyBwb2ludGVyLWV2ZW50czogbm9uZTsgYmFja2dyb3VuZDogdXJsKCJkYXRhOmltYWdlL3N2Zyt4bWwsJTNDc3ZnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zycgdmlld0JveD0nMCAwIDY0IDQwJyBmaWxsPSdub25lJyBzdHJva2U9JyUyM0ZGOEE1Qicgc3Ryb2tlLXdpZHRoPSczJyBzdHJva2UtbGluZWNhcD0ncm91bmQnIHN0cm9rZS1saW5lam9pbj0ncm91bmQnJTNFJTNDcGF0aCBkPSdNNCAyNiBDIDIwIDYsIDQwIDQsIDU2IDE4Jy8lM0UlM0NwYXRoIGQ9J000NCAxNiBMNTcgMTkgTDU2IDYnLyUzRSUzQy9zdmclM0UiKSBjZW50ZXIgLyBjb250YWluIG5vLXJlcGVhdDsgfQ=="
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-147ebf4",
+            "label": "halo-lilas",
+            "groupe": "Surfaces",
+            "description": "À ajouter à « carte-constat » : halo lilas.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": [],
+                    "custom_css": {
+                        "raw": "LS1ybC1oYWxvLTE6IHJnYmEoMTk2LDE4MSwyNTMsMC45KTsgLS1ybC1oYWxvLTI6IHJnYmEoMTM5LDkyLDI0NiwwLjM1KTs="
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-b981724",
+            "label": "halo-bleu",
+            "groupe": "Surfaces",
+            "description": "À ajouter à « carte-constat » : halo bleu.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": [],
+                    "custom_css": {
+                        "raw": "LS1ybC1oYWxvLTE6IHJnYmEoMTIwLDEyNCwyNTUsMC45KTsgLS1ybC1oYWxvLTI6IHJnYmEoNTIsNTIsMjI0LDAuNCk7"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-acb2e9f",
+            "label": "halo-orange",
+            "groupe": "Surfaces",
+            "description": "À ajouter à « carte-constat » : halo orange vif.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": [],
+                    "custom_css": {
+                        "raw": "LS1ybC1oYWxvLTE6IHJnYmEoMjU1LDEzOCw5MSwwLjkpOyAtLXJsLWhhbG8tMjogcmdiYSgyMjQsODYsNDIsMC4zNSk7"
+                    }
+                }
+            ]
+        },
+        {
             "id": "g-cb4dee9",
             "label": "carte-ecran",
             "groupe": "Surfaces",
@@ -572,6 +942,78 @@
                         }
                     },
                     "custom_css": null
+                }
+            ]
+        },
+        {
+            "id": "g-b7cdecb",
+            "label": "chapitre-peche",
+            "groupe": "Surfaces",
+            "description": "À ajouter à « chapitre » : version pêche (communication interne, RH).",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": [],
+                    "custom_css": {
+                        "raw": "YmFja2dyb3VuZC1pbWFnZTogcmFkaWFsLWdyYWRpZW50KDcwJSA1MCUgYXQgODIlIDAlLCByZ2JhKDI1NSwyNTUsMjU1LDAuOTUpLCByZ2JhKDI1NSwyNTUsMjU1LDApIDcyJSksIGxpbmVhci1ncmFkaWVudCgyMDBkZWcsIHJnYmEoMjU1LDIzOCwyMjksMC45NykgMCUsIHJnYmEoMjU1LDIyNiwyMTIsMC45NSkgNjAlLCByZ2JhKDI1NSwyNDcsMjQyLDAuOTYpIDEwMCUpOyAtLXJsLW9tYnJlLXBob3RvOiByZ2JhKDIyNCw4Niw0MiwwLjYpOw=="
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-1628a1f",
+            "label": "chapitre-colle",
+            "groupe": "Surfaces",
+            "description": "À ajouter au premier chapitre : il reste collé en haut pendant que le suivant glisse par-dessus (grands écrans seulement, à partir de 1200 px).",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "tablet",
+                        "state": null
+                    },
+                    "props": {
+                        "position": {
+                            "$$type": "string",
+                            "value": "relative"
+                        },
+                        "inset-block-start": {
+                            "$$type": "size",
+                            "value": {
+                                "size": null,
+                                "unit": "auto"
+                            }
+                        }
+                    },
+                    "custom_css": null
+                },
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "position": {
+                            "$$type": "string",
+                            "value": "sticky"
+                        },
+                        "inset-block-start": {
+                            "$$type": "size",
+                            "value": {
+                                "size": "min(110px, calc(100vh - 800px))",
+                                "unit": "custom"
+                            }
+                        },
+                        "z-index": {
+                            "$$type": "number",
+                            "value": 1
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "QG1lZGlhIChtYXgtd2lkdGg6IDExOTlweCkgeyBwb3NpdGlvbjogcmVsYXRpdmU7IHRvcDogYXV0bzsgfQ=="
+                    }
                 }
             ]
         },
@@ -899,6 +1341,117 @@
                         }
                     },
                     "custom_css": null
+                }
+            ]
+        },
+        {
+            "id": "g-46a14e1",
+            "label": "photo-chapitre",
+            "groupe": "Vidéo et images",
+            "description": "À ajouter à « cadre-photo » : grande photo d'un chapitre (560 px de haut, ombre colorée).",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "tablet",
+                        "state": null
+                    },
+                    "props": {
+                        "min-height": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 420,
+                                "unit": "px"
+                            }
+                        }
+                    },
+                    "custom_css": null
+                },
+                {
+                    "meta": {
+                        "breakpoint": "mobile",
+                        "state": null
+                    },
+                    "props": {
+                        "min-height": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 340,
+                                "unit": "px"
+                            }
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "LS1ybC1yYXlvbi1waG90bzogMjJweDs="
+                    }
+                },
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "min-height": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 560,
+                                "unit": "px"
+                            }
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "LS1ybC1yYXlvbi1waG90bzogMzBweDsgYm94LXNoYWRvdzogMCAyNHB4IDUwcHggLTMwcHggdmFyKC0tcmwtb21icmUtcGhvdG8sIHJnYmEoNTIsNTIsMjI0LDAuNikpOw=="
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-a7d7cfd",
+            "label": "viseur",
+            "groupe": "Vidéo et images",
+            "description": "À ajouter à « cadre-photo » : coins de viseur de caméra blancs.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": [],
+                    "custom_css": {
+                        "raw": "Jjo6YmVmb3JlIHsgcG9zaXRpb246IHJlbGF0aXZlOyB0b3A6IGF1dG87IHJpZ2h0OiBhdXRvOyBib3R0b206IGF1dG87IGxlZnQ6IGF1dG87IGhlaWdodDogYXV0bzsgb3BhY2l0eTogMTsgbWl4LWJsZW5kLW1vZGU6IG5vcm1hbDsgYm9yZGVyOiAwOyBjb250ZW50OiAnJzsgcG9zaXRpb246IGFic29sdXRlOyB6LWluZGV4OiAyOyB3aWR0aDogYXV0bzsgdG9wOiAyMnB4OyByaWdodDogMjJweDsgYm90dG9tOiAyMnB4OyBsZWZ0OiAyMnB4OyBwb2ludGVyLWV2ZW50czogbm9uZTsgYmFja2dyb3VuZDogbGluZWFyLWdyYWRpZW50KHJnYmEoMjU1LDI1NSwyNTUsMC45MiksIHJnYmEoMjU1LDI1NSwyNTUsMC45MikpIGxlZnQgdG9wIC8gMjBweCAycHggbm8tcmVwZWF0LCBsaW5lYXItZ3JhZGllbnQocmdiYSgyNTUsMjU1LDI1NSwwLjkyKSwgcmdiYSgyNTUsMjU1LDI1NSwwLjkyKSkgbGVmdCB0b3AgLyAycHggMjBweCBuby1yZXBlYXQsIGxpbmVhci1ncmFkaWVudChyZ2JhKDI1NSwyNTUsMjU1LDAuOTIpLCByZ2JhKDI1NSwyNTUsMjU1LDAuOTIpKSByaWdodCB0b3AgLyAyMHB4IDJweCBuby1yZXBlYXQsIGxpbmVhci1ncmFkaWVudChyZ2JhKDI1NSwyNTUsMjU1LDAuOTIpLCByZ2JhKDI1NSwyNTUsMjU1LDAuOTIpKSByaWdodCB0b3AgLyAycHggMjBweCBuby1yZXBlYXQsIGxpbmVhci1ncmFkaWVudChyZ2JhKDI1NSwyNTUsMjU1LDAuOTIpLCByZ2JhKDI1NSwyNTUsMjU1LDAuOTIpKSBsZWZ0IGJvdHRvbSAvIDIwcHggMnB4IG5vLXJlcGVhdCwgbGluZWFyLWdyYWRpZW50KHJnYmEoMjU1LDI1NSwyNTUsMC45MiksIHJnYmEoMjU1LDI1NSwyNTUsMC45MikpIGxlZnQgYm90dG9tIC8gMnB4IDIwcHggbm8tcmVwZWF0LCBsaW5lYXItZ3JhZGllbnQocmdiYSgyNTUsMjU1LDI1NSwwLjkyKSwgcmdiYSgyNTUsMjU1LDI1NSwwLjkyKSkgcmlnaHQgYm90dG9tIC8gMjBweCAycHggbm8tcmVwZWF0LCBsaW5lYXItZ3JhZGllbnQocmdiYSgyNTUsMjU1LDI1NSwwLjkyKSwgcmdiYSgyNTUsMjU1LDI1NSwwLjkyKSkgcmlnaHQgYm90dG9tIC8gMnB4IDIwcHggbm8tcmVwZWF0OyB9"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-f18629b",
+            "label": "rec-droite",
+            "groupe": "Vidéo et images",
+            "description": "À ajouter à « rec-libelle » : mention en haut à droite, sans point (durée 00:00:58).",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "inset-inline-end": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 34,
+                                "unit": "px"
+                            }
+                        },
+                        "inset-inline-start": {
+                            "$$type": "size",
+                            "value": {
+                                "size": null,
+                                "unit": "auto"
+                            }
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "Jjo6YmVmb3JlIHsgZGlzcGxheTogbm9uZTsgfQ=="
+                    }
                 }
             ]
         },
@@ -2415,6 +2968,65 @@
             ]
         },
         {
+            "id": "g-6833b75",
+            "label": "grille-etapes",
+            "groupe": "Mise en page",
+            "description": "Trois étapes côte à côte, espacées pour la flèche qui les relie ; l'une sous l'autre sous 980 px.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "tablet",
+                        "state": null
+                    },
+                    "props": {
+                        "gap": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 18,
+                                "unit": "px"
+                            }
+                        },
+                        "grid-template-columns": {
+                            "$$type": "string",
+                            "value": "minmax(0, 1fr)"
+                        }
+                    },
+                    "custom_css": null
+                },
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "padding": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 0,
+                                "unit": "px"
+                            }
+                        },
+                        "display": {
+                            "$$type": "string",
+                            "value": "grid"
+                        },
+                        "gap": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 44,
+                                "unit": "px"
+                            }
+                        },
+                        "grid-template-columns": {
+                            "$$type": "string",
+                            "value": "repeat(3, minmax(0, 1fr))"
+                        }
+                    },
+                    "custom_css": null
+                }
+            ]
+        },
+        {
             "id": "g-7069cae",
             "label": "grille-6",
             "groupe": "Mise en page",
@@ -3019,6 +3631,51 @@
             ]
         },
         {
+            "id": "g-9a0b2c9",
+            "label": "texte-fort",
+            "groupe": "Textes",
+            "description": "Texte courant en semi-gras, plus foncé (« Le constat »).",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "font-family": {
+                            "$$type": "font-family",
+                            "value": "Hanken Grotesk"
+                        },
+                        "font-weight": {
+                            "$$type": "string",
+                            "value": "600"
+                        },
+                        "font-size": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 17,
+                                "unit": "px"
+                            }
+                        },
+                        "line-height": {
+                            "$$type": "size",
+                            "value": {
+                                "size": "1.5",
+                                "unit": "custom"
+                            }
+                        },
+                        "display": {
+                            "$$type": "string",
+                            "value": "block"
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "Y29sb3I6IHZhcigtLXJsLXRleHRlLWZvcnQsICMyQTI4NDApOw=="
+                    }
+                }
+            ]
+        },
+        {
             "id": "g-42fa6ca",
             "label": "texte-petit",
             "groupe": "Textes",
@@ -3055,6 +3712,167 @@
                     },
                     "custom_css": {
                         "raw": "Y29sb3I6IHZhcigtLXJsLXBhcmFncmFwaGUsIHZhcigtLXBhcmFncmFwaGUpKTsgJiBzdHJvbmcsICYgYiB7IGZvbnQtd2VpZ2h0OiA3MDA7IGNvbG9yOiB2YXIoLS1ybC10ZXh0ZSwgdmFyKC0tZW5jcmUpKTsgfQ=="
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-5526ed7",
+            "label": "question-carte",
+            "groupe": "Textes",
+            "description": "Question d'une carte (« Vos emails internes ? »), 17 px semi-gras.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "font-family": {
+                            "$$type": "font-family",
+                            "value": "Hanken Grotesk"
+                        },
+                        "font-weight": {
+                            "$$type": "string",
+                            "value": "600"
+                        },
+                        "font-size": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 17,
+                                "unit": "px"
+                            }
+                        },
+                        "line-height": {
+                            "$$type": "size",
+                            "value": {
+                                "size": "1.4",
+                                "unit": "custom"
+                            }
+                        },
+                        "display": {
+                            "$$type": "string",
+                            "value": "block"
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "Y29sb3I6IHZhcigtLXJsLXRleHRlLCB2YXIoLS1lbmNyZSkpOw=="
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-ef1008e",
+            "label": "mot-choc",
+            "groupe": "Textes",
+            "description": "Mot-réponse en grand (« Ignorés. »), 42 px. Couleur réglable sur l'élément.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "font-family": {
+                            "$$type": "font-family",
+                            "value": "Bricolage Grotesque"
+                        },
+                        "font-size": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 42,
+                                "unit": "px"
+                            }
+                        },
+                        "letter-spacing": {
+                            "$$type": "size",
+                            "value": {
+                                "size": -0.05,
+                                "unit": "em"
+                            }
+                        },
+                        "line-height": {
+                            "$$type": "size",
+                            "value": {
+                                "size": "1.05",
+                                "unit": "custom"
+                            }
+                        },
+                        "margin": {
+                            "$$type": "dimensions",
+                            "value": {
+                                "block-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 2,
+                                        "unit": "px"
+                                    }
+                                }
+                            }
+                        },
+                        "display": {
+                            "$$type": "string",
+                            "value": "block"
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "Zm9udC13ZWlnaHQ6IDY1MDs="
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-55ea819",
+            "label": "phrase-chute",
+            "groupe": "Textes",
+            "description": "Phrase de conclusion d'une section, grisée ; le gras passe en couleur titre.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "font-family": {
+                            "$$type": "font-family",
+                            "value": "Bricolage Grotesque"
+                        },
+                        "font-weight": {
+                            "$$type": "string",
+                            "value": "600"
+                        },
+                        "font-size": {
+                            "$$type": "size",
+                            "value": {
+                                "size": "clamp(22px, 2.1vw, 28px)",
+                                "unit": "custom"
+                            }
+                        },
+                        "color": {
+                            "$$type": "global-color-variable",
+                            "value": "e-gv-35c9fa2"
+                        },
+                        "letter-spacing": {
+                            "$$type": "size",
+                            "value": {
+                                "size": -0.02,
+                                "unit": "em"
+                            }
+                        },
+                        "line-height": {
+                            "$$type": "size",
+                            "value": {
+                                "size": "1.4",
+                                "unit": "custom"
+                            }
+                        },
+                        "display": {
+                            "$$type": "string",
+                            "value": "block"
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "JiBzdHJvbmcsICYgYiB7IGZvbnQtd2VpZ2h0OiBpbmhlcml0OyBjb2xvcjogdmFyKC0tcmwtdGV4dGUsIHZhcigtLWVuY3JlKSk7IH0="
                     }
                 }
             ]
@@ -6269,6 +7087,217 @@
             ]
         },
         {
+            "id": "g-79835e9",
+            "label": "etiquette-carte",
+            "groupe": "Étiquettes",
+            "description": "Petite étiquette en capitales en haut d'une carte sombre (« Déjà écrit »), avec un point lilas.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "font-family": {
+                            "$$type": "font-family",
+                            "value": "Hanken Grotesk"
+                        },
+                        "font-weight": {
+                            "$$type": "string",
+                            "value": "700"
+                        },
+                        "font-size": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 12,
+                                "unit": "px"
+                            }
+                        },
+                        "color": {
+                            "$$type": "color",
+                            "value": "#E4DFF2"
+                        },
+                        "letter-spacing": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 0.14,
+                                "unit": "em"
+                            }
+                        },
+                        "line-height": {
+                            "$$type": "size",
+                            "value": {
+                                "size": "1.3",
+                                "unit": "custom"
+                            }
+                        },
+                        "text-transform": {
+                            "$$type": "string",
+                            "value": "uppercase"
+                        },
+                        "padding": {
+                            "$$type": "dimensions",
+                            "value": {
+                                "block-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 5,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 12,
+                                        "unit": "px"
+                                    }
+                                },
+                                "block-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 5,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 10,
+                                        "unit": "px"
+                                    }
+                                }
+                            }
+                        },
+                        "border-radius": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 999,
+                                "unit": "px"
+                            }
+                        },
+                        "background": {
+                            "$$type": "background",
+                            "value": {
+                                "color": {
+                                    "$$type": "color",
+                                    "value": "rgba(255,255,255,0.08)"
+                                }
+                            }
+                        },
+                        "box-shadow": {
+                            "$$type": "box-shadow",
+                            "value": [
+                                {
+                                    "$$type": "shadow",
+                                    "value": {
+                                        "hOffset": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 0,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "vOffset": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 1,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "blur": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 0,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "spread": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 0,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "color": {
+                                            "$$type": "color",
+                                            "value": "rgba(255,255,255,0.16)"
+                                        },
+                                        "position": {
+                                            "$$type": "string",
+                                            "value": "inset"
+                                        }
+                                    }
+                                },
+                                {
+                                    "$$type": "shadow",
+                                    "value": {
+                                        "hOffset": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 0,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "vOffset": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 0,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "blur": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 0,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "spread": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 1,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "color": {
+                                            "$$type": "color",
+                                            "value": "rgba(255,255,255,0.1)"
+                                        },
+                                        "position": {
+                                            "$$type": "string",
+                                            "value": "inset"
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        "display": {
+                            "$$type": "string",
+                            "value": "inline-flex"
+                        },
+                        "gap": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 8,
+                                "unit": "px"
+                            }
+                        },
+                        "align-items": {
+                            "$$type": "string",
+                            "value": "center"
+                        },
+                        "align-self": {
+                            "$$type": "string",
+                            "value": "flex-start"
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "d2lkdGg6IGZpdC1jb250ZW50OyAmOjpiZWZvcmUgeyBwb3NpdGlvbjogcmVsYXRpdmU7IHRvcDogYXV0bzsgcmlnaHQ6IGF1dG87IGJvdHRvbTogYXV0bzsgbGVmdDogYXV0bzsgaGVpZ2h0OiBhdXRvOyBvcGFjaXR5OiAxOyBtaXgtYmxlbmQtbW9kZTogbm9ybWFsOyBib3JkZXI6IDA7IGNvbnRlbnQ6ICcnOyBmbGV4LXNocmluazogMDsgd2lkdGg6IDdweDsgaGVpZ2h0OiA3cHg7IGJvcmRlci1yYWRpdXM6IDUwJTsgYmFja2dyb3VuZDogI0M0QjVGRDsgfQ=="
+                    }
+                }
+            ]
+        },
+        {
             "id": "g-d9b9258",
             "label": "carte-verre",
             "groupe": "Surfaces",
@@ -6364,6 +7393,385 @@
                     "custom_css": {
                         "raw": "YmFja2dyb3VuZDogdmFyKC0tcmwtdmVycmUtZm9uZCwgcmFkaWFsLWdyYWRpZW50KDcwJSA1MCUgYXQgMTglIDAlLCByZ2JhKDI1NSwyNTUsMjU1LDAuOTUpLCByZ2JhKDI1NSwyNTUsMjU1LDApIDcyJSksIGxpbmVhci1ncmFkaWVudCgxNTBkZWcsIHJnYmEoMjU1LDI1NSwyNTUsMC43NCkgMCUsIHJnYmEoMjU1LDI1NSwyNTUsMC40MikgNTUlLCByZ2JhKDI1NSwyNTUsMjU1LDAuNikgMTAwJSkpOyBib3gtc2hhZG93OiB2YXIoLS1ybC12ZXJyZS1vbWJyZSwgaW5zZXQgMCAxcHggMCAjRkZGRkZGLCBpbnNldCAwIC0xcHggMCByZ2JhKDI1NSwyNTUsMjU1LDAuNSksIDAgMXB4IDJweCByZ2JhKDE1LDE1LDE4LDAuMDQpLCAwIDMwcHggNzBweCAtMzRweCByZ2JhKDc2LDQ4LDE3MCwwLjM0KSk7ICY6OmJlZm9yZSB7IHBvc2l0aW9uOiByZWxhdGl2ZTsgdG9wOiBhdXRvOyByaWdodDogYXV0bzsgYm90dG9tOiBhdXRvOyBsZWZ0OiBhdXRvOyBoZWlnaHQ6IGF1dG87IG9wYWNpdHk6IDE7IG1peC1ibGVuZC1tb2RlOiBub3JtYWw7IGJvcmRlcjogMDsgY29udGVudDogJyc7IHBvc2l0aW9uOiBhYnNvbHV0ZTsgdG9wOiAwOyByaWdodDogMDsgYm90dG9tOiAwOyBsZWZ0OiAwOyBib3JkZXItcmFkaXVzOiBpbmhlcml0OyBwYWRkaW5nOiAxLjJweDsgYmFja2dyb3VuZDogdmFyKC0tcmwtdmVycmUtYm9yZCwgbGluZWFyLWdyYWRpZW50KDE0MGRlZywgI0ZGRkZGRiwgcmdiYSgyNTUsMjU1LDI1NSwwLjM1KSAzMCUsIHJnYmEoMTk2LDE4MSwyNTMsMC40KSA2MiUsIHJnYmEoMjU1LDIwOSwxOTEsMC45KSkpOyAtd2Via2l0LW1hc2s6IGxpbmVhci1ncmFkaWVudCgjMDAwIDAgMCkgY29udGVudC1ib3gsIGxpbmVhci1ncmFkaWVudCgjMDAwIDAgMCk7IC13ZWJraXQtbWFzay1jb21wb3NpdGU6IHhvcjsgbWFzay1jb21wb3NpdGU6IGV4Y2x1ZGU7IHBvaW50ZXItZXZlbnRzOiBub25lOyB9"
                     }
+                }
+            ]
+        },
+        {
+            "id": "g-4387a86",
+            "label": "chapitre",
+            "groupe": "Surfaces",
+            "description": "Grande carte en verre bleutée d'un chapitre « Pour qui » : photo et texte côte à côte (l'un sous l'autre sous 980 px).",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "tablet",
+                        "state": null
+                    },
+                    "props": {
+                        "grid-template-columns": {
+                            "$$type": "string",
+                            "value": "minmax(0, 1fr)"
+                        }
+                    },
+                    "custom_css": null
+                },
+                {
+                    "meta": {
+                        "breakpoint": "mobile",
+                        "state": null
+                    },
+                    "props": {
+                        "padding": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 10,
+                                "unit": "px"
+                            }
+                        },
+                        "border-radius": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 30,
+                                "unit": "px"
+                            }
+                        }
+                    },
+                    "custom_css": null
+                },
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "position": {
+                            "$$type": "string",
+                            "value": "relative"
+                        },
+                        "padding": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 16,
+                                "unit": "px"
+                            }
+                        },
+                        "border-radius": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 40,
+                                "unit": "px"
+                            }
+                        },
+                        "box-shadow": {
+                            "$$type": "box-shadow",
+                            "value": [
+                                {
+                                    "$$type": "shadow",
+                                    "value": {
+                                        "hOffset": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 0,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "vOffset": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 1,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "blur": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 0,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "spread": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 0,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "color": {
+                                            "$$type": "color",
+                                            "value": "#FFFFFF"
+                                        },
+                                        "position": {
+                                            "$$type": "string",
+                                            "value": "inset"
+                                        }
+                                    }
+                                },
+                                {
+                                    "$$type": "shadow",
+                                    "value": {
+                                        "hOffset": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 0,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "vOffset": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 30,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "blur": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 70,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "spread": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": -34,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "color": {
+                                            "$$type": "color",
+                                            "value": "rgba(76,48,170,0.34)"
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        "backdrop-filter": {
+                            "$$type": "backdrop-filter",
+                            "value": [
+                                {
+                                    "$$type": "css-filter-func",
+                                    "value": {
+                                        "func": {
+                                            "$$type": "string",
+                                            "value": "blur"
+                                        },
+                                        "args": {
+                                            "$$type": "blur",
+                                            "value": {
+                                                "size": {
+                                                    "$$type": "size",
+                                                    "value": {
+                                                        "size": 28,
+                                                        "unit": "px"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "$$type": "css-filter-func",
+                                    "value": {
+                                        "func": {
+                                            "$$type": "string",
+                                            "value": "saturate"
+                                        },
+                                        "args": {
+                                            "$$type": "intensity",
+                                            "value": {
+                                                "size": {
+                                                    "$$type": "size",
+                                                    "value": {
+                                                        "size": 180,
+                                                        "unit": "%"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        "display": {
+                            "$$type": "string",
+                            "value": "grid"
+                        },
+                        "gap": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 0,
+                                "unit": "px"
+                            }
+                        },
+                        "grid-template-columns": {
+                            "$$type": "string",
+                            "value": "repeat(2, minmax(0, 1fr))"
+                        },
+                        "align-items": {
+                            "$$type": "string",
+                            "value": "stretch"
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "YmFja2dyb3VuZC1pbWFnZTogcmFkaWFsLWdyYWRpZW50KDcwJSA1MCUgYXQgMTglIDAlLCByZ2JhKDI1NSwyNTUsMjU1LDAuOTUpLCByZ2JhKDI1NSwyNTUsMjU1LDApIDcyJSksIGxpbmVhci1ncmFkaWVudCgxNjBkZWcsIHJnYmEoMjMyLDIzMiwyNTUsMC44NCkgMCUsIHJnYmEoMjE0LDIxNiwyNTUsMC41MikgNjAlLCByZ2JhKDI1NSwyNTUsMjU1LDAuNjQpIDEwMCUpOyAtLXJsLW9tYnJlLXBob3RvOiByZ2JhKDUyLDUyLDIyNCwwLjYpOyAmOjpiZWZvcmUgeyBwb3NpdGlvbjogcmVsYXRpdmU7IHRvcDogYXV0bzsgcmlnaHQ6IGF1dG87IGJvdHRvbTogYXV0bzsgbGVmdDogYXV0bzsgaGVpZ2h0OiBhdXRvOyBvcGFjaXR5OiAxOyBtaXgtYmxlbmQtbW9kZTogbm9ybWFsOyBib3JkZXI6IDA7IGNvbnRlbnQ6ICcnOyBwb3NpdGlvbjogYWJzb2x1dGU7IHRvcDogMDsgcmlnaHQ6IDA7IGJvdHRvbTogMDsgbGVmdDogMDsgYm9yZGVyLXJhZGl1czogaW5oZXJpdDsgcGFkZGluZzogMS4ycHg7IGJhY2tncm91bmQ6IGxpbmVhci1ncmFkaWVudCgxNDBkZWcsICNGRkZGRkYsIHJnYmEoMjU1LDI1NSwyNTUsMC4zNSkgMzAlLCByZ2JhKDE5NiwxODEsMjUzLDAuNCkgNjIlLCByZ2JhKDI1NSwyMDksMTkxLDAuOSkpOyAtd2Via2l0LW1hc2s6IGxpbmVhci1ncmFkaWVudCgjMDAwIDAgMCkgY29udGVudC1ib3gsIGxpbmVhci1ncmFkaWVudCgjMDAwIDAgMCk7IC13ZWJraXQtbWFzay1jb21wb3NpdGU6IHhvcjsgbWFzay1jb21wb3NpdGU6IGV4Y2x1ZGU7IHBvaW50ZXItZXZlbnRzOiBub25lOyB9"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-da514b7",
+            "label": "colonne-chapitre",
+            "groupe": "Surfaces",
+            "description": "Colonne de texte d'un chapitre : étiquette, titre, constat, listes, boutons, centrés verticalement.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "tablet",
+                        "state": null
+                    },
+                    "props": {
+                        "padding": {
+                            "$$type": "dimensions",
+                            "value": {
+                                "block-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 30,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 20,
+                                        "unit": "px"
+                                    }
+                                },
+                                "block-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 24,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 20,
+                                        "unit": "px"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "custom_css": null
+                },
+                {
+                    "meta": {
+                        "breakpoint": "mobile",
+                        "state": null
+                    },
+                    "props": {
+                        "padding": {
+                            "$$type": "dimensions",
+                            "value": {
+                                "block-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 24,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 10,
+                                        "unit": "px"
+                                    }
+                                },
+                                "block-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 18,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 10,
+                                        "unit": "px"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "custom_css": null
+                },
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "position": {
+                            "$$type": "string",
+                            "value": "relative"
+                        },
+                        "padding": {
+                            "$$type": "dimensions",
+                            "value": {
+                                "block-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 34,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 40,
+                                        "unit": "px"
+                                    }
+                                },
+                                "block-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 34,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 40,
+                                        "unit": "px"
+                                    }
+                                }
+                            }
+                        },
+                        "display": {
+                            "$$type": "string",
+                            "value": "flex"
+                        },
+                        "flex-direction": {
+                            "$$type": "string",
+                            "value": "column"
+                        },
+                        "gap": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 20,
+                                "unit": "px"
+                            }
+                        },
+                        "justify-content": {
+                            "$$type": "string",
+                            "value": "center"
+                        }
+                    },
+                    "custom_css": null
                 }
             ]
         },
@@ -7657,6 +9065,95 @@
             ]
         },
         {
+            "id": "g-6b76b02",
+            "label": "rec-libelle",
+            "groupe": "Vidéo et images",
+            "description": "Mention « REC » en haut à gauche d'une photo, avec le point rouge qui clignote.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "position": {
+                            "$$type": "string",
+                            "value": "absolute"
+                        },
+                        "inset-block-start": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 32,
+                                "unit": "px"
+                            }
+                        },
+                        "inset-inline-start": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 34,
+                                "unit": "px"
+                            }
+                        },
+                        "z-index": {
+                            "$$type": "number",
+                            "value": 3
+                        },
+                        "font-family": {
+                            "$$type": "font-family",
+                            "value": "Hanken Grotesk"
+                        },
+                        "font-weight": {
+                            "$$type": "string",
+                            "value": "700"
+                        },
+                        "font-size": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 12,
+                                "unit": "px"
+                            }
+                        },
+                        "color": {
+                            "$$type": "color",
+                            "value": "#FFFFFF"
+                        },
+                        "letter-spacing": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 0.1,
+                                "unit": "em"
+                            }
+                        },
+                        "line-height": {
+                            "$$type": "size",
+                            "value": {
+                                "size": "1",
+                                "unit": "custom"
+                            }
+                        },
+                        "display": {
+                            "$$type": "string",
+                            "value": "inline-flex"
+                        },
+                        "gap": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 6,
+                                "unit": "px"
+                            }
+                        },
+                        "align-items": {
+                            "$$type": "string",
+                            "value": "center"
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "d2lkdGg6IGZpdC1jb250ZW50OyBmb250LXZhcmlhbnQtbnVtZXJpYzogdGFidWxhci1udW1zOyB0ZXh0LXNoYWRvdzogMCAxcHggNnB4IHJnYmEoMCwwLDAsMC4zNSk7ICY6OmJlZm9yZSB7IGNvbnRlbnQ6ICcnOyBmbGV4LXNocmluazogMDsgd2lkdGg6IDdweDsgaGVpZ2h0OiA3cHg7IGJvcmRlci1yYWRpdXM6IDUwJTsgYmFja2dyb3VuZDogI0ZGM0IzMDsgYm94LXNoYWRvdzogMCAwIDAgM3B4IHJnYmEoMjU1LDU5LDQ4LDAuMjgpOyB9ICY6OmJlZm9yZSB7IGFuaW1hdGlvbjogcmwtY2xpZ25vdGUgMS42cyBlYXNlLWluLW91dCBpbmZpbml0ZTsgfQ=="
+                    }
+                }
+            ]
+        },
+        {
             "id": "g-02c5a59",
             "label": "bandeau-video",
             "groupe": "Vidéo et images",
@@ -8559,6 +10056,165 @@
                             }
                         },
                         "width": {
+                            "$$type": "size",
+                            "value": {
+                                "size": null,
+                                "unit": "auto"
+                            }
+                        }
+                    },
+                    "custom_css": null
+                }
+            ]
+        },
+        {
+            "id": "g-8ad07f4",
+            "label": "illustration-ui",
+            "groupe": "Vidéo et images",
+            "description": "Illustration décorative d'une fausse interface (image avec son ombre) : centrée en haut de la carte. Texte alternatif vide.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "width": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 125,
+                                "unit": "%"
+                            }
+                        },
+                        "max-width": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 316,
+                                "unit": "px"
+                            }
+                        },
+                        "margin": {
+                            "$$type": "dimensions",
+                            "value": {
+                                "block-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": -28,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 0,
+                                        "unit": "px"
+                                    }
+                                },
+                                "block-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": -24,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 0,
+                                        "unit": "px"
+                                    }
+                                }
+                            }
+                        },
+                        "display": {
+                            "$$type": "string",
+                            "value": "block"
+                        },
+                        "align-self": {
+                            "$$type": "string",
+                            "value": "center"
+                        },
+                        "height": {
+                            "$$type": "size",
+                            "value": {
+                                "size": null,
+                                "unit": "auto"
+                            }
+                        }
+                    },
+                    "custom_css": null
+                }
+            ]
+        },
+        {
+            "id": "g-23e0d78",
+            "label": "illustration-photo",
+            "groupe": "Vidéo et images",
+            "description": "Illustration décorative (fausse interface) posée en bas à gauche d'une photo. Texte alternatif vide.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "mobile",
+                        "state": null
+                    },
+                    "props": {
+                        "width": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 300,
+                                "unit": "px"
+                            }
+                        }
+                    },
+                    "custom_css": null
+                },
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "width": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 386,
+                                "unit": "px"
+                            }
+                        },
+                        "max-width": {
+                            "$$type": "size",
+                            "value": {
+                                "size": "calc(100% + 8px)",
+                                "unit": "custom"
+                            }
+                        },
+                        "position": {
+                            "$$type": "string",
+                            "value": "absolute"
+                        },
+                        "inset-block-end": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 0,
+                                "unit": "px"
+                            }
+                        },
+                        "inset-inline-start": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 0,
+                                "unit": "px"
+                            }
+                        },
+                        "z-index": {
+                            "$$type": "number",
+                            "value": 3
+                        },
+                        "display": {
+                            "$$type": "string",
+                            "value": "block"
+                        },
+                        "height": {
                             "$$type": "size",
                             "value": {
                                 "size": null,
@@ -9475,6 +11131,42 @@
                     },
                     "custom_css": {
                         "raw": "LXdlYmtpdC1tYXNrOiBsaW5lYXItZ3JhZGllbnQoOTBkZWcsIHRyYW5zcGFyZW50IDAsICMwMDAgOCUsICMwMDAgOTIlLCB0cmFuc3BhcmVudCAxMDAlKTsgbWFzazogbGluZWFyLWdyYWRpZW50KDkwZGVnLCB0cmFuc3BhcmVudCAwLCAjMDAwIDglLCAjMDAwIDkyJSwgdHJhbnNwYXJlbnQgMTAwJSk7"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-6ad0af9",
+            "label": "halos-nuit",
+            "groupe": "Décors et mouvement",
+            "description": "À ajouter à une section sombre : halo violet en haut à gauche, halo pêche en bas à droite. Ils dérivent lentement.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": [],
+                    "custom_css": {
+                        "raw": "Jjo6YmVmb3JlIHsgcG9zaXRpb246IHJlbGF0aXZlOyB0b3A6IGF1dG87IHJpZ2h0OiBhdXRvOyBib3R0b206IGF1dG87IGxlZnQ6IGF1dG87IGhlaWdodDogYXV0bzsgb3BhY2l0eTogMTsgbWl4LWJsZW5kLW1vZGU6IG5vcm1hbDsgYm9yZGVyOiAwOyBjb250ZW50OiAnJzsgcG9zaXRpb246IGFic29sdXRlOyB6LWluZGV4OiAtMTsgd2lkdGg6IDc2MHB4OyBoZWlnaHQ6IDc2MHB4OyBib3JkZXItcmFkaXVzOiA1MCU7IHBvaW50ZXItZXZlbnRzOiBub25lOyBsZWZ0OiAtMTAlOyB0b3A6IC0zMCU7IGJhY2tncm91bmQ6IHJhZGlhbC1ncmFkaWVudChjbG9zZXN0LXNpZGUsIHJnYmEoMTM5LDkyLDI0NiwwLjQyKSwgcmdiYSgxNSwxNSwxOCwwKSAxMDAlKTsgfSAmOjphZnRlciB7IGNvbnRlbnQ6ICcnOyBwb3NpdGlvbjogYWJzb2x1dGU7IHotaW5kZXg6IC0xOyB3aWR0aDogODIwcHg7IGhlaWdodDogODIwcHg7IGJvcmRlci1yYWRpdXM6IDUwJTsgcG9pbnRlci1ldmVudHM6IG5vbmU7IHJpZ2h0OiAtMTIlOyBib3R0b206IC0zNiU7IGJhY2tncm91bmQ6IHJhZGlhbC1ncmFkaWVudChjbG9zZXN0LXNpZGUsIHJnYmEoMjU1LDEzOCw5MSwwLjM0KSwgcmdiYSgxNSwxNSwxOCwwKSAxMDAlKTsgfSAmOjpiZWZvcmUsICY6OmFmdGVyIHsgYW5pbWF0aW9uOiBybC1kZXJpdmUgMjBzIGVhc2UtaW4tb3V0IGluZmluaXRlOyB9ICY6OmFmdGVyIHsgYW5pbWF0aW9uLWRlbGF5OiAtOXM7IH0="
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-1eb8c4c",
+            "label": "halos-cotes",
+            "groupe": "Décors et mouvement",
+            "description": "À ajouter à une section claire : halo bleu à gauche, halo pêche à droite, plus bas. Ils dérivent lentement.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": [],
+                    "custom_css": {
+                        "raw": "Jjo6YmVmb3JlIHsgcG9zaXRpb246IHJlbGF0aXZlOyB0b3A6IGF1dG87IHJpZ2h0OiBhdXRvOyBib3R0b206IGF1dG87IGxlZnQ6IGF1dG87IGhlaWdodDogYXV0bzsgb3BhY2l0eTogMTsgbWl4LWJsZW5kLW1vZGU6IG5vcm1hbDsgYm9yZGVyOiAwOyBjb250ZW50OiAnJzsgcG9zaXRpb246IGFic29sdXRlOyB6LWluZGV4OiAtMTsgd2lkdGg6IDgyMHB4OyBoZWlnaHQ6IDgyMHB4OyBib3JkZXItcmFkaXVzOiA1MCU7IHBvaW50ZXItZXZlbnRzOiBub25lOyBsZWZ0OiAtMTYlOyB0b3A6IDEwJTsgYmFja2dyb3VuZDogcmFkaWFsLWdyYWRpZW50KGNsb3Nlc3Qtc2lkZSwgcmdiYSg1Miw1MiwyMjQsMC4yNiksIHJnYmEoMTk2LDE4MSwyNTMsMC4yKSA1MCUsIHJnYmEoMjUwLDI0OSwyNDcsMCkgMTAwJSk7IH0gJjo6YWZ0ZXIgeyBjb250ZW50OiAnJzsgcG9zaXRpb246IGFic29sdXRlOyB6LWluZGV4OiAtMTsgd2lkdGg6IDgyMHB4OyBoZWlnaHQ6IDgyMHB4OyBib3JkZXItcmFkaXVzOiA1MCU7IHBvaW50ZXItZXZlbnRzOiBub25lOyByaWdodDogLTE2JTsgdG9wOiA1MiU7IGJhY2tncm91bmQ6IHJhZGlhbC1ncmFkaWVudChjbG9zZXN0LXNpZGUsIHJnYmEoMjU1LDEzOCw5MSwwLjM4KSwgcmdiYSgyNTUsMjA5LDE5MSwwLjMpIDUwJSwgcmdiYSgyNTAsMjQ5LDI0NywwKSAxMDAlKTsgfSAmOjpiZWZvcmUsICY6OmFmdGVyIHsgYW5pbWF0aW9uOiBybC1kZXJpdmUgMjBzIGVhc2UtaW4tb3V0IGluZmluaXRlOyB9ICY6OmFmdGVyIHsgYW5pbWF0aW9uLWRlbGF5OiAtOHM7IH0="
                     }
                 }
             ]

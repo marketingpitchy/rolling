@@ -1,0 +1,38 @@
+[
+ {
+  "selecteur": "#vague .mock",
+  "rang": 0,
+  "fichier": "constat-email.png",
+  "marge": 32
+ },
+ {
+  "selecteur": "#vague .mock",
+  "rang": 1,
+  "fichier": "constat-blog.png",
+  "marge": 32
+ },
+ {
+  "selecteur": "#vague .mock",
+  "rang": 2,
+  "fichier": "constat-module.png",
+  "marge": 32
+ },
+ {
+  "selecteur": "#vague .mock",
+  "rang": 3,
+  "fichier": "constat-evenement.png",
+  "marge": 32
+ },
+ {
+  "selecteur": ".stk-mk .lq",
+  "rang": 0,
+  "fichier": "pourqui-recherche.png",
+  "marge": 24
+ },
+ {
+  "selecteur": ".stk-rh .lq",
+  "rang": 0,
+  "fichier": "pourqui-intranet.png",
+  "marge": 24
+ }
+]

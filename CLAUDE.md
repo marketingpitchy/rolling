@@ -125,6 +125,7 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   `main.site-main { overflow-x: clip }` (thème) empêche le défilement horizontal des halos.
 - Les classes **modificatrices** d'un `::before` (couleur d'un point) ne contiennent pas la remise à zéro (elle écrasait
   la taille posée par la classe de base).
+- `.e-con::before` reçoit aussi `width: 100%` d'Elementor : un `::before` calé par top/right/bottom/left pose `width: auto`.
 - Aperçu mobile de l'éditeur = 360 px : tester aussi à 360.
 - Logos : pas de bouton pause (choix cliente) ; défilement arrêté au survol / au clavier et avec « réduire les animations » ;
   la cliente coupe le défilement en retirant la classe `logos-defilants`.
@@ -254,9 +255,10 @@ image, texte, « À lire aussi » ; colonne latérale = temps de lecture, partag
 
 ## Questions encore ouvertes
 
-- Extension SEO : la cliente pense à Slim SEO. Si elle l'installe, c'est **lui** l'outil unique des métas
-  (title, description, canonical, OG, sitemap) et le thème n'en sort aucune ; le thème ajoute seulement ce
-  que Slim SEO ne fait pas (VideoObject des réalisations). En attente de sa décision.
+- **Extension SEO (décidé)** : la cliente installe Rank Math (ou équivalent) pour les métas et l'indexation. C'est
+  **lui** l'outil unique des métas (title, description, canonical, OG, sitemap, noindex) ; le thème n'en sort aucune.
+  Le thème n'ajoute que ce que l'extension ne fait pas (VideoObject des réalisations, à vérifier selon l'extension
+  choisie à la livraison 4, sans doublon de schéma).
 - Hébergement OVH (offre Pro ou Performance). Pas de cache de pages côté OVH : recommandé WP Super Cache.
   Le thème videra aussi ce cache à sa mise à jour s'il est présent.
 - Pied de page : validé = reprend le menu principal + 2e menu « Pied de page » (liens légaux). Mise en page

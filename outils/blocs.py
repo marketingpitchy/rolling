@@ -22,8 +22,10 @@ class E:
         self.enfants = enfants or []
 
 
-def F(nom, cls=None, style=None, enfants=None, tag=None, lien=None):
+def F(nom, cls=None, style=None, enfants=None, tag=None, lien=None, ancre=None):
     cfg = {}
+    if ancre:
+        cfg['_cssid'] = ancre
     if tag:
         cfg['tag'] = tag
     if lien:
@@ -229,10 +231,161 @@ showreel = F('Showreel', ['section', 'section-suite'], tag='section', enfants=[
     ]),
 ])
 
+# --------------------------------------------------------------------------------------------
+# Morceaux des sections
+# --------------------------------------------------------------------------------------------
+
+COLONNE = 'display: flex; flex-direction: column; gap: 0;'
+
+
+def entete(prefixe, timecode, surtitre, titres, intro=None, style=None):
+    """Haut de section : timecode + sur-titre, titre(s), introduction. titres = [(texte, balise, classes)]."""
+    enfants = [F(prefixe + ' · repère', ['sur-titre'], enfants=[
+        P(prefixe + ' · timecode', timecode, ['timecode']),
+        P(prefixe + ' · sur-titre', surtitre),
+    ])]
+    lignes = []
+    for i, (texte, balise, cls) in enumerate(titres):
+        lignes.append((H if balise.startswith('h') else P)(prefixe + ' · titre' + (' %d' % (i + 1) if len(titres) > 1 else ''), texte, *((balise, cls) if balise.startswith('h') else (cls,))))
+    if len(lignes) > 1:
+        enfants.append(F(prefixe + ' · titres', None, 'display: flex; flex-direction: column; gap: 0; padding: 0;', lignes))
+    else:
+        enfants += lignes
+    if intro:
+        enfants.append(P(prefixe + ' · introduction', intro, ['texte-intro'], 'max-width: 820px;'))
+    return F(prefixe + ' · en-tête', ['entete-section'], style, enfants)
+
+
+# --------------------------------------------------------------------------------------------
+# 00:01 Pourquoi la vidéo
+# --------------------------------------------------------------------------------------------
+
+def constat(nom, etiquette, rec, image, question, mot, couleur, halo):
+    return F('Carte · ' + nom, ['carte-verre', 'carte-constat'] + ([halo] if halo else []), enfants=[
+        P(nom + ' · étiquette', etiquette, ['etiquette-carte'] + (['etiquette-rec'] if rec else [])),
+        I(nom + ' · illustration', image, cls=['illustration-ui'], taille='full'),
+        F(nom + ' · texte', None, 'display: flex; flex-direction: column; gap: 0; margin-top: auto;', enfants=[
+            P(nom + ' · question', question, ['question-carte']),
+            P(nom + ' · réponse', mot, ['mot-choc'], 'color: %s;' % couleur),
+        ]),
+    ])
+
+
+pourquoi = F('Pourquoi la vidéo', ['section', 'section-sombre', 'halos-nuit'], tag='section', ancre='vague', enfants=[
+    F('Pourquoi · contenu', ['conteneur'], COLONNE, enfants=[
+        entete('Pourquoi', '00:01', 'Pourquoi la vidéo', [
+            ("Hier, une entreprise sans site web n'existait pas.", 'p', ['titre-lg', 'titre-eteint']),
+            ('Demain, sans vidéo, <em>elle sera ignorée.</em>', 'h2', ['titre-lg']),
+        ]),
+        F('Pourquoi · cartes', ['grille-4'], enfants=[
+            constat('Emails', 'Déjà écrit', False, 'constat-email.png', 'Vos emails internes&nbsp;?', 'Ignorés.', '#FFD1BF', None),
+            constat('Blog', 'Déjà écrit', False, 'constat-blog.png', 'Vos articles de blog&nbsp;?', 'Survolés.', '#D9CFFF', 'halo-lilas'),
+            constat('Modules', 'Déjà écrit', False, 'constat-module.png', 'Vos modules PowerPoint&nbsp;?', 'Subis.', '#C8CBFF', 'halo-bleu'),
+            constat('Événements', 'À tourner', True, 'constat-evenement.png', 'Vos événements&nbsp;?', 'Oubliés.', '#FFB48C', 'halo-orange'),
+        ]),
+        P('Pourquoi · chute', "Vous n'avez pas le temps&nbsp;? <strong>C'est notre métier&nbsp;: nous nous en occupons, sans limite.</strong>", ['phrase-chute'], 'margin-top: 52px;'),
+    ]),
+])
+
+# --------------------------------------------------------------------------------------------
+# 00:02 Pour qui
+# --------------------------------------------------------------------------------------------
+
+def liste_coches(prefixe, lignes):
+    return F(prefixe, ['liste-coches'], enfants=[
+        F(prefixe + ' · ligne %d' % (i + 1), ['ligne-coche'], enfants=[
+            I(prefixe + ' · coche %d' % (i + 1), 'coche-verre.png', cls=['coche'], taille='thumbnail'),
+            P(prefixe + ' · texte %d' % (i + 1), texte, ['texte-petit']),
+        ]) for i, texte in enumerate(lignes)
+    ])
+
+
+def chapitre(nom, cls, photo, texte, photo_gauche=True, style=None):
+    return F('Chapitre · ' + nom, ['chapitre'] + cls, style, enfants=photo + texte if photo_gauche else texte + photo, tag='article')
+
+
+def colonne_chapitre(nom, etiquette, picto, titre, couleur_label, constat, contenus, projets, chips, chip_cls, bouton):
+    return [F(nom + ' · texte', ['colonne-chapitre'], enfants=[
+        F(nom + ' · haut', None, 'display: flex; flex-direction: row; align-items: center; justify-content: space-between; gap: 16px; padding: 0;', enfants=[
+            P(nom + ' · étiquette', etiquette, [etiquette_cls(couleur_label)]),
+            I(nom + ' · picto', picto, cls=['picto-verre'], style='height: 76px; margin: -10px -8px -10px 0;', taille='thumbnail'),
+        ]),
+        H(nom + ' · titre', titre, 'h3', ['titre-md']),
+        F(nom + ' · constat', ['panneau'], enfants=[
+            P(nom + ' · constat · label', 'Le constat', ['label', 'label-violet' if couleur_label == 'bleu' else 'label-orange']),
+            P(nom + ' · constat · texte', constat, ['texte-fort']),
+        ]),
+        F(nom + ' · listes', None, 'display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 22px; padding: 0;', enfants=[
+            F(nom + ' · contenus', ['pile'], enfants=[P(nom + ' · contenus · titre', 'À partir de vos contenus', ['label']), liste_coches(nom + ' · contenus · liste', contenus)]),
+            F(nom + ' · projets', ['pile'], enfants=[P(nom + ' · projets · titre', 'Pour vos nouveaux projets', ['label']), liste_coches(nom + ' · projets · liste', projets)]),
+        ]),
+        F(nom + ' · canaux', ['rangee'], enfants=[P(nom + ' · canal · ' + c, c, [chip_cls]) for c in chips]),
+        B(nom + ' · bouton', bouton, '#contact', ['bouton-principal', 'bouton-petit']),
+    ])]
+
+
+def etiquette_cls(couleur):
+    return 'etiquette-metier-bleu' if couleur == 'bleu' else 'etiquette-metier-orange'
+
+
+pour_qui = F('Pour qui', ['section', 'halos-cotes'], tag='section', enfants=[
+    F('Pour qui · contenu', ['conteneur'], COLONNE, enfants=[
+        entete('Pour qui', '00:02', 'Pour qui', [('Ce que la vidéo <em>va vous apporter.</em>', 'h2', ['titre-lg'])]),
+        chapitre('Marketing', ['chapitre-colle'], [
+            D('Marketing · photo', ['cadre-photo', 'photo-chapitre'], enfants=[
+                I('Marketing · image', 'pourqui-marketing.jpg', "Des mains tapent sur le clavier d'un ordinateur portable", ['image-couvrante'], 'object-position: 42% 55%;'),
+                I('Marketing · illustration', 'pourqui-recherche.png', cls=['illustration-photo']),
+            ]),
+        ], colonne_chapitre('Marketing', 'Marketing &amp; communication', 'picto-megaphone.png', 'Soyez vus là où vos clients vous <b>cherchent.</b>', 'bleu',
+            'Google et les IA privilégient, dans leurs réponses, les marques qui ont des vidéos. Et YouTube ou TikTok sont devenus des moteurs de recherche à part entière.',
+            ['Vos pages produit, en démos vidéo', 'Vos articles, en vidéos de 90&nbsp;s', 'Votre étude annuelle, en série'],
+            ['Lancements produit', 'Salons &amp; événements', 'Campagnes LinkedIn'],
+            ['SEO', 'GEO / IA', 'YouTube', 'TikTok', 'LinkedIn'], 'chip-bleu', 'Parlons de vos vidéos marketing')),
+        chapitre('Interne', ['chapitre-peche'], style='margin-top: 28px; z-index: 2;', photo_gauche=False, photo=[
+            D('Interne · photo', ['cadre-photo', 'photo-chapitre', 'viseur'], enfants=[
+                I('Interne · image', 'pourqui-interne.jpg', 'Une collaboratrice, souriante, filmée pour une vidéo interne', ['image-couvrante'], 'object-position: 56% 30%;'),
+                P('Interne · rec', 'REC', ['rec-libelle']),
+                P('Interne · durée', '00:00:58', ['rec-libelle', 'rec-droite']),
+                I('Interne · illustration', 'pourqui-intranet.png', cls=['illustration-photo']),
+            ]),
+        ], texte=colonne_chapitre('Interne', 'Com interne · RH · Formation', 'picto-equipe.png', 'Soyez enfin <u>regardés.</u>', 'orange',
+            "Livrets d'accueil, procédures, formations, notes internes&nbsp;: vous avez des centaines de pages que personne ne lit. Le fond est déjà là, il ne lui manque que la vidéo.",
+            ["Votre livret d'accueil, en série d'onboarding", 'Vos procédures, en tutoriels courts', 'Vos formations, en microlearning de 60&nbsp;s', 'Vos notes internes, en rendez-vous vidéo'],
+            ['Séminaires &amp; conventions', 'Témoignages collaborateurs', 'Projets de transformation'],
+            ['Onboarding', 'Microlearning', 'Marque employeur', 'Actu interne'], 'chip-orange', 'Parlons de vos contenus internes')),
+    ]),
+])
+
+# --------------------------------------------------------------------------------------------
+# 00:03 La méthode
+# --------------------------------------------------------------------------------------------
+
+def etape(n, titre, texte):
+    return F('Étape %d' % n, ['carte-verre', 'carte-etape'], enfants=[
+        I('Étape %d · chiffre' % n, 'chiffre-%d.png' % n, cls=['picto-verre'], style='height: 80px; align-self: flex-start;', taille='medium'),
+        H('Étape %d · titre' % n, titre, 'h3', ['titre-xs']),
+        P('Étape %d · texte' % n, texte, ['texte']),
+    ])
+
+
+methode = F('La méthode', ['section', 'section-lilas'], tag='section', ancre='methode', enfants=[
+    F('Méthode · contenu', ['conteneur'], COLONNE, enfants=[
+        entete('Méthode', '00:03', 'La méthode', [('Vous avez le fond. <em>Nous produisons la forme.</em>', 'h2', ['titre-lg'])]),
+        F('Méthode · étapes', ['grille-etapes'], enfants=[
+            etape(1, 'Partagez vos contenus et vos projets.', "Articles, présentations, modules de formation, vos propres rushs, mais aussi lancements ou événements à tourner&nbsp;: nous priorisons ensemble ce qui part en vidéo en premier."),
+            etape(2, 'Nous produisons, un projet à la fois.', "Motion, habillage ou tournage, selon le projet et votre formule — à votre charte, sous l'œil d'un directeur artistique dédié. Traité à fond, livré, nous enchaînons."),
+            etape(3, 'Vous diffusez. Partout.', "Des vidéos prêtes à l'emploi, déclinées dans tous les formats&nbsp;: horizontal, vertical, carré. Pour vos réseaux, vos sites, votre intranet et vos formations."),
+        ]),
+    ]),
+])
+
 BLOCS = [
     ('01-hero', 'Rolling · 01 Hero', hero),
     ('02-logos', 'Rolling · 02 Ils nous font confiance', logos),
     ('03-showreel', 'Rolling · 03 Showreel', showreel),
+    ('04-pourquoi', 'Rolling · 04 Pourquoi la vidéo', pourquoi),
+    ('05-pour-qui', 'Rolling · 05 Pour qui', pour_qui),
+    ('06-methode', 'Rolling · 06 La méthode', methode),
 ]
 
 if __name__ == '__main__':
