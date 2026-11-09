@@ -111,6 +111,7 @@ P['cta-landing'] = P['cta'].replace('href="#contact"', 'href="#landing-rdv"')
 def fill(t, page):
     for _ in range(4):
         t = t.replace('{{page}}', page)
+        t = t.replace('{{curres}}', ' data-courant="oui"' if page in ('blog', 'article', 'guides', 'webinars', 'replays') else '')
         t = re.sub(r'\{\{cur:(\w+)\}\}', lambda m: ' aria-current="page"' if m.group(1) == page or (m.group(1) + 's') == page else '', t)
         t = re.sub(r'\{\{rea:(\w+)\}\}', lambda m: rea_card(m.group(1), 'h2'), t)
         t = re.sub(r'\{\{rea3:(\w+)\}\}', lambda m: rea_card(m.group(1), 'h3'), t)
@@ -125,7 +126,7 @@ def fill(t, page):
     return t
 
 pages = []
-for f in ['p-offres.html', 'p-realisations.html', 'p-temoignages.html', 'p-blog.html', 'p-autres.html']:
+for f in ['p-offres.html', 'p-realisations.html', 'p-temoignages.html', 'p-blog.html', 'p-ressources.html', 'p-autres.html']:
     src = open(D + f, encoding='utf8').read()
     for m in re.finditer(r'<!--@page ([\w-]+)\|([^>]*)-->(.*?)(?=<!--@page|\Z)', src, re.S):
         pages.append((m.group(1), m.group(2), fill(m.group(3), m.group(1))))

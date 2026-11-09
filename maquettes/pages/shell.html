@@ -43,6 +43,22 @@
       b.querySelector('.sr').textContent = o ? 'Fermer le menu' : 'Ouvrir le menu';
     });
   });
+  // Sous-menu « Ressources » : bouton qui ouvre la liste ; Échap ou clic ailleurs la referme.
+  document.querySelectorAll('.menu-ouvrir').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var o = b.getAttribute('aria-expanded') !== 'true';
+      b.setAttribute('aria-expanded', o); b.parentElement.classList.toggle('ouvert', o);
+    });
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key !== 'Escape') return;
+    document.querySelectorAll('.menu-ouvrir[aria-expanded="true"]').forEach(function (b) { b.click(); b.focus(); });
+  });
+  document.addEventListener('click', function (e) {
+    document.querySelectorAll('.menu-sous.ouvert').forEach(function (m) {
+      if (!m.contains(e.target)) { m.classList.remove('ouvert'); m.querySelector('.menu-ouvrir').setAttribute('aria-expanded', 'false'); }
+    });
+  });
   document.querySelectorAll('.partage-copier').forEach(function (b) {
     b.addEventListener('click', function () { try { navigator.clipboard.writeText(location.href); } catch (e) {} b.title = 'Lien copié'; });
   });

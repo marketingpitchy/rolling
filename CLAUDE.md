@@ -29,7 +29,16 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   l'éditeur (clic sur EN/ES/9:16/1:1 ou sélection d'un texte d'une version ⇒ rolling.js pose data-format / data-rl-langue).
   rolling.js reconnaît l'aperçu de l'éditeur à `?elementor-preview=` (la classe du body arrive après le script différé :
   avant, le comportement du site tournait dans l'éditeur).
-  Prochaines : 3 = contenus admin + modèles du site (balises maison) ; 4 = pages Offres, Contact, landing…, SEO, contrôle final.
+  **0.2.2 validée par la cliente.**
+- **Nouvelle demande : Ressources.** Menu « Ressources » (sous-menu : Blog, Guides, Webinars, Replays) + 3 pages :
+  Guides (liste de ressources téléchargeables → pages HubSpot), Webinars (à venir → fiche d'inscription Livestorm ou
+  HubSpot ; Livestorm connecté peut-être plus tard), Replays (→ pages HubSpot). Maquette ajoutée à `maquette-pages.html`
+  (pages guides, webinars, replays ; sous-menu en en-tête et colonne « Ressources » au pied), **en attente de validation**.
+  Proposition : types de contenu « Guide » (image, thème, nb de pages, résumé, lien HubSpot) et « Webinar » (date, heure,
+  durée, intervenants, lien d'inscription, lien du replay) : à venir ⇒ page Webinars, passé + lien replay ⇒ page Replays.
+  Prochaines : 3 = contenus admin (réalisations, témoignages, logos, offres, articles, guides, webinars) + modèles du site
+  (balises maison) + sous-menu ; 4 = pages Offres, Réalisations, Témoignages, Blog, Guides, Webinars, Replays, Contact,
+  landing, 404, SEO, contrôle final.
 - FAQ : la cliente ajoute elle-même les réponses ; garder les questions telles quelles.
 - Le WordPress de production existe déjà chez la cliente : on livre seulement le thème (zip à importer).
 

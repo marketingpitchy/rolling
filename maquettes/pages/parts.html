@@ -14,7 +14,15 @@
         <li><a href="#offres"{{cur:offres}}>Offres</a></li>
         <li><a href="#realisations"{{cur:realisations}}>Réalisations</a></li>
         <li><a href="#temoignages"{{cur:temoignages}}>Témoignages</a></li>
-        <li><a href="#blog"{{cur:blog}}>Blog</a></li>
+        <li class="menu-sous">
+          <button class="menu-ouvrir" type="button" aria-expanded="false" aria-controls="sous-{{page}}"{{curres}}>Ressources <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+          <ul class="sous-menu" id="sous-{{page}}">
+            <li><a href="#blog"{{cur:blog}}><strong>Blog</strong><span>Nos conseils et méthodes vidéo</span></a></li>
+            <li><a href="#guides"{{cur:guides}}><strong>Guides</strong><span>Nos guides à télécharger</span></a></li>
+            <li><a href="#webinars"{{cur:webinars}}><strong>Webinars</strong><span>Nos prochains rendez-vous en direct</span></a></li>
+            <li><a href="#replays"{{cur:replays}}><strong>Replays</strong><span>Nos webinars, à revoir quand vous voulez</span></a></li>
+          </ul>
+        </li>
         <li class="menu-cta"><a class="bouton-principal bouton-petit" href="#contact">Réserver un échange</a></li>
       </ul>
       <a class="bouton-principal bouton-petit" href="#contact">Réserver un échange</a>
@@ -40,7 +48,11 @@
       </div>
       <nav aria-label="Pied de page : pages">
         <p class="label">Navigation</p>
-        <ul><li><a href="#offres">Offres</a></li><li><a href="#realisations">Réalisations</a></li><li><a href="#temoignages">Témoignages</a></li><li><a href="#blog">Blog</a></li><li><a href="#contact">Réserver un échange</a></li></ul>
+        <ul><li><a href="#offres">Offres</a></li><li><a href="#realisations">Réalisations</a></li><li><a href="#temoignages">Témoignages</a></li><li><a href="#contact">Réserver un échange</a></li></ul>
+      </nav>
+      <nav aria-label="Pied de page : ressources">
+        <p class="label">Ressources</p>
+        <ul><li><a href="#blog">Blog</a></li><li><a href="#guides">Guides</a></li><li><a href="#webinars">Webinars</a></li><li><a href="#replays">Replays</a></li></ul>
       </nav>
       <nav aria-label="Pied de page : informations">
         <p class="label">Informations</p>
