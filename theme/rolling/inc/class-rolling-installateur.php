@@ -85,9 +85,10 @@ class Rolling_Installateur {
 		self::$rapport = array();
 
 		self::installer_variables();
-		self::installer_classes();
-		$medias = self::installer_medias();
+		$obsoletes = self::installer_classes();
+		$medias    = self::installer_medias();
 		self::installer_modeles( $medias );
+		self::supprimer_classes_inutiles( $obsoletes );
 
 		if ( ! get_option( self::OPTION_PREMIERE ) ) {
 			self::premiere_installation( $medias );
@@ -202,14 +203,16 @@ class Rolling_Installateur {
 	/* ------------------------------------------------------------------ */
 
 	/**
-	 * Installe ou met à jour les classes globales du thème.
+	 * Installe ou met à jour les classes globales du thème (sans rien supprimer).
+	 *
+	 * @return string[] Ids des classes du thème devenues inutiles, à supprimer après la mise à jour des modèles.
 	 */
 	private static function installer_classes() {
 		$sources = Rolling_Donnees::lire( 'classes' );
 		$classes = isset( $sources['classes'] ) ? $sources['classes'] : array();
 
 		if ( empty( $classes ) ) {
-			return;
+			return array();
 		}
 
 		$depot   = Global_Classes_Repository::make();
@@ -267,8 +270,8 @@ class Rolling_Installateur {
 			$suivi[ $id ] = self::empreinte_classe( $attendu );
 		}
 
-		// Classes du thème devenues inutiles : retirées si la cliente ne les a pas modifiées.
-		$supprimees = array();
+		// Classes du thème devenues inutiles : candidates à la suppression si la cliente ne les a pas modifiées.
+		$obsoletes = array();
 
 		foreach ( array_keys( $suivi ) as $id ) {
 			if ( in_array( $id, $ids_theme, true ) ) {
@@ -276,25 +279,36 @@ class Rolling_Installateur {
 			}
 
 			if ( isset( $actuels[ $id ] ) && self::empreinte_classe( $actuels[ $id ] ) === $suivi[ $id ] ) {
-				$supprimees[] = $id;
+				$obsoletes[] = $id;
+			} else {
+				unset( $suivi[ $id ] );
 			}
-
-			unset( $suivi[ $id ] );
 		}
 
-		if ( $ajoutees || $modifiees || $supprimees ) {
-			$nouvel_ordre = self::ordre_classes( $ordre, $ids_theme, $supprimees, $actuels );
+		if ( $ajoutees || $modifiees ) {
+			$nouvel_ordre = self::ordre_classes( $ordre, array_merge( $ids_theme, $obsoletes ), array(), $actuels );
 
 			$depot->apply_changes(
 				$touchees,
 				array(
 					'added'    => $ajoutees,
 					'modified' => $modifiees,
-					'deleted'  => $supprimees,
+					'deleted'  => array(),
 					'order'    => $nouvel_ordre !== $ordre,
 				),
 				$nouvel_ordre
 			);
+		}
+
+		// L'empreinte retenue est celle de la classe telle qu'Elementor l'a enregistrée.
+		if ( $ajoutees || $modifiees ) {
+			$relues = Global_Classes_Repository::make()->all( true )->get_items()->all();
+
+			foreach ( array_merge( $ajoutees, $modifiees ) as $id ) {
+				if ( isset( $relues[ $id ] ) ) {
+					$suivi[ $id ] = self::empreinte_classe( $relues[ $id ] );
+				}
+			}
 		}
 
 		update_option( self::OPTION_CLASSES, $suivi, false );
@@ -302,6 +316,63 @@ class Rolling_Installateur {
 		if ( $gardees ) {
 			/* translators: %s: liste de noms de classes. */
 			self::$rapport[] = sprintf( __( 'Classes modifiées par vous, gardées telles quelles : %s.', 'rolling' ), implode( ', ', $gardees ) );
+		}
+
+		return $obsoletes;
+	}
+
+	/**
+	 * Supprime les classes du thème devenues inutiles, seulement si plus aucune page ni aucun modèle ne les utilise
+	 * (Elementor retirerait sinon la classe de ces pages, et le thème ne touche jamais aux pages).
+	 *
+	 * @param string[] $obsoletes Ids candidats.
+	 */
+	private static function supprimer_classes_inutiles( $obsoletes ) {
+		if ( empty( $obsoletes ) ) {
+			return;
+		}
+
+		$relations  = new \Elementor\Modules\GlobalClasses\Global_Classes_Relations();
+		$depot      = Global_Classes_Repository::make();
+		$actuels    = $depot->all( true )->get_items()->all();
+		$suivi      = get_option( self::OPTION_CLASSES, array() );
+		$supprimees = array();
+		$utilisees  = array();
+
+		foreach ( $obsoletes as $id ) {
+			if ( ! isset( $actuels[ $id ] ) ) {
+				unset( $suivi[ $id ] );
+				continue;
+			}
+
+			if ( $relations->get_posts_by_style( $id ) ) {
+				$utilisees[] = $actuels[ $id ]['label'];
+				continue;
+			}
+
+			$supprimees[] = $id;
+			unset( $suivi[ $id ] );
+		}
+
+		if ( $supprimees ) {
+			$ordre = array_values( array_diff( $depot->get_order(), $supprimees ) );
+			$depot->apply_changes(
+				array(),
+				array(
+					'added'    => array(),
+					'modified' => array(),
+					'deleted'  => $supprimees,
+					'order'    => true,
+				),
+				$ordre
+			);
+		}
+
+		update_option( self::OPTION_CLASSES, $suivi, false );
+
+		if ( $utilisees ) {
+			/* translators: %s: liste de noms de classes. */
+			self::$rapport[] = sprintf( __( 'Classes que le thème n’utilise plus, gardées car vos pages s’en servent : %s.', 'rolling' ), implode( ', ', $utilisees ) );
 		}
 	}
 

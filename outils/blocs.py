@@ -102,34 +102,28 @@ def composer(racine):
 
 
 # --------------------------------------------------------------------------------------------
-# Morceaux réutilisés
+# Morceaux réutilisés. Règle : aucun conteneur vide (l'éditeur y glisse sa zone de dépôt) :
+# les décors (points, halos, barres) sont des pseudo-éléments des classes.
 # --------------------------------------------------------------------------------------------
 
-def halo(nom, couleur, position):
-    return D(nom, ['halo-' + couleur], position)
+def bandeau(nom, texte, cls=None, style=None):
+    return F(nom, ['bandeau-video'] + (cls or []), style, [P(nom + ' · texte', texte)])
 
 
-def bandeau(nom, texte, rec=False, style=None):
-    enfants = [D(nom + ' · point', ['point-rec'])] if rec else [D(nom + ' · point', None, 'width: 6px; height: 6px; min-width: 6px; padding: 0; border-radius: 50%; background: #FFD1BF; box-shadow: 0 0 0 3px rgba(255,209,191,0.3);')]
-    return F(nom, ['bandeau-video'], style, enfants + [P(nom + ' · texte', texte)])
-
-
-def lecture(nom, style=None, verre=False):
-    return D(nom, ['bouton-lecture', 'bouton-lecture-verre'] if verre else ['bouton-lecture'], style)
+def lecture(nom, verre=False, style=None):
+    if verre:
+        return I(nom, 'bouton-lecture-verre.png', cls=['bouton-lecture', 'bouton-lecture-verre'], style=style, taille='thumbnail')
+    return I(nom, 'bouton-lecture.png', cls=['bouton-lecture'], style=style, taille='thumbnail')
 
 
 # --------------------------------------------------------------------------------------------
 # Hero
 # --------------------------------------------------------------------------------------------
 
-
-
-hero = F('Hero', ['section'], 'padding: 104px 0 70px; @media(--tablet) { padding: 116px 0 56px; } @media(--mobile) { padding: 124px 0 48px; }', tag='section', enfants=[
-    halo('Halo lilas', 'lilas', 'left: -300px; top: -380px;'),
-    halo('Halo pêche', 'peche', 'right: -380px; top: -200px; opacity: 0.7;'),
-    F('Hero · contenu', ['conteneur'], 'display: flex; flex-direction: row; flex-wrap: wrap; align-items: center; gap: 48px; z-index: 2;', enfants=[
+hero = F('Hero', ['section', 'halos-haut'], 'padding: 104px 0 70px; @media(--tablet) { padding: 116px 0 56px; } @media(--mobile) { padding: 124px 0 48px; }', tag='section', enfants=[
+    F('Hero · contenu', ['conteneur'], 'display: flex; flex-direction: row; flex-wrap: wrap; align-items: center; gap: 48px;', enfants=[
         F('Promesse', ['pile'], 'flex: 1 1 560px; min-width: 0; gap: 0; padding-top: 40px; @media(--tablet) { padding-top: 0; }', enfants=[
-            F('Pastille', ['pastille'], enfants=[D('Pastille · point', ['point']), P('Pastille · texte', 'Votre agence vidéo illimitée')]),
+            F('Pastille', ['pastille'], enfants=[P('Pastille · texte', 'Votre agence vidéo illimitée')]),
             H('Titre H1', "Le meilleur <u>de l'humain.</u><br>Le meilleur <b>de l'IA.</b>", 'h1', ['titre-lg'], 'margin-top: 26px;'),
             P('Chapô', "Vos clients, vos candidats, vos collaborateurs s'informent tous en vidéo. Mais vos équipes n'ont pas le temps d'en faire ? La nôtre s'en charge, à prix fixe, <u>en illimité.</u>", ['chapo'], 'margin-top: 26px; max-width: 620px;'),
             F('Boutons', ['rangee'], 'margin-top: 40px;', enfants=[
@@ -144,12 +138,11 @@ hero = F('Hero', ['section'], 'padding: 104px 0 70px; @media(--tablet) { padding
                 P('Preuve · texte', 'Par les équipes de <strong>Pitchy</strong> — 10 ans de vidéo, 500+ grandes entreprises.', ['texte-petit'], 'font-size: 14px; color: var(--legende);'),
             ]),
         ]),
-        D('Visuels', None, 'position: relative; flex: 1 1 460px; min-width: 0; height: 680px; padding: 0; @media(--tablet) { height: auto; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; } @media(--mobile) { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }', enfants=[
-            D('Visuels · lueur', None, 'position: absolute; left: -40px; right: -40px; top: -20px; bottom: -40px; padding: 0; background: radial-gradient(closest-side, rgba(255,162,122,0.6), rgba(255,209,191,0.3) 55%, rgba(250,249,247,0) 100%); @media(--tablet) { display: none; }'),
+        D('Visuels', ['lueur-peche'], 'position: relative; flex: 1 1 460px; min-width: 0; height: 680px; padding: 0; @media(--tablet) { height: auto; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; } @media(--mobile) { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }', enfants=[
             D('Tournage', ['cadre-verre'], 'position: absolute; left: 0; right: 0; top: 0; border-radius: 42px; @media(--tablet) { position: relative; grid-column: 1 / -1; }', enfants=[
                 D('Tournage · photo', ['cadre-photo'], 'height: 652px; border-radius: 29px; @media(--tablet) { height: 420px; } @media(--mobile) { height: 280px; }', enfants=[
                     I('Tournage · image', 'hero-tournage.jpg', 'Une caméra sur trépied, en plein tournage dans des bureaux', ['image-couvrante'], 'object-position: 56% 50%;'),
-                    bandeau('Tournage · bandeau', 'Tournage', rec=True, style='top: 18px; left: 18px;'),
+                    bandeau('Tournage · bandeau', 'Tournage', ['bandeau-rec'], 'top: 18px; left: 18px;'),
                 ]),
             ]),
             D('Interview', ['cadre-verre'], 'position: absolute; left: 28px; top: 252px; width: 208px; z-index: 2; border-radius: 34px; @media(--tablet) { position: relative; left: auto; top: auto; width: auto; }', enfants=[
@@ -166,24 +159,14 @@ hero = F('Hero', ['section'], 'padding: 104px 0 70px; @media(--tablet) { padding
                 D('Démo produit · vidéo', ['cadre-photo'], 'aspect-ratio: 16 / 9; border-radius: 19px;', enfants=[
                     I('Démo produit · image', 'hero-demo-produit.jpg', "Un pot de crème ouvert flotte au-dessus d'une pierre", ['image-couvrante'], 'object-position: 50% 40%;'),
                     bandeau('Démo produit · bandeau', 'Démo produit', style='top: 10px; left: 10px;'),
-                    F('Démo produit · lecteur', ['plaque-verre'], 'position: absolute; z-index: 2; left: 8px; right: 8px; bottom: 8px; width: auto; gap: 12px; padding: 6px 14px 6px 6px; border-radius: 999px;', enfants=[
-                        lecture('Démo produit · lecture', 'width: 30px; height: 30px;', verre=True),
-                        D('Démo produit · piste', ['piste-lecture'], enfants=[
-                            D('Démo produit · progression'),
-                        ]),
+                    F('Démo produit · lecteur', ['plaque-verre', 'plaque-lecteur'], 'position: absolute; z-index: 2; left: 8px; right: 8px; bottom: 8px; width: auto; gap: 12px; padding: 6px 14px 6px 6px; border-radius: 999px;', enfants=[
+                        lecture('Démo produit · lecture', verre=True, style='width: 30px; height: 30px;'),
                     ]),
                 ]),
             ]),
             D('Motion design', ['cadre-verre'], 'position: absolute; right: 28px; top: 432px; width: 208px; z-index: 2; @media(--tablet) { position: relative; right: auto; top: auto; width: auto; align-self: start; }', enfants=[
-                D('Motion design · vidéo', ['fond-video-orange'], 'position: relative; aspect-ratio: 1 / 1; overflow: hidden; padding: 0; border-radius: 19px;', enfants=[
-                    D('Motion design · bulle', None, 'position: absolute; left: 18px; top: 54px; width: 62px; height: 62px; padding: 0; border-radius: 50%; background: radial-gradient(circle at 32% 28%, #FFFFFF 0%, rgba(255,255,255,0.75) 40%, rgba(255,255,255,0.25) 100%); box-shadow: 0 10px 22px -10px rgba(160,50,10,0.6);'),
-                    F('Motion design · barres', ['barres-graphique'], 'position: absolute; right: 16px; top: 46px;', enfants=[
-                        D('Barre 1'), D('Barre 2'), D('Barre 3'), D('Barre 4'),
-                    ]),
-                    F('Motion design · bandeau', ['bandeau-video'], 'top: 10px; left: 10px; color: #0F0F12; background: linear-gradient(165deg, rgba(255,255,255,0.72) 0%, rgba(255,255,255,0.32) 100%);', enfants=[
-                        D('Motion design · point', None, 'width: 6px; height: 6px; min-width: 6px; padding: 0; border-radius: 50%; background: #E0562A; box-shadow: 0 0 0 3px rgba(224,86,42,0.22);'),
-                        P('Motion design · texte', 'Motion design'),
-                    ]),
+                D('Motion design · vidéo', ['fond-video-orange', 'illus-motion'], 'aspect-ratio: 1 / 1; overflow: hidden; padding: 0; border-radius: 19px;', enfants=[
+                    bandeau('Motion design · bandeau', 'Motion design', ['bandeau-clair'], 'top: 10px; left: 10px;'),
                     F('Motion design · plaque', ['plaque-verre'], 'position: absolute; z-index: 2; left: 8px; right: 8px; bottom: 8px; width: auto; justify-content: space-between; padding: 10px 8px 10px 12px; color: #0F0F12;', enfants=[
                         P('Motion design · titre', 'Résultats<br><span>2026</span>', ['titre-vignette', 'titre-vignette-sombre'], 'font-size: 17px; line-height: 0.98; letter-spacing: -0.04em;'),
                         lecture('Motion design · lecture', verre=True),

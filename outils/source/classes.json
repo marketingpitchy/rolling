@@ -7,7 +7,7 @@
         {
           "label": "section",
           "description": "Bloc de page : 124 px de marge en haut et en bas, contient les halos.",
-          "css": "position: relative; display: flex; flex-direction: column; padding: 124px 0; overflow: clip; @media(--tablet) { padding: 84px 0; } @media(--mobile) { padding: 72px 0; }"
+          "css": "position: relative; display: flex; flex-direction: column; padding: 124px 0; overflow: clip; isolation: isolate; @media(--tablet) { padding: 84px 0; } @media(--mobile) { padding: 72px 0; }"
         },
         {
           "label": "section-sombre",
@@ -26,8 +26,8 @@
         },
         {
           "label": "fond-grille",
-          "description": "Grille fine de 48 px, posée en fond d'une section sombre (section IA). Élément décoratif placé en premier dans la section.",
-          "css": "position: absolute; top: 0; right: 0; bottom: 0; left: 0; padding: 0; pointer-events: none; background-image: linear-gradient(rgba(255,255,255,0.055) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.055) 1px, transparent 1px); background-size: 48px 48px;"
+          "description": "À ajouter à « section-sombre » : grille fine de 48 px (section IA).",
+          "css": "background-image: linear-gradient(rgba(255,255,255,0.055) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.055) 1px, transparent 1px), linear-gradient(180deg, #0F0E1E 0%, #131230 52%, #0F0F12 100%); background-size: 48px 48px, 48px 48px, auto;"
         },
         {
           "label": "conteneur",
@@ -132,7 +132,7 @@
         {
           "label": "sur-titre",
           "description": "Libellé en capitales après le timecode (« Pour qui »), précédé d'un trait.",
-          "css": "display: inline-flex; width: fit-content; align-items: center; gap: 14px; font-family: var(--police-texte); font-size: 12px; line-height: 1.2; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--rl-legende, var(--legende)); &::before { content: ''; order: 1; width: 28px; height: 1px; background: var(--rl-filet, rgba(15,15,18,0.18)); } & > :last-child { order: 2; }"
+          "css": "display: inline-flex; width: fit-content; align-items: center; gap: 14px; font-family: var(--police-texte); font-size: 12px; line-height: 1.2; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--rl-legende, var(--legende)); &::before { position: relative; top: auto; right: auto; bottom: auto; left: auto; height: auto; opacity: 1; mix-blend-mode: normal; border: 0; content: ''; order: 1; width: 28px; height: 1px; background: var(--rl-filet, rgba(15,15,18,0.18)); } & > :last-child { order: 2; }"
         },
         {
           "label": "label",
@@ -153,6 +153,26 @@
           "label": "note-main",
           "description": "Annotation manuscrite en Caveat (30 px, couleur note), légèrement inclinée. Masquée sous 980 px.",
           "css": "display: block; width: fit-content; font-family: var(--police-main); font-size: 30px; line-height: 1; font-weight: 700; color: var(--note); white-space: nowrap; transform: rotate(-3deg); @media(--tablet) { display: none; }"
+        },
+        {
+          "label": "titre-point",
+          "css": "display: flex; align-items: baseline; gap: 14px; &::before { position: relative; top: auto; right: auto; bottom: auto; left: auto; height: auto; opacity: 1; mix-blend-mode: normal; border: 0; content: ''; flex-shrink: 0; width: 8px; height: 8px; border-radius: 50%; transform: translateY(-2px); background: #FF8A5B; box-shadow: 0 0 0 4px rgba(255,138,91,0.22); }",
+          "description": "À ajouter à un titre : point de couleur devant (questions de FAQ). Pêche par défaut."
+        },
+        {
+          "label": "titre-point-bleu",
+          "css": "&::before { position: relative; top: auto; right: auto; bottom: auto; left: auto; height: auto; opacity: 1; mix-blend-mode: normal; border: 0; background: #3434E0; box-shadow: 0 0 0 4px rgba(52,52,224,0.16); }",
+          "description": "À ajouter à « titre-point » : point bleu."
+        },
+        {
+          "label": "titre-point-encre",
+          "css": "&::before { position: relative; top: auto; right: auto; bottom: auto; left: auto; height: auto; opacity: 1; mix-blend-mode: normal; border: 0; background: #0F0F12; box-shadow: 0 0 0 4px rgba(15,15,18,0.12); }",
+          "description": "À ajouter à « titre-point » : point encre."
+        },
+        {
+          "label": "texte-masque",
+          "description": "Texte lu par les lecteurs d'écran mais invisible à l'écran (ex. la valeur d'un chiffre en verre).",
+          "css": "position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;"
         }
       ]
     },
@@ -196,33 +216,18 @@
         },
         {
           "label": "pastille",
-          "description": "Pastille en verre liquide au-dessus du H1 (« Votre agence vidéo illimitée »), avec un point de couleur.",
-          "css": "display: inline-flex; width: fit-content; align-items: center; gap: 9px; padding: 8px 15px 8px 12px; border-radius: 999px; font-family: var(--police-texte); font-size: 14px; line-height: 1.2; font-weight: 600; color: var(--rl-etiquette-texte, #4A2BB8); background: var(--rl-etiquette-fond, linear-gradient(165deg, rgba(255,255,255,0.68) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0.48) 100%)); backdrop-filter: blur(26px) saturate(195%); box-shadow: var(--rl-etiquette-ombre, inset 0 1.5px 0 #FFFFFF, inset 0 0 0 1px rgba(255,255,255,0.35), 0 28px 64px -32px rgba(70,40,150,0.32));"
-        },
-        {
-          "label": "point",
-          "description": "Point de couleur des pastilles (pêche). Élément vide de 8 px.",
-          "css": "flex-shrink: 0; width: 8px; height: 8px; min-width: 8px; padding: 0; border-radius: 50%; background: var(--peche); box-shadow: 0 0 0 4px rgba(255,138,91,0.22);"
-        },
-        {
-          "label": "point-bleu",
-          "description": "À ajouter à « point » : point bleu (IA, marketing).",
-          "css": "background: var(--bleu); box-shadow: 0 0 0 4px rgba(52,52,224,0.16);"
-        },
-        {
-          "label": "point-orange",
-          "description": "À ajouter à « point » : point orange (humain, com interne).",
-          "css": "background: var(--orange); box-shadow: 0 0 0 4px rgba(224,86,42,0.18);"
+          "description": "Pastille en verre liquide au-dessus du H1 (« Votre agence vidéo illimitée »), avec son point pêche.",
+          "css": "display: inline-flex; width: fit-content; align-items: center; gap: 9px; padding: 8px 15px 8px 12px; border-radius: 999px; font-family: var(--police-texte); font-size: 14px; line-height: 1.2; font-weight: 600; color: var(--rl-etiquette-texte, #4A2BB8); background: var(--rl-etiquette-fond, linear-gradient(165deg, rgba(255,255,255,0.68) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0.48) 100%)); backdrop-filter: blur(26px) saturate(195%); box-shadow: var(--rl-etiquette-ombre, inset 0 1.5px 0 #FFFFFF, inset 0 0 0 1px rgba(255,255,255,0.35), 0 28px 64px -32px rgba(70,40,150,0.32)); &::before { position: relative; top: auto; right: auto; bottom: auto; left: auto; height: auto; opacity: 1; mix-blend-mode: normal; border: 0; content: ''; flex-shrink: 0; width: 8px; height: 8px; border-radius: 50%; background: #FF8A5B; box-shadow: 0 0 0 4px rgba(255,138,91,0.22); }"
         },
         {
           "label": "etiquette-metier-bleu",
           "description": "Étiquette pleine « Marketing & communication », en tête de chapitre.",
-          "css": "display: inline-flex; width: fit-content; align-items: center; gap: 12px; padding: 12px 24px 12px 16px; border-radius: 999px; font-family: var(--police-titre); font-size: 19px; line-height: 1.1; font-weight: 650; letter-spacing: -0.02em; color: #FFFFFF; white-space: nowrap; background: radial-gradient(80% 120% at 12% 0%, rgba(255,255,255,0.32), rgba(255,255,255,0) 60%), linear-gradient(100deg, #3434E0 0%, #5B3BEA 62%, #7B4DF2 100%); box-shadow: inset 0 1px 0 rgba(255,255,255,0.5), 0 18px 34px -16px rgba(52,52,224,0.75); @media(--mobile) { font-size: 16px; white-space: normal; }"
+          "css": "display: inline-flex; width: fit-content; align-items: center; gap: 12px; padding: 12px 24px 12px 16px; border-radius: 999px; font-family: var(--police-titre); font-size: 19px; line-height: 1.1; font-weight: 650; letter-spacing: -0.02em; color: #FFFFFF; white-space: nowrap; background: radial-gradient(80% 120% at 12% 0%, rgba(255,255,255,0.32), rgba(255,255,255,0) 60%), linear-gradient(100deg, #3434E0 0%, #5B3BEA 62%, #7B4DF2 100%); box-shadow: inset 0 1px 0 rgba(255,255,255,0.5), 0 18px 34px -16px rgba(52,52,224,0.75); @media(--mobile) { font-size: 16px; white-space: normal; } &::before { position: relative; top: auto; right: auto; bottom: auto; left: auto; height: auto; opacity: 1; mix-blend-mode: normal; border: 0; content: ''; flex-shrink: 0; width: 10px; height: 10px; border-radius: 50%; background: #FFFFFF; box-shadow: 0 0 0 4px rgba(255,255,255,0.28); }"
         },
         {
           "label": "etiquette-metier-orange",
           "description": "Étiquette pleine « Com interne · RH · Formation », en tête de chapitre.",
-          "css": "display: inline-flex; width: fit-content; align-items: center; gap: 12px; padding: 12px 24px 12px 16px; border-radius: 999px; font-family: var(--police-titre); font-size: 19px; line-height: 1.1; font-weight: 650; letter-spacing: -0.02em; color: #FFFFFF; white-space: nowrap; background: radial-gradient(80% 120% at 12% 0%, rgba(255,255,255,0.36), rgba(255,255,255,0) 60%), linear-gradient(100deg, #C2410C 0%, #E0562A 100%); box-shadow: inset 0 1px 0 rgba(255,255,255,0.55), 0 18px 34px -16px rgba(224,86,42,0.75); @media(--mobile) { font-size: 16px; white-space: normal; }"
+          "css": "display: inline-flex; width: fit-content; align-items: center; gap: 12px; padding: 12px 24px 12px 16px; border-radius: 999px; font-family: var(--police-titre); font-size: 19px; line-height: 1.1; font-weight: 650; letter-spacing: -0.02em; color: #FFFFFF; white-space: nowrap; background: radial-gradient(80% 120% at 12% 0%, rgba(255,255,255,0.36), rgba(255,255,255,0) 60%), linear-gradient(100deg, #C2410C 0%, #E0562A 100%); box-shadow: inset 0 1px 0 rgba(255,255,255,0.55), 0 18px 34px -16px rgba(224,86,42,0.75); @media(--mobile) { font-size: 16px; white-space: normal; } &::before { position: relative; top: auto; right: auto; bottom: auto; left: auto; height: auto; opacity: 1; mix-blend-mode: normal; border: 0; content: ''; flex-shrink: 0; width: 10px; height: 10px; border-radius: 50%; background: #FFFFFF; box-shadow: 0 0 0 4px rgba(255,255,255,0.28); }"
         },
         {
           "label": "chip-bleu",
@@ -253,6 +258,16 @@
           "label": "badge-securite",
           "description": "Badge de réassurance (IA sécurisée, Données en Europe, RGPD). Toujours les trois ensemble.",
           "css": "display: inline-flex; width: fit-content; align-items: center; gap: 11px; padding: 8px 20px 8px 8px; border-radius: 999px; font-family: var(--police-texte); font-size: 15px; line-height: 1.2; font-weight: 700; color: var(--rl-texte, #0F0F12); background: var(--rl-verre-bouton-fond, rgba(255,255,255,0.7)); box-shadow: var(--rl-verre-bouton-ombre, inset 0 1px 0 #FFFFFF, inset 0 0 0 1px rgba(91,59,234,0.14)); background-color: transparent;"
+        },
+        {
+          "label": "pastille-bleue",
+          "css": "&::before { position: relative; top: auto; right: auto; bottom: auto; left: auto; height: auto; opacity: 1; mix-blend-mode: normal; border: 0; background: #3434E0; box-shadow: 0 0 0 4px rgba(52,52,224,0.16); }",
+          "description": "À ajouter à « pastille » : point bleu (IA, marketing)."
+        },
+        {
+          "label": "pastille-orange",
+          "css": "&::before { position: relative; top: auto; right: auto; bottom: auto; left: auto; height: auto; opacity: 1; mix-blend-mode: normal; border: 0; background: #E0562A; box-shadow: 0 0 0 4px rgba(224,86,42,0.18); }",
+          "description": "À ajouter à « pastille » : point orange (humain, com interne)."
         }
       ]
     },
@@ -262,7 +277,7 @@
         {
           "label": "carte-verre",
           "description": "Carte en verre dépoli (claire ; fumée dans une section sombre). Rayon 26 px, padding 28 px.",
-          "css": "position: relative; display: flex; flex-direction: column; gap: 14px; padding: 28px; border-radius: 26px; background: var(--rl-verre-fond, radial-gradient(70% 50% at 18% 0%, rgba(255,255,255,0.95), rgba(255,255,255,0) 72%), linear-gradient(150deg, rgba(255,255,255,0.74) 0%, rgba(255,255,255,0.42) 55%, rgba(255,255,255,0.6) 100%)); backdrop-filter: blur(28px) saturate(180%); box-shadow: var(--rl-verre-ombre, inset 0 1px 0 #FFFFFF, inset 0 -1px 0 rgba(255,255,255,0.5), 0 1px 2px rgba(15,15,18,0.04), 0 30px 70px -34px rgba(76,48,170,0.34)); &::before { content: ''; position: absolute; top: 0; right: 0; bottom: 0; left: 0; border-radius: inherit; padding: 1.2px; background: var(--rl-verre-bord, linear-gradient(140deg, #FFFFFF, rgba(255,255,255,0.35) 30%, rgba(196,181,253,0.4) 62%, rgba(255,209,191,0.9))); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; }"
+          "css": "position: relative; display: flex; flex-direction: column; gap: 14px; padding: 28px; border-radius: 26px; background: var(--rl-verre-fond, radial-gradient(70% 50% at 18% 0%, rgba(255,255,255,0.95), rgba(255,255,255,0) 72%), linear-gradient(150deg, rgba(255,255,255,0.74) 0%, rgba(255,255,255,0.42) 55%, rgba(255,255,255,0.6) 100%)); backdrop-filter: blur(28px) saturate(180%); box-shadow: var(--rl-verre-ombre, inset 0 1px 0 #FFFFFF, inset 0 -1px 0 rgba(255,255,255,0.5), 0 1px 2px rgba(15,15,18,0.04), 0 30px 70px -34px rgba(76,48,170,0.34)); &::before { position: relative; top: auto; right: auto; bottom: auto; left: auto; height: auto; opacity: 1; mix-blend-mode: normal; border: 0; content: ''; position: absolute; top: 0; right: 0; bottom: 0; left: 0; border-radius: inherit; padding: 1.2px; background: var(--rl-verre-bord, linear-gradient(140deg, #FFFFFF, rgba(255,255,255,0.35) 30%, rgba(196,181,253,0.4) 62%, rgba(255,209,191,0.9))); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; }"
         },
         {
           "label": "grand-bloc",
@@ -307,7 +322,7 @@
         {
           "label": "cadre-verre",
           "description": "Cadre en verre épais autour d'une photo ou d'une vignette (14 px de verre, rayon 32 px).",
-          "css": "position: relative; padding: 14px; border-radius: 32px; isolation: isolate; background: linear-gradient(150deg, rgba(255,255,255,0.36) 0%, rgba(255,255,255,0.11) 40%, rgba(255,255,255,0.05) 62%, rgba(255,255,255,0.22) 100%); backdrop-filter: blur(22px) saturate(190%) brightness(1.12); box-shadow: inset 0 1.5px 0 rgba(255,255,255,0.95), inset 1.5px 0 0 rgba(255,255,255,0.6), inset 0 -1.5px 0 rgba(255,255,255,0.42), inset 0 0 30px rgba(255,255,255,0.16), 0 32px 64px -24px rgba(10,6,30,0.62), 0 10px 22px -12px rgba(10,6,30,0.42); &::before { content: ''; position: absolute; top: 0; right: 0; bottom: 0; left: 0; border-radius: inherit; padding: 1.6px; background: linear-gradient(135deg, #FFFFFF 0%, rgba(255,255,255,0.32) 26%, rgba(255,255,255,0.06) 50%, rgba(255,255,255,0.3) 74%, rgba(255,255,255,0.95) 100%); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; z-index: 4; }"
+          "css": "position: relative; padding: 14px; border-radius: 32px; isolation: isolate; background: linear-gradient(150deg, rgba(255,255,255,0.36) 0%, rgba(255,255,255,0.11) 40%, rgba(255,255,255,0.05) 62%, rgba(255,255,255,0.22) 100%); backdrop-filter: blur(22px) saturate(190%) brightness(1.12); box-shadow: inset 0 1.5px 0 rgba(255,255,255,0.95), inset 1.5px 0 0 rgba(255,255,255,0.6), inset 0 -1.5px 0 rgba(255,255,255,0.42), inset 0 0 30px rgba(255,255,255,0.16), 0 32px 64px -24px rgba(10,6,30,0.62), 0 10px 22px -12px rgba(10,6,30,0.42); &::before { position: relative; top: auto; right: auto; bottom: auto; left: auto; height: auto; opacity: 1; mix-blend-mode: normal; border: 0; content: ''; position: absolute; top: 0; right: 0; bottom: 0; left: 0; border-radius: inherit; padding: 1.6px; background: linear-gradient(135deg, #FFFFFF 0%, rgba(255,255,255,0.32) 26%, rgba(255,255,255,0.06) 50%, rgba(255,255,255,0.3) 74%, rgba(255,255,255,0.95) 100%); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; z-index: 4; }"
         }
       ]
     },
@@ -322,7 +337,7 @@
         {
           "label": "cadre-photo",
           "description": "Fenêtre d'image arrondie avec le voile de marque (violet → pêche) et un dégradé sombre en haut et en bas.",
-          "css": "position: relative; overflow: hidden; padding: 0; border-radius: 20px; background: #2A2233; isolation: isolate; & img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; } &::after { content: ''; position: absolute; top: 0; right: 0; bottom: 0; left: 0; border-radius: inherit; background: linear-gradient(180deg, rgba(12,8,30,0.55) 0%, rgba(12,8,30,0) 28%, rgba(12,8,30,0) 62%, rgba(12,8,30,0.6) 100%), linear-gradient(200deg, rgba(139,92,246,0.18), rgba(255,255,255,0) 50%, rgba(255,138,91,0.22)); pointer-events: none; }"
+          "css": "position: relative; overflow: hidden; padding: 0; border-radius: 20px; background: #2A2233; isolation: isolate; &::after { content: ''; position: absolute; top: 0; right: 0; bottom: 0; left: 0; border-radius: inherit; background: linear-gradient(180deg, rgba(12,8,30,0.55) 0%, rgba(12,8,30,0) 28%, rgba(12,8,30,0) 62%, rgba(12,8,30,0.6) 100%), linear-gradient(200deg, rgba(139,92,246,0.18), rgba(255,255,255,0) 50%, rgba(255,138,91,0.22)); pointer-events: none; }"
         },
         {
           "label": "image-couvrante",
@@ -331,8 +346,8 @@
         },
         {
           "label": "bandeau-video",
-          "description": "Bandeau en verre en haut à gauche d'une vignette (INTERVIEW, MOTION 2D).",
-          "css": "position: absolute; width: fit-content; z-index: 2; top: 14px; left: 14px; display: inline-flex; align-items: center; gap: 7px; padding: 6px 12px 6px 10px; border-radius: 999px; font-family: var(--police-texte); font-size: 12px; line-height: 1; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: #FFFFFF; background: rgba(20,14,46,0.55); backdrop-filter: blur(16px) saturate(180%); box-shadow: inset 0 1px 0 rgba(255,255,255,0.6), inset 0 0 0 1px rgba(255,255,255,0.35); white-space: nowrap;"
+          "description": "Bandeau en verre en haut à gauche d'une vignette (INTERVIEW, MOTION 2D), avec son point.",
+          "css": "position: absolute; width: fit-content; z-index: 2; top: 14px; left: 14px; display: inline-flex; align-items: center; gap: 7px; padding: 6px 12px 6px 10px; border-radius: 999px; font-family: var(--police-texte); font-size: 12px; line-height: 1; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: #FFFFFF; background: rgba(20,14,46,0.55); backdrop-filter: blur(16px) saturate(180%); box-shadow: inset 0 1px 0 rgba(255,255,255,0.6), inset 0 0 0 1px rgba(255,255,255,0.35); white-space: nowrap; &::before { position: relative; top: auto; right: auto; bottom: auto; left: auto; height: auto; opacity: 1; mix-blend-mode: normal; border: 0; content: ''; flex-shrink: 0; width: 6px; height: 6px; border-radius: 50%; background: #FFD1BF; box-shadow: 0 0 0 3px rgba(255,209,191,0.3); }"
         },
         {
           "label": "duree",
@@ -341,19 +356,13 @@
         },
         {
           "label": "bouton-lecture",
-          "description": "Rond pêche avec le triangle de lecture, en bas à droite d'une vignette.",
-          "css": "position: absolute; z-index: 2; right: 16px; bottom: 16px; display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; padding: 0 0 0 3px; border-radius: 50%; color: #0F0F12; background: var(--peche); box-shadow: 0 8px 20px -6px rgba(255,138,91,0.9); &::before { content: ''; width: 0; height: 0; border-left: 13px solid currentColor; border-top: 8px solid transparent; border-bottom: 8px solid transparent; }"
+          "description": "Bouton lecture d'une vignette (image du kit, décorative), en bas à droite.",
+          "css": "position: absolute; z-index: 2; right: 16px; bottom: 16px; width: 48px; height: 48px; border-radius: 50%; filter: drop-shadow(0 8px 14px rgba(255,138,91,0.55));"
         },
         {
           "label": "barre-progression",
-          "description": "Barre de progression en bas d'une vignette (le remplissage est un élément enfant).",
-          "css": "position: absolute; z-index: 2; left: 0; bottom: 0; width: 100%; height: 5px; padding: 0; background: rgba(255,255,255,0.25); & > * { height: 100%; width: 38%; background: #FFD1BF; }"
-        },
-        {
-          "label": "point-rec",
-          "description": "Point rouge REC qui clignote.",
-          "css": "flex-shrink: 0; width: 8px; height: 8px; min-width: 8px; padding: 0; border-radius: 50%; background: #FF3B30; box-shadow: 0 0 0 3px rgba(255,59,48,0.28);",
-          "brut": "animation: rl-clignote 1.6s ease-in-out infinite;"
+          "description": "Barre de progression en bas d'une vignette, avec sa partie lue.",
+          "css": "position: absolute; z-index: 2; left: 0; bottom: 0; width: 100%; height: 5px; padding: 0; background: rgba(255,255,255,0.25); &::after { content: ''; position: absolute; top: 0; bottom: 0; left: 0; width: var(--rl-progression, 38%); background: #FFD1BF; }"
         },
         {
           "label": "tuile-logo",
@@ -412,23 +421,34 @@
         },
         {
           "label": "bouton-lecture-verre",
-          "description": "À ajouter à « bouton-lecture » : petit bouton lecture en verre, posé dans une plaque (34 px).",
-          "css": "position: relative; right: auto; bottom: auto; width: 34px; height: 34px; color: #FFFFFF; background-color: transparent; background-image: linear-gradient(165deg, rgba(255,255,255,0.62) 0%, rgba(255,255,255,0.2) 100%); box-shadow: inset 0 1px 0 #FFFFFF, inset 0 0 0 1px rgba(255,255,255,0.5), 0 6px 14px -6px rgba(10,6,30,0.55); backdrop-filter: blur(10px); &::before { border-left-width: 10px; border-top-width: 6px; border-bottom-width: 6px; }"
-        },
-        {
-          "label": "piste-lecture",
-          "description": "Piste de lecture d'un lecteur vidéo dessiné ; l'élément à l'intérieur est la partie déjà lue.",
-          "css": "position: relative; flex: 1 1 auto; height: 5px; padding: 0; border-radius: 999px; background: rgba(255,255,255,0.3); & > * { position: absolute; top: 0; bottom: 0; left: 0; width: 58%; padding: 0; border-radius: 999px; background: #FFFFFF; }"
-        },
-        {
-          "label": "barres-graphique",
-          "description": "Petit graphique en barres dessiné (motion design) : quatre éléments vides à l'intérieur, du plus petit au plus grand.",
-          "css": "display: flex; flex-direction: row; align-items: flex-end; gap: 6px; width: fit-content; height: 74px; padding: 0; & > * { width: 15px; padding: 0; border-radius: 5px 5px 2px 2px; background: rgba(255,255,255,0.6); box-shadow: inset 0 1px 0 #FFFFFF; } & > :nth-child(1) { height: 38%; } & > :nth-child(2) { height: 56%; } & > :nth-child(3) { height: 74%; background: rgba(255,255,255,0.78); } & > :nth-child(4) { height: 100%; background: #0F0F12; box-shadow: none; }"
+          "description": "À ajouter à « bouton-lecture » : petit bouton en verre posé dans une plaque (34 px).",
+          "css": "position: relative; right: auto; bottom: auto; width: 34px; height: 34px; filter: drop-shadow(0 6px 10px rgba(10,6,30,0.45));"
         },
         {
           "label": "bouton-son",
           "description": "Bouton « Activer le son » posé sur une vidéo, avec l'icône du haut-parleur.",
-          "css": "position: absolute; z-index: 3; top: 22px; right: 22px; display: inline-flex; width: fit-content; align-items: center; gap: 9px; min-height: 44px; padding: 0 18px 0 14px; border-radius: 999px; font-family: var(--police-texte); font-size: 14px; line-height: 1; font-weight: 700; color: #FFFFFF; text-shadow: 0 1px 4px rgba(12,8,40,0.4); background-color: transparent; background-image: linear-gradient(165deg, rgba(255,255,255,0.34) 0%, rgba(255,255,255,0.12) 100%); backdrop-filter: blur(16px) saturate(180%); box-shadow: inset 0 1px 0 rgba(255,255,255,0.85), inset 0 0 0 1px rgba(255,255,255,0.5), 0 10px 24px -12px rgba(0,0,0,0.6); &::before { content: ''; flex-shrink: 0; width: 16px; height: 16px; background-color: currentColor; -webkit-mask: url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M11 5 6 9H2v6h4l5 4z'/%3E%3Cpath d='m23 9-6 6'/%3E%3Cpath d='m17 9 6 6'/%3E%3C/svg%3E\") center / contain no-repeat; mask: url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M11 5 6 9H2v6h4l5 4z'/%3E%3Cpath d='m23 9-6 6'/%3E%3Cpath d='m17 9 6 6'/%3E%3C/svg%3E\") center / contain no-repeat; } &:hover { background: linear-gradient(165deg, rgba(255,255,255,0.46) 0%, rgba(255,255,255,0.2) 100%); } @media(--mobile) { top: 12px; right: 12px; }"
+          "css": "position: absolute; z-index: 3; top: 22px; right: 22px; display: inline-flex; width: fit-content; align-items: center; gap: 9px; min-height: 44px; padding: 0 18px 0 14px; border-radius: 999px; font-family: var(--police-texte); font-size: 14px; line-height: 1; font-weight: 700; color: #FFFFFF; text-shadow: 0 1px 4px rgba(12,8,40,0.4); background-color: transparent; background-image: linear-gradient(165deg, rgba(255,255,255,0.34) 0%, rgba(255,255,255,0.12) 100%); backdrop-filter: blur(16px) saturate(180%); box-shadow: inset 0 1px 0 rgba(255,255,255,0.85), inset 0 0 0 1px rgba(255,255,255,0.5), 0 10px 24px -12px rgba(0,0,0,0.6); &::before { position: relative; top: auto; right: auto; bottom: auto; left: auto; height: auto; opacity: 1; mix-blend-mode: normal; border: 0; content: ''; flex-shrink: 0; width: 16px; height: 16px; background-color: currentColor; -webkit-mask: url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M11 5 6 9H2v6h4l5 4z'/%3E%3Cpath d='m23 9-6 6'/%3E%3Cpath d='m17 9 6 6'/%3E%3C/svg%3E\") center / contain no-repeat; mask: url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M11 5 6 9H2v6h4l5 4z'/%3E%3Cpath d='m23 9-6 6'/%3E%3Cpath d='m17 9 6 6'/%3E%3C/svg%3E\") center / contain no-repeat; } &:hover { background: linear-gradient(165deg, rgba(255,255,255,0.46) 0%, rgba(255,255,255,0.2) 100%); } @media(--mobile) { top: 12px; right: 12px; }"
+        },
+        {
+          "label": "bandeau-rec",
+          "css": "&::before { position: relative; top: auto; right: auto; bottom: auto; left: auto; height: auto; opacity: 1; mix-blend-mode: normal; border: 0; width: 8px; height: 8px; background: #FF3B30; box-shadow: 0 0 0 3px rgba(255,59,48,0.28); }",
+          "description": "À ajouter à « bandeau-video » : point rouge REC qui clignote (tournage).",
+          "brut": "&::before { animation: rl-clignote 1.6s ease-in-out infinite; }"
+        },
+        {
+          "label": "bandeau-clair",
+          "css": "color: #0F0F12; text-shadow: none; background: linear-gradient(165deg, rgba(255,255,255,0.72) 0%, rgba(255,255,255,0.32) 100%); &::before { position: relative; top: auto; right: auto; bottom: auto; left: auto; height: auto; opacity: 1; mix-blend-mode: normal; border: 0; background: #E0562A; box-shadow: 0 0 0 3px rgba(224,86,42,0.22); }",
+          "description": "À ajouter à « bandeau-video » sur un fond clair ou orange : texte encre, point orange."
+        },
+        {
+          "label": "illus-motion",
+          "css": "position: relative; isolation: isolate; &::before { position: relative; top: auto; right: auto; bottom: auto; left: auto; height: auto; opacity: 1; mix-blend-mode: normal; border: 0; content: ''; position: absolute; z-index: -1; right: 16px; top: 46px; width: 78px; height: 74px; background: linear-gradient(#0F0F12, #0F0F12) right bottom / 15px 100% no-repeat, linear-gradient(rgba(255,255,255,0.78), rgba(255,255,255,0.78)) 42px bottom / 15px 74% no-repeat, linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)) 21px bottom / 15px 56% no-repeat, linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)) left bottom / 15px 38% no-repeat; } &::after { content: ''; position: absolute; z-index: -1; left: 18px; top: 54px; width: 62px; height: 62px; border-radius: 50%; background: radial-gradient(circle at 32% 28%, #FFFFFF 0%, rgba(255,255,255,0.75) 40%, rgba(255,255,255,0.25) 100%); box-shadow: 0 10px 22px -10px rgba(160,50,10,0.6); }",
+          "description": "Illustration de motion design dessinée dans une vignette : une bulle et un petit graphique en barres."
+        },
+        {
+          "label": "plaque-lecteur",
+          "description": "À ajouter à « plaque-verre » : lecteur vidéo dessiné (bouton lecture puis piste de lecture, déjà lue à 58 %).",
+          "css": "&::after { content: ''; flex: 1 1 auto; height: 5px; border-radius: 999px; background: linear-gradient(#FFFFFF, #FFFFFF) left center / var(--rl-progression, 58%) 100% no-repeat, rgba(255,255,255,0.3); }"
         }
       ]
     },
@@ -456,24 +476,6 @@
       "nom": "Décors et mouvement",
       "classes": [
         {
-          "label": "halo-peche",
-          "description": "Halo pêche flou en fond de section (860 px), qui dérive lentement. Décoratif.",
-          "css": "position: absolute; width: 860px; height: 860px; padding: 0; border-radius: 50%; pointer-events: none; background: radial-gradient(closest-side, rgba(255,162,122,0.5), rgba(255,162,122,0));",
-          "brut": "animation: rl-derive 20s ease-in-out infinite;"
-        },
-        {
-          "label": "halo-lilas",
-          "description": "Halo lilas flou en fond de section. Décoratif.",
-          "css": "position: absolute; width: 860px; height: 860px; padding: 0; border-radius: 50%; pointer-events: none; background: radial-gradient(closest-side, rgba(196,181,253,0.5), rgba(196,181,253,0));",
-          "brut": "animation: rl-derive 20s ease-in-out infinite;"
-        },
-        {
-          "label": "halo-bleu",
-          "description": "Halo bleu des sections IA et Marketing. Décoratif.",
-          "css": "position: absolute; width: 860px; height: 860px; padding: 0; border-radius: 50%; pointer-events: none; background: radial-gradient(closest-side, rgba(52,52,224,0.3), rgba(52,52,224,0));",
-          "brut": "animation: rl-derive 20s ease-in-out infinite;"
-        },
-        {
           "label": "flotte",
           "description": "L'élément flotte doucement de haut en bas (8 s).",
           "css": "position: relative;",
@@ -489,6 +491,29 @@
           "label": "masque-bords",
           "description": "Fond qui s'efface sur les bords gauche et droit (bande de logos).",
           "css": "overflow: hidden; padding: 0; -webkit-mask: linear-gradient(90deg, transparent 0, #000 8%, #000 92%, transparent 100%); mask: linear-gradient(90deg, transparent 0, #000 8%, #000 92%, transparent 100%);"
+        },
+        {
+          "label": "halos-haut",
+          "css": "&::before { position: relative; top: auto; right: auto; bottom: auto; left: auto; height: auto; opacity: 1; mix-blend-mode: normal; border: 0; content: ''; position: absolute; z-index: -1; width: 860px; height: 860px; border-radius: 50%; pointer-events: none; left: -300px; top: -380px; background: radial-gradient(closest-side, rgba(196,181,253,0.5), rgba(196,181,253,0)); } &::after { content: ''; position: absolute; z-index: -1; width: 860px; height: 860px; border-radius: 50%; pointer-events: none; right: -380px; top: -200px; opacity: 0.7; background: radial-gradient(closest-side, rgba(255,162,122,0.5), rgba(255,162,122,0)); }",
+          "description": "À ajouter à une section : halo lilas en haut à gauche, halo pêche en haut à droite. Ils dérivent lentement.",
+          "brut": "&::before, &::after { animation: rl-derive 20s ease-in-out infinite; }"
+        },
+        {
+          "label": "halos-bas",
+          "css": "&::before { position: relative; top: auto; right: auto; bottom: auto; left: auto; height: auto; opacity: 1; mix-blend-mode: normal; border: 0; content: ''; position: absolute; z-index: -1; width: 860px; height: 860px; border-radius: 50%; pointer-events: none; left: -340px; bottom: -420px; background: radial-gradient(closest-side, rgba(196,181,253,0.5), rgba(196,181,253,0)); } &::after { content: ''; position: absolute; z-index: -1; width: 860px; height: 860px; border-radius: 50%; pointer-events: none; right: -420px; bottom: -300px; opacity: 0.6; background: radial-gradient(closest-side, rgba(255,162,122,0.5), rgba(255,162,122,0)); }",
+          "description": "À ajouter à une section : halos lilas et pêche en bas.",
+          "brut": "&::before, &::after { animation: rl-derive 20s ease-in-out infinite; }"
+        },
+        {
+          "label": "halo-centre",
+          "css": "&::before { position: relative; top: auto; right: auto; bottom: auto; left: auto; height: auto; opacity: 1; mix-blend-mode: normal; border: 0; content: ''; position: absolute; z-index: -1; width: 860px; height: 860px; border-radius: 50%; pointer-events: none; left: 50%; top: 50%; margin: -430px 0 0 -430px; background: radial-gradient(closest-side, rgba(255,138,91,0.42), rgba(139,92,246,0.3) 52%, rgba(15,15,18,0) 100%); }",
+          "description": "À ajouter à une section : grand halo pêche et violet au centre (CTA final).",
+          "brut": "&::before { animation: rl-derive 20s ease-in-out infinite; }"
+        },
+        {
+          "label": "lueur-peche",
+          "css": "isolation: isolate; &::before { position: relative; top: auto; right: auto; bottom: auto; left: auto; height: auto; opacity: 1; mix-blend-mode: normal; border: 0; content: ''; position: absolute; z-index: -1; left: -40px; right: -40px; top: -20px; bottom: -40px; pointer-events: none; background: radial-gradient(closest-side, rgba(255,162,122,0.6), rgba(255,209,191,0.3) 55%, rgba(250,249,247,0) 100%); } @media(--tablet) { isolation: auto; }",
+          "description": "À ajouter à un bloc visuel : lueur pêche douce derrière lui."
         }
       ]
     }

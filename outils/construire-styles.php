@@ -21,7 +21,7 @@ $source = $args[0] ?? '/tmp/rolling/source';
 $sortie = $args[1] ?? '/tmp/rolling/data';
 
 // Les classes prioritaires (modificateurs) passent avant les classes de base.
-$prioritaires = array( 'logos-defilants', 'conteneur-etroit', 'label-violet', 'titre-eteint', 'bouton-petit', 'point-bleu', 'point-orange', 'grand-bloc', 'carte-chiffre', 'carte-question', 'portrait-petit', 'image-couvrante', 'bouton-lecture-verre', 'titre-vignette-sombre' );
+$prioritaires = array( 'logos-defilants', 'conteneur-etroit', 'label-violet', 'titre-eteint', 'bouton-petit', 'pastille-bleue', 'pastille-orange', 'titre-point-bleu', 'titre-point-encre', 'bandeau-rec', 'bandeau-clair', 'fond-grille', 'halos-haut', 'halos-bas', 'halo-centre', 'lueur-peche', 'plaque-lecteur', 'grand-bloc', 'carte-chiffre', 'carte-question', 'portrait-petit', 'image-couvrante', 'bouton-lecture-verre', 'titre-vignette-sombre' );
 
 /**
  * Id stable d'une variable ou d'une classe.

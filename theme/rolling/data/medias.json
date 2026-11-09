@@ -24,6 +24,18 @@
     "titre": "Flèche dessinée (annotation)"
   },
   {
+    "cle": "bouton-lecture-verre",
+    "fichier": "bouton-lecture-verre.png",
+    "alt": "",
+    "titre": "Bouton lecture (verre)"
+  },
+  {
+    "cle": "bouton-lecture",
+    "fichier": "bouton-lecture.png",
+    "alt": "",
+    "titre": "Bouton lecture (pêche)"
+  },
+  {
     "cle": "hero-tournage",
     "fichier": "hero-tournage.jpg",
     "alt": "Une caméra sur trépied, en plein tournage dans des bureaux",

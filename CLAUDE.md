@@ -73,6 +73,36 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
 - **Licence Pro** : ma copie n'a pas de licence ⇒ balises dynamiques et variables de taille Pro bloquées. On ne
   contourne pas la licence. Ce qui en dépend se teste chez la cliente (ou thème = balises dynamiques maison).
 
+## Leçons de construction (Elementor 4.3.6, vérifiées sur la copie de test)
+
+- **Aucun conteneur vide dans un bloc** : l'éditeur glisse sa barre et sa zone de dépôt dans chaque conteneur, les
+  décors vides y sont déformés. Points, halos, barres, pistes = pseudo-éléments des classes ; boutons lecture = image du kit.
+- **`.e-con::before` est positionné par Elementor** (position, top/left, height, border, opacity) : tout `&::before`
+  d'une classe commence par une remise à zéro (`position: relative; top/right/bottom/left: auto; height: auto…`).
+- **CSS personnalisé des styles locaux = rendu seulement avec licence Pro** (Elementor le retire sinon). Donc aucun CSS
+  non natif ni règle imbriquée en style local : `construire-blocs.php` refuse (« À METTRE DANS UNE CLASSE »).
+  Le CSS personnalisé des **classes** est rendu sans licence.
+- Mode « Conserver les styles, case décochée » (keep_flatten) : classes recopiées en styles locaux ⇒ leur CSS
+  personnalisé n'est rendu qu'avec la licence ⇒ **à faire tester par la cliente** (test B).
+- Mode « Conserver les styles, case cochée » (keep_create) : Elementor crée **toujours** des copies `DUP_…` des classes
+  (comportement voulu par Elementor). Rendu identique, mais classes en double ⇒ recommander « Adopter le style de ce site ».
+- Mode « Adopter le style de ce site » : rendu identique au site (vérifié, 37 px d'écart sur 1440×820).
+- Après insertion, l'éditeur réinitialise ses classes et ne recharge que celles de la page enregistrée (défaut Elementor) :
+  `assets/js/rolling-editeur.js` appelle `elementorV2.editorGlobalClasses.loadExistingClasses(ids du thème)` à
+  l'ouverture et après l'évènement `elementor/global-styles/imported`. Bloc stylé tout de suite (vérifié).
+- Supprimer une classe utilisée fait retirer sa référence des pages par Elementor ⇒ l'installateur met à jour les
+  modèles d'abord, puis ne supprime une classe obsolète **que si plus rien ne l'utilise** (Global_Classes_Relations).
+- L'éditeur réécrit les données (null → « », nombres → chaînes) : empreintes normalisées (Rolling_Donnees::empreinte)
+  et relues après enregistrement, sinon fausses « V2 » / fausses « classes modifiées ».
+- `e-button` a un fond bleu par défaut : toute classe de bouton pose `background-color`.
+- Règle `& img` dans une classe de cadre = attrape aussi les icônes posées dedans : utiliser `image-couvrante`.
+- Texte riche : la classe d'un `<span>` est retirée ⇒ mots en dégradé par la mise en forme (italique = dégradé de
+  section, gras = IA, souligné = humain ; chapô : souligné = mot manuscrit).
+- Copie de test hors ligne : mu-plugin `scratchpad/wp/mu/copie-hors-ligne.php` (répond aux appels elementor.com, sinon
+  « Mes modèles » plante sur `reorder_categories`). Jamais dans le thème.
+- Chaîne : `outils/construire.sh [styles|blocs|tout]` ; sources `outils/source/{variables,classes}.json`, `outils/blocs.py` ;
+  page d'essai `outils/page-essai.php` ; tests éditeur `scratchpad/tools/editeur*.js`, `insertion-debug.js`.
+
 ## Exigences du thème
 
 1. Tout se modifie dans Elementor 4 (éléments atomiques, classes globales, variables) : aucun texte ni
@@ -155,9 +185,8 @@ image, texte, « À lire aussi » ; colonne latérale = temps de lecture, partag
 - Page Contact : FAQ propre à l'échange (5 questions, réponses [À confirmer]), pas la FAQ de l'accueil.
 
 - Labels en 12 px (pas 11).
-- Les illustrations uniques de la maquette (mini-email, mini-article, module PPT, carte convention,
-  résultat de recherche, carte intranet, storyboard, schéma IA Factory) sont des éléments Elementor
-  modifiables avec styles locaux (usage unique = pas de classe globale).
+- Les illustrations uniques de la maquette sont des éléments Elementor modifiables ; styles locaux seulement s'ils sont
+  natifs (sinon une classe dédiée, cf. « Leçons de construction »).
 - Écran « Votre vidéo » de la section 00:05 : rendu interactif (16:9, 9:16, 1:1 et FR, EN, ES) —
   maquette HTML à faire valider avant intégration.
 

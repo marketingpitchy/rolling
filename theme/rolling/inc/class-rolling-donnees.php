@@ -72,7 +72,43 @@ class Rolling_Donnees {
 	 * @return string
 	 */
 	public static function empreinte( $valeur ) {
-		return md5( (string) wp_json_encode( self::trier( $valeur ) ) );
+		return md5( (string) wp_json_encode( self::trier( self::normaliser( $valeur ) ) ) );
+	}
+
+	/**
+	 * Rend deux écritures équivalentes identiques (l'éditeur réécrit null en « », 1.06 en « 1.06 »…).
+	 *
+	 * @param mixed $valeur Donnée.
+	 * @return mixed
+	 */
+	private static function normaliser( $valeur ) {
+		if ( is_array( $valeur ) ) {
+			$resultat = array();
+
+			foreach ( $valeur as $cle => $element ) {
+				if ( null === $element || '' === $element || array() === $element ) {
+					continue;
+				}
+
+				$resultat[ $cle ] = self::normaliser( $element );
+			}
+
+			return $resultat;
+		}
+
+		if ( is_object( $valeur ) ) {
+			return self::normaliser( (array) $valeur );
+		}
+
+		if ( null === $valeur ) {
+			return '';
+		}
+
+		if ( is_numeric( $valeur ) ) {
+			return (string) ( 0 + $valeur );
+		}
+
+		return $valeur;
 	}
 
 	/**
