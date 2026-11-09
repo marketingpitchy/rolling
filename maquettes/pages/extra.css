@@ -246,3 +246,36 @@ article > .conteneur:first-child { padding-top: calc(86px + 56px) !important; }
 .cta-badges .rangee { justify-content: center; }
 .cas-bandeau-appel { display: flex; align-items: center; gap: 14px; }
 @media (max-width: 640px) { .cas-bandeau-appel { flex-direction: column; align-items: flex-start; gap: 10px; } }
+
+/* Page L'agence */
+.agence-hero { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 56px; align-items: center; }
+.agence-photo { padding: 10px; border-radius: 30px; transform: rotate(1.5deg); }
+.frise { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; position: relative; }
+.frise::before { content: ''; position: absolute; left: 0; right: 0; top: 11px; height: 2px; background: linear-gradient(90deg, rgba(91,59,234,.25), #8E4DE6, #E0562A); }
+.frise li { position: relative; padding-top: 38px; display: flex; flex-direction: column; gap: 10px; }
+.frise li::before { content: ''; position: absolute; left: 0; top: 4px; width: 16px; height: 16px; border-radius: 50%; background: #fff; box-shadow: 0 0 0 4px rgba(91,59,234,.35); }
+.frise li:last-child::before { background: var(--peche); box-shadow: 0 0 0 4px rgba(255,138,91,.35), 0 0 22px rgba(255,138,91,.8); }
+.frise-date { font-size: 12px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--violet); }
+.frise-date-forte { color: var(--orange-fonce); }
+.citation-fondateurs { margin-top: 72px; max-width: 920px; grid-column: auto; }
+.conviction { display: flex; flex-direction: column; gap: 12px; padding: 30px; }
+.libelle-plaque { font-size: 16px; font-weight: 600; color: #2A2840; }
+.equipe-agence { list-style: none; padding: 0; margin-top: 36px; display: flex; flex-wrap: wrap; justify-content: flex-start; gap: 36px 22px; }
+.equipe-agence .membre { flex: 0 1 180px; display: flex; flex-direction: column; align-items: center; gap: 4px; text-align: center; }
+.portrait-membre { width: 132px; height: 132px; margin-bottom: 14px; }
+.membre-nom { font-size: 20px; }
+.agence-lieu { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 520px); gap: 56px; align-items: center; }
+.agence-confiance { display: flex; flex-direction: column; gap: 18px; padding: 30px; }
+@media (max-width: 980px) {
+  .agence-hero, .agence-lieu { grid-template-columns: minmax(0, 1fr); }
+  .agence-photo { max-width: 420px; }
+  .frise { grid-template-columns: minmax(0, 1fr); gap: 32px; padding-left: 34px; }
+  .frise::before { left: 7px; right: auto; top: 0; bottom: 0; width: 2px; height: auto; background: linear-gradient(180deg, rgba(91,59,234,.25), #8E4DE6, #E0562A); }
+  .frise li { padding-top: 0; }
+  .frise li::before { left: -34px; top: 2px; }
+}
+@media (max-width: 640px) { .equipe-agence { justify-content: center; } .equipe-agence .membre { flex: 0 0 calc(50% - 11px); } .portrait-membre { width: 112px; height: 112px; } .membre-nom { font-size: 18px; } }
+.conviction h3 { display: flex; gap: 14px; align-items: center; }
+.conviction .point { display: inline-block; }
+.conviction p { margin-left: 22px; }
+.equipe-agence .membre { flex-basis: 168px; }

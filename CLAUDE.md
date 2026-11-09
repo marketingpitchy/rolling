@@ -62,10 +62,14 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   Page de maquette « Pied de page avec avis clients (plus tard) ».
   Sections partagées : **composants Elementor** (clic droit sur un flexbox/div-block > « Créer un composant », onglet
   « Composants » ; création/modification = licence Pro active et Pro ≥ 4.0 ; 100 composants max). Non testable sur ma copie.
-- Fiche témoignage, variantes à tester (maquette) : actuel (projet puis citation), A (citation puis projet),
-  B (infos du projet en bandeau horizontal sous le chapô, citation seule à gauche ; sans citation, le récit est centré).
-  Badges IA sécurisée / Europe / RGPD ajoutés sous le bouton du CTA final (pas sur le CTA de la landing : déjà sous la FAQ).
-  Proposition « L'agence » (qui sommes-nous) : en attente des infos de la cliente.
+- **Fiche témoignage : option B validée** (infos du projet en bandeau horizontal sous le chapô : secteur, équipes,
+  formats, durée + « Réserver un échange » ; citation facultative seule à gauche ; sans citation, récit centré 820 px).
+  Badges IA sécurisée / Europe / RGPD sous le bouton du CTA final = élément à part, supprimable (pas sur le CTA landing).
+- **Page « L'agence »** (maquette, à valider) : lancée en novembre 2026 par les fondateurs de Pitchy ; Paris + toute la
+  France ; 500+ clients historiques Pitchy, 10 ans de vidéo ; équipe = celle de l'accueil ; photo backstage à fournir ;
+  citation des fondateurs **proposée, à valider par eux** ; infos des badges (hébergement, outils IA) à fournir.
+  Sections : hero + photo, 00:01 histoire (frise 3 temps) + citation, 00:02 convictions (4) + plaque de chiffres,
+  00:03 équipe (créas, experts IA), 00:04 Paris / France + badges, CTA. Lien « Qui sommes-nous » dans la colonne L'agence du pied.
 - FAQ : la cliente ajoute elle-même les réponses ; garder les questions telles quelles.
 - Le WordPress de production existe déjà chez la cliente : on livre seulement le thème (zip à importer).
 

@@ -33,10 +33,21 @@ IMGS = {
     'av-b': A + '3176c95410f4a3d254335499e7f3b906.jpg', 'av-c': A + '74925af8f938584975d83db5d75fc53d.jpg', 'av-d': A + 'e8f568cf44e7f5a81da775ba0635c788.jpg',
     'salon': A + '61156c7e433e879076d1a17eecb3cfd4.jpg', 'collab': A + '6f51f5e5a901bb504a63670f0073c1ce.jpg', 'equipe': A + '23ae00b892795ef7557cd0cc2a51d9ed.jpg',
     'drone': A + '800596cc95238009b058ae2cc26be647.jpg',
+    'eq-thomas': '/home/user/rolling/theme/rolling/assets/medias/equipe-thomas.jpg',
+    'eq-alex': '/home/user/rolling/theme/rolling/assets/medias/equipe-alex.jpg',
+    'eq-victor': '/home/user/rolling/theme/rolling/assets/medias/equipe-victor.jpg',
+    'eq-vincent': '/home/user/rolling/theme/rolling/assets/medias/equipe-vincent.jpg',
+    'eq-marion-t': '/home/user/rolling/theme/rolling/assets/medias/equipe-marion-t.jpg',
+    'eq-sophie': '/home/user/rolling/theme/rolling/assets/medias/equipe-sophie.jpg',
+    'eq-ronan': '/home/user/rolling/theme/rolling/assets/medias/equipe-ronan.jpg',
+    'eq-marion-l': '/home/user/rolling/theme/rolling/assets/medias/equipe-marion-l.jpg',
+    'eq-ines': '/home/user/rolling/theme/rolling/assets/medias/equipe-ines.jpg',
+    'eq-hakim': '/home/user/rolling/theme/rolling/assets/medias/equipe-hakim.jpg',
+    'eq-maxime': '/home/user/rolling/theme/rolling/assets/medias/equipe-maxime.jpg',
     'cap-fnac': I + 'cap-FNACDARTY.png', 'cap-sncf': I + 'cap-SNCF.png', 'cap-weenect': I + 'cap-WEENECT.png',
     'cap-veolia': I + 'cap-VEOLIA.png', 'cap-groupama': I + 'cap-Groupama.png', 'cap-article': I + 'cap-ARTICLEBLOG.png',
 }
-WIDTH = {'n5': 90, 'n6': 90, 'n7': 90, 'n8': 90, 'n9': 90, 'nplus': 90, 'npourcent': 110, 'nk': 90, 'nM': 110, 'n0': 90, 'n1': 90, 'n2': 90, 'n3': 90, 'n4': 90, 'n500': 360, 'n1c': 90, 'julie': 240, 'thomas': 160,
+WIDTH = {'eq-thomas': 280, 'eq-alex': 280, 'eq-victor': 280, 'eq-vincent': 280, 'eq-marion-t': 280, 'eq-sophie': 280, 'eq-ronan': 280, 'eq-marion-l': 280, 'eq-ines': 280, 'eq-hakim': 280, 'eq-maxime': 280, 'n5': 90, 'n6': 90, 'n7': 90, 'n8': 90, 'n9': 90, 'nplus': 90, 'npourcent': 110, 'nk': 90, 'nM': 110, 'n0': 90, 'n1': 90, 'n2': 90, 'n3': 90, 'n4': 90, 'n500': 360, 'n1c': 90, 'julie': 240, 'thomas': 160,
          'av-a': 80, 'av-b': 80, 'av-c': 80, 'av-d': 80}
 cache = {}
 def img(k):
@@ -154,7 +165,7 @@ def fill(t, page):
     return t
 
 pages = []
-for f in ['p-offres.html', 'p-realisations.html', 'p-temoignages.html', 'p-blog.html', 'p-ressources.html', 'p-autres.html']:
+for f in ['p-offres.html', 'p-realisations.html', 'p-temoignages.html', 'p-blog.html', 'p-ressources.html', 'p-agence.html', 'p-autres.html']:
     src = open(D + f, encoding='utf8').read()
     for m in re.finditer(r'<!--@page ([\w-]+)\|([^>]*)-->(.*?)(?=<!--@page|\Z)', src, re.S):
         pages.append((m.group(1), m.group(2), fill(m.group(3), m.group(1))))
