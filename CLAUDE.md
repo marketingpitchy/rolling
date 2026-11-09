@@ -14,6 +14,7 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   PHPCS 0 (`phpcs.xml.dist`), robots IA, LCP sans lazy + fetchpriority, `<main>` ajouté aux modèles Elementor.
 - **Retours livraison 1** (test B fait par la cliente : rendu cassé en « case décochée » ; poignées des sections absentes ;
   étiquettes coupées en mobile ; pas de bouton « Arrêter le défilement ») ⇒ **0.1.1** corrige tout (voir Leçons).
+  **0.1.1 validée par la cliente.** Elle insère toujours avec « Adopter le style de ce site ».
   Prochaines : 2 = blocs de l'accueil 00:01 → fin + Page complète ; 3 = contenus admin + modèles du site (balises maison) ;
   4 = pages Offres, Contact, landing…, SEO (VideoObject), contrôle final.
 - FAQ : la cliente ajoute elle-même les réponses ; garder les questions telles quelles.
@@ -285,8 +286,7 @@ Sources dans `maquettes/` (sans images). Fichiers à ouvrir : `maquette-logos-ec
 - Landing, comparatif : « En interne avec Canva » (pas « stagiaire »). Ce libellé vaut partout.
 
 - `maquette-logos-ecran.html` (hors git, contient les logos clients) : **validée**.
-  - Logos : le défilement s'active / se coupe **depuis Elementor** (réglage de la cliente). Côté visiteur,
-    on garde l'arrêt au survol/clavier et le bouton pause (WCAG 2.2.2 : tout contenu qui bouge plus de 5 s
-    doit pouvoir être arrêté).
+  - Logos : le défilement s'active / se coupe **depuis Elementor** (classe `logos-defilants`). Côté visiteur :
+    arrêt au survol / au clavier, **pas de bouton pause** (choix de la cliente, livraison 0.1.1).
   - Écran 00:05 : validé tel quel. Ajouter une image de fond remplaçable dans Elementor (voile violet
     gardé pour la lisibilité). Choix A validé : une seule image, recadrée selon le format.
