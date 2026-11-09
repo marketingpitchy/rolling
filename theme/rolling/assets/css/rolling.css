@@ -46,6 +46,9 @@ body.elementor-editor-preview *, body.elementor-editor-preview *::before, body.e
 .admin-bar .rl-entete { top: 32px; }
 /* Dans l'éditeur Elementor, l'en-tête ne colle pas : il ne cache pas les poignées des sections. */
 body.elementor-editor-active .rl-entete, body.elementor-editor-preview .rl-entete { position: relative; }
+/* Écran « Votre vidéo », dans l'éditeur : la version EN ou ES s'affiche pendant qu'on modifie l'un de ses textes. */
+body.elementor-editor-active [id^="rl-version-"]:has(.elementor-element-editable), body.elementor-editor-active [id^="rl-version-"].elementor-element-editable { display: block !important; }
+body.elementor-editor-active #rl-ecran:has([id^="rl-version-"] .elementor-element-editable, [id^="rl-version-"].elementor-element-editable) [id^="rl-version-"]:not(:has(.elementor-element-editable)):not(.elementor-element-editable) { display: none !important; }
 .rl-entete__barre { pointer-events: auto; position: relative; display: flex; align-items: center; justify-content: space-between; gap: 18px; box-sizing: border-box; max-width: 1184px; min-height: 68px; margin: 0 auto; padding: 8px 9px 8px 26px; border-radius: 999px;
 	background: radial-gradient(70% 50% at 18% 0%, rgba(255,255,255,0.95), rgba(255,255,255,0) 72%), linear-gradient(150deg, rgba(255,255,255,0.86) 0%, rgba(255,255,255,0.66) 55%, rgba(255,255,255,0.78) 100%);
 	-webkit-backdrop-filter: blur(28px) saturate(180%); backdrop-filter: blur(28px) saturate(180%);

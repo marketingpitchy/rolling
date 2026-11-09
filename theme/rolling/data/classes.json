@@ -1071,7 +1071,7 @@
             "id": "g-8b8fb7f",
             "label": "carte-etape",
             "groupe": "Surfaces",
-            "description": "À ajouter à une carte en verre : étape de la méthode (chiffre en verre, titre, texte), flèche orange vers l'étape suivante. Se soulève au survol.",
+            "description": "À ajouter à une carte en verre : étape de la méthode (chiffre en verre, titre, texte). Une flèche orange arrive de l'étape précédente. Se soulève au survol.",
             "variants": [
                 {
                     "meta": {
@@ -1088,7 +1088,7 @@
                         }
                     },
                     "custom_css": {
-                        "raw": "Jjpub3QoOmxhc3QtY2hpbGQpOjphZnRlciB7IGRpc3BsYXk6IG5vbmU7IH0="
+                        "raw": "Jjpub3QoOmZpcnN0LWNoaWxkKTo6YWZ0ZXIgeyBkaXNwbGF5OiBub25lOyB9"
                     }
                 },
                 {
@@ -1188,7 +1188,7 @@
                         }
                     },
                     "custom_css": {
-                        "raw": "Jjpub3QoOmxhc3QtY2hpbGQpOjphZnRlciB7IGNvbnRlbnQ6ICcnOyBwb3NpdGlvbjogYWJzb2x1dGU7IHotaW5kZXg6IDI7IHJpZ2h0OiAtNTRweDsgdG9wOiA0NnB4OyB3aWR0aDogNjRweDsgaGVpZ2h0OiA0MHB4OyBwb2ludGVyLWV2ZW50czogbm9uZTsgYmFja2dyb3VuZDogdXJsKCJkYXRhOmltYWdlL3N2Zyt4bWwsJTNDc3ZnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zycgdmlld0JveD0nMCAwIDY0IDQwJyBmaWxsPSdub25lJyBzdHJva2U9JyUyM0ZGOEE1Qicgc3Ryb2tlLXdpZHRoPSczJyBzdHJva2UtbGluZWNhcD0ncm91bmQnIHN0cm9rZS1saW5lam9pbj0ncm91bmQnJTNFJTNDcGF0aCBkPSdNNCAyNiBDIDIwIDYsIDQwIDQsIDU2IDE4Jy8lM0UlM0NwYXRoIGQ9J000NCAxNiBMNTcgMTkgTDU2IDYnLyUzRSUzQy9zdmclM0UiKSBjZW50ZXIgLyBjb250YWluIG5vLXJlcGVhdDsgfQ=="
+                        "raw": "Jjpub3QoOmZpcnN0LWNoaWxkKTo6YWZ0ZXIgeyBjb250ZW50OiAnJzsgcG9zaXRpb246IGFic29sdXRlOyB6LWluZGV4OiAyOyBsZWZ0OiAtNTRweDsgdG9wOiA0NnB4OyB3aWR0aDogNjRweDsgaGVpZ2h0OiA0MHB4OyBwb2ludGVyLWV2ZW50czogbm9uZTsgYmFja2dyb3VuZDogdXJsKCJkYXRhOmltYWdlL3N2Zyt4bWwsJTNDc3ZnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zycgdmlld0JveD0nMCAwIDY0IDQwJyBmaWxsPSdub25lJyBzdHJva2U9JyUyM0ZGOEE1Qicgc3Ryb2tlLXdpZHRoPSczJyBzdHJva2UtbGluZWNhcD0ncm91bmQnIHN0cm9rZS1saW5lam9pbj0ncm91bmQnJTNFJTNDcGF0aCBkPSdNNCAyNiBDIDIwIDYsIDQwIDQsIDU2IDE4Jy8lM0UlM0NwYXRoIGQ9J000NCAxNiBMNTcgMTkgTDU2IDYnLyUzRSUzQy9zdmclM0UiKSBjZW50ZXIgLyBjb250YWluIG5vLXJlcGVhdDsgfQ=="
                     }
                 }
             ]
@@ -4588,24 +4588,50 @@
             ]
         },
         {
+            "id": "g-7496110",
+            "label": "suite-fleche",
+            "groupe": "Mise en page",
+            "description": "Flèche en pointillés au-dessus d'un bloc, qui le relie à ce qui précède (tablette et mobile ; sur ordinateur, le schéma a déjà la sienne).",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "tablet",
+                        "state": null
+                    },
+                    "props": [],
+                    "custom_css": {
+                        "raw": "Jjo6YWZ0ZXIgeyBjb250ZW50OiAnJzsgcG9zaXRpb246IGFic29sdXRlOyBsZWZ0OiA1MCU7IHRvcDogLTYwcHg7IHdpZHRoOiAxNHB4OyBoZWlnaHQ6IDQ4cHg7IG1hcmdpbi1sZWZ0OiAtN3B4OyBwb2ludGVyLWV2ZW50czogbm9uZTsgYmFja2dyb3VuZDogdXJsKCJkYXRhOmltYWdlL3N2Zyt4bWwsJTNDc3ZnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zycgdmlld0JveD0nMCAwIDE0IDknIGZpbGw9J25vbmUnIHN0cm9rZT0nJTIzRkZCNDhDJyBzdHJva2Utd2lkdGg9JzIuNCcgc3Ryb2tlLWxpbmVjYXA9J3JvdW5kJyBzdHJva2UtbGluZWpvaW49J3JvdW5kJyUzRSUzQ3BhdGggZD0nTTEuNSAxLjUgTDcgNyBMMTIuNSAxLjUnLyUzRSUzQy9zdmclM0UiKSBjZW50ZXIgYm90dG9tIC8gMTJweCA4cHggbm8tcmVwZWF0LCByZXBlYXRpbmctbGluZWFyLWdyYWRpZW50KDE4MGRlZywgI0ZGQjQ4QyAwIDZweCwgcmdiYSgwLDAsMCwwKSA2cHggMTJweCkgY2VudGVyIHRvcCAvIDJweCBjYWxjKDEwMCUgLSA0cHgpIG5vLXJlcGVhdDsgfQ=="
+                    }
+                },
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "position": {
+                            "$$type": "string",
+                            "value": "relative"
+                        }
+                    },
+                    "custom_css": null
+                }
+            ]
+        },
+        {
             "id": "g-b9a3efd",
             "label": "grille-equipe",
             "groupe": "Mise en page",
-            "description": "Portraits de l'équipe : autant de colonnes que possible (170 px minimum).",
+            "description": "Portraits de l'équipe : ajoutez, dupliquez ou supprimez des personnes, elles restent centrées (2 par ligne sur mobile).",
             "variants": [
                 {
                     "meta": {
                         "breakpoint": "mobile",
                         "state": null
                     },
-                    "props": {
-                        "grid-template-columns": {
-                            "$$type": "string",
-                            "value": "repeat(2, minmax(0, 1fr))"
-                        }
-                    },
+                    "props": [],
                     "custom_css": {
-                        "raw": "Z2FwOiAyOHB4IDEycHg7"
+                        "raw": "Z2FwOiAyOHB4IDEycHg7ICYgPiAqIHsgZmxleDogMCAwIGNhbGMoNTAlIC0gNnB4KTsgbWF4LXdpZHRoOiBub25lOyB9"
                     }
                 },
                 {
@@ -4623,21 +4649,28 @@
                         },
                         "display": {
                             "$$type": "string",
-                            "value": "grid"
+                            "value": "flex"
                         },
-                        "gap": {
-                            "$$type": "size",
-                            "value": {
-                                "size": 22,
-                                "unit": "px"
-                            }
-                        },
-                        "grid-template-columns": {
+                        "flex-direction": {
                             "$$type": "string",
-                            "value": "repeat(auto-fit, minmax(170px, 1fr))"
+                            "value": "row"
+                        },
+                        "flex-wrap": {
+                            "$$type": "string",
+                            "value": "wrap"
+                        },
+                        "justify-content": {
+                            "$$type": "string",
+                            "value": "center"
+                        },
+                        "align-items": {
+                            "$$type": "string",
+                            "value": "flex-start"
                         }
                     },
-                    "custom_css": null
+                    "custom_css": {
+                        "raw": "Z2FwOiAyOHB4IDIycHg7ICYgPiAqIHsgZmxleDogMSAxIDE2MHB4OyBtYXgtd2lkdGg6IDIyMHB4OyB9"
+                    }
                 }
             ]
         },
@@ -13399,12 +13432,16 @@
                                 "unit": "px"
                             }
                         },
-                        "height": {
+                        "max-width": {
                             "$$type": "size",
                             "value": {
-                                "size": 148,
-                                "unit": "px"
+                                "size": 100,
+                                "unit": "%"
                             }
+                        },
+                        "aspect-ratio": {
+                            "$$type": "string",
+                            "value": "1 / 1"
                         },
                         "object-fit": {
                             "$$type": "string",
@@ -13508,6 +13545,13 @@
                         "display": {
                             "$$type": "string",
                             "value": "block"
+                        },
+                        "height": {
+                            "$$type": "size",
+                            "value": {
+                                "size": null,
+                                "unit": "auto"
+                            }
                         },
                         "margin": {
                             "$$type": "dimensions",

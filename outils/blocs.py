@@ -483,7 +483,7 @@ ia = F("Le meilleur de l'IA", ['section', 'section-sombre', 'fond-grille', 'halo
                 liste_icones('Créas · liste', [('intention', "Note d'intention"), ('planning', 'Planning et suivi de production'), ('piste', 'Choix de la piste'), ('direction', 'Direction artistique'), ('charte', 'Respect de votre charte'), ('main', 'Animation à la main'), ('montage', 'Rythme et montage'), ('corrections', 'Corrections et finitions'), ('cible', 'Adaptation à votre cible'), ('validation', 'Validation finale')]),
             ]),
         ]),
-        F('IA · votre vidéo', None, 'display: flex; flex-direction: column; align-items: center; gap: 0; width: 100%; max-width: 620px; margin: 72px auto 0; padding: 0;', enfants=[
+        F('IA · votre vidéo', ['suite-fleche'], 'display: flex; flex-direction: column; align-items: center; gap: 0; width: 100%; max-width: 620px; margin: 72px auto 0; padding: 0;', enfants=[
             F('Écran · boutons', ['rangee'], 'justify-content: center; margin-bottom: 18px;', enfants=[
                 F('Écran · formats', ['groupe-choix'], enfants=[P('Écran · formats · nom', 'Format', ['nom-groupe'])] + [
                     B('Écran · format ' + f, f, '#rl-format-' + f.replace(':', '-'), ['choix-ecran']) for f in ('16:9', '9:16', '1:1')]),

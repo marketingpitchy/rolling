@@ -19,6 +19,12 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   vs maquette, axe 0, contrastes sur photo (outil au rectangle du texte), PHPCS 0, SEO (1 H1, titres sans saut, alt,
   dimensions, sizes="auto" sur les images différées), insertion Page complète (identique au site), case décochée
   (310/310 styles gardés), mise à jour 0.1.1 → 0.2.0 par téléversement (zip 2,9 Mo ; limite d'envoi à surveiller chez OVH).
+- **Retours livraison 2 ⇒ 0.2.1** : flèches de la méthode portées par l'étape suivante (elles étaient sous la carte) ;
+  équipe en flex centré (ajout/suppression libres) ; portraits toujours ronds (aspect-ratio) ; flèche vers l'écran en
+  mobile (`suite-fleche`) ; dans l'éditeur, la version EN/ES de l'écran s'affiche quand on sélectionne un de ses textes
+  (CSS du thème sur les ids `rl-version-…` et `.elementor-element-editable`).
+  Chiffres 00:08 : **maquette `maquette-chiffres.html` envoyée (options A grille ouverte, B générique, C plaque unique)**,
+  en attente du choix de la cliente (source : `maquettes/chiffres/`).
   Prochaines : 3 = contenus admin + modèles du site (balises maison) ; 4 = pages Offres, Contact, landing…, SEO, contrôle final.
 - FAQ : la cliente ajoute elle-même les réponses ; garder les questions telles quelles.
 - Le WordPress de production existe déjà chez la cliente : on livre seulement le thème (zip à importer).
