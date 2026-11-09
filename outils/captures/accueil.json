@@ -34,5 +34,191 @@
   "rang": 0,
   "fichier": "pourqui-intranet.png",
   "marge": 24
+ },
+ {
+  "selecteur": "#exemples .lg > div",
+  "rang": 0,
+  "fichier": "exemple-motion.png",
+  "marge": 0
+ },
+ {
+  "selecteur": "#exemples .lg > div",
+  "rang": 1,
+  "fichier": "exemple-demo-produit.png",
+  "marge": 0
+ },
+ {
+  "selecteur": "#exemples .lg > div",
+  "rang": 2,
+  "fichier": "exemple-microlearning.png",
+  "marge": 0
+ },
+ {
+  "selecteur": "#exemples .lg > div",
+  "rang": 3,
+  "fichier": "exemple-linkedin.png",
+  "marge": 0
+ },
+ {
+  "selecteur": "#exemples .lg > div",
+  "rang": 4,
+  "fichier": "exemple-serie.png",
+  "marge": 0
+ },
+ {
+  "selecteur": "#exemples .lg > div",
+  "rang": 5,
+  "fichier": "exemple-interview.png",
+  "marge": 0
+ },
+ {
+  "selecteur": ".fx-ia .fx-i",
+  "rang": 0,
+  "fichier": "ia-icone-scenario.png",
+  "marge": 2
+ },
+ {
+  "selecteur": ".fx-ia .fx-i",
+  "rang": 1,
+  "fichier": "ia-icone-storyboards.png",
+  "marge": 2
+ },
+ {
+  "selecteur": ".fx-ia .fx-i",
+  "rang": 2,
+  "fichier": "ia-icone-da.png",
+  "marge": 2
+ },
+ {
+  "selecteur": ".fx-ia .fx-i",
+  "rang": 3,
+  "fichier": "ia-icone-images.png",
+  "marge": 2
+ },
+ {
+  "selecteur": ".fx-ia .fx-i",
+  "rang": 4,
+  "fichier": "ia-icone-motion.png",
+  "marge": 2
+ },
+ {
+  "selecteur": ".fx-ia .fx-i",
+  "rang": 5,
+  "fichier": "ia-icone-voix.png",
+  "marge": 2
+ },
+ {
+  "selecteur": ".fx-ia .fx-i",
+  "rang": 6,
+  "fichier": "ia-icone-son.png",
+  "marge": 2
+ },
+ {
+  "selecteur": ".fx-ia .fx-i",
+  "rang": 7,
+  "fichier": "ia-icone-sous-titres.png",
+  "marge": 2
+ },
+ {
+  "selecteur": ".fx-ia .fx-i",
+  "rang": 8,
+  "fichier": "ia-icone-formats.png",
+  "marge": 2
+ },
+ {
+  "selecteur": ".fx-ia .fx-i",
+  "rang": 9,
+  "fichier": "ia-icone-versions.png",
+  "marge": 2
+ },
+ {
+  "selecteur": ".fx-hu .fx-i",
+  "rang": 0,
+  "fichier": "ia-icone-intention.png",
+  "marge": 2
+ },
+ {
+  "selecteur": ".fx-hu .fx-i",
+  "rang": 1,
+  "fichier": "ia-icone-planning.png",
+  "marge": 2
+ },
+ {
+  "selecteur": ".fx-hu .fx-i",
+  "rang": 2,
+  "fichier": "ia-icone-piste.png",
+  "marge": 2
+ },
+ {
+  "selecteur": ".fx-hu .fx-i",
+  "rang": 3,
+  "fichier": "ia-icone-direction.png",
+  "marge": 2
+ },
+ {
+  "selecteur": ".fx-hu .fx-i",
+  "rang": 4,
+  "fichier": "ia-icone-charte.png",
+  "marge": 2
+ },
+ {
+  "selecteur": ".fx-hu .fx-i",
+  "rang": 5,
+  "fichier": "ia-icone-main.png",
+  "marge": 2
+ },
+ {
+  "selecteur": ".fx-hu .fx-i",
+  "rang": 6,
+  "fichier": "ia-icone-montage.png",
+  "marge": 2
+ },
+ {
+  "selecteur": ".fx-hu .fx-i",
+  "rang": 7,
+  "fichier": "ia-icone-corrections.png",
+  "marge": 2
+ },
+ {
+  "selecteur": ".fx-hu .fx-i",
+  "rang": 8,
+  "fichier": "ia-icone-cible.png",
+  "marge": 2
+ },
+ {
+  "selecteur": ".fx-hu .fx-i",
+  "rang": 9,
+  "fichier": "ia-icone-validation.png",
+  "marge": 2
+ },
+ {
+  "selecteur": "#ia .sec-i",
+  "rang": 0,
+  "fichier": "badge-securite.png",
+  "marge": 2
+ },
+ {
+  "selecteur": "#ia .sec-i",
+  "rang": 1,
+  "fichier": "badge-europe.png",
+  "marge": 2
+ },
+ {
+  "selecteur": "#ia .sec-i",
+  "rang": 2,
+  "fichier": "badge-rgpd.png",
+  "marge": 2
+ },
+ {
+  "selecteur": ".fx-ia .ico",
+  "rang": 0,
+  "fichier": "ia-icone-factory.png",
+  "marge": 14
+ },
+ {
+  "selecteur": ".fx-hub",
+  "rang": 0,
+  "fichier": "ia-espace-projet.png",
+  "marge": 24
  }
 ]

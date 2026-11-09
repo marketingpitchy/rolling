@@ -1,0 +1,977 @@
+{
+ "cle": "08-ia",
+ "titre": "Rolling · 08 Le meilleur de l'IA",
+ "type": "e-flexbox",
+ "composition": {
+  "xml_structure": "<e-flexbox configuration-id=\"Le meilleur de l'IA\"><e-flexbox configuration-id=\"IA · contenu\"><e-flexbox configuration-id=\"IA · en-tête\"><e-flexbox configuration-id=\"IA · repère\"><e-paragraph configuration-id=\"IA · timecode\"></e-paragraph><e-paragraph configuration-id=\"IA · sur-titre\"></e-paragraph></e-flexbox><e-heading configuration-id=\"IA · titre\"></e-heading><e-paragraph configuration-id=\"IA · introduction\"></e-paragraph><e-flexbox configuration-id=\"IA · badges\"><e-flexbox configuration-id=\"IA · badge · IA sécurisée\"><e-image configuration-id=\"IA · badge · IA sécurisée · icône\"></e-image><e-paragraph configuration-id=\"IA · badge · IA sécurisée · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"IA · badge · Données hébergées en Europe\"><e-image configuration-id=\"IA · badge · Données hébergées en Europe · icône\"></e-image><e-paragraph configuration-id=\"IA · badge · Données hébergées en Europe · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"IA · badge · Conforme RGPD\"><e-image configuration-id=\"IA · badge · Conforme RGPD · icône\"></e-image><e-paragraph configuration-id=\"IA · badge · Conforme RGPD · texte\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox><e-flexbox configuration-id=\"IA · schéma\"><e-flexbox configuration-id=\"IA · factory\"><e-flexbox configuration-id=\"Factory · tête\"><e-image configuration-id=\"Factory · icône\"></e-image><e-flexbox configuration-id=\"Factory · titres\"><e-paragraph configuration-id=\"Factory · rôle\"></e-paragraph><e-heading configuration-id=\"Factory · titre\"></e-heading></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Factory · liste\"><e-flexbox configuration-id=\"Factory · liste · Pistes de scénario\"><e-image configuration-id=\"Factory · liste · icône · Pistes de scénario\"></e-image><e-paragraph configuration-id=\"Factory · liste · texte · Pistes de scénario\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Factory · liste · Storyboards\"><e-image configuration-id=\"Factory · liste · icône · Storyboards\"></e-image><e-paragraph configuration-id=\"Factory · liste · texte · Storyboards\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Factory · liste · Pistes de DA\"><e-image configuration-id=\"Factory · liste · icône · Pistes de DA\"></e-image><e-paragraph configuration-id=\"Factory · liste · texte · Pistes de DA\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Factory · liste · Images et illustrations\"><e-image configuration-id=\"Factory · liste · icône · Images et illustrations\"></e-image><e-paragraph configuration-id=\"Factory · liste · texte · Images et illustrations\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Factory · liste · Habillage et motion\"><e-image configuration-id=\"Factory · liste · icône · Habillage et motion\"></e-image><e-paragraph configuration-id=\"Factory · liste · texte · Habillage et motion\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Factory · liste · Voix off\"><e-image configuration-id=\"Factory · liste · icône · Voix off\"></e-image><e-paragraph configuration-id=\"Factory · liste · texte · Voix off\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Factory · liste · Sound design\"><e-image configuration-id=\"Factory · liste · icône · Sound design\"></e-image><e-paragraph configuration-id=\"Factory · liste · texte · Sound design\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Factory · liste · Sous-titres et traductions\"><e-image configuration-id=\"Factory · liste · icône · Sous-titres et traductions\"></e-image><e-paragraph configuration-id=\"Factory · liste · texte · Sous-titres et traductions\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Factory · liste · Déclinaisons de formats\"><e-image configuration-id=\"Factory · liste · icône · Déclinaisons de formats\"></e-image><e-paragraph configuration-id=\"Factory · liste · texte · Déclinaisons de formats\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Factory · liste · Premières versions\"><e-image configuration-id=\"Factory · liste · icône · Premières versions\"></e-image><e-paragraph configuration-id=\"Factory · liste · texte · Premières versions\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox><e-flexbox configuration-id=\"IA · centre\"><e-paragraph configuration-id=\"Centre · vos contenus\"></e-paragraph><e-image configuration-id=\"Centre · espace projet\"></e-image></e-flexbox><e-flexbox configuration-id=\"IA · créas\"><e-flexbox configuration-id=\"Créas · tête\"><e-flexbox configuration-id=\"Créas · visages\"><e-image configuration-id=\"Créas · visage 1\"></e-image><e-image configuration-id=\"Créas · visage 2\"></e-image><e-image configuration-id=\"Créas · visage 3\"></e-image></e-flexbox><e-flexbox configuration-id=\"Créas · titres\"><e-paragraph configuration-id=\"Créas · rôle\"></e-paragraph><e-heading configuration-id=\"Créas · titre\"></e-heading></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Créas · liste\"><e-flexbox configuration-id=\"Créas · liste · Note d'intention\"><e-image configuration-id=\"Créas · liste · icône · Note d'intention\"></e-image><e-paragraph configuration-id=\"Créas · liste · texte · Note d'intention\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Créas · liste · Planning et suivi de production\"><e-image configuration-id=\"Créas · liste · icône · Planning et suivi de production\"></e-image><e-paragraph configuration-id=\"Créas · liste · texte · Planning et suivi de production\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Créas · liste · Choix de la piste\"><e-image configuration-id=\"Créas · liste · icône · Choix de la piste\"></e-image><e-paragraph configuration-id=\"Créas · liste · texte · Choix de la piste\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Créas · liste · Direction artistique\"><e-image configuration-id=\"Créas · liste · icône · Direction artistique\"></e-image><e-paragraph configuration-id=\"Créas · liste · texte · Direction artistique\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Créas · liste · Respect de votre charte\"><e-image configuration-id=\"Créas · liste · icône · Respect de votre charte\"></e-image><e-paragraph configuration-id=\"Créas · liste · texte · Respect de votre charte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Créas · liste · Animation à la main\"><e-image configuration-id=\"Créas · liste · icône · Animation à la main\"></e-image><e-paragraph configuration-id=\"Créas · liste · texte · Animation à la main\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Créas · liste · Rythme et montage\"><e-image configuration-id=\"Créas · liste · icône · Rythme et montage\"></e-image><e-paragraph configuration-id=\"Créas · liste · texte · Rythme et montage\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Créas · liste · Corrections et finitions\"><e-image configuration-id=\"Créas · liste · icône · Corrections et finitions\"></e-image><e-paragraph configuration-id=\"Créas · liste · texte · Corrections et finitions\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Créas · liste · Adaptation à votre cible\"><e-image configuration-id=\"Créas · liste · icône · Adaptation à votre cible\"></e-image><e-paragraph configuration-id=\"Créas · liste · texte · Adaptation à votre cible\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Créas · liste · Validation finale\"><e-image configuration-id=\"Créas · liste · icône · Validation finale\"></e-image><e-paragraph configuration-id=\"Créas · liste · texte · Validation finale\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox></e-flexbox><e-flexbox configuration-id=\"IA · votre vidéo\"><e-flexbox configuration-id=\"Écran · boutons\"><e-flexbox configuration-id=\"Écran · formats\"><e-paragraph configuration-id=\"Écran · formats · nom\"></e-paragraph><e-button configuration-id=\"Écran · format 16:9\"></e-button><e-button configuration-id=\"Écran · format 9:16\"></e-button><e-button configuration-id=\"Écran · format 1:1\"></e-button></e-flexbox><e-flexbox configuration-id=\"Écran · langues\"><e-paragraph configuration-id=\"Écran · langues · nom\"></e-paragraph><e-button configuration-id=\"Écran · langue FR\"></e-button><e-button configuration-id=\"Écran · langue EN\"></e-button><e-button configuration-id=\"Écran · langue ES\"></e-button></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Écran · scène\"><e-flexbox configuration-id=\"Écran · cadre\"><e-flexbox configuration-id=\"Écran · vidéo\"><e-div-block configuration-id=\"Écran · fond\"><e-image configuration-id=\"Écran · image de fond\"></e-image></e-div-block><e-flexbox configuration-id=\"Écran · version FR\"><e-paragraph configuration-id=\"Écran · FR · haut\"></e-paragraph><e-paragraph configuration-id=\"Écran · FR · titre\"></e-paragraph><e-paragraph configuration-id=\"Écran · FR · sous-titre\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Écran · version EN\"><e-paragraph configuration-id=\"Écran · EN · haut\"></e-paragraph><e-paragraph configuration-id=\"Écran · EN · titre\"></e-paragraph><e-paragraph configuration-id=\"Écran · EN · sous-titre\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Écran · version ES\"><e-paragraph configuration-id=\"Écran · ES · haut\"></e-paragraph><e-paragraph configuration-id=\"Écran · ES · titre\"></e-paragraph><e-paragraph configuration-id=\"Écran · ES · sous-titre\"></e-paragraph></e-flexbox><e-image configuration-id=\"Écran · lecture\"></e-image></e-flexbox></e-flexbox></e-flexbox><e-paragraph configuration-id=\"Écran · légende\"></e-paragraph><e-paragraph configuration-id=\"Écran · sous-légende\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"IA · experts\"><e-heading configuration-id=\"Experts · titre\"></e-heading><e-flexbox configuration-id=\"Experts · portraits\"><e-flexbox configuration-id=\"Experts · Ronan\"><e-image configuration-id=\"Experts · Ronan · photo\"></e-image><e-paragraph configuration-id=\"Experts · Ronan · prénom\"></e-paragraph><e-paragraph configuration-id=\"Experts · Ronan · poste\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Experts · Marion\"><e-image configuration-id=\"Experts · Marion · photo\"></e-image><e-paragraph configuration-id=\"Experts · Marion · prénom\"></e-paragraph><e-paragraph configuration-id=\"Experts · Marion · poste\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Experts · Inès\"><e-image configuration-id=\"Experts · Inès · photo\"></e-image><e-paragraph configuration-id=\"Experts · Inès · prénom\"></e-paragraph><e-paragraph configuration-id=\"Experts · Inès · poste\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Experts · Hakim\"><e-image configuration-id=\"Experts · Hakim · photo\"></e-image><e-paragraph configuration-id=\"Experts · Hakim · prénom\"></e-paragraph><e-paragraph configuration-id=\"Experts · Hakim · poste\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Experts · Maxime\"><e-image configuration-id=\"Experts · Maxime · photo\"></e-image><e-paragraph configuration-id=\"Experts · Maxime · prénom\"></e-paragraph><e-paragraph configuration-id=\"Experts · Maxime · poste\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox></e-flexbox></e-flexbox>",
+  "element_config": {
+   "Le meilleur de l'IA": {
+    "_cssid": "ia",
+    "tag": "section"
+   },
+   "IA · timecode": {
+    "paragraph": "00:05"
+   },
+   "IA · sur-titre": {
+    "paragraph": "Sous le capot"
+   },
+   "IA · titre": {
+    "tag": "h2",
+    "title": "Le meilleur <em>de l'IA.</em>"
+   },
+   "IA · introduction": {
+    "paragraph": "Nous orchestrons les meilleures IA du marché au sein de notre <strong>IA Factory</strong>. Pilotée par notre équipe tech, notre plateforme génère des pistes de scénarios, des storyboards et des premières versions. <strong>Nos créas choisissent, corrigent, adaptent… et perfectionnent chaque vidéo.</strong>"
+   },
+   "IA · badge · IA sécurisée · icône": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/badge-securite.webp"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "IA · badge · IA sécurisée · texte": {
+    "paragraph": "IA sécurisée"
+   },
+   "IA · badge · Données hébergées en Europe · icône": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/badge-europe.webp"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "IA · badge · Données hébergées en Europe · texte": {
+    "paragraph": "Données hébergées en Europe"
+   },
+   "IA · badge · Conforme RGPD · icône": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/badge-rgpd.webp"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "IA · badge · Conforme RGPD · texte": {
+    "paragraph": "Conforme RGPD"
+   },
+   "Factory · icône": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/ia-icone-factory.webp"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "Factory · rôle": {
+    "paragraph": "Propose · génère · décline"
+   },
+   "Factory · titre": {
+    "tag": "h3",
+    "title": "Notre IA Factory"
+   },
+   "Factory · liste · icône · Pistes de scénario": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/ia-icone-scenario.webp"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "Factory · liste · texte · Pistes de scénario": {
+    "paragraph": "Pistes de scénario"
+   },
+   "Factory · liste · icône · Storyboards": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/ia-icone-storyboards.webp"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "Factory · liste · texte · Storyboards": {
+    "paragraph": "Storyboards"
+   },
+   "Factory · liste · icône · Pistes de DA": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/ia-icone-da.webp"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "Factory · liste · texte · Pistes de DA": {
+    "paragraph": "Pistes de DA"
+   },
+   "Factory · liste · icône · Images et illustrations": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/ia-icone-images.webp"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "Factory · liste · texte · Images et illustrations": {
+    "paragraph": "Images et illustrations"
+   },
+   "Factory · liste · icône · Habillage et motion": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/ia-icone-motion.webp"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "Factory · liste · texte · Habillage et motion": {
+    "paragraph": "Habillage et motion"
+   },
+   "Factory · liste · icône · Voix off": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/ia-icone-voix.webp"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "Factory · liste · texte · Voix off": {
+    "paragraph": "Voix off"
+   },
+   "Factory · liste · icône · Sound design": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/ia-icone-son.webp"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "Factory · liste · texte · Sound design": {
+    "paragraph": "Sound design"
+   },
+   "Factory · liste · icône · Sous-titres et traductions": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/ia-icone-sous-titres.webp"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "Factory · liste · texte · Sous-titres et traductions": {
+    "paragraph": "Sous-titres et traductions"
+   },
+   "Factory · liste · icône · Déclinaisons de formats": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/ia-icone-formats.webp"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "Factory · liste · texte · Déclinaisons de formats": {
+    "paragraph": "Déclinaisons de formats"
+   },
+   "Factory · liste · icône · Premières versions": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/ia-icone-versions.webp"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "Factory · liste · texte · Premières versions": {
+    "paragraph": "Premières versions"
+   },
+   "Centre · vos contenus": {
+    "paragraph": "Vos contenus &amp; vos briefs"
+   },
+   "Centre · espace projet": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/ia-espace-projet.webp",
+      "alt": "Votre espace projet : notre IA propose, nos créas corrigent. Vous suivez, échangez et validez."
+     },
+     "size": "full"
+    }
+   },
+   "Créas · visage 1": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/direction-1.jpg"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "Créas · visage 2": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/direction-2.jpg"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "Créas · visage 3": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/direction-3.jpg"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "Créas · rôle": {
+    "paragraph": "Choisit · corrige · adapte"
+   },
+   "Créas · titre": {
+    "tag": "h3",
+    "title": "Directeur artistique,<br>chef de projet<br>&amp; motion designer"
+   },
+   "Créas · liste · icône · Note d'intention": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/ia-icone-intention.webp"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "Créas · liste · texte · Note d'intention": {
+    "paragraph": "Note d'intention"
+   },
+   "Créas · liste · icône · Planning et suivi de production": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/ia-icone-planning.webp"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "Créas · liste · texte · Planning et suivi de production": {
+    "paragraph": "Planning et suivi de production"
+   },
+   "Créas · liste · icône · Choix de la piste": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/ia-icone-piste.webp"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "Créas · liste · texte · Choix de la piste": {
+    "paragraph": "Choix de la piste"
+   },
+   "Créas · liste · icône · Direction artistique": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/ia-icone-direction.webp"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "Créas · liste · texte · Direction artistique": {
+    "paragraph": "Direction artistique"
+   },
+   "Créas · liste · icône · Respect de votre charte": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/ia-icone-charte.webp"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "Créas · liste · texte · Respect de votre charte": {
+    "paragraph": "Respect de votre charte"
+   },
+   "Créas · liste · icône · Animation à la main": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/ia-icone-main.webp"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "Créas · liste · texte · Animation à la main": {
+    "paragraph": "Animation à la main"
+   },
+   "Créas · liste · icône · Rythme et montage": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/ia-icone-montage.webp"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "Créas · liste · texte · Rythme et montage": {
+    "paragraph": "Rythme et montage"
+   },
+   "Créas · liste · icône · Corrections et finitions": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/ia-icone-corrections.webp"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "Créas · liste · texte · Corrections et finitions": {
+    "paragraph": "Corrections et finitions"
+   },
+   "Créas · liste · icône · Adaptation à votre cible": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/ia-icone-cible.webp"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "Créas · liste · texte · Adaptation à votre cible": {
+    "paragraph": "Adaptation à votre cible"
+   },
+   "Créas · liste · icône · Validation finale": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/ia-icone-validation.webp"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "Créas · liste · texte · Validation finale": {
+    "paragraph": "Validation finale"
+   },
+   "Écran · formats · nom": {
+    "paragraph": "Format"
+   },
+   "Écran · format 16:9": {
+    "text": "16:9",
+    "link": {
+     "destination": "#rl-format-16-9"
+    }
+   },
+   "Écran · format 9:16": {
+    "text": "9:16",
+    "link": {
+     "destination": "#rl-format-9-16"
+    }
+   },
+   "Écran · format 1:1": {
+    "text": "1:1",
+    "link": {
+     "destination": "#rl-format-1-1"
+    }
+   },
+   "Écran · langues · nom": {
+    "paragraph": "Langue"
+   },
+   "Écran · langue FR": {
+    "text": "FR",
+    "link": {
+     "destination": "#rl-langue-fr"
+    }
+   },
+   "Écran · langue EN": {
+    "text": "EN",
+    "link": {
+     "destination": "#rl-langue-en"
+    }
+   },
+   "Écran · langue ES": {
+    "text": "ES",
+    "link": {
+     "destination": "#rl-langue-es"
+    }
+   },
+   "Écran · cadre": {
+    "_cssid": "rl-ecran"
+   },
+   "Écran · image de fond": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/pourqui-interne.jpg"
+     },
+     "size": "large"
+    }
+   },
+   "Écran · version FR": {
+    "_cssid": "rl-version-fr"
+   },
+   "Écran · FR · haut": {
+    "paragraph": "Votre vidéo · 1:28"
+   },
+   "Écran · FR · titre": {
+    "paragraph": "Bienvenue<br><em>chez nous.</em>"
+   },
+   "Écran · FR · sous-titre": {
+    "paragraph": "«&nbsp;Votre premier jour commence ici.&nbsp;»"
+   },
+   "Écran · version EN": {
+    "_cssid": "rl-version-en"
+   },
+   "Écran · EN · haut": {
+    "paragraph": "Your video · 1:28"
+   },
+   "Écran · EN · titre": {
+    "paragraph": "Welcome<br><em>aboard.</em>"
+   },
+   "Écran · EN · sous-titre": {
+    "paragraph": "“Your first day starts here.”"
+   },
+   "Écran · version ES": {
+    "_cssid": "rl-version-es"
+   },
+   "Écran · ES · haut": {
+    "paragraph": "Tu vídeo · 1:28"
+   },
+   "Écran · ES · titre": {
+    "paragraph": "Bienvenido<br><em>a bordo.</em>"
+   },
+   "Écran · ES · sous-titre": {
+    "paragraph": "«&nbsp;Tu primer día empieza aquí.&nbsp;»"
+   },
+   "Écran · lecture": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/bouton-lecture.png"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "Écran · légende": {
+    "paragraph": "Votre vidéo, <em>prête à publier.</em>"
+   },
+   "Écran · sous-légende": {
+    "paragraph": "Tous les formats, toutes les langues, à votre charte."
+   },
+   "Experts · titre": {
+    "tag": "h3",
+    "title": "Nos experts <em>IA.</em>"
+   },
+   "Experts · Ronan · photo": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/equipe-ronan.jpg",
+      "alt": "Ronan, Directeur Technique"
+     },
+     "size": "medium"
+    }
+   },
+   "Experts · Ronan · prénom": {
+    "paragraph": "Ronan"
+   },
+   "Experts · Ronan · poste": {
+    "paragraph": "Directeur Technique"
+   },
+   "Experts · Marion · photo": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/equipe-marion-l.jpg",
+      "alt": "Marion, Développeuse Full-Stack"
+     },
+     "size": "medium"
+    }
+   },
+   "Experts · Marion · prénom": {
+    "paragraph": "Marion"
+   },
+   "Experts · Marion · poste": {
+    "paragraph": "Développeuse Full-Stack"
+   },
+   "Experts · Inès · photo": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/equipe-ines.jpg",
+      "alt": "Inès, DevOps"
+     },
+     "size": "medium"
+    }
+   },
+   "Experts · Inès · prénom": {
+    "paragraph": "Inès"
+   },
+   "Experts · Inès · poste": {
+    "paragraph": "DevOps"
+   },
+   "Experts · Hakim · photo": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/equipe-hakim.jpg",
+      "alt": "Hakim, Développeur Back-End"
+     },
+     "size": "medium"
+    }
+   },
+   "Experts · Hakim · prénom": {
+    "paragraph": "Hakim"
+   },
+   "Experts · Hakim · poste": {
+    "paragraph": "Développeur Back-End"
+   },
+   "Experts · Maxime · photo": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/equipe-maxime.jpg",
+      "alt": "Maxime, Product Manager Senior"
+     },
+     "size": "medium"
+    }
+   },
+   "Experts · Maxime · prénom": {
+    "paragraph": "Maxime"
+   },
+   "Experts · Maxime · poste": {
+    "paragraph": "Product Manager Senior"
+   }
+  },
+  "classes": {
+   "Le meilleur de l'IA": [
+    "section",
+    "section-sombre",
+    "fond-grille",
+    "halos-ia"
+   ],
+   "IA · contenu": [
+    "conteneur"
+   ],
+   "IA · en-tête": [
+    "entete-section"
+   ],
+   "IA · repère": [
+    "sur-titre"
+   ],
+   "IA · timecode": [
+    "timecode"
+   ],
+   "IA · titre": [
+    "titre-xl"
+   ],
+   "IA · introduction": [
+    "texte-intro"
+   ],
+   "IA · badges": [
+    "rangee"
+   ],
+   "IA · badge · IA sécurisée": [
+    "badge-securite"
+   ],
+   "IA · badge · IA sécurisée · icône": [
+    "icone-badge"
+   ],
+   "IA · badge · Données hébergées en Europe": [
+    "badge-securite"
+   ],
+   "IA · badge · Données hébergées en Europe · icône": [
+    "icone-badge"
+   ],
+   "IA · badge · Conforme RGPD": [
+    "badge-securite"
+   ],
+   "IA · badge · Conforme RGPD · icône": [
+    "icone-badge"
+   ],
+   "IA · schéma": [
+    "grille-schema"
+   ],
+   "IA · factory": [
+    "carte-verre",
+    "carte-ia"
+   ],
+   "Factory · icône": [
+    "icone-carte"
+   ],
+   "Factory · rôle": [
+    "label",
+    "label-violet"
+   ],
+   "Factory · titre": [
+    "titre-xs"
+   ],
+   "Factory · liste": [
+    "liste-icones"
+   ],
+   "Factory · liste · Pistes de scénario": [
+    "ligne-icone"
+   ],
+   "Factory · liste · icône · Pistes de scénario": [
+    "icone-liste"
+   ],
+   "Factory · liste · texte · Pistes de scénario": [
+    "texte"
+   ],
+   "Factory · liste · Storyboards": [
+    "ligne-icone"
+   ],
+   "Factory · liste · icône · Storyboards": [
+    "icone-liste"
+   ],
+   "Factory · liste · texte · Storyboards": [
+    "texte"
+   ],
+   "Factory · liste · Pistes de DA": [
+    "ligne-icone"
+   ],
+   "Factory · liste · icône · Pistes de DA": [
+    "icone-liste"
+   ],
+   "Factory · liste · texte · Pistes de DA": [
+    "texte"
+   ],
+   "Factory · liste · Images et illustrations": [
+    "ligne-icone"
+   ],
+   "Factory · liste · icône · Images et illustrations": [
+    "icone-liste"
+   ],
+   "Factory · liste · texte · Images et illustrations": [
+    "texte"
+   ],
+   "Factory · liste · Habillage et motion": [
+    "ligne-icone"
+   ],
+   "Factory · liste · icône · Habillage et motion": [
+    "icone-liste"
+   ],
+   "Factory · liste · texte · Habillage et motion": [
+    "texte"
+   ],
+   "Factory · liste · Voix off": [
+    "ligne-icone"
+   ],
+   "Factory · liste · icône · Voix off": [
+    "icone-liste"
+   ],
+   "Factory · liste · texte · Voix off": [
+    "texte"
+   ],
+   "Factory · liste · Sound design": [
+    "ligne-icone"
+   ],
+   "Factory · liste · icône · Sound design": [
+    "icone-liste"
+   ],
+   "Factory · liste · texte · Sound design": [
+    "texte"
+   ],
+   "Factory · liste · Sous-titres et traductions": [
+    "ligne-icone"
+   ],
+   "Factory · liste · icône · Sous-titres et traductions": [
+    "icone-liste"
+   ],
+   "Factory · liste · texte · Sous-titres et traductions": [
+    "texte"
+   ],
+   "Factory · liste · Déclinaisons de formats": [
+    "ligne-icone"
+   ],
+   "Factory · liste · icône · Déclinaisons de formats": [
+    "icone-liste"
+   ],
+   "Factory · liste · texte · Déclinaisons de formats": [
+    "texte"
+   ],
+   "Factory · liste · Premières versions": [
+    "ligne-icone"
+   ],
+   "Factory · liste · icône · Premières versions": [
+    "icone-liste"
+   ],
+   "Factory · liste · texte · Premières versions": [
+    "texte"
+   ],
+   "IA · centre": [
+    "colonne-flux"
+   ],
+   "Centre · vos contenus": [
+    "pilule-flux"
+   ],
+   "Centre · espace projet": [
+    "illustration-hub"
+   ],
+   "IA · créas": [
+    "carte-verre",
+    "carte-humain"
+   ],
+   "Créas · visages": [
+    "visages"
+   ],
+   "Créas · rôle": [
+    "label",
+    "label-peche"
+   ],
+   "Créas · titre": [
+    "titre-xs"
+   ],
+   "Créas · liste": [
+    "liste-icones"
+   ],
+   "Créas · liste · Note d'intention": [
+    "ligne-icone"
+   ],
+   "Créas · liste · icône · Note d'intention": [
+    "icone-liste"
+   ],
+   "Créas · liste · texte · Note d'intention": [
+    "texte"
+   ],
+   "Créas · liste · Planning et suivi de production": [
+    "ligne-icone"
+   ],
+   "Créas · liste · icône · Planning et suivi de production": [
+    "icone-liste"
+   ],
+   "Créas · liste · texte · Planning et suivi de production": [
+    "texte"
+   ],
+   "Créas · liste · Choix de la piste": [
+    "ligne-icone"
+   ],
+   "Créas · liste · icône · Choix de la piste": [
+    "icone-liste"
+   ],
+   "Créas · liste · texte · Choix de la piste": [
+    "texte"
+   ],
+   "Créas · liste · Direction artistique": [
+    "ligne-icone"
+   ],
+   "Créas · liste · icône · Direction artistique": [
+    "icone-liste"
+   ],
+   "Créas · liste · texte · Direction artistique": [
+    "texte"
+   ],
+   "Créas · liste · Respect de votre charte": [
+    "ligne-icone"
+   ],
+   "Créas · liste · icône · Respect de votre charte": [
+    "icone-liste"
+   ],
+   "Créas · liste · texte · Respect de votre charte": [
+    "texte"
+   ],
+   "Créas · liste · Animation à la main": [
+    "ligne-icone"
+   ],
+   "Créas · liste · icône · Animation à la main": [
+    "icone-liste"
+   ],
+   "Créas · liste · texte · Animation à la main": [
+    "texte"
+   ],
+   "Créas · liste · Rythme et montage": [
+    "ligne-icone"
+   ],
+   "Créas · liste · icône · Rythme et montage": [
+    "icone-liste"
+   ],
+   "Créas · liste · texte · Rythme et montage": [
+    "texte"
+   ],
+   "Créas · liste · Corrections et finitions": [
+    "ligne-icone"
+   ],
+   "Créas · liste · icône · Corrections et finitions": [
+    "icone-liste"
+   ],
+   "Créas · liste · texte · Corrections et finitions": [
+    "texte"
+   ],
+   "Créas · liste · Adaptation à votre cible": [
+    "ligne-icone"
+   ],
+   "Créas · liste · icône · Adaptation à votre cible": [
+    "icone-liste"
+   ],
+   "Créas · liste · texte · Adaptation à votre cible": [
+    "texte"
+   ],
+   "Créas · liste · Validation finale": [
+    "ligne-icone"
+   ],
+   "Créas · liste · icône · Validation finale": [
+    "icone-liste"
+   ],
+   "Créas · liste · texte · Validation finale": [
+    "texte"
+   ],
+   "Écran · boutons": [
+    "rangee"
+   ],
+   "Écran · formats": [
+    "groupe-choix"
+   ],
+   "Écran · formats · nom": [
+    "nom-groupe"
+   ],
+   "Écran · format 16:9": [
+    "choix-ecran"
+   ],
+   "Écran · format 9:16": [
+    "choix-ecran"
+   ],
+   "Écran · format 1:1": [
+    "choix-ecran"
+   ],
+   "Écran · langues": [
+    "groupe-choix"
+   ],
+   "Écran · langues · nom": [
+    "nom-groupe"
+   ],
+   "Écran · langue FR": [
+    "choix-ecran"
+   ],
+   "Écran · langue EN": [
+    "choix-ecran"
+   ],
+   "Écran · langue ES": [
+    "choix-ecran"
+   ],
+   "Écran · scène": [
+    "scene-ecran"
+   ],
+   "Écran · cadre": [
+    "ecran-cadre"
+   ],
+   "Écran · vidéo": [
+    "ecran-video"
+   ],
+   "Écran · fond": [
+    "ecran-fond"
+   ],
+   "Écran · image de fond": [
+    "image-couvrante"
+   ],
+   "Écran · version FR": [
+    "version-langue"
+   ],
+   "Écran · FR · haut": [
+    "ecran-haut"
+   ],
+   "Écran · FR · titre": [
+    "ecran-titre"
+   ],
+   "Écran · FR · sous-titre": [
+    "ecran-sous-titre"
+   ],
+   "Écran · version EN": [
+    "version-langue",
+    "version-cachee"
+   ],
+   "Écran · EN · haut": [
+    "ecran-haut"
+   ],
+   "Écran · EN · titre": [
+    "ecran-titre"
+   ],
+   "Écran · EN · sous-titre": [
+    "ecran-sous-titre"
+   ],
+   "Écran · version ES": [
+    "version-langue",
+    "version-cachee"
+   ],
+   "Écran · ES · haut": [
+    "ecran-haut"
+   ],
+   "Écran · ES · titre": [
+    "ecran-titre"
+   ],
+   "Écran · ES · sous-titre": [
+    "ecran-sous-titre"
+   ],
+   "Écran · lecture": [
+    "bouton-lecture",
+    "lecture-ecran"
+   ],
+   "Écran · légende": [
+    "legende-ecran"
+   ],
+   "Écran · sous-légende": [
+    "texte-petit"
+   ],
+   "Experts · titre": [
+    "titre-sm"
+   ],
+   "Experts · portraits": [
+    "grille-equipe"
+   ],
+   "Experts · Ronan": [
+    "membre-equipe"
+   ],
+   "Experts · Ronan · photo": [
+    "portrait",
+    "portrait-sombre"
+   ],
+   "Experts · Ronan · prénom": [
+    "nom-membre"
+   ],
+   "Experts · Ronan · poste": [
+    "poste-membre"
+   ],
+   "Experts · Marion": [
+    "membre-equipe"
+   ],
+   "Experts · Marion · photo": [
+    "portrait",
+    "portrait-sombre"
+   ],
+   "Experts · Marion · prénom": [
+    "nom-membre"
+   ],
+   "Experts · Marion · poste": [
+    "poste-membre"
+   ],
+   "Experts · Inès": [
+    "membre-equipe"
+   ],
+   "Experts · Inès · photo": [
+    "portrait",
+    "portrait-sombre"
+   ],
+   "Experts · Inès · prénom": [
+    "nom-membre"
+   ],
+   "Experts · Inès · poste": [
+    "poste-membre"
+   ],
+   "Experts · Hakim": [
+    "membre-equipe"
+   ],
+   "Experts · Hakim · photo": [
+    "portrait",
+    "portrait-sombre"
+   ],
+   "Experts · Hakim · prénom": [
+    "nom-membre"
+   ],
+   "Experts · Hakim · poste": [
+    "poste-membre"
+   ],
+   "Experts · Maxime": [
+    "membre-equipe"
+   ],
+   "Experts · Maxime · photo": [
+    "portrait",
+    "portrait-sombre"
+   ],
+   "Experts · Maxime · prénom": [
+    "nom-membre"
+   ],
+   "Experts · Maxime · poste": [
+    "poste-membre"
+   ]
+  },
+  "style": {
+   "IA · contenu": "display: flex; flex-direction: column; gap: 0;",
+   "IA · introduction": "max-width: 820px;",
+   "IA · badges": "margin-top: 8px;",
+   "Factory · tête": "display: flex; flex-direction: row; align-items: center; gap: 14px; padding: 0; min-height: 84px;",
+   "Factory · titres": "display: flex; flex-direction: column; gap: 0;",
+   "Créas · tête": "display: flex; flex-direction: row; align-items: center; gap: 14px; padding: 0; min-height: 84px;",
+   "Créas · titres": "display: flex; flex-direction: column; gap: 0;",
+   "IA · votre vidéo": "display: flex; flex-direction: column; align-items: center; gap: 0; width: 100%; max-width: 620px; margin: 72px auto 0; padding: 0;",
+   "Écran · boutons": "justify-content: center; margin-bottom: 18px;",
+   "Écran · scène": "width: 100%;",
+   "Écran · légende": "margin-top: 20px;",
+   "Écran · sous-légende": "margin-top: 4px; text-align: center;",
+   "IA · experts": "display: flex; flex-direction: column; gap: 0; margin-top: 104px;",
+   "Experts · portraits": "margin-top: 36px;"
+  }
+ },
+ "brut": {}
+}

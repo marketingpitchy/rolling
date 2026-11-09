@@ -163,6 +163,63 @@
 		}
 	} );
 
+	/*
+	 * Écran « Votre vidéo » : l'élément d'identifiant rl-ecran reçoit data-format (ses styles suivent),
+	 * les versions rl-version-fr, -en, -es reçoivent leur langue et s'affichent une à la fois.
+	 * Les boutons sont des liens #rl-format-16-9 / #rl-langue-en ; leur groupe prend le nom écrit dans le groupe.
+	 */
+	document.querySelectorAll( '#rl-ecran' ).forEach( function ( ecran ) {
+		var section = bloc( ecran );
+		var versions = section.querySelectorAll( '[id^="rl-version-"]' );
+		var annonce = document.createElement( 'p' );
+		var choix = { format: '16:9', langue: 'fr' };
+
+		annonce.setAttribute( 'aria-live', 'polite' );
+		annonce.style.cssText = 'position:absolute;width:1px;height:1px;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;';
+		ecran.parentElement.appendChild( annonce );
+		ecran.setAttribute( 'data-format', choix.format );
+
+		versions.forEach( function ( v ) {
+			v.setAttribute( 'lang', v.id.replace( 'rl-version-', '' ) );
+		} );
+
+		function afficher() {
+			ecran.setAttribute( 'data-format', choix.format );
+			versions.forEach( function ( v ) {
+				v.style.display = v.getAttribute( 'lang' ) === choix.langue ? 'block' : 'none';
+			} );
+		}
+
+		section.querySelectorAll( 'a[href*="#rl-format-"], a[href*="#rl-langue-"]' ).forEach( function ( lien ) {
+			var cle = lien.getAttribute( 'href' ).split( '#rl-' )[ 1 ].split( '-' );
+			var type = cle.shift();
+			var valeur = type === 'format' ? cle.join( ':' ) : cle.join( '-' );
+			var groupe = lien.parentElement;
+			var nom = groupe.querySelector( 'p' );
+
+			enBouton( lien );
+			lien.setAttribute( 'aria-pressed', valeur === choix[ type ] ? 'true' : 'false' );
+
+			if ( nom && ! groupe.hasAttribute( 'role' ) ) {
+				groupe.setAttribute( 'role', 'group' );
+				groupe.setAttribute( 'aria-label', nom.textContent.trim() );
+				nom.setAttribute( 'aria-hidden', 'true' );
+			}
+
+			lien.setAttribute( 'aria-label', ( nom ? nom.textContent.trim() + ' ' : '' ) + lien.textContent.trim() );
+
+			lien.addEventListener( 'click', function ( e ) {
+				e.preventDefault();
+				choix[ type ] = valeur;
+				groupe.querySelectorAll( 'a[href*="#rl-"]' ).forEach( function ( autre ) {
+					autre.setAttribute( 'aria-pressed', autre === lien ? 'true' : 'false' );
+				} );
+				afficher();
+				annonce.textContent = lien.getAttribute( 'aria-label' );
+			} );
+		} );
+	} );
+
 	/* Les liens #rl-… ne changent jamais l'adresse */
 	document.addEventListener( 'click', function ( e ) {
 		var lien = e.target.closest ? e.target.closest( 'a[href*="#rl-"]' ) : null;

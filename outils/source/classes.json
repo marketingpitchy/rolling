@@ -75,6 +75,21 @@
           "css": "display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 44px; padding: 0; @media(--tablet) { grid-template-columns: minmax(0, 1fr); gap: 18px; }"
         },
         {
+          "label": "grille-schema",
+          "description": "Schéma en trois colonnes : une carte, le centre (300 px), une carte. L'un sous l'autre sous 980 px.",
+          "css": "display: grid; grid-template-columns: minmax(0, 1fr) 300px minmax(0, 1fr); align-items: stretch; gap: 0; padding: 0; @media(--tablet) { grid-template-columns: minmax(0, 1fr); gap: 16px; }"
+        },
+        {
+          "label": "colonne-flux",
+          "description": "Colonne centrale du schéma : contenu centré, flèche en pointillés vers l'écran du dessous (ordinateur seulement).",
+          "css": "position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0; padding: 0; min-height: 360px; &::after { content: ''; position: absolute; left: 50%; top: calc(50% + 175px); bottom: -62px; width: 14px; margin-left: -7px; pointer-events: none; background: url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 9' fill='none' stroke='%23FFB48C' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M1.5 1.5 L7 7 L12.5 1.5'/%3E%3C/svg%3E\") center bottom / 12px 8px no-repeat, repeating-linear-gradient(180deg, #FFB48C 0 6px, rgba(0,0,0,0) 6px 12px) center top / 2px calc(100% - 4px) no-repeat; } @media(--tablet) { min-height: 320px; &::after { display: none; } }"
+        },
+        {
+          "label": "grille-equipe",
+          "description": "Portraits de l'équipe : autant de colonnes que possible (170 px minimum).",
+          "css": "display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 22px; padding: 0; @media(--mobile) { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 12px; }"
+        },
+        {
           "label": "grille-6",
           "description": "Six colonnes (logos), trois sous 980 px, deux sur mobile.",
           "css": "display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 12px; padding: 0; @media(--tablet) { grid-template-columns: repeat(3, minmax(0, 1fr)); } @media(--mobile) { grid-template-columns: repeat(2, minmax(0, 1fr)); }"
@@ -165,6 +180,31 @@
           "css": "display: block; font-family: Bricolage Grotesque; font-size: clamp(22px, 2.1vw, 28px); line-height: 1.4; font-weight: 600; letter-spacing: -0.02em; color: var(--eteint); & strong, & b { font-weight: inherit; color: var(--rl-texte, var(--encre)); }"
         },
         {
+          "label": "accroche",
+          "description": "Phrase d'appel courte avant un bouton (« Et avec vos contenus, ça donnerait quoi ? »). Italique = dégradé.",
+          "css": "display: block; font-family: Bricolage Grotesque; font-size: clamp(22px, 2.3vw, 30px); line-height: 1.15; font-weight: 650; letter-spacing: -0.04em; color: var(--rl-texte, var(--encre)); & em, & i { font-style: normal; background-image: var(--rl-degrade, linear-gradient(95deg, #5B3BEA 0%, #8E4DE6 42%, #E0562A 100%)); -webkit-background-clip: text; background-clip: text; color: transparent; }"
+        },
+        {
+          "label": "fleche-resultat",
+          "description": "Résultat après le contenu de départ (« → vidéo de 90 s »), précédé d'une flèche orange.",
+          "css": "display: inline-flex; width: fit-content; align-items: center; gap: 6px; font-family: Hanken Grotesk; font-size: 15px; line-height: 1.3; font-weight: 700; color: var(--rl-texte, var(--encre)); &::before { content: ''; flex-shrink: 0; width: 14px; height: 14px; background-color: #E0562A; -webkit-mask: url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14'/%3E%3Cpath d='M13 6l6 6-6 6'/%3E%3C/svg%3E\") center / contain no-repeat; mask: url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14'/%3E%3Cpath d='M13 6l6 6-6 6'/%3E%3C/svg%3E\") center / contain no-repeat; }"
+        },
+        {
+          "label": "legende-ecran",
+          "description": "Légende sous un écran ou un visuel (« Votre vidéo, prête à publier. »), centrée. Italique = dégradé.",
+          "css": "display: block; text-align: center; font-family: Bricolage Grotesque; font-size: 20px; line-height: 1.3; font-weight: 650; letter-spacing: -0.02em; color: var(--rl-texte, var(--encre)); & em, & i { font-style: normal; background-image: var(--rl-degrade, linear-gradient(95deg, #5B3BEA 0%, #8E4DE6 42%, #E0562A 100%)); -webkit-background-clip: text; background-clip: text; color: transparent; }"
+        },
+        {
+          "label": "nom-membre",
+          "description": "Prénom sous un portrait.",
+          "css": "display: block; margin-top: 18px; font-family: Hanken Grotesk; font-size: 16px; line-height: 1.35; font-weight: 700; color: var(--rl-texte, var(--encre));"
+        },
+        {
+          "label": "poste-membre",
+          "description": "Intitulé de poste sous le prénom (capitales aux mots principaux).",
+          "css": "display: block; font-family: Hanken Grotesk; font-size: 14px; line-height: 1.4; color: var(--rl-legende, var(--legende));"
+        },
+        {
           "label": "texte-legende",
           "description": "À ajouter à un petit texte : version légende, 14 px et gris.",
           "css": "font-size: 14px; color: var(--rl-legende, var(--legende));"
@@ -188,6 +228,11 @@
           "label": "label-orange",
           "description": "À ajouter à « label » : label en orange foncé.",
           "css": "color: #B4461C;"
+        },
+        {
+          "label": "label-peche",
+          "description": "À ajouter à « label » : label pêche, sur fond sombre.",
+          "css": "color: #FFB48C;"
         },
         {
           "label": "titre-eteint",
@@ -243,6 +288,11 @@
           "label": "bouton-petit",
           "description": "À ajouter à un bouton : version de 48 px pour les cartes et encarts.",
           "css": "min-height: 48px; padding: 0 22px; font-size: 15px;"
+        },
+        {
+          "label": "choix-ecran",
+          "description": "Bouton d'un groupe à choix (16:9, FR…). Le lien commence par #rl-format- ou #rl-langue- : le thème le transforme en bouton qui change l'écran.",
+          "css": "display: inline-flex; width: fit-content; align-items: center; justify-content: center; min-width: 44px; min-height: 32px; padding: 0 12px; border-radius: 999px; font-family: Hanken Grotesk; font-size: 13px; line-height: 1; font-weight: 800; letter-spacing: 0.02em; font-variant-numeric: tabular-nums; color: #FAF9F7; background-color: transparent; &:hover { background-color: rgba(255,255,255,0.12); } &[aria-pressed=\"true\"] { background-color: #FFFFFF; color: #1B1820; }"
         }
       ]
     },
@@ -319,6 +369,21 @@
           "description": "À ajouter à « etiquette-carte » : texte pêche et point rouge qui clignote (« À tourner »).",
           "css": "color: #FFD1BF; &::before { width: 8px; height: 8px; background: #FF3B30; box-shadow: 0 0 0 3px rgba(255,59,48,0.25); }",
           "brut": "&::before { animation: rl-clignote 1.6s ease-in-out infinite; }"
+        },
+        {
+          "label": "pilule-flux",
+          "description": "Pilule claire en haut du schéma (« Vos contenus & vos briefs »), avec la flèche en pointillés vers le centre. Cachée sous 980 px.",
+          "css": "position: relative; display: inline-flex; width: fit-content; align-items: center; gap: 9px; margin-bottom: 46px; padding: 9px 16px; border-radius: 999px; white-space: nowrap; font-family: Hanken Grotesk; font-size: 14px; line-height: 1.2; font-weight: 700; color: #1B1820; background: linear-gradient(165deg, rgba(255,255,255,0.96) 0%, rgba(255,255,255,0.82) 100%); box-shadow: inset 0 1px 0 #FFFFFF, 0 10px 26px -14px rgba(0,0,0,0.6); &::after { content: ''; position: absolute; left: 50%; top: 100%; width: 14px; height: 86px; margin-left: -7px; pointer-events: none; background: url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 9' fill='none' stroke='%23C4B5FD' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M1.5 1.5 L7 7 L12.5 1.5'/%3E%3C/svg%3E\") center bottom / 12px 8px no-repeat, repeating-linear-gradient(180deg, #C4B5FD 0 6px, rgba(0,0,0,0) 6px 12px) center top / 2px calc(100% - 4px) no-repeat; } @media(--tablet) { display: none; }"
+        },
+        {
+          "label": "groupe-choix",
+          "description": "Groupe de boutons à choix (Format, Langue) au-dessus de l'écran « Votre vidéo ».",
+          "css": "display: inline-flex; width: fit-content; flex-direction: row; align-items: center; gap: 4px; padding: 4px; border-radius: 999px; background: rgba(255,255,255,0.08); box-shadow: inset 0 1px 0 rgba(255,255,255,0.16), inset 0 0 0 1px rgba(255,255,255,0.1);"
+        },
+        {
+          "label": "nom-groupe",
+          "description": "Nom d'un groupe de boutons à choix (« Format »).",
+          "css": "display: block; padding: 0 8px 0 10px; font-family: Hanken Grotesk; font-size: 12px; line-height: 1.2; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #B6B0CC;"
         }
       ]
     },
@@ -339,6 +404,21 @@
           "label": "carte-etape",
           "description": "À ajouter à une carte en verre : étape de la méthode (chiffre en verre, titre, texte), flèche orange vers l'étape suivante. Se soulève au survol.",
           "css": "padding: 36px; border-radius: 30px; transition: transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1); &:hover { transform: translateY(-5px); } &:not(:last-child)::after { content: ''; position: absolute; z-index: 2; right: -54px; top: 46px; width: 64px; height: 40px; pointer-events: none; background: url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 40' fill='none' stroke='%23FF8A5B' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 26 C 20 6, 40 4, 56 18'/%3E%3Cpath d='M44 16 L57 19 L56 6'/%3E%3C/svg%3E\") center / contain no-repeat; } @media(--tablet) { padding: 28px; &:not(:last-child)::after { display: none; } }"
+        },
+        {
+          "label": "carte-vignette",
+          "description": "À ajouter à une carte en verre : cadre fin d'une vignette vidéo (image 16:9). Se soulève au survol.",
+          "css": "padding: 8px; border-radius: 26px; gap: 0; transition: transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1); &:hover { transform: translateY(-5px); }"
+        },
+        {
+          "label": "carte-ia",
+          "description": "À ajouter à une carte en verre sombre : carte « Notre IA Factory », lueur bleue en haut à gauche.",
+          "css": "padding: 30px 30px 24px; border-radius: 32px; gap: 20px; background: radial-gradient(90% 34% at 14% 0%, rgba(124,126,255,0.30), rgba(124,126,255,0) 70%), linear-gradient(160deg, rgba(52,52,224,0.18) 0%, rgba(255,255,255,0.04) 58%, rgba(139,92,246,0.10) 100%); @media(--mobile) { padding: 24px 20px 18px; }"
+        },
+        {
+          "label": "carte-humain",
+          "description": "À ajouter à une carte en verre sombre : carte de l'équipe créa, lueur pêche en haut à droite.",
+          "css": "padding: 30px 30px 24px; border-radius: 32px; gap: 20px; background: radial-gradient(90% 34% at 86% 0%, rgba(255,138,91,0.32), rgba(255,138,91,0) 70%), linear-gradient(200deg, rgba(255,138,91,0.15) 0%, rgba(255,255,255,0.04) 58%, rgba(255,209,191,0.08) 100%); @media(--mobile) { padding: 24px 20px 18px; }"
         },
         {
           "label": "halo-lilas",
@@ -518,6 +598,63 @@
           "css": "width: 56px; height: 56px; margin: 0; box-shadow: 0 0 0 3px #FFFFFF, 0 10px 20px -10px rgba(70,40,150,0.5);"
         },
         {
+          "label": "portrait-sombre",
+          "description": "À ajouter à « portrait » : anneau discret, pour un fond sombre.",
+          "css": "box-shadow: 0 0 0 3px rgba(255,255,255,0.26), 0 0 0 10px rgba(255,255,255,0.05), 0 26px 50px -24px rgba(0,0,0,0.85);"
+        },
+        {
+          "label": "membre-equipe",
+          "description": "Un membre de l'équipe : portrait, prénom, poste, centrés. Se soulève au survol.",
+          "css": "display: flex; flex-direction: column; align-items: center; gap: 0; padding: 0; text-align: center; transition: transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1); &:hover { transform: translateY(-5px); }"
+        },
+        {
+          "label": "scene-ecran",
+          "description": "Zone de l'écran « Votre vidéo » : hauteur fixe, l'écran change de format sans faire sauter la page.",
+          "css": "position: relative; display: flex; align-items: center; justify-content: center; height: 388px; padding: 0; @media(--tablet) { height: 420px; }"
+        },
+        {
+          "label": "ecran-cadre",
+          "description": "Cadre de l'écran « Votre vidéo » (620 × 369), bord dégradé qui tourne. Son format change avec les boutons Format (le thème pose data-format).",
+          "css": "position: relative; width: 620px; height: 369px; max-width: 100%; padding: 10px; border-radius: 30px; background: linear-gradient(160deg, rgba(40,34,80,0.92) 0%, rgba(18,16,34,0.96) 100%); box-shadow: inset 0 1px 0 rgba(255,255,255,0.2), 0 50px 110px -30px rgba(91,59,234,0.75); transition: width 0.6s cubic-bezier(0.2, 0.8, 0.2, 1), height 0.6s cubic-bezier(0.2, 0.8, 0.2, 1); &::after { content: ''; position: absolute; top: -1.5px; right: -1.5px; bottom: -1.5px; left: -1.5px; border-radius: inherit; padding: 2px; pointer-events: none; background: conic-gradient(from var(--rl-angle, 0deg), #8B5CF6, #C4B5FD, #FF8A5B, #FFD1BF, #FF8A5B, #8B5CF6); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; }",
+          "brut": "&::after { animation: rl-anneau 8s linear infinite; } &[data-format=\"9:16\"] { width: 218px; height: 388px; --rl-ecran-titre: 32px; --rl-ecran-titre-haut: 56px; --rl-sous-gauche: 14px; --rl-sous-droite: 14px; --rl-sous-bas: 82px; --rl-sous-decale: none; --rl-sous-largeur: auto; --rl-sous-max: none; --rl-sous-taille: 13px; --rl-lecture-droite: calc(50% - 23px); --rl-bulle1-droite: -12%; --rl-bulle1-haut: 40%; --rl-bulle1-taille: 96px; --rl-bulle2-droite: 68%; --rl-bulle2-haut: 47%; } &[data-format=\"1:1\"] { width: 388px; height: 388px; --rl-ecran-titre: 44px; --rl-sous-gauche: 18px; --rl-sous-droite: 76px; --rl-sous-decale: none; --rl-sous-largeur: auto; --rl-sous-max: none; --rl-bulle1-droite: 8%; --rl-bulle1-haut: 34%; } @media (max-width: 980px) { width: 100%; height: auto; aspect-ratio: 16 / 9; --rl-ecran-titre: 34px; --rl-ecran-titre-haut: 52px; &[data-format=\"9:16\"] { width: 236px; height: 420px; aspect-ratio: auto; --rl-ecran-titre: 32px; --rl-ecran-titre-haut: 56px; } &[data-format=\"1:1\"] { width: min(100%, 360px); height: auto; aspect-ratio: 1 / 1; --rl-ecran-titre: 36px; --rl-ecran-titre-haut: 64px; } } @media (max-width: 767px) { &:not([data-format=\"9:16\"]):not([data-format=\"1:1\"]) { --rl-ecran-titre: 24px; --rl-ecran-titre-haut: 42px; --rl-sous-bas: 16px; --rl-sous-taille: 12px; --rl-sous-max: calc(100% - 90px); --rl-sous-gauche: 14px; --rl-sous-decale: none; --rl-lecture-ecran: 38px; --rl-lecture-droite: 12px; --rl-lecture-bas: 14px; --rl-bulle1-taille: 70px; } }"
+        },
+        {
+          "label": "ecran-video",
+          "description": "Image de la vidéo dans le cadre : coins arrondis, dégradé violet, deux bulles de verre qui flottent.",
+          "css": "position: relative; width: 100%; height: 100%; padding: 0; border-radius: 22px; overflow: hidden; color: #FFFFFF; background: radial-gradient(130% 120% at 85% 15%, #9C7BF5 0%, #5C4BEE 34%, #3434E0 62%, #1C1C8E 100%); isolation: isolate; &::before { position: relative; top: auto; right: auto; bottom: auto; left: auto; height: auto; opacity: 1; mix-blend-mode: normal; border: 0; content: ''; position: absolute; z-index: 2; right: var(--rl-bulle1-droite, 14%); top: var(--rl-bulle1-haut, 24%); width: var(--rl-bulle1-taille, 118px); height: var(--rl-bulle1-taille, 118px); border-radius: 50%; pointer-events: none; background: rgba(255,255,255,0.22); backdrop-filter: blur(10px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.9), 0 20px 40px -18px rgba(20,10,80,0.6); transition: right 0.6s, top 0.6s, width 0.6s, height 0.6s; } &::after { content: ''; position: absolute; z-index: 2; right: var(--rl-bulle2-droite, 37%); top: var(--rl-bulle2-haut, 58%); width: 46px; height: 46px; border-radius: 14px; rotate: 14deg; pointer-events: none; background: rgba(255,209,191,0.5); backdrop-filter: blur(8px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.9); transition: right 0.6s, top 0.6s; }",
+          "brut": "&::before { animation: rl-flotte 8s ease-in-out infinite; } &::after { animation: rl-flotte 8s ease-in-out -3s infinite; }"
+        },
+        {
+          "label": "ecran-fond",
+          "description": "Fond de l'écran : votre image, recadrée selon le format, sous un voile violet (lisibilité) ; barre de lecture en bas.",
+          "css": "position: absolute; z-index: 0; top: 0; right: 0; bottom: 0; left: 0; padding: 0; overflow: hidden; &::before { position: relative; top: auto; right: auto; bottom: auto; left: auto; height: auto; opacity: 1; mix-blend-mode: normal; border: 0; content: ''; position: absolute; z-index: 2; left: 0; right: 0; bottom: 0; width: auto; height: 5px; background: linear-gradient(#FFD1BF, #FFD1BF) left center / 42% 100% no-repeat, rgba(255,255,255,0.2); } &::after { content: ''; position: absolute; z-index: 1; top: 0; right: 0; bottom: 0; left: 0; pointer-events: none; background: radial-gradient(28% 75% at 78% 49%, rgba(255,180,140,0.85), rgba(255,138,91,0.35) 50%, rgba(255,138,91,0) 100%), radial-gradient(130% 120% at 85% 15%, rgba(156,123,245,0.82) 0%, rgba(92,75,238,0.86) 34%, rgba(52,52,224,0.9) 62%, rgba(28,28,142,0.94) 100%); }"
+        },
+        {
+          "label": "version-langue",
+          "description": "Une version de langue des textes de l'écran (FR, EN, ES). Son identifiant (rl-version-en…) donne la langue.",
+          "css": "position: absolute; z-index: 3; top: 0; right: 0; bottom: 0; left: 0; display: block; padding: 0;"
+        },
+        {
+          "label": "version-cachee",
+          "description": "À ajouter aux versions EN et ES : cachées au départ (le thème les affiche au clic). Modifiez-les depuis le Navigateur.",
+          "css": "display: none;"
+        },
+        {
+          "label": "ecran-haut",
+          "description": "Ligne du haut de l'écran (« Votre vidéo · 1:28 »), en capitales.",
+          "css": "position: absolute; top: 18px; left: 22px; right: 20px; margin: 0; font-family: Hanken Grotesk; font-size: 12px; line-height: 1.2; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #FFFFFF;"
+        },
+        {
+          "label": "ecran-titre",
+          "description": "Grand titre dans l'écran. Italique = pêche. Sa taille suit le format.",
+          "css": "position: absolute; left: 24px; right: 20px; top: var(--rl-ecran-titre-haut, 64px); margin: 0; font-family: Bricolage Grotesque; font-size: var(--rl-ecran-titre, 48px); line-height: 0.98; font-weight: 650; letter-spacing: -0.045em; color: #FFFFFF; text-shadow: 0 2px 14px rgba(10,10,60,0.35); transition: font-size 0.6s, top 0.6s; & em, & i { font-style: normal; color: #FFD1BF; }"
+        },
+        {
+          "label": "ecran-sous-titre",
+          "description": "Sous-titre de la vidéo (bandeau sombre). Sa place suit le format.",
+          "css": "position: absolute; left: var(--rl-sous-gauche, 50%); right: var(--rl-sous-droite, auto); bottom: var(--rl-sous-bas, 30px); transform: var(--rl-sous-decale, translateX(-50%)); width: var(--rl-sous-largeur, max-content); max-width: var(--rl-sous-max, calc(100% - 120px)); margin: 0; padding: 6px 13px; border-radius: 8px; background: rgba(12,10,30,0.72); font-family: Hanken Grotesk; font-size: var(--rl-sous-taille, 14px); line-height: 1.35; font-weight: 600; text-align: center; color: #FFFFFF;"
+        },
+        {
           "label": "visages",
           "description": "Groupe de petits visages qui se chevauchent (preuve sociale du hero).",
           "css": "display: inline-flex; width: fit-content; flex-direction: row; padding: 0; & img { width: 36px; height: 36px; border-radius: 50%; object-fit: cover; box-shadow: 0 0 0 2.5px #FFFFFF; } & img + img, & > * + * { margin-left: -10px; }"
@@ -536,6 +673,31 @@
           "label": "illustration-photo",
           "description": "Illustration décorative (fausse interface) posée en bas à gauche d'une photo. Texte alternatif vide.",
           "css": "position: absolute; z-index: 3; left: 0; bottom: 0; display: block; width: 386px; max-width: calc(100% + 8px); height: auto; @media(--mobile) { width: 300px; }"
+        },
+        {
+          "label": "illustration-hub",
+          "description": "Illustration centrale du schéma (« Votre espace projet »), avec sa marge d'ombre.",
+          "css": "display: block; width: 348px; max-width: calc(100% + 48px); height: auto; margin: -24px;"
+        },
+        {
+          "label": "icone-liste",
+          "description": "Petite icône carrée (28 px) devant une ligne de liste.",
+          "css": "display: block; flex-shrink: 0; width: 28px; height: 28px;"
+        },
+        {
+          "label": "icone-badge",
+          "description": "Icône ronde (32 px) dans un badge de réassurance.",
+          "css": "display: block; flex-shrink: 0; width: 32px; height: 32px;"
+        },
+        {
+          "label": "icone-carte",
+          "description": "Icône en tête d'une carte (52 px), avec son ombre.",
+          "css": "display: block; flex-shrink: 0; width: 80px; height: 80px; margin: -14px;"
+        },
+        {
+          "label": "image-vignette",
+          "description": "Image d'une vignette vidéo : 16:9, coins arrondis, recadrée pour remplir le cadre.",
+          "css": "display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 19px;"
         },
         {
           "label": "chiffre-verre",
@@ -571,6 +733,11 @@
           "label": "bouton-lecture-verre",
           "description": "À ajouter à « bouton-lecture » : petit bouton en verre posé dans une plaque (34 px).",
           "css": "position: relative; right: auto; bottom: auto; width: var(--rl-lecture, 34px); height: var(--rl-lecture, 34px); filter: drop-shadow(0 6px 10px rgba(10,6,30,0.45));"
+        },
+        {
+          "label": "lecture-ecran",
+          "description": "À ajouter à « bouton-lecture » : bouton lecture de l'écran « Votre vidéo » (46 px), sa place suit le format.",
+          "css": "z-index: 4; right: var(--rl-lecture-droite, 18px); bottom: var(--rl-lecture-bas, 22px); width: var(--rl-lecture-ecran, 46px); height: var(--rl-lecture-ecran, 46px); transition: right 0.6s;"
         },
         {
           "label": "bouton-son",
@@ -617,6 +784,16 @@
           "label": "coche",
           "description": "La coche en verre (26 px) devant chaque ligne.",
           "css": "flex-shrink: 0; width: 26px; height: 26px; margin-top: 1px; filter: drop-shadow(0 3px 6px rgba(91,59,234,0.28));"
+        },
+        {
+          "label": "liste-icones",
+          "description": "Liste dont chaque ligne commence par une petite icône, lignes séparées par un filet.",
+          "css": "display: flex; flex-direction: column; gap: 0; padding: 0; & > * + * { border-top: 1px solid var(--rl-filet-doux, rgba(255,255,255,0.07)); }"
+        },
+        {
+          "label": "ligne-icone",
+          "description": "Une ligne de liste à icône : l'icône, puis le texte.",
+          "css": "display: flex; flex-direction: row; align-items: center; gap: 12px; padding: 7px 0;"
         }
       ]
     },
@@ -663,6 +840,18 @@
           "description": "À ajouter à une section claire : halo bleu à gauche, halo pêche à droite, plus bas. Ils dérivent lentement.",
           "css": "&::before { position: relative; top: auto; right: auto; bottom: auto; left: auto; height: auto; opacity: 1; mix-blend-mode: normal; border: 0; content: ''; position: absolute; z-index: -1; width: 820px; height: 820px; border-radius: 50%; pointer-events: none; left: -16%; top: 10%; background: radial-gradient(closest-side, rgba(52,52,224,0.26), rgba(196,181,253,0.2) 50%, rgba(250,249,247,0) 100%); } &::after { content: ''; position: absolute; z-index: -1; width: 820px; height: 820px; border-radius: 50%; pointer-events: none; right: -16%; top: 52%; background: radial-gradient(closest-side, rgba(255,138,91,0.38), rgba(255,209,191,0.3) 50%, rgba(250,249,247,0) 100%); }",
           "brut": "&::before, &::after { animation: rl-derive 20s ease-in-out infinite; } &::after { animation-delay: -8s; }"
+        },
+        {
+          "label": "halo-doux",
+          "description": "À ajouter à une section claire : grand halo pêche et lilas, doux, au centre gauche. Il dérive lentement.",
+          "css": "&::before { position: relative; top: auto; right: auto; bottom: auto; left: auto; height: auto; opacity: 1; mix-blend-mode: normal; border: 0; content: ''; position: absolute; z-index: -1; width: 900px; height: 900px; border-radius: 50%; pointer-events: none; left: 20%; top: 20%; background: radial-gradient(closest-side, rgba(255,209,191,0.5), rgba(237,230,255,0.4) 50%, rgba(250,249,247,0) 100%); }",
+          "brut": "&::before { animation: rl-derive 20s ease-in-out infinite; }"
+        },
+        {
+          "label": "halos-ia",
+          "description": "À ajouter à une section sombre : halo bleu à gauche, halo pêche à droite (section IA). Ils dérivent lentement.",
+          "css": "&::before { position: relative; top: auto; right: auto; bottom: auto; left: auto; height: auto; opacity: 1; mix-blend-mode: normal; border: 0; content: ''; position: absolute; z-index: -1; width: 820px; height: 820px; border-radius: 50%; pointer-events: none; left: -12%; top: 8%; background: radial-gradient(closest-side, rgba(52,52,224,0.5), rgba(15,15,18,0) 100%); } &::after { content: ''; position: absolute; z-index: -1; width: 860px; height: 860px; border-radius: 50%; pointer-events: none; right: -14%; top: 18%; background: radial-gradient(closest-side, rgba(255,138,91,0.3), rgba(15,15,18,0) 100%); }",
+          "brut": "&::before, &::after { animation: rl-derive 20s ease-in-out infinite; } &::after { animation-delay: -9s; }"
         },
         {
           "label": "halo-centre",

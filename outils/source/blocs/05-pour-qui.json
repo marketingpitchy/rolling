@@ -33,7 +33,7 @@
    "Marketing · illustration": {
     "image": {
      "src": {
-      "url": "https://media.rolling.invalid/pourqui-recherche.png"
+      "url": "https://media.rolling.invalid/pourqui-recherche.webp"
      },
      "size": "full"
     }
@@ -295,7 +295,7 @@
    "Interne · illustration": {
     "image": {
      "src": {
-      "url": "https://media.rolling.invalid/pourqui-intranet.png"
+      "url": "https://media.rolling.invalid/pourqui-intranet.webp"
      },
      "size": "full"
     }

@@ -386,6 +386,27 @@
             ]
         },
         {
+            "id": "g-507a3d7",
+            "label": "label-peche",
+            "groupe": "Textes",
+            "description": "À ajouter à « label » : label pêche, sur fond sombre.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "color": {
+                            "$$type": "color",
+                            "value": "#FFB48C"
+                        }
+                    },
+                    "custom_css": null
+                }
+            ]
+        },
+        {
             "id": "g-c908b7d",
             "label": "titre-eteint",
             "groupe": "Textes",
@@ -833,6 +854,335 @@
                     },
                     "custom_css": {
                         "raw": "Jjpub3QoOmxhc3QtY2hpbGQpOjphZnRlciB7IGNvbnRlbnQ6ICcnOyBwb3NpdGlvbjogYWJzb2x1dGU7IHotaW5kZXg6IDI7IHJpZ2h0OiAtNTRweDsgdG9wOiA0NnB4OyB3aWR0aDogNjRweDsgaGVpZ2h0OiA0MHB4OyBwb2ludGVyLWV2ZW50czogbm9uZTsgYmFja2dyb3VuZDogdXJsKCJkYXRhOmltYWdlL3N2Zyt4bWwsJTNDc3ZnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zycgdmlld0JveD0nMCAwIDY0IDQwJyBmaWxsPSdub25lJyBzdHJva2U9JyUyM0ZGOEE1Qicgc3Ryb2tlLXdpZHRoPSczJyBzdHJva2UtbGluZWNhcD0ncm91bmQnIHN0cm9rZS1saW5lam9pbj0ncm91bmQnJTNFJTNDcGF0aCBkPSdNNCAyNiBDIDIwIDYsIDQwIDQsIDU2IDE4Jy8lM0UlM0NwYXRoIGQ9J000NCAxNiBMNTcgMTkgTDU2IDYnLyUzRSUzQy9zdmclM0UiKSBjZW50ZXIgLyBjb250YWluIG5vLXJlcGVhdDsgfQ=="
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-d6a1c2d",
+            "label": "carte-vignette",
+            "groupe": "Surfaces",
+            "description": "À ajouter à une carte en verre : cadre fin d'une vignette vidéo (image 16:9). Se soulève au survol.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": "hover"
+                    },
+                    "props": {
+                        "transform": {
+                            "$$type": "transform",
+                            "value": {
+                                "transform-functions": {
+                                    "$$type": "transform-functions",
+                                    "value": [
+                                        {
+                                            "$$type": "transform-move",
+                                            "value": {
+                                                "x": {
+                                                    "$$type": "size",
+                                                    "value": {
+                                                        "size": 0,
+                                                        "unit": "px"
+                                                    }
+                                                },
+                                                "y": {
+                                                    "$$type": "size",
+                                                    "value": {
+                                                        "size": -5,
+                                                        "unit": "px"
+                                                    }
+                                                },
+                                                "z": {
+                                                    "$$type": "size",
+                                                    "value": {
+                                                        "size": 0,
+                                                        "unit": "px"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    },
+                    "custom_css": null
+                },
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "padding": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 8,
+                                "unit": "px"
+                            }
+                        },
+                        "border-radius": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 26,
+                                "unit": "px"
+                            }
+                        },
+                        "transition": {
+                            "$$type": "transition",
+                            "value": [
+                                {
+                                    "$$type": "selection-size",
+                                    "value": {
+                                        "selection": {
+                                            "$$type": "key-value",
+                                            "value": {
+                                                "key": {
+                                                    "$$type": "string",
+                                                    "value": "transform"
+                                                },
+                                                "value": {
+                                                    "$$type": "string",
+                                                    "value": "transform"
+                                                }
+                                            }
+                                        },
+                                        "size": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 0.45,
+                                                "unit": "s"
+                                            }
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        "gap": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 0,
+                                "unit": "px"
+                            }
+                        }
+                    },
+                    "custom_css": null
+                }
+            ]
+        },
+        {
+            "id": "g-351c8f1",
+            "label": "carte-ia",
+            "groupe": "Surfaces",
+            "description": "À ajouter à une carte en verre sombre : carte « Notre IA Factory », lueur bleue en haut à gauche.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "mobile",
+                        "state": null
+                    },
+                    "props": {
+                        "padding": {
+                            "$$type": "dimensions",
+                            "value": {
+                                "block-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 24,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 20,
+                                        "unit": "px"
+                                    }
+                                },
+                                "block-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 18,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 20,
+                                        "unit": "px"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "custom_css": null
+                },
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "padding": {
+                            "$$type": "dimensions",
+                            "value": {
+                                "block-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 30,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 30,
+                                        "unit": "px"
+                                    }
+                                },
+                                "block-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 24,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 30,
+                                        "unit": "px"
+                                    }
+                                }
+                            }
+                        },
+                        "border-radius": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 32,
+                                "unit": "px"
+                            }
+                        },
+                        "gap": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 20,
+                                "unit": "px"
+                            }
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "YmFja2dyb3VuZC1pbWFnZTogcmFkaWFsLWdyYWRpZW50KDkwJSAzNCUgYXQgMTQlIDAlLCByZ2JhKDEyNCwxMjYsMjU1LDAuMzApLCByZ2JhKDEyNCwxMjYsMjU1LDApIDcwJSksIGxpbmVhci1ncmFkaWVudCgxNjBkZWcsIHJnYmEoNTIsNTIsMjI0LDAuMTgpIDAlLCByZ2JhKDI1NSwyNTUsMjU1LDAuMDQpIDU4JSwgcmdiYSgxMzksOTIsMjQ2LDAuMTApIDEwMCUpOw=="
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-c3b0cb6",
+            "label": "carte-humain",
+            "groupe": "Surfaces",
+            "description": "À ajouter à une carte en verre sombre : carte de l'équipe créa, lueur pêche en haut à droite.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "mobile",
+                        "state": null
+                    },
+                    "props": {
+                        "padding": {
+                            "$$type": "dimensions",
+                            "value": {
+                                "block-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 24,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 20,
+                                        "unit": "px"
+                                    }
+                                },
+                                "block-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 18,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 20,
+                                        "unit": "px"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "custom_css": null
+                },
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "padding": {
+                            "$$type": "dimensions",
+                            "value": {
+                                "block-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 30,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 30,
+                                        "unit": "px"
+                                    }
+                                },
+                                "block-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 24,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 30,
+                                        "unit": "px"
+                                    }
+                                }
+                            }
+                        },
+                        "border-radius": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 32,
+                                "unit": "px"
+                            }
+                        },
+                        "gap": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 20,
+                                "unit": "px"
+                            }
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "YmFja2dyb3VuZC1pbWFnZTogcmFkaWFsLWdyYWRpZW50KDkwJSAzNCUgYXQgODYlIDAlLCByZ2JhKDI1NSwxMzgsOTEsMC4zMiksIHJnYmEoMjU1LDEzOCw5MSwwKSA3MCUpLCBsaW5lYXItZ3JhZGllbnQoMjAwZGVnLCByZ2JhKDI1NSwxMzgsOTEsMC4xNSkgMCUsIHJnYmEoMjU1LDI1NSwyNTUsMC4wNCkgNTglLCByZ2JhKDI1NSwyMDksMTkxLDAuMDgpIDEwMCUpOw=="
                     }
                 }
             ]
@@ -1718,6 +2068,160 @@
             ]
         },
         {
+            "id": "g-488edde",
+            "label": "portrait-sombre",
+            "groupe": "Vidéo et images",
+            "description": "À ajouter à « portrait » : anneau discret, pour un fond sombre.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "box-shadow": {
+                            "$$type": "box-shadow",
+                            "value": [
+                                {
+                                    "$$type": "shadow",
+                                    "value": {
+                                        "hOffset": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 0,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "vOffset": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 0,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "blur": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 0,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "spread": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 3,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "color": {
+                                            "$$type": "color",
+                                            "value": "rgba(255,255,255,0.26)"
+                                        }
+                                    }
+                                },
+                                {
+                                    "$$type": "shadow",
+                                    "value": {
+                                        "hOffset": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 0,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "vOffset": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 0,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "blur": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 0,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "spread": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 10,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "color": {
+                                            "$$type": "color",
+                                            "value": "rgba(255,255,255,0.05)"
+                                        }
+                                    }
+                                },
+                                {
+                                    "$$type": "shadow",
+                                    "value": {
+                                        "hOffset": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 0,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "vOffset": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 26,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "blur": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 50,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "spread": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": -24,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "color": {
+                                            "$$type": "color",
+                                            "value": "rgba(0,0,0,0.85)"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "custom_css": null
+                }
+            ]
+        },
+        {
+            "id": "g-706920b",
+            "label": "version-cachee",
+            "groupe": "Vidéo et images",
+            "description": "À ajouter aux versions EN et ES : cachées au départ (le thème les affiche au clic). Modifiez-les depuis le Navigateur.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "display": {
+                            "$$type": "string",
+                            "value": "none"
+                        }
+                    },
+                    "custom_css": null
+                }
+            ]
+        },
+        {
             "id": "g-d6cb92c",
             "label": "titre-vignette-sombre",
             "groupe": "Vidéo et images",
@@ -1817,6 +2321,29 @@
                     },
                     "custom_css": {
                         "raw": "d2lkdGg6IHZhcigtLXJsLWxlY3R1cmUsIDM0cHgpOyBoZWlnaHQ6IHZhcigtLXJsLWxlY3R1cmUsIDM0cHgpOw=="
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-ce7bf99",
+            "label": "lecture-ecran",
+            "groupe": "Vidéo et images",
+            "description": "À ajouter à « bouton-lecture » : bouton lecture de l'écran « Votre vidéo » (46 px), sa place suit le format.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "z-index": {
+                            "$$type": "number",
+                            "value": 4
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "dHJhbnNpdGlvbjogcmlnaHQgMC42czsgaW5zZXQtaW5saW5lLWVuZDogdmFyKC0tcmwtbGVjdHVyZS1kcm9pdGUsIDE4cHgpOyBpbnNldC1ibG9jay1lbmQ6IHZhcigtLXJsLWxlY3R1cmUtYmFzLCAyMnB4KTsgd2lkdGg6IHZhcigtLXJsLWxlY3R1cmUtZWNyYW4sIDQ2cHgpOyBoZWlnaHQ6IHZhcigtLXJsLWxlY3R1cmUtZWNyYW4sIDQ2cHgpOw=="
                     }
                 }
             ]
@@ -3027,6 +3554,201 @@
             ]
         },
         {
+            "id": "g-a41f56d",
+            "label": "grille-schema",
+            "groupe": "Mise en page",
+            "description": "Schéma en trois colonnes : une carte, le centre (300 px), une carte. L'un sous l'autre sous 980 px.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "tablet",
+                        "state": null
+                    },
+                    "props": {
+                        "gap": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 16,
+                                "unit": "px"
+                            }
+                        },
+                        "grid-template-columns": {
+                            "$$type": "string",
+                            "value": "minmax(0, 1fr)"
+                        }
+                    },
+                    "custom_css": null
+                },
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "padding": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 0,
+                                "unit": "px"
+                            }
+                        },
+                        "display": {
+                            "$$type": "string",
+                            "value": "grid"
+                        },
+                        "gap": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 0,
+                                "unit": "px"
+                            }
+                        },
+                        "grid-template-columns": {
+                            "$$type": "string",
+                            "value": "minmax(0, 1fr) 300px minmax(0, 1fr)"
+                        },
+                        "align-items": {
+                            "$$type": "string",
+                            "value": "stretch"
+                        }
+                    },
+                    "custom_css": null
+                }
+            ]
+        },
+        {
+            "id": "g-2bf3184",
+            "label": "colonne-flux",
+            "groupe": "Mise en page",
+            "description": "Colonne centrale du schéma : contenu centré, flèche en pointillés vers l'écran du dessous (ordinateur seulement).",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "tablet",
+                        "state": null
+                    },
+                    "props": {
+                        "min-height": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 320,
+                                "unit": "px"
+                            }
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "Jjo6YWZ0ZXIgeyBkaXNwbGF5OiBub25lOyB9"
+                    }
+                },
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "min-height": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 360,
+                                "unit": "px"
+                            }
+                        },
+                        "position": {
+                            "$$type": "string",
+                            "value": "relative"
+                        },
+                        "padding": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 0,
+                                "unit": "px"
+                            }
+                        },
+                        "display": {
+                            "$$type": "string",
+                            "value": "flex"
+                        },
+                        "flex-direction": {
+                            "$$type": "string",
+                            "value": "column"
+                        },
+                        "gap": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 0,
+                                "unit": "px"
+                            }
+                        },
+                        "justify-content": {
+                            "$$type": "string",
+                            "value": "center"
+                        },
+                        "align-items": {
+                            "$$type": "string",
+                            "value": "center"
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "Jjo6YWZ0ZXIgeyBjb250ZW50OiAnJzsgcG9zaXRpb246IGFic29sdXRlOyBsZWZ0OiA1MCU7IHRvcDogY2FsYyg1MCUgKyAxNzVweCk7IGJvdHRvbTogLTYycHg7IHdpZHRoOiAxNHB4OyBtYXJnaW4tbGVmdDogLTdweDsgcG9pbnRlci1ldmVudHM6IG5vbmU7IGJhY2tncm91bmQ6IHVybCgiZGF0YTppbWFnZS9zdmcreG1sLCUzQ3N2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCAxNCA5JyBmaWxsPSdub25lJyBzdHJva2U9JyUyM0ZGQjQ4Qycgc3Ryb2tlLXdpZHRoPScyLjQnIHN0cm9rZS1saW5lY2FwPSdyb3VuZCcgc3Ryb2tlLWxpbmVqb2luPSdyb3VuZCclM0UlM0NwYXRoIGQ9J00xLjUgMS41IEw3IDcgTDEyLjUgMS41Jy8lM0UlM0Mvc3ZnJTNFIikgY2VudGVyIGJvdHRvbSAvIDEycHggOHB4IG5vLXJlcGVhdCwgcmVwZWF0aW5nLWxpbmVhci1ncmFkaWVudCgxODBkZWcsICNGRkI0OEMgMCA2cHgsIHJnYmEoMCwwLDAsMCkgNnB4IDEycHgpIGNlbnRlciB0b3AgLyAycHggY2FsYygxMDAlIC0gNHB4KSBuby1yZXBlYXQ7IH0="
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-b9a3efd",
+            "label": "grille-equipe",
+            "groupe": "Mise en page",
+            "description": "Portraits de l'équipe : autant de colonnes que possible (170 px minimum).",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "mobile",
+                        "state": null
+                    },
+                    "props": {
+                        "grid-template-columns": {
+                            "$$type": "string",
+                            "value": "repeat(2, minmax(0, 1fr))"
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "Z2FwOiAyOHB4IDEycHg7"
+                    }
+                },
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "padding": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 0,
+                                "unit": "px"
+                            }
+                        },
+                        "display": {
+                            "$$type": "string",
+                            "value": "grid"
+                        },
+                        "gap": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 22,
+                                "unit": "px"
+                            }
+                        },
+                        "grid-template-columns": {
+                            "$$type": "string",
+                            "value": "repeat(auto-fit, minmax(170px, 1fr))"
+                        }
+                    },
+                    "custom_css": null
+                }
+            ]
+        },
+        {
             "id": "g-7069cae",
             "label": "grille-6",
             "groupe": "Mise en page",
@@ -3873,6 +4595,260 @@
                     },
                     "custom_css": {
                         "raw": "JiBzdHJvbmcsICYgYiB7IGZvbnQtd2VpZ2h0OiBpbmhlcml0OyBjb2xvcjogdmFyKC0tcmwtdGV4dGUsIHZhcigtLWVuY3JlKSk7IH0="
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-21f0f87",
+            "label": "accroche",
+            "groupe": "Textes",
+            "description": "Phrase d'appel courte avant un bouton (« Et avec vos contenus, ça donnerait quoi ? »). Italique = dégradé.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "font-family": {
+                            "$$type": "font-family",
+                            "value": "Bricolage Grotesque"
+                        },
+                        "font-size": {
+                            "$$type": "size",
+                            "value": {
+                                "size": "clamp(22px, 2.3vw, 30px)",
+                                "unit": "custom"
+                            }
+                        },
+                        "letter-spacing": {
+                            "$$type": "size",
+                            "value": {
+                                "size": -0.04,
+                                "unit": "em"
+                            }
+                        },
+                        "line-height": {
+                            "$$type": "size",
+                            "value": {
+                                "size": "1.15",
+                                "unit": "custom"
+                            }
+                        },
+                        "display": {
+                            "$$type": "string",
+                            "value": "block"
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "Zm9udC13ZWlnaHQ6IDY1MDsgY29sb3I6IHZhcigtLXJsLXRleHRlLCB2YXIoLS1lbmNyZSkpOyAmIGVtLCAmIGkgeyBmb250LXN0eWxlOiBub3JtYWw7IGJhY2tncm91bmQtaW1hZ2U6IHZhcigtLXJsLWRlZ3JhZGUsIGxpbmVhci1ncmFkaWVudCg5NWRlZywgIzVCM0JFQSAwJSwgIzhFNERFNiA0MiUsICNFMDU2MkEgMTAwJSkpOyAtd2Via2l0LWJhY2tncm91bmQtY2xpcDogdGV4dDsgYmFja2dyb3VuZC1jbGlwOiB0ZXh0OyBjb2xvcjogdHJhbnNwYXJlbnQ7IH0="
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-99833a2",
+            "label": "fleche-resultat",
+            "groupe": "Textes",
+            "description": "Résultat après le contenu de départ (« → vidéo de 90 s »), précédé d'une flèche orange.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "font-family": {
+                            "$$type": "font-family",
+                            "value": "Hanken Grotesk"
+                        },
+                        "font-weight": {
+                            "$$type": "string",
+                            "value": "700"
+                        },
+                        "font-size": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 15,
+                                "unit": "px"
+                            }
+                        },
+                        "line-height": {
+                            "$$type": "size",
+                            "value": {
+                                "size": "1.3",
+                                "unit": "custom"
+                            }
+                        },
+                        "display": {
+                            "$$type": "string",
+                            "value": "inline-flex"
+                        },
+                        "gap": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 6,
+                                "unit": "px"
+                            }
+                        },
+                        "align-items": {
+                            "$$type": "string",
+                            "value": "center"
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "d2lkdGg6IGZpdC1jb250ZW50OyBjb2xvcjogdmFyKC0tcmwtdGV4dGUsIHZhcigtLWVuY3JlKSk7ICY6OmJlZm9yZSB7IGNvbnRlbnQ6ICcnOyBmbGV4LXNocmluazogMDsgd2lkdGg6IDE0cHg7IGhlaWdodDogMTRweDsgYmFja2dyb3VuZC1jb2xvcjogI0UwNTYyQTsgLXdlYmtpdC1tYXNrOiB1cmwoImRhdGE6aW1hZ2Uvc3ZnK3htbCwlM0NzdmcgeG1sbnM9J2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJyB2aWV3Qm94PScwIDAgMjQgMjQnIGZpbGw9J25vbmUnIHN0cm9rZT0nJTIzMDAwJyBzdHJva2Utd2lkdGg9JzIuNicgc3Ryb2tlLWxpbmVjYXA9J3JvdW5kJyBzdHJva2UtbGluZWpvaW49J3JvdW5kJyUzRSUzQ3BhdGggZD0nTTUgMTJoMTQnLyUzRSUzQ3BhdGggZD0nTTEzIDZsNiA2LTYgNicvJTNFJTNDL3N2ZyUzRSIpIGNlbnRlciAvIGNvbnRhaW4gbm8tcmVwZWF0OyBtYXNrOiB1cmwoImRhdGE6aW1hZ2Uvc3ZnK3htbCwlM0NzdmcgeG1sbnM9J2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJyB2aWV3Qm94PScwIDAgMjQgMjQnIGZpbGw9J25vbmUnIHN0cm9rZT0nJTIzMDAwJyBzdHJva2Utd2lkdGg9JzIuNicgc3Ryb2tlLWxpbmVjYXA9J3JvdW5kJyBzdHJva2UtbGluZWpvaW49J3JvdW5kJyUzRSUzQ3BhdGggZD0nTTUgMTJoMTQnLyUzRSUzQ3BhdGggZD0nTTEzIDZsNiA2LTYgNicvJTNFJTNDL3N2ZyUzRSIpIGNlbnRlciAvIGNvbnRhaW4gbm8tcmVwZWF0OyB9"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-2ed94d5",
+            "label": "legende-ecran",
+            "groupe": "Textes",
+            "description": "Légende sous un écran ou un visuel (« Votre vidéo, prête à publier. »), centrée. Italique = dégradé.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "font-family": {
+                            "$$type": "font-family",
+                            "value": "Bricolage Grotesque"
+                        },
+                        "font-size": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 20,
+                                "unit": "px"
+                            }
+                        },
+                        "letter-spacing": {
+                            "$$type": "size",
+                            "value": {
+                                "size": -0.02,
+                                "unit": "em"
+                            }
+                        },
+                        "line-height": {
+                            "$$type": "size",
+                            "value": {
+                                "size": "1.3",
+                                "unit": "custom"
+                            }
+                        },
+                        "text-align": {
+                            "$$type": "string",
+                            "value": "center"
+                        },
+                        "display": {
+                            "$$type": "string",
+                            "value": "block"
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "Zm9udC13ZWlnaHQ6IDY1MDsgY29sb3I6IHZhcigtLXJsLXRleHRlLCB2YXIoLS1lbmNyZSkpOyAmIGVtLCAmIGkgeyBmb250LXN0eWxlOiBub3JtYWw7IGJhY2tncm91bmQtaW1hZ2U6IHZhcigtLXJsLWRlZ3JhZGUsIGxpbmVhci1ncmFkaWVudCg5NWRlZywgIzVCM0JFQSAwJSwgIzhFNERFNiA0MiUsICNFMDU2MkEgMTAwJSkpOyAtd2Via2l0LWJhY2tncm91bmQtY2xpcDogdGV4dDsgYmFja2dyb3VuZC1jbGlwOiB0ZXh0OyBjb2xvcjogdHJhbnNwYXJlbnQ7IH0="
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-bafe416",
+            "label": "nom-membre",
+            "groupe": "Textes",
+            "description": "Prénom sous un portrait.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "font-family": {
+                            "$$type": "font-family",
+                            "value": "Hanken Grotesk"
+                        },
+                        "font-weight": {
+                            "$$type": "string",
+                            "value": "700"
+                        },
+                        "font-size": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 16,
+                                "unit": "px"
+                            }
+                        },
+                        "line-height": {
+                            "$$type": "size",
+                            "value": {
+                                "size": "1.35",
+                                "unit": "custom"
+                            }
+                        },
+                        "margin": {
+                            "$$type": "dimensions",
+                            "value": {
+                                "block-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 18,
+                                        "unit": "px"
+                                    }
+                                }
+                            }
+                        },
+                        "display": {
+                            "$$type": "string",
+                            "value": "block"
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "Y29sb3I6IHZhcigtLXJsLXRleHRlLCB2YXIoLS1lbmNyZSkpOw=="
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-93ed1df",
+            "label": "poste-membre",
+            "groupe": "Textes",
+            "description": "Intitulé de poste sous le prénom (capitales aux mots principaux).",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "font-family": {
+                            "$$type": "font-family",
+                            "value": "Hanken Grotesk"
+                        },
+                        "font-size": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 14,
+                                "unit": "px"
+                            }
+                        },
+                        "line-height": {
+                            "$$type": "size",
+                            "value": {
+                                "size": "1.4",
+                                "unit": "custom"
+                            }
+                        },
+                        "display": {
+                            "$$type": "string",
+                            "value": "block"
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "Y29sb3I6IHZhcigtLXJsLWxlZ2VuZGUsIHZhcigtLWxlZ2VuZGUpKTs="
                     }
                 }
             ]
@@ -4945,6 +5921,151 @@
                     },
                     "custom_css": {
                         "raw": "d2lkdGg6IGZpdC1jb250ZW50OyAmOjphZnRlciB7IGNvbnRlbnQ6ICcnOyBmbGV4LXNocmluazogMDsgd2lkdGg6IDE4cHg7IGhlaWdodDogMThweDsgYmFja2dyb3VuZC1jb2xvcjogY3VycmVudENvbG9yOyAtd2Via2l0LW1hc2s6IHVybCgiZGF0YTppbWFnZS9zdmcreG1sLCUzQ3N2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCAyNCAyNCcgZmlsbD0nbm9uZScgc3Ryb2tlPSclMjMwMDAnIHN0cm9rZS13aWR0aD0nMi40JyBzdHJva2UtbGluZWNhcD0ncm91bmQnIHN0cm9rZS1saW5lam9pbj0ncm91bmQnJTNFJTNDcGF0aCBkPSdNNSAxMmgxNCcvJTNFJTNDcGF0aCBkPSdNMTMgNmw2IDYtNiA2Jy8lM0UlM0Mvc3ZnJTNFIikgY2VudGVyIC8gY29udGFpbiBuby1yZXBlYXQ7IG1hc2s6IHVybCgiZGF0YTppbWFnZS9zdmcreG1sLCUzQ3N2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCAyNCAyNCcgZmlsbD0nbm9uZScgc3Ryb2tlPSclMjMwMDAnIHN0cm9rZS13aWR0aD0nMi40JyBzdHJva2UtbGluZWNhcD0ncm91bmQnIHN0cm9rZS1saW5lam9pbj0ncm91bmQnJTNFJTNDcGF0aCBkPSdNNSAxMmgxNCcvJTNFJTNDcGF0aCBkPSdNMTMgNmw2IDYtNiA2Jy8lM0UlM0Mvc3ZnJTNFIikgY2VudGVyIC8gY29udGFpbiBuby1yZXBlYXQ7IH0="
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-8c01047",
+            "label": "choix-ecran",
+            "groupe": "Boutons",
+            "description": "Bouton d'un groupe à choix (16:9, FR…). Le lien commence par #rl-format- ou #rl-langue- : le thème le transforme en bouton qui change l'écran.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": "hover"
+                    },
+                    "props": {
+                        "background": {
+                            "$$type": "background",
+                            "value": {
+                                "color": {
+                                    "$$type": "color",
+                                    "value": "rgba(255,255,255,0.12)"
+                                }
+                            }
+                        }
+                    },
+                    "custom_css": null
+                },
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "min-width": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 44,
+                                "unit": "px"
+                            }
+                        },
+                        "min-height": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 32,
+                                "unit": "px"
+                            }
+                        },
+                        "font-family": {
+                            "$$type": "font-family",
+                            "value": "Hanken Grotesk"
+                        },
+                        "font-weight": {
+                            "$$type": "string",
+                            "value": "800"
+                        },
+                        "font-size": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 13,
+                                "unit": "px"
+                            }
+                        },
+                        "color": {
+                            "$$type": "color",
+                            "value": "#FAF9F7"
+                        },
+                        "letter-spacing": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 0.02,
+                                "unit": "em"
+                            }
+                        },
+                        "line-height": {
+                            "$$type": "size",
+                            "value": {
+                                "size": "1",
+                                "unit": "custom"
+                            }
+                        },
+                        "padding": {
+                            "$$type": "dimensions",
+                            "value": {
+                                "block-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 0,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 12,
+                                        "unit": "px"
+                                    }
+                                },
+                                "block-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 0,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 12,
+                                        "unit": "px"
+                                    }
+                                }
+                            }
+                        },
+                        "border-radius": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 999,
+                                "unit": "px"
+                            }
+                        },
+                        "background": {
+                            "$$type": "background",
+                            "value": {
+                                "color": {
+                                    "$$type": "color",
+                                    "value": "transparent"
+                                }
+                            }
+                        },
+                        "display": {
+                            "$$type": "string",
+                            "value": "inline-flex"
+                        },
+                        "justify-content": {
+                            "$$type": "string",
+                            "value": "center"
+                        },
+                        "align-items": {
+                            "$$type": "string",
+                            "value": "center"
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "d2lkdGg6IGZpdC1jb250ZW50OyBmb250LXZhcmlhbnQtbnVtZXJpYzogdGFidWxhci1udW1zOyAmW2FyaWEtcHJlc3NlZD0idHJ1ZSJdIHsgYmFja2dyb3VuZC1jb2xvcjogI0ZGRkZGRjsgY29sb3I6ICMxQjE4MjA7IH0="
                     }
                 }
             ]
@@ -7294,6 +8415,511 @@
                     "custom_css": {
                         "raw": "d2lkdGg6IGZpdC1jb250ZW50OyAmOjpiZWZvcmUgeyBwb3NpdGlvbjogcmVsYXRpdmU7IHRvcDogYXV0bzsgcmlnaHQ6IGF1dG87IGJvdHRvbTogYXV0bzsgbGVmdDogYXV0bzsgaGVpZ2h0OiBhdXRvOyBvcGFjaXR5OiAxOyBtaXgtYmxlbmQtbW9kZTogbm9ybWFsOyBib3JkZXI6IDA7IGNvbnRlbnQ6ICcnOyBmbGV4LXNocmluazogMDsgd2lkdGg6IDdweDsgaGVpZ2h0OiA3cHg7IGJvcmRlci1yYWRpdXM6IDUwJTsgYmFja2dyb3VuZDogI0M0QjVGRDsgfQ=="
                     }
+                }
+            ]
+        },
+        {
+            "id": "g-01a74e2",
+            "label": "pilule-flux",
+            "groupe": "Étiquettes",
+            "description": "Pilule claire en haut du schéma (« Vos contenus & vos briefs »), avec la flèche en pointillés vers le centre. Cachée sous 980 px.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "tablet",
+                        "state": null
+                    },
+                    "props": {
+                        "display": {
+                            "$$type": "string",
+                            "value": "none"
+                        }
+                    },
+                    "custom_css": null
+                },
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "position": {
+                            "$$type": "string",
+                            "value": "relative"
+                        },
+                        "font-family": {
+                            "$$type": "font-family",
+                            "value": "Hanken Grotesk"
+                        },
+                        "font-weight": {
+                            "$$type": "string",
+                            "value": "700"
+                        },
+                        "font-size": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 14,
+                                "unit": "px"
+                            }
+                        },
+                        "color": {
+                            "$$type": "color",
+                            "value": "#1B1820"
+                        },
+                        "line-height": {
+                            "$$type": "size",
+                            "value": {
+                                "size": "1.2",
+                                "unit": "custom"
+                            }
+                        },
+                        "padding": {
+                            "$$type": "dimensions",
+                            "value": {
+                                "block-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 9,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 16,
+                                        "unit": "px"
+                                    }
+                                },
+                                "block-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 9,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 16,
+                                        "unit": "px"
+                                    }
+                                }
+                            }
+                        },
+                        "margin": {
+                            "$$type": "dimensions",
+                            "value": {
+                                "block-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 46,
+                                        "unit": "px"
+                                    }
+                                }
+                            }
+                        },
+                        "border-radius": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 999,
+                                "unit": "px"
+                            }
+                        },
+                        "background": {
+                            "$$type": "background",
+                            "value": {
+                                "background-overlay": {
+                                    "$$type": "background-overlay",
+                                    "value": [
+                                        {
+                                            "$$type": "background-gradient-overlay",
+                                            "value": {
+                                                "type": {
+                                                    "$$type": "string",
+                                                    "value": "linear"
+                                                },
+                                                "stops": {
+                                                    "$$type": "gradient-color-stop",
+                                                    "value": [
+                                                        {
+                                                            "$$type": "color-stop",
+                                                            "value": {
+                                                                "color": {
+                                                                    "$$type": "color",
+                                                                    "value": "rgba(255,255,255,0.96)"
+                                                                },
+                                                                "offset": {
+                                                                    "$$type": "number",
+                                                                    "value": 0
+                                                                }
+                                                            }
+                                                        },
+                                                        {
+                                                            "$$type": "color-stop",
+                                                            "value": {
+                                                                "color": {
+                                                                    "$$type": "color",
+                                                                    "value": "rgba(255,255,255,0.82)"
+                                                                },
+                                                                "offset": {
+                                                                    "$$type": "number",
+                                                                    "value": 100
+                                                                }
+                                                            }
+                                                        }
+                                                    ]
+                                                },
+                                                "angle": {
+                                                    "$$type": "number",
+                                                    "value": 165
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        "box-shadow": {
+                            "$$type": "box-shadow",
+                            "value": [
+                                {
+                                    "$$type": "shadow",
+                                    "value": {
+                                        "hOffset": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 0,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "vOffset": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 1,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "blur": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 0,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "spread": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 0,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "color": {
+                                            "$$type": "color",
+                                            "value": "#FFFFFF"
+                                        },
+                                        "position": {
+                                            "$$type": "string",
+                                            "value": "inset"
+                                        }
+                                    }
+                                },
+                                {
+                                    "$$type": "shadow",
+                                    "value": {
+                                        "hOffset": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 0,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "vOffset": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 10,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "blur": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 26,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "spread": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": -14,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "color": {
+                                            "$$type": "color",
+                                            "value": "rgba(0,0,0,0.6)"
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        "display": {
+                            "$$type": "string",
+                            "value": "inline-flex"
+                        },
+                        "gap": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 9,
+                                "unit": "px"
+                            }
+                        },
+                        "align-items": {
+                            "$$type": "string",
+                            "value": "center"
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "d2lkdGg6IGZpdC1jb250ZW50OyB3aGl0ZS1zcGFjZTogbm93cmFwOyAmOjphZnRlciB7IGNvbnRlbnQ6ICcnOyBwb3NpdGlvbjogYWJzb2x1dGU7IGxlZnQ6IDUwJTsgdG9wOiAxMDAlOyB3aWR0aDogMTRweDsgaGVpZ2h0OiA4NnB4OyBtYXJnaW4tbGVmdDogLTdweDsgcG9pbnRlci1ldmVudHM6IG5vbmU7IGJhY2tncm91bmQ6IHVybCgiZGF0YTppbWFnZS9zdmcreG1sLCUzQ3N2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCAxNCA5JyBmaWxsPSdub25lJyBzdHJva2U9JyUyM0M0QjVGRCcgc3Ryb2tlLXdpZHRoPScyLjQnIHN0cm9rZS1saW5lY2FwPSdyb3VuZCcgc3Ryb2tlLWxpbmVqb2luPSdyb3VuZCclM0UlM0NwYXRoIGQ9J00xLjUgMS41IEw3IDcgTDEyLjUgMS41Jy8lM0UlM0Mvc3ZnJTNFIikgY2VudGVyIGJvdHRvbSAvIDEycHggOHB4IG5vLXJlcGVhdCwgcmVwZWF0aW5nLWxpbmVhci1ncmFkaWVudCgxODBkZWcsICNDNEI1RkQgMCA2cHgsIHJnYmEoMCwwLDAsMCkgNnB4IDEycHgpIGNlbnRlciB0b3AgLyAycHggY2FsYygxMDAlIC0gNHB4KSBuby1yZXBlYXQ7IH0="
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-6c13df7",
+            "label": "groupe-choix",
+            "groupe": "Étiquettes",
+            "description": "Groupe de boutons à choix (Format, Langue) au-dessus de l'écran « Votre vidéo ».",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "padding": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 4,
+                                "unit": "px"
+                            }
+                        },
+                        "border-radius": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 999,
+                                "unit": "px"
+                            }
+                        },
+                        "background": {
+                            "$$type": "background",
+                            "value": {
+                                "color": {
+                                    "$$type": "color",
+                                    "value": "rgba(255,255,255,0.08)"
+                                }
+                            }
+                        },
+                        "box-shadow": {
+                            "$$type": "box-shadow",
+                            "value": [
+                                {
+                                    "$$type": "shadow",
+                                    "value": {
+                                        "hOffset": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 0,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "vOffset": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 1,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "blur": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 0,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "spread": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 0,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "color": {
+                                            "$$type": "color",
+                                            "value": "rgba(255,255,255,0.16)"
+                                        },
+                                        "position": {
+                                            "$$type": "string",
+                                            "value": "inset"
+                                        }
+                                    }
+                                },
+                                {
+                                    "$$type": "shadow",
+                                    "value": {
+                                        "hOffset": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 0,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "vOffset": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 0,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "blur": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 0,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "spread": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 1,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "color": {
+                                            "$$type": "color",
+                                            "value": "rgba(255,255,255,0.1)"
+                                        },
+                                        "position": {
+                                            "$$type": "string",
+                                            "value": "inset"
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        "display": {
+                            "$$type": "string",
+                            "value": "inline-flex"
+                        },
+                        "flex-direction": {
+                            "$$type": "string",
+                            "value": "row"
+                        },
+                        "gap": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 4,
+                                "unit": "px"
+                            }
+                        },
+                        "align-items": {
+                            "$$type": "string",
+                            "value": "center"
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "d2lkdGg6IGZpdC1jb250ZW50Ow=="
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-70aad11",
+            "label": "nom-groupe",
+            "groupe": "Étiquettes",
+            "description": "Nom d'un groupe de boutons à choix (« Format »).",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "font-family": {
+                            "$$type": "font-family",
+                            "value": "Hanken Grotesk"
+                        },
+                        "font-weight": {
+                            "$$type": "string",
+                            "value": "700"
+                        },
+                        "font-size": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 12,
+                                "unit": "px"
+                            }
+                        },
+                        "color": {
+                            "$$type": "color",
+                            "value": "#B6B0CC"
+                        },
+                        "letter-spacing": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 0.14,
+                                "unit": "em"
+                            }
+                        },
+                        "line-height": {
+                            "$$type": "size",
+                            "value": {
+                                "size": "1.2",
+                                "unit": "custom"
+                            }
+                        },
+                        "text-transform": {
+                            "$$type": "string",
+                            "value": "uppercase"
+                        },
+                        "padding": {
+                            "$$type": "dimensions",
+                            "value": {
+                                "block-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 0,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 8,
+                                        "unit": "px"
+                                    }
+                                },
+                                "block-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 0,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 10,
+                                        "unit": "px"
+                                    }
+                                }
+                            }
+                        },
+                        "display": {
+                            "$$type": "string",
+                            "value": "block"
+                        }
+                    },
+                    "custom_css": null
                 }
             ]
         },
@@ -9953,6 +11579,884 @@
             ]
         },
         {
+            "id": "g-0b130eb",
+            "label": "membre-equipe",
+            "groupe": "Vidéo et images",
+            "description": "Un membre de l'équipe : portrait, prénom, poste, centrés. Se soulève au survol.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": "hover"
+                    },
+                    "props": {
+                        "transform": {
+                            "$$type": "transform",
+                            "value": {
+                                "transform-functions": {
+                                    "$$type": "transform-functions",
+                                    "value": [
+                                        {
+                                            "$$type": "transform-move",
+                                            "value": {
+                                                "x": {
+                                                    "$$type": "size",
+                                                    "value": {
+                                                        "size": 0,
+                                                        "unit": "px"
+                                                    }
+                                                },
+                                                "y": {
+                                                    "$$type": "size",
+                                                    "value": {
+                                                        "size": -5,
+                                                        "unit": "px"
+                                                    }
+                                                },
+                                                "z": {
+                                                    "$$type": "size",
+                                                    "value": {
+                                                        "size": 0,
+                                                        "unit": "px"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    },
+                    "custom_css": null
+                },
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "text-align": {
+                            "$$type": "string",
+                            "value": "center"
+                        },
+                        "padding": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 0,
+                                "unit": "px"
+                            }
+                        },
+                        "transition": {
+                            "$$type": "transition",
+                            "value": [
+                                {
+                                    "$$type": "selection-size",
+                                    "value": {
+                                        "selection": {
+                                            "$$type": "key-value",
+                                            "value": {
+                                                "key": {
+                                                    "$$type": "string",
+                                                    "value": "transform"
+                                                },
+                                                "value": {
+                                                    "$$type": "string",
+                                                    "value": "transform"
+                                                }
+                                            }
+                                        },
+                                        "size": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 0.45,
+                                                "unit": "s"
+                                            }
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        "display": {
+                            "$$type": "string",
+                            "value": "flex"
+                        },
+                        "flex-direction": {
+                            "$$type": "string",
+                            "value": "column"
+                        },
+                        "gap": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 0,
+                                "unit": "px"
+                            }
+                        },
+                        "align-items": {
+                            "$$type": "string",
+                            "value": "center"
+                        }
+                    },
+                    "custom_css": null
+                }
+            ]
+        },
+        {
+            "id": "g-fef6093",
+            "label": "scene-ecran",
+            "groupe": "Vidéo et images",
+            "description": "Zone de l'écran « Votre vidéo » : hauteur fixe, l'écran change de format sans faire sauter la page.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "tablet",
+                        "state": null
+                    },
+                    "props": {
+                        "height": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 420,
+                                "unit": "px"
+                            }
+                        }
+                    },
+                    "custom_css": null
+                },
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "height": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 388,
+                                "unit": "px"
+                            }
+                        },
+                        "position": {
+                            "$$type": "string",
+                            "value": "relative"
+                        },
+                        "padding": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 0,
+                                "unit": "px"
+                            }
+                        },
+                        "display": {
+                            "$$type": "string",
+                            "value": "flex"
+                        },
+                        "justify-content": {
+                            "$$type": "string",
+                            "value": "center"
+                        },
+                        "align-items": {
+                            "$$type": "string",
+                            "value": "center"
+                        }
+                    },
+                    "custom_css": null
+                }
+            ]
+        },
+        {
+            "id": "g-25bf33c",
+            "label": "ecran-cadre",
+            "groupe": "Vidéo et images",
+            "description": "Cadre de l'écran « Votre vidéo » (620 × 369), bord dégradé qui tourne. Son format change avec les boutons Format (le thème pose data-format).",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "width": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 620,
+                                "unit": "px"
+                            }
+                        },
+                        "height": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 369,
+                                "unit": "px"
+                            }
+                        },
+                        "max-width": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 100,
+                                "unit": "%"
+                            }
+                        },
+                        "position": {
+                            "$$type": "string",
+                            "value": "relative"
+                        },
+                        "padding": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 10,
+                                "unit": "px"
+                            }
+                        },
+                        "border-radius": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 30,
+                                "unit": "px"
+                            }
+                        },
+                        "background": {
+                            "$$type": "background",
+                            "value": {
+                                "background-overlay": {
+                                    "$$type": "background-overlay",
+                                    "value": [
+                                        {
+                                            "$$type": "background-gradient-overlay",
+                                            "value": {
+                                                "type": {
+                                                    "$$type": "string",
+                                                    "value": "linear"
+                                                },
+                                                "stops": {
+                                                    "$$type": "gradient-color-stop",
+                                                    "value": [
+                                                        {
+                                                            "$$type": "color-stop",
+                                                            "value": {
+                                                                "color": {
+                                                                    "$$type": "color",
+                                                                    "value": "rgba(40,34,80,0.92)"
+                                                                },
+                                                                "offset": {
+                                                                    "$$type": "number",
+                                                                    "value": 0
+                                                                }
+                                                            }
+                                                        },
+                                                        {
+                                                            "$$type": "color-stop",
+                                                            "value": {
+                                                                "color": {
+                                                                    "$$type": "color",
+                                                                    "value": "rgba(18,16,34,0.96)"
+                                                                },
+                                                                "offset": {
+                                                                    "$$type": "number",
+                                                                    "value": 100
+                                                                }
+                                                            }
+                                                        }
+                                                    ]
+                                                },
+                                                "angle": {
+                                                    "$$type": "number",
+                                                    "value": 160
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        "box-shadow": {
+                            "$$type": "box-shadow",
+                            "value": [
+                                {
+                                    "$$type": "shadow",
+                                    "value": {
+                                        "hOffset": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 0,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "vOffset": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 1,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "blur": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 0,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "spread": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 0,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "color": {
+                                            "$$type": "color",
+                                            "value": "rgba(255,255,255,0.2)"
+                                        },
+                                        "position": {
+                                            "$$type": "string",
+                                            "value": "inset"
+                                        }
+                                    }
+                                },
+                                {
+                                    "$$type": "shadow",
+                                    "value": {
+                                        "hOffset": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 0,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "vOffset": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 50,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "blur": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 110,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "spread": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": -30,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "color": {
+                                            "$$type": "color",
+                                            "value": "rgba(91,59,234,0.75)"
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        "transition": {
+                            "$$type": "transition",
+                            "value": [
+                                {
+                                    "$$type": "selection-size",
+                                    "value": {
+                                        "selection": {
+                                            "$$type": "key-value",
+                                            "value": {
+                                                "key": {
+                                                    "$$type": "string",
+                                                    "value": "width"
+                                                },
+                                                "value": {
+                                                    "$$type": "string",
+                                                    "value": "width"
+                                                }
+                                            }
+                                        },
+                                        "size": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 0.6,
+                                                "unit": "s"
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "$$type": "selection-size",
+                                    "value": {
+                                        "selection": {
+                                            "$$type": "key-value",
+                                            "value": {
+                                                "key": {
+                                                    "$$type": "string",
+                                                    "value": "height"
+                                                },
+                                                "value": {
+                                                    "$$type": "string",
+                                                    "value": "height"
+                                                }
+                                            }
+                                        },
+                                        "size": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 0.6,
+                                                "unit": "s"
+                                            }
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "Jjo6YWZ0ZXIgeyBjb250ZW50OiAnJzsgcG9zaXRpb246IGFic29sdXRlOyB0b3A6IC0xLjVweDsgcmlnaHQ6IC0xLjVweDsgYm90dG9tOiAtMS41cHg7IGxlZnQ6IC0xLjVweDsgYm9yZGVyLXJhZGl1czogaW5oZXJpdDsgcGFkZGluZzogMnB4OyBwb2ludGVyLWV2ZW50czogbm9uZTsgYmFja2dyb3VuZDogY29uaWMtZ3JhZGllbnQoZnJvbSB2YXIoLS1ybC1hbmdsZSwgMGRlZyksICM4QjVDRjYsICNDNEI1RkQsICNGRjhBNUIsICNGRkQxQkYsICNGRjhBNUIsICM4QjVDRjYpOyAtd2Via2l0LW1hc2s6IGxpbmVhci1ncmFkaWVudCgjMDAwIDAgMCkgY29udGVudC1ib3gsIGxpbmVhci1ncmFkaWVudCgjMDAwIDAgMCk7IC13ZWJraXQtbWFzay1jb21wb3NpdGU6IHhvcjsgbWFzay1jb21wb3NpdGU6IGV4Y2x1ZGU7IH0gJjo6YWZ0ZXIgeyBhbmltYXRpb246IHJsLWFubmVhdSA4cyBsaW5lYXIgaW5maW5pdGU7IH0gJltkYXRhLWZvcm1hdD0iOToxNiJdIHsgd2lkdGg6IDIxOHB4OyBoZWlnaHQ6IDM4OHB4OyAtLXJsLWVjcmFuLXRpdHJlOiAzMnB4OyAtLXJsLWVjcmFuLXRpdHJlLWhhdXQ6IDU2cHg7IC0tcmwtc291cy1nYXVjaGU6IDE0cHg7IC0tcmwtc291cy1kcm9pdGU6IDE0cHg7IC0tcmwtc291cy1iYXM6IDgycHg7IC0tcmwtc291cy1kZWNhbGU6IG5vbmU7IC0tcmwtc291cy1sYXJnZXVyOiBhdXRvOyAtLXJsLXNvdXMtbWF4OiBub25lOyAtLXJsLXNvdXMtdGFpbGxlOiAxM3B4OyAtLXJsLWxlY3R1cmUtZHJvaXRlOiBjYWxjKDUwJSAtIDIzcHgpOyAtLXJsLWJ1bGxlMS1kcm9pdGU6IC0xMiU7IC0tcmwtYnVsbGUxLWhhdXQ6IDQwJTsgLS1ybC1idWxsZTEtdGFpbGxlOiA5NnB4OyAtLXJsLWJ1bGxlMi1kcm9pdGU6IDY4JTsgLS1ybC1idWxsZTItaGF1dDogNDclOyB9ICZbZGF0YS1mb3JtYXQ9IjE6MSJdIHsgd2lkdGg6IDM4OHB4OyBoZWlnaHQ6IDM4OHB4OyAtLXJsLWVjcmFuLXRpdHJlOiA0NHB4OyAtLXJsLXNvdXMtZ2F1Y2hlOiAxOHB4OyAtLXJsLXNvdXMtZHJvaXRlOiA3NnB4OyAtLXJsLXNvdXMtZGVjYWxlOiBub25lOyAtLXJsLXNvdXMtbGFyZ2V1cjogYXV0bzsgLS1ybC1zb3VzLW1heDogbm9uZTsgLS1ybC1idWxsZTEtZHJvaXRlOiA4JTsgLS1ybC1idWxsZTEtaGF1dDogMzQlOyB9IEBtZWRpYSAobWF4LXdpZHRoOiA5ODBweCkgeyB3aWR0aDogMTAwJTsgaGVpZ2h0OiBhdXRvOyBhc3BlY3QtcmF0aW86IDE2IC8gOTsgLS1ybC1lY3Jhbi10aXRyZTogMzRweDsgLS1ybC1lY3Jhbi10aXRyZS1oYXV0OiA1MnB4OyAmW2RhdGEtZm9ybWF0PSI5OjE2Il0geyB3aWR0aDogMjM2cHg7IGhlaWdodDogNDIwcHg7IGFzcGVjdC1yYXRpbzogYXV0bzsgLS1ybC1lY3Jhbi10aXRyZTogMzJweDsgLS1ybC1lY3Jhbi10aXRyZS1oYXV0OiA1NnB4OyB9ICZbZGF0YS1mb3JtYXQ9IjE6MSJdIHsgd2lkdGg6IG1pbigxMDAlLCAzNjBweCk7IGhlaWdodDogYXV0bzsgYXNwZWN0LXJhdGlvOiAxIC8gMTsgLS1ybC1lY3Jhbi10aXRyZTogMzZweDsgLS1ybC1lY3Jhbi10aXRyZS1oYXV0OiA2NHB4OyB9IH0gQG1lZGlhIChtYXgtd2lkdGg6IDc2N3B4KSB7ICY6bm90KFtkYXRhLWZvcm1hdD0iOToxNiJdKTpub3QoW2RhdGEtZm9ybWF0PSIxOjEiXSkgeyAtLXJsLWVjcmFuLXRpdHJlOiAyNHB4OyAtLXJsLWVjcmFuLXRpdHJlLWhhdXQ6IDQycHg7IC0tcmwtc291cy1iYXM6IDE2cHg7IC0tcmwtc291cy10YWlsbGU6IDEycHg7IC0tcmwtc291cy1tYXg6IGNhbGMoMTAwJSAtIDkwcHgpOyAtLXJsLXNvdXMtZ2F1Y2hlOiAxNHB4OyAtLXJsLXNvdXMtZGVjYWxlOiBub25lOyAtLXJsLWxlY3R1cmUtZWNyYW46IDM4cHg7IC0tcmwtbGVjdHVyZS1kcm9pdGU6IDEycHg7IC0tcmwtbGVjdHVyZS1iYXM6IDE0cHg7IC0tcmwtYnVsbGUxLXRhaWxsZTogNzBweDsgfSB9"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-56c81f2",
+            "label": "ecran-video",
+            "groupe": "Vidéo et images",
+            "description": "Image de la vidéo dans le cadre : coins arrondis, dégradé violet, deux bulles de verre qui flottent.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "width": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 100,
+                                "unit": "%"
+                            }
+                        },
+                        "height": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 100,
+                                "unit": "%"
+                            }
+                        },
+                        "overflow": {
+                            "$$type": "string",
+                            "value": "hidden"
+                        },
+                        "position": {
+                            "$$type": "string",
+                            "value": "relative"
+                        },
+                        "color": {
+                            "$$type": "color",
+                            "value": "#FFFFFF"
+                        },
+                        "padding": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 0,
+                                "unit": "px"
+                            }
+                        },
+                        "border-radius": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 22,
+                                "unit": "px"
+                            }
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "YmFja2dyb3VuZC1pbWFnZTogcmFkaWFsLWdyYWRpZW50KDEzMCUgMTIwJSBhdCA4NSUgMTUlLCAjOUM3QkY1IDAlLCAjNUM0QkVFIDM0JSwgIzM0MzRFMCA2MiUsICMxQzFDOEUgMTAwJSk7IGlzb2xhdGlvbjogaXNvbGF0ZTsgJjo6YmVmb3JlIHsgcG9zaXRpb246IHJlbGF0aXZlOyB0b3A6IGF1dG87IHJpZ2h0OiBhdXRvOyBib3R0b206IGF1dG87IGxlZnQ6IGF1dG87IGhlaWdodDogYXV0bzsgb3BhY2l0eTogMTsgbWl4LWJsZW5kLW1vZGU6IG5vcm1hbDsgYm9yZGVyOiAwOyBjb250ZW50OiAnJzsgcG9zaXRpb246IGFic29sdXRlOyB6LWluZGV4OiAyOyByaWdodDogdmFyKC0tcmwtYnVsbGUxLWRyb2l0ZSwgMTQlKTsgdG9wOiB2YXIoLS1ybC1idWxsZTEtaGF1dCwgMjQlKTsgd2lkdGg6IHZhcigtLXJsLWJ1bGxlMS10YWlsbGUsIDExOHB4KTsgaGVpZ2h0OiB2YXIoLS1ybC1idWxsZTEtdGFpbGxlLCAxMThweCk7IGJvcmRlci1yYWRpdXM6IDUwJTsgcG9pbnRlci1ldmVudHM6IG5vbmU7IGJhY2tncm91bmQ6IHJnYmEoMjU1LDI1NSwyNTUsMC4yMik7IGJhY2tkcm9wLWZpbHRlcjogYmx1cigxMHB4KTsgYm94LXNoYWRvdzogaW5zZXQgMCAxcHggMCByZ2JhKDI1NSwyNTUsMjU1LDAuOSksIDAgMjBweCA0MHB4IC0xOHB4IHJnYmEoMjAsMTAsODAsMC42KTsgdHJhbnNpdGlvbjogcmlnaHQgMC42cywgdG9wIDAuNnMsIHdpZHRoIDAuNnMsIGhlaWdodCAwLjZzOyB9ICY6OmFmdGVyIHsgY29udGVudDogJyc7IHBvc2l0aW9uOiBhYnNvbHV0ZTsgei1pbmRleDogMjsgcmlnaHQ6IHZhcigtLXJsLWJ1bGxlMi1kcm9pdGUsIDM3JSk7IHRvcDogdmFyKC0tcmwtYnVsbGUyLWhhdXQsIDU4JSk7IHdpZHRoOiA0NnB4OyBoZWlnaHQ6IDQ2cHg7IGJvcmRlci1yYWRpdXM6IDE0cHg7IHJvdGF0ZTogMTRkZWc7IHBvaW50ZXItZXZlbnRzOiBub25lOyBiYWNrZ3JvdW5kOiByZ2JhKDI1NSwyMDksMTkxLDAuNSk7IGJhY2tkcm9wLWZpbHRlcjogYmx1cig4cHgpOyBib3gtc2hhZG93OiBpbnNldCAwIDFweCAwIHJnYmEoMjU1LDI1NSwyNTUsMC45KTsgdHJhbnNpdGlvbjogcmlnaHQgMC42cywgdG9wIDAuNnM7IH0gJjo6YmVmb3JlIHsgYW5pbWF0aW9uOiBybC1mbG90dGUgOHMgZWFzZS1pbi1vdXQgaW5maW5pdGU7IH0gJjo6YWZ0ZXIgeyBhbmltYXRpb246IHJsLWZsb3R0ZSA4cyBlYXNlLWluLW91dCAtM3MgaW5maW5pdGU7IH0="
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-6300012",
+            "label": "ecran-fond",
+            "groupe": "Vidéo et images",
+            "description": "Fond de l'écran : votre image, recadrée selon le format, sous un voile violet (lisibilité) ; barre de lecture en bas.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "overflow": {
+                            "$$type": "string",
+                            "value": "hidden"
+                        },
+                        "position": {
+                            "$$type": "string",
+                            "value": "absolute"
+                        },
+                        "inset-block-start": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 0,
+                                "unit": "px"
+                            }
+                        },
+                        "inset-inline-end": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 0,
+                                "unit": "px"
+                            }
+                        },
+                        "inset-block-end": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 0,
+                                "unit": "px"
+                            }
+                        },
+                        "inset-inline-start": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 0,
+                                "unit": "px"
+                            }
+                        },
+                        "z-index": {
+                            "$$type": "number",
+                            "value": 0
+                        },
+                        "padding": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 0,
+                                "unit": "px"
+                            }
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "Jjo6YmVmb3JlIHsgcG9zaXRpb246IHJlbGF0aXZlOyB0b3A6IGF1dG87IHJpZ2h0OiBhdXRvOyBib3R0b206IGF1dG87IGxlZnQ6IGF1dG87IGhlaWdodDogYXV0bzsgb3BhY2l0eTogMTsgbWl4LWJsZW5kLW1vZGU6IG5vcm1hbDsgYm9yZGVyOiAwOyBjb250ZW50OiAnJzsgcG9zaXRpb246IGFic29sdXRlOyB6LWluZGV4OiAyOyBsZWZ0OiAwOyByaWdodDogMDsgYm90dG9tOiAwOyB3aWR0aDogYXV0bzsgaGVpZ2h0OiA1cHg7IGJhY2tncm91bmQ6IGxpbmVhci1ncmFkaWVudCgjRkZEMUJGLCAjRkZEMUJGKSBsZWZ0IGNlbnRlciAvIDQyJSAxMDAlIG5vLXJlcGVhdCwgcmdiYSgyNTUsMjU1LDI1NSwwLjIpOyB9ICY6OmFmdGVyIHsgY29udGVudDogJyc7IHBvc2l0aW9uOiBhYnNvbHV0ZTsgei1pbmRleDogMTsgdG9wOiAwOyByaWdodDogMDsgYm90dG9tOiAwOyBsZWZ0OiAwOyBwb2ludGVyLWV2ZW50czogbm9uZTsgYmFja2dyb3VuZDogcmFkaWFsLWdyYWRpZW50KDI4JSA3NSUgYXQgNzglIDQ5JSwgcmdiYSgyNTUsMTgwLDE0MCwwLjg1KSwgcmdiYSgyNTUsMTM4LDkxLDAuMzUpIDUwJSwgcmdiYSgyNTUsMTM4LDkxLDApIDEwMCUpLCByYWRpYWwtZ3JhZGllbnQoMTMwJSAxMjAlIGF0IDg1JSAxNSUsIHJnYmEoMTU2LDEyMywyNDUsMC44MikgMCUsIHJnYmEoOTIsNzUsMjM4LDAuODYpIDM0JSwgcmdiYSg1Miw1MiwyMjQsMC45KSA2MiUsIHJnYmEoMjgsMjgsMTQyLDAuOTQpIDEwMCUpOyB9"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-c673a1c",
+            "label": "version-langue",
+            "groupe": "Vidéo et images",
+            "description": "Une version de langue des textes de l'écran (FR, EN, ES). Son identifiant (rl-version-en…) donne la langue.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "position": {
+                            "$$type": "string",
+                            "value": "absolute"
+                        },
+                        "inset-block-start": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 0,
+                                "unit": "px"
+                            }
+                        },
+                        "inset-inline-end": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 0,
+                                "unit": "px"
+                            }
+                        },
+                        "inset-block-end": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 0,
+                                "unit": "px"
+                            }
+                        },
+                        "inset-inline-start": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 0,
+                                "unit": "px"
+                            }
+                        },
+                        "z-index": {
+                            "$$type": "number",
+                            "value": 3
+                        },
+                        "padding": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 0,
+                                "unit": "px"
+                            }
+                        },
+                        "display": {
+                            "$$type": "string",
+                            "value": "block"
+                        }
+                    },
+                    "custom_css": null
+                }
+            ]
+        },
+        {
+            "id": "g-c0e8825",
+            "label": "ecran-haut",
+            "groupe": "Vidéo et images",
+            "description": "Ligne du haut de l'écran (« Votre vidéo · 1:28 »), en capitales.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "position": {
+                            "$$type": "string",
+                            "value": "absolute"
+                        },
+                        "inset-block-start": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 18,
+                                "unit": "px"
+                            }
+                        },
+                        "inset-inline-end": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 20,
+                                "unit": "px"
+                            }
+                        },
+                        "inset-inline-start": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 22,
+                                "unit": "px"
+                            }
+                        },
+                        "font-family": {
+                            "$$type": "font-family",
+                            "value": "Hanken Grotesk"
+                        },
+                        "font-weight": {
+                            "$$type": "string",
+                            "value": "700"
+                        },
+                        "font-size": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 12,
+                                "unit": "px"
+                            }
+                        },
+                        "color": {
+                            "$$type": "color",
+                            "value": "#FFFFFF"
+                        },
+                        "letter-spacing": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 0.08,
+                                "unit": "em"
+                            }
+                        },
+                        "line-height": {
+                            "$$type": "size",
+                            "value": {
+                                "size": "1.2",
+                                "unit": "custom"
+                            }
+                        },
+                        "text-transform": {
+                            "$$type": "string",
+                            "value": "uppercase"
+                        },
+                        "margin": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 0,
+                                "unit": "px"
+                            }
+                        }
+                    },
+                    "custom_css": null
+                }
+            ]
+        },
+        {
+            "id": "g-55a4410",
+            "label": "ecran-titre",
+            "groupe": "Vidéo et images",
+            "description": "Grand titre dans l'écran. Italique = pêche. Sa taille suit le format.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "position": {
+                            "$$type": "string",
+                            "value": "absolute"
+                        },
+                        "inset-inline-end": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 20,
+                                "unit": "px"
+                            }
+                        },
+                        "inset-inline-start": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 24,
+                                "unit": "px"
+                            }
+                        },
+                        "font-family": {
+                            "$$type": "font-family",
+                            "value": "Bricolage Grotesque"
+                        },
+                        "color": {
+                            "$$type": "color",
+                            "value": "#FFFFFF"
+                        },
+                        "letter-spacing": {
+                            "$$type": "size",
+                            "value": {
+                                "size": -0.045,
+                                "unit": "em"
+                            }
+                        },
+                        "line-height": {
+                            "$$type": "size",
+                            "value": {
+                                "size": "0.98",
+                                "unit": "custom"
+                            }
+                        },
+                        "margin": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 0,
+                                "unit": "px"
+                            }
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "Zm9udC13ZWlnaHQ6IDY1MDsgdGV4dC1zaGFkb3c6IDAgMnB4IDE0cHggcmdiYSgxMCwxMCw2MCwwLjM1KTsgdHJhbnNpdGlvbjogZm9udC1zaXplIDAuNnMsIHRvcCAwLjZzOyBpbnNldC1ibG9jay1zdGFydDogdmFyKC0tcmwtZWNyYW4tdGl0cmUtaGF1dCwgNjRweCk7IGZvbnQtc2l6ZTogdmFyKC0tcmwtZWNyYW4tdGl0cmUsIDQ4cHgpOyAmIGVtLCAmIGkgeyBmb250LXN0eWxlOiBub3JtYWw7IGNvbG9yOiAjRkZEMUJGOyB9"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-9f3b85b",
+            "label": "ecran-sous-titre",
+            "groupe": "Vidéo et images",
+            "description": "Sous-titre de la vidéo (bandeau sombre). Sa place suit le format.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "position": {
+                            "$$type": "string",
+                            "value": "absolute"
+                        },
+                        "font-family": {
+                            "$$type": "font-family",
+                            "value": "Hanken Grotesk"
+                        },
+                        "font-weight": {
+                            "$$type": "string",
+                            "value": "600"
+                        },
+                        "color": {
+                            "$$type": "color",
+                            "value": "#FFFFFF"
+                        },
+                        "line-height": {
+                            "$$type": "size",
+                            "value": {
+                                "size": "1.35",
+                                "unit": "custom"
+                            }
+                        },
+                        "text-align": {
+                            "$$type": "string",
+                            "value": "center"
+                        },
+                        "padding": {
+                            "$$type": "dimensions",
+                            "value": {
+                                "block-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 6,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 13,
+                                        "unit": "px"
+                                    }
+                                },
+                                "block-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 6,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 13,
+                                        "unit": "px"
+                                    }
+                                }
+                            }
+                        },
+                        "margin": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 0,
+                                "unit": "px"
+                            }
+                        },
+                        "border-radius": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 8,
+                                "unit": "px"
+                            }
+                        },
+                        "background": {
+                            "$$type": "background",
+                            "value": {
+                                "color": {
+                                    "$$type": "color",
+                                    "value": "rgba(12,10,30,0.72)"
+                                }
+                            }
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "dHJhbnNmb3JtOiB2YXIoLS1ybC1zb3VzLWRlY2FsZSwgdHJhbnNsYXRlWCgtNTAlKSk7IGluc2V0LWlubGluZS1zdGFydDogdmFyKC0tcmwtc291cy1nYXVjaGUsIDUwJSk7IGluc2V0LWlubGluZS1lbmQ6IHZhcigtLXJsLXNvdXMtZHJvaXRlLCBhdXRvKTsgaW5zZXQtYmxvY2stZW5kOiB2YXIoLS1ybC1zb3VzLWJhcywgMzBweCk7IHdpZHRoOiB2YXIoLS1ybC1zb3VzLWxhcmdldXIsIG1heC1jb250ZW50KTsgbWF4LXdpZHRoOiB2YXIoLS1ybC1zb3VzLW1heCwgY2FsYygxMDAlIC0gMTIwcHgpKTsgZm9udC1zaXplOiB2YXIoLS1ybC1zb3VzLXRhaWxsZSwgMTRweCk7"
+                    }
+                }
+            ]
+        },
+        {
             "id": "g-c0564bc",
             "label": "visages",
             "groupe": "Vidéo et images",
@@ -10209,6 +12713,244 @@
                         "z-index": {
                             "$$type": "number",
                             "value": 3
+                        },
+                        "display": {
+                            "$$type": "string",
+                            "value": "block"
+                        },
+                        "height": {
+                            "$$type": "size",
+                            "value": {
+                                "size": null,
+                                "unit": "auto"
+                            }
+                        }
+                    },
+                    "custom_css": null
+                }
+            ]
+        },
+        {
+            "id": "g-4324b57",
+            "label": "illustration-hub",
+            "groupe": "Vidéo et images",
+            "description": "Illustration centrale du schéma (« Votre espace projet »), avec sa marge d'ombre.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "width": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 348,
+                                "unit": "px"
+                            }
+                        },
+                        "max-width": {
+                            "$$type": "size",
+                            "value": {
+                                "size": "calc(100% + 48px)",
+                                "unit": "custom"
+                            }
+                        },
+                        "margin": {
+                            "$$type": "size",
+                            "value": {
+                                "size": -24,
+                                "unit": "px"
+                            }
+                        },
+                        "display": {
+                            "$$type": "string",
+                            "value": "block"
+                        },
+                        "height": {
+                            "$$type": "size",
+                            "value": {
+                                "size": null,
+                                "unit": "auto"
+                            }
+                        }
+                    },
+                    "custom_css": null
+                }
+            ]
+        },
+        {
+            "id": "g-e191feb",
+            "label": "icone-liste",
+            "groupe": "Vidéo et images",
+            "description": "Petite icône carrée (28 px) devant une ligne de liste.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "width": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 28,
+                                "unit": "px"
+                            }
+                        },
+                        "height": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 28,
+                                "unit": "px"
+                            }
+                        },
+                        "display": {
+                            "$$type": "string",
+                            "value": "block"
+                        },
+                        "flex": {
+                            "$$type": "flex",
+                            "value": {
+                                "flexShrink": {
+                                    "$$type": "number",
+                                    "value": 0
+                                }
+                            }
+                        }
+                    },
+                    "custom_css": null
+                }
+            ]
+        },
+        {
+            "id": "g-691f7f9",
+            "label": "icone-badge",
+            "groupe": "Vidéo et images",
+            "description": "Icône ronde (32 px) dans un badge de réassurance.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "width": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 32,
+                                "unit": "px"
+                            }
+                        },
+                        "height": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 32,
+                                "unit": "px"
+                            }
+                        },
+                        "display": {
+                            "$$type": "string",
+                            "value": "block"
+                        },
+                        "flex": {
+                            "$$type": "flex",
+                            "value": {
+                                "flexShrink": {
+                                    "$$type": "number",
+                                    "value": 0
+                                }
+                            }
+                        }
+                    },
+                    "custom_css": null
+                }
+            ]
+        },
+        {
+            "id": "g-f70fb71",
+            "label": "icone-carte",
+            "groupe": "Vidéo et images",
+            "description": "Icône en tête d'une carte (52 px), avec son ombre.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "width": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 80,
+                                "unit": "px"
+                            }
+                        },
+                        "height": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 80,
+                                "unit": "px"
+                            }
+                        },
+                        "margin": {
+                            "$$type": "size",
+                            "value": {
+                                "size": -14,
+                                "unit": "px"
+                            }
+                        },
+                        "display": {
+                            "$$type": "string",
+                            "value": "block"
+                        },
+                        "flex": {
+                            "$$type": "flex",
+                            "value": {
+                                "flexShrink": {
+                                    "$$type": "number",
+                                    "value": 0
+                                }
+                            }
+                        }
+                    },
+                    "custom_css": null
+                }
+            ]
+        },
+        {
+            "id": "g-bbb9370",
+            "label": "image-vignette",
+            "groupe": "Vidéo et images",
+            "description": "Image d'une vignette vidéo : 16:9, coins arrondis, recadrée pour remplir le cadre.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "width": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 100,
+                                "unit": "%"
+                            }
+                        },
+                        "aspect-ratio": {
+                            "$$type": "string",
+                            "value": "16 / 9"
+                        },
+                        "object-fit": {
+                            "$$type": "string",
+                            "value": "cover"
+                        },
+                        "border-radius": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 19,
+                                "unit": "px"
+                            }
                         },
                         "display": {
                             "$$type": "string",
@@ -11083,6 +13825,116 @@
             ]
         },
         {
+            "id": "g-aef0a7c",
+            "label": "liste-icones",
+            "groupe": "Listes",
+            "description": "Liste dont chaque ligne commence par une petite icône, lignes séparées par un filet.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "padding": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 0,
+                                "unit": "px"
+                            }
+                        },
+                        "display": {
+                            "$$type": "string",
+                            "value": "flex"
+                        },
+                        "flex-direction": {
+                            "$$type": "string",
+                            "value": "column"
+                        },
+                        "gap": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 0,
+                                "unit": "px"
+                            }
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "JiA+ICogKyAqIHsgYm9yZGVyLXRvcDogMXB4IHNvbGlkIHZhcigtLXJsLWZpbGV0LWRvdXgsIHJnYmEoMjU1LDI1NSwyNTUsMC4wNykpOyB9"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-a5bcfaa",
+            "label": "ligne-icone",
+            "groupe": "Listes",
+            "description": "Une ligne de liste à icône : l'icône, puis le texte.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "padding": {
+                            "$$type": "dimensions",
+                            "value": {
+                                "block-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 7,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 0,
+                                        "unit": "px"
+                                    }
+                                },
+                                "block-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 7,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 0,
+                                        "unit": "px"
+                                    }
+                                }
+                            }
+                        },
+                        "display": {
+                            "$$type": "string",
+                            "value": "flex"
+                        },
+                        "flex-direction": {
+                            "$$type": "string",
+                            "value": "row"
+                        },
+                        "gap": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 12,
+                                "unit": "px"
+                            }
+                        },
+                        "align-items": {
+                            "$$type": "string",
+                            "value": "center"
+                        }
+                    },
+                    "custom_css": null
+                }
+            ]
+        },
+        {
             "id": "g-b56e252",
             "label": "flotte",
             "groupe": "Décors et mouvement",
@@ -11167,6 +14019,42 @@
                     "props": [],
                     "custom_css": {
                         "raw": "Jjo6YmVmb3JlIHsgcG9zaXRpb246IHJlbGF0aXZlOyB0b3A6IGF1dG87IHJpZ2h0OiBhdXRvOyBib3R0b206IGF1dG87IGxlZnQ6IGF1dG87IGhlaWdodDogYXV0bzsgb3BhY2l0eTogMTsgbWl4LWJsZW5kLW1vZGU6IG5vcm1hbDsgYm9yZGVyOiAwOyBjb250ZW50OiAnJzsgcG9zaXRpb246IGFic29sdXRlOyB6LWluZGV4OiAtMTsgd2lkdGg6IDgyMHB4OyBoZWlnaHQ6IDgyMHB4OyBib3JkZXItcmFkaXVzOiA1MCU7IHBvaW50ZXItZXZlbnRzOiBub25lOyBsZWZ0OiAtMTYlOyB0b3A6IDEwJTsgYmFja2dyb3VuZDogcmFkaWFsLWdyYWRpZW50KGNsb3Nlc3Qtc2lkZSwgcmdiYSg1Miw1MiwyMjQsMC4yNiksIHJnYmEoMTk2LDE4MSwyNTMsMC4yKSA1MCUsIHJnYmEoMjUwLDI0OSwyNDcsMCkgMTAwJSk7IH0gJjo6YWZ0ZXIgeyBjb250ZW50OiAnJzsgcG9zaXRpb246IGFic29sdXRlOyB6LWluZGV4OiAtMTsgd2lkdGg6IDgyMHB4OyBoZWlnaHQ6IDgyMHB4OyBib3JkZXItcmFkaXVzOiA1MCU7IHBvaW50ZXItZXZlbnRzOiBub25lOyByaWdodDogLTE2JTsgdG9wOiA1MiU7IGJhY2tncm91bmQ6IHJhZGlhbC1ncmFkaWVudChjbG9zZXN0LXNpZGUsIHJnYmEoMjU1LDEzOCw5MSwwLjM4KSwgcmdiYSgyNTUsMjA5LDE5MSwwLjMpIDUwJSwgcmdiYSgyNTAsMjQ5LDI0NywwKSAxMDAlKTsgfSAmOjpiZWZvcmUsICY6OmFmdGVyIHsgYW5pbWF0aW9uOiBybC1kZXJpdmUgMjBzIGVhc2UtaW4tb3V0IGluZmluaXRlOyB9ICY6OmFmdGVyIHsgYW5pbWF0aW9uLWRlbGF5OiAtOHM7IH0="
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-07f3338",
+            "label": "halo-doux",
+            "groupe": "Décors et mouvement",
+            "description": "À ajouter à une section claire : grand halo pêche et lilas, doux, au centre gauche. Il dérive lentement.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": [],
+                    "custom_css": {
+                        "raw": "Jjo6YmVmb3JlIHsgcG9zaXRpb246IHJlbGF0aXZlOyB0b3A6IGF1dG87IHJpZ2h0OiBhdXRvOyBib3R0b206IGF1dG87IGxlZnQ6IGF1dG87IGhlaWdodDogYXV0bzsgb3BhY2l0eTogMTsgbWl4LWJsZW5kLW1vZGU6IG5vcm1hbDsgYm9yZGVyOiAwOyBjb250ZW50OiAnJzsgcG9zaXRpb246IGFic29sdXRlOyB6LWluZGV4OiAtMTsgd2lkdGg6IDkwMHB4OyBoZWlnaHQ6IDkwMHB4OyBib3JkZXItcmFkaXVzOiA1MCU7IHBvaW50ZXItZXZlbnRzOiBub25lOyBsZWZ0OiAyMCU7IHRvcDogMjAlOyBiYWNrZ3JvdW5kOiByYWRpYWwtZ3JhZGllbnQoY2xvc2VzdC1zaWRlLCByZ2JhKDI1NSwyMDksMTkxLDAuNSksIHJnYmEoMjM3LDIzMCwyNTUsMC40KSA1MCUsIHJnYmEoMjUwLDI0OSwyNDcsMCkgMTAwJSk7IH0gJjo6YmVmb3JlIHsgYW5pbWF0aW9uOiBybC1kZXJpdmUgMjBzIGVhc2UtaW4tb3V0IGluZmluaXRlOyB9"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-fe443cf",
+            "label": "halos-ia",
+            "groupe": "Décors et mouvement",
+            "description": "À ajouter à une section sombre : halo bleu à gauche, halo pêche à droite (section IA). Ils dérivent lentement.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": [],
+                    "custom_css": {
+                        "raw": "Jjo6YmVmb3JlIHsgcG9zaXRpb246IHJlbGF0aXZlOyB0b3A6IGF1dG87IHJpZ2h0OiBhdXRvOyBib3R0b206IGF1dG87IGxlZnQ6IGF1dG87IGhlaWdodDogYXV0bzsgb3BhY2l0eTogMTsgbWl4LWJsZW5kLW1vZGU6IG5vcm1hbDsgYm9yZGVyOiAwOyBjb250ZW50OiAnJzsgcG9zaXRpb246IGFic29sdXRlOyB6LWluZGV4OiAtMTsgd2lkdGg6IDgyMHB4OyBoZWlnaHQ6IDgyMHB4OyBib3JkZXItcmFkaXVzOiA1MCU7IHBvaW50ZXItZXZlbnRzOiBub25lOyBsZWZ0OiAtMTIlOyB0b3A6IDglOyBiYWNrZ3JvdW5kOiByYWRpYWwtZ3JhZGllbnQoY2xvc2VzdC1zaWRlLCByZ2JhKDUyLDUyLDIyNCwwLjUpLCByZ2JhKDE1LDE1LDE4LDApIDEwMCUpOyB9ICY6OmFmdGVyIHsgY29udGVudDogJyc7IHBvc2l0aW9uOiBhYnNvbHV0ZTsgei1pbmRleDogLTE7IHdpZHRoOiA4NjBweDsgaGVpZ2h0OiA4NjBweDsgYm9yZGVyLXJhZGl1czogNTAlOyBwb2ludGVyLWV2ZW50czogbm9uZTsgcmlnaHQ6IC0xNCU7IHRvcDogMTglOyBiYWNrZ3JvdW5kOiByYWRpYWwtZ3JhZGllbnQoY2xvc2VzdC1zaWRlLCByZ2JhKDI1NSwxMzgsOTEsMC4zKSwgcmdiYSgxNSwxNSwxOCwwKSAxMDAlKTsgfSAmOjpiZWZvcmUsICY6OmFmdGVyIHsgYW5pbWF0aW9uOiBybC1kZXJpdmUgMjBzIGVhc2UtaW4tb3V0IGluZmluaXRlOyB9ICY6OmFmdGVyIHsgYW5pbWF0aW9uLWRlbGF5OiAtOXM7IH0="
                     }
                 }
             ]

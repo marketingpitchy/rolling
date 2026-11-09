@@ -1,0 +1,263 @@
+{
+ "cle": "07-exemples",
+ "titre": "Rolling · 07 Avant Après",
+ "type": "e-flexbox",
+ "composition": {
+  "xml_structure": "<e-flexbox configuration-id=\"Avant Après\"><e-flexbox configuration-id=\"Exemples · contenu\"><e-flexbox configuration-id=\"Exemples · en-tête\"><e-flexbox configuration-id=\"Exemples · repère\"><e-paragraph configuration-id=\"Exemples · timecode\"></e-paragraph><e-paragraph configuration-id=\"Exemples · sur-titre\"></e-paragraph></e-flexbox><e-heading configuration-id=\"Exemples · titre\"></e-heading></e-flexbox><e-flexbox configuration-id=\"Exemples · grille\"><e-flexbox configuration-id=\"Exemple 1\"><e-flexbox configuration-id=\"Exemple 1 · vignette\"><e-image configuration-id=\"Exemple 1 · image\"></e-image></e-flexbox><e-flexbox configuration-id=\"Exemple 1 · légende\"><e-paragraph configuration-id=\"Exemple 1 · avant\"></e-paragraph><e-paragraph configuration-id=\"Exemple 1 · après\"></e-paragraph></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Exemple 2\"><e-flexbox configuration-id=\"Exemple 2 · vignette\"><e-image configuration-id=\"Exemple 2 · image\"></e-image></e-flexbox><e-flexbox configuration-id=\"Exemple 2 · légende\"><e-paragraph configuration-id=\"Exemple 2 · avant\"></e-paragraph><e-paragraph configuration-id=\"Exemple 2 · après\"></e-paragraph></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Exemple 3\"><e-flexbox configuration-id=\"Exemple 3 · vignette\"><e-image configuration-id=\"Exemple 3 · image\"></e-image></e-flexbox><e-flexbox configuration-id=\"Exemple 3 · légende\"><e-paragraph configuration-id=\"Exemple 3 · avant\"></e-paragraph><e-paragraph configuration-id=\"Exemple 3 · après\"></e-paragraph></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Exemple 4\"><e-flexbox configuration-id=\"Exemple 4 · vignette\"><e-image configuration-id=\"Exemple 4 · image\"></e-image></e-flexbox><e-flexbox configuration-id=\"Exemple 4 · légende\"><e-paragraph configuration-id=\"Exemple 4 · avant\"></e-paragraph><e-paragraph configuration-id=\"Exemple 4 · après\"></e-paragraph></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Exemple 5\"><e-flexbox configuration-id=\"Exemple 5 · vignette\"><e-image configuration-id=\"Exemple 5 · image\"></e-image></e-flexbox><e-flexbox configuration-id=\"Exemple 5 · légende\"><e-paragraph configuration-id=\"Exemple 5 · avant\"></e-paragraph><e-paragraph configuration-id=\"Exemple 5 · après\"></e-paragraph></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Exemple 6\"><e-flexbox configuration-id=\"Exemple 6 · vignette\"><e-image configuration-id=\"Exemple 6 · image\"></e-image></e-flexbox><e-flexbox configuration-id=\"Exemple 6 · légende\"><e-paragraph configuration-id=\"Exemple 6 · avant\"></e-paragraph><e-paragraph configuration-id=\"Exemple 6 · après\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Exemples · appel\"><e-paragraph configuration-id=\"Exemples · question\"></e-paragraph><e-button configuration-id=\"Exemples · bouton\"></e-button></e-flexbox></e-flexbox></e-flexbox>",
+  "element_config": {
+   "Avant Après": {
+    "_cssid": "exemples",
+    "tag": "section"
+   },
+   "Exemples · timecode": {
+    "paragraph": "00:04"
+   },
+   "Exemples · sur-titre": {
+    "paragraph": "Avant → Après"
+   },
+   "Exemples · titre": {
+    "tag": "h2",
+    "title": "Ce que ça donne, <em>concrètement.</em>"
+   },
+   "Exemple 1 · image": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/exemple-motion.webp",
+      "alt": "Exemple de vidéo en motion 2D : « 5 idées reçues sur le télétravail »"
+     },
+     "size": "medium_large"
+    }
+   },
+   "Exemple 1 · avant": {
+    "paragraph": "Article de blog"
+   },
+   "Exemple 1 · après": {
+    "paragraph": "vidéo de 90&nbsp;s"
+   },
+   "Exemple 2 · image": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/exemple-demo-produit.webp",
+      "alt": "Exemple de démo produit : « Composition naturelle. »"
+     },
+     "size": "medium_large"
+    }
+   },
+   "Exemple 2 · avant": {
+    "paragraph": "Page web produit"
+   },
+   "Exemple 2 · après": {
+    "paragraph": "démo vidéo"
+   },
+   "Exemple 3 · image": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/exemple-microlearning.webp",
+      "alt": "Exemple de microlearning vertical : « Le réflexe sécurité n°3 »"
+     },
+     "size": "medium_large"
+    }
+   },
+   "Exemple 3 · avant": {
+    "paragraph": "Module de formation"
+   },
+   "Exemple 3 · après": {
+    "paragraph": "microlearning 60&nbsp;s"
+   },
+   "Exemple 4 · image": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/exemple-linkedin.webp",
+      "alt": "Exemple d'annonce LinkedIn : « Nous ouvrons à Lisbonne. »"
+     },
+     "size": "medium_large"
+    }
+   },
+   "Exemple 4 · avant": {
+    "paragraph": "Communiqué"
+   },
+   "Exemple 4 · après": {
+    "paragraph": "annonce vidéo LinkedIn"
+   },
+   "Exemple 5 · image": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/exemple-serie.webp",
+      "alt": "Exemple de série vidéo : « Rapport RSE, épisode par épisode »"
+     },
+     "size": "medium_large"
+    }
+   },
+   "Exemple 5 · avant": {
+    "paragraph": "Rapport PPT"
+   },
+   "Exemple 5 · après": {
+    "paragraph": "série de 6 épisodes"
+   },
+   "Exemple 6 · image": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/exemple-interview.webp",
+      "alt": "Exemple d'interview métier : « 3 questions à Julien »"
+     },
+     "size": "medium_large"
+    }
+   },
+   "Exemple 6 · avant": {
+    "paragraph": "Séminaire &amp; équipes"
+   },
+   "Exemple 6 · après": {
+    "paragraph": "interviews &amp; rétrospectives"
+   },
+   "Exemples · question": {
+    "paragraph": "Et avec vos contenus, <em>ça donnerait quoi&nbsp;?</em>"
+   },
+   "Exemples · bouton": {
+    "text": "Réserver un échange",
+    "link": {
+     "destination": "/contact/"
+    }
+   }
+  },
+  "classes": {
+   "Avant Après": [
+    "section",
+    "halo-doux"
+   ],
+   "Exemples · contenu": [
+    "conteneur"
+   ],
+   "Exemples · en-tête": [
+    "entete-section"
+   ],
+   "Exemples · repère": [
+    "sur-titre"
+   ],
+   "Exemples · timecode": [
+    "timecode"
+   ],
+   "Exemples · titre": [
+    "titre-lg"
+   ],
+   "Exemples · grille": [
+    "grille-3"
+   ],
+   "Exemple 1 · vignette": [
+    "carte-verre",
+    "carte-vignette"
+   ],
+   "Exemple 1 · image": [
+    "image-vignette"
+   ],
+   "Exemple 1 · légende": [
+    "rangee"
+   ],
+   "Exemple 1 · avant": [
+    "tag-bleu"
+   ],
+   "Exemple 1 · après": [
+    "fleche-resultat"
+   ],
+   "Exemple 2 · vignette": [
+    "carte-verre",
+    "carte-vignette"
+   ],
+   "Exemple 2 · image": [
+    "image-vignette"
+   ],
+   "Exemple 2 · légende": [
+    "rangee"
+   ],
+   "Exemple 2 · avant": [
+    "tag-bleu"
+   ],
+   "Exemple 2 · après": [
+    "fleche-resultat"
+   ],
+   "Exemple 3 · vignette": [
+    "carte-verre",
+    "carte-vignette"
+   ],
+   "Exemple 3 · image": [
+    "image-vignette"
+   ],
+   "Exemple 3 · légende": [
+    "rangee"
+   ],
+   "Exemple 3 · avant": [
+    "tag-orange"
+   ],
+   "Exemple 3 · après": [
+    "fleche-resultat"
+   ],
+   "Exemple 4 · vignette": [
+    "carte-verre",
+    "carte-vignette"
+   ],
+   "Exemple 4 · image": [
+    "image-vignette"
+   ],
+   "Exemple 4 · légende": [
+    "rangee"
+   ],
+   "Exemple 4 · avant": [
+    "tag-bleu"
+   ],
+   "Exemple 4 · après": [
+    "fleche-resultat"
+   ],
+   "Exemple 5 · vignette": [
+    "carte-verre",
+    "carte-vignette"
+   ],
+   "Exemple 5 · image": [
+    "image-vignette"
+   ],
+   "Exemple 5 · légende": [
+    "rangee"
+   ],
+   "Exemple 5 · avant": [
+    "tag-bleu"
+   ],
+   "Exemple 5 · après": [
+    "fleche-resultat"
+   ],
+   "Exemple 6 · vignette": [
+    "carte-verre",
+    "carte-vignette"
+   ],
+   "Exemple 6 · image": [
+    "image-vignette"
+   ],
+   "Exemple 6 · légende": [
+    "rangee"
+   ],
+   "Exemple 6 · avant": [
+    "tag-orange"
+   ],
+   "Exemple 6 · après": [
+    "fleche-resultat"
+   ],
+   "Exemples · appel": [
+    "rangee"
+   ],
+   "Exemples · question": [
+    "accroche"
+   ],
+   "Exemples · bouton": [
+    "bouton-principal"
+   ]
+  },
+  "style": {
+   "Exemples · contenu": "display: flex; flex-direction: column; gap: 0;",
+   "Exemple 1": "display: flex; flex-direction: column; gap: 16px; padding: 0;",
+   "Exemple 2": "display: flex; flex-direction: column; gap: 16px; padding: 0;",
+   "Exemple 3": "display: flex; flex-direction: column; gap: 16px; padding: 0;",
+   "Exemple 4": "display: flex; flex-direction: column; gap: 16px; padding: 0;",
+   "Exemple 5": "display: flex; flex-direction: column; gap: 16px; padding: 0;",
+   "Exemple 6": "display: flex; flex-direction: column; gap: 16px; padding: 0;",
+   "Exemples · appel": "justify-content: center; margin-top: 64px; text-align: center;"
+  }
+ },
+ "brut": {}
+}

@@ -28,7 +28,7 @@
    "Emails · illustration": {
     "image": {
      "src": {
-      "url": "https://media.rolling.invalid/constat-email.png"
+      "url": "https://media.rolling.invalid/constat-email.webp"
      },
      "size": "full"
     }
@@ -45,7 +45,7 @@
    "Blog · illustration": {
     "image": {
      "src": {
-      "url": "https://media.rolling.invalid/constat-blog.png"
+      "url": "https://media.rolling.invalid/constat-blog.webp"
      },
      "size": "full"
     }
@@ -62,7 +62,7 @@
    "Modules · illustration": {
     "image": {
      "src": {
-      "url": "https://media.rolling.invalid/constat-module.png"
+      "url": "https://media.rolling.invalid/constat-module.webp"
      },
      "size": "full"
     }
@@ -79,7 +79,7 @@
    "Événements · illustration": {
     "image": {
      "src": {
-      "url": "https://media.rolling.invalid/constat-evenement.png"
+      "url": "https://media.rolling.invalid/constat-evenement.webp"
      },
      "size": "full"
     }

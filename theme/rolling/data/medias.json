@@ -139,25 +139,25 @@
  },
  {
   "cle": "constat-email",
-  "fichier": "constat-email.png",
+  "fichier": "constat-email.webp",
   "alt": "",
   "titre": "Illustration : un email interne non lu"
  },
  {
   "cle": "constat-blog",
-  "fichier": "constat-blog.png",
+  "fichier": "constat-blog.webp",
   "alt": "",
   "titre": "Illustration : un article de blog lu à 12 %"
  },
  {
   "cle": "constat-module",
-  "fichier": "constat-module.png",
+  "fichier": "constat-module.webp",
   "alt": "",
   "titre": "Illustration : un module de formation PowerPoint"
  },
  {
   "cle": "constat-evenement",
-  "fichier": "constat-evenement.png",
+  "fichier": "constat-evenement.webp",
   "alt": "",
   "titre": "Illustration : une convention annuelle"
  },
@@ -187,13 +187,13 @@
  },
  {
   "cle": "pourqui-recherche",
-  "fichier": "pourqui-recherche.png",
+  "fichier": "pourqui-recherche.webp",
   "alt": "",
   "titre": "Illustration : la vidéo en premier dans une recherche"
  },
  {
   "cle": "pourqui-intranet",
-  "fichier": "pourqui-intranet.png",
+  "fichier": "pourqui-intranet.webp",
   "alt": "",
   "titre": "Illustration : une vidéo regardée jusqu’au bout sur l’intranet"
  },
@@ -286,5 +286,239 @@
   "fichier": "chiffre-500-plus.png",
   "alt": "",
   "titre": "Chiffre en verre « 500+ »"
+ },
+ {
+  "cle": "exemple-motion",
+  "fichier": "exemple-motion.webp",
+  "alt": "Exemple de vidéo en motion 2D : « 5 idées reçues sur le télétravail »",
+  "titre": "Vignette : « 5 idées reçues sur le télétravail »"
+ },
+ {
+  "cle": "exemple-demo-produit",
+  "fichier": "exemple-demo-produit.webp",
+  "alt": "Exemple de démo produit : « Composition naturelle. »",
+  "titre": "Vignette : « Composition naturelle. »"
+ },
+ {
+  "cle": "exemple-microlearning",
+  "fichier": "exemple-microlearning.webp",
+  "alt": "Exemple de microlearning vertical : « Le réflexe sécurité n°3 »",
+  "titre": "Vignette : « Le réflexe sécurité n°3 »"
+ },
+ {
+  "cle": "exemple-linkedin",
+  "fichier": "exemple-linkedin.webp",
+  "alt": "Exemple d'annonce LinkedIn : « Nous ouvrons à Lisbonne. »",
+  "titre": "Vignette : « Nous ouvrons à Lisbonne. »"
+ },
+ {
+  "cle": "exemple-serie",
+  "fichier": "exemple-serie.webp",
+  "alt": "Exemple de série vidéo : « Rapport RSE, épisode par épisode »",
+  "titre": "Vignette : « Rapport RSE, épisode par épisode »"
+ },
+ {
+  "cle": "exemple-interview",
+  "fichier": "exemple-interview.webp",
+  "alt": "Exemple d'interview métier : « 3 questions à Julien »",
+  "titre": "Vignette : « 3 questions à Julien »"
+ },
+ {
+  "cle": "equipe-ronan",
+  "fichier": "equipe-ronan.jpg",
+  "alt": "Ronan, Directeur Technique",
+  "titre": "Portrait : Ronan, Directeur Technique"
+ },
+ {
+  "cle": "equipe-marion-l",
+  "fichier": "equipe-marion-l.jpg",
+  "alt": "Marion, Développeuse Full-Stack",
+  "titre": "Portrait : Marion, Développeuse Full-Stack"
+ },
+ {
+  "cle": "equipe-ines",
+  "fichier": "equipe-ines.jpg",
+  "alt": "Inès, DevOps",
+  "titre": "Portrait : Inès, DevOps"
+ },
+ {
+  "cle": "equipe-hakim",
+  "fichier": "equipe-hakim.jpg",
+  "alt": "Hakim, Développeur Back-End",
+  "titre": "Portrait : Hakim, Développeur Back-End"
+ },
+ {
+  "cle": "equipe-maxime",
+  "fichier": "equipe-maxime.jpg",
+  "alt": "Maxime, Product Manager Senior",
+  "titre": "Portrait : Maxime, Product Manager Senior"
+ },
+ {
+  "cle": "direction-1",
+  "fichier": "direction-1.jpg",
+  "alt": "",
+  "titre": "Visage de l’équipe créa 1"
+ },
+ {
+  "cle": "direction-2",
+  "fichier": "direction-2.jpg",
+  "alt": "",
+  "titre": "Visage de l’équipe créa 2"
+ },
+ {
+  "cle": "direction-3",
+  "fichier": "direction-3.jpg",
+  "alt": "",
+  "titre": "Visage de l’équipe créa 3"
+ },
+ {
+  "cle": "ia-icone-scenario",
+  "fichier": "ia-icone-scenario.webp",
+  "alt": "",
+  "titre": "Icône : Pistes de scénario"
+ },
+ {
+  "cle": "ia-icone-storyboards",
+  "fichier": "ia-icone-storyboards.webp",
+  "alt": "",
+  "titre": "Icône : Storyboards"
+ },
+ {
+  "cle": "ia-icone-da",
+  "fichier": "ia-icone-da.webp",
+  "alt": "",
+  "titre": "Icône : Pistes de DA"
+ },
+ {
+  "cle": "ia-icone-images",
+  "fichier": "ia-icone-images.webp",
+  "alt": "",
+  "titre": "Icône : Images et illustrations"
+ },
+ {
+  "cle": "ia-icone-motion",
+  "fichier": "ia-icone-motion.webp",
+  "alt": "",
+  "titre": "Icône : Habillage et motion"
+ },
+ {
+  "cle": "ia-icone-voix",
+  "fichier": "ia-icone-voix.webp",
+  "alt": "",
+  "titre": "Icône : Voix off"
+ },
+ {
+  "cle": "ia-icone-son",
+  "fichier": "ia-icone-son.webp",
+  "alt": "",
+  "titre": "Icône : Sound design"
+ },
+ {
+  "cle": "ia-icone-sous-titres",
+  "fichier": "ia-icone-sous-titres.webp",
+  "alt": "",
+  "titre": "Icône : Sous-titres et traductions"
+ },
+ {
+  "cle": "ia-icone-formats",
+  "fichier": "ia-icone-formats.webp",
+  "alt": "",
+  "titre": "Icône : Déclinaisons de formats"
+ },
+ {
+  "cle": "ia-icone-versions",
+  "fichier": "ia-icone-versions.webp",
+  "alt": "",
+  "titre": "Icône : Premières versions"
+ },
+ {
+  "cle": "ia-icone-intention",
+  "fichier": "ia-icone-intention.webp",
+  "alt": "",
+  "titre": "Icône : Note d'intention"
+ },
+ {
+  "cle": "ia-icone-planning",
+  "fichier": "ia-icone-planning.webp",
+  "alt": "",
+  "titre": "Icône : Planning et suivi"
+ },
+ {
+  "cle": "ia-icone-piste",
+  "fichier": "ia-icone-piste.webp",
+  "alt": "",
+  "titre": "Icône : Choix de la piste"
+ },
+ {
+  "cle": "ia-icone-direction",
+  "fichier": "ia-icone-direction.webp",
+  "alt": "",
+  "titre": "Icône : Direction artistique"
+ },
+ {
+  "cle": "ia-icone-charte",
+  "fichier": "ia-icone-charte.webp",
+  "alt": "",
+  "titre": "Icône : Respect de la charte"
+ },
+ {
+  "cle": "ia-icone-main",
+  "fichier": "ia-icone-main.webp",
+  "alt": "",
+  "titre": "Icône : Animation à la main"
+ },
+ {
+  "cle": "ia-icone-montage",
+  "fichier": "ia-icone-montage.webp",
+  "alt": "",
+  "titre": "Icône : Rythme et montage"
+ },
+ {
+  "cle": "ia-icone-corrections",
+  "fichier": "ia-icone-corrections.webp",
+  "alt": "",
+  "titre": "Icône : Corrections et finitions"
+ },
+ {
+  "cle": "ia-icone-cible",
+  "fichier": "ia-icone-cible.webp",
+  "alt": "",
+  "titre": "Icône : Adaptation à la cible"
+ },
+ {
+  "cle": "ia-icone-validation",
+  "fichier": "ia-icone-validation.webp",
+  "alt": "",
+  "titre": "Icône : Validation finale"
+ },
+ {
+  "cle": "ia-icone-factory",
+  "fichier": "ia-icone-factory.webp",
+  "alt": "",
+  "titre": "Icône : IA Factory"
+ },
+ {
+  "cle": "badge-securite",
+  "fichier": "badge-securite.webp",
+  "alt": "",
+  "titre": "Icône de badge : IA sécurisée"
+ },
+ {
+  "cle": "badge-europe",
+  "fichier": "badge-europe.webp",
+  "alt": "",
+  "titre": "Icône de badge : Données en Europe"
+ },
+ {
+  "cle": "badge-rgpd",
+  "fichier": "badge-rgpd.webp",
+  "alt": "",
+  "titre": "Icône de badge : RGPD"
+ },
+ {
+  "cle": "ia-espace-projet",
+  "fichier": "ia-espace-projet.webp",
+  "alt": "Votre espace projet : notre IA propose, nos créas corrigent. Vous suivez, échangez et validez.",
+  "titre": "Schéma : votre espace projet"
  }
 ]

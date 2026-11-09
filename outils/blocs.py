@@ -278,10 +278,10 @@ pourquoi = F('Pourquoi la vidéo', ['section', 'section-sombre', 'halos-nuit'], 
             ('Demain, sans vidéo, <em>elle sera ignorée.</em>', 'h2', ['titre-lg']),
         ]),
         F('Pourquoi · cartes', ['grille-4'], enfants=[
-            constat('Emails', 'Déjà écrit', False, 'constat-email.png', 'Vos emails internes&nbsp;?', 'Ignorés.', '#FFD1BF', None),
-            constat('Blog', 'Déjà écrit', False, 'constat-blog.png', 'Vos articles de blog&nbsp;?', 'Survolés.', '#D9CFFF', 'halo-lilas'),
-            constat('Modules', 'Déjà écrit', False, 'constat-module.png', 'Vos modules PowerPoint&nbsp;?', 'Subis.', '#C8CBFF', 'halo-bleu'),
-            constat('Événements', 'À tourner', True, 'constat-evenement.png', 'Vos événements&nbsp;?', 'Oubliés.', '#FFB48C', 'halo-orange'),
+            constat('Emails', 'Déjà écrit', False, 'constat-email.webp', 'Vos emails internes&nbsp;?', 'Ignorés.', '#FFD1BF', None),
+            constat('Blog', 'Déjà écrit', False, 'constat-blog.webp', 'Vos articles de blog&nbsp;?', 'Survolés.', '#D9CFFF', 'halo-lilas'),
+            constat('Modules', 'Déjà écrit', False, 'constat-module.webp', 'Vos modules PowerPoint&nbsp;?', 'Subis.', '#C8CBFF', 'halo-bleu'),
+            constat('Événements', 'À tourner', True, 'constat-evenement.webp', 'Vos événements&nbsp;?', 'Oubliés.', '#FFB48C', 'halo-orange'),
         ]),
         P('Pourquoi · chute', "Vous n'avez pas le temps&nbsp;? <strong>C'est notre métier&nbsp;: nous nous en occupons, sans limite.</strong>", ['phrase-chute'], 'margin-top: 52px;'),
     ]),
@@ -334,7 +334,7 @@ pour_qui = F('Pour qui', ['section', 'halos-cotes'], tag='section', enfants=[
         chapitre('Marketing', ['chapitre-colle'], [
             D('Marketing · photo', ['cadre-photo', 'photo-chapitre'], enfants=[
                 I('Marketing · image', 'pourqui-marketing.jpg', "Des mains tapent sur le clavier d'un ordinateur portable", ['image-couvrante'], 'object-position: 42% 55%;'),
-                I('Marketing · illustration', 'pourqui-recherche.png', cls=['illustration-photo']),
+                I('Marketing · illustration', 'pourqui-recherche.webp', cls=['illustration-photo']),
             ]),
         ], colonne_chapitre('Marketing', 'Marketing &amp; communication', 'picto-megaphone.png', 'Soyez vus là où vos clients vous <b>cherchent.</b>', 'bleu',
             'Google et les IA privilégient, dans leurs réponses, les marques qui ont des vidéos. Et YouTube ou TikTok sont devenus des moteurs de recherche à part entière.',
@@ -346,7 +346,7 @@ pour_qui = F('Pour qui', ['section', 'halos-cotes'], tag='section', enfants=[
                 I('Interne · image', 'pourqui-interne.jpg', 'Une collaboratrice, souriante, filmée pour une vidéo interne', ['image-couvrante'], 'object-position: 56% 30%;'),
                 P('Interne · rec', 'REC', ['rec-libelle']),
                 P('Interne · durée', '00:00:58', ['rec-libelle', 'rec-droite']),
-                I('Interne · illustration', 'pourqui-intranet.png', cls=['illustration-photo']),
+                I('Interne · illustration', 'pourqui-intranet.webp', cls=['illustration-photo']),
             ]),
         ], texte=colonne_chapitre('Interne', 'Com interne · RH · Formation', 'picto-equipe.png', 'Soyez enfin <u>regardés.</u>', 'orange',
             "Livrets d'accueil, procédures, formations, notes internes&nbsp;: vous avez des centaines de pages que personne ne lit. Le fond est déjà là, il ne lui manque que la vidéo.",
@@ -379,6 +379,144 @@ methode = F('La méthode', ['section', 'section-lilas'], tag='section', ancre='m
     ]),
 ])
 
+# --------------------------------------------------------------------------------------------
+# 00:04 Avant → Après
+# --------------------------------------------------------------------------------------------
+
+def exemple(n, image, alt, depart, tag, resultat):
+    return F('Exemple %d' % n, None, 'display: flex; flex-direction: column; gap: 16px; padding: 0;', enfants=[
+        F('Exemple %d · vignette' % n, ['carte-verre', 'carte-vignette'], enfants=[
+            I('Exemple %d · image' % n, image, alt, ['image-vignette'], taille='medium_large'),
+        ]),
+        F('Exemple %d · légende' % n, ['rangee'], enfants=[
+            P('Exemple %d · avant' % n, depart, [tag]),
+            P('Exemple %d · après' % n, resultat, ['fleche-resultat']),
+        ]),
+    ])
+
+
+exemples = F('Avant Après', ['section', 'halo-doux'], tag='section', ancre='exemples', enfants=[
+    F('Exemples · contenu', ['conteneur'], COLONNE, enfants=[
+        entete('Exemples', '00:04', 'Avant → Après', [('Ce que ça donne, <em>concrètement.</em>', 'h2', ['titre-lg'])]),
+        F('Exemples · grille', ['grille-3'], enfants=[
+            exemple(1, 'exemple-motion.webp', 'Exemple de vidéo en motion 2D : « 5 idées reçues sur le télétravail »', 'Article de blog', 'tag-bleu', 'vidéo de 90&nbsp;s'),
+            exemple(2, 'exemple-demo-produit.webp', 'Exemple de démo produit : « Composition naturelle. »', 'Page web produit', 'tag-bleu', 'démo vidéo'),
+            exemple(3, 'exemple-microlearning.webp', 'Exemple de microlearning vertical : « Le réflexe sécurité n°3 »', 'Module de formation', 'tag-orange', 'microlearning 60&nbsp;s'),
+            exemple(4, 'exemple-linkedin.webp', "Exemple d'annonce LinkedIn : « Nous ouvrons à Lisbonne. »", 'Communiqué', 'tag-bleu', 'annonce vidéo LinkedIn'),
+            exemple(5, 'exemple-serie.webp', 'Exemple de série vidéo : « Rapport RSE, épisode par épisode »', 'Rapport PPT', 'tag-bleu', 'série de 6 épisodes'),
+            exemple(6, 'exemple-interview.webp', "Exemple d'interview métier : « 3 questions à Julien »", 'Séminaire &amp; équipes', 'tag-orange', 'interviews &amp; rétrospectives'),
+        ]),
+        F('Exemples · appel', ['rangee'], 'justify-content: center; margin-top: 64px; text-align: center;', enfants=[
+            P('Exemples · question', 'Et avec vos contenus, <em>ça donnerait quoi&nbsp;?</em>', ['accroche']),
+            B('Exemples · bouton', 'Réserver un échange', '/contact/', ['bouton-principal']),
+        ]),
+    ]),
+])
+
+# --------------------------------------------------------------------------------------------
+# 00:05 Le meilleur de l'IA
+# --------------------------------------------------------------------------------------------
+
+LIGNE = 'display: flex; flex-direction: row; align-items: center; gap: 14px; padding: 0;'
+
+
+def liste_icones(prefixe, lignes):
+    return F(prefixe, ['liste-icones'], enfants=[
+        F(prefixe + ' · ' + texte, ['ligne-icone'], enfants=[
+            I(prefixe + ' · icône · ' + texte, 'ia-icone-' + icone + '.webp', cls=['icone-liste'], taille='thumbnail'),
+            P(prefixe + ' · texte · ' + texte, texte, ['texte']),
+        ]) for icone, texte in lignes
+    ])
+
+
+def version_ecran(langue, haut, titre, sous, cachee):
+    return F('Écran · version ' + langue.upper(), ['version-langue'] + (['version-cachee'] if cachee else []), ancre='rl-version-' + langue, enfants=[
+        P('Écran · ' + langue.upper() + ' · haut', haut, ['ecran-haut']),
+        P('Écran · ' + langue.upper() + ' · titre', titre, ['ecran-titre']),
+        P('Écran · ' + langue.upper() + ' · sous-titre', sous, ['ecran-sous-titre']),
+    ])
+
+
+def membre(prefixe, cle, nom, poste, sombre=False):
+    return F(prefixe + ' · ' + nom, ['membre-equipe'], enfants=[
+        I(prefixe + ' · ' + nom + ' · photo', 'equipe-' + cle + '.jpg', nom + ', ' + poste, ['portrait'] + (['portrait-sombre'] if sombre else []), taille='medium'),
+        P(prefixe + ' · ' + nom + ' · prénom', nom, ['nom-membre']),
+        P(prefixe + ' · ' + nom + ' · poste', poste, ['poste-membre']),
+    ])
+
+
+entete_ia = entete('IA', '00:05', 'Sous le capot', [("Le meilleur <em>de l'IA.</em>", 'h2', ['titre-xl'])],
+                   intro='Nous orchestrons les meilleures IA du marché au sein de notre <strong>IA Factory</strong>. Pilotée par notre équipe tech, notre plateforme génère des pistes de scénarios, des storyboards et des premières versions. <strong>Nos créas choisissent, corrigent, adaptent… et perfectionnent chaque vidéo.</strong>')
+entete_ia.enfants.append(F('IA · badges', ['rangee'], 'margin-top: 8px;', enfants=[
+    F('IA · badge · ' + texte, ['badge-securite'], enfants=[
+        I('IA · badge · ' + texte + ' · icône', 'badge-' + icone + '.webp', cls=['icone-badge'], taille='thumbnail'),
+        P('IA · badge · ' + texte + ' · texte', texte),
+    ]) for icone, texte in (('securite', 'IA sécurisée'), ('europe', 'Données hébergées en Europe'), ('rgpd', 'Conforme RGPD'))
+]))
+
+ia = F("Le meilleur de l'IA", ['section', 'section-sombre', 'fond-grille', 'halos-ia'], tag='section', ancre='ia', enfants=[
+    F('IA · contenu', ['conteneur'], COLONNE, enfants=[
+        entete_ia,
+        F('IA · schéma', ['grille-schema'], enfants=[
+            F('IA · factory', ['carte-verre', 'carte-ia'], enfants=[
+                F('Factory · tête', None, LIGNE + ' min-height: 84px;', enfants=[
+                    I('Factory · icône', 'ia-icone-factory.webp', cls=['icone-carte'], taille='thumbnail'),
+                    F('Factory · titres', None, COLONNE, enfants=[
+                        P('Factory · rôle', 'Propose · génère · décline', ['label', 'label-violet']),
+                        H('Factory · titre', 'Notre IA Factory', 'h3', ['titre-xs']),
+                    ]),
+                ]),
+                liste_icones('Factory · liste', [('scenario', 'Pistes de scénario'), ('storyboards', 'Storyboards'), ('da', 'Pistes de DA'), ('images', 'Images et illustrations'), ('motion', 'Habillage et motion'), ('voix', 'Voix off'), ('son', 'Sound design'), ('sous-titres', 'Sous-titres et traductions'), ('formats', 'Déclinaisons de formats'), ('versions', 'Premières versions')]),
+            ]),
+            F('IA · centre', ['colonne-flux'], enfants=[
+                P('Centre · vos contenus', 'Vos contenus &amp; vos briefs', ['pilule-flux']),
+                I('Centre · espace projet', 'ia-espace-projet.webp', 'Votre espace projet : notre IA propose, nos créas corrigent. Vous suivez, échangez et validez.', ['illustration-hub']),
+            ]),
+            F('IA · créas', ['carte-verre', 'carte-humain'], enfants=[
+                F('Créas · tête', None, LIGNE + ' min-height: 84px;', enfants=[
+                    F('Créas · visages', ['visages'], enfants=[I('Créas · visage %d' % i, 'direction-%d.jpg' % i, taille='thumbnail') for i in (1, 2, 3)]),
+                    F('Créas · titres', None, COLONNE, enfants=[
+                        P('Créas · rôle', 'Choisit · corrige · adapte', ['label', 'label-peche']),
+                        H('Créas · titre', 'Directeur artistique,<br>chef de projet<br>&amp; motion designer', 'h3', ['titre-xs']),
+                    ]),
+                ]),
+                liste_icones('Créas · liste', [('intention', "Note d'intention"), ('planning', 'Planning et suivi de production'), ('piste', 'Choix de la piste'), ('direction', 'Direction artistique'), ('charte', 'Respect de votre charte'), ('main', 'Animation à la main'), ('montage', 'Rythme et montage'), ('corrections', 'Corrections et finitions'), ('cible', 'Adaptation à votre cible'), ('validation', 'Validation finale')]),
+            ]),
+        ]),
+        F('IA · votre vidéo', None, 'display: flex; flex-direction: column; align-items: center; gap: 0; width: 100%; max-width: 620px; margin: 72px auto 0; padding: 0;', enfants=[
+            F('Écran · boutons', ['rangee'], 'justify-content: center; margin-bottom: 18px;', enfants=[
+                F('Écran · formats', ['groupe-choix'], enfants=[P('Écran · formats · nom', 'Format', ['nom-groupe'])] + [
+                    B('Écran · format ' + f, f, '#rl-format-' + f.replace(':', '-'), ['choix-ecran']) for f in ('16:9', '9:16', '1:1')]),
+                F('Écran · langues', ['groupe-choix'], enfants=[P('Écran · langues · nom', 'Langue', ['nom-groupe'])] + [
+                    B('Écran · langue ' + l, l, '#rl-langue-' + l.lower(), ['choix-ecran']) for l in ('FR', 'EN', 'ES')]),
+            ]),
+            F('Écran · scène', ['scene-ecran'], 'width: 100%;', enfants=[
+                F('Écran · cadre', ['ecran-cadre'], ancre='rl-ecran', enfants=[
+                    F('Écran · vidéo', ['ecran-video'], enfants=[
+                        D('Écran · fond', ['ecran-fond'], enfants=[I('Écran · image de fond', 'pourqui-interne.jpg', cls=['image-couvrante'], taille='large')]),
+                        version_ecran('fr', 'Votre vidéo · 1:28', 'Bienvenue<br><em>chez nous.</em>', '«&nbsp;Votre premier jour commence ici.&nbsp;»', False),
+                        version_ecran('en', 'Your video · 1:28', 'Welcome<br><em>aboard.</em>', '“Your first day starts here.”', True),
+                        version_ecran('es', 'Tu vídeo · 1:28', 'Bienvenido<br><em>a bordo.</em>', '«&nbsp;Tu primer día empieza aquí.&nbsp;»', True),
+                        I('Écran · lecture', 'bouton-lecture.png', cls=['bouton-lecture', 'lecture-ecran'], taille='thumbnail'),
+                    ]),
+                ]),
+            ]),
+            P('Écran · légende', 'Votre vidéo, <em>prête à publier.</em>', ['legende-ecran'], 'margin-top: 20px;'),
+            P('Écran · sous-légende', 'Tous les formats, toutes les langues, à votre charte.', ['texte-petit'], 'margin-top: 4px; text-align: center;'),
+        ]),
+        F('IA · experts', None, COLONNE + ' margin-top: 104px;', enfants=[
+            H('Experts · titre', 'Nos experts <em>IA.</em>', 'h3', ['titre-sm']),
+            F('Experts · portraits', ['grille-equipe'], 'margin-top: 36px;', enfants=[
+                membre('Experts', 'ronan', 'Ronan', 'Directeur Technique', True),
+                membre('Experts', 'marion-l', 'Marion', 'Développeuse Full-Stack', True),
+                membre('Experts', 'ines', 'Inès', 'DevOps', True),
+                membre('Experts', 'hakim', 'Hakim', 'Développeur Back-End', True),
+                membre('Experts', 'maxime', 'Maxime', 'Product Manager Senior', True),
+            ]),
+        ]),
+    ]),
+])
+
 BLOCS = [
     ('01-hero', 'Rolling · 01 Hero', hero),
     ('02-logos', 'Rolling · 02 Ils nous font confiance', logos),
@@ -386,6 +524,8 @@ BLOCS = [
     ('04-pourquoi', 'Rolling · 04 Pourquoi la vidéo', pourquoi),
     ('05-pour-qui', 'Rolling · 05 Pour qui', pour_qui),
     ('06-methode', 'Rolling · 06 La méthode', methode),
+    ('07-exemples', 'Rolling · 07 Avant Après', exemples),
+    ('08-ia', "Rolling · 08 Le meilleur de l'IA", ia),
 ]
 
 if __name__ == '__main__':
