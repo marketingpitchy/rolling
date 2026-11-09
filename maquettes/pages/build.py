@@ -119,7 +119,7 @@ def etoiles(note):
 AVIS = ''.join(f'<li><a class="carte-avis" href="#accueil-placeholder" target="_blank" rel="noopener"><span class="avis-image" aria-hidden="true">{im}</span><span class="avis-texte">{etoiles(n)}<span><strong>{n}/5</strong> · {src}</span></span><span class="sr"> (nouvel onglet)</span></a></li>'
                for im, n, src in [('[image]', '4,9', '[37 avis Google]'), ('[badge]', '4,8', '[24 avis, plateforme]'), ('[image]', '5,0', '[12 avis, plateforme]')])
 P['pied-avis'] = P['pied'].replace('<!--AVIS-->', '<ul class="pied-avis" aria-label="Avis de nos clients">' + AVIS + '</ul>')
-P['cta-landing'] = P['cta'].replace('href="#contact"', 'href="#landing-rdv"')
+P['cta-landing'] = re.sub(r'<!--BADGES-->.*?<!--/BADGES-->', '', P['cta'], flags=re.S).replace('href="#contact"', 'href="#landing-rdv"')
 
 def verre(texte):
     # « 87 % » ou « 2 500+ » en chiffres en verre ; le texte réel reste lu par les lecteurs d'écran.

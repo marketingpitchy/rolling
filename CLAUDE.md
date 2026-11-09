@@ -62,6 +62,10 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   Page de maquette « Pied de page avec avis clients (plus tard) ».
   Sections partagées : **composants Elementor** (clic droit sur un flexbox/div-block > « Créer un composant », onglet
   « Composants » ; création/modification = licence Pro active et Pro ≥ 4.0 ; 100 composants max). Non testable sur ma copie.
+- Fiche témoignage, variantes à tester (maquette) : actuel (projet puis citation), A (citation puis projet),
+  B (infos du projet en bandeau horizontal sous le chapô, citation seule à gauche ; sans citation, le récit est centré).
+  Badges IA sécurisée / Europe / RGPD ajoutés sous le bouton du CTA final (pas sur le CTA de la landing : déjà sous la FAQ).
+  Proposition « L'agence » (qui sommes-nous) : en attente des infos de la cliente.
 - FAQ : la cliente ajoute elle-même les réponses ; garder les questions telles quelles.
 - Le WordPress de production existe déjà chez la cliente : on livre seulement le thème (zip à importer).
 
