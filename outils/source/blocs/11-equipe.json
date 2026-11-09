@@ -3,7 +3,7 @@
  "titre": "Rolling · 11 Née chez Pitchy",
  "type": "e-flexbox",
  "composition": {
-  "xml_structure": "<e-flexbox configuration-id=\"Née chez Pitchy\"><e-flexbox configuration-id=\"Équipe · contenu\"><e-flexbox configuration-id=\"Équipe · haut\"><e-flexbox configuration-id=\"Équipe · présentation\"><e-flexbox configuration-id=\"Équipe · en-tête\"><e-flexbox configuration-id=\"Équipe · repère\"><e-paragraph configuration-id=\"Équipe · timecode\"></e-paragraph><e-paragraph configuration-id=\"Équipe · sur-titre\"></e-paragraph></e-flexbox><e-heading configuration-id=\"Équipe · titre\"></e-heading><e-paragraph configuration-id=\"Équipe · texte 1\"></e-paragraph><e-paragraph configuration-id=\"Équipe · texte 2\"></e-paragraph></e-flexbox></e-flexbox><e-div-block configuration-id=\"Équipe · chiffres\"><e-flexbox configuration-id=\"Chiffres · grille\"><e-flexbox configuration-id=\"Chiffre · Ans\"><e-flexbox configuration-id=\"Ans · nombre\"><e-image configuration-id=\"Ans · chiffre 1\"></e-image><e-image configuration-id=\"Ans · chiffre 0\"></e-image><e-paragraph configuration-id=\"Ans · valeur lue\"></e-paragraph><e-paragraph configuration-id=\"Ans · unité\"></e-paragraph></e-flexbox><e-paragraph configuration-id=\"Ans · libellé\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Chiffre · Entreprises\"><e-flexbox configuration-id=\"Entreprises · nombre\"><e-image configuration-id=\"Entreprises · chiffre 500-plus\"></e-image><e-paragraph configuration-id=\"Entreprises · valeur lue\"></e-paragraph></e-flexbox><e-paragraph configuration-id=\"Entreprises · libellé\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Chiffre · Studio\"><e-flexbox configuration-id=\"Studio · nombre\"><e-image configuration-id=\"Studio · chiffre 1\"></e-image><e-paragraph configuration-id=\"Studio · valeur lue\"></e-paragraph></e-flexbox><e-paragraph configuration-id=\"Studio · libellé\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Chiffre · Plateforme\"><e-flexbox configuration-id=\"Plateforme · nombre\"><e-image configuration-id=\"Plateforme · chiffre 1\"></e-image><e-paragraph configuration-id=\"Plateforme · valeur lue\"></e-paragraph></e-flexbox><e-paragraph configuration-id=\"Plateforme · libellé\"></e-paragraph></e-flexbox></e-flexbox></e-div-block></e-flexbox><e-flexbox configuration-id=\"Équipe · témoignage\"><e-image configuration-id=\"Témoignage · photo\"></e-image><e-flexbox configuration-id=\"Témoignage · texte\"><e-paragraph configuration-id=\"Témoignage · citation\"></e-paragraph><e-paragraph configuration-id=\"Témoignage · auteur\"></e-paragraph></e-flexbox><e-button configuration-id=\"Témoignage · bouton\"></e-button></e-flexbox></e-flexbox></e-flexbox>",
+  "xml_structure": "<e-flexbox configuration-id=\"Née chez Pitchy\"><e-flexbox configuration-id=\"Équipe · contenu\"><e-flexbox configuration-id=\"Équipe · présentation\"><e-flexbox configuration-id=\"Équipe · en-tête\"><e-flexbox configuration-id=\"Équipe · repère\"><e-paragraph configuration-id=\"Équipe · timecode\"></e-paragraph><e-paragraph configuration-id=\"Équipe · sur-titre\"></e-paragraph></e-flexbox><e-heading configuration-id=\"Équipe · titre\"></e-heading><e-paragraph configuration-id=\"Équipe · texte 1\"></e-paragraph><e-paragraph configuration-id=\"Équipe · texte 2\"></e-paragraph></e-flexbox></e-flexbox><e-div-block configuration-id=\"Équipe · chiffres\"><e-flexbox configuration-id=\"Chiffres · plaque\"><e-flexbox configuration-id=\"Chiffre · Ans\"><e-flexbox configuration-id=\"Ans · nombre\"><e-image configuration-id=\"Ans · chiffre 1\"></e-image><e-image configuration-id=\"Ans · chiffre 2\"></e-image><e-paragraph configuration-id=\"Ans · valeur lue\"></e-paragraph></e-flexbox><e-paragraph configuration-id=\"Ans · libellé\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Chiffre · Entreprises\"><e-flexbox configuration-id=\"Entreprises · nombre\"><e-image configuration-id=\"Entreprises · chiffre 1\"></e-image><e-image configuration-id=\"Entreprises · chiffre 2\"></e-image><e-image configuration-id=\"Entreprises · chiffre 3\"></e-image><e-image configuration-id=\"Entreprises · chiffre 4\"></e-image><e-paragraph configuration-id=\"Entreprises · valeur lue\"></e-paragraph></e-flexbox><e-paragraph configuration-id=\"Entreprises · libellé\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Chiffre · Studio\"><e-flexbox configuration-id=\"Studio · nombre\"><e-image configuration-id=\"Studio · chiffre 1\"></e-image><e-paragraph configuration-id=\"Studio · valeur lue\"></e-paragraph></e-flexbox><e-paragraph configuration-id=\"Studio · libellé\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Chiffre · Plateforme\"><e-flexbox configuration-id=\"Plateforme · nombre\"><e-image configuration-id=\"Plateforme · chiffre 1\"></e-image><e-paragraph configuration-id=\"Plateforme · valeur lue\"></e-paragraph></e-flexbox><e-paragraph configuration-id=\"Plateforme · libellé\"></e-paragraph></e-flexbox></e-flexbox></e-div-block><e-flexbox configuration-id=\"Équipe · témoignage\"><e-image configuration-id=\"Témoignage · photo\"></e-image><e-flexbox configuration-id=\"Témoignage · texte\"><e-paragraph configuration-id=\"Témoignage · citation\"></e-paragraph><e-paragraph configuration-id=\"Témoignage · auteur\"></e-paragraph></e-flexbox><e-button configuration-id=\"Témoignage · bouton\"></e-button></e-flexbox></e-flexbox></e-flexbox>",
   "element_config": {
    "Née chez Pitchy": {
     "tag": "section"
@@ -32,7 +32,7 @@
      "size": "medium"
     }
    },
-   "Ans · chiffre 0": {
+   "Ans · chiffre 2": {
     "image": {
      "src": {
       "url": "https://media.rolling.invalid/chiffre-0.webp"
@@ -43,18 +43,39 @@
    "Ans · valeur lue": {
     "paragraph": "10"
    },
-   "Ans · unité": {
-    "paragraph": "ans"
-   },
    "Ans · libellé": {
-    "paragraph": "de vidéo pour les entreprises"
+    "paragraph": "ans de vidéo pour les entreprises"
    },
-   "Entreprises · chiffre 500-plus": {
+   "Entreprises · chiffre 1": {
     "image": {
      "src": {
-      "url": "https://media.rolling.invalid/chiffre-500-plus.webp"
+      "url": "https://media.rolling.invalid/chiffre-5.webp"
      },
-     "size": "medium_large"
+     "size": "medium"
+    }
+   },
+   "Entreprises · chiffre 2": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/chiffre-0.webp"
+     },
+     "size": "medium"
+    }
+   },
+   "Entreprises · chiffre 3": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/chiffre-0.webp"
+     },
+     "size": "medium"
+    }
+   },
+   "Entreprises · chiffre 4": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/chiffre-plus.webp"
+     },
+     "size": "medium"
     }
    },
    "Entreprises · valeur lue": {
@@ -141,9 +162,8 @@
    "Équipe · chiffres": [
     "lueur-peche"
    ],
-   "Chiffre · Ans": [
-    "carte-verre",
-    "carte-chiffre"
+   "Chiffres · plaque": [
+    "plaque-chiffres"
    ],
    "Ans · nombre": [
     "chiffre-verre"
@@ -151,15 +171,8 @@
    "Ans · valeur lue": [
     "texte-masque"
    ],
-   "Ans · unité": [
-    "unite-chiffre"
-   ],
    "Ans · libellé": [
-    "texte-petit"
-   ],
-   "Chiffre · Entreprises": [
-    "carte-verre",
-    "carte-chiffre"
+    "libelle-chiffre"
    ],
    "Entreprises · nombre": [
     "chiffre-verre"
@@ -168,11 +181,7 @@
     "texte-masque"
    ],
    "Entreprises · libellé": [
-    "texte-petit"
-   ],
-   "Chiffre · Studio": [
-    "carte-verre",
-    "carte-chiffre"
+    "libelle-chiffre"
    ],
    "Studio · nombre": [
     "chiffre-verre"
@@ -181,11 +190,7 @@
     "texte-masque"
    ],
    "Studio · libellé": [
-    "texte-petit"
-   ],
-   "Chiffre · Plateforme": [
-    "carte-verre",
-    "carte-chiffre"
+    "libelle-chiffre"
    ],
    "Plateforme · nombre": [
     "chiffre-verre"
@@ -194,7 +199,7 @@
     "texte-masque"
    ],
    "Plateforme · libellé": [
-    "texte-petit"
+    "libelle-chiffre"
    ],
    "Équipe · témoignage": [
     "carte-verre",
@@ -218,10 +223,8 @@
   },
   "style": {
    "Équipe · contenu": "display: flex; flex-direction: column; gap: 0;",
-   "Équipe · haut": "display: flex; flex-direction: row; flex-wrap: wrap; align-items: flex-start; gap: 48px; padding: 0;",
-   "Équipe · présentation": "flex: 1 1 440px; min-width: 0; padding: 0;",
-   "Équipe · chiffres": "flex: 1 1 420px; min-width: 0; padding: 0;",
-   "Chiffres · grille": "display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 14px; padding: 0;",
+   "Équipe · présentation": "max-width: 820px; padding: 0;",
+   "Équipe · chiffres": "padding: 0;",
    "Équipe · témoignage": "margin-top: 64px;",
    "Témoignage · texte": "display: flex; flex-direction: column; gap: 0;",
    "Témoignage · auteur": "margin-top: 16px;"

@@ -5898,6 +5898,67 @@
             ]
         },
         {
+            "id": "g-5a6e722",
+            "label": "libelle-chiffre",
+            "groupe": "Textes",
+            "description": "Texte sous un chiffre clé (« ans de vidéo pour les entreprises »).",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "mobile",
+                        "state": null
+                    },
+                    "props": {
+                        "font-size": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 15,
+                                "unit": "px"
+                            }
+                        }
+                    },
+                    "custom_css": null
+                },
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "font-family": {
+                            "$$type": "font-family",
+                            "value": "Hanken Grotesk"
+                        },
+                        "font-weight": {
+                            "$$type": "string",
+                            "value": "600"
+                        },
+                        "font-size": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 16,
+                                "unit": "px"
+                            }
+                        },
+                        "line-height": {
+                            "$$type": "size",
+                            "value": {
+                                "size": "1.4",
+                                "unit": "custom"
+                            }
+                        },
+                        "display": {
+                            "$$type": "string",
+                            "value": "block"
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "Y29sb3I6IHZhcigtLXJsLXRleHRlLWZvcnQsICMyQTI4NDApOw=="
+                    }
+                }
+            ]
+        },
+        {
             "id": "g-5c81556",
             "label": "prix",
             "groupe": "Textes",
@@ -5957,66 +6018,6 @@
                     },
                     "custom_css": {
                         "raw": "Zm9udC13ZWlnaHQ6IDY1MDsgY29sb3I6IHZhcigtLXJsLXRleHRlLCB2YXIoLS1lbmNyZSkpOyAmIHNwYW4geyBmb250LWZhbWlseTogSGFua2VuIEdyb3Rlc2s7IGZvbnQtc2l6ZTogMTRweDsgZm9udC13ZWlnaHQ6IDYwMDsgbGV0dGVyLXNwYWNpbmc6IDA7IGNvbG9yOiB2YXIoLS1ybC1sZWdlbmRlLCB2YXIoLS1sZWdlbmRlKSk7IC13ZWJraXQtdGV4dC1maWxsLWNvbG9yOiB2YXIoLS1ybC1sZWdlbmRlLCB2YXIoLS1sZWdlbmRlKSk7IH0="
-                    }
-                }
-            ]
-        },
-        {
-            "id": "g-6daa67d",
-            "label": "unite-chiffre",
-            "groupe": "Textes",
-            "description": "Unité après un chiffre en verre (« ans »), en violet.",
-            "variants": [
-                {
-                    "meta": {
-                        "breakpoint": "desktop",
-                        "state": null
-                    },
-                    "props": {
-                        "font-family": {
-                            "$$type": "font-family",
-                            "value": "Bricolage Grotesque"
-                        },
-                        "font-size": {
-                            "$$type": "size",
-                            "value": {
-                                "size": 26,
-                                "unit": "px"
-                            }
-                        },
-                        "letter-spacing": {
-                            "$$type": "size",
-                            "value": {
-                                "size": -0.04,
-                                "unit": "em"
-                            }
-                        },
-                        "line-height": {
-                            "$$type": "size",
-                            "value": {
-                                "size": "1",
-                                "unit": "custom"
-                            }
-                        },
-                        "padding": {
-                            "$$type": "dimensions",
-                            "value": {
-                                "block-end": {
-                                    "$$type": "size",
-                                    "value": {
-                                        "size": 7,
-                                        "unit": "px"
-                                    }
-                                }
-                            }
-                        },
-                        "display": {
-                            "$$type": "string",
-                            "value": "block"
-                        }
-                    },
-                    "custom_css": {
-                        "raw": "Zm9udC13ZWlnaHQ6IDY1MDsgY29sb3I6IHZhcigtLXJsLWFjY2VudCwgIzVCM0JFQSk7"
                     }
                 }
             ]
@@ -12118,6 +12119,272 @@
             ]
         },
         {
+            "id": "g-a7d3ca7",
+            "label": "plaque-chiffres",
+            "groupe": "Surfaces",
+            "description": "Une seule plaque en verre qui réunit plusieurs chiffres clés, séparés par des filets : sur une ligne sur ordinateur, en 2 × 2 sous 980 px.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "tablet",
+                        "state": null
+                    },
+                    "props": {
+                        "padding": {
+                            "$$type": "dimensions",
+                            "value": {
+                                "block-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 10,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 6,
+                                        "unit": "px"
+                                    }
+                                },
+                                "block-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 10,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 6,
+                                        "unit": "px"
+                                    }
+                                }
+                            }
+                        },
+                        "grid-template-columns": {
+                            "$$type": "string",
+                            "value": "repeat(2, minmax(0, 1fr))"
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "JiA+ICogeyBwYWRkaW5nOiAyMHB4IDE2cHg7IH0gJiA+ICogKyAqIHsgYm9yZGVyLWxlZnQ6IDA7IH0gJiA+IDpudGgtY2hpbGQob2RkKSB7IGJvcmRlci1yaWdodDogMXB4IHNvbGlkIHJnYmEoOTEsNTksMjM0LDAuMTYpOyB9ICYgPiA6bnRoLWNoaWxkKC1uKzIpIHsgYm9yZGVyLWJvdHRvbTogMXB4IHNvbGlkIHJnYmEoOTEsNTksMjM0LDAuMTYpOyB9"
+                    }
+                },
+                {
+                    "meta": {
+                        "breakpoint": "mobile",
+                        "state": null
+                    },
+                    "props": [],
+                    "custom_css": {
+                        "raw": "JiA+ICogeyBwYWRkaW5nOiAxOHB4IDEycHg7IH0="
+                    }
+                },
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "position": {
+                            "$$type": "string",
+                            "value": "relative"
+                        },
+                        "padding": {
+                            "$$type": "dimensions",
+                            "value": {
+                                "block-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 30,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 8,
+                                        "unit": "px"
+                                    }
+                                },
+                                "block-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 30,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 8,
+                                        "unit": "px"
+                                    }
+                                }
+                            }
+                        },
+                        "border-radius": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 30,
+                                "unit": "px"
+                            }
+                        },
+                        "box-shadow": {
+                            "$$type": "box-shadow",
+                            "value": [
+                                {
+                                    "$$type": "shadow",
+                                    "value": {
+                                        "hOffset": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 0,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "vOffset": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 1,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "blur": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 0,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "spread": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 0,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "color": {
+                                            "$$type": "color",
+                                            "value": "#FFFFFF"
+                                        },
+                                        "position": {
+                                            "$$type": "string",
+                                            "value": "inset"
+                                        }
+                                    }
+                                },
+                                {
+                                    "$$type": "shadow",
+                                    "value": {
+                                        "hOffset": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 0,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "vOffset": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 30,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "blur": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 70,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "spread": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": -34,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "color": {
+                                            "$$type": "color",
+                                            "value": "rgba(76,48,170,0.34)"
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        "backdrop-filter": {
+                            "$$type": "backdrop-filter",
+                            "value": [
+                                {
+                                    "$$type": "css-filter-func",
+                                    "value": {
+                                        "func": {
+                                            "$$type": "string",
+                                            "value": "blur"
+                                        },
+                                        "args": {
+                                            "$$type": "blur",
+                                            "value": {
+                                                "size": {
+                                                    "$$type": "size",
+                                                    "value": {
+                                                        "size": 24,
+                                                        "unit": "px"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "$$type": "css-filter-func",
+                                    "value": {
+                                        "func": {
+                                            "$$type": "string",
+                                            "value": "saturate"
+                                        },
+                                        "args": {
+                                            "$$type": "intensity",
+                                            "value": {
+                                                "size": {
+                                                    "$$type": "size",
+                                                    "value": {
+                                                        "size": 170,
+                                                        "unit": "%"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        "display": {
+                            "$$type": "string",
+                            "value": "grid"
+                        },
+                        "gap": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 0,
+                                "unit": "px"
+                            }
+                        },
+                        "grid-template-columns": {
+                            "$$type": "string",
+                            "value": "repeat(4, minmax(0, 1fr))"
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "YmFja2dyb3VuZC1pbWFnZTogcmFkaWFsLWdyYWRpZW50KDcwJSA2MCUgYXQgMTUlIDAlLCByZ2JhKDI1NSwyNTUsMjU1LDAuOTUpLCByZ2JhKDI1NSwyNTUsMjU1LDApIDcyJSksIGxpbmVhci1ncmFkaWVudCgxNTBkZWcsIHJnYmEoMjU1LDI1NSwyNTUsMC43OCksIHJnYmEoMjU1LDI1NSwyNTUsMC40NikpOyAmID4gKiB7IGRpc3BsYXk6IGZsZXg7IGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47IGdhcDogMTBweDsgcGFkZGluZzogNHB4IDI0cHg7IH0gJiA+ICogKyAqIHsgYm9yZGVyLWxlZnQ6IDFweCBzb2xpZCByZ2JhKDkxLDU5LDIzNCwwLjE2KTsgfSAmOjpiZWZvcmUgeyBwb3NpdGlvbjogcmVsYXRpdmU7IHRvcDogYXV0bzsgcmlnaHQ6IGF1dG87IGJvdHRvbTogYXV0bzsgbGVmdDogYXV0bzsgaGVpZ2h0OiBhdXRvOyBvcGFjaXR5OiAxOyBtaXgtYmxlbmQtbW9kZTogbm9ybWFsOyBib3JkZXI6IDA7IGNvbnRlbnQ6ICcnOyBwb3NpdGlvbjogYWJzb2x1dGU7IHRvcDogMDsgcmlnaHQ6IDA7IGJvdHRvbTogMDsgbGVmdDogMDsgd2lkdGg6IGF1dG87IGJvcmRlci1yYWRpdXM6IGluaGVyaXQ7IHBhZGRpbmc6IDEuMnB4OyBwb2ludGVyLWV2ZW50czogbm9uZTsgYmFja2dyb3VuZDogbGluZWFyLWdyYWRpZW50KDE0MGRlZywgI0ZGRkZGRiwgcmdiYSgyNTUsMjU1LDI1NSwwLjM1KSAzMCUsIHJnYmEoMTk2LDE4MSwyNTMsMC40KSA2MiUsIHJnYmEoMjU1LDIwOSwxOTEsMC45KSk7IC13ZWJraXQtbWFzazogbGluZWFyLWdyYWRpZW50KCMwMDAgMCAwKSBjb250ZW50LWJveCwgbGluZWFyLWdyYWRpZW50KCMwMDAgMCAwKTsgLXdlYmtpdC1tYXNrLWNvbXBvc2l0ZTogeG9yOyBtYXNrLWNvbXBvc2l0ZTogZXhjbHVkZTsgfQ=="
+                    }
+                }
+            ]
+        },
+        {
             "id": "g-6b9e1d3",
             "label": "texte-citation",
             "groupe": "Surfaces",
@@ -15088,8 +15355,18 @@
             "id": "g-7e33aed",
             "label": "chiffre-verre",
             "groupe": "Vidéo et images",
-            "description": "Nombre composé de chiffres en verre côte à côte (62 px de haut).",
+            "description": "Nombre composé de chiffres en verre côte à côte (68 px de haut, 52 px sur mobile).",
             "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "tablet",
+                        "state": null
+                    },
+                    "props": [],
+                    "custom_css": {
+                        "raw": "JiBpbWcgeyBoZWlnaHQ6IDUycHg7IH0="
+                    }
+                },
                 {
                     "meta": {
                         "breakpoint": "desktop",
@@ -15168,7 +15445,7 @@
                         }
                     },
                     "custom_css": {
-                        "raw": "JiBpbWcgeyBoZWlnaHQ6IDYycHg7IHdpZHRoOiBhdXRvOyB9"
+                        "raw": "JiBpbWcgeyBoZWlnaHQ6IDY4cHg7IHdpZHRoOiBhdXRvOyB9"
                     }
                 }
             ]

@@ -23,8 +23,12 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   équipe en flex centré (ajout/suppression libres) ; portraits toujours ronds (aspect-ratio) ; flèche vers l'écran en
   mobile (`suite-fleche`) ; dans l'éditeur, la version EN/ES de l'écran s'affiche quand on sélectionne un de ses textes
   (CSS du thème sur les ids `rl-version-…` et `.elementor-element-editable`).
-  Chiffres 00:08 : **maquette `maquette-chiffres.html` envoyée (options A grille ouverte, B générique, C plaque unique)**,
-  en attente du choix de la cliente (source : `maquettes/chiffres/`).
+  Chiffres 00:08 : maquette `maquettes/chiffres/` (A, B, C) ⇒ **option C choisie** (une seule plaque en verre), « ans »
+  ramené dans le libellé (« ans de vidéo… »), 500+ composé de chiffres séparés ⇒ **0.2.2**.
+- **0.2.2** : plaque de chiffres (`plaque-chiffres`, `libelle-chiffre`) sous le texte ; écran « Votre vidéo » piloté dans
+  l'éditeur (clic sur EN/ES/9:16/1:1 ou sélection d'un texte d'une version ⇒ rolling.js pose data-format / data-rl-langue).
+  rolling.js reconnaît l'aperçu de l'éditeur à `?elementor-preview=` (la classe du body arrive après le script différé :
+  avant, le comportement du site tournait dans l'éditeur).
   Prochaines : 3 = contenus admin + modèles du site (balises maison) ; 4 = pages Offres, Contact, landing…, SEO, contrôle final.
 - FAQ : la cliente ajoute elle-même les réponses ; garder les questions telles quelles.
 - Le WordPress de production existe déjà chez la cliente : on livre seulement le thème (zip à importer).
@@ -146,6 +150,8 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
 - Écran « Votre vidéo » : boutons = liens `#rl-format-9-16`, `#rl-langue-en` ; cadre d'id `rl-ecran` (data-format posé
   par rolling.js) ; versions d'id `rl-version-fr/en/es` (lang posé par rolling.js) ; tailles par variables `--rl-…`.
 - « Page complète » : `99-page-complete` assemble les blocs construits (type page), refaite à chaque construction.
+- `construire.sh` s'arrête en silence si `blocs.py` échoue (ex. « Nom en double ») : ne pas filtrer sa sortie par grep
+  sans vérifier le code de retour. Noms d'éléments uniques (chiffres répétés numérotés).
 - Aperçu mobile de l'éditeur = 360 px : tester aussi à 360.
 - Logos : pas de bouton pause (choix cliente) ; défilement arrêté au survol / au clavier et avec « réduire les animations » ;
   la cliente coupe le défilement en retirant la classe `logos-defilants`.

@@ -604,14 +604,12 @@ offre = F("L'offre", ['section', 'halos-offre'], tag='section', ancre='offres', 
 # 00:08 L'équipe (Née chez Pitchy)
 # --------------------------------------------------------------------------------------------
 
-def carte_chiffre(nom, chiffres, lu, libelle, unite=None):
-    nombre = [I(nom + ' · chiffre ' + c, 'chiffre-' + c + '.webp', taille='medium_large' if c == '500-plus' else 'medium') for c in chiffres]
+def chiffre(nom, chiffres, lu, libelle):
+    nombre = [I(nom + ' · chiffre %d' % (i + 1), 'chiffre-' + c + '.webp', taille='medium') for i, c in enumerate(chiffres)]
     nombre.append(P(nom + ' · valeur lue', lu, ['texte-masque']))
-    if unite:
-        nombre.append(P(nom + ' · unité', unite, ['unite-chiffre']))
-    return F('Chiffre · ' + nom, ['carte-verre', 'carte-chiffre'], enfants=[
+    return F('Chiffre · ' + nom, None, enfants=[
         F(nom + ' · nombre', ['chiffre-verre'], enfants=nombre),
-        P(nom + ' · libellé', libelle, ['texte-petit']),
+        P(nom + ' · libellé', libelle, ['libelle-chiffre']),
     ])
 
 
@@ -623,15 +621,13 @@ entete_equipe.enfants += [
 
 equipe = F('Née chez Pitchy', ['section'], tag='section', enfants=[
     F('Équipe · contenu', ['conteneur'], COLONNE, enfants=[
-        F('Équipe · haut', None, 'display: flex; flex-direction: row; flex-wrap: wrap; align-items: flex-start; gap: 48px; padding: 0;', enfants=[
-            F('Équipe · présentation', None, 'flex: 1 1 440px; min-width: 0; padding: 0;', enfants=[entete_equipe]),
-            D('Équipe · chiffres', ['lueur-peche'], 'flex: 1 1 420px; min-width: 0; padding: 0;', enfants=[
-                F('Chiffres · grille', None, 'display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 14px; padding: 0;', enfants=[
-                    carte_chiffre('Ans', ['1', '0'], '10', 'de vidéo pour les entreprises', unite='ans'),
-                    carte_chiffre('Entreprises', ['500-plus'], '500+', 'grandes entreprises équipées'),
-                    carte_chiffre('Studio', ['1'], '1', 'studio motion &amp; tournage intégré'),
-                    carte_chiffre('Plateforme', ['1'], '1', 'plateforme de production propriétaire'),
-                ]),
+        F('Équipe · présentation', None, 'max-width: 820px; padding: 0;', enfants=[entete_equipe]),
+        D('Équipe · chiffres', ['lueur-peche'], 'padding: 0;', enfants=[
+            F('Chiffres · plaque', ['plaque-chiffres'], enfants=[
+                chiffre('Ans', ['1', '0'], '10', 'ans de vidéo pour les entreprises'),
+                chiffre('Entreprises', ['5', '0', '0', 'plus'], '500+', 'grandes entreprises équipées'),
+                chiffre('Studio', ['1'], '1', 'studio motion &amp; tournage intégré'),
+                chiffre('Plateforme', ['1'], '1', 'plateforme de production propriétaire'),
             ]),
         ]),
         F('Équipe · témoignage', ['carte-verre', 'citation', 'carte-citation'], 'margin-top: 64px;', enfants=[

@@ -7,7 +7,8 @@
 	'use strict';
 
 	var calme = window.matchMedia && window.matchMedia( '(prefers-reduced-motion: reduce)' ).matches;
-	var editeur = document.body.classList.contains( 'elementor-editor-active' );
+	// L'aperçu de l'éditeur se reconnaît à son adresse : la classe du body arrive plus tard.
+	var editeur = document.body.classList.contains( 'elementor-editor-active' ) || /[?&]elementor-preview=/.test( window.location.search );
 
 	/* Menu burger de l'en-tête */
 	document.querySelectorAll( '.rl-burger' ).forEach( function ( bouton ) {
@@ -29,7 +30,38 @@
 		} );
 	} );
 
+	/*
+	 * Dans l'éditeur : l'écran « Votre vidéo » suit l'élément sélectionné. Sélectionner le bouton 9:16 ou EN change
+	 * le format ou la langue affichés ; sélectionner un texte d'une version (même depuis la Structure) l'affiche.
+	 */
 	if ( editeur ) {
+		new MutationObserver( function ( changements ) {
+			changements.forEach( function ( c ) {
+				var el = c.target;
+				var ecran = document.getElementById( 'rl-ecran' );
+
+				if ( ! ecran || ! el.classList || ! el.classList.contains( 'elementor-element-editable' ) ) {
+					return;
+				}
+
+				var lien = el.matches( 'a[href*="#rl-"]' ) ? el : el.querySelector( 'a[href*="#rl-format-"], a[href*="#rl-langue-"]' );
+				var version = el.closest( '[id^="rl-version-"]' );
+
+				if ( lien ) {
+					var cle = lien.getAttribute( 'href' ).split( '#rl-' )[ 1 ].split( '-' );
+					var type = cle.shift();
+
+					if ( type === 'format' ) {
+						ecran.setAttribute( 'data-format', cle.join( ':' ) );
+					} else if ( type === 'langue' ) {
+						ecran.setAttribute( 'data-rl-langue', cle.join( '-' ) );
+					}
+				} else if ( version ) {
+					ecran.setAttribute( 'data-rl-langue', version.id.replace( 'rl-version-', '' ) );
+				}
+			} );
+		} ).observe( document.body, { subtree: true, attributes: true, attributeFilter: [ 'class' ] } );
+
 		return;
 	}
 

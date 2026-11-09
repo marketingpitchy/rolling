@@ -230,6 +230,11 @@
           "css": "display: block; font-family: Hanken Grotesk; font-size: 14px; line-height: 1.4; color: var(--rl-legende, var(--legende));"
         },
         {
+          "label": "libelle-chiffre",
+          "description": "Texte sous un chiffre clé (« ans de vidéo pour les entreprises »).",
+          "css": "display: block; font-family: Hanken Grotesk; font-size: 16px; line-height: 1.4; font-weight: 600; color: var(--rl-texte-fort, #2A2840); @media(--mobile) { font-size: 15px; }"
+        },
+        {
           "label": "prix",
           "description": "Prix d'une formule (46 px). « / mois » se met en petit : sélectionnez-le et appliquez la mise en forme « span » (code).",
           "css": "display: block; font-family: Bricolage Grotesque; font-size: 46px; line-height: 1.1; font-weight: 650; letter-spacing: -0.04em; color: var(--rl-texte, var(--encre)); & span { font-family: Hanken Grotesk; font-size: 14px; font-weight: 600; letter-spacing: 0; color: var(--rl-legende, var(--legende)); -webkit-text-fill-color: var(--rl-legende, var(--legende)); } @media(--mobile) { font-size: 40px; }"
@@ -238,11 +243,6 @@
           "label": "prix-degrade",
           "description": "À ajouter à « prix » : chiffres en dégradé clair (formule mise en avant, fond sombre).",
           "css": "background-image: linear-gradient(95deg, #C9BBFF 0%, #EBB0F2 45%, #FFA27A 100%); -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent;"
-        },
-        {
-          "label": "unite-chiffre",
-          "description": "Unité après un chiffre en verre (« ans »), en violet.",
-          "css": "display: block; padding-bottom: 7px; font-family: Bricolage Grotesque; font-size: 26px; line-height: 1; font-weight: 650; letter-spacing: -0.04em; color: var(--rl-accent, #5B3BEA);"
         },
         {
           "label": "resume-offre",
@@ -577,6 +577,11 @@
           "css": "min-height: 170px; justify-content: space-between;"
         },
         {
+          "label": "plaque-chiffres",
+          "description": "Une seule plaque en verre qui réunit plusieurs chiffres clés, séparés par des filets : sur une ligne sur ordinateur, en 2 × 2 sous 980 px.",
+          "css": "position: relative; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; padding: 30px 8px; border-radius: 30px; background: radial-gradient(70% 60% at 15% 0%, rgba(255,255,255,0.95), rgba(255,255,255,0) 72%), linear-gradient(150deg, rgba(255,255,255,0.78), rgba(255,255,255,0.46)); backdrop-filter: blur(24px) saturate(170%); box-shadow: inset 0 1px 0 #FFFFFF, 0 30px 70px -34px rgba(76,48,170,0.34); & > * { display: flex; flex-direction: column; gap: 10px; padding: 4px 24px; } & > * + * { border-left: 1px solid rgba(91,59,234,0.16); } &::before { position: relative; top: auto; right: auto; bottom: auto; left: auto; height: auto; opacity: 1; mix-blend-mode: normal; border: 0; content: ''; position: absolute; top: 0; right: 0; bottom: 0; left: 0; width: auto; border-radius: inherit; padding: 1.2px; pointer-events: none; background: linear-gradient(140deg, #FFFFFF, rgba(255,255,255,0.35) 30%, rgba(196,181,253,0.4) 62%, rgba(255,209,191,0.9)); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; } @media(--tablet) { grid-template-columns: repeat(2, minmax(0, 1fr)); padding: 10px 6px; & > * { padding: 20px 16px; } & > * + * { border-left: 0; } & > :nth-child(odd) { border-right: 1px solid rgba(91,59,234,0.16); } & > :nth-child(-n+2) { border-bottom: 1px solid rgba(91,59,234,0.16); } } @media(--mobile) { & > * { padding: 18px 12px; } }"
+        },
+        {
           "label": "carte-question",
           "description": "À ajouter à « carte-verre » : question de FAQ (titre « titre-question » avec son point, puis la réponse).",
           "css": "padding: 26px 30px 26px 60px; gap: 8px; @media(--mobile) { padding: 22px 20px 22px 46px; }"
@@ -807,8 +812,8 @@
         },
         {
           "label": "chiffre-verre",
-          "description": "Nombre composé de chiffres en verre côte à côte (62 px de haut).",
-          "css": "display: inline-flex; flex-direction: row; align-items: flex-end; gap: 2px; padding: 0; filter: drop-shadow(0 8px 14px rgba(91,59,234,0.25)); & img { height: 62px; width: auto; }"
+          "description": "Nombre composé de chiffres en verre côte à côte (68 px de haut, 52 px sur mobile).",
+          "css": "display: inline-flex; flex-direction: row; align-items: flex-end; gap: 2px; padding: 0; filter: drop-shadow(0 8px 14px rgba(91,59,234,0.25)); & img { height: 68px; width: auto; } @media(--tablet) { & img { height: 52px; } }"
         },
         {
           "label": "titre-vignette",
