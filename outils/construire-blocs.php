@@ -10,6 +10,8 @@
  * @package Rolling
  */
 
+// phpcs:disable WordPress.Security.EscapeOutput.OutputNotEscaped, WordPress.WP.GlobalVariablesOverride.Prohibited -- Script de construction lancé en ligne de commande (wp eval-file) sur la copie de test, jamais sur le site.
+
 // phpcs:disable WordPress.WP.AlternativeFunctions
 
 wp_set_current_user( 1 );
@@ -38,9 +40,17 @@ function rolling_poser_brut( $elements, &$brut ) {
 			}
 
 			if ( null === $local ) {
-				$local = 'e-' . $element['id'] . '-' . substr( md5( $nom ), 0, 4 );
-				$element['styles'][ $local ] = array( 'id' => $local, 'label' => 'local', 'type' => 'class', 'variants' => array() );
-				$element['settings']['classes'] = array( '$$type' => 'classes', 'value' => array_merge( $classes, array( $local ) ) );
+				$local                          = 'e-' . $element['id'] . '-' . substr( md5( $nom ), 0, 4 );
+				$element['styles'][ $local ]    = array(
+					'id'       => $local,
+					'label'    => 'local',
+					'type'     => 'class',
+					'variants' => array(),
+				);
+				$element['settings']['classes'] = array(
+					'$$type' => 'classes',
+					'value'  => array_merge( $classes, array( $local ) ),
+				);
 			}
 
 			$pose = false;
@@ -56,7 +66,10 @@ function rolling_poser_brut( $elements, &$brut ) {
 
 			if ( ! $pose ) {
 				$element['styles'][ $local ]['variants'][] = array(
-					'meta'       => array( 'breakpoint' => 'desktop', 'state' => null ),
+					'meta'       => array(
+						'breakpoint' => 'desktop',
+						'state'      => null,
+					),
 					'props'      => (object) array(),
 					'custom_css' => array( 'raw' => base64_encode( $css ) ), // phpcs:ignore WordPress.PHP.DiscouragedPHPFunctions
 				);

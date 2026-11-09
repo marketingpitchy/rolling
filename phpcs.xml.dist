@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<ruleset name="Rolling">
+	<description>Normes WordPress pour le thème Rolling.</description>
+	<file>theme/rolling</file>
+	<file>outils/construire-styles.php</file>
+	<file>outils/construire-blocs.php</file>
+	<file>outils/page-essai.php</file>
+	<exclude-pattern>*/data/*</exclude-pattern>
+	<exclude-pattern>*/assets/*</exclude-pattern>
+	<arg name="extensions" value="php"/>
+	<arg value="s"/>
+	<config name="testVersion" value="8.1-"/>
+	<config name="minimum_wp_version" value="7.0"/>
+	<rule ref="WordPress">
+		<!-- Noms de fichiers des classes : class-rolling-*.php (conforme) ; les gabarits Hello gardent leur nom. -->
+		<exclude name="WordPress.Files.FileName.InvalidClassFileName"/>
+	</rule>
+	<rule ref="PHPCompatibilityWP"/>
+	<rule ref="WordPress.WP.I18n">
+		<properties><property name="text_domain" type="array"><element value="rolling"/></property></properties>
+	</rule>
+	<rule ref="WordPress.NamingConventions.PrefixAllGlobals">
+		<properties><property name="prefixes" type="array"><element value="rolling"/></property></properties>
+	</rule>
+	<!-- Scripts de construction : lancés seulement par wp eval-file sur la copie de test. -->
+	<rule ref="WordPress.NamingConventions.PrefixAllGlobals"><exclude-pattern>outils/*</exclude-pattern></rule>
+</ruleset>

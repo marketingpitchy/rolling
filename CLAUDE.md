@@ -9,6 +9,12 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
 
 - Phase 0 terminée. **Maquettes HTML validées par la cliente** (logos/écran + 11 pages).
 - Phase 1 en cours : écriture du thème enfant.
+- **Livraison 1 envoyée (0.1.0)** : fondations + blocs Hero, Logos, Showreel. Zip : `outils/zip.sh` → `livraisons/` (hors git).
+  Vérifié : site neuf + mise à jour par Apparence > Thèmes > Téléverser, axe 0 (1440, 390, réduire les animations),
+  PHPCS 0 (`phpcs.xml.dist`), robots IA, LCP sans lazy + fetchpriority, `<main>` ajouté aux modèles Elementor.
+  Reste à faire tester par la cliente : mode « Conserver les styles », case décochée (test B, dépend de la licence Pro).
+  Prochaines : 2 = blocs de l'accueil 00:01 → fin + Page complète ; 3 = contenus admin + modèles du site (balises maison) ;
+  4 = pages Offres, Contact, landing…, SEO (VideoObject), contrôle final.
 - FAQ : la cliente ajoute elle-même les réponses ; garder les questions telles quelles.
 - Le WordPress de production existe déjà chez la cliente : on livre seulement le thème (zip à importer).
 
@@ -98,6 +104,9 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
 - Règle `& img` dans une classe de cadre = attrape aussi les icônes posées dedans : utiliser `image-couvrante`.
 - Texte riche : la classe d'un `<span>` est retirée ⇒ mots en dégradé par la mise en forme (italique = dégradé de
   section, gras = IA, souligné = humain ; chapô : souligné = mot manuscrit).
+- Contrastes sur photo/dégradé : `scratchpad/tools/contraste-photo.js` (pire pixel, 2e centile). Dégradé humain finit
+  à #EC5E2B ; plaques en verre fumé (rgba(22,14,52,.66→.46)) ; plaque-claire pour la vignette orange.
+- Recommander à la cliente « Adopter le style de ce site » (keep_create crée des `DUP_`).
 - Copie de test hors ligne : mu-plugin `scratchpad/wp/mu/copie-hors-ligne.php` (répond aux appels elementor.com, sinon
   « Mes modèles » plante sur `reorder_categories`). Jamais dans le thème.
 - Chaîne : `outils/construire.sh [styles|blocs|tout]` ; sources `outils/source/{variables,classes}.json`, `outils/blocs.py` ;

@@ -11,6 +11,8 @@
  * @package Rolling
  */
 
+// phpcs:disable WordPress.Security.EscapeOutput.OutputNotEscaped, WordPress.WP.GlobalVariablesOverride.Prohibited -- Script de construction lancé en ligne de commande (wp eval-file) sur la copie de test, jamais sur le site.
+
 // phpcs:disable WordPress.WP.AlternativeFunctions, WordPress.PHP.DiscouragedPHPFunctions
 
 use Elementor\Plugin;
@@ -21,7 +23,7 @@ $source = $args[0] ?? '/tmp/rolling/source';
 $sortie = $args[1] ?? '/tmp/rolling/data';
 
 // Les classes prioritaires (modificateurs) passent avant les classes de base.
-$prioritaires = array( 'logos-defilants', 'conteneur-etroit', 'label-violet', 'titre-eteint', 'bouton-petit', 'pastille-bleue', 'pastille-orange', 'titre-point-bleu', 'titre-point-encre', 'bandeau-rec', 'bandeau-clair', 'fond-grille', 'halos-haut', 'halos-bas', 'halo-centre', 'lueur-peche', 'plaque-lecteur', 'grand-bloc', 'carte-chiffre', 'carte-question', 'portrait-petit', 'image-couvrante', 'bouton-lecture-verre', 'titre-vignette-sombre' );
+$prioritaires = array( 'logos-defilants', 'conteneur-etroit', 'label-violet', 'titre-eteint', 'bouton-petit', 'pastille-bleue', 'pastille-orange', 'titre-point-bleu', 'titre-point-encre', 'bandeau-rec', 'bandeau-clair', 'fond-grille', 'halos-haut', 'halos-bas', 'halo-centre', 'lueur-peche', 'plaque-lecteur', 'plaque-claire', 'grand-bloc', 'carte-chiffre', 'carte-question', 'portrait-petit', 'image-couvrante', 'bouton-lecture-verre', 'titre-vignette-sombre' );
 
 /**
  * Id stable d'une variable ou d'une classe.
@@ -36,13 +38,19 @@ function rolling_id( $prefixe, $label ) {
 
 /* 1. Variables ------------------------------------------------------------ */
 
-$variables = json_decode( file_get_contents( $source . '/variables.json' ), true );
+$variables        = json_decode( file_get_contents( $source . '/variables.json' ), true );
 $sortie_variables = array();
 
 foreach ( $variables as $variable ) {
 	$valeur = 'global-color-variable' === $variable['type']
-		? array( '$$type' => 'color', 'value' => $variable['value'] )
-		: array( '$$type' => 'string', 'value' => $variable['value'] );
+		? array(
+			'$$type' => 'color',
+			'value'  => $variable['value'],
+		)
+		: array(
+			'$$type' => 'string',
+			'value'  => $variable['value'],
+		);
 
 	$sortie_variables[] = array(
 		'id'          => rolling_id( 'e-gv-', $variable['label'] ),
@@ -55,7 +63,11 @@ foreach ( $variables as $variable ) {
 
 // Sur la copie de test : on repart des seules variables du thème.
 $kit    = Plugin::$instance->kits_manager->get_active_kit();
-$record = array( 'data' => array(), 'watermark' => 0, 'version' => 2 );
+$record = array(
+	'data'      => array(),
+	'watermark' => 0,
+	'version'   => 2,
+);
 $ordre  = 0;
 
 foreach ( $sortie_variables as $v ) {
@@ -69,7 +81,7 @@ foreach ( $sortie_variables as $v ) {
 	);
 }
 
-$ancien = $kit->get_json_meta( '_elementor_global_variables' );
+$ancien              = $kit->get_json_meta( '_elementor_global_variables' );
 $record['watermark'] = (int) ( $ancien['watermark'] ?? 0 ) + 1;
 $kit->update_json_meta( '_elementor_global_variables', $record );
 delete_option( 'rolling_variables' );
@@ -82,16 +94,16 @@ echo 'Variables : ' . count( $sortie_variables ) . "\n";
 $definition = json_decode( file_get_contents( $source . '/classes.json' ), true );
 
 // Convertisseur officiel d'Elementor (celui de l'outil manage-classes), sans rien enregistrer en base.
-$outil      = new \Elementor\Modules\Mcp\Abilities\Manage_Classes_Ability();
-$methode    = new ReflectionMethod( $outil, 'get_css_converter' );
+$outil   = new \Elementor\Modules\Mcp\Abilities\Manage_Classes_Ability();
+$methode = new ReflectionMethod( $outil, 'get_css_converter' );
 $methode->setAccessible( true );
-$convertir  = function () use ( $outil, $methode ) {
+$convertir      = function () use ( $outil, $methode ) {
 	return $methode->invoke( $outil );
 };
-$points     = Plugin::$instance->breakpoints->get_active_devices_list();
-$resultats  = new \Elementor\Modules\Mcp\Abilities\Utils\Bulk_Operations_Result();
-$merger     = '\Elementor\Modules\Mcp\Abilities\Utils\Style_Variants_Merger';
-$erreurs    = 0;
+$points         = Plugin::$instance->breakpoints->get_active_devices_list();
+$resultats      = new \Elementor\Modules\Mcp\Abilities\Utils\Bulk_Operations_Result();
+$merger         = '\Elementor\Modules\Mcp\Abilities\Utils\Style_Variants_Merger';
+$erreurs        = 0;
 $sortie_classes = array();
 
 foreach ( $definition['groupes'] as $groupe ) {
@@ -125,7 +137,10 @@ foreach ( $definition['groupes'] as $groupe ) {
 
 			if ( ! $trouve ) {
 				$variants[] = array(
-					'meta'       => array( 'breakpoint' => 'desktop', 'state' => null ),
+					'meta'       => array(
+						'breakpoint' => 'desktop',
+						'state'      => null,
+					),
 					'props'      => array(),
 					'custom_css' => array( 'raw' => base64_encode( $classe['brut'] ) ),
 				);
@@ -163,7 +178,13 @@ $groupes = array_map(
 
 file_put_contents(
 	$sortie . '/classes.json',
-	wp_json_encode( array( 'groupes' => $groupes, 'classes' => $sortie_classes ), JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES ) . "\n"
+	wp_json_encode(
+		array(
+			'groupes' => $groupes,
+			'classes' => $sortie_classes,
+		),
+		JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES
+	) . "\n"
 );
 
 echo 'Classes : ' . count( $sortie_classes ) . ', erreurs : ' . $erreurs . "\n";

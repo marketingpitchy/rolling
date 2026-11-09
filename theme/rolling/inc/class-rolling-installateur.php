@@ -18,15 +18,15 @@ use Elementor\Modules\GlobalClasses\Global_Classes_Repository;
  */
 class Rolling_Installateur {
 
-	const OPTION_VERSION   = 'rolling_version_installee';
-	const OPTION_VARIABLES = 'rolling_variables';
-	const OPTION_CLASSES   = 'rolling_classes';
-	const OPTION_MEDIAS    = 'rolling_medias';
-	const OPTION_MODELES   = 'rolling_modeles';
-	const OPTION_PREMIERE  = 'rolling_premiere_installation';
+	const OPTION_VERSION    = 'rolling_version_installee';
+	const OPTION_VARIABLES  = 'rolling_variables';
+	const OPTION_CLASSES    = 'rolling_classes';
+	const OPTION_MEDIAS     = 'rolling_medias';
+	const OPTION_MODELES    = 'rolling_modeles';
+	const OPTION_PREMIERE   = 'rolling_premiere_installation';
 	const TRANSIENT_RAPPORT = 'rolling_rapport';
-	const URL_MEDIA        = 'https://media.rolling.invalid/';
-	const META_VARIABLES   = '_elementor_global_variables';
+	const URL_MEDIA         = 'https://media.rolling.invalid/';
+	const META_VARIABLES    = '_elementor_global_variables';
 
 	/**
 	 * Lignes du rapport affiché après une installation.
@@ -103,9 +103,7 @@ class Rolling_Installateur {
 		self::enregistrer_rapport();
 	}
 
-	/* ------------------------------------------------------------------ */
-	/* Variables                                                           */
-	/* ------------------------------------------------------------------ */
+	// Variables.
 
 	/**
 	 * Installe ou met à jour les variables Elementor (couleurs, polices).
@@ -117,20 +115,20 @@ class Rolling_Installateur {
 			return;
 		}
 
-		$sources   = Rolling_Donnees::lire( 'variables' );
-		$suivi     = get_option( self::OPTION_VARIABLES, array() );
-		$record    = $kit->get_json_meta( self::META_VARIABLES );
-		$record    = is_array( $record ) && ! empty( $record ) ? $record : array(
+		$sources    = Rolling_Donnees::lire( 'variables' );
+		$suivi      = get_option( self::OPTION_VARIABLES, array() );
+		$record     = $kit->get_json_meta( self::META_VARIABLES );
+		$record     = is_array( $record ) && ! empty( $record ) ? $record : array(
 			'data'      => array(),
 			'watermark' => 0,
 			'version'   => 2,
 		);
-		$donnees   = isset( $record['data'] ) && is_array( $record['data'] ) ? $record['data'] : array();
+		$donnees    = isset( $record['data'] ) && is_array( $record['data'] ) ? $record['data'] : array();
 		$maintenant = gmdate( 'Y-m-d H:i:s' );
-		$ordre     = count( $donnees );
-		$change    = false;
-		$gardees   = 0;
-		$ids_theme = array();
+		$ordre      = count( $donnees );
+		$change     = false;
+		$gardees    = 0;
+		$ids_theme  = array();
 
 		foreach ( $sources as $source ) {
 			$id          = $source['id'];
@@ -149,7 +147,7 @@ class Rolling_Installateur {
 				);
 				$change         = true;
 			} else {
-				$actuel = array_intersect_key( $donnees[ $id ], $attendu );
+				$actuel   = array_intersect_key( $donnees[ $id ], $attendu );
 				$modifiee = isset( $suivi[ $id ] ) && Rolling_Donnees::empreinte( $actuel ) !== $suivi[ $id ];
 
 				if ( $modifiee ) {
@@ -198,9 +196,7 @@ class Rolling_Installateur {
 		}
 	}
 
-	/* ------------------------------------------------------------------ */
-	/* Classes globales                                                    */
-	/* ------------------------------------------------------------------ */
+	// Classes globales.
 
 	/**
 	 * Installe ou met à jour les classes globales du thème (sans rien supprimer).
@@ -413,9 +409,7 @@ class Rolling_Installateur {
 		);
 	}
 
-	/* ------------------------------------------------------------------ */
-	/* Médias de départ                                                    */
-	/* ------------------------------------------------------------------ */
+	// Médias de départ.
 
 	/**
 	 * Copie les images de départ dans la médiathèque (une seule fois chacune).
@@ -474,9 +468,7 @@ class Rolling_Installateur {
 		return $suivi;
 	}
 
-	/* ------------------------------------------------------------------ */
-	/* Blocs et modèles (Modèles > Mes modèles)                            */
-	/* ------------------------------------------------------------------ */
+	// Blocs et modèles (Modèles > Mes modèles).
 
 	/**
 	 * Installe ou met à jour les blocs du thème dans « Mes modèles ».
@@ -665,7 +657,7 @@ class Rolling_Installateur {
 			return $valeur;
 		}
 
-		// Forme Elementor d'une source d'image : { $$type: image-src, value: { url: { $$type: url, value: … } } }.
+		// Source d'image Elementor qui pointe vers une URL fictive du thème : on la relie à la pièce jointe.
 		if ( isset( $valeur['$$type'], $valeur['value']['url']['value'] ) && 'image-src' === $valeur['$$type'] ) {
 			$cle = self::cle_media( $valeur['value']['url']['value'] );
 
@@ -722,9 +714,7 @@ class Rolling_Installateur {
 		return pathinfo( substr( $url, strlen( self::URL_MEDIA ) ), PATHINFO_FILENAME );
 	}
 
-	/* ------------------------------------------------------------------ */
-	/* Première installation : pages, menus, réglages                     */
-	/* ------------------------------------------------------------------ */
+	// Première installation : pages, menus, réglages.
 
 	/**
 	 * Crée les pages manquantes, les menus, et pose les réglages de départ (une seule fois).
@@ -875,9 +865,7 @@ class Rolling_Installateur {
 		return $menu_id;
 	}
 
-	/* ------------------------------------------------------------------ */
-	/* Caches et rapport                                                   */
-	/* ------------------------------------------------------------------ */
+	// Caches et rapport.
 
 	/**
 	 * Vide le cache d'Elementor et celui de WP Super Cache.

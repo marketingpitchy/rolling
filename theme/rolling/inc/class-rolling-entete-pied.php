@@ -20,6 +20,26 @@ class Rolling_Entete_Pied {
 	public static function init() {
 		add_action( 'customize_register', array( __CLASS__, 'personnaliser' ) );
 		add_filter( 'theme_page_templates', array( __CLASS__, 'modeles_de_page' ) );
+
+		// Les modèles « Elementor pleine largeur » et « Canevas » n'ont pas de zone <main> : on l'ajoute (accessibilité, lien d'évitement).
+		foreach ( array( 'header-footer', 'canvas' ) as $modele ) {
+			add_action( 'elementor/page_templates/' . $modele . '/before_content', array( __CLASS__, 'ouvrir_main' ) );
+			add_action( 'elementor/page_templates/' . $modele . '/after_content', array( __CLASS__, 'fermer_main' ) );
+		}
+	}
+
+	/**
+	 * Ouvre la zone principale de la page.
+	 */
+	public static function ouvrir_main() {
+		echo '<main id="content" class="site-main">';
+	}
+
+	/**
+	 * Ferme la zone principale de la page.
+	 */
+	public static function fermer_main() {
+		echo '</main>';
 	}
 
 	/**

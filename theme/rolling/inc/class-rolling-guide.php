@@ -36,8 +36,8 @@ class Rolling_Guide {
 	 * Affiche le guide.
 	 */
 	public static function afficher() {
-		$classes   = Rolling_Donnees::lire( 'classes' );
-		$variables = Rolling_Donnees::lire( 'variables' );
+		$classes    = Rolling_Donnees::lire( 'classes' );
+		$variables  = Rolling_Donnees::lire( 'variables' );
 		$par_groupe = array();
 
 		foreach ( $classes['classes'] ?? array() as $classe ) {

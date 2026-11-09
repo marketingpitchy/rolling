@@ -24,6 +24,7 @@ class Rolling_Ressources {
 		add_filter( 'elementor/frontend/print_google_fonts', '__return_false' );
 		add_filter( 'hello_elementor_page_title', array( __CLASS__, 'titre_de_page' ) );
 		add_action( 'after_setup_theme', array( __CLASS__, 'supports' ) );
+		add_filter( 'wp_content_img_tag', array( __CLASS__, 'image_principale' ), 20 );
 	}
 
 	/**
@@ -31,7 +32,13 @@ class Rolling_Ressources {
 	 */
 	public static function supports() {
 		load_child_theme_textdomain( 'rolling', ROLLING_DIR . '/languages' );
-		add_theme_support( 'custom-logo', array( 'flex-width' => true, 'flex-height' => true ) );
+		add_theme_support(
+			'custom-logo',
+			array(
+				'flex-width'  => true,
+				'flex-height' => true,
+			)
+		);
 		register_nav_menus(
 			array(
 				'principal' => __( 'Menu principal (en-tête et pied de page)', 'rolling' ),
@@ -45,7 +52,16 @@ class Rolling_Ressources {
 	 */
 	public static function charger() {
 		wp_enqueue_style( 'rolling', ROLLING_URL . '/assets/css/rolling.css', array(), ROLLING_VERSION );
-		wp_enqueue_script( 'rolling', ROLLING_URL . '/assets/js/rolling.js', array(), ROLLING_VERSION, array( 'strategy' => 'defer', 'in_footer' => true ) );
+		wp_enqueue_script(
+			'rolling',
+			ROLLING_URL . '/assets/js/rolling.js',
+			array(),
+			ROLLING_VERSION,
+			array(
+				'strategy'  => 'defer',
+				'in_footer' => true,
+			)
+		);
 	}
 
 	/**
@@ -64,6 +80,30 @@ class Rolling_Ressources {
 
 		wp_enqueue_script( 'rolling-editeur', ROLLING_URL . '/assets/js/rolling-editeur.js', array(), ROLLING_VERSION, true );
 		wp_add_inline_script( 'rolling-editeur', 'window.rollingEditeur = ' . wp_json_encode( array( 'classes' => $ids ) ) . ';', 'before' );
+	}
+
+	/**
+	 * Image principale (LCP) : la première grande image de la page n'est pas chargée en différé
+	 * et passe en priorité haute (règle SEO 6.3). Les suivantes restent en chargement différé.
+	 *
+	 * @param string $balise Balise <img>.
+	 * @return string
+	 */
+	public static function image_principale( $balise ) {
+		static $trouvee = false;
+
+		if ( $trouvee || is_admin() || ! preg_match( '/\swidth="(\d+)"/', $balise, $largeur ) || (int) $largeur[1] < 800 ) {
+			return $balise;
+		}
+
+		$trouvee = true;
+		$balise  = preg_replace( '/\sloading="lazy"/', '', $balise );
+
+		if ( false === strpos( $balise, 'fetchpriority=' ) ) {
+			$balise = str_replace( '<img ', '<img fetchpriority="high" ', $balise );
+		}
+
+		return $balise;
 	}
 
 	/**

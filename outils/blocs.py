@@ -167,7 +167,7 @@ hero = F('Hero', ['section', 'halos-haut'], 'padding: 104px 0 70px; @media(--tab
             D('Motion design', ['cadre-verre'], 'position: absolute; right: 28px; top: 432px; width: 208px; z-index: 2; @media(--tablet) { position: relative; right: auto; top: auto; width: auto; align-self: start; }', enfants=[
                 D('Motion design · vidéo', ['fond-video-orange', 'illus-motion'], 'aspect-ratio: 1 / 1; overflow: hidden; padding: 0; border-radius: 19px;', enfants=[
                     bandeau('Motion design · bandeau', 'Motion design', ['bandeau-clair'], 'top: 10px; left: 10px;'),
-                    F('Motion design · plaque', ['plaque-verre'], 'position: absolute; z-index: 2; left: 8px; right: 8px; bottom: 8px; width: auto; justify-content: space-between; padding: 10px 8px 10px 12px; color: #0F0F12;', enfants=[
+                    F('Motion design · plaque', ['plaque-verre', 'plaque-claire'], 'position: absolute; z-index: 2; left: 8px; right: 8px; bottom: 8px; width: auto; justify-content: space-between; padding: 10px 8px 10px 12px; color: #0F0F12;', enfants=[
                         P('Motion design · titre', 'Résultats<br><span>2026</span>', ['titre-vignette', 'titre-vignette-sombre'], 'font-size: 17px; line-height: 0.98; letter-spacing: -0.04em;'),
                         lecture('Motion design · lecture', verre=True),
                     ]),

@@ -18,7 +18,16 @@ $rolling_menus = array(
 		<div class="rl-pied__bas">
 			<span class="rl-pied__logo"><?php echo Rolling_Entete_Pied::logo( true ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- HTML de wp_get_attachment_image(). ?></span>
 			<nav aria-label="<?php echo esc_attr( (string) wp_get_nav_menu_name( 'pied' ) ); ?>">
-				<?php wp_nav_menu( array( 'theme_location' => 'pied', 'container' => false, 'depth' => 1, 'fallback_cb' => false ) ); ?>
+				<?php
+				wp_nav_menu(
+					array(
+						'theme_location' => 'pied',
+						'container'      => false,
+						'depth'          => 1,
+						'fallback_cb'    => false,
+					)
+				);
+				?>
 			</nav>
 		</div>
 	</div>
@@ -42,7 +51,16 @@ $rolling_menus = array(
 						<?php if ( $rolling_titre ) : ?>
 							<p class="rl-pied__titre"><?php echo esc_html( $rolling_titre ); ?></p>
 						<?php endif; ?>
-						<?php wp_nav_menu( array( 'theme_location' => $rolling_emplacement, 'container' => false, 'depth' => 1, 'fallback_cb' => false ) ); ?>
+						<?php
+						wp_nav_menu(
+							array(
+								'theme_location' => $rolling_emplacement,
+								'container'      => false,
+								'depth'          => 1,
+								'fallback_cb'    => false,
+							)
+						);
+						?>
 					</nav>
 				<?php endif; ?>
 			<?php endforeach; ?>

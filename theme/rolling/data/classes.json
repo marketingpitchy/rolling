@@ -367,6 +367,77 @@
             ]
         },
         {
+            "id": "g-d7bac72",
+            "label": "plaque-claire",
+            "groupe": "Surfaces",
+            "description": "À ajouter à « plaque-verre » sur un fond coloré (vignette orange) : verre clair, pour un texte encre.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "background": {
+                            "$$type": "background",
+                            "value": {
+                                "background-overlay": {
+                                    "$$type": "background-overlay",
+                                    "value": [
+                                        {
+                                            "$$type": "background-gradient-overlay",
+                                            "value": {
+                                                "type": {
+                                                    "$$type": "string",
+                                                    "value": "linear"
+                                                },
+                                                "stops": {
+                                                    "$$type": "gradient-color-stop",
+                                                    "value": [
+                                                        {
+                                                            "$$type": "color-stop",
+                                                            "value": {
+                                                                "color": {
+                                                                    "$$type": "color",
+                                                                    "value": "rgba(255,255,255,0.62)"
+                                                                },
+                                                                "offset": {
+                                                                    "$$type": "number",
+                                                                    "value": 0
+                                                                }
+                                                            }
+                                                        },
+                                                        {
+                                                            "$$type": "color-stop",
+                                                            "value": {
+                                                                "color": {
+                                                                    "$$type": "color",
+                                                                    "value": "rgba(255,255,255,0.38)"
+                                                                },
+                                                                "offset": {
+                                                                    "$$type": "number",
+                                                                    "value": 100
+                                                                }
+                                                            }
+                                                        }
+                                                    ]
+                                                },
+                                                "angle": {
+                                                    "$$type": "number",
+                                                    "value": 160
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    },
+                    "custom_css": null
+                }
+            ]
+        },
+        {
             "id": "g-6567433",
             "label": "image-couvrante",
             "groupe": "Vidéo et images",
@@ -540,7 +611,7 @@
             "id": "g-d6cb92c",
             "label": "titre-vignette-sombre",
             "groupe": "Vidéo et images",
-            "description": "À ajouter à « titre-vignette » sur un fond clair ou orange : texte encre, deuxième ligne blanche.",
+            "description": "À ajouter à « titre-vignette » sur une plaque claire : texte encre, deuxième ligne violet foncé.",
             "variants": [
                 {
                     "meta": {
@@ -554,7 +625,7 @@
                         }
                     },
                     "custom_css": {
-                        "raw": "dGV4dC1zaGFkb3c6IG5vbmU7ICYgc3BhbiB7IGNvbG9yOiAjRkZGRkZGOyB0ZXh0LXNoYWRvdzogMCAxcHggNnB4IHJnYmEoMTYwLDUwLDEwLDAuNDUpOyB9"
+                        "raw": "dGV4dC1zaGFkb3c6IG5vbmU7ICYgc3BhbiB7IGNvbG9yOiAjM0IxRjlFOyB0ZXh0LXNoYWRvdzogbm9uZTsgfQ=="
                     }
                 }
             ]
@@ -1958,7 +2029,7 @@
                         }
                     },
                     "custom_css": {
-                        "raw": "Zm9udC13ZWlnaHQ6IDY1MDsgY29sb3I6IHZhcigtLXJsLXRleHRlLCB2YXIoLS1lbmNyZSkpOyAmIGVtLCAmIGkgeyBmb250LXN0eWxlOiBub3JtYWw7IGJhY2tncm91bmQtaW1hZ2U6IHZhcigtLXJsLWRlZ3JhZGUsIGxpbmVhci1ncmFkaWVudCg5NWRlZywgIzVCM0JFQSAwJSwgIzhFNERFNiA0MiUsICNFMDU2MkEgMTAwJSkpOyAtd2Via2l0LWJhY2tncm91bmQtY2xpcDogdGV4dDsgYmFja2dyb3VuZC1jbGlwOiB0ZXh0OyBjb2xvcjogdHJhbnNwYXJlbnQ7IH0gJiBzdHJvbmcsICYgYiB7IGZvbnQtd2VpZ2h0OiBpbmhlcml0OyBiYWNrZ3JvdW5kLWltYWdlOiBsaW5lYXItZ3JhZGllbnQoOTVkZWcsICMzNDM0RTAgMCUsICM1QjNCRUEgNTAlLCAjOEU0REU2IDEwMCUpOyAtd2Via2l0LWJhY2tncm91bmQtY2xpcDogdGV4dDsgYmFja2dyb3VuZC1jbGlwOiB0ZXh0OyBjb2xvcjogdHJhbnNwYXJlbnQ7IH0gJiB1IHsgdGV4dC1kZWNvcmF0aW9uOiBub25lOyBiYWNrZ3JvdW5kLWltYWdlOiBsaW5lYXItZ3JhZGllbnQoOTVkZWcsICNDMjQxMEMgMCUsICNFMDU2MkEgNDUlLCAjRkY4QTVCIDEwMCUpOyAtd2Via2l0LWJhY2tncm91bmQtY2xpcDogdGV4dDsgYmFja2dyb3VuZC1jbGlwOiB0ZXh0OyBjb2xvcjogdHJhbnNwYXJlbnQ7IH0="
+                        "raw": "Zm9udC13ZWlnaHQ6IDY1MDsgY29sb3I6IHZhcigtLXJsLXRleHRlLCB2YXIoLS1lbmNyZSkpOyAmIGVtLCAmIGkgeyBmb250LXN0eWxlOiBub3JtYWw7IGJhY2tncm91bmQtaW1hZ2U6IHZhcigtLXJsLWRlZ3JhZGUsIGxpbmVhci1ncmFkaWVudCg5NWRlZywgIzVCM0JFQSAwJSwgIzhFNERFNiA0MiUsICNFMDU2MkEgMTAwJSkpOyAtd2Via2l0LWJhY2tncm91bmQtY2xpcDogdGV4dDsgYmFja2dyb3VuZC1jbGlwOiB0ZXh0OyBjb2xvcjogdHJhbnNwYXJlbnQ7IH0gJiBzdHJvbmcsICYgYiB7IGZvbnQtd2VpZ2h0OiBpbmhlcml0OyBiYWNrZ3JvdW5kLWltYWdlOiBsaW5lYXItZ3JhZGllbnQoOTVkZWcsICMzNDM0RTAgMCUsICM1QjNCRUEgNTAlLCAjOEU0REU2IDEwMCUpOyAtd2Via2l0LWJhY2tncm91bmQtY2xpcDogdGV4dDsgYmFja2dyb3VuZC1jbGlwOiB0ZXh0OyBjb2xvcjogdHJhbnNwYXJlbnQ7IH0gJiB1IHsgdGV4dC1kZWNvcmF0aW9uOiBub25lOyBiYWNrZ3JvdW5kLWltYWdlOiBsaW5lYXItZ3JhZGllbnQoOTVkZWcsICNDMjQxMEMgMCUsICNFMDU2MkEgNDUlLCAjRUM1RTJCIDEwMCUpOyAtd2Via2l0LWJhY2tncm91bmQtY2xpcDogdGV4dDsgYmFja2dyb3VuZC1jbGlwOiB0ZXh0OyBjb2xvcjogdHJhbnNwYXJlbnQ7IH0="
                     }
                 }
             ]
@@ -2006,7 +2077,7 @@
                         }
                     },
                     "custom_css": {
-                        "raw": "Zm9udC13ZWlnaHQ6IDY1MDsgY29sb3I6IHZhcigtLXJsLXRleHRlLCB2YXIoLS1lbmNyZSkpOyAmIGVtLCAmIGkgeyBmb250LXN0eWxlOiBub3JtYWw7IGJhY2tncm91bmQtaW1hZ2U6IHZhcigtLXJsLWRlZ3JhZGUsIGxpbmVhci1ncmFkaWVudCg5NWRlZywgIzVCM0JFQSAwJSwgIzhFNERFNiA0MiUsICNFMDU2MkEgMTAwJSkpOyAtd2Via2l0LWJhY2tncm91bmQtY2xpcDogdGV4dDsgYmFja2dyb3VuZC1jbGlwOiB0ZXh0OyBjb2xvcjogdHJhbnNwYXJlbnQ7IH0gJiBzdHJvbmcsICYgYiB7IGZvbnQtd2VpZ2h0OiBpbmhlcml0OyBiYWNrZ3JvdW5kLWltYWdlOiBsaW5lYXItZ3JhZGllbnQoOTVkZWcsICMzNDM0RTAgMCUsICM1QjNCRUEgNTAlLCAjOEU0REU2IDEwMCUpOyAtd2Via2l0LWJhY2tncm91bmQtY2xpcDogdGV4dDsgYmFja2dyb3VuZC1jbGlwOiB0ZXh0OyBjb2xvcjogdHJhbnNwYXJlbnQ7IH0gJiB1IHsgdGV4dC1kZWNvcmF0aW9uOiBub25lOyBiYWNrZ3JvdW5kLWltYWdlOiBsaW5lYXItZ3JhZGllbnQoOTVkZWcsICNDMjQxMEMgMCUsICNFMDU2MkEgNDUlLCAjRkY4QTVCIDEwMCUpOyAtd2Via2l0LWJhY2tncm91bmQtY2xpcDogdGV4dDsgYmFja2dyb3VuZC1jbGlwOiB0ZXh0OyBjb2xvcjogdHJhbnNwYXJlbnQ7IH0="
+                        "raw": "Zm9udC13ZWlnaHQ6IDY1MDsgY29sb3I6IHZhcigtLXJsLXRleHRlLCB2YXIoLS1lbmNyZSkpOyAmIGVtLCAmIGkgeyBmb250LXN0eWxlOiBub3JtYWw7IGJhY2tncm91bmQtaW1hZ2U6IHZhcigtLXJsLWRlZ3JhZGUsIGxpbmVhci1ncmFkaWVudCg5NWRlZywgIzVCM0JFQSAwJSwgIzhFNERFNiA0MiUsICNFMDU2MkEgMTAwJSkpOyAtd2Via2l0LWJhY2tncm91bmQtY2xpcDogdGV4dDsgYmFja2dyb3VuZC1jbGlwOiB0ZXh0OyBjb2xvcjogdHJhbnNwYXJlbnQ7IH0gJiBzdHJvbmcsICYgYiB7IGZvbnQtd2VpZ2h0OiBpbmhlcml0OyBiYWNrZ3JvdW5kLWltYWdlOiBsaW5lYXItZ3JhZGllbnQoOTVkZWcsICMzNDM0RTAgMCUsICM1QjNCRUEgNTAlLCAjOEU0REU2IDEwMCUpOyAtd2Via2l0LWJhY2tncm91bmQtY2xpcDogdGV4dDsgYmFja2dyb3VuZC1jbGlwOiB0ZXh0OyBjb2xvcjogdHJhbnNwYXJlbnQ7IH0gJiB1IHsgdGV4dC1kZWNvcmF0aW9uOiBub25lOyBiYWNrZ3JvdW5kLWltYWdlOiBsaW5lYXItZ3JhZGllbnQoOTVkZWcsICNDMjQxMEMgMCUsICNFMDU2MkEgNDUlLCAjRUM1RTJCIDEwMCUpOyAtd2Via2l0LWJhY2tncm91bmQtY2xpcDogdGV4dDsgYmFja2dyb3VuZC1jbGlwOiB0ZXh0OyBjb2xvcjogdHJhbnNwYXJlbnQ7IH0="
                     }
                 }
             ]
@@ -2054,7 +2125,7 @@
                         }
                     },
                     "custom_css": {
-                        "raw": "Zm9udC13ZWlnaHQ6IDY1MDsgY29sb3I6IHZhcigtLXJsLXRleHRlLCB2YXIoLS1lbmNyZSkpOyAmIGVtLCAmIGkgeyBmb250LXN0eWxlOiBub3JtYWw7IGJhY2tncm91bmQtaW1hZ2U6IHZhcigtLXJsLWRlZ3JhZGUsIGxpbmVhci1ncmFkaWVudCg5NWRlZywgIzVCM0JFQSAwJSwgIzhFNERFNiA0MiUsICNFMDU2MkEgMTAwJSkpOyAtd2Via2l0LWJhY2tncm91bmQtY2xpcDogdGV4dDsgYmFja2dyb3VuZC1jbGlwOiB0ZXh0OyBjb2xvcjogdHJhbnNwYXJlbnQ7IH0gJiBzdHJvbmcsICYgYiB7IGZvbnQtd2VpZ2h0OiBpbmhlcml0OyBiYWNrZ3JvdW5kLWltYWdlOiBsaW5lYXItZ3JhZGllbnQoOTVkZWcsICMzNDM0RTAgMCUsICM1QjNCRUEgNTAlLCAjOEU0REU2IDEwMCUpOyAtd2Via2l0LWJhY2tncm91bmQtY2xpcDogdGV4dDsgYmFja2dyb3VuZC1jbGlwOiB0ZXh0OyBjb2xvcjogdHJhbnNwYXJlbnQ7IH0gJiB1IHsgdGV4dC1kZWNvcmF0aW9uOiBub25lOyBiYWNrZ3JvdW5kLWltYWdlOiBsaW5lYXItZ3JhZGllbnQoOTVkZWcsICNDMjQxMEMgMCUsICNFMDU2MkEgNDUlLCAjRkY4QTVCIDEwMCUpOyAtd2Via2l0LWJhY2tncm91bmQtY2xpcDogdGV4dDsgYmFja2dyb3VuZC1jbGlwOiB0ZXh0OyBjb2xvcjogdHJhbnNwYXJlbnQ7IH0="
+                        "raw": "Zm9udC13ZWlnaHQ6IDY1MDsgY29sb3I6IHZhcigtLXJsLXRleHRlLCB2YXIoLS1lbmNyZSkpOyAmIGVtLCAmIGkgeyBmb250LXN0eWxlOiBub3JtYWw7IGJhY2tncm91bmQtaW1hZ2U6IHZhcigtLXJsLWRlZ3JhZGUsIGxpbmVhci1ncmFkaWVudCg5NWRlZywgIzVCM0JFQSAwJSwgIzhFNERFNiA0MiUsICNFMDU2MkEgMTAwJSkpOyAtd2Via2l0LWJhY2tncm91bmQtY2xpcDogdGV4dDsgYmFja2dyb3VuZC1jbGlwOiB0ZXh0OyBjb2xvcjogdHJhbnNwYXJlbnQ7IH0gJiBzdHJvbmcsICYgYiB7IGZvbnQtd2VpZ2h0OiBpbmhlcml0OyBiYWNrZ3JvdW5kLWltYWdlOiBsaW5lYXItZ3JhZGllbnQoOTVkZWcsICMzNDM0RTAgMCUsICM1QjNCRUEgNTAlLCAjOEU0REU2IDEwMCUpOyAtd2Via2l0LWJhY2tncm91bmQtY2xpcDogdGV4dDsgYmFja2dyb3VuZC1jbGlwOiB0ZXh0OyBjb2xvcjogdHJhbnNwYXJlbnQ7IH0gJiB1IHsgdGV4dC1kZWNvcmF0aW9uOiBub25lOyBiYWNrZ3JvdW5kLWltYWdlOiBsaW5lYXItZ3JhZGllbnQoOTVkZWcsICNDMjQxMEMgMCUsICNFMDU2MkEgNDUlLCAjRUM1RTJCIDEwMCUpOyAtd2Via2l0LWJhY2tncm91bmQtY2xpcDogdGV4dDsgYmFja2dyb3VuZC1jbGlwOiB0ZXh0OyBjb2xvcjogdHJhbnNwYXJlbnQ7IH0="
                     }
                 }
             ]
@@ -2102,7 +2173,7 @@
                         }
                     },
                     "custom_css": {
-                        "raw": "Zm9udC13ZWlnaHQ6IDY1MDsgY29sb3I6IHZhcigtLXJsLXRleHRlLCB2YXIoLS1lbmNyZSkpOyAmIGVtLCAmIGkgeyBmb250LXN0eWxlOiBub3JtYWw7IGJhY2tncm91bmQtaW1hZ2U6IHZhcigtLXJsLWRlZ3JhZGUsIGxpbmVhci1ncmFkaWVudCg5NWRlZywgIzVCM0JFQSAwJSwgIzhFNERFNiA0MiUsICNFMDU2MkEgMTAwJSkpOyAtd2Via2l0LWJhY2tncm91bmQtY2xpcDogdGV4dDsgYmFja2dyb3VuZC1jbGlwOiB0ZXh0OyBjb2xvcjogdHJhbnNwYXJlbnQ7IH0gJiBzdHJvbmcsICYgYiB7IGZvbnQtd2VpZ2h0OiBpbmhlcml0OyBiYWNrZ3JvdW5kLWltYWdlOiBsaW5lYXItZ3JhZGllbnQoOTVkZWcsICMzNDM0RTAgMCUsICM1QjNCRUEgNTAlLCAjOEU0REU2IDEwMCUpOyAtd2Via2l0LWJhY2tncm91bmQtY2xpcDogdGV4dDsgYmFja2dyb3VuZC1jbGlwOiB0ZXh0OyBjb2xvcjogdHJhbnNwYXJlbnQ7IH0gJiB1IHsgdGV4dC1kZWNvcmF0aW9uOiBub25lOyBiYWNrZ3JvdW5kLWltYWdlOiBsaW5lYXItZ3JhZGllbnQoOTVkZWcsICNDMjQxMEMgMCUsICNFMDU2MkEgNDUlLCAjRkY4QTVCIDEwMCUpOyAtd2Via2l0LWJhY2tncm91bmQtY2xpcDogdGV4dDsgYmFja2dyb3VuZC1jbGlwOiB0ZXh0OyBjb2xvcjogdHJhbnNwYXJlbnQ7IH0="
+                        "raw": "Zm9udC13ZWlnaHQ6IDY1MDsgY29sb3I6IHZhcigtLXJsLXRleHRlLCB2YXIoLS1lbmNyZSkpOyAmIGVtLCAmIGkgeyBmb250LXN0eWxlOiBub3JtYWw7IGJhY2tncm91bmQtaW1hZ2U6IHZhcigtLXJsLWRlZ3JhZGUsIGxpbmVhci1ncmFkaWVudCg5NWRlZywgIzVCM0JFQSAwJSwgIzhFNERFNiA0MiUsICNFMDU2MkEgMTAwJSkpOyAtd2Via2l0LWJhY2tncm91bmQtY2xpcDogdGV4dDsgYmFja2dyb3VuZC1jbGlwOiB0ZXh0OyBjb2xvcjogdHJhbnNwYXJlbnQ7IH0gJiBzdHJvbmcsICYgYiB7IGZvbnQtd2VpZ2h0OiBpbmhlcml0OyBiYWNrZ3JvdW5kLWltYWdlOiBsaW5lYXItZ3JhZGllbnQoOTVkZWcsICMzNDM0RTAgMCUsICM1QjNCRUEgNTAlLCAjOEU0REU2IDEwMCUpOyAtd2Via2l0LWJhY2tncm91bmQtY2xpcDogdGV4dDsgYmFja2dyb3VuZC1jbGlwOiB0ZXh0OyBjb2xvcjogdHJhbnNwYXJlbnQ7IH0gJiB1IHsgdGV4dC1kZWNvcmF0aW9uOiBub25lOyBiYWNrZ3JvdW5kLWltYWdlOiBsaW5lYXItZ3JhZGllbnQoOTVkZWcsICNDMjQxMEMgMCUsICNFMDU2MkEgNDUlLCAjRUM1RTJCIDEwMCUpOyAtd2Via2l0LWJhY2tncm91bmQtY2xpcDogdGV4dDsgYmFja2dyb3VuZC1jbGlwOiB0ZXh0OyBjb2xvcjogdHJhbnNwYXJlbnQ7IH0="
                     }
                 }
             ]
@@ -5978,7 +6049,7 @@
             "id": "g-96df232",
             "label": "plaque-verre",
             "groupe": "Surfaces",
-            "description": "Plaque de verre posée sur une photo ou une vidéo (texte blanc).",
+            "description": "Plaque de verre fumé posée sur une photo ou une vidéo, sous un texte blanc (lisible sur toute photo).",
             "variants": [
                 {
                     "meta": {
@@ -6059,7 +6130,7 @@
                                                             "value": {
                                                                 "color": {
                                                                     "$$type": "color",
-                                                                    "value": "rgba(255,255,255,0.36)"
+                                                                    "value": "rgba(22,14,52,0.66)"
                                                                 },
                                                                 "offset": {
                                                                     "$$type": "number",
@@ -6072,7 +6143,7 @@
                                                             "value": {
                                                                 "color": {
                                                                     "$$type": "color",
-                                                                    "value": "rgba(255,255,255,0.12)"
+                                                                    "value": "rgba(22,14,52,0.46)"
                                                                 },
                                                                 "offset": {
                                                                     "$$type": "number",
@@ -6913,6 +6984,62 @@
             "groupe": "Vidéo et images",
             "description": "Bandeau en verre en haut à gauche d'une vignette (INTERVIEW, MOTION 2D), avec son point.",
             "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "mobile",
+                        "state": null
+                    },
+                    "props": {
+                        "letter-spacing": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 0.05,
+                                "unit": "em"
+                            }
+                        },
+                        "padding": {
+                            "$$type": "dimensions",
+                            "value": {
+                                "block-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 5,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 9,
+                                        "unit": "px"
+                                    }
+                                },
+                                "block-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 5,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 8,
+                                        "unit": "px"
+                                    }
+                                }
+                            }
+                        },
+                        "gap": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 5,
+                                "unit": "px"
+                            }
+                        }
+                    },
+                    "custom_css": null
+                },
                 {
                     "meta": {
                         "breakpoint": "desktop",
@@ -8092,7 +8219,7 @@
                                                             "value": {
                                                                 "color": {
                                                                     "$$type": "color",
-                                                                    "value": "rgba(255,255,255,0.46)"
+                                                                    "value": "rgba(22,14,52,0.8)"
                                                                 },
                                                                 "offset": {
                                                                     "$$type": "number",
@@ -8105,7 +8232,7 @@
                                                             "value": {
                                                                 "color": {
                                                                     "$$type": "color",
-                                                                    "value": "rgba(255,255,255,0.2)"
+                                                                    "value": "rgba(22,14,52,0.62)"
                                                                 },
                                                                 "offset": {
                                                                     "$$type": "number",
@@ -8254,7 +8381,7 @@
                                                             "value": {
                                                                 "color": {
                                                                     "$$type": "color",
-                                                                    "value": "rgba(255,255,255,0.34)"
+                                                                    "value": "rgba(22,14,52,0.66)"
                                                                 },
                                                                 "offset": {
                                                                     "$$type": "number",
@@ -8267,7 +8394,7 @@
                                                             "value": {
                                                                 "color": {
                                                                     "$$type": "color",
-                                                                    "value": "rgba(255,255,255,0.12)"
+                                                                    "value": "rgba(22,14,52,0.5)"
                                                                 },
                                                                 "offset": {
                                                                     "$$type": "number",

@@ -19,8 +19,10 @@ require_once ROLLING_DIR . '/inc/class-rolling-installateur.php';
 require_once ROLLING_DIR . '/inc/class-rolling-ressources.php';
 require_once ROLLING_DIR . '/inc/class-rolling-entete-pied.php';
 require_once ROLLING_DIR . '/inc/class-rolling-guide.php';
+require_once ROLLING_DIR . '/inc/class-rolling-seo.php';
 
 Rolling_Installateur::init();
 Rolling_Ressources::init();
 Rolling_Entete_Pied::init();
 Rolling_Guide::init();
+Rolling_Seo::init();

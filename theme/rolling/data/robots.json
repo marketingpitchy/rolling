@@ -1,0 +1,5 @@
+{
+  "_note": "Robots d'IA (règle SEO 3.6, décision de la cliente) : recherche et citation autorisées, entraînement de modèles refusé.",
+  "autorises": ["OAI-SearchBot", "ChatGPT-User", "PerplexityBot", "Perplexity-User", "Claude-SearchBot", "Claude-User"],
+  "refuses": ["GPTBot", "ClaudeBot", "Google-Extended", "CCBot", "Applebot-Extended", "meta-externalagent"]
+}
