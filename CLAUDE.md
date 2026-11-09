@@ -36,6 +36,13 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   (pages guides, webinars, replays ; sous-menu en en-tête et colonne « Ressources » au pied), **en attente de validation**.
   Proposition : types de contenu « Guide » (image, thème, nb de pages, résumé, lien HubSpot) et « Webinar » (date, heure,
   durée, intervenants, lien d'inscription, lien du replay) : à venir ⇒ page Webinars, passé + lien replay ⇒ page Replays.
+  **Maquette Ressources validée** (guides, webinars, replays « top »).
+- **Retours maquette (tour suivant)** : Témoignages refaite (mur de cartes identiques : logo, citation, personne, lien ;
+  témoignage « à la une » sur 2 colonnes ; filtres ; plus de chiffres en double). Landing revue selon le playbook :
+  titre avec « agence vidéo » (correspondance avec l'annonce), 2e showreel remplacé par des résultats chiffrés
+  [à fournir] + appel au milieu, preuve sociale = plaque de chiffres + 3 témoignages courts (dont 1 vidéo), calendrier
+  HubSpot dans la page, objections du premier contact (engagement, délais, si le résultat ne plaît pas, droits) [réponses
+  à confirmer]. En attente de validation.
   Prochaines : 3 = contenus admin (réalisations, témoignages, logos, offres, articles, guides, webinars) + modèles du site
   (balises maison) + sous-menu ; 4 = pages Offres, Réalisations, Témoignages, Blog, Guides, Webinars, Replays, Contact,
   landing, 404, SEO, contrôle final.
