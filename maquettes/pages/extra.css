@@ -279,3 +279,6 @@ article > .conteneur:first-child { padding-top: calc(86px + 56px) !important; }
 .conviction .point { display: inline-block; }
 .conviction p { margin-left: 22px; }
 .equipe-agence .membre { flex-basis: 168px; }
+.agence-hero { margin-top: 26px; }
+/* Mots en dégradé : un peu d'air à gauche et à droite pour que le dégradé ne rogne pas les lettres */
+.degrade-promesse, .degrade-humain, .degrade-ia, .degrade-clair { padding: 0 .06em; margin: 0 -.06em; -webkit-box-decoration-break: clone; box-decoration-break: clone; }

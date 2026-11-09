@@ -70,6 +70,12 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   citation des fondateurs **proposée, à valider par eux** ; infos des badges (hébergement, outils IA) à fournir.
   Sections : hero + photo, 00:01 histoire (frise 3 temps) + citation, 00:02 convictions (4) + plaque de chiffres,
   00:03 équipe (créas, experts IA), 00:04 Paris / France + badges, CTA. Lien « Qui sommes-nous » dans la colonne L'agence du pied.
+  **Ne jamais desservir Pitchy (encore vendue)** : Pitchy = les équipes qui créent elles-mêmes, Rolling = celles qui
+  délèguent (complémentaires, jamais « l'outil ne suffit pas »).
+- **Menu du haut** : Offres, Réalisations, Témoignages, Ressources, **L'agence** + bouton. La page « L'agence » s'ajoute aux
+  pages créées à l'activation ; chez la cliente (menu déjà créé), elle ajoute le lien elle-même dans Apparence > Menus.
+- Mots en dégradé (background-clip: text) : prévoir `padding-inline: .06em; margin-inline: -.06em;
+  box-decoration-break: clone` (sinon la 1re lettre est rognée) ⇒ **à vérifier dans les classes du thème** (livraison 3).
 - FAQ : la cliente ajoute elle-même les réponses ; garder les questions telles quelles.
 - Le WordPress de production existe déjà chez la cliente : on livre seulement le thème (zip à importer).
 
@@ -330,7 +336,7 @@ image, texte, « À lire aussi » ; colonne latérale = temps de lecture, partag
   Le thème videra aussi ce cache à sa mise à jour s'il est présent.
 - Pied de page : validé = reprend le menu principal + 2e menu « Pied de page » (liens légaux). Mise en page
   à montrer dans les maquettes HTML des pages.
-- Menu du haut (validé) : pages Offres, Réalisations, Témoignages, Blog + bouton « Réserver un échange ».
+- Menu du haut (validé, mis à jour) : Offres, Réalisations, Témoignages, Ressources (sous-menu), L'agence + bouton « Réserver un échange ».
   La cliente ajoutera elle-même des liens vers les sections de l'accueil (ancres). Les blocs gardent les
   ancres de la maquette : #vague (Pourquoi), #methode, #exemples, #ia, #offres, #contact (+ #humain).
 - Activation du thème : crée une seule fois les pages manquantes (vides) et les deux menus
