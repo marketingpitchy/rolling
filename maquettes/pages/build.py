@@ -109,6 +109,16 @@ P = {}
 for m in re.finditer(r'<!--@([\w-]+)-->(.*?)(?=<!--@|\Z)', raw, re.S):
     P[m.group(1)] = m.group(2).strip()
 P['citation-sans-bouton'] = re.sub(r'\s*<a class="bouton-principal bouton-petit" href="#temoignage">.*?</a>', '', P['citation'], flags=re.S).replace('grid-template-columns', 'x')
+def etoiles(note):
+    # 5 étoiles remplies au prorata de la note (4,8 = 96 %) ; la note réelle est lue par les lecteurs d'écran.
+    e = ''.join(f'<path transform="translate({i*20} 0)" d="M9 1.5l2.3 4.8 5.2.7-3.8 3.6.9 5.2L9 13.3l-4.6 2.5.9-5.2L1.5 7l5.2-.7z"/>' for i in range(5))
+    pct = round(float(note.replace(',', '.')) / 5 * 100)
+    return (f'<span class="etoiles" role="img" aria-label="Note : {note} sur 5"><svg width="98" height="18" viewBox="0 0 98 18" aria-hidden="true">'
+            f'<defs><linearGradient id="et-{pct}"><stop offset="{pct}%" stop-color="#FFB547"/><stop offset="{pct}%" stop-color="rgba(255,255,255,.22)"/></linearGradient></defs>'
+            f'<g fill="url(#et-{pct})">{e}</g></svg></span>')
+AVIS = ''.join(f'<li><a class="carte-avis" href="#accueil-placeholder" target="_blank" rel="noopener"><span class="avis-image" aria-hidden="true">{im}</span><span class="avis-texte">{etoiles(n)}<span><strong>{n}/5</strong> · {src}</span></span><span class="sr"> (nouvel onglet)</span></a></li>'
+               for im, n, src in [('[image]', '4,9', '[37 avis Google]'), ('[badge]', '4,8', '[24 avis, plateforme]'), ('[image]', '5,0', '[12 avis, plateforme]')])
+P['pied-avis'] = P['pied'].replace('<!--AVIS-->', '<ul class="pied-avis" aria-label="Avis de nos clients">' + AVIS + '</ul>')
 P['cta-landing'] = P['cta'].replace('href="#contact"', 'href="#landing-rdv"')
 
 def verre(texte):

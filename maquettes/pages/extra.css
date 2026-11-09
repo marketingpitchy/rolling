@@ -78,15 +78,12 @@ article > .conteneur:first-child { padding-top: calc(86px + 56px) !important; }
 .sous-menu a:hover, .sous-menu a[aria-current="page"] { background: var(--lilas-doux); }
 .sous-menu strong { font-family: var(--police-titre); font-size: 17px; font-weight: 650; letter-spacing: -.02em; color: var(--encre); }
 .sous-menu span { font-size: 14px; color: var(--legende); }
-.pied-haut { grid-template-columns: 1.4fr 1fr 1fr 1fr !important; }
 @media (max-width: 980px) {
   .entete.ouvert .menu-sous { display: block; }
   .entete.ouvert .menu-ouvrir { display: flex; width: 100%; min-height: 52px; padding: 0 16px; font-size: 17px; justify-content: space-between; }
   .entete.ouvert .sous-menu { position: static; width: auto; padding: 0 0 8px 12px; box-shadow: none; background: none; }
   .entete.ouvert .sous-menu a { padding: 10px 16px !important; align-items: flex-start; text-align: left; }
-  .pied-haut { grid-template-columns: 1fr 1fr !important; }
 }
-@media (max-width: 640px) { .pied-haut { grid-template-columns: 1fr !important; } }
 
 /* Ressources : guides, webinars, replays */
 .carte-guide { display: flex; flex-direction: column; gap: 14px; }
@@ -178,3 +175,56 @@ article > .conteneur:first-child { padding-top: calc(86px + 56px) !important; }
   .piste-logos[aria-hidden] { display: none; }
   .temoin, .temoin:hover { transform: none; }
 }
+
+/* Pied de page : colonnes de liens (menu « Pied de page » : 1er niveau = titre de colonne), badges, avis, mentions */
+.pied { position: relative; overflow: hidden; background: linear-gradient(180deg, var(--nuit) 0%, var(--encre) 60%); }
+.pied-halo { position: absolute; width: 760px; height: 760px; right: -280px; top: -420px; border-radius: 50%; background: radial-gradient(closest-side, rgba(139,92,246,.28), rgba(255,138,91,.12) 55%, transparent 100%); pointer-events: none; }
+.pied .conteneur { position: relative; }
+.pied-tete { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 32px; padding: 72px 0 48px; border-bottom: 1px solid rgba(255,255,255,.08); }
+.pied-marque { display: flex; flex-direction: column; gap: 16px; max-width: 420px; }
+.pied-marque p { color: var(--sombre-paragraphe); font-size: 16px; }
+.pied-reseaux { display: flex !important; gap: 8px !important; }
+.pied-reseau { justify-content: center; width: 44px; min-height: 44px !important; border-radius: 50%; background: rgba(255,255,255,.07); box-shadow: inset 0 0 0 1px rgba(255,255,255,.1); }
+.pied-reseau:hover { background: rgba(255,255,255,.14); }
+.pied-appel { display: flex; flex-direction: column; align-items: flex-start; gap: 16px; padding: 26px 28px; border-radius: 26px; background: rgba(255,255,255,.05); box-shadow: inset 0 1px 0 rgba(255,255,255,.12), inset 0 0 0 1px rgba(255,255,255,.08); }
+.pied-appel-titre { font-family: var(--police-titre); font-weight: 650; letter-spacing: -.03em; font-size: 23px !important; line-height: 1.25; color: #fff !important; }
+.pied .bouton-soleil, .pied .bouton-soleil:hover { color: var(--encre); text-decoration: none; }
+.pied-colonnes { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 36px 28px; padding: 48px 0; }
+.pied-titre { margin-bottom: 12px; font-size: 12px !important; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: #fff !important; }
+.pied-confiance { display: flex; flex-direction: column; align-items: flex-start; gap: 18px; padding: 28px 0; border-top: 1px solid rgba(255,255,255,.08); }
+.pied-badges { display: flex !important; flex-wrap: wrap; gap: 10px !important; }
+.pied .badge-securite { color: #fff; background: rgba(255,255,255,.07); box-shadow: inset 0 1px 0 rgba(255,255,255,.16), inset 0 0 0 1px rgba(255,255,255,.1); }
+.pied .badge-securite i { color: #C9CBFF; background: rgba(124,126,255,.18); }
+.pied-avis { display: flex !important; flex-wrap: wrap; gap: 10px !important; }
+.carte-avis { gap: 12px; min-height: 64px !important; padding: 8px 18px 8px 8px; border-radius: 18px; background: rgba(255,255,255,.07); box-shadow: inset 0 1px 0 rgba(255,255,255,.16), inset 0 0 0 1px rgba(255,255,255,.1); transition: transform .3s ease, background .3s ease; }
+.carte-avis:hover { transform: translateY(-2px); background: rgba(255,255,255,.12); text-decoration: none !important; }
+.avis-image { display: inline-flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 12px; background: #fff; color: var(--legende); font-size: 10px; font-weight: 700; }
+.avis-texte { display: flex; flex-direction: column; gap: 2px; font-size: 14px; color: var(--sombre-paragraphe); line-height: 1.35; }
+.avis-texte strong { color: #fff; }
+.etoiles svg { display: block; }
+.pied-bas { align-items: center; }
+.pied-legal { display: flex !important; flex-wrap: wrap; gap: 0 22px !important; }
+.pied-legal a { font-size: 14px; }
+@media (max-width: 980px) { .pied-colonnes { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 640px) {
+  .pied-tete { padding-top: 56px; }
+  .pied-appel { width: 100%; }
+  .pied-colonnes { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px 20px; }
+  .pied-confiance { flex-direction: column; align-items: flex-start; }
+}
+
+/* Fiche témoignage : la carte « Le projet » reste, la citation est en plus */
+.cas-cote { position: sticky; top: 120px; display: flex; flex-direction: column; gap: 22px; }
+.cas-cote .cas-citation { position: static; }
+.cas-fiche { display: flex; flex-direction: column; gap: 20px; padding: 30px 32px; background: radial-gradient(70% 60% at 10% 0%, rgba(255,255,255,.95), rgba(255,255,255,0) 72%), linear-gradient(160deg, rgba(237,230,255,.9) 0%, rgba(255,226,212,.7) 100%); }
+.cas-infos { display: grid; gap: 0; }
+.cas-infos > div { display: grid; grid-template-columns: 112px minmax(0, 1fr); gap: 16px; padding: 12px 0; border-top: 1px solid rgba(91,59,234,.14); }
+.cas-infos > div:first-child { border-top: 0; padding-top: 0; }
+.cas-infos dt { font-size: 12px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--legende); padding-top: 4px; }
+.cas-infos dd { font-size: 16px; font-weight: 600; color: var(--encre); }
+.cas-fiche-appel { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; padding-top: 18px; border-top: 1px solid rgba(91,59,234,.14); }
+@media (max-width: 980px) {
+  .cas-cote { position: static; }
+  .plaque-libre > .chiffre-cle:last-child:nth-child(odd) { grid-column: 1 / -1; }
+}
+@media (max-width: 640px) { .plaque-libre > .chiffre-cle { padding: 4px 16px; } .plaque-libre .chiffre-verre img { height: 40px; } .cas-fiche { padding: 24px; } .cas-infos > div { grid-template-columns: minmax(0, 1fr); gap: 4px; } }

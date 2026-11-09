@@ -54,6 +54,14 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   Prochaines : 3 = contenus admin (réalisations, témoignages, logos, offres, articles, guides, webinars) + modèles du site
   (balises maison) + sous-menu ; 4 = pages Offres, Réalisations, Témoignages, Blog, Guides, Webinars, Replays, Contact,
   landing, 404, SEO, contrôle final.
+- **Tour suivant (maquette)** : fiche témoignage = carte « Le projet » (client, secteur, équipes, formats, durée + « Réserver
+  un échange ») toujours à gauche, citation **facultative** dessous ; cas à 4 chiffres (cas habituel) ; en mobile un
+  chiffre impair prend toute la largeur. Pied de page façon PlayPlay : logo + phrase + réseaux, encart « Réserver un
+  échange », colonnes = menu « Pied de page » (1er niveau = titre de colonne), badges IA sécurisée / Europe / RGPD,
+  **avis clients facultatifs** (Personnaliser : image, note, nb d'avis, lien ; 4 max ; rien si vide), mentions légales.
+  Page de maquette « Pied de page avec avis clients (plus tard) ».
+  Sections partagées : **composants Elementor** (clic droit sur un flexbox/div-block > « Créer un composant », onglet
+  « Composants » ; création/modification = licence Pro active et Pro ≥ 4.0 ; 100 composants max). Non testable sur ma copie.
 - FAQ : la cliente ajoute elle-même les réponses ; garder les questions telles quelles.
 - Le WordPress de production existe déjà chez la cliente : on livre seulement le thème (zip à importer).
 
