@@ -55,20 +55,18 @@
   },
   "classes": {
    "Showreel": [
-    "section"
+    "section",
+    "section-suite"
    ],
    "Showreel · contenu": [
-    "conteneur",
-    "pile"
-   ],
-   "Annotation": [
-    "rangee"
+    "conteneur"
    ],
    "Annotation · texte": [
     "note-main"
    ],
    "Showreel · cadre": [
-    "carte-verre"
+    "carte-verre",
+    "carte-ecran"
    ],
    "Bouton son": [
     "bouton-son"
@@ -84,11 +82,9 @@
    ]
   },
   "style": {
-   "Showreel": "padding: 0 0 120px; @media(--tablet) { padding: 0 0 84px; }",
-   "Showreel · contenu": "gap: 0;",
-   "Annotation": "justify-content: flex-end; align-items: flex-start; gap: 6px; margin-bottom: 6px; padding-right: 30px; @media(--tablet) { display: none; }",
+   "Showreel · contenu": "display: flex; flex-direction: column; gap: 0;",
+   "Annotation": "display: flex; flex-direction: row; justify-content: flex-end; align-items: flex-start; gap: 6px; margin-bottom: 6px; padding: 0 30px 0 0; @media(--tablet) { display: none; }",
    "Annotation · flèche": "width: 34px; margin-top: 14px;",
-   "Showreel · cadre": "padding: 12px; border-radius: 40px; @media(--mobile) { padding: 8px; border-radius: 28px; }",
    "Showreel · écran": "position: relative; overflow: hidden; padding: 0; border-radius: 30px; background: #2A2233; @media(--mobile) { border-radius: 22px; }",
    "Showreel · vidéo": "display: block; width: 100%; aspect-ratio: 16 / 9;",
    "Showreel · boutons": "justify-content: center; margin-top: 28px;"

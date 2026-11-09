@@ -12,6 +12,8 @@
 /* Base */
 html { scroll-behavior: smooth; scroll-padding-top: 110px; }
 body { margin: 0; background: #FAF9F7; color: #0F0F12; font-family: "Hanken Grotesk", system-ui, sans-serif; font-size: 17px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+/* Les halos des sections débordent : jamais de défilement horizontal (overflow clip ne gêne pas les éléments collants). */
+main.site-main { overflow-x: clip; }
 img, svg, video { max-width: 100%; }
 :focus-visible { outline: 2px solid var(--rl-focus, #5B3BEA); outline-offset: 2px; }
 .page-content > .elementor, .site-main { max-width: none; }

@@ -120,9 +120,9 @@ def lecture(nom, verre=False, style=None):
 # Hero
 # --------------------------------------------------------------------------------------------
 
-hero = F('Hero', ['section', 'halos-haut'], 'padding: 104px 0 70px; @media(--tablet) { padding: 116px 0 56px; } @media(--mobile) { padding: 124px 0 48px; }', tag='section', enfants=[
+hero = F('Hero', ['section', 'section-entete', 'halos-haut'], tag='section', enfants=[
     F('Hero · contenu', ['conteneur'], 'display: flex; flex-direction: row; flex-wrap: wrap; align-items: center; gap: 48px;', enfants=[
-        F('Promesse', ['pile'], 'flex: 1 1 560px; min-width: 0; gap: 0; padding-top: 40px; @media(--tablet) { padding-top: 0; }', enfants=[
+        F('Promesse', None, 'display: flex; flex-direction: column; flex: 1 1 560px; min-width: 0; gap: 0; padding: 40px 0 0; @media(--tablet) { padding: 0; }', enfants=[
             F('Pastille', ['pastille'], enfants=[P('Pastille · texte', 'Votre agence vidéo illimitée')]),
             H('Titre H1', "Le meilleur <u>de l'humain.</u><br>Le meilleur <b>de l'IA.</b>", 'h1', ['titre-lg'], 'margin-top: 26px;'),
             P('Chapô', "Vos clients, vos candidats, vos collaborateurs s'informent tous en vidéo. Mais vos équipes n'ont pas le temps d'en faire ? La nôtre s'en charge, à prix fixe, <u>en illimité.</u>", ['chapo'], 'margin-top: 26px; max-width: 620px;'),
@@ -135,40 +135,40 @@ hero = F('Hero', ['section', 'halos-haut'], 'padding: 104px 0 70px; @media(--tab
                     I('Visage 1', 'visage-1.jpg', taille='thumbnail'), I('Visage 2', 'visage-2.jpg', taille='thumbnail'),
                     I('Visage 3', 'visage-3.jpg', taille='thumbnail'), I('Visage 4', 'visage-4.jpg', taille='thumbnail'),
                 ]),
-                P('Preuve · texte', 'Par les équipes de <strong>Pitchy</strong> — 10 ans de vidéo, 500+ grandes entreprises.', ['texte-petit'], 'font-size: 14px; color: var(--legende);'),
+                P('Preuve · texte', 'Par les équipes de <strong>Pitchy</strong> — 10 ans de vidéo, 500+ grandes entreprises.', ['texte-petit', 'texte-legende']),
             ]),
         ]),
         D('Visuels', ['lueur-peche'], 'position: relative; flex: 1 1 460px; min-width: 0; height: 680px; padding: 0; @media(--tablet) { height: auto; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; } @media(--mobile) { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }', enfants=[
-            D('Tournage', ['cadre-verre'], 'position: absolute; left: 0; right: 0; top: 0; border-radius: 42px; @media(--tablet) { position: relative; grid-column: 1 / -1; }', enfants=[
-                D('Tournage · photo', ['cadre-photo'], 'height: 652px; border-radius: 29px; @media(--tablet) { height: 420px; } @media(--mobile) { height: 280px; }', enfants=[
+            D('Tournage', ['cadre-verre', 'cadre-verre-grand'], 'position: absolute; left: 0; right: 0; top: 0; @media(--tablet) { position: relative; grid-column: 1 / -1; }', enfants=[
+                D('Tournage · photo', ['cadre-photo'], 'height: 652px; @media(--tablet) { height: 420px; } @media(--mobile) { height: 280px; }', enfants=[
                     I('Tournage · image', 'hero-tournage.jpg', 'Une caméra sur trépied, en plein tournage dans des bureaux', ['image-couvrante'], 'object-position: 56% 50%;'),
-                    bandeau('Tournage · bandeau', 'Tournage', ['bandeau-rec'], 'top: 18px; left: 18px;'),
+                    bandeau('Tournage · bandeau', 'Tournage', ['bandeau-rec']),
                 ]),
             ]),
-            D('Interview', ['cadre-verre'], 'position: absolute; left: 28px; top: 252px; width: 208px; z-index: 2; border-radius: 34px; @media(--tablet) { position: relative; left: auto; top: auto; width: auto; }', enfants=[
-                D('Interview · vidéo', ['cadre-photo'], 'aspect-ratio: 9 / 16; border-radius: 21px; background: #3F2BB8;', enfants=[
+            D('Interview', ['cadre-verre'], 'position: absolute; left: 28px; top: 252px; width: 208px; z-index: 2; @media(--tablet) { position: relative; left: auto; top: auto; width: auto; }', enfants=[
+                D('Interview · vidéo', ['cadre-photo'], 'aspect-ratio: 9 / 16;', enfants=[
                     I('Interview · image', 'hero-interview.jpg', 'Une experte filmée en interview', ['image-couvrante'], 'object-position: 53% 28%;'),
-                    bandeau('Interview · bandeau', 'Interview', style='top: 10px; left: 10px;'),
-                    F('Interview · plaque', ['plaque-verre'], 'position: absolute; z-index: 2; left: 8px; right: 8px; bottom: 8px; width: auto; justify-content: space-between; padding: 10px 8px 10px 12px;', enfants=[
+                    bandeau('Interview · bandeau', 'Interview'),
+                    F('Interview · plaque', ['plaque-verre', 'plaque-bas'], enfants=[
                         P('Interview · titre', '3 gestes<br><span>qui sauvent</span>', ['titre-vignette']),
                         lecture('Interview · lecture', verre=True),
                     ]),
                 ]),
             ]),
             D('Démo produit', ['cadre-verre'], 'position: absolute; right: 28px; top: 24px; width: 294px; z-index: 2; @media(--tablet) { position: relative; right: auto; top: auto; width: auto; align-self: start; } @media(--mobile) { grid-column: 1 / -1; order: 3; }', enfants=[
-                D('Démo produit · vidéo', ['cadre-photo'], 'aspect-ratio: 16 / 9; border-radius: 19px;', enfants=[
+                D('Démo produit · vidéo', ['cadre-photo'], 'aspect-ratio: 16 / 9;', enfants=[
                     I('Démo produit · image', 'hero-demo-produit.jpg', "Un pot de crème ouvert flotte au-dessus d'une pierre", ['image-couvrante'], 'object-position: 50% 40%;'),
-                    bandeau('Démo produit · bandeau', 'Démo produit', style='top: 10px; left: 10px;'),
-                    F('Démo produit · lecteur', ['plaque-verre', 'plaque-lecteur'], 'position: absolute; z-index: 2; left: 8px; right: 8px; bottom: 8px; width: auto; gap: 12px; padding: 6px 14px 6px 6px; border-radius: 999px;', enfants=[
-                        lecture('Démo produit · lecture', verre=True, style='width: 30px; height: 30px;'),
+                    bandeau('Démo produit · bandeau', 'Démo produit'),
+                    F('Démo produit · lecteur', ['plaque-verre', 'plaque-bas', 'plaque-lecteur'], enfants=[
+                        lecture('Démo produit · lecture', verre=True),
                     ]),
                 ]),
             ]),
             D('Motion design', ['cadre-verre'], 'position: absolute; right: 28px; top: 432px; width: 208px; z-index: 2; @media(--tablet) { position: relative; right: auto; top: auto; width: auto; align-self: start; }', enfants=[
                 D('Motion design · vidéo', ['fond-video-orange', 'illus-motion'], 'aspect-ratio: 1 / 1; overflow: hidden; padding: 0; border-radius: 19px;', enfants=[
-                    bandeau('Motion design · bandeau', 'Motion design', ['bandeau-clair'], 'top: 10px; left: 10px;'),
-                    F('Motion design · plaque', ['plaque-verre', 'plaque-claire'], 'position: absolute; z-index: 2; left: 8px; right: 8px; bottom: 8px; width: auto; justify-content: space-between; padding: 10px 8px 10px 12px; color: #0F0F12;', enfants=[
-                        P('Motion design · titre', 'Résultats<br><span>2026</span>', ['titre-vignette', 'titre-vignette-sombre'], 'font-size: 17px; line-height: 0.98; letter-spacing: -0.04em;'),
+                    bandeau('Motion design · bandeau', 'Motion design', ['bandeau-clair']),
+                    F('Motion design · plaque', ['plaque-verre', 'plaque-bas', 'plaque-claire'], enfants=[
+                        P('Motion design · titre', 'Résultats<br><span>2026</span>', ['titre-vignette', 'titre-vignette-sombre']),
                         lecture('Motion design · lecture', verre=True),
                     ]),
                 ]),
@@ -193,19 +193,16 @@ LOGOS = [
     ('logo-veolia.png', 'Veolia', 32),
 ]
 
-logos = F('Ils nous font confiance', ['section'], 'padding: 0 0 104px; @media(--tablet) { padding: 0 0 72px; }', tag='section', enfants=[
+logos = F('Ils nous font confiance', ['section', 'section-suite'], tag='section', enfants=[
     F('Logos · titre', ['conteneur'], 'justify-content: center;', enfants=[
         P('Logos · libellé', 'Ils nous font confiance', ['label'], 'text-align: center; width: 100%;'),
     ]),
     F('Logos · bande', ['masque-bords'], 'margin-top: 22px; width: 100%;', enfants=[
         F('Logos · liste', ['logos-defilants', 'grille-6'], enfants=[
-            F('Logo · ' + alt, ['carte-verre', 'tuile-logo'], 'padding: 0 14px; gap: 0;', enfants=[
+            F('Logo · ' + alt, ['carte-verre', 'tuile-logo'], enfants=[
                 I('Logo · image · ' + alt, fichier, cls=None, style='height: %dpx;' % h, taille='medium'),
             ]) for fichier, alt, h in LOGOS
         ]),
-    ]),
-    F('Logos · commande', ['conteneur'], 'justify-content: center; margin-top: 4px;', enfants=[
-        B('Bouton pause', '<span>Arrêter le défilement</span><span>Relancer le défilement</span>', '#rl-pause', ['bouton-verre', 'bouton-petit', 'bascule-libelles'], 'min-height: 44px; font-size: 14px;'),
     ]),
 ])
 
@@ -213,13 +210,13 @@ logos = F('Ils nous font confiance', ['section'], 'padding: 0 0 104px; @media(--
 # Showreel
 # --------------------------------------------------------------------------------------------
 
-showreel = F('Showreel', ['section'], 'padding: 0 0 120px; @media(--tablet) { padding: 0 0 84px; }', tag='section', enfants=[
-    F('Showreel · contenu', ['conteneur', 'pile'], 'gap: 0;', enfants=[
-        F('Annotation', ['rangee'], 'justify-content: flex-end; align-items: flex-start; gap: 6px; margin-bottom: 6px; padding-right: 30px; @media(--tablet) { display: none; }', enfants=[
+showreel = F('Showreel', ['section', 'section-suite'], tag='section', enfants=[
+    F('Showreel · contenu', ['conteneur'], 'display: flex; flex-direction: column; gap: 0;', enfants=[
+        F('Annotation', None, 'display: flex; flex-direction: row; justify-content: flex-end; align-items: flex-start; gap: 6px; margin-bottom: 6px; padding: 0 30px 0 0; @media(--tablet) { display: none; }', enfants=[
             P('Annotation · texte', 'ce que nous faisons, en vrai', ['note-main']),
             I('Annotation · flèche', 'fleche-annotation.png', style='width: 34px; margin-top: 14px;'),
         ]),
-        D('Showreel · cadre', ['carte-verre'], 'padding: 12px; border-radius: 40px; @media(--mobile) { padding: 8px; border-radius: 28px; }', enfants=[
+        D('Showreel · cadre', ['carte-verre', 'carte-ecran'], enfants=[
             D('Showreel · écran', None, 'position: relative; overflow: hidden; padding: 0; border-radius: 30px; background: #2A2233; @media(--mobile) { border-radius: 22px; }', enfants=[
                 E('e-self-hosted-video', 'Showreel · vidéo', {'autoplay': True, 'mute': True, 'loop': True, 'playsinline': True, 'controls': True, 'preload': 'none', 'poster_enabled': True, 'poster': {'src': {'url': MEDIA + 'showreel-affiche.jpg'}, 'size': 'full'}}, None, 'display: block; width: 100%; aspect-ratio: 16 / 9;'),
                 B('Bouton son', 'Activer le son', '#rl-son', ['bouton-son']),

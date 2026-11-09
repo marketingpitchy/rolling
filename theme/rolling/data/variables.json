@@ -218,35 +218,5 @@
             "value": "#B6B0CC"
         },
         "description": "Légendes et labels sur fond sombre."
-    },
-    {
-        "id": "e-gv-713521c",
-        "label": "police-titre",
-        "type": "global-font-variable",
-        "value": {
-            "$$type": "string",
-            "value": "Bricolage Grotesque"
-        },
-        "description": "Titres, chapôs, étiquettes métiers."
-    },
-    {
-        "id": "e-gv-58819d5",
-        "label": "police-texte",
-        "type": "global-font-variable",
-        "value": {
-            "$$type": "string",
-            "value": "Hanken Grotesk"
-        },
-        "description": "Texte, boutons, labels."
-    },
-    {
-        "id": "e-gv-f74c97d",
-        "label": "police-main",
-        "type": "global-font-variable",
-        "value": {
-            "$$type": "string",
-            "value": "Caveat"
-        },
-        "description": "Annotations manuscrites seulement."
     }
 ]

@@ -11,6 +11,274 @@
     ],
     "classes": [
         {
+            "id": "g-e13f5b6",
+            "label": "section-entete",
+            "groupe": "Mise en page",
+            "description": "À ajouter à la première section d'une page : marges qui laissent la place à l'en-tête posé dessus.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "tablet",
+                        "state": null
+                    },
+                    "props": {
+                        "padding": {
+                            "$$type": "dimensions",
+                            "value": {
+                                "block-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 116,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 0,
+                                        "unit": "px"
+                                    }
+                                },
+                                "block-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 56,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 0,
+                                        "unit": "px"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "custom_css": null
+                },
+                {
+                    "meta": {
+                        "breakpoint": "mobile",
+                        "state": null
+                    },
+                    "props": {
+                        "padding": {
+                            "$$type": "dimensions",
+                            "value": {
+                                "block-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 124,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 0,
+                                        "unit": "px"
+                                    }
+                                },
+                                "block-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 48,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 0,
+                                        "unit": "px"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "custom_css": null
+                },
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "padding": {
+                            "$$type": "dimensions",
+                            "value": {
+                                "block-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 104,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 0,
+                                        "unit": "px"
+                                    }
+                                },
+                                "block-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 70,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 0,
+                                        "unit": "px"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "custom_css": null
+                }
+            ]
+        },
+        {
+            "id": "g-3396e99",
+            "label": "section-suite",
+            "groupe": "Mise en page",
+            "description": "À ajouter à une section qui prolonge la précédente : pas de marge en haut, marge réduite en bas.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "tablet",
+                        "state": null
+                    },
+                    "props": {
+                        "padding": {
+                            "$$type": "dimensions",
+                            "value": {
+                                "block-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 0,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 0,
+                                        "unit": "px"
+                                    }
+                                },
+                                "block-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 72,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 0,
+                                        "unit": "px"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "custom_css": null
+                },
+                {
+                    "meta": {
+                        "breakpoint": "mobile",
+                        "state": null
+                    },
+                    "props": {
+                        "padding": {
+                            "$$type": "dimensions",
+                            "value": {
+                                "block-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 0,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 0,
+                                        "unit": "px"
+                                    }
+                                },
+                                "block-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 72,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 0,
+                                        "unit": "px"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "custom_css": null
+                },
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "padding": {
+                            "$$type": "dimensions",
+                            "value": {
+                                "block-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 0,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 0,
+                                        "unit": "px"
+                                    }
+                                },
+                                "block-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 104,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 0,
+                                        "unit": "px"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "custom_css": null
+                }
+            ]
+        },
+        {
             "id": "g-ed35082",
             "label": "fond-grille",
             "groupe": "Mise en page",
@@ -49,6 +317,32 @@
                         }
                     },
                     "custom_css": null
+                }
+            ]
+        },
+        {
+            "id": "g-7fdd194",
+            "label": "texte-legende",
+            "groupe": "Textes",
+            "description": "À ajouter à un petit texte : version légende, 14 px et gris.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "font-size": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 14,
+                                "unit": "px"
+                            }
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "Y29sb3I6IHZhcigtLXJsLWxlZ2VuZGUsIHZhcigtLWxlZ2VuZGUpKTs="
+                    }
                 }
             ]
         },
@@ -104,7 +398,7 @@
                     },
                     "props": [],
                     "custom_css": {
-                        "raw": "Jjo6YmVmb3JlIHsgcG9zaXRpb246IHJlbGF0aXZlOyB0b3A6IGF1dG87IHJpZ2h0OiBhdXRvOyBib3R0b206IGF1dG87IGxlZnQ6IGF1dG87IGhlaWdodDogYXV0bzsgb3BhY2l0eTogMTsgbWl4LWJsZW5kLW1vZGU6IG5vcm1hbDsgYm9yZGVyOiAwOyBiYWNrZ3JvdW5kOiAjMzQzNEUwOyBib3gtc2hhZG93OiAwIDAgMCA0cHggcmdiYSg1Miw1MiwyMjQsMC4xNik7IH0="
+                        "raw": "Jjo6YmVmb3JlIHsgYmFja2dyb3VuZDogIzM0MzRFMDsgYm94LXNoYWRvdzogMCAwIDAgNHB4IHJnYmEoNTIsNTIsMjI0LDAuMTYpOyB9"
                     }
                 }
             ]
@@ -122,7 +416,7 @@
                     },
                     "props": [],
                     "custom_css": {
-                        "raw": "Jjo6YmVmb3JlIHsgcG9zaXRpb246IHJlbGF0aXZlOyB0b3A6IGF1dG87IHJpZ2h0OiBhdXRvOyBib3R0b206IGF1dG87IGxlZnQ6IGF1dG87IGhlaWdodDogYXV0bzsgb3BhY2l0eTogMTsgbWl4LWJsZW5kLW1vZGU6IG5vcm1hbDsgYm9yZGVyOiAwOyBiYWNrZ3JvdW5kOiAjMEYwRjEyOyBib3gtc2hhZG93OiAwIDAgMCA0cHggcmdiYSgxNSwxNSwxOCwwLjEyKTsgfQ=="
+                        "raw": "Jjo6YmVmb3JlIHsgYmFja2dyb3VuZDogIzBGMEYxMjsgYm94LXNoYWRvdzogMCAwIDAgNHB4IHJnYmEoMTUsMTUsMTgsMC4xMik7IH0="
                     }
                 }
             ]
@@ -204,7 +498,7 @@
                     },
                     "props": [],
                     "custom_css": {
-                        "raw": "Jjo6YmVmb3JlIHsgcG9zaXRpb246IHJlbGF0aXZlOyB0b3A6IGF1dG87IHJpZ2h0OiBhdXRvOyBib3R0b206IGF1dG87IGxlZnQ6IGF1dG87IGhlaWdodDogYXV0bzsgb3BhY2l0eTogMTsgbWl4LWJsZW5kLW1vZGU6IG5vcm1hbDsgYm9yZGVyOiAwOyBiYWNrZ3JvdW5kOiAjMzQzNEUwOyBib3gtc2hhZG93OiAwIDAgMCA0cHggcmdiYSg1Miw1MiwyMjQsMC4xNik7IH0="
+                        "raw": "Jjo6YmVmb3JlIHsgYmFja2dyb3VuZDogIzM0MzRFMDsgYm94LXNoYWRvdzogMCAwIDAgNHB4IHJnYmEoNTIsNTIsMjI0LDAuMTYpOyB9"
                     }
                 }
             ]
@@ -222,8 +516,62 @@
                     },
                     "props": [],
                     "custom_css": {
-                        "raw": "Jjo6YmVmb3JlIHsgcG9zaXRpb246IHJlbGF0aXZlOyB0b3A6IGF1dG87IHJpZ2h0OiBhdXRvOyBib3R0b206IGF1dG87IGxlZnQ6IGF1dG87IGhlaWdodDogYXV0bzsgb3BhY2l0eTogMTsgbWl4LWJsZW5kLW1vZGU6IG5vcm1hbDsgYm9yZGVyOiAwOyBiYWNrZ3JvdW5kOiAjRTA1NjJBOyBib3gtc2hhZG93OiAwIDAgMCA0cHggcmdiYSgyMjQsODYsNDIsMC4xOCk7IH0="
+                        "raw": "Jjo6YmVmb3JlIHsgYmFja2dyb3VuZDogI0UwNTYyQTsgYm94LXNoYWRvdzogMCAwIDAgNHB4IHJnYmEoMjI0LDg2LDQyLDAuMTgpOyB9"
                     }
+                }
+            ]
+        },
+        {
+            "id": "g-cb4dee9",
+            "label": "carte-ecran",
+            "groupe": "Surfaces",
+            "description": "À ajouter à une carte en verre qui encadre une vidéo : bord fin et grands arrondis.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "mobile",
+                        "state": null
+                    },
+                    "props": {
+                        "padding": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 8,
+                                "unit": "px"
+                            }
+                        },
+                        "border-radius": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 28,
+                                "unit": "px"
+                            }
+                        }
+                    },
+                    "custom_css": null
+                },
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "padding": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 12,
+                                "unit": "px"
+                            }
+                        },
+                        "border-radius": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 40,
+                                "unit": "px"
+                            }
+                        }
+                    },
+                    "custom_css": null
                 }
             ]
         },
@@ -274,6 +622,93 @@
                             "value": {
                                 "size": 40,
                                 "unit": "px"
+                            }
+                        }
+                    },
+                    "custom_css": null
+                }
+            ]
+        },
+        {
+            "id": "g-949019a",
+            "label": "plaque-bas",
+            "groupe": "Surfaces",
+            "description": "À ajouter à une plaque en verre : posée en bas de la vignette, sur toute sa largeur.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "mobile",
+                        "state": null
+                    },
+                    "props": {
+                        "inset-inline-end": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 6,
+                                "unit": "px"
+                            }
+                        },
+                        "inset-block-end": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 6,
+                                "unit": "px"
+                            }
+                        },
+                        "inset-inline-start": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 6,
+                                "unit": "px"
+                            }
+                        }
+                    },
+                    "custom_css": null
+                },
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "position": {
+                            "$$type": "string",
+                            "value": "absolute"
+                        },
+                        "inset-inline-end": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 8,
+                                "unit": "px"
+                            }
+                        },
+                        "inset-block-end": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 8,
+                                "unit": "px"
+                            }
+                        },
+                        "inset-inline-start": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 8,
+                                "unit": "px"
+                            }
+                        },
+                        "z-index": {
+                            "$$type": "number",
+                            "value": 2
+                        },
+                        "justify-content": {
+                            "$$type": "string",
+                            "value": "space-between"
+                        },
+                        "width": {
+                            "$$type": "size",
+                            "value": {
+                                "size": null,
+                                "unit": "auto"
                             }
                         }
                     },
@@ -367,6 +802,32 @@
             ]
         },
         {
+            "id": "g-f872b08",
+            "label": "cadre-verre-grand",
+            "groupe": "Surfaces",
+            "description": "À ajouter à un cadre en verre qui porte un grand visuel : plus arrondi, étiquette plus éloignée du bord.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "border-radius": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 42,
+                                "unit": "px"
+                            }
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "LS1ybC1yYXlvbi1waG90bzogMjlweDsgLS1ybC1tYXJnZS12aWduZXR0ZTogMThweDs="
+                    }
+                }
+            ]
+        },
+        {
             "id": "g-d7bac72",
             "label": "plaque-claire",
             "groupe": "Surfaces",
@@ -378,6 +839,10 @@
                         "state": null
                     },
                     "props": {
+                        "color": {
+                            "$$type": "color",
+                            "value": "#0F0F12"
+                        },
                         "background": {
                             "$$type": "background",
                             "value": {
@@ -487,6 +952,98 @@
                         }
                     },
                     "custom_css": null
+                }
+            ]
+        },
+        {
+            "id": "g-4623012",
+            "label": "tuile-logo",
+            "groupe": "Vidéo et images",
+            "description": "Tuile de logo client : logo en gris à 72 %, la couleur revient au survol.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "min-width": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 150,
+                                "unit": "px"
+                            }
+                        },
+                        "min-height": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 86,
+                                "unit": "px"
+                            }
+                        },
+                        "padding": {
+                            "$$type": "dimensions",
+                            "value": {
+                                "block-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 0,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 14,
+                                        "unit": "px"
+                                    }
+                                },
+                                "block-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 0,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 14,
+                                        "unit": "px"
+                                    }
+                                }
+                            }
+                        },
+                        "border-radius": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 18,
+                                "unit": "px"
+                            }
+                        },
+                        "display": {
+                            "$$type": "string",
+                            "value": "flex"
+                        },
+                        "gap": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 0,
+                                "unit": "px"
+                            }
+                        },
+                        "justify-content": {
+                            "$$type": "string",
+                            "value": "center"
+                        },
+                        "align-items": {
+                            "$$type": "string",
+                            "value": "center"
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "JiBpbWcgeyB3aWR0aDogYXV0bzsgbWF4LXdpZHRoOiA4OCU7IGZpbHRlcjogZ3JheXNjYWxlKDEpIGNvbnRyYXN0KDEuMDUpOyBvcGFjaXR5OiAwLjcyOyB0cmFuc2l0aW9uOiBmaWx0ZXIgMC4zcyBlYXNlLCBvcGFjaXR5IDAuM3MgZWFzZTsgfSAmOmhvdmVyIGltZyB7IGZpbHRlcjogbm9uZTsgb3BhY2l0eTogMTsgfQ=="
+                    }
                 }
             ]
         },
@@ -642,20 +1199,6 @@
                         "state": null
                     },
                     "props": {
-                        "width": {
-                            "$$type": "size",
-                            "value": {
-                                "size": 34,
-                                "unit": "px"
-                            }
-                        },
-                        "height": {
-                            "$$type": "size",
-                            "value": {
-                                "size": 34,
-                                "unit": "px"
-                            }
-                        },
                         "position": {
                             "$$type": "string",
                             "value": "relative"
@@ -719,7 +1262,9 @@
                             }
                         }
                     },
-                    "custom_css": null
+                    "custom_css": {
+                        "raw": "d2lkdGg6IHZhcigtLXJsLWxlY3R1cmUsIDM0cHgpOyBoZWlnaHQ6IHZhcigtLXJsLWxlY3R1cmUsIDM0cHgpOw=="
+                    }
                 }
             ]
         },
@@ -736,7 +1281,7 @@
                     },
                     "props": [],
                     "custom_css": {
-                        "raw": "Jjo6YmVmb3JlIHsgcG9zaXRpb246IHJlbGF0aXZlOyB0b3A6IGF1dG87IHJpZ2h0OiBhdXRvOyBib3R0b206IGF1dG87IGxlZnQ6IGF1dG87IGhlaWdodDogYXV0bzsgb3BhY2l0eTogMTsgbWl4LWJsZW5kLW1vZGU6IG5vcm1hbDsgYm9yZGVyOiAwOyB3aWR0aDogOHB4OyBoZWlnaHQ6IDhweDsgYmFja2dyb3VuZDogI0ZGM0IzMDsgYm94LXNoYWRvdzogMCAwIDAgM3B4IHJnYmEoMjU1LDU5LDQ4LDAuMjgpOyB9ICY6OmJlZm9yZSB7IGFuaW1hdGlvbjogcmwtY2xpZ25vdGUgMS42cyBlYXNlLWluLW91dCBpbmZpbml0ZTsgfQ=="
+                        "raw": "Jjo6YmVmb3JlIHsgd2lkdGg6IDhweDsgaGVpZ2h0OiA4cHg7IGJhY2tncm91bmQ6ICNGRjNCMzA7IGJveC1zaGFkb3c6IDAgMCAwIDNweCByZ2JhKDI1NSw1OSw0OCwwLjI4KTsgfSAmOjpiZWZvcmUgeyBhbmltYXRpb246IHJsLWNsaWdub3RlIDEuNnMgZWFzZS1pbi1vdXQgaW5maW5pdGU7IH0="
                     }
                 }
             ]
@@ -813,7 +1358,7 @@
                         }
                     },
                     "custom_css": {
-                        "raw": "dGV4dC1zaGFkb3c6IG5vbmU7ICY6OmJlZm9yZSB7IHBvc2l0aW9uOiByZWxhdGl2ZTsgdG9wOiBhdXRvOyByaWdodDogYXV0bzsgYm90dG9tOiBhdXRvOyBsZWZ0OiBhdXRvOyBoZWlnaHQ6IGF1dG87IG9wYWNpdHk6IDE7IG1peC1ibGVuZC1tb2RlOiBub3JtYWw7IGJvcmRlcjogMDsgYmFja2dyb3VuZDogI0UwNTYyQTsgYm94LXNoYWRvdzogMCAwIDAgM3B4IHJnYmEoMjI0LDg2LDQyLDAuMjIpOyB9"
+                        "raw": "dGV4dC1zaGFkb3c6IG5vbmU7ICY6OmJlZm9yZSB7IGJhY2tncm91bmQ6ICNFMDU2MkE7IGJveC1zaGFkb3c6IDAgMCAwIDNweCByZ2JhKDIyNCw4Niw0MiwwLjIyKTsgfQ=="
                     }
                 }
             ]
@@ -826,12 +1371,109 @@
             "variants": [
                 {
                     "meta": {
+                        "breakpoint": "mobile",
+                        "state": null
+                    },
+                    "props": {
+                        "padding": {
+                            "$$type": "dimensions",
+                            "value": {
+                                "block-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 6,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 12,
+                                        "unit": "px"
+                                    }
+                                },
+                                "block-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 6,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 6,
+                                        "unit": "px"
+                                    }
+                                }
+                            }
+                        },
+                        "gap": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 10,
+                                "unit": "px"
+                            }
+                        }
+                    },
+                    "custom_css": null
+                },
+                {
+                    "meta": {
                         "breakpoint": "desktop",
                         "state": null
                     },
-                    "props": [],
+                    "props": {
+                        "padding": {
+                            "$$type": "dimensions",
+                            "value": {
+                                "block-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 6,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 14,
+                                        "unit": "px"
+                                    }
+                                },
+                                "block-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 6,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 6,
+                                        "unit": "px"
+                                    }
+                                }
+                            }
+                        },
+                        "border-radius": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 999,
+                                "unit": "px"
+                            }
+                        },
+                        "gap": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 12,
+                                "unit": "px"
+                            }
+                        }
+                    },
                     "custom_css": {
-                        "raw": "Jjo6YWZ0ZXIgeyBjb250ZW50OiAnJzsgZmxleDogMSAxIGF1dG87IGhlaWdodDogNXB4OyBib3JkZXItcmFkaXVzOiA5OTlweDsgYmFja2dyb3VuZDogbGluZWFyLWdyYWRpZW50KCNGRkZGRkYsICNGRkZGRkYpIGxlZnQgY2VudGVyIC8gdmFyKC0tcmwtcHJvZ3Jlc3Npb24sIDU4JSkgMTAwJSBuby1yZXBlYXQsIHJnYmEoMjU1LDI1NSwyNTUsMC4zKTsgfQ=="
+                        "raw": "LS1ybC1sZWN0dXJlOiAzMHB4OyAmOjphZnRlciB7IGNvbnRlbnQ6ICcnOyBmbGV4OiAxIDEgYXV0bzsgaGVpZ2h0OiA1cHg7IGJvcmRlci1yYWRpdXM6IDk5OXB4OyBiYWNrZ3JvdW5kOiBsaW5lYXItZ3JhZGllbnQoI0ZGRkZGRiwgI0ZGRkZGRikgbGVmdCBjZW50ZXIgLyB2YXIoLS1ybC1wcm9ncmVzc2lvbiwgNTglKSAxMDAlIG5vLXJlcGVhdCwgcmdiYSgyNTUsMjU1LDI1NSwwLjMpOyB9"
                     }
                 }
             ]
@@ -1132,7 +1774,7 @@
                         }
                     },
                     "custom_css": {
-                        "raw": "b3ZlcmZsb3c6IGNsaXA7IGlzb2xhdGlvbjogaXNvbGF0ZTs="
+                        "raw": "b3ZlcmZsb3c6IGNsaXA7IG92ZXJmbG93LWNsaXAtbWFyZ2luOiAyNHB4OyBpc29sYXRpb246IGlzb2xhdGU7"
                     }
                 }
             ]
@@ -1999,8 +2641,8 @@
                     },
                     "props": {
                         "font-family": {
-                            "$$type": "global-font-variable",
-                            "value": "e-gv-713521c"
+                            "$$type": "font-family",
+                            "value": "Bricolage Grotesque"
                         },
                         "font-size": {
                             "$$type": "size",
@@ -2047,8 +2689,8 @@
                     },
                     "props": {
                         "font-family": {
-                            "$$type": "global-font-variable",
-                            "value": "e-gv-713521c"
+                            "$$type": "font-family",
+                            "value": "Bricolage Grotesque"
                         },
                         "font-size": {
                             "$$type": "size",
@@ -2095,8 +2737,8 @@
                     },
                     "props": {
                         "font-family": {
-                            "$$type": "global-font-variable",
-                            "value": "e-gv-713521c"
+                            "$$type": "font-family",
+                            "value": "Bricolage Grotesque"
                         },
                         "font-size": {
                             "$$type": "size",
@@ -2143,8 +2785,8 @@
                     },
                     "props": {
                         "font-family": {
-                            "$$type": "global-font-variable",
-                            "value": "e-gv-713521c"
+                            "$$type": "font-family",
+                            "value": "Bricolage Grotesque"
                         },
                         "font-size": {
                             "$$type": "size",
@@ -2191,8 +2833,8 @@
                     },
                     "props": {
                         "font-family": {
-                            "$$type": "global-font-variable",
-                            "value": "e-gv-713521c"
+                            "$$type": "font-family",
+                            "value": "Bricolage Grotesque"
                         },
                         "font-size": {
                             "$$type": "size",
@@ -2239,8 +2881,8 @@
                     },
                     "props": {
                         "font-family": {
-                            "$$type": "global-font-variable",
-                            "value": "e-gv-713521c"
+                            "$$type": "font-family",
+                            "value": "Bricolage Grotesque"
                         },
                         "font-weight": {
                             "$$type": "string",
@@ -2273,7 +2915,7 @@
                         }
                     },
                     "custom_css": {
-                        "raw": "Y29sb3I6IHZhcigtLXJsLXRleHRlLCB2YXIoLS1lbmNyZSkpOyAmIHUgeyBmb250LWZhbWlseTogdmFyKC0tcG9saWNlLW1haW4pOyBmb250LXdlaWdodDogNzAwOyBmb250LXNpemU6IDEuMjJlbTsgbGluZS1oZWlnaHQ6IDE7IGxldHRlci1zcGFjaW5nOiAwOyBjb2xvcjogI0Q5NTMxRjsgdGV4dC1kZWNvcmF0aW9uOiBub25lOyBwYWRkaW5nLWJvdHRvbTogNnB4OyBiYWNrZ3JvdW5kOiB1cmwoImRhdGE6aW1hZ2Uvc3ZnK3htbCwlM0NzdmcgeG1sbnM9J2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJyB2aWV3Qm94PScwIDAgMzAwIDIyJyBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSdub25lJyUzRSUzQ3BhdGggZD0nTTQgMTUgQyA3MCA1LCAxOTAgMywgMjk2IDEwJyBmaWxsPSdub25lJyBzdHJva2U9JyUyM0ZGOEE1Qicgc3Ryb2tlLXdpZHRoPSc1JyBzdHJva2UtbGluZWNhcD0ncm91bmQnLyUzRSUzQy9zdmclM0UiKSBsZWZ0IGJvdHRvbSAvIDEwMCUgMTBweCBuby1yZXBlYXQ7IH0="
+                        "raw": "Y29sb3I6IHZhcigtLXJsLXRleHRlLCB2YXIoLS1lbmNyZSkpOyAmIHUgeyBmb250LWZhbWlseTogQ2F2ZWF0OyBmb250LXdlaWdodDogNzAwOyBmb250LXNpemU6IDEuMjJlbTsgbGluZS1oZWlnaHQ6IDE7IGxldHRlci1zcGFjaW5nOiAwOyBjb2xvcjogI0Q5NTMxRjsgdGV4dC1kZWNvcmF0aW9uOiBub25lOyBwYWRkaW5nLWJvdHRvbTogNnB4OyBiYWNrZ3JvdW5kOiB1cmwoImRhdGE6aW1hZ2Uvc3ZnK3htbCwlM0NzdmcgeG1sbnM9J2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJyB2aWV3Qm94PScwIDAgMzAwIDIyJyBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSdub25lJyUzRSUzQ3BhdGggZD0nTTQgMTUgQyA3MCA1LCAxOTAgMywgMjk2IDEwJyBmaWxsPSdub25lJyBzdHJva2U9JyUyM0ZGOEE1Qicgc3Ryb2tlLXdpZHRoPSc1JyBzdHJva2UtbGluZWNhcD0ncm91bmQnLyUzRSUzQy9zdmclM0UiKSBsZWZ0IGJvdHRvbSAvIDEwMCUgMTBweCBuby1yZXBlYXQ7IH0="
                     }
                 }
             ]
@@ -2307,8 +2949,8 @@
                     },
                     "props": {
                         "font-family": {
-                            "$$type": "global-font-variable",
-                            "value": "e-gv-58819d5"
+                            "$$type": "font-family",
+                            "value": "Hanken Grotesk"
                         },
                         "font-size": {
                             "$$type": "size",
@@ -2348,8 +2990,8 @@
                     },
                     "props": {
                         "font-family": {
-                            "$$type": "global-font-variable",
-                            "value": "e-gv-58819d5"
+                            "$$type": "font-family",
+                            "value": "Hanken Grotesk"
                         },
                         "font-size": {
                             "$$type": "size",
@@ -2389,8 +3031,8 @@
                     },
                     "props": {
                         "font-family": {
-                            "$$type": "global-font-variable",
-                            "value": "e-gv-58819d5"
+                            "$$type": "font-family",
+                            "value": "Hanken Grotesk"
                         },
                         "font-size": {
                             "$$type": "size",
@@ -2430,8 +3072,8 @@
                     },
                     "props": {
                         "font-family": {
-                            "$$type": "global-font-variable",
-                            "value": "e-gv-58819d5"
+                            "$$type": "font-family",
+                            "value": "Hanken Grotesk"
                         },
                         "font-weight": {
                             "$$type": "string",
@@ -2497,8 +3139,8 @@
                     },
                     "props": {
                         "font-family": {
-                            "$$type": "global-font-variable",
-                            "value": "e-gv-58819d5"
+                            "$$type": "font-family",
+                            "value": "Hanken Grotesk"
                         },
                         "font-weight": {
                             "$$type": "string",
@@ -2566,8 +3208,8 @@
                     },
                     "props": {
                         "font-family": {
-                            "$$type": "global-font-variable",
-                            "value": "e-gv-f74c97d"
+                            "$$type": "font-family",
+                            "value": "Caveat"
                         },
                         "font-weight": {
                             "$$type": "string",
@@ -2795,8 +3437,8 @@
                             }
                         },
                         "font-family": {
-                            "$$type": "global-font-variable",
-                            "value": "e-gv-58819d5"
+                            "$$type": "font-family",
+                            "value": "Hanken Grotesk"
                         },
                         "font-weight": {
                             "$$type": "string",
@@ -2981,8 +3623,8 @@
                             }
                         },
                         "font-family": {
-                            "$$type": "global-font-variable",
-                            "value": "e-gv-58819d5"
+                            "$$type": "font-family",
+                            "value": "Hanken Grotesk"
                         },
                         "font-weight": {
                             "$$type": "string",
@@ -3214,8 +3856,8 @@
                             }
                         },
                         "font-family": {
-                            "$$type": "global-font-variable",
-                            "value": "e-gv-58819d5"
+                            "$$type": "font-family",
+                            "value": "Hanken Grotesk"
                         },
                         "font-weight": {
                             "$$type": "string",
@@ -3490,24 +4132,6 @@
             ]
         },
         {
-            "id": "g-229f43a",
-            "label": "bascule-libelles",
-            "groupe": "Boutons",
-            "description": "Bouton à deux libellés (deux <span> : « Arrêter… » puis « Relancer… ») : seul le premier s'affiche, le script échange au clic.",
-            "variants": [
-                {
-                    "meta": {
-                        "breakpoint": "desktop",
-                        "state": null
-                    },
-                    "props": [],
-                    "custom_css": {
-                        "raw": "JiBzcGFuICsgc3BhbiB7IGRpc3BsYXk6IG5vbmU7IH0="
-                    }
-                }
-            ]
-        },
-        {
             "id": "g-a3e683f",
             "label": "timecode",
             "groupe": "Étiquettes",
@@ -3520,8 +4144,8 @@
                     },
                     "props": {
                         "font-family": {
-                            "$$type": "global-font-variable",
-                            "value": "e-gv-58819d5"
+                            "$$type": "font-family",
+                            "value": "Hanken Grotesk"
                         },
                         "font-weight": {
                             "$$type": "string",
@@ -3612,8 +4236,8 @@
                     },
                     "props": {
                         "font-family": {
-                            "$$type": "global-font-variable",
-                            "value": "e-gv-58819d5"
+                            "$$type": "font-family",
+                            "value": "Hanken Grotesk"
                         },
                         "font-weight": {
                             "$$type": "string",
@@ -3773,8 +4397,8 @@
                     },
                     "props": {
                         "font-family": {
-                            "$$type": "global-font-variable",
-                            "value": "e-gv-713521c"
+                            "$$type": "font-family",
+                            "value": "Bricolage Grotesque"
                         },
                         "font-size": {
                             "$$type": "size",
@@ -3977,8 +4601,8 @@
                     },
                     "props": {
                         "font-family": {
-                            "$$type": "global-font-variable",
-                            "value": "e-gv-713521c"
+                            "$$type": "font-family",
+                            "value": "Bricolage Grotesque"
                         },
                         "font-size": {
                             "$$type": "size",
@@ -4170,8 +4794,8 @@
                             }
                         },
                         "font-family": {
-                            "$$type": "global-font-variable",
-                            "value": "e-gv-58819d5"
+                            "$$type": "font-family",
+                            "value": "Hanken Grotesk"
                         },
                         "font-weight": {
                             "$$type": "string",
@@ -4455,8 +5079,8 @@
                             }
                         },
                         "font-family": {
-                            "$$type": "global-font-variable",
-                            "value": "e-gv-58819d5"
+                            "$$type": "font-family",
+                            "value": "Hanken Grotesk"
                         },
                         "font-weight": {
                             "$$type": "string",
@@ -4740,8 +5364,8 @@
                             }
                         },
                         "font-family": {
-                            "$$type": "global-font-variable",
-                            "value": "e-gv-58819d5"
+                            "$$type": "font-family",
+                            "value": "Hanken Grotesk"
                         },
                         "font-weight": {
                             "$$type": "string",
@@ -5018,8 +5642,8 @@
                     },
                     "props": {
                         "font-family": {
-                            "$$type": "global-font-variable",
-                            "value": "e-gv-58819d5"
+                            "$$type": "font-family",
+                            "value": "Hanken Grotesk"
                         },
                         "font-weight": {
                             "$$type": "string",
@@ -5285,8 +5909,8 @@
                     },
                     "props": {
                         "font-family": {
-                            "$$type": "global-font-variable",
-                            "value": "e-gv-58819d5"
+                            "$$type": "font-family",
+                            "value": "Hanken Grotesk"
                         },
                         "font-weight": {
                             "$$type": "string",
@@ -5552,8 +6176,8 @@
                     },
                     "props": {
                         "font-family": {
-                            "$$type": "global-font-variable",
-                            "value": "e-gv-58819d5"
+                            "$$type": "font-family",
+                            "value": "Hanken Grotesk"
                         },
                         "font-weight": {
                             "$$type": "string",
@@ -6053,14 +6677,61 @@
             "variants": [
                 {
                     "meta": {
+                        "breakpoint": "mobile",
+                        "state": null
+                    },
+                    "props": {
+                        "padding": {
+                            "$$type": "dimensions",
+                            "value": {
+                                "block-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 8,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 6,
+                                        "unit": "px"
+                                    }
+                                },
+                                "block-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 8,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 10,
+                                        "unit": "px"
+                                    }
+                                }
+                            }
+                        },
+                        "gap": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 6,
+                                "unit": "px"
+                            }
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "LS1ybC1sZWN0dXJlOiAyNnB4Ow=="
+                    }
+                },
+                {
+                    "meta": {
                         "breakpoint": "desktop",
                         "state": null
                     },
                     "props": {
-                        "position": {
-                            "$$type": "string",
-                            "value": "relative"
-                        },
                         "color": {
                             "$$type": "color",
                             "value": "#FFFFFF"
@@ -6078,7 +6749,7 @@
                                 "inline-end": {
                                     "$$type": "size",
                                     "value": {
-                                        "size": 12,
+                                        "size": 8,
                                         "unit": "px"
                                     }
                                 },
@@ -6439,8 +7110,8 @@
                     },
                     "props": {
                         "font-family": {
-                            "$$type": "global-font-variable",
-                            "value": "e-gv-713521c"
+                            "$$type": "font-family",
+                            "value": "Bricolage Grotesque"
                         },
                         "font-weight": {
                             "$$type": "string",
@@ -6486,14 +7157,28 @@
             "variants": [
                 {
                     "meta": {
+                        "breakpoint": "mobile",
+                        "state": null
+                    },
+                    "props": {
+                        "padding": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 8,
+                                "unit": "px"
+                            }
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "LS1ybC1yYXlvbi1waG90bzogMjRweDsgLS1ybC1tYXJnZS12aWduZXR0ZTogOHB4Ow=="
+                    }
+                },
+                {
+                    "meta": {
                         "breakpoint": "desktop",
                         "state": null
                     },
                     "props": {
-                        "position": {
-                            "$$type": "string",
-                            "value": "relative"
-                        },
                         "padding": {
                             "$$type": "size",
                             "value": {
@@ -6833,7 +7518,7 @@
                         }
                     },
                     "custom_css": {
-                        "raw": "aXNvbGF0aW9uOiBpc29sYXRlOyBiYWNrZHJvcC1maWx0ZXI6IGJsdXIoMjJweCkgc2F0dXJhdGUoMTkwJSkgYnJpZ2h0bmVzcygxLjEyKTsgJjo6YmVmb3JlIHsgcG9zaXRpb246IHJlbGF0aXZlOyB0b3A6IGF1dG87IHJpZ2h0OiBhdXRvOyBib3R0b206IGF1dG87IGxlZnQ6IGF1dG87IGhlaWdodDogYXV0bzsgb3BhY2l0eTogMTsgbWl4LWJsZW5kLW1vZGU6IG5vcm1hbDsgYm9yZGVyOiAwOyBjb250ZW50OiAnJzsgcG9zaXRpb246IGFic29sdXRlOyB0b3A6IDA7IHJpZ2h0OiAwOyBib3R0b206IDA7IGxlZnQ6IDA7IGJvcmRlci1yYWRpdXM6IGluaGVyaXQ7IHBhZGRpbmc6IDEuNnB4OyBiYWNrZ3JvdW5kOiBsaW5lYXItZ3JhZGllbnQoMTM1ZGVnLCAjRkZGRkZGIDAlLCByZ2JhKDI1NSwyNTUsMjU1LDAuMzIpIDI2JSwgcmdiYSgyNTUsMjU1LDI1NSwwLjA2KSA1MCUsIHJnYmEoMjU1LDI1NSwyNTUsMC4zKSA3NCUsIHJnYmEoMjU1LDI1NSwyNTUsMC45NSkgMTAwJSk7IC13ZWJraXQtbWFzazogbGluZWFyLWdyYWRpZW50KCMwMDAgMCAwKSBjb250ZW50LWJveCwgbGluZWFyLWdyYWRpZW50KCMwMDAgMCAwKTsgLXdlYmtpdC1tYXNrLWNvbXBvc2l0ZTogeG9yOyBtYXNrLWNvbXBvc2l0ZTogZXhjbHVkZTsgcG9pbnRlci1ldmVudHM6IG5vbmU7IHotaW5kZXg6IDQ7IH0="
+                        "raw": "LS1ybC1yYXlvbi1waG90bzogMTlweDsgLS1ybC1tYXJnZS12aWduZXR0ZTogMTBweDsgaXNvbGF0aW9uOiBpc29sYXRlOyBiYWNrZHJvcC1maWx0ZXI6IGJsdXIoMjJweCkgc2F0dXJhdGUoMTkwJSkgYnJpZ2h0bmVzcygxLjEyKTsgJjo6YmVmb3JlIHsgcG9zaXRpb246IHJlbGF0aXZlOyB0b3A6IGF1dG87IHJpZ2h0OiBhdXRvOyBib3R0b206IGF1dG87IGxlZnQ6IGF1dG87IGhlaWdodDogYXV0bzsgb3BhY2l0eTogMTsgbWl4LWJsZW5kLW1vZGU6IG5vcm1hbDsgYm9yZGVyOiAwOyBjb250ZW50OiAnJzsgcG9zaXRpb246IGFic29sdXRlOyB0b3A6IDA7IHJpZ2h0OiAwOyBib3R0b206IDA7IGxlZnQ6IDA7IGJvcmRlci1yYWRpdXM6IGluaGVyaXQ7IHBhZGRpbmc6IDEuNnB4OyBiYWNrZ3JvdW5kOiBsaW5lYXItZ3JhZGllbnQoMTM1ZGVnLCAjRkZGRkZGIDAlLCByZ2JhKDI1NSwyNTUsMjU1LDAuMzIpIDI2JSwgcmdiYSgyNTUsMjU1LDI1NSwwLjA2KSA1MCUsIHJnYmEoMjU1LDI1NSwyNTUsMC4zKSA3NCUsIHJnYmEoMjU1LDI1NSwyNTUsMC45NSkgMTAwJSk7IC13ZWJraXQtbWFzazogbGluZWFyLWdyYWRpZW50KCMwMDAgMCAwKSBjb250ZW50LWJveCwgbGluZWFyLWdyYWRpZW50KCMwMDAgMCAwKTsgLXdlYmtpdC1tYXNrLWNvbXBvc2l0ZTogeG9yOyBtYXNrLWNvbXBvc2l0ZTogZXhjbHVkZTsgcG9pbnRlci1ldmVudHM6IG5vbmU7IHotaW5kZXg6IDQ7IH0="
                     }
                 }
             ]
@@ -6955,13 +7640,6 @@
                                 "unit": "px"
                             }
                         },
-                        "border-radius": {
-                            "$$type": "size",
-                            "value": {
-                                "size": 20,
-                                "unit": "px"
-                            }
-                        },
                         "background": {
                             "$$type": "background",
                             "value": {
@@ -6973,7 +7651,7 @@
                         }
                     },
                     "custom_css": {
-                        "raw": "aXNvbGF0aW9uOiBpc29sYXRlOyAmOjphZnRlciB7IGNvbnRlbnQ6ICcnOyBwb3NpdGlvbjogYWJzb2x1dGU7IHRvcDogMDsgcmlnaHQ6IDA7IGJvdHRvbTogMDsgbGVmdDogMDsgYm9yZGVyLXJhZGl1czogaW5oZXJpdDsgYmFja2dyb3VuZDogbGluZWFyLWdyYWRpZW50KDE4MGRlZywgcmdiYSgxMiw4LDMwLDAuNTUpIDAlLCByZ2JhKDEyLDgsMzAsMCkgMjglLCByZ2JhKDEyLDgsMzAsMCkgNjIlLCByZ2JhKDEyLDgsMzAsMC42KSAxMDAlKSwgbGluZWFyLWdyYWRpZW50KDIwMGRlZywgcmdiYSgxMzksOTIsMjQ2LDAuMTgpLCByZ2JhKDI1NSwyNTUsMjU1LDApIDUwJSwgcmdiYSgyNTUsMTM4LDkxLDAuMjIpKTsgcG9pbnRlci1ldmVudHM6IG5vbmU7IH0="
+                        "raw": "aXNvbGF0aW9uOiBpc29sYXRlOyBib3JkZXItcmFkaXVzOiB2YXIoLS1ybC1yYXlvbi1waG90bywgMjBweCk7ICY6OmFmdGVyIHsgY29udGVudDogJyc7IHBvc2l0aW9uOiBhYnNvbHV0ZTsgdG9wOiAwOyByaWdodDogMDsgYm90dG9tOiAwOyBsZWZ0OiAwOyBib3JkZXItcmFkaXVzOiBpbmhlcml0OyBiYWNrZ3JvdW5kOiBsaW5lYXItZ3JhZGllbnQoMTgwZGVnLCByZ2JhKDEyLDgsMzAsMC41NSkgMCUsIHJnYmEoMTIsOCwzMCwwKSAyOCUsIHJnYmEoMTIsOCwzMCwwKSA2MiUsIHJnYmEoMTIsOCwzMCwwLjYpIDEwMCUpLCBsaW5lYXItZ3JhZGllbnQoMjAwZGVnLCByZ2JhKDEzOSw5MiwyNDYsMC4xOCksIHJnYmEoMjU1LDI1NSwyNTUsMCkgNTAlLCByZ2JhKDI1NSwxMzgsOTEsMC4yMikpOyBwb2ludGVyLWV2ZW50czogbm9uZTsgfQ=="
                     }
                 }
             ]
@@ -6990,11 +7668,25 @@
                         "state": null
                     },
                     "props": {
+                        "max-width": {
+                            "$$type": "size",
+                            "value": {
+                                "size": "calc(100% - 16px)",
+                                "unit": "custom"
+                            }
+                        },
                         "letter-spacing": {
                             "$$type": "size",
                             "value": {
-                                "size": 0.05,
+                                "size": 0.04,
                                 "unit": "em"
+                            }
+                        },
+                        "line-height": {
+                            "$$type": "size",
+                            "value": {
+                                "size": "1.15",
+                                "unit": "custom"
                             }
                         },
                         "padding": {
@@ -7030,6 +7722,13 @@
                                 }
                             }
                         },
+                        "border-radius": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 12,
+                                "unit": "px"
+                            }
+                        },
                         "gap": {
                             "$$type": "size",
                             "value": {
@@ -7038,7 +7737,9 @@
                             }
                         }
                     },
-                    "custom_css": null
+                    "custom_css": {
+                        "raw": "d2hpdGUtc3BhY2U6IG5vcm1hbDs="
+                    }
                 },
                 {
                     "meta": {
@@ -7050,27 +7751,13 @@
                             "$$type": "string",
                             "value": "absolute"
                         },
-                        "inset-block-start": {
-                            "$$type": "size",
-                            "value": {
-                                "size": 14,
-                                "unit": "px"
-                            }
-                        },
-                        "inset-inline-start": {
-                            "$$type": "size",
-                            "value": {
-                                "size": 14,
-                                "unit": "px"
-                            }
-                        },
                         "z-index": {
                             "$$type": "number",
                             "value": 2
                         },
                         "font-family": {
-                            "$$type": "global-font-variable",
-                            "value": "e-gv-58819d5"
+                            "$$type": "font-family",
+                            "value": "Hanken Grotesk"
                         },
                         "font-weight": {
                             "$$type": "string",
@@ -7305,7 +7992,7 @@
                         }
                     },
                     "custom_css": {
-                        "raw": "d2lkdGg6IGZpdC1jb250ZW50OyB3aGl0ZS1zcGFjZTogbm93cmFwOyAmOjpiZWZvcmUgeyBwb3NpdGlvbjogcmVsYXRpdmU7IHRvcDogYXV0bzsgcmlnaHQ6IGF1dG87IGJvdHRvbTogYXV0bzsgbGVmdDogYXV0bzsgaGVpZ2h0OiBhdXRvOyBvcGFjaXR5OiAxOyBtaXgtYmxlbmQtbW9kZTogbm9ybWFsOyBib3JkZXI6IDA7IGNvbnRlbnQ6ICcnOyBmbGV4LXNocmluazogMDsgd2lkdGg6IDZweDsgaGVpZ2h0OiA2cHg7IGJvcmRlci1yYWRpdXM6IDUwJTsgYmFja2dyb3VuZDogI0ZGRDFCRjsgYm94LXNoYWRvdzogMCAwIDAgM3B4IHJnYmEoMjU1LDIwOSwxOTEsMC4zKTsgfQ=="
+                        "raw": "d2lkdGg6IGZpdC1jb250ZW50OyB3aGl0ZS1zcGFjZTogbm93cmFwOyBpbnNldC1ibG9jay1zdGFydDogdmFyKC0tcmwtbWFyZ2UtdmlnbmV0dGUsIDE0cHgpOyBpbnNldC1pbmxpbmUtc3RhcnQ6IHZhcigtLXJsLW1hcmdlLXZpZ25ldHRlLCAxNHB4KTsgJjo6YmVmb3JlIHsgcG9zaXRpb246IHJlbGF0aXZlOyB0b3A6IGF1dG87IHJpZ2h0OiBhdXRvOyBib3R0b206IGF1dG87IGxlZnQ6IGF1dG87IGhlaWdodDogYXV0bzsgb3BhY2l0eTogMTsgbWl4LWJsZW5kLW1vZGU6IG5vcm1hbDsgYm9yZGVyOiAwOyBjb250ZW50OiAnJzsgZmxleC1zaHJpbms6IDA7IHdpZHRoOiA2cHg7IGhlaWdodDogNnB4OyBib3JkZXItcmFkaXVzOiA1MCU7IGJhY2tncm91bmQ6ICNGRkQxQkY7IGJveC1zaGFkb3c6IDAgMCAwIDNweCByZ2JhKDI1NSwyMDksMTkxLDAuMyk7IH0="
                     }
                 }
             ]
@@ -7345,8 +8032,8 @@
                             "value": 2
                         },
                         "font-family": {
-                            "$$type": "global-font-variable",
-                            "value": "e-gv-58819d5"
+                            "$$type": "font-family",
+                            "value": "Hanken Grotesk"
                         },
                         "font-weight": {
                             "$$type": "string",
@@ -7597,91 +8284,6 @@
                     },
                     "custom_css": {
                         "raw": "Jjo6YWZ0ZXIgeyBjb250ZW50OiAnJzsgcG9zaXRpb246IGFic29sdXRlOyB0b3A6IDA7IGJvdHRvbTogMDsgbGVmdDogMDsgd2lkdGg6IHZhcigtLXJsLXByb2dyZXNzaW9uLCAzOCUpOyBiYWNrZ3JvdW5kOiAjRkZEMUJGOyB9"
-                    }
-                }
-            ]
-        },
-        {
-            "id": "g-4623012",
-            "label": "tuile-logo",
-            "groupe": "Vidéo et images",
-            "description": "Tuile de logo client : logo en gris à 72 %, la couleur revient au survol.",
-            "variants": [
-                {
-                    "meta": {
-                        "breakpoint": "desktop",
-                        "state": null
-                    },
-                    "props": {
-                        "min-width": {
-                            "$$type": "size",
-                            "value": {
-                                "size": 150,
-                                "unit": "px"
-                            }
-                        },
-                        "min-height": {
-                            "$$type": "size",
-                            "value": {
-                                "size": 86,
-                                "unit": "px"
-                            }
-                        },
-                        "padding": {
-                            "$$type": "dimensions",
-                            "value": {
-                                "block-start": {
-                                    "$$type": "size",
-                                    "value": {
-                                        "size": 0,
-                                        "unit": "px"
-                                    }
-                                },
-                                "inline-end": {
-                                    "$$type": "size",
-                                    "value": {
-                                        "size": 14,
-                                        "unit": "px"
-                                    }
-                                },
-                                "block-end": {
-                                    "$$type": "size",
-                                    "value": {
-                                        "size": 0,
-                                        "unit": "px"
-                                    }
-                                },
-                                "inline-start": {
-                                    "$$type": "size",
-                                    "value": {
-                                        "size": 14,
-                                        "unit": "px"
-                                    }
-                                }
-                            }
-                        },
-                        "border-radius": {
-                            "$$type": "size",
-                            "value": {
-                                "size": 18,
-                                "unit": "px"
-                            }
-                        },
-                        "display": {
-                            "$$type": "string",
-                            "value": "flex"
-                        },
-                        "justify-content": {
-                            "$$type": "string",
-                            "value": "center"
-                        },
-                        "align-items": {
-                            "$$type": "string",
-                            "value": "center"
-                        }
-                    },
-                    "custom_css": {
-                        "raw": "JiBpbWcgeyB3aWR0aDogYXV0bzsgbWF4LXdpZHRoOiA4OCU7IGZpbHRlcjogZ3JheXNjYWxlKDEpIGNvbnRyYXN0KDEuMDUpOyBvcGFjaXR5OiAwLjcyOyB0cmFuc2l0aW9uOiBmaWx0ZXIgMC4zcyBlYXNlLCBvcGFjaXR5IDAuM3MgZWFzZTsgfSAmOmhvdmVyIGltZyB7IGZpbHRlcjogbm9uZTsgb3BhY2l0eTogMTsgfQ=="
                     }
                 }
             ]
@@ -8065,13 +8667,29 @@
             "variants": [
                 {
                     "meta": {
+                        "breakpoint": "mobile",
+                        "state": null
+                    },
+                    "props": {
+                        "font-size": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 14,
+                                "unit": "px"
+                            }
+                        }
+                    },
+                    "custom_css": null
+                },
+                {
+                    "meta": {
                         "breakpoint": "desktop",
                         "state": null
                     },
                     "props": {
                         "font-family": {
-                            "$$type": "global-font-variable",
-                            "value": "e-gv-713521c"
+                            "$$type": "font-family",
+                            "value": "Bricolage Grotesque"
                         },
                         "font-size": {
                             "$$type": "size",
@@ -8291,8 +8909,8 @@
                             "value": 3
                         },
                         "font-family": {
-                            "$$type": "global-font-variable",
-                            "value": "e-gv-58819d5"
+                            "$$type": "font-family",
+                            "value": "Hanken Grotesk"
                         },
                         "font-weight": {
                             "$$type": "string",

@@ -12,7 +12,8 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
 - **Livraison 1 envoyée (0.1.0)** : fondations + blocs Hero, Logos, Showreel. Zip : `outils/zip.sh` → `livraisons/` (hors git).
   Vérifié : site neuf + mise à jour par Apparence > Thèmes > Téléverser, axe 0 (1440, 390, réduire les animations),
   PHPCS 0 (`phpcs.xml.dist`), robots IA, LCP sans lazy + fetchpriority, `<main>` ajouté aux modèles Elementor.
-  Reste à faire tester par la cliente : mode « Conserver les styles », case décochée (test B, dépend de la licence Pro).
+- **Retours livraison 1** (test B fait par la cliente : rendu cassé en « case décochée » ; poignées des sections absentes ;
+  étiquettes coupées en mobile ; pas de bouton « Arrêter le défilement ») ⇒ **0.1.1** corrige tout (voir Leçons).
   Prochaines : 2 = blocs de l'accueil 00:01 → fin + Page complète ; 3 = contenus admin + modèles du site (balises maison) ;
   4 = pages Offres, Contact, landing…, SEO (VideoObject), contrôle final.
 - FAQ : la cliente ajoute elle-même les réponses ; garder les questions telles quelles.
@@ -107,6 +108,25 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
 - Contrastes sur photo/dégradé : `scratchpad/tools/contraste-photo.js` (pire pixel, 2e centile). Dégradé humain finit
   à #EC5E2B ; plaques en verre fumé (rgba(22,14,52,.66→.46)) ; plaque-claire pour la vignette orange.
 - Recommander à la cliente « Adopter le style de ce site » (keep_create crée des `DUP_`).
+- **Bug Elementor 4.3.6 (keep_flatten)** : la variable de police devient `$$type: string` alors que le validateur attend
+  `font-family` ⇒ tout le style local est jeté à l'enregistrement (titres, textes, boutons sans style). ⇒ **pas de
+  variable de police** : les classes écrivent le nom de la police (`font-family` natif). Variables police-* retirées.
+- keep_flatten ajoute les variantes des classes **après** le style local de l'élément (le local perd), puis les classes
+  dans l'ordre de l'élément (la dernière gagne). Sur le site : local > classes, et entre classes l'ordre global.
+  ⇒ règle : **une propriété = une seule source par élément** (pas de réglage local qui reprend une propriété d'une de
+  ses classes ; sinon une classe modificatrice prioritaire) et classes de l'élément rangées par priorité
+  (`construire-blocs.php`). Contrôle bloquant : `outils/chevauchements.py` (lancé par construire.sh).
+- Fichiers CSS chargés : global-desktop, local-desktop, global-tablet, local-tablet, global-mobile, local-mobile.
+- `.e-con` pose déjà `position: relative` : les classes de cadre ne la posent pas (sinon conflit avec un local absolu).
+- Valeurs qui dépendent du parent : propriétés `--rl-…` posées par le parent (ex. `--rl-rayon-photo`, `--rl-marge-vignette`,
+  `--rl-lecture`), lues par l'enfant avec une valeur par défaut.
+- Poignées d'Elementor : accrochées 24 px au-dessus de chaque section ⇒ `section` a `overflow-clip-margin: 24px`, et
+  `main.site-main { overflow-x: clip }` (thème) empêche le défilement horizontal des halos.
+- Les classes **modificatrices** d'un `::before` (couleur d'un point) ne contiennent pas la remise à zéro (elle écrasait
+  la taille posée par la classe de base).
+- Aperçu mobile de l'éditeur = 360 px : tester aussi à 360.
+- Logos : pas de bouton pause (choix cliente) ; défilement arrêté au survol / au clavier et avec « réduire les animations » ;
+  la cliente coupe le défilement en retirant la classe `logos-defilants`.
 - Copie de test hors ligne : mu-plugin `scratchpad/wp/mu/copie-hors-ligne.php` (répond aux appels elementor.com, sinon
   « Mes modèles » plante sur `reorder_categories`). Jamais dans le thème.
 - Chaîne : `outils/construire.sh [styles|blocs|tout]` ; sources `outils/source/{variables,classes}.json`, `outils/blocs.py` ;

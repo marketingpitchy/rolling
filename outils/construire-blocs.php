@@ -87,11 +87,43 @@ function rolling_poser_brut( $elements, &$brut ) {
 	return $elements;
 }
 
+/**
+ * Range les classes globales de chaque élément de la moins prioritaire à la plus prioritaire.
+ *
+ * Sur le site, entre deux classes, c'est l'ordre global qui décide (la première de la liste l'emporte).
+ * Quand la cliente insère un bloc avec « Conserver les styles du modèle », case décochée, Elementor recopie
+ * les classes dans l'ordre de l'élément et la dernière l'emporte : les deux ordres doivent donc coïncider.
+ *
+ * @param array $elements Éléments.
+ * @param array $rang     Id de classe => rang dans l'ordre global (0 = la plus prioritaire).
+ * @return array
+ */
+function rolling_ordonner_classes( $elements, $rang ) {
+	foreach ( $elements as &$element ) {
+		$ids = $element['settings']['classes']['value'] ?? null;
+
+		if ( is_array( $ids ) ) {
+			$globales = array_values( array_filter( $ids, fn( $id ) => isset( $rang[ $id ] ) ) );
+			$autres   = array_values( array_filter( $ids, fn( $id ) => ! isset( $rang[ $id ] ) ) );
+			usort( $globales, fn( $a, $b ) => $rang[ $b ] <=> $rang[ $a ] );
+			$element['settings']['classes']['value'] = array_merge( $globales, $autres );
+		}
+
+		if ( ! empty( $element['elements'] ) ) {
+			$element['elements'] = rolling_ordonner_classes( $element['elements'], $rang );
+		}
+	}
+	unset( $element );
+
+	return $elements;
+}
+
 $source = $args[0] ?? '/tmp/rolling/source/blocs';
 $sortie = $args[1] ?? '/tmp/rolling/data/blocs';
 $filtre = $args[2] ?? '';
 $outil  = wp_get_ability( 'elementor/build-composition' );
 $total  = 0;
+$rang   = array_flip( array_column( json_decode( file_get_contents( dirname( $sortie ) . '/classes.json' ), true )['classes'], 'id' ) );
 
 foreach ( glob( $source . '/*.json' ) as $fichier ) {
 	$bloc = json_decode( file_get_contents( $fichier ), true );
@@ -130,7 +162,7 @@ foreach ( glob( $source . '/*.json' ) as $fichier ) {
 	}
 
 	$document = \Elementor\Plugin::$instance->documents->get( $page, false );
-	$contenu  = $document ? $document->get_elements_data() : array();
+	$contenu  = rolling_ordonner_classes( $document ? $document->get_elements_data() : array(), $rang );
 	// Le CSS personnalisé des styles locaux n'est rendu qu'avec une licence Pro : on le refuse.
 	foreach ( $brut as $nom => $css ) {
 		echo 'À METTRE DANS UNE CLASSE (' . $bloc['cle'] . ' / ' . $nom . ') : ' . $css . "\n";

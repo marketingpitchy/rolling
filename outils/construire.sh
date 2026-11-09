@@ -24,6 +24,7 @@ preparer() {
 	dc cp "$ICI/source" cli:/tmp/rolling/ >/dev/null 2>&1
 	dc cp "$ICI/construire-styles.php" cli:/tmp/rolling/ >/dev/null 2>&1
 	dc cp "$ICI/construire-blocs.php" cli:/tmp/rolling/ >/dev/null 2>&1
+	dc cp "$THEME/data/classes.json" cli:/tmp/rolling/data/classes.json >/dev/null 2>&1
 	dc exec -T -u 0 cli chown -R 33:33 /tmp/rolling
 }
 
@@ -43,6 +44,8 @@ if [ "$ETAPE" = "blocs" ] || [ "$ETAPE" = "tout" ]; then
 	for f in $(dc exec -T cli bash -c 'ls /tmp/rolling/data/blocs'); do
 		dc cp "cli:/tmp/rolling/data/blocs/$f" "$THEME/data/blocs/$f" >/dev/null 2>&1
 	done
+	# Une propriété = une seule source par élément (sinon le rendu change avec « case décochée »).
+	python3 -I "$ICI/chevauchements.py"
 	envoyer_theme
 	installer
 fi

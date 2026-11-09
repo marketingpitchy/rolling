@@ -138,13 +138,11 @@
   "classes": {
    "Hero": [
     "section",
+    "section-entete",
     "halos-haut"
    ],
    "Hero · contenu": [
     "conteneur"
-   ],
-   "Promesse": [
-    "pile"
    ],
    "Pastille": [
     "pastille"
@@ -171,13 +169,15 @@
     "visages"
    ],
    "Preuve · texte": [
-    "texte-petit"
+    "texte-petit",
+    "texte-legende"
    ],
    "Visuels": [
     "lueur-peche"
    ],
    "Tournage": [
-    "cadre-verre"
+    "cadre-verre",
+    "cadre-verre-grand"
    ],
    "Tournage · photo": [
     "cadre-photo"
@@ -202,7 +202,8 @@
     "bandeau-video"
    ],
    "Interview · plaque": [
-    "plaque-verre"
+    "plaque-verre",
+    "plaque-bas"
    ],
    "Interview · titre": [
     "titre-vignette"
@@ -225,6 +226,7 @@
    ],
    "Démo produit · lecteur": [
     "plaque-verre",
+    "plaque-bas",
     "plaque-lecteur"
    ],
    "Démo produit · lecture": [
@@ -244,6 +246,7 @@
    ],
    "Motion design · plaque": [
     "plaque-verre",
+    "plaque-bas",
     "plaque-claire"
    ],
    "Motion design · titre": [
@@ -256,35 +259,24 @@
    ]
   },
   "style": {
-   "Hero": "padding: 104px 0 70px; @media(--tablet) { padding: 116px 0 56px; } @media(--mobile) { padding: 124px 0 48px; }",
    "Hero · contenu": "display: flex; flex-direction: row; flex-wrap: wrap; align-items: center; gap: 48px;",
-   "Promesse": "flex: 1 1 560px; min-width: 0; gap: 0; padding-top: 40px; @media(--tablet) { padding-top: 0; }",
+   "Promesse": "display: flex; flex-direction: column; flex: 1 1 560px; min-width: 0; gap: 0; padding: 40px 0 0; @media(--tablet) { padding: 0; }",
    "Titre H1": "margin-top: 26px;",
    "Chapô": "margin-top: 26px; max-width: 620px;",
    "Boutons": "margin-top: 40px;",
    "Preuve": "margin-top: 24px;",
-   "Preuve · texte": "font-size: 14px; color: var(--legende);",
    "Visuels": "position: relative; flex: 1 1 460px; min-width: 0; height: 680px; padding: 0; @media(--tablet) { height: auto; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; } @media(--mobile) { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }",
-   "Tournage": "position: absolute; left: 0; right: 0; top: 0; border-radius: 42px; @media(--tablet) { position: relative; grid-column: 1 / -1; }",
-   "Tournage · photo": "height: 652px; border-radius: 29px; @media(--tablet) { height: 420px; } @media(--mobile) { height: 280px; }",
+   "Tournage": "position: absolute; left: 0; right: 0; top: 0; @media(--tablet) { position: relative; grid-column: 1 / -1; }",
+   "Tournage · photo": "height: 652px; @media(--tablet) { height: 420px; } @media(--mobile) { height: 280px; }",
    "Tournage · image": "object-position: 56% 50%;",
-   "Tournage · bandeau": "top: 18px; left: 18px;",
-   "Interview": "position: absolute; left: 28px; top: 252px; width: 208px; z-index: 2; border-radius: 34px; @media(--tablet) { position: relative; left: auto; top: auto; width: auto; }",
-   "Interview · vidéo": "aspect-ratio: 9 / 16; border-radius: 21px; background: #3F2BB8;",
+   "Interview": "position: absolute; left: 28px; top: 252px; width: 208px; z-index: 2; @media(--tablet) { position: relative; left: auto; top: auto; width: auto; }",
+   "Interview · vidéo": "aspect-ratio: 9 / 16;",
    "Interview · image": "object-position: 53% 28%;",
-   "Interview · bandeau": "top: 10px; left: 10px;",
-   "Interview · plaque": "position: absolute; z-index: 2; left: 8px; right: 8px; bottom: 8px; width: auto; justify-content: space-between; padding: 10px 8px 10px 12px;",
    "Démo produit": "position: absolute; right: 28px; top: 24px; width: 294px; z-index: 2; @media(--tablet) { position: relative; right: auto; top: auto; width: auto; align-self: start; } @media(--mobile) { grid-column: 1 / -1; order: 3; }",
-   "Démo produit · vidéo": "aspect-ratio: 16 / 9; border-radius: 19px;",
+   "Démo produit · vidéo": "aspect-ratio: 16 / 9;",
    "Démo produit · image": "object-position: 50% 40%;",
-   "Démo produit · bandeau": "top: 10px; left: 10px;",
-   "Démo produit · lecteur": "position: absolute; z-index: 2; left: 8px; right: 8px; bottom: 8px; width: auto; gap: 12px; padding: 6px 14px 6px 6px; border-radius: 999px;",
-   "Démo produit · lecture": "width: 30px; height: 30px;",
    "Motion design": "position: absolute; right: 28px; top: 432px; width: 208px; z-index: 2; @media(--tablet) { position: relative; right: auto; top: auto; width: auto; align-self: start; }",
-   "Motion design · vidéo": "aspect-ratio: 1 / 1; overflow: hidden; padding: 0; border-radius: 19px;",
-   "Motion design · bandeau": "top: 10px; left: 10px;",
-   "Motion design · plaque": "position: absolute; z-index: 2; left: 8px; right: 8px; bottom: 8px; width: auto; justify-content: space-between; padding: 10px 8px 10px 12px; color: #0F0F12;",
-   "Motion design · titre": "font-size: 17px; line-height: 0.98; letter-spacing: -0.04em;"
+   "Motion design · vidéo": "aspect-ratio: 1 / 1; overflow: hidden; padding: 0; border-radius: 19px;"
   }
  },
  "brut": {}

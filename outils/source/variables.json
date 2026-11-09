@@ -20,8 +20,5 @@
   {"label": "peche", "type": "global-color-variable", "value": "#FF8A5B", "description": "Bouton lecture, soulignés, bouton principal sur fond sombre. Jamais du texte sur fond clair."},
   {"label": "peche-doux", "type": "global-color-variable", "value": "#FFD1BF", "description": "Deuxième ligne des titres sur vidéo, barres de progression, badge « Le plus complet »."},
   {"label": "sombre-paragraphe", "type": "global-color-variable", "value": "#C9C3DE", "description": "Paragraphes sur fond sombre."},
-  {"label": "sombre-legende", "type": "global-color-variable", "value": "#B6B0CC", "description": "Légendes et labels sur fond sombre."},
-  {"label": "police-titre", "type": "global-font-variable", "value": "Bricolage Grotesque", "description": "Titres, chapôs, étiquettes métiers."},
-  {"label": "police-texte", "type": "global-font-variable", "value": "Hanken Grotesk", "description": "Texte, boutons, labels."},
-  {"label": "police-main", "type": "global-font-variable", "value": "Caveat", "description": "Annotations manuscrites seulement."}
+  {"label": "sombre-legende", "type": "global-color-variable", "value": "#B6B0CC", "description": "Légendes et labels sur fond sombre."}
 ]

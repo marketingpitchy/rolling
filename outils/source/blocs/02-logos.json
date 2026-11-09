@@ -3,7 +3,7 @@
  "titre": "Rolling · 02 Ils nous font confiance",
  "type": "e-flexbox",
  "composition": {
-  "xml_structure": "<e-flexbox configuration-id=\"Ils nous font confiance\"><e-flexbox configuration-id=\"Logos · titre\"><e-paragraph configuration-id=\"Logos · libellé\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Logos · bande\"><e-flexbox configuration-id=\"Logos · liste\"><e-flexbox configuration-id=\"Logo · Groupement Mousquetaires\"><e-image configuration-id=\"Logo · image · Groupement Mousquetaires\"></e-image></e-flexbox><e-flexbox configuration-id=\"Logo · Club Med\"><e-image configuration-id=\"Logo · image · Club Med\"></e-image></e-flexbox><e-flexbox configuration-id=\"Logo · SNCF\"><e-image configuration-id=\"Logo · image · SNCF\"></e-image></e-flexbox><e-flexbox configuration-id=\"Logo · L’Occitane en Provence\"><e-image configuration-id=\"Logo · image · L’Occitane en Provence\"></e-image></e-flexbox><e-flexbox configuration-id=\"Logo · Air France\"><e-image configuration-id=\"Logo · image · Air France\"></e-image></e-flexbox><e-flexbox configuration-id=\"Logo · BNP Paribas\"><e-image configuration-id=\"Logo · image · BNP Paribas\"></e-image></e-flexbox><e-flexbox configuration-id=\"Logo · Fnac Darty\"><e-image configuration-id=\"Logo · image · Fnac Darty\"></e-image></e-flexbox><e-flexbox configuration-id=\"Logo · Groupama\"><e-image configuration-id=\"Logo · image · Groupama\"></e-image></e-flexbox><e-flexbox configuration-id=\"Logo · Veolia\"><e-image configuration-id=\"Logo · image · Veolia\"></e-image></e-flexbox></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Logos · commande\"><e-button configuration-id=\"Bouton pause\"></e-button></e-flexbox></e-flexbox>",
+  "xml_structure": "<e-flexbox configuration-id=\"Ils nous font confiance\"><e-flexbox configuration-id=\"Logos · titre\"><e-paragraph configuration-id=\"Logos · libellé\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Logos · bande\"><e-flexbox configuration-id=\"Logos · liste\"><e-flexbox configuration-id=\"Logo · Groupement Mousquetaires\"><e-image configuration-id=\"Logo · image · Groupement Mousquetaires\"></e-image></e-flexbox><e-flexbox configuration-id=\"Logo · Club Med\"><e-image configuration-id=\"Logo · image · Club Med\"></e-image></e-flexbox><e-flexbox configuration-id=\"Logo · SNCF\"><e-image configuration-id=\"Logo · image · SNCF\"></e-image></e-flexbox><e-flexbox configuration-id=\"Logo · L’Occitane en Provence\"><e-image configuration-id=\"Logo · image · L’Occitane en Provence\"></e-image></e-flexbox><e-flexbox configuration-id=\"Logo · Air France\"><e-image configuration-id=\"Logo · image · Air France\"></e-image></e-flexbox><e-flexbox configuration-id=\"Logo · BNP Paribas\"><e-image configuration-id=\"Logo · image · BNP Paribas\"></e-image></e-flexbox><e-flexbox configuration-id=\"Logo · Fnac Darty\"><e-image configuration-id=\"Logo · image · Fnac Darty\"></e-image></e-flexbox><e-flexbox configuration-id=\"Logo · Groupama\"><e-image configuration-id=\"Logo · image · Groupama\"></e-image></e-flexbox><e-flexbox configuration-id=\"Logo · Veolia\"><e-image configuration-id=\"Logo · image · Veolia\"></e-image></e-flexbox></e-flexbox></e-flexbox></e-flexbox>",
   "element_config": {
    "Ils nous font confiance": {
     "tag": "section"
@@ -82,17 +82,12 @@
      },
      "size": "medium"
     }
-   },
-   "Bouton pause": {
-    "text": "<span>Arrêter le défilement</span><span>Relancer le défilement</span>",
-    "link": {
-     "destination": "#rl-pause"
-    }
    }
   },
   "classes": {
    "Ils nous font confiance": [
-    "section"
+    "section",
+    "section-suite"
    ],
    "Logos · titre": [
     "conteneur"
@@ -142,41 +137,21 @@
    "Logo · Veolia": [
     "carte-verre",
     "tuile-logo"
-   ],
-   "Logos · commande": [
-    "conteneur"
-   ],
-   "Bouton pause": [
-    "bouton-verre",
-    "bouton-petit",
-    "bascule-libelles"
    ]
   },
   "style": {
-   "Ils nous font confiance": "padding: 0 0 104px; @media(--tablet) { padding: 0 0 72px; }",
    "Logos · titre": "justify-content: center;",
    "Logos · libellé": "text-align: center; width: 100%;",
    "Logos · bande": "margin-top: 22px; width: 100%;",
-   "Logo · Groupement Mousquetaires": "padding: 0 14px; gap: 0;",
    "Logo · image · Groupement Mousquetaires": "height: 46px;",
-   "Logo · Club Med": "padding: 0 14px; gap: 0;",
    "Logo · image · Club Med": "height: 26px;",
-   "Logo · SNCF": "padding: 0 14px; gap: 0;",
    "Logo · image · SNCF": "height: 40px;",
-   "Logo · L’Occitane en Provence": "padding: 0 14px; gap: 0;",
    "Logo · image · L’Occitane en Provence": "height: 30px;",
-   "Logo · Air France": "padding: 0 14px; gap: 0;",
    "Logo · image · Air France": "height: 14px;",
-   "Logo · BNP Paribas": "padding: 0 14px; gap: 0;",
    "Logo · image · BNP Paribas": "height: 30px;",
-   "Logo · Fnac Darty": "padding: 0 14px; gap: 0;",
    "Logo · image · Fnac Darty": "height: 30px;",
-   "Logo · Groupama": "padding: 0 14px; gap: 0;",
    "Logo · image · Groupama": "height: 28px;",
-   "Logo · Veolia": "padding: 0 14px; gap: 0;",
-   "Logo · image · Veolia": "height: 32px;",
-   "Logos · commande": "justify-content: center; margin-top: 4px;",
-   "Bouton pause": "min-height: 44px; font-size: 14px;"
+   "Logo · image · Veolia": "height: 32px;"
   }
  },
  "brut": {}
