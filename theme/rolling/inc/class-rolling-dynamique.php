@@ -505,7 +505,7 @@ class Rolling_Dynamique {
 						'class'   => 'chiffre-image',
 					)
 				);
-			} elseif ( preg_match( '/\s/u', $caractere ) ) {
+			} elseif ( preg_match( '/[\s\x{00A0}\x{202F}]/u', $caractere ) ) {
 				$html .= '<span class="espace-chiffre" aria-hidden="true"></span>';
 			}
 		}

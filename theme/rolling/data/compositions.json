@@ -1,0 +1,15 @@
+[
+ {"cle": "en-bref", "titre": "En bref", "description": "Résumé de 3 à 5 points en haut de l'article (repris par les lecteurs pressés et les IA)."},
+ {"cle": "etapes", "titre": "Étapes numérotées", "description": "Liste d'étapes avec numéros ronds."},
+ {"cle": "liste-coches", "titre": "Liste à coches", "description": "Liste avec la coche en verre."},
+ {"cle": "video", "titre": "Vidéo", "description": "Collez l'adresse YouTube : la vidéo se charge au clic, coins arrondis, légende dessous."},
+ {"cle": "chiffre-cle", "titre": "Chiffre clé", "description": "Un chiffre en verre (0-9, +, %, k, M), une phrase et la source."},
+ {"cle": "tableau", "titre": "Tableau", "description": "Tableau au style Rolling (en-tête violet, lignes alternées)."},
+ {"cle": "tableau-comparatif", "titre": "Tableau comparatif", "description": "Tableau dont la dernière colonne est mise en avant."},
+ {"cle": "avis", "titre": "Avis d'expert", "description": "Photo, conseil, nom et poste."},
+ {"cle": "encart-guide", "titre": "Encart guide", "description": "Image, « Guide gratuit », titre et bouton de téléchargement."},
+ {"cle": "encart-appel", "titre": "Encart appel", "description": "Bandeau sombre avec « Réserver un échange »."},
+ {"cle": "a-retenir", "titre": "À retenir", "description": "Encadré de conclusion."},
+ {"cle": "faq", "titre": "FAQ", "description": "Questions qui s'ouvrent au clic."},
+ {"cle": "auteur", "titre": "Auteur", "description": "Photo, nom, poste, présentation et lien LinkedIn."}
+]

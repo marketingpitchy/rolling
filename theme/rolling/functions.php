@@ -23,6 +23,7 @@ require_once ROLLING_DIR . '/inc/class-rolling-seo.php';
 require_once ROLLING_DIR . '/inc/class-rolling-contenus.php';
 require_once ROLLING_DIR . '/inc/class-rolling-webinars.php';
 require_once ROLLING_DIR . '/inc/class-rolling-dynamique.php';
+require_once ROLLING_DIR . '/inc/class-rolling-compositions.php';
 
 Rolling_Installateur::init();
 Rolling_Ressources::init();
@@ -31,3 +32,4 @@ Rolling_Guide::init();
 Rolling_Seo::init();
 Rolling_Contenus::init();
 Rolling_Dynamique::init();
+Rolling_Compositions::init();

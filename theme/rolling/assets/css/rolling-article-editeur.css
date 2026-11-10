@@ -1,0 +1,117 @@
+/* Fichier généré par outils/classes_fiches.py : ne pas modifier à la main. */
+@font-face { font-family: "Bricolage Grotesque"; src: url("../fonts/bricolage-grotesque-variable.woff2") format("woff2"); font-weight: 200 800; font-stretch: 75% 100%; font-style: normal; font-display: swap; }
+@font-face { font-family: "Hanken Grotesk"; src: url("../fonts/hanken-grotesk-variable.woff2") format("woff2"); font-weight: 100 900; font-style: normal; font-display: swap; }
+@font-face { font-family: "Caveat"; src: url("../fonts/caveat-bold.woff2") format("woff2"); font-weight: 700; font-style: normal; font-display: swap; }
+
+/* Éditeur seulement : sur le site, coches et chiffres en verre sont posés par le widget « Texte de l'article ». */
+body { --paragraphe: #4A4858; --encre: #0F0F12; --legende: #6E6B7B; --violet: #5B3BEA; font-family: "Hanken Grotesk", system-ui, sans-serif; color: #0F0F12; background: #FAF9F7; }
+.is-root-container > p, .is-root-container > ul, .is-root-container > ol { font-family: "Hanken Grotesk"; font-size: 18px; line-height: 1.7; color: #4A4858; }
+.is-root-container > h2 { font-family: "Bricolage Grotesque"; font-weight: 650; font-size: 34px; line-height: 1.15; letter-spacing: -0.04em; }
+.is-root-container > h3 { font-family: "Bricolage Grotesque"; font-weight: 650; font-size: 23px; letter-spacing: -0.035em; }
+.is-root-container .is-style-coches { list-style: none; padding: 0; }
+.is-root-container .is-style-coches > li { position: relative; padding-left: 38px; margin-top: 12px; }
+.is-root-container .is-style-coches > li::before { content: ''; position: absolute; top: 2px; left: 0; width: 26px; height: 26px; background: url(../medias/coche-verre.png) center / contain no-repeat; }
+.is-root-container .rl-chiffre-valeur { font-family: "Bricolage Grotesque"; font-weight: 800; font-size: 56px; line-height: 1; color: #8E4DE6; }
+.is-root-container > p, .is-root-container > ul, .is-root-container > ol { margin: 20px 0 0; font-family: Hanken Grotesk; font-size: 18px; line-height: 1.7; color: var(--rl-paragraphe, var(--paragraphe)); }
+.is-root-container strong { color: var(--rl-texte, var(--encre)); }
+.is-root-container a { color: #5B3BEA; text-decoration: underline; }
+.is-root-container > h2 { margin: 52px 0 0; font-family: Bricolage Grotesque; font-weight: 650; font-size: clamp(26px, 2.6vw, 34px); line-height: 1.15; letter-spacing: -0.04em; color: var(--rl-texte, var(--encre)); scroll-margin-top: 110px; }
+.is-root-container > h3 { margin: 32px 0 0; font-family: Bricolage Grotesque; font-weight: 650; font-size: 23px; letter-spacing: -0.035em; color: var(--rl-texte, var(--encre)); }
+.is-root-container img { max-width: 100%; height: auto; border-radius: 22px; }
+.is-root-container figure { margin: 32px 0; }
+.is-root-container blockquote { margin: 28px 0; padding: 20px 24px; border-left: 3px solid #5B3BEA; border-radius: 0 18px 18px 0; background: #EDE6FF; font-family: Bricolage Grotesque; font-size: 20px; line-height: 1.5; font-weight: 600; }
+@media (max-width: 767px) {
+.is-root-container > p, .is-root-container > ul, .is-root-container > ol { font-size: 17px; }
+}
+.is-root-container .coche, .is-root-container .chiffre-verre img, .is-root-container .lecture-centre img { border-radius: 0; }
+.is-root-container .wp-block-table { margin: 32px 0 0; overflow-x: auto; border-radius: 18px; background: #FFFFFF; box-shadow: inset 0 0 0 1px rgba(15,15,18,0.08), 0 18px 40px -28px rgba(70,40,150,0.45); }
+.is-root-container .wp-block-table:focus-visible { outline: 3px solid #5B3BEA; outline-offset: 3px; }
+.is-root-container .wp-block-table table { width: 100%; min-width: 540px; margin: 0; border: 0; border-collapse: collapse; font-family: Hanken Grotesk; font-size: 16px; line-height: 1.45; text-align: left; }
+.is-root-container .wp-block-table thead { border: 0; }
+.is-root-container .wp-block-table th { padding: 14px 18px; border: 0; background: #5B3BEA; color: #FFFFFF; font-family: Bricolage Grotesque; font-weight: 650; font-size: 16px; letter-spacing: -0.02em; vertical-align: bottom; text-align: left; }
+.is-root-container .wp-block-table td { padding: 14px 18px; border: 0; border-top: 1px solid rgba(15,15,18,0.07); color: var(--rl-paragraphe, var(--paragraphe)); vertical-align: top; }
+.is-root-container .wp-block-table tbody tr:nth-child(even) td { background: #FAF9F7; }
+.is-root-container .wp-block-table td:first-child { color: var(--rl-texte, var(--encre)); font-weight: 600; }
+.is-root-container .wp-block-table figcaption { margin: 0; padding: 12px 18px 14px; border-top: 1px solid rgba(15,15,18,0.07); font-size: 14px; text-align: left; color: var(--rl-legende, var(--legende)); }
+.is-root-container .wp-block-table.is-style-comparatif th { background: #F3F0FA; color: var(--rl-texte, var(--encre)); }
+.is-root-container .wp-block-table.is-style-comparatif th:last-child { background: #5B3BEA; color: #FFFFFF; }
+.is-root-container .wp-block-table.is-style-comparatif td:last-child { background: #EDE6FF; color: #2A1A80; font-weight: 600; }
+.is-root-container .wp-block-table.is-style-comparatif tbody tr:nth-child(even) td:last-child { background: #E4DAFF; }
+.is-root-container .liste-coches { margin: 18px 0 0; padding: 0; list-style: none; }
+.is-root-container .ligne-coche { font-family: Hanken Grotesk; font-size: 18px; line-height: 1.6; color: var(--rl-paragraphe, var(--paragraphe)); }
+.is-root-container .is-style-etapes { counter-reset: rl-etape; display: grid; gap: 14px; margin: 22px 0 0; padding: 0; list-style: none; }
+.is-root-container .is-style-etapes > li { counter-increment: rl-etape; position: relative; padding-left: 48px; min-height: 34px; }
+.is-root-container .is-style-etapes > li::before { content: counter(rl-etape); position: absolute; top: 0; left: 0; width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: Bricolage Grotesque; font-weight: 650; font-size: 16px; line-height: 1; color: #FFFFFF; background: linear-gradient(140deg, #5B3BEA, #8E4DE6); }
+.is-root-container .rl-en-bref, .is-root-container .rl-a-retenir { margin: 32px 0 0; padding: 28px; border-radius: 26px; background: linear-gradient(120deg, rgba(237,230,255,0.95), rgba(255,241,231,0.9)); }
+.is-root-container .rl-a-retenir { background: linear-gradient(120deg, rgba(255,241,231,0.95), rgba(255,224,206,0.7)); }
+.is-root-container .rl-label { margin: 0; font-family: Hanken Grotesk; font-size: 12px; line-height: 1.3; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #5B3BEA; }
+.is-root-container .rl-a-retenir h2, .is-root-container .rl-encart-guide h3 { margin: 0; font-family: Bricolage Grotesque; font-weight: 650; font-size: 23px; line-height: 1.2; letter-spacing: -0.035em; color: var(--rl-texte, var(--encre)); }
+.is-root-container .rl-en-bref .liste-coches, .is-root-container .rl-a-retenir .liste-coches { margin-top: 14px; }
+.is-root-container .rl-en-bref .ligne-coche, .is-root-container .rl-a-retenir .ligne-coche { font-size: 17px; }
+.is-root-container .rl-avis { position: relative; margin: 22px 0 0; padding: 28px 28px 28px 102px; border-radius: 26px; background: #FFFFFF; box-shadow: 0 1px 2px rgba(15,15,18,0.05), 0 24px 50px -30px rgba(76,48,170,0.3); }
+.is-root-container .rl-avis .rl-portrait { position: absolute; top: 28px; left: 28px; width: 56px; height: 56px; margin: 0; }
+.is-root-container .rl-avis .rl-portrait img, .is-root-container .rl-auteur .rl-portrait img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; box-shadow: 0 0 0 3px #FFFFFF, 0 10px 20px -10px rgba(70,40,150,0.5); }
+.is-root-container .rl-avis p { margin: 0; font-family: Hanken Grotesk; font-size: 17px; line-height: 1.65; color: var(--rl-paragraphe, var(--paragraphe)); }
+.is-root-container .rl-avis p + p { margin-top: 8px; font-size: 15px; }
+.is-root-container .rl-avis strong, .is-root-container .rl-auteur strong { color: var(--rl-texte, var(--encre)); }
+.is-root-container .rl-chiffre-cle { display: flex; flex-direction: row; flex-wrap: wrap; align-items: center; column-gap: 24px; row-gap: 6px; margin: 32px 0 0; padding: 24px 28px; border-radius: 26px; background: linear-gradient(120deg, rgba(237,230,255,0.9), rgba(255,241,231,0.85)); }
+.is-root-container .rl-chiffre-cle > *, .is-root-container .rl-chiffre-cle > .wp-block-group__inner-container > * { margin: 0; }
+.is-root-container .rl-chiffre-cle .wp-block-group__inner-container { display: contents; }
+.is-root-container .rl-chiffre-valeur { flex-shrink: 0; margin: 0; }
+.is-root-container .rl-chiffre-valeur .chiffre-verre img { height: 64px; }
+.is-root-container .rl-chiffre-texte { flex: 1 1 260px; font-family: Bricolage Grotesque; font-weight: 650; font-size: 21px; line-height: 1.3; letter-spacing: -0.02em; color: var(--rl-texte, var(--encre)); }
+.is-root-container .rl-source { flex: 1 1 100%; padding-left: 0; font-family: Hanken Grotesk; font-size: 15px; color: var(--rl-legende, var(--legende)); }
+.is-root-container .rl-encart-guide { display: grid; grid-template-columns: 180px minmax(0, 1fr); column-gap: 22px; align-items: center; margin: 32px 0 0; padding: 16px; border-radius: 26px; background: #FFFFFF; box-shadow: 0 1px 2px rgba(15,15,18,0.05), 0 24px 50px -30px rgba(76,48,170,0.3); }
+.is-root-container .rl-encart-guide .wp-block-group__inner-container { display: contents; }
+.is-root-container .rl-encart-guide .wp-block-image { grid-row: 1 / span 4; margin: 0; aspect-ratio: 4 / 3; overflow: hidden; border-radius: 18px; }
+.is-root-container .rl-encart-guide .wp-block-image img { width: 100%; height: 100%; object-fit: cover; border-radius: 0; }
+.is-root-container .rl-encart-guide > :not(.wp-block-image), .is-root-container .rl-encart-guide .wp-block-group__inner-container > :not(.wp-block-image) { grid-column: 2; margin: 0; }
+.is-root-container .rl-encart-guide h3 { margin: 6px 0 12px; font-size: 22px; }
+.is-root-container .rl-encart-appel { display: flex; flex-direction: row; flex-wrap: wrap; align-items: center; justify-content: space-between; column-gap: 22px; row-gap: 14px; margin: 32px 0 0; padding: 24px 28px; border-radius: 26px; background: linear-gradient(160deg, #1C1730, #0F0F12); }
+.is-root-container .rl-encart-appel .wp-block-group__inner-container { display: contents; }
+.is-root-container .rl-encart-appel p { flex: 1 1 320px; margin: 0; font-family: Hanken Grotesk; font-size: 15px; line-height: 1.5; color: #C9C3DE; }
+.is-root-container .rl-encart-appel p strong { display: block; margin-bottom: 6px; font-family: Bricolage Grotesque; font-weight: 650; font-size: 23px; line-height: 1.2; letter-spacing: -0.035em; color: #FFFFFF; }
+.is-root-container .wp-block-buttons { display: flex; flex-wrap: wrap; gap: 12px; margin: 0; }
+.is-root-container .wp-block-button__link { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 48px; padding: 0 22px; border: 0; border-radius: 999px; font-family: Hanken Grotesk; font-size: 15px; line-height: 1; font-weight: 600; text-decoration: none; color: #0F0F12; background: #FFFFFF; box-shadow: inset 0 1px 0 #FFFFFF, inset 0 0 0 1px rgba(15,15,18,0.1), 0 10px 24px -14px rgba(70,40,150,0.45); }
+.is-root-container .wp-block-button__link:hover { color: #FFFFFF; background: #5B3BEA; }
+.is-root-container .rl-encart-appel .wp-block-button__link { color: #0F0F12; background: linear-gradient(135deg, #FFD1BF, #FF8A5B); box-shadow: 0 12px 28px -14px rgba(255,138,91,0.8); }
+.is-root-container .rl-encart-appel .wp-block-button__link:hover { color: #0F0F12; background: #FFFFFF; }
+.is-root-container .rl-faq { display: grid; gap: 10px; margin: 22px 0 0; }
+.is-root-container .rl-faq .wp-block-group__inner-container { display: grid; gap: 10px; }
+.is-root-container .wp-block-details { margin: 0; border-radius: 18px; background: #FFFFFF; box-shadow: inset 0 0 0 1px rgba(15,15,18,0.08); }
+.is-root-container .wp-block-details summary { list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 16px; min-height: 56px; padding: 14px 20px; cursor: pointer; font-family: Bricolage Grotesque; font-weight: 650; font-size: 18px; line-height: 1.3; letter-spacing: -0.02em; color: var(--rl-texte, var(--encre)); }
+.is-root-container .wp-block-details summary::-webkit-details-marker { display: none; }
+.is-root-container .wp-block-details summary::after { content: '+'; flex-shrink: 0; width: 30px; height: 30px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 20px; line-height: 1; color: #FFFFFF; background: linear-gradient(140deg, #5B3BEA, #8E4DE6); }
+.is-root-container .wp-block-details[open] summary::after { content: '−'; }
+.is-root-container .wp-block-details > :not(summary) { margin: 0; padding: 0 20px 18px; font-family: Hanken Grotesk; font-size: 17px; line-height: 1.65; color: var(--rl-paragraphe, var(--paragraphe)); }
+.is-root-container .rl-auteur { position: relative; margin: 40px 0 0; padding: 24px 24px 24px 116px; min-height: 120px; border-radius: 26px; background: #FFFFFF; box-shadow: inset 0 0 0 1px rgba(15,15,18,0.08); }
+.is-root-container .rl-auteur .rl-portrait { position: absolute; top: 24px; left: 24px; width: 72px; height: 72px; margin: 0; }
+.is-root-container .rl-auteur p { margin: 0; font-family: Hanken Grotesk; font-size: 15px; line-height: 1.55; color: var(--rl-paragraphe, var(--paragraphe)); }
+.is-root-container .rl-auteur .rl-label { color: var(--rl-legende, var(--legende)); }
+.is-root-container .rl-auteur .rl-nom { margin-top: 4px; font-family: Bricolage Grotesque; font-weight: 650; font-size: 23px; line-height: 1.2; letter-spacing: -0.035em; color: var(--rl-texte, var(--encre)); }
+.is-root-container .rl-auteur .rl-bio { margin-top: 8px; }
+.is-root-container .rl-auteur a { display: inline-flex; min-height: 32px; align-items: center; margin-top: 6px; font-weight: 600; }
+.is-root-container .wp-block-embed, .is-root-container .wp-block-video { margin: 32px 0 0; }
+.is-root-container .wp-block-embed__wrapper::before { display: none; }
+.is-root-container .wp-block-embed .video-fiche { --rl-rayon-photo: 22px; }
+.is-root-container .wp-block-embed iframe { width: 100%; height: auto; aspect-ratio: 16 / 9; border: 0; border-radius: 22px; }
+.is-root-container .wp-block-video video { width: 100%; border-radius: 22px; }
+.is-root-container .wp-block-embed figcaption, .is-root-container .wp-block-video figcaption, .is-root-container .wp-block-image figcaption { margin: 10px 0 0; font-size: 14px; font-style: normal; text-align: left; color: var(--rl-legende, var(--legende)); }
+@media (max-width: 767px) {
+.is-root-container .wp-block-table table { min-width: 0; font-size: 14px; }
+.is-root-container .wp-block-table th { padding: 11px 10px; font-size: 14px; }
+.is-root-container .wp-block-table td { padding: 11px 10px; }
+.is-root-container .wp-block-table th:first-child, .is-root-container .wp-block-table td:first-child { padding-left: 14px; }
+.is-root-container .ligne-coche { font-size: 17px; }
+.is-root-container .rl-en-bref, .is-root-container .rl-a-retenir { padding: 22px; }
+.is-root-container .rl-avis { padding: 96px 22px 22px; }
+.is-root-container .rl-avis .rl-portrait { top: 22px; left: 22px; }
+.is-root-container .rl-chiffre-cle { padding: 22px; }
+.is-root-container .rl-chiffre-texte { font-size: 19px; }
+.is-root-container .rl-encart-guide { grid-template-columns: minmax(0, 1fr); row-gap: 12px; }
+.is-root-container .rl-encart-guide .wp-block-image { grid-row: auto; }
+.is-root-container .rl-encart-guide > :not(.wp-block-image), .is-root-container .rl-encart-guide .wp-block-group__inner-container > :not(.wp-block-image) { grid-column: 1; }
+.is-root-container .rl-encart-appel { padding: 22px; }
+.is-root-container .rl-auteur { padding: 108px 22px 22px; }
+.is-root-container .rl-auteur .rl-portrait { top: 22px; left: 22px; }
+}
