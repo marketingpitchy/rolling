@@ -44,7 +44,8 @@
 
           <details class="carte-verre article-sommaire-mobile" style="margin-top:28px;padding:18px 24px"><summary class="titre-xs" style="font-size:19px;cursor:pointer">Sommaire</summary><ol class="sommaire" style="margin-top:12px">{{sommaire}}</ol></details>
 
-          <aside class="carte-verre" style="margin-top:32px;background:linear-gradient(120deg,rgba(237,230,255,.95),rgba(255,241,231,.9))" aria-labelledby="enbref">
+          <p class="annot-compo">Composition « En bref »</p>
+          <aside class="carte-verre" style="margin-top:10px;background:linear-gradient(120deg,rgba(237,230,255,.95),rgba(255,241,231,.9))" aria-labelledby="enbref">
             <h2 id="enbref" class="label label-violet">En bref</h2>
             <ul class="liste-coches" style="margin-top:14px">
               <li class="ligne-coche">{{coche}}<span class="texte">Un module long se découpe en vidéos de 60 secondes, une idée par vidéo.</span></li>
@@ -61,6 +62,7 @@
             <h3 id="attention">Une idée par vidéo.</h3>
             <p>[Texte d'exemple] Au-delà de 90 secondes, l'attention baisse. Une vidéo = un geste, une règle, un réflexe.</p>
             <h2 id="etapes">Les 5 étapes pour passer du module à la vidéo.</h2>
+            <p class="annot-compo">Composition « Étapes »</p>
             <ol class="article-etapes">
               <li><strong>Découpez</strong> votre module en idées clés.</li>
               <li><strong>Priorisez</strong> ce qui part en vidéo en premier.</li>
@@ -68,13 +70,26 @@
               <li><strong>Produisez</strong> en motion, en tournage ou avec un avatar.</li>
               <li><strong>Diffusez</strong> sur votre LMS, votre intranet et vos réseaux.</li>
             </ol>
+            <p class="annot-compo">Composition « Vidéo »</p>
+            <figure class="video-article"><div class="cadre-photo"><img src="{{img:cap-veolia}}" alt="" width="1280" height="720" loading="lazy"><span class="bandeau-video">Exemple</span><span class="duree">1:12</span><button class="bouton-lecture" type="button">{{lecture}}<span class="sr">Lire la vidéo : un module RH découpé en 5 vidéos</span></button></div><figcaption>[Texte d'exemple] Un module RH de 40 slides, découpé en 5 vidéos de 60 secondes.</figcaption></figure>
+            <p class="annot-compo">Composition « Chiffre clé »</p>
+            <aside class="chiffre-cle" aria-label="Chiffre clé"><p class="chiffre-cle-valeur">{{verre:87%}}</p><p class="chiffre-cle-texte">[Texte d'exemple] des salariés retiennent mieux une consigne vue en vidéo qu'en lisant un document.<span class="texte-petit">Source : [à fournir]</span></p></aside>
+            <h3 id="besoin">Ce qu'il vous faut pour démarrer.</h3>
+            <p class="annot-compo">Composition « Liste à coches »</p>
+            <ul class="liste-coches liste-article"><li class="ligne-coche">{{coche}}<span class="texte">Votre module actuel, même en PDF</span></li><li class="ligne-coche">{{coche}}<span class="texte">Un expert disponible 30 minutes pour valider les scripts</span></li><li class="ligne-coche">{{coche}}<span class="texte">L'accès à votre LMS ou à votre intranet</span></li></ul>
             <h3 id="comparatif">Module classique ou microlearning vidéo.</h3>
             <figure class="wp-block-table is-style-comparatif" tabindex="0" role="region" aria-label="Tableau : module classique ou microlearning vidéo"><table><thead><tr><th><span class="sr">Critère</span></th><th>Module classique</th><th>Microlearning vidéo</th></tr></thead><tbody><tr><td>Durée</td><td>45 minutes</td><td>5 × 90 secondes</td></tr><tr><td>Taux de complétion</td><td>[À fournir]</td><td>[À fournir]</td></tr><tr><td>Sur mobile</td><td>Difficile</td><td>Pensé pour</td></tr><tr><td>Mise à jour</td><td>Tout le module</td><td>Une seule vidéo</td></tr></tbody></table><figcaption class="wp-element-caption">[Texte d'exemple] Le style « Comparatif » met en avant la dernière colonne.</figcaption></figure>
             <figure class="cadre-photo" style="aspect-ratio:16/9;border-radius:22px;margin:32px 0"><img src="{{img:interview}}" alt="Une formatrice explique un geste face caméra, en tournage vidéo" width="1200" height="800" loading="lazy"></figure>
             <h2 id="avis">Notre avis.</h2>
-            <div class="carte-pleine rangee" style="gap:18px;align-items:flex-start;flex-wrap:nowrap"><img class="portrait portrait-petit" src="{{img:thomas}}" alt="" width="56" height="56"><div><p class="texte">[Texte d'exemple] Le plus dur n'est pas de produire : c'est de choisir. Commencez par le module le plus consulté, pas le plus récent.</p><p class="texte-petit" style="margin-top:8px"><strong>Thomas</strong>, Directeur Artistique chez Rolling</p></div></div>
+            <p class="annot-compo">Composition « Avis d'expert »</p>
+            <div class="carte-pleine rangee" style="margin-top:10px;gap:18px;align-items:flex-start;flex-wrap:nowrap"><img class="portrait portrait-petit" src="{{img:thomas}}" alt="" width="56" height="56"><div><p class="texte">[Texte d'exemple] Le plus dur n'est pas de produire : c'est de choisir. Commencez par le module le plus consulté, pas le plus récent.</p><p class="texte-petit" style="margin-top:8px"><strong>Thomas</strong>, Directeur Artistique chez Rolling</p></div></div>
+            <p class="annot-compo">Composition « Encart guide »</p>
+            <aside class="encart-guide" aria-labelledby="encart-guide-titre"><span class="cadre-photo"><img src="{{img:collab}}" alt="" width="640" height="480" loading="lazy"></span><div><p class="rangee" style="gap:10px"><span class="label label-violet">Guide gratuit</span><span class="texte-petit">24 pages</span></p><h3 id="encart-guide-titre" class="titre-xs">[Texte d'exemple] Le guide de l'onboarding en vidéo</h3><a class="bouton-verre bouton-petit" href="#guides">Télécharger le guide {{fleche}}</a></div></aside>
             <p>Pour aller plus loin, découvrez <a href="#offres">nos offres de production vidéo à prix fixe</a>, ou lisez notre article sur <a href="#article">la vidéo dans l'onboarding de vos nouveaux collaborateurs</a>.</p>
-            <aside class="carte-verre" style="margin-top:36px;background:linear-gradient(120deg,rgba(255,241,231,.95),rgba(255,224,206,.7))" aria-labelledby="aretenir">
+            <p class="annot-compo">Composition « Encart appel »</p>
+            <aside class="encart-appel section-sombre" aria-labelledby="encart-appel-titre"><div><p id="encart-appel-titre" class="titre-xs">Vos modules méritent mieux qu'un PDF.</p><p class="texte-petit">30 minutes pour choisir vos 3 premières vidéos. À prix fixe, en illimité.</p></div><a class="bouton-principal bouton-petit" href="#contact">Réserver un échange {{fleche}}</a></aside>
+            <p class="annot-compo">Composition « À retenir »</p>
+            <aside class="carte-verre" style="margin-top:10px;background:linear-gradient(120deg,rgba(255,241,231,.95),rgba(255,224,206,.7))" aria-labelledby="aretenir">
               <h2 id="aretenir" class="titre-xs" style="margin:0">À retenir.</h2>
               <ul class="liste-coches" style="margin-top:14px">
                 <li class="ligne-coche">{{coche}}<span class="texte">60 secondes, une idée par vidéo</span></li>
@@ -82,6 +97,11 @@
                 <li class="ligne-coche">{{coche}}<span class="texte">Diffuser là où vos équipes sont déjà</span></li>
               </ul>
             </aside>
+            <h2 id="faq">Questions fréquentes.</h2>
+            <p class="annot-compo">Composition « FAQ »</p>
+            <div class="faq-article"><details><summary>Combien de temps faut-il pour produire 5 vidéos&nbsp;?</summary><p>[Réponse d'exemple] Comptez deux à trois semaines, de la validation des scripts à la livraison.</p></details><details><summary>Faut-il tourner, ou le motion design suffit&nbsp;?</summary><p>[Réponse d'exemple] Le motion suffit pour une règle ou un process. Un geste métier se montre mieux en tournage.</p></details><details><summary>Les vidéos fonctionnent-elles sur notre LMS&nbsp;?</summary><p>[Réponse d'exemple] Oui : nous livrons en MP4 et aux formats de votre plateforme.</p></details></div>
+            <p class="annot-compo">Composition « Auteur »</p>
+            <aside class="auteur-article" aria-label="Auteur de l'article"><img class="portrait" src="{{img:thomas}}" alt="" width="72" height="72"><div><p class="label">Écrit par</p><p class="titre-xs" style="margin-top:4px">Thomas</p><p class="texte-petit">Directeur Artistique chez Rolling</p><p class="texte-petit" style="margin-top:8px">[Texte d'exemple] 10 ans de vidéo pour les équipes RH et formation, du storyboard au montage.</p><a class="lien-auteur" href="#linkedin">Thomas sur LinkedIn<span class="sr"> (nouvel onglet)</span></a></div></aside>
           </div>
         </div>
 

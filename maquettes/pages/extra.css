@@ -467,3 +467,41 @@ a.vignette-video:hover .bouton-lecture, a.vignette-video:focus-visible .bouton-l
 .prop-cas .temoin { height: auto; }
 .prop-sans-lien { margin-top: 18px; color: var(--legende); }
 .prop-citation { margin: 0; }
+
+/* Article : compositions d'écriture (annotation en pointillés = repère de maquette, absent du site) */
+.annot-compo { display: inline-block; margin: 32px 0 0; padding: 3px 9px; border: 1.5px dashed currentColor; border-radius: 8px; font-size: 12px; font-weight: 600; letter-spacing: .02em; color: var(--violet-fonce, #4A2BB8); }
+.article-texte > .annot-compo + * { margin-top: 10px; }
+.video-article { margin: 0; }
+.video-article .cadre-photo { aspect-ratio: 16 / 9; border-radius: 22px; }
+.video-article figcaption { margin-top: 10px; font-size: 14px; color: var(--legende); }
+.chiffre-cle { display: flex; align-items: center; gap: 24px; padding: 24px 28px; border-radius: 26px; background: linear-gradient(120deg, rgba(237,230,255,.9), rgba(255,241,231,.85)); }
+.chiffre-cle-valeur { flex-shrink: 0; }
+.chiffre-cle-valeur img { height: 64px; width: auto; }
+.chiffre-cle-texte { font-family: var(--police-titre); font-weight: 650; font-size: 21px; line-height: 1.3; letter-spacing: -.02em; color: var(--encre); }
+.chiffre-cle-texte .texte-petit { display: block; margin-top: 6px; font-family: var(--police-texte, inherit); font-weight: 400; letter-spacing: 0; }
+.liste-article { margin-top: 18px; }
+.article-texte > h3 + .annot-compo { margin-top: 14px; }
+.encart-guide { display: grid; grid-template-columns: 180px minmax(0, 1fr); gap: 22px; align-items: center; padding: 16px; border-radius: 26px; background: #fff; box-shadow: 0 1px 2px rgba(15,15,18,.05), 0 24px 50px -30px rgba(76,48,170,.3); }
+.encart-guide .cadre-photo { display: block; aspect-ratio: 4 / 3; border-radius: 18px; }
+.encart-guide > div { display: flex; flex-direction: column; gap: 10px; align-items: flex-start; }
+.encart-appel { display: flex; align-items: center; justify-content: space-between; gap: 22px; padding: 24px 28px; border-radius: 26px; background: linear-gradient(160deg, #1C1730, #0F0F12); }
+.encart-appel .titre-xs { color: #fff; }
+.encart-appel .texte-petit { margin-top: 6px; color: #C9C3DE; }
+.encart-appel .bouton-principal { flex-shrink: 0; }
+.faq-article { display: grid; gap: 10px; }
+.faq-article details { border-radius: 18px; background: #fff; box-shadow: inset 0 0 0 1px rgba(15,15,18,.08); }
+.faq-article summary { list-style: none; display: flex; justify-content: space-between; gap: 16px; align-items: center; min-height: 56px; padding: 14px 20px; cursor: pointer; font-family: var(--police-titre); font-weight: 650; font-size: 18px; letter-spacing: -.02em; color: var(--encre); }
+.faq-article summary::-webkit-details-marker { display: none; }
+.faq-article summary::after { content: '+'; flex-shrink: 0; width: 30px; height: 30px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 20px; color: #fff; background: linear-gradient(140deg, #5B3BEA, #8E4DE6); }
+.faq-article details[open] summary::after { content: '−'; }
+.faq-article details p { padding: 0 20px 18px; font-size: 17px; line-height: 1.65; color: var(--paragraphe); }
+.auteur-article { display: flex; gap: 20px; align-items: flex-start; padding: 24px; border-radius: 26px; background: #fff; box-shadow: inset 0 0 0 1px rgba(15,15,18,.08); }
+.auteur-article .portrait { width: 72px; height: 72px; flex-shrink: 0; margin: 0; }
+.lien-auteur { display: inline-flex; align-items: center; min-height: 32px; margin-top: 8px; font-size: 15px; font-weight: 600; color: #5B3BEA; }
+@media (max-width: 640px) {
+  .chiffre-cle { flex-direction: column; align-items: flex-start; gap: 14px; padding: 22px; }
+  .chiffre-cle-texte { font-size: 19px; }
+  .encart-guide { grid-template-columns: minmax(0, 1fr); }
+  .encart-appel { flex-direction: column; align-items: flex-start; }
+  .auteur-article { flex-direction: column; }
+}

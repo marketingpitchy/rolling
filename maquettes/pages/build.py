@@ -98,7 +98,7 @@ def art_card(k, h='h2'):
             f'<p class="rangee" style="gap:10px"><span class="tag-{tone}">{cat}</span><span class="texte-petit">{tl} de lecture · {date}</span></p>'
             f'<{h} class="titre-xs"><a href="#article" style="color:inherit;text-decoration:none">{ti}</a></{h}></article>')
 
-SOMMAIRE = ''.join(f'<li><a href="#{i}">{t}</a></li>' for i, t in [('pourquoi', 'Pourquoi le microlearning fonctionne'), ('etapes', 'Les 5 étapes'), ('avis', 'Notre avis'), ('aretenir', 'À retenir')])
+SOMMAIRE = ''.join(f'<li><a href="#{i}">{t}</a></li>' for i, t in [('pourquoi', 'Pourquoi le microlearning fonctionne'), ('etapes', 'Les 5 étapes'), ('avis', 'Notre avis'), ('aretenir', 'À retenir'), ('faq', 'Questions fréquentes')])
 ICO = {
     'LinkedIn': '<path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.84-2.05 3.78-2.05C20.6 8.65 21 11.2 21 14.5V21h-4v-5.8c0-1.4 0-3.2-1.95-3.2S12.8 13.5 12.8 15.1V21H9z" fill="currentColor"/>',
     'Facebook': '<path d="M14 8h3V4h-3c-2.8 0-4.5 1.8-4.5 4.6V11H7v4h2.5v7h4v-7H16l.7-4h-3.2V8.9c0-.6.3-.9.9-.9z" fill="currentColor"/>',

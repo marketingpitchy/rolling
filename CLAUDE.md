@@ -145,12 +145,15 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   témoignage, réalisation = page vidéo, encart « Le cas client » automatique si lié. Contre-proposition (la cliente
   voulait des témoignages = citations seules) : témoignage = citation + lien vers la réalisation par défaut, récit
   facultatif (fiche seulement si rempli) ; maquette « Proposition : témoignages et réalisations » (saisie, 3 cas de
-  cartes : vidéo / cas client / sans lien, citation automatique sur la fiche réalisation) ; **en attente de réponse**.
+  cartes : vidéo / cas client / sans lien, citation automatique sur la fiche réalisation) ; **validée** (« pourquoi pas »)
+  ⇒ à intégrer (livraison 0.4.0, avec les compositions d'article).
 - **Tableaux d'article** (maquette, page Article, à valider) : bloc « Tableau » de WordPress stylé par le thème (en-tête
   violet, lignes alternées, carte arrondie, défilement horizontal si trop large, figure focusable) + style de bloc
   « Comparatif » (dernière colonne mise en avant) + composition « Rolling : tableau ». En mobile, 3 colonnes tiennent.
-  **Validé** (« good »). Autres éléments d'écriture proposés (à choisir) : en bref, à retenir, avis d'expert, vidéo
-  intégrée, encart appel / guide, FAQ, étapes, chiffre clé, auteur.
+  **Validé** (« good »). Autres éléments d'écriture : **go pour tous** ⇒ maquette page Article (annotations en
+  pointillés « Composition « … » ») : En bref, Étapes, Vidéo, Chiffre clé, Liste à coches, Avis d'expert, Encart guide,
+  Encart appel (sombre), À retenir, FAQ (details), Auteur ; **à valider**. Dans le thème : compositions Gutenberg
+  (catégorie Rolling) + styles du texte d'article ; rien ne s'affiche si on ne les insère pas.
 - FAQ : la cliente ajoute elle-même les réponses ; garder les questions telles quelles.
 - Le WordPress de production existe déjà chez la cliente : on livre seulement le thème (zip à importer).
 
