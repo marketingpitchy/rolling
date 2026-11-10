@@ -78,20 +78,28 @@
     <div class="conteneur">
       <h2 id="h2-prochain" class="label label-violet" style="margin-bottom:18px">Le prochain webinar</h2>
       <article class="carte-verre webinar-une" style="display:grid;align-items:center">
-        <a href="#webinars" class="cadre-photo" tabindex="-1" aria-hidden="true"><img src="{{img:laptop}}" alt="" width="1200" height="750" fetchpriority="high"><span class="bandeau-video bandeau-rec">En direct</span></a>
+        <a href="#webinars" class="cadre-photo" tabindex="-1" aria-hidden="true"><img src="{{img:laptop}}" alt="" width="1200" height="750" fetchpriority="high"><span class="bandeau-video bandeau-rec" data-cr-bandeau>Bientôt en direct</span></a>
         <div class="pile" style="gap:14px;padding:20px 0">
-          <p class="rangee"><span class="tag-orange">RH &amp; formation</span><span class="texte-petit">Jeudi 11 juin 2026 · 11 h 00 · 45 min · en ligne</span></p>
+          <p class="rangee"><span class="tag-orange">RH &amp; formation</span><span class="texte-petit">Jeudi 3 décembre 2026 · 11 h 00 · 45 min · en ligne</span></p>
+          <div class="compte-rebours" data-debut="2026-12-03T11:00:00+01:00" data-duree="45">
+            <div class="cr-avant"><p class="label">Début dans</p><p class="cr-chiffres" aria-hidden="true"><span><b data-cr="j">--</b><i>jours</i></span><span class="cr-sep">:</span><span><b data-cr="h">--</b><i>heures</i></span><span class="cr-sep">:</span><span><b data-cr="m">--</b><i>min</i></span><span class="cr-sep">:</span><span><b data-cr="s">--</b><i>s</i></span></p><p class="sr">Le webinar commence le jeudi 3 décembre 2026 à 11 h 00, heure de Paris.</p></div>
+            <p class="cr-direct"><span class="point-rec"></span>En direct maintenant</p>
+            <p class="cr-fin texte-petit">Ce webinar est terminé. Le replay arrive bientôt.</p>
+          </div>
           <h3 class="titre-md" style="font-size:34px"><a href="#webinars" style="color:inherit;text-decoration:none">[Texte d'exemple] Onboarding : 5 vidéos qui changent les premiers jours</a></h3>
           <p class="texte">Nous montrons, exemples à l'appui, comment une série de 5 vidéos remplace un livret d'accueil que personne ne lit.</p>
           <div class="rangee" style="gap:12px"><span class="visages"><img src="{{img:thomas}}" alt="" width="36" height="36"><img src="{{img:av-b}}" alt="" width="36" height="36"></span><span class="texte-petit"><strong>Thomas</strong> et <strong>Sophie</strong>, de l'équipe Rolling</span></div>
-          <a class="bouton-principal bouton-petit" style="align-self:flex-start" href="#webinars">S'inscrire au webinar {{fleche}}</a>
+          <a class="bouton-principal bouton-petit" style="align-self:flex-start" href="#webinars" data-cr-bouton="Rejoindre le direct">S'inscrire au webinar {{fleche}}</a>
         </div>
       </article>
+
+      <p class="label landing-etape" style="margin-top:40px">Aperçu : le même compte à rebours le jour J, pendant le direct</p>
+      <div class="carte-verre" style="padding:22px 26px;display:flex;flex-wrap:wrap;align-items:center;gap:18px 28px"><div class="compte-rebours en-direct"><p class="cr-direct"><span class="point-rec"></span>En direct maintenant</p></div><p class="texte-petit" style="flex:1 1 260px">Le bouton devient «&nbsp;Rejoindre le direct&nbsp;». 45&nbsp;minutes après le début, le webinar quitte la page et passe dans les replays dès que vous ajoutez le lien du replay.</p></div>
 
       <h2 class="label label-violet" style="margin:56px 0 18px">Les suivants</h2>
       <div class="pile" style="gap:16px">
         <article class="carte-verre webinar">
-          <p class="webinar-date"><span class="jour">25</span><span class="mois">Juin</span><span class="heure">11 h 00</span></p>
+          <p class="webinar-date"><span class="jour">17</span><span class="mois">Déc.</span><span class="heure">11 h 00</span></p>
           <div>
             <p class="rangee" style="gap:10px"><span class="tag-bleu">IA &amp; vidéo</span><span class="texte-petit">45 min · en ligne</span></p>
             <h3 class="titre-xs" style="margin-top:8px">[Texte d'exemple] IA et vidéo : ce qui change pour vos équipes com</h3>
@@ -100,7 +108,7 @@
           <a class="bouton-principal bouton-petit" href="#webinars">S'inscrire {{fleche}}</a>
         </article>
         <article class="carte-verre webinar">
-          <p class="webinar-date"><span class="jour">9</span><span class="mois">Juil.</span><span class="heure">14 h 00</span></p>
+          <p class="webinar-date"><span class="jour">14</span><span class="mois">Janv.</span><span class="heure">14 h 00</span></p>
           <div>
             <p class="rangee" style="gap:10px"><span class="tag-orange">Communication interne</span><span class="texte-petit">45 min · en ligne</span></p>
             <h3 class="titre-xs" style="margin-top:8px">[Texte d'exemple] Interviews de collaborateurs : les réussir sans studio</h3>

@@ -81,6 +81,16 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   clip sous son numéro). Tête de lecture = poignée en écusson (clip-path) + trait qui s'arrête sous les clips.
   Dans le thème : tête de lecture et repères = pseudo-éléments (pas de conteneur vide), avec remise à zéro du `::before`
   (sinon il hérite des styles d'un autre `::before`, ex. le liseré de `carte-verre`). Frise validée (« très stylé »).
+- **Idées « film » (maquettes, à valider)** : 1 article = lecteur de lecture (pilule en bas : ▶, barre, « 02:10 / 06:00 »,
+  visible pendant le texte) **go** ; 2 témoignage = récit en « Scène 1…4 » le long d'une pellicule (page complète seulement,
+  à voir) ; 3 réalisation = page d'essai « générique de fin » (fiche technique + équipe en générique, section sombre,
+  lignes qui montent une à une ; remplace la carte « La fiche ») ; 4 contact = clap au-dessus du calendrier (valeurs en
+  Caveat, barre qui se ferme à l'apparition) ; 5 404 = mire aux couleurs de la charte + « Signal perdu · 04:04 ».
+  Webinars : **compte à rebours réel** (date + heure du webinar, heure de Paris, calculé dans le navigateur ⇒ compatible
+  WP Super Cache) ; pendant la durée : « En direct maintenant » + bouton « Rejoindre le direct » ; après : « Terminé ».
+  Offres : frise de montage à 4 clips « Ce qui se passe après votre échange » (délais [à confirmer]), 00:03 ; FAQ passe en 00:04.
+  Réalisations : au survol (ou au centre de l'écran sur mobile), image qui zoome + barre de progression qui avance.
+  Lien d'évitement placé dans `<header>` (sinon axe « region »).
 - **Menu du haut** : Offres, Réalisations, Témoignages, Ressources, **L'agence** + bouton. La page « L'agence » s'ajoute aux
   pages créées à l'activation ; chez la cliente (menu déjà créé), elle ajoute le lien elle-même dans Apparence > Menus.
 - Mots en dégradé (background-clip: text) : prévoir `padding-inline: .06em; margin-inline: -.06em;

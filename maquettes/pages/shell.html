@@ -61,7 +61,7 @@
   });
   // Apparitions au défilement (dans le thème : module « Interactions » d'Elementor, réglable par vous)
   if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches && 'IntersectionObserver' in window) {
-    var cibles = document.querySelectorAll('.page main .carte-verre, .page main .carte-pleine, .page main .temoin, .page main .plaque-chiffres > div, .page main .grille-3 > *, .page main .grille-4 > *, .page main .titre-lg, .page main .titre-md, .page main .entete-section, .page main .webinar, .page main .apparait');
+    var cibles = document.querySelectorAll('.page main .carte-verre, .page main .carte-pleine, .page main .temoin, .page main .plaque-chiffres > div, .page main .grille-3 > *, .page main .grille-4 > *, .page main .titre-lg, .page main .titre-md, .page main .entete-section, .page main .webinar, .page main .apparait, .page main .clap, .page main .generique');
     var vue = new IntersectionObserver(function (es) {
       es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('vu'); vue.unobserve(e.target); } });
     }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
@@ -71,6 +71,41 @@
       el.classList.add('apparait'); el.style.setProperty('--delai', ((rang % 4) * 0.08) + 's');
       vue.observe(el);
     });
+  }
+
+  // Webinars : compte à rebours réel jusqu'à la date du webinar ; « En direct » pendant la durée ; « Terminé » ensuite.
+  document.querySelectorAll('.compte-rebours[data-debut]').forEach(function (cr) {
+    var debut = Date.parse(cr.dataset.debut), fin = debut + (+cr.dataset.duree || 45) * 60000, carte = cr.closest('article');
+    var bouton = carte && carte.querySelector('[data-cr-bouton]'), bandeau = carte && carte.querySelector('[data-cr-bandeau]');
+    function deux(n) { return (n < 10 ? '0' : '') + n; }
+    function maj() {
+      var maintenant = Date.now();
+      if (maintenant >= fin) { cr.classList.remove('en-direct'); cr.classList.add('termine'); if (bandeau) bandeau.textContent = 'Terminé'; return; }
+      if (maintenant >= debut) { cr.classList.add('en-direct'); if (bandeau) bandeau.textContent = 'En direct'; if (bouton && !bouton.dataset.fait) { bouton.firstChild.nodeValue = bouton.dataset.crBouton + ' '; bouton.dataset.fait = 1; } return; }
+      var s = Math.floor((debut - maintenant) / 1000);
+      cr.querySelector('[data-cr="j"]').textContent = deux(Math.floor(s / 86400));
+      cr.querySelector('[data-cr="h"]').textContent = deux(Math.floor(s % 86400 / 3600));
+      cr.querySelector('[data-cr="m"]').textContent = deux(Math.floor(s % 3600 / 60));
+      cr.querySelector('[data-cr="s"]').textContent = deux(s % 60);
+    }
+    maj(); setInterval(maj, 1000);
+  });
+  // Article : barre de lecture façon lecteur vidéo (visible pendant la lecture du texte).
+  document.querySelectorAll('.lecteur-lecture').forEach(function (l) {
+    var texte = l.closest('main').querySelector('.article-texte'), total = (+l.dataset.minutes || 5) * 60, temps = l.querySelector('b');
+    function maj() {
+      if (!texte || !texte.offsetParent) return;
+      var r = texte.getBoundingClientRect(), p = Math.min(1, Math.max(0, (innerHeight * .6 - r.top) / r.height)), s = Math.round(p * total);
+      l.style.setProperty('--avance', (p * 100).toFixed(1) + '%');
+      temps.textContent = (s / 60 < 10 ? '0' : '') + Math.floor(s / 60) + ':' + (s % 60 < 10 ? '0' : '') + s % 60;
+      l.classList.toggle('visible', p > 0 && p < 1);
+    }
+    addEventListener('scroll', maj, { passive: true }); addEventListener('hashchange', maj); maj();
+  });
+  // Réalisations : sur un écran tactile, la vignette au centre de l'écran « démarre ».
+  if (matchMedia('(hover: none)').matches && 'IntersectionObserver' in window) {
+    var centre = new IntersectionObserver(function (es) { es.forEach(function (e) { e.target.classList.toggle('joue', e.isIntersecting); }); }, { rootMargin: '-40% 0px -40% 0px' });
+    document.querySelectorAll('.vignette-video').forEach(function (v) { centre.observe(v); });
   }
   document.querySelectorAll('.partage-copier').forEach(function (b) {
     b.addEventListener('click', function () { try { navigator.clipboard.writeText(location.href); } catch (e) {} b.title = 'Lien copié'; });
