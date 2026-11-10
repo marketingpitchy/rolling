@@ -142,7 +142,12 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   `outils/icones-partage.js`, blanches au survol par filter) + texte masqué ; « Copier le lien » = lien `#rl-copier`
   (rolling.js). Anciens widgets Partage / Résumer gardés (compatibilité). Classe `bouton-ia`.
 - Réalisation / témoignage : champs en double (besoin, produit/accompagnement, résultat) ⇒ proposé : récit dans le
-  témoignage, réalisation = page vidéo, encart « Le cas client » automatique si lié ; **en attente de réponse**.
+  témoignage, réalisation = page vidéo, encart « Le cas client » automatique si lié. Contre-proposition (la cliente
+  voulait des témoignages = citations seules) : témoignage = citation + lien vers la réalisation par défaut, récit
+  facultatif (fiche seulement si rempli) ; **en attente de réponse**.
+- **Tableaux d'article** (maquette, page Article, à valider) : bloc « Tableau » de WordPress stylé par le thème (en-tête
+  violet, lignes alternées, carte arrondie, défilement horizontal si trop large, figure focusable) + style de bloc
+  « Comparatif » (dernière colonne mise en avant) + composition « Rolling : tableau ». En mobile, 3 colonnes tiennent.
 - FAQ : la cliente ajoute elle-même les réponses ; garder les questions telles quelles.
 - Le WordPress de production existe déjà chez la cliente : on livre seulement le thème (zip à importer).
 

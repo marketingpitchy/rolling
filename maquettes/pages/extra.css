@@ -443,3 +443,18 @@ a.vignette-video:hover .bouton-lecture, a.vignette-video:focus-visible .bouton-l
 .cr-jours { display: inline-flex; align-items: baseline; }
 .cr-unite { margin-left: 2px; font-size: .72em; font-weight: 650; }
 .cr-deux { margin: 0 5px; opacity: .55; }
+
+/* Article : tableaux (bloc « Tableau » de WordPress). Style « Comparatif » = dernière colonne mise en avant. */
+.article-texte > .wp-block-table { margin: 32px 0 0; overflow-x: auto; border-radius: 18px; background: #FFFFFF; box-shadow: inset 0 0 0 1px rgba(15,15,18,.08), 0 18px 40px -28px rgba(70,40,150,.45); }
+.article-texte > .wp-block-table:focus-visible { outline: 3px solid var(--focus, #5B3BEA); outline-offset: 3px; }
+.wp-block-table table { width: 100%; min-width: 540px; border-collapse: collapse; font-size: 16px; line-height: 1.45; text-align: left; }
+.wp-block-table th { padding: 14px 18px; background: #5B3BEA; color: #FFFFFF; font-family: var(--police-titre); font-weight: 650; font-size: 16px; letter-spacing: -.02em; vertical-align: bottom; }
+.wp-block-table td { padding: 14px 18px; color: var(--paragraphe); border-top: 1px solid rgba(15,15,18,.07); vertical-align: top; }
+.wp-block-table tbody tr:nth-child(even) td { background: #FAF9F7; }
+.wp-block-table td:first-child { color: var(--encre); font-weight: 600; }
+.wp-block-table figcaption { padding: 12px 18px 14px; font-size: 14px; color: var(--legende); border-top: 1px solid rgba(15,15,18,.07); }
+.wp-block-table.is-style-comparatif th { background: #F3F0FA; color: var(--encre); }
+.wp-block-table.is-style-comparatif th:last-child { background: #5B3BEA; color: #FFFFFF; }
+.wp-block-table.is-style-comparatif td:last-child { background: #EDE6FF; color: #2A1A80; font-weight: 600; }
+.wp-block-table.is-style-comparatif tbody tr:nth-child(even) td:last-child { background: #E4DAFF; }
+@media (max-width: 640px) { .wp-block-table table { min-width: 0; font-size: 14px; } .wp-block-table th { font-size: 14px; } .wp-block-table th, .wp-block-table td { padding: 11px 10px; } .wp-block-table th:first-child, .wp-block-table td:first-child { padding-left: 14px; } .wp-block-table figcaption { padding: 10px 14px 12px; font-size: 13px; } }
