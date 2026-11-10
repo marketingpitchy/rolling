@@ -474,11 +474,11 @@ a.vignette-video:hover .bouton-lecture, a.vignette-video:focus-visible .bouton-l
 .video-article { margin: 0; }
 .video-article .cadre-photo { aspect-ratio: 16 / 9; border-radius: 22px; }
 .video-article figcaption { margin-top: 10px; font-size: 14px; color: var(--legende); }
-.chiffre-cle { display: flex; align-items: center; gap: 24px; padding: 24px 28px; border-radius: 26px; background: linear-gradient(120deg, rgba(237,230,255,.9), rgba(255,241,231,.85)); }
-.chiffre-cle-valeur { flex-shrink: 0; }
-.chiffre-cle-valeur img { height: 64px; width: auto; }
-.chiffre-cle-texte { font-family: var(--police-titre); font-weight: 650; font-size: 21px; line-height: 1.3; letter-spacing: -.02em; color: var(--encre); }
-.chiffre-cle-texte .texte-petit { display: block; margin-top: 6px; font-family: var(--police-texte, inherit); font-weight: 400; letter-spacing: 0; }
+.chiffre-article { display: flex; align-items: center; gap: 24px; padding: 24px 28px; border-radius: 26px; background: linear-gradient(120deg, rgba(237,230,255,.9), rgba(255,241,231,.85)); }
+.chiffre-article-valeur { flex-shrink: 0; }
+.chiffre-article-valeur img { height: 64px; width: auto; }
+.chiffre-article-texte { font-family: var(--police-titre); font-weight: 650; font-size: 21px; line-height: 1.3; letter-spacing: -.02em; color: var(--encre); }
+.chiffre-article-texte .texte-petit { display: block; margin-top: 6px; font-family: var(--police-texte, inherit); font-weight: 400; letter-spacing: 0; }
 .liste-article { margin-top: 18px; }
 .article-texte > h3 + .annot-compo { margin-top: 14px; }
 .encart-guide { display: grid; grid-template-columns: 180px minmax(0, 1fr); gap: 22px; align-items: center; padding: 16px; border-radius: 26px; background: #fff; box-shadow: 0 1px 2px rgba(15,15,18,.05), 0 24px 50px -30px rgba(76,48,170,.3); }
@@ -499,8 +499,8 @@ a.vignette-video:hover .bouton-lecture, a.vignette-video:focus-visible .bouton-l
 .auteur-article .portrait { width: 72px; height: 72px; flex-shrink: 0; margin: 0; }
 .lien-auteur { display: inline-flex; align-items: center; min-height: 32px; margin-top: 8px; font-size: 15px; font-weight: 600; color: #5B3BEA; }
 @media (max-width: 640px) {
-  .chiffre-cle { flex-direction: column; align-items: flex-start; gap: 14px; padding: 22px; }
-  .chiffre-cle-texte { font-size: 19px; }
+  .chiffre-article { flex-direction: column; align-items: flex-start; gap: 14px; padding: 22px; }
+  .chiffre-article-texte { font-size: 19px; }
   .encart-guide { grid-template-columns: minmax(0, 1fr); }
   .encart-appel { flex-direction: column; align-items: flex-start; }
   .auteur-article { flex-direction: column; }
