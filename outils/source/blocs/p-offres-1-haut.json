@@ -1,0 +1,71 @@
+{
+ "cle": "p-offres-1-haut",
+ "titre": "Rolling · Offres · Haut de page",
+ "type": "e-flexbox",
+ "composition": {
+  "xml_structure": "<e-flexbox configuration-id=\"Offres · haut\"><e-flexbox configuration-id=\"Offres · haut · contenu\"><e-flexbox configuration-id=\"Offres · haut · pastille\"><e-paragraph configuration-id=\"Offres · haut · pastille · texte\"></e-paragraph></e-flexbox><e-heading configuration-id=\"Offres · haut · titre\"></e-heading><e-paragraph configuration-id=\"Offres · haut · introduction\"></e-paragraph><e-flexbox configuration-id=\"Offres · haut · boutons\"><e-button configuration-id=\"Offres · haut · bouton 1\"></e-button><e-button configuration-id=\"Offres · haut · bouton 2\"></e-button></e-flexbox></e-flexbox></e-flexbox>",
+  "element_config": {
+   "Offres · haut": {
+    "tag": "section"
+   },
+   "Offres · haut · pastille · texte": {
+    "paragraph": "Deux formules, un abonnement annuel"
+   },
+   "Offres · haut · titre": {
+    "tag": "h1",
+    "title": "Nos formules d'agence vidéo, <em>à prix fixe.</em>"
+   },
+   "Offres · haut · introduction": {
+    "paragraph": "Tous vos contenus et vos projets en vidéo, ou le tournage en plus. Un abonnement annuel, une équipe dédiée, <strong>des vidéos en illimité</strong>."
+   },
+   "Offres · haut · bouton 1": {
+    "text": "Réserver un échange",
+    "link": {
+     "destination": "/contact/"
+    }
+   },
+   "Offres · haut · bouton 2": {
+    "text": "Comparer les formules",
+    "link": {
+     "destination": "#comparer"
+    }
+   }
+  },
+  "classes": {
+   "Offres · haut": [
+    "section",
+    "section-entete",
+    "entete-page",
+    "halos-haut"
+   ],
+   "Offres · haut · contenu": [
+    "conteneur"
+   ],
+   "Offres · haut · pastille": [
+    "pastille"
+   ],
+   "Offres · haut · titre": [
+    "titre-lg"
+   ],
+   "Offres · haut · introduction": [
+    "texte-intro"
+   ],
+   "Offres · haut · boutons": [
+    "rangee"
+   ],
+   "Offres · haut · bouton 1": [
+    "bouton-principal"
+   ],
+   "Offres · haut · bouton 2": [
+    "bouton-verre"
+   ]
+  },
+  "style": {
+   "Offres · haut · contenu": "display: flex; flex-direction: column; gap: 0;",
+   "Offres · haut · titre": "margin-top: 26px; max-width: 900px;",
+   "Offres · haut · introduction": "margin-top: 22px; max-width: 680px;",
+   "Offres · haut · boutons": "margin-top: 32px;"
+  }
+ },
+ "brut": {}
+}

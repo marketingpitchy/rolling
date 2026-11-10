@@ -1529,6 +1529,236 @@
      "css": "font-size: 28px; @media(--mobile) { font-size: 24px; }"
     },
     {
+     "label": "offres-tableau",
+     "description": "Tableau des formules (avec carte-pleine) : la colonne de droite est posée sur une bande sombre.",
+     "css": "border-radius: 34px; gap: 0; padding: 0 0 8px; &::before { position: relative; top: auto; right: auto; bottom: auto; left: auto; height: auto; opacity: 1; mix-blend-mode: normal; border: 0; -webkit-mask: none; mask: none; padding: 0; content: ''; position: absolute; z-index: 0; top: 8px; bottom: 8px; right: 8px; left: auto; width: 262px; height: auto; border-radius: 28px; background: radial-gradient(90% 16% at 85% 0%, rgba(255,138,91,0.42), rgba(255,138,91,0) 70%), radial-gradient(80% 16% at 0% 100%, rgba(139,92,246,0.45), rgba(139,92,246,0) 70%), linear-gradient(180deg, #1C1730 0%, #0F0F12 100%); box-shadow: inset 0 1px 0 rgba(255,255,255,0.2); } @media(--mobile) { &::before { width: 96px; } }"
+    },
+    {
+     "label": "offres-badge",
+     "description": "« Le plus complet » posé sur le haut de la colonne sombre.",
+     "css": "position: absolute; z-index: 3; top: -14px; right: 87px; width: fit-content; padding: 6px 14px; border-radius: 999px; font-family: Hanken Grotesk; font-size: 12px; line-height: 1.2; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: #0F0F12; background: #FFD1BF; @media(--mobile) { right: 18px; font-size: 11px; padding: 5px 10px; }"
+    },
+    {
+     "label": "offres-ligne",
+     "description": "Ligne du tableau : libellé, puis une case par formule (la 3e sur fond sombre).",
+     "css": "position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0, 1fr) 250px 262px; gap: 0; padding: 0 8px 0 0; & > * { display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 2px; padding: 9px 24px; font-family: Hanken Grotesk; font-size: 15.5px; line-height: 1.4; text-align: center; color: var(--encre); border-top: 1px solid rgba(15,15,18,0.07); } & > :first-child { align-items: flex-start; padding-left: 36px; text-align: left; } & > :nth-child(3) { color: #ECE8F7; border-top-color: rgba(255,255,255,0.08); --rl-texte: #FFFFFF; --rl-legende: #B6B0CC; } @media(--mobile) { grid-template-columns: minmax(0, 1fr) 92px 96px; & > *, & > :first-child { padding: 10px; font-size: 14px; } }"
+    },
+    {
+     "label": "offres-groupe",
+     "description": "Ligne de titre de groupe dans le tableau (avec offres-ligne) : une seule case, dans la première colonne.",
+     "css": "& > * { padding-top: 26px; padding-bottom: 6px; border-top: 0; }"
+    },
+    {
+     "label": "offres-entete",
+     "description": "Première ligne du tableau (avec offres-ligne) : titre, nom, prix et bouton de chaque formule.",
+     "css": "& > * { justify-content: flex-start; gap: 8px; padding-top: 34px; padding-bottom: 26px; border-top: 0; } & > :nth-child(3) { border-top: 0; }"
+    },
+    {
+     "label": "offres-detail",
+     "description": "Précision sous un libellé du tableau, en petit.",
+     "css": "display: block; font-family: Hanken Grotesk; font-size: 13px; line-height: 1.4; color: var(--rl-legende, var(--legende));"
+    },
+    {
+     "label": "offres-prix",
+     "description": "Prix d'une formule dans le tableau (le span = « / mois » en petit).",
+     "css": "display: block; font-family: Bricolage Grotesque; font-size: 38px; line-height: 1.1; font-weight: 650; letter-spacing: -0.04em; color: var(--rl-texte, var(--encre)); & span { font-family: Hanken Grotesk; font-size: 14px; letter-spacing: 0; font-weight: 400; color: var(--rl-legende, var(--legende)); }"
+    },
+    {
+     "label": "offres-resume",
+     "description": "Résumé d'une formule dans le tableau, sur fond lilas.",
+     "css": "display: block; width: 100%; margin-top: 4px; padding: 8px 10px; border-radius: 12px; font-family: Hanken Grotesk; font-size: 13px; line-height: 1.35; font-weight: 600; color: #4A2BB8; background: #EDE6FF;"
+    },
+    {
+     "label": "offres-resume-sombre",
+     "description": "Résumé de la formule sombre (avec offres-resume).",
+     "css": "color: #ECE8F7; background: rgba(255,255,255,0.08); box-shadow: inset 0 0 0 1px rgba(255,255,255,0.14);"
+    },
+    {
+     "label": "offres-masquer",
+     "description": "Masqué sur mobile (prix et boutons du haut du tableau : ils passent sous le tableau).",
+     "css": "@media(--mobile) { display: none; }"
+    },
+    {
+     "label": "offres-mobile",
+     "description": "Cartes prix sous le tableau, visibles sur mobile seulement.",
+     "css": "display: none; @media(--mobile) { display: grid; }"
+    },
+    {
+     "label": "titre-formule",
+     "description": "Nom d'une formule en tête de tableau (avec titre-xs).",
+     "css": "font-size: 21px; @media(--mobile) { font-size: 15px; }"
+    },
+    {
+     "label": "case-oui",
+     "description": "Coche « Inclus » dans le tableau.",
+     "css": "display: block; width: 26px; height: 26px; margin: 0 auto; filter: drop-shadow(0 3px 6px rgba(91,59,234,0.28));"
+    },
+    {
+     "label": "case-non",
+     "description": "Croix « Non inclus » dans le tableau (le texte est masqué, une croix grise le remplace).",
+     "css": "position: relative; display: block; width: 22px; height: 22px; margin: 0 auto; overflow: hidden; border-radius: 50%; font-size: 0; color: transparent; background: rgba(15,15,18,0.06); &::before, &::after { content: ''; position: absolute; top: 10px; left: 6px; width: 10px; height: 2px; border-radius: 2px; background: #6E6B7B; transform: rotate(45deg); } &::after { transform: rotate(-45deg); }"
+    },
+    {
+     "label": "montage",
+     "description": "Frise de montage (avec carte-verre) : règle, clips, et une tête de lecture rouge qui avance jusqu'au dernier clip.",
+     "css": "gap: 0; margin-top: 8px; padding: 22px 26px 34px; border-radius: 30px; overflow: hidden; &::before { position: relative; top: auto; right: auto; bottom: auto; left: auto; height: auto; opacity: 1; mix-blend-mode: normal; border: 0; -webkit-mask: none; mask: none; padding: 0; content: ''; position: absolute; z-index: 2; top: 36px; left: 18px; right: auto; bottom: auto; width: 16px; height: 20px; padding: 0; pointer-events: none; background: linear-gradient(90deg, transparent 7px, rgba(255,255,255,0.9) 7px 9px, transparent 9px) center 4px / 16px 8px no-repeat, linear-gradient(180deg, #FF6A5F, #FF3B30); clip-path: polygon(0 0, 100% 0, 100% 62%, 50% 100%, 0 62%); border-radius: 4px 4px 0 0; box-shadow: none; transition: left 2.4s cubic-bezier(0.4, 0, 0.2, 1) 0.3s; } &::after { content: ''; position: absolute; z-index: 2; top: 54px; left: 25px; width: 2px; height: 112px; pointer-events: none; background: linear-gradient(180deg, #FF3B30 0%, #FF3B30 82%, rgba(255,59,48,0) 100%); box-shadow: 0 0 10px rgba(255,59,48,0.45); transition: left 2.4s cubic-bezier(0.4, 0, 0.2, 1) 0.3s; } &.vu::before { left: calc(100% - 38px); } &.vu::after { left: calc(100% - 31px); } @media(--tablet) { padding: 20px 20px 26px; &::before, &::after { display: none; } }"
+    },
+    {
+     "label": "montage-regle",
+     "description": "Règle de timecodes en haut de la frise (deux textes : début et fin).",
+     "css": "display: flex; flex-direction: row; justify-content: space-between; padding: 0 44px 26px 0; font-family: Bricolage Grotesque; font-size: 12px; font-weight: 650; letter-spacing: 0.08em; color: var(--rl-legende, var(--legende)); background: repeating-linear-gradient(90deg, rgba(91,59,234,0.28) 0 1px, transparent 1px 24px) left 22px / 100% 8px no-repeat, repeating-linear-gradient(90deg, rgba(91,59,234,0.45) 0 1px, transparent 1px 120px) left 18px / 100% 12px no-repeat; @media(--tablet) { padding: 0 0 18px 30px; background: none; }"
+    },
+    {
+     "label": "montage-piste",
+     "description": "Piste des clips (3 colonnes ; en mobile, une colonne le long d'une règle verticale).",
+     "css": "position: relative; display: grid; grid-template-columns: 1.15fr 1fr 1.3fr; gap: 10px; padding: 0; @media(--tablet) { grid-template-columns: minmax(0, 1fr); gap: 30px; padding-left: 30px; &::before { position: relative; top: auto; right: auto; bottom: auto; left: auto; height: auto; opacity: 1; mix-blend-mode: normal; border: 0; -webkit-mask: none; mask: none; padding: 0; content: ''; position: absolute; top: 0; bottom: 0; left: 6px; right: auto; width: 10px; height: auto; background: linear-gradient(90deg, transparent 4px, rgba(91,59,234,0.3) 4px 6px, transparent 6px), repeating-linear-gradient(180deg, rgba(91,59,234,0.35) 0 1px, transparent 1px 14px); } }"
+    },
+    {
+     "label": "montage-4",
+     "description": "Frise à 4 clips (avec montage-piste).",
+     "css": "grid-template-columns: repeat(4, minmax(0, 1fr)); @media(--tablet) { grid-template-columns: minmax(0, 1fr); }"
+    },
+    {
+     "label": "clip",
+     "description": "Un clip de la frise : barre colorée, titre, texte.",
+     "css": "display: flex; flex-direction: column; gap: 10px; padding: 0; & > :not(.clip-barre) { padding-right: 12px; } @media(--tablet) { &::before { position: relative; top: auto; right: auto; bottom: auto; left: auto; height: auto; opacity: 1; mix-blend-mode: normal; border: 0; -webkit-mask: none; mask: none; padding: 0; content: ''; position: absolute; top: 25px; left: -29px; right: auto; bottom: auto; width: 14px; height: 14px; border-radius: 50%; background: #FFFFFF; box-shadow: 0 0 0 3px rgba(91,59,234,0.45); } }"
+    },
+    {
+     "label": "clip-barre",
+     "description": "Barre colorée d'un clip, avec sa forme d'onde.",
+     "css": "position: relative; display: flex; flex-direction: row; align-items: center; gap: 10px; min-height: 64px; margin-bottom: 10px; padding: 0 16px; border-radius: 14px; overflow: hidden; font-family: Hanken Grotesk; font-size: 14px; font-weight: 700; color: #FFFFFF; background: linear-gradient(100deg, #3434E0, #5B3BEA); box-shadow: inset 0 1px 0 rgba(255,255,255,0.35), 0 14px 30px -18px rgba(76,48,170,0.7); &::before { position: relative; top: auto; right: auto; bottom: auto; left: auto; height: auto; opacity: 1; mix-blend-mode: normal; border: 0; -webkit-mask: none; mask: none; padding: 0; content: ''; position: absolute; top: auto; right: 0; bottom: 0; left: 0; width: auto; height: 22px; opacity: 0.35; background: repeating-linear-gradient(90deg, #FFFFFF 0 2px, transparent 2px 6px); -webkit-mask: linear-gradient(0deg, #000 0%, transparent 100%); mask: linear-gradient(0deg, #000 0%, transparent 100%); } & > * { position: relative; } @media(--mobile) { flex-wrap: wrap; gap: 6px 8px; padding: 10px 12px; }"
+    },
+    {
+     "label": "clip-numero",
+     "description": "« Clip 01 » dans la barre.",
+     "css": "flex-shrink: 0; width: fit-content; padding: 4px 9px; border-radius: 999px; font-family: Hanken Grotesk; font-size: 11px; line-height: 1.2; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; white-space: nowrap; color: #FFFFFF; background: rgba(15,15,18,0.32);"
+    },
+    {
+     "label": "clip-nom",
+     "description": "Nom du clip dans la barre.",
+     "css": "font-family: Hanken Grotesk; font-size: 14px; line-height: 1.3; font-weight: 700; color: inherit; @media(--mobile) { order: 3; flex: 1 0 100%; }"
+    },
+    {
+     "label": "clip-rec",
+     "description": "« En cours » avec un point rouge, à droite de la barre.",
+     "css": "display: inline-flex; flex-direction: row; align-items: center; gap: 7px; flex-shrink: 0; margin-left: auto; padding: 4px 10px; border-radius: 999px; font-family: Hanken Grotesk; font-size: 12px; line-height: 1.2; font-weight: 700; white-space: nowrap; color: #FFFFFF; background: rgba(15,15,18,0.72); &::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: #FF3B30; animation: rl-clignote 1.6s ease-in-out infinite; } @media(--mobile) { order: 2; }"
+    },
+    {
+     "label": "clip-demande",
+     "description": "Couleur du 2e clip (violet).",
+     "css": "& .clip-barre { background: linear-gradient(100deg, #5B3BEA, #8E4DE6); }"
+    },
+    {
+     "label": "clip-mauve",
+     "description": "Couleur d'un clip mauve.",
+     "css": "& .clip-barre { background: linear-gradient(100deg, #8E4DE6, #B5459E); }"
+    },
+    {
+     "label": "clip-final",
+     "description": "Dernier clip (pêche) : la tête de lecture s'y arrête ; en mobile, elle le pointe.",
+     "css": "& .clip-barre { color: #0F0F12; background: linear-gradient(100deg, #FFD1BF, #FFA27A 55%, #FF8A5B); } & .clip-numero { color: #FFFFFF; background: rgba(15,15,18,0.55); } @media(--tablet) { &::before { top: 22px; left: -32px; width: 20px; height: 20px; border-radius: 4px 0 0 4px; background: linear-gradient(90deg, transparent 6px, rgba(255,255,255,0.9) 6px 14px, transparent 14px) center / 20px 2px no-repeat, linear-gradient(90deg, #FF6A5F, #FF3B30); clip-path: polygon(0 0, 62% 0, 100% 50%, 62% 100%, 0 100%); box-shadow: none; } }"
+    },
+    {
+     "label": "carte-ajout",
+     "description": "Carte image + textes (avec carte-verre) : l'image touche presque les bords.",
+     "css": "gap: 0; padding: 10px 10px 30px;"
+    },
+    {
+     "label": "carte-ajout-texte",
+     "description": "Textes sous l'image d'une carte-ajout.",
+     "css": "display: flex; flex-direction: column; gap: 12px; padding: 22px 18px 0;"
+    },
+    {
+     "label": "cadre-storyboard",
+     "description": "Visuel « storyboard » : fond pêche et annotation manuscrite au centre (remplaçable par une image).",
+     "css": "position: relative; display: flex; align-items: center; justify-content: center; aspect-ratio: 16 / 10; padding: 0; border-radius: 20px; overflow: hidden; background: linear-gradient(160deg, #FFE7DA, #FFD1BF);"
+    },
+    {
+     "label": "titre-carte",
+     "description": "Titre d'une grande carte (avec titre-sm) : un peu plus petit.",
+     "css": "font-size: 32px; @media(--mobile) { font-size: 26px; }"
+    },
+    {
+     "label": "contact-grille",
+     "description": "Page Contact : textes à gauche, calendrier à droite (une colonne sous 1024 px).",
+     "css": "display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: 56px; align-items: start; @media(--tablet) { grid-template-columns: minmax(0, 1fr); gap: 40px; }"
+    },
+    {
+     "label": "contact-cote",
+     "description": "Colonne du calendrier : le clap se pose sur son coin.",
+     "css": "display: flex; flex-direction: column; gap: 0; padding: 0;"
+    },
+    {
+     "label": "clap",
+     "description": "Clap de cinéma (Scène, Prise, Durée) : la barre se ferme quand il apparaît.",
+     "css": "position: relative; z-index: 2; align-self: flex-end; width: min(330px, 100%); margin: 0 18px -46px 0; padding: 28px 0 0; transform: rotate(3deg); filter: drop-shadow(0 16px 24px rgba(15,15,18,0.3)); &::before { position: relative; top: auto; right: auto; bottom: auto; left: auto; height: auto; opacity: 1; mix-blend-mode: normal; border: 0; -webkit-mask: none; mask: none; padding: 0; content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: auto; width: auto; height: 24px; border-radius: 6px 6px 0 0; background: repeating-linear-gradient(-55deg, #0F0F12 0 16px, #FAF9F7 16px 32px); box-shadow: inset 0 0 0 2px #0F0F12; transform-origin: 6px 100%; transform: rotate(-14deg); transition: transform 0.5s cubic-bezier(0.5, -0.4, 0.6, 1.6) 0.5s; } &.vu::before { transform: rotate(0); } @media(--tablet) { align-self: flex-start; margin: 0 0 -40px 8px; }"
+    },
+    {
+     "label": "clap-corps",
+     "description": "Corps du clap (sombre, avec une bande rayée en haut).",
+     "css": "position: relative; display: flex; flex-direction: column; gap: 0; padding: 10px 0 0; border-radius: 0 0 16px 16px; overflow: hidden; background: linear-gradient(160deg, #1C1730, #0F0F12); box-shadow: inset 0 0 0 1px rgba(255,255,255,0.08); &::before { position: relative; top: auto; right: auto; bottom: auto; left: auto; height: auto; opacity: 1; mix-blend-mode: normal; border: 0; -webkit-mask: none; mask: none; padding: 0; content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: auto; width: auto; height: 10px; background: repeating-linear-gradient(-55deg, #0F0F12 0 16px, #FAF9F7 16px 32px); }"
+    },
+    {
+     "label": "clap-grille",
+     "description": "Cases du clap.",
+     "css": "display: grid; grid-template-columns: 1.6fr 0.7fr 1fr; gap: 0; padding: 0; & > * { display: flex; flex-direction: column; gap: 0; padding: 8px 14px 10px; } & > * + * { border-left: 1px solid rgba(255,255,255,0.14); }"
+    },
+    {
+     "label": "clap-champ",
+     "description": "Nom d'une case du clap (Scène, Prise, Durée).",
+     "css": "font-family: Hanken Grotesk; font-size: 10px; line-height: 1.4; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #B6B0CC;"
+    },
+    {
+     "label": "clap-valeur",
+     "description": "Valeur d'une case du clap, écrite à la main.",
+     "css": "font-family: Caveat; font-size: 27px; line-height: 1.1; font-weight: 700; white-space: nowrap; color: #FFD1BF;"
+    },
+    {
+     "label": "zone-calendrier",
+     "description": "Emplacement du calendrier HubSpot (avec carte-verre) : hauteur réservée, la page ne saute pas au chargement.",
+     "css": "min-height: 640px; align-items: center; justify-content: center; gap: 10px; padding: 40px; text-align: center; @media(--mobile) { min-height: 560px; padding: 28px 20px; }"
+    },
+    {
+     "label": "agence-hero",
+     "description": "Haut de la page L'agence : textes à gauche, photo à droite (une colonne sous 1024 px).",
+     "css": "display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 56px; align-items: center; margin-top: 26px; @media(--tablet) { grid-template-columns: minmax(0, 1fr); gap: 40px; }"
+    },
+    {
+     "label": "agence-photo",
+     "description": "Photo du haut de L'agence (avec carte-verre) : cadre fin, légende dessous.",
+     "css": "gap: 0; padding: 10px; border-radius: 30px; @media(--tablet) { max-width: 420px; }"
+    },
+    {
+     "label": "citation-fondateurs",
+     "description": "Citation des fondateurs (avec carte-verre, temoin et temoin-une) : photo à gauche, citation à droite.",
+     "css": "display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: 44px; align-items: center; margin-top: 72px; @media(--tablet) { grid-template-columns: minmax(0, 1fr); gap: 26px; }"
+    },
+    {
+     "label": "fondateurs-photo",
+     "description": "Cadre de la photo des fondateurs (avec cadre-photo) : format 4:3.",
+     "css": "aspect-ratio: 4 / 3; --rl-rayon-photo: 22px;"
+    },
+    {
+     "label": "conviction",
+     "description": "Carte d'une conviction (avec carte-verre) : titre à point coloré et texte.",
+     "css": "gap: 12px; padding: 30px; & .texte { padding-left: 22px; }"
+    },
+    {
+     "label": "agence-lieu",
+     "description": "« Basés à Paris » : textes à gauche, carte de confiance à droite.",
+     "css": "display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 520px); gap: 56px; align-items: center; @media(--tablet) { grid-template-columns: minmax(0, 1fr); gap: 32px; }"
+    },
+    {
+     "label": "badges-clairs",
+     "description": "Badges IA sécurisée / Europe / RGPD sur fond clair (avec rangee) : l'icône claire est posée sur une pastille sombre.",
+     "css": "& .icone-badge { border-radius: 50%; background: #2A1F55; }"
+    },
+    {
+     "label": "agence-confiance",
+     "description": "Carte « Vos données, protégées » (avec carte-verre) : badges et précisions.",
+     "css": "gap: 18px; padding: 30px;"
+    },
+    {
      "label": "mire",
      "description": "Mire de fin d'émission aux couleurs Rolling (page 404), avec « Signal perdu ».",
      "css": "position: relative; width: 100%; max-width: 560px; aspect-ratio: 16 / 9; margin: 0 auto; padding: 0; overflow: hidden; border-radius: 26px; display: flex; align-items: center; justify-content: center; background: linear-gradient(90deg, #FAF9F7 0 14.28%, #FFD1BF 14.28% 28.57%, #FF8A5B 28.57% 42.85%, #E0562A 42.85% 57.14%, #C4B5FD 57.14% 71.42%, #8E4DE6 71.42% 85.71%, #5B3BEA 85.71%) top / 100% 74% no-repeat, linear-gradient(90deg, #3434E0 0 14.28%, #0F0F12 14.28% 28.57%, #8E4DE6 28.57% 42.85%, #17112C 42.85% 57.14%, #FF8A5B 57.14% 71.42%, #0F0F12 71.42% 85.71%, #FAF9F7 85.71%) bottom / 100% 26% no-repeat; box-shadow: 0 0 0 8px rgba(255,255,255,0.06), 0 40px 80px -30px rgba(0,0,0,0.8); &::after { content: ''; position: absolute; top: 0; right: 0; bottom: 0; left: 0; background: repeating-linear-gradient(180deg, rgba(15,15,18,0.16) 0 2px, transparent 2px 4px); animation: rl-scintille 3.2s steps(2) infinite; pointer-events: none; }"

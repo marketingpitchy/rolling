@@ -35,6 +35,7 @@ img, svg, video { max-width: 100%; }
 }
 body.elementor-editor-active *, body.elementor-editor-active *::before, body.elementor-editor-active *::after,
 body.elementor-editor-preview *, body.elementor-editor-preview *::before, body.elementor-editor-preview *::after { animation: none !important; }
+body.elementor-editor-preview .montage::before, body.elementor-editor-preview .montage::after, body.elementor-editor-preview .clap::before { transition: none !important; }
 
 /* Listes de cartes (widget Rolling) : l'enveloppe de chaque modèle s'efface, la carte est la cellule de la grille */
 .rl-liste > .elementor { display: contents; }

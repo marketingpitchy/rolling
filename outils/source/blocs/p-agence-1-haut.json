@@ -1,0 +1,112 @@
+{
+ "cle": "p-agence-1-haut",
+ "titre": "Rolling · L'agence · Haut de page",
+ "type": "e-flexbox",
+ "composition": {
+  "xml_structure": "<e-flexbox configuration-id=\"L'agence · haut\"><e-flexbox configuration-id=\"L'agence · haut · contenu\"><e-paragraph configuration-id=\"L'agence · fil d’Ariane\"></e-paragraph><e-flexbox configuration-id=\"L'agence · présentation\"><e-flexbox configuration-id=\"L'agence · textes\"><e-flexbox configuration-id=\"L'agence · pastille\"><e-paragraph configuration-id=\"L'agence · pastille · texte\"></e-paragraph></e-flexbox><e-heading configuration-id=\"L'agence · titre\"></e-heading><e-paragraph configuration-id=\"L'agence · introduction\"></e-paragraph><e-flexbox configuration-id=\"L'agence · boutons\"><e-button configuration-id=\"L'agence · réserver\"></e-button><e-button configuration-id=\"L'agence · offres\"></e-button></e-flexbox></e-flexbox><e-flexbox configuration-id=\"L'agence · photo\"><e-div-block configuration-id=\"L'agence · photo · cadre\"><e-image configuration-id=\"L'agence · photo · image\"></e-image><e-paragraph configuration-id=\"L'agence · photo · bandeau\"></e-paragraph></e-div-block><e-paragraph configuration-id=\"L'agence · photo · légende\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox></e-flexbox>",
+  "element_config": {
+   "L'agence · haut": {
+    "tag": "section"
+   },
+   "L'agence · fil d’Ariane": {
+    "paragraph": "⟦widget:rolling-ariane⟧"
+   },
+   "L'agence · pastille · texte": {
+    "paragraph": "Lancée en novembre 2026"
+   },
+   "L'agence · titre": {
+    "tag": "h1",
+    "title": "Rolling, l'agence vidéo<br><em>née chez Pitchy.</em>"
+   },
+   "L'agence · introduction": {
+    "paragraph": "Depuis treize ans, nous accompagnons les grandes entreprises en vidéo. Certaines équipes veulent créer elles-mêmes&nbsp;: c'est Pitchy. D'autres veulent déléguer&nbsp;: c'est Rolling, une équipe qui produit pour vous, à prix fixe, en illimité."
+   },
+   "L'agence · réserver": {
+    "text": "Réserver un échange",
+    "link": {
+     "destination": "/contact/"
+    }
+   },
+   "L'agence · offres": {
+    "text": "Voir les offres",
+    "link": {
+     "destination": "/offres/"
+    }
+   },
+   "L'agence · photo · image": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/hero-tournage.jpg",
+      "alt": "L'équipe Rolling en tournage, derrière la caméra"
+     },
+     "size": "large"
+    }
+   },
+   "L'agence · photo · bandeau": {
+    "paragraph": "Backstage"
+   },
+   "L'agence · photo · légende": {
+    "paragraph": "[Photo backstage de tournage à fournir]"
+   }
+  },
+  "classes": {
+   "L'agence · haut": [
+    "section",
+    "section-entete",
+    "entete-page",
+    "halos-haut"
+   ],
+   "L'agence · haut · contenu": [
+    "conteneur"
+   ],
+   "L'agence · présentation": [
+    "agence-hero"
+   ],
+   "L'agence · pastille": [
+    "pastille"
+   ],
+   "L'agence · titre": [
+    "titre-lg"
+   ],
+   "L'agence · introduction": [
+    "texte-intro"
+   ],
+   "L'agence · boutons": [
+    "rangee"
+   ],
+   "L'agence · réserver": [
+    "bouton-principal"
+   ],
+   "L'agence · offres": [
+    "bouton-verre"
+   ],
+   "L'agence · photo": [
+    "carte-verre",
+    "agence-photo",
+    "flotte"
+   ],
+   "L'agence · photo · cadre": [
+    "cadre-photo"
+   ],
+   "L'agence · photo · image": [
+    "image-couvrante"
+   ],
+   "L'agence · photo · bandeau": [
+    "bandeau-video"
+   ],
+   "L'agence · photo · légende": [
+    "texte-petit"
+   ]
+  },
+  "style": {
+   "L'agence · haut · contenu": "display: flex; flex-direction: column; gap: 0;",
+   "L'agence · textes": "display: flex; flex-direction: column; gap: 0;",
+   "L'agence · titre": "margin-top: 22px;",
+   "L'agence · introduction": "margin-top: 22px; max-width: 600px;",
+   "L'agence · boutons": "margin-top: 34px;",
+   "L'agence · photo · cadre": "aspect-ratio: 1 / 1;",
+   "L'agence · photo · légende": "padding: 12px 6px 2px;"
+  }
+ },
+ "brut": {}
+}

@@ -1,0 +1,367 @@
+{
+ "cle": "p-agence-4-equipe",
+ "titre": "Rolling · L'agence · 00:03 L'équipe",
+ "type": "e-flexbox",
+ "composition": {
+  "xml_structure": "<e-flexbox configuration-id=\"L'agence · équipe\"><e-flexbox configuration-id=\"L'agence · équipe · contenu\"><e-flexbox configuration-id=\"L'agence · équipe · en-tête\"><e-flexbox configuration-id=\"L'agence · équipe · repère\"><e-paragraph configuration-id=\"L'agence · équipe · timecode\"></e-paragraph><e-paragraph configuration-id=\"L'agence · équipe · sur-titre\"></e-paragraph></e-flexbox><e-heading configuration-id=\"L'agence · équipe · titre\"></e-heading></e-flexbox><e-heading configuration-id=\"L'agence · créas · titre\"></e-heading><e-flexbox configuration-id=\"L'agence · créas\"><e-flexbox configuration-id=\"L'agence créas · Thomas\"><e-image configuration-id=\"L'agence créas · Thomas · photo\"></e-image><e-paragraph configuration-id=\"L'agence créas · Thomas · prénom\"></e-paragraph><e-paragraph configuration-id=\"L'agence créas · Thomas · poste\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"L'agence créas · Alex\"><e-image configuration-id=\"L'agence créas · Alex · photo\"></e-image><e-paragraph configuration-id=\"L'agence créas · Alex · prénom\"></e-paragraph><e-paragraph configuration-id=\"L'agence créas · Alex · poste\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"L'agence créas · Victor\"><e-image configuration-id=\"L'agence créas · Victor · photo\"></e-image><e-paragraph configuration-id=\"L'agence créas · Victor · prénom\"></e-paragraph><e-paragraph configuration-id=\"L'agence créas · Victor · poste\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"L'agence créas · Vincent\"><e-image configuration-id=\"L'agence créas · Vincent · photo\"></e-image><e-paragraph configuration-id=\"L'agence créas · Vincent · prénom\"></e-paragraph><e-paragraph configuration-id=\"L'agence créas · Vincent · poste\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"L'agence créas · Marion\"><e-image configuration-id=\"L'agence créas · Marion · photo\"></e-image><e-paragraph configuration-id=\"L'agence créas · Marion · prénom\"></e-paragraph><e-paragraph configuration-id=\"L'agence créas · Marion · poste\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"L'agence créas · Sophie\"><e-image configuration-id=\"L'agence créas · Sophie · photo\"></e-image><e-paragraph configuration-id=\"L'agence créas · Sophie · prénom\"></e-paragraph><e-paragraph configuration-id=\"L'agence créas · Sophie · poste\"></e-paragraph></e-flexbox></e-flexbox><e-heading configuration-id=\"L'agence · experts · titre\"></e-heading><e-flexbox configuration-id=\"L'agence · experts\"><e-flexbox configuration-id=\"L'agence experts · Ronan\"><e-image configuration-id=\"L'agence experts · Ronan · photo\"></e-image><e-paragraph configuration-id=\"L'agence experts · Ronan · prénom\"></e-paragraph><e-paragraph configuration-id=\"L'agence experts · Ronan · poste\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"L'agence experts · Marion\"><e-image configuration-id=\"L'agence experts · Marion · photo\"></e-image><e-paragraph configuration-id=\"L'agence experts · Marion · prénom\"></e-paragraph><e-paragraph configuration-id=\"L'agence experts · Marion · poste\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"L'agence experts · Inès\"><e-image configuration-id=\"L'agence experts · Inès · photo\"></e-image><e-paragraph configuration-id=\"L'agence experts · Inès · prénom\"></e-paragraph><e-paragraph configuration-id=\"L'agence experts · Inès · poste\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"L'agence experts · Hakim\"><e-image configuration-id=\"L'agence experts · Hakim · photo\"></e-image><e-paragraph configuration-id=\"L'agence experts · Hakim · prénom\"></e-paragraph><e-paragraph configuration-id=\"L'agence experts · Hakim · poste\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"L'agence experts · Maxime\"><e-image configuration-id=\"L'agence experts · Maxime · photo\"></e-image><e-paragraph configuration-id=\"L'agence experts · Maxime · prénom\"></e-paragraph><e-paragraph configuration-id=\"L'agence experts · Maxime · poste\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox></e-flexbox>",
+  "element_config": {
+   "L'agence · équipe": {
+    "tag": "section"
+   },
+   "L'agence · équipe · timecode": {
+    "paragraph": "00:03"
+   },
+   "L'agence · équipe · sur-titre": {
+    "paragraph": "L'équipe"
+   },
+   "L'agence · équipe · titre": {
+    "tag": "h2",
+    "title": "Les visages <em>derrière vos vidéos.</em>"
+   },
+   "L'agence · créas · titre": {
+    "tag": "h3",
+    "title": "Nos créas."
+   },
+   "L'agence créas · Thomas · photo": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/equipe-thomas.jpg",
+      "alt": "Thomas, Directeur Artistique"
+     },
+     "size": "medium"
+    }
+   },
+   "L'agence créas · Thomas · prénom": {
+    "paragraph": "Thomas"
+   },
+   "L'agence créas · Thomas · poste": {
+    "paragraph": "Directeur Artistique"
+   },
+   "L'agence créas · Alex · photo": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/equipe-alex.jpg",
+      "alt": "Alex, Responsable Équipe Motion Design"
+     },
+     "size": "medium"
+    }
+   },
+   "L'agence créas · Alex · prénom": {
+    "paragraph": "Alex"
+   },
+   "L'agence créas · Alex · poste": {
+    "paragraph": "Responsable Équipe Motion Design"
+   },
+   "L'agence créas · Victor · photo": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/equipe-victor.jpg",
+      "alt": "Victor, Motion Designer"
+     },
+     "size": "medium"
+    }
+   },
+   "L'agence créas · Victor · prénom": {
+    "paragraph": "Victor"
+   },
+   "L'agence créas · Victor · poste": {
+    "paragraph": "Motion Designer"
+   },
+   "L'agence créas · Vincent · photo": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/equipe-vincent.jpg",
+      "alt": "Vincent, Cadreur"
+     },
+     "size": "medium"
+    }
+   },
+   "L'agence créas · Vincent · prénom": {
+    "paragraph": "Vincent"
+   },
+   "L'agence créas · Vincent · poste": {
+    "paragraph": "Cadreur"
+   },
+   "L'agence créas · Marion · photo": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/equipe-marion-t.jpg",
+      "alt": "Marion, Responsable Studio"
+     },
+     "size": "medium"
+    }
+   },
+   "L'agence créas · Marion · prénom": {
+    "paragraph": "Marion"
+   },
+   "L'agence créas · Marion · poste": {
+    "paragraph": "Responsable Studio"
+   },
+   "L'agence créas · Sophie · photo": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/equipe-sophie.jpg",
+      "alt": "Sophie, Chef de Projet"
+     },
+     "size": "medium"
+    }
+   },
+   "L'agence créas · Sophie · prénom": {
+    "paragraph": "Sophie"
+   },
+   "L'agence créas · Sophie · poste": {
+    "paragraph": "Chef de Projet"
+   },
+   "L'agence · experts · titre": {
+    "tag": "h3",
+    "title": "Nos experts <b>IA.</b>"
+   },
+   "L'agence experts · Ronan · photo": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/equipe-ronan.jpg",
+      "alt": "Ronan, Directeur Technique"
+     },
+     "size": "medium"
+    }
+   },
+   "L'agence experts · Ronan · prénom": {
+    "paragraph": "Ronan"
+   },
+   "L'agence experts · Ronan · poste": {
+    "paragraph": "Directeur Technique"
+   },
+   "L'agence experts · Marion · photo": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/equipe-marion-l.jpg",
+      "alt": "Marion, Développeuse Full-Stack"
+     },
+     "size": "medium"
+    }
+   },
+   "L'agence experts · Marion · prénom": {
+    "paragraph": "Marion"
+   },
+   "L'agence experts · Marion · poste": {
+    "paragraph": "Développeuse Full-Stack"
+   },
+   "L'agence experts · Inès · photo": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/equipe-ines.jpg",
+      "alt": "Inès, DevOps"
+     },
+     "size": "medium"
+    }
+   },
+   "L'agence experts · Inès · prénom": {
+    "paragraph": "Inès"
+   },
+   "L'agence experts · Inès · poste": {
+    "paragraph": "DevOps"
+   },
+   "L'agence experts · Hakim · photo": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/equipe-hakim.jpg",
+      "alt": "Hakim, Développeur Back-End"
+     },
+     "size": "medium"
+    }
+   },
+   "L'agence experts · Hakim · prénom": {
+    "paragraph": "Hakim"
+   },
+   "L'agence experts · Hakim · poste": {
+    "paragraph": "Développeur Back-End"
+   },
+   "L'agence experts · Maxime · photo": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/equipe-maxime.jpg",
+      "alt": "Maxime, Product Manager Senior"
+     },
+     "size": "medium"
+    }
+   },
+   "L'agence experts · Maxime · prénom": {
+    "paragraph": "Maxime"
+   },
+   "L'agence experts · Maxime · poste": {
+    "paragraph": "Product Manager Senior"
+   }
+  },
+  "classes": {
+   "L'agence · équipe": [
+    "section"
+   ],
+   "L'agence · équipe · contenu": [
+    "conteneur"
+   ],
+   "L'agence · équipe · en-tête": [
+    "entete-section"
+   ],
+   "L'agence · équipe · repère": [
+    "sur-titre"
+   ],
+   "L'agence · équipe · timecode": [
+    "timecode"
+   ],
+   "L'agence · équipe · titre": [
+    "titre-md"
+   ],
+   "L'agence · créas · titre": [
+    "titre-sm"
+   ],
+   "L'agence · créas": [
+    "grille-equipe"
+   ],
+   "L'agence créas · Thomas": [
+    "membre-equipe"
+   ],
+   "L'agence créas · Thomas · photo": [
+    "portrait"
+   ],
+   "L'agence créas · Thomas · prénom": [
+    "nom-membre"
+   ],
+   "L'agence créas · Thomas · poste": [
+    "poste-membre"
+   ],
+   "L'agence créas · Alex": [
+    "membre-equipe"
+   ],
+   "L'agence créas · Alex · photo": [
+    "portrait"
+   ],
+   "L'agence créas · Alex · prénom": [
+    "nom-membre"
+   ],
+   "L'agence créas · Alex · poste": [
+    "poste-membre"
+   ],
+   "L'agence créas · Victor": [
+    "membre-equipe"
+   ],
+   "L'agence créas · Victor · photo": [
+    "portrait"
+   ],
+   "L'agence créas · Victor · prénom": [
+    "nom-membre"
+   ],
+   "L'agence créas · Victor · poste": [
+    "poste-membre"
+   ],
+   "L'agence créas · Vincent": [
+    "membre-equipe"
+   ],
+   "L'agence créas · Vincent · photo": [
+    "portrait"
+   ],
+   "L'agence créas · Vincent · prénom": [
+    "nom-membre"
+   ],
+   "L'agence créas · Vincent · poste": [
+    "poste-membre"
+   ],
+   "L'agence créas · Marion": [
+    "membre-equipe"
+   ],
+   "L'agence créas · Marion · photo": [
+    "portrait"
+   ],
+   "L'agence créas · Marion · prénom": [
+    "nom-membre"
+   ],
+   "L'agence créas · Marion · poste": [
+    "poste-membre"
+   ],
+   "L'agence créas · Sophie": [
+    "membre-equipe"
+   ],
+   "L'agence créas · Sophie · photo": [
+    "portrait"
+   ],
+   "L'agence créas · Sophie · prénom": [
+    "nom-membre"
+   ],
+   "L'agence créas · Sophie · poste": [
+    "poste-membre"
+   ],
+   "L'agence · experts · titre": [
+    "titre-sm"
+   ],
+   "L'agence · experts": [
+    "grille-equipe"
+   ],
+   "L'agence experts · Ronan": [
+    "membre-equipe"
+   ],
+   "L'agence experts · Ronan · photo": [
+    "portrait"
+   ],
+   "L'agence experts · Ronan · prénom": [
+    "nom-membre"
+   ],
+   "L'agence experts · Ronan · poste": [
+    "poste-membre"
+   ],
+   "L'agence experts · Marion": [
+    "membre-equipe"
+   ],
+   "L'agence experts · Marion · photo": [
+    "portrait"
+   ],
+   "L'agence experts · Marion · prénom": [
+    "nom-membre"
+   ],
+   "L'agence experts · Marion · poste": [
+    "poste-membre"
+   ],
+   "L'agence experts · Inès": [
+    "membre-equipe"
+   ],
+   "L'agence experts · Inès · photo": [
+    "portrait"
+   ],
+   "L'agence experts · Inès · prénom": [
+    "nom-membre"
+   ],
+   "L'agence experts · Inès · poste": [
+    "poste-membre"
+   ],
+   "L'agence experts · Hakim": [
+    "membre-equipe"
+   ],
+   "L'agence experts · Hakim · photo": [
+    "portrait"
+   ],
+   "L'agence experts · Hakim · prénom": [
+    "nom-membre"
+   ],
+   "L'agence experts · Hakim · poste": [
+    "poste-membre"
+   ],
+   "L'agence experts · Maxime": [
+    "membre-equipe"
+   ],
+   "L'agence experts · Maxime · photo": [
+    "portrait"
+   ],
+   "L'agence experts · Maxime · prénom": [
+    "nom-membre"
+   ],
+   "L'agence experts · Maxime · poste": [
+    "poste-membre"
+   ]
+  },
+  "style": {
+   "L'agence · équipe · contenu": "display: flex; flex-direction: column; gap: 0;",
+   "L'agence · créas": "margin-top: 36px;",
+   "L'agence · experts · titre": "margin-top: 88px;",
+   "L'agence · experts": "margin-top: 36px;"
+  }
+ },
+ "brut": {}
+}

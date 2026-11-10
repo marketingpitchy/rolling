@@ -1,0 +1,125 @@
+{
+ "cle": "p-contact-2-faq",
+ "titre": "Rolling · Contact · FAQ de l'échange",
+ "type": "e-flexbox",
+ "composition": {
+  "xml_structure": "<e-flexbox configuration-id=\"Contact · FAQ\"><e-flexbox configuration-id=\"Contact · FAQ · contenu\"><e-flexbox configuration-id=\"Contact · FAQ · en-tête\"><e-heading configuration-id=\"Contact · FAQ · titre\"></e-heading></e-flexbox><e-flexbox configuration-id=\"Contact · FAQ · questions\"><e-flexbox configuration-id=\"Contact · question 1\"><e-heading configuration-id=\"Contact · question 1 · titre\"></e-heading><e-paragraph configuration-id=\"Contact · question 1 · réponse\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Contact · question 2\"><e-heading configuration-id=\"Contact · question 2 · titre\"></e-heading><e-paragraph configuration-id=\"Contact · question 2 · réponse\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Contact · question 3\"><e-heading configuration-id=\"Contact · question 3 · titre\"></e-heading><e-paragraph configuration-id=\"Contact · question 3 · réponse\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Contact · question 4\"><e-heading configuration-id=\"Contact · question 4 · titre\"></e-heading><e-paragraph configuration-id=\"Contact · question 4 · réponse\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Contact · question 5\"><e-heading configuration-id=\"Contact · question 5 · titre\"></e-heading><e-paragraph configuration-id=\"Contact · question 5 · réponse\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox></e-flexbox>",
+  "element_config": {
+   "Contact · FAQ": {
+    "tag": "section"
+   },
+   "Contact · FAQ · titre": {
+    "tag": "h2",
+    "title": "Vos questions <em>sur l'échange.</em>"
+   },
+   "Contact · question 1 · titre": {
+    "tag": "h3",
+    "title": "Combien de temps dure l'échange&nbsp;?"
+   },
+   "Contact · question 1 · réponse": {
+    "paragraph": "30 minutes, en visio. Vous choisissez le créneau dans le calendrier."
+   },
+   "Contact · question 2 · titre": {
+    "tag": "h3",
+    "title": "Faut-il préparer quelque chose&nbsp;?"
+   },
+   "Contact · question 2 · réponse": {
+    "paragraph": "Non. Si vous le pouvez, gardez sous la main 2 ou 3 contenus que vous aimeriez voir en vidéo : un article, un module de formation, une présentation."
+   },
+   "Contact · question 3 · titre": {
+    "tag": "h3",
+    "title": "L'échange est-il payant ou engageant&nbsp;?"
+   },
+   "Contact · question 3 · réponse": {
+    "paragraph": "[À confirmer] Non : l'échange est gratuit et sans engagement."
+   },
+   "Contact · question 4 · titre": {
+    "tag": "h3",
+    "title": "Qui sera présent de votre côté&nbsp;?"
+   },
+   "Contact · question 4 · réponse": {
+    "paragraph": "[À confirmer] Un membre de notre équipe, chef de projet ou directeur artistique."
+   },
+   "Contact · question 5 · titre": {
+    "tag": "h3",
+    "title": "Et après l'échange&nbsp;?"
+   },
+   "Contact · question 5 · réponse": {
+    "paragraph": "Vous recevez votre stratégie vidéo et le prix de la formule adaptée. [À confirmer : délai de démarrage de la première vidéo.]"
+   }
+  },
+  "classes": {
+   "Contact · FAQ": [
+    "section",
+    "section-lilas"
+   ],
+   "Contact · FAQ · contenu": [
+    "conteneur",
+    "conteneur-etroit"
+   ],
+   "Contact · FAQ · en-tête": [
+    "entete-section"
+   ],
+   "Contact · FAQ · titre": [
+    "titre-md"
+   ],
+   "Contact · FAQ · questions": [
+    "liste-questions"
+   ],
+   "Contact · question 1": [
+    "carte-verre",
+    "carte-question"
+   ],
+   "Contact · question 1 · titre": [
+    "titre-question"
+   ],
+   "Contact · question 1 · réponse": [
+    "texte"
+   ],
+   "Contact · question 2": [
+    "carte-verre",
+    "carte-question"
+   ],
+   "Contact · question 2 · titre": [
+    "titre-question"
+   ],
+   "Contact · question 2 · réponse": [
+    "texte"
+   ],
+   "Contact · question 3": [
+    "carte-verre",
+    "carte-question"
+   ],
+   "Contact · question 3 · titre": [
+    "titre-question"
+   ],
+   "Contact · question 3 · réponse": [
+    "texte"
+   ],
+   "Contact · question 4": [
+    "carte-verre",
+    "carte-question"
+   ],
+   "Contact · question 4 · titre": [
+    "titre-question"
+   ],
+   "Contact · question 4 · réponse": [
+    "texte"
+   ],
+   "Contact · question 5": [
+    "carte-verre",
+    "carte-question"
+   ],
+   "Contact · question 5 · titre": [
+    "titre-question"
+   ],
+   "Contact · question 5 · réponse": [
+    "texte"
+   ]
+  },
+  "style": {
+   "Contact · FAQ · contenu": "display: flex; flex-direction: column; gap: 0;"
+  }
+ },
+ "brut": {}
+}

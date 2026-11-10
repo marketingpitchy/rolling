@@ -1,0 +1,309 @@
+{
+ "cle": "p-offres-3-tournage",
+ "titre": "Rolling · Offres · 00:02 Création + Tournage",
+ "type": "e-flexbox",
+ "composition": {
+  "xml_structure": "<e-flexbox configuration-id=\"Offres · Création + Tournage\"><e-flexbox configuration-id=\"Offres · ajout · contenu\"><e-flexbox configuration-id=\"Offres · ajout · en-tête\"><e-flexbox configuration-id=\"Offres · ajout · repère\"><e-paragraph configuration-id=\"Offres · ajout · timecode\"></e-paragraph><e-paragraph configuration-id=\"Offres · ajout · sur-titre\"></e-paragraph></e-flexbox><e-heading configuration-id=\"Offres · ajout · titre\"></e-heading></e-flexbox><e-flexbox configuration-id=\"Offres · ajout · cartes\"><e-flexbox configuration-id=\"Offres · captation\"><e-div-block configuration-id=\"Offres · captation · cadre\"><e-image configuration-id=\"Offres · captation · photo\"></e-image><e-paragraph configuration-id=\"Offres · captation · rec\"></e-paragraph><e-paragraph configuration-id=\"Offres · captation · durée\"></e-paragraph></e-div-block><e-flexbox configuration-id=\"Offres · captation · textes\"><e-paragraph configuration-id=\"Offres · captation · label\"></e-paragraph><e-heading configuration-id=\"Offres · captation · titre\"></e-heading><e-paragraph configuration-id=\"Offres · captation · texte\"></e-paragraph><e-flexbox configuration-id=\"Offres · captation · étiquettes\"><e-paragraph configuration-id=\"Offres · captation · étiquette 1\"></e-paragraph><e-paragraph configuration-id=\"Offres · captation · étiquette 2\"></e-paragraph><e-paragraph configuration-id=\"Offres · captation · étiquette 3\"></e-paragraph><e-paragraph configuration-id=\"Offres · captation · étiquette 4\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Offres · fait main\"><e-div-block configuration-id=\"Offres · fait main · visuel\"><e-paragraph configuration-id=\"Offres · fait main · annotation\"></e-paragraph></e-div-block><e-flexbox configuration-id=\"Offres · fait main · textes\"><e-paragraph configuration-id=\"Offres · fait main · label\"></e-paragraph><e-heading configuration-id=\"Offres · fait main · titre\"></e-heading><e-paragraph configuration-id=\"Offres · fait main · texte\"></e-paragraph><e-flexbox configuration-id=\"Offres · fait main · étiquettes\"><e-paragraph configuration-id=\"Offres · fait main · étiquette 1\"></e-paragraph><e-paragraph configuration-id=\"Offres · fait main · étiquette 2\"></e-paragraph><e-paragraph configuration-id=\"Offres · fait main · étiquette 3\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Offres · promesses\"><e-heading configuration-id=\"Offres · promesses · titre\"></e-heading><e-flexbox configuration-id=\"Offres · promesses · liste\"><e-flexbox configuration-id=\"Offres · promesse 1\"><e-image configuration-id=\"Offres · promesse 1 · chiffre\"></e-image><e-paragraph configuration-id=\"Offres · promesse 1 · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Offres · promesse 2\"><e-image configuration-id=\"Offres · promesse 2 · chiffre\"></e-image><e-paragraph configuration-id=\"Offres · promesse 2 · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Offres · promesse 3\"><e-image configuration-id=\"Offres · promesse 3 · chiffre\"></e-image><e-paragraph configuration-id=\"Offres · promesse 3 · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Offres · promesse 4\"><e-image configuration-id=\"Offres · promesse 4 · chiffre\"></e-image><e-paragraph configuration-id=\"Offres · promesse 4 · texte\"></e-paragraph></e-flexbox></e-flexbox><e-paragraph configuration-id=\"Offres · promesses · note\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox>",
+  "element_config": {
+   "Offres · Création + Tournage": {
+    "tag": "section"
+   },
+   "Offres · ajout · timecode": {
+    "paragraph": "00:02"
+   },
+   "Offres · ajout · sur-titre": {
+    "paragraph": "Création + Tournage"
+   },
+   "Offres · ajout · titre": {
+    "tag": "h2",
+    "title": "Ce que <em>Création + Tournage</em> ajoute."
+   },
+   "Offres · captation": {
+    "tag": "article"
+   },
+   "Offres · captation · photo": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/hero-tournage.jpg",
+      "alt": "Tournage d'une interview dans des bureaux lumineux, caméra et lumières en place"
+     },
+     "size": "large"
+    }
+   },
+   "Offres · captation · rec": {
+    "paragraph": "Rec"
+   },
+   "Offres · captation · durée": {
+    "paragraph": "00:14:32"
+   },
+   "Offres · captation · label": {
+    "paragraph": "Captation offerte"
+   },
+   "Offres · captation · titre": {
+    "tag": "h3",
+    "title": "Nous venons tourner chez vous. <u>Partout en France.</u>"
+   },
+   "Offres · captation · texte": {
+    "paragraph": "Nos équipes se déplacent, un projet à la fois : vos collaborateurs, vos produits, vos événements passent à l'image."
+   },
+   "Offres · captation · étiquette 1": {
+    "paragraph": "Interviews"
+   },
+   "Offres · captation · étiquette 2": {
+    "paragraph": "Vidéos produit"
+   },
+   "Offres · captation · étiquette 3": {
+    "paragraph": "Rétrospectives d'événements"
+   },
+   "Offres · captation · étiquette 4": {
+    "paragraph": "Témoignages"
+   },
+   "Offres · fait main": {
+    "tag": "article"
+   },
+   "Offres · fait main · annotation": {
+    "paragraph": "storyboard · v1"
+   },
+   "Offres · fait main · label": {
+    "paragraph": "Sans IA"
+   },
+   "Offres · fait main · titre": {
+    "tag": "h3",
+    "title": "Le motion sur-mesure, <em>100&nbsp;% fait main.</em>"
+   },
+   "Offres · fait main · texte": {
+    "paragraph": "Sans IA : nos motion designers dessinent chaque plan à la main, pour vos sujets les plus sensibles."
+   },
+   "Offres · fait main · étiquette 1": {
+    "paragraph": "Sans IA"
+   },
+   "Offres · fait main · étiquette 2": {
+    "paragraph": "Sur mesure"
+   },
+   "Offres · fait main · étiquette 3": {
+    "paragraph": "100&nbsp;% fait main"
+   },
+   "Offres · promesses · titre": {
+    "tag": "h3",
+    "title": "L'illimité qui tient ses promesses&nbsp;:"
+   },
+   "Offres · promesse 1 · chiffre": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/chiffre-1.webp"
+     },
+     "size": "medium"
+    }
+   },
+   "Offres · promesse 1 · texte": {
+    "paragraph": "<strong>Un projet traité à fond</strong> à la fois"
+   },
+   "Offres · promesse 2 · chiffre": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/chiffre-2.webp"
+     },
+     "size": "medium"
+    }
+   },
+   "Offres · promesse 2 · texte": {
+    "paragraph": "<strong>1 projet = 1 vidéo livrée</strong>, prête à publier"
+   },
+   "Offres · promesse 3 · chiffre": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/chiffre-3.webp"
+     },
+     "size": "medium"
+    }
+   },
+   "Offres · promesse 3 · texte": {
+    "paragraph": "<strong>Des allers-retours cadrés</strong>, pour livrer vite"
+   },
+   "Offres · promesse 4 · chiffre": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/chiffre-4.webp"
+     },
+     "size": "medium"
+    }
+   },
+   "Offres · promesse 4 · texte": {
+    "paragraph": "<strong>1 abonnement = 1 équipe métier</strong>"
+   },
+   "Offres · promesses · note": {
+    "paragraph": "C'est notre façon de garantir la même qualité et la même vitesse — à tous nos abonnés."
+   }
+  },
+  "classes": {
+   "Offres · Création + Tournage": [
+    "section",
+    "section-suite"
+   ],
+   "Offres · ajout · contenu": [
+    "conteneur"
+   ],
+   "Offres · ajout · en-tête": [
+    "entete-section"
+   ],
+   "Offres · ajout · repère": [
+    "sur-titre"
+   ],
+   "Offres · ajout · timecode": [
+    "timecode"
+   ],
+   "Offres · ajout · titre": [
+    "titre-md"
+   ],
+   "Offres · ajout · cartes": [
+    "grille-2"
+   ],
+   "Offres · captation": [
+    "carte-verre",
+    "carte-ajout"
+   ],
+   "Offres · captation · cadre": [
+    "cadre-photo",
+    "cadre-16-10"
+   ],
+   "Offres · captation · photo": [
+    "image-couvrante"
+   ],
+   "Offres · captation · rec": [
+    "bandeau-video",
+    "bandeau-rec"
+   ],
+   "Offres · captation · durée": [
+    "duree"
+   ],
+   "Offres · captation · textes": [
+    "carte-ajout-texte"
+   ],
+   "Offres · captation · label": [
+    "label",
+    "label-orange"
+   ],
+   "Offres · captation · titre": [
+    "titre-sm",
+    "titre-carte"
+   ],
+   "Offres · captation · texte": [
+    "texte"
+   ],
+   "Offres · captation · étiquettes": [
+    "rangee"
+   ],
+   "Offres · captation · étiquette 1": [
+    "chip-orange"
+   ],
+   "Offres · captation · étiquette 2": [
+    "chip-orange"
+   ],
+   "Offres · captation · étiquette 3": [
+    "chip-orange"
+   ],
+   "Offres · captation · étiquette 4": [
+    "chip-orange"
+   ],
+   "Offres · fait main": [
+    "carte-verre",
+    "carte-ajout"
+   ],
+   "Offres · fait main · visuel": [
+    "cadre-storyboard"
+   ],
+   "Offres · fait main · annotation": [
+    "note-main"
+   ],
+   "Offres · fait main · textes": [
+    "carte-ajout-texte"
+   ],
+   "Offres · fait main · label": [
+    "label",
+    "label-violet"
+   ],
+   "Offres · fait main · titre": [
+    "titre-sm",
+    "titre-carte"
+   ],
+   "Offres · fait main · texte": [
+    "texte"
+   ],
+   "Offres · fait main · étiquettes": [
+    "rangee"
+   ],
+   "Offres · fait main · étiquette 1": [
+    "chip-neutre"
+   ],
+   "Offres · fait main · étiquette 2": [
+    "chip-neutre"
+   ],
+   "Offres · fait main · étiquette 3": [
+    "chip-neutre"
+   ],
+   "Offres · promesses": [
+    "carte-verre",
+    "grand-bloc",
+    "carte-promesses"
+   ],
+   "Offres · promesses · titre": [
+    "titre-xs"
+   ],
+   "Offres · promesses · liste": [
+    "grille-4"
+   ],
+   "Offres · promesse 1": [
+    "ligne-coche"
+   ],
+   "Offres · promesse 1 · chiffre": [
+    "picto-verre"
+   ],
+   "Offres · promesse 1 · texte": [
+    "texte-petit"
+   ],
+   "Offres · promesse 2": [
+    "ligne-coche"
+   ],
+   "Offres · promesse 2 · chiffre": [
+    "picto-verre"
+   ],
+   "Offres · promesse 2 · texte": [
+    "texte-petit"
+   ],
+   "Offres · promesse 3": [
+    "ligne-coche"
+   ],
+   "Offres · promesse 3 · chiffre": [
+    "picto-verre"
+   ],
+   "Offres · promesse 3 · texte": [
+    "texte-petit"
+   ],
+   "Offres · promesse 4": [
+    "ligne-coche"
+   ],
+   "Offres · promesse 4 · chiffre": [
+    "picto-verre"
+   ],
+   "Offres · promesse 4 · texte": [
+    "texte-petit"
+   ],
+   "Offres · promesses · note": [
+    "texte-petit"
+   ]
+  },
+  "style": {
+   "Offres · ajout · contenu": "display: flex; flex-direction: column; gap: 0;",
+   "Offres · captation · étiquettes": "margin-top: 6px;",
+   "Offres · fait main · étiquettes": "margin-top: 6px;",
+   "Offres · promesses": "margin-top: 28px;",
+   "Offres · promesses · liste": "margin-top: 8px;",
+   "Offres · promesse 1 · chiffre": "height: 40px;",
+   "Offres · promesse 2 · chiffre": "height: 40px;",
+   "Offres · promesse 3 · chiffre": "height: 40px;",
+   "Offres · promesse 4 · chiffre": "height: 40px;",
+   "Offres · promesses · note": "margin-top: 10px;"
+  }
+ },
+ "brut": {}
+}

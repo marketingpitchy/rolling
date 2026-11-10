@@ -8,6 +8,7 @@ import os
 ICI = os.path.dirname(os.path.abspath(__file__))
 
 REPERE = "Repère sans style : le thème masque ce bloc quand le champ « %s » du contenu est vide."
+RAZ = "position: relative; top: auto; right: auto; bottom: auto; left: auto; height: auto; opacity: 1; mix-blend-mode: normal; border: 0; -webkit-mask: none; mask: none; padding: 0; "
 CLASSES = [
     # Repères des parties facultatives (aucun style : seulement lus par le thème).
     *[(('si-' + c), REPERE % c, '--rl-repere: 1;') for c in ['chapo', 'logo', 'secteur', 'equipes', 'formats', 'duree', 'chiffres', 'citation', 'auteur', 'poste', 'portrait', 'videos', 'generique', 'besoin', 'resultat', 'contexte', 'pages', 'type-doc', 'resume', 'intervenants', 'image', 'avant', 'apres', 'client', 'produit', 'accompagnement', 'recit', 'temoignage-lie', 'temoignage-citation', 'temoignage-portrait', 'temoignage-poste', 'metier', 'format', 'theme']],
@@ -114,6 +115,85 @@ CLASSES = [
     ('entete-page', "Haut d'une page intérieure (avec section-entete) : plus d'air sous l'en-tête.", 'padding: 184px 0 56px; @media(--tablet) { padding: 160px 0 48px; } @media(--mobile) { padding: 136px 0 40px; }'),
     ('appel-centre', "Bandeau d'appel (avec carte-verre et carte-appel) en grand et centré, au milieu d'une page.", 'justify-content: center; gap: 18px 28px; padding: 48px; border-radius: 40px; text-align: center; @media(--mobile) { padding: 28px; border-radius: 32px; }'),
     ('titre-encart', "Titre d'un encart d'appel (avec titre-xs) : un peu plus grand.", 'font-size: 28px; @media(--mobile) { font-size: 24px; }'),
+
+    # Offres : tableau comparatif (colonne « Création + Tournage » sur fond sombre = pseudo-élément du tableau).
+    ('offres-tableau', "Tableau des formules (avec carte-pleine) : la colonne de droite est posée sur une bande sombre.",
+     "border-radius: 34px; gap: 0; padding: 0 0 8px; &::before { " + RAZ + "content: ''; position: absolute; z-index: 0; top: 8px; bottom: 8px; right: 8px; left: auto; width: 262px; height: auto; border-radius: 28px; background: radial-gradient(90% 16% at 85% 0%, rgba(255,138,91,0.42), rgba(255,138,91,0) 70%), radial-gradient(80% 16% at 0% 100%, rgba(139,92,246,0.45), rgba(139,92,246,0) 70%), linear-gradient(180deg, #1C1730 0%, #0F0F12 100%); box-shadow: inset 0 1px 0 rgba(255,255,255,0.2); } @media(--mobile) { &::before { width: 96px; } }"),
+    ('offres-badge', "« Le plus complet » posé sur le haut de la colonne sombre.", 'position: absolute; z-index: 3; top: -14px; right: 87px; width: fit-content; padding: 6px 14px; border-radius: 999px; font-family: Hanken Grotesk; font-size: 12px; line-height: 1.2; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: #0F0F12; background: #FFD1BF; @media(--mobile) { right: 18px; font-size: 11px; padding: 5px 10px; }'),
+    ('offres-ligne', "Ligne du tableau : libellé, puis une case par formule (la 3e sur fond sombre).",
+     "position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0, 1fr) 250px 262px; gap: 0; padding: 0 8px 0 0; "
+     "& > * { display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 2px; padding: 9px 24px; font-family: Hanken Grotesk; font-size: 15.5px; line-height: 1.4; text-align: center; color: var(--encre); border-top: 1px solid rgba(15,15,18,0.07); } "
+     "& > :first-child { align-items: flex-start; padding-left: 36px; text-align: left; } "
+     "& > :nth-child(3) { color: #ECE8F7; border-top-color: rgba(255,255,255,0.08); --rl-texte: #FFFFFF; --rl-legende: #B6B0CC; } "
+     "@media(--mobile) { grid-template-columns: minmax(0, 1fr) 92px 96px; & > *, & > :first-child { padding: 10px; font-size: 14px; } }"),
+    ('offres-groupe', "Ligne de titre de groupe dans le tableau (avec offres-ligne) : une seule case, dans la première colonne.", '& > * { padding-top: 26px; padding-bottom: 6px; border-top: 0; }'),
+    ('offres-entete', "Première ligne du tableau (avec offres-ligne) : titre, nom, prix et bouton de chaque formule.", '& > * { justify-content: flex-start; gap: 8px; padding-top: 34px; padding-bottom: 26px; border-top: 0; } & > :nth-child(3) { border-top: 0; }'),
+    ('offres-detail', "Précision sous un libellé du tableau, en petit.", 'display: block; font-family: Hanken Grotesk; font-size: 13px; line-height: 1.4; color: var(--rl-legende, var(--legende));'),
+    ('offres-prix', "Prix d'une formule dans le tableau (le span = « / mois » en petit).", 'display: block; font-family: Bricolage Grotesque; font-size: 38px; line-height: 1.1; font-weight: 650; letter-spacing: -0.04em; color: var(--rl-texte, var(--encre)); & span { font-family: Hanken Grotesk; font-size: 14px; letter-spacing: 0; font-weight: 400; color: var(--rl-legende, var(--legende)); }'),
+    ('offres-resume', "Résumé d'une formule dans le tableau, sur fond lilas.", 'display: block; width: 100%; margin-top: 4px; padding: 8px 10px; border-radius: 12px; font-family: Hanken Grotesk; font-size: 13px; line-height: 1.35; font-weight: 600; color: #4A2BB8; background: #EDE6FF;'),
+    ('offres-resume-sombre', "Résumé de la formule sombre (avec offres-resume).", 'color: #ECE8F7; background: rgba(255,255,255,0.08); box-shadow: inset 0 0 0 1px rgba(255,255,255,0.14);'),
+    ('offres-masquer', "Masqué sur mobile (prix et boutons du haut du tableau : ils passent sous le tableau).", '@media(--mobile) { display: none; }'),
+    ('offres-mobile', "Cartes prix sous le tableau, visibles sur mobile seulement.", 'display: none; @media(--mobile) { display: grid; }'),
+    ('titre-formule', "Nom d'une formule en tête de tableau (avec titre-xs).", 'font-size: 21px; @media(--mobile) { font-size: 15px; }'),
+    ('case-oui', "Coche « Inclus » dans le tableau.", 'display: block; width: 26px; height: 26px; margin: 0 auto; filter: drop-shadow(0 3px 6px rgba(91,59,234,0.28));'),
+    ('case-non', "Croix « Non inclus » dans le tableau (le texte est masqué, une croix grise le remplace).", "position: relative; display: block; width: 22px; height: 22px; margin: 0 auto; overflow: hidden; border-radius: 50%; font-size: 0; color: transparent; background: rgba(15,15,18,0.06); &::before, &::after { content: ''; position: absolute; top: 10px; left: 6px; width: 10px; height: 2px; border-radius: 2px; background: #6E6B7B; transform: rotate(45deg); } &::after { transform: rotate(-45deg); }"),
+
+    # Frise de montage (offres, L'agence) : règle de timecodes, clips colorés, tête de lecture rouge.
+    ('montage', "Frise de montage (avec carte-verre) : règle, clips, et une tête de lecture rouge qui avance jusqu'au dernier clip.",
+     "gap: 0; margin-top: 8px; padding: 22px 26px 34px; border-radius: 30px; overflow: hidden; "
+     "&::before { " + RAZ + "content: ''; position: absolute; z-index: 2; top: 36px; left: 18px; right: auto; bottom: auto; width: 16px; height: 20px; padding: 0; pointer-events: none; background: linear-gradient(90deg, transparent 7px, rgba(255,255,255,0.9) 7px 9px, transparent 9px) center 4px / 16px 8px no-repeat, linear-gradient(180deg, #FF6A5F, #FF3B30); clip-path: polygon(0 0, 100% 0, 100% 62%, 50% 100%, 0 62%); border-radius: 4px 4px 0 0; box-shadow: none; transition: left 2.4s cubic-bezier(0.4, 0, 0.2, 1) 0.3s; } "
+     "&::after { content: ''; position: absolute; z-index: 2; top: 54px; left: 25px; width: 2px; height: 112px; pointer-events: none; background: linear-gradient(180deg, #FF3B30 0%, #FF3B30 82%, rgba(255,59,48,0) 100%); box-shadow: 0 0 10px rgba(255,59,48,0.45); transition: left 2.4s cubic-bezier(0.4, 0, 0.2, 1) 0.3s; } "
+     "&.vu::before { left: calc(100% - 38px); } &.vu::after { left: calc(100% - 31px); } "
+     "@media(--tablet) { padding: 20px 20px 26px; &::before, &::after { display: none; } }"),
+    ('montage-regle', "Règle de timecodes en haut de la frise (deux textes : début et fin).", 'display: flex; flex-direction: row; justify-content: space-between; padding: 0 44px 26px 0; font-family: Bricolage Grotesque; font-size: 12px; font-weight: 650; letter-spacing: 0.08em; color: var(--rl-legende, var(--legende)); background: repeating-linear-gradient(90deg, rgba(91,59,234,0.28) 0 1px, transparent 1px 24px) left 22px / 100% 8px no-repeat, repeating-linear-gradient(90deg, rgba(91,59,234,0.45) 0 1px, transparent 1px 120px) left 18px / 100% 12px no-repeat; @media(--tablet) { padding: 0 0 18px 30px; background: none; }'),
+    ('montage-piste', "Piste des clips (3 colonnes ; en mobile, une colonne le long d'une règle verticale).",
+     "position: relative; display: grid; grid-template-columns: 1.15fr 1fr 1.3fr; gap: 10px; padding: 0; "
+     "@media(--tablet) { grid-template-columns: minmax(0, 1fr); gap: 30px; padding-left: 30px; &::before { " + RAZ + "content: ''; position: absolute; top: 0; bottom: 0; left: 6px; right: auto; width: 10px; height: auto; background: linear-gradient(90deg, transparent 4px, rgba(91,59,234,0.3) 4px 6px, transparent 6px), repeating-linear-gradient(180deg, rgba(91,59,234,0.35) 0 1px, transparent 1px 14px); } }"),
+    ('montage-4', "Frise à 4 clips (avec montage-piste).", 'grid-template-columns: repeat(4, minmax(0, 1fr)); @media(--tablet) { grid-template-columns: minmax(0, 1fr); }'),
+    ('clip', "Un clip de la frise : barre colorée, titre, texte.",
+     "display: flex; flex-direction: column; gap: 10px; padding: 0; & > :not(.clip-barre) { padding-right: 12px; } "
+     "@media(--tablet) { &::before { " + RAZ + "content: ''; position: absolute; top: 25px; left: -29px; right: auto; bottom: auto; width: 14px; height: 14px; border-radius: 50%; background: #FFFFFF; box-shadow: 0 0 0 3px rgba(91,59,234,0.45); } }"),
+    ('clip-barre', "Barre colorée d'un clip, avec sa forme d'onde.",
+     "position: relative; display: flex; flex-direction: row; align-items: center; gap: 10px; min-height: 64px; margin-bottom: 10px; padding: 0 16px; border-radius: 14px; overflow: hidden; font-family: Hanken Grotesk; font-size: 14px; font-weight: 700; color: #FFFFFF; background: linear-gradient(100deg, #3434E0, #5B3BEA); box-shadow: inset 0 1px 0 rgba(255,255,255,0.35), 0 14px 30px -18px rgba(76,48,170,0.7); "
+     "&::before { " + RAZ + "content: ''; position: absolute; top: auto; right: 0; bottom: 0; left: 0; width: auto; height: 22px; opacity: 0.35; background: repeating-linear-gradient(90deg, #FFFFFF 0 2px, transparent 2px 6px); -webkit-mask: linear-gradient(0deg, #000 0%, transparent 100%); mask: linear-gradient(0deg, #000 0%, transparent 100%); } & > * { position: relative; } "
+     "@media(--mobile) { flex-wrap: wrap; gap: 6px 8px; padding: 10px 12px; }"),
+    ('clip-numero', "« Clip 01 » dans la barre.", 'flex-shrink: 0; width: fit-content; padding: 4px 9px; border-radius: 999px; font-family: Hanken Grotesk; font-size: 11px; line-height: 1.2; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; white-space: nowrap; color: #FFFFFF; background: rgba(15,15,18,0.32);'),
+    ('clip-nom', "Nom du clip dans la barre.", 'font-family: Hanken Grotesk; font-size: 14px; line-height: 1.3; font-weight: 700; color: inherit; @media(--mobile) { order: 3; flex: 1 0 100%; }'),
+    ('clip-rec', "« En cours » avec un point rouge, à droite de la barre.", "display: inline-flex; flex-direction: row; align-items: center; gap: 7px; flex-shrink: 0; margin-left: auto; padding: 4px 10px; border-radius: 999px; font-family: Hanken Grotesk; font-size: 12px; line-height: 1.2; font-weight: 700; white-space: nowrap; color: #FFFFFF; background: rgba(15,15,18,0.72); &::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: #FF3B30; animation: rl-clignote 1.6s ease-in-out infinite; } @media(--mobile) { order: 2; }"),
+    ('clip-demande', "Couleur du 2e clip (violet).", '& .clip-barre { background: linear-gradient(100deg, #5B3BEA, #8E4DE6); }'),
+    ('clip-mauve', "Couleur d'un clip mauve.", '& .clip-barre { background: linear-gradient(100deg, #8E4DE6, #B5459E); }'),
+    ('clip-final', "Dernier clip (pêche) : la tête de lecture s'y arrête ; en mobile, elle le pointe.",
+     "& .clip-barre { color: #0F0F12; background: linear-gradient(100deg, #FFD1BF, #FFA27A 55%, #FF8A5B); } & .clip-numero { color: #FFFFFF; background: rgba(15,15,18,0.55); } "
+     "@media(--tablet) { &::before { top: 22px; left: -32px; width: 20px; height: 20px; border-radius: 4px 0 0 4px; background: linear-gradient(90deg, transparent 6px, rgba(255,255,255,0.9) 6px 14px, transparent 14px) center / 20px 2px no-repeat, linear-gradient(90deg, #FF6A5F, #FF3B30); clip-path: polygon(0 0, 62% 0, 100% 50%, 62% 100%, 0 100%); box-shadow: none; } }"),
+
+    # Offres : ce que Création + Tournage ajoute.
+    ('carte-ajout', "Carte image + textes (avec carte-verre) : l'image touche presque les bords.", 'gap: 0; padding: 10px 10px 30px;'),
+    ('carte-ajout-texte', "Textes sous l'image d'une carte-ajout.", 'display: flex; flex-direction: column; gap: 12px; padding: 22px 18px 0;'),
+    ('cadre-storyboard', "Visuel « storyboard » : fond pêche et annotation manuscrite au centre (remplaçable par une image).", 'position: relative; display: flex; align-items: center; justify-content: center; aspect-ratio: 16 / 10; padding: 0; border-radius: 20px; overflow: hidden; background: linear-gradient(160deg, #FFE7DA, #FFD1BF);'),
+    ('titre-carte', "Titre d'une grande carte (avec titre-sm) : un peu plus petit.", 'font-size: 32px; @media(--mobile) { font-size: 26px; }'),
+
+    # Contact : clap posé sur le coin du calendrier.
+    ('contact-grille', "Page Contact : textes à gauche, calendrier à droite (une colonne sous 1024 px).", 'display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: 56px; align-items: start; @media(--tablet) { grid-template-columns: minmax(0, 1fr); gap: 40px; }'),
+    ('contact-cote', "Colonne du calendrier : le clap se pose sur son coin.", 'display: flex; flex-direction: column; gap: 0; padding: 0;'),
+    ('clap', "Clap de cinéma (Scène, Prise, Durée) : la barre se ferme quand il apparaît.",
+     "position: relative; z-index: 2; align-self: flex-end; width: min(330px, 100%); margin: 0 18px -46px 0; padding: 28px 0 0; transform: rotate(3deg); filter: drop-shadow(0 16px 24px rgba(15,15,18,0.3)); "
+     "&::before { " + RAZ + "content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: auto; width: auto; height: 24px; border-radius: 6px 6px 0 0; background: repeating-linear-gradient(-55deg, #0F0F12 0 16px, #FAF9F7 16px 32px); box-shadow: inset 0 0 0 2px #0F0F12; transform-origin: 6px 100%; transform: rotate(-14deg); transition: transform 0.5s cubic-bezier(0.5, -0.4, 0.6, 1.6) 0.5s; } "
+     "&.vu::before { transform: rotate(0); } @media(--tablet) { align-self: flex-start; margin: 0 0 -40px 8px; }"),
+    ('clap-corps', "Corps du clap (sombre, avec une bande rayée en haut).", "position: relative; display: flex; flex-direction: column; gap: 0; padding: 10px 0 0; border-radius: 0 0 16px 16px; overflow: hidden; background: linear-gradient(160deg, #1C1730, #0F0F12); box-shadow: inset 0 0 0 1px rgba(255,255,255,0.08); &::before { " + RAZ + "content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: auto; width: auto; height: 10px; background: repeating-linear-gradient(-55deg, #0F0F12 0 16px, #FAF9F7 16px 32px); }"),
+    ('clap-grille', "Cases du clap.", 'display: grid; grid-template-columns: 1.6fr 0.7fr 1fr; gap: 0; padding: 0; & > * { display: flex; flex-direction: column; gap: 0; padding: 8px 14px 10px; } & > * + * { border-left: 1px solid rgba(255,255,255,0.14); }'),
+    ('clap-champ', "Nom d'une case du clap (Scène, Prise, Durée).", 'font-family: Hanken Grotesk; font-size: 10px; line-height: 1.4; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #B6B0CC;'),
+    ('clap-valeur', "Valeur d'une case du clap, écrite à la main.", 'font-family: Caveat; font-size: 27px; line-height: 1.1; font-weight: 700; white-space: nowrap; color: #FFD1BF;'),
+    ('zone-calendrier', "Emplacement du calendrier HubSpot (avec carte-verre) : hauteur réservée, la page ne saute pas au chargement.", 'min-height: 640px; align-items: center; justify-content: center; gap: 10px; padding: 40px; text-align: center; @media(--mobile) { min-height: 560px; padding: 28px 20px; }'),
+
+    # L'agence.
+    ('agence-hero', "Haut de la page L'agence : textes à gauche, photo à droite (une colonne sous 1024 px).", 'display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 56px; align-items: center; margin-top: 26px; @media(--tablet) { grid-template-columns: minmax(0, 1fr); gap: 40px; }'),
+    ('agence-photo', "Photo du haut de L'agence (avec carte-verre) : cadre fin, légende dessous.", 'gap: 0; padding: 10px; border-radius: 30px; @media(--tablet) { max-width: 420px; }'),
+    ('citation-fondateurs', "Citation des fondateurs (avec carte-verre, temoin et temoin-une) : photo à gauche, citation à droite.", 'display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: 44px; align-items: center; margin-top: 72px; @media(--tablet) { grid-template-columns: minmax(0, 1fr); gap: 26px; }'),
+    ('fondateurs-photo', "Cadre de la photo des fondateurs (avec cadre-photo) : format 4:3.", 'aspect-ratio: 4 / 3; --rl-rayon-photo: 22px;'),
+    ('conviction', "Carte d'une conviction (avec carte-verre) : titre à point coloré et texte.", 'gap: 12px; padding: 30px; & .texte { padding-left: 22px; }'),
+    ('agence-lieu', "« Basés à Paris » : textes à gauche, carte de confiance à droite.", 'display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 520px); gap: 56px; align-items: center; @media(--tablet) { grid-template-columns: minmax(0, 1fr); gap: 32px; }'),
+    ('badges-clairs', "Badges IA sécurisée / Europe / RGPD sur fond clair (avec rangee) : l'icône claire est posée sur une pastille sombre.", '& .icone-badge { border-radius: 50%; background: #2A1F55; }'),
+    ('agence-confiance', "Carte « Vos données, protégées » (avec carte-verre) : badges et précisions.", 'gap: 18px; padding: 30px;'),
 
     # Page 404.
     ('mire', "Mire de fin d'émission aux couleurs Rolling (page 404), avec « Signal perdu ».",

@@ -154,6 +154,25 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   pointillés « Composition « … » ») : En bref, Étapes, Vidéo, Chiffre clé, Liste à coches, Avis d'expert, Encart guide,
   Encart appel (sombre), À retenir, FAQ (details), Auteur ; **à valider**. Dans le thème : compositions Gutenberg
   (catégorie Rolling) + styles du texte d'article ; rien ne s'affiche si on ne les insère pas.
+- **Livraison 4 (0.4.0) en cours** :
+  - Articles : 13 compositions Gutenberg (`data/compositions/*.html` + `compositions.json`, catégorie « Rolling », articles
+    seulement) ; styles de blocs « Liste à coches », « Étapes numérotées » (liste), « Comparatif » (tableau) ; rendu =
+    règles de la classe `article-texte` ; le widget Texte de l'article (`enrichir()`) pose coches en verre, chiffres en
+    verre (`rl-chiffre-valeur`), vidéo YouTube au clic (affiche i.ytimg.com), tableaux focusables ; il porte la classe
+    `elementor-widget-theme-post-content` (sinon Elementor remet à zéro les marges des figures) ; aperçu dans l'éditeur
+    WordPress = `assets/css/rolling-article-editeur.css` généré par `classes_fiches.py` (CSS déplié).
+  - Témoignages : citation par défaut, récit facultatif (`Rolling_Contenus::a_recit`) ; sans récit = redirection 301
+    vers la réalisation liée (sinon /temoignages/) et hors sitemap ; carte : « Lire le cas client » (si-recit) ou « Voir
+    la vidéo » (sans-recit + si-videos, balise Lien `realisation`) ; fiche réalisation : citation du témoignage lié
+    (réglage « Lire dans : témoignage lié » des balises Champ/Image, repères `si-temoignage-…`). Repères de filtres
+    `si-metier`, `si-format`, `si-theme`.
+  - Pages : blocs `p-<page>-<n>-…` + « Page complète (<page>) » (`pc-…`, avec 13-final) pour Réalisations, Témoignages,
+    Blog, Guides, Webinars, Replays, Offres, Contact, L'agence ; **reste la landing**. Widget Liste : titre affiché
+    seulement s'il y a des cartes, « Première carte à la une » (c9 carte article à la une), liste vide des webinars =
+    c10 « Aucun webinar ». Classes « très prioritaires » (`$tres_prioritaires`, ordre de la liste = priorité) pour les
+    modificateurs de classes déjà prioritaires (entete-page, titre-point-bleu…).
+  - Photo des fondateurs : **pas dans le thème** (photo provisoire hero-interview.jpg) : la cliente l'importe et la
+    remplace dans Elementor. Le contrôle automatique a refusé de la copier, puis a bloqué les commits suivants.
 - FAQ : la cliente ajoute elle-même les réponses ; garder les questions telles quelles.
 - Le WordPress de production existe déjà chez la cliente : on livre seulement le thème (zip à importer).
 

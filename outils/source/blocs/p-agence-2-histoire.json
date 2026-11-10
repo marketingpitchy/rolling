@@ -1,0 +1,203 @@
+{
+ "cle": "p-agence-2-histoire",
+ "titre": "Rolling · L'agence · 00:01 Notre histoire",
+ "type": "e-flexbox",
+ "composition": {
+  "xml_structure": "<e-flexbox configuration-id=\"L'agence · histoire\"><e-flexbox configuration-id=\"L'agence · histoire · contenu\"><e-flexbox configuration-id=\"L'agence · histoire · en-tête\"><e-flexbox configuration-id=\"L'agence · histoire · repère\"><e-paragraph configuration-id=\"L'agence · histoire · timecode\"></e-paragraph><e-paragraph configuration-id=\"L'agence · histoire · sur-titre\"></e-paragraph></e-flexbox><e-heading configuration-id=\"L'agence · histoire · titre\"></e-heading></e-flexbox><e-flexbox configuration-id=\"L'agence · histoire · frise\"><e-flexbox configuration-id=\"L'agence · histoire · règle\"><e-paragraph configuration-id=\"L'agence · histoire · règle · début\"></e-paragraph><e-paragraph configuration-id=\"L'agence · histoire · règle · fin\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"L'agence · histoire · piste\"><e-flexbox configuration-id=\"L'agence · histoire · clip 1\"><e-flexbox configuration-id=\"L'agence · histoire · clip 1 · barre\"><e-paragraph configuration-id=\"L'agence · histoire · clip 1 · numéro\"></e-paragraph><e-paragraph configuration-id=\"L'agence · histoire · clip 1 · nom\"></e-paragraph></e-flexbox><e-heading configuration-id=\"L'agence · histoire · clip 1 · titre\"></e-heading><e-paragraph configuration-id=\"L'agence · histoire · clip 1 · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"L'agence · histoire · clip 2\"><e-flexbox configuration-id=\"L'agence · histoire · clip 2 · barre\"><e-paragraph configuration-id=\"L'agence · histoire · clip 2 · numéro\"></e-paragraph><e-paragraph configuration-id=\"L'agence · histoire · clip 2 · nom\"></e-paragraph></e-flexbox><e-heading configuration-id=\"L'agence · histoire · clip 2 · titre\"></e-heading><e-paragraph configuration-id=\"L'agence · histoire · clip 2 · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"L'agence · histoire · clip 3\"><e-flexbox configuration-id=\"L'agence · histoire · clip 3 · barre\"><e-paragraph configuration-id=\"L'agence · histoire · clip 3 · numéro\"></e-paragraph><e-paragraph configuration-id=\"L'agence · histoire · clip 3 · nom\"></e-paragraph><e-paragraph configuration-id=\"L'agence · histoire · clip 3 · en cours\"></e-paragraph></e-flexbox><e-heading configuration-id=\"L'agence · histoire · clip 3 · titre\"></e-heading><e-paragraph configuration-id=\"L'agence · histoire · clip 3 · texte\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox><e-flexbox configuration-id=\"L'agence · citation des fondateurs\"><e-div-block configuration-id=\"L'agence · fondateurs · cadre\"><e-image configuration-id=\"L'agence · fondateurs · photo\"></e-image></e-div-block><e-flexbox configuration-id=\"L'agence · fondateurs · texte\"><e-paragraph configuration-id=\"L'agence · fondateurs · citation\"></e-paragraph><e-flexbox configuration-id=\"L'agence · fondateurs · auteurs\"><e-paragraph configuration-id=\"L'agence · fondateurs · noms\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox></e-flexbox></e-flexbox>",
+  "element_config": {
+   "L'agence · histoire": {
+    "tag": "section"
+   },
+   "L'agence · histoire · timecode": {
+    "paragraph": "00:01"
+   },
+   "L'agence · histoire · sur-titre": {
+    "paragraph": "Notre histoire"
+   },
+   "L'agence · histoire · titre": {
+    "tag": "h2",
+    "title": "Cette fois, <em>c'est nous qui produisons.</em>"
+   },
+   "L'agence · histoire · règle · début": {
+    "paragraph": "00:00:00"
+   },
+   "L'agence · histoire · règle · fin": {
+    "paragraph": "13:00:00"
+   },
+   "L'agence · histoire · clip 1 · numéro": {
+    "paragraph": "Clip 01"
+   },
+   "L'agence · histoire · clip 1 · nom": {
+    "paragraph": "Pitchy · depuis 13 ans"
+   },
+   "L'agence · histoire · clip 1 · titre": {
+    "tag": "h3",
+    "title": "Pitchy équipe les entreprises."
+   },
+   "L'agence · histoire · clip 1 · texte": {
+    "paragraph": "Pitchy, la plateforme française de création vidéo, donne aux équipes com, RH et formation de 500+ grandes entreprises les outils pour faire leurs vidéos."
+   },
+   "L'agence · histoire · clip 2 · numéro": {
+    "paragraph": "Clip 02"
+   },
+   "L'agence · histoire · clip 2 · nom": {
+    "paragraph": "Vos demandes"
+   },
+   "L'agence · histoire · clip 2 · titre": {
+    "tag": "h3",
+    "title": "«&nbsp;Et si vous le faisiez pour nous&nbsp;?&nbsp;»"
+   },
+   "L'agence · histoire · clip 2 · texte": {
+    "paragraph": "Beaucoup de nos clients créent leurs vidéos avec Pitchy. D'autres nous demandaient de les produire pour eux, de l'idée à la livraison."
+   },
+   "L'agence · histoire · clip 3 · numéro": {
+    "paragraph": "Clip 03"
+   },
+   "L'agence · histoire · clip 3 · nom": {
+    "paragraph": "Rolling · novembre 2026"
+   },
+   "L'agence · histoire · clip 3 · en cours": {
+    "paragraph": "En cours"
+   },
+   "L'agence · histoire · clip 3 · titre": {
+    "tag": "h3",
+    "title": "Rolling est lancée."
+   },
+   "L'agence · histoire · clip 3 · texte": {
+    "paragraph": "Les équipes de Pitchy lancent leur agence vidéo en abonnement&nbsp;: nos créas, notre studio et notre IA Factory produisent pour vous. Pitchy continue, à côté."
+   },
+   "L'agence · fondateurs · photo": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/hero-interview.jpg",
+      "alt": "Lionel Chouraqui et Benjamin Chouraqui, fondateurs de Rolling"
+     },
+     "size": "large"
+    }
+   },
+   "L'agence · fondateurs · citation": {
+    "paragraph": "Treize ans aux côtés de milliers d’entreprises sur leurs enjeux vidéo nous ont appris une chose&nbsp;: tout le monde a compris que c’était devenu vital, mais trop nombreux sont ceux encore qui manquent de temps. Rolling, c’est notre réponse&nbsp;: une équipe qui produit pour vous, à prix fixe, en illimité."
+   },
+   "L'agence · fondateurs · noms": {
+    "paragraph": "<strong>Lionel Chouraqui et Benjamin Chouraqui</strong><br>Fondateurs et dirigeants de Pitchy et de Rolling"
+   }
+  },
+  "classes": {
+   "L'agence · histoire": [
+    "section",
+    "section-suite"
+   ],
+   "L'agence · histoire · contenu": [
+    "conteneur"
+   ],
+   "L'agence · histoire · en-tête": [
+    "entete-section"
+   ],
+   "L'agence · histoire · repère": [
+    "sur-titre"
+   ],
+   "L'agence · histoire · timecode": [
+    "timecode"
+   ],
+   "L'agence · histoire · titre": [
+    "titre-md"
+   ],
+   "L'agence · histoire · frise": [
+    "carte-verre",
+    "montage"
+   ],
+   "L'agence · histoire · règle": [
+    "montage-regle"
+   ],
+   "L'agence · histoire · piste": [
+    "montage-piste"
+   ],
+   "L'agence · histoire · clip 1": [
+    "clip"
+   ],
+   "L'agence · histoire · clip 1 · barre": [
+    "clip-barre"
+   ],
+   "L'agence · histoire · clip 1 · numéro": [
+    "clip-numero"
+   ],
+   "L'agence · histoire · clip 1 · nom": [
+    "clip-nom"
+   ],
+   "L'agence · histoire · clip 1 · titre": [
+    "titre-xs"
+   ],
+   "L'agence · histoire · clip 1 · texte": [
+    "texte"
+   ],
+   "L'agence · histoire · clip 2": [
+    "clip",
+    "clip-demande"
+   ],
+   "L'agence · histoire · clip 2 · barre": [
+    "clip-barre"
+   ],
+   "L'agence · histoire · clip 2 · numéro": [
+    "clip-numero"
+   ],
+   "L'agence · histoire · clip 2 · nom": [
+    "clip-nom"
+   ],
+   "L'agence · histoire · clip 2 · titre": [
+    "titre-xs"
+   ],
+   "L'agence · histoire · clip 2 · texte": [
+    "texte"
+   ],
+   "L'agence · histoire · clip 3": [
+    "clip",
+    "clip-final"
+   ],
+   "L'agence · histoire · clip 3 · barre": [
+    "clip-barre"
+   ],
+   "L'agence · histoire · clip 3 · numéro": [
+    "clip-numero"
+   ],
+   "L'agence · histoire · clip 3 · nom": [
+    "clip-nom"
+   ],
+   "L'agence · histoire · clip 3 · en cours": [
+    "clip-rec"
+   ],
+   "L'agence · histoire · clip 3 · titre": [
+    "titre-xs"
+   ],
+   "L'agence · histoire · clip 3 · texte": [
+    "texte"
+   ],
+   "L'agence · citation des fondateurs": [
+    "carte-verre",
+    "temoin",
+    "temoin-une",
+    "citation-fondateurs"
+   ],
+   "L'agence · fondateurs · cadre": [
+    "cadre-photo",
+    "fondateurs-photo"
+   ],
+   "L'agence · fondateurs · photo": [
+    "image-couvrante"
+   ],
+   "L'agence · fondateurs · citation": [
+    "temoin-citation"
+   ],
+   "L'agence · fondateurs · auteurs": [
+    "temoin-auteur"
+   ],
+   "L'agence · fondateurs · noms": [
+    "texte-petit"
+   ]
+  },
+  "style": {
+   "L'agence · histoire · contenu": "display: flex; flex-direction: column; gap: 0;",
+   "L'agence · fondateurs · texte": "display: flex; flex-direction: column; gap: 0; gap: 18px;"
+  }
+ },
+ "brut": {}
+}

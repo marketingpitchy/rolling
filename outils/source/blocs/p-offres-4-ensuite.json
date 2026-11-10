@@ -1,0 +1,198 @@
+{
+ "cle": "p-offres-4-ensuite",
+ "titre": "Rolling · Offres · 00:03 Et ensuite",
+ "type": "e-flexbox",
+ "composition": {
+  "xml_structure": "<e-flexbox configuration-id=\"Offres · et ensuite\"><e-flexbox configuration-id=\"Offres · ensuite · contenu\"><e-flexbox configuration-id=\"Offres · ensuite · en-tête\"><e-flexbox configuration-id=\"Offres · ensuite · repère\"><e-paragraph configuration-id=\"Offres · ensuite · timecode\"></e-paragraph><e-paragraph configuration-id=\"Offres · ensuite · sur-titre\"></e-paragraph></e-flexbox><e-heading configuration-id=\"Offres · ensuite · titre\"></e-heading></e-flexbox><e-flexbox configuration-id=\"Offres · ensuite · frise\"><e-flexbox configuration-id=\"Offres · ensuite · règle\"><e-paragraph configuration-id=\"Offres · ensuite · règle · début\"></e-paragraph><e-paragraph configuration-id=\"Offres · ensuite · règle · fin\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Offres · ensuite · piste\"><e-flexbox configuration-id=\"Offres · ensuite · clip 1\"><e-flexbox configuration-id=\"Offres · ensuite · clip 1 · barre\"><e-paragraph configuration-id=\"Offres · ensuite · clip 1 · numéro\"></e-paragraph><e-paragraph configuration-id=\"Offres · ensuite · clip 1 · nom\"></e-paragraph></e-flexbox><e-heading configuration-id=\"Offres · ensuite · clip 1 · titre\"></e-heading><e-paragraph configuration-id=\"Offres · ensuite · clip 1 · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Offres · ensuite · clip 2\"><e-flexbox configuration-id=\"Offres · ensuite · clip 2 · barre\"><e-paragraph configuration-id=\"Offres · ensuite · clip 2 · numéro\"></e-paragraph><e-paragraph configuration-id=\"Offres · ensuite · clip 2 · nom\"></e-paragraph></e-flexbox><e-heading configuration-id=\"Offres · ensuite · clip 2 · titre\"></e-heading><e-paragraph configuration-id=\"Offres · ensuite · clip 2 · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Offres · ensuite · clip 3\"><e-flexbox configuration-id=\"Offres · ensuite · clip 3 · barre\"><e-paragraph configuration-id=\"Offres · ensuite · clip 3 · numéro\"></e-paragraph><e-paragraph configuration-id=\"Offres · ensuite · clip 3 · nom\"></e-paragraph></e-flexbox><e-heading configuration-id=\"Offres · ensuite · clip 3 · titre\"></e-heading><e-paragraph configuration-id=\"Offres · ensuite · clip 3 · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Offres · ensuite · clip 4\"><e-flexbox configuration-id=\"Offres · ensuite · clip 4 · barre\"><e-paragraph configuration-id=\"Offres · ensuite · clip 4 · numéro\"></e-paragraph><e-paragraph configuration-id=\"Offres · ensuite · clip 4 · nom\"></e-paragraph><e-paragraph configuration-id=\"Offres · ensuite · clip 4 · en cours\"></e-paragraph></e-flexbox><e-heading configuration-id=\"Offres · ensuite · clip 4 · titre\"></e-heading><e-paragraph configuration-id=\"Offres · ensuite · clip 4 · texte\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox></e-flexbox></e-flexbox>",
+  "element_config": {
+   "Offres · et ensuite": {
+    "tag": "section"
+   },
+   "Offres · ensuite · timecode": {
+    "paragraph": "00:03"
+   },
+   "Offres · ensuite · sur-titre": {
+    "paragraph": "Et ensuite"
+   },
+   "Offres · ensuite · titre": {
+    "tag": "h2",
+    "title": "Ce qui se passe <em>après votre échange.</em>"
+   },
+   "Offres · ensuite · règle · début": {
+    "paragraph": "00:00:00"
+   },
+   "Offres · ensuite · règle · fin": {
+    "paragraph": "∞"
+   },
+   "Offres · ensuite · clip 1 · numéro": {
+    "paragraph": "Clip 01"
+   },
+   "Offres · ensuite · clip 1 · nom": {
+    "paragraph": "Jour J · 30 min"
+   },
+   "Offres · ensuite · clip 1 · titre": {
+    "tag": "h3",
+    "title": "L'échange."
+   },
+   "Offres · ensuite · clip 1 · texte": {
+    "paragraph": "Nous passons en revue vos contenus et vos projets. Vous connaissez le prix dès la fin de l'échange."
+   },
+   "Offres · ensuite · clip 2 · numéro": {
+    "paragraph": "Clip 02"
+   },
+   "Offres · ensuite · clip 2 · nom": {
+    "paragraph": "[Semaine 1]"
+   },
+   "Offres · ensuite · clip 2 · titre": {
+    "tag": "h3",
+    "title": "Votre stratégie vidéo."
+   },
+   "Offres · ensuite · clip 2 · texte": {
+    "paragraph": "Votre plan vidéo de l'année et vos 3&nbsp;premières vidéos, choisies ensemble. [Délai à confirmer]"
+   },
+   "Offres · ensuite · clip 3 · numéro": {
+    "paragraph": "Clip 03"
+   },
+   "Offres · ensuite · clip 3 · nom": {
+    "paragraph": "[Semaine 2]"
+   },
+   "Offres · ensuite · clip 3 · titre": {
+    "tag": "h3",
+    "title": "Votre première vidéo."
+   },
+   "Offres · ensuite · clip 3 · texte": {
+    "paragraph": "Votre chef de projet et votre directeur artistique lancent la production. Vous validez, nous ajustons. [Délai à confirmer]"
+   },
+   "Offres · ensuite · clip 4 · numéro": {
+    "paragraph": "Clip 04"
+   },
+   "Offres · ensuite · clip 4 · nom": {
+    "paragraph": "Ensuite"
+   },
+   "Offres · ensuite · clip 4 · en cours": {
+    "paragraph": "En continu"
+   },
+   "Offres · ensuite · clip 4 · titre": {
+    "tag": "h3",
+    "title": "Une vidéo après l'autre."
+   },
+   "Offres · ensuite · clip 4 · texte": {
+    "paragraph": "Vous ajoutez vos projets quand vous voulez. Nous les traitons un à la fois, sans compter."
+   }
+  },
+  "classes": {
+   "Offres · et ensuite": [
+    "section",
+    "section-suite"
+   ],
+   "Offres · ensuite · contenu": [
+    "conteneur"
+   ],
+   "Offres · ensuite · en-tête": [
+    "entete-section"
+   ],
+   "Offres · ensuite · repère": [
+    "sur-titre"
+   ],
+   "Offres · ensuite · timecode": [
+    "timecode"
+   ],
+   "Offres · ensuite · titre": [
+    "titre-md"
+   ],
+   "Offres · ensuite · frise": [
+    "carte-verre",
+    "montage"
+   ],
+   "Offres · ensuite · règle": [
+    "montage-regle"
+   ],
+   "Offres · ensuite · piste": [
+    "montage-piste",
+    "montage-4"
+   ],
+   "Offres · ensuite · clip 1": [
+    "clip"
+   ],
+   "Offres · ensuite · clip 1 · barre": [
+    "clip-barre"
+   ],
+   "Offres · ensuite · clip 1 · numéro": [
+    "clip-numero"
+   ],
+   "Offres · ensuite · clip 1 · nom": [
+    "clip-nom"
+   ],
+   "Offres · ensuite · clip 1 · titre": [
+    "titre-xs"
+   ],
+   "Offres · ensuite · clip 1 · texte": [
+    "texte"
+   ],
+   "Offres · ensuite · clip 2": [
+    "clip",
+    "clip-demande"
+   ],
+   "Offres · ensuite · clip 2 · barre": [
+    "clip-barre"
+   ],
+   "Offres · ensuite · clip 2 · numéro": [
+    "clip-numero"
+   ],
+   "Offres · ensuite · clip 2 · nom": [
+    "clip-nom"
+   ],
+   "Offres · ensuite · clip 2 · titre": [
+    "titre-xs"
+   ],
+   "Offres · ensuite · clip 2 · texte": [
+    "texte"
+   ],
+   "Offres · ensuite · clip 3": [
+    "clip",
+    "clip-mauve"
+   ],
+   "Offres · ensuite · clip 3 · barre": [
+    "clip-barre"
+   ],
+   "Offres · ensuite · clip 3 · numéro": [
+    "clip-numero"
+   ],
+   "Offres · ensuite · clip 3 · nom": [
+    "clip-nom"
+   ],
+   "Offres · ensuite · clip 3 · titre": [
+    "titre-xs"
+   ],
+   "Offres · ensuite · clip 3 · texte": [
+    "texte"
+   ],
+   "Offres · ensuite · clip 4": [
+    "clip",
+    "clip-final"
+   ],
+   "Offres · ensuite · clip 4 · barre": [
+    "clip-barre"
+   ],
+   "Offres · ensuite · clip 4 · numéro": [
+    "clip-numero"
+   ],
+   "Offres · ensuite · clip 4 · nom": [
+    "clip-nom"
+   ],
+   "Offres · ensuite · clip 4 · en cours": [
+    "clip-rec"
+   ],
+   "Offres · ensuite · clip 4 · titre": [
+    "titre-xs"
+   ],
+   "Offres · ensuite · clip 4 · texte": [
+    "texte"
+   ]
+  },
+  "style": {
+   "Offres · ensuite · contenu": "display: flex; flex-direction: column; gap: 0;"
+  }
+ },
+ "brut": {}
+}

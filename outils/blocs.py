@@ -462,8 +462,8 @@ def membre(prefixe, cle, nom, poste, sombre=False):
 
 entete_ia = entete('IA', '00:05', 'Sous le capot', [("Le meilleur <em>de l'IA.</em>", 'h2', ['titre-xl'])],
                    intro='Nous orchestrons les meilleures IA du marché au sein de notre <strong>IA Factory</strong>. Pilotée par notre équipe tech, notre plateforme génère des pistes de scénarios, des storyboards et des premières versions. <strong>Nos créas choisissent, corrigent, adaptent… et perfectionnent chaque vidéo.</strong>')
-def badges(prefixe, style):
-    return F(prefixe + ' · badges', ['rangee'], style, enfants=[
+def badges(prefixe, style, clair=False):
+    return F(prefixe + ' · badges', ['rangee'] + (['badges-clairs'] if clair else []), style, enfants=[
         F(prefixe + ' · badge · ' + texte, ['badge-securite'], enfants=[
             I(prefixe + ' · badge · ' + texte + ' · icône', 'badge-' + icone + '.webp', cls=['icone-badge'], taille='thumbnail'),
             P(prefixe + ' · badge · ' + texte + ' · texte', texte),
@@ -1176,6 +1176,363 @@ replays_liste = section_liste('Replays · liste', [
     W('Replays · cartes', 'rolling-liste', contenu='replays', classe='grille-3', filtres='rolling_theme', tous='Tous les replays', nombre='12', plus='yes', plus_texte='Voir plus de replays'),
 ])
 
+
+def haut_page_boutons(nom, pastille, pastille_cls, titre, intro, boutons, largeur='900px'):
+    """Haut de page avec boutons (Offres, Contact…)."""
+    racine = haut_page(nom, pastille, pastille_cls, titre, intro, largeur=largeur)
+    racine.enfants[0].enfants.append(F(nom + ' · boutons', ['rangee'], 'margin-top: 32px;', enfants=[
+        B(nom + ' · bouton %d' % (i + 1), t, l, c) for i, (t, l, c) in enumerate(boutons)
+    ]))
+    return racine
+
+
+def entete_simple(prefixe, timecode, surtitre, titre=None, balise='h2', cls=None):
+    return entete(prefixe, timecode, surtitre, [(titre, balise, cls or ['titre-md'])] if titre else [])
+
+
+OFFRES_LIGNES = [
+    ('Ce que vous nous confiez', None),
+    ('Vos écrits', 'PPT, PDF, articles, pages web, modules de formation', True),
+    ('Vos vidéos', 'Rushs, vidéos existantes, motion à mettre à jour', True),
+    ('Vos nouveaux projets', 'Un simple brief suffit', True),
+    ('Ce que nous produisons, en illimité', None),
+    ('Motion design 2D et 3D', None, True), ('Montage et habillage', None, True), ('Voix off et sound design', None, True),
+    ('Sous-titres et versions multilingues', None, True), ('Déclinaisons tous formats', '16:9, 9:16, 1:1', True),
+    ("L'accompagnement", None),
+    ('Un directeur artistique dédié', None, True), ('Un chef de projet dédié', None, True), ('Une stratégie vidéo annuelle', None, True),
+    ('Des données sécurisées', 'Même pour vos contenus confidentiels', True),
+    ('En plus avec Création + Tournage', None),
+    ('Captation offerte', 'Partout en France, un projet à la fois', False),
+    ('Interviews et témoignages', 'Collaborateurs, dirigeants, clients', False),
+    ("Génération d'avatars", 'Présentateurs et porte-parole virtuels', False),
+    ('Vidéos produit', 'Démos et mises en situation', False),
+    ('Événements et séminaires', 'Rétrospectives et aftermovies', False),
+    ('Motion 100&nbsp;% fait main, sans IA', 'Chaque plan dessiné à la main', False),
+]
+
+
+def case(nom, inclus):
+    if inclus:
+        return F(nom, None, None, enfants=[I(nom + ' · coche', 'coche-verre.png', 'Inclus', ['case-oui'], taille='thumbnail')])
+    return F(nom, None, None, enfants=[P(nom + ' · non', 'Non inclus', ['case-non'])])
+
+
+def ligne_offre(n, ligne):
+    nom = 'Offres · ligne %02d' % n
+    if ligne[1] is None and len(ligne) == 2:
+        return F(nom, ['offres-ligne', 'offres-groupe'], enfants=[
+            F(nom + ' · groupe', None, None, enfants=[P(nom + ' · titre', ligne[0], ['label', 'label-violet'])]),
+        ])
+    libelle, detail, creation = ligne
+    cellule = [P(nom + ' · libellé', libelle)] + ([P(nom + ' · détail', detail, ['offres-detail'])] if detail else [])
+    return F(nom, ['offres-ligne'], enfants=[
+        F(nom + ' · critère', None, None, enfants=cellule),
+        case(nom + ' · création', creation),
+        case(nom + ' · complet', True),
+    ])
+
+
+offres_haut = haut_page_boutons('Offres · haut', 'Deux formules, un abonnement annuel', [], "Nos formules d'agence vidéo, <em>à prix fixe.</em>",
+                                'Tous vos contenus et vos projets en vidéo, ou le tournage en plus. Un abonnement annuel, une équipe dédiée, <strong>des vidéos en illimité</strong>.',
+                                [('Réserver un échange', '/contact/', ['bouton-principal']), ('Comparer les formules', '#comparer', ['bouton-verre'])])
+
+offres_tableau = F('Offres · formules', ['section', 'section-suite', 'halo-doux'], tag='section', ancre='comparer', enfants=[
+    F('Offres · formules · contenu', ['conteneur'], COLONNE, enfants=[
+        entete_simple('Offres · formules', '00:01', 'Les formules'),
+        F('Offres · tableau', ['carte-pleine', 'offres-tableau'], enfants=[
+            P('Offres · badge', 'Le plus complet', ['offres-badge']),
+            F('Offres · en-tête', ['offres-ligne', 'offres-entete'], enfants=[
+                F('Offres · en-tête · titre', None, None, enfants=[H('Offres · titre', 'Comparez <em>les formules</em>', 'h2', ['titre-xs', 'titre-encart'])]),
+                F('Offres · Création', None, None, enfants=[
+                    H('Offres · Création · nom', 'Création illimitée', 'h3', ['titre-xs', 'titre-formule']),
+                    P('Offres · Création · prix', '1&nbsp;250&nbsp;€<span> / mois</span>', ['offres-prix', 'offres-masquer']),
+                    P('Offres · Création · annuel', 'Soit 15&nbsp;000&nbsp;€ / an', ['offres-detail', 'offres-masquer']),
+                    P('Offres · Création · résumé', 'Tous vos contenus et vos projets, en vidéo', ['offres-resume', 'offres-masquer']),
+                    B('Offres · Création · bouton', 'Choisir Création', '/contact/', ['bouton-verre', 'bouton-petit', 'offres-masquer']),
+                ]),
+                F('Offres · Complet', None, None, enfants=[
+                    H('Offres · Complet · nom', 'Création + Tournage', 'h3', ['titre-xs', 'titre-formule']),
+                    P('Offres · Complet · prix', '2&nbsp;080&nbsp;€<span> / mois</span>', ['offres-prix', 'prix-degrade', 'offres-masquer']),
+                    P('Offres · Complet · annuel', 'Soit 25&nbsp;000&nbsp;€ / an', ['offres-detail', 'offres-masquer']),
+                    P('Offres · Complet · résumé', 'Tout Création, plus le tournage et le motion fait main', ['offres-resume', 'offres-resume-sombre', 'offres-masquer']),
+                    B('Offres · Complet · bouton', 'Choisir Complet', '/contact/', ['bouton-soleil', 'bouton-petit', 'offres-masquer']),
+                ]),
+            ]),
+        ] + [ligne_offre(n, l) for n, l in enumerate(OFFRES_LIGNES, 1)]),
+        F('Offres · prix mobile', ['grille-2', 'offres-mobile'], 'margin-top: 20px;', enfants=[
+            F('Offres · mobile · Création', ['carte-pleine'], enfants=[
+                P('Offres · mobile · Création · nom', 'Création illimitée', ['titre-xs']),
+                P('Offres · mobile · Création · prix', '1&nbsp;250&nbsp;€<span> / mois</span>', ['offres-prix']),
+                P('Offres · mobile · Création · annuel', 'Soit 15&nbsp;000&nbsp;€ / an', ['texte-petit']),
+                B('Offres · mobile · Création · bouton', 'Choisir Création', '/contact/', ['bouton-verre', 'bouton-petit']),
+            ]),
+            F('Offres · mobile · Complet', ['carte-pleine', 'section-sombre', 'carte-prix-sombre'], enfants=[
+                P('Offres · mobile · Complet · nom', 'Création + Tournage', ['titre-xs']),
+                P('Offres · mobile · Complet · prix', '2&nbsp;080&nbsp;€<span> / mois</span>', ['offres-prix']),
+                P('Offres · mobile · Complet · annuel', 'Soit 25&nbsp;000&nbsp;€ / an', ['texte-petit']),
+                B('Offres · mobile · Complet · bouton', 'Choisir Complet', '/contact/', ['bouton-soleil', 'bouton-petit']),
+            ]),
+        ]),
+    ]),
+])
+
+
+def carte_ajout(nom, visuel, label, label_cls, titre, texte, chips, chip_cls):
+    return F(nom, ['carte-verre', 'carte-ajout'], tag='article', enfants=[
+        visuel,
+        F(nom + ' · textes', ['carte-ajout-texte'], enfants=[
+            P(nom + ' · label', label, ['label'] + label_cls),
+            H(nom + ' · titre', titre, 'h3', ['titre-sm', 'titre-carte']),
+            P(nom + ' · texte', texte, ['texte']),
+            F(nom + ' · étiquettes', ['rangee'], 'margin-top: 6px;', enfants=[P(nom + ' · étiquette %d' % (i + 1), c, [chip_cls]) for i, c in enumerate(chips)]),
+        ]),
+    ])
+
+
+offres_ajout = F('Offres · Création + Tournage', ['section', 'section-suite'], tag='section', enfants=[
+    F('Offres · ajout · contenu', ['conteneur'], COLONNE, enfants=[
+        entete_simple('Offres · ajout', '00:02', 'Création + Tournage', 'Ce que <em>Création + Tournage</em> ajoute.'),
+        F('Offres · ajout · cartes', ['grille-2'], enfants=[
+            carte_ajout('Offres · captation', D('Offres · captation · cadre', ['cadre-photo', 'cadre-16-10'], enfants=[
+                I('Offres · captation · photo', 'hero-tournage.jpg', "Tournage d'une interview dans des bureaux lumineux, caméra et lumières en place", ['image-couvrante'], taille='large'),
+                P('Offres · captation · rec', 'Rec', ['bandeau-video', 'bandeau-rec']),
+                P('Offres · captation · durée', '00:14:32', ['duree']),
+            ]), 'Captation offerte', ['label-orange'], 'Nous venons tourner chez vous. <u>Partout en France.</u>',
+                "Nos équipes se déplacent, un projet à la fois : vos collaborateurs, vos produits, vos événements passent à l'image.",
+                ['Interviews', 'Vidéos produit', "Rétrospectives d'événements", 'Témoignages'], 'chip-orange'),
+            carte_ajout('Offres · fait main', D('Offres · fait main · visuel', ['cadre-storyboard'], enfants=[
+                P('Offres · fait main · annotation', 'storyboard · v1', ['note-main']),
+            ]), 'Sans IA', ['label-violet'], 'Le motion sur-mesure, <em>100&nbsp;% fait main.</em>',
+                'Sans IA : nos motion designers dessinent chaque plan à la main, pour vos sujets les plus sensibles.',
+                ['Sans IA', 'Sur mesure', '100&nbsp;% fait main'], 'chip-neutre'),
+        ]),
+        F('Offres · promesses', ['carte-verre', 'grand-bloc', 'carte-promesses'], 'margin-top: 28px;', enfants=[
+            H('Offres · promesses · titre', "L'illimité qui tient ses promesses&nbsp;:", 'h3', ['titre-xs']),
+            F('Offres · promesses · liste', ['grille-4'], 'margin-top: 8px;', enfants=[
+                F('Offres · promesse %d' % n, ['ligne-coche'], enfants=[
+                    I('Offres · promesse %d · chiffre' % n, 'chiffre-%d.webp' % n, cls=['picto-verre'], style='height: 40px;', taille='medium'),
+                    P('Offres · promesse %d · texte' % n, t, ['texte-petit']),
+                ]) for n, t in enumerate(['<strong>Un projet traité à fond</strong> à la fois', '<strong>1 projet = 1 vidéo livrée</strong>, prête à publier', '<strong>Des allers-retours cadrés</strong>, pour livrer vite', '<strong>1 abonnement = 1 équipe métier</strong>'], 1)
+            ]),
+            P('Offres · promesses · note', "C'est notre façon de garantir la même qualité et la même vitesse — à tous nos abonnés.", ['texte-petit'], 'margin-top: 10px;'),
+        ]),
+    ]),
+])
+
+
+def montage(prefixe, debut, fin, clips, quatre=False):
+    """Frise de montage : clips = [(classe de couleur, nom du clip, titre, texte, pastille rouge ou None)]."""
+    return F(prefixe + ' · frise', ['carte-verre', 'montage'], enfants=[
+        F(prefixe + ' · règle', ['montage-regle'], enfants=[P(prefixe + ' · règle · début', debut), P(prefixe + ' · règle · fin', fin)]),
+        F(prefixe + ' · piste', ['montage-piste'] + (['montage-4'] if quatre else []), enfants=[
+            F(prefixe + ' · clip %d' % n, ['clip'] + ([cls] if cls else []), enfants=[
+                F(prefixe + ' · clip %d · barre' % n, ['clip-barre'], enfants=[
+                    P(prefixe + ' · clip %d · numéro' % n, 'Clip %02d' % n, ['clip-numero']),
+                    P(prefixe + ' · clip %d · nom' % n, nom, ['clip-nom']),
+                ] + ([P(prefixe + ' · clip %d · en cours' % n, rec, ['clip-rec'])] if rec else [])),
+                H(prefixe + ' · clip %d · titre' % n, titre, 'h3', ['titre-xs']),
+                P(prefixe + ' · clip %d · texte' % n, texte, ['texte']),
+            ]) for n, (cls, nom, titre, texte, rec) in enumerate(clips, 1)
+        ]),
+    ])
+
+
+offres_ensuite = F('Offres · et ensuite', ['section', 'section-suite'], tag='section', enfants=[
+    F('Offres · ensuite · contenu', ['conteneur'], COLONNE, enfants=[
+        entete_simple('Offres · ensuite', '00:03', 'Et ensuite', 'Ce qui se passe <em>après votre échange.</em>'),
+        montage('Offres · ensuite', '00:00:00', '∞', [
+            (None, 'Jour J · 30 min', "L'échange.", "Nous passons en revue vos contenus et vos projets. Vous connaissez le prix dès la fin de l'échange.", None),
+            ('clip-demande', '[Semaine 1]', 'Votre stratégie vidéo.', "Votre plan vidéo de l'année et vos 3&nbsp;premières vidéos, choisies ensemble. [Délai à confirmer]", None),
+            ('clip-mauve', '[Semaine 2]', 'Votre première vidéo.', 'Votre chef de projet et votre directeur artistique lancent la production. Vous validez, nous ajustons. [Délai à confirmer]', None),
+            ('clip-final', 'Ensuite', "Une vidéo après l'autre.", 'Vous ajoutez vos projets quand vous voulez. Nous les traitons un à la fois, sans compter.', 'En continu'),
+        ], quatre=True),
+    ]),
+])
+
+QUESTIONS_OFFRES = [
+    ('Combien de projets pouvons-nous lancer&nbsp;?', 'Autant que vous voulez, en illimité. Nous traitons un projet à fond à la fois : nous le livrons, puis nous enchaînons sur le suivant.'),
+    ('Quel délai pour une vidéo&nbsp;?', '[Réponse à fournir : délai moyen entre le brief et la livraison.]'),
+    ("L'abonnement nous engage-t-il pour un an&nbsp;?", "[Réponse à fournir : durée d'engagement, reconduction, résiliation.]"),
+    ('Comment se passe le paiement&nbsp;?', '[Réponse à fournir : paiement mensuel ou annuel, facturation.]'),
+    ("Pouvons-nous changer de formule en cours d'année&nbsp;?", '[Réponse à fournir.]'),
+]
+
+
+def bloc_faq(prefixe, timecode, surtitre, titre, questions, section_cls=None):
+    return F(prefixe, ['section', 'section-suite'] + (section_cls or []), tag='section', enfants=[
+        F(prefixe + ' · contenu', ['conteneur', 'conteneur-etroit'], COLONNE, enfants=[
+            entete_simple(prefixe, timecode, surtitre, titre),
+            F(prefixe + ' · questions', ['liste-questions'], enfants=[
+                F(prefixe + ' · question %d' % n, ['carte-verre', 'carte-question'], enfants=[
+                    H(prefixe + ' · question %d · titre' % n, q, 'h3', ['titre-question']),
+                    P(prefixe + ' · question %d · réponse' % n, r, ['texte']),
+                ]) for n, (q, r) in enumerate(questions, 1)
+            ]),
+        ]),
+    ])
+
+
+offres_faq = bloc_faq('Offres · FAQ', '00:04', "L'abonnement", 'Vos questions <em>sur l’abonnement.</em>', QUESTIONS_OFFRES)
+
+
+QUESTIONS_CONTACT = [
+    ("Combien de temps dure l'échange&nbsp;?", '30 minutes, en visio. Vous choisissez le créneau dans le calendrier.'),
+    ('Faut-il préparer quelque chose&nbsp;?', 'Non. Si vous le pouvez, gardez sous la main 2 ou 3 contenus que vous aimeriez voir en vidéo : un article, un module de formation, une présentation.'),
+    ("L'échange est-il payant ou engageant&nbsp;?", "[À confirmer] Non : l'échange est gratuit et sans engagement."),
+    ('Qui sera présent de votre côté&nbsp;?', '[À confirmer] Un membre de notre équipe, chef de projet ou directeur artistique.'),
+    ("Et après l'échange&nbsp;?", 'Vous recevez votre stratégie vidéo et le prix de la formule adaptée. [À confirmer : délai de démarrage de la première vidéo.]'),
+]
+
+contact_haut = F('Contact · échange', ['section', 'section-entete', 'entete-page', 'halos-haut'], tag='section', enfants=[
+    F('Contact · contenu', ['conteneur', 'contact-grille'], enfants=[
+        F('Contact · textes', None, COLONNE, enfants=[
+            F('Contact · pastille', ['pastille'], enfants=[P('Contact · pastille · texte', '30 minutes, sans engagement')]),
+            H('Contact · titre', 'Parlons de <em>vos vidéos.</em>', 'h1', ['titre-lg'], 'margin-top: 26px;'),
+            P('Contact · introduction', '30 minutes pour passer en revue vos contenus et vos projets. Vous repartez avec votre stratégie vidéo et vos 3&nbsp;premières vidéos à produire.', ['texte-intro'], 'margin-top: 22px;'),
+            H('Contact · pendant', "Pendant l'échange", 'h2', ['label'], 'margin-top: 36px;'),
+            F('Contact · coches', None, 'margin-top: 14px; padding: 0;', enfants=[liste_coches('Contact', [
+                'Nous passons en revue vos contenus et vos projets', 'Nous choisissons ensemble vos 3 premières vidéos',
+                'Nous vous montrons des exemples de votre métier', "Vous connaissez le prix dès la fin de l'échange"])]),
+            F('Contact · preuve', ['rangee'], 'margin-top: 32px;', enfants=[
+                F('Contact · visages', ['visages'], enfants=[I('Contact · visage %d' % n, 'visage-%d.jpg' % n, taille='thumbnail') for n in (1, 2, 3)]),
+                P('Contact · preuve · texte', 'Par les équipes de <strong>Pitchy</strong> — 13 ans de vidéo, 500+ grandes entreprises.', ['texte-petit']),
+            ]),
+            F('Contact · écrire', ['carte-pleine'], 'margin-top: 36px;', enfants=[
+                H('Contact · écrire · titre', 'Vous préférez écrire&nbsp;?', 'h2', ['titre-xs']),
+                P('Contact · écrire · texte', 'Écrivez-nous à <a href="mailto:contact@agence-rolling.fr">contact@agence-rolling.fr</a> [adresse à confirmer]. Nous répondons sous 24 heures ouvrées.', ['texte']),
+            ]),
+        ]),
+        F('Contact · calendrier', ['contact-cote'], enfants=[
+            F('Contact · clap', ['clap'], enfants=[
+                F('Contact · clap · corps', ['clap-corps'], enfants=[
+                    F('Contact · clap · cases', ['clap-grille'], enfants=[
+                        F('Contact · clap · %s' % champ, None, None, enfants=[P('Contact · clap · %s · nom' % champ, champ, ['clap-champ']), P('Contact · clap · %s · valeur' % champ, valeur, ['clap-valeur'])])
+                        for champ, valeur in [('Scène', 'Votre échange'), ('Prise', '1'), ('Durée', '30:00')]
+                    ]),
+                ]),
+            ]),
+            F('Contact · emplacement', ['carte-verre', 'zone-calendrier'], enfants=[
+                P('Contact · emplacement · label', 'Emplacement réservé', ['label', 'label-violet']),
+                P('Contact · emplacement · titre', 'Votre calendrier HubSpot', ['titre-xs']),
+                P('Contact · emplacement · texte', "Remplacez ce texte par le calendrier HubSpot (élément HTML ou code court). La hauteur est réservée : la page ne saute pas quand il se charge.", ['texte-petit'], 'max-width: 34ch;'),
+            ]),
+        ]),
+    ]),
+])
+
+contact_faq = F('Contact · FAQ', ['section', 'section-lilas'], tag='section', enfants=[
+    F('Contact · FAQ · contenu', ['conteneur', 'conteneur-etroit'], COLONNE, enfants=[
+        F('Contact · FAQ · en-tête', ['entete-section'], enfants=[H('Contact · FAQ · titre', "Vos questions <em>sur l'échange.</em>", 'h2', ['titre-md'])]),
+        F('Contact · FAQ · questions', ['liste-questions'], enfants=[
+            F('Contact · question %d' % n, ['carte-verre', 'carte-question'], enfants=[
+                H('Contact · question %d · titre' % n, q, 'h3', ['titre-question']),
+                P('Contact · question %d · réponse' % n, r, ['texte']),
+            ]) for n, (q, r) in enumerate(QUESTIONS_CONTACT, 1)
+        ]),
+    ]),
+])
+
+
+agence_haut = F("L'agence · haut", ['section', 'section-entete', 'entete-page', 'halos-haut'], tag='section', enfants=[
+    F("L'agence · haut · contenu", ['conteneur'], COLONNE, enfants=[
+        W("L'agence · fil d’Ariane", 'rolling-ariane'),
+        F("L'agence · présentation", ['agence-hero'], enfants=[
+            F("L'agence · textes", None, COLONNE, enfants=[
+                F("L'agence · pastille", ['pastille'], enfants=[P("L'agence · pastille · texte", 'Lancée en novembre 2026')]),
+                H("L'agence · titre", "Rolling, l'agence vidéo<br><em>née chez Pitchy.</em>", 'h1', ['titre-lg'], 'margin-top: 22px;'),
+                P("L'agence · introduction", "Depuis treize ans, nous accompagnons les grandes entreprises en vidéo. Certaines équipes veulent créer elles-mêmes&nbsp;: c'est Pitchy. D'autres veulent déléguer&nbsp;: c'est Rolling, une équipe qui produit pour vous, à prix fixe, en illimité.", ['texte-intro'], 'margin-top: 22px; max-width: 600px;'),
+                F("L'agence · boutons", ['rangee'], 'margin-top: 34px;', enfants=[
+                    B("L'agence · réserver", 'Réserver un échange', '/contact/', ['bouton-principal']),
+                    B("L'agence · offres", 'Voir les offres', '/offres/', ['bouton-verre']),
+                ]),
+            ]),
+            F("L'agence · photo", ['carte-verre', 'agence-photo', 'flotte'], enfants=[
+                D("L'agence · photo · cadre", ['cadre-photo'], 'aspect-ratio: 1 / 1;', enfants=[
+                    I("L'agence · photo · image", 'hero-tournage.jpg', "L'équipe Rolling en tournage, derrière la caméra", ['image-couvrante'], taille='large'),
+                    P("L'agence · photo · bandeau", 'Backstage', ['bandeau-video']),
+                ]),
+                P("L'agence · photo · légende", '[Photo backstage de tournage à fournir]', ['texte-petit'], 'padding: 12px 6px 2px;'),
+            ]),
+        ]),
+    ]),
+])
+
+agence_histoire = F("L'agence · histoire", ['section', 'section-suite'], tag='section', enfants=[
+    F("L'agence · histoire · contenu", ['conteneur'], COLONNE, enfants=[
+        entete_simple("L'agence · histoire", '00:01', 'Notre histoire', "Cette fois, <em>c'est nous qui produisons.</em>"),
+        montage("L'agence · histoire", '00:00:00', '13:00:00', [
+            (None, 'Pitchy · depuis 13 ans', 'Pitchy équipe les entreprises.', 'Pitchy, la plateforme française de création vidéo, donne aux équipes com, RH et formation de 500+ grandes entreprises les outils pour faire leurs vidéos.', None),
+            ('clip-demande', 'Vos demandes', '«&nbsp;Et si vous le faisiez pour nous&nbsp;?&nbsp;»', "Beaucoup de nos clients créent leurs vidéos avec Pitchy. D'autres nous demandaient de les produire pour eux, de l'idée à la livraison.", None),
+            ('clip-final', 'Rolling · novembre 2026', 'Rolling est lancée.', "Les équipes de Pitchy lancent leur agence vidéo en abonnement&nbsp;: nos créas, notre studio et notre IA Factory produisent pour vous. Pitchy continue, à côté.", 'En cours'),
+        ]),
+        F("L'agence · citation des fondateurs", ['carte-verre', 'temoin', 'temoin-une', 'citation-fondateurs'], enfants=[
+            D("L'agence · fondateurs · cadre", ['cadre-photo', 'fondateurs-photo'], enfants=[
+                I("L'agence · fondateurs · photo", 'hero-interview.jpg', 'Lionel Chouraqui et Benjamin Chouraqui, fondateurs de Rolling', ['image-couvrante'], taille='large'),
+            ]),
+            F("L'agence · fondateurs · texte", None, COLONNE + ' gap: 18px;', enfants=[
+                P("L'agence · fondateurs · citation", "Treize ans aux côtés de milliers d’entreprises sur leurs enjeux vidéo nous ont appris une chose&nbsp;: tout le monde a compris que c’était devenu vital, mais trop nombreux sont ceux encore qui manquent de temps. Rolling, c’est notre réponse&nbsp;: une équipe qui produit pour vous, à prix fixe, en illimité.", ['temoin-citation']),
+                F("L'agence · fondateurs · auteurs", ['temoin-auteur'], enfants=[
+                    P("L'agence · fondateurs · noms", '<strong>Lionel Chouraqui et Benjamin Chouraqui</strong><br>Fondateurs et dirigeants de Pitchy et de Rolling', ['texte-petit']),
+                ]),
+            ]),
+        ]),
+    ]),
+])
+
+agence_convictions = F("L'agence · convictions", ['section', 'section-chaude'], tag='section', enfants=[
+    F("L'agence · convictions · contenu", ['conteneur'], COLONNE, enfants=[
+        entete_simple("L'agence · convictions", '00:02', 'Nos convictions', 'Ce qui ne change pas, <u>vidéo après vidéo.</u>'),
+        F("L'agence · convictions · cartes", ['grille-2'], enfants=[
+            F("L'agence · conviction %d" % n, ['carte-verre', 'conviction'], tag='article', enfants=[
+                H("L'agence · conviction %d · titre" % n, titre, 'h3', ['titre-xs', 'titre-point'] + ([point] if point else [])),
+                P("L'agence · conviction %d · texte" % n, texte, ['texte']),
+            ]) for n, (point, titre, texte) in enumerate([
+                ('titre-point-bleu', "Le meilleur de l'humain et de l'IA.", "Notre IA Factory accélère tout ce qui peut l'être : pistes créatives, voix off, sous-titres, traductions, déclinaisons. Nos créas gardent la direction artistique, l'animation à la main et la validation finale."),
+                (None, 'Un prix fixe, en illimité.', "Pas de devis à chaque vidéo. Un abonnement, et vos contenus deviennent des vidéos, un projet après l'autre, sans compter."),
+                (None, 'Une équipe dédiée.', 'Un directeur artistique et un chef de projet qui connaissent vos enjeux, votre charte et vos équipes. Toujours les mêmes interlocuteurs.'),
+                ('titre-point-bleu', 'Le regard final, toujours humain.', 'Chaque vidéo est relue et validée par nos équipes avant de vous être livrée. La qualité est garantie sur chaque vidéo.'),
+            ], 1)
+        ]),
+        F("L'agence · chiffres", ['plaque-chiffres'], 'margin-top: 56px;', enfants=[
+            chiffre("L'agence · ans", ['1', '3'], '13', 'ans de vidéo pour les entreprises'),
+            chiffre("L'agence · entreprises", ['5', '0', '0', 'plus'], '500+', 'grandes entreprises équipées'),
+            chiffre("L'agence · studio", ['1'], '1', 'studio motion &amp; tournage intégré'),
+            chiffre("L'agence · plateforme", ['1'], '1', 'plateforme de production propriétaire'),
+        ]),
+    ]),
+])
+
+agence_equipe = F("L'agence · équipe", ['section'], tag='section', enfants=[
+    F("L'agence · équipe · contenu", ['conteneur'], COLONNE, enfants=[
+        entete_simple("L'agence · équipe", '00:03', "L'équipe", 'Les visages <em>derrière vos vidéos.</em>'),
+        H("L'agence · créas · titre", 'Nos créas.', 'h3', ['titre-sm']),
+        F("L'agence · créas", ['grille-equipe'], 'margin-top: 36px;', enfants=[
+            membre("L'agence créas", c, n, p) for c, n, p in [('thomas', 'Thomas', 'Directeur Artistique'), ('alex', 'Alex', 'Responsable Équipe Motion Design'), ('victor', 'Victor', 'Motion Designer'),
+                                                             ('vincent', 'Vincent', 'Cadreur'), ('marion-t', 'Marion', 'Responsable Studio'), ('sophie', 'Sophie', 'Chef de Projet')]
+        ]),
+        H("L'agence · experts · titre", 'Nos experts <b>IA.</b>', 'h3', ['titre-sm'], 'margin-top: 88px;'),
+        F("L'agence · experts", ['grille-equipe'], 'margin-top: 36px;', enfants=[
+            membre("L'agence experts", c, n, p) for c, n, p in [('ronan', 'Ronan', 'Directeur Technique'), ('marion-l', 'Marion', 'Développeuse Full-Stack'), ('ines', 'Inès', 'DevOps'),
+                                                               ('hakim', 'Hakim', 'Développeur Back-End'), ('maxime', 'Maxime', 'Product Manager Senior')]
+        ]),
+    ]),
+])
+
+agence_lieu = F("L'agence · où nous trouver", ['section', 'section-lilas'], tag='section', enfants=[
+    F("L'agence · lieu · contenu", ['conteneur', 'agence-lieu'], enfants=[
+        F("L'agence · lieu · textes", None, COLONNE, enfants=[
+            F("L'agence · lieu · repère", ['sur-titre'], enfants=[P("L'agence · lieu · timecode", '00:04', ['timecode']), P("L'agence · lieu · sur-titre", 'Où nous trouver')]),
+            H("L'agence · lieu · titre", 'Basés à Paris. <u>Partout en France.</u>', 'h2', ['titre-md'], 'margin-top: 22px;'),
+            P("L'agence · lieu · texte", 'Notre studio est à Paris. Nos équipes de tournage se déplacent dans toute la France pour filmer vos collaborateurs, vos événements et vos produits.', ['texte-intro'], 'margin-top: 20px; max-width: 560px;'),
+        ]),
+        F("L'agence · confiance", ['carte-verre', 'agence-confiance'], enfants=[
+            P("L'agence · confiance · label", 'Vos données, protégées', ['label', 'label-violet']),
+            badges("L'agence", None, clair=True),
+            P("L'agence · confiance · texte", "[À compléter : où sont hébergées les données, quels outils d'IA, comment ils sont sécurisés.]", ['texte-petit']),
+        ]),
+    ]),
+])
+
 PAGES = [
     ('Réalisations', [('p-rea-1-haut', 'Haut de page', rea_haut), ('p-rea-2-liste', 'Liste', rea_liste)]),
     ('Témoignages', [('p-tem-1-haut', 'Haut de page', tem_haut), ('p-tem-2-liste', 'Liste', tem_liste)]),
@@ -1183,6 +1540,13 @@ PAGES = [
     ('Guides', [('p-guides-1-haut', 'Haut de page', guides_haut), ('p-guides-2-liste', 'Liste', guides_liste)]),
     ('Webinars', [('p-webinars-1-haut', 'Haut de page', webinars_haut), ('p-webinars-2-liste', 'Liste', webinars_liste)]),
     ('Replays', [('p-replays-1-haut', 'Haut de page', replays_haut), ('p-replays-2-liste', 'Liste', replays_liste)]),
+    ('Offres', [('p-offres-1-haut', 'Haut de page', offres_haut), ('p-offres-2-formules', '00:01 Les formules', offres_tableau),
+                ('p-offres-3-tournage', '00:02 Création + Tournage', offres_ajout), ('p-offres-4-ensuite', '00:03 Et ensuite', offres_ensuite),
+                ('p-offres-5-faq', "00:04 FAQ de l'abonnement", offres_faq)]),
+    ("L'agence", [('p-agence-1-haut', 'Haut de page', agence_haut), ('p-agence-2-histoire', '00:01 Notre histoire', agence_histoire),
+                  ('p-agence-3-convictions', '00:02 Nos convictions', agence_convictions), ('p-agence-4-equipe', "00:03 L'équipe", agence_equipe),
+                  ('p-agence-5-lieu', '00:04 Où nous trouver', agence_lieu)]),
+    ('Contact', [('p-contact-1-echange', "L'échange et le calendrier", contact_haut), ('p-contact-2-faq', "FAQ de l'échange", contact_faq)]),
 ]
 
 

@@ -1,0 +1,137 @@
+{
+ "cle": "p-offres-5-faq",
+ "titre": "Rolling · Offres · 00:04 FAQ de l'abonnement",
+ "type": "e-flexbox",
+ "composition": {
+  "xml_structure": "<e-flexbox configuration-id=\"Offres · FAQ\"><e-flexbox configuration-id=\"Offres · FAQ · contenu\"><e-flexbox configuration-id=\"Offres · FAQ · en-tête\"><e-flexbox configuration-id=\"Offres · FAQ · repère\"><e-paragraph configuration-id=\"Offres · FAQ · timecode\"></e-paragraph><e-paragraph configuration-id=\"Offres · FAQ · sur-titre\"></e-paragraph></e-flexbox><e-heading configuration-id=\"Offres · FAQ · titre\"></e-heading></e-flexbox><e-flexbox configuration-id=\"Offres · FAQ · questions\"><e-flexbox configuration-id=\"Offres · FAQ · question 1\"><e-heading configuration-id=\"Offres · FAQ · question 1 · titre\"></e-heading><e-paragraph configuration-id=\"Offres · FAQ · question 1 · réponse\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Offres · FAQ · question 2\"><e-heading configuration-id=\"Offres · FAQ · question 2 · titre\"></e-heading><e-paragraph configuration-id=\"Offres · FAQ · question 2 · réponse\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Offres · FAQ · question 3\"><e-heading configuration-id=\"Offres · FAQ · question 3 · titre\"></e-heading><e-paragraph configuration-id=\"Offres · FAQ · question 3 · réponse\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Offres · FAQ · question 4\"><e-heading configuration-id=\"Offres · FAQ · question 4 · titre\"></e-heading><e-paragraph configuration-id=\"Offres · FAQ · question 4 · réponse\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Offres · FAQ · question 5\"><e-heading configuration-id=\"Offres · FAQ · question 5 · titre\"></e-heading><e-paragraph configuration-id=\"Offres · FAQ · question 5 · réponse\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox></e-flexbox>",
+  "element_config": {
+   "Offres · FAQ": {
+    "tag": "section"
+   },
+   "Offres · FAQ · timecode": {
+    "paragraph": "00:04"
+   },
+   "Offres · FAQ · sur-titre": {
+    "paragraph": "L'abonnement"
+   },
+   "Offres · FAQ · titre": {
+    "tag": "h2",
+    "title": "Vos questions <em>sur l’abonnement.</em>"
+   },
+   "Offres · FAQ · question 1 · titre": {
+    "tag": "h3",
+    "title": "Combien de projets pouvons-nous lancer&nbsp;?"
+   },
+   "Offres · FAQ · question 1 · réponse": {
+    "paragraph": "Autant que vous voulez, en illimité. Nous traitons un projet à fond à la fois : nous le livrons, puis nous enchaînons sur le suivant."
+   },
+   "Offres · FAQ · question 2 · titre": {
+    "tag": "h3",
+    "title": "Quel délai pour une vidéo&nbsp;?"
+   },
+   "Offres · FAQ · question 2 · réponse": {
+    "paragraph": "[Réponse à fournir : délai moyen entre le brief et la livraison.]"
+   },
+   "Offres · FAQ · question 3 · titre": {
+    "tag": "h3",
+    "title": "L'abonnement nous engage-t-il pour un an&nbsp;?"
+   },
+   "Offres · FAQ · question 3 · réponse": {
+    "paragraph": "[Réponse à fournir : durée d'engagement, reconduction, résiliation.]"
+   },
+   "Offres · FAQ · question 4 · titre": {
+    "tag": "h3",
+    "title": "Comment se passe le paiement&nbsp;?"
+   },
+   "Offres · FAQ · question 4 · réponse": {
+    "paragraph": "[Réponse à fournir : paiement mensuel ou annuel, facturation.]"
+   },
+   "Offres · FAQ · question 5 · titre": {
+    "tag": "h3",
+    "title": "Pouvons-nous changer de formule en cours d'année&nbsp;?"
+   },
+   "Offres · FAQ · question 5 · réponse": {
+    "paragraph": "[Réponse à fournir.]"
+   }
+  },
+  "classes": {
+   "Offres · FAQ": [
+    "section",
+    "section-suite"
+   ],
+   "Offres · FAQ · contenu": [
+    "conteneur",
+    "conteneur-etroit"
+   ],
+   "Offres · FAQ · en-tête": [
+    "entete-section"
+   ],
+   "Offres · FAQ · repère": [
+    "sur-titre"
+   ],
+   "Offres · FAQ · timecode": [
+    "timecode"
+   ],
+   "Offres · FAQ · titre": [
+    "titre-md"
+   ],
+   "Offres · FAQ · questions": [
+    "liste-questions"
+   ],
+   "Offres · FAQ · question 1": [
+    "carte-verre",
+    "carte-question"
+   ],
+   "Offres · FAQ · question 1 · titre": [
+    "titre-question"
+   ],
+   "Offres · FAQ · question 1 · réponse": [
+    "texte"
+   ],
+   "Offres · FAQ · question 2": [
+    "carte-verre",
+    "carte-question"
+   ],
+   "Offres · FAQ · question 2 · titre": [
+    "titre-question"
+   ],
+   "Offres · FAQ · question 2 · réponse": [
+    "texte"
+   ],
+   "Offres · FAQ · question 3": [
+    "carte-verre",
+    "carte-question"
+   ],
+   "Offres · FAQ · question 3 · titre": [
+    "titre-question"
+   ],
+   "Offres · FAQ · question 3 · réponse": [
+    "texte"
+   ],
+   "Offres · FAQ · question 4": [
+    "carte-verre",
+    "carte-question"
+   ],
+   "Offres · FAQ · question 4 · titre": [
+    "titre-question"
+   ],
+   "Offres · FAQ · question 4 · réponse": [
+    "texte"
+   ],
+   "Offres · FAQ · question 5": [
+    "carte-verre",
+    "carte-question"
+   ],
+   "Offres · FAQ · question 5 · titre": [
+    "titre-question"
+   ],
+   "Offres · FAQ · question 5 · réponse": [
+    "texte"
+   ]
+  },
+  "style": {
+   "Offres · FAQ · contenu": "display: flex; flex-direction: column; gap: 0;"
+  }
+ },
+ "brut": {}
+}

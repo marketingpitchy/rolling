@@ -1,0 +1,265 @@
+{
+ "cle": "p-agence-3-convictions",
+ "titre": "Rolling · L'agence · 00:02 Nos convictions",
+ "type": "e-flexbox",
+ "composition": {
+  "xml_structure": "<e-flexbox configuration-id=\"L'agence · convictions\"><e-flexbox configuration-id=\"L'agence · convictions · contenu\"><e-flexbox configuration-id=\"L'agence · convictions · en-tête\"><e-flexbox configuration-id=\"L'agence · convictions · repère\"><e-paragraph configuration-id=\"L'agence · convictions · timecode\"></e-paragraph><e-paragraph configuration-id=\"L'agence · convictions · sur-titre\"></e-paragraph></e-flexbox><e-heading configuration-id=\"L'agence · convictions · titre\"></e-heading></e-flexbox><e-flexbox configuration-id=\"L'agence · convictions · cartes\"><e-flexbox configuration-id=\"L'agence · conviction 1\"><e-heading configuration-id=\"L'agence · conviction 1 · titre\"></e-heading><e-paragraph configuration-id=\"L'agence · conviction 1 · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"L'agence · conviction 2\"><e-heading configuration-id=\"L'agence · conviction 2 · titre\"></e-heading><e-paragraph configuration-id=\"L'agence · conviction 2 · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"L'agence · conviction 3\"><e-heading configuration-id=\"L'agence · conviction 3 · titre\"></e-heading><e-paragraph configuration-id=\"L'agence · conviction 3 · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"L'agence · conviction 4\"><e-heading configuration-id=\"L'agence · conviction 4 · titre\"></e-heading><e-paragraph configuration-id=\"L'agence · conviction 4 · texte\"></e-paragraph></e-flexbox></e-flexbox><e-flexbox configuration-id=\"L'agence · chiffres\"><e-flexbox configuration-id=\"Chiffre · L'agence · ans\"><e-flexbox configuration-id=\"L'agence · ans · nombre\"><e-image configuration-id=\"L'agence · ans · chiffre 1\"></e-image><e-image configuration-id=\"L'agence · ans · chiffre 2\"></e-image><e-paragraph configuration-id=\"L'agence · ans · valeur lue\"></e-paragraph></e-flexbox><e-paragraph configuration-id=\"L'agence · ans · libellé\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Chiffre · L'agence · entreprises\"><e-flexbox configuration-id=\"L'agence · entreprises · nombre\"><e-image configuration-id=\"L'agence · entreprises · chiffre 1\"></e-image><e-image configuration-id=\"L'agence · entreprises · chiffre 2\"></e-image><e-image configuration-id=\"L'agence · entreprises · chiffre 3\"></e-image><e-image configuration-id=\"L'agence · entreprises · chiffre 4\"></e-image><e-paragraph configuration-id=\"L'agence · entreprises · valeur lue\"></e-paragraph></e-flexbox><e-paragraph configuration-id=\"L'agence · entreprises · libellé\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Chiffre · L'agence · studio\"><e-flexbox configuration-id=\"L'agence · studio · nombre\"><e-image configuration-id=\"L'agence · studio · chiffre 1\"></e-image><e-paragraph configuration-id=\"L'agence · studio · valeur lue\"></e-paragraph></e-flexbox><e-paragraph configuration-id=\"L'agence · studio · libellé\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Chiffre · L'agence · plateforme\"><e-flexbox configuration-id=\"L'agence · plateforme · nombre\"><e-image configuration-id=\"L'agence · plateforme · chiffre 1\"></e-image><e-paragraph configuration-id=\"L'agence · plateforme · valeur lue\"></e-paragraph></e-flexbox><e-paragraph configuration-id=\"L'agence · plateforme · libellé\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox></e-flexbox>",
+  "element_config": {
+   "L'agence · convictions": {
+    "tag": "section"
+   },
+   "L'agence · convictions · timecode": {
+    "paragraph": "00:02"
+   },
+   "L'agence · convictions · sur-titre": {
+    "paragraph": "Nos convictions"
+   },
+   "L'agence · convictions · titre": {
+    "tag": "h2",
+    "title": "Ce qui ne change pas, <u>vidéo après vidéo.</u>"
+   },
+   "L'agence · conviction 1": {
+    "tag": "article"
+   },
+   "L'agence · conviction 1 · titre": {
+    "tag": "h3",
+    "title": "Le meilleur de l'humain et de l'IA."
+   },
+   "L'agence · conviction 1 · texte": {
+    "paragraph": "Notre IA Factory accélère tout ce qui peut l'être : pistes créatives, voix off, sous-titres, traductions, déclinaisons. Nos créas gardent la direction artistique, l'animation à la main et la validation finale."
+   },
+   "L'agence · conviction 2": {
+    "tag": "article"
+   },
+   "L'agence · conviction 2 · titre": {
+    "tag": "h3",
+    "title": "Un prix fixe, en illimité."
+   },
+   "L'agence · conviction 2 · texte": {
+    "paragraph": "Pas de devis à chaque vidéo. Un abonnement, et vos contenus deviennent des vidéos, un projet après l'autre, sans compter."
+   },
+   "L'agence · conviction 3": {
+    "tag": "article"
+   },
+   "L'agence · conviction 3 · titre": {
+    "tag": "h3",
+    "title": "Une équipe dédiée."
+   },
+   "L'agence · conviction 3 · texte": {
+    "paragraph": "Un directeur artistique et un chef de projet qui connaissent vos enjeux, votre charte et vos équipes. Toujours les mêmes interlocuteurs."
+   },
+   "L'agence · conviction 4": {
+    "tag": "article"
+   },
+   "L'agence · conviction 4 · titre": {
+    "tag": "h3",
+    "title": "Le regard final, toujours humain."
+   },
+   "L'agence · conviction 4 · texte": {
+    "paragraph": "Chaque vidéo est relue et validée par nos équipes avant de vous être livrée. La qualité est garantie sur chaque vidéo."
+   },
+   "L'agence · ans · chiffre 1": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/chiffre-1.webp"
+     },
+     "size": "medium"
+    }
+   },
+   "L'agence · ans · chiffre 2": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/chiffre-3.webp"
+     },
+     "size": "medium"
+    }
+   },
+   "L'agence · ans · valeur lue": {
+    "paragraph": "13"
+   },
+   "L'agence · ans · libellé": {
+    "paragraph": "ans de vidéo pour les entreprises"
+   },
+   "L'agence · entreprises · chiffre 1": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/chiffre-5.webp"
+     },
+     "size": "medium"
+    }
+   },
+   "L'agence · entreprises · chiffre 2": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/chiffre-0.webp"
+     },
+     "size": "medium"
+    }
+   },
+   "L'agence · entreprises · chiffre 3": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/chiffre-0.webp"
+     },
+     "size": "medium"
+    }
+   },
+   "L'agence · entreprises · chiffre 4": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/chiffre-plus.webp"
+     },
+     "size": "medium"
+    }
+   },
+   "L'agence · entreprises · valeur lue": {
+    "paragraph": "500+"
+   },
+   "L'agence · entreprises · libellé": {
+    "paragraph": "grandes entreprises équipées"
+   },
+   "L'agence · studio · chiffre 1": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/chiffre-1.webp"
+     },
+     "size": "medium"
+    }
+   },
+   "L'agence · studio · valeur lue": {
+    "paragraph": "1"
+   },
+   "L'agence · studio · libellé": {
+    "paragraph": "studio motion &amp; tournage intégré"
+   },
+   "L'agence · plateforme · chiffre 1": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/chiffre-1.webp"
+     },
+     "size": "medium"
+    }
+   },
+   "L'agence · plateforme · valeur lue": {
+    "paragraph": "1"
+   },
+   "L'agence · plateforme · libellé": {
+    "paragraph": "plateforme de production propriétaire"
+   }
+  },
+  "classes": {
+   "L'agence · convictions": [
+    "section",
+    "section-chaude"
+   ],
+   "L'agence · convictions · contenu": [
+    "conteneur"
+   ],
+   "L'agence · convictions · en-tête": [
+    "entete-section"
+   ],
+   "L'agence · convictions · repère": [
+    "sur-titre"
+   ],
+   "L'agence · convictions · timecode": [
+    "timecode"
+   ],
+   "L'agence · convictions · titre": [
+    "titre-md"
+   ],
+   "L'agence · convictions · cartes": [
+    "grille-2"
+   ],
+   "L'agence · conviction 1": [
+    "carte-verre",
+    "conviction"
+   ],
+   "L'agence · conviction 1 · titre": [
+    "titre-xs",
+    "titre-point",
+    "titre-point-bleu"
+   ],
+   "L'agence · conviction 1 · texte": [
+    "texte"
+   ],
+   "L'agence · conviction 2": [
+    "carte-verre",
+    "conviction"
+   ],
+   "L'agence · conviction 2 · titre": [
+    "titre-xs",
+    "titre-point"
+   ],
+   "L'agence · conviction 2 · texte": [
+    "texte"
+   ],
+   "L'agence · conviction 3": [
+    "carte-verre",
+    "conviction"
+   ],
+   "L'agence · conviction 3 · titre": [
+    "titre-xs",
+    "titre-point"
+   ],
+   "L'agence · conviction 3 · texte": [
+    "texte"
+   ],
+   "L'agence · conviction 4": [
+    "carte-verre",
+    "conviction"
+   ],
+   "L'agence · conviction 4 · titre": [
+    "titre-xs",
+    "titre-point",
+    "titre-point-bleu"
+   ],
+   "L'agence · conviction 4 · texte": [
+    "texte"
+   ],
+   "L'agence · chiffres": [
+    "plaque-chiffres"
+   ],
+   "L'agence · ans · nombre": [
+    "chiffre-verre"
+   ],
+   "L'agence · ans · valeur lue": [
+    "texte-masque"
+   ],
+   "L'agence · ans · libellé": [
+    "libelle-chiffre"
+   ],
+   "L'agence · entreprises · nombre": [
+    "chiffre-verre"
+   ],
+   "L'agence · entreprises · valeur lue": [
+    "texte-masque"
+   ],
+   "L'agence · entreprises · libellé": [
+    "libelle-chiffre"
+   ],
+   "L'agence · studio · nombre": [
+    "chiffre-verre"
+   ],
+   "L'agence · studio · valeur lue": [
+    "texte-masque"
+   ],
+   "L'agence · studio · libellé": [
+    "libelle-chiffre"
+   ],
+   "L'agence · plateforme · nombre": [
+    "chiffre-verre"
+   ],
+   "L'agence · plateforme · valeur lue": [
+    "texte-masque"
+   ],
+   "L'agence · plateforme · libellé": [
+    "libelle-chiffre"
+   ]
+  },
+  "style": {
+   "L'agence · convictions · contenu": "display: flex; flex-direction: column; gap: 0;",
+   "L'agence · chiffres": "margin-top: 56px;"
+  }
+ },
+ "brut": {}
+}

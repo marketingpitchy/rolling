@@ -1,0 +1,126 @@
+{
+ "cle": "p-agence-5-lieu",
+ "titre": "Rolling · L'agence · 00:04 Où nous trouver",
+ "type": "e-flexbox",
+ "composition": {
+  "xml_structure": "<e-flexbox configuration-id=\"L'agence · où nous trouver\"><e-flexbox configuration-id=\"L'agence · lieu · contenu\"><e-flexbox configuration-id=\"L'agence · lieu · textes\"><e-flexbox configuration-id=\"L'agence · lieu · repère\"><e-paragraph configuration-id=\"L'agence · lieu · timecode\"></e-paragraph><e-paragraph configuration-id=\"L'agence · lieu · sur-titre\"></e-paragraph></e-flexbox><e-heading configuration-id=\"L'agence · lieu · titre\"></e-heading><e-paragraph configuration-id=\"L'agence · lieu · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"L'agence · confiance\"><e-paragraph configuration-id=\"L'agence · confiance · label\"></e-paragraph><e-flexbox configuration-id=\"L'agence · badges\"><e-flexbox configuration-id=\"L'agence · badge · IA sécurisée\"><e-image configuration-id=\"L'agence · badge · IA sécurisée · icône\"></e-image><e-paragraph configuration-id=\"L'agence · badge · IA sécurisée · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"L'agence · badge · Données hébergées en Europe\"><e-image configuration-id=\"L'agence · badge · Données hébergées en Europe · icône\"></e-image><e-paragraph configuration-id=\"L'agence · badge · Données hébergées en Europe · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"L'agence · badge · Conforme RGPD\"><e-image configuration-id=\"L'agence · badge · Conforme RGPD · icône\"></e-image><e-paragraph configuration-id=\"L'agence · badge · Conforme RGPD · texte\"></e-paragraph></e-flexbox></e-flexbox><e-paragraph configuration-id=\"L'agence · confiance · texte\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox>",
+  "element_config": {
+   "L'agence · où nous trouver": {
+    "tag": "section"
+   },
+   "L'agence · lieu · timecode": {
+    "paragraph": "00:04"
+   },
+   "L'agence · lieu · sur-titre": {
+    "paragraph": "Où nous trouver"
+   },
+   "L'agence · lieu · titre": {
+    "tag": "h2",
+    "title": "Basés à Paris. <u>Partout en France.</u>"
+   },
+   "L'agence · lieu · texte": {
+    "paragraph": "Notre studio est à Paris. Nos équipes de tournage se déplacent dans toute la France pour filmer vos collaborateurs, vos événements et vos produits."
+   },
+   "L'agence · confiance · label": {
+    "paragraph": "Vos données, protégées"
+   },
+   "L'agence · badge · IA sécurisée · icône": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/badge-securite.webp"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "L'agence · badge · IA sécurisée · texte": {
+    "paragraph": "IA sécurisée"
+   },
+   "L'agence · badge · Données hébergées en Europe · icône": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/badge-europe.webp"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "L'agence · badge · Données hébergées en Europe · texte": {
+    "paragraph": "Données hébergées en Europe"
+   },
+   "L'agence · badge · Conforme RGPD · icône": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/badge-rgpd.webp"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "L'agence · badge · Conforme RGPD · texte": {
+    "paragraph": "Conforme RGPD"
+   },
+   "L'agence · confiance · texte": {
+    "paragraph": "[À compléter : où sont hébergées les données, quels outils d'IA, comment ils sont sécurisés.]"
+   }
+  },
+  "classes": {
+   "L'agence · où nous trouver": [
+    "section",
+    "section-lilas"
+   ],
+   "L'agence · lieu · contenu": [
+    "conteneur",
+    "agence-lieu"
+   ],
+   "L'agence · lieu · repère": [
+    "sur-titre"
+   ],
+   "L'agence · lieu · timecode": [
+    "timecode"
+   ],
+   "L'agence · lieu · titre": [
+    "titre-md"
+   ],
+   "L'agence · lieu · texte": [
+    "texte-intro"
+   ],
+   "L'agence · confiance": [
+    "carte-verre",
+    "agence-confiance"
+   ],
+   "L'agence · confiance · label": [
+    "label",
+    "label-violet"
+   ],
+   "L'agence · badges": [
+    "rangee",
+    "badges-clairs"
+   ],
+   "L'agence · badge · IA sécurisée": [
+    "badge-securite"
+   ],
+   "L'agence · badge · IA sécurisée · icône": [
+    "icone-badge"
+   ],
+   "L'agence · badge · Données hébergées en Europe": [
+    "badge-securite"
+   ],
+   "L'agence · badge · Données hébergées en Europe · icône": [
+    "icone-badge"
+   ],
+   "L'agence · badge · Conforme RGPD": [
+    "badge-securite"
+   ],
+   "L'agence · badge · Conforme RGPD · icône": [
+    "icone-badge"
+   ],
+   "L'agence · confiance · texte": [
+    "texte-petit"
+   ]
+  },
+  "style": {
+   "L'agence · lieu · textes": "display: flex; flex-direction: column; gap: 0;",
+   "L'agence · lieu · titre": "margin-top: 22px;",
+   "L'agence · lieu · texte": "margin-top: 20px; max-width: 560px;"
+  }
+ },
+ "brut": {}
+}

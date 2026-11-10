@@ -400,6 +400,21 @@
 		} );
 	} );
 
+	/* Frise de montage et clap : la tête de lecture avance, la barre du clap se ferme quand ils apparaissent (tout de suite dans l'éditeur ou sans animation) */
+	document.querySelectorAll( '.montage, .clap' ).forEach( function ( frise ) {
+		if ( editeur || calme || ! ( 'IntersectionObserver' in window ) ) {
+			frise.classList.add( 'vu' );
+			return;
+		}
+		var vue = new IntersectionObserver( function ( entrees ) {
+			if ( entrees[ 0 ].isIntersecting ) {
+				frise.classList.add( 'vu' );
+				vue.disconnect();
+			}
+		}, { threshold: 0.4 } );
+		vue.observe( frise );
+	} );
+
 	/* Lien « Copier le lien » (#rl-copier, élément Elementor) : partage du téléphone, sinon copie dans le presse-papiers */
 	document.addEventListener( 'click', function ( e ) {
 		var lien = e.target.closest ? e.target.closest( 'a[href$="#rl-copier"]' ) : null, url = window.location.href.split( '#' )[ 0 ];

@@ -1,0 +1,13 @@
+{
+ "cle": "pc-offres",
+ "titre": "Rolling · Page complète (Offres)",
+ "type": "page",
+ "assemble": [
+  "p-offres-1-haut",
+  "p-offres-2-formules",
+  "p-offres-3-tournage",
+  "p-offres-4-ensuite",
+  "p-offres-5-faq",
+  "13-final"
+ ]
+}
