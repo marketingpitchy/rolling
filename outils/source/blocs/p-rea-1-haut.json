@@ -1,0 +1,56 @@
+{
+ "cle": "p-rea-1-haut",
+ "titre": "Rolling · Réalisations · Haut de page",
+ "type": "e-flexbox",
+ "composition": {
+  "xml_structure": "<e-flexbox configuration-id=\"Réalisations · haut\"><e-flexbox configuration-id=\"Réalisations · haut · contenu\"><e-paragraph configuration-id=\"Réalisations · haut · annotation\"></e-paragraph><e-flexbox configuration-id=\"Réalisations · haut · pastille\"><e-paragraph configuration-id=\"Réalisations · haut · pastille · texte\"></e-paragraph></e-flexbox><e-heading configuration-id=\"Réalisations · haut · titre\"></e-heading><e-paragraph configuration-id=\"Réalisations · haut · introduction\"></e-paragraph></e-flexbox></e-flexbox>",
+  "element_config": {
+   "Réalisations · haut": {
+    "tag": "section"
+   },
+   "Réalisations · haut · annotation": {
+    "paragraph": "ce que nous faisons, en vrai"
+   },
+   "Réalisations · haut · pastille · texte": {
+    "paragraph": "Réalisations"
+   },
+   "Réalisations · haut · titre": {
+    "tag": "h1",
+    "title": "Nos réalisations, <em>du contenu à la vidéo.</em>"
+   },
+   "Réalisations · haut · introduction": {
+    "paragraph": "Articles, modules de formation, événements, lancements : voici ce que nos clients nous ont confié, et ce que notre <strong>agence vidéo</strong> en a fait. Chaque vidéo indique son contenu de départ."
+   }
+  },
+  "classes": {
+   "Réalisations · haut": [
+    "section",
+    "section-entete",
+    "entete-page",
+    "halos-haut"
+   ],
+   "Réalisations · haut · contenu": [
+    "conteneur"
+   ],
+   "Réalisations · haut · annotation": [
+    "note-main"
+   ],
+   "Réalisations · haut · pastille": [
+    "pastille"
+   ],
+   "Réalisations · haut · titre": [
+    "titre-lg"
+   ],
+   "Réalisations · haut · introduction": [
+    "texte-intro"
+   ]
+  },
+  "style": {
+   "Réalisations · haut · contenu": "display: flex; flex-direction: column; gap: 0;",
+   "Réalisations · haut · annotation": "position: absolute; top: 10px; right: 60px;",
+   "Réalisations · haut · titre": "margin-top: 26px; max-width: 880px;",
+   "Réalisations · haut · introduction": "margin-top: 22px; max-width: 680px;"
+  }
+ },
+ "brut": {}
+}

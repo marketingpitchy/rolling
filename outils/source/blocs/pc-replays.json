@@ -1,0 +1,10 @@
+{
+ "cle": "pc-replays",
+ "titre": "Rolling · Page complète (Replays)",
+ "type": "page",
+ "assemble": [
+  "p-replays-1-haut",
+  "p-replays-2-liste",
+  "13-final"
+ ]
+}

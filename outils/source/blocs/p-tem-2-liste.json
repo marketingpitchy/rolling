@@ -1,0 +1,29 @@
+{
+ "cle": "p-tem-2-liste",
+ "titre": "Rolling · Témoignages · Liste",
+ "type": "e-flexbox",
+ "composition": {
+  "xml_structure": "<e-flexbox configuration-id=\"Témoignages · liste\"><e-flexbox configuration-id=\"Témoignages · liste · contenu\"><e-paragraph configuration-id=\"Témoignages · cartes\"></e-paragraph></e-flexbox></e-flexbox>",
+  "element_config": {
+   "Témoignages · liste": {
+    "tag": "section"
+   },
+   "Témoignages · cartes": {
+    "paragraph": "⟦widget:rolling-liste|contenu=temoignages|classe=mur-temoins|filtres=rolling_metier|tous=Tous|nombre=12|plus=yes|plus_texte=Voir plus de témoignages⟧"
+   }
+  },
+  "classes": {
+   "Témoignages · liste": [
+    "section",
+    "section-suite"
+   ],
+   "Témoignages · liste · contenu": [
+    "conteneur"
+   ]
+  },
+  "style": {
+   "Témoignages · liste · contenu": "display: flex; flex-direction: column; gap: 0; gap: 48px;"
+  }
+ },
+ "brut": {}
+}

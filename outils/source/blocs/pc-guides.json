@@ -1,0 +1,10 @@
+{
+ "cle": "pc-guides",
+ "titre": "Rolling · Page complète (Guides)",
+ "type": "page",
+ "assemble": [
+  "p-guides-1-haut",
+  "p-guides-2-liste",
+  "13-final"
+ ]
+}

@@ -1,0 +1,51 @@
+{
+ "cle": "p-rea-2-liste",
+ "titre": "Rolling · Réalisations · Liste",
+ "type": "e-flexbox",
+ "composition": {
+  "xml_structure": "<e-flexbox configuration-id=\"Réalisations · liste\"><e-flexbox configuration-id=\"Réalisations · liste · contenu\"><e-paragraph configuration-id=\"Réalisations · cartes\"></e-paragraph><e-flexbox configuration-id=\"Réalisations · appel\"><e-paragraph configuration-id=\"Réalisations · appel · texte\"></e-paragraph><e-button configuration-id=\"Réalisations · appel · bouton\"></e-button></e-flexbox></e-flexbox></e-flexbox>",
+  "element_config": {
+   "Réalisations · liste": {
+    "tag": "section"
+   },
+   "Réalisations · cartes": {
+    "paragraph": "⟦widget:rolling-liste|contenu=realisations|classe=grille-3|filtres=both|tous=Toutes|plus=yes|plus_texte=Réalisations suivantes⟧"
+   },
+   "Réalisations · appel · texte": {
+    "paragraph": "Et avec vos contenus, <em>ça donnerait quoi&nbsp;?</em>"
+   },
+   "Réalisations · appel · bouton": {
+    "text": "Réserver un échange",
+    "link": {
+     "destination": "/contact/"
+    }
+   }
+  },
+  "classes": {
+   "Réalisations · liste": [
+    "section",
+    "section-suite"
+   ],
+   "Réalisations · liste · contenu": [
+    "conteneur"
+   ],
+   "Réalisations · appel": [
+    "carte-verre",
+    "carte-appel",
+    "appel-centre"
+   ],
+   "Réalisations · appel · texte": [
+    "titre-xs",
+    "titre-encart"
+   ],
+   "Réalisations · appel · bouton": [
+    "bouton-principal"
+   ]
+  },
+  "style": {
+   "Réalisations · liste · contenu": "display: flex; flex-direction: column; gap: 0; gap: 48px;",
+   "Réalisations · appel": "margin-top: 24px;"
+  }
+ },
+ "brut": {}
+}

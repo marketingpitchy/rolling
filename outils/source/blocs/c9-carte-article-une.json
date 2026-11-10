@@ -1,0 +1,92 @@
+{
+ "cle": "c9-carte-article-une",
+ "titre": "Rolling · Carte article à la une",
+ "type": "e-flexbox",
+ "apercu": "post",
+ "composition": {
+  "xml_structure": "<e-flexbox configuration-id=\"Carte article à la une\"><e-flexbox configuration-id=\"Article à la une · vignette\"><e-div-block configuration-id=\"Article à la une · cadre\"><e-image configuration-id=\"Article à la une · image\"></e-image></e-div-block></e-flexbox><e-flexbox configuration-id=\"Article à la une · textes\"><e-flexbox configuration-id=\"Article à la une · infos\"><e-paragraph configuration-id=\"Article à la une · catégorie\"></e-paragraph><e-paragraph configuration-id=\"Article à la une · lecture\"></e-paragraph><e-paragraph configuration-id=\"Article à la une · date\"></e-paragraph></e-flexbox><e-heading configuration-id=\"Article à la une · titre\"></e-heading><e-paragraph configuration-id=\"Article à la une · extrait\"></e-paragraph><e-button configuration-id=\"Article à la une · bouton\"></e-button></e-flexbox></e-flexbox>",
+  "element_config": {
+   "Carte article à la une": {
+    "tag": "article"
+   },
+   "Article à la une · image": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/dynamique/rolling-image/image=une.png"
+     },
+     "size": "large"
+    }
+   },
+   "Article à la une · catégorie": {
+    "paragraph": "⟦rolling-terme|taxonomie=category⟧"
+   },
+   "Article à la une · lecture": {
+    "paragraph": "⟦rolling-article|info=lecture_c⟧"
+   },
+   "Article à la une · date": {
+    "paragraph": "⟦rolling-article|info=date⟧"
+   },
+   "Article à la une · titre": {
+    "tag": "h2",
+    "title": "⟦rolling-article|info=titre⟧",
+    "link": {
+     "destination": "⟦rolling-lien|lien=fiche⟧"
+    }
+   },
+   "Article à la une · extrait": {
+    "paragraph": "⟦rolling-article|info=extrait⟧"
+   },
+   "Article à la une · bouton": {
+    "text": "Lire l'article",
+    "link": {
+     "destination": "⟦rolling-lien|lien=fiche⟧"
+    }
+   }
+  },
+  "classes": {
+   "Carte article à la une": [
+    "carte-verre",
+    "carte-webinar-une"
+   ],
+   "Article à la une · vignette": [
+    "vignette-lien",
+    "si-image"
+   ],
+   "Article à la une · cadre": [
+    "cadre-photo",
+    "cadre-16-10"
+   ],
+   "Article à la une · image": [
+    "image-couvrante"
+   ],
+   "Article à la une · infos": [
+    "rangee"
+   ],
+   "Article à la une · catégorie": [
+    "tag-orange"
+   ],
+   "Article à la une · lecture": [
+    "texte-petit"
+   ],
+   "Article à la une · date": [
+    "texte-petit"
+   ],
+   "Article à la une · titre": [
+    "titre-sm",
+    "lien-titre"
+   ],
+   "Article à la une · extrait": [
+    "texte"
+   ],
+   "Article à la une · bouton": [
+    "bouton-principal",
+    "bouton-petit"
+   ]
+  },
+  "style": {
+   "Article à la une · vignette": "padding: 0; border-radius: 20px;",
+   "Article à la une · textes": "display: flex; flex-direction: column; gap: 0; gap: 14px; padding: 20px 0;"
+  }
+ },
+ "brut": {}
+}

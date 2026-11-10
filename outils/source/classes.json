@@ -1400,8 +1400,8 @@
     },
     {
      "label": "carte-webinar-une",
-     "description": "Prochain webinar (avec carte-verre) : image à gauche, textes à droite.",
-     "css": "display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 36px; align-items: center; padding: 12px 40px 12px 12px; @media(--tablet) { grid-template-columns: minmax(0, 1fr); padding: 12px 12px 26px; }"
+     "description": "Carte à la une (avec carte-verre) : image à gauche, textes à droite (prochain webinar, dernier article du blog) ; sans image, le texte prend toute la largeur.",
+     "css": "display: grid; grid-column: 1 / -1; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 36px; align-items: center; padding: 12px 40px 12px 12px; & > :only-child { grid-column: 1 / -1; padding-left: 28px; } @media(--tablet) { grid-template-columns: minmax(0, 1fr); padding: 12px 12px 26px; }"
     },
     {
      "label": "webinar-date",
@@ -1507,6 +1507,26 @@
      "label": "bouton-ia",
      "description": "« Résumer avec » : petit bouton-étiquette vers une IA (ChatGPT, Claude…).",
      "css": "display: inline-flex; width: fit-content; align-items: center; min-height: 36px; padding: 6px 15px; border: 0; border-radius: 999px; font-family: Hanken Grotesk; font-size: 14px; line-height: 1.2; font-weight: 600; color: #2A2840; text-decoration: none; background-color: #FFFFFF; background-image: linear-gradient(170deg, rgba(255,255,255,0.94), rgba(255,255,255,0.56)); box-shadow: inset 0 1px 0 #FFFFFF, inset 0 0 0 1px rgba(15,15,18,0.1), 0 6px 14px -10px rgba(70,40,150,0.4); &:hover { color: #5B3BEA; }"
+    },
+    {
+     "label": "carte-vide",
+     "description": "Message d'une liste vide (avec carte-verre) : centré (ex. « Pas de webinar programmé »).",
+     "css": "align-items: center; gap: 14px; padding: 48px 28px; text-align: center; @media(--mobile) { padding: 36px 22px; }"
+    },
+    {
+     "label": "entete-page",
+     "description": "Haut d'une page intérieure (avec section-entete) : plus d'air sous l'en-tête.",
+     "css": "padding: 184px 0 56px; @media(--tablet) { padding: 160px 0 48px; } @media(--mobile) { padding: 136px 0 40px; }"
+    },
+    {
+     "label": "appel-centre",
+     "description": "Bandeau d'appel (avec carte-verre et carte-appel) en grand et centré, au milieu d'une page.",
+     "css": "justify-content: center; gap: 18px 28px; padding: 48px; border-radius: 40px; text-align: center; @media(--mobile) { padding: 28px; border-radius: 32px; }"
+    },
+    {
+     "label": "titre-encart",
+     "description": "Titre d'un encart d'appel (avec titre-xs) : un peu plus grand.",
+     "css": "font-size: 28px; @media(--mobile) { font-size: 24px; }"
     },
     {
      "label": "mire",

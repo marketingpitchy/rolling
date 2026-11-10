@@ -1,0 +1,50 @@
+{
+ "cle": "p-replays-1-haut",
+ "titre": "Rolling · Replays · Haut de page",
+ "type": "e-flexbox",
+ "composition": {
+  "xml_structure": "<e-flexbox configuration-id=\"Replays · haut\"><e-flexbox configuration-id=\"Replays · haut · contenu\"><e-flexbox configuration-id=\"Replays · haut · pastille\"><e-paragraph configuration-id=\"Replays · haut · pastille · texte\"></e-paragraph></e-flexbox><e-heading configuration-id=\"Replays · haut · titre\"></e-heading><e-paragraph configuration-id=\"Replays · haut · introduction\"></e-paragraph></e-flexbox></e-flexbox>",
+  "element_config": {
+   "Replays · haut": {
+    "tag": "section"
+   },
+   "Replays · haut · pastille · texte": {
+    "paragraph": "Ressources · Replays"
+   },
+   "Replays · haut · titre": {
+    "tag": "h1",
+    "title": "Nos webinars, <em>à revoir quand vous voulez.</em>"
+   },
+   "Replays · haut · introduction": {
+    "paragraph": "Tous nos rendez-vous en direct, disponibles en replay. Choisissez un thème, regardez à votre rythme."
+   }
+  },
+  "classes": {
+   "Replays · haut": [
+    "section",
+    "section-entete",
+    "entete-page",
+    "halos-haut"
+   ],
+   "Replays · haut · contenu": [
+    "conteneur"
+   ],
+   "Replays · haut · pastille": [
+    "pastille",
+    "pastille-bleue"
+   ],
+   "Replays · haut · titre": [
+    "titre-lg"
+   ],
+   "Replays · haut · introduction": [
+    "texte-intro"
+   ]
+  },
+  "style": {
+   "Replays · haut · contenu": "display: flex; flex-direction: column; gap: 0;",
+   "Replays · haut · titre": "margin-top: 26px; max-width: 900px;",
+   "Replays · haut · introduction": "margin-top: 22px; max-width: 680px;"
+  }
+ },
+ "brut": {}
+}

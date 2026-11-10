@@ -77,6 +77,8 @@ class Rolling_Widget_Liste extends Rolling_Widget {
 				'min'         => 0,
 			)
 		);
+		$this->texte( 'titre', __( 'Titre au-dessus (affiché seulement s’il y a des cartes)', 'rolling' ), '' );
+		$this->texte( 'titre_classe', __( 'Classes du titre', 'rolling' ), 'label label-violet' );
 		$this->texte( 'classe', __( 'Classe de la grille', 'rolling' ), 'grille-3' );
 		$this->choix(
 			'carte_theme',
@@ -88,6 +90,15 @@ class Rolling_Widget_Liste extends Rolling_Widget {
 		);
 		$this->choix( 'modele', __( 'Modèle de carte', 'rolling' ), self::modeles( __( 'Carte du thème', 'rolling' ) ), '0' );
 		$this->choix( 'modele_une', __( 'Modèle de la première carte', 'rolling' ), self::modeles( __( 'Comme les autres', 'rolling' ) ), '0' );
+		$this->add_control(
+			'premiere_une',
+			array(
+				'label'       => __( 'Première carte à la une (carte du thème)', 'rolling' ),
+				'description' => __( 'Ex. : le dernier article en grand sur la page Blog.', 'rolling' ),
+				'type'        => Controls_Manager::SWITCHER,
+				'default'     => '',
+			)
+		);
 		$this->add_control(
 			'filtres',
 			array(
@@ -114,7 +125,7 @@ class Rolling_Widget_Liste extends Rolling_Widget {
 			)
 		);
 		$this->texte( 'plus_texte', __( 'Texte du bouton', 'rolling' ), __( 'Voir plus', 'rolling' ) );
-		$this->choix( 'modele_vide', __( 'Liste vide : modèle à afficher', 'rolling' ), self::modeles( __( 'Rien', 'rolling' ) ), '0' );
+		$this->choix( 'modele_vide', __( 'Liste vide : modèle à afficher', 'rolling' ), self::modeles( __( 'Celui du thème (webinars : « Pas de webinar programmé »), sinon rien', 'rolling' ) ), '0' );
 		$this->end_controls_section();
 	}
 
@@ -131,6 +142,8 @@ class Rolling_Widget_Liste extends Rolling_Widget {
 		$cles  = array(
 			'c2-carte-temoignage-une' => 'c3-carte-temoignage-une',
 			'c6-carte-webinar-une'    => 'c7-carte-webinar-une',
+			'c4-carte-article-une'    => 'c9-carte-article-une',
+			'c6-carte-webinar-vide'   => 'c10-aucun-webinar',
 		);
 		$cle   = $cles[ $cle ] ?? $cle;
 
@@ -250,14 +263,22 @@ class Rolling_Widget_Liste extends Rolling_Widget {
 			$modele_une = 'temoignages' === $r['contenu'] && $ids && ! Rolling_Contenus::valeur( 'a_la_une', $ids[0] ) ? 0 : self::modele_du_theme( $r['contenu'], '-une' );
 			$modele_une = 'webinars' === $r['contenu'] ? 0 : $modele_une;
 		}
+		if ( ! $modele_une && 'yes' === ( $r['premiere_une'] ?? '' ) ) {
+			$modele_une = self::modele_du_theme( $r['contenu'], '-une' );
+		}
 
 		$this->afficher_filtres( $r );
 
 		if ( ! $ids ) {
-			if ( (int) $r['modele_vide'] ) {
-				echo \Elementor\Plugin::$instance->frontend->get_builder_content_for_display( (int) $r['modele_vide'], false ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- HTML produit par Elementor.
+			$vide = (int) $r['modele_vide'] ? (int) $r['modele_vide'] : ( 'webinars' === $r['contenu'] && ! (int) $r['decalage'] ? self::modele_du_theme( 'webinars', '-vide' ) : 0 );
+			if ( $vide ) {
+				echo \Elementor\Plugin::$instance->frontend->get_builder_content_for_display( $vide, false ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- HTML produit par Elementor.
 			}
 			return;
+		}
+
+		if ( '' !== trim( (string) ( $r['titre'] ?? '' ) ) ) {
+			echo '<h2 class="' . esc_attr( $r['titre_classe'] ) . '">' . esc_html( $r['titre'] ) . '</h2>';
 		}
 
 		if ( ! $modele ) {

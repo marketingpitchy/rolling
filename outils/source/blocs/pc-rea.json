@@ -1,0 +1,10 @@
+{
+ "cle": "pc-rea",
+ "titre": "Rolling · Page complète (Réalisations)",
+ "type": "page",
+ "assemble": [
+  "p-rea-1-haut",
+  "p-rea-2-liste",
+  "13-final"
+ ]
+}

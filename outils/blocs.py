@@ -789,6 +789,33 @@ carte_article = F('Carte article', ['carte-liste'], tag='article', enfants=[
     H('Article · titre', DYN('rolling-article', info='titre'), 'h3', ['titre-xs', 'lien-titre'], lien=FICHE),
 ])
 
+carte_article_une = F('Carte article à la une', ['carte-verre', 'carte-webinar-une'], tag='article', enfants=[
+    F('Article à la une · vignette', ['vignette-lien', 'si-image'], 'padding: 0; border-radius: 20px;', enfants=[
+        D('Article à la une · cadre', ['cadre-photo', 'cadre-16-10'], enfants=[
+            I('Article à la une · image', DYN('rolling-image', image='une'), cls=['image-couvrante'], taille='large'),
+        ]),
+    ]),
+    F('Article à la une · textes', None, COLONNE + ' gap: 14px; padding: 20px 0;', enfants=[
+        F('Article à la une · infos', ['rangee'], enfants=[
+            P('Article à la une · catégorie', DYN('rolling-terme', taxonomie='category'), ['tag-orange']),
+            P('Article à la une · lecture', DYN('rolling-article', info='lecture_c'), ['texte-petit']),
+            P('Article à la une · date', DYN('rolling-article', info='date'), ['texte-petit']),
+        ]),
+        H('Article à la une · titre', DYN('rolling-article', info='titre'), 'h2', ['titre-sm', 'lien-titre'], lien=FICHE),
+        P('Article à la une · extrait', DYN('rolling-article', info='extrait'), ['texte']),
+        B('Article à la une · bouton', "Lire l'article", FICHE, ['bouton-principal', 'bouton-petit']),
+    ]),
+])
+
+aucun_webinar = F('Aucun webinar', ['carte-verre', 'carte-vide'], enfants=[
+    P('Aucun webinar · titre', 'Pas de webinar programmé pour le moment.', ['titre-xs']),
+    P('Aucun webinar · texte', 'Nos prochains rendez-vous arrivent bientôt. En attendant, nos webinars passés sont à revoir en replay.', ['texte'], 'max-width: 560px;'),
+    F('Aucun webinar · boutons', ['rangee'], 'justify-content: center;', enfants=[
+        B('Aucun webinar · replays', 'Voir les replays', '/replays/', ['bouton-principal', 'bouton-petit']),
+        B('Aucun webinar · échange', 'Réserver un échange', '/contact/', ['bouton-verre', 'bouton-petit']),
+    ]),
+])
+
 HUBSPOT = DYN('rolling-lien', lien='lien')
 carte_guide = F('Carte guide', ['carte-guide'], tag='article', enfants=[
     F('Guide · vignette', ['vignette-lien', 'si-image'], 'padding: 0; border-radius: 22px;', enfants=[
@@ -1077,6 +1104,88 @@ page_404 = F('Page 404', ['section', 'section-sombre', 'fond-grille', 'halo-cent
     ]),
 ])
 
+# --------------------------------------------------------------------------------------------
+# Pages (livraison 4) : un bloc par section de la maquette + « Page complète » par page.
+# --------------------------------------------------------------------------------------------
+
+def haut_page(nom, pastille, pastille_cls, titre, intro, note=None, largeur='900px'):
+    """Haut d'une page : pastille, H1 (italique = mots en dégradé), introduction, annotation manuscrite facultative."""
+    enfants = []
+    if note:
+        enfants.append(P(nom + ' · annotation', note, ['note-main'], 'position: absolute; top: 10px; right: 60px;'))
+    enfants += [
+        F(nom + ' · pastille', ['pastille'] + pastille_cls, enfants=[P(nom + ' · pastille · texte', pastille)]),
+        H(nom + ' · titre', titre, 'h1', ['titre-lg'], 'margin-top: 26px; max-width: %s;' % largeur),
+        P(nom + ' · introduction', intro, ['texte-intro'], 'margin-top: 22px; max-width: 680px;'),
+    ]
+    return F(nom, ['section', 'section-entete', 'entete-page', 'halos-haut'], tag='section', enfants=[
+        F(nom + ' · contenu', ['conteneur'], COLONNE, enfants=enfants),
+    ])
+
+
+def section_liste(nom, listes, apres=None):
+    """Section d'une liste : un ou plusieurs widgets « Rolling · Liste », puis des éléments facultatifs."""
+    return F(nom, ['section', 'section-suite'], tag='section', enfants=[
+        F(nom + ' · contenu', ['conteneur'], COLONNE + ' gap: 48px;', enfants=listes + (apres or [])),
+    ])
+
+
+def appel_milieu(nom, titre, style=None):
+    """Encart « Et avec vos contenus ? » + bouton, au milieu d'une page."""
+    return F(nom, ['carte-verre', 'carte-appel', 'appel-centre'], style, enfants=[
+        P(nom + ' · texte', titre, ['titre-xs', 'titre-encart']),
+        B(nom + ' · bouton', 'Réserver un échange', '/contact/', ['bouton-principal']),
+    ])
+
+
+rea_haut = haut_page('Réalisations · haut', 'Réalisations', [], 'Nos réalisations, <em>du contenu à la vidéo.</em>',
+                     "Articles, modules de formation, événements, lancements : voici ce que nos clients nous ont confié, et ce que notre <strong>agence vidéo</strong> en a fait. Chaque vidéo indique son contenu de départ.",
+                     note='ce que nous faisons, en vrai', largeur='880px')
+rea_liste = section_liste('Réalisations · liste', [
+    W('Réalisations · cartes', 'rolling-liste', contenu='realisations', classe='grille-3', filtres='both', tous='Toutes', plus='yes', plus_texte='Réalisations suivantes'),
+], [appel_milieu('Réalisations · appel', 'Et avec vos contenus, <em>ça donnerait quoi&nbsp;?</em>', 'margin-top: 24px;')])
+
+tem_haut = haut_page('Témoignages · haut', 'Témoignages', ['pastille-orange'], 'Ce que nos clients disent <u>de notre accompagnement.</u>',
+                     'Responsables RH, formation, communication interne ou marketing : ils nous ont confié leurs contenus. Leurs mots, tels quels.')
+tem_liste = section_liste('Témoignages · liste', [
+    W('Témoignages · cartes', 'rolling-liste', contenu='temoignages', classe='mur-temoins', filtres='rolling_metier', tous='Tous', nombre='12', plus='yes', plus_texte='Voir plus de témoignages'),
+])
+
+blog_haut = haut_page('Blog · haut', 'Le blog', ['pastille-bleue'], 'Des conseils vidéo <em>pour vos équipes.</em>',
+                      'Communication interne, RH, formation, marketing : nos méthodes pour que vos contenus soient enfin regardés.')
+blog_liste = section_liste('Blog · liste', [
+    W('Blog · cartes', 'rolling-liste', contenu='articles', classe='grille-3', filtres='category', tous='Tous les articles', nombre='10', premiere_une='yes', plus='yes', plus_texte='Articles suivants'),
+])
+
+guides_haut = haut_page('Guides · haut', 'Ressources · Guides', ['pastille-bleue'], 'Nos guides vidéo, <em>à télécharger.</em>',
+                        'Méthodes, modèles et check-lists pour faire de la vidéo votre meilleur canal. Gratuits, prêts à partager avec vos équipes.')
+guides_liste = section_liste('Guides · liste', [
+    W('Guides · cartes', 'rolling-liste', contenu='guides', classe='grille-3', filtres='rolling_theme', tous='Tous les guides', nombre='12', plus='yes', plus_texte='Voir plus de guides'),
+])
+
+webinars_haut = haut_page('Webinars · haut', 'Ressources · Webinars', ['pastille-bleue'], 'Nos webinars, <em>en direct avec nos équipes.</em>',
+                          '45 minutes pour voir des cas concrets, poser vos questions et repartir avec des idées de vidéos pour vos équipes.')
+webinars_liste = section_liste('Webinars · liste', [
+    W('Webinars · prochain', 'rolling-liste', contenu='webinars', nombre='1', classe='pile', carte_theme='une', titre='Le prochain webinar'),
+    W('Webinars · suivants', 'rolling-liste', contenu='webinars', decalage='1', nombre='12', classe='pile', titre='Les suivants'),
+])
+
+replays_haut = haut_page('Replays · haut', 'Ressources · Replays', ['pastille-bleue'], 'Nos webinars, <em>à revoir quand vous voulez.</em>',
+                         'Tous nos rendez-vous en direct, disponibles en replay. Choisissez un thème, regardez à votre rythme.')
+replays_liste = section_liste('Replays · liste', [
+    W('Replays · cartes', 'rolling-liste', contenu='replays', classe='grille-3', filtres='rolling_theme', tous='Tous les replays', nombre='12', plus='yes', plus_texte='Voir plus de replays'),
+])
+
+PAGES = [
+    ('Réalisations', [('p-rea-1-haut', 'Haut de page', rea_haut), ('p-rea-2-liste', 'Liste', rea_liste)]),
+    ('Témoignages', [('p-tem-1-haut', 'Haut de page', tem_haut), ('p-tem-2-liste', 'Liste', tem_liste)]),
+    ('Blog', [('p-blog-1-haut', 'Haut de page', blog_haut), ('p-blog-2-liste', 'Liste', blog_liste)]),
+    ('Guides', [('p-guides-1-haut', 'Haut de page', guides_haut), ('p-guides-2-liste', 'Liste', guides_liste)]),
+    ('Webinars', [('p-webinars-1-haut', 'Haut de page', webinars_haut), ('p-webinars-2-liste', 'Liste', webinars_liste)]),
+    ('Replays', [('p-replays-1-haut', 'Haut de page', replays_haut), ('p-replays-2-liste', 'Liste', replays_liste)]),
+]
+
+
 MODELES_SITE = [
     ('c1-carte-realisation', 'Rolling · Carte réalisation', carte_realisation, 'rolling_realisation'),
     ('c2-carte-temoignage', 'Rolling · Carte témoignage', carte_temoignage(), 'rolling_temoignage'),
@@ -1086,6 +1195,8 @@ MODELES_SITE = [
     ('c6-carte-webinar', 'Rolling · Carte webinar', carte_webinar, 'rolling_webinar'),
     ('c7-carte-webinar-une', 'Rolling · Carte prochain webinar', carte_webinar_une, 'rolling_webinar'),
     ('c8-carte-replay', 'Rolling · Carte replay', carte_replay, 'rolling_webinar'),
+    ('c9-carte-article-une', 'Rolling · Carte article à la une', carte_article_une, 'post'),
+    ('c10-aucun-webinar', 'Rolling · Aucun webinar programmé', aucun_webinar, ''),
     ('f1-fiche-realisation', 'Rolling · Fiche réalisation', fiche_realisation, 'rolling_realisation'),
     ('f2-fiche-temoignage', 'Rolling · Fiche témoignage', fiche_temoignage, 'rolling_temoignage'),
     ('f3-fiche-article', 'Rolling · Article de blog', fiche_article, 'post'),
@@ -1109,6 +1220,18 @@ if __name__ == '__main__':
         with open(os.path.join(dossier, cle + '.json'), 'w', encoding='utf8') as f:
             json.dump(donnees, f, ensure_ascii=False, indent=1)
         print(cle, len(donnees['composition']['xml_structure']), 'caractères de XML')
+    for page, sections in PAGES:
+        cles_page = []
+        for cle, titre, racine in sections:
+            composition, brut = composer(racine)
+            with open(os.path.join(dossier, cle + '.json'), 'w', encoding='utf8') as f:
+                json.dump({'cle': cle, 'titre': 'Rolling · %s · %s' % (page, titre), 'type': 'e-flexbox', 'composition': composition, 'brut': brut}, f, ensure_ascii=False, indent=1)
+            cles_page.append(cle)
+            print(cle, len(composition['xml_structure']), 'caractères de XML')
+        cle_pc = 'pc-' + cles_page[0].split('-')[1]
+        with open(os.path.join(dossier, cle_pc + '.json'), 'w', encoding='utf8') as f:
+            json.dump({'cle': cle_pc, 'titre': 'Rolling · Page complète (%s)' % page, 'type': 'page', 'assemble': cles_page + ['13-final']}, f, ensure_ascii=False, indent=1)
+        print(cle_pc, ':', len(cles_page) + 1, 'blocs')
     # « Page complète » : tous les blocs de l'accueil à la suite, dans un modèle de type page.
     with open(os.path.join(dossier, '99-page-complete.json'), 'w', encoding='utf8') as f:
         json.dump({'cle': '99-page-complete', 'titre': 'Rolling · Page complète (accueil)', 'type': 'page', 'assemble': cles}, f, ensure_ascii=False, indent=1)

@@ -1,0 +1,10 @@
+{
+ "cle": "pc-webinars",
+ "titre": "Rolling · Page complète (Webinars)",
+ "type": "page",
+ "assemble": [
+  "p-webinars-1-haut",
+  "p-webinars-2-liste",
+  "13-final"
+ ]
+}

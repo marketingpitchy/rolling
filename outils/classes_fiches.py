@@ -82,7 +82,7 @@ CLASSES = [
 
     # Webinars, guides, replays.
     ('carte-webinar', 'Webinar dans la liste « Les suivants » (avec carte-verre) : date, textes, bouton.', 'display: grid; grid-template-columns: 132px minmax(0, 1fr) auto; gap: 28px; align-items: center; padding: 22px 28px 22px 22px; @media(--tablet) { grid-template-columns: 96px minmax(0, 1fr); gap: 20px; & > :last-child { grid-column: 1 / -1; justify-self: start; } } @media(--mobile) { padding: 16px; }'),
-    ('carte-webinar-une', 'Prochain webinar (avec carte-verre) : image à gauche, textes à droite.', 'display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 36px; align-items: center; padding: 12px 40px 12px 12px; @media(--tablet) { grid-template-columns: minmax(0, 1fr); padding: 12px 12px 26px; }'),
+    ('carte-webinar-une', 'Carte à la une (avec carte-verre) : image à gauche, textes à droite (prochain webinar, dernier article du blog) ; sans image, le texte prend toute la largeur.', 'display: grid; grid-column: 1 / -1; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 36px; align-items: center; padding: 12px 40px 12px 12px; & > :only-child { grid-column: 1 / -1; padding-left: 28px; } @media(--tablet) { grid-template-columns: minmax(0, 1fr); padding: 12px 12px 26px; }'),
     ('webinar-date', 'Date du webinar dans un carré en dégradé (jour, mois, heure).', 'display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; min-height: 132px; padding: 0; border-radius: 22px; text-align: center; color: #FFFFFF; background: radial-gradient(120% 100% at 20% 0%, #8E4DE6 0%, #5B3BEA 55%, #3434E0 100%); box-shadow: inset 0 1px 0 rgba(255,255,255,0.35), 0 18px 34px -18px rgba(52,52,224,0.6); @media(--tablet) { min-height: 96px; }'),
     ('webinar-jour', 'Jour (grand chiffre).', 'display: block; font-family: Bricolage Grotesque; font-size: 46px; line-height: 1; font-weight: 650; letter-spacing: -0.04em; color: #FFFFFF; @media(--tablet) { font-size: 34px; }'),
     ('webinar-mois', 'Mois abrégé.', 'display: block; font-family: Hanken Grotesk; font-size: 13px; line-height: 1.3; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: #FFFFFF;'),
@@ -108,6 +108,12 @@ CLASSES = [
     ('resumer', '« Résumer avec » : rangée des liens vers les IA.', 'margin: 12px 0 0; padding: 0; list-style: none; gap: 8px;'),
     ('bouton-ia', '« Résumer avec » : petit bouton-étiquette vers une IA (ChatGPT, Claude…).',
      'display: inline-flex; width: fit-content; align-items: center; min-height: 36px; padding: 6px 15px; border: 0; border-radius: 999px; font-family: Hanken Grotesk; font-size: 14px; line-height: 1.2; font-weight: 600; color: #2A2840; text-decoration: none; background-color: #FFFFFF; background-image: linear-gradient(170deg, rgba(255,255,255,0.94), rgba(255,255,255,0.56)); box-shadow: inset 0 1px 0 #FFFFFF, inset 0 0 0 1px rgba(15,15,18,0.1), 0 6px 14px -10px rgba(70,40,150,0.4); &:hover { color: #5B3BEA; }'),
+
+    # Pages (livraison 4).
+    ('carte-vide', "Message d'une liste vide (avec carte-verre) : centré (ex. « Pas de webinar programmé »).", 'align-items: center; gap: 14px; padding: 48px 28px; text-align: center; @media(--mobile) { padding: 36px 22px; }'),
+    ('entete-page', "Haut d'une page intérieure (avec section-entete) : plus d'air sous l'en-tête.", 'padding: 184px 0 56px; @media(--tablet) { padding: 160px 0 48px; } @media(--mobile) { padding: 136px 0 40px; }'),
+    ('appel-centre', "Bandeau d'appel (avec carte-verre et carte-appel) en grand et centré, au milieu d'une page.", 'justify-content: center; gap: 18px 28px; padding: 48px; border-radius: 40px; text-align: center; @media(--mobile) { padding: 28px; border-radius: 32px; }'),
+    ('titre-encart', "Titre d'un encart d'appel (avec titre-xs) : un peu plus grand.", 'font-size: 28px; @media(--mobile) { font-size: 24px; }'),
 
     # Page 404.
     ('mire', "Mire de fin d'émission aux couleurs Rolling (page 404), avec « Signal perdu ».",

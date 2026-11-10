@@ -1,0 +1,10 @@
+{
+ "cle": "pc-tem",
+ "titre": "Rolling · Page complète (Témoignages)",
+ "type": "page",
+ "assemble": [
+  "p-tem-1-haut",
+  "p-tem-2-liste",
+  "13-final"
+ ]
+}

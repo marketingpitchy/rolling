@@ -1,0 +1,10 @@
+{
+ "cle": "pc-blog",
+ "titre": "Rolling · Page complète (Blog)",
+ "type": "page",
+ "assemble": [
+  "p-blog-1-haut",
+  "p-blog-2-liste",
+  "13-final"
+ ]
+}

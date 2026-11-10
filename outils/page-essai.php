@@ -21,13 +21,14 @@ foreach ( $cles as $cle ) {
 	$contenu = array_merge( $contenu, $doc->get_elements_data() );
 }
 
-$page = get_page_by_path( 'essai-blocs' );
+$slug = isset( $args[1] ) && $args[1] ? sanitize_title( $args[1] ) : 'essai-blocs';
+$page = get_page_by_path( $slug );
 $id   = $page ? $page->ID : wp_insert_post(
 	array(
 		'post_type'   => 'page',
 		'post_status' => 'publish',
-		'post_title'  => 'Essai des blocs',
-		'post_name'   => 'essai-blocs',
+		'post_title'  => 'Essai ' . $slug,
+		'post_name'   => $slug,
 	)
 );
 update_post_meta( $id, '_elementor_edit_mode', 'builder' );

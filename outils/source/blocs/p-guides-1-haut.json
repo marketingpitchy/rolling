@@ -1,0 +1,50 @@
+{
+ "cle": "p-guides-1-haut",
+ "titre": "Rolling · Guides · Haut de page",
+ "type": "e-flexbox",
+ "composition": {
+  "xml_structure": "<e-flexbox configuration-id=\"Guides · haut\"><e-flexbox configuration-id=\"Guides · haut · contenu\"><e-flexbox configuration-id=\"Guides · haut · pastille\"><e-paragraph configuration-id=\"Guides · haut · pastille · texte\"></e-paragraph></e-flexbox><e-heading configuration-id=\"Guides · haut · titre\"></e-heading><e-paragraph configuration-id=\"Guides · haut · introduction\"></e-paragraph></e-flexbox></e-flexbox>",
+  "element_config": {
+   "Guides · haut": {
+    "tag": "section"
+   },
+   "Guides · haut · pastille · texte": {
+    "paragraph": "Ressources · Guides"
+   },
+   "Guides · haut · titre": {
+    "tag": "h1",
+    "title": "Nos guides vidéo, <em>à télécharger.</em>"
+   },
+   "Guides · haut · introduction": {
+    "paragraph": "Méthodes, modèles et check-lists pour faire de la vidéo votre meilleur canal. Gratuits, prêts à partager avec vos équipes."
+   }
+  },
+  "classes": {
+   "Guides · haut": [
+    "section",
+    "section-entete",
+    "entete-page",
+    "halos-haut"
+   ],
+   "Guides · haut · contenu": [
+    "conteneur"
+   ],
+   "Guides · haut · pastille": [
+    "pastille",
+    "pastille-bleue"
+   ],
+   "Guides · haut · titre": [
+    "titre-lg"
+   ],
+   "Guides · haut · introduction": [
+    "texte-intro"
+   ]
+  },
+  "style": {
+   "Guides · haut · contenu": "display: flex; flex-direction: column; gap: 0;",
+   "Guides · haut · titre": "margin-top: 26px; max-width: 900px;",
+   "Guides · haut · introduction": "margin-top: 22px; max-width: 680px;"
+  }
+ },
+ "brut": {}
+}

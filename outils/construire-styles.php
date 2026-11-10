@@ -22,7 +22,9 @@ wp_set_current_user( 1 );
 $source = $args[0] ?? '/tmp/rolling/source';
 $sortie = $args[1] ?? '/tmp/rolling/data';
 
-// Les classes prioritaires (modificateurs) passent avant les classes de base.
+// Les classes prioritaires (modificateurs) passent avant les classes de base ; les « très prioritaires » modifient
+// elles-mêmes une classe prioritaire (ex. entete-page modifie section-entete) et passent avant tout.
+$tres_prioritaires = array( 'entete-page', 'appel-centre', 'titre-encart', 'carte-vide' );
 $prioritaires = array( 'logos-defilants', 'conteneur-etroit', 'label-violet', 'titre-eteint', 'bouton-petit', 'pastille-bleue', 'pastille-orange', 'titre-point-bleu', 'titre-point-encre', 'bandeau-rec', 'bandeau-clair', 'fond-grille', 'halos-haut', 'halos-bas', 'halo-centre', 'lueur-peche', 'plaque-lecteur', 'plaque-claire', 'grand-bloc', 'carte-chiffre', 'carte-question', 'portrait-petit', 'image-couvrante', 'bouton-lecture-verre', 'titre-vignette-sombre', 'section-entete', 'section-suite', 'texte-legende', 'cadre-verre-grand', 'plaque-bas', 'carte-ecran', 'tuile-logo', 'carte-constat', 'halo-lilas', 'halo-bleu', 'halo-orange', 'etiquette-rec', 'chapitre-peche', 'chapitre-colle', 'photo-chapitre', 'viseur', 'rec-droite', 'label-orange', 'carte-etape', 'carte-vignette', 'carte-ia', 'carte-humain', 'label-peche', 'portrait-sombre', 'version-cachee', 'lecture-ecran', 'carte-prix', 'carte-prix-sombre', 'carte-promesses', 'prix-degrade', 'resume-offre-sombre', 'citation', 'carte-citation', 'portrait-moyen', 'carte-appel', 'section-finale', 'titre-souligne', 'temoin', 'temoin-une', 'carte-webinar', 'carte-webinar-une', 'cas-citation', 'lien-titre', 'vignette-lien', 'video-fiche', 'cadre-16-9', 'cadre-16-10', 'cadre-4-3', 'carte-outils', 'carte-sombre' );
 
 /**
@@ -164,8 +166,11 @@ foreach ( $resultats->to_array()['errors'] ?? array() as $e ) {
 
 usort(
 	$sortie_classes,
-	function ( $a, $b ) use ( $prioritaires ) {
-		return (int) ! in_array( $a['label'], $prioritaires, true ) <=> (int) ! in_array( $b['label'], $prioritaires, true );
+	function ( $a, $b ) use ( $prioritaires, $tres_prioritaires ) {
+		$rang = function ( $label ) use ( $prioritaires, $tres_prioritaires ) {
+			return in_array( $label, $tres_prioritaires, true ) ? 0 : ( in_array( $label, $prioritaires, true ) ? 1 : 2 );
+		};
+		return $rang( $a['label'] ) <=> $rang( $b['label'] );
 	}
 );
 

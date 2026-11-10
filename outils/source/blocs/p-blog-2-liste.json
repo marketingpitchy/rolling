@@ -1,0 +1,29 @@
+{
+ "cle": "p-blog-2-liste",
+ "titre": "Rolling · Blog · Liste",
+ "type": "e-flexbox",
+ "composition": {
+  "xml_structure": "<e-flexbox configuration-id=\"Blog · liste\"><e-flexbox configuration-id=\"Blog · liste · contenu\"><e-paragraph configuration-id=\"Blog · cartes\"></e-paragraph></e-flexbox></e-flexbox>",
+  "element_config": {
+   "Blog · liste": {
+    "tag": "section"
+   },
+   "Blog · cartes": {
+    "paragraph": "⟦widget:rolling-liste|contenu=articles|classe=grille-3|filtres=category|tous=Tous les articles|nombre=10|premiere_une=yes|plus=yes|plus_texte=Articles suivants⟧"
+   }
+  },
+  "classes": {
+   "Blog · liste": [
+    "section",
+    "section-suite"
+   ],
+   "Blog · liste · contenu": [
+    "conteneur"
+   ]
+  },
+  "style": {
+   "Blog · liste · contenu": "display: flex; flex-direction: column; gap: 0; gap: 48px;"
+  }
+ },
+ "brut": {}
+}

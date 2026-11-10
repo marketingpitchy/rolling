@@ -1,0 +1,50 @@
+{
+ "cle": "p-webinars-1-haut",
+ "titre": "Rolling · Webinars · Haut de page",
+ "type": "e-flexbox",
+ "composition": {
+  "xml_structure": "<e-flexbox configuration-id=\"Webinars · haut\"><e-flexbox configuration-id=\"Webinars · haut · contenu\"><e-flexbox configuration-id=\"Webinars · haut · pastille\"><e-paragraph configuration-id=\"Webinars · haut · pastille · texte\"></e-paragraph></e-flexbox><e-heading configuration-id=\"Webinars · haut · titre\"></e-heading><e-paragraph configuration-id=\"Webinars · haut · introduction\"></e-paragraph></e-flexbox></e-flexbox>",
+  "element_config": {
+   "Webinars · haut": {
+    "tag": "section"
+   },
+   "Webinars · haut · pastille · texte": {
+    "paragraph": "Ressources · Webinars"
+   },
+   "Webinars · haut · titre": {
+    "tag": "h1",
+    "title": "Nos webinars, <em>en direct avec nos équipes.</em>"
+   },
+   "Webinars · haut · introduction": {
+    "paragraph": "45 minutes pour voir des cas concrets, poser vos questions et repartir avec des idées de vidéos pour vos équipes."
+   }
+  },
+  "classes": {
+   "Webinars · haut": [
+    "section",
+    "section-entete",
+    "entete-page",
+    "halos-haut"
+   ],
+   "Webinars · haut · contenu": [
+    "conteneur"
+   ],
+   "Webinars · haut · pastille": [
+    "pastille",
+    "pastille-bleue"
+   ],
+   "Webinars · haut · titre": [
+    "titre-lg"
+   ],
+   "Webinars · haut · introduction": [
+    "texte-intro"
+   ]
+  },
+  "style": {
+   "Webinars · haut · contenu": "display: flex; flex-direction: column; gap: 0;",
+   "Webinars · haut · titre": "margin-top: 26px; max-width: 900px;",
+   "Webinars · haut · introduction": "margin-top: 22px; max-width: 680px;"
+  }
+ },
+ "brut": {}
+}

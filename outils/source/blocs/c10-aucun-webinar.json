@@ -1,0 +1,57 @@
+{
+ "cle": "c10-aucun-webinar",
+ "titre": "Rolling · Aucun webinar programmé",
+ "type": "e-flexbox",
+ "apercu": "",
+ "composition": {
+  "xml_structure": "<e-flexbox configuration-id=\"Aucun webinar\"><e-paragraph configuration-id=\"Aucun webinar · titre\"></e-paragraph><e-paragraph configuration-id=\"Aucun webinar · texte\"></e-paragraph><e-flexbox configuration-id=\"Aucun webinar · boutons\"><e-button configuration-id=\"Aucun webinar · replays\"></e-button><e-button configuration-id=\"Aucun webinar · échange\"></e-button></e-flexbox></e-flexbox>",
+  "element_config": {
+   "Aucun webinar · titre": {
+    "paragraph": "Pas de webinar programmé pour le moment."
+   },
+   "Aucun webinar · texte": {
+    "paragraph": "Nos prochains rendez-vous arrivent bientôt. En attendant, nos webinars passés sont à revoir en replay."
+   },
+   "Aucun webinar · replays": {
+    "text": "Voir les replays",
+    "link": {
+     "destination": "/replays/"
+    }
+   },
+   "Aucun webinar · échange": {
+    "text": "Réserver un échange",
+    "link": {
+     "destination": "/contact/"
+    }
+   }
+  },
+  "classes": {
+   "Aucun webinar": [
+    "carte-verre",
+    "carte-vide"
+   ],
+   "Aucun webinar · titre": [
+    "titre-xs"
+   ],
+   "Aucun webinar · texte": [
+    "texte"
+   ],
+   "Aucun webinar · boutons": [
+    "rangee"
+   ],
+   "Aucun webinar · replays": [
+    "bouton-principal",
+    "bouton-petit"
+   ],
+   "Aucun webinar · échange": [
+    "bouton-verre",
+    "bouton-petit"
+   ]
+  },
+  "style": {
+   "Aucun webinar · texte": "max-width: 560px;",
+   "Aucun webinar · boutons": "justify-content: center;"
+  }
+ },
+ "brut": {}
+}

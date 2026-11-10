@@ -1,0 +1,32 @@
+{
+ "cle": "p-webinars-2-liste",
+ "titre": "Rolling · Webinars · Liste",
+ "type": "e-flexbox",
+ "composition": {
+  "xml_structure": "<e-flexbox configuration-id=\"Webinars · liste\"><e-flexbox configuration-id=\"Webinars · liste · contenu\"><e-paragraph configuration-id=\"Webinars · prochain\"></e-paragraph><e-paragraph configuration-id=\"Webinars · suivants\"></e-paragraph></e-flexbox></e-flexbox>",
+  "element_config": {
+   "Webinars · liste": {
+    "tag": "section"
+   },
+   "Webinars · prochain": {
+    "paragraph": "⟦widget:rolling-liste|contenu=webinars|nombre=1|classe=pile|carte_theme=une|titre=Le prochain webinar⟧"
+   },
+   "Webinars · suivants": {
+    "paragraph": "⟦widget:rolling-liste|contenu=webinars|decalage=1|nombre=12|classe=pile|titre=Les suivants⟧"
+   }
+  },
+  "classes": {
+   "Webinars · liste": [
+    "section",
+    "section-suite"
+   ],
+   "Webinars · liste · contenu": [
+    "conteneur"
+   ]
+  },
+  "style": {
+   "Webinars · liste · contenu": "display: flex; flex-direction: column; gap: 0; gap: 48px;"
+  }
+ },
+ "brut": {}
+}

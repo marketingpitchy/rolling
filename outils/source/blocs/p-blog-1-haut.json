@@ -1,0 +1,50 @@
+{
+ "cle": "p-blog-1-haut",
+ "titre": "Rolling · Blog · Haut de page",
+ "type": "e-flexbox",
+ "composition": {
+  "xml_structure": "<e-flexbox configuration-id=\"Blog · haut\"><e-flexbox configuration-id=\"Blog · haut · contenu\"><e-flexbox configuration-id=\"Blog · haut · pastille\"><e-paragraph configuration-id=\"Blog · haut · pastille · texte\"></e-paragraph></e-flexbox><e-heading configuration-id=\"Blog · haut · titre\"></e-heading><e-paragraph configuration-id=\"Blog · haut · introduction\"></e-paragraph></e-flexbox></e-flexbox>",
+  "element_config": {
+   "Blog · haut": {
+    "tag": "section"
+   },
+   "Blog · haut · pastille · texte": {
+    "paragraph": "Le blog"
+   },
+   "Blog · haut · titre": {
+    "tag": "h1",
+    "title": "Des conseils vidéo <em>pour vos équipes.</em>"
+   },
+   "Blog · haut · introduction": {
+    "paragraph": "Communication interne, RH, formation, marketing : nos méthodes pour que vos contenus soient enfin regardés."
+   }
+  },
+  "classes": {
+   "Blog · haut": [
+    "section",
+    "section-entete",
+    "entete-page",
+    "halos-haut"
+   ],
+   "Blog · haut · contenu": [
+    "conteneur"
+   ],
+   "Blog · haut · pastille": [
+    "pastille",
+    "pastille-bleue"
+   ],
+   "Blog · haut · titre": [
+    "titre-lg"
+   ],
+   "Blog · haut · introduction": [
+    "texte-intro"
+   ]
+  },
+  "style": {
+   "Blog · haut · contenu": "display: flex; flex-direction: column; gap: 0;",
+   "Blog · haut · titre": "margin-top: 26px; max-width: 900px;",
+   "Blog · haut · introduction": "margin-top: 22px; max-width: 680px;"
+  }
+ },
+ "brut": {}
+}

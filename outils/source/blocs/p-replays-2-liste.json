@@ -1,0 +1,29 @@
+{
+ "cle": "p-replays-2-liste",
+ "titre": "Rolling · Replays · Liste",
+ "type": "e-flexbox",
+ "composition": {
+  "xml_structure": "<e-flexbox configuration-id=\"Replays · liste\"><e-flexbox configuration-id=\"Replays · liste · contenu\"><e-paragraph configuration-id=\"Replays · cartes\"></e-paragraph></e-flexbox></e-flexbox>",
+  "element_config": {
+   "Replays · liste": {
+    "tag": "section"
+   },
+   "Replays · cartes": {
+    "paragraph": "⟦widget:rolling-liste|contenu=replays|classe=grille-3|filtres=rolling_theme|tous=Tous les replays|nombre=12|plus=yes|plus_texte=Voir plus de replays⟧"
+   }
+  },
+  "classes": {
+   "Replays · liste": [
+    "section",
+    "section-suite"
+   ],
+   "Replays · liste · contenu": [
+    "conteneur"
+   ]
+  },
+  "style": {
+   "Replays · liste · contenu": "display: flex; flex-direction: column; gap: 0; gap: 48px;"
+  }
+ },
+ "brut": {}
+}

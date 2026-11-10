@@ -1,0 +1,29 @@
+{
+ "cle": "p-guides-2-liste",
+ "titre": "Rolling · Guides · Liste",
+ "type": "e-flexbox",
+ "composition": {
+  "xml_structure": "<e-flexbox configuration-id=\"Guides · liste\"><e-flexbox configuration-id=\"Guides · liste · contenu\"><e-paragraph configuration-id=\"Guides · cartes\"></e-paragraph></e-flexbox></e-flexbox>",
+  "element_config": {
+   "Guides · liste": {
+    "tag": "section"
+   },
+   "Guides · cartes": {
+    "paragraph": "⟦widget:rolling-liste|contenu=guides|classe=grille-3|filtres=rolling_theme|tous=Tous les guides|nombre=12|plus=yes|plus_texte=Voir plus de guides⟧"
+   }
+  },
+  "classes": {
+   "Guides · liste": [
+    "section",
+    "section-suite"
+   ],
+   "Guides · liste · contenu": [
+    "conteneur"
+   ]
+  },
+  "style": {
+   "Guides · liste · contenu": "display: flex; flex-direction: column; gap: 0; gap: 48px;"
+  }
+ },
+ "brut": {}
+}
