@@ -77,7 +77,10 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   mot pour mot) : Lionel Chouraqui et Benjamin Chouraqui, frères, fondateurs et dirigeants (Pitchy et Rolling).
   Frise de « L'agence » = **timeline de montage** (règle 00:00:00 → 13:00:00, 3 clips colorés avec forme d'onde,
   tête de lecture rouge qui avance jusqu'au clip Rolling « En cours » ; arrêtée avec « réduire les animations » ;
-  en mobile, clips empilés sans tête de lecture). Dans le thème : tête de lecture = pseudo-élément (pas de conteneur vide).
+  en mobile, règle verticale à gauche, un repère par clip et tête de lecture rouge pointée sur le clip Rolling ; libellé du
+  clip sous son numéro). Tête de lecture = poignée en écusson (clip-path) + trait qui s'arrête sous les clips.
+  Dans le thème : tête de lecture et repères = pseudo-éléments (pas de conteneur vide), avec remise à zéro du `::before`
+  (sinon il hérite des styles d'un autre `::before`, ex. le liseré de `carte-verre`). Frise validée (« très stylé »).
 - **Menu du haut** : Offres, Réalisations, Témoignages, Ressources, **L'agence** + bouton. La page « L'agence » s'ajoute aux
   pages créées à l'activation ; chez la cliente (menu déjà créé), elle ajoute le lien elle-même dans Apparence > Menus.
 - Mots en dégradé (background-clip: text) : prévoir `padding-inline: .06em; margin-inline: -.06em;
