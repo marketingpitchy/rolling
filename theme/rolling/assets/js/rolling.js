@@ -30,6 +30,24 @@
 		} );
 	} );
 
+	/* Sous-menu de l'en-tête (ex. « Ressources ») : le bouton l'ouvre ; Échap ou un clic ailleurs le referme. */
+	document.querySelectorAll( '.rl-menu__ouvrir' ).forEach( function ( bouton ) {
+		var element = bouton.parentElement;
+		function basculer( ouvrir ) {
+			bouton.setAttribute( 'aria-expanded', ouvrir ? 'true' : 'false' );
+			element.classList.toggle( 'rl-ouvert', ouvrir );
+		}
+		bouton.addEventListener( 'click', function () { basculer( bouton.getAttribute( 'aria-expanded' ) !== 'true' ); } );
+		document.addEventListener( 'click', function ( e ) { if ( ! element.contains( e.target ) ) { basculer( false ); } } );
+		element.addEventListener( 'keydown', function ( e ) {
+			if ( e.key === 'Escape' && bouton.getAttribute( 'aria-expanded' ) === 'true' ) {
+				e.stopPropagation();
+				basculer( false );
+				bouton.focus();
+			}
+		} );
+	} );
+
 	/*
 	 * Dans l'éditeur : l'écran « Votre vidéo » suit l'élément sélectionné. Sélectionner le bouton 9:16 ou EN change
 	 * le format ou la langue affichés ; sélectionner un texte d'une version (même depuis la Structure) l'affiche.
@@ -324,6 +342,63 @@
 		}, { rootMargin: '-40% 0px -40% 0px' } );
 		document.querySelectorAll( 'a.vignette-lien' ).forEach( function ( v ) { centre.observe( v ); } );
 	}
+
+	/* Article : barre de lecture (en haut de l'écran) avec un repère par chapitre, sommaire qui suit la lecture,
+	   bouton « Copier le lien » (partage natif sur téléphone). */
+	document.querySelectorAll( '[data-rl-article]' ).forEach( function ( texte ) {
+		if ( editeur ) {
+			return;
+		}
+		var barre = document.createElement( 'div' ), avance = document.createElement( 'span' ), poses = false;
+		barre.className = 'rl-progression';
+		barre.setAttribute( 'aria-hidden', 'true' );
+		avance.className = 'rl-progression__avance';
+		barre.appendChild( avance );
+		document.body.appendChild( barre );
+		function maj() {
+			var r = texte.getBoundingClientRect(), p = Math.min( 1, Math.max( 0, ( window.innerHeight * 0.5 - r.top ) / r.height ) );
+			if ( ! poses && r.height ) {
+				texte.querySelectorAll( 'h2' ).forEach( function ( h ) {
+					var repere = document.createElement( 'span' );
+					repere.className = 'rl-progression__chapitre';
+					repere.style.left = ( ( h.getBoundingClientRect().top - r.top ) / r.height * 100 ).toFixed( 1 ) + '%';
+					barre.appendChild( repere );
+				} );
+				poses = true;
+			}
+			barre.style.setProperty( '--rl-avance', ( p * 100 ).toFixed( 1 ) + '%' );
+			barre.classList.toggle( 'rl-visible', p > 0 );
+		}
+		window.addEventListener( 'scroll', maj, { passive: true } );
+		maj();
+
+		var liens = document.querySelectorAll( '[data-rl-sommaire] a' );
+		if ( liens.length && 'IntersectionObserver' in window ) {
+			var suivi = new IntersectionObserver( function ( entrees ) {
+				entrees.forEach( function ( e ) {
+					if ( e.isIntersecting ) {
+						liens.forEach( function ( l ) { l.classList.toggle( 'actif', l.getAttribute( 'href' ) === '#' + e.target.id ); } );
+					}
+				} );
+			}, { rootMargin: '-20% 0px -70% 0px' } );
+			texte.querySelectorAll( 'h2[id]' ).forEach( function ( h ) { suivi.observe( h ); } );
+		}
+	} );
+	document.querySelectorAll( '[data-rl-copier]' ).forEach( function ( bouton ) {
+		bouton.addEventListener( 'click', function () {
+			var url = window.location.href;
+			if ( navigator.share && window.matchMedia( '(hover: none)' ).matches ) {
+				navigator.share( { url: url, title: document.title } ).catch( function () {} );
+				return;
+			}
+			if ( navigator.clipboard ) {
+				navigator.clipboard.writeText( url ).then( function () {
+					bouton.setAttribute( 'title', bouton.getAttribute( 'data-rl-copier' ) );
+					bouton.setAttribute( 'aria-label', bouton.getAttribute( 'data-rl-copier' ) );
+				} );
+			}
+		} );
+	} );
 
 	/* Les liens #rl-… ne changent jamais l'adresse */
 	document.addEventListener( 'click', function ( e ) {

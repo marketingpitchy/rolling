@@ -1,0 +1,83 @@
+{
+ "cle": "f4-page-404",
+ "titre": "Rolling · Page 404",
+ "type": "e-flexbox",
+ "apercu": "",
+ "composition": {
+  "xml_structure": "<e-flexbox configuration-id=\"Page 404\"><e-flexbox configuration-id=\"404 · contenu\"><e-div-block configuration-id=\"404 · mire\"><e-paragraph configuration-id=\"404 · signal\"></e-paragraph></e-div-block><e-heading configuration-id=\"404 · titre\"></e-heading><e-paragraph configuration-id=\"404 · texte\"></e-paragraph><e-flexbox configuration-id=\"404 · boutons\"><e-button configuration-id=\"404 · accueil\"></e-button><e-button configuration-id=\"404 · offres\"></e-button></e-flexbox><e-paragraph configuration-id=\"404 · liens\"></e-paragraph></e-flexbox></e-flexbox>",
+  "element_config": {
+   "Page 404": {
+    "tag": "section"
+   },
+   "404 · signal": {
+    "paragraph": "Signal perdu · 04:04"
+   },
+   "404 · titre": {
+    "tag": "h1",
+    "title": "Cette page a été <em>coupée au montage.</em>"
+   },
+   "404 · texte": {
+    "paragraph": "Elle n’existe plus, ou elle a changé d’adresse. Reprenons depuis le début."
+   },
+   "404 · accueil": {
+    "text": "Revenir à l’accueil",
+    "link": {
+     "destination": "/"
+    }
+   },
+   "404 · offres": {
+    "text": "Voir les offres",
+    "link": {
+     "destination": "/offres/"
+    }
+   },
+   "404 · liens": {
+    "paragraph": "<a href=\"/realisations/\">Nos réalisations</a> <a href=\"/temoignages/\">Les témoignages</a> <a href=\"/blog/\">Le blog</a> <a href=\"/contact/\">Contact</a>"
+   }
+  },
+  "classes": {
+   "Page 404": [
+    "section",
+    "section-sombre",
+    "fond-grille",
+    "halo-centre"
+   ],
+   "404 · contenu": [
+    "conteneur"
+   ],
+   "404 · mire": [
+    "mire"
+   ],
+   "404 · signal": [
+    "mire-signal"
+   ],
+   "404 · titre": [
+    "titre-lg"
+   ],
+   "404 · texte": [
+    "texte-intro"
+   ],
+   "404 · boutons": [
+    "rangee"
+   ],
+   "404 · accueil": [
+    "bouton-principal"
+   ],
+   "404 · offres": [
+    "bouton-verre"
+   ],
+   "404 · liens": [
+    "liens-utiles"
+   ]
+  },
+  "style": {
+   "Page 404": "min-height: 72vh;",
+   "404 · contenu": "display: flex; flex-direction: column; gap: 0; align-items: center; text-align: center;",
+   "404 · titre": "margin-top: 44px;",
+   "404 · texte": "margin-top: 22px; max-width: 560px;",
+   "404 · boutons": "justify-content: center; margin-top: 34px;",
+   "404 · liens": "margin-top: 40px;"
+  }
+ },
+ "brut": {}
+}

@@ -216,12 +216,9 @@ logos = F('Ils nous font confiance', ['section', 'section-suite'], tag='section'
     F('Logos · titre', ['conteneur'], 'justify-content: center;', enfants=[
         P('Logos · libellé', 'Ils nous font confiance', ['label'], 'text-align: center; width: 100%;'),
     ]),
-    F('Logos · bande', ['masque-bords'], 'margin-top: 22px; width: 100%;', enfants=[
-        F('Logos · liste', ['logos-defilants', 'grille-6'], enfants=[
-            F('Logo · ' + alt, ['carte-verre', 'tuile-logo'], enfants=[
-                I('Logo · image · ' + alt, fichier, cls=None, style='height: %dpx;' % h, taille='medium'),
-            ]) for fichier, alt, h in LOGOS
-        ]),
+    # Les logos viennent de la liste « Logos clients » : une modification met à jour toutes les bandes du site.
+    F('Logos · bande', None, 'margin-top: 22px; width: 100%; padding: 0;', enfants=[
+        W('Logos · liste', 'rolling-logos'),
     ]),
 ])
 
@@ -464,12 +461,16 @@ def membre(prefixe, cle, nom, poste, sombre=False):
 
 entete_ia = entete('IA', '00:05', 'Sous le capot', [("Le meilleur <em>de l'IA.</em>", 'h2', ['titre-xl'])],
                    intro='Nous orchestrons les meilleures IA du marché au sein de notre <strong>IA Factory</strong>. Pilotée par notre équipe tech, notre plateforme génère des pistes de scénarios, des storyboards et des premières versions. <strong>Nos créas choisissent, corrigent, adaptent… et perfectionnent chaque vidéo.</strong>')
-entete_ia.enfants.append(F('IA · badges', ['rangee'], 'margin-top: 8px;', enfants=[
-    F('IA · badge · ' + texte, ['badge-securite'], enfants=[
-        I('IA · badge · ' + texte + ' · icône', 'badge-' + icone + '.webp', cls=['icone-badge'], taille='thumbnail'),
-        P('IA · badge · ' + texte + ' · texte', texte),
-    ]) for icone, texte in (('securite', 'IA sécurisée'), ('europe', 'Données hébergées en Europe'), ('rgpd', 'Conforme RGPD'))
-]))
+def badges(prefixe, style):
+    return F(prefixe + ' · badges', ['rangee'], style, enfants=[
+        F(prefixe + ' · badge · ' + texte, ['badge-securite'], enfants=[
+            I(prefixe + ' · badge · ' + texte + ' · icône', 'badge-' + icone + '.webp', cls=['icone-badge'], taille='thumbnail'),
+            P(prefixe + ' · badge · ' + texte + ' · texte', texte),
+        ]) for icone, texte in (('securite', 'IA sécurisée'), ('europe', 'Données hébergées en Europe'), ('rgpd', 'Conforme RGPD'))
+    ])
+
+
+entete_ia.enfants.append(badges('IA', 'margin-top: 8px;'))
 
 ia = F("Le meilleur de l'IA", ['section', 'section-sombre', 'fond-grille', 'halos-ia'], tag='section', ancre='ia', enfants=[
     F('IA · contenu', ['conteneur'], COLONNE, enfants=[
@@ -699,6 +700,7 @@ final = F('Appel final', ['section', 'section-sombre', 'section-finale', 'halo-c
         F('Final · bouton', None, 'display: flex; justify-content: center; margin-top: 38px; padding: 0;', enfants=[
             B('Final · réserver', 'Réserver un échange', '/contact/', ['bouton-soleil']),
         ]),
+        badges('Final', 'justify-content: center; margin-top: 34px;'),
     ]),
 ])
 
@@ -735,7 +737,7 @@ def avant_apres(prefixe):
 
 
 carte_realisation = F('Carte réalisation', ['carte-liste'], tag='article', enfants=[
-    F('Réalisation · vignette', ['vignette-video', 'vignette-lien'], lien=FICHE, enfants=[
+    F('Réalisation · vignette', ['vignette-video', 'vignette-lien', 'si-image'], lien=FICHE, enfants=[
         D('Réalisation · cadre', ['cadre-photo', 'cadre-16-9'], enfants=[
             I('Réalisation · image', DYN('rolling-image', image='une'), cls=['image-couvrante'], taille='medium_large'),
             P('Réalisation · format', DYN('rolling-terme', taxonomie='rolling_format'), ['bandeau-video']),
@@ -772,7 +774,7 @@ def carte_temoignage(une=False):
 
 
 carte_article = F('Carte article', ['carte-liste'], tag='article', enfants=[
-    F('Article · vignette', ['vignette-lien'], 'padding: 0; border-radius: 22px;', lien=FICHE, enfants=[
+    F('Article · vignette', ['vignette-lien', 'si-image'], 'padding: 0; border-radius: 22px;', enfants=[
         D('Article · cadre', ['cadre-photo', 'cadre-16-10'], enfants=[
             I('Article · image', DYN('rolling-image', image='une'), cls=['image-couvrante'], taille='medium_large'),
         ]),
@@ -787,7 +789,7 @@ carte_article = F('Carte article', ['carte-liste'], tag='article', enfants=[
 
 HUBSPOT = DYN('rolling-lien', lien='lien')
 carte_guide = F('Carte guide', ['carte-guide'], tag='article', enfants=[
-    F('Guide · vignette', ['vignette-lien'], 'padding: 0; border-radius: 22px;', lien=HUBSPOT, enfants=[
+    F('Guide · vignette', ['vignette-lien', 'si-image'], 'padding: 0; border-radius: 22px;', enfants=[
         D('Guide · cadre', ['cadre-photo', 'cadre-4-3'], enfants=[
             I('Guide · image', DYN('rolling-image', image='une'), cls=['image-couvrante'], taille='medium_large'),
             P('Guide · type', DYN('rolling-champ', champ='type_doc'), ['bandeau-video', 'si-type-doc']),
@@ -821,7 +823,7 @@ carte_webinar = F('Carte webinar', ['carte-verre', 'carte-webinar'], tag='articl
 ])
 
 carte_webinar_une = F('Prochain webinar', ['carte-verre', 'carte-webinar-une'], tag='article', enfants=[
-    D('Prochain · cadre', ['cadre-photo', 'cadre-16-10'], enfants=[
+    D('Prochain · cadre', ['cadre-photo', 'cadre-16-10', 'si-image'], enfants=[
         I('Prochain · image', DYN('rolling-image', image='une'), cls=['image-couvrante'], taille='large'),
         P('Prochain · bandeau', 'Prochain webinar', ['bandeau-video', 'bandeau-rec']),
     ]),
@@ -840,7 +842,7 @@ carte_webinar_une = F('Prochain webinar', ['carte-verre', 'carte-webinar-une'], 
 
 REPLAY = DYN('rolling-lien', lien='replay')
 carte_replay = F('Carte replay', ['carte-liste'], tag='article', enfants=[
-    F('Replay · vignette', ['vignette-video', 'vignette-lien'], lien=REPLAY, enfants=[
+    F('Replay · vignette', ['vignette-video', 'vignette-lien', 'si-image'], lien=REPLAY, enfants=[
         D('Replay · cadre', ['cadre-photo', 'cadre-16-9'], enfants=[
             I('Replay · image', DYN('rolling-image', image='une'), cls=['image-couvrante'], taille='medium_large'),
             P('Replay · bandeau', 'Replay', ['bandeau-video']),
@@ -984,6 +986,69 @@ fiche_temoignage = F('Fiche témoignage', None, COLONNE + ' align-items: stretch
     final,
 ])
 
+fiche_article = F('Fiche article', None, COLONNE + ' align-items: stretch; padding: 0; width: 100%;', tag='article', enfants=[
+    F('Article · haut', ['section', 'section-entete'], tag='section', enfants=[
+        F('Article · grille', ['conteneur', 'article-grille'], enfants=[
+            F('Article · principal', ['article-principal'], enfants=[
+                W('Article · fil d’Ariane', 'rolling-ariane'),
+                H('Article · titre', DYN('rolling-article', info='titre'), 'h1', ['titre-lg'], 'margin-top: 24px;'),
+                F('Article · infos', ['rangee'], 'margin-top: 20px;', enfants=[
+                    P('Article · catégorie', DYN('rolling-terme', taxonomie='category'), ['tag-orange']),
+                    P('Article · publié', DYN('rolling-article', info='publie'), ['texte-petit']),
+                    P('Article · lecture', DYN('rolling-article', info='lecture_c'), ['texte-petit']),
+                ]),
+                D('Article · image', ['cadre-photo', 'cadre-16-9', 'si-image'], 'margin-top: 28px;', enfants=[
+                    I('Article · image · fichier', DYN('rolling-image', image='une'), cls=['image-couvrante'], taille='large'),
+                ]),
+                W('Article · texte', 'rolling-contenu'),
+            ]),
+            F('Article · outils', ['article-cote'], enfants=[
+                F('Article · outils · colle', ['article-cote-colle'], enfants=[
+                    F('Article · lecture et sommaire', ['carte-verre', 'carte-outils'], enfants=[
+                        P('Article · lecture · libellé', 'Temps de lecture', ['label']),
+                        P('Article · lecture · durée', DYN('rolling-article', info='lecture'), ['titre-xs']),
+                        P('Article · sommaire · libellé', 'Sommaire', ['label'], 'margin-top: 14px;'),
+                        W('Article · sommaire', 'rolling-sommaire'),
+                    ]),
+                    F('Article · partage et IA', ['carte-verre', 'carte-outils'], enfants=[
+                        P('Article · partage · libellé', 'Partager l’article', ['label']),
+                        W('Article · partage', 'rolling-partage'),
+                        P('Article · résumer · libellé', 'Résumer avec', ['label'], 'margin-top: 14px;'),
+                        W('Article · résumer', 'rolling-resumer'),
+                    ]),
+                    F('Article · appel', ['carte-verre', 'section-sombre', 'carte-sombre'], enfants=[
+                        P('Article · appel · titre', 'Et si ce contenu devenait <em>une vidéo&nbsp;?</em>', ['titre-xs']),
+                        P('Article · appel · texte', '30 minutes pour passer en revue vos contenus. Vous repartez avec vos 3 premières vidéos à produire.', ['texte-petit']),
+                        B('Article · appel · bouton', 'Réserver un échange', '/contact/', ['bouton-principal', 'bouton-petit']),
+                    ]),
+                ]),
+            ]),
+        ]),
+    ]),
+    F('Article · à lire aussi', ['section', 'section-lilas'], tag='section', enfants=[
+        F('Article · à lire aussi · contenu', ['conteneur'], COLONNE, enfants=[
+            H('Article · à lire aussi · titre', 'À lire <em>aussi.</em>', 'h2', ['titre-sm'], 'margin-bottom: 36px;'),
+            W('Article · à lire aussi · liste', 'rolling-liste', contenu='lire_aussi', nombre='3', classe='grille-3'),
+        ]),
+    ]),
+    final,
+])
+
+page_404 = F('Page 404', ['section', 'section-sombre', 'fond-grille', 'halo-centre'], 'min-height: 72vh;', tag='section', enfants=[
+    F('404 · contenu', ['conteneur'], COLONNE + ' align-items: center; text-align: center;', enfants=[
+        D('404 · mire', ['mire'], enfants=[
+            P('404 · signal', 'Signal perdu · 04:04', ['mire-signal']),
+        ]),
+        H('404 · titre', 'Cette page a été <em>coupée au montage.</em>', 'h1', ['titre-lg'], 'margin-top: 44px;'),
+        P('404 · texte', 'Elle n’existe plus, ou elle a changé d’adresse. Reprenons depuis le début.', ['texte-intro'], 'margin-top: 22px; max-width: 560px;'),
+        F('404 · boutons', ['rangee'], 'justify-content: center; margin-top: 34px;', enfants=[
+            B('404 · accueil', 'Revenir à l’accueil', '/', ['bouton-principal']),
+            B('404 · offres', 'Voir les offres', '/offres/', ['bouton-verre']),
+        ]),
+        P('404 · liens', '<a href="/realisations/">Nos réalisations</a> <a href="/temoignages/">Les témoignages</a> <a href="/blog/">Le blog</a> <a href="/contact/">Contact</a>', ['liens-utiles'], 'margin-top: 40px;'),
+    ]),
+])
+
 MODELES_SITE = [
     ('c1-carte-realisation', 'Rolling · Carte réalisation', carte_realisation, 'rolling_realisation'),
     ('c2-carte-temoignage', 'Rolling · Carte témoignage', carte_temoignage(), 'rolling_temoignage'),
@@ -995,6 +1060,8 @@ MODELES_SITE = [
     ('c8-carte-replay', 'Rolling · Carte replay', carte_replay, 'rolling_webinar'),
     ('f1-fiche-realisation', 'Rolling · Fiche réalisation', fiche_realisation, 'rolling_realisation'),
     ('f2-fiche-temoignage', 'Rolling · Fiche témoignage', fiche_temoignage, 'rolling_temoignage'),
+    ('f3-fiche-article', 'Rolling · Article de blog', fiche_article, 'post'),
+    ('f4-page-404', 'Rolling · Page 404', page_404, ''),
 ]
 
 if __name__ == '__main__':

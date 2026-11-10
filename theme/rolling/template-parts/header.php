@@ -23,7 +23,7 @@ $rolling_fleche  = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" 
 						'theme_location' => 'principal',
 						'container'      => false,
 						'menu_class'     => 'rl-menu',
-						'depth'          => 1,
+						'depth'          => 2,
 						'fallback_cb'    => false,
 					)
 				);

@@ -97,7 +97,7 @@ class Rolling_Installateur {
 			update_option( self::OPTION_PREMIERE, ROLLING_VERSION, false );
 		}
 
-		self::nouveautes( $site_existant );
+		self::nouveautes( $site_existant, $medias );
 		flush_rewrite_rules( false );
 
 		self::vider_caches();
@@ -818,9 +818,12 @@ class Rolling_Installateur {
 
 	/**
 	 * Ce qui arrive avec une nouvelle version, créé une seule fois (jamais recréé si la cliente l'a supprimé) :
-	 * pages, termes des filtres et menus d'emplacements nouveaux.
+	 * pages, termes des filtres, menus d'emplacements nouveaux, réglages, logos clients de départ.
+	 *
+	 * @param bool               $site_existant Site déjà installé avant cette version.
+	 * @param array<string, int> $medias        Médias installés.
 	 */
-	private static function nouveautes( $site_existant ) {
+	private static function nouveautes( $site_existant, $medias ) {
 		$config = Rolling_Donnees::lire( 'installation' );
 		$faits  = get_option( 'rolling_deja_crees', null );
 		$pages  = array();
@@ -883,6 +886,50 @@ class Rolling_Installateur {
 			}
 		}
 		set_theme_mod( 'nav_menu_locations', $emplacements );
+
+		// Nouveaux réglages du Personnalisateur : valeur de départ posée une fois, si rien n'est réglé.
+		foreach ( $config['reglages'] ?? array() as $cle => $valeur ) {
+			if ( in_array( 'reglage:' . $cle, $faits, true ) ) {
+				continue;
+			}
+			if ( false === get_theme_mod( $cle, false ) ) {
+				set_theme_mod( $cle, $valeur );
+			}
+			$faits[] = 'reglage:' . $cle;
+		}
+
+		// Logos clients de départ (ceux de la maquette), si la liste est vide.
+		if ( ! in_array( 'logos:depart', $faits, true ) ) {
+			$existants = get_posts(
+				array(
+					'post_type'      => 'rolling_logo',
+					'posts_per_page' => 1,
+					'post_status'    => 'any',
+					'fields'         => 'ids',
+				)
+			);
+			if ( ! $existants ) {
+				foreach ( $config['logos'] ?? array() as $rang => $logo ) {
+					if ( empty( $medias[ $logo['media'] ] ) ) {
+						continue;
+					}
+					$id = wp_insert_post(
+						array(
+							'post_type'   => 'rolling_logo',
+							'post_status' => 'publish',
+							'post_title'  => $logo['nom'],
+							'menu_order'  => $rang,
+						)
+					);
+					if ( $id && ! is_wp_error( $id ) ) {
+						set_post_thumbnail( $id, $medias[ $logo['media'] ] );
+						update_post_meta( $id, Rolling_Contenus::PREFIXE . 'hauteur', (string) $logo['hauteur'] );
+					}
+				}
+			}
+			$faits[] = 'logos:depart';
+		}
+
 		update_option( 'rolling_deja_crees', array_values( array_unique( $faits ) ), false );
 	}
 
@@ -953,11 +1000,13 @@ class Rolling_Installateur {
 	 * @param int   $parent   Élément parent.
 	 */
 	private static function elements_de_menu( $menu_id, $elements, $pages, $parent ) {
-		foreach ( $elements as $position => $element ) {
+		static $position = 0;
+
+		foreach ( $elements as $element ) {
 			$element = is_array( $element ) ? $element : array( 'page' => $element );
 			$args    = array(
 				'menu-item-status'    => 'publish',
-				'menu-item-position'  => $position + 1,
+				'menu-item-position'  => ++$position,
 				'menu-item-parent-id' => $parent,
 			);
 

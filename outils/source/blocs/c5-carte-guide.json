@@ -9,11 +9,6 @@
    "Carte guide": {
     "tag": "article"
    },
-   "Guide · vignette": {
-    "link": {
-     "destination": "⟦rolling-lien|lien=lien⟧"
-    }
-   },
    "Guide · image": {
     "image": {
      "src": {
@@ -53,7 +48,8 @@
     "carte-guide"
    ],
    "Guide · vignette": [
-    "vignette-lien"
+    "vignette-lien",
+    "si-image"
    ],
    "Guide · cadre": [
     "cadre-photo",

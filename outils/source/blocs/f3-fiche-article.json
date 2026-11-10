@@ -1,0 +1,297 @@
+{
+ "cle": "f3-fiche-article",
+ "titre": "Rolling · Article de blog",
+ "type": "e-flexbox",
+ "apercu": "post",
+ "composition": {
+  "xml_structure": "<e-flexbox configuration-id=\"Fiche article\"><e-flexbox configuration-id=\"Article · haut\"><e-flexbox configuration-id=\"Article · grille\"><e-flexbox configuration-id=\"Article · principal\"><e-paragraph configuration-id=\"Article · fil d’Ariane\"></e-paragraph><e-heading configuration-id=\"Article · titre\"></e-heading><e-flexbox configuration-id=\"Article · infos\"><e-paragraph configuration-id=\"Article · catégorie\"></e-paragraph><e-paragraph configuration-id=\"Article · publié\"></e-paragraph><e-paragraph configuration-id=\"Article · lecture\"></e-paragraph></e-flexbox><e-div-block configuration-id=\"Article · image\"><e-image configuration-id=\"Article · image · fichier\"></e-image></e-div-block><e-paragraph configuration-id=\"Article · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Article · outils\"><e-flexbox configuration-id=\"Article · outils · colle\"><e-flexbox configuration-id=\"Article · lecture et sommaire\"><e-paragraph configuration-id=\"Article · lecture · libellé\"></e-paragraph><e-paragraph configuration-id=\"Article · lecture · durée\"></e-paragraph><e-paragraph configuration-id=\"Article · sommaire · libellé\"></e-paragraph><e-paragraph configuration-id=\"Article · sommaire\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Article · partage et IA\"><e-paragraph configuration-id=\"Article · partage · libellé\"></e-paragraph><e-paragraph configuration-id=\"Article · partage\"></e-paragraph><e-paragraph configuration-id=\"Article · résumer · libellé\"></e-paragraph><e-paragraph configuration-id=\"Article · résumer\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Article · appel\"><e-paragraph configuration-id=\"Article · appel · titre\"></e-paragraph><e-paragraph configuration-id=\"Article · appel · texte\"></e-paragraph><e-button configuration-id=\"Article · appel · bouton\"></e-button></e-flexbox></e-flexbox></e-flexbox></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Article · à lire aussi\"><e-flexbox configuration-id=\"Article · à lire aussi · contenu\"><e-heading configuration-id=\"Article · à lire aussi · titre\"></e-heading><e-paragraph configuration-id=\"Article · à lire aussi · liste\"></e-paragraph></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Appel final\"><e-image configuration-id=\"Final · verre cannelé\"></e-image><e-flexbox configuration-id=\"Final · contenu\"><e-heading configuration-id=\"Final · titre\"></e-heading><e-paragraph configuration-id=\"Final · texte\"></e-paragraph><e-flexbox configuration-id=\"Final · bouton\"><e-button configuration-id=\"Final · réserver\"></e-button></e-flexbox><e-flexbox configuration-id=\"Final · badges\"><e-flexbox configuration-id=\"Final · badge · IA sécurisée\"><e-image configuration-id=\"Final · badge · IA sécurisée · icône\"></e-image><e-paragraph configuration-id=\"Final · badge · IA sécurisée · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Final · badge · Données hébergées en Europe\"><e-image configuration-id=\"Final · badge · Données hébergées en Europe · icône\"></e-image><e-paragraph configuration-id=\"Final · badge · Données hébergées en Europe · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Final · badge · Conforme RGPD\"><e-image configuration-id=\"Final · badge · Conforme RGPD · icône\"></e-image><e-paragraph configuration-id=\"Final · badge · Conforme RGPD · texte\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox></e-flexbox></e-flexbox>",
+  "element_config": {
+   "Fiche article": {
+    "tag": "article"
+   },
+   "Article · haut": {
+    "tag": "section"
+   },
+   "Article · fil d’Ariane": {
+    "paragraph": "⟦widget:rolling-ariane⟧"
+   },
+   "Article · titre": {
+    "tag": "h1",
+    "title": "⟦rolling-article|info=titre⟧"
+   },
+   "Article · catégorie": {
+    "paragraph": "⟦rolling-terme|taxonomie=category⟧"
+   },
+   "Article · publié": {
+    "paragraph": "⟦rolling-article|info=publie⟧"
+   },
+   "Article · lecture": {
+    "paragraph": "⟦rolling-article|info=lecture_c⟧"
+   },
+   "Article · image · fichier": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/dynamique/rolling-image/image=une.png"
+     },
+     "size": "large"
+    }
+   },
+   "Article · texte": {
+    "paragraph": "⟦widget:rolling-contenu⟧"
+   },
+   "Article · lecture · libellé": {
+    "paragraph": "Temps de lecture"
+   },
+   "Article · lecture · durée": {
+    "paragraph": "⟦rolling-article|info=lecture⟧"
+   },
+   "Article · sommaire · libellé": {
+    "paragraph": "Sommaire"
+   },
+   "Article · sommaire": {
+    "paragraph": "⟦widget:rolling-sommaire⟧"
+   },
+   "Article · partage · libellé": {
+    "paragraph": "Partager l’article"
+   },
+   "Article · partage": {
+    "paragraph": "⟦widget:rolling-partage⟧"
+   },
+   "Article · résumer · libellé": {
+    "paragraph": "Résumer avec"
+   },
+   "Article · résumer": {
+    "paragraph": "⟦widget:rolling-resumer⟧"
+   },
+   "Article · appel · titre": {
+    "paragraph": "Et si ce contenu devenait <em>une vidéo&nbsp;?</em>"
+   },
+   "Article · appel · texte": {
+    "paragraph": "30 minutes pour passer en revue vos contenus. Vous repartez avec vos 3 premières vidéos à produire."
+   },
+   "Article · appel · bouton": {
+    "text": "Réserver un échange",
+    "link": {
+     "destination": "/contact/"
+    }
+   },
+   "Article · à lire aussi": {
+    "tag": "section"
+   },
+   "Article · à lire aussi · titre": {
+    "tag": "h2",
+    "title": "À lire <em>aussi.</em>"
+   },
+   "Article · à lire aussi · liste": {
+    "paragraph": "⟦widget:rolling-liste|contenu=lire_aussi|nombre=3|classe=grille-3⟧"
+   },
+   "Appel final": {
+    "_cssid": "contact",
+    "tag": "section"
+   },
+   "Final · verre cannelé": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/final-verre-cannele.webp"
+     },
+     "size": "medium_large"
+    }
+   },
+   "Final · titre": {
+    "tag": "h2",
+    "title": "Vos vidéos&nbsp;? Nous nous en occupons.<br><em>Sans limite.</em>"
+   },
+   "Final · texte": {
+    "paragraph": "30 minutes pour passer en revue vos contenus et vos projets. Vous repartez avec votre stratégie vidéo et vos 3&nbsp;premières vidéos à produire."
+   },
+   "Final · réserver": {
+    "text": "Réserver un échange",
+    "link": {
+     "destination": "/contact/"
+    }
+   },
+   "Final · badge · IA sécurisée · icône": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/badge-securite.webp"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "Final · badge · IA sécurisée · texte": {
+    "paragraph": "IA sécurisée"
+   },
+   "Final · badge · Données hébergées en Europe · icône": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/badge-europe.webp"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "Final · badge · Données hébergées en Europe · texte": {
+    "paragraph": "Données hébergées en Europe"
+   },
+   "Final · badge · Conforme RGPD · icône": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/badge-rgpd.webp"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "Final · badge · Conforme RGPD · texte": {
+    "paragraph": "Conforme RGPD"
+   }
+  },
+  "classes": {
+   "Article · haut": [
+    "section",
+    "section-entete"
+   ],
+   "Article · grille": [
+    "conteneur",
+    "article-grille"
+   ],
+   "Article · principal": [
+    "article-principal"
+   ],
+   "Article · titre": [
+    "titre-lg"
+   ],
+   "Article · infos": [
+    "rangee"
+   ],
+   "Article · catégorie": [
+    "tag-orange"
+   ],
+   "Article · publié": [
+    "texte-petit"
+   ],
+   "Article · lecture": [
+    "texte-petit"
+   ],
+   "Article · image": [
+    "cadre-photo",
+    "cadre-16-9",
+    "si-image"
+   ],
+   "Article · image · fichier": [
+    "image-couvrante"
+   ],
+   "Article · outils": [
+    "article-cote"
+   ],
+   "Article · outils · colle": [
+    "article-cote-colle"
+   ],
+   "Article · lecture et sommaire": [
+    "carte-verre",
+    "carte-outils"
+   ],
+   "Article · lecture · libellé": [
+    "label"
+   ],
+   "Article · lecture · durée": [
+    "titre-xs"
+   ],
+   "Article · sommaire · libellé": [
+    "label"
+   ],
+   "Article · partage et IA": [
+    "carte-verre",
+    "carte-outils"
+   ],
+   "Article · partage · libellé": [
+    "label"
+   ],
+   "Article · résumer · libellé": [
+    "label"
+   ],
+   "Article · appel": [
+    "carte-verre",
+    "section-sombre",
+    "carte-sombre"
+   ],
+   "Article · appel · titre": [
+    "titre-xs"
+   ],
+   "Article · appel · texte": [
+    "texte-petit"
+   ],
+   "Article · appel · bouton": [
+    "bouton-principal",
+    "bouton-petit"
+   ],
+   "Article · à lire aussi": [
+    "section",
+    "section-lilas"
+   ],
+   "Article · à lire aussi · contenu": [
+    "conteneur"
+   ],
+   "Article · à lire aussi · titre": [
+    "titre-sm"
+   ],
+   "Appel final": [
+    "section",
+    "section-sombre",
+    "section-finale",
+    "halo-centre",
+    "decors-final"
+   ],
+   "Final · verre cannelé": [
+    "decor-flottant"
+   ],
+   "Final · contenu": [
+    "conteneur"
+   ],
+   "Final · titre": [
+    "titre-lg",
+    "titre-souligne"
+   ],
+   "Final · texte": [
+    "texte-intro"
+   ],
+   "Final · réserver": [
+    "bouton-soleil"
+   ],
+   "Final · badges": [
+    "rangee"
+   ],
+   "Final · badge · IA sécurisée": [
+    "badge-securite"
+   ],
+   "Final · badge · IA sécurisée · icône": [
+    "icone-badge"
+   ],
+   "Final · badge · Données hébergées en Europe": [
+    "badge-securite"
+   ],
+   "Final · badge · Données hébergées en Europe · icône": [
+    "icone-badge"
+   ],
+   "Final · badge · Conforme RGPD": [
+    "badge-securite"
+   ],
+   "Final · badge · Conforme RGPD · icône": [
+    "icone-badge"
+   ]
+  },
+  "style": {
+   "Fiche article": "display: flex; flex-direction: column; gap: 0; align-items: stretch; padding: 0; width: 100%;",
+   "Article · titre": "margin-top: 24px;",
+   "Article · infos": "margin-top: 20px;",
+   "Article · image": "margin-top: 28px;",
+   "Article · sommaire · libellé": "margin-top: 14px;",
+   "Article · résumer · libellé": "margin-top: 14px;",
+   "Article · à lire aussi · contenu": "display: flex; flex-direction: column; gap: 0;",
+   "Article · à lire aussi · titre": "margin-bottom: 36px;",
+   "Final · contenu": "display: flex; flex-direction: column; gap: 0; align-items: center; z-index: 1;",
+   "Final · texte": "margin-top: 34px; max-width: 600px;",
+   "Final · bouton": "display: flex; justify-content: center; margin-top: 38px; padding: 0;",
+   "Final · badges": "justify-content: center; margin-top: 34px;"
+  }
+ },
+ "brut": {}
+}

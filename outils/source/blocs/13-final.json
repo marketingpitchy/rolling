@@ -3,7 +3,7 @@
  "titre": "Rolling · 13 Appel final",
  "type": "e-flexbox",
  "composition": {
-  "xml_structure": "<e-flexbox configuration-id=\"Appel final\"><e-image configuration-id=\"Final · verre cannelé\"></e-image><e-flexbox configuration-id=\"Final · contenu\"><e-heading configuration-id=\"Final · titre\"></e-heading><e-paragraph configuration-id=\"Final · texte\"></e-paragraph><e-flexbox configuration-id=\"Final · bouton\"><e-button configuration-id=\"Final · réserver\"></e-button></e-flexbox></e-flexbox></e-flexbox>",
+  "xml_structure": "<e-flexbox configuration-id=\"Appel final\"><e-image configuration-id=\"Final · verre cannelé\"></e-image><e-flexbox configuration-id=\"Final · contenu\"><e-heading configuration-id=\"Final · titre\"></e-heading><e-paragraph configuration-id=\"Final · texte\"></e-paragraph><e-flexbox configuration-id=\"Final · bouton\"><e-button configuration-id=\"Final · réserver\"></e-button></e-flexbox><e-flexbox configuration-id=\"Final · badges\"><e-flexbox configuration-id=\"Final · badge · IA sécurisée\"><e-image configuration-id=\"Final · badge · IA sécurisée · icône\"></e-image><e-paragraph configuration-id=\"Final · badge · IA sécurisée · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Final · badge · Données hébergées en Europe\"><e-image configuration-id=\"Final · badge · Données hébergées en Europe · icône\"></e-image><e-paragraph configuration-id=\"Final · badge · Données hébergées en Europe · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Final · badge · Conforme RGPD\"><e-image configuration-id=\"Final · badge · Conforme RGPD · icône\"></e-image><e-paragraph configuration-id=\"Final · badge · Conforme RGPD · texte\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox></e-flexbox>",
   "element_config": {
    "Appel final": {
     "_cssid": "contact",
@@ -29,6 +29,39 @@
     "link": {
      "destination": "/contact/"
     }
+   },
+   "Final · badge · IA sécurisée · icône": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/badge-securite.webp"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "Final · badge · IA sécurisée · texte": {
+    "paragraph": "IA sécurisée"
+   },
+   "Final · badge · Données hébergées en Europe · icône": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/badge-europe.webp"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "Final · badge · Données hébergées en Europe · texte": {
+    "paragraph": "Données hébergées en Europe"
+   },
+   "Final · badge · Conforme RGPD · icône": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/badge-rgpd.webp"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "Final · badge · Conforme RGPD · texte": {
+    "paragraph": "Conforme RGPD"
    }
   },
   "classes": {
@@ -54,12 +87,34 @@
    ],
    "Final · réserver": [
     "bouton-soleil"
+   ],
+   "Final · badges": [
+    "rangee"
+   ],
+   "Final · badge · IA sécurisée": [
+    "badge-securite"
+   ],
+   "Final · badge · IA sécurisée · icône": [
+    "icone-badge"
+   ],
+   "Final · badge · Données hébergées en Europe": [
+    "badge-securite"
+   ],
+   "Final · badge · Données hébergées en Europe · icône": [
+    "icone-badge"
+   ],
+   "Final · badge · Conforme RGPD": [
+    "badge-securite"
+   ],
+   "Final · badge · Conforme RGPD · icône": [
+    "icone-badge"
    ]
   },
   "style": {
    "Final · contenu": "display: flex; flex-direction: column; gap: 0; align-items: center; z-index: 1;",
    "Final · texte": "margin-top: 34px; max-width: 600px;",
-   "Final · bouton": "display: flex; justify-content: center; margin-top: 38px; padding: 0;"
+   "Final · bouton": "display: flex; justify-content: center; margin-top: 38px; padding: 0;",
+   "Final · badges": "justify-content: center; margin-top: 34px;"
   }
  },
  "brut": {}

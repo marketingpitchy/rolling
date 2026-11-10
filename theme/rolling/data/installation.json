@@ -191,15 +191,65 @@
     "rolling_cta_texte": "Réserver un échange",
     "rolling_libelle_menu_ouvrir": "Ouvrir le menu",
     "rolling_libelle_menu_fermer": "Fermer le menu",
-    "rolling_pied_presentation": "Votre agence vidéo illimitée, pour les équipes com, RH et formation. Une marque Pitchy.",
+    "rolling_pied_presentation": "Votre agence vidéo illimitée, pour les équipes com, RH et formation.",
     "rolling_pied_marque": "Une marque Pitchy",
     "rolling_pied_titre_navigation": "Navigation",
     "rolling_pied_titre_informations": "Informations",
     "rolling_pied_copyright": "© {annee} Rolling",
     "rolling_pied_mention": "agence-rolling.fr",
-    "rolling_pied_appel": "Un projet vidéo ? Parlons-en 30 minutes."
+    "rolling_pied_appel": "Un projet vidéo ? Parlons-en 30 minutes.",
+    "rolling_badge_1": "IA sécurisée",
+    "rolling_badge_2": "Données hébergées en Europe",
+    "rolling_badge_3": "Conforme RGPD"
   },
   "kit": {
     "viewport_tablet": 980
-  }
+  },
+  "logos": [
+    {
+      "media": "logo-groupement-mousquetaires",
+      "nom": "Groupement Mousquetaires",
+      "hauteur": 46
+    },
+    {
+      "media": "logo-club-med",
+      "nom": "Club Med",
+      "hauteur": 26
+    },
+    {
+      "media": "logo-sncf",
+      "nom": "SNCF",
+      "hauteur": 40
+    },
+    {
+      "media": "logo-loccitane",
+      "nom": "L’Occitane en Provence",
+      "hauteur": 30
+    },
+    {
+      "media": "logo-air-france",
+      "nom": "Air France",
+      "hauteur": 14
+    },
+    {
+      "media": "logo-bnp-paribas",
+      "nom": "BNP Paribas",
+      "hauteur": 30
+    },
+    {
+      "media": "logo-fnac-darty",
+      "nom": "Fnac Darty",
+      "hauteur": 30
+    },
+    {
+      "media": "logo-groupama",
+      "nom": "Groupama",
+      "hauteur": 28
+    },
+    {
+      "media": "logo-veolia",
+      "nom": "Veolia",
+      "hauteur": 32
+    }
+  ]
 }

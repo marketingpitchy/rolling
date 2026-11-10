@@ -59,7 +59,10 @@ class Rolling_Dynamique {
 	 * @param \Elementor\Core\DynamicTags\Manager $gestionnaire Gestionnaire.
 	 */
 	public static function balises( $gestionnaire ) {
-		require_once ROLLING_DIR . '/inc/elementor/balises.php';
+		require_once ROLLING_DIR . '/inc/elementor/balises/trait-rolling-balise-socle.php';
+		foreach ( glob( ROLLING_DIR . '/inc/elementor/balises/class-*.php' ) as $fichier ) {
+			require_once $fichier;
+		}
 		$gestionnaire->register_group( self::GROUPE, array( 'title' => 'Rolling' ) );
 		foreach ( array( 'Rolling_Balise_Titre', 'Rolling_Balise_Champ', 'Rolling_Balise_Article', 'Rolling_Balise_Terme', 'Rolling_Balise_Webinar', 'Rolling_Balise_Image', 'Rolling_Balise_Lien' ) as $classe ) {
 			$gestionnaire->register( new $classe() );
@@ -72,8 +75,11 @@ class Rolling_Dynamique {
 	 * @param \Elementor\Widgets_Manager $gestionnaire Gestionnaire.
 	 */
 	public static function widgets( $gestionnaire ) {
-		require_once ROLLING_DIR . '/inc/elementor/widgets.php';
-		foreach ( array( 'Rolling_Widget_Liste', 'Rolling_Widget_Chiffres', 'Rolling_Widget_Coches', 'Rolling_Widget_Generique', 'Rolling_Widget_Compte_A_Rebours', 'Rolling_Widget_Video', 'Rolling_Widget_Transcription', 'Rolling_Widget_Logos', 'Rolling_Widget_Ariane' ) as $classe ) {
+		require_once ROLLING_DIR . '/inc/elementor/widgets/class-rolling-widget.php';
+		foreach ( glob( ROLLING_DIR . '/inc/elementor/widgets/class-rolling-widget-*.php' ) as $fichier ) {
+			require_once $fichier;
+		}
+		foreach ( array( 'Rolling_Widget_Liste', 'Rolling_Widget_Chiffres', 'Rolling_Widget_Coches', 'Rolling_Widget_Generique', 'Rolling_Widget_Compte_A_Rebours', 'Rolling_Widget_Video', 'Rolling_Widget_Transcription', 'Rolling_Widget_Logos', 'Rolling_Widget_Ariane', 'Rolling_Widget_Contenu', 'Rolling_Widget_Sommaire', 'Rolling_Widget_Partage', 'Rolling_Widget_Resumer' ) as $classe ) {
 			$gestionnaire->register( new $classe() );
 		}
 	}
@@ -105,15 +111,21 @@ class Rolling_Dynamique {
 		$id = (int) get_the_ID();
 
 		if ( $id && 'elementor_library' === get_post_type( $id ) ) {
-			$type   = (string) get_post_meta( $id, '_rolling_apercu', true );
-			$apercu = $type ? get_posts(
-				array(
-					'post_type'      => $type,
-					'posts_per_page' => 1,
-					'fields'         => 'ids',
-					'no_found_rows'  => true,
+			$type    = (string) get_post_meta( $id, '_rolling_apercu', true );
+			$requete = array(
+				'post_type'      => $type,
+				'posts_per_page' => 1,
+				'fields'         => 'ids',
+				'no_found_rows'  => true,
+			);
+			// Témoignage : celui « à la une » d'abord, souvent le plus complet.
+			$apercu = 'rolling_temoignage' === $type ? get_posts(
+				$requete + array(
+					'meta_key'   => Rolling_Contenus::PREFIXE . 'a_la_une', // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_key
+					'meta_value' => '1', // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_value
 				)
 			) : array();
+			$apercu = $apercu ? $apercu : ( $type ? get_posts( $requete ) : array() );
 
 			return $apercu ? (int) $apercu[0] : $id;
 		}
@@ -138,7 +150,7 @@ class Rolling_Dynamique {
 	 * Ex. : un bloc qui porte la classe « si-citation » n'est pas affiché si le témoignage n'a pas de citation.
 	 * Dans l'éditeur, tout reste visible pour pouvoir le mettre en forme.
 	 *
-	 * @param bool                   $afficher Afficher.
+	 * @param bool                    $afficher Afficher.
 	 * @param \Elementor\Element_Base $element  Élément.
 	 * @return bool
 	 */
@@ -199,8 +211,8 @@ class Rolling_Dynamique {
 	 * @return bool
 	 */
 	private static function condition_remplie( $repere ) {
-		$sans  = 0 === strpos( $repere, 'sans-' );
-		$reste = substr( $repere, $sans ? 5 : 3 );
+		$sans     = 0 === strpos( $repere, 'sans-' );
+		$reste    = substr( $repere, $sans ? 5 : 3 );
 		$morceaux = explode( '--', $reste, 2 );
 
 		if ( isset( $morceaux[1] ) ) {
@@ -306,7 +318,7 @@ class Rolling_Dynamique {
 		}
 
 		foreach ( array_unique( array_filter( $modeles ) ) as $modele ) {
-			do_action( 'elementor/post/render', $modele );
+			do_action( 'elementor/post/render', $modele ); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound, WordPress.NamingConventions.ValidHookName.UseUnderscores -- crochet d'Elementor.
 			\Elementor\Core\Files\CSS\Post::create( $modele )->enqueue();
 		}
 	}
@@ -338,7 +350,7 @@ class Rolling_Dynamique {
 			return $ids;
 		}
 
-		$labels = array( 'filtres-liste', 'chip-filtre', 'rangee', 'liste-plus', 'bouton-verre', 'bouton-petit', 'plaque-libre', 'chiffre-verre', 'libelle-chiffre', 'texte-masque', 'liste-coches', 'ligne-coche', 'coche', 'texte', 'texte-petit', 'generique-liste', 'compte-rebours', 'cr-pilule', 'cr-point', 'cr-label', 'cr-temps', 'cr-direct', 'cr-fin', 'cadre-photo', 'video-fiche', 'image-couvrante', 'bandeau-video', 'duree', 'lecture-centre', 'transcription', 'masque-bords', 'logos-defilants', 'grille-6', 'carte-verre', 'tuile-logo', 'ariane' );
+		$labels = array( 'filtres-liste', 'chip-filtre', 'rangee', 'liste-plus', 'bouton-verre', 'bouton-petit', 'plaque-libre', 'chiffre-verre', 'libelle-chiffre', 'texte-masque', 'liste-coches', 'ligne-coche', 'coche', 'texte', 'texte-petit', 'generique-liste', 'compte-rebours', 'cr-pilule', 'cr-point', 'cr-label', 'cr-temps', 'cr-direct', 'cr-fin', 'cadre-photo', 'video-fiche', 'image-couvrante', 'bandeau-video', 'duree', 'lecture-centre', 'transcription', 'masque-bords', 'logos-defilants', 'grille-6', 'carte-verre', 'tuile-logo', 'ariane', 'article-texte', 'sommaire', 'partage', 'partage-bouton', 'chip-neutre', 'resumer' );
 		if ( preg_match_all( '/"classe(?:_texte)?":"([^"]+)"/', $donnees, $trouves ) ) {
 			foreach ( $trouves[1] as $liste ) {
 				$labels = array_merge( $labels, preg_split( '/\s+/', $liste ) );

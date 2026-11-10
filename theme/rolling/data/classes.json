@@ -4256,6 +4256,141 @@
             ]
         },
         {
+            "id": "g-b964e35",
+            "label": "carte-outils",
+            "groupe": "Fiches et listes",
+            "description": "Petite carte d’outils (avec carte-verre) : marges réduites.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "padding": {
+                            "$$type": "dimensions",
+                            "value": {
+                                "block-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 20,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 22,
+                                        "unit": "px"
+                                    }
+                                },
+                                "block-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 20,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 22,
+                                        "unit": "px"
+                                    }
+                                }
+                            }
+                        },
+                        "gap": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 6,
+                                "unit": "px"
+                            }
+                        }
+                    },
+                    "custom_css": null
+                }
+            ]
+        },
+        {
+            "id": "g-0c4c9ef",
+            "label": "carte-sombre",
+            "groupe": "Fiches et listes",
+            "description": "Carte foncée (avec carte-verre et section-sombre) : appel à l'action de la colonne d'outils.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "padding": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 24,
+                                "unit": "px"
+                            }
+                        },
+                        "background": {
+                            "$$type": "background",
+                            "value": {
+                                "background-overlay": {
+                                    "$$type": "background-overlay",
+                                    "value": [
+                                        {
+                                            "$$type": "background-gradient-overlay",
+                                            "value": {
+                                                "type": {
+                                                    "$$type": "string",
+                                                    "value": "linear"
+                                                },
+                                                "stops": {
+                                                    "$$type": "gradient-color-stop",
+                                                    "value": [
+                                                        {
+                                                            "$$type": "color-stop",
+                                                            "value": {
+                                                                "color": {
+                                                                    "$$type": "color",
+                                                                    "value": "#1C1730"
+                                                                },
+                                                                "offset": {
+                                                                    "$$type": "number",
+                                                                    "value": 0
+                                                                }
+                                                            }
+                                                        },
+                                                        {
+                                                            "$$type": "color-stop",
+                                                            "value": {
+                                                                "color": {
+                                                                    "$$type": "color",
+                                                                    "value": "#0F0F12"
+                                                                },
+                                                                "offset": {
+                                                                    "$$type": "number",
+                                                                    "value": 100
+                                                                }
+                                                            }
+                                                        }
+                                                    ]
+                                                },
+                                                "angle": {
+                                                    "$$type": "number",
+                                                    "value": 160
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    },
+                    "custom_css": null
+                }
+            ]
+        },
+        {
             "id": "g-ca436b1",
             "label": "section",
             "groupe": "Mise en page",
@@ -5582,7 +5717,7 @@
                         }
                     },
                     "custom_css": {
-                        "raw": "Zm9udC13ZWlnaHQ6IDY1MDsgY29sb3I6IHZhcigtLXJsLXRleHRlLCB2YXIoLS1lbmNyZSkpOyAmIGVtLCAmIGkgeyBmb250LXN0eWxlOiBub3JtYWw7IGJhY2tncm91bmQtaW1hZ2U6IHZhcigtLXJsLWRlZ3JhZGUsIGxpbmVhci1ncmFkaWVudCg5NWRlZywgIzVCM0JFQSAwJSwgIzhFNERFNiA0MiUsICNFMDU2MkEgMTAwJSkpOyAtd2Via2l0LWJhY2tncm91bmQtY2xpcDogdGV4dDsgYmFja2dyb3VuZC1jbGlwOiB0ZXh0OyBjb2xvcjogdHJhbnNwYXJlbnQ7IH0gJiBzdHJvbmcsICYgYiB7IGZvbnQtd2VpZ2h0OiBpbmhlcml0OyBiYWNrZ3JvdW5kLWltYWdlOiBsaW5lYXItZ3JhZGllbnQoOTVkZWcsICMzNDM0RTAgMCUsICM1QjNCRUEgNTAlLCAjOEU0REU2IDEwMCUpOyAtd2Via2l0LWJhY2tncm91bmQtY2xpcDogdGV4dDsgYmFja2dyb3VuZC1jbGlwOiB0ZXh0OyBjb2xvcjogdHJhbnNwYXJlbnQ7IH0gJiB1IHsgdGV4dC1kZWNvcmF0aW9uOiBub25lOyBiYWNrZ3JvdW5kLWltYWdlOiBsaW5lYXItZ3JhZGllbnQoOTVkZWcsICNDMjQxMEMgMCUsICNFMDU2MkEgNDUlLCAjRUM1RTJCIDEwMCUpOyAtd2Via2l0LWJhY2tncm91bmQtY2xpcDogdGV4dDsgYmFja2dyb3VuZC1jbGlwOiB0ZXh0OyBjb2xvcjogdHJhbnNwYXJlbnQ7IH0="
+                        "raw": "Zm9udC13ZWlnaHQ6IDY1MDsgY29sb3I6IHZhcigtLXJsLXRleHRlLCB2YXIoLS1lbmNyZSkpOyAmIGVtLCAmIGkgeyBmb250LXN0eWxlOiBub3JtYWw7IGJhY2tncm91bmQtaW1hZ2U6IHZhcigtLXJsLWRlZ3JhZGUsIGxpbmVhci1ncmFkaWVudCg5NWRlZywgIzVCM0JFQSAwJSwgIzhFNERFNiA0MiUsICNFMDU2MkEgMTAwJSkpOyAtd2Via2l0LWJhY2tncm91bmQtY2xpcDogdGV4dDsgcGFkZGluZzogMCAwLjA2ZW07IG1hcmdpbjogMCAtMC4wNmVtOyAtd2Via2l0LWJveC1kZWNvcmF0aW9uLWJyZWFrOiBjbG9uZTsgYm94LWRlY29yYXRpb24tYnJlYWs6IGNsb25lOyBiYWNrZ3JvdW5kLWNsaXA6IHRleHQ7IGNvbG9yOiB0cmFuc3BhcmVudDsgfSAmIHN0cm9uZywgJiBiIHsgZm9udC13ZWlnaHQ6IGluaGVyaXQ7IGJhY2tncm91bmQtaW1hZ2U6IGxpbmVhci1ncmFkaWVudCg5NWRlZywgIzM0MzRFMCAwJSwgIzVCM0JFQSA1MCUsICM4RTRERTYgMTAwJSk7IC13ZWJraXQtYmFja2dyb3VuZC1jbGlwOiB0ZXh0OyBiYWNrZ3JvdW5kLWNsaXA6IHRleHQ7IGNvbG9yOiB0cmFuc3BhcmVudDsgfSAmIHUgeyB0ZXh0LWRlY29yYXRpb246IG5vbmU7IGJhY2tncm91bmQtaW1hZ2U6IGxpbmVhci1ncmFkaWVudCg5NWRlZywgI0MyNDEwQyAwJSwgI0UwNTYyQSA0NSUsICNFQzVFMkIgMTAwJSk7IC13ZWJraXQtYmFja2dyb3VuZC1jbGlwOiB0ZXh0OyBiYWNrZ3JvdW5kLWNsaXA6IHRleHQ7IGNvbG9yOiB0cmFuc3BhcmVudDsgfQ=="
                     }
                 }
             ]
@@ -5630,7 +5765,7 @@
                         }
                     },
                     "custom_css": {
-                        "raw": "Zm9udC13ZWlnaHQ6IDY1MDsgY29sb3I6IHZhcigtLXJsLXRleHRlLCB2YXIoLS1lbmNyZSkpOyAmIGVtLCAmIGkgeyBmb250LXN0eWxlOiBub3JtYWw7IGJhY2tncm91bmQtaW1hZ2U6IHZhcigtLXJsLWRlZ3JhZGUsIGxpbmVhci1ncmFkaWVudCg5NWRlZywgIzVCM0JFQSAwJSwgIzhFNERFNiA0MiUsICNFMDU2MkEgMTAwJSkpOyAtd2Via2l0LWJhY2tncm91bmQtY2xpcDogdGV4dDsgYmFja2dyb3VuZC1jbGlwOiB0ZXh0OyBjb2xvcjogdHJhbnNwYXJlbnQ7IH0gJiBzdHJvbmcsICYgYiB7IGZvbnQtd2VpZ2h0OiBpbmhlcml0OyBiYWNrZ3JvdW5kLWltYWdlOiBsaW5lYXItZ3JhZGllbnQoOTVkZWcsICMzNDM0RTAgMCUsICM1QjNCRUEgNTAlLCAjOEU0REU2IDEwMCUpOyAtd2Via2l0LWJhY2tncm91bmQtY2xpcDogdGV4dDsgYmFja2dyb3VuZC1jbGlwOiB0ZXh0OyBjb2xvcjogdHJhbnNwYXJlbnQ7IH0gJiB1IHsgdGV4dC1kZWNvcmF0aW9uOiBub25lOyBiYWNrZ3JvdW5kLWltYWdlOiBsaW5lYXItZ3JhZGllbnQoOTVkZWcsICNDMjQxMEMgMCUsICNFMDU2MkEgNDUlLCAjRUM1RTJCIDEwMCUpOyAtd2Via2l0LWJhY2tncm91bmQtY2xpcDogdGV4dDsgYmFja2dyb3VuZC1jbGlwOiB0ZXh0OyBjb2xvcjogdHJhbnNwYXJlbnQ7IH0="
+                        "raw": "Zm9udC13ZWlnaHQ6IDY1MDsgY29sb3I6IHZhcigtLXJsLXRleHRlLCB2YXIoLS1lbmNyZSkpOyAmIGVtLCAmIGkgeyBmb250LXN0eWxlOiBub3JtYWw7IGJhY2tncm91bmQtaW1hZ2U6IHZhcigtLXJsLWRlZ3JhZGUsIGxpbmVhci1ncmFkaWVudCg5NWRlZywgIzVCM0JFQSAwJSwgIzhFNERFNiA0MiUsICNFMDU2MkEgMTAwJSkpOyAtd2Via2l0LWJhY2tncm91bmQtY2xpcDogdGV4dDsgcGFkZGluZzogMCAwLjA2ZW07IG1hcmdpbjogMCAtMC4wNmVtOyAtd2Via2l0LWJveC1kZWNvcmF0aW9uLWJyZWFrOiBjbG9uZTsgYm94LWRlY29yYXRpb24tYnJlYWs6IGNsb25lOyBiYWNrZ3JvdW5kLWNsaXA6IHRleHQ7IGNvbG9yOiB0cmFuc3BhcmVudDsgfSAmIHN0cm9uZywgJiBiIHsgZm9udC13ZWlnaHQ6IGluaGVyaXQ7IGJhY2tncm91bmQtaW1hZ2U6IGxpbmVhci1ncmFkaWVudCg5NWRlZywgIzM0MzRFMCAwJSwgIzVCM0JFQSA1MCUsICM4RTRERTYgMTAwJSk7IC13ZWJraXQtYmFja2dyb3VuZC1jbGlwOiB0ZXh0OyBiYWNrZ3JvdW5kLWNsaXA6IHRleHQ7IGNvbG9yOiB0cmFuc3BhcmVudDsgfSAmIHUgeyB0ZXh0LWRlY29yYXRpb246IG5vbmU7IGJhY2tncm91bmQtaW1hZ2U6IGxpbmVhci1ncmFkaWVudCg5NWRlZywgI0MyNDEwQyAwJSwgI0UwNTYyQSA0NSUsICNFQzVFMkIgMTAwJSk7IC13ZWJraXQtYmFja2dyb3VuZC1jbGlwOiB0ZXh0OyBiYWNrZ3JvdW5kLWNsaXA6IHRleHQ7IGNvbG9yOiB0cmFuc3BhcmVudDsgfQ=="
                     }
                 }
             ]
@@ -5678,7 +5813,7 @@
                         }
                     },
                     "custom_css": {
-                        "raw": "Zm9udC13ZWlnaHQ6IDY1MDsgY29sb3I6IHZhcigtLXJsLXRleHRlLCB2YXIoLS1lbmNyZSkpOyAmIGVtLCAmIGkgeyBmb250LXN0eWxlOiBub3JtYWw7IGJhY2tncm91bmQtaW1hZ2U6IHZhcigtLXJsLWRlZ3JhZGUsIGxpbmVhci1ncmFkaWVudCg5NWRlZywgIzVCM0JFQSAwJSwgIzhFNERFNiA0MiUsICNFMDU2MkEgMTAwJSkpOyAtd2Via2l0LWJhY2tncm91bmQtY2xpcDogdGV4dDsgYmFja2dyb3VuZC1jbGlwOiB0ZXh0OyBjb2xvcjogdHJhbnNwYXJlbnQ7IH0gJiBzdHJvbmcsICYgYiB7IGZvbnQtd2VpZ2h0OiBpbmhlcml0OyBiYWNrZ3JvdW5kLWltYWdlOiBsaW5lYXItZ3JhZGllbnQoOTVkZWcsICMzNDM0RTAgMCUsICM1QjNCRUEgNTAlLCAjOEU0REU2IDEwMCUpOyAtd2Via2l0LWJhY2tncm91bmQtY2xpcDogdGV4dDsgYmFja2dyb3VuZC1jbGlwOiB0ZXh0OyBjb2xvcjogdHJhbnNwYXJlbnQ7IH0gJiB1IHsgdGV4dC1kZWNvcmF0aW9uOiBub25lOyBiYWNrZ3JvdW5kLWltYWdlOiBsaW5lYXItZ3JhZGllbnQoOTVkZWcsICNDMjQxMEMgMCUsICNFMDU2MkEgNDUlLCAjRUM1RTJCIDEwMCUpOyAtd2Via2l0LWJhY2tncm91bmQtY2xpcDogdGV4dDsgYmFja2dyb3VuZC1jbGlwOiB0ZXh0OyBjb2xvcjogdHJhbnNwYXJlbnQ7IH0="
+                        "raw": "Zm9udC13ZWlnaHQ6IDY1MDsgY29sb3I6IHZhcigtLXJsLXRleHRlLCB2YXIoLS1lbmNyZSkpOyAmIGVtLCAmIGkgeyBmb250LXN0eWxlOiBub3JtYWw7IGJhY2tncm91bmQtaW1hZ2U6IHZhcigtLXJsLWRlZ3JhZGUsIGxpbmVhci1ncmFkaWVudCg5NWRlZywgIzVCM0JFQSAwJSwgIzhFNERFNiA0MiUsICNFMDU2MkEgMTAwJSkpOyAtd2Via2l0LWJhY2tncm91bmQtY2xpcDogdGV4dDsgcGFkZGluZzogMCAwLjA2ZW07IG1hcmdpbjogMCAtMC4wNmVtOyAtd2Via2l0LWJveC1kZWNvcmF0aW9uLWJyZWFrOiBjbG9uZTsgYm94LWRlY29yYXRpb24tYnJlYWs6IGNsb25lOyBiYWNrZ3JvdW5kLWNsaXA6IHRleHQ7IGNvbG9yOiB0cmFuc3BhcmVudDsgfSAmIHN0cm9uZywgJiBiIHsgZm9udC13ZWlnaHQ6IGluaGVyaXQ7IGJhY2tncm91bmQtaW1hZ2U6IGxpbmVhci1ncmFkaWVudCg5NWRlZywgIzM0MzRFMCAwJSwgIzVCM0JFQSA1MCUsICM4RTRERTYgMTAwJSk7IC13ZWJraXQtYmFja2dyb3VuZC1jbGlwOiB0ZXh0OyBiYWNrZ3JvdW5kLWNsaXA6IHRleHQ7IGNvbG9yOiB0cmFuc3BhcmVudDsgfSAmIHUgeyB0ZXh0LWRlY29yYXRpb246IG5vbmU7IGJhY2tncm91bmQtaW1hZ2U6IGxpbmVhci1ncmFkaWVudCg5NWRlZywgI0MyNDEwQyAwJSwgI0UwNTYyQSA0NSUsICNFQzVFMkIgMTAwJSk7IC13ZWJraXQtYmFja2dyb3VuZC1jbGlwOiB0ZXh0OyBiYWNrZ3JvdW5kLWNsaXA6IHRleHQ7IGNvbG9yOiB0cmFuc3BhcmVudDsgfQ=="
                     }
                 }
             ]
@@ -5726,7 +5861,7 @@
                         }
                     },
                     "custom_css": {
-                        "raw": "Zm9udC13ZWlnaHQ6IDY1MDsgY29sb3I6IHZhcigtLXJsLXRleHRlLCB2YXIoLS1lbmNyZSkpOyAmIGVtLCAmIGkgeyBmb250LXN0eWxlOiBub3JtYWw7IGJhY2tncm91bmQtaW1hZ2U6IHZhcigtLXJsLWRlZ3JhZGUsIGxpbmVhci1ncmFkaWVudCg5NWRlZywgIzVCM0JFQSAwJSwgIzhFNERFNiA0MiUsICNFMDU2MkEgMTAwJSkpOyAtd2Via2l0LWJhY2tncm91bmQtY2xpcDogdGV4dDsgYmFja2dyb3VuZC1jbGlwOiB0ZXh0OyBjb2xvcjogdHJhbnNwYXJlbnQ7IH0gJiBzdHJvbmcsICYgYiB7IGZvbnQtd2VpZ2h0OiBpbmhlcml0OyBiYWNrZ3JvdW5kLWltYWdlOiBsaW5lYXItZ3JhZGllbnQoOTVkZWcsICMzNDM0RTAgMCUsICM1QjNCRUEgNTAlLCAjOEU0REU2IDEwMCUpOyAtd2Via2l0LWJhY2tncm91bmQtY2xpcDogdGV4dDsgYmFja2dyb3VuZC1jbGlwOiB0ZXh0OyBjb2xvcjogdHJhbnNwYXJlbnQ7IH0gJiB1IHsgdGV4dC1kZWNvcmF0aW9uOiBub25lOyBiYWNrZ3JvdW5kLWltYWdlOiBsaW5lYXItZ3JhZGllbnQoOTVkZWcsICNDMjQxMEMgMCUsICNFMDU2MkEgNDUlLCAjRUM1RTJCIDEwMCUpOyAtd2Via2l0LWJhY2tncm91bmQtY2xpcDogdGV4dDsgYmFja2dyb3VuZC1jbGlwOiB0ZXh0OyBjb2xvcjogdHJhbnNwYXJlbnQ7IH0="
+                        "raw": "Zm9udC13ZWlnaHQ6IDY1MDsgY29sb3I6IHZhcigtLXJsLXRleHRlLCB2YXIoLS1lbmNyZSkpOyAmIGVtLCAmIGkgeyBmb250LXN0eWxlOiBub3JtYWw7IGJhY2tncm91bmQtaW1hZ2U6IHZhcigtLXJsLWRlZ3JhZGUsIGxpbmVhci1ncmFkaWVudCg5NWRlZywgIzVCM0JFQSAwJSwgIzhFNERFNiA0MiUsICNFMDU2MkEgMTAwJSkpOyAtd2Via2l0LWJhY2tncm91bmQtY2xpcDogdGV4dDsgcGFkZGluZzogMCAwLjA2ZW07IG1hcmdpbjogMCAtMC4wNmVtOyAtd2Via2l0LWJveC1kZWNvcmF0aW9uLWJyZWFrOiBjbG9uZTsgYm94LWRlY29yYXRpb24tYnJlYWs6IGNsb25lOyBiYWNrZ3JvdW5kLWNsaXA6IHRleHQ7IGNvbG9yOiB0cmFuc3BhcmVudDsgfSAmIHN0cm9uZywgJiBiIHsgZm9udC13ZWlnaHQ6IGluaGVyaXQ7IGJhY2tncm91bmQtaW1hZ2U6IGxpbmVhci1ncmFkaWVudCg5NWRlZywgIzM0MzRFMCAwJSwgIzVCM0JFQSA1MCUsICM4RTRERTYgMTAwJSk7IC13ZWJraXQtYmFja2dyb3VuZC1jbGlwOiB0ZXh0OyBiYWNrZ3JvdW5kLWNsaXA6IHRleHQ7IGNvbG9yOiB0cmFuc3BhcmVudDsgfSAmIHUgeyB0ZXh0LWRlY29yYXRpb246IG5vbmU7IGJhY2tncm91bmQtaW1hZ2U6IGxpbmVhci1ncmFkaWVudCg5NWRlZywgI0MyNDEwQyAwJSwgI0UwNTYyQSA0NSUsICNFQzVFMkIgMTAwJSk7IC13ZWJraXQtYmFja2dyb3VuZC1jbGlwOiB0ZXh0OyBiYWNrZ3JvdW5kLWNsaXA6IHRleHQ7IGNvbG9yOiB0cmFuc3BhcmVudDsgfQ=="
                     }
                 }
             ]
@@ -6337,7 +6472,7 @@
                         }
                     },
                     "custom_css": {
-                        "raw": "Zm9udC13ZWlnaHQ6IDY1MDsgY29sb3I6IHZhcigtLXJsLXRleHRlLCB2YXIoLS1lbmNyZSkpOyAmIGVtLCAmIGkgeyBmb250LXN0eWxlOiBub3JtYWw7IGJhY2tncm91bmQtaW1hZ2U6IHZhcigtLXJsLWRlZ3JhZGUsIGxpbmVhci1ncmFkaWVudCg5NWRlZywgIzVCM0JFQSAwJSwgIzhFNERFNiA0MiUsICNFMDU2MkEgMTAwJSkpOyAtd2Via2l0LWJhY2tncm91bmQtY2xpcDogdGV4dDsgYmFja2dyb3VuZC1jbGlwOiB0ZXh0OyBjb2xvcjogdHJhbnNwYXJlbnQ7IH0="
+                        "raw": "Zm9udC13ZWlnaHQ6IDY1MDsgY29sb3I6IHZhcigtLXJsLXRleHRlLCB2YXIoLS1lbmNyZSkpOyAmIGVtLCAmIGkgeyBmb250LXN0eWxlOiBub3JtYWw7IGJhY2tncm91bmQtaW1hZ2U6IHZhcigtLXJsLWRlZ3JhZGUsIGxpbmVhci1ncmFkaWVudCg5NWRlZywgIzVCM0JFQSAwJSwgIzhFNERFNiA0MiUsICNFMDU2MkEgMTAwJSkpOyAtd2Via2l0LWJhY2tncm91bmQtY2xpcDogdGV4dDsgcGFkZGluZzogMCAwLjA2ZW07IG1hcmdpbjogMCAtMC4wNmVtOyAtd2Via2l0LWJveC1kZWNvcmF0aW9uLWJyZWFrOiBjbG9uZTsgYm94LWRlY29yYXRpb24tYnJlYWs6IGNsb25lOyBiYWNrZ3JvdW5kLWNsaXA6IHRleHQ7IGNvbG9yOiB0cmFuc3BhcmVudDsgfQ=="
                     }
                 }
             ]
@@ -6445,7 +6580,7 @@
                         }
                     },
                     "custom_css": {
-                        "raw": "Zm9udC13ZWlnaHQ6IDY1MDsgY29sb3I6IHZhcigtLXJsLXRleHRlLCB2YXIoLS1lbmNyZSkpOyAmIGVtLCAmIGkgeyBmb250LXN0eWxlOiBub3JtYWw7IGJhY2tncm91bmQtaW1hZ2U6IHZhcigtLXJsLWRlZ3JhZGUsIGxpbmVhci1ncmFkaWVudCg5NWRlZywgIzVCM0JFQSAwJSwgIzhFNERFNiA0MiUsICNFMDU2MkEgMTAwJSkpOyAtd2Via2l0LWJhY2tncm91bmQtY2xpcDogdGV4dDsgYmFja2dyb3VuZC1jbGlwOiB0ZXh0OyBjb2xvcjogdHJhbnNwYXJlbnQ7IH0="
+                        "raw": "Zm9udC13ZWlnaHQ6IDY1MDsgY29sb3I6IHZhcigtLXJsLXRleHRlLCB2YXIoLS1lbmNyZSkpOyAmIGVtLCAmIGkgeyBmb250LXN0eWxlOiBub3JtYWw7IGJhY2tncm91bmQtaW1hZ2U6IHZhcigtLXJsLWRlZ3JhZGUsIGxpbmVhci1ncmFkaWVudCg5NWRlZywgIzVCM0JFQSAwJSwgIzhFNERFNiA0MiUsICNFMDU2MkEgMTAwJSkpOyAtd2Via2l0LWJhY2tncm91bmQtY2xpcDogdGV4dDsgcGFkZGluZzogMCAwLjA2ZW07IG1hcmdpbjogMCAtMC4wNmVtOyAtd2Via2l0LWJveC1kZWNvcmF0aW9uLWJyZWFrOiBjbG9uZTsgYm94LWRlY29yYXRpb24tYnJlYWs6IGNsb25lOyBiYWNrZ3JvdW5kLWNsaXA6IHRleHQ7IGNvbG9yOiB0cmFuc3BhcmVudDsgfQ=="
                     }
                 }
             ]
@@ -21236,6 +21371,1052 @@
                     },
                     "custom_css": {
                         "raw": "JiBvbCB7IGRpc3BsYXk6IGZsZXg7IGZsZXgtd3JhcDogd3JhcDsgZ2FwOiA2cHg7IG1hcmdpbjogMDsgcGFkZGluZzogMDsgbGlzdC1zdHlsZTogbm9uZTsgZm9udC1mYW1pbHk6IEhhbmtlbiBHcm90ZXNrOyBmb250LXNpemU6IDE0cHg7IGNvbG9yOiB2YXIoLS1ybC1sZWdlbmRlLCB2YXIoLS1sZWdlbmRlKSk7IH0gJiBsaSArIGxpOjpiZWZvcmUgeyBjb250ZW50OiAn4oC6JzsgbWFyZ2luLXJpZ2h0OiA2cHg7IGNvbG9yOiAjOEY4OUE4OyB9ICYgYSB7IGRpc3BsYXk6IGlubGluZS1mbGV4OyBtaW4taGVpZ2h0OiAyNHB4OyBhbGlnbi1pdGVtczogY2VudGVyOyBjb2xvcjogdmFyKC0tcmwtcGFyYWdyYXBoZSwgdmFyKC0tcGFyYWdyYXBoZSkpOyB0ZXh0LWRlY29yYXRpb246IG5vbmU7IH0gJiBhOmhvdmVyIHsgY29sb3I6ICM1QjNCRUE7IHRleHQtZGVjb3JhdGlvbjogdW5kZXJsaW5lOyB9"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-484c61e",
+            "label": "article-grille",
+            "groupe": "Fiches et listes",
+            "description": "Article : texte à gauche, colonne d'outils à droite (dessous sous 980 px).",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "tablet",
+                        "state": null
+                    },
+                    "props": {
+                        "gap": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 40,
+                                "unit": "px"
+                            }
+                        },
+                        "grid-template-columns": {
+                            "$$type": "string",
+                            "value": "minmax(0, 1fr)"
+                        }
+                    },
+                    "custom_css": null
+                },
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "padding": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 0,
+                                "unit": "px"
+                            }
+                        },
+                        "display": {
+                            "$$type": "string",
+                            "value": "grid"
+                        },
+                        "gap": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 56,
+                                "unit": "px"
+                            }
+                        },
+                        "grid-template-columns": {
+                            "$$type": "string",
+                            "value": "minmax(0, 1fr) 320px"
+                        },
+                        "align-items": {
+                            "$$type": "string",
+                            "value": "start"
+                        }
+                    },
+                    "custom_css": null
+                }
+            ]
+        },
+        {
+            "id": "g-2478a7b",
+            "label": "article-principal",
+            "groupe": "Fiches et listes",
+            "description": "Colonne principale de l'article (largeur de lecture).",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "min-width": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 0,
+                                "unit": "px"
+                            }
+                        },
+                        "max-width": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 780,
+                                "unit": "px"
+                            }
+                        },
+                        "padding": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 0,
+                                "unit": "px"
+                            }
+                        },
+                        "display": {
+                            "$$type": "string",
+                            "value": "flex"
+                        },
+                        "flex-direction": {
+                            "$$type": "string",
+                            "value": "column"
+                        },
+                        "gap": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 0,
+                                "unit": "px"
+                            }
+                        }
+                    },
+                    "custom_css": null
+                }
+            ]
+        },
+        {
+            "id": "g-5ea6331",
+            "label": "article-cote",
+            "groupe": "Fiches et listes",
+            "description": "Colonne d'outils de l'article.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "padding": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 0,
+                                "unit": "px"
+                            }
+                        },
+                        "align-self": {
+                            "$$type": "string",
+                            "value": "stretch"
+                        }
+                    },
+                    "custom_css": null
+                }
+            ]
+        },
+        {
+            "id": "g-b3d3c06",
+            "label": "article-cote-colle",
+            "groupe": "Fiches et listes",
+            "description": "Outils de l'article qui suivent la lecture (sur ordinateur).",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "tablet",
+                        "state": null
+                    },
+                    "props": {
+                        "position": {
+                            "$$type": "string",
+                            "value": "static"
+                        }
+                    },
+                    "custom_css": null
+                },
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "position": {
+                            "$$type": "string",
+                            "value": "sticky"
+                        },
+                        "inset-block-start": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 110,
+                                "unit": "px"
+                            }
+                        },
+                        "padding": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 0,
+                                "unit": "px"
+                            }
+                        },
+                        "display": {
+                            "$$type": "string",
+                            "value": "flex"
+                        },
+                        "flex-direction": {
+                            "$$type": "string",
+                            "value": "column"
+                        },
+                        "gap": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 16,
+                                "unit": "px"
+                            }
+                        }
+                    },
+                    "custom_css": null
+                }
+            ]
+        },
+        {
+            "id": "g-0185556",
+            "label": "article-texte",
+            "groupe": "Fiches et listes",
+            "description": "Texte d'un article : paragraphes, intertitres, listes, images, liens.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "mobile",
+                        "state": null
+                    },
+                    "props": [],
+                    "custom_css": {
+                        "raw": "JiA+IHAsICYgPiB1bCwgJiA+IG9sIHsgZm9udC1zaXplOiAxN3B4OyB9"
+                    }
+                },
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "margin": {
+                            "$$type": "dimensions",
+                            "value": {
+                                "block-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 40,
+                                        "unit": "px"
+                                    }
+                                }
+                            }
+                        },
+                        "display": {
+                            "$$type": "string",
+                            "value": "block"
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "JiA+IHAsICYgPiB1bCwgJiA+IG9sIHsgbWFyZ2luOiAyMHB4IDAgMDsgZm9udC1mYW1pbHk6IEhhbmtlbiBHcm90ZXNrOyBmb250LXNpemU6IDE4cHg7IGxpbmUtaGVpZ2h0OiAxLjc7IGNvbG9yOiB2YXIoLS1ybC1wYXJhZ3JhcGhlLCB2YXIoLS1wYXJhZ3JhcGhlKSk7IH0gJiBzdHJvbmcgeyBjb2xvcjogdmFyKC0tcmwtdGV4dGUsIHZhcigtLWVuY3JlKSk7IH0gJiBhIHsgY29sb3I6ICM1QjNCRUE7IHRleHQtZGVjb3JhdGlvbjogdW5kZXJsaW5lOyB9ICYgPiBoMiB7IG1hcmdpbjogNTJweCAwIDA7IGZvbnQtZmFtaWx5OiBCcmljb2xhZ2UgR3JvdGVzcXVlOyBmb250LXdlaWdodDogNjUwOyBmb250LXNpemU6IGNsYW1wKDI2cHgsIDIuNnZ3LCAzNHB4KTsgbGluZS1oZWlnaHQ6IDEuMTU7IGxldHRlci1zcGFjaW5nOiAtMC4wNGVtOyBjb2xvcjogdmFyKC0tcmwtdGV4dGUsIHZhcigtLWVuY3JlKSk7IHNjcm9sbC1tYXJnaW4tdG9wOiAxMTBweDsgfSAmID4gaDMgeyBtYXJnaW46IDMycHggMCAwOyBmb250LWZhbWlseTogQnJpY29sYWdlIEdyb3Rlc3F1ZTsgZm9udC13ZWlnaHQ6IDY1MDsgZm9udC1zaXplOiAyM3B4OyBsZXR0ZXItc3BhY2luZzogLTAuMDM1ZW07IGNvbG9yOiB2YXIoLS1ybC10ZXh0ZSwgdmFyKC0tZW5jcmUpKTsgfSAmIGltZyB7IG1heC13aWR0aDogMTAwJTsgaGVpZ2h0OiBhdXRvOyBib3JkZXItcmFkaXVzOiAyMnB4OyB9ICYgZmlndXJlIHsgbWFyZ2luOiAzMnB4IDA7IH0gJiBibG9ja3F1b3RlIHsgbWFyZ2luOiAyOHB4IDA7IHBhZGRpbmc6IDIwcHggMjRweDsgYm9yZGVyLWxlZnQ6IDNweCBzb2xpZCAjNUIzQkVBOyBib3JkZXItcmFkaXVzOiAwIDE4cHggMThweCAwOyBiYWNrZ3JvdW5kOiAjRURFNkZGOyBmb250LWZhbWlseTogQnJpY29sYWdlIEdyb3Rlc3F1ZTsgZm9udC1zaXplOiAyMHB4OyBsaW5lLWhlaWdodDogMS41OyBmb250LXdlaWdodDogNjAwOyB9"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-64bcb6f",
+            "label": "sommaire",
+            "groupe": "Fiches et listes",
+            "description": "Sommaire de l'article : le chapitre lu est en violet.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "padding": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 0,
+                                "unit": "px"
+                            }
+                        },
+                        "margin": {
+                            "$$type": "dimensions",
+                            "value": {
+                                "block-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 8,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 0,
+                                        "unit": "px"
+                                    }
+                                },
+                                "block-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 0,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 0,
+                                        "unit": "px"
+                                    }
+                                }
+                            }
+                        },
+                        "display": {
+                            "$$type": "string",
+                            "value": "grid"
+                        },
+                        "gap": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 2,
+                                "unit": "px"
+                            }
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "bGlzdC1zdHlsZTogbm9uZTsgJiBhIHsgZGlzcGxheTogZmxleDsgbWluLWhlaWdodDogMzRweDsgYWxpZ24taXRlbXM6IGNlbnRlcjsgcGFkZGluZzogNHB4IDAgNHB4IDE0cHg7IGJvcmRlci1sZWZ0OiAycHggc29saWQgcmdiYSgxNSwxNSwxOCwwLjEpOyBmb250LWZhbWlseTogSGFua2VuIEdyb3Rlc2s7IGZvbnQtc2l6ZTogMTVweDsgbGluZS1oZWlnaHQ6IDEuMzU7IGNvbG9yOiB2YXIoLS1ybC1wYXJhZ3JhcGhlLCB2YXIoLS1wYXJhZ3JhcGhlKSk7IHRleHQtZGVjb3JhdGlvbjogbm9uZTsgfSAmIGE6aG92ZXIsICYgYS5hY3RpZiB7IGNvbG9yOiAjNUIzQkVBOyBib3JkZXItbGVmdC1jb2xvcjogIzVCM0JFQTsgfQ=="
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-d92f8e8",
+            "label": "partage",
+            "groupe": "Fiches et listes",
+            "description": "Boutons de partage de l'article.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "padding": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 0,
+                                "unit": "px"
+                            }
+                        },
+                        "margin": {
+                            "$$type": "dimensions",
+                            "value": {
+                                "block-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 12,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 0,
+                                        "unit": "px"
+                                    }
+                                },
+                                "block-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 0,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 0,
+                                        "unit": "px"
+                                    }
+                                }
+                            }
+                        },
+                        "display": {
+                            "$$type": "string",
+                            "value": "flex"
+                        },
+                        "gap": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 8,
+                                "unit": "px"
+                            }
+                        },
+                        "flex-wrap": {
+                            "$$type": "string",
+                            "value": "wrap"
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "bGlzdC1zdHlsZTogbm9uZTs="
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-6423bdc",
+            "label": "partage-bouton",
+            "groupe": "Fiches et listes",
+            "description": "Bouton rond de partage.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": "hover"
+                    },
+                    "props": {
+                        "color": {
+                            "$$type": "color",
+                            "value": "#FFFFFF"
+                        },
+                        "background": {
+                            "$$type": "background",
+                            "value": {
+                                "color": {
+                                    "$$type": "color",
+                                    "value": "#5B3BEA"
+                                }
+                            }
+                        }
+                    },
+                    "custom_css": null
+                },
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "width": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 44,
+                                "unit": "px"
+                            }
+                        },
+                        "height": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 44,
+                                "unit": "px"
+                            }
+                        },
+                        "color": {
+                            "$$type": "color",
+                            "value": "#0F0F12"
+                        },
+                        "cursor": {
+                            "$$type": "string",
+                            "value": "pointer"
+                        },
+                        "padding": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 0,
+                                "unit": "px"
+                            }
+                        },
+                        "border-radius": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 50,
+                                "unit": "%"
+                            }
+                        },
+                        "border-width": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 0,
+                                "unit": "px"
+                            }
+                        },
+                        "background": {
+                            "$$type": "background",
+                            "value": {
+                                "color": {
+                                    "$$type": "color",
+                                    "value": "#FFFFFF"
+                                }
+                            }
+                        },
+                        "box-shadow": {
+                            "$$type": "box-shadow",
+                            "value": [
+                                {
+                                    "$$type": "shadow",
+                                    "value": {
+                                        "hOffset": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 0,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "vOffset": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 0,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "blur": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 0,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "spread": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 1,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "color": {
+                                            "$$type": "color",
+                                            "value": "rgba(15,15,18,0.1)"
+                                        },
+                                        "position": {
+                                            "$$type": "string",
+                                            "value": "inset"
+                                        }
+                                    }
+                                },
+                                {
+                                    "$$type": "shadow",
+                                    "value": {
+                                        "hOffset": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 0,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "vOffset": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 6,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "blur": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 14,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "spread": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": -10,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "color": {
+                                            "$$type": "color",
+                                            "value": "rgba(70,40,150,0.4)"
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        "display": {
+                            "$$type": "string",
+                            "value": "inline-flex"
+                        },
+                        "justify-content": {
+                            "$$type": "string",
+                            "value": "center"
+                        },
+                        "align-items": {
+                            "$$type": "string",
+                            "value": "center"
+                        }
+                    },
+                    "custom_css": null
+                }
+            ]
+        },
+        {
+            "id": "g-528f8d9",
+            "label": "resumer",
+            "groupe": "Fiches et listes",
+            "description": "« Résumer avec » : liens vers les IA.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "padding": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 0,
+                                "unit": "px"
+                            }
+                        },
+                        "margin": {
+                            "$$type": "dimensions",
+                            "value": {
+                                "block-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 12,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 0,
+                                        "unit": "px"
+                                    }
+                                },
+                                "block-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 0,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 0,
+                                        "unit": "px"
+                                    }
+                                }
+                            }
+                        },
+                        "gap": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 8,
+                                "unit": "px"
+                            }
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "bGlzdC1zdHlsZTogbm9uZTs="
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-343565e",
+            "label": "mire",
+            "groupe": "Fiches et listes",
+            "description": "Mire de fin d'émission aux couleurs Rolling (page 404), avec « Signal perdu ».",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "width": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 100,
+                                "unit": "%"
+                            }
+                        },
+                        "max-width": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 560,
+                                "unit": "px"
+                            }
+                        },
+                        "overflow": {
+                            "$$type": "string",
+                            "value": "hidden"
+                        },
+                        "aspect-ratio": {
+                            "$$type": "string",
+                            "value": "16 / 9"
+                        },
+                        "position": {
+                            "$$type": "string",
+                            "value": "relative"
+                        },
+                        "padding": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 0,
+                                "unit": "px"
+                            }
+                        },
+                        "border-radius": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 26,
+                                "unit": "px"
+                            }
+                        },
+                        "box-shadow": {
+                            "$$type": "box-shadow",
+                            "value": [
+                                {
+                                    "$$type": "shadow",
+                                    "value": {
+                                        "hOffset": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 0,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "vOffset": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 0,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "blur": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 0,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "spread": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 8,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "color": {
+                                            "$$type": "color",
+                                            "value": "rgba(255,255,255,0.06)"
+                                        }
+                                    }
+                                },
+                                {
+                                    "$$type": "shadow",
+                                    "value": {
+                                        "hOffset": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 0,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "vOffset": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 40,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "blur": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 80,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "spread": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": -30,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "color": {
+                                            "$$type": "color",
+                                            "value": "rgba(0,0,0,0.8)"
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        "display": {
+                            "$$type": "string",
+                            "value": "flex"
+                        },
+                        "justify-content": {
+                            "$$type": "string",
+                            "value": "center"
+                        },
+                        "align-items": {
+                            "$$type": "string",
+                            "value": "center"
+                        },
+                        "margin": {
+                            "$$type": "dimensions",
+                            "value": {
+                                "block-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 0,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": null,
+                                        "unit": "auto"
+                                    }
+                                },
+                                "block-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 0,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": null,
+                                        "unit": "auto"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "YmFja2dyb3VuZC1pbWFnZTogbGluZWFyLWdyYWRpZW50KDkwZGVnLCAjRkFGOUY3IDAgMTQuMjglLCAjRkZEMUJGIDE0LjI4JSAyOC41NyUsICNGRjhBNUIgMjguNTclIDQyLjg1JSwgI0UwNTYyQSA0Mi44NSUgNTcuMTQlLCAjQzRCNUZEIDU3LjE0JSA3MS40MiUsICM4RTRERTYgNzEuNDIlIDg1LjcxJSwgIzVCM0JFQSA4NS43MSUpLCBsaW5lYXItZ3JhZGllbnQoOTBkZWcsICMzNDM0RTAgMCAxNC4yOCUsICMwRjBGMTIgMTQuMjglIDI4LjU3JSwgIzhFNERFNiAyOC41NyUgNDIuODUlLCAjMTcxMTJDIDQyLjg1JSA1Ny4xNCUsICNGRjhBNUIgNTcuMTQlIDcxLjQyJSwgIzBGMEYxMiA3MS40MiUgODUuNzElLCAjRkFGOUY3IDg1LjcxJSk7IGJhY2tncm91bmQtcmVwZWF0OiBuby1yZXBlYXQsIG5vLXJlcGVhdDsgYmFja2dyb3VuZC1wb3NpdGlvbjogdG9wLCBib3R0b207IGJhY2tncm91bmQtc2l6ZTogMTAwJSA3NCUsIDEwMCUgMjYlOyAmOjphZnRlciB7IGNvbnRlbnQ6ICcnOyBwb3NpdGlvbjogYWJzb2x1dGU7IHRvcDogMDsgcmlnaHQ6IDA7IGJvdHRvbTogMDsgbGVmdDogMDsgYmFja2dyb3VuZDogcmVwZWF0aW5nLWxpbmVhci1ncmFkaWVudCgxODBkZWcsIHJnYmEoMTUsMTUsMTgsMC4xNikgMCAycHgsIHRyYW5zcGFyZW50IDJweCA0cHgpOyBhbmltYXRpb246IHJsLXNjaW50aWxsZSAzLjJzIHN0ZXBzKDIpIGluZmluaXRlOyBwb2ludGVyLWV2ZW50czogbm9uZTsgfQ=="
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-2f3965c",
+            "label": "mire-signal",
+            "groupe": "Fiches et listes",
+            "description": "« Signal perdu · 04:04 » au centre de la mire.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "mobile",
+                        "state": null
+                    },
+                    "props": {
+                        "font-size": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 12,
+                                "unit": "px"
+                            }
+                        },
+                        "padding": {
+                            "$$type": "dimensions",
+                            "value": {
+                                "block-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 8,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 14,
+                                        "unit": "px"
+                                    }
+                                },
+                                "block-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 8,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 14,
+                                        "unit": "px"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "custom_css": null
+                },
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "position": {
+                            "$$type": "string",
+                            "value": "relative"
+                        },
+                        "z-index": {
+                            "$$type": "number",
+                            "value": 1
+                        },
+                        "font-family": {
+                            "$$type": "font-family",
+                            "value": "Hanken Grotesk"
+                        },
+                        "font-weight": {
+                            "$$type": "string",
+                            "value": "800"
+                        },
+                        "font-size": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 14,
+                                "unit": "px"
+                            }
+                        },
+                        "color": {
+                            "$$type": "color",
+                            "value": "#FFFFFF"
+                        },
+                        "letter-spacing": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 0.14,
+                                "unit": "em"
+                            }
+                        },
+                        "text-transform": {
+                            "$$type": "string",
+                            "value": "uppercase"
+                        },
+                        "padding": {
+                            "$$type": "dimensions",
+                            "value": {
+                                "block-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 10,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 18,
+                                        "unit": "px"
+                                    }
+                                },
+                                "block-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 10,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 18,
+                                        "unit": "px"
+                                    }
+                                }
+                            }
+                        },
+                        "border-radius": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 999,
+                                "unit": "px"
+                            }
+                        },
+                        "background": {
+                            "$$type": "background",
+                            "value": {
+                                "color": {
+                                    "$$type": "color",
+                                    "value": "rgba(15,15,18,0.88)"
+                                }
+                            }
+                        },
+                        "display": {
+                            "$$type": "string",
+                            "value": "inline-flex"
+                        },
+                        "gap": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 10,
+                                "unit": "px"
+                            }
+                        },
+                        "align-items": {
+                            "$$type": "string",
+                            "value": "center"
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "d2hpdGUtc3BhY2U6IG5vd3JhcDsgJjo6YmVmb3JlIHsgY29udGVudDogJyc7IHdpZHRoOiA4cHg7IGhlaWdodDogOHB4OyBib3JkZXItcmFkaXVzOiA1MCU7IGJhY2tncm91bmQ6ICNGRjNCMzA7IGJveC1zaGFkb3c6IDAgMCAwIDNweCByZ2JhKDI1NSw1OSw0OCwwLjI4KTsgYW5pbWF0aW9uOiBybC1jbGlnbm90ZSAxLjZzIGVhc2UtaW4tb3V0IGluZmluaXRlOyB9"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-4e7b269",
+            "label": "liens-utiles",
+            "groupe": "Fiches et listes",
+            "description": "Liens utiles en ligne, centrés (page 404).",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "font-family": {
+                            "$$type": "font-family",
+                            "value": "Hanken Grotesk"
+                        },
+                        "font-size": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 16,
+                                "unit": "px"
+                            }
+                        },
+                        "line-height": {
+                            "$$type": "size",
+                            "value": {
+                                "size": "2",
+                                "unit": "custom"
+                            }
+                        },
+                        "text-align": {
+                            "$$type": "string",
+                            "value": "center"
+                        },
+                        "display": {
+                            "$$type": "string",
+                            "value": "block"
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "Y29sb3I6IHZhcigtLXJsLXBhcmFncmFwaGUsIHZhcigtLXBhcmFncmFwaGUpKTsgJiBhIHsgZGlzcGxheTogaW5saW5lLWZsZXg7IGFsaWduLWl0ZW1zOiBjZW50ZXI7IG1pbi1oZWlnaHQ6IDQ0cHg7IG1hcmdpbjogMCAxMnB4OyBjb2xvcjogaW5oZXJpdDsgdGV4dC1kZWNvcmF0aW9uOiB1bmRlcmxpbmU7IH0gJiBhOmhvdmVyIHsgY29sb3I6ICNGRkZGRkY7IH0="
                     }
                 }
             ]

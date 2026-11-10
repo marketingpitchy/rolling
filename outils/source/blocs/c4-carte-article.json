@@ -9,11 +9,6 @@
    "Carte article": {
     "tag": "article"
    },
-   "Article · vignette": {
-    "link": {
-     "destination": "⟦rolling-lien|lien=fiche⟧"
-    }
-   },
    "Article · image": {
     "image": {
      "src": {
@@ -44,7 +39,8 @@
     "carte-liste"
    ],
    "Article · vignette": [
-    "vignette-lien"
+    "vignette-lien",
+    "si-image"
    ],
    "Article · cadre": [
     "cadre-photo",

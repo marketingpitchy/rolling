@@ -86,7 +86,7 @@ class Rolling_Webinars {
 	 * @return int[]
 	 */
 	public static function liste( $liste, $nombre = 50 ) {
-		$ids = get_posts(
+		$ids   = get_posts(
 			array(
 				'post_type'      => 'rolling_webinar',
 				'posts_per_page' => 200,

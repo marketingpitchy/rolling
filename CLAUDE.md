@@ -52,7 +52,7 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   Deux pages de maquette : cas complet et cas sans chiffres ni vidéo. Landing : timecodes 00:01 à 00:05 en sur-titres ;
   les étiquettes en pointillés de la maquette sont des annotations (pas sur le site).
   Prochaines : 3 = contenus admin (réalisations, témoignages, logos, offres, articles, guides, webinars) + modèles du site
-  (balises maison) + sous-menu ; 4 = pages Offres, Réalisations, Témoignages, Blog, Guides, Webinars, Replays, Contact,
+  (balises maison) + sous-menu [fait en 0.3.0] ; 4 = pages Offres, Réalisations, Témoignages, Blog, Guides, Webinars, Replays, Contact,
   landing, 404, SEO, contrôle final.
 - **Tour suivant (maquette)** : fiche témoignage = carte « Le projet » (client, secteur, équipes, formats, durée + « Réserver
   un échange ») toujours à gauche, citation **facultative** dessous ; cas à 4 chiffres (cas habituel) ; en mobile un
@@ -110,6 +110,25 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   pages créées à l'activation ; chez la cliente (menu déjà créé), elle ajoute le lien elle-même dans Apparence > Menus.
 - Mots en dégradé (background-clip: text) : prévoir `padding-inline: .06em; margin-inline: -.06em;
   box-decoration-break: clone` (sinon la 1re lettre est rognée) ⇒ **à vérifier dans les classes du thème** (livraison 3).
+- **Livraison 3 envoyée (0.3.0)** : contenus admin (Réalisations, Témoignages, Logos clients, Guides, Webinars + filtres
+  Métiers / Formats vidéo / Thèmes ; champs du thème, lignes répétables) ; balises « Rolling » (7) et widgets « Rolling »
+  (Liste de cartes, Chiffres clés, Liste à coches, Générique, Compte à rebours, Vidéo, Transcription, Logos clients, Fil
+  d'Ariane, Texte / Sommaire / Partage / Résumer de l'article) ; modèles du site dans Mes modèles : 8 cartes + fiches
+  réalisation, témoignage, article, 404 (choix dans Personnaliser > Rolling : modèles des fiches) ; en-tête avec sous-menu
+  (élément parent = bouton) ; pied façon PlayPlay (menu « Pied de page : colonnes », réseaux, badges, avis facultatifs) ;
+  bloc Logos = widget relié à la liste (9 logos créés au départ) ; badges sous l'appel final ; 13 ans ; dégradés aérés ;
+  pages Guides, Webinars, Replays, L'agence créées une fois. Vérifié : axe 0 (fiches, listes, article, 404, accueil, 1440/390,
+  réduire les animations), PHPCS 0, mobile 390, éditeur (aperçu avec vrais contenus), mise à jour 0.2.2 → 0.3.0 sur wp2.
+  Pages Réalisations, Témoignages, Blog, Guides, Webinars, Replays, Offres, Contact, L'agence, landing = **livraison 4**
+  (blocs de page avec les widgets Liste).
+- Leçons 0.3.0 : Elementor ne prépare les styles que des documents qu'il affiche ⇒ fiches (gabarit modeles/fiche.php)
+  et cartes : `elementor/post/render` + CSS du modèle dans `elementor/frontend/after_enqueue_styles`, cartes rattachées au
+  document par `elementor/document/related_posts` (une seule feuille globale, ordre des classes respecté) ; classes
+  écrites par les widgets déclarées par `elementor/global_classes/extract_class_ids_from_post` ; enveloppe `.elementor`
+  des cartes en `display: contents` (`.rl-liste`) ; `.site-main.rl-fiche` pleine largeur (Hello limite à 1140) ;
+  Hello appelle `template-parts/dynamic-*.php` (copies supprimées : elles incluent header/footer.php) ; hors admin
+  (wp-cli), Elementor allège les réglages des balises et refuse l'enregistrement ⇒ construire.sh simule l'écran
+  d'administration ; positions des éléments de menu = compteur global ; `trim()` avec « · » casse l'UTF-8.
 - FAQ : la cliente ajoute elle-même les réponses ; garder les questions telles quelles.
 - Le WordPress de production existe déjà chez la cliente : on livre seulement le thème (zip à importer).
 

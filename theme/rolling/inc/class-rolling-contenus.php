@@ -40,59 +40,59 @@ class Rolling_Contenus {
 	public static function types() {
 		return array(
 			'rolling_realisation' => array(
-				'pluriel'  => __( 'Réalisations', 'rolling' ),
+				'pluriel'   => __( 'Réalisations', 'rolling' ),
 				'singulier' => __( 'Réalisation', 'rolling' ),
-				'feminin'  => true,
-				'slug'     => 'realisations',
-				'public'   => true,
-				'icone'    => 'dashicons-video-alt3',
-				'position' => 21,
-				'supports' => array( 'title', 'thumbnail', 'revisions' ),
-				'titre'    => __( 'Titre de la réalisation (ex. : 13 jours de formation, une seule vidéo.)', 'rolling' ),
+				'feminin'   => true,
+				'slug'      => 'realisations',
+				'public'    => true,
+				'icone'     => 'dashicons-video-alt3',
+				'position'  => 21,
+				'supports'  => array( 'title', 'thumbnail', 'revisions' ),
+				'titre'     => __( 'Titre de la réalisation (ex. : 13 jours de formation, une seule vidéo.)', 'rolling' ),
 			),
 			'rolling_temoignage'  => array(
-				'pluriel'  => __( 'Témoignages', 'rolling' ),
+				'pluriel'   => __( 'Témoignages', 'rolling' ),
 				'singulier' => __( 'Témoignage', 'rolling' ),
-				'feminin'  => false,
-				'slug'     => 'temoignages',
-				'public'   => true,
-				'icone'    => 'dashicons-format-quote',
-				'position' => 22,
-				'supports' => array( 'title', 'thumbnail', 'revisions' ),
-				'titre'    => __( 'Titre du cas (ex. : l’expertise vidéo qui manquait à l’équipe SIRH.)', 'rolling' ),
+				'feminin'   => false,
+				'slug'      => 'temoignages',
+				'public'    => true,
+				'icone'     => 'dashicons-format-quote',
+				'position'  => 22,
+				'supports'  => array( 'title', 'thumbnail', 'revisions' ),
+				'titre'     => __( 'Titre du cas (ex. : l’expertise vidéo qui manquait à l’équipe SIRH.)', 'rolling' ),
 			),
 			'rolling_logo'        => array(
-				'pluriel'  => __( 'Logos clients', 'rolling' ),
+				'pluriel'   => __( 'Logos clients', 'rolling' ),
 				'singulier' => __( 'Logo client', 'rolling' ),
-				'feminin'  => false,
-				'slug'     => '',
-				'public'   => false,
-				'icone'    => 'dashicons-awards',
-				'position' => 23,
-				'supports' => array( 'title', 'thumbnail', 'page-attributes' ),
-				'titre'    => __( 'Nom du client (lu par Google et les lecteurs d’écran)', 'rolling' ),
+				'feminin'   => false,
+				'slug'      => '',
+				'public'    => false,
+				'icone'     => 'dashicons-awards',
+				'position'  => 23,
+				'supports'  => array( 'title', 'thumbnail', 'page-attributes' ),
+				'titre'     => __( 'Nom du client (lu par Google et les lecteurs d’écran)', 'rolling' ),
 			),
 			'rolling_guide'       => array(
-				'pluriel'  => __( 'Guides', 'rolling' ),
+				'pluriel'   => __( 'Guides', 'rolling' ),
 				'singulier' => __( 'Guide', 'rolling' ),
-				'feminin'  => false,
-				'slug'     => '',
-				'public'   => false,
-				'icone'    => 'dashicons-media-document',
-				'position' => 24,
-				'supports' => array( 'title', 'thumbnail' ),
-				'titre'    => __( 'Titre du guide', 'rolling' ),
+				'feminin'   => false,
+				'slug'      => '',
+				'public'    => false,
+				'icone'     => 'dashicons-media-document',
+				'position'  => 24,
+				'supports'  => array( 'title', 'thumbnail' ),
+				'titre'     => __( 'Titre du guide', 'rolling' ),
 			),
 			'rolling_webinar'     => array(
-				'pluriel'  => __( 'Webinars', 'rolling' ),
+				'pluriel'   => __( 'Webinars', 'rolling' ),
 				'singulier' => __( 'Webinar', 'rolling' ),
-				'feminin'  => false,
-				'slug'     => '',
-				'public'   => false,
-				'icone'    => 'dashicons-microphone',
-				'position' => 25,
-				'supports' => array( 'title', 'thumbnail' ),
-				'titre'    => __( 'Titre du webinar', 'rolling' ),
+				'feminin'   => false,
+				'slug'      => '',
+				'public'    => false,
+				'icone'     => 'dashicons-microphone',
+				'position'  => 25,
+				'supports'  => array( 'title', 'thumbnail' ),
+				'titre'     => __( 'Titre du webinar', 'rolling' ),
 			),
 		);
 	}
@@ -157,83 +157,107 @@ class Rolling_Contenus {
 		return array(
 			'rolling_realisation' => array(
 				__( 'La carte et le haut de la fiche', 'rolling' ) => array(
-					'client'          => array( 'texte', __( 'Client', 'rolling' ), __( 'Ex. : Fnac Darty. Affiché au-dessus du titre.', 'rolling' ) ),
-					'titre_couleur'   => array( 'texte', __( 'Fin du titre en couleur', 'rolling' ), __( 'Recopiez la fin du titre à mettre en dégradé. Ex. : une seule vidéo.', 'rolling' ) ),
-					'chapo'           => array( 'zone', __( 'Chapô (facultatif)', 'rolling' ), __( 'Une ou deux phrases sous le titre de la fiche.', 'rolling' ) ),
-					'avant'           => array( 'texte', __( 'Contenu de départ', 'rolling' ), __( 'Ex. : Programme du séminaire.', 'rolling' ) ),
-					'apres'           => array( 'texte', __( 'Vidéo produite', 'rolling' ), __( 'Ex. : aftermovie de 2 min.', 'rolling' ) ),
-					'tonalite'        => array( 'choix', __( 'Couleur de l’étiquette', 'rolling' ), '', $tonalite ),
-					'duree'           => array( 'texte', __( 'Durée de la vidéo', 'rolling' ), __( 'Ex. : 2:04', 'rolling' ) ),
+					'client'        => array( 'texte', __( 'Client', 'rolling' ), __( 'Ex. : Fnac Darty. Affiché au-dessus du titre.', 'rolling' ) ),
+					'titre_couleur' => array( 'texte', __( 'Fin du titre en couleur', 'rolling' ), __( 'Recopiez la fin du titre à mettre en dégradé. Ex. : une seule vidéo.', 'rolling' ) ),
+					'chapo'         => array( 'zone', __( 'Chapô (facultatif)', 'rolling' ), __( 'Une ou deux phrases sous le titre de la fiche.', 'rolling' ) ),
+					'avant'         => array( 'texte', __( 'Contenu de départ', 'rolling' ), __( 'Ex. : Programme du séminaire.', 'rolling' ) ),
+					'apres'         => array( 'texte', __( 'Vidéo produite', 'rolling' ), __( 'Ex. : aftermovie de 2 min.', 'rolling' ) ),
+					'tonalite'      => array( 'choix', __( 'Couleur de l’étiquette', 'rolling' ), '', $tonalite ),
+					'duree'         => array( 'texte', __( 'Durée de la vidéo', 'rolling' ), __( 'Ex. : 2:04', 'rolling' ) ),
 				),
-				__( 'La vidéo', 'rolling' )                     => array(
-					'video'           => array( 'lien', __( 'Lien de la vidéo', 'rolling' ), __( 'Lien YouTube ou lien d’un fichier de la médiathèque. L’image à la une sert d’affiche.', 'rolling' ) ),
-					'transcription'   => array( 'zone', __( 'Transcription (facultatif)', 'rolling' ), __( 'Laissez vide : la ligne « Lire la transcription » n’apparaît pas.', 'rolling' ) ),
+				__( 'La vidéo', 'rolling' ) => array(
+					'video'         => array( 'lien', __( 'Lien de la vidéo', 'rolling' ), __( 'Lien YouTube ou lien d’un fichier de la médiathèque. L’image à la une sert d’affiche.', 'rolling' ) ),
+					'transcription' => array( 'zone', __( 'Transcription (facultatif)', 'rolling' ), __( 'Laissez vide : la ligne « Lire la transcription » n’apparaît pas.', 'rolling' ) ),
 				),
-				__( 'Le récit', 'rolling' )                     => array(
-					'besoin'          => array( 'zone', __( 'Le besoin', 'rolling' ), '' ),
-					'produit'         => array( 'lignes', __( 'Ce que nous avons produit', 'rolling' ), __( 'Une ligne par point (liste à coches).', 'rolling' ), array( 'texte' => __( 'Point', 'rolling' ) ) ),
-					'resultat'        => array( 'zone', __( 'Le résultat', 'rolling' ), '' ),
+				__( 'Le récit', 'rolling' ) => array(
+					'besoin'   => array( 'zone', __( 'Le besoin', 'rolling' ), '' ),
+					'produit'  => array( 'lignes', __( 'Ce que nous avons produit', 'rolling' ), __( 'Une ligne par point (liste à coches).', 'rolling' ), array( 'texte' => __( 'Point', 'rolling' ) ) ),
+					'resultat' => array( 'zone', __( 'Le résultat', 'rolling' ), '' ),
 				),
-				__( 'Le générique (facultatif)', 'rolling' )   => array(
-					'generique'       => array( 'lignes', __( 'Lignes du générique', 'rolling' ), __( 'Ex. : Client — Fnac Darty ; Direction artistique — Thomas. Laissez vide : pas de générique.', 'rolling' ), array( 'role' => __( 'Intitulé', 'rolling' ), 'valeur' => __( 'Valeur', 'rolling' ) ) ),
+				__( 'Le générique (facultatif)', 'rolling' ) => array(
+					'generique' => array(
+						'lignes',
+						__( 'Lignes du générique', 'rolling' ),
+						__( 'Ex. : Client — Fnac Darty ; Direction artistique — Thomas. Laissez vide : pas de générique.', 'rolling' ),
+						array(
+							'role'   => __( 'Intitulé', 'rolling' ),
+							'valeur' => __( 'Valeur', 'rolling' ),
+						),
+					),
 				),
 			),
 			'rolling_temoignage'  => array(
-				__( 'Le haut de la fiche', 'rolling' )         => array(
-					'client'          => array( 'texte', __( 'Client', 'rolling' ), __( 'Ex. : Groupement Mousquetaires.', 'rolling' ) ),
-					'logo'            => array( 'image', __( 'Logo du client', 'rolling' ), '' ),
-					'titre_couleur'   => array( 'texte', __( 'Fin du titre en couleur', 'rolling' ), __( 'Recopiez la fin du titre à mettre en dégradé.', 'rolling' ) ),
-					'chapo'           => array( 'zone', __( 'Chapô', 'rolling' ), __( 'En deux phrases : qui ils sont, ce que nous avons fait ensemble.', 'rolling' ) ),
-					'a_la_une'        => array( 'case', __( 'À la une sur la page Témoignages', 'rolling' ), __( 'Un seul témoignage à la une : le plus récent coché.', 'rolling' ) ),
+				__( 'Le haut de la fiche', 'rolling' )  => array(
+					'client'        => array( 'texte', __( 'Client', 'rolling' ), __( 'Ex. : Groupement Mousquetaires.', 'rolling' ) ),
+					'logo'          => array( 'image', __( 'Logo du client', 'rolling' ), '' ),
+					'titre_couleur' => array( 'texte', __( 'Fin du titre en couleur', 'rolling' ), __( 'Recopiez la fin du titre à mettre en dégradé.', 'rolling' ) ),
+					'chapo'         => array( 'zone', __( 'Chapô', 'rolling' ), __( 'En deux phrases : qui ils sont, ce que nous avons fait ensemble.', 'rolling' ) ),
+					'a_la_une'      => array( 'case', __( 'À la une sur la page Témoignages', 'rolling' ), __( 'Un seul témoignage à la une : le plus récent coché.', 'rolling' ) ),
 				),
-				__( 'Le bandeau du projet', 'rolling' )        => array(
-					'secteur'         => array( 'texte', __( 'Secteur', 'rolling' ), '' ),
-					'equipes'         => array( 'texte', __( 'Équipes', 'rolling' ), '' ),
-					'formats'         => array( 'texte', __( 'Formats', 'rolling' ), '' ),
-					'duree'           => array( 'texte', __( 'Durée', 'rolling' ), __( 'Ex. : 3 mois. Un champ vide n’est pas affiché.', 'rolling' ) ),
+				__( 'Le bandeau du projet', 'rolling' ) => array(
+					'secteur' => array( 'texte', __( 'Secteur', 'rolling' ), '' ),
+					'equipes' => array( 'texte', __( 'Équipes', 'rolling' ), '' ),
+					'formats' => array( 'texte', __( 'Formats', 'rolling' ), '' ),
+					'duree'   => array( 'texte', __( 'Durée', 'rolling' ), __( 'Ex. : 3 mois. Un champ vide n’est pas affiché.', 'rolling' ) ),
 				),
 				__( 'Les chiffres clés (facultatif)', 'rolling' ) => array(
-					'chiffres'        => array( 'lignes', __( 'Chiffres', 'rolling' ), __( 'Valeur en chiffres (0-9, +, %, k, M), ex. « 87 % » ou « 2 500+ », puis les mots dans le libellé. Aucun chiffre : la plaque n’apparaît pas.', 'rolling' ), array( 'valeur' => __( 'Valeur', 'rolling' ), 'libelle' => __( 'Libellé', 'rolling' ) ) ),
+					'chiffres' => array(
+						'lignes',
+						__( 'Chiffres', 'rolling' ),
+						__( 'Valeur en chiffres (0-9, +, %, k, M), ex. « 87 % » ou « 2 500+ », puis les mots dans le libellé. Aucun chiffre : la plaque n’apparaît pas.', 'rolling' ),
+						array(
+							'valeur'  => __( 'Valeur', 'rolling' ),
+							'libelle' => __( 'Libellé', 'rolling' ),
+						),
+					),
 				),
-				__( 'La citation (facultatif)', 'rolling' )    => array(
-					'citation'        => array( 'zone', __( 'Citation, mot pour mot', 'rolling' ), __( 'Laissez vide : pas de citation, le récit se centre.', 'rolling' ) ),
-					'auteur'          => array( 'texte', __( 'Prénom Nom', 'rolling' ), '' ),
-					'poste'           => array( 'texte', __( 'Poste', 'rolling' ), '' ),
-					'portrait'        => array( 'image', __( 'Portrait (carré)', 'rolling' ), '' ),
+				__( 'La citation (facultatif)', 'rolling' ) => array(
+					'citation' => array( 'zone', __( 'Citation, mot pour mot', 'rolling' ), __( 'Laissez vide : pas de citation, le récit se centre.', 'rolling' ) ),
+					'auteur'   => array( 'texte', __( 'Prénom Nom', 'rolling' ), '' ),
+					'poste'    => array( 'texte', __( 'Poste', 'rolling' ), '' ),
+					'portrait' => array( 'image', __( 'Portrait (carré)', 'rolling' ), '' ),
 				),
-				__( 'Le récit', 'rolling' )                     => array(
-					'contexte'        => array( 'zone', __( 'Le contexte', 'rolling' ), '' ),
-					'besoin'          => array( 'zone', __( 'Leur besoin', 'rolling' ), '' ),
-					'accompagnement'  => array( 'lignes', __( 'Notre accompagnement', 'rolling' ), __( 'Une ligne par étape (liste à coches).', 'rolling' ), array( 'texte' => __( 'Étape', 'rolling' ) ) ),
-					'videos'          => array( 'relation', __( 'Les vidéos', 'rolling' ), __( 'Cochez les réalisations à montrer. Aucune : le bloc « Les vidéos » n’apparaît pas.', 'rolling' ), 'rolling_realisation' ),
+				__( 'Le récit', 'rolling' )             => array(
+					'contexte'       => array( 'zone', __( 'Le contexte', 'rolling' ), '' ),
+					'besoin'         => array( 'zone', __( 'Leur besoin', 'rolling' ), '' ),
+					'accompagnement' => array( 'lignes', __( 'Notre accompagnement', 'rolling' ), __( 'Une ligne par étape (liste à coches).', 'rolling' ), array( 'texte' => __( 'Étape', 'rolling' ) ) ),
+					'videos'         => array( 'relation', __( 'Les vidéos', 'rolling' ), __( 'Cochez les réalisations à montrer. Aucune : le bloc « Les vidéos » n’apparaît pas.', 'rolling' ), 'rolling_realisation' ),
 				),
 			),
 			'rolling_logo'        => array(
 				__( 'Le logo', 'rolling' ) => array(
-					'hauteur'         => array( 'nombre', __( 'Hauteur d’affichage (px)', 'rolling' ), __( 'Pour équilibrer les logos entre eux. Par défaut : 32.', 'rolling' ) ),
+					'hauteur' => array( 'nombre', __( 'Hauteur d’affichage (px)', 'rolling' ), __( 'Pour équilibrer les logos entre eux. Par défaut : 32.', 'rolling' ) ),
 				),
 			),
 			'rolling_guide'       => array(
 				__( 'Le guide', 'rolling' ) => array(
-					'resume'          => array( 'zone', __( 'Résumé', 'rolling' ), __( 'Une phrase sous le titre.', 'rolling' ) ),
-					'type_doc'        => array( 'texte', __( 'Type', 'rolling' ), __( 'Ex. : Guide PDF, Check-list, Modèle.', 'rolling' ) ),
-					'pages'           => array( 'nombre', __( 'Nombre de pages', 'rolling' ), '' ),
-					'lien'            => array( 'lien', __( 'Lien de la page HubSpot', 'rolling' ), __( 'Le bouton « Télécharger le guide » ouvre ce lien.', 'rolling' ) ),
+					'resume'   => array( 'zone', __( 'Résumé', 'rolling' ), __( 'Une phrase sous le titre.', 'rolling' ) ),
+					'type_doc' => array( 'texte', __( 'Type', 'rolling' ), __( 'Ex. : Guide PDF, Check-list, Modèle.', 'rolling' ) ),
+					'pages'    => array( 'nombre', __( 'Nombre de pages', 'rolling' ), '' ),
+					'lien'     => array( 'lien', __( 'Lien de la page HubSpot', 'rolling' ), __( 'Le bouton « Télécharger le guide » ouvre ce lien.', 'rolling' ) ),
 				),
 			),
 			'rolling_webinar'     => array(
-				__( 'Le webinar', 'rolling' )        => array(
-					'resume'          => array( 'zone', __( 'Résumé', 'rolling' ), __( 'Une ou deux phrases sous le titre.', 'rolling' ) ),
-					'date'            => array( 'date', __( 'Date', 'rolling' ), '' ),
-					'heure'           => array( 'heure', __( 'Heure de début (heure de Paris)', 'rolling' ), '' ),
-					'duree'           => array( 'nombre', __( 'Durée (minutes)', 'rolling' ), __( 'Par défaut : 45. À la fin, le webinar quitte la page Webinars.', 'rolling' ) ),
+				__( 'Le webinar', 'rolling' )       => array(
+					'resume' => array( 'zone', __( 'Résumé', 'rolling' ), __( 'Une ou deux phrases sous le titre.', 'rolling' ) ),
+					'date'   => array( 'date', __( 'Date', 'rolling' ), '' ),
+					'heure'  => array( 'heure', __( 'Heure de début (heure de Paris)', 'rolling' ), '' ),
+					'duree'  => array( 'nombre', __( 'Durée (minutes)', 'rolling' ), __( 'Par défaut : 45. À la fin, le webinar quitte la page Webinars.', 'rolling' ) ),
 				),
-				__( 'Les intervenants', 'rolling' )  => array(
-					'intervenants'    => array( 'lignes', __( 'Intervenants', 'rolling' ), '', array( 'nom' => __( 'Prénom', 'rolling' ), 'poste' => __( 'Poste', 'rolling' ) ) ),
+				__( 'Les intervenants', 'rolling' ) => array(
+					'intervenants' => array(
+						'lignes',
+						__( 'Intervenants', 'rolling' ),
+						'',
+						array(
+							'nom'   => __( 'Prénom', 'rolling' ),
+							'poste' => __( 'Poste', 'rolling' ),
+						),
+					),
 				),
-				__( 'Les liens', 'rolling' )         => array(
-					'inscription'     => array( 'lien', __( 'Lien d’inscription (Livestorm ou HubSpot)', 'rolling' ), '' ),
-					'replay'          => array( 'lien', __( 'Lien du replay (page HubSpot)', 'rolling' ), __( 'Une fois le webinar passé, il apparaît sur la page Replays dès que ce lien est rempli.', 'rolling' ) ),
+				__( 'Les liens', 'rolling' )        => array(
+					'inscription' => array( 'lien', __( 'Lien d’inscription (Livestorm ou HubSpot)', 'rolling' ), '' ),
+					'replay'      => array( 'lien', __( 'Lien du replay (page HubSpot)', 'rolling' ), __( 'Une fois le webinar passé, il apparaît sur la page Replays dès que ce lien est rempli.', 'rolling' ) ),
 				),
 			),
 		);
@@ -465,9 +489,9 @@ class Rolling_Contenus {
 	 * @param array   $def  Champ.
 	 */
 	private static function afficher_champ( $post, $cle, $def ) {
-		$nom    = 'rolling[' . $cle . ']';
-		$id     = 'rolling-' . $cle;
-		$valeur = self::valeur( $cle, $post->ID );
+		$nom                           = 'rolling[' . $cle . ']';
+		$id                            = 'rolling-' . $cle;
+		$valeur                        = self::valeur( $cle, $post->ID );
 		list( $type, $libelle, $aide ) = $def;
 
 		echo '<div class="rolling-champ rolling-champ-' . esc_attr( $type ) . '">';
@@ -620,10 +644,10 @@ class Rolling_Contenus {
 	 * @return array
 	 */
 	public static function colonnes( $colonnes ) {
-		$type = get_current_screen() ? get_current_screen()->post_type : '';
+		$type  = get_current_screen() ? get_current_screen()->post_type : '';
 		$ajout = array(
-			'rolling_webinar'    => array( 'rolling_quand' => __( 'Date', 'rolling' ) ),
-			'rolling_temoignage' => array( 'rolling_client' => __( 'Client', 'rolling' ) ),
+			'rolling_webinar'     => array( 'rolling_quand' => __( 'Date', 'rolling' ) ),
+			'rolling_temoignage'  => array( 'rolling_client' => __( 'Client', 'rolling' ) ),
 			'rolling_realisation' => array( 'rolling_client' => __( 'Client', 'rolling' ) ),
 		);
 		if ( isset( $ajout[ $type ] ) ) {
