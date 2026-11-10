@@ -404,9 +404,9 @@ image, texte, « À lire aussi » ; colonne latérale = temps de lecture, partag
 
 ## Questions encore ouvertes
 
+- **Extension SEO (décidé)** : la cliente installe Rank Math (ou équivalent) pour les métas et l'indexation. C'est
   **lui** l'outil unique des métas (title, description, canonical, OG, sitemap) ; exception demandée par la cliente :
   le thème pose le noindex des pages cochées (champ ACF `noindex`) et retire auteurs / catégories (0.3.1).
-  **lui** l'outil unique des métas (title, description, canonical, OG, sitemap, noindex) ; le thème n'en sort aucune.
   Le thème n'ajoute que ce que l'extension ne fait pas (VideoObject des réalisations, à vérifier selon l'extension
   choisie à la livraison 4, sans doublon de schéma).
 - Hébergement OVH (offre Pro ou Performance). Pas de cache de pages côté OVH : recommandé WP Super Cache.
