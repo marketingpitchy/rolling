@@ -4,7 +4,7 @@
  "type": "e-flexbox",
  "apercu": "rolling_temoignage",
  "composition": {
-  "xml_structure": "<e-flexbox configuration-id=\"Carte témoignage\"><e-flexbox configuration-id=\"Témoin · haut\"><e-image configuration-id=\"Témoin · logo\"></e-image><e-paragraph configuration-id=\"Témoin · métier\"></e-paragraph></e-flexbox><e-paragraph configuration-id=\"Témoin · citation\"></e-paragraph><e-paragraph configuration-id=\"Témoin · chapô\"></e-paragraph><e-flexbox configuration-id=\"Témoin · auteur\"><e-image configuration-id=\"Témoin · portrait\"></e-image><e-flexbox configuration-id=\"Témoin · personne\"><e-paragraph configuration-id=\"Témoin · nom\"></e-paragraph><e-paragraph configuration-id=\"Témoin · poste\"></e-paragraph></e-flexbox></e-flexbox><e-button configuration-id=\"Témoin · lien\"></e-button></e-flexbox>",
+  "xml_structure": "<e-flexbox configuration-id=\"Carte témoignage\"><e-flexbox configuration-id=\"Témoin · haut\"><e-image configuration-id=\"Témoin · logo\"></e-image><e-paragraph configuration-id=\"Témoin · métier\"></e-paragraph></e-flexbox><e-paragraph configuration-id=\"Témoin · citation\"></e-paragraph><e-paragraph configuration-id=\"Témoin · chapô\"></e-paragraph><e-flexbox configuration-id=\"Témoin · auteur\"><e-image configuration-id=\"Témoin · portrait\"></e-image><e-flexbox configuration-id=\"Témoin · personne\"><e-paragraph configuration-id=\"Témoin · nom\"></e-paragraph><e-paragraph configuration-id=\"Témoin · poste\"></e-paragraph></e-flexbox></e-flexbox><e-button configuration-id=\"Témoin · lien cas client\"></e-button><e-button configuration-id=\"Témoin · lien vidéo\"></e-button></e-flexbox>",
   "element_config": {
    "Carte témoignage": {
     "tag": "article"
@@ -40,10 +40,16 @@
    "Témoin · poste": {
     "paragraph": "⟦rolling-champ|champ=poste⟧"
    },
-   "Témoin · lien": {
-    "text": "Lire le cas",
+   "Témoin · lien cas client": {
+    "text": "Lire le cas client",
     "link": {
      "destination": "⟦rolling-lien|lien=fiche⟧"
+    }
+   },
+   "Témoin · lien vidéo": {
+    "text": "Voir la vidéo",
+    "link": {
+     "destination": "⟦rolling-lien|lien=realisation⟧"
     }
    }
   },
@@ -60,7 +66,8 @@
     "si-logo"
    ],
    "Témoin · métier": [
-    "tag-orange"
+    "tag-orange",
+    "si-metier"
    ],
    "Témoin · citation": [
     "temoin-citation",
@@ -89,8 +96,14 @@
     "texte-petit",
     "si-poste"
    ],
-   "Témoin · lien": [
-    "temoin-lien"
+   "Témoin · lien cas client": [
+    "temoin-lien",
+    "si-recit"
+   ],
+   "Témoin · lien vidéo": [
+    "temoin-lien",
+    "sans-recit",
+    "si-videos"
    ]
   },
   "style": {}

@@ -10,8 +10,9 @@ ICI = os.path.dirname(os.path.abspath(__file__))
 REPERE = "Repère sans style : le thème masque ce bloc quand le champ « %s » du contenu est vide."
 CLASSES = [
     # Repères des parties facultatives (aucun style : seulement lus par le thème).
-    *[(('si-' + c), REPERE % c, '--rl-repere: 1;') for c in ['chapo', 'logo', 'secteur', 'equipes', 'formats', 'duree', 'chiffres', 'citation', 'auteur', 'poste', 'portrait', 'videos', 'generique', 'besoin', 'resultat', 'contexte', 'pages', 'type-doc', 'resume', 'intervenants', 'image', 'avant', 'apres', 'client', 'produit', 'accompagnement']],
+    *[(('si-' + c), REPERE % c, '--rl-repere: 1;') for c in ['chapo', 'logo', 'secteur', 'equipes', 'formats', 'duree', 'chiffres', 'citation', 'auteur', 'poste', 'portrait', 'videos', 'generique', 'besoin', 'resultat', 'contexte', 'pages', 'type-doc', 'resume', 'intervenants', 'image', 'avant', 'apres', 'client', 'produit', 'accompagnement', 'recit', 'temoignage-lie', 'temoignage-citation', 'temoignage-portrait', 'temoignage-poste', 'metier', 'format', 'theme']],
     ('si-mise-a-jour', "Repère sans style : affiché seulement quand l'article a été modifié après le jour de sa publication.", '--rl-repere: 1;'),
+    ('sans-recit', "Repère sans style : affiché seulement quand le témoignage n'a pas de récit (citation seule, pas de page).", '--rl-repere: 1;'),
     ('sans-citation', "Repère sans style : affiché seulement quand le témoignage n'a pas de citation.", '--rl-repere: 1;'),
     ('si-tonalite--bleu', "Repère sans style : affiché seulement quand la couleur de l'étiquette est « bleu ».", '--rl-repere: 1;'),
     ('sans-tonalite--bleu', "Repère sans style : affiché quand la couleur de l'étiquette n'est pas « bleu » (orange par défaut).", '--rl-repere: 1;'),

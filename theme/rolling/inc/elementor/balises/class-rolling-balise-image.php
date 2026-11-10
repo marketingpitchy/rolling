@@ -44,6 +44,7 @@ class Rolling_Balise_Image extends Data_Tag {
 				'portrait' => __( 'Portrait', 'rolling' ),
 			)
 		);
+		$this->source();
 	}
 
 	/**

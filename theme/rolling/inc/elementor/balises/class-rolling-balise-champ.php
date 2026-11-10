@@ -57,6 +57,7 @@ class Rolling_Balise_Champ extends Tag {
 	/** Réglages. */
 	protected function register_controls() {
 		$this->choix( 'champ', __( 'Champ', 'rolling' ), self::options() );
+		$this->source();
 		foreach ( array(
 			'avant' => __( 'Texte avant', 'rolling' ),
 			'apres' => __( 'Texte après (ex. : « pages »)', 'rolling' ),

@@ -40,6 +40,7 @@ class Rolling_Balise_Lien extends Data_Tag {
 			__( 'Lien', 'rolling' ),
 			array(
 				'fiche'       => __( 'La fiche (réalisation, témoignage, article)', 'rolling' ),
+				'realisation' => __( 'La réalisation liée (sur un témoignage)', 'rolling' ),
 				'video'       => __( 'La vidéo', 'rolling' ),
 				'lien'        => __( 'Page HubSpot du guide', 'rolling' ),
 				'inscription' => __( 'Inscription au webinar', 'rolling' ),
@@ -57,6 +58,11 @@ class Rolling_Balise_Lien extends Data_Tag {
 	public function get_value( array $options = array() ) {
 		$id    = $this->contenu();
 		$choix = (string) $this->get_settings( 'lien' );
+
+		if ( 'realisation' === $choix ) {
+			$videos = array_values( array_filter( (array) Rolling_Contenus::valeur( 'videos', $id ), 'get_post' ) );
+			return $videos ? (string) get_permalink( (int) $videos[0] ) : '';
+		}
 
 		return 'fiche' === $choix ? (string) get_permalink( $id ) : (string) Rolling_Contenus::valeur( $choix, $id );
 	}

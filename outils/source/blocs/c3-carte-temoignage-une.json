@@ -4,7 +4,7 @@
  "type": "e-flexbox",
  "apercu": "rolling_temoignage",
  "composition": {
-  "xml_structure": "<e-flexbox configuration-id=\"Carte témoignage à la une\"><e-flexbox configuration-id=\"Témoin à la une · haut\"><e-image configuration-id=\"Témoin à la une · logo\"></e-image><e-paragraph configuration-id=\"Témoin à la une · métier\"></e-paragraph></e-flexbox><e-paragraph configuration-id=\"Témoin à la une · citation\"></e-paragraph><e-paragraph configuration-id=\"Témoin à la une · chapô\"></e-paragraph><e-flexbox configuration-id=\"Témoin à la une · auteur\"><e-image configuration-id=\"Témoin à la une · portrait\"></e-image><e-flexbox configuration-id=\"Témoin à la une · personne\"><e-paragraph configuration-id=\"Témoin à la une · nom\"></e-paragraph><e-paragraph configuration-id=\"Témoin à la une · poste\"></e-paragraph></e-flexbox></e-flexbox><e-button configuration-id=\"Témoin à la une · lien\"></e-button></e-flexbox>",
+  "xml_structure": "<e-flexbox configuration-id=\"Carte témoignage à la une\"><e-flexbox configuration-id=\"Témoin à la une · haut\"><e-image configuration-id=\"Témoin à la une · logo\"></e-image><e-paragraph configuration-id=\"Témoin à la une · métier\"></e-paragraph></e-flexbox><e-paragraph configuration-id=\"Témoin à la une · citation\"></e-paragraph><e-paragraph configuration-id=\"Témoin à la une · chapô\"></e-paragraph><e-flexbox configuration-id=\"Témoin à la une · auteur\"><e-image configuration-id=\"Témoin à la une · portrait\"></e-image><e-flexbox configuration-id=\"Témoin à la une · personne\"><e-paragraph configuration-id=\"Témoin à la une · nom\"></e-paragraph><e-paragraph configuration-id=\"Témoin à la une · poste\"></e-paragraph></e-flexbox></e-flexbox><e-button configuration-id=\"Témoin à la une · lien cas client\"></e-button><e-button configuration-id=\"Témoin à la une · lien vidéo\"></e-button></e-flexbox>",
   "element_config": {
    "Carte témoignage à la une": {
     "tag": "article"
@@ -40,10 +40,16 @@
    "Témoin à la une · poste": {
     "paragraph": "⟦rolling-champ|champ=poste⟧"
    },
-   "Témoin à la une · lien": {
-    "text": "Lire le cas",
+   "Témoin à la une · lien cas client": {
+    "text": "Lire le cas client",
     "link": {
      "destination": "⟦rolling-lien|lien=fiche⟧"
+    }
+   },
+   "Témoin à la une · lien vidéo": {
+    "text": "Voir la vidéo",
+    "link": {
+     "destination": "⟦rolling-lien|lien=realisation⟧"
     }
    }
   },
@@ -61,7 +67,8 @@
     "si-logo"
    ],
    "Témoin à la une · métier": [
-    "tag-orange"
+    "tag-orange",
+    "si-metier"
    ],
    "Témoin à la une · citation": [
     "temoin-citation",
@@ -90,8 +97,14 @@
     "texte-petit",
     "si-poste"
    ],
-   "Témoin à la une · lien": [
-    "temoin-lien"
+   "Témoin à la une · lien cas client": [
+    "temoin-lien",
+    "si-recit"
+   ],
+   "Témoin à la une · lien vidéo": [
+    "temoin-lien",
+    "sans-recit",
+    "si-videos"
    ]
   },
   "style": {}

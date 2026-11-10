@@ -56,6 +56,22 @@ trait Rolling_Balise_Socle {
 	 * @return int
 	 */
 	protected function contenu() {
-		return Rolling_Dynamique::contenu_courant();
+		$id = Rolling_Dynamique::contenu_courant();
+
+		return 'temoignage' === $this->get_settings( 'source' ) ? Rolling_Contenus::temoignage_lie( $id ) : $id;
+	}
+
+	/**
+	 * Réglage « Lire dans » : le contenu affiché, ou le témoignage lié à la réalisation affichée.
+	 */
+	protected function source() {
+		$this->choix(
+			'source',
+			__( 'Lire dans', 'rolling' ),
+			array(
+				'courant'    => __( 'Le contenu affiché', 'rolling' ),
+				'temoignage' => __( 'Le témoignage lié (sur une fiche réalisation)', 'rolling' ),
+			)
+		);
 	}
 }

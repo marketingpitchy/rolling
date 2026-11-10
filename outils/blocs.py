@@ -741,7 +741,7 @@ carte_realisation = F('Carte réalisation', ['carte-liste'], tag='article', enfa
     F('Réalisation · vignette', ['vignette-video', 'vignette-lien', 'si-image'], lien=FICHE, enfants=[
         D('Réalisation · cadre', ['cadre-photo', 'cadre-16-9'], enfants=[
             I('Réalisation · image', DYN('rolling-image', image='une'), cls=['image-couvrante'], taille='medium_large'),
-            P('Réalisation · format', DYN('rolling-terme', taxonomie='rolling_format'), ['bandeau-video']),
+            P('Réalisation · format', DYN('rolling-terme', taxonomie='rolling_format'), ['bandeau-video', 'si-format']),
             P('Réalisation · durée', DYN('rolling-champ', champ='duree'), ['duree', 'si-duree']),
             lecture('Réalisation · lecture'),
         ]),
@@ -759,7 +759,7 @@ def carte_temoignage(une=False):
     return F('Carte témoignage' + (' à la une' if une else ''), ['carte-verre', 'temoin'] + (['temoin-une'] if une else []), tag='article', enfants=[
         F(p + ' · haut', ['temoin-haut'], enfants=[
             I(p + ' · logo', DYN('rolling-image', image='logo'), cls=['temoin-logo', 'si-logo'], taille='medium'),
-            P(p + ' · métier', DYN('rolling-terme', taxonomie='rolling_metier'), ['tag-orange']),
+            P(p + ' · métier', DYN('rolling-terme', taxonomie='rolling_metier'), ['tag-orange', 'si-metier']),
         ]),
         P(p + ' · citation', DYN('rolling-champ', champ='citation'), ['temoin-citation', 'si-citation']),
         P(p + ' · chapô', DYN('rolling-champ', champ='chapo'), ['texte', 'sans-citation']),
@@ -770,7 +770,8 @@ def carte_temoignage(une=False):
                 P(p + ' · poste', DYN('rolling-champ', champ='poste'), ['texte-petit', 'si-poste']),
             ]),
         ]),
-        B(p + ' · lien', 'Lire le cas', FICHE, ['temoin-lien']),
+        B(p + ' · lien cas client', 'Lire le cas client', FICHE, ['temoin-lien', 'si-recit']),
+        B(p + ' · lien vidéo', 'Voir la vidéo', DYN('rolling-lien', lien='realisation'), ['temoin-lien', 'sans-recit', 'si-videos']),
     ])
 
 
@@ -797,7 +798,7 @@ carte_guide = F('Carte guide', ['carte-guide'], tag='article', enfants=[
         ]),
     ]),
     F('Guide · infos', ['rangee'], enfants=[
-        P('Guide · thème', DYN('rolling-terme', taxonomie='rolling_theme'), ['tag-orange']),
+        P('Guide · thème', DYN('rolling-terme', taxonomie='rolling_theme'), ['tag-orange', 'si-theme']),
         P('Guide · pages', DYN('rolling-champ', champ='pages', apres=' pages'), ['texte-petit', 'si-pages']),
     ]),
     H('Guide · titre', DYN('rolling-article', info='titre'), 'h3', ['titre-xs', 'lien-titre'], lien=HUBSPOT),
@@ -814,7 +815,7 @@ carte_webinar = F('Carte webinar', ['carte-verre', 'carte-webinar'], tag='articl
     ]),
     F('Webinar · textes', ['pile-serree'], enfants=[
         F('Webinar · infos', ['rangee'], enfants=[
-            P('Webinar · thème', DYN('rolling-terme', taxonomie='rolling_theme'), ['tag-bleu']),
+            P('Webinar · thème', DYN('rolling-terme', taxonomie='rolling_theme'), ['tag-bleu', 'si-theme']),
             P('Webinar · durée', DYN('rolling-webinar', info='duree'), ['texte-petit']),
         ]),
         H('Webinar · titre', DYN('rolling-article', info='titre'), 'h3', ['titre-xs']),
@@ -830,7 +831,7 @@ carte_webinar_une = F('Prochain webinar', ['carte-verre', 'carte-webinar-une'], 
     ]),
     F('Prochain · textes', ['pile'], enfants=[
         F('Prochain · infos', ['rangee'], enfants=[
-            P('Prochain · thème', DYN('rolling-terme', taxonomie='rolling_theme'), ['tag-orange']),
+            P('Prochain · thème', DYN('rolling-terme', taxonomie='rolling_theme'), ['tag-orange', 'si-theme']),
             P('Prochain · date', DYN('rolling-webinar', info='complete'), ['texte-petit']),
         ]),
         W('Prochain · compte à rebours', 'rolling-compte-a-rebours'),
@@ -851,7 +852,7 @@ carte_replay = F('Carte replay', ['carte-liste'], tag='article', enfants=[
         ]),
     ]),
     F('Replay · infos', ['rangee'], enfants=[
-        P('Replay · thème', DYN('rolling-terme', taxonomie='rolling_theme'), ['tag-orange']),
+        P('Replay · thème', DYN('rolling-terme', taxonomie='rolling_theme'), ['tag-orange', 'si-theme']),
         P('Replay · date', DYN('rolling-webinar', info='diffuse'), ['texte-petit']),
     ]),
     H('Replay · titre', DYN('rolling-article', info='titre'), 'h3', ['titre-xs', 'lien-titre'], lien=REPLAY),
@@ -864,8 +865,8 @@ fiche_realisation = F('Fiche réalisation', None, COLONNE + ' align-items: stret
         F('Fiche réalisation · haut · contenu', ['conteneur'], COLONNE, enfants=[
             W('Fiche réalisation · fil d’Ariane', 'rolling-ariane'),
             F('Fiche réalisation · étiquettes', ['rangee'], 'margin-top: 28px;', enfants=[
-                P('Fiche réalisation · métier', DYN('rolling-terme', taxonomie='rolling_metier'), ['etiquette-metier-orange']),
-                P('Fiche réalisation · format', DYN('rolling-terme', taxonomie='rolling_format'), ['chip-neutre']),
+                P('Fiche réalisation · métier', DYN('rolling-terme', taxonomie='rolling_metier'), ['etiquette-metier-orange', 'si-metier']),
+                P('Fiche réalisation · format', DYN('rolling-terme', taxonomie='rolling_format'), ['chip-neutre', 'si-format']),
             ]),
             H('Fiche réalisation · titre', DYN('rolling-titre', forme='client'), 'h1', ['titre-lg'], 'margin-top: 22px; max-width: 960px;'),
             F('Fiche réalisation · transformation', None, 'margin-top: 20px; padding: 0;', enfants=[avant_apres('Fiche réalisation')]),
@@ -891,6 +892,16 @@ fiche_realisation = F('Fiche réalisation', None, COLONNE + ' align-items: stret
             F('Fiche réalisation · résultat', ['pile', 'si-resultat'], enfants=[
                 H('Fiche réalisation · résultat · titre', 'Le résultat.', 'h2', ['titre-sm']),
                 P('Fiche réalisation · résultat · texte', DYN('rolling-champ', champ='resultat'), ['texte']),
+            ]),
+            F('Fiche réalisation · citation du client', ['carte-verre', 'temoin', 'temoin-une', 'si-temoignage-lie', 'si-temoignage-citation'], enfants=[
+                P('Fiche réalisation · citation · texte', DYN('rolling-champ', champ='citation', source='temoignage'), ['temoin-citation']),
+                F('Fiche réalisation · citation · auteur', ['temoin-auteur'], enfants=[
+                    I('Fiche réalisation · citation · portrait', DYN('rolling-image', image='portrait', source='temoignage'), cls=['portrait', 'portrait-petit', 'si-temoignage-portrait'], taille='thumbnail'),
+                    F('Fiche réalisation · citation · personne', ['pile-serree'], enfants=[
+                        P('Fiche réalisation · citation · nom', DYN('rolling-champ', champ='auteur', source='temoignage'), ['cas-info-valeur']),
+                        P('Fiche réalisation · citation · poste', DYN('rolling-champ', champ='poste', source='temoignage'), ['texte-petit', 'si-temoignage-poste']),
+                    ]),
+                ]),
             ]),
             W('Fiche réalisation · transcription', 'rolling-transcription'),
         ]),
@@ -928,7 +939,7 @@ fiche_temoignage = F('Fiche témoignage', None, COLONNE + ' align-items: stretch
                 D('Fiche témoignage · logo', ['cas-logo', 'si-logo'], enfants=[
                     I('Fiche témoignage · logo · image', DYN('rolling-image', image='logo'), taille='medium'),
                 ]),
-                P('Fiche témoignage · métier', DYN('rolling-terme', taxonomie='rolling_metier'), ['etiquette-metier-orange']),
+                P('Fiche témoignage · métier', DYN('rolling-terme', taxonomie='rolling_metier'), ['etiquette-metier-orange', 'si-metier']),
             ]),
             H('Fiche témoignage · titre', DYN('rolling-titre', forme='client'), 'h1', ['titre-lg'], 'margin-top: 22px; max-width: 980px;'),
             P('Fiche témoignage · chapô', DYN('rolling-champ', champ='chapo'), ['texte-intro', 'si-chapo'], 'margin-top: 20px; max-width: 760px;'),

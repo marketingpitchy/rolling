@@ -238,6 +238,22 @@ class Rolling_Dynamique {
 		if ( 'image' === $cle ) {
 			return ! has_post_thumbnail( $id );
 		}
+		if ( taxonomy_exists( 'rolling_' . $cle ) ) {
+			// Filtre (métier, format, thème) : vide si aucun terme coché.
+			return ! has_term( '', 'rolling_' . $cle, $id );
+		}
+		if ( 'recit' === $cle ) {
+			return ! Rolling_Contenus::a_recit( $id );
+		}
+		if ( 'temoignage_lie' === $cle ) {
+			return ! Rolling_Contenus::temoignage_lie( $id );
+		}
+		if ( 0 === strpos( $cle, 'temoignage_' ) ) {
+			// Champ du témoignage lié à la réalisation affichée (« si-temoignage-portrait »…).
+			$temoignage = Rolling_Contenus::temoignage_lie( $id );
+			$valeur     = $temoignage ? Rolling_Contenus::valeur( substr( $cle, 11 ), $temoignage ) : '';
+			return '' === $valeur || array() === $valeur || null === $valeur;
+		}
 		if ( 'mise_a_jour' === $cle ) {
 			// Vide tant que l'article n'a pas été modifié un autre jour que celui de sa publication.
 			return get_the_modified_date( 'Y-m-d', $id ) <= get_the_date( 'Y-m-d', $id );

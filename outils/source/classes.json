@@ -1139,8 +1139,53 @@
      "css": "--rl-repere: 1;"
     },
     {
+     "label": "si-recit",
+     "description": "Repère sans style : le thème masque ce bloc quand le champ « recit » du contenu est vide.",
+     "css": "--rl-repere: 1;"
+    },
+    {
+     "label": "si-temoignage-lie",
+     "description": "Repère sans style : le thème masque ce bloc quand le champ « temoignage-lie » du contenu est vide.",
+     "css": "--rl-repere: 1;"
+    },
+    {
+     "label": "si-temoignage-citation",
+     "description": "Repère sans style : le thème masque ce bloc quand le champ « temoignage-citation » du contenu est vide.",
+     "css": "--rl-repere: 1;"
+    },
+    {
+     "label": "si-temoignage-portrait",
+     "description": "Repère sans style : le thème masque ce bloc quand le champ « temoignage-portrait » du contenu est vide.",
+     "css": "--rl-repere: 1;"
+    },
+    {
+     "label": "si-temoignage-poste",
+     "description": "Repère sans style : le thème masque ce bloc quand le champ « temoignage-poste » du contenu est vide.",
+     "css": "--rl-repere: 1;"
+    },
+    {
+     "label": "si-metier",
+     "description": "Repère sans style : le thème masque ce bloc quand le champ « metier » du contenu est vide.",
+     "css": "--rl-repere: 1;"
+    },
+    {
+     "label": "si-format",
+     "description": "Repère sans style : le thème masque ce bloc quand le champ « format » du contenu est vide.",
+     "css": "--rl-repere: 1;"
+    },
+    {
+     "label": "si-theme",
+     "description": "Repère sans style : le thème masque ce bloc quand le champ « theme » du contenu est vide.",
+     "css": "--rl-repere: 1;"
+    },
+    {
      "label": "si-mise-a-jour",
      "description": "Repère sans style : affiché seulement quand l'article a été modifié après le jour de sa publication.",
+     "css": "--rl-repere: 1;"
+    },
+    {
+     "label": "sans-recit",
+     "description": "Repère sans style : affiché seulement quand le témoignage n'a pas de récit (citation seule, pas de page).",
      "css": "--rl-repere: 1;"
     },
     {

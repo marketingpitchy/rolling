@@ -26,10 +26,60 @@ class Rolling_Contenus {
 		add_action( 'save_post', array( __CLASS__, 'sauver' ), 10, 2 );
 		add_action( 'admin_enqueue_scripts', array( __CLASS__, 'scripts_admin' ) );
 		add_filter( 'enter_title_here', array( __CLASS__, 'aide_titre' ), 10, 2 );
+		add_action( 'template_redirect', array( __CLASS__, 'temoignage_sans_recit' ) );
+		add_filter( 'wp_sitemaps_posts_query_args', array( __CLASS__, 'sitemap_sans_citations_seules' ), 10, 2 );
 		foreach ( array_keys( self::types() ) as $type ) {
 			add_filter( 'manage_' . $type . '_posts_columns', array( __CLASS__, 'colonnes' ) );
 			add_action( 'manage_' . $type . '_posts_custom_column', array( __CLASS__, 'colonne' ), 10, 2 );
 		}
+	}
+
+	/**
+	 * Témoignage sans récit (citation seule) : pas de page, redirection vers sa réalisation, sinon la page Témoignages.
+	 */
+	public static function temoignage_sans_recit() {
+		if ( ! is_singular( 'rolling_temoignage' ) || self::a_recit( (int) get_queried_object_id() ) ) {
+			return;
+		}
+
+		$videos = array_values( array_filter( (array) self::valeur( 'videos', (int) get_queried_object_id() ), 'get_post' ) );
+		$page   = get_page_by_path( 'temoignages' );
+		$cible  = $videos ? get_permalink( (int) $videos[0] ) : ( $page ? get_permalink( $page ) : home_url( '/' ) );
+
+		wp_safe_redirect( $cible, 301, 'Rolling' );
+		exit;
+	}
+
+	/**
+	 * Sitemap : seulement les témoignages qui ont une page (récit rempli).
+	 *
+	 * @param array  $args Requête.
+	 * @param string $type Type de contenu.
+	 * @return array
+	 */
+	public static function sitemap_sans_citations_seules( $args, $type ) {
+		if ( 'rolling_temoignage' !== $type ) {
+			return $args;
+		}
+
+		$seules = array_filter(
+			get_posts(
+				array(
+					'post_type'      => 'rolling_temoignage',
+					'posts_per_page' => 500,
+					'fields'         => 'ids',
+					'no_found_rows'  => true,
+				)
+			),
+			function ( $id ) {
+				return ! self::a_recit( $id );
+			}
+		);
+		if ( $seules ) {
+			$args['post__not_in'] = array_merge( $args['post__not_in'] ?? array(), array_values( $seules ) ); // phpcs:ignore WordPressVIPMinimum.Performance.WPQueryParams.PostNotIn_post__not_in
+		}
+
+		return $args;
 	}
 
 	/**
@@ -187,41 +237,35 @@ class Rolling_Contenus {
 				),
 			),
 			'rolling_temoignage'  => array(
-				__( 'Le haut de la fiche', 'rolling' )  => array(
-					'client'        => array( 'texte', __( 'Client', 'rolling' ), __( 'Ex. : Groupement Mousquetaires.', 'rolling' ) ),
-					'logo'          => array( 'image', __( 'Logo du client', 'rolling' ), '' ),
-					'titre_couleur' => array( 'texte', __( 'Fin du titre en couleur', 'rolling' ), __( 'Recopiez la fin du titre à mettre en dégradé.', 'rolling' ) ),
-					'chapo'         => array( 'zone', __( 'Chapô', 'rolling' ), __( 'En deux phrases : qui ils sont, ce que nous avons fait ensemble.', 'rolling' ) ),
-					'a_la_une'      => array( 'case', __( 'À la une sur la page Témoignages', 'rolling' ), __( 'Un seul témoignage à la une : le plus récent coché.', 'rolling' ) ),
+				__( 'La citation (toujours)', 'rolling' ) => array(
+					'client'   => array( 'texte', __( 'Client', 'rolling' ), __( 'Ex. : Groupement Mousquetaires.', 'rolling' ) ),
+					'logo'     => array( 'image', __( 'Logo du client', 'rolling' ), '' ),
+					'citation' => array( 'zone', __( 'Citation, mot pour mot', 'rolling' ), __( 'Deux phrases, avec un résultat précis si possible.', 'rolling' ) ),
+					'auteur'   => array( 'texte', __( 'Prénom Nom', 'rolling' ), '' ),
+					'poste'    => array( 'texte', __( 'Poste', 'rolling' ), '' ),
+					'portrait' => array( 'image', __( 'Portrait (carré)', 'rolling' ), '' ),
+					'videos'   => array( 'relation', __( 'Réalisations liées', 'rolling' ), __( 'La carte « Voir la vidéo » mène à la première cochée, et la citation s’affiche sur sa fiche. Aucune : pas de lien vidéo.', 'rolling' ), 'rolling_realisation' ),
+					'a_la_une' => array( 'case', __( 'À la une sur la page Témoignages', 'rolling' ), __( 'Un seul témoignage à la une : le plus récent coché.', 'rolling' ) ),
 				),
-				__( 'Le bandeau du projet', 'rolling' ) => array(
-					'secteur' => array( 'texte', __( 'Secteur', 'rolling' ), '' ),
-					'equipes' => array( 'texte', __( 'Équipes', 'rolling' ), '' ),
-					'formats' => array( 'texte', __( 'Formats', 'rolling' ), '' ),
-					'duree'   => array( 'texte', __( 'Durée', 'rolling' ), __( 'Ex. : 3 mois. Un champ vide n’est pas affiché.', 'rolling' ) ),
-				),
-				__( 'Les chiffres clés (facultatif)', 'rolling' ) => array(
-					'chiffres' => array(
+				__( 'Le récit (facultatif) : rempli, il crée une page « cas client »', 'rolling' ) => array(
+					'titre_couleur'  => array( 'texte', __( 'Fin du titre en couleur', 'rolling' ), __( 'Recopiez la fin du titre à mettre en dégradé.', 'rolling' ) ),
+					'chapo'          => array( 'zone', __( 'Chapô', 'rolling' ), __( 'En deux phrases : qui ils sont, ce que nous avons fait ensemble.', 'rolling' ) ),
+					'secteur'        => array( 'texte', __( 'Secteur', 'rolling' ), '' ),
+					'equipes'        => array( 'texte', __( 'Équipes', 'rolling' ), '' ),
+					'formats'        => array( 'texte', __( 'Formats', 'rolling' ), '' ),
+					'duree'          => array( 'texte', __( 'Durée', 'rolling' ), __( 'Ex. : 3 mois. Un champ vide n’est pas affiché.', 'rolling' ) ),
+					'chiffres'       => array(
 						'lignes',
-						__( 'Chiffres', 'rolling' ),
+						__( 'Chiffres clés', 'rolling' ),
 						__( 'Valeur en chiffres (0-9, +, %, k, M), ex. « 87 % » ou « 2 500+ », puis les mots dans le libellé. Aucun chiffre : la plaque n’apparaît pas.', 'rolling' ),
 						array(
 							'valeur'  => __( 'Valeur', 'rolling' ),
 							'libelle' => __( 'Libellé', 'rolling' ),
 						),
 					),
-				),
-				__( 'La citation (facultatif)', 'rolling' ) => array(
-					'citation' => array( 'zone', __( 'Citation, mot pour mot', 'rolling' ), __( 'Laissez vide : pas de citation, le récit se centre.', 'rolling' ) ),
-					'auteur'   => array( 'texte', __( 'Prénom Nom', 'rolling' ), '' ),
-					'poste'    => array( 'texte', __( 'Poste', 'rolling' ), '' ),
-					'portrait' => array( 'image', __( 'Portrait (carré)', 'rolling' ), '' ),
-				),
-				__( 'Le récit', 'rolling' )             => array(
-					'contexte'       => array( 'zone', __( 'Le contexte', 'rolling' ), '' ),
+					'contexte'       => array( 'zone', __( 'Le contexte', 'rolling' ), __( 'Contexte, besoin, accompagnement ou chiffres remplis : la page « cas client » existe et la carte mène à « Lire le cas client ».', 'rolling' ) ),
 					'besoin'         => array( 'zone', __( 'Leur besoin', 'rolling' ), '' ),
 					'accompagnement' => array( 'lignes', __( 'Notre accompagnement', 'rolling' ), __( 'Une ligne par étape (liste à coches).', 'rolling' ), array( 'texte' => __( 'Étape', 'rolling' ) ) ),
-					'videos'         => array( 'relation', __( 'Les vidéos', 'rolling' ), __( 'Cochez les réalisations à montrer. Aucune : le bloc « Les vidéos » n’apparaît pas.', 'rolling' ), 'rolling_realisation' ),
 				),
 			),
 			'rolling_logo'        => array(
@@ -278,6 +322,53 @@ class Rolling_Contenus {
 		}
 
 		return null;
+	}
+
+	/**
+	 * Le témoignage a-t-il un récit (page « cas client ») ? Contexte, besoin, accompagnement ou chiffres remplis.
+	 *
+	 * @param int $id Témoignage.
+	 * @return bool
+	 */
+	public static function a_recit( $id ) {
+		foreach ( array( 'contexte', 'besoin', 'accompagnement', 'chiffres' ) as $cle ) {
+			$valeur = self::valeur( $cle, $id );
+			if ( '' !== $valeur && array() !== $valeur && null !== $valeur ) {
+				return true;
+			}
+		}
+
+		return false;
+	}
+
+	/**
+	 * Témoignage qui cite cette réalisation dans « Réalisations liées » (le plus récent), ou 0.
+	 *
+	 * @param int $realisation Réalisation.
+	 * @return int
+	 */
+	public static function temoignage_lie( $realisation ) {
+		static $liens = null;
+
+		if ( null === $liens ) {
+			$liens = array();
+			foreach ( get_posts(
+				array(
+					'post_type'      => 'rolling_temoignage',
+					'posts_per_page' => 200,
+					'fields'         => 'ids',
+					'no_found_rows'  => true,
+				)
+			) as $temoignage ) {
+				foreach ( (array) self::valeur( 'videos', $temoignage ) as $video ) {
+					if ( ! isset( $liens[ (int) $video ] ) ) {
+						$liens[ (int) $video ] = (int) $temoignage;
+					}
+				}
+			}
+		}
+
+		return $liens[ (int) $realisation ] ?? 0;
 	}
 
 	/**
