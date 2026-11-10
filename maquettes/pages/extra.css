@@ -458,3 +458,12 @@ a.vignette-video:hover .bouton-lecture, a.vignette-video:focus-visible .bouton-l
 .wp-block-table.is-style-comparatif td:last-child { background: #EDE6FF; color: #2A1A80; font-weight: 600; }
 .wp-block-table.is-style-comparatif tbody tr:nth-child(even) td:last-child { background: #E4DAFF; }
 @media (max-width: 640px) { .wp-block-table table { min-width: 0; font-size: 14px; } .wp-block-table th { font-size: 14px; } .wp-block-table th, .wp-block-table td { padding: 11px 10px; } .wp-block-table th:first-child, .wp-block-table td:first-child { padding-left: 14px; } .wp-block-table figcaption { padding: 10px 14px 12px; font-size: 13px; } }
+
+/* Proposition témoignages / réalisations */
+.prop-saisie { align-items: stretch; }
+.prop-fiche { padding: 30px; display: flex; flex-direction: column; }
+.prop-facultatif { margin-top: 22px; padding: 18px 20px; border: 1.5px dashed rgba(91,59,234,.45); border-radius: 18px; }
+.prop-auto { margin-top: auto; border-color: rgba(224,86,42,.5); }
+.prop-cas .temoin { height: auto; }
+.prop-sans-lien { margin-top: 18px; color: var(--legende); }
+.prop-citation { margin: 0; }
