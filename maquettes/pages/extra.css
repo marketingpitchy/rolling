@@ -379,11 +379,11 @@ article > .conteneur:first-child { padding-top: calc(86px + 56px) !important; }
 
 /* Réalisations : au survol (ou au centre de l'écran sur mobile), la vignette « démarre » */
 .vignette-video .cadre-photo img { transition: transform 1.4s cubic-bezier(.2,.8,.2,1); }
-.vignette-video .barre-progression i { width: 0; transition: width .4s ease; }
+a.vignette-video .barre-progression i { width: 0; transition: width .4s ease; }
 .vignette-video .bouton-lecture { transition: transform .4s cubic-bezier(.2,.8,.2,1); }
-.vignette-video:hover .cadre-photo img, .vignette-video:focus-visible .cadre-photo img, .vignette-video.joue .cadre-photo img { transform: scale(1.06); }
-.vignette-video:hover .barre-progression i, .vignette-video:focus-visible .barre-progression i, .vignette-video.joue .barre-progression i { width: 100%; transition: width 7s linear; }
-.vignette-video:hover .bouton-lecture, .vignette-video:focus-visible .bouton-lecture, .vignette-video.joue .bouton-lecture { transform: scale(1.14); }
+a.vignette-video:hover .cadre-photo img, a.vignette-video:focus-visible .cadre-photo img, a.vignette-video.joue .cadre-photo img { transform: scale(1.06); }
+a.vignette-video:hover .barre-progression i, a.vignette-video:focus-visible .barre-progression i, a.vignette-video.joue .barre-progression i { width: 100%; transition: width 7s linear; }
+a.vignette-video:hover .bouton-lecture, a.vignette-video:focus-visible .bouton-lecture, a.vignette-video.joue .bouton-lecture { transform: scale(1.14); }
 @media (prefers-reduced-motion: reduce) { .vignette-video .cadre-photo img, .vignette-video .barre-progression i, .vignette-video .bouton-lecture { transition: none !important; transform: none !important; } }
 .clap.apparait { transform: translateY(26px) rotate(-2deg); }
 .clap.apparait.vu { transform: rotate(-2deg); }
@@ -432,3 +432,10 @@ article > .conteneur:first-child { padding-top: calc(86px + 56px) !important; }
 .contact-cote .clap-valeur { font-size: 27px; }
 @media (max-width: 980px) { .contact-cote .clap { align-self: flex-start; margin: 0 0 -40px 8px; } }
 .generique .bouton-principal { display: flex; width: max-content; margin: 0 auto; }
+
+/* Compte à rebours : « j » collé au nombre, groupes plus espacés */
+.cr-pilule { gap: 16px; padding: 10px 22px 10px 16px; }
+.cr-temps { display: inline-flex; align-items: baseline; gap: 16px; }
+.cr-jours { display: inline-flex; align-items: baseline; }
+.cr-unite { margin-left: 2px; font-size: .72em; font-weight: 650; }
+.cr-deux { margin: 0 5px; opacity: .55; }

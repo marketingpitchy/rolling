@@ -108,7 +108,7 @@
   // Réalisations : sur un écran tactile, la vignette au centre de l'écran « démarre ».
   if (matchMedia('(hover: none)').matches && 'IntersectionObserver' in window) {
     var centre = new IntersectionObserver(function (es) { es.forEach(function (e) { e.target.classList.toggle('joue', e.isIntersecting); }); }, { rootMargin: '-40% 0px -40% 0px' });
-    document.querySelectorAll('.vignette-video').forEach(function (v) { centre.observe(v); });
+    document.querySelectorAll('a.vignette-video').forEach(function (v) { centre.observe(v); });
   }
   document.querySelectorAll('.partage-copier').forEach(function (b) {
     b.addEventListener('click', function () { try { navigator.clipboard.writeText(location.href); } catch (e) {} b.title = 'Lien copié'; });

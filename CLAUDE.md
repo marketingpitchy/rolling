@@ -99,6 +99,13 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   Durée, 330 px) posé sur le coin du calendrier ; « Vous préférez écrire » supprimable sans gêne ; 404 mire **validée** ;
   compte à rebours ⇒ pilule au style des timecodes (« Début dans 22 j 04:32:10 ») ; frise des offres **validée**.
   Survol des réalisations = simulation (zoom + barre) ; proposé : extrait vidéo facultatif lu au survol (ordinateur seulement).
+  Tour suivant : générique, article (barre à chapitres), témoignage sobre, contact **validés** ; survol réservé aux
+  cartes-liens (`a.vignette-video`) : la vidéo de la fiche ne bouge plus (le `scale` du survol écrasait le centrage du
+  bouton lecture) ; compte à rebours : « 22j » collé, groupes espacés.
+- **Mots-clés Google Ads de la landing** (chacun au moins une fois, en français naturel) : agence vidéo (H1), agence de
+  production vidéo à Paris (pastille du hero), agence de production vidéo (chapô), agence de communication vidéo (fin du
+  constat), agence de vidéo (intro du comparatif), agence vidéo motion design (carte « Une équipe vidéo à l'année »),
+  studio de tournage à Paris + agence audiovisuelle à Paris (nouvelle question « Où se passent les tournages ? »).
 - **Menu du haut** : Offres, Réalisations, Témoignages, Ressources, **L'agence** + bouton. La page « L'agence » s'ajoute aux
   pages créées à l'activation ; chez la cliente (menu déjà créé), elle ajoute le lien elle-même dans Apparence > Menus.
 - Mots en dégradé (background-clip: text) : prévoir `padding-inline: .06em; margin-inline: -.06em;
