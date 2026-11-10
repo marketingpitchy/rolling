@@ -17820,6 +17820,24 @@
             ]
         },
         {
+            "id": "g-299bd48",
+            "label": "si-mise-a-jour",
+            "groupe": "Fiches et listes",
+            "description": "Repère sans style : affiché seulement quand l'article a été modifié après le jour de sa publication.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": [],
+                    "custom_css": {
+                        "raw": "LS1ybC1yZXBlcmU6IDE7"
+                    }
+                }
+            ]
+        },
+        {
             "id": "g-96e70f4",
             "label": "sans-citation",
             "groupe": "Fiches et listes",

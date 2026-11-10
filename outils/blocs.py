@@ -995,6 +995,7 @@ fiche_article = F('Fiche article', None, COLONNE + ' align-items: stretch; paddi
                 F('Article · infos', ['rangee'], 'margin-top: 20px;', enfants=[
                     P('Article · catégorie', DYN('rolling-terme', taxonomie='category'), ['tag-orange']),
                     P('Article · publié', DYN('rolling-article', info='publie'), ['texte-petit']),
+                    P('Article · mis à jour', DYN('rolling-article', info='modifie'), ['texte-petit', 'si-mise-a-jour']),
                     P('Article · lecture', DYN('rolling-article', info='lecture_c'), ['texte-petit']),
                 ]),
                 D('Article · image', ['cadre-photo', 'cadre-16-9', 'si-image'], 'margin-top: 28px;', enfants=[

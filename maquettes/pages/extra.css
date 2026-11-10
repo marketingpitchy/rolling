@@ -257,7 +257,11 @@ article > .conteneur:first-child { padding-top: calc(86px + 56px) !important; }
 .frise li:last-child::before { background: var(--peche); box-shadow: 0 0 0 4px rgba(255,138,91,.35), 0 0 22px rgba(255,138,91,.8); }
 .frise-date { font-size: 12px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--violet); }
 .frise-date-forte { color: var(--orange-fonce); }
-.citation-fondateurs { margin-top: 72px; max-width: 920px; grid-column: auto; }
+.citation-fondateurs { margin-top: 72px; max-width: none; grid-column: auto; display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: 44px; align-items: center; }
+.fondateurs-photo { display: block; aspect-ratio: 4 / 3; border-radius: 22px; overflow: hidden; }
+.fondateurs-photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; display: block; }
+.fondateurs-texte { display: flex; flex-direction: column; gap: 18px; }
+@media (max-width: 980px) { .citation-fondateurs { grid-template-columns: minmax(0, 1fr); gap: 26px; } }
 .conviction { display: flex; flex-direction: column; gap: 12px; padding: 30px; }
 .libelle-plaque { font-size: 16px; font-weight: 600; color: #2A2840; }
 .equipe-agence { list-style: none; padding: 0; margin-top: 36px; display: flex; flex-wrap: wrap; justify-content: flex-start; gap: 36px 22px; }

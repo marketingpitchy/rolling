@@ -129,6 +129,13 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   Hello appelle `template-parts/dynamic-*.php` (copies supprimées : elles incluent header/footer.php) ; hors admin
   (wp-cli), Elementor allège les réglages des balises et refuse l'enregistrement ⇒ construire.sh simule l'écran
   d'administration ; positions des éléments de menu = compteur global ; `trim()` avec « · » casse l'UTF-8.
+- **0.3.1 (préparée)** : noindex page par page = champ ACF de la cliente nommé `noindex` (Vrai / Faux ou case à cocher),
+  lu par `Rolling_Seo` (filtres `wp_robots`, `rank_math/frontend/robots`, `wpseo_robots_array`) + retiré des sitemaps ;
+  archives auteurs / catégories / étiquettes / dates redirigées en 301 vers le blog (catégorie ⇒ `?categorie=`) et retirées
+  du sitemap de WordPress ; article : « Mis à jour le … » (balise Article `modifie`, repère `si-mise-a-jour` = modifié un
+  autre jour que la publication ; « 1er » pour le premier du mois). Maquette L'agence : nouvelle citation (« milliers
+  d'entreprises ») + photo des fondateurs côte à côte (hors git : scratchpad/imgs/fondateurs.webp), photo 4:3 à gauche.
+- Composants Elementor : **éléments atomiques seulement** (les widgets maison v3 comme Partage ne peuvent pas y entrer).
 - FAQ : la cliente ajoute elle-même les réponses ; garder les questions telles quelles.
 - Le WordPress de production existe déjà chez la cliente : on livre seulement le thème (zip à importer).
 

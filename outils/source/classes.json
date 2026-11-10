@@ -1139,6 +1139,11 @@
      "css": "--rl-repere: 1;"
     },
     {
+     "label": "si-mise-a-jour",
+     "description": "Repère sans style : affiché seulement quand l'article a été modifié après le jour de sa publication.",
+     "css": "--rl-repere: 1;"
+    },
+    {
      "label": "sans-citation",
      "description": "Repère sans style : affiché seulement quand le témoignage n'a pas de citation.",
      "css": "--rl-repere: 1;"

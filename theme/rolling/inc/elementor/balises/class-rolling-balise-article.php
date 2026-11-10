@@ -13,7 +13,7 @@ use Elementor\Core\DynamicTags\Tag;
 use Elementor\Modules\DynamicTags\Module as Balises;
 
 /**
- * Article de blog : titre, date, catégorie, extrait, temps de lecture.
+ * Article de blog : titre, dates (publication, mise à jour), catégorie, extrait, temps de lecture.
  */
 class Rolling_Balise_Article extends Tag {
 	use Rolling_Balise_Socle;
@@ -42,6 +42,8 @@ class Rolling_Balise_Article extends Tag {
 				'titre'     => __( 'Titre', 'rolling' ),
 				'publie'    => __( 'Publié le…', 'rolling' ),
 				'date'      => __( 'Date', 'rolling' ),
+				'modifie'   => __( 'Mis à jour le…', 'rolling' ),
+				'maj'       => __( 'Date de mise à jour', 'rolling' ),
 				'categorie' => __( 'Catégorie', 'rolling' ),
 				'extrait'   => __( 'Extrait', 'rolling' ),
 				'lecture'   => __( 'Temps de lecture (6 minutes)', 'rolling' ),
@@ -62,6 +64,20 @@ class Rolling_Balise_Article extends Tag {
 		return max( 1, (int) round( $mots / 200 ) );
 	}
 
+	/**
+	 * Date en toutes lettres, « 1er » pour le premier du mois.
+	 *
+	 * @param int  $id     Contenu.
+	 * @param bool $modifie Date de mise à jour plutôt que de publication.
+	 * @return string
+	 */
+	public static function date_fr( $id, $modifie = false ) {
+		$jour  = $modifie ? get_the_modified_date( 'j', $id ) : get_the_date( 'j', $id );
+		$suite = $modifie ? get_the_modified_date( 'F Y', $id ) : get_the_date( 'F Y', $id );
+
+		return ( '1' === (string) $jour ? '1er' : $jour ) . ' ' . $suite;
+	}
+
 	/** Affichage. */
 	public function render() {
 		$id = get_the_ID() && 'elementor_library' !== get_post_type() ? get_the_ID() : $this->contenu();
@@ -78,10 +94,17 @@ class Rolling_Balise_Article extends Tag {
 		switch ( $this->get_settings( 'info' ) ) {
 			case 'publie':
 				/* translators: %s : date de publication. */
-				echo esc_html( sprintf( __( 'Publié le %s', 'rolling' ), get_the_date( 'j F Y', $id ) ) );
+				echo esc_html( sprintf( __( 'Publié le %s', 'rolling' ), self::date_fr( $id ) ) );
 				break;
 			case 'date':
-				echo esc_html( get_the_date( 'j F Y', $id ) );
+				echo esc_html( self::date_fr( $id ) );
+				break;
+			case 'modifie':
+				/* translators: %s : date de la dernière mise à jour. */
+				echo esc_html( sprintf( __( 'Mis à jour le %s', 'rolling' ), self::date_fr( $id, true ) ) );
+				break;
+			case 'maj':
+				echo esc_html( self::date_fr( $id, true ) );
 				break;
 			case 'categorie':
 				$categories = get_the_category( $id );

@@ -238,6 +238,10 @@ class Rolling_Dynamique {
 		if ( 'image' === $cle ) {
 			return ! has_post_thumbnail( $id );
 		}
+		if ( 'mise_a_jour' === $cle ) {
+			// Vide tant que l'article n'a pas été modifié un autre jour que celui de sa publication.
+			return get_the_modified_date( 'Y-m-d', $id ) <= get_the_date( 'Y-m-d', $id );
+		}
 
 		$valeur = Rolling_Contenus::valeur( $cle, $id );
 

@@ -45,9 +45,10 @@ IMGS = {
     'eq-hakim': '/home/user/rolling/theme/rolling/assets/medias/equipe-hakim.jpg',
     'eq-maxime': '/home/user/rolling/theme/rolling/assets/medias/equipe-maxime.jpg',
     'cap-fnac': I + 'cap-FNACDARTY.png', 'cap-sncf': I + 'cap-SNCF.png', 'cap-weenect': I + 'cap-WEENECT.png',
+    'fondateurs': I + 'fondateurs.webp',
     'cap-veolia': I + 'cap-VEOLIA.png', 'cap-groupama': I + 'cap-Groupama.png', 'cap-article': I + 'cap-ARTICLEBLOG.png',
 }
-WIDTH = {'eq-thomas': 280, 'eq-alex': 280, 'eq-victor': 280, 'eq-vincent': 280, 'eq-marion-t': 280, 'eq-sophie': 280, 'eq-ronan': 280, 'eq-marion-l': 280, 'eq-ines': 280, 'eq-hakim': 280, 'eq-maxime': 280, 'n5': 90, 'n6': 90, 'n7': 90, 'n8': 90, 'n9': 90, 'nplus': 90, 'npourcent': 110, 'nk': 90, 'nM': 110, 'n0': 90, 'n1': 90, 'n2': 90, 'n3': 90, 'n4': 90, 'n500': 360, 'n1c': 90, 'julie': 240, 'thomas': 160,
+WIDTH = {'fondateurs': 900, 'eq-thomas': 280, 'eq-alex': 280, 'eq-victor': 280, 'eq-vincent': 280, 'eq-marion-t': 280, 'eq-sophie': 280, 'eq-ronan': 280, 'eq-marion-l': 280, 'eq-ines': 280, 'eq-hakim': 280, 'eq-maxime': 280, 'n5': 90, 'n6': 90, 'n7': 90, 'n8': 90, 'n9': 90, 'nplus': 90, 'npourcent': 110, 'nk': 90, 'nM': 110, 'n0': 90, 'n1': 90, 'n2': 90, 'n3': 90, 'n4': 90, 'n500': 360, 'n1c': 90, 'julie': 240, 'thomas': 160,
          'av-a': 80, 'av-b': 80, 'av-c': 80, 'av-d': 80}
 cache = {}
 def img(k):
