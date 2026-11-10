@@ -91,6 +91,14 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   Offres : frise de montage à 4 clips « Ce qui se passe après votre échange » (délais [à confirmer]), 00:03 ; FAQ passe en 00:04.
   Réalisations : au survol (ou au centre de l'écran sur mobile), image qui zoome + barre de progression qui avance.
   Lien d'évitement placé dans `<header>` (sinon axe « region »).
+  **Retours** : article ⇒ plus de pilule lecteur (faisait penser à un audio) : fine barre de progression en haut de l'écran
+  (dégradé brand) avec un repère blanc par chapitre H2 ; témoignage ⇒ pellicule et « Scène » **retirées** (trop lourd) ;
+  générique ⇒ **gardé**, facultatif (affiché seulement si rempli), fond clair dans la continuité de la page (plus de section
+  sombre), filet « 02:04 · Fin » ; transcription ⇒ facultative, simple ligne « + Lire la transcription » (absente si vide) ;
+  pas d'onde autour du bouton lecture sur la fiche réalisation (classe `sans-onde`) ; contact ⇒ clap réduit (Scène/Prise/
+  Durée, 330 px) posé sur le coin du calendrier ; « Vous préférez écrire » supprimable sans gêne ; 404 mire **validée** ;
+  compte à rebours ⇒ pilule au style des timecodes (« Début dans 22 j 04:32:10 ») ; frise des offres **validée**.
+  Survol des réalisations = simulation (zoom + barre) ; proposé : extrait vidéo facultatif lu au survol (ordinateur seulement).
 - **Menu du haut** : Offres, Réalisations, Témoignages, Ressources, **L'agence** + bouton. La page « L'agence » s'ajoute aux
   pages créées à l'activation ; chez la cliente (menu déjà créé), elle ajoute le lien elle-même dans Apparence > Menus.
 - Mots en dégradé (background-clip: text) : prévoir `padding-inline: .06em; margin-inline: -.06em;
