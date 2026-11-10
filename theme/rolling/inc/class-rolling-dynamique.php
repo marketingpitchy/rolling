@@ -64,7 +64,7 @@ class Rolling_Dynamique {
 			require_once $fichier;
 		}
 		$gestionnaire->register_group( self::GROUPE, array( 'title' => 'Rolling' ) );
-		foreach ( array( 'Rolling_Balise_Titre', 'Rolling_Balise_Champ', 'Rolling_Balise_Article', 'Rolling_Balise_Terme', 'Rolling_Balise_Webinar', 'Rolling_Balise_Image', 'Rolling_Balise_Lien' ) as $classe ) {
+		foreach ( array( 'Rolling_Balise_Titre', 'Rolling_Balise_Champ', 'Rolling_Balise_Article', 'Rolling_Balise_Terme', 'Rolling_Balise_Webinar', 'Rolling_Balise_Image', 'Rolling_Balise_Lien', 'Rolling_Balise_Partage' ) as $classe ) {
 			$gestionnaire->register( new $classe() );
 		}
 	}

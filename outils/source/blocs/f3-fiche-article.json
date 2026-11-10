@@ -4,7 +4,7 @@
  "type": "e-flexbox",
  "apercu": "post",
  "composition": {
-  "xml_structure": "<e-flexbox configuration-id=\"Fiche article\"><e-flexbox configuration-id=\"Article · haut\"><e-flexbox configuration-id=\"Article · grille\"><e-flexbox configuration-id=\"Article · principal\"><e-paragraph configuration-id=\"Article · fil d’Ariane\"></e-paragraph><e-heading configuration-id=\"Article · titre\"></e-heading><e-flexbox configuration-id=\"Article · infos\"><e-paragraph configuration-id=\"Article · catégorie\"></e-paragraph><e-paragraph configuration-id=\"Article · publié\"></e-paragraph><e-paragraph configuration-id=\"Article · mis à jour\"></e-paragraph><e-paragraph configuration-id=\"Article · lecture\"></e-paragraph></e-flexbox><e-div-block configuration-id=\"Article · image\"><e-image configuration-id=\"Article · image · fichier\"></e-image></e-div-block><e-paragraph configuration-id=\"Article · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Article · outils\"><e-flexbox configuration-id=\"Article · outils · colle\"><e-flexbox configuration-id=\"Article · lecture et sommaire\"><e-paragraph configuration-id=\"Article · lecture · libellé\"></e-paragraph><e-paragraph configuration-id=\"Article · lecture · durée\"></e-paragraph><e-paragraph configuration-id=\"Article · sommaire · libellé\"></e-paragraph><e-paragraph configuration-id=\"Article · sommaire\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Article · partage et IA\"><e-paragraph configuration-id=\"Article · partage · libellé\"></e-paragraph><e-paragraph configuration-id=\"Article · partage\"></e-paragraph><e-paragraph configuration-id=\"Article · résumer · libellé\"></e-paragraph><e-paragraph configuration-id=\"Article · résumer\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Article · appel\"><e-paragraph configuration-id=\"Article · appel · titre\"></e-paragraph><e-paragraph configuration-id=\"Article · appel · texte\"></e-paragraph><e-button configuration-id=\"Article · appel · bouton\"></e-button></e-flexbox></e-flexbox></e-flexbox></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Article · à lire aussi\"><e-flexbox configuration-id=\"Article · à lire aussi · contenu\"><e-heading configuration-id=\"Article · à lire aussi · titre\"></e-heading><e-paragraph configuration-id=\"Article · à lire aussi · liste\"></e-paragraph></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Appel final\"><e-image configuration-id=\"Final · verre cannelé\"></e-image><e-flexbox configuration-id=\"Final · contenu\"><e-heading configuration-id=\"Final · titre\"></e-heading><e-paragraph configuration-id=\"Final · texte\"></e-paragraph><e-flexbox configuration-id=\"Final · bouton\"><e-button configuration-id=\"Final · réserver\"></e-button></e-flexbox><e-flexbox configuration-id=\"Final · badges\"><e-flexbox configuration-id=\"Final · badge · IA sécurisée\"><e-image configuration-id=\"Final · badge · IA sécurisée · icône\"></e-image><e-paragraph configuration-id=\"Final · badge · IA sécurisée · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Final · badge · Données hébergées en Europe\"><e-image configuration-id=\"Final · badge · Données hébergées en Europe · icône\"></e-image><e-paragraph configuration-id=\"Final · badge · Données hébergées en Europe · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Final · badge · Conforme RGPD\"><e-image configuration-id=\"Final · badge · Conforme RGPD · icône\"></e-image><e-paragraph configuration-id=\"Final · badge · Conforme RGPD · texte\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox></e-flexbox></e-flexbox>",
+  "xml_structure": "<e-flexbox configuration-id=\"Fiche article\"><e-flexbox configuration-id=\"Article · haut\"><e-flexbox configuration-id=\"Article · grille\"><e-flexbox configuration-id=\"Article · principal\"><e-paragraph configuration-id=\"Article · fil d’Ariane\"></e-paragraph><e-heading configuration-id=\"Article · titre\"></e-heading><e-flexbox configuration-id=\"Article · infos\"><e-paragraph configuration-id=\"Article · catégorie\"></e-paragraph><e-paragraph configuration-id=\"Article · publié\"></e-paragraph><e-paragraph configuration-id=\"Article · mis à jour\"></e-paragraph><e-paragraph configuration-id=\"Article · lecture\"></e-paragraph></e-flexbox><e-div-block configuration-id=\"Article · image\"><e-image configuration-id=\"Article · image · fichier\"></e-image></e-div-block><e-paragraph configuration-id=\"Article · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Article · outils\"><e-flexbox configuration-id=\"Article · outils · colle\"><e-flexbox configuration-id=\"Article · lecture et sommaire\"><e-paragraph configuration-id=\"Article · lecture · libellé\"></e-paragraph><e-paragraph configuration-id=\"Article · lecture · durée\"></e-paragraph><e-paragraph configuration-id=\"Article · sommaire · libellé\"></e-paragraph><e-paragraph configuration-id=\"Article · sommaire\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Article · partage et IA\"><e-paragraph configuration-id=\"Article · partage · libellé\"></e-paragraph><e-flexbox configuration-id=\"Article · partage\"><e-flexbox configuration-id=\"Article · partage · LinkedIn\"><e-image configuration-id=\"Article · partage · LinkedIn · icône\"></e-image><e-paragraph configuration-id=\"Article · partage · LinkedIn · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Article · partage · Facebook\"><e-image configuration-id=\"Article · partage · Facebook · icône\"></e-image><e-paragraph configuration-id=\"Article · partage · Facebook · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Article · partage · X\"><e-image configuration-id=\"Article · partage · X · icône\"></e-image><e-paragraph configuration-id=\"Article · partage · X · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Article · partage · WhatsApp\"><e-image configuration-id=\"Article · partage · WhatsApp · icône\"></e-image><e-paragraph configuration-id=\"Article · partage · WhatsApp · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Article · partage · E-mail\"><e-image configuration-id=\"Article · partage · E-mail · icône\"></e-image><e-paragraph configuration-id=\"Article · partage · E-mail · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Article · partage · Copier\"><e-image configuration-id=\"Article · partage · Copier · icône\"></e-image><e-paragraph configuration-id=\"Article · partage · Copier · texte\"></e-paragraph></e-flexbox></e-flexbox><e-paragraph configuration-id=\"Article · résumer · libellé\"></e-paragraph><e-flexbox configuration-id=\"Article · résumer\"><e-button configuration-id=\"Article · résumer · ChatGPT\"></e-button><e-button configuration-id=\"Article · résumer · Claude\"></e-button><e-button configuration-id=\"Article · résumer · Perplexity\"></e-button><e-button configuration-id=\"Article · résumer · Le Chat\"></e-button></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Article · appel\"><e-paragraph configuration-id=\"Article · appel · titre\"></e-paragraph><e-paragraph configuration-id=\"Article · appel · texte\"></e-paragraph><e-button configuration-id=\"Article · appel · bouton\"></e-button></e-flexbox></e-flexbox></e-flexbox></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Article · à lire aussi\"><e-flexbox configuration-id=\"Article · à lire aussi · contenu\"><e-heading configuration-id=\"Article · à lire aussi · titre\"></e-heading><e-paragraph configuration-id=\"Article · à lire aussi · liste\"></e-paragraph></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Appel final\"><e-image configuration-id=\"Final · verre cannelé\"></e-image><e-flexbox configuration-id=\"Final · contenu\"><e-heading configuration-id=\"Final · titre\"></e-heading><e-paragraph configuration-id=\"Final · texte\"></e-paragraph><e-flexbox configuration-id=\"Final · bouton\"><e-button configuration-id=\"Final · réserver\"></e-button></e-flexbox><e-flexbox configuration-id=\"Final · badges\"><e-flexbox configuration-id=\"Final · badge · IA sécurisée\"><e-image configuration-id=\"Final · badge · IA sécurisée · icône\"></e-image><e-paragraph configuration-id=\"Final · badge · IA sécurisée · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Final · badge · Données hébergées en Europe\"><e-image configuration-id=\"Final · badge · Données hébergées en Europe · icône\"></e-image><e-paragraph configuration-id=\"Final · badge · Données hébergées en Europe · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Final · badge · Conforme RGPD\"><e-image configuration-id=\"Final · badge · Conforme RGPD · icône\"></e-image><e-paragraph configuration-id=\"Final · badge · Conforme RGPD · texte\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox></e-flexbox></e-flexbox>",
   "element_config": {
    "Fiche article": {
     "tag": "article"
@@ -57,14 +57,136 @@
    "Article · partage · libellé": {
     "paragraph": "Partager l’article"
    },
-   "Article · partage": {
-    "paragraph": "⟦widget:rolling-partage⟧"
+   "Article · partage · LinkedIn": {
+    "link": {
+     "destination": "⟦rolling-partage|vers=linkedin⟧",
+     "isTargetBlank": true
+    }
+   },
+   "Article · partage · LinkedIn · icône": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/partage-linkedin.png"
+     },
+     "size": "full"
+    }
+   },
+   "Article · partage · LinkedIn · texte": {
+    "paragraph": "Partager sur LinkedIn"
+   },
+   "Article · partage · Facebook": {
+    "link": {
+     "destination": "⟦rolling-partage|vers=facebook⟧",
+     "isTargetBlank": true
+    }
+   },
+   "Article · partage · Facebook · icône": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/partage-facebook.png"
+     },
+     "size": "full"
+    }
+   },
+   "Article · partage · Facebook · texte": {
+    "paragraph": "Partager sur Facebook"
+   },
+   "Article · partage · X": {
+    "link": {
+     "destination": "⟦rolling-partage|vers=x⟧",
+     "isTargetBlank": true
+    }
+   },
+   "Article · partage · X · icône": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/partage-x.png"
+     },
+     "size": "full"
+    }
+   },
+   "Article · partage · X · texte": {
+    "paragraph": "Partager sur X"
+   },
+   "Article · partage · WhatsApp": {
+    "link": {
+     "destination": "⟦rolling-partage|vers=whatsapp⟧",
+     "isTargetBlank": true
+    }
+   },
+   "Article · partage · WhatsApp · icône": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/partage-whatsapp.png"
+     },
+     "size": "full"
+    }
+   },
+   "Article · partage · WhatsApp · texte": {
+    "paragraph": "Partager sur WhatsApp"
+   },
+   "Article · partage · E-mail": {
+    "link": {
+     "destination": "⟦rolling-partage|vers=email⟧"
+    }
+   },
+   "Article · partage · E-mail · icône": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/partage-email.png"
+     },
+     "size": "full"
+    }
+   },
+   "Article · partage · E-mail · texte": {
+    "paragraph": "Envoyer par e-mail"
+   },
+   "Article · partage · Copier": {
+    "link": {
+     "destination": "#rl-copier"
+    }
+   },
+   "Article · partage · Copier · icône": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/partage-copier.png"
+     },
+     "size": "full"
+    }
+   },
+   "Article · partage · Copier · texte": {
+    "paragraph": "Copier le lien"
    },
    "Article · résumer · libellé": {
     "paragraph": "Résumer avec"
    },
-   "Article · résumer": {
-    "paragraph": "⟦widget:rolling-resumer⟧"
+   "Article · résumer · ChatGPT": {
+    "text": "ChatGPT",
+    "link": {
+     "destination": "⟦rolling-partage|vers=chatgpt⟧",
+     "isTargetBlank": true
+    }
+   },
+   "Article · résumer · Claude": {
+    "text": "Claude",
+    "link": {
+     "destination": "⟦rolling-partage|vers=claude⟧",
+     "isTargetBlank": true
+    }
+   },
+   "Article · résumer · Perplexity": {
+    "text": "Perplexity",
+    "link": {
+     "destination": "⟦rolling-partage|vers=perplexity⟧",
+     "isTargetBlank": true
+    }
+   },
+   "Article · résumer · Le Chat": {
+    "text": "Le Chat",
+    "link": {
+     "destination": "⟦rolling-partage|vers=lechat⟧",
+     "isTargetBlank": true
+    }
    },
    "Article · appel · titre": {
     "paragraph": "Et si ce contenu devenait <em>une vidéo&nbsp;?</em>"
@@ -212,8 +334,63 @@
    "Article · partage · libellé": [
     "label"
    ],
+   "Article · partage": [
+    "partage"
+   ],
+   "Article · partage · LinkedIn": [
+    "partage-bouton"
+   ],
+   "Article · partage · LinkedIn · texte": [
+    "texte-masque"
+   ],
+   "Article · partage · Facebook": [
+    "partage-bouton"
+   ],
+   "Article · partage · Facebook · texte": [
+    "texte-masque"
+   ],
+   "Article · partage · X": [
+    "partage-bouton"
+   ],
+   "Article · partage · X · texte": [
+    "texte-masque"
+   ],
+   "Article · partage · WhatsApp": [
+    "partage-bouton"
+   ],
+   "Article · partage · WhatsApp · texte": [
+    "texte-masque"
+   ],
+   "Article · partage · E-mail": [
+    "partage-bouton"
+   ],
+   "Article · partage · E-mail · texte": [
+    "texte-masque"
+   ],
+   "Article · partage · Copier": [
+    "partage-bouton"
+   ],
+   "Article · partage · Copier · texte": [
+    "texte-masque"
+   ],
    "Article · résumer · libellé": [
     "label"
+   ],
+   "Article · résumer": [
+    "rangee",
+    "resumer"
+   ],
+   "Article · résumer · ChatGPT": [
+    "bouton-ia"
+   ],
+   "Article · résumer · Claude": [
+    "bouton-ia"
+   ],
+   "Article · résumer · Perplexity": [
+    "bouton-ia"
+   ],
+   "Article · résumer · Le Chat": [
+    "bouton-ia"
    ],
    "Article · appel": [
     "carte-verre",

@@ -400,6 +400,27 @@
 		} );
 	} );
 
+	/* Lien « Copier le lien » (#rl-copier, élément Elementor) : partage du téléphone, sinon copie dans le presse-papiers */
+	document.addEventListener( 'click', function ( e ) {
+		var lien = e.target.closest ? e.target.closest( 'a[href$="#rl-copier"]' ) : null, url = window.location.href.split( '#' )[ 0 ];
+		if ( ! lien ) {
+			return;
+		}
+		if ( navigator.share && window.matchMedia( '(hover: none)' ).matches ) {
+			navigator.share( { url: url, title: document.title } ).catch( function () {} );
+			return;
+		}
+		if ( navigator.clipboard ) {
+			navigator.clipboard.writeText( url ).then( function () {
+				var texte = lien.querySelector( '.texte-masque' ) || lien, copie = 'en' === document.documentElement.lang.slice( 0, 2 ) ? 'Link copied' : 'Lien copié';
+				lien.classList.add( 'copie' );
+				lien.setAttribute( 'title', copie );
+				texte.setAttribute( 'role', 'status' );
+				texte.textContent = copie;
+			} );
+		}
+	} );
+
 	/* Les liens #rl-… ne changent jamais l'adresse */
 	document.addEventListener( 'click', function ( e ) {
 		var lien = e.target.closest ? e.target.closest( 'a[href*="#rl-"]' ) : null;

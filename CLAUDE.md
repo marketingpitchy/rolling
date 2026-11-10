@@ -136,6 +136,13 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   autre jour que la publication ; « 1er » pour le premier du mois). Maquette L'agence : nouvelle citation (« milliers
   d'entreprises ») + photo des fondateurs côte à côte (hors git : scratchpad/imgs/fondateurs.webp), photo 4:3 à gauche.
 - Composants Elementor : **éléments atomiques seulement** (les widgets maison v3 comme Partage ne peuvent pas y entrer).
+  ⇒ **0.3.2** : « Partager l'article » et « Résumer avec » refaits en éléments atomiques (lien = balise maison
+  « Partager / Résumer avec une IA » `rolling-partage` : linkedin, facebook, x, whatsapp, email, chatgpt, claude,
+  perplexity, lechat, page ; demande à l'IA réglable) ; icônes = images `partage-*.png` (générées par
+  `outils/icones-partage.js`, blanches au survol par filter) + texte masqué ; « Copier le lien » = lien `#rl-copier`
+  (rolling.js). Anciens widgets Partage / Résumer gardés (compatibilité). Classe `bouton-ia`.
+- Réalisation / témoignage : champs en double (besoin, produit/accompagnement, résultat) ⇒ proposé : récit dans le
+  témoignage, réalisation = page vidéo, encart « Le cas client » automatique si lié ; **en attente de réponse**.
 - FAQ : la cliente ajoute elle-même les réponses ; garder les questions telles quelles.
 - Le WordPress de production existe déjà chez la cliente : on livre seulement le thème (zip à importer).
 

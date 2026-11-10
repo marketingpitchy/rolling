@@ -22,14 +22,14 @@ class E:
         self.enfants = enfants or []
 
 
-def F(nom, cls=None, style=None, enfants=None, tag=None, lien=None, ancre=None):
+def F(nom, cls=None, style=None, enfants=None, tag=None, lien=None, ancre=None, onglet=False):
     cfg = {}
     if ancre:
         cfg['_cssid'] = ancre
     if tag:
         cfg['tag'] = tag
     if lien:
-        cfg['link'] = {'destination': lien}
+        cfg['link'] = {'destination': lien, 'isTargetBlank': True} if onglet else {'destination': lien}
     return E('e-flexbox', nom, cfg, cls, style, enfants)
 
 
@@ -58,8 +58,9 @@ def P(nom, texte, cls=None, style=None):
     return E('e-paragraph', nom, {'paragraph': texte}, cls, style)
 
 
-def B(nom, texte, lien, cls=None, style=None):
-    return E('e-button', nom, {'text': texte, 'link': {'destination': lien}}, cls, style)
+def B(nom, texte, lien, cls=None, style=None, onglet=False):
+    lien = {'destination': lien, 'isTargetBlank': True} if onglet else {'destination': lien}
+    return E('e-button', nom, {'text': texte, 'link': lien}, cls, style)
 
 
 def I(nom, media, alt='', cls=None, style=None, taille='full'):
@@ -1013,9 +1014,24 @@ fiche_article = F('Fiche article', None, COLONNE + ' align-items: stretch; paddi
                     ]),
                     F('Article · partage et IA', ['carte-verre', 'carte-outils'], enfants=[
                         P('Article · partage · libellé', 'Partager l’article', ['label']),
-                        W('Article · partage', 'rolling-partage'),
+                        F('Article · partage', ['partage'], enfants=[
+                            F('Article · partage · %s' % nom, ['partage-bouton'], lien=lien, onglet=cle not in ('email', 'copier'), enfants=[
+                                I('Article · partage · %s · icône' % nom, 'partage-%s.png' % cle),
+                                P('Article · partage · %s · texte' % nom, texte, ['texte-masque']),
+                            ]) for cle, nom, texte, lien in [
+                                ('linkedin', 'LinkedIn', 'Partager sur LinkedIn', DYN('rolling-partage', vers='linkedin')),
+                                ('facebook', 'Facebook', 'Partager sur Facebook', DYN('rolling-partage', vers='facebook')),
+                                ('x', 'X', 'Partager sur X', DYN('rolling-partage', vers='x')),
+                                ('whatsapp', 'WhatsApp', 'Partager sur WhatsApp', DYN('rolling-partage', vers='whatsapp')),
+                                ('email', 'E-mail', 'Envoyer par e-mail', DYN('rolling-partage', vers='email')),
+                                ('copier', 'Copier', 'Copier le lien', '#rl-copier'),
+                            ]
+                        ]),
                         P('Article · résumer · libellé', 'Résumer avec', ['label'], 'margin-top: 14px;'),
-                        W('Article · résumer', 'rolling-resumer'),
+                        F('Article · résumer', ['rangee', 'resumer'], enfants=[
+                            B('Article · résumer · %s' % nom, nom, DYN('rolling-partage', vers=cle), ['bouton-ia'], onglet=True)
+                            for cle, nom in [('chatgpt', 'ChatGPT'), ('claude', 'Claude'), ('perplexity', 'Perplexity'), ('lechat', 'Le Chat')]
+                        ]),
                     ]),
                     F('Article · appel', ['carte-verre', 'section-sombre', 'carte-sombre'], enfants=[
                         P('Article · appel · titre', 'Et si ce contenu devenait <em>une vidéo&nbsp;?</em>', ['titre-xs']),

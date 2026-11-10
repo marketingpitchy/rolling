@@ -574,5 +574,41 @@
   "fichier": "final-verre-cannele.webp",
   "alt": "",
   "titre": "Décor : verre cannelé"
+ },
+ {
+  "cle": "partage-linkedin",
+  "fichier": "partage-linkedin.png",
+  "alt": "",
+  "titre": "Icône de partage : LinkedIn"
+ },
+ {
+  "cle": "partage-facebook",
+  "fichier": "partage-facebook.png",
+  "alt": "",
+  "titre": "Icône de partage : Facebook"
+ },
+ {
+  "cle": "partage-x",
+  "fichier": "partage-x.png",
+  "alt": "",
+  "titre": "Icône de partage : X"
+ },
+ {
+  "cle": "partage-whatsapp",
+  "fichier": "partage-whatsapp.png",
+  "alt": "",
+  "titre": "Icône de partage : WhatsApp"
+ },
+ {
+  "cle": "partage-email",
+  "fichier": "partage-email.png",
+  "alt": "",
+  "titre": "Icône de partage : e-mail"
+ },
+ {
+  "cle": "partage-copier",
+  "fichier": "partage-copier.png",
+  "alt": "",
+  "titre": "Icône de partage : copier le lien"
  }
 ]
