@@ -72,6 +72,12 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   00:03 équipe (créas, experts IA), 00:04 Paris / France + badges, CTA. Lien « Qui sommes-nous » dans la colonne L'agence du pied.
   **Ne jamais desservir Pitchy (encore vendue)** : Pitchy = les équipes qui créent elles-mêmes, Rolling = celles qui
   délèguent (complémentaires, jamais « l'outil ne suffit pas »).
+- **13 ans d'expérience partout** (plus 10) : bandeau du hero, textes et chiffre de « Née chez Pitchy » (blocs reconstruits,
+  à livrer en 0.3.0), maquettes (landing, agence). Citation des fondateurs **validée pour l'instant** (texte de la cliente,
+  mot pour mot) : Lionel Chouraqui et Benjamin Chouraqui, frères, fondateurs et dirigeants (Pitchy et Rolling).
+  Frise de « L'agence » = **timeline de montage** (règle 00:00:00 → 13:00:00, 3 clips colorés avec forme d'onde,
+  tête de lecture rouge qui avance jusqu'au clip Rolling « En cours » ; arrêtée avec « réduire les animations » ;
+  en mobile, clips empilés sans tête de lecture). Dans le thème : tête de lecture = pseudo-élément (pas de conteneur vide).
 - **Menu du haut** : Offres, Réalisations, Témoignages, Ressources, **L'agence** + bouton. La page « L'agence » s'ajoute aux
   pages créées à l'activation ; chez la cliente (menu déjà créé), elle ajoute le lien elle-même dans Apparence > Menus.
 - Mots en dégradé (background-clip: text) : prévoir `padding-inline: .06em; margin-inline: -.06em;

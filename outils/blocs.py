@@ -137,7 +137,7 @@ hero = F('Hero', ['section', 'section-entete', 'halos-haut'], tag='section', enf
                     I('Visage 1', 'visage-1.jpg', taille='thumbnail'), I('Visage 2', 'visage-2.jpg', taille='thumbnail'),
                     I('Visage 3', 'visage-3.jpg', taille='thumbnail'), I('Visage 4', 'visage-4.jpg', taille='thumbnail'),
                 ]),
-                P('Preuve · texte', 'Par les équipes de <strong>Pitchy</strong> — 10 ans de vidéo, 500+ grandes entreprises.', ['texte-petit', 'texte-legende']),
+                P('Preuve · texte', 'Par les équipes de <strong>Pitchy</strong> — 13 ans de vidéo, 500+ grandes entreprises.', ['texte-petit', 'texte-legende']),
             ]),
         ]),
         D('Visuels', ['lueur-peche'], 'position: relative; flex: 1 1 460px; min-width: 0; height: 680px; padding: 0; @media(--tablet) { height: auto; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; } @media(--mobile) { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }', enfants=[
@@ -615,8 +615,8 @@ def chiffre(nom, chiffres, lu, libelle):
 
 entete_equipe = entete('Équipe', '00:08', "L'équipe", [('Née chez <em>Pitchy.</em>', 'h2', ['titre-lg'])])
 entete_equipe.enfants += [
-    P('Équipe · texte 1', "Rolling est lancée par les équipes de Pitchy, la plateforme française de création vidéo qui équipe les grandes entreprises depuis 10&nbsp;ans. Même exigence, nouvelle promesse&nbsp;: <strong>cette fois, c'est nous qui produisons.</strong>", ['texte']),
-    P('Équipe · texte 2', 'Un studio motion intégré, une équipe tech qui industrialise la production, et dix ans passés à comprendre comment les grands comptes font — et regardent — de la vidéo.', ['texte']),
+    P('Équipe · texte 1', "Rolling est lancée par les équipes de Pitchy, la plateforme française de création vidéo qui équipe les grandes entreprises depuis 13&nbsp;ans. Même exigence, nouvelle promesse&nbsp;: <strong>cette fois, c'est nous qui produisons.</strong>", ['texte']),
+    P('Équipe · texte 2', 'Un studio motion intégré, une équipe tech qui industrialise la production, et treize ans passés à comprendre comment les grands comptes font — et regardent — de la vidéo.', ['texte']),
 ]
 
 equipe = F('Née chez Pitchy', ['section'], tag='section', enfants=[
@@ -624,7 +624,7 @@ equipe = F('Née chez Pitchy', ['section'], tag='section', enfants=[
         F('Équipe · présentation', None, 'max-width: 820px; padding: 0;', enfants=[entete_equipe]),
         D('Équipe · chiffres', ['lueur-peche'], 'padding: 0;', enfants=[
             F('Chiffres · plaque', ['plaque-chiffres'], enfants=[
-                chiffre('Ans', ['1', '0'], '10', 'ans de vidéo pour les entreprises'),
+                chiffre('Ans', ['1', '3'], '13', 'ans de vidéo pour les entreprises'),
                 chiffre('Entreprises', ['5', '0', '0', 'plus'], '500+', 'grandes entreprises équipées'),
                 chiffre('Studio', ['1'], '1', 'studio motion &amp; tournage intégré'),
                 chiffre('Plateforme', ['1'], '1', 'plateforme de production propriétaire'),

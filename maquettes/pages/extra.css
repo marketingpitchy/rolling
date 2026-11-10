@@ -282,3 +282,39 @@ article > .conteneur:first-child { padding-top: calc(86px + 56px) !important; }
 .agence-hero { margin-top: 26px; }
 /* Mots en dégradé : un peu d'air à gauche et à droite pour que le dégradé ne rogne pas les lettres */
 .degrade-promesse, .degrade-humain, .degrade-ia, .degrade-clair { padding: 0 .06em; margin: 0 -.06em; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+
+/* Page L'agence : l'histoire comme une timeline de montage (règle de timecodes, clips, tête de lecture) */
+.montage { position: relative; margin-top: 8px; padding: 22px 26px 34px; border-radius: 30px; overflow: hidden; }
+.montage-regle { display: flex; justify-content: space-between; padding: 0 44px 26px 0; font-family: var(--police-titre); font-size: 12px; font-weight: 650; letter-spacing: .08em; color: var(--legende); background: repeating-linear-gradient(90deg, rgba(91,59,234,.28) 0 1px, transparent 1px 24px) left 22px / 100% 8px no-repeat, repeating-linear-gradient(90deg, rgba(91,59,234,.45) 0 1px, transparent 1px 120px) left 18px / 100% 12px no-repeat; }
+.montage-piste { list-style: none; padding: 0; display: grid; grid-template-columns: 1.15fr 1fr 1.3fr; gap: 10px; }
+.clip { display: flex; flex-direction: column; gap: 10px; }
+.clip-barre { position: relative; display: flex; align-items: center; gap: 10px; min-height: 64px; padding: 0 16px; border-radius: 14px; overflow: hidden; color: #fff; font-size: 14px; font-weight: 700; box-shadow: inset 0 1px 0 rgba(255,255,255,.35), 0 14px 30px -18px rgba(76,48,170,.7); margin-bottom: 10px; }
+.clip-barre::before { content: ''; position: absolute; inset: auto 0 0 0; height: 22px; opacity: .35; background: repeating-linear-gradient(90deg, #fff 0 2px, transparent 2px 6px); -webkit-mask: linear-gradient(0deg, #000 0%, transparent 100%); mask: linear-gradient(0deg, #000 0%, transparent 100%); }
+.clip-barre > * { position: relative; }
+.clip-numero { padding: 4px 9px; border-radius: 999px; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; background: rgba(15,15,18,.32); }
+.clip-pitchy .clip-barre { background: linear-gradient(100deg, #3434E0, #5B3BEA); }
+.clip-demande .clip-barre { background: linear-gradient(100deg, #5B3BEA, #8E4DE6); }
+.clip-rolling .clip-barre { color: var(--encre); background: linear-gradient(100deg, #FFD1BF, #FFA27A 55%, #FF8A5B); }
+.clip-rolling .clip-numero { color: #fff; background: rgba(15,15,18,.55); }
+.clip-rec { margin-left: auto; display: inline-flex; align-items: center; gap: 7px; padding: 4px 10px; border-radius: 999px; font-size: 12px; color: #fff; background: rgba(15,15,18,.72); }
+.clip h3, .clip .texte { padding-right: 12px; }
+.clip-demande h3 { letter-spacing: -.02em; }
+/* Tête de lecture : elle avance jusqu'à aujourd'hui quand la frise apparaît */
+.montage::after { content: ''; position: absolute; top: 44px; height: 116px; left: 26px; width: 2px; border-radius: 2px; background: #FF3B30; box-shadow: 0 0 12px rgba(255,59,48,.6); transition: left 2.4s cubic-bezier(.4,0,.2,1) .3s; }
+.montage::before { content: ''; position: absolute; z-index: 1; top: 36px; left: 21px; width: 12px; height: 12px; border-radius: 3px 3px 50% 50%; background: #FF3B30; transition: left 2.4s cubic-bezier(.4,0,.2,1) .3s; }
+.montage.vu::after { left: calc(100% - 30px); }
+.montage.vu::before { left: calc(100% - 35px); }
+.duo-initiales { display: inline-flex; }
+.duo-initiales .portrait + .portrait { margin-left: -14px; }
+.duo-initiales .portrait { font-size: 16px; }
+@media (max-width: 980px) {
+  .montage { padding: 20px 20px 26px; }
+  .montage-piste { grid-template-columns: minmax(0, 1fr); gap: 26px; }
+  .montage::before, .montage::after { display: none; }
+  .montage-regle { padding-right: 0; }
+}
+@media (prefers-reduced-motion: reduce) { .montage::before, .montage::after { transition: none; } .montage::after { left: calc(100% - 30px); } .montage::before { left: calc(100% - 35px); } }
+.clip-numero, .clip-rec { white-space: nowrap; flex-shrink: 0; }
+.duo-initiales .portrait + .portrait { margin-left: -6px; }
+.duo-initiales .portrait { font-size: 15px; }
+@media (max-width: 640px) { .clip-barre { gap: 8px; padding: 10px 12px; } .clip-nom { line-height: 1.3; } }
