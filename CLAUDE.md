@@ -174,6 +174,22 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
 - **Licence Pro** : ma copie n'a pas de licence ⇒ balises dynamiques et variables de taille Pro bloquées. On ne
   contourne pas la licence. Ce qui en dépend se teste chez la cliente (ou thème = balises dynamiques maison).
 
+## Livraison 3 : architecture du contenu dynamique (vérifiée sur la copie, sans licence Pro)
+
+- **Balises maison** : classes `\Elementor\Core\DynamicTags\Tag` / `Data_Tag` enregistrées sur `elementor/dynamic_tags/register`
+  (groupe « Rolling »). Elles apparaissent dans les éléments atomiques (icône base de données) **seulement si chaque
+  contrôle a name/section/label/default** : redéfinir `register_advanced_section() {}` (les contrôles Avant/Après/Repli
+  du Tag de base n'ont pas de défaut ⇒ balise rejetée en silence). Rendu vérifié : la balise lit l'article courant.
+- **Fiches** (réalisation, témoignage, webinar…) : le thème affiche, dans son modèle PHP de fiche, un **modèle Elementor
+  de Mes modèles** (`get_builder_content_for_display`), avec l'article courant en place ⇒ modifiable dans Elementor, sans
+  Theme Builder Pro. Modèle utilisé choisi dans Personnaliser (V2 à côté si la cliente a modifié le sien).
+- **Listes** (cartes) : widget maison « Rolling · Liste » (v3) qui boucle sur les contenus et affiche pour chacun un modèle
+  de carte Elementor (vérifié : un rendu par article, pas de mélange). `is_dynamic_content()` = vrai (cache des éléments).
+- **Parties facultatives** (citation, chiffres, vidéos, générique, transcription) : classes repères vides `si-…` +
+  filtre `elementor/frontend/{type}/should_render` qui retire le bloc si le champ est vide.
+- Contenus répétés (chiffres clés) : widget maison qui écrit le HTML avec les classes globales existantes.
+- Collection Loop / Loop Grid / Display Conditions = Pro : non utilisés (option A).
+
 ## Leçons de construction (Elementor 4.3.6, vérifiées sur la copie de test)
 
 - **Aucun conteneur vide dans un bloc** : l'éditeur glisse sa barre et sa zone de dépôt dans chaque conteneur, les
