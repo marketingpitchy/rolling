@@ -37,8 +37,21 @@ def D(nom, cls=None, style=None, enfants=None, tag=None):
     return E('e-div-block', nom, {'tag': tag} if tag else {}, cls, style, enfants)
 
 
-def H(nom, texte, tag='h2', cls=None, style=None):
-    return E('e-heading', nom, {'tag': tag, 'title': texte}, cls, style)
+def H(nom, texte, tag='h2', cls=None, style=None, lien=None):
+    cfg = {'tag': tag, 'title': texte}
+    if lien:
+        cfg['link'] = {'destination': lien}
+    return E('e-heading', nom, cfg, cls, style)
+
+
+def DYN(balise, **reglages):
+    """Balise dynamique « Rolling » : convertie par construire-blocs.php en valeur dynamique d'Elementor."""
+    return '⟦%s%s⟧' % (balise, ''.join('|%s=%s' % (k, v) for k, v in reglages.items()))
+
+
+def W(nom, widget, **reglages):
+    """Widget « Rolling » : un paragraphe repère, remplacé par le widget par construire-blocs.php."""
+    return E('e-paragraph', nom, {'paragraph': '⟦widget:%s%s⟧' % (widget, ''.join('|%s=%s' % (k, v) for k, v in reglages.items()))})
 
 
 def P(nom, texte, cls=None, style=None):
@@ -50,6 +63,10 @@ def B(nom, texte, lien, cls=None, style=None):
 
 
 def I(nom, media, alt='', cls=None, style=None, taille='full'):
+    if media.startswith('⟦'):
+        # Image dynamique : adresse valide pendant la construction, convertie ensuite par construire-blocs.php.
+        nom_balise, *reglages = media.strip('⟦⟧').split('|')
+        media = 'dynamique/%s/%s.png' % (nom_balise, '&'.join(reglages))
     src = {'url': MEDIA + media}
     if alt:
         src['alt'] = alt
@@ -701,6 +718,285 @@ BLOCS = [
     ('13-final', 'Rolling · 13 Appel final', final),
 ]
 
+# --------------------------------------------------------------------------------------------
+# Modèles du site (livraison 3) : cartes des listes et fiches. Les textes viennent des contenus de
+# l'administration par les balises « Rolling » ; les parties facultatives portent une classe repère si-…
+# --------------------------------------------------------------------------------------------
+
+FICHE = DYN('rolling-lien', lien='fiche')
+
+
+def avant_apres(prefixe):
+    return F(prefixe + ' · avant après', ['avant-apres', 'si-avant'], enfants=[
+        P(prefixe + ' · avant (orange)', DYN('rolling-champ', champ='avant'), ['tag-orange', 'sans-tonalite--bleu']),
+        P(prefixe + ' · avant (bleu)', DYN('rolling-champ', champ='avant'), ['tag-bleu', 'si-tonalite--bleu']),
+        P(prefixe + ' · après', DYN('rolling-champ', champ='apres'), ['si-apres']),
+    ])
+
+
+carte_realisation = F('Carte réalisation', ['carte-liste'], tag='article', enfants=[
+    F('Réalisation · vignette', ['vignette-video', 'vignette-lien'], lien=FICHE, enfants=[
+        D('Réalisation · cadre', ['cadre-photo', 'cadre-16-9'], enfants=[
+            I('Réalisation · image', DYN('rolling-image', image='une'), cls=['image-couvrante'], taille='medium_large'),
+            P('Réalisation · format', DYN('rolling-terme', taxonomie='rolling_format'), ['bandeau-video']),
+            P('Réalisation · durée', DYN('rolling-champ', champ='duree'), ['duree', 'si-duree']),
+            lecture('Réalisation · lecture'),
+        ]),
+    ]),
+    F('Réalisation · textes', ['pile-serree'], enfants=[
+        P('Réalisation · client', DYN('rolling-champ', champ='client'), ['label', 'si-client']),
+        H('Réalisation · titre', DYN('rolling-titre', forme='titre'), 'h3', ['titre-xs', 'lien-titre'], lien=FICHE),
+    ]),
+    avant_apres('Réalisation'),
+])
+
+
+def carte_temoignage(une=False):
+    p = 'Témoin à la une' if une else 'Témoin'
+    return F('Carte témoignage' + (' à la une' if une else ''), ['carte-verre', 'temoin'] + (['temoin-une'] if une else []), tag='article', enfants=[
+        F(p + ' · haut', ['temoin-haut'], enfants=[
+            I(p + ' · logo', DYN('rolling-image', image='logo'), cls=['temoin-logo', 'si-logo'], taille='medium'),
+            P(p + ' · métier', DYN('rolling-terme', taxonomie='rolling_metier'), ['tag-orange']),
+        ]),
+        P(p + ' · citation', DYN('rolling-champ', champ='citation'), ['temoin-citation', 'si-citation']),
+        P(p + ' · chapô', DYN('rolling-champ', champ='chapo'), ['texte', 'sans-citation']),
+        F(p + ' · auteur', ['temoin-auteur', 'si-auteur'], enfants=[
+            I(p + ' · portrait', DYN('rolling-image', image='portrait'), cls=['portrait', 'portrait-petit', 'si-portrait'], taille='thumbnail'),
+            F(p + ' · personne', ['pile-serree'], enfants=[
+                P(p + ' · nom', DYN('rolling-champ', champ='auteur'), ['cas-info-valeur']),
+                P(p + ' · poste', DYN('rolling-champ', champ='poste'), ['texte-petit', 'si-poste']),
+            ]),
+        ]),
+        B(p + ' · lien', 'Lire le cas', FICHE, ['temoin-lien']),
+    ])
+
+
+carte_article = F('Carte article', ['carte-liste'], tag='article', enfants=[
+    F('Article · vignette', ['vignette-lien'], 'padding: 0; border-radius: 22px;', lien=FICHE, enfants=[
+        D('Article · cadre', ['cadre-photo', 'cadre-16-10'], enfants=[
+            I('Article · image', DYN('rolling-image', image='une'), cls=['image-couvrante'], taille='medium_large'),
+        ]),
+    ]),
+    F('Article · infos', ['rangee'], enfants=[
+        P('Article · catégorie', DYN('rolling-terme', taxonomie='category'), ['tag-orange']),
+        P('Article · lecture', DYN('rolling-article', info='lecture_c'), ['texte-petit']),
+        P('Article · date', DYN('rolling-article', info='date'), ['texte-petit']),
+    ]),
+    H('Article · titre', DYN('rolling-article', info='titre'), 'h3', ['titre-xs', 'lien-titre'], lien=FICHE),
+])
+
+HUBSPOT = DYN('rolling-lien', lien='lien')
+carte_guide = F('Carte guide', ['carte-guide'], tag='article', enfants=[
+    F('Guide · vignette', ['vignette-lien'], 'padding: 0; border-radius: 22px;', lien=HUBSPOT, enfants=[
+        D('Guide · cadre', ['cadre-photo', 'cadre-4-3'], enfants=[
+            I('Guide · image', DYN('rolling-image', image='une'), cls=['image-couvrante'], taille='medium_large'),
+            P('Guide · type', DYN('rolling-champ', champ='type_doc'), ['bandeau-video', 'si-type-doc']),
+        ]),
+    ]),
+    F('Guide · infos', ['rangee'], enfants=[
+        P('Guide · thème', DYN('rolling-terme', taxonomie='rolling_theme'), ['tag-orange']),
+        P('Guide · pages', DYN('rolling-champ', champ='pages', apres=' pages'), ['texte-petit', 'si-pages']),
+    ]),
+    H('Guide · titre', DYN('rolling-article', info='titre'), 'h3', ['titre-xs', 'lien-titre'], lien=HUBSPOT),
+    P('Guide · résumé', DYN('rolling-champ', champ='resume'), ['texte-petit', 'si-resume']),
+    B('Guide · bouton', 'Télécharger le guide', HUBSPOT, ['bouton-verre', 'bouton-petit']),
+])
+
+INSCRIPTION = DYN('rolling-lien', lien='inscription')
+carte_webinar = F('Carte webinar', ['carte-verre', 'carte-webinar'], tag='article', enfants=[
+    F('Webinar · date', ['webinar-date'], enfants=[
+        P('Webinar · jour', DYN('rolling-webinar', info='jour'), ['webinar-jour']),
+        P('Webinar · mois', DYN('rolling-webinar', info='mois'), ['webinar-mois']),
+        P('Webinar · heure', DYN('rolling-webinar', info='heure'), ['webinar-heure']),
+    ]),
+    F('Webinar · textes', ['pile-serree'], enfants=[
+        F('Webinar · infos', ['rangee'], enfants=[
+            P('Webinar · thème', DYN('rolling-terme', taxonomie='rolling_theme'), ['tag-bleu']),
+            P('Webinar · durée', DYN('rolling-webinar', info='duree'), ['texte-petit']),
+        ]),
+        H('Webinar · titre', DYN('rolling-article', info='titre'), 'h3', ['titre-xs']),
+        P('Webinar · intervenants', DYN('rolling-webinar', info='intervenants'), ['texte-petit', 'si-intervenants']),
+    ]),
+    B('Webinar · bouton', "S'inscrire", INSCRIPTION, ['bouton-principal', 'bouton-petit']),
+])
+
+carte_webinar_une = F('Prochain webinar', ['carte-verre', 'carte-webinar-une'], tag='article', enfants=[
+    D('Prochain · cadre', ['cadre-photo', 'cadre-16-10'], enfants=[
+        I('Prochain · image', DYN('rolling-image', image='une'), cls=['image-couvrante'], taille='large'),
+        P('Prochain · bandeau', 'Prochain webinar', ['bandeau-video', 'bandeau-rec']),
+    ]),
+    F('Prochain · textes', ['pile'], enfants=[
+        F('Prochain · infos', ['rangee'], enfants=[
+            P('Prochain · thème', DYN('rolling-terme', taxonomie='rolling_theme'), ['tag-orange']),
+            P('Prochain · date', DYN('rolling-webinar', info='complete'), ['texte-petit']),
+        ]),
+        W('Prochain · compte à rebours', 'rolling-compte-a-rebours'),
+        H('Prochain · titre', DYN('rolling-article', info='titre'), 'h3', ['titre-md']),
+        P('Prochain · résumé', DYN('rolling-champ', champ='resume'), ['texte', 'si-resume']),
+        P('Prochain · intervenants', DYN('rolling-webinar', info='intervenants'), ['texte-petit', 'si-intervenants']),
+        B('Prochain · bouton', "S'inscrire au webinar", INSCRIPTION, ['bouton-principal', 'bouton-petit']),
+    ]),
+])
+
+REPLAY = DYN('rolling-lien', lien='replay')
+carte_replay = F('Carte replay', ['carte-liste'], tag='article', enfants=[
+    F('Replay · vignette', ['vignette-video', 'vignette-lien'], lien=REPLAY, enfants=[
+        D('Replay · cadre', ['cadre-photo', 'cadre-16-9'], enfants=[
+            I('Replay · image', DYN('rolling-image', image='une'), cls=['image-couvrante'], taille='medium_large'),
+            P('Replay · bandeau', 'Replay', ['bandeau-video']),
+            lecture('Replay · lecture'),
+        ]),
+    ]),
+    F('Replay · infos', ['rangee'], enfants=[
+        P('Replay · thème', DYN('rolling-terme', taxonomie='rolling_theme'), ['tag-orange']),
+        P('Replay · date', DYN('rolling-webinar', info='diffuse'), ['texte-petit']),
+    ]),
+    H('Replay · titre', DYN('rolling-article', info='titre'), 'h3', ['titre-xs', 'lien-titre'], lien=REPLAY),
+    B('Replay · bouton', 'Voir le replay', REPLAY, ['bouton-verre', 'bouton-petit']),
+])
+
+# Fiche réalisation : haut, vidéo, récit, générique (facultatif), autres réalisations, appel final.
+fiche_realisation = F('Fiche réalisation', None, COLONNE + ' align-items: stretch; padding: 0; width: 100%;', tag='article', enfants=[
+    F('Fiche réalisation · haut', ['section', 'section-entete'], tag='section', enfants=[
+        F('Fiche réalisation · haut · contenu', ['conteneur'], COLONNE, enfants=[
+            W('Fiche réalisation · fil d’Ariane', 'rolling-ariane'),
+            F('Fiche réalisation · étiquettes', ['rangee'], 'margin-top: 28px;', enfants=[
+                P('Fiche réalisation · métier', DYN('rolling-terme', taxonomie='rolling_metier'), ['etiquette-metier-orange']),
+                P('Fiche réalisation · format', DYN('rolling-terme', taxonomie='rolling_format'), ['chip-neutre']),
+            ]),
+            H('Fiche réalisation · titre', DYN('rolling-titre', forme='client'), 'h1', ['titre-lg'], 'margin-top: 22px; max-width: 960px;'),
+            F('Fiche réalisation · transformation', None, 'margin-top: 20px; padding: 0;', enfants=[avant_apres('Fiche réalisation')]),
+        ]),
+    ]),
+    F('Fiche réalisation · vidéo', ['section', 'section-suite'], tag='section', enfants=[
+        F('Fiche réalisation · vidéo · contenu', ['conteneur'], COLONNE, enfants=[
+            D('Fiche réalisation · cadre vidéo', ['vignette-video'], 'width: 100%; max-width: 1040px; margin: 0 auto;', enfants=[
+                W('Fiche réalisation · lecteur', 'rolling-video'),
+            ]),
+        ]),
+    ]),
+    F('Fiche réalisation · récit', ['section', 'section-suite'], tag='section', enfants=[
+        F('Fiche réalisation · récit · contenu', ['conteneur', 'conteneur-etroit'], COLONNE + ' gap: 40px;', enfants=[
+            F('Fiche réalisation · besoin', ['pile', 'si-besoin'], enfants=[
+                H('Fiche réalisation · besoin · titre', 'Le besoin.', 'h2', ['titre-sm']),
+                P('Fiche réalisation · besoin · texte', DYN('rolling-champ', champ='besoin'), ['texte']),
+            ]),
+            F('Fiche réalisation · produit', ['pile', 'si-produit'], enfants=[
+                H('Fiche réalisation · produit · titre', 'Ce que nous avons produit.', 'h2', ['titre-sm']),
+                W('Fiche réalisation · produit · liste', 'rolling-coches', champ='produit'),
+            ]),
+            F('Fiche réalisation · résultat', ['pile', 'si-resultat'], enfants=[
+                H('Fiche réalisation · résultat · titre', 'Le résultat.', 'h2', ['titre-sm']),
+                P('Fiche réalisation · résultat · texte', DYN('rolling-champ', champ='resultat'), ['texte']),
+            ]),
+            W('Fiche réalisation · transcription', 'rolling-transcription'),
+        ]),
+    ]),
+    F('Fiche réalisation · générique', ['section', 'section-suite', 'si-generique'], tag='section', enfants=[
+        F('Fiche réalisation · générique · contenu', ['conteneur', 'conteneur-etroit'], COLONNE + ' align-items: center; text-align: center;', enfants=[
+            F('Fiche réalisation · générique · filet', ['generique-filet'], 'width: 100%;', enfants=[
+                P('Fiche réalisation · générique · timecode', DYN('rolling-champ', champ='duree'), ['timecode', 'si-duree']),
+                P('Fiche réalisation · générique · fin', 'Fin', ['label']),
+            ]),
+            H('Fiche réalisation · générique · titre', 'Le générique.', 'h2', ['titre-sm'], 'margin-top: 20px;'),
+            W('Fiche réalisation · générique · lignes', 'rolling-generique'),
+            F('Fiche réalisation · générique · signature', ['generique-fin'], 'margin-top: 56px;', enfants=[
+                P('Fiche réalisation · générique · production', 'Une production', ['label']),
+                I('Fiche réalisation · générique · logo', 'logo-rolling.png', 'Rolling', taille='medium'),
+            ]),
+            B('Fiche réalisation · générique · bouton', 'Réserver un échange', '/contact/', ['bouton-principal', 'bouton-petit'], 'margin-top: 30px;'),
+        ]),
+    ]),
+    F('Fiche réalisation · autres', ['section', 'section-lilas'], tag='section', enfants=[
+        F('Fiche réalisation · autres · contenu', ['conteneur'], COLONNE, enfants=[
+            H('Fiche réalisation · autres · titre', "D'autres <em>réalisations.</em>", 'h2', ['titre-sm'], 'margin-bottom: 36px;'),
+            W('Fiche réalisation · autres · liste', 'rolling-liste', contenu='autres', nombre='3', classe='grille-3'),
+        ]),
+    ]),
+    final,
+])
+
+INFOS_PROJET = [('secteur', 'Secteur'), ('equipes', 'Équipes'), ('formats', 'Formats'), ('duree', 'Durée')]
+fiche_temoignage = F('Fiche témoignage', None, COLONNE + ' align-items: stretch; padding: 0; width: 100%;', tag='article', enfants=[
+    F('Fiche témoignage · haut', ['section', 'section-entete'], tag='section', enfants=[
+        F('Fiche témoignage · haut · contenu', ['conteneur'], COLONNE, enfants=[
+            W('Fiche témoignage · fil d’Ariane', 'rolling-ariane'),
+            F('Fiche témoignage · étiquettes', ['rangee'], 'margin-top: 28px;', enfants=[
+                D('Fiche témoignage · logo', ['cas-logo', 'si-logo'], enfants=[
+                    I('Fiche témoignage · logo · image', DYN('rolling-image', image='logo'), taille='medium'),
+                ]),
+                P('Fiche témoignage · métier', DYN('rolling-terme', taxonomie='rolling_metier'), ['etiquette-metier-orange']),
+            ]),
+            H('Fiche témoignage · titre', DYN('rolling-titre', forme='client'), 'h1', ['titre-lg'], 'margin-top: 22px; max-width: 980px;'),
+            P('Fiche témoignage · chapô', DYN('rolling-champ', champ='chapo'), ['texte-intro', 'si-chapo'], 'margin-top: 20px; max-width: 760px;'),
+            F('Fiche témoignage · bandeau', ['cas-bandeau'], 'margin-top: 30px;', enfants=[
+                F('Fiche témoignage · infos', ['cas-bandeau-infos'], enfants=[
+                    F('Fiche témoignage · ' + nom, ['si-' + cle], enfants=[
+                        P('Fiche témoignage · ' + nom + ' · libellé', nom, ['label']),
+                        P('Fiche témoignage · ' + nom + ' · valeur', DYN('rolling-champ', champ=cle), ['cas-info-valeur']),
+                    ]) for cle, nom in INFOS_PROJET
+                ]),
+                F('Fiche témoignage · appel', ['cas-bandeau-appel'], enfants=[
+                    P('Fiche témoignage · appel · texte', '<strong>Un projet similaire&nbsp;?</strong>', ['texte-petit']),
+                    B('Fiche témoignage · appel · bouton', 'Réserver un échange', '/contact/', ['bouton-principal', 'bouton-petit']),
+                ]),
+            ]),
+        ]),
+    ]),
+    F('Fiche témoignage · chiffres', ['section', 'section-suite', 'si-chiffres'], tag='section', enfants=[
+        F('Fiche témoignage · chiffres · contenu', ['conteneur'], COLONNE, enfants=[
+            H('Fiche témoignage · chiffres · titre', 'En chiffres', 'h2', ['label', 'label-violet'], 'margin-bottom: 18px;'),
+            W('Fiche témoignage · chiffres · plaque', 'rolling-chiffres'),
+        ]),
+    ]),
+    F('Fiche témoignage · cas', ['section', 'section-suite'], tag='section', enfants=[
+        F('Fiche témoignage · cas · grille', ['conteneur', 'cas-grille'], enfants=[
+            F('Fiche témoignage · citation', ['carte-verre', 'temoin', 'cas-citation', 'si-citation'], enfants=[
+                P('Fiche témoignage · citation · texte', DYN('rolling-champ', champ='citation'), ['temoin-citation']),
+                F('Fiche témoignage · citation · auteur', ['temoin-auteur', 'si-auteur'], enfants=[
+                    I('Fiche témoignage · citation · portrait', DYN('rolling-image', image='portrait'), cls=['portrait', 'portrait-petit', 'si-portrait'], taille='thumbnail'),
+                    F('Fiche témoignage · citation · personne', ['pile-serree'], enfants=[
+                        P('Fiche témoignage · citation · nom', DYN('rolling-champ', champ='auteur'), ['cas-info-valeur']),
+                        P('Fiche témoignage · citation · poste', DYN('rolling-champ', champ='poste'), ['texte-petit', 'si-poste']),
+                    ]),
+                ]),
+            ]),
+            F('Fiche témoignage · récit', ['cas-recit'], enfants=[
+                F('Fiche témoignage · contexte', ['pile', 'si-contexte'], enfants=[
+                    H('Fiche témoignage · contexte · titre', 'Le contexte.', 'h2', ['titre-sm']),
+                    P('Fiche témoignage · contexte · texte', DYN('rolling-champ', champ='contexte'), ['texte']),
+                ]),
+                F('Fiche témoignage · besoin', ['pile', 'si-besoin'], enfants=[
+                    H('Fiche témoignage · besoin · titre', 'Leur besoin.', 'h2', ['titre-sm']),
+                    P('Fiche témoignage · besoin · texte', DYN('rolling-champ', champ='besoin'), ['texte']),
+                ]),
+                F('Fiche témoignage · accompagnement', ['pile', 'si-accompagnement'], enfants=[
+                    H('Fiche témoignage · accompagnement · titre', 'Notre accompagnement.', 'h2', ['titre-sm']),
+                    W('Fiche témoignage · accompagnement · liste', 'rolling-coches', champ='accompagnement'),
+                ]),
+                F('Fiche témoignage · vidéos', ['pile', 'si-videos'], enfants=[
+                    H('Fiche témoignage · vidéos · titre', 'Les vidéos.', 'h2', ['titre-sm']),
+                    W('Fiche témoignage · vidéos · liste', 'rolling-liste', contenu='liees', nombre='6', classe='grille-2'),
+                ]),
+            ]),
+        ]),
+    ]),
+    final,
+])
+
+MODELES_SITE = [
+    ('c1-carte-realisation', 'Rolling · Carte réalisation', carte_realisation, 'rolling_realisation'),
+    ('c2-carte-temoignage', 'Rolling · Carte témoignage', carte_temoignage(), 'rolling_temoignage'),
+    ('c3-carte-temoignage-une', 'Rolling · Carte témoignage à la une', carte_temoignage(True), 'rolling_temoignage'),
+    ('c4-carte-article', 'Rolling · Carte article', carte_article, 'post'),
+    ('c5-carte-guide', 'Rolling · Carte guide', carte_guide, 'rolling_guide'),
+    ('c6-carte-webinar', 'Rolling · Carte webinar', carte_webinar, 'rolling_webinar'),
+    ('c7-carte-webinar-une', 'Rolling · Carte prochain webinar', carte_webinar_une, 'rolling_webinar'),
+    ('c8-carte-replay', 'Rolling · Carte replay', carte_replay, 'rolling_webinar'),
+    ('f1-fiche-realisation', 'Rolling · Fiche réalisation', fiche_realisation, 'rolling_realisation'),
+    ('f2-fiche-temoignage', 'Rolling · Fiche témoignage', fiche_temoignage, 'rolling_temoignage'),
+]
+
 if __name__ == '__main__':
     dossier = os.path.join(ICI, 'source', 'blocs')
     os.makedirs(dossier, exist_ok=True)
@@ -709,6 +1005,12 @@ if __name__ == '__main__':
         composition, brut = composer(racine)
         donnees = {'cle': cle, 'titre': titre, 'type': 'e-flexbox', 'composition': composition, 'brut': brut}
         cles.append(cle)
+        with open(os.path.join(dossier, cle + '.json'), 'w', encoding='utf8') as f:
+            json.dump(donnees, f, ensure_ascii=False, indent=1)
+        print(cle, len(donnees['composition']['xml_structure']), 'caractères de XML')
+    for cle, titre, racine, apercu in MODELES_SITE:
+        composition, brut = composer(racine)
+        donnees = {'cle': cle, 'titre': titre, 'type': 'e-flexbox', 'apercu': apercu, 'composition': composition, 'brut': brut}
         with open(os.path.join(dossier, cle + '.json'), 'w', encoding='utf8') as f:
             json.dump(donnees, f, ensure_ascii=False, indent=1)
         print(cle, len(donnees['composition']['xml_structure']), 'caractères de XML')

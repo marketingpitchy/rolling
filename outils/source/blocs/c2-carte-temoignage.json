@@ -1,0 +1,99 @@
+{
+ "cle": "c2-carte-temoignage",
+ "titre": "Rolling · Carte témoignage",
+ "type": "e-flexbox",
+ "apercu": "rolling_temoignage",
+ "composition": {
+  "xml_structure": "<e-flexbox configuration-id=\"Carte témoignage\"><e-flexbox configuration-id=\"Témoin · haut\"><e-image configuration-id=\"Témoin · logo\"></e-image><e-paragraph configuration-id=\"Témoin · métier\"></e-paragraph></e-flexbox><e-paragraph configuration-id=\"Témoin · citation\"></e-paragraph><e-paragraph configuration-id=\"Témoin · chapô\"></e-paragraph><e-flexbox configuration-id=\"Témoin · auteur\"><e-image configuration-id=\"Témoin · portrait\"></e-image><e-flexbox configuration-id=\"Témoin · personne\"><e-paragraph configuration-id=\"Témoin · nom\"></e-paragraph><e-paragraph configuration-id=\"Témoin · poste\"></e-paragraph></e-flexbox></e-flexbox><e-button configuration-id=\"Témoin · lien\"></e-button></e-flexbox>",
+  "element_config": {
+   "Carte témoignage": {
+    "tag": "article"
+   },
+   "Témoin · logo": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/dynamique/rolling-image/image=logo.png"
+     },
+     "size": "medium"
+    }
+   },
+   "Témoin · métier": {
+    "paragraph": "⟦rolling-terme|taxonomie=rolling_metier⟧"
+   },
+   "Témoin · citation": {
+    "paragraph": "⟦rolling-champ|champ=citation⟧"
+   },
+   "Témoin · chapô": {
+    "paragraph": "⟦rolling-champ|champ=chapo⟧"
+   },
+   "Témoin · portrait": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/dynamique/rolling-image/image=portrait.png"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "Témoin · nom": {
+    "paragraph": "⟦rolling-champ|champ=auteur⟧"
+   },
+   "Témoin · poste": {
+    "paragraph": "⟦rolling-champ|champ=poste⟧"
+   },
+   "Témoin · lien": {
+    "text": "Lire le cas",
+    "link": {
+     "destination": "⟦rolling-lien|lien=fiche⟧"
+    }
+   }
+  },
+  "classes": {
+   "Carte témoignage": [
+    "carte-verre",
+    "temoin"
+   ],
+   "Témoin · haut": [
+    "temoin-haut"
+   ],
+   "Témoin · logo": [
+    "temoin-logo",
+    "si-logo"
+   ],
+   "Témoin · métier": [
+    "tag-orange"
+   ],
+   "Témoin · citation": [
+    "temoin-citation",
+    "si-citation"
+   ],
+   "Témoin · chapô": [
+    "texte",
+    "sans-citation"
+   ],
+   "Témoin · auteur": [
+    "temoin-auteur",
+    "si-auteur"
+   ],
+   "Témoin · portrait": [
+    "portrait",
+    "portrait-petit",
+    "si-portrait"
+   ],
+   "Témoin · personne": [
+    "pile-serree"
+   ],
+   "Témoin · nom": [
+    "cas-info-valeur"
+   ],
+   "Témoin · poste": [
+    "texte-petit",
+    "si-poste"
+   ],
+   "Témoin · lien": [
+    "temoin-lien"
+   ]
+  },
+  "style": {}
+ },
+ "brut": {}
+}

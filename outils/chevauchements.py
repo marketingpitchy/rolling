@@ -80,7 +80,8 @@ def main():
 
         def parcourir(el):
             nonlocal total
-            ids = el.get('settings', {}).get('classes', {}).get('value', []) or []
+            reglages = el.get('settings') if isinstance(el.get('settings'), dict) else {}
+            ids = (reglages.get('classes') or {}).get('value', []) if isinstance(reglages.get('classes'), dict) else []
             sources = []  # (nom, carte, rang sur le site, rang une fois recopié)
             locaux = [i for i in ids if i not in par_id and i in (el.get('styles') or {})]
             for pos, i in enumerate(ids):

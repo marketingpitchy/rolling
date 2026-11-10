@@ -44,6 +44,7 @@ class Rolling_Ressources {
 			array(
 				'principal' => __( 'Menu principal (en-tête et pied de page)', 'rolling' ),
 				'pied'      => __( 'Pied de page : informations', 'rolling' ),
+				'colonnes'  => __( 'Pied de page : colonnes de liens (1er niveau = titre de colonne)', 'rolling' ),
 			)
 		);
 	}

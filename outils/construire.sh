@@ -17,7 +17,8 @@ envoyer_theme() {
 	dc exec -T -u 0 wp chown -R www-data: /var/www/html/wp-content/themes/rolling
 }
 installer() {
-	dc exec -T cli wp eval 'wp_set_current_user(1); Rolling_Installateur::installer(); print_r(get_transient("rolling_rapport"));'
+	# Écran d'administration simulé : comme chez la cliente (Elementor garde alors les réglages complets des balises).
+	dc exec -T cli wp eval 'set_current_screen("dashboard"); wp_set_current_user(1); Rolling_Installateur::installer(); print_r(get_transient("rolling_rapport"));'
 }
 preparer() {
 	dc exec -T -u 0 cli bash -c 'rm -rf /tmp/rolling; mkdir -p /tmp/rolling/data/blocs'

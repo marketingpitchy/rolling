@@ -45,6 +45,30 @@
       "titre": "Landing Google Ads",
       "slug": "agence-video",
       "modele": "modeles/landing.php"
+    },
+    {
+      "cle": "agence",
+      "titre": "L'agence",
+      "slug": "agence",
+      "depuis": "0.3.0"
+    },
+    {
+      "cle": "guides",
+      "titre": "Guides",
+      "slug": "guides",
+      "depuis": "0.3.0"
+    },
+    {
+      "cle": "webinars",
+      "titre": "Webinars",
+      "slug": "webinars",
+      "depuis": "0.3.0"
+    },
+    {
+      "cle": "replays",
+      "titre": "Replays",
+      "slug": "replays",
+      "depuis": "0.3.0"
     }
   ],
   "menus": [
@@ -55,7 +79,17 @@
         "offres",
         "realisations",
         "temoignages",
-        "blog"
+        {
+          "titre": "Ressources",
+          "lien": "#",
+          "enfants": [
+            "blog",
+            "guides",
+            "webinars",
+            "replays"
+          ]
+        },
+        "agence"
       ]
     },
     {
@@ -67,18 +101,103 @@
         "cgv",
         "contact"
       ]
+    },
+    {
+      "nom": "Pied de page : colonnes",
+      "emplacement": "colonnes",
+      "depuis": "0.3.0",
+      "pages": [
+        {
+          "titre": "L'agence",
+          "lien": "#",
+          "enfants": [
+            {
+              "page": "agence",
+              "titre": "Qui sommes-nous"
+            },
+            "offres",
+            "realisations",
+            "temoignages"
+          ]
+        },
+        {
+          "titre": "Nos vidéos",
+          "lien": "#",
+          "enfants": [
+            {
+              "titre": "Motion design",
+              "lien": "/realisations/?format=motion-design"
+            },
+            {
+              "titre": "Tournage",
+              "lien": "/realisations/?format=tournage"
+            },
+            {
+              "titre": "Interviews",
+              "lien": "/realisations/?format=interview"
+            },
+            {
+              "titre": "Démos produit",
+              "lien": "/realisations/?format=demo-produit"
+            },
+            {
+              "titre": "Avatars et voix off",
+              "lien": "/realisations/?format=avatar-et-voix-off"
+            }
+          ]
+        },
+        {
+          "titre": "Pour vos équipes",
+          "lien": "#",
+          "enfants": [
+            {
+              "titre": "Communication interne, RH, formation",
+              "lien": "/realisations/?metier=com-interne-rh-formation"
+            },
+            {
+              "titre": "Marketing et communication",
+              "lien": "/realisations/?metier=marketing-communication"
+            }
+          ]
+        },
+        {
+          "titre": "Ressources",
+          "lien": "#",
+          "enfants": [
+            "blog",
+            "guides",
+            "webinars",
+            "replays"
+          ]
+        },
+        {
+          "titre": "Contact",
+          "lien": "#",
+          "enfants": [
+            {
+              "page": "contact",
+              "titre": "Réserver un échange"
+            },
+            {
+              "page": "contact",
+              "titre": "Nous écrire"
+            }
+          ]
+        }
+      ]
     }
   ],
   "reglages": {
     "rolling_cta_texte": "Réserver un échange",
     "rolling_libelle_menu_ouvrir": "Ouvrir le menu",
     "rolling_libelle_menu_fermer": "Fermer le menu",
-    "rolling_pied_presentation": "Votre agence vidéo illimitée, pour les équipes com, RH et formation.",
+    "rolling_pied_presentation": "Votre agence vidéo illimitée, pour les équipes com, RH et formation. Une marque Pitchy.",
     "rolling_pied_marque": "Une marque Pitchy",
     "rolling_pied_titre_navigation": "Navigation",
     "rolling_pied_titre_informations": "Informations",
     "rolling_pied_copyright": "© {annee} Rolling",
-    "rolling_pied_mention": "agence-rolling.fr"
+    "rolling_pied_mention": "agence-rolling.fr",
+    "rolling_pied_appel": "Un projet vidéo ? Parlons-en 30 minutes."
   },
   "kit": {
     "viewport_tablet": 980

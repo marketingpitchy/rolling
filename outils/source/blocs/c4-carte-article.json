@@ -1,0 +1,78 @@
+{
+ "cle": "c4-carte-article",
+ "titre": "Rolling · Carte article",
+ "type": "e-flexbox",
+ "apercu": "post",
+ "composition": {
+  "xml_structure": "<e-flexbox configuration-id=\"Carte article\"><e-flexbox configuration-id=\"Article · vignette\"><e-div-block configuration-id=\"Article · cadre\"><e-image configuration-id=\"Article · image\"></e-image></e-div-block></e-flexbox><e-flexbox configuration-id=\"Article · infos\"><e-paragraph configuration-id=\"Article · catégorie\"></e-paragraph><e-paragraph configuration-id=\"Article · lecture\"></e-paragraph><e-paragraph configuration-id=\"Article · date\"></e-paragraph></e-flexbox><e-heading configuration-id=\"Article · titre\"></e-heading></e-flexbox>",
+  "element_config": {
+   "Carte article": {
+    "tag": "article"
+   },
+   "Article · vignette": {
+    "link": {
+     "destination": "⟦rolling-lien|lien=fiche⟧"
+    }
+   },
+   "Article · image": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/dynamique/rolling-image/image=une.png"
+     },
+     "size": "medium_large"
+    }
+   },
+   "Article · catégorie": {
+    "paragraph": "⟦rolling-terme|taxonomie=category⟧"
+   },
+   "Article · lecture": {
+    "paragraph": "⟦rolling-article|info=lecture_c⟧"
+   },
+   "Article · date": {
+    "paragraph": "⟦rolling-article|info=date⟧"
+   },
+   "Article · titre": {
+    "tag": "h3",
+    "title": "⟦rolling-article|info=titre⟧",
+    "link": {
+     "destination": "⟦rolling-lien|lien=fiche⟧"
+    }
+   }
+  },
+  "classes": {
+   "Carte article": [
+    "carte-liste"
+   ],
+   "Article · vignette": [
+    "vignette-lien"
+   ],
+   "Article · cadre": [
+    "cadre-photo",
+    "cadre-16-10"
+   ],
+   "Article · image": [
+    "image-couvrante"
+   ],
+   "Article · infos": [
+    "rangee"
+   ],
+   "Article · catégorie": [
+    "tag-orange"
+   ],
+   "Article · lecture": [
+    "texte-petit"
+   ],
+   "Article · date": [
+    "texte-petit"
+   ],
+   "Article · titre": [
+    "titre-xs",
+    "lien-titre"
+   ]
+  },
+  "style": {
+   "Article · vignette": "padding: 0; border-radius: 22px;"
+  }
+ },
+ "brut": {}
+}

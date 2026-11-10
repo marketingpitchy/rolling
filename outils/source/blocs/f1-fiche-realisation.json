@@ -1,0 +1,308 @@
+{
+ "cle": "f1-fiche-realisation",
+ "titre": "Rolling · Fiche réalisation",
+ "type": "e-flexbox",
+ "apercu": "rolling_realisation",
+ "composition": {
+  "xml_structure": "<e-flexbox configuration-id=\"Fiche réalisation\"><e-flexbox configuration-id=\"Fiche réalisation · haut\"><e-flexbox configuration-id=\"Fiche réalisation · haut · contenu\"><e-paragraph configuration-id=\"Fiche réalisation · fil d’Ariane\"></e-paragraph><e-flexbox configuration-id=\"Fiche réalisation · étiquettes\"><e-paragraph configuration-id=\"Fiche réalisation · métier\"></e-paragraph><e-paragraph configuration-id=\"Fiche réalisation · format\"></e-paragraph></e-flexbox><e-heading configuration-id=\"Fiche réalisation · titre\"></e-heading><e-flexbox configuration-id=\"Fiche réalisation · transformation\"><e-flexbox configuration-id=\"Fiche réalisation · avant après\"><e-paragraph configuration-id=\"Fiche réalisation · avant (orange)\"></e-paragraph><e-paragraph configuration-id=\"Fiche réalisation · avant (bleu)\"></e-paragraph><e-paragraph configuration-id=\"Fiche réalisation · après\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Fiche réalisation · vidéo\"><e-flexbox configuration-id=\"Fiche réalisation · vidéo · contenu\"><e-div-block configuration-id=\"Fiche réalisation · cadre vidéo\"><e-paragraph configuration-id=\"Fiche réalisation · lecteur\"></e-paragraph></e-div-block></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Fiche réalisation · récit\"><e-flexbox configuration-id=\"Fiche réalisation · récit · contenu\"><e-flexbox configuration-id=\"Fiche réalisation · besoin\"><e-heading configuration-id=\"Fiche réalisation · besoin · titre\"></e-heading><e-paragraph configuration-id=\"Fiche réalisation · besoin · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Fiche réalisation · produit\"><e-heading configuration-id=\"Fiche réalisation · produit · titre\"></e-heading><e-paragraph configuration-id=\"Fiche réalisation · produit · liste\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Fiche réalisation · résultat\"><e-heading configuration-id=\"Fiche réalisation · résultat · titre\"></e-heading><e-paragraph configuration-id=\"Fiche réalisation · résultat · texte\"></e-paragraph></e-flexbox><e-paragraph configuration-id=\"Fiche réalisation · transcription\"></e-paragraph></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Fiche réalisation · générique\"><e-flexbox configuration-id=\"Fiche réalisation · générique · contenu\"><e-flexbox configuration-id=\"Fiche réalisation · générique · filet\"><e-paragraph configuration-id=\"Fiche réalisation · générique · timecode\"></e-paragraph><e-paragraph configuration-id=\"Fiche réalisation · générique · fin\"></e-paragraph></e-flexbox><e-heading configuration-id=\"Fiche réalisation · générique · titre\"></e-heading><e-paragraph configuration-id=\"Fiche réalisation · générique · lignes\"></e-paragraph><e-flexbox configuration-id=\"Fiche réalisation · générique · signature\"><e-paragraph configuration-id=\"Fiche réalisation · générique · production\"></e-paragraph><e-image configuration-id=\"Fiche réalisation · générique · logo\"></e-image></e-flexbox><e-button configuration-id=\"Fiche réalisation · générique · bouton\"></e-button></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Fiche réalisation · autres\"><e-flexbox configuration-id=\"Fiche réalisation · autres · contenu\"><e-heading configuration-id=\"Fiche réalisation · autres · titre\"></e-heading><e-paragraph configuration-id=\"Fiche réalisation · autres · liste\"></e-paragraph></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Appel final\"><e-image configuration-id=\"Final · verre cannelé\"></e-image><e-flexbox configuration-id=\"Final · contenu\"><e-heading configuration-id=\"Final · titre\"></e-heading><e-paragraph configuration-id=\"Final · texte\"></e-paragraph><e-flexbox configuration-id=\"Final · bouton\"><e-button configuration-id=\"Final · réserver\"></e-button></e-flexbox></e-flexbox></e-flexbox></e-flexbox>",
+  "element_config": {
+   "Fiche réalisation": {
+    "tag": "article"
+   },
+   "Fiche réalisation · haut": {
+    "tag": "section"
+   },
+   "Fiche réalisation · fil d’Ariane": {
+    "paragraph": "⟦widget:rolling-ariane⟧"
+   },
+   "Fiche réalisation · métier": {
+    "paragraph": "⟦rolling-terme|taxonomie=rolling_metier⟧"
+   },
+   "Fiche réalisation · format": {
+    "paragraph": "⟦rolling-terme|taxonomie=rolling_format⟧"
+   },
+   "Fiche réalisation · titre": {
+    "tag": "h1",
+    "title": "⟦rolling-titre|forme=client⟧"
+   },
+   "Fiche réalisation · avant (orange)": {
+    "paragraph": "⟦rolling-champ|champ=avant⟧"
+   },
+   "Fiche réalisation · avant (bleu)": {
+    "paragraph": "⟦rolling-champ|champ=avant⟧"
+   },
+   "Fiche réalisation · après": {
+    "paragraph": "⟦rolling-champ|champ=apres⟧"
+   },
+   "Fiche réalisation · vidéo": {
+    "tag": "section"
+   },
+   "Fiche réalisation · lecteur": {
+    "paragraph": "⟦widget:rolling-video⟧"
+   },
+   "Fiche réalisation · récit": {
+    "tag": "section"
+   },
+   "Fiche réalisation · besoin · titre": {
+    "tag": "h2",
+    "title": "Le besoin."
+   },
+   "Fiche réalisation · besoin · texte": {
+    "paragraph": "⟦rolling-champ|champ=besoin⟧"
+   },
+   "Fiche réalisation · produit · titre": {
+    "tag": "h2",
+    "title": "Ce que nous avons produit."
+   },
+   "Fiche réalisation · produit · liste": {
+    "paragraph": "⟦widget:rolling-coches|champ=produit⟧"
+   },
+   "Fiche réalisation · résultat · titre": {
+    "tag": "h2",
+    "title": "Le résultat."
+   },
+   "Fiche réalisation · résultat · texte": {
+    "paragraph": "⟦rolling-champ|champ=resultat⟧"
+   },
+   "Fiche réalisation · transcription": {
+    "paragraph": "⟦widget:rolling-transcription⟧"
+   },
+   "Fiche réalisation · générique": {
+    "tag": "section"
+   },
+   "Fiche réalisation · générique · timecode": {
+    "paragraph": "⟦rolling-champ|champ=duree⟧"
+   },
+   "Fiche réalisation · générique · fin": {
+    "paragraph": "Fin"
+   },
+   "Fiche réalisation · générique · titre": {
+    "tag": "h2",
+    "title": "Le générique."
+   },
+   "Fiche réalisation · générique · lignes": {
+    "paragraph": "⟦widget:rolling-generique⟧"
+   },
+   "Fiche réalisation · générique · production": {
+    "paragraph": "Une production"
+   },
+   "Fiche réalisation · générique · logo": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/logo-rolling.png",
+      "alt": "Rolling"
+     },
+     "size": "medium"
+    }
+   },
+   "Fiche réalisation · générique · bouton": {
+    "text": "Réserver un échange",
+    "link": {
+     "destination": "/contact/"
+    }
+   },
+   "Fiche réalisation · autres": {
+    "tag": "section"
+   },
+   "Fiche réalisation · autres · titre": {
+    "tag": "h2",
+    "title": "D'autres <em>réalisations.</em>"
+   },
+   "Fiche réalisation · autres · liste": {
+    "paragraph": "⟦widget:rolling-liste|contenu=autres|nombre=3|classe=grille-3⟧"
+   },
+   "Appel final": {
+    "_cssid": "contact",
+    "tag": "section"
+   },
+   "Final · verre cannelé": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/final-verre-cannele.webp"
+     },
+     "size": "medium_large"
+    }
+   },
+   "Final · titre": {
+    "tag": "h2",
+    "title": "Vos vidéos&nbsp;? Nous nous en occupons.<br><em>Sans limite.</em>"
+   },
+   "Final · texte": {
+    "paragraph": "30 minutes pour passer en revue vos contenus et vos projets. Vous repartez avec votre stratégie vidéo et vos 3&nbsp;premières vidéos à produire."
+   },
+   "Final · réserver": {
+    "text": "Réserver un échange",
+    "link": {
+     "destination": "/contact/"
+    }
+   }
+  },
+  "classes": {
+   "Fiche réalisation · haut": [
+    "section",
+    "section-entete"
+   ],
+   "Fiche réalisation · haut · contenu": [
+    "conteneur"
+   ],
+   "Fiche réalisation · étiquettes": [
+    "rangee"
+   ],
+   "Fiche réalisation · métier": [
+    "etiquette-metier-orange"
+   ],
+   "Fiche réalisation · format": [
+    "chip-neutre"
+   ],
+   "Fiche réalisation · titre": [
+    "titre-lg"
+   ],
+   "Fiche réalisation · avant après": [
+    "avant-apres",
+    "si-avant"
+   ],
+   "Fiche réalisation · avant (orange)": [
+    "tag-orange",
+    "sans-tonalite--bleu"
+   ],
+   "Fiche réalisation · avant (bleu)": [
+    "tag-bleu",
+    "si-tonalite--bleu"
+   ],
+   "Fiche réalisation · après": [
+    "si-apres"
+   ],
+   "Fiche réalisation · vidéo": [
+    "section",
+    "section-suite"
+   ],
+   "Fiche réalisation · vidéo · contenu": [
+    "conteneur"
+   ],
+   "Fiche réalisation · cadre vidéo": [
+    "vignette-video"
+   ],
+   "Fiche réalisation · récit": [
+    "section",
+    "section-suite"
+   ],
+   "Fiche réalisation · récit · contenu": [
+    "conteneur",
+    "conteneur-etroit"
+   ],
+   "Fiche réalisation · besoin": [
+    "pile",
+    "si-besoin"
+   ],
+   "Fiche réalisation · besoin · titre": [
+    "titre-sm"
+   ],
+   "Fiche réalisation · besoin · texte": [
+    "texte"
+   ],
+   "Fiche réalisation · produit": [
+    "pile",
+    "si-produit"
+   ],
+   "Fiche réalisation · produit · titre": [
+    "titre-sm"
+   ],
+   "Fiche réalisation · résultat": [
+    "pile",
+    "si-resultat"
+   ],
+   "Fiche réalisation · résultat · titre": [
+    "titre-sm"
+   ],
+   "Fiche réalisation · résultat · texte": [
+    "texte"
+   ],
+   "Fiche réalisation · générique": [
+    "section",
+    "section-suite",
+    "si-generique"
+   ],
+   "Fiche réalisation · générique · contenu": [
+    "conteneur",
+    "conteneur-etroit"
+   ],
+   "Fiche réalisation · générique · filet": [
+    "generique-filet"
+   ],
+   "Fiche réalisation · générique · timecode": [
+    "timecode",
+    "si-duree"
+   ],
+   "Fiche réalisation · générique · fin": [
+    "label"
+   ],
+   "Fiche réalisation · générique · titre": [
+    "titre-sm"
+   ],
+   "Fiche réalisation · générique · signature": [
+    "generique-fin"
+   ],
+   "Fiche réalisation · générique · production": [
+    "label"
+   ],
+   "Fiche réalisation · générique · bouton": [
+    "bouton-principal",
+    "bouton-petit"
+   ],
+   "Fiche réalisation · autres": [
+    "section",
+    "section-lilas"
+   ],
+   "Fiche réalisation · autres · contenu": [
+    "conteneur"
+   ],
+   "Fiche réalisation · autres · titre": [
+    "titre-sm"
+   ],
+   "Appel final": [
+    "section",
+    "section-sombre",
+    "section-finale",
+    "halo-centre",
+    "decors-final"
+   ],
+   "Final · verre cannelé": [
+    "decor-flottant"
+   ],
+   "Final · contenu": [
+    "conteneur"
+   ],
+   "Final · titre": [
+    "titre-lg",
+    "titre-souligne"
+   ],
+   "Final · texte": [
+    "texte-intro"
+   ],
+   "Final · réserver": [
+    "bouton-soleil"
+   ]
+  },
+  "style": {
+   "Fiche réalisation": "display: flex; flex-direction: column; gap: 0; align-items: stretch; padding: 0; width: 100%;",
+   "Fiche réalisation · haut · contenu": "display: flex; flex-direction: column; gap: 0;",
+   "Fiche réalisation · étiquettes": "margin-top: 28px;",
+   "Fiche réalisation · titre": "margin-top: 22px; max-width: 960px;",
+   "Fiche réalisation · transformation": "margin-top: 20px; padding: 0;",
+   "Fiche réalisation · vidéo · contenu": "display: flex; flex-direction: column; gap: 0;",
+   "Fiche réalisation · cadre vidéo": "width: 100%; max-width: 1040px; margin: 0 auto;",
+   "Fiche réalisation · récit · contenu": "display: flex; flex-direction: column; gap: 0; gap: 40px;",
+   "Fiche réalisation · générique · contenu": "display: flex; flex-direction: column; gap: 0; align-items: center; text-align: center;",
+   "Fiche réalisation · générique · filet": "width: 100%;",
+   "Fiche réalisation · générique · titre": "margin-top: 20px;",
+   "Fiche réalisation · générique · signature": "margin-top: 56px;",
+   "Fiche réalisation · générique · bouton": "margin-top: 30px;",
+   "Fiche réalisation · autres · contenu": "display: flex; flex-direction: column; gap: 0;",
+   "Fiche réalisation · autres · titre": "margin-bottom: 36px;",
+   "Final · contenu": "display: flex; flex-direction: column; gap: 0; align-items: center; z-index: 1;",
+   "Final · texte": "margin-top: 34px; max-width: 600px;",
+   "Final · bouton": "display: flex; justify-content: center; margin-top: 38px; padding: 0;"
+  }
+ },
+ "brut": {}
+}

@@ -82,7 +82,7 @@
 	}
 
 	/* Logos qui défilent : toute bande dont l'animation s'appelle rl-defile */
-	var conteneurs = document.querySelectorAll( '.e-flexbox-base, .e-div-block-base, .e-con' );
+	var conteneurs = document.querySelectorAll( '.e-flexbox-base, .e-div-block-base, .e-con, .rl-logos' );
 
 	conteneurs.forEach( function ( bande, index ) {
 		var anim = window.getComputedStyle( bande ).animationName || '';
@@ -251,6 +251,79 @@
 			} );
 		} );
 	} );
+
+	/* Webinars : compte à rebours réel jusqu'au début (heure de Paris, calculée dans le navigateur : compatible
+	   avec le cache des pages), puis « En direct » pendant la durée, puis « Terminé ». */
+	document.querySelectorAll( '[data-debut][data-fin]' ).forEach( function ( cr ) {
+		var debut = parseInt( cr.getAttribute( 'data-debut' ), 10 ), fin = parseInt( cr.getAttribute( 'data-fin' ), 10 );
+		var carte = cr.closest( 'article' ), bouton = carte ? carte.querySelector( 'a[href]' + ( carte.querySelector( '.e-button-base' ) ? '.e-button-base' : '' ) ) : null;
+		var chiffres = {};
+		cr.querySelectorAll( '[data-cr]' ).forEach( function ( b ) { chiffres[ b.getAttribute( 'data-cr' ) ] = b; } );
+		function deux( n ) { return ( n < 10 ? '0' : '' ) + n; }
+		function maj() {
+			var maintenant = Date.now();
+			if ( maintenant >= fin ) {
+				cr.classList.remove( 'en-direct' );
+				cr.classList.add( 'termine' );
+				return false;
+			}
+			if ( maintenant >= debut ) {
+				if ( ! cr.classList.contains( 'en-direct' ) ) {
+					cr.classList.add( 'en-direct' );
+					if ( bouton && cr.getAttribute( 'data-bouton' ) ) {
+						var texte = bouton.querySelector( 'span' ) || bouton;
+						texte.firstChild.nodeValue = cr.getAttribute( 'data-bouton' ) + ' ';
+					}
+				}
+				return true;
+			}
+			var s = Math.floor( ( debut - maintenant ) / 1000 );
+			if ( chiffres.j ) {
+				chiffres.j.textContent = deux( Math.floor( s / 86400 ) );
+				chiffres.h.textContent = deux( Math.floor( s % 86400 / 3600 ) );
+				chiffres.m.textContent = deux( Math.floor( s % 3600 / 60 ) );
+				chiffres.s.textContent = deux( s % 60 );
+			}
+			return true;
+		}
+		if ( maj() && ! editeur ) {
+			var minuterie = setInterval( function () { if ( ! maj() ) { clearInterval( minuterie ); } }, 1000 );
+		}
+	} );
+
+	/* Vidéo d'une fiche : chargée seulement au clic (YouTube sans cookie, ou fichier de la médiathèque) */
+	document.querySelectorAll( '[data-rl-video]' ).forEach( function ( cadre ) {
+		var bouton = cadre.querySelector( 'button' );
+		if ( ! bouton || editeur ) {
+			return;
+		}
+		bouton.addEventListener( 'click', function () {
+			var url = cadre.getAttribute( 'data-rl-video' ), yt = url.match( /(?:youtu\.be\/|v=|embed\/|shorts\/)([\w-]{11})/ ), lecteur;
+			if ( yt ) {
+				lecteur = document.createElement( 'iframe' );
+				lecteur.src = 'https://www.youtube-nocookie.com/embed/' + yt[ 1 ] + '?autoplay=1&rel=0';
+				lecteur.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+				lecteur.title = bouton.getAttribute( 'aria-label' );
+			} else {
+				lecteur = document.createElement( 'video' );
+				lecteur.src = url;
+				lecteur.controls = true;
+				lecteur.autoplay = true;
+				lecteur.playsInline = true;
+			}
+			cadre.appendChild( lecteur );
+			bouton.remove();
+			lecteur.focus();
+		} );
+	} );
+
+	/* Vignettes des listes : sur un écran tactile, celle qui passe au centre de l'écran « démarre » */
+	if ( ! calme && ! editeur && window.matchMedia( '(hover: none)' ).matches && 'IntersectionObserver' in window ) {
+		var centre = new IntersectionObserver( function ( entrees ) {
+			entrees.forEach( function ( e ) { e.target.classList.toggle( 'joue', e.isIntersecting ); } );
+		}, { rootMargin: '-40% 0px -40% 0px' } );
+		document.querySelectorAll( 'a.vignette-lien' ).forEach( function ( v ) { centre.observe( v ); } );
+	}
 
 	/* Les liens #rl-… ne changent jamais l'adresse */
 	document.addEventListener( 'click', function ( e ) {

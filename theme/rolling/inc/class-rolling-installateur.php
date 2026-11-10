@@ -90,10 +90,15 @@ class Rolling_Installateur {
 		self::installer_modeles( $medias );
 		self::supprimer_classes_inutiles( $obsoletes );
 
-		if ( ! get_option( self::OPTION_PREMIERE ) ) {
+		$site_existant = (bool) get_option( self::OPTION_PREMIERE );
+
+		if ( ! $site_existant ) {
 			self::premiere_installation( $medias );
 			update_option( self::OPTION_PREMIERE, ROLLING_VERSION, false );
 		}
+
+		self::nouveautes( $site_existant );
+		flush_rewrite_rules( false );
 
 		self::vider_caches();
 		update_option( self::OPTION_VERSION, ROLLING_VERSION, false );
@@ -510,7 +515,11 @@ class Rolling_Installateur {
 			}
 
 			if ( $post_id && self::modele_modifie( $post_id, $info ) ) {
-				// La cliente a modifié ce modèle : la nouvelle version arrive à côté.
+				// La cliente a modifié ce modèle : la nouvelle version arrive à côté. Une fiche garde son modèle modifié.
+				$fiche = array_search( $cle, Rolling_Dynamique::FICHES, true );
+				if ( false !== $fiche && ! get_theme_mod( 'rolling_modele_' . $fiche ) ) {
+					set_theme_mod( 'rolling_modele_' . $fiche, $post_id );
+				}
 				$titre   = self::titre_libre( $bloc['titre'] );
 				$post_id = self::creer_modele( $source, $bloc, $contenu, $titre );
 
@@ -524,6 +533,9 @@ class Rolling_Installateur {
 				if ( $document ) {
 					$document->save( array( 'elements' => $contenu ) );
 				}
+				if ( ! empty( $bloc['apercu'] ) ) {
+					update_post_meta( $post_id, '_rolling_apercu', sanitize_key( $bloc['apercu'] ) );
+				}
 			} else {
 				$post_id = self::creer_modele( $source, $bloc, $contenu, $bloc['titre'] );
 			}
@@ -534,6 +546,8 @@ class Rolling_Installateur {
 					'source'    => Rolling_Donnees::empreinte( $contenu ),
 					'empreinte' => self::empreinte_modele( $post_id ),
 				);
+				// Suivi gardé après chaque modèle : une installation interrompue ne fait pas croire à des modifications.
+				update_option( self::OPTION_MODELES, $suivi, false );
 			}
 		}
 
@@ -577,6 +591,9 @@ class Rolling_Installateur {
 		}
 
 		update_post_meta( $post_id, '_rolling_cle', $bloc['cle'] );
+		if ( ! empty( $bloc['apercu'] ) ) {
+			update_post_meta( $post_id, '_rolling_apercu', sanitize_key( $bloc['apercu'] ) );
+		}
 
 		return (int) $post_id;
 	}
@@ -800,6 +817,76 @@ class Rolling_Installateur {
 	}
 
 	/**
+	 * Ce qui arrive avec une nouvelle version, créé une seule fois (jamais recréé si la cliente l'a supprimé) :
+	 * pages, termes des filtres et menus d'emplacements nouveaux.
+	 */
+	private static function nouveautes( $site_existant ) {
+		$config = Rolling_Donnees::lire( 'installation' );
+		$faits  = get_option( 'rolling_deja_crees', null );
+		$pages  = array();
+
+		// Site déjà installé avant ce suivi : ce qui existait avant (sans « depuis ») est réputé fait, pour ne pas
+		// recréer une page ou un menu que la cliente aurait supprimé.
+		if ( null === $faits ) {
+			$faits = array();
+			if ( $site_existant ) {
+				foreach ( $config['pages'] ?? array() as $page ) {
+					if ( empty( $page['depuis'] ) ) {
+						$faits[] = 'page:' . $page['cle'];
+					}
+				}
+				foreach ( $config['menus'] ?? array() as $menu ) {
+					if ( empty( $menu['depuis'] ) ) {
+						$faits[] = 'menu:' . $menu['emplacement'];
+					}
+				}
+			}
+		}
+		$faits = (array) $faits;
+
+		foreach ( $config['pages'] ?? array() as $page ) {
+			$existante = get_page_by_path( $page['slug'] );
+			if ( $existante ) {
+				$pages[ $page['cle'] ] = (int) $existante->ID;
+			}
+			if ( in_array( 'page:' . $page['cle'], $faits, true ) ) {
+				continue;
+			}
+			$pages[ $page['cle'] ] = self::page( $page );
+			$faits[]               = 'page:' . $page['cle'];
+		}
+
+		foreach ( Rolling_Contenus::taxonomies() as $taxonomie => $t ) {
+			if ( in_array( 'termes:' . $taxonomie, $faits, true ) ) {
+				continue;
+			}
+			foreach ( $t['termes'] as $slug => $terme ) {
+				if ( ! term_exists( $slug, $taxonomie ) ) {
+					wp_insert_term( $terme, $taxonomie, array( 'slug' => $slug ) );
+				}
+			}
+			$faits[] = 'termes:' . $taxonomie;
+		}
+
+		$emplacements = get_theme_mod( 'nav_menu_locations', array() );
+		foreach ( $config['menus'] ?? array() as $menu ) {
+			if ( in_array( 'menu:' . $menu['emplacement'], $faits, true ) ) {
+				continue;
+			}
+			$faits[] = 'menu:' . $menu['emplacement'];
+			if ( ! empty( $emplacements[ $menu['emplacement'] ] ) ) {
+				continue;
+			}
+			$menu_id = self::menu( $menu, $pages );
+			if ( $menu_id ) {
+				$emplacements[ $menu['emplacement'] ] = $menu_id;
+			}
+		}
+		set_theme_mod( 'nav_menu_locations', $emplacements );
+		update_option( 'rolling_deja_crees', array_values( array_unique( $faits ) ), false );
+	}
+
+	/**
 	 * Retourne la page demandée, créée vide si elle n'existe pas.
 	 *
 	 * @param array $page Configuration.
@@ -852,25 +939,55 @@ class Rolling_Installateur {
 			return $menu_id;
 		}
 
-		foreach ( $menu['pages'] as $position => $cle ) {
-			if ( empty( $pages[ $cle ] ) ) {
-				continue;
-			}
-
-			wp_update_nav_menu_item(
-				$menu_id,
-				0,
-				array(
-					'menu-item-object-id' => $pages[ $cle ],
-					'menu-item-object'    => 'page',
-					'menu-item-type'      => 'post_type',
-					'menu-item-status'    => 'publish',
-					'menu-item-position'  => $position + 1,
-				)
-			);
-		}
+		self::elements_de_menu( $menu_id, $menu['pages'], $pages, 0 );
 
 		return $menu_id;
+	}
+
+	/**
+	 * Ajoute des éléments de menu : clé de page, ou { titre, lien | page, enfants }.
+	 *
+	 * @param int   $menu_id  Menu.
+	 * @param array $elements Éléments.
+	 * @param array $pages    Pages par clé.
+	 * @param int   $parent   Élément parent.
+	 */
+	private static function elements_de_menu( $menu_id, $elements, $pages, $parent ) {
+		foreach ( $elements as $position => $element ) {
+			$element = is_array( $element ) ? $element : array( 'page' => $element );
+			$args    = array(
+				'menu-item-status'    => 'publish',
+				'menu-item-position'  => $position + 1,
+				'menu-item-parent-id' => $parent,
+			);
+
+			if ( ! empty( $element['page'] ) ) {
+				if ( empty( $pages[ $element['page'] ] ) ) {
+					continue;
+				}
+				$args += array(
+					'menu-item-object-id' => $pages[ $element['page'] ],
+					'menu-item-object'    => 'page',
+					'menu-item-type'      => 'post_type',
+				);
+			} else {
+				$lien  = $element['lien'] ?? '#';
+				$args += array(
+					'menu-item-type' => 'custom',
+					'menu-item-url'  => 0 === strpos( $lien, '/' ) ? home_url( $lien ) : $lien,
+				);
+			}
+
+			if ( ! empty( $element['titre'] ) ) {
+				$args['menu-item-title'] = $element['titre'];
+			}
+
+			$id = wp_update_nav_menu_item( $menu_id, 0, $args );
+
+			if ( ! is_wp_error( $id ) && ! empty( $element['enfants'] ) ) {
+				self::elements_de_menu( $menu_id, $element['enfants'], $pages, $id );
+			}
+		}
 	}
 
 	// Caches et rapport.

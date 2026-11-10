@@ -20,9 +20,14 @@ require_once ROLLING_DIR . '/inc/class-rolling-ressources.php';
 require_once ROLLING_DIR . '/inc/class-rolling-entete-pied.php';
 require_once ROLLING_DIR . '/inc/class-rolling-guide.php';
 require_once ROLLING_DIR . '/inc/class-rolling-seo.php';
+require_once ROLLING_DIR . '/inc/class-rolling-contenus.php';
+require_once ROLLING_DIR . '/inc/class-rolling-webinars.php';
+require_once ROLLING_DIR . '/inc/class-rolling-dynamique.php';
 
 Rolling_Installateur::init();
 Rolling_Ressources::init();
 Rolling_Entete_Pied::init();
 Rolling_Guide::init();
 Rolling_Seo::init();
+Rolling_Contenus::init();
+Rolling_Dynamique::init();

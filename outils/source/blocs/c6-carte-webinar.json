@@ -1,0 +1,85 @@
+{
+ "cle": "c6-carte-webinar",
+ "titre": "Rolling · Carte webinar",
+ "type": "e-flexbox",
+ "apercu": "rolling_webinar",
+ "composition": {
+  "xml_structure": "<e-flexbox configuration-id=\"Carte webinar\"><e-flexbox configuration-id=\"Webinar · date\"><e-paragraph configuration-id=\"Webinar · jour\"></e-paragraph><e-paragraph configuration-id=\"Webinar · mois\"></e-paragraph><e-paragraph configuration-id=\"Webinar · heure\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Webinar · textes\"><e-flexbox configuration-id=\"Webinar · infos\"><e-paragraph configuration-id=\"Webinar · thème\"></e-paragraph><e-paragraph configuration-id=\"Webinar · durée\"></e-paragraph></e-flexbox><e-heading configuration-id=\"Webinar · titre\"></e-heading><e-paragraph configuration-id=\"Webinar · intervenants\"></e-paragraph></e-flexbox><e-button configuration-id=\"Webinar · bouton\"></e-button></e-flexbox>",
+  "element_config": {
+   "Carte webinar": {
+    "tag": "article"
+   },
+   "Webinar · jour": {
+    "paragraph": "⟦rolling-webinar|info=jour⟧"
+   },
+   "Webinar · mois": {
+    "paragraph": "⟦rolling-webinar|info=mois⟧"
+   },
+   "Webinar · heure": {
+    "paragraph": "⟦rolling-webinar|info=heure⟧"
+   },
+   "Webinar · thème": {
+    "paragraph": "⟦rolling-terme|taxonomie=rolling_theme⟧"
+   },
+   "Webinar · durée": {
+    "paragraph": "⟦rolling-webinar|info=duree⟧"
+   },
+   "Webinar · titre": {
+    "tag": "h3",
+    "title": "⟦rolling-article|info=titre⟧"
+   },
+   "Webinar · intervenants": {
+    "paragraph": "⟦rolling-webinar|info=intervenants⟧"
+   },
+   "Webinar · bouton": {
+    "text": "S'inscrire",
+    "link": {
+     "destination": "⟦rolling-lien|lien=inscription⟧"
+    }
+   }
+  },
+  "classes": {
+   "Carte webinar": [
+    "carte-verre",
+    "carte-webinar"
+   ],
+   "Webinar · date": [
+    "webinar-date"
+   ],
+   "Webinar · jour": [
+    "webinar-jour"
+   ],
+   "Webinar · mois": [
+    "webinar-mois"
+   ],
+   "Webinar · heure": [
+    "webinar-heure"
+   ],
+   "Webinar · textes": [
+    "pile-serree"
+   ],
+   "Webinar · infos": [
+    "rangee"
+   ],
+   "Webinar · thème": [
+    "tag-bleu"
+   ],
+   "Webinar · durée": [
+    "texte-petit"
+   ],
+   "Webinar · titre": [
+    "titre-xs"
+   ],
+   "Webinar · intervenants": [
+    "texte-petit",
+    "si-intervenants"
+   ],
+   "Webinar · bouton": [
+    "bouton-principal",
+    "bouton-petit"
+   ]
+  },
+  "style": {}
+ },
+ "brut": {}
+}

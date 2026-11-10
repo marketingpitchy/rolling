@@ -1,0 +1,12 @@
+/* Formulaires des contenus Rolling dans l'administration. */
+.rolling-champs { display: grid; gap: 18px; padding: 6px 0; }
+.rolling-libelle { display: block; margin-bottom: 6px; font-weight: 600; }
+.rolling-champ .description { margin-top: 4px; }
+.rolling-image { display: flex; align-items: center; gap: 12px; }
+.rolling-apercu img { display: block; width: 80px; height: auto; border-radius: 6px; background: #f0f0f1; }
+.rolling-liste { margin: 0 0 10px; padding-left: 22px; }
+.rolling-ligne { display: flex; gap: 8px; align-items: center; margin-bottom: 8px; }
+.rolling-ligne input { flex: 1; min-width: 0; }
+.rolling-ligne input[data-colonne="valeur"], .rolling-ligne input[data-colonne="nom"], .rolling-ligne input[data-colonne="role"] { flex: 0 0 160px; }
+.rolling-ligne .button-link { min-width: 28px; min-height: 28px; font-size: 18px; text-decoration: none; }
+.rolling-relation { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 6px 18px; max-height: 260px; overflow: auto; padding: 8px; border: 1px solid #dcdcde; border-radius: 4px; }

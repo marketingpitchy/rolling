@@ -1,0 +1,97 @@
+{
+ "cle": "c5-carte-guide",
+ "titre": "Rolling · Carte guide",
+ "type": "e-flexbox",
+ "apercu": "rolling_guide",
+ "composition": {
+  "xml_structure": "<e-flexbox configuration-id=\"Carte guide\"><e-flexbox configuration-id=\"Guide · vignette\"><e-div-block configuration-id=\"Guide · cadre\"><e-image configuration-id=\"Guide · image\"></e-image><e-paragraph configuration-id=\"Guide · type\"></e-paragraph></e-div-block></e-flexbox><e-flexbox configuration-id=\"Guide · infos\"><e-paragraph configuration-id=\"Guide · thème\"></e-paragraph><e-paragraph configuration-id=\"Guide · pages\"></e-paragraph></e-flexbox><e-heading configuration-id=\"Guide · titre\"></e-heading><e-paragraph configuration-id=\"Guide · résumé\"></e-paragraph><e-button configuration-id=\"Guide · bouton\"></e-button></e-flexbox>",
+  "element_config": {
+   "Carte guide": {
+    "tag": "article"
+   },
+   "Guide · vignette": {
+    "link": {
+     "destination": "⟦rolling-lien|lien=lien⟧"
+    }
+   },
+   "Guide · image": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/dynamique/rolling-image/image=une.png"
+     },
+     "size": "medium_large"
+    }
+   },
+   "Guide · type": {
+    "paragraph": "⟦rolling-champ|champ=type_doc⟧"
+   },
+   "Guide · thème": {
+    "paragraph": "⟦rolling-terme|taxonomie=rolling_theme⟧"
+   },
+   "Guide · pages": {
+    "paragraph": "⟦rolling-champ|champ=pages|apres= pages⟧"
+   },
+   "Guide · titre": {
+    "tag": "h3",
+    "title": "⟦rolling-article|info=titre⟧",
+    "link": {
+     "destination": "⟦rolling-lien|lien=lien⟧"
+    }
+   },
+   "Guide · résumé": {
+    "paragraph": "⟦rolling-champ|champ=resume⟧"
+   },
+   "Guide · bouton": {
+    "text": "Télécharger le guide",
+    "link": {
+     "destination": "⟦rolling-lien|lien=lien⟧"
+    }
+   }
+  },
+  "classes": {
+   "Carte guide": [
+    "carte-guide"
+   ],
+   "Guide · vignette": [
+    "vignette-lien"
+   ],
+   "Guide · cadre": [
+    "cadre-photo",
+    "cadre-4-3"
+   ],
+   "Guide · image": [
+    "image-couvrante"
+   ],
+   "Guide · type": [
+    "bandeau-video",
+    "si-type-doc"
+   ],
+   "Guide · infos": [
+    "rangee"
+   ],
+   "Guide · thème": [
+    "tag-orange"
+   ],
+   "Guide · pages": [
+    "texte-petit",
+    "si-pages"
+   ],
+   "Guide · titre": [
+    "titre-xs",
+    "lien-titre"
+   ],
+   "Guide · résumé": [
+    "texte-petit",
+    "si-resume"
+   ],
+   "Guide · bouton": [
+    "bouton-verre",
+    "bouton-petit"
+   ]
+  },
+  "style": {
+   "Guide · vignette": "padding: 0; border-radius: 22px;"
+  }
+ },
+ "brut": {}
+}

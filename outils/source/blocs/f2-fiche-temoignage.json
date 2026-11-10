@@ -1,0 +1,354 @@
+{
+ "cle": "f2-fiche-temoignage",
+ "titre": "Rolling · Fiche témoignage",
+ "type": "e-flexbox",
+ "apercu": "rolling_temoignage",
+ "composition": {
+  "xml_structure": "<e-flexbox configuration-id=\"Fiche témoignage\"><e-flexbox configuration-id=\"Fiche témoignage · haut\"><e-flexbox configuration-id=\"Fiche témoignage · haut · contenu\"><e-paragraph configuration-id=\"Fiche témoignage · fil d’Ariane\"></e-paragraph><e-flexbox configuration-id=\"Fiche témoignage · étiquettes\"><e-div-block configuration-id=\"Fiche témoignage · logo\"><e-image configuration-id=\"Fiche témoignage · logo · image\"></e-image></e-div-block><e-paragraph configuration-id=\"Fiche témoignage · métier\"></e-paragraph></e-flexbox><e-heading configuration-id=\"Fiche témoignage · titre\"></e-heading><e-paragraph configuration-id=\"Fiche témoignage · chapô\"></e-paragraph><e-flexbox configuration-id=\"Fiche témoignage · bandeau\"><e-flexbox configuration-id=\"Fiche témoignage · infos\"><e-flexbox configuration-id=\"Fiche témoignage · Secteur\"><e-paragraph configuration-id=\"Fiche témoignage · Secteur · libellé\"></e-paragraph><e-paragraph configuration-id=\"Fiche témoignage · Secteur · valeur\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Fiche témoignage · Équipes\"><e-paragraph configuration-id=\"Fiche témoignage · Équipes · libellé\"></e-paragraph><e-paragraph configuration-id=\"Fiche témoignage · Équipes · valeur\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Fiche témoignage · Formats\"><e-paragraph configuration-id=\"Fiche témoignage · Formats · libellé\"></e-paragraph><e-paragraph configuration-id=\"Fiche témoignage · Formats · valeur\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Fiche témoignage · Durée\"><e-paragraph configuration-id=\"Fiche témoignage · Durée · libellé\"></e-paragraph><e-paragraph configuration-id=\"Fiche témoignage · Durée · valeur\"></e-paragraph></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Fiche témoignage · appel\"><e-paragraph configuration-id=\"Fiche témoignage · appel · texte\"></e-paragraph><e-button configuration-id=\"Fiche témoignage · appel · bouton\"></e-button></e-flexbox></e-flexbox></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Fiche témoignage · chiffres\"><e-flexbox configuration-id=\"Fiche témoignage · chiffres · contenu\"><e-heading configuration-id=\"Fiche témoignage · chiffres · titre\"></e-heading><e-paragraph configuration-id=\"Fiche témoignage · chiffres · plaque\"></e-paragraph></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Fiche témoignage · cas\"><e-flexbox configuration-id=\"Fiche témoignage · cas · grille\"><e-flexbox configuration-id=\"Fiche témoignage · citation\"><e-paragraph configuration-id=\"Fiche témoignage · citation · texte\"></e-paragraph><e-flexbox configuration-id=\"Fiche témoignage · citation · auteur\"><e-image configuration-id=\"Fiche témoignage · citation · portrait\"></e-image><e-flexbox configuration-id=\"Fiche témoignage · citation · personne\"><e-paragraph configuration-id=\"Fiche témoignage · citation · nom\"></e-paragraph><e-paragraph configuration-id=\"Fiche témoignage · citation · poste\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Fiche témoignage · récit\"><e-flexbox configuration-id=\"Fiche témoignage · contexte\"><e-heading configuration-id=\"Fiche témoignage · contexte · titre\"></e-heading><e-paragraph configuration-id=\"Fiche témoignage · contexte · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Fiche témoignage · besoin\"><e-heading configuration-id=\"Fiche témoignage · besoin · titre\"></e-heading><e-paragraph configuration-id=\"Fiche témoignage · besoin · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Fiche témoignage · accompagnement\"><e-heading configuration-id=\"Fiche témoignage · accompagnement · titre\"></e-heading><e-paragraph configuration-id=\"Fiche témoignage · accompagnement · liste\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Fiche témoignage · vidéos\"><e-heading configuration-id=\"Fiche témoignage · vidéos · titre\"></e-heading><e-paragraph configuration-id=\"Fiche témoignage · vidéos · liste\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Appel final\"><e-image configuration-id=\"Final · verre cannelé\"></e-image><e-flexbox configuration-id=\"Final · contenu\"><e-heading configuration-id=\"Final · titre\"></e-heading><e-paragraph configuration-id=\"Final · texte\"></e-paragraph><e-flexbox configuration-id=\"Final · bouton\"><e-button configuration-id=\"Final · réserver\"></e-button></e-flexbox></e-flexbox></e-flexbox></e-flexbox>",
+  "element_config": {
+   "Fiche témoignage": {
+    "tag": "article"
+   },
+   "Fiche témoignage · haut": {
+    "tag": "section"
+   },
+   "Fiche témoignage · fil d’Ariane": {
+    "paragraph": "⟦widget:rolling-ariane⟧"
+   },
+   "Fiche témoignage · logo · image": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/dynamique/rolling-image/image=logo.png"
+     },
+     "size": "medium"
+    }
+   },
+   "Fiche témoignage · métier": {
+    "paragraph": "⟦rolling-terme|taxonomie=rolling_metier⟧"
+   },
+   "Fiche témoignage · titre": {
+    "tag": "h1",
+    "title": "⟦rolling-titre|forme=client⟧"
+   },
+   "Fiche témoignage · chapô": {
+    "paragraph": "⟦rolling-champ|champ=chapo⟧"
+   },
+   "Fiche témoignage · Secteur · libellé": {
+    "paragraph": "Secteur"
+   },
+   "Fiche témoignage · Secteur · valeur": {
+    "paragraph": "⟦rolling-champ|champ=secteur⟧"
+   },
+   "Fiche témoignage · Équipes · libellé": {
+    "paragraph": "Équipes"
+   },
+   "Fiche témoignage · Équipes · valeur": {
+    "paragraph": "⟦rolling-champ|champ=equipes⟧"
+   },
+   "Fiche témoignage · Formats · libellé": {
+    "paragraph": "Formats"
+   },
+   "Fiche témoignage · Formats · valeur": {
+    "paragraph": "⟦rolling-champ|champ=formats⟧"
+   },
+   "Fiche témoignage · Durée · libellé": {
+    "paragraph": "Durée"
+   },
+   "Fiche témoignage · Durée · valeur": {
+    "paragraph": "⟦rolling-champ|champ=duree⟧"
+   },
+   "Fiche témoignage · appel · texte": {
+    "paragraph": "<strong>Un projet similaire&nbsp;?</strong>"
+   },
+   "Fiche témoignage · appel · bouton": {
+    "text": "Réserver un échange",
+    "link": {
+     "destination": "/contact/"
+    }
+   },
+   "Fiche témoignage · chiffres": {
+    "tag": "section"
+   },
+   "Fiche témoignage · chiffres · titre": {
+    "tag": "h2",
+    "title": "En chiffres"
+   },
+   "Fiche témoignage · chiffres · plaque": {
+    "paragraph": "⟦widget:rolling-chiffres⟧"
+   },
+   "Fiche témoignage · cas": {
+    "tag": "section"
+   },
+   "Fiche témoignage · citation · texte": {
+    "paragraph": "⟦rolling-champ|champ=citation⟧"
+   },
+   "Fiche témoignage · citation · portrait": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/dynamique/rolling-image/image=portrait.png"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "Fiche témoignage · citation · nom": {
+    "paragraph": "⟦rolling-champ|champ=auteur⟧"
+   },
+   "Fiche témoignage · citation · poste": {
+    "paragraph": "⟦rolling-champ|champ=poste⟧"
+   },
+   "Fiche témoignage · contexte · titre": {
+    "tag": "h2",
+    "title": "Le contexte."
+   },
+   "Fiche témoignage · contexte · texte": {
+    "paragraph": "⟦rolling-champ|champ=contexte⟧"
+   },
+   "Fiche témoignage · besoin · titre": {
+    "tag": "h2",
+    "title": "Leur besoin."
+   },
+   "Fiche témoignage · besoin · texte": {
+    "paragraph": "⟦rolling-champ|champ=besoin⟧"
+   },
+   "Fiche témoignage · accompagnement · titre": {
+    "tag": "h2",
+    "title": "Notre accompagnement."
+   },
+   "Fiche témoignage · accompagnement · liste": {
+    "paragraph": "⟦widget:rolling-coches|champ=accompagnement⟧"
+   },
+   "Fiche témoignage · vidéos · titre": {
+    "tag": "h2",
+    "title": "Les vidéos."
+   },
+   "Fiche témoignage · vidéos · liste": {
+    "paragraph": "⟦widget:rolling-liste|contenu=liees|nombre=6|classe=grille-2⟧"
+   },
+   "Appel final": {
+    "_cssid": "contact",
+    "tag": "section"
+   },
+   "Final · verre cannelé": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/final-verre-cannele.webp"
+     },
+     "size": "medium_large"
+    }
+   },
+   "Final · titre": {
+    "tag": "h2",
+    "title": "Vos vidéos&nbsp;? Nous nous en occupons.<br><em>Sans limite.</em>"
+   },
+   "Final · texte": {
+    "paragraph": "30 minutes pour passer en revue vos contenus et vos projets. Vous repartez avec votre stratégie vidéo et vos 3&nbsp;premières vidéos à produire."
+   },
+   "Final · réserver": {
+    "text": "Réserver un échange",
+    "link": {
+     "destination": "/contact/"
+    }
+   }
+  },
+  "classes": {
+   "Fiche témoignage · haut": [
+    "section",
+    "section-entete"
+   ],
+   "Fiche témoignage · haut · contenu": [
+    "conteneur"
+   ],
+   "Fiche témoignage · étiquettes": [
+    "rangee"
+   ],
+   "Fiche témoignage · logo": [
+    "cas-logo",
+    "si-logo"
+   ],
+   "Fiche témoignage · métier": [
+    "etiquette-metier-orange"
+   ],
+   "Fiche témoignage · titre": [
+    "titre-lg"
+   ],
+   "Fiche témoignage · chapô": [
+    "texte-intro",
+    "si-chapo"
+   ],
+   "Fiche témoignage · bandeau": [
+    "cas-bandeau"
+   ],
+   "Fiche témoignage · infos": [
+    "cas-bandeau-infos"
+   ],
+   "Fiche témoignage · Secteur": [
+    "si-secteur"
+   ],
+   "Fiche témoignage · Secteur · libellé": [
+    "label"
+   ],
+   "Fiche témoignage · Secteur · valeur": [
+    "cas-info-valeur"
+   ],
+   "Fiche témoignage · Équipes": [
+    "si-equipes"
+   ],
+   "Fiche témoignage · Équipes · libellé": [
+    "label"
+   ],
+   "Fiche témoignage · Équipes · valeur": [
+    "cas-info-valeur"
+   ],
+   "Fiche témoignage · Formats": [
+    "si-formats"
+   ],
+   "Fiche témoignage · Formats · libellé": [
+    "label"
+   ],
+   "Fiche témoignage · Formats · valeur": [
+    "cas-info-valeur"
+   ],
+   "Fiche témoignage · Durée": [
+    "si-duree"
+   ],
+   "Fiche témoignage · Durée · libellé": [
+    "label"
+   ],
+   "Fiche témoignage · Durée · valeur": [
+    "cas-info-valeur"
+   ],
+   "Fiche témoignage · appel": [
+    "cas-bandeau-appel"
+   ],
+   "Fiche témoignage · appel · texte": [
+    "texte-petit"
+   ],
+   "Fiche témoignage · appel · bouton": [
+    "bouton-principal",
+    "bouton-petit"
+   ],
+   "Fiche témoignage · chiffres": [
+    "section",
+    "section-suite",
+    "si-chiffres"
+   ],
+   "Fiche témoignage · chiffres · contenu": [
+    "conteneur"
+   ],
+   "Fiche témoignage · chiffres · titre": [
+    "label",
+    "label-violet"
+   ],
+   "Fiche témoignage · cas": [
+    "section",
+    "section-suite"
+   ],
+   "Fiche témoignage · cas · grille": [
+    "conteneur",
+    "cas-grille"
+   ],
+   "Fiche témoignage · citation": [
+    "carte-verre",
+    "temoin",
+    "cas-citation",
+    "si-citation"
+   ],
+   "Fiche témoignage · citation · texte": [
+    "temoin-citation"
+   ],
+   "Fiche témoignage · citation · auteur": [
+    "temoin-auteur",
+    "si-auteur"
+   ],
+   "Fiche témoignage · citation · portrait": [
+    "portrait",
+    "portrait-petit",
+    "si-portrait"
+   ],
+   "Fiche témoignage · citation · personne": [
+    "pile-serree"
+   ],
+   "Fiche témoignage · citation · nom": [
+    "cas-info-valeur"
+   ],
+   "Fiche témoignage · citation · poste": [
+    "texte-petit",
+    "si-poste"
+   ],
+   "Fiche témoignage · récit": [
+    "cas-recit"
+   ],
+   "Fiche témoignage · contexte": [
+    "pile",
+    "si-contexte"
+   ],
+   "Fiche témoignage · contexte · titre": [
+    "titre-sm"
+   ],
+   "Fiche témoignage · contexte · texte": [
+    "texte"
+   ],
+   "Fiche témoignage · besoin": [
+    "pile",
+    "si-besoin"
+   ],
+   "Fiche témoignage · besoin · titre": [
+    "titre-sm"
+   ],
+   "Fiche témoignage · besoin · texte": [
+    "texte"
+   ],
+   "Fiche témoignage · accompagnement": [
+    "pile",
+    "si-accompagnement"
+   ],
+   "Fiche témoignage · accompagnement · titre": [
+    "titre-sm"
+   ],
+   "Fiche témoignage · vidéos": [
+    "pile",
+    "si-videos"
+   ],
+   "Fiche témoignage · vidéos · titre": [
+    "titre-sm"
+   ],
+   "Appel final": [
+    "section",
+    "section-sombre",
+    "section-finale",
+    "halo-centre",
+    "decors-final"
+   ],
+   "Final · verre cannelé": [
+    "decor-flottant"
+   ],
+   "Final · contenu": [
+    "conteneur"
+   ],
+   "Final · titre": [
+    "titre-lg",
+    "titre-souligne"
+   ],
+   "Final · texte": [
+    "texte-intro"
+   ],
+   "Final · réserver": [
+    "bouton-soleil"
+   ]
+  },
+  "style": {
+   "Fiche témoignage": "display: flex; flex-direction: column; gap: 0; align-items: stretch; padding: 0; width: 100%;",
+   "Fiche témoignage · haut · contenu": "display: flex; flex-direction: column; gap: 0;",
+   "Fiche témoignage · étiquettes": "margin-top: 28px;",
+   "Fiche témoignage · titre": "margin-top: 22px; max-width: 980px;",
+   "Fiche témoignage · chapô": "margin-top: 20px; max-width: 760px;",
+   "Fiche témoignage · bandeau": "margin-top: 30px;",
+   "Fiche témoignage · chiffres · contenu": "display: flex; flex-direction: column; gap: 0;",
+   "Fiche témoignage · chiffres · titre": "margin-bottom: 18px;",
+   "Final · contenu": "display: flex; flex-direction: column; gap: 0; align-items: center; z-index: 1;",
+   "Final · texte": "margin-top: 34px; max-width: 600px;",
+   "Final · bouton": "display: flex; justify-content: center; margin-top: 38px; padding: 0;"
+  }
+ },
+ "brut": {}
+}

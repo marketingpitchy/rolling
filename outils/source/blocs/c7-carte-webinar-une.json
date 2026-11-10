@@ -1,0 +1,96 @@
+{
+ "cle": "c7-carte-webinar-une",
+ "titre": "Rolling · Carte prochain webinar",
+ "type": "e-flexbox",
+ "apercu": "rolling_webinar",
+ "composition": {
+  "xml_structure": "<e-flexbox configuration-id=\"Prochain webinar\"><e-div-block configuration-id=\"Prochain · cadre\"><e-image configuration-id=\"Prochain · image\"></e-image><e-paragraph configuration-id=\"Prochain · bandeau\"></e-paragraph></e-div-block><e-flexbox configuration-id=\"Prochain · textes\"><e-flexbox configuration-id=\"Prochain · infos\"><e-paragraph configuration-id=\"Prochain · thème\"></e-paragraph><e-paragraph configuration-id=\"Prochain · date\"></e-paragraph></e-flexbox><e-paragraph configuration-id=\"Prochain · compte à rebours\"></e-paragraph><e-heading configuration-id=\"Prochain · titre\"></e-heading><e-paragraph configuration-id=\"Prochain · résumé\"></e-paragraph><e-paragraph configuration-id=\"Prochain · intervenants\"></e-paragraph><e-button configuration-id=\"Prochain · bouton\"></e-button></e-flexbox></e-flexbox>",
+  "element_config": {
+   "Prochain webinar": {
+    "tag": "article"
+   },
+   "Prochain · image": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/dynamique/rolling-image/image=une.png"
+     },
+     "size": "large"
+    }
+   },
+   "Prochain · bandeau": {
+    "paragraph": "Prochain webinar"
+   },
+   "Prochain · thème": {
+    "paragraph": "⟦rolling-terme|taxonomie=rolling_theme⟧"
+   },
+   "Prochain · date": {
+    "paragraph": "⟦rolling-webinar|info=complete⟧"
+   },
+   "Prochain · compte à rebours": {
+    "paragraph": "⟦widget:rolling-compte-a-rebours⟧"
+   },
+   "Prochain · titre": {
+    "tag": "h3",
+    "title": "⟦rolling-article|info=titre⟧"
+   },
+   "Prochain · résumé": {
+    "paragraph": "⟦rolling-champ|champ=resume⟧"
+   },
+   "Prochain · intervenants": {
+    "paragraph": "⟦rolling-webinar|info=intervenants⟧"
+   },
+   "Prochain · bouton": {
+    "text": "S'inscrire au webinar",
+    "link": {
+     "destination": "⟦rolling-lien|lien=inscription⟧"
+    }
+   }
+  },
+  "classes": {
+   "Prochain webinar": [
+    "carte-verre",
+    "carte-webinar-une"
+   ],
+   "Prochain · cadre": [
+    "cadre-photo",
+    "cadre-16-10"
+   ],
+   "Prochain · image": [
+    "image-couvrante"
+   ],
+   "Prochain · bandeau": [
+    "bandeau-video",
+    "bandeau-rec"
+   ],
+   "Prochain · textes": [
+    "pile"
+   ],
+   "Prochain · infos": [
+    "rangee"
+   ],
+   "Prochain · thème": [
+    "tag-orange"
+   ],
+   "Prochain · date": [
+    "texte-petit"
+   ],
+   "Prochain · titre": [
+    "titre-md"
+   ],
+   "Prochain · résumé": [
+    "texte",
+    "si-resume"
+   ],
+   "Prochain · intervenants": [
+    "texte-petit",
+    "si-intervenants"
+   ],
+   "Prochain · bouton": [
+    "bouton-principal",
+    "bouton-petit"
+   ]
+  },
+  "style": {}
+ },
+ "brut": {}
+}

@@ -118,6 +118,112 @@ function rolling_ordonner_classes( $elements, $rang ) {
 	return $elements;
 }
 
+/**
+ * Repères « ⟦…⟧ » de blocs.py → balises dynamiques et widgets Rolling.
+ *
+ * Texte : ⟦rolling-champ|champ=client⟧ ; image : https://media.rolling.invalid/⟦rolling-image|image=logo⟧ ;
+ * lien : ⟦rolling-lien|lien=fiche⟧ ; widget : paragraphe ⟦widget:rolling-chiffres|classe=…⟧.
+ *
+ * @param array $elements Éléments.
+ * @return array
+ */
+function rolling_dynamiser( $elements ) {
+	foreach ( $elements as &$element ) {
+		$paragraphe = $element['settings']['paragraph']['value'] ?? '';
+		if ( is_string( $paragraphe ) && preg_match( '/^⟦widget:([^|⟧]+)(.*)⟧$/u', $paragraphe, $m ) ) {
+			$element = array(
+				'id'         => $element['id'],
+				'elType'     => 'widget',
+				'widgetType' => $m[1],
+				'settings'   => (object) rolling_reglages_repere( $m[2] ),
+				'elements'   => array(),
+			);
+			continue;
+		}
+		$element['settings'] = rolling_valeurs_dynamiques( $element['settings'] ?? array() );
+		if ( ! empty( $element['elements'] ) ) {
+			$element['elements'] = rolling_dynamiser( $element['elements'] );
+		}
+	}
+	unset( $element );
+
+	return $elements;
+}
+
+/**
+ * Lit « |cle=valeur|… ».
+ *
+ * @param string $texte Texte.
+ * @return array
+ */
+function rolling_reglages_repere( $texte ) {
+	$reglages = array();
+	foreach ( array_filter( explode( '|', $texte ), 'strlen' ) as $paire ) {
+		list( $cle, $valeur ) = array_pad( explode( '=', $paire, 2 ), 2, '' );
+		$reglages[ $cle ]     = $valeur;
+	}
+
+	return $reglages;
+}
+
+/**
+ * Remplace, dans des réglages atomiques, chaque valeur repère par une valeur dynamique.
+ *
+ * @param mixed $valeur Réglages.
+ * @return mixed
+ */
+function rolling_valeurs_dynamiques( $valeur ) {
+	if ( ! is_array( $valeur ) ) {
+		return $valeur;
+	}
+
+	// Image : la source entière devient dynamique.
+	if ( ( $valeur['$$type'] ?? '' ) === 'image-src' ) {
+		$url = $valeur['value']['url']['value'] ?? '';
+		if ( is_string( $url ) && preg_match( '#/dynamique/([^/]+)/(.*)\.png$#', $url, $m ) ) {
+			return rolling_dynamique( $m[1], '|' . str_replace( '&', '|', $m[2] ) );
+		}
+		return $valeur;
+	}
+
+	// Elementor peut avoir préfixé un lien (« http://⟦…⟧ ») : on cherche le repère dans toute la valeur.
+	if ( isset( $valeur['$$type'] ) && is_string( $valeur['value'] ?? null ) && preg_match( '/⟦([^|⟧]+)([^⟧]*)⟧/u', $valeur['value'], $m ) ) {
+		return rolling_dynamique( $m[1], $m[2] );
+	}
+
+	foreach ( $valeur as $cle => $sous ) {
+		$valeur[ $cle ] = rolling_valeurs_dynamiques( $sous );
+	}
+
+	return $valeur;
+}
+
+/**
+ * Valeur dynamique d'Elementor pour une balise Rolling.
+ *
+ * @param string $nom      Balise.
+ * @param string $reglages « |cle=valeur… ».
+ * @return array
+ */
+function rolling_dynamique( $nom, $reglages ) {
+	$typees = array();
+	foreach ( rolling_reglages_repere( $reglages ) as $cle => $v ) {
+		$typees[ $cle ] = array(
+			'$$type' => 'string',
+			'value'  => $v,
+		);
+	}
+
+	return array(
+		'$$type' => 'dynamic',
+		'value'  => array(
+			'name'     => $nom,
+			'group'    => 'rolling',
+			'settings' => (object) $typees,
+		),
+	);
+}
+
 $source = $args[0] ?? '/tmp/rolling/source/blocs';
 $sortie = $args[1] ?? '/tmp/rolling/data/blocs';
 $filtre = $args[2] ?? '';
@@ -187,7 +293,7 @@ foreach ( glob( $source . '/*.json' ) as $fichier ) {
 	}
 
 	$document = \Elementor\Plugin::$instance->documents->get( $page, false );
-	$contenu  = rolling_ordonner_classes( $document ? $document->get_elements_data() : array(), $rang );
+	$contenu  = rolling_dynamiser( rolling_ordonner_classes( $document ? $document->get_elements_data() : array(), $rang ) );
 	// Le CSS personnalisé des styles locaux n'est rendu qu'avec une licence Pro : on le refuse.
 	foreach ( $brut as $nom => $css ) {
 		echo 'À METTRE DANS UNE CLASSE (' . $bloc['cle'] . ' / ' . $nom . ') : ' . $css . "\n";
@@ -200,6 +306,7 @@ foreach ( glob( $source . '/*.json' ) as $fichier ) {
 				'cle'     => $bloc['cle'],
 				'titre'   => $bloc['titre'],
 				'type'    => $bloc['type'],
+				'apercu'  => $bloc['apercu'] ?? '',
 				'contenu' => $contenu,
 			),
 			JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES

@@ -1,0 +1,100 @@
+{
+ "cle": "c3-carte-temoignage-une",
+ "titre": "Rolling · Carte témoignage à la une",
+ "type": "e-flexbox",
+ "apercu": "rolling_temoignage",
+ "composition": {
+  "xml_structure": "<e-flexbox configuration-id=\"Carte témoignage à la une\"><e-flexbox configuration-id=\"Témoin à la une · haut\"><e-image configuration-id=\"Témoin à la une · logo\"></e-image><e-paragraph configuration-id=\"Témoin à la une · métier\"></e-paragraph></e-flexbox><e-paragraph configuration-id=\"Témoin à la une · citation\"></e-paragraph><e-paragraph configuration-id=\"Témoin à la une · chapô\"></e-paragraph><e-flexbox configuration-id=\"Témoin à la une · auteur\"><e-image configuration-id=\"Témoin à la une · portrait\"></e-image><e-flexbox configuration-id=\"Témoin à la une · personne\"><e-paragraph configuration-id=\"Témoin à la une · nom\"></e-paragraph><e-paragraph configuration-id=\"Témoin à la une · poste\"></e-paragraph></e-flexbox></e-flexbox><e-button configuration-id=\"Témoin à la une · lien\"></e-button></e-flexbox>",
+  "element_config": {
+   "Carte témoignage à la une": {
+    "tag": "article"
+   },
+   "Témoin à la une · logo": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/dynamique/rolling-image/image=logo.png"
+     },
+     "size": "medium"
+    }
+   },
+   "Témoin à la une · métier": {
+    "paragraph": "⟦rolling-terme|taxonomie=rolling_metier⟧"
+   },
+   "Témoin à la une · citation": {
+    "paragraph": "⟦rolling-champ|champ=citation⟧"
+   },
+   "Témoin à la une · chapô": {
+    "paragraph": "⟦rolling-champ|champ=chapo⟧"
+   },
+   "Témoin à la une · portrait": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/dynamique/rolling-image/image=portrait.png"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "Témoin à la une · nom": {
+    "paragraph": "⟦rolling-champ|champ=auteur⟧"
+   },
+   "Témoin à la une · poste": {
+    "paragraph": "⟦rolling-champ|champ=poste⟧"
+   },
+   "Témoin à la une · lien": {
+    "text": "Lire le cas",
+    "link": {
+     "destination": "⟦rolling-lien|lien=fiche⟧"
+    }
+   }
+  },
+  "classes": {
+   "Carte témoignage à la une": [
+    "carte-verre",
+    "temoin",
+    "temoin-une"
+   ],
+   "Témoin à la une · haut": [
+    "temoin-haut"
+   ],
+   "Témoin à la une · logo": [
+    "temoin-logo",
+    "si-logo"
+   ],
+   "Témoin à la une · métier": [
+    "tag-orange"
+   ],
+   "Témoin à la une · citation": [
+    "temoin-citation",
+    "si-citation"
+   ],
+   "Témoin à la une · chapô": [
+    "texte",
+    "sans-citation"
+   ],
+   "Témoin à la une · auteur": [
+    "temoin-auteur",
+    "si-auteur"
+   ],
+   "Témoin à la une · portrait": [
+    "portrait",
+    "portrait-petit",
+    "si-portrait"
+   ],
+   "Témoin à la une · personne": [
+    "pile-serree"
+   ],
+   "Témoin à la une · nom": [
+    "cas-info-valeur"
+   ],
+   "Témoin à la une · poste": [
+    "texte-petit",
+    "si-poste"
+   ],
+   "Témoin à la une · lien": [
+    "temoin-lien"
+   ]
+  },
+  "style": {}
+ },
+ "brut": {}
+}

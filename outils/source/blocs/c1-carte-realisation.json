@@ -1,0 +1,114 @@
+{
+ "cle": "c1-carte-realisation",
+ "titre": "Rolling · Carte réalisation",
+ "type": "e-flexbox",
+ "apercu": "rolling_realisation",
+ "composition": {
+  "xml_structure": "<e-flexbox configuration-id=\"Carte réalisation\"><e-flexbox configuration-id=\"Réalisation · vignette\"><e-div-block configuration-id=\"Réalisation · cadre\"><e-image configuration-id=\"Réalisation · image\"></e-image><e-paragraph configuration-id=\"Réalisation · format\"></e-paragraph><e-paragraph configuration-id=\"Réalisation · durée\"></e-paragraph><e-image configuration-id=\"Réalisation · lecture\"></e-image></e-div-block></e-flexbox><e-flexbox configuration-id=\"Réalisation · textes\"><e-paragraph configuration-id=\"Réalisation · client\"></e-paragraph><e-heading configuration-id=\"Réalisation · titre\"></e-heading></e-flexbox><e-flexbox configuration-id=\"Réalisation · avant après\"><e-paragraph configuration-id=\"Réalisation · avant (orange)\"></e-paragraph><e-paragraph configuration-id=\"Réalisation · avant (bleu)\"></e-paragraph><e-paragraph configuration-id=\"Réalisation · après\"></e-paragraph></e-flexbox></e-flexbox>",
+  "element_config": {
+   "Carte réalisation": {
+    "tag": "article"
+   },
+   "Réalisation · vignette": {
+    "link": {
+     "destination": "⟦rolling-lien|lien=fiche⟧"
+    }
+   },
+   "Réalisation · image": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/dynamique/rolling-image/image=une.png"
+     },
+     "size": "medium_large"
+    }
+   },
+   "Réalisation · format": {
+    "paragraph": "⟦rolling-terme|taxonomie=rolling_format⟧"
+   },
+   "Réalisation · durée": {
+    "paragraph": "⟦rolling-champ|champ=duree⟧"
+   },
+   "Réalisation · lecture": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/bouton-lecture.png"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "Réalisation · client": {
+    "paragraph": "⟦rolling-champ|champ=client⟧"
+   },
+   "Réalisation · titre": {
+    "tag": "h3",
+    "title": "⟦rolling-titre|forme=titre⟧",
+    "link": {
+     "destination": "⟦rolling-lien|lien=fiche⟧"
+    }
+   },
+   "Réalisation · avant (orange)": {
+    "paragraph": "⟦rolling-champ|champ=avant⟧"
+   },
+   "Réalisation · avant (bleu)": {
+    "paragraph": "⟦rolling-champ|champ=avant⟧"
+   },
+   "Réalisation · après": {
+    "paragraph": "⟦rolling-champ|champ=apres⟧"
+   }
+  },
+  "classes": {
+   "Carte réalisation": [
+    "carte-liste"
+   ],
+   "Réalisation · vignette": [
+    "vignette-video",
+    "vignette-lien"
+   ],
+   "Réalisation · cadre": [
+    "cadre-photo",
+    "cadre-16-9"
+   ],
+   "Réalisation · image": [
+    "image-couvrante"
+   ],
+   "Réalisation · format": [
+    "bandeau-video"
+   ],
+   "Réalisation · durée": [
+    "duree",
+    "si-duree"
+   ],
+   "Réalisation · lecture": [
+    "bouton-lecture"
+   ],
+   "Réalisation · textes": [
+    "pile-serree"
+   ],
+   "Réalisation · client": [
+    "label",
+    "si-client"
+   ],
+   "Réalisation · titre": [
+    "titre-xs",
+    "lien-titre"
+   ],
+   "Réalisation · avant après": [
+    "avant-apres",
+    "si-avant"
+   ],
+   "Réalisation · avant (orange)": [
+    "tag-orange",
+    "sans-tonalite--bleu"
+   ],
+   "Réalisation · avant (bleu)": [
+    "tag-bleu",
+    "si-tonalite--bleu"
+   ],
+   "Réalisation · après": [
+    "si-apres"
+   ]
+  },
+  "style": {}
+ },
+ "brut": {}
+}

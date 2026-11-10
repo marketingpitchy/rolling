@@ -1,0 +1,98 @@
+{
+ "cle": "c8-carte-replay",
+ "titre": "Rolling · Carte replay",
+ "type": "e-flexbox",
+ "apercu": "rolling_webinar",
+ "composition": {
+  "xml_structure": "<e-flexbox configuration-id=\"Carte replay\"><e-flexbox configuration-id=\"Replay · vignette\"><e-div-block configuration-id=\"Replay · cadre\"><e-image configuration-id=\"Replay · image\"></e-image><e-paragraph configuration-id=\"Replay · bandeau\"></e-paragraph><e-image configuration-id=\"Replay · lecture\"></e-image></e-div-block></e-flexbox><e-flexbox configuration-id=\"Replay · infos\"><e-paragraph configuration-id=\"Replay · thème\"></e-paragraph><e-paragraph configuration-id=\"Replay · date\"></e-paragraph></e-flexbox><e-heading configuration-id=\"Replay · titre\"></e-heading><e-button configuration-id=\"Replay · bouton\"></e-button></e-flexbox>",
+  "element_config": {
+   "Carte replay": {
+    "tag": "article"
+   },
+   "Replay · vignette": {
+    "link": {
+     "destination": "⟦rolling-lien|lien=replay⟧"
+    }
+   },
+   "Replay · image": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/dynamique/rolling-image/image=une.png"
+     },
+     "size": "medium_large"
+    }
+   },
+   "Replay · bandeau": {
+    "paragraph": "Replay"
+   },
+   "Replay · lecture": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/bouton-lecture.png"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "Replay · thème": {
+    "paragraph": "⟦rolling-terme|taxonomie=rolling_theme⟧"
+   },
+   "Replay · date": {
+    "paragraph": "⟦rolling-webinar|info=diffuse⟧"
+   },
+   "Replay · titre": {
+    "tag": "h3",
+    "title": "⟦rolling-article|info=titre⟧",
+    "link": {
+     "destination": "⟦rolling-lien|lien=replay⟧"
+    }
+   },
+   "Replay · bouton": {
+    "text": "Voir le replay",
+    "link": {
+     "destination": "⟦rolling-lien|lien=replay⟧"
+    }
+   }
+  },
+  "classes": {
+   "Carte replay": [
+    "carte-liste"
+   ],
+   "Replay · vignette": [
+    "vignette-video",
+    "vignette-lien"
+   ],
+   "Replay · cadre": [
+    "cadre-photo",
+    "cadre-16-9"
+   ],
+   "Replay · image": [
+    "image-couvrante"
+   ],
+   "Replay · bandeau": [
+    "bandeau-video"
+   ],
+   "Replay · lecture": [
+    "bouton-lecture"
+   ],
+   "Replay · infos": [
+    "rangee"
+   ],
+   "Replay · thème": [
+    "tag-orange"
+   ],
+   "Replay · date": [
+    "texte-petit"
+   ],
+   "Replay · titre": [
+    "titre-xs",
+    "lien-titre"
+   ],
+   "Replay · bouton": [
+    "bouton-verre",
+    "bouton-petit"
+   ]
+  },
+  "style": {}
+ },
+ "brut": {}
+}
