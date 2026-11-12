@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hero mobile</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Caveat:wght@700&family=Hanken+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root { --encre: #0F0F12; --paragraphe: #4A4858; --discret: #6E6B7B; --surface: #FAF9F7; --violet: #5B3BEA; --orange: #E0562A; --img: "hero-mobile-imgs/"; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: "Hanken Grotesk", system-ui, sans-serif; color: var(--encre); background: var(--surface); line-height: 1.6; }
+main { max-width: 1340px; margin: 0 auto; padding: 56px 16px 96px; }
+h1 { font-family: "Bricolage Grotesque"; font-weight: 650; font-size: clamp(32px, 4vw, 52px); letter-spacing: -.05em; line-height: 1.06; }
+h1 em { font-style: normal; background: linear-gradient(90deg, #5B3BEA, #B5459E 55%, #EC5E2B); -webkit-background-clip: text; background-clip: text; color: transparent; padding: 0 .06em; margin: 0 -.06em; }
+.intro { margin-top: 18px; max-width: 780px; font-size: 18px; color: var(--paragraphe); }
+.regles { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
+.regles span { padding: 6px 14px; border-radius: 999px; font-size: 14px; font-weight: 600; background: #fff; box-shadow: inset 0 0 0 1px rgba(15,15,18,.1); }
+.options { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(390px, 100%), 1fr)); gap: 40px 28px; margin-top: 48px; }
+.option h2 { font-family: "Bricolage Grotesque"; font-weight: 650; font-size: 26px; letter-spacing: -.035em; line-height: 1.2; }
+.option .lettre { display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; margin-right: 8px; border-radius: 50%; font-size: 15px; color: #fff; background: linear-gradient(140deg, #5B3BEA, #8E4DE6); vertical-align: 3px; }
+.option p.desc { margin-top: 10px; font-size: 16px; color: var(--paragraphe); min-height: 104px; }
+.option.conseil h2::after { content: "Notre conseil"; margin-left: 10px; padding: 3px 10px; border-radius: 999px; font: 700 12px "Hanken Grotesk"; letter-spacing: .06em; text-transform: uppercase; color: #fff; background: var(--orange); vertical-align: 5px; }
+
+/* Téléphone */
+.tel { width: 390px; max-width: 100%; margin-top: 20px; border-radius: 44px; padding: 10px; background: #111; box-shadow: 0 30px 60px -30px rgba(30,20,80,.45); }
+.ecran { position: relative; height: 760px; overflow: hidden; border-radius: 36px; background: var(--surface); }
+.ecran::before { content: ""; position: absolute; inset: 0; background: radial-gradient(60% 40% at 0% 0%, rgba(167,139,250,.35), transparent 70%), radial-gradient(55% 40% at 100% 20%, rgba(255,138,91,.28), transparent 70%); pointer-events: none; }
+.page { position: relative; padding: 18px 20px 0; }
+.entete { display: flex; align-items: center; justify-content: space-between; padding: 10px 10px 10px 18px; border-radius: 999px; background: rgba(255,255,255,.75); box-shadow: 0 6px 20px -10px rgba(40,20,120,.3), inset 0 0 0 1px rgba(255,255,255,.9); }
+.logo { font: 650 22px "Bricolage Grotesque"; letter-spacing: -.05em; }
+.logo b { background: linear-gradient(90deg, #8E4DE6, #EC5E2B); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.burger { width: 40px; height: 40px; border-radius: 50%; background: var(--encre); display: grid; place-items: center; }
+.burger i { width: 16px; height: 2px; background: #fff; box-shadow: 0 -5px #fff, 0 5px #fff; }
+.pastille { display: inline-flex; gap: 8px; align-items: center; margin-top: 26px; padding: 5px 12px; border-radius: 999px; font-size: 12px; font-weight: 700; color: var(--violet); background: rgba(255,255,255,.8); }
+.pastille::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: #FF8A5B; box-shadow: 0 0 0 3px rgba(255,138,91,.25); }
+.titre { margin-top: 14px; font: 650 33px/1.05 "Bricolage Grotesque"; letter-spacing: -.05em; }
+.titre .h { color: #D9531F; } .titre .i { color: var(--violet); }
+.chapo { margin-top: 12px; font-size: 15px; line-height: 1.5; color: var(--paragraphe); }
+.boutons { display: flex; gap: 10px; margin-top: 16px; }
+.btn { padding: 12px 18px; border-radius: 999px; font-size: 14px; font-weight: 700; background: var(--encre); color: #fff; white-space: nowrap; }
+.btn.b2 { background: #fff; color: var(--encre); box-shadow: inset 0 0 0 1px rgba(15,15,18,.08); }
+.visuel { position: relative; margin-top: 26px; }
+
+/* Éléments communs du visuel */
+.carte { position: absolute; overflow: hidden; border-radius: 22px; border: 5px solid rgba(255,255,255,.92); box-shadow: 0 22px 40px -18px rgba(40,20,120,.45); background: #222 center / cover no-repeat; }
+.etiquette { position: absolute; top: 8px; left: 8px; display: inline-flex; align-items: center; gap: 6px; padding: 3px 9px; border-radius: 999px; font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: #fff; background: rgba(22,14,52,.66); }
+.etiquette::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: #FF4D4D; }
+.motion { background: linear-gradient(150deg, #FFB08A, #EC5E2B); }
+.motion::before { content: ""; position: absolute; left: 14%; top: 34%; width: 34%; aspect-ratio: 1; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #fff, #FFE3D6 60%, #F8B79C); }
+.motion::after { content: ""; position: absolute; right: 12%; bottom: 30%; width: 34%; height: 40%; background: linear-gradient(#0F0F12, #0F0F12) 0 100% / 18% 40% no-repeat, linear-gradient(#fff, #fff) 41% 100% / 18% 70% no-repeat, linear-gradient(#0F0F12, #0F0F12) 100% 100% / 18% 100% no-repeat; }
+.motion .leg { position: absolute; z-index: 1; left: 10px; right: 10px; bottom: 10px; padding: 6px 10px; border-radius: 12px; font: 700 13px/1.15 "Hanken Grotesk"; color: #3A1608; background: rgba(255,255,255,.6); }
+.motion .leg span { color: var(--violet); }
+.legende { position: absolute; left: 10px; right: 10px; bottom: 10px; padding: 6px 10px; border-radius: 12px; font: 700 13px/1.15 "Hanken Grotesk"; color: #fff; background: rgba(22,14,52,.62); }
+.barre { position: absolute; left: 10px; right: 10px; bottom: 10px; height: 30px; border-radius: 999px; background: rgba(22,14,52,.66); }
+.barre::before { content: ""; position: absolute; left: 10px; top: 9px; width: 12px; height: 12px; border-radius: 50%; background: rgba(255,255,255,.9); }
+.barre::after { content: ""; position: absolute; left: 32px; right: 12px; top: 14px; height: 3px; border-radius: 3px; background: linear-gradient(90deg, #fff 55%, rgba(255,255,255,.3) 55%); }
+.preuve { display: flex; align-items: center; gap: 10px; margin-top: 18px; font-size: 12px; color: var(--discret); }
+.visages { display: flex; } .visages img { width: 28px; height: 28px; border-radius: 50%; border: 2px solid #fff; margin-left: -8px; } .visages img:first-child { margin-left: 0; }
+.annot { margin-top: 14px; font-size: 14px; color: var(--paragraphe); }
+.annot li { margin: 4px 0 0 18px; }
+
+/* A · Plateau : composition superposée, comme sur ordinateur, en 360 px de haut */
+.a .visuel { height: 330px; }
+.a .t { left: 4%; right: 4%; top: 30px; height: 230px; background-image: url(hero-mobile-imgs/hero-tournage.jpg); animation: flotte 6s ease-in-out infinite; }
+.a .iv { left: 0; bottom: 0; width: 38%; height: 190px; background-image: url(hero-mobile-imgs/hero-interview.jpg); background-position: 40% center; transform: rotate(-4deg); animation: flotte 6s -2s ease-in-out infinite; }
+.a .m { right: 0; top: 0; width: 40%; height: 128px; transform: rotate(5deg); animation: flotte 6s -4s ease-in-out infinite; }
+.a .d { right: 6%; bottom: 6px; width: 46%; height: 112px; background-image: url(hero-mobile-imgs/hero-demo-produit.jpg); background-position: center 35%; animation: flotte 6s -3s ease-in-out infinite; }
+@keyframes flotte { 50% { translate: 0 -6px; } }
+
+/* B · Pellicule : bande de film qui défile, cadres perforés */
+.b .visuel { margin-left: -20px; margin-right: -20px; height: 300px; }
+.pellicule { position: absolute; inset: 20px 0; padding: 22px 0; background: #16112C; transform: rotate(-3deg); box-shadow: 0 24px 40px -22px rgba(22,14,52,.7); overflow: hidden; }
+.pellicule::before, .pellicule::after { content: ""; position: absolute; left: 0; right: 0; height: 10px; background: repeating-linear-gradient(90deg, transparent 0 8px, rgba(250,249,247,.85) 8px 20px, transparent 20px 28px); border-radius: 2px; z-index: 2; }
+.pellicule::before { top: 6px; } .pellicule::after { bottom: 6px; }
+.piste { display: flex; gap: 10px; width: max-content; animation: defile 18s linear infinite; }
+.cadre { position: relative; width: 170px; height: 176px; border-radius: 10px; overflow: hidden; background: #222 center / cover no-repeat; flex: none; }
+.cadre .tc { position: absolute; right: 8px; top: 8px; font: 700 12px "Hanken Grotesk"; color: #fff; padding: 2px 7px; border-radius: 6px; background: rgba(22,14,52,.66); font-variant-numeric: tabular-nums; }
+@keyframes defile { to { transform: translateX(calc(-50% - 5px)); } }
+
+/* C · Écran de montage : un grand cadre, les plans s'enchaînent, timeline dessous */
+.c .visuel { height: 340px; }
+.moniteur { position: absolute; inset: 0 0 64px; border-radius: 24px; overflow: hidden; border: 5px solid rgba(255,255,255,.92); box-shadow: 0 22px 40px -18px rgba(40,20,120,.45); background: #16112C; }
+.plan { position: absolute; inset: 0; background: center / cover no-repeat; opacity: 0; animation: plan 12s infinite; }
+.plan:nth-child(1) { background-image: url(hero-mobile-imgs/hero-tournage.jpg); animation-delay: 0s; }
+.plan:nth-child(2) { background-image: url(hero-mobile-imgs/hero-interview.jpg); background-position: 35% center; animation-delay: 3s; }
+.plan:nth-child(3) { animation-delay: 6s; }
+.plan:nth-child(4) { background-image: url(hero-mobile-imgs/hero-demo-produit.jpg); background-position: center 40%; animation-delay: 9s; }
+.plan.motion, .cadre.motion { background: linear-gradient(150deg, #FFB08A, #EC5E2B); }
+@keyframes plan { 0% { opacity: 0; transform: scale(1.06); } 3%, 25% { opacity: 1; } 28%, 100% { opacity: 0; transform: scale(1); } }
+.rec { position: absolute; top: 10px; right: 12px; display: flex; gap: 6px; align-items: center; font: 700 12px "Hanken Grotesk"; color: #fff; padding: 3px 8px; border-radius: 999px; background: rgba(22,14,52,.66); font-variant-numeric: tabular-nums; z-index: 2; }
+.rec::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: #FF4D4D; animation: rec 1s steps(2) infinite; }
+@keyframes rec { 50% { opacity: .2; } }
+.plan .etiquette { z-index: 2; }
+.timeline { position: absolute; left: 0; right: 0; bottom: 0; height: 50px; padding: 8px 10px; border-radius: 16px; background: #fff; box-shadow: 0 10px 24px -14px rgba(40,20,120,.35); display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 5px; }
+.clip { position: relative; border-radius: 7px; overflow: hidden; font: 700 12px/22px "Hanken Grotesk"; color: #fff; text-align: center; white-space: nowrap; }
+.clip::after { content: ""; position: absolute; inset: auto 6px 5px; height: 6px; background: repeating-linear-gradient(90deg, rgba(255,255,255,.55) 0 2px, transparent 2px 4px); mask: linear-gradient(90deg, #000 0 20%, transparent 20% 24%, #000 24% 60%, transparent 60% 64%, #000 64%); opacity: .7; }
+.k1 { background: #5B3BEA; } .k2 { background: #8E4DE6; } .k3 { background: #E0562A; } .k4 { background: #3434E0; }
+.tete { position: absolute; top: 2px; bottom: 2px; left: 10px; width: 2px; background: #FF3B3B; animation: tete 12s linear infinite; z-index: 3; }
+.tete::before { content: ""; position: absolute; top: -6px; left: -5px; width: 12px; height: 10px; background: #FF3B3B; clip-path: polygon(0 0, 100% 0, 100% 55%, 50% 100%, 0 55%); }
+@keyframes tete { to { left: calc(100% - 12px); } }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; }
+  .plan:nth-child(1) { opacity: 1; }
+  .b .pellicule { overflow-x: auto; }
+}
+</style>
+</head>
+<body>
+<main>
+  <h1>Hero en mobile : <em>3 idées.</em></h1>
+  <p class="intro">Aujourd’hui, en mobile, les 4 vignettes du hero s’empilent les unes sous les autres : c’est long et sans effet. Voici 3 façons de garder l’esprit « vidéo » sur 330 px de haut environ. Sur ordinateur, rien ne change.</p>
+  <div class="regles"><span>Mobile seulement (sous 768 px)</span><span>Images remplaçables dans Elementor</span><span>Rien ne bouge avec « réduire les animations »</span><span>Rien ne bouge dans l’éditeur</span></div>
+
+  <div class="options">
+    <section class="option a">
+      <h2><span class="lettre">A</span>Le plateau</h2>
+      <p class="desc">La composition de l’ordinateur, resserrée : le tournage au centre, l’interview, le motion design et la démo produit posés dessus, qui flottent doucement. Le plus proche de ce que vous avez déjà.</p>
+      <div class="tel"><div class="ecran"><div class="page">
+        <div class="entete"><span class="logo">« rolling <b>▶▶</b></span><span class="burger"><i></i></span></div>
+        <span class="pastille">Votre agence vidéo illimitée</span>
+        <p class="titre">Le meilleur <span class="h">de l’humain.</span><br>Le meilleur <span class="i">de l’IA.</span></p>
+        <p class="chapo">Vos clients, vos candidats, vos collaborateurs s’informent tous en vidéo. La nôtre s’en charge, à prix fixe, en illimité.</p>
+        <div class="boutons"><span class="btn">Réserver un échange →</span><span class="btn b2">Voir les offres</span></div>
+        <div class="visuel">
+          <div class="carte t"><span class="etiquette">Tournage</span></div>
+          <div class="carte m motion"><span class="etiquette">Motion</span><span class="leg">Résultats <span>2026</span></span></div>
+          <div class="carte iv"><span class="etiquette">Interview</span><span class="legende">3 gestes qui sauvent</span></div>
+          <div class="carte d"><span class="etiquette">Démo</span><span class="barre"></span></div>
+        </div>
+      </div></div></div>
+      <ul class="annot"><li>Même éléments qu’aujourd’hui, autre placement en mobile.</li><li>Le plus simple à intégrer.</li></ul>
+    </section>
+
+    <section class="option b">
+      <h2><span class="lettre">B</span>La pellicule</h2>
+      <p class="desc">Les 4 plans sur une bande de film inclinée, perforée, qui défile lentement comme la bande de logos. Timecode sur chaque plan. Avec « réduire les animations », la bande s’arrête et se fait glisser au doigt.</p>
+      <div class="tel"><div class="ecran"><div class="page">
+        <div class="entete"><span class="logo">« rolling <b>▶▶</b></span><span class="burger"><i></i></span></div>
+        <span class="pastille">Votre agence vidéo illimitée</span>
+        <p class="titre">Le meilleur <span class="h">de l’humain.</span><br>Le meilleur <span class="i">de l’IA.</span></p>
+        <p class="chapo">Vos clients, vos candidats, vos collaborateurs s’informent tous en vidéo. La nôtre s’en charge, à prix fixe, en illimité.</p>
+        <div class="boutons"><span class="btn">Réserver un échange →</span><span class="btn b2">Voir les offres</span></div>
+        <div class="visuel">
+          <div class="pellicule"><div class="piste">
+            <div class="cadre" style="background-image:url(hero-mobile-imgs/hero-tournage.jpg)"><span class="etiquette">Tournage</span><span class="tc">00:01</span></div>
+            <div class="cadre" style="background-image:url(hero-mobile-imgs/hero-interview.jpg);background-position:38% center"><span class="etiquette">Interview</span><span class="tc">00:02</span></div>
+            <div class="cadre motion"><span class="etiquette">Motion</span><span class="tc">00:03</span></div>
+            <div class="cadre" style="background-image:url(hero-mobile-imgs/hero-demo-produit.jpg)"><span class="etiquette">Démo</span><span class="tc">00:04</span></div>
+            <div class="cadre" style="background-image:url(hero-mobile-imgs/hero-tournage.jpg)" aria-hidden="true"><span class="etiquette">Tournage</span><span class="tc">00:01</span></div>
+            <div class="cadre" style="background-image:url(hero-mobile-imgs/hero-interview.jpg);background-position:38% center" aria-hidden="true"><span class="etiquette">Interview</span><span class="tc">00:02</span></div>
+            <div class="cadre motion" aria-hidden="true"><span class="etiquette">Motion</span><span class="tc">00:03</span></div>
+            <div class="cadre" style="background-image:url(hero-mobile-imgs/hero-demo-produit.jpg)" aria-hidden="true"><span class="etiquette">Démo</span><span class="tc">00:04</span></div>
+          </div></div>
+        </div>
+      </div></div></div>
+      <ul class="annot"><li>Les plans sont répétés une fois pour la boucle (copie masquée aux lecteurs d’écran).</li><li>Fait écho aux logos qui défilent juste en dessous : à éviter si vous gardez ce défilement.</li></ul>
+    </section>
+
+    <section class="option c conseil">
+      <h2><span class="lettre">C</span>L’écran de montage</h2>
+      <p class="desc">Un seul grand écran où les 4 plans s’enchaînent (3 s chacun, léger zoom), voyant REC, et dessous une mini timeline aux couleurs de la charte avec la tête de lecture rouge des frises. Le plus « film », et le plus compact.</p>
+      <div class="tel"><div class="ecran"><div class="page">
+        <div class="entete"><span class="logo">« rolling <b>▶▶</b></span><span class="burger"><i></i></span></div>
+        <span class="pastille">Votre agence vidéo illimitée</span>
+        <p class="titre">Le meilleur <span class="h">de l’humain.</span><br>Le meilleur <span class="i">de l’IA.</span></p>
+        <p class="chapo">Vos clients, vos candidats, vos collaborateurs s’informent tous en vidéo. La nôtre s’en charge, à prix fixe, en illimité.</p>
+        <div class="boutons"><span class="btn">Réserver un échange →</span><span class="btn b2">Voir les offres</span></div>
+        <div class="visuel">
+          <div class="moniteur">
+            <div class="plan"><span class="etiquette">Tournage</span></div>
+            <div class="plan"><span class="etiquette">Interview</span></div>
+            <div class="plan motion"><span class="etiquette">Motion design</span><span class="leg">Résultats <span>2026</span></span></div>
+            <div class="plan"><span class="etiquette">Démo produit</span></div>
+            <span class="rec">REC</span>
+          </div>
+          <div class="timeline">
+            <span class="clip k1">Tournage</span><span class="clip k2">Interview</span><span class="clip k3">Motion</span><span class="clip k4">Démo</span>
+            <span class="tete"></span>
+          </div>
+        </div>
+      </div></div></div>
+      <ul class="annot"><li>La tête de lecture passe sur le clip du plan affiché.</li><li>Avec « réduire les animations » : le premier plan reste affiché, tête de lecture au début.</li></ul>
+    </section>
+  </div>
+</main>
+</body>
+</html>
