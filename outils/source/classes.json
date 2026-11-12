@@ -1514,6 +1514,12 @@
      "css": "align-items: center; gap: 14px; padding: 48px 28px; text-align: center; @media(--mobile) { padding: 36px 22px; }"
     },
     {
+     "label": "hero-collage",
+     "description": "Visuels du hero sur ordinateur (981 px et plus) : vignettes en collage aéré, cadres fins, légèrement inclinées, qui flottent doucement. Sans effet sur tablette et mobile.",
+     "css": "--rl-collage: 1;",
+     "brut": "@media (min-width: 981px) { & > .e-con { padding: 6px; border-radius: 26px; --rl-rayon-photo: 20px; --rl-marge-vignette: 10px; animation: rl-flotte 8s ease-in-out infinite; } & > .e-con:nth-last-child(4) { rotate: -3deg; } & > .e-con:nth-last-child(3) { rotate: 4deg; animation-delay: -2s; } & > .e-con:nth-last-child(2) { rotate: 2deg; animation-delay: -4s; } & > .e-con:nth-last-child(1) { rotate: -5deg; animation-delay: -6s; } }"
+    },
+    {
      "label": "texte-herite",
      "description": "Texte qui reprend la police, la taille, la graisse et la couleur de son parent (ex. le titre H1 posé dans la pastille du hero).",
      "css": "margin: 0;",

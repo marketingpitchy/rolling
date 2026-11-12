@@ -112,6 +112,11 @@ CLASSES = [
 
     # Pages (livraison 4).
     ('carte-vide', "Message d'une liste vide (avec carte-verre) : centré (ex. « Pas de webinar programmé »).", 'align-items: center; gap: 14px; padding: 48px 28px; text-align: center; @media(--mobile) { padding: 36px 22px; }'),
+    ('hero-collage', "Visuels du hero sur ordinateur (981 px et plus) : vignettes en collage aéré, cadres fins, légèrement inclinées, qui flottent doucement. Sans effet sur tablette et mobile.",
+     "--rl-collage: 1;",
+     "@media (min-width: 981px) { & > .e-con { padding: 6px; border-radius: 26px; --rl-rayon-photo: 20px; --rl-marge-vignette: 10px; animation: rl-flotte 8s ease-in-out infinite; } "
+     "& > .e-con:nth-last-child(4) { rotate: -3deg; } & > .e-con:nth-last-child(3) { rotate: 4deg; animation-delay: -2s; } "
+     "& > .e-con:nth-last-child(2) { rotate: 2deg; animation-delay: -4s; } & > .e-con:nth-last-child(1) { rotate: -5deg; animation-delay: -6s; } }"),
     ('texte-herite', "Texte qui reprend la police, la taille, la graisse et la couleur de son parent (ex. le titre H1 posé dans la pastille du hero).", 'margin: 0;', 'font-family: inherit; font-size: inherit; font-weight: inherit; line-height: inherit; letter-spacing: inherit; color: inherit;'),
     ('hero-montage', "Visuels du hero en mobile (sous 768 px) : les vignettes s'enchaînent dans un seul cadre (3 s chacune, dans l'ordre), avec des barres de progression façon stories en haut et un timecode. Sans effet sur ordinateur et tablette.",
      "@media(--mobile) { display: block; height: 400px; margin-top: 4px; isolation: isolate; "

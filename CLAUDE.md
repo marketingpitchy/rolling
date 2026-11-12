@@ -219,6 +219,10 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   **Maquette « Hero sur ordinateur : plus léger »** (`maquettes/hero-mobile/hero-ordinateur.html`, **à valider**) : bloc
   d'images jugé trop massif ⇒ A collage aéré (conseil : 4 vignettes flottantes inclinées sur halo, plus de grand cadre),
   B photo fondue dans la page (masque radial) + 3 vignettes, C pellicule verticale qui défile + interview flottante.
+- **0.4.5 : hero ordinateur = option A (collage aéré) validée** : classe `hero-collage` sur « Visuels » (CSS brut dans
+  `@media (min-width: 981px)` : cadres fins 6 px, rotations par nth-last-child, `rl-flotte` décalé) ; positions locales
+  des 4 vignettes revues (Visuels max 560 px centré, 630 px de haut ; Tournage 380 px en 16:10, Interview / Motion 190 px).
+  Leçon : `margin-inline` et `max-width: none` sont ignorés par le convertisseur ⇒ `margin: 0 auto`, `max-width: 100%`.
 - **Chargement de page effet film** (demande avant la fin de la livraison 4) : maquette `maquettes/loading/maquette-loading.html`
   (copie /workspace/maquette-loading.html), 4 options : A amorce 3-2-1, B clap qui se ferme puis rideau, C ouverture
   cinéma (bandes noires + REC + timecode + règle avec la tête de lecture rouge des frises, plus de filet fin), D barre de lecture en haut sans écran. Conseil : C à l'arrivée (première page

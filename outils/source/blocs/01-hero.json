@@ -180,7 +180,8 @@
    ],
    "Visuels": [
     "lueur-peche",
-    "hero-montage"
+    "hero-montage",
+    "hero-collage"
    ],
    "Tournage": [
     "cadre-verre",
@@ -276,17 +277,17 @@
    "Chapô": "margin-top: 26px; max-width: 620px;",
    "Boutons": "margin-top: 40px;",
    "Preuve": "margin-top: 24px;",
-   "Visuels": "position: relative; flex: 1 1 460px; min-width: 0; height: 680px; padding: 0; @media(--tablet) { height: auto; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; } @media(--mobile) { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }",
-   "Tournage": "position: absolute; left: 0; right: 0; top: 0; @media(--tablet) { position: relative; grid-column: 1 / -1; }",
-   "Tournage · photo": "height: 652px; @media(--tablet) { height: 420px; } @media(--mobile) { height: 280px; }",
+   "Visuels": "position: relative; flex: 1 1 460px; min-width: 0; max-width: 560px; height: 630px; margin: 0 auto; padding: 0; @media(--tablet) { max-width: 100%; height: auto; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; } @media(--mobile) { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }",
+   "Tournage": "position: absolute; left: 60px; top: 50px; width: 380px; @media(--tablet) { position: relative; left: auto; top: auto; width: auto; grid-column: 1 / -1; }",
+   "Tournage · photo": "aspect-ratio: 16 / 10; @media(--tablet) { height: 420px; } @media(--mobile) { height: 280px; }",
    "Tournage · image": "object-position: 56% 50%;",
-   "Interview": "position: absolute; left: 28px; top: 252px; width: 208px; z-index: 2; @media(--tablet) { position: relative; left: auto; top: auto; width: auto; }",
+   "Interview": "position: absolute; right: 0; top: 110px; width: 190px; z-index: 2; @media(--tablet) { position: relative; right: auto; top: auto; width: auto; }",
    "Interview · vidéo": "aspect-ratio: 9 / 16;",
    "Interview · image": "object-position: 53% 28%;",
-   "Démo produit": "position: absolute; right: 28px; top: 24px; width: 294px; z-index: 2; @media(--tablet) { position: relative; right: auto; top: auto; width: auto; align-self: start; } @media(--mobile) { grid-column: 1 / -1; order: 3; }",
+   "Démo produit": "position: absolute; left: 10px; top: 340px; width: 270px; z-index: 2; @media(--tablet) { position: relative; left: auto; top: auto; width: auto; align-self: start; } @media(--mobile) { grid-column: 1 / -1; order: 3; }",
    "Démo produit · vidéo": "aspect-ratio: 16 / 9;",
    "Démo produit · image": "object-position: 50% 40%;",
-   "Motion design": "position: absolute; right: 28px; top: 432px; width: 208px; z-index: 2; @media(--tablet) { position: relative; right: auto; top: auto; width: auto; align-self: start; }",
+   "Motion design": "position: absolute; left: 255px; top: 440px; width: 190px; z-index: 2; @media(--tablet) { position: relative; left: auto; top: auto; width: auto; align-self: start; }",
    "Motion design · vidéo": "aspect-ratio: 1 / 1; overflow: hidden; padding: 0; border-radius: 19px;"
   }
  },

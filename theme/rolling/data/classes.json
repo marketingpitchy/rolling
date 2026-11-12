@@ -24189,6 +24189,24 @@
             ]
         },
         {
+            "id": "g-69b0a3b",
+            "label": "hero-collage",
+            "groupe": "Fiches et listes",
+            "description": "Visuels du hero sur ordinateur (981 px et plus) : vignettes en collage aéré, cadres fins, légèrement inclinées, qui flottent doucement. Sans effet sur tablette et mobile.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": [],
+                    "custom_css": {
+                        "raw": "LS1ybC1jb2xsYWdlOiAxOyBAbWVkaWEgKG1pbi13aWR0aDogOTgxcHgpIHsgJiA+IC5lLWNvbiB7IHBhZGRpbmc6IDZweDsgYm9yZGVyLXJhZGl1czogMjZweDsgLS1ybC1yYXlvbi1waG90bzogMjBweDsgLS1ybC1tYXJnZS12aWduZXR0ZTogMTBweDsgYW5pbWF0aW9uOiBybC1mbG90dGUgOHMgZWFzZS1pbi1vdXQgaW5maW5pdGU7IH0gJiA+IC5lLWNvbjpudGgtbGFzdC1jaGlsZCg0KSB7IHJvdGF0ZTogLTNkZWc7IH0gJiA+IC5lLWNvbjpudGgtbGFzdC1jaGlsZCgzKSB7IHJvdGF0ZTogNGRlZzsgYW5pbWF0aW9uLWRlbGF5OiAtMnM7IH0gJiA+IC5lLWNvbjpudGgtbGFzdC1jaGlsZCgyKSB7IHJvdGF0ZTogMmRlZzsgYW5pbWF0aW9uLWRlbGF5OiAtNHM7IH0gJiA+IC5lLWNvbjpudGgtbGFzdC1jaGlsZCgxKSB7IHJvdGF0ZTogLTVkZWc7IGFuaW1hdGlvbi1kZWxheTogLTZzOyB9IH0="
+                    }
+                }
+            ]
+        },
+        {
             "id": "g-09b19aa",
             "label": "texte-herite",
             "groupe": "Fiches et listes",

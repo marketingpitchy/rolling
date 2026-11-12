@@ -158,14 +158,14 @@ hero = F('Hero', ['section', 'section-entete', 'halos-haut'], tag='section', enf
                 P('Preuve · texte', 'Par les équipes de <strong>Pitchy</strong> — 13 ans de vidéo, 500+ grandes entreprises.', ['texte-petit', 'texte-legende']),
             ]),
         ]),
-        D('Visuels', ['lueur-peche', 'hero-montage'], 'position: relative; flex: 1 1 460px; min-width: 0; height: 680px; padding: 0; @media(--tablet) { height: auto; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; } @media(--mobile) { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }', enfants=[
-            D('Tournage', ['cadre-verre', 'cadre-verre-grand'], 'position: absolute; left: 0; right: 0; top: 0; @media(--tablet) { position: relative; grid-column: 1 / -1; }', enfants=[
-                D('Tournage · photo', ['cadre-photo'], 'height: 652px; @media(--tablet) { height: 420px; } @media(--mobile) { height: 280px; }', enfants=[
+        D('Visuels', ['lueur-peche', 'hero-montage', 'hero-collage'], 'position: relative; flex: 1 1 460px; min-width: 0; max-width: 560px; height: 630px; margin: 0 auto; padding: 0; @media(--tablet) { max-width: 100%; height: auto; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; } @media(--mobile) { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }', enfants=[
+            D('Tournage', ['cadre-verre', 'cadre-verre-grand'], 'position: absolute; left: 60px; top: 50px; width: 380px; @media(--tablet) { position: relative; left: auto; top: auto; width: auto; grid-column: 1 / -1; }', enfants=[
+                D('Tournage · photo', ['cadre-photo'], 'aspect-ratio: 16 / 10; @media(--tablet) { height: 420px; } @media(--mobile) { height: 280px; }', enfants=[
                     I('Tournage · image', 'hero-tournage.jpg', 'Une caméra sur trépied, en plein tournage dans des bureaux', ['image-couvrante'], 'object-position: 56% 50%;'),
                     bandeau('Tournage · bandeau', 'Tournage', ['bandeau-rec']),
                 ]),
             ]),
-            D('Interview', ['cadre-verre'], 'position: absolute; left: 28px; top: 252px; width: 208px; z-index: 2; @media(--tablet) { position: relative; left: auto; top: auto; width: auto; }', enfants=[
+            D('Interview', ['cadre-verre'], 'position: absolute; right: 0; top: 110px; width: 190px; z-index: 2; @media(--tablet) { position: relative; right: auto; top: auto; width: auto; }', enfants=[
                 D('Interview · vidéo', ['cadre-photo'], 'aspect-ratio: 9 / 16;', enfants=[
                     I('Interview · image', 'hero-interview.jpg', 'Une experte filmée en interview', ['image-couvrante'], 'object-position: 53% 28%;'),
                     bandeau('Interview · bandeau', 'Interview'),
@@ -175,7 +175,7 @@ hero = F('Hero', ['section', 'section-entete', 'halos-haut'], tag='section', enf
                     ]),
                 ]),
             ]),
-            D('Démo produit', ['cadre-verre'], 'position: absolute; right: 28px; top: 24px; width: 294px; z-index: 2; @media(--tablet) { position: relative; right: auto; top: auto; width: auto; align-self: start; } @media(--mobile) { grid-column: 1 / -1; order: 3; }', enfants=[
+            D('Démo produit', ['cadre-verre'], 'position: absolute; left: 10px; top: 340px; width: 270px; z-index: 2; @media(--tablet) { position: relative; left: auto; top: auto; width: auto; align-self: start; } @media(--mobile) { grid-column: 1 / -1; order: 3; }', enfants=[
                 D('Démo produit · vidéo', ['cadre-photo'], 'aspect-ratio: 16 / 9;', enfants=[
                     I('Démo produit · image', 'hero-demo-produit.jpg', "Un pot de crème ouvert flotte au-dessus d'une pierre", ['image-couvrante'], 'object-position: 50% 40%;'),
                     bandeau('Démo produit · bandeau', 'Démo produit'),
@@ -184,7 +184,7 @@ hero = F('Hero', ['section', 'section-entete', 'halos-haut'], tag='section', enf
                     ]),
                 ]),
             ]),
-            D('Motion design', ['cadre-verre'], 'position: absolute; right: 28px; top: 432px; width: 208px; z-index: 2; @media(--tablet) { position: relative; right: auto; top: auto; width: auto; align-self: start; }', enfants=[
+            D('Motion design', ['cadre-verre'], 'position: absolute; left: 255px; top: 440px; width: 190px; z-index: 2; @media(--tablet) { position: relative; left: auto; top: auto; width: auto; align-self: start; }', enfants=[
                 D('Motion design · vidéo', ['fond-video-orange', 'illus-motion', 'motion-formes'], 'aspect-ratio: 1 / 1; overflow: hidden; padding: 0; border-radius: 19px;', enfants=[
                     bandeau('Motion design · bandeau', 'Motion design', ['bandeau-clair']),
                     P('Motion design · mot', 'Résultats 2026', ['mot-motion']),
