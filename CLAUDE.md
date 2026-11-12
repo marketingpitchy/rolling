@@ -154,7 +154,14 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   pointillés « Composition « … » ») : En bref, Étapes, Vidéo, Chiffre clé, Liste à coches, Avis d'expert, Encart guide,
   Encart appel (sombre), À retenir, FAQ (details), Auteur ; **à valider**. Dans le thème : compositions Gutenberg
   (catégorie Rolling) + styles du texte d'article ; rien ne s'affiche si on ne les insère pas.
-- **Livraison 4 (0.4.0) en cours** :
+- **Livraison 4 envoyée (0.4.0)** (12/11/2026) : compositions d'article, témoignages (citation / récit), 10 pages
+  (blocs + « Page complète »), landing, chargement C + D. Vérifié : axe 0 (13 pages, 1440/390/réduire les animations),
+  1 H1 et pas de saut de titre partout, 1024 sans débordement, PHPCS 0, insertion « Page complète (Offres) » dans
+  l'éditeur (Adopter le style), mise à jour 0.3.2 → 0.4.0 sur wp2 avec **Elementor 4.4.0** (rendu identique à wp).
+  Leçon : **l'éditeur ajoute `.elementor-element-overlay` en 1er enfant de chaque conteneur** ⇒ dans les classes, jamais
+  `:first-child` / `:nth-child(n)` sur les enfants d'un conteneur : compter depuis la fin (`:nth-last-child`, `:last-child`).
+  Listes sans H2 : titre H2 masqué (`texte-masque`) avant les cartes h3 (Réalisations, Guides, Replays).
+- **Livraison 4 (0.4.0), détails** :
   - Articles : 13 compositions Gutenberg (`data/compositions/*.html` + `compositions.json`, catégorie « Rolling », articles
     seulement) ; styles de blocs « Liste à coches », « Étapes numérotées » (liste), « Comparatif » (tableau) ; rendu =
     règles de la classe `article-texte` ; le widget Texte de l'article (`enrichir()`) pose coches en verre, chiffres en
@@ -178,6 +185,9 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   cinéma (bandes noires + REC + timecode + règle avec la tête de lecture rouge des frises, plus de filet fin), D barre de lecture en haut sans écran. Conseil : C à l'arrivée (première page
   de la visite, sessionStorage), D entre les pages ; < 1,5 s, clic / Échap pour passer, rien avec « réduire les
   animations », rien dans l'éditeur, pas sur la landing ; **C choisie (avec la tête de lecture), D validée entre les pages**.
+  Intégré en 0.4.0 : `inc/class-rolling-chargement.php` (script dans le head : classe `rl-intro-joue` ou `rl-barre-joue`
+  selon sessionStorage ; écran après `wp_body_open` ; logo pour fond sombre de Personnaliser) ; CSS dans rolling.css ;
+  désactivable dans Personnaliser > « Rolling : chargement de page ».
   Option E ajoutée (idée de la cliente) : un document « (guillemets du logo) traverse le logo et devient une vidéo ▶,
   tête de lecture sur la règle, puis ouverture comme C (1,5 s). **Choix final : C** (E écartée) ⇒ à intégrer en 0.4.0.
 - Google Tag Manager : chez la cliente, le Custom Code d'Elementor Pro est dans le nouveau menu **Elementor > Éléments
