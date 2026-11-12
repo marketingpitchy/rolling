@@ -1,0 +1,183 @@
+{
+ "cle": "p-landing-1-hero",
+ "titre": "Rolling · Landing · Hero et logos",
+ "type": "e-flexbox",
+ "composition": {
+  "xml_structure": "<e-flexbox configuration-id=\"Landing · hero\"><e-flexbox configuration-id=\"Landing · hero · contenu\"><e-flexbox configuration-id=\"Landing · textes\"><e-flexbox configuration-id=\"Landing · pastille\"><e-paragraph configuration-id=\"Landing · pastille · texte\"></e-paragraph></e-flexbox><e-heading configuration-id=\"Landing · titre\"></e-heading><e-paragraph configuration-id=\"Landing · chapô\"></e-paragraph><e-flexbox configuration-id=\"Landing · boutons\"><e-button configuration-id=\"Landing · réserver\"></e-button><e-button configuration-id=\"Landing · offres\"></e-button></e-flexbox><e-paragraph configuration-id=\"Landing · précision\"></e-paragraph><e-flexbox configuration-id=\"Landing · preuve\"><e-flexbox configuration-id=\"Landing · visages\"><e-image configuration-id=\"Landing · visage 1\"></e-image><e-image configuration-id=\"Landing · visage 2\"></e-image><e-image configuration-id=\"Landing · visage 3\"></e-image><e-image configuration-id=\"Landing · visage 4\"></e-image></e-flexbox><e-paragraph configuration-id=\"Landing · preuve · texte\"></e-paragraph></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Landing · visuel\"><e-div-block configuration-id=\"Landing · visuel · cadre\"><e-image configuration-id=\"Landing · visuel · image\"></e-image><e-paragraph configuration-id=\"Landing · visuel · bandeau\"></e-paragraph><e-paragraph configuration-id=\"Landing · visuel · durée\"></e-paragraph><e-image configuration-id=\"Landing · visuel · lecture\"></e-image></e-div-block></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Landing · logos\"><e-flexbox configuration-id=\"Landing · logos · titre\"><e-paragraph configuration-id=\"Landing · logos · libellé\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Landing · logos · bande\"><e-paragraph configuration-id=\"Landing · logos · liste\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox>",
+  "element_config": {
+   "Landing · hero": {
+    "tag": "section"
+   },
+   "Landing · pastille · texte": {
+    "paragraph": "Agence de production vidéo à Paris"
+   },
+   "Landing · titre": {
+    "tag": "h1",
+    "title": "L'agence vidéo qui transforme vos contenus <em>en vidéos, en illimité.</em>"
+   },
+   "Landing · chapô": {
+    "paragraph": "Rolling est l'agence de production vidéo en abonnement des équipes com, RH et formation. Vos emails, articles et modules deviennent des vidéos que vos équipes regardent vraiment, à prix fixe, <u>en illimité.</u>"
+   },
+   "Landing · réserver": {
+    "text": "Réserver un échange",
+    "link": {
+     "destination": "#landing-rdv"
+    }
+   },
+   "Landing · offres": {
+    "text": "Voir les offres",
+    "link": {
+     "destination": "#landing-offres"
+    }
+   },
+   "Landing · précision": {
+    "paragraph": "30 minutes, en visio. Vous repartez avec vos 3 premières vidéos à produire."
+   },
+   "Landing · visage 1": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/visage-1.jpg"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "Landing · visage 2": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/visage-2.jpg"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "Landing · visage 3": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/visage-3.jpg"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "Landing · visage 4": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/visage-4.jpg"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "Landing · preuve · texte": {
+    "paragraph": "Par les équipes de <strong>Pitchy</strong> — 13 ans de vidéo, 500+ grandes entreprises."
+   },
+   "Landing · visuel · image": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/hero-tournage.jpg",
+      "alt": "Caméra en plein tournage, l'écran de contrôle montre une interview"
+     },
+     "size": "large"
+    }
+   },
+   "Landing · visuel · bandeau": {
+    "paragraph": "Showreel"
+   },
+   "Landing · visuel · durée": {
+    "paragraph": "0:59"
+   },
+   "Landing · visuel · lecture": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/bouton-lecture.png"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "Landing · logos · libellé": {
+    "paragraph": "Ils nous font confiance"
+   },
+   "Landing · logos · liste": {
+    "paragraph": "⟦widget:rolling-logos⟧"
+   }
+  },
+  "classes": {
+   "Landing · hero": [
+    "section",
+    "section-entete",
+    "entete-page",
+    "halos-haut"
+   ],
+   "Landing · hero · contenu": [
+    "conteneur",
+    "landing-hero"
+   ],
+   "Landing · pastille": [
+    "pastille"
+   ],
+   "Landing · titre": [
+    "titre-lg"
+   ],
+   "Landing · chapô": [
+    "chapo"
+   ],
+   "Landing · boutons": [
+    "rangee"
+   ],
+   "Landing · réserver": [
+    "bouton-principal"
+   ],
+   "Landing · offres": [
+    "bouton-verre"
+   ],
+   "Landing · précision": [
+    "texte-petit"
+   ],
+   "Landing · preuve": [
+    "rangee"
+   ],
+   "Landing · visages": [
+    "visages"
+   ],
+   "Landing · preuve · texte": [
+    "texte-petit"
+   ],
+   "Landing · visuel": [
+    "vignette-video",
+    "flotte"
+   ],
+   "Landing · visuel · cadre": [
+    "cadre-photo",
+    "cadre-4-3"
+   ],
+   "Landing · visuel · image": [
+    "image-couvrante"
+   ],
+   "Landing · visuel · bandeau": [
+    "bandeau-video"
+   ],
+   "Landing · visuel · durée": [
+    "duree"
+   ],
+   "Landing · visuel · lecture": [
+    "lecture-centre"
+   ],
+   "Landing · logos · titre": [
+    "conteneur"
+   ],
+   "Landing · logos · libellé": [
+    "label"
+   ]
+  },
+  "style": {
+   "Landing · textes": "display: flex; flex-direction: column; gap: 0;",
+   "Landing · titre": "margin-top: 24px;",
+   "Landing · chapô": "margin-top: 22px;",
+   "Landing · boutons": "margin-top: 32px;",
+   "Landing · précision": "margin-top: 14px;",
+   "Landing · preuve": "margin-top: 28px;",
+   "Landing · logos": "margin-top: 56px; width: 100%; padding: 0;",
+   "Landing · logos · titre": "justify-content: center;",
+   "Landing · logos · libellé": "text-align: center; width: 100%;",
+   "Landing · logos · bande": "margin-top: 22px; width: 100%; padding: 0;"
+  }
+ },
+ "brut": {}
+}

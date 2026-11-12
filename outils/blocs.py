@@ -1533,6 +1533,195 @@ agence_lieu = F("L'agence · où nous trouver", ['section', 'section-lilas'], ta
     ]),
 ])
 
+
+landing_hero = F('Landing · hero', ['section', 'section-entete', 'entete-page', 'halos-haut'], tag='section', enfants=[
+    F('Landing · hero · contenu', ['conteneur', 'landing-hero'], enfants=[
+        F('Landing · textes', None, COLONNE, enfants=[
+            F('Landing · pastille', ['pastille'], enfants=[P('Landing · pastille · texte', 'Agence de production vidéo à Paris')]),
+            H('Landing · titre', "L'agence vidéo qui transforme vos contenus <em>en vidéos, en illimité.</em>", 'h1', ['titre-lg'], 'margin-top: 24px;'),
+            P('Landing · chapô', "Rolling est l'agence de production vidéo en abonnement des équipes com, RH et formation. Vos emails, articles et modules deviennent des vidéos que vos équipes regardent vraiment, à prix fixe, <u>en illimité.</u>", ['chapo'], 'margin-top: 22px;'),
+            F('Landing · boutons', ['rangee'], 'margin-top: 32px;', enfants=[
+                B('Landing · réserver', 'Réserver un échange', '#landing-rdv', ['bouton-principal']),
+                B('Landing · offres', 'Voir les offres', '#landing-offres', ['bouton-verre']),
+            ]),
+            P('Landing · précision', '30 minutes, en visio. Vous repartez avec vos 3 premières vidéos à produire.', ['texte-petit'], 'margin-top: 14px;'),
+            F('Landing · preuve', ['rangee'], 'margin-top: 28px;', enfants=[
+                F('Landing · visages', ['visages'], enfants=[I('Landing · visage %d' % n, 'visage-%d.jpg' % n, taille='thumbnail') for n in (1, 2, 3, 4)]),
+                P('Landing · preuve · texte', 'Par les équipes de <strong>Pitchy</strong> — 13 ans de vidéo, 500+ grandes entreprises.', ['texte-petit']),
+            ]),
+        ]),
+        F('Landing · visuel', ['vignette-video', 'flotte'], enfants=[
+            D('Landing · visuel · cadre', ['cadre-photo', 'cadre-4-3'], enfants=[
+                I('Landing · visuel · image', 'hero-tournage.jpg', "Caméra en plein tournage, l'écran de contrôle montre une interview", ['image-couvrante'], taille='large'),
+                P('Landing · visuel · bandeau', 'Showreel', ['bandeau-video']),
+                P('Landing · visuel · durée', '0:59', ['duree']),
+                I('Landing · visuel · lecture', 'bouton-lecture.png', cls=['lecture-centre'], taille='thumbnail'),
+            ]),
+        ]),
+    ]),
+    F('Landing · logos', None, 'margin-top: 56px; width: 100%; padding: 0;', enfants=[
+        F('Landing · logos · titre', ['conteneur'], 'justify-content: center;', enfants=[
+            P('Landing · logos · libellé', 'Ils nous font confiance', ['label'], 'text-align: center; width: 100%;'),
+        ]),
+        F('Landing · logos · bande', None, 'margin-top: 22px; width: 100%; padding: 0;', enfants=[W('Landing · logos · liste', 'rolling-logos')]),
+    ]),
+])
+
+landing_douleur = F('Landing · constat', ['section', 'section-sombre', 'halos-nuit'], tag='section', enfants=[
+    F('Landing · constat · contenu', ['conteneur'], COLONNE, enfants=[
+        entete('Landing · constat', '00:01', 'Le constat', [
+            ('Vos contenus sont déjà écrits.', 'p', ['titre-lg', 'titre-eteint']),
+            ('Mais sont-ils <em>vraiment lus&nbsp;?</em>', 'h2', ['titre-lg']),
+        ]),
+        F('Landing · constat · cartes', ['grille-4'], enfants=[
+            F('Landing · constat · %s' % nom, ['carte-verre', 'carte-douleur'], enfants=[
+                P('Landing · constat · %s · question' % nom, question, ['texte-petit']),
+                P('Landing · constat · %s · mot' % nom, mot, ['titre-sm']),
+            ]) for nom, question, mot in [('emails', 'Vos emails internes&nbsp;?', '<em>Ignorés.</em>'), ('articles', 'Vos articles de blog&nbsp;?', '<em>Survolés.</em>'),
+                                           ('modules', 'Vos modules PowerPoint&nbsp;?', '<em>Subis.</em>'), ('événements', 'Vos événements&nbsp;?', '<u>Oubliés.</u>')]
+        ]),
+        P('Landing · constat · conclusion', "Vous n'avez pas le temps&nbsp;? C'est notre métier d'agence de communication vidéo : nous nous en occupons, sans limite.", ['titre-xs'], 'margin-top: 44px;'),
+    ]),
+])
+
+COMPARATIF = [
+    ("Prix connu à l'avance", ['Au devis', 'Salaires et outils', 'Oui', 'Au devis'], 'Prix fixe'),
+    ('Volume de vidéos', ['Selon disponibilité', "Selon l'équipe", 'Limité', 'Par projet'], 'Illimité'),
+    ('Motion, tournage, interviews, avatars', ['Une spécialité', "Selon l'équipe", 'Modèles', 'Oui'], "Tout, à l'année"),
+    ('Tous les formats et les langues', ['En option', "Selon l'équipe", 'Limité', 'En option'], 'Inclus'),
+    ('Directeur artistique dédié', ['—', "Selon l'équipe", '—', 'Oui'], 'Inclus'),
+    ('Expertise com interne, RH, formation', ['Variable', 'Oui', '—', 'Rare'], '13 ans, 500+ clients'),
+]
+SOLUTIONS = ['Freelance', 'Studio interne', 'En interne avec Canva', 'Agence de pub']
+
+
+def ligne_comparatif(n, critere, valeurs, nous):
+    nom = 'Comparatif · ligne %d' % n
+    return F(nom, ['comparatif-ligne'], enfants=[F(nom + ' · critère', None, None, enfants=[P(nom + ' · critère · texte', critere)])] + [
+        F(nom + ' · %s' % sol, None, None, enfants=[P(nom + ' · %s · solution' % sol, sol, ['comparatif-solution']), P(nom + ' · %s · valeur' % sol, v)])
+        for sol, v in zip(SOLUTIONS, valeurs)
+    ] + [F(nom + ' · Rolling', None, None, enfants=[
+        P(nom + ' · Rolling · solution', 'Rolling', ['comparatif-solution']),
+        I(nom + ' · Rolling · coche', 'coche-verre.png', cls=['coche'], taille='thumbnail'),
+        P(nom + ' · Rolling · valeur', nous),
+    ])])
+
+
+landing_produit = F('Landing · pourquoi Rolling', ['section', 'halo-doux'], tag='section', enfants=[
+    F('Landing · produit · contenu', ['conteneur'], COLONNE, enfants=[
+        entete('Landing · produit', '00:02', 'Pourquoi Rolling', [("Pourquoi Rolling, plutôt <em>qu'une autre solution&nbsp;?</em>", 'h2', ['titre-lg'])],
+               intro="Un freelance, votre studio interne, une production en interne avec Canva ou une agence de pub : chacun a ses forces. Voici ce qui change avec une agence de vidéo à l'année."),
+        F('Landing · comparatif', ['carte-pleine', 'comparatif'], enfants=[
+            F('Comparatif · en-tête', ['comparatif-ligne', 'comparatif-entete'], enfants=[
+                F('Comparatif · en-tête · critère', None, None, enfants=[P('Comparatif · en-tête · critère · texte', 'Critère')]),
+            ] + [F('Comparatif · en-tête · %s' % sol, None, None, enfants=[P('Comparatif · en-tête · %s · texte' % sol, sol)]) for sol in SOLUTIONS]
+              + [F('Comparatif · en-tête · Rolling', None, None, enfants=[P('Comparatif · en-tête · Rolling · texte', 'Rolling')])]),
+        ] + [ligne_comparatif(n, c, v, r) for n, (c, v, r) in enumerate(COMPARATIF, 1)]),
+        F('Landing · atouts', ['grille-3'], 'margin-top: 56px;', enfants=[
+            F('Landing · atout %d' % n, ['carte-verre'], enfants=[
+                I('Landing · atout %d · chiffre' % n, 'chiffre-%d.webp' % n, cls=['picto-verre'], style='height: 56px; align-self: flex-start;', taille='medium'),
+                H('Landing · atout %d · titre' % n, titre, 'h3', ['titre-xs']),
+                P('Landing · atout %d · texte' % n, texte, ['texte']),
+            ]) for n, (titre, texte) in enumerate([
+                ("Une équipe vidéo à l'année.", 'Notre agence vidéo motion design et tournage réunit directeur artistique, chef de projet, motion designers et cadreurs : une seule équipe, qui connaît votre charte.'),
+                ('Notre IA Factory, pour aller vite.', 'Pistes de scénario, voix off, sous-titres, déclinaisons : notre IA Factory accélère, nos créas décident.'),
+                ('Un prix fixe, en illimité.', 'Plus vous faites de vidéos, moins chacune vous coûte. Pas de devis à chaque projet.'),
+            ], 1)
+        ]),
+        H('Landing · résultats · titre', 'Ce que ça change pour nos clients', 'h3', ['label', 'label-violet'], 'margin: 64px 0 18px;'),
+        F('Landing · résultats', ['plaque-chiffres', 'plaque-3'], enfants=[
+            F('Landing · résultat %d' % n, ['chiffre-texte'], enfants=[
+                P('Landing · résultat %d · chiffre' % n, valeur, ['titre-md']),
+                P('Landing · résultat %d · texte' % n, texte, ['texte-petit']),
+            ]) for n, (valeur, texte) in enumerate([
+                ('<em>[87 %]</em>', "<strong>de complétion</strong> sur une série d'onboarding vidéo [chiffre à fournir]"),
+                ('<em>[x]</em>', '<strong>vidéos livrées par mois</strong> en moyenne par client [à fournir]'),
+                ('<em>[x jours]</em>', '<strong>pour une première version</strong> après votre brief [à fournir]'),
+            ], 1)
+        ]),
+        F('Landing · appel', ['carte-verre', 'carte-appel'], 'margin-top: 28px;', enfants=[
+            P('Landing · appel · texte', 'Et avec vos contenus, <em>ça donnerait quoi&nbsp;?</em>', ['titre-xs']),
+            B('Landing · appel · bouton', 'Réserver un échange', '#landing-rdv', ['bouton-principal', 'bouton-petit']),
+        ]),
+    ]),
+])
+
+landing_preuve = F('Landing · preuve sociale', ['section', 'section-chaude'], tag='section', enfants=[
+    F('Landing · preuve · contenu', ['conteneur'], COLONNE, enfants=[
+        entete('Landing · preuve', '00:03', 'Ils nous font confiance', [('Née chez <em>Pitchy.</em>', 'h2', ['titre-md'])]),
+        F('Landing · chiffres', ['plaque-chiffres'], 'margin-bottom: 28px;', enfants=[
+            chiffre('Landing · ans', ['1', '3'], '13', 'ans de vidéo pour les entreprises'),
+            chiffre('Landing · entreprises', ['5', '0', '0', 'plus'], '500+', 'grandes entreprises équipées'),
+            chiffre('Landing · studio', ['1'], '1', 'studio motion &amp; tournage intégré'),
+            chiffre('Landing · plateforme', ['1'], '1', 'plateforme de production propriétaire'),
+        ]),
+        W('Landing · témoignages', 'rolling-liste', contenu='temoignages', nombre='3', classe='grille-3', une_auto=''),
+    ]),
+])
+
+landing_action = F('Landing · action', ['section', 'section-suite'], tag='section', ancre='landing-rdv', enfants=[
+    F('Landing · action · contenu', ['conteneur'], COLONNE, enfants=[
+        F('Landing · action · bloc', ['carte-verre', 'grand-bloc', 'landing-action'], enfants=[
+            F('Landing · action · textes', None, COLONNE, enfants=[
+                F('Landing · action · repère', ['sur-titre'], enfants=[P('Landing · action · timecode', '00:04', ['timecode']), P('Landing · action · sur-titre', 'Votre échange')]),
+                H('Landing · action · titre', 'Réservez 30 minutes. <em>Repartez avec 3 vidéos à produire.</em>', 'h2', ['titre-sm'], 'margin-top: 18px;'),
+                P('Landing · action · texte', 'Choisissez votre créneau : nous regardons ensemble vos contenus et vos projets, puis nous vous proposons vos 3 premières vidéos.', ['texte'], 'margin-top: 10px;'),
+            ]),
+            F('Landing · calendrier', ['carte-verre', 'zone-calendrier', 'zone-calendrier-court'], enfants=[
+                P('Landing · calendrier · label', 'Emplacement réservé', ['label', 'label-violet']),
+                P('Landing · calendrier · titre', 'Votre calendrier HubSpot', ['titre-xs']),
+                P('Landing · calendrier · texte', 'Remplacez ce texte par le calendrier HubSpot (élément HTML ou code court).', ['texte-petit'], 'max-width: 34ch;'),
+            ]),
+        ]),
+    ]),
+])
+
+QUESTIONS_LANDING = [
+    ('«&nbsp;Illimité&nbsp;», vraiment&nbsp;?', "Oui : nous ne comptons pas les vidéos. Nous traitons un projet à fond à la fois, puis nous enchaînons sur le suivant. C'est ce qui rend l'illimité possible, avec une qualité garantie sur chaque vidéo."),
+    ("Faut-il s'engager pour un an&nbsp;?", "[Réponse à confirmer : durée de l'abonnement, conditions de sortie.]"),
+    ('En combien de temps recevons-nous une vidéo&nbsp;?', "[Réponse à confirmer : délai moyen d'une première version, puis des corrections.]"),
+    ('Et si le résultat ne nous plaît pas&nbsp;?', "[Réponse à confirmer : nombre d'allers-retours, rôle du directeur artistique.]"),
+    ('À qui appartiennent les vidéos&nbsp;?', '[Réponse à confirmer : droits sur les vidéos, les musiques et les images.]'),
+    ('Où se passent les tournages&nbsp;?', 'Dans notre studio de tournage à Paris, ou chez vous. Agence audiovisuelle à Paris, nous nous déplaçons partout en France pour filmer vos collaborateurs, vos événements et vos produits.'),
+    ('Que devons-nous fournir&nbsp;?', "Vos contenus, vos idées de projets et votre charte graphique. Nous nous occupons de tout le reste, de la stratégie vidéo annuelle jusqu'à la livraison."),
+]
+
+landing_objections = F('Landing · objections', ['section'], tag='section', ancre='landing-offres', enfants=[
+    F('Landing · objections · contenu', ['conteneur', 'conteneur-etroit'], COLONNE, enfants=[
+        entete('Landing · objections', '00:05', 'Vos questions', [('Avant de dire <em>«&nbsp;trop beau pour être vrai&nbsp;»</em>', 'h2', ['titre-md'])]),
+        F('Landing · formules', ['grille-2'], 'margin-bottom: 28px;', enfants=[
+            F('Landing · formule Création', ['carte-pleine'], enfants=[
+                H('Landing · formule Création · nom', 'Création illimitée', 'h3', ['titre-xs']),
+                P('Landing · formule Création · prix', '1&nbsp;250&nbsp;€<span> / mois</span>', ['offres-prix']),
+                P('Landing · formule Création · texte', 'Tous vos contenus et vos projets, en vidéo.', ['texte-petit']),
+            ]),
+            F('Landing · formule Complet', ['carte-pleine', 'section-sombre', 'carte-prix-sombre'], enfants=[
+                H('Landing · formule Complet · nom', 'Création + Tournage', 'h3', ['titre-xs']),
+                P('Landing · formule Complet · prix', '2&nbsp;080&nbsp;€<span> / mois</span>', ['offres-prix']),
+                P('Landing · formule Complet · texte', 'Tout Création, plus le tournage et le motion fait main.', ['texte-petit']),
+            ]),
+        ]),
+        F('Landing · questions', ['liste-questions'], enfants=[
+            F('Landing · question %d' % n, ['carte-verre', 'carte-question'], enfants=[
+                H('Landing · question %d · titre' % n, q, 'h3', ['titre-question']),
+                P('Landing · question %d · réponse' % n, r, ['texte']),
+            ]) for n, (q, r) in enumerate(QUESTIONS_LANDING, 1)
+        ]),
+        badges('Landing', 'margin-top: 40px;', clair=True),
+    ]),
+])
+
+landing_final = F('Landing · appel final', ['section', 'section-sombre', 'section-finale', 'halo-centre', 'decors-final'], tag='section', enfants=[
+    I('Landing · final · verre cannelé', 'final-verre-cannele.webp', cls=['decor-flottant'], taille='medium_large'),
+    F('Landing · final · contenu', ['conteneur'], COLONNE + ' align-items: center; z-index: 1;', enfants=[
+        H('Landing · final · titre', 'Vos vidéos&nbsp;? Nous nous en occupons.<br><em>Sans limite.</em>', 'h2', ['titre-lg', 'titre-souligne']),
+        P('Landing · final · texte', '30 minutes pour passer en revue vos contenus et vos projets. Vous repartez avec votre stratégie vidéo et vos 3&nbsp;premières vidéos à produire.', ['texte-intro'], 'margin-top: 34px; max-width: 600px;'),
+        F('Landing · final · bouton', None, 'display: flex; justify-content: center; margin-top: 38px; padding: 0;', enfants=[
+            B('Landing · final · réserver', 'Réserver un échange', '#landing-rdv', ['bouton-soleil']),
+        ]),
+    ]),
+])
+
 PAGES = [
     ('Réalisations', [('p-rea-1-haut', 'Haut de page', rea_haut), ('p-rea-2-liste', 'Liste', rea_liste)]),
     ('Témoignages', [('p-tem-1-haut', 'Haut de page', tem_haut), ('p-tem-2-liste', 'Liste', tem_liste)]),
@@ -1546,6 +1735,10 @@ PAGES = [
     ("L'agence", [('p-agence-1-haut', 'Haut de page', agence_haut), ('p-agence-2-histoire', '00:01 Notre histoire', agence_histoire),
                   ('p-agence-3-convictions', '00:02 Nos convictions', agence_convictions), ('p-agence-4-equipe', "00:03 L'équipe", agence_equipe),
                   ('p-agence-5-lieu', '00:04 Où nous trouver', agence_lieu)]),
+    ('Landing', [('p-landing-1-hero', 'Hero et logos', landing_hero), ('p-landing-2-constat', '00:01 Le constat', landing_douleur),
+                 ('p-landing-3-pourquoi', '00:02 Pourquoi Rolling', landing_produit), ('p-landing-4-preuve', '00:03 Preuve sociale', landing_preuve),
+                 ('p-landing-5-action', '00:04 Votre échange', landing_action), ('p-landing-6-objections', '00:05 Vos questions', landing_objections),
+                 ('p-landing-7-final', 'Appel final', landing_final)]),
     ('Contact', [('p-contact-1-echange', "L'échange et le calendrier", contact_haut), ('p-contact-2-faq', "FAQ de l'échange", contact_faq)]),
 ]
 
@@ -1594,7 +1787,7 @@ if __name__ == '__main__':
             print(cle, len(composition['xml_structure']), 'caractères de XML')
         cle_pc = 'pc-' + cles_page[0].split('-')[1]
         with open(os.path.join(dossier, cle_pc + '.json'), 'w', encoding='utf8') as f:
-            json.dump({'cle': cle_pc, 'titre': 'Rolling · Page complète (%s)' % page, 'type': 'page', 'assemble': cles_page + ['13-final']}, f, ensure_ascii=False, indent=1)
+            json.dump({'cle': cle_pc, 'titre': 'Rolling · Page complète (%s)' % page, 'type': 'page', 'assemble': cles_page + ([] if page == 'Landing' else ['13-final'])}, f, ensure_ascii=False, indent=1)
         print(cle_pc, ':', len(cles_page) + 1, 'blocs')
     # « Page complète » : tous les blocs de l'accueil à la suite, dans un modèle de type page.
     with open(os.path.join(dossier, '99-page-complete.json'), 'w', encoding='utf8') as f:

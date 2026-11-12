@@ -1,0 +1,620 @@
+{
+ "cle": "p-landing-3-pourquoi",
+ "titre": "Rolling · Landing · 00:02 Pourquoi Rolling",
+ "type": "e-flexbox",
+ "composition": {
+  "xml_structure": "<e-flexbox configuration-id=\"Landing · pourquoi Rolling\"><e-flexbox configuration-id=\"Landing · produit · contenu\"><e-flexbox configuration-id=\"Landing · produit · en-tête\"><e-flexbox configuration-id=\"Landing · produit · repère\"><e-paragraph configuration-id=\"Landing · produit · timecode\"></e-paragraph><e-paragraph configuration-id=\"Landing · produit · sur-titre\"></e-paragraph></e-flexbox><e-heading configuration-id=\"Landing · produit · titre\"></e-heading><e-paragraph configuration-id=\"Landing · produit · introduction\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Landing · comparatif\"><e-flexbox configuration-id=\"Comparatif · en-tête\"><e-flexbox configuration-id=\"Comparatif · en-tête · critère\"><e-paragraph configuration-id=\"Comparatif · en-tête · critère · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Comparatif · en-tête · Freelance\"><e-paragraph configuration-id=\"Comparatif · en-tête · Freelance · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Comparatif · en-tête · Studio interne\"><e-paragraph configuration-id=\"Comparatif · en-tête · Studio interne · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Comparatif · en-tête · En interne avec Canva\"><e-paragraph configuration-id=\"Comparatif · en-tête · En interne avec Canva · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Comparatif · en-tête · Agence de pub\"><e-paragraph configuration-id=\"Comparatif · en-tête · Agence de pub · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Comparatif · en-tête · Rolling\"><e-paragraph configuration-id=\"Comparatif · en-tête · Rolling · texte\"></e-paragraph></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Comparatif · ligne 1\"><e-flexbox configuration-id=\"Comparatif · ligne 1 · critère\"><e-paragraph configuration-id=\"Comparatif · ligne 1 · critère · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Comparatif · ligne 1 · Freelance\"><e-paragraph configuration-id=\"Comparatif · ligne 1 · Freelance · solution\"></e-paragraph><e-paragraph configuration-id=\"Comparatif · ligne 1 · Freelance · valeur\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Comparatif · ligne 1 · Studio interne\"><e-paragraph configuration-id=\"Comparatif · ligne 1 · Studio interne · solution\"></e-paragraph><e-paragraph configuration-id=\"Comparatif · ligne 1 · Studio interne · valeur\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Comparatif · ligne 1 · En interne avec Canva\"><e-paragraph configuration-id=\"Comparatif · ligne 1 · En interne avec Canva · solution\"></e-paragraph><e-paragraph configuration-id=\"Comparatif · ligne 1 · En interne avec Canva · valeur\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Comparatif · ligne 1 · Agence de pub\"><e-paragraph configuration-id=\"Comparatif · ligne 1 · Agence de pub · solution\"></e-paragraph><e-paragraph configuration-id=\"Comparatif · ligne 1 · Agence de pub · valeur\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Comparatif · ligne 1 · Rolling\"><e-paragraph configuration-id=\"Comparatif · ligne 1 · Rolling · solution\"></e-paragraph><e-image configuration-id=\"Comparatif · ligne 1 · Rolling · coche\"></e-image><e-paragraph configuration-id=\"Comparatif · ligne 1 · Rolling · valeur\"></e-paragraph></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Comparatif · ligne 2\"><e-flexbox configuration-id=\"Comparatif · ligne 2 · critère\"><e-paragraph configuration-id=\"Comparatif · ligne 2 · critère · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Comparatif · ligne 2 · Freelance\"><e-paragraph configuration-id=\"Comparatif · ligne 2 · Freelance · solution\"></e-paragraph><e-paragraph configuration-id=\"Comparatif · ligne 2 · Freelance · valeur\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Comparatif · ligne 2 · Studio interne\"><e-paragraph configuration-id=\"Comparatif · ligne 2 · Studio interne · solution\"></e-paragraph><e-paragraph configuration-id=\"Comparatif · ligne 2 · Studio interne · valeur\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Comparatif · ligne 2 · En interne avec Canva\"><e-paragraph configuration-id=\"Comparatif · ligne 2 · En interne avec Canva · solution\"></e-paragraph><e-paragraph configuration-id=\"Comparatif · ligne 2 · En interne avec Canva · valeur\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Comparatif · ligne 2 · Agence de pub\"><e-paragraph configuration-id=\"Comparatif · ligne 2 · Agence de pub · solution\"></e-paragraph><e-paragraph configuration-id=\"Comparatif · ligne 2 · Agence de pub · valeur\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Comparatif · ligne 2 · Rolling\"><e-paragraph configuration-id=\"Comparatif · ligne 2 · Rolling · solution\"></e-paragraph><e-image configuration-id=\"Comparatif · ligne 2 · Rolling · coche\"></e-image><e-paragraph configuration-id=\"Comparatif · ligne 2 · Rolling · valeur\"></e-paragraph></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Comparatif · ligne 3\"><e-flexbox configuration-id=\"Comparatif · ligne 3 · critère\"><e-paragraph configuration-id=\"Comparatif · ligne 3 · critère · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Comparatif · ligne 3 · Freelance\"><e-paragraph configuration-id=\"Comparatif · ligne 3 · Freelance · solution\"></e-paragraph><e-paragraph configuration-id=\"Comparatif · ligne 3 · Freelance · valeur\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Comparatif · ligne 3 · Studio interne\"><e-paragraph configuration-id=\"Comparatif · ligne 3 · Studio interne · solution\"></e-paragraph><e-paragraph configuration-id=\"Comparatif · ligne 3 · Studio interne · valeur\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Comparatif · ligne 3 · En interne avec Canva\"><e-paragraph configuration-id=\"Comparatif · ligne 3 · En interne avec Canva · solution\"></e-paragraph><e-paragraph configuration-id=\"Comparatif · ligne 3 · En interne avec Canva · valeur\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Comparatif · ligne 3 · Agence de pub\"><e-paragraph configuration-id=\"Comparatif · ligne 3 · Agence de pub · solution\"></e-paragraph><e-paragraph configuration-id=\"Comparatif · ligne 3 · Agence de pub · valeur\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Comparatif · ligne 3 · Rolling\"><e-paragraph configuration-id=\"Comparatif · ligne 3 · Rolling · solution\"></e-paragraph><e-image configuration-id=\"Comparatif · ligne 3 · Rolling · coche\"></e-image><e-paragraph configuration-id=\"Comparatif · ligne 3 · Rolling · valeur\"></e-paragraph></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Comparatif · ligne 4\"><e-flexbox configuration-id=\"Comparatif · ligne 4 · critère\"><e-paragraph configuration-id=\"Comparatif · ligne 4 · critère · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Comparatif · ligne 4 · Freelance\"><e-paragraph configuration-id=\"Comparatif · ligne 4 · Freelance · solution\"></e-paragraph><e-paragraph configuration-id=\"Comparatif · ligne 4 · Freelance · valeur\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Comparatif · ligne 4 · Studio interne\"><e-paragraph configuration-id=\"Comparatif · ligne 4 · Studio interne · solution\"></e-paragraph><e-paragraph configuration-id=\"Comparatif · ligne 4 · Studio interne · valeur\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Comparatif · ligne 4 · En interne avec Canva\"><e-paragraph configuration-id=\"Comparatif · ligne 4 · En interne avec Canva · solution\"></e-paragraph><e-paragraph configuration-id=\"Comparatif · ligne 4 · En interne avec Canva · valeur\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Comparatif · ligne 4 · Agence de pub\"><e-paragraph configuration-id=\"Comparatif · ligne 4 · Agence de pub · solution\"></e-paragraph><e-paragraph configuration-id=\"Comparatif · ligne 4 · Agence de pub · valeur\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Comparatif · ligne 4 · Rolling\"><e-paragraph configuration-id=\"Comparatif · ligne 4 · Rolling · solution\"></e-paragraph><e-image configuration-id=\"Comparatif · ligne 4 · Rolling · coche\"></e-image><e-paragraph configuration-id=\"Comparatif · ligne 4 · Rolling · valeur\"></e-paragraph></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Comparatif · ligne 5\"><e-flexbox configuration-id=\"Comparatif · ligne 5 · critère\"><e-paragraph configuration-id=\"Comparatif · ligne 5 · critère · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Comparatif · ligne 5 · Freelance\"><e-paragraph configuration-id=\"Comparatif · ligne 5 · Freelance · solution\"></e-paragraph><e-paragraph configuration-id=\"Comparatif · ligne 5 · Freelance · valeur\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Comparatif · ligne 5 · Studio interne\"><e-paragraph configuration-id=\"Comparatif · ligne 5 · Studio interne · solution\"></e-paragraph><e-paragraph configuration-id=\"Comparatif · ligne 5 · Studio interne · valeur\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Comparatif · ligne 5 · En interne avec Canva\"><e-paragraph configuration-id=\"Comparatif · ligne 5 · En interne avec Canva · solution\"></e-paragraph><e-paragraph configuration-id=\"Comparatif · ligne 5 · En interne avec Canva · valeur\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Comparatif · ligne 5 · Agence de pub\"><e-paragraph configuration-id=\"Comparatif · ligne 5 · Agence de pub · solution\"></e-paragraph><e-paragraph configuration-id=\"Comparatif · ligne 5 · Agence de pub · valeur\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Comparatif · ligne 5 · Rolling\"><e-paragraph configuration-id=\"Comparatif · ligne 5 · Rolling · solution\"></e-paragraph><e-image configuration-id=\"Comparatif · ligne 5 · Rolling · coche\"></e-image><e-paragraph configuration-id=\"Comparatif · ligne 5 · Rolling · valeur\"></e-paragraph></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Comparatif · ligne 6\"><e-flexbox configuration-id=\"Comparatif · ligne 6 · critère\"><e-paragraph configuration-id=\"Comparatif · ligne 6 · critère · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Comparatif · ligne 6 · Freelance\"><e-paragraph configuration-id=\"Comparatif · ligne 6 · Freelance · solution\"></e-paragraph><e-paragraph configuration-id=\"Comparatif · ligne 6 · Freelance · valeur\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Comparatif · ligne 6 · Studio interne\"><e-paragraph configuration-id=\"Comparatif · ligne 6 · Studio interne · solution\"></e-paragraph><e-paragraph configuration-id=\"Comparatif · ligne 6 · Studio interne · valeur\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Comparatif · ligne 6 · En interne avec Canva\"><e-paragraph configuration-id=\"Comparatif · ligne 6 · En interne avec Canva · solution\"></e-paragraph><e-paragraph configuration-id=\"Comparatif · ligne 6 · En interne avec Canva · valeur\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Comparatif · ligne 6 · Agence de pub\"><e-paragraph configuration-id=\"Comparatif · ligne 6 · Agence de pub · solution\"></e-paragraph><e-paragraph configuration-id=\"Comparatif · ligne 6 · Agence de pub · valeur\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Comparatif · ligne 6 · Rolling\"><e-paragraph configuration-id=\"Comparatif · ligne 6 · Rolling · solution\"></e-paragraph><e-image configuration-id=\"Comparatif · ligne 6 · Rolling · coche\"></e-image><e-paragraph configuration-id=\"Comparatif · ligne 6 · Rolling · valeur\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Landing · atouts\"><e-flexbox configuration-id=\"Landing · atout 1\"><e-image configuration-id=\"Landing · atout 1 · chiffre\"></e-image><e-heading configuration-id=\"Landing · atout 1 · titre\"></e-heading><e-paragraph configuration-id=\"Landing · atout 1 · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Landing · atout 2\"><e-image configuration-id=\"Landing · atout 2 · chiffre\"></e-image><e-heading configuration-id=\"Landing · atout 2 · titre\"></e-heading><e-paragraph configuration-id=\"Landing · atout 2 · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Landing · atout 3\"><e-image configuration-id=\"Landing · atout 3 · chiffre\"></e-image><e-heading configuration-id=\"Landing · atout 3 · titre\"></e-heading><e-paragraph configuration-id=\"Landing · atout 3 · texte\"></e-paragraph></e-flexbox></e-flexbox><e-heading configuration-id=\"Landing · résultats · titre\"></e-heading><e-flexbox configuration-id=\"Landing · résultats\"><e-flexbox configuration-id=\"Landing · résultat 1\"><e-paragraph configuration-id=\"Landing · résultat 1 · chiffre\"></e-paragraph><e-paragraph configuration-id=\"Landing · résultat 1 · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Landing · résultat 2\"><e-paragraph configuration-id=\"Landing · résultat 2 · chiffre\"></e-paragraph><e-paragraph configuration-id=\"Landing · résultat 2 · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Landing · résultat 3\"><e-paragraph configuration-id=\"Landing · résultat 3 · chiffre\"></e-paragraph><e-paragraph configuration-id=\"Landing · résultat 3 · texte\"></e-paragraph></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Landing · appel\"><e-paragraph configuration-id=\"Landing · appel · texte\"></e-paragraph><e-button configuration-id=\"Landing · appel · bouton\"></e-button></e-flexbox></e-flexbox></e-flexbox>",
+  "element_config": {
+   "Landing · pourquoi Rolling": {
+    "tag": "section"
+   },
+   "Landing · produit · timecode": {
+    "paragraph": "00:02"
+   },
+   "Landing · produit · sur-titre": {
+    "paragraph": "Pourquoi Rolling"
+   },
+   "Landing · produit · titre": {
+    "tag": "h2",
+    "title": "Pourquoi Rolling, plutôt <em>qu'une autre solution&nbsp;?</em>"
+   },
+   "Landing · produit · introduction": {
+    "paragraph": "Un freelance, votre studio interne, une production en interne avec Canva ou une agence de pub : chacun a ses forces. Voici ce qui change avec une agence de vidéo à l'année."
+   },
+   "Comparatif · en-tête · critère · texte": {
+    "paragraph": "Critère"
+   },
+   "Comparatif · en-tête · Freelance · texte": {
+    "paragraph": "Freelance"
+   },
+   "Comparatif · en-tête · Studio interne · texte": {
+    "paragraph": "Studio interne"
+   },
+   "Comparatif · en-tête · En interne avec Canva · texte": {
+    "paragraph": "En interne avec Canva"
+   },
+   "Comparatif · en-tête · Agence de pub · texte": {
+    "paragraph": "Agence de pub"
+   },
+   "Comparatif · en-tête · Rolling · texte": {
+    "paragraph": "Rolling"
+   },
+   "Comparatif · ligne 1 · critère · texte": {
+    "paragraph": "Prix connu à l'avance"
+   },
+   "Comparatif · ligne 1 · Freelance · solution": {
+    "paragraph": "Freelance"
+   },
+   "Comparatif · ligne 1 · Freelance · valeur": {
+    "paragraph": "Au devis"
+   },
+   "Comparatif · ligne 1 · Studio interne · solution": {
+    "paragraph": "Studio interne"
+   },
+   "Comparatif · ligne 1 · Studio interne · valeur": {
+    "paragraph": "Salaires et outils"
+   },
+   "Comparatif · ligne 1 · En interne avec Canva · solution": {
+    "paragraph": "En interne avec Canva"
+   },
+   "Comparatif · ligne 1 · En interne avec Canva · valeur": {
+    "paragraph": "Oui"
+   },
+   "Comparatif · ligne 1 · Agence de pub · solution": {
+    "paragraph": "Agence de pub"
+   },
+   "Comparatif · ligne 1 · Agence de pub · valeur": {
+    "paragraph": "Au devis"
+   },
+   "Comparatif · ligne 1 · Rolling · solution": {
+    "paragraph": "Rolling"
+   },
+   "Comparatif · ligne 1 · Rolling · coche": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/coche-verre.png"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "Comparatif · ligne 1 · Rolling · valeur": {
+    "paragraph": "Prix fixe"
+   },
+   "Comparatif · ligne 2 · critère · texte": {
+    "paragraph": "Volume de vidéos"
+   },
+   "Comparatif · ligne 2 · Freelance · solution": {
+    "paragraph": "Freelance"
+   },
+   "Comparatif · ligne 2 · Freelance · valeur": {
+    "paragraph": "Selon disponibilité"
+   },
+   "Comparatif · ligne 2 · Studio interne · solution": {
+    "paragraph": "Studio interne"
+   },
+   "Comparatif · ligne 2 · Studio interne · valeur": {
+    "paragraph": "Selon l'équipe"
+   },
+   "Comparatif · ligne 2 · En interne avec Canva · solution": {
+    "paragraph": "En interne avec Canva"
+   },
+   "Comparatif · ligne 2 · En interne avec Canva · valeur": {
+    "paragraph": "Limité"
+   },
+   "Comparatif · ligne 2 · Agence de pub · solution": {
+    "paragraph": "Agence de pub"
+   },
+   "Comparatif · ligne 2 · Agence de pub · valeur": {
+    "paragraph": "Par projet"
+   },
+   "Comparatif · ligne 2 · Rolling · solution": {
+    "paragraph": "Rolling"
+   },
+   "Comparatif · ligne 2 · Rolling · coche": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/coche-verre.png"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "Comparatif · ligne 2 · Rolling · valeur": {
+    "paragraph": "Illimité"
+   },
+   "Comparatif · ligne 3 · critère · texte": {
+    "paragraph": "Motion, tournage, interviews, avatars"
+   },
+   "Comparatif · ligne 3 · Freelance · solution": {
+    "paragraph": "Freelance"
+   },
+   "Comparatif · ligne 3 · Freelance · valeur": {
+    "paragraph": "Une spécialité"
+   },
+   "Comparatif · ligne 3 · Studio interne · solution": {
+    "paragraph": "Studio interne"
+   },
+   "Comparatif · ligne 3 · Studio interne · valeur": {
+    "paragraph": "Selon l'équipe"
+   },
+   "Comparatif · ligne 3 · En interne avec Canva · solution": {
+    "paragraph": "En interne avec Canva"
+   },
+   "Comparatif · ligne 3 · En interne avec Canva · valeur": {
+    "paragraph": "Modèles"
+   },
+   "Comparatif · ligne 3 · Agence de pub · solution": {
+    "paragraph": "Agence de pub"
+   },
+   "Comparatif · ligne 3 · Agence de pub · valeur": {
+    "paragraph": "Oui"
+   },
+   "Comparatif · ligne 3 · Rolling · solution": {
+    "paragraph": "Rolling"
+   },
+   "Comparatif · ligne 3 · Rolling · coche": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/coche-verre.png"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "Comparatif · ligne 3 · Rolling · valeur": {
+    "paragraph": "Tout, à l'année"
+   },
+   "Comparatif · ligne 4 · critère · texte": {
+    "paragraph": "Tous les formats et les langues"
+   },
+   "Comparatif · ligne 4 · Freelance · solution": {
+    "paragraph": "Freelance"
+   },
+   "Comparatif · ligne 4 · Freelance · valeur": {
+    "paragraph": "En option"
+   },
+   "Comparatif · ligne 4 · Studio interne · solution": {
+    "paragraph": "Studio interne"
+   },
+   "Comparatif · ligne 4 · Studio interne · valeur": {
+    "paragraph": "Selon l'équipe"
+   },
+   "Comparatif · ligne 4 · En interne avec Canva · solution": {
+    "paragraph": "En interne avec Canva"
+   },
+   "Comparatif · ligne 4 · En interne avec Canva · valeur": {
+    "paragraph": "Limité"
+   },
+   "Comparatif · ligne 4 · Agence de pub · solution": {
+    "paragraph": "Agence de pub"
+   },
+   "Comparatif · ligne 4 · Agence de pub · valeur": {
+    "paragraph": "En option"
+   },
+   "Comparatif · ligne 4 · Rolling · solution": {
+    "paragraph": "Rolling"
+   },
+   "Comparatif · ligne 4 · Rolling · coche": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/coche-verre.png"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "Comparatif · ligne 4 · Rolling · valeur": {
+    "paragraph": "Inclus"
+   },
+   "Comparatif · ligne 5 · critère · texte": {
+    "paragraph": "Directeur artistique dédié"
+   },
+   "Comparatif · ligne 5 · Freelance · solution": {
+    "paragraph": "Freelance"
+   },
+   "Comparatif · ligne 5 · Freelance · valeur": {
+    "paragraph": "—"
+   },
+   "Comparatif · ligne 5 · Studio interne · solution": {
+    "paragraph": "Studio interne"
+   },
+   "Comparatif · ligne 5 · Studio interne · valeur": {
+    "paragraph": "Selon l'équipe"
+   },
+   "Comparatif · ligne 5 · En interne avec Canva · solution": {
+    "paragraph": "En interne avec Canva"
+   },
+   "Comparatif · ligne 5 · En interne avec Canva · valeur": {
+    "paragraph": "—"
+   },
+   "Comparatif · ligne 5 · Agence de pub · solution": {
+    "paragraph": "Agence de pub"
+   },
+   "Comparatif · ligne 5 · Agence de pub · valeur": {
+    "paragraph": "Oui"
+   },
+   "Comparatif · ligne 5 · Rolling · solution": {
+    "paragraph": "Rolling"
+   },
+   "Comparatif · ligne 5 · Rolling · coche": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/coche-verre.png"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "Comparatif · ligne 5 · Rolling · valeur": {
+    "paragraph": "Inclus"
+   },
+   "Comparatif · ligne 6 · critère · texte": {
+    "paragraph": "Expertise com interne, RH, formation"
+   },
+   "Comparatif · ligne 6 · Freelance · solution": {
+    "paragraph": "Freelance"
+   },
+   "Comparatif · ligne 6 · Freelance · valeur": {
+    "paragraph": "Variable"
+   },
+   "Comparatif · ligne 6 · Studio interne · solution": {
+    "paragraph": "Studio interne"
+   },
+   "Comparatif · ligne 6 · Studio interne · valeur": {
+    "paragraph": "Oui"
+   },
+   "Comparatif · ligne 6 · En interne avec Canva · solution": {
+    "paragraph": "En interne avec Canva"
+   },
+   "Comparatif · ligne 6 · En interne avec Canva · valeur": {
+    "paragraph": "—"
+   },
+   "Comparatif · ligne 6 · Agence de pub · solution": {
+    "paragraph": "Agence de pub"
+   },
+   "Comparatif · ligne 6 · Agence de pub · valeur": {
+    "paragraph": "Rare"
+   },
+   "Comparatif · ligne 6 · Rolling · solution": {
+    "paragraph": "Rolling"
+   },
+   "Comparatif · ligne 6 · Rolling · coche": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/coche-verre.png"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "Comparatif · ligne 6 · Rolling · valeur": {
+    "paragraph": "13 ans, 500+ clients"
+   },
+   "Landing · atout 1 · chiffre": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/chiffre-1.webp"
+     },
+     "size": "medium"
+    }
+   },
+   "Landing · atout 1 · titre": {
+    "tag": "h3",
+    "title": "Une équipe vidéo à l'année."
+   },
+   "Landing · atout 1 · texte": {
+    "paragraph": "Notre agence vidéo motion design et tournage réunit directeur artistique, chef de projet, motion designers et cadreurs : une seule équipe, qui connaît votre charte."
+   },
+   "Landing · atout 2 · chiffre": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/chiffre-2.webp"
+     },
+     "size": "medium"
+    }
+   },
+   "Landing · atout 2 · titre": {
+    "tag": "h3",
+    "title": "Notre IA Factory, pour aller vite."
+   },
+   "Landing · atout 2 · texte": {
+    "paragraph": "Pistes de scénario, voix off, sous-titres, déclinaisons : notre IA Factory accélère, nos créas décident."
+   },
+   "Landing · atout 3 · chiffre": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/chiffre-3.webp"
+     },
+     "size": "medium"
+    }
+   },
+   "Landing · atout 3 · titre": {
+    "tag": "h3",
+    "title": "Un prix fixe, en illimité."
+   },
+   "Landing · atout 3 · texte": {
+    "paragraph": "Plus vous faites de vidéos, moins chacune vous coûte. Pas de devis à chaque projet."
+   },
+   "Landing · résultats · titre": {
+    "tag": "h3",
+    "title": "Ce que ça change pour nos clients"
+   },
+   "Landing · résultat 1 · chiffre": {
+    "paragraph": "<em>[87 %]</em>"
+   },
+   "Landing · résultat 1 · texte": {
+    "paragraph": "<strong>de complétion</strong> sur une série d'onboarding vidéo [chiffre à fournir]"
+   },
+   "Landing · résultat 2 · chiffre": {
+    "paragraph": "<em>[x]</em>"
+   },
+   "Landing · résultat 2 · texte": {
+    "paragraph": "<strong>vidéos livrées par mois</strong> en moyenne par client [à fournir]"
+   },
+   "Landing · résultat 3 · chiffre": {
+    "paragraph": "<em>[x jours]</em>"
+   },
+   "Landing · résultat 3 · texte": {
+    "paragraph": "<strong>pour une première version</strong> après votre brief [à fournir]"
+   },
+   "Landing · appel · texte": {
+    "paragraph": "Et avec vos contenus, <em>ça donnerait quoi&nbsp;?</em>"
+   },
+   "Landing · appel · bouton": {
+    "text": "Réserver un échange",
+    "link": {
+     "destination": "#landing-rdv"
+    }
+   }
+  },
+  "classes": {
+   "Landing · pourquoi Rolling": [
+    "section",
+    "halo-doux"
+   ],
+   "Landing · produit · contenu": [
+    "conteneur"
+   ],
+   "Landing · produit · en-tête": [
+    "entete-section"
+   ],
+   "Landing · produit · repère": [
+    "sur-titre"
+   ],
+   "Landing · produit · timecode": [
+    "timecode"
+   ],
+   "Landing · produit · titre": [
+    "titre-lg"
+   ],
+   "Landing · produit · introduction": [
+    "texte-intro"
+   ],
+   "Landing · comparatif": [
+    "carte-pleine",
+    "comparatif"
+   ],
+   "Comparatif · en-tête": [
+    "comparatif-ligne",
+    "comparatif-entete"
+   ],
+   "Comparatif · ligne 1": [
+    "comparatif-ligne"
+   ],
+   "Comparatif · ligne 1 · Freelance · solution": [
+    "comparatif-solution"
+   ],
+   "Comparatif · ligne 1 · Studio interne · solution": [
+    "comparatif-solution"
+   ],
+   "Comparatif · ligne 1 · En interne avec Canva · solution": [
+    "comparatif-solution"
+   ],
+   "Comparatif · ligne 1 · Agence de pub · solution": [
+    "comparatif-solution"
+   ],
+   "Comparatif · ligne 1 · Rolling · solution": [
+    "comparatif-solution"
+   ],
+   "Comparatif · ligne 1 · Rolling · coche": [
+    "coche"
+   ],
+   "Comparatif · ligne 2": [
+    "comparatif-ligne"
+   ],
+   "Comparatif · ligne 2 · Freelance · solution": [
+    "comparatif-solution"
+   ],
+   "Comparatif · ligne 2 · Studio interne · solution": [
+    "comparatif-solution"
+   ],
+   "Comparatif · ligne 2 · En interne avec Canva · solution": [
+    "comparatif-solution"
+   ],
+   "Comparatif · ligne 2 · Agence de pub · solution": [
+    "comparatif-solution"
+   ],
+   "Comparatif · ligne 2 · Rolling · solution": [
+    "comparatif-solution"
+   ],
+   "Comparatif · ligne 2 · Rolling · coche": [
+    "coche"
+   ],
+   "Comparatif · ligne 3": [
+    "comparatif-ligne"
+   ],
+   "Comparatif · ligne 3 · Freelance · solution": [
+    "comparatif-solution"
+   ],
+   "Comparatif · ligne 3 · Studio interne · solution": [
+    "comparatif-solution"
+   ],
+   "Comparatif · ligne 3 · En interne avec Canva · solution": [
+    "comparatif-solution"
+   ],
+   "Comparatif · ligne 3 · Agence de pub · solution": [
+    "comparatif-solution"
+   ],
+   "Comparatif · ligne 3 · Rolling · solution": [
+    "comparatif-solution"
+   ],
+   "Comparatif · ligne 3 · Rolling · coche": [
+    "coche"
+   ],
+   "Comparatif · ligne 4": [
+    "comparatif-ligne"
+   ],
+   "Comparatif · ligne 4 · Freelance · solution": [
+    "comparatif-solution"
+   ],
+   "Comparatif · ligne 4 · Studio interne · solution": [
+    "comparatif-solution"
+   ],
+   "Comparatif · ligne 4 · En interne avec Canva · solution": [
+    "comparatif-solution"
+   ],
+   "Comparatif · ligne 4 · Agence de pub · solution": [
+    "comparatif-solution"
+   ],
+   "Comparatif · ligne 4 · Rolling · solution": [
+    "comparatif-solution"
+   ],
+   "Comparatif · ligne 4 · Rolling · coche": [
+    "coche"
+   ],
+   "Comparatif · ligne 5": [
+    "comparatif-ligne"
+   ],
+   "Comparatif · ligne 5 · Freelance · solution": [
+    "comparatif-solution"
+   ],
+   "Comparatif · ligne 5 · Studio interne · solution": [
+    "comparatif-solution"
+   ],
+   "Comparatif · ligne 5 · En interne avec Canva · solution": [
+    "comparatif-solution"
+   ],
+   "Comparatif · ligne 5 · Agence de pub · solution": [
+    "comparatif-solution"
+   ],
+   "Comparatif · ligne 5 · Rolling · solution": [
+    "comparatif-solution"
+   ],
+   "Comparatif · ligne 5 · Rolling · coche": [
+    "coche"
+   ],
+   "Comparatif · ligne 6": [
+    "comparatif-ligne"
+   ],
+   "Comparatif · ligne 6 · Freelance · solution": [
+    "comparatif-solution"
+   ],
+   "Comparatif · ligne 6 · Studio interne · solution": [
+    "comparatif-solution"
+   ],
+   "Comparatif · ligne 6 · En interne avec Canva · solution": [
+    "comparatif-solution"
+   ],
+   "Comparatif · ligne 6 · Agence de pub · solution": [
+    "comparatif-solution"
+   ],
+   "Comparatif · ligne 6 · Rolling · solution": [
+    "comparatif-solution"
+   ],
+   "Comparatif · ligne 6 · Rolling · coche": [
+    "coche"
+   ],
+   "Landing · atouts": [
+    "grille-3"
+   ],
+   "Landing · atout 1": [
+    "carte-verre"
+   ],
+   "Landing · atout 1 · chiffre": [
+    "picto-verre"
+   ],
+   "Landing · atout 1 · titre": [
+    "titre-xs"
+   ],
+   "Landing · atout 1 · texte": [
+    "texte"
+   ],
+   "Landing · atout 2": [
+    "carte-verre"
+   ],
+   "Landing · atout 2 · chiffre": [
+    "picto-verre"
+   ],
+   "Landing · atout 2 · titre": [
+    "titre-xs"
+   ],
+   "Landing · atout 2 · texte": [
+    "texte"
+   ],
+   "Landing · atout 3": [
+    "carte-verre"
+   ],
+   "Landing · atout 3 · chiffre": [
+    "picto-verre"
+   ],
+   "Landing · atout 3 · titre": [
+    "titre-xs"
+   ],
+   "Landing · atout 3 · texte": [
+    "texte"
+   ],
+   "Landing · résultats · titre": [
+    "label",
+    "label-violet"
+   ],
+   "Landing · résultats": [
+    "plaque-chiffres",
+    "plaque-3"
+   ],
+   "Landing · résultat 1": [
+    "chiffre-texte"
+   ],
+   "Landing · résultat 1 · chiffre": [
+    "titre-md"
+   ],
+   "Landing · résultat 1 · texte": [
+    "texte-petit"
+   ],
+   "Landing · résultat 2": [
+    "chiffre-texte"
+   ],
+   "Landing · résultat 2 · chiffre": [
+    "titre-md"
+   ],
+   "Landing · résultat 2 · texte": [
+    "texte-petit"
+   ],
+   "Landing · résultat 3": [
+    "chiffre-texte"
+   ],
+   "Landing · résultat 3 · chiffre": [
+    "titre-md"
+   ],
+   "Landing · résultat 3 · texte": [
+    "texte-petit"
+   ],
+   "Landing · appel": [
+    "carte-verre",
+    "carte-appel"
+   ],
+   "Landing · appel · texte": [
+    "titre-xs"
+   ],
+   "Landing · appel · bouton": [
+    "bouton-principal",
+    "bouton-petit"
+   ]
+  },
+  "style": {
+   "Landing · produit · contenu": "display: flex; flex-direction: column; gap: 0;",
+   "Landing · produit · introduction": "max-width: 820px;",
+   "Landing · atouts": "margin-top: 56px;",
+   "Landing · atout 1 · chiffre": "height: 56px; align-self: flex-start;",
+   "Landing · atout 2 · chiffre": "height: 56px; align-self: flex-start;",
+   "Landing · atout 3 · chiffre": "height: 56px; align-self: flex-start;",
+   "Landing · résultats · titre": "margin: 64px 0 18px;",
+   "Landing · appel": "margin-top: 28px;"
+  }
+ },
+ "brut": {}
+}

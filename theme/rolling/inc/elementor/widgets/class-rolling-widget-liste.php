@@ -91,6 +91,15 @@ class Rolling_Widget_Liste extends Rolling_Widget {
 		$this->choix( 'modele', __( 'Modèle de carte', 'rolling' ), self::modeles( __( 'Carte du thème', 'rolling' ) ), '0' );
 		$this->choix( 'modele_une', __( 'Modèle de la première carte', 'rolling' ), self::modeles( __( 'Comme les autres', 'rolling' ) ), '0' );
 		$this->add_control(
+			'une_auto',
+			array(
+				'label'       => __( 'Témoignages : le témoignage « à la une » en grand', 'rolling' ),
+				'description' => __( 'Désactivez pour des cartes toutes identiques (ex. 3 témoignages sur la landing).', 'rolling' ),
+				'type'        => Controls_Manager::SWITCHER,
+				'default'     => 'yes',
+			)
+		);
+		$this->add_control(
 			'premiere_une',
 			array(
 				'label'       => __( 'Première carte à la une (carte du thème)', 'rolling' ),
@@ -259,7 +268,7 @@ class Rolling_Widget_Liste extends Rolling_Widget {
 		$modele              = $modele ? $modele : self::modele_du_theme( $r['contenu'] );
 		$modele_une          = (int) $r['modele_une'];
 
-		if ( ! $modele_une && in_array( $r['contenu'], array( 'temoignages', 'webinars' ), true ) && ! (int) $r['decalage'] ) {
+		if ( ! $modele_une && in_array( $r['contenu'], array( 'temoignages', 'webinars' ), true ) && ! (int) $r['decalage'] && 'yes' === ( $r['une_auto'] ?? 'yes' ) ) {
 			$modele_une = 'temoignages' === $r['contenu'] && $ids && ! Rolling_Contenus::valeur( 'a_la_une', $ids[0] ) ? 0 : self::modele_du_theme( $r['contenu'], '-une' );
 			$modele_une = 'webinars' === $r['contenu'] ? 0 : $modele_une;
 		}

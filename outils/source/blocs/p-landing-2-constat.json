@@ -1,0 +1,131 @@
+{
+ "cle": "p-landing-2-constat",
+ "titre": "Rolling · Landing · 00:01 Le constat",
+ "type": "e-flexbox",
+ "composition": {
+  "xml_structure": "<e-flexbox configuration-id=\"Landing · constat\"><e-flexbox configuration-id=\"Landing · constat · contenu\"><e-flexbox configuration-id=\"Landing · constat · en-tête\"><e-flexbox configuration-id=\"Landing · constat · repère\"><e-paragraph configuration-id=\"Landing · constat · timecode\"></e-paragraph><e-paragraph configuration-id=\"Landing · constat · sur-titre\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Landing · constat · titres\"><e-paragraph configuration-id=\"Landing · constat · titre 1\"></e-paragraph><e-heading configuration-id=\"Landing · constat · titre 2\"></e-heading></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Landing · constat · cartes\"><e-flexbox configuration-id=\"Landing · constat · emails\"><e-paragraph configuration-id=\"Landing · constat · emails · question\"></e-paragraph><e-paragraph configuration-id=\"Landing · constat · emails · mot\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Landing · constat · articles\"><e-paragraph configuration-id=\"Landing · constat · articles · question\"></e-paragraph><e-paragraph configuration-id=\"Landing · constat · articles · mot\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Landing · constat · modules\"><e-paragraph configuration-id=\"Landing · constat · modules · question\"></e-paragraph><e-paragraph configuration-id=\"Landing · constat · modules · mot\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Landing · constat · événements\"><e-paragraph configuration-id=\"Landing · constat · événements · question\"></e-paragraph><e-paragraph configuration-id=\"Landing · constat · événements · mot\"></e-paragraph></e-flexbox></e-flexbox><e-paragraph configuration-id=\"Landing · constat · conclusion\"></e-paragraph></e-flexbox></e-flexbox>",
+  "element_config": {
+   "Landing · constat": {
+    "tag": "section"
+   },
+   "Landing · constat · timecode": {
+    "paragraph": "00:01"
+   },
+   "Landing · constat · sur-titre": {
+    "paragraph": "Le constat"
+   },
+   "Landing · constat · titre 1": {
+    "paragraph": "Vos contenus sont déjà écrits."
+   },
+   "Landing · constat · titre 2": {
+    "tag": "h2",
+    "title": "Mais sont-ils <em>vraiment lus&nbsp;?</em>"
+   },
+   "Landing · constat · emails · question": {
+    "paragraph": "Vos emails internes&nbsp;?"
+   },
+   "Landing · constat · emails · mot": {
+    "paragraph": "<em>Ignorés.</em>"
+   },
+   "Landing · constat · articles · question": {
+    "paragraph": "Vos articles de blog&nbsp;?"
+   },
+   "Landing · constat · articles · mot": {
+    "paragraph": "<em>Survolés.</em>"
+   },
+   "Landing · constat · modules · question": {
+    "paragraph": "Vos modules PowerPoint&nbsp;?"
+   },
+   "Landing · constat · modules · mot": {
+    "paragraph": "<em>Subis.</em>"
+   },
+   "Landing · constat · événements · question": {
+    "paragraph": "Vos événements&nbsp;?"
+   },
+   "Landing · constat · événements · mot": {
+    "paragraph": "<u>Oubliés.</u>"
+   },
+   "Landing · constat · conclusion": {
+    "paragraph": "Vous n'avez pas le temps&nbsp;? C'est notre métier d'agence de communication vidéo : nous nous en occupons, sans limite."
+   }
+  },
+  "classes": {
+   "Landing · constat": [
+    "section",
+    "section-sombre",
+    "halos-nuit"
+   ],
+   "Landing · constat · contenu": [
+    "conteneur"
+   ],
+   "Landing · constat · en-tête": [
+    "entete-section"
+   ],
+   "Landing · constat · repère": [
+    "sur-titre"
+   ],
+   "Landing · constat · timecode": [
+    "timecode"
+   ],
+   "Landing · constat · titre 1": [
+    "titre-lg",
+    "titre-eteint"
+   ],
+   "Landing · constat · titre 2": [
+    "titre-lg"
+   ],
+   "Landing · constat · cartes": [
+    "grille-4"
+   ],
+   "Landing · constat · emails": [
+    "carte-verre",
+    "carte-douleur"
+   ],
+   "Landing · constat · emails · question": [
+    "texte-petit"
+   ],
+   "Landing · constat · emails · mot": [
+    "titre-sm"
+   ],
+   "Landing · constat · articles": [
+    "carte-verre",
+    "carte-douleur"
+   ],
+   "Landing · constat · articles · question": [
+    "texte-petit"
+   ],
+   "Landing · constat · articles · mot": [
+    "titre-sm"
+   ],
+   "Landing · constat · modules": [
+    "carte-verre",
+    "carte-douleur"
+   ],
+   "Landing · constat · modules · question": [
+    "texte-petit"
+   ],
+   "Landing · constat · modules · mot": [
+    "titre-sm"
+   ],
+   "Landing · constat · événements": [
+    "carte-verre",
+    "carte-douleur"
+   ],
+   "Landing · constat · événements · question": [
+    "texte-petit"
+   ],
+   "Landing · constat · événements · mot": [
+    "titre-sm"
+   ],
+   "Landing · constat · conclusion": [
+    "titre-xs"
+   ]
+  },
+  "style": {
+   "Landing · constat · contenu": "display: flex; flex-direction: column; gap: 0;",
+   "Landing · constat · titres": "display: flex; flex-direction: column; gap: 0; padding: 0;",
+   "Landing · constat · conclusion": "margin-top: 44px;"
+  }
+ },
+ "brut": {}
+}

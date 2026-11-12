@@ -1503,6 +1503,233 @@
             ]
         },
         {
+            "id": "g-351fffd",
+            "label": "carte-douleur",
+            "groupe": "Fiches et listes",
+            "description": "Carte du constat de la landing (avec carte-verre) : la question, puis le mot en dégradé.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "padding": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 26,
+                                "unit": "px"
+                            }
+                        },
+                        "gap": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 8,
+                                "unit": "px"
+                            }
+                        }
+                    },
+                    "custom_css": null
+                }
+            ]
+        },
+        {
+            "id": "g-3735f8b",
+            "label": "comparatif",
+            "groupe": "Fiches et listes",
+            "description": "Tableau comparatif de la landing (avec carte-pleine) : une ligne par critère ; en mobile, chaque critère devient une carte.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "mobile",
+                        "state": null
+                    },
+                    "props": {
+                        "padding": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 6,
+                                "unit": "px"
+                            }
+                        }
+                    },
+                    "custom_css": null
+                },
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "padding": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 8,
+                                "unit": "px"
+                            }
+                        },
+                        "gap": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 0,
+                                "unit": "px"
+                            }
+                        }
+                    },
+                    "custom_css": null
+                }
+            ]
+        },
+        {
+            "id": "g-e466a16",
+            "label": "comparatif-entete",
+            "groupe": "Fiches et listes",
+            "description": "Première ligne du comparatif (avec comparatif-ligne) : noms des solutions ; masquée en mobile.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "tablet",
+                        "state": null
+                    },
+                    "props": {
+                        "display": {
+                            "$$type": "string",
+                            "value": "none"
+                        }
+                    },
+                    "custom_css": null
+                },
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": [],
+                    "custom_css": {
+                        "raw": "JiA+ICogeyBib3JkZXItdG9wOiAwOyBmb250LWZhbWlseTogQnJpY29sYWdlIEdyb3Rlc3F1ZTsgZm9udC1zaXplOiAxNXB4OyBmb250LXdlaWdodDogNjUwOyBsZXR0ZXItc3BhY2luZzogLTAuMDJlbTsgY29sb3I6IHZhcigtLWVuY3JlKTsgfSAmID4gOmxhc3QtY2hpbGQgeyBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjsgY29sb3I6ICNGRkZGRkY7IGJhY2tncm91bmQ6ICM1QjNCRUE7IGJvcmRlci1yYWRpdXM6IDE0cHggMTRweCAwIDA7IH0="
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-5693795",
+            "label": "plaque-3",
+            "groupe": "Fiches et listes",
+            "description": "Plaque de chiffres à 3 colonnes (avec plaque-chiffres).",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "tablet",
+                        "state": null
+                    },
+                    "props": {
+                        "grid-template-columns": {
+                            "$$type": "string",
+                            "value": "minmax(0, 1fr)"
+                        }
+                    },
+                    "custom_css": null
+                },
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "grid-template-columns": {
+                            "$$type": "string",
+                            "value": "repeat(3, minmax(0, 1fr))"
+                        }
+                    },
+                    "custom_css": null
+                }
+            ]
+        },
+        {
+            "id": "g-84471e0",
+            "label": "landing-action",
+            "groupe": "Fiches et listes",
+            "description": "Bloc « Réservez 30 minutes » (avec carte-verre et grand-bloc) : texte à gauche, calendrier à droite.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "tablet",
+                        "state": null
+                    },
+                    "props": {
+                        "grid-template-columns": {
+                            "$$type": "string",
+                            "value": "minmax(0, 1fr)"
+                        }
+                    },
+                    "custom_css": null
+                },
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "display": {
+                            "$$type": "string",
+                            "value": "grid"
+                        },
+                        "grid-template-columns": {
+                            "$$type": "string",
+                            "value": "minmax(0, 1fr) minmax(0, 1.1fr)"
+                        },
+                        "align-items": {
+                            "$$type": "string",
+                            "value": "center"
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "Z2FwOiAyNHB4IDQwcHg7"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-6a907a2",
+            "label": "zone-calendrier-court",
+            "groupe": "Fiches et listes",
+            "description": "Emplacement du calendrier plus court (avec zone-calendrier), dans un bloc.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "mobile",
+                        "state": null
+                    },
+                    "props": {
+                        "min-height": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 480,
+                                "unit": "px"
+                            }
+                        }
+                    },
+                    "custom_css": null
+                },
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "min-height": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 420,
+                                "unit": "px"
+                            }
+                        }
+                    },
+                    "custom_css": null
+                }
+            ]
+        },
+        {
             "id": "g-e13f5b6",
             "label": "section-entete",
             "groupe": "Mise en page",
@@ -26350,6 +26577,325 @@
                     "props": [],
                     "custom_css": {
                         "raw": "JiAuaWNvbmUtYmFkZ2UgeyBib3JkZXItcmFkaXVzOiA1MCU7IGJhY2tncm91bmQ6ICMyQTFGNTU7IH0="
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-3815fd1",
+            "label": "landing-hero",
+            "groupe": "Fiches et listes",
+            "description": "Haut de la landing : textes à gauche, visuel du showreel à droite (une colonne sous 1024 px).",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "tablet",
+                        "state": null
+                    },
+                    "props": {
+                        "gap": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 40,
+                                "unit": "px"
+                            }
+                        },
+                        "grid-template-columns": {
+                            "$$type": "string",
+                            "value": "minmax(0, 1fr)"
+                        }
+                    },
+                    "custom_css": null
+                },
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "display": {
+                            "$$type": "string",
+                            "value": "grid"
+                        },
+                        "gap": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 56,
+                                "unit": "px"
+                            }
+                        },
+                        "grid-template-columns": {
+                            "$$type": "string",
+                            "value": "minmax(0, 1fr) minmax(0, 1fr)"
+                        },
+                        "align-items": {
+                            "$$type": "string",
+                            "value": "center"
+                        }
+                    },
+                    "custom_css": null
+                }
+            ]
+        },
+        {
+            "id": "g-6f2397b",
+            "label": "comparatif-ligne",
+            "groupe": "Fiches et listes",
+            "description": "Ligne du comparatif : critère, 4 solutions, Rolling (mis en avant).",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "tablet",
+                        "state": null
+                    },
+                    "props": {
+                        "overflow": {
+                            "$$type": "string",
+                            "value": "hidden"
+                        },
+                        "margin": {
+                            "$$type": "dimensions",
+                            "value": {
+                                "block-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 8,
+                                        "unit": "px"
+                                    }
+                                }
+                            }
+                        },
+                        "border-radius": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 18,
+                                "unit": "px"
+                            }
+                        },
+                        "box-shadow": {
+                            "$$type": "box-shadow",
+                            "value": [
+                                {
+                                    "$$type": "shadow",
+                                    "value": {
+                                        "hOffset": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 0,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "vOffset": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 0,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "blur": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 0,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "spread": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 1,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "color": {
+                                            "$$type": "color",
+                                            "value": "rgba(15,15,18,0.08)"
+                                        },
+                                        "position": {
+                                            "$$type": "string",
+                                            "value": "inset"
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        "grid-template-columns": {
+                            "$$type": "string",
+                            "value": "minmax(0, 1fr) minmax(0, 1fr)"
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "JiA+ICogeyBwYWRkaW5nOiAxMHB4IDE0cHg7IGZvbnQtc2l6ZTogMTRweDsgfSAmID4gOmZpcnN0LWNoaWxkIHsgZ3JpZC1jb2x1bW46IDEgLyAtMTsgYm9yZGVyLXRvcDogMDsgYmFja2dyb3VuZDogI0ZBRjlGNzsgfSAmID4gOmxhc3QtY2hpbGQgeyBncmlkLWNvbHVtbjogMSAvIC0xOyB9"
+                    }
+                },
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "padding": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 0,
+                                "unit": "px"
+                            }
+                        },
+                        "display": {
+                            "$$type": "string",
+                            "value": "grid"
+                        },
+                        "gap": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 0,
+                                "unit": "px"
+                            }
+                        },
+                        "grid-template-columns": {
+                            "$$type": "string",
+                            "value": "minmax(0, 1.5fr) repeat(4, minmax(0, 1fr)) minmax(0, 1.25fr)"
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "JiA+ICogeyBkaXNwbGF5OiBmbGV4OyBmbGV4LWRpcmVjdGlvbjogY29sdW1uOyBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjsgZ2FwOiAycHg7IHBhZGRpbmc6IDE0cHggMTZweDsgZm9udC1mYW1pbHk6IEhhbmtlbiBHcm90ZXNrOyBmb250LXNpemU6IDE1cHg7IGxpbmUtaGVpZ2h0OiAxLjM1OyBjb2xvcjogdmFyKC0tcGFyYWdyYXBoZSk7IGJvcmRlci10b3A6IDFweCBzb2xpZCByZ2JhKDE1LDE1LDE4LDAuMDcpOyB9ICYgPiA6Zmlyc3QtY2hpbGQgeyBmb250LXdlaWdodDogNzAwOyBjb2xvcjogdmFyKC0tZW5jcmUpOyB9ICYgPiA6bGFzdC1jaGlsZCB7IGZsZXgtZGlyZWN0aW9uOiByb3c7IGFsaWduLWl0ZW1zOiBjZW50ZXI7IGp1c3RpZnktY29udGVudDogZmxleC1zdGFydDsgZ2FwOiA4cHg7IGZvbnQtd2VpZ2h0OiA3MDA7IGNvbG9yOiAjMkExQTgwOyBiYWNrZ3JvdW5kOiAjRURFNkZGOyB9"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-9dc64b4",
+            "label": "comparatif-solution",
+            "groupe": "Fiches et listes",
+            "description": "Nom de la solution au-dessus d'une case, visible seulement en mobile.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "tablet",
+                        "state": null
+                    },
+                    "props": {
+                        "display": {
+                            "$$type": "string",
+                            "value": "block"
+                        }
+                    },
+                    "custom_css": null
+                },
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "font-family": {
+                            "$$type": "font-family",
+                            "value": "Hanken Grotesk"
+                        },
+                        "font-weight": {
+                            "$$type": "string",
+                            "value": "700"
+                        },
+                        "font-size": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 11,
+                                "unit": "px"
+                            }
+                        },
+                        "color": {
+                            "$$type": "global-color-variable",
+                            "value": "e-gv-ff12e70"
+                        },
+                        "letter-spacing": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 0.12,
+                                "unit": "em"
+                            }
+                        },
+                        "line-height": {
+                            "$$type": "size",
+                            "value": {
+                                "size": "1.3",
+                                "unit": "custom"
+                            }
+                        },
+                        "text-transform": {
+                            "$$type": "string",
+                            "value": "uppercase"
+                        },
+                        "display": {
+                            "$$type": "string",
+                            "value": "none"
+                        }
+                    },
+                    "custom_css": null
+                }
+            ]
+        },
+        {
+            "id": "g-0a5e4a6",
+            "label": "chiffre-texte",
+            "groupe": "Fiches et listes",
+            "description": "Chiffre écrit en texte dans une plaque (à remplacer par vos résultats) : grand, en dégradé.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "padding": {
+                            "$$type": "dimensions",
+                            "value": {
+                                "block-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 6,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 24,
+                                        "unit": "px"
+                                    }
+                                },
+                                "block-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 6,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 24,
+                                        "unit": "px"
+                                    }
+                                }
+                            }
+                        },
+                        "display": {
+                            "$$type": "string",
+                            "value": "flex"
+                        },
+                        "flex-direction": {
+                            "$$type": "string",
+                            "value": "column"
+                        },
+                        "gap": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 8,
+                                "unit": "px"
+                            }
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "JiAudGl0cmUtbWQgeyBmb250LXNpemU6IDQwcHg7IH0="
                     }
                 }
             ]

@@ -1,0 +1,65 @@
+{
+ "cle": "p-landing-7-final",
+ "titre": "Rolling · Landing · Appel final",
+ "type": "e-flexbox",
+ "composition": {
+  "xml_structure": "<e-flexbox configuration-id=\"Landing · appel final\"><e-image configuration-id=\"Landing · final · verre cannelé\"></e-image><e-flexbox configuration-id=\"Landing · final · contenu\"><e-heading configuration-id=\"Landing · final · titre\"></e-heading><e-paragraph configuration-id=\"Landing · final · texte\"></e-paragraph><e-flexbox configuration-id=\"Landing · final · bouton\"><e-button configuration-id=\"Landing · final · réserver\"></e-button></e-flexbox></e-flexbox></e-flexbox>",
+  "element_config": {
+   "Landing · appel final": {
+    "tag": "section"
+   },
+   "Landing · final · verre cannelé": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/final-verre-cannele.webp"
+     },
+     "size": "medium_large"
+    }
+   },
+   "Landing · final · titre": {
+    "tag": "h2",
+    "title": "Vos vidéos&nbsp;? Nous nous en occupons.<br><em>Sans limite.</em>"
+   },
+   "Landing · final · texte": {
+    "paragraph": "30 minutes pour passer en revue vos contenus et vos projets. Vous repartez avec votre stratégie vidéo et vos 3&nbsp;premières vidéos à produire."
+   },
+   "Landing · final · réserver": {
+    "text": "Réserver un échange",
+    "link": {
+     "destination": "#landing-rdv"
+    }
+   }
+  },
+  "classes": {
+   "Landing · appel final": [
+    "section",
+    "section-sombre",
+    "section-finale",
+    "halo-centre",
+    "decors-final"
+   ],
+   "Landing · final · verre cannelé": [
+    "decor-flottant"
+   ],
+   "Landing · final · contenu": [
+    "conteneur"
+   ],
+   "Landing · final · titre": [
+    "titre-lg",
+    "titre-souligne"
+   ],
+   "Landing · final · texte": [
+    "texte-intro"
+   ],
+   "Landing · final · réserver": [
+    "bouton-soleil"
+   ]
+  },
+  "style": {
+   "Landing · final · contenu": "display: flex; flex-direction: column; gap: 0; align-items: center; z-index: 1;",
+   "Landing · final · texte": "margin-top: 34px; max-width: 600px;",
+   "Landing · final · bouton": "display: flex; justify-content: center; margin-top: 38px; padding: 0;"
+  }
+ },
+ "brut": {}
+}

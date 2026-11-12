@@ -1,0 +1,277 @@
+{
+ "cle": "p-landing-6-objections",
+ "titre": "Rolling · Landing · 00:05 Vos questions",
+ "type": "e-flexbox",
+ "composition": {
+  "xml_structure": "<e-flexbox configuration-id=\"Landing · objections\"><e-flexbox configuration-id=\"Landing · objections · contenu\"><e-flexbox configuration-id=\"Landing · objections · en-tête\"><e-flexbox configuration-id=\"Landing · objections · repère\"><e-paragraph configuration-id=\"Landing · objections · timecode\"></e-paragraph><e-paragraph configuration-id=\"Landing · objections · sur-titre\"></e-paragraph></e-flexbox><e-heading configuration-id=\"Landing · objections · titre\"></e-heading></e-flexbox><e-flexbox configuration-id=\"Landing · formules\"><e-flexbox configuration-id=\"Landing · formule Création\"><e-heading configuration-id=\"Landing · formule Création · nom\"></e-heading><e-paragraph configuration-id=\"Landing · formule Création · prix\"></e-paragraph><e-paragraph configuration-id=\"Landing · formule Création · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Landing · formule Complet\"><e-heading configuration-id=\"Landing · formule Complet · nom\"></e-heading><e-paragraph configuration-id=\"Landing · formule Complet · prix\"></e-paragraph><e-paragraph configuration-id=\"Landing · formule Complet · texte\"></e-paragraph></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Landing · questions\"><e-flexbox configuration-id=\"Landing · question 1\"><e-heading configuration-id=\"Landing · question 1 · titre\"></e-heading><e-paragraph configuration-id=\"Landing · question 1 · réponse\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Landing · question 2\"><e-heading configuration-id=\"Landing · question 2 · titre\"></e-heading><e-paragraph configuration-id=\"Landing · question 2 · réponse\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Landing · question 3\"><e-heading configuration-id=\"Landing · question 3 · titre\"></e-heading><e-paragraph configuration-id=\"Landing · question 3 · réponse\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Landing · question 4\"><e-heading configuration-id=\"Landing · question 4 · titre\"></e-heading><e-paragraph configuration-id=\"Landing · question 4 · réponse\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Landing · question 5\"><e-heading configuration-id=\"Landing · question 5 · titre\"></e-heading><e-paragraph configuration-id=\"Landing · question 5 · réponse\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Landing · question 6\"><e-heading configuration-id=\"Landing · question 6 · titre\"></e-heading><e-paragraph configuration-id=\"Landing · question 6 · réponse\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Landing · question 7\"><e-heading configuration-id=\"Landing · question 7 · titre\"></e-heading><e-paragraph configuration-id=\"Landing · question 7 · réponse\"></e-paragraph></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Landing · badges\"><e-flexbox configuration-id=\"Landing · badge · IA sécurisée\"><e-image configuration-id=\"Landing · badge · IA sécurisée · icône\"></e-image><e-paragraph configuration-id=\"Landing · badge · IA sécurisée · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Landing · badge · Données hébergées en Europe\"><e-image configuration-id=\"Landing · badge · Données hébergées en Europe · icône\"></e-image><e-paragraph configuration-id=\"Landing · badge · Données hébergées en Europe · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Landing · badge · Conforme RGPD\"><e-image configuration-id=\"Landing · badge · Conforme RGPD · icône\"></e-image><e-paragraph configuration-id=\"Landing · badge · Conforme RGPD · texte\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox></e-flexbox>",
+  "element_config": {
+   "Landing · objections": {
+    "_cssid": "landing-offres",
+    "tag": "section"
+   },
+   "Landing · objections · timecode": {
+    "paragraph": "00:05"
+   },
+   "Landing · objections · sur-titre": {
+    "paragraph": "Vos questions"
+   },
+   "Landing · objections · titre": {
+    "tag": "h2",
+    "title": "Avant de dire <em>«&nbsp;trop beau pour être vrai&nbsp;»</em>"
+   },
+   "Landing · formule Création · nom": {
+    "tag": "h3",
+    "title": "Création illimitée"
+   },
+   "Landing · formule Création · prix": {
+    "paragraph": "1&nbsp;250&nbsp;€<span> / mois</span>"
+   },
+   "Landing · formule Création · texte": {
+    "paragraph": "Tous vos contenus et vos projets, en vidéo."
+   },
+   "Landing · formule Complet · nom": {
+    "tag": "h3",
+    "title": "Création + Tournage"
+   },
+   "Landing · formule Complet · prix": {
+    "paragraph": "2&nbsp;080&nbsp;€<span> / mois</span>"
+   },
+   "Landing · formule Complet · texte": {
+    "paragraph": "Tout Création, plus le tournage et le motion fait main."
+   },
+   "Landing · question 1 · titre": {
+    "tag": "h3",
+    "title": "«&nbsp;Illimité&nbsp;», vraiment&nbsp;?"
+   },
+   "Landing · question 1 · réponse": {
+    "paragraph": "Oui : nous ne comptons pas les vidéos. Nous traitons un projet à fond à la fois, puis nous enchaînons sur le suivant. C'est ce qui rend l'illimité possible, avec une qualité garantie sur chaque vidéo."
+   },
+   "Landing · question 2 · titre": {
+    "tag": "h3",
+    "title": "Faut-il s'engager pour un an&nbsp;?"
+   },
+   "Landing · question 2 · réponse": {
+    "paragraph": "[Réponse à confirmer : durée de l'abonnement, conditions de sortie.]"
+   },
+   "Landing · question 3 · titre": {
+    "tag": "h3",
+    "title": "En combien de temps recevons-nous une vidéo&nbsp;?"
+   },
+   "Landing · question 3 · réponse": {
+    "paragraph": "[Réponse à confirmer : délai moyen d'une première version, puis des corrections.]"
+   },
+   "Landing · question 4 · titre": {
+    "tag": "h3",
+    "title": "Et si le résultat ne nous plaît pas&nbsp;?"
+   },
+   "Landing · question 4 · réponse": {
+    "paragraph": "[Réponse à confirmer : nombre d'allers-retours, rôle du directeur artistique.]"
+   },
+   "Landing · question 5 · titre": {
+    "tag": "h3",
+    "title": "À qui appartiennent les vidéos&nbsp;?"
+   },
+   "Landing · question 5 · réponse": {
+    "paragraph": "[Réponse à confirmer : droits sur les vidéos, les musiques et les images.]"
+   },
+   "Landing · question 6 · titre": {
+    "tag": "h3",
+    "title": "Où se passent les tournages&nbsp;?"
+   },
+   "Landing · question 6 · réponse": {
+    "paragraph": "Dans notre studio de tournage à Paris, ou chez vous. Agence audiovisuelle à Paris, nous nous déplaçons partout en France pour filmer vos collaborateurs, vos événements et vos produits."
+   },
+   "Landing · question 7 · titre": {
+    "tag": "h3",
+    "title": "Que devons-nous fournir&nbsp;?"
+   },
+   "Landing · question 7 · réponse": {
+    "paragraph": "Vos contenus, vos idées de projets et votre charte graphique. Nous nous occupons de tout le reste, de la stratégie vidéo annuelle jusqu'à la livraison."
+   },
+   "Landing · badge · IA sécurisée · icône": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/badge-securite.webp"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "Landing · badge · IA sécurisée · texte": {
+    "paragraph": "IA sécurisée"
+   },
+   "Landing · badge · Données hébergées en Europe · icône": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/badge-europe.webp"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "Landing · badge · Données hébergées en Europe · texte": {
+    "paragraph": "Données hébergées en Europe"
+   },
+   "Landing · badge · Conforme RGPD · icône": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/badge-rgpd.webp"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "Landing · badge · Conforme RGPD · texte": {
+    "paragraph": "Conforme RGPD"
+   }
+  },
+  "classes": {
+   "Landing · objections": [
+    "section"
+   ],
+   "Landing · objections · contenu": [
+    "conteneur",
+    "conteneur-etroit"
+   ],
+   "Landing · objections · en-tête": [
+    "entete-section"
+   ],
+   "Landing · objections · repère": [
+    "sur-titre"
+   ],
+   "Landing · objections · timecode": [
+    "timecode"
+   ],
+   "Landing · objections · titre": [
+    "titre-md"
+   ],
+   "Landing · formules": [
+    "grille-2"
+   ],
+   "Landing · formule Création": [
+    "carte-pleine"
+   ],
+   "Landing · formule Création · nom": [
+    "titre-xs"
+   ],
+   "Landing · formule Création · prix": [
+    "offres-prix"
+   ],
+   "Landing · formule Création · texte": [
+    "texte-petit"
+   ],
+   "Landing · formule Complet": [
+    "carte-pleine",
+    "section-sombre",
+    "carte-prix-sombre"
+   ],
+   "Landing · formule Complet · nom": [
+    "titre-xs"
+   ],
+   "Landing · formule Complet · prix": [
+    "offres-prix"
+   ],
+   "Landing · formule Complet · texte": [
+    "texte-petit"
+   ],
+   "Landing · questions": [
+    "liste-questions"
+   ],
+   "Landing · question 1": [
+    "carte-verre",
+    "carte-question"
+   ],
+   "Landing · question 1 · titre": [
+    "titre-question"
+   ],
+   "Landing · question 1 · réponse": [
+    "texte"
+   ],
+   "Landing · question 2": [
+    "carte-verre",
+    "carte-question"
+   ],
+   "Landing · question 2 · titre": [
+    "titre-question"
+   ],
+   "Landing · question 2 · réponse": [
+    "texte"
+   ],
+   "Landing · question 3": [
+    "carte-verre",
+    "carte-question"
+   ],
+   "Landing · question 3 · titre": [
+    "titre-question"
+   ],
+   "Landing · question 3 · réponse": [
+    "texte"
+   ],
+   "Landing · question 4": [
+    "carte-verre",
+    "carte-question"
+   ],
+   "Landing · question 4 · titre": [
+    "titre-question"
+   ],
+   "Landing · question 4 · réponse": [
+    "texte"
+   ],
+   "Landing · question 5": [
+    "carte-verre",
+    "carte-question"
+   ],
+   "Landing · question 5 · titre": [
+    "titre-question"
+   ],
+   "Landing · question 5 · réponse": [
+    "texte"
+   ],
+   "Landing · question 6": [
+    "carte-verre",
+    "carte-question"
+   ],
+   "Landing · question 6 · titre": [
+    "titre-question"
+   ],
+   "Landing · question 6 · réponse": [
+    "texte"
+   ],
+   "Landing · question 7": [
+    "carte-verre",
+    "carte-question"
+   ],
+   "Landing · question 7 · titre": [
+    "titre-question"
+   ],
+   "Landing · question 7 · réponse": [
+    "texte"
+   ],
+   "Landing · badges": [
+    "rangee",
+    "badges-clairs"
+   ],
+   "Landing · badge · IA sécurisée": [
+    "badge-securite"
+   ],
+   "Landing · badge · IA sécurisée · icône": [
+    "icone-badge"
+   ],
+   "Landing · badge · Données hébergées en Europe": [
+    "badge-securite"
+   ],
+   "Landing · badge · Données hébergées en Europe · icône": [
+    "icone-badge"
+   ],
+   "Landing · badge · Conforme RGPD": [
+    "badge-securite"
+   ],
+   "Landing · badge · Conforme RGPD · icône": [
+    "icone-badge"
+   ]
+  },
+  "style": {
+   "Landing · objections · contenu": "display: flex; flex-direction: column; gap: 0;",
+   "Landing · formules": "margin-bottom: 28px;",
+   "Landing · badges": "margin-top: 40px;"
+  }
+ },
+ "brut": {}
+}

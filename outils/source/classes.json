@@ -1759,6 +1759,56 @@
      "css": "gap: 18px; padding: 30px;"
     },
     {
+     "label": "landing-hero",
+     "description": "Haut de la landing : textes à gauche, visuel du showreel à droite (une colonne sous 1024 px).",
+     "css": "display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 56px; align-items: center; @media(--tablet) { grid-template-columns: minmax(0, 1fr); gap: 40px; }"
+    },
+    {
+     "label": "carte-douleur",
+     "description": "Carte du constat de la landing (avec carte-verre) : la question, puis le mot en dégradé.",
+     "css": "gap: 8px; padding: 26px;"
+    },
+    {
+     "label": "comparatif",
+     "description": "Tableau comparatif de la landing (avec carte-pleine) : une ligne par critère ; en mobile, chaque critère devient une carte.",
+     "css": "gap: 0; padding: 8px; @media(--mobile) { padding: 6px; }"
+    },
+    {
+     "label": "comparatif-ligne",
+     "description": "Ligne du comparatif : critère, 4 solutions, Rolling (mis en avant).",
+     "css": "display: grid; grid-template-columns: minmax(0, 1.5fr) repeat(4, minmax(0, 1fr)) minmax(0, 1.25fr); gap: 0; padding: 0; & > * { display: flex; flex-direction: column; justify-content: center; gap: 2px; padding: 14px 16px; font-family: Hanken Grotesk; font-size: 15px; line-height: 1.35; color: var(--paragraphe); border-top: 1px solid rgba(15,15,18,0.07); } & > :first-child { font-weight: 700; color: var(--encre); } & > :last-child { flex-direction: row; align-items: center; justify-content: flex-start; gap: 8px; font-weight: 700; color: #2A1A80; background: #EDE6FF; } @media(--tablet) { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); margin-top: 8px; border-radius: 18px; overflow: hidden; box-shadow: inset 0 0 0 1px rgba(15,15,18,0.08); & > * { padding: 10px 14px; font-size: 14px; } & > :first-child { grid-column: 1 / -1; border-top: 0; background: #FAF9F7; } & > :last-child { grid-column: 1 / -1; } }"
+    },
+    {
+     "label": "comparatif-entete",
+     "description": "Première ligne du comparatif (avec comparatif-ligne) : noms des solutions ; masquée en mobile.",
+     "css": "& > * { border-top: 0; font-family: Bricolage Grotesque; font-size: 15px; font-weight: 650; letter-spacing: -0.02em; color: var(--encre); } & > :last-child { justify-content: center; color: #FFFFFF; background: #5B3BEA; border-radius: 14px 14px 0 0; } @media(--tablet) { display: none; }"
+    },
+    {
+     "label": "comparatif-solution",
+     "description": "Nom de la solution au-dessus d'une case, visible seulement en mobile.",
+     "css": "display: none; font-family: Hanken Grotesk; font-size: 11px; line-height: 1.3; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--legende); @media(--tablet) { display: block; }"
+    },
+    {
+     "label": "plaque-3",
+     "description": "Plaque de chiffres à 3 colonnes (avec plaque-chiffres).",
+     "css": "grid-template-columns: repeat(3, minmax(0, 1fr)); @media(--tablet) { grid-template-columns: minmax(0, 1fr); }"
+    },
+    {
+     "label": "chiffre-texte",
+     "description": "Chiffre écrit en texte dans une plaque (à remplacer par vos résultats) : grand, en dégradé.",
+     "css": "display: flex; flex-direction: column; gap: 8px; padding: 6px 24px; & .titre-md { font-size: 40px; }"
+    },
+    {
+     "label": "landing-action",
+     "description": "Bloc « Réservez 30 minutes » (avec carte-verre et grand-bloc) : texte à gauche, calendrier à droite.",
+     "css": "display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: 24px 40px; align-items: center; @media(--tablet) { grid-template-columns: minmax(0, 1fr); }"
+    },
+    {
+     "label": "zone-calendrier-court",
+     "description": "Emplacement du calendrier plus court (avec zone-calendrier), dans un bloc.",
+     "css": "min-height: 420px; @media(--mobile) { min-height: 480px; }"
+    },
+    {
      "label": "mire",
      "description": "Mire de fin d'émission aux couleurs Rolling (page 404), avec « Signal perdu ».",
      "css": "position: relative; width: 100%; max-width: 560px; aspect-ratio: 16 / 9; margin: 0 auto; padding: 0; overflow: hidden; border-radius: 26px; display: flex; align-items: center; justify-content: center; background: linear-gradient(90deg, #FAF9F7 0 14.28%, #FFD1BF 14.28% 28.57%, #FF8A5B 28.57% 42.85%, #E0562A 42.85% 57.14%, #C4B5FD 57.14% 71.42%, #8E4DE6 71.42% 85.71%, #5B3BEA 85.71%) top / 100% 74% no-repeat, linear-gradient(90deg, #3434E0 0 14.28%, #0F0F12 14.28% 28.57%, #8E4DE6 28.57% 42.85%, #17112C 42.85% 57.14%, #FF8A5B 57.14% 71.42%, #0F0F12 71.42% 85.71%, #FAF9F7 85.71%) bottom / 100% 26% no-repeat; box-shadow: 0 0 0 8px rgba(255,255,255,0.06), 0 40px 80px -30px rgba(0,0,0,0.8); &::after { content: ''; position: absolute; top: 0; right: 0; bottom: 0; left: 0; background: repeating-linear-gradient(180deg, rgba(15,15,18,0.16) 0 2px, transparent 2px 4px); animation: rl-scintille 3.2s steps(2) infinite; pointer-events: none; }"

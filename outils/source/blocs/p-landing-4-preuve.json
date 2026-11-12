@@ -1,0 +1,179 @@
+{
+ "cle": "p-landing-4-preuve",
+ "titre": "Rolling · Landing · 00:03 Preuve sociale",
+ "type": "e-flexbox",
+ "composition": {
+  "xml_structure": "<e-flexbox configuration-id=\"Landing · preuve sociale\"><e-flexbox configuration-id=\"Landing · preuve · contenu\"><e-flexbox configuration-id=\"Landing · preuve · en-tête\"><e-flexbox configuration-id=\"Landing · preuve · repère\"><e-paragraph configuration-id=\"Landing · preuve · timecode\"></e-paragraph><e-paragraph configuration-id=\"Landing · preuve · sur-titre\"></e-paragraph></e-flexbox><e-heading configuration-id=\"Landing · preuve · titre\"></e-heading></e-flexbox><e-flexbox configuration-id=\"Landing · chiffres\"><e-flexbox configuration-id=\"Chiffre · Landing · ans\"><e-flexbox configuration-id=\"Landing · ans · nombre\"><e-image configuration-id=\"Landing · ans · chiffre 1\"></e-image><e-image configuration-id=\"Landing · ans · chiffre 2\"></e-image><e-paragraph configuration-id=\"Landing · ans · valeur lue\"></e-paragraph></e-flexbox><e-paragraph configuration-id=\"Landing · ans · libellé\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Chiffre · Landing · entreprises\"><e-flexbox configuration-id=\"Landing · entreprises · nombre\"><e-image configuration-id=\"Landing · entreprises · chiffre 1\"></e-image><e-image configuration-id=\"Landing · entreprises · chiffre 2\"></e-image><e-image configuration-id=\"Landing · entreprises · chiffre 3\"></e-image><e-image configuration-id=\"Landing · entreprises · chiffre 4\"></e-image><e-paragraph configuration-id=\"Landing · entreprises · valeur lue\"></e-paragraph></e-flexbox><e-paragraph configuration-id=\"Landing · entreprises · libellé\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Chiffre · Landing · studio\"><e-flexbox configuration-id=\"Landing · studio · nombre\"><e-image configuration-id=\"Landing · studio · chiffre 1\"></e-image><e-paragraph configuration-id=\"Landing · studio · valeur lue\"></e-paragraph></e-flexbox><e-paragraph configuration-id=\"Landing · studio · libellé\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Chiffre · Landing · plateforme\"><e-flexbox configuration-id=\"Landing · plateforme · nombre\"><e-image configuration-id=\"Landing · plateforme · chiffre 1\"></e-image><e-paragraph configuration-id=\"Landing · plateforme · valeur lue\"></e-paragraph></e-flexbox><e-paragraph configuration-id=\"Landing · plateforme · libellé\"></e-paragraph></e-flexbox></e-flexbox><e-paragraph configuration-id=\"Landing · témoignages\"></e-paragraph></e-flexbox></e-flexbox>",
+  "element_config": {
+   "Landing · preuve sociale": {
+    "tag": "section"
+   },
+   "Landing · preuve · timecode": {
+    "paragraph": "00:03"
+   },
+   "Landing · preuve · sur-titre": {
+    "paragraph": "Ils nous font confiance"
+   },
+   "Landing · preuve · titre": {
+    "tag": "h2",
+    "title": "Née chez <em>Pitchy.</em>"
+   },
+   "Landing · ans · chiffre 1": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/chiffre-1.webp"
+     },
+     "size": "medium"
+    }
+   },
+   "Landing · ans · chiffre 2": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/chiffre-3.webp"
+     },
+     "size": "medium"
+    }
+   },
+   "Landing · ans · valeur lue": {
+    "paragraph": "13"
+   },
+   "Landing · ans · libellé": {
+    "paragraph": "ans de vidéo pour les entreprises"
+   },
+   "Landing · entreprises · chiffre 1": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/chiffre-5.webp"
+     },
+     "size": "medium"
+    }
+   },
+   "Landing · entreprises · chiffre 2": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/chiffre-0.webp"
+     },
+     "size": "medium"
+    }
+   },
+   "Landing · entreprises · chiffre 3": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/chiffre-0.webp"
+     },
+     "size": "medium"
+    }
+   },
+   "Landing · entreprises · chiffre 4": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/chiffre-plus.webp"
+     },
+     "size": "medium"
+    }
+   },
+   "Landing · entreprises · valeur lue": {
+    "paragraph": "500+"
+   },
+   "Landing · entreprises · libellé": {
+    "paragraph": "grandes entreprises équipées"
+   },
+   "Landing · studio · chiffre 1": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/chiffre-1.webp"
+     },
+     "size": "medium"
+    }
+   },
+   "Landing · studio · valeur lue": {
+    "paragraph": "1"
+   },
+   "Landing · studio · libellé": {
+    "paragraph": "studio motion &amp; tournage intégré"
+   },
+   "Landing · plateforme · chiffre 1": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/chiffre-1.webp"
+     },
+     "size": "medium"
+    }
+   },
+   "Landing · plateforme · valeur lue": {
+    "paragraph": "1"
+   },
+   "Landing · plateforme · libellé": {
+    "paragraph": "plateforme de production propriétaire"
+   },
+   "Landing · témoignages": {
+    "paragraph": "⟦widget:rolling-liste|contenu=temoignages|nombre=3|classe=grille-3|une_auto=⟧"
+   }
+  },
+  "classes": {
+   "Landing · preuve sociale": [
+    "section",
+    "section-chaude"
+   ],
+   "Landing · preuve · contenu": [
+    "conteneur"
+   ],
+   "Landing · preuve · en-tête": [
+    "entete-section"
+   ],
+   "Landing · preuve · repère": [
+    "sur-titre"
+   ],
+   "Landing · preuve · timecode": [
+    "timecode"
+   ],
+   "Landing · preuve · titre": [
+    "titre-md"
+   ],
+   "Landing · chiffres": [
+    "plaque-chiffres"
+   ],
+   "Landing · ans · nombre": [
+    "chiffre-verre"
+   ],
+   "Landing · ans · valeur lue": [
+    "texte-masque"
+   ],
+   "Landing · ans · libellé": [
+    "libelle-chiffre"
+   ],
+   "Landing · entreprises · nombre": [
+    "chiffre-verre"
+   ],
+   "Landing · entreprises · valeur lue": [
+    "texte-masque"
+   ],
+   "Landing · entreprises · libellé": [
+    "libelle-chiffre"
+   ],
+   "Landing · studio · nombre": [
+    "chiffre-verre"
+   ],
+   "Landing · studio · valeur lue": [
+    "texte-masque"
+   ],
+   "Landing · studio · libellé": [
+    "libelle-chiffre"
+   ],
+   "Landing · plateforme · nombre": [
+    "chiffre-verre"
+   ],
+   "Landing · plateforme · valeur lue": [
+    "texte-masque"
+   ],
+   "Landing · plateforme · libellé": [
+    "libelle-chiffre"
+   ]
+  },
+  "style": {
+   "Landing · preuve · contenu": "display: flex; flex-direction: column; gap: 0;",
+   "Landing · chiffres": "margin-bottom: 28px;"
+  }
+ },
+ "brut": {}
+}
