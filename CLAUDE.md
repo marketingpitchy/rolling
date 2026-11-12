@@ -223,6 +223,15 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   `@media (min-width: 981px)` : cadres fins 6 px, rotations par nth-last-child, `rl-flotte` décalé) ; positions locales
   des 4 vignettes revues (Visuels max 560 px centré, 630 px de haut ; Tournage 380 px en 16:10, Interview / Motion 190 px).
   Leçon : `margin-inline` et `max-width: none` sont ignorés par le convertisseur ⇒ `margin: 0 auto`, `max-width: 100%`.
+- **0.4.6** : flèche « Vos contenus & vos briefs » raccourcie (52 px, ne croise plus le cercle de l'image) ; pointillés
+  animés (`rl-pointilles` : couche de tirets en `repeat-y` + `content-box` avec `padding-bottom: 4px`, la pointe reste en bas)
+  sur pilule-flux, colonne-flux, suite-fleche ; `halos-offre` recalés dans la section (top / bottom 0 : plus de halo coupé
+  aux jonctions 00:06/00:07/00:08) ; pied de page : fond qui part de #0F0F12 (comme l'appel final), plus de filet, halo
+  déplacé en bas à droite. Illustrations capturées : ombres coupées net au bord ⇒ `outils/adoucir-bords.py` (rampe de
+  transparence sur les bords encore visibles) ; l'installateur **remplace le fichier des images de départ** quand celle du
+  thème change (`rafraichir_media` : même pièce jointe, nouveau nom `<base>-<md5 8>`, ancien fichier gardé ; jamais si la
+  cliente a mis un autre fichier). Écran « Votre vidéo » : l'image de fond se change par le Navigateur (« Écran · image de fond »).
+  page-essai avec toutes les clés plante (modèles de cartes) ⇒ passer la liste des blocs de l'accueil.
 - **Chargement de page effet film** (demande avant la fin de la livraison 4) : maquette `maquettes/loading/maquette-loading.html`
   (copie /workspace/maquette-loading.html), 4 options : A amorce 3-2-1, B clap qui se ferme puis rideau, C ouverture
   cinéma (bandes noires + REC + timecode + règle avec la tête de lecture rouge des frises, plus de filet fin), D barre de lecture en haut sans écran. Conseil : C à l'arrivée (première page

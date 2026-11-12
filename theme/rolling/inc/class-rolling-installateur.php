@@ -444,13 +444,14 @@ class Rolling_Installateur {
 		foreach ( $medias as $media ) {
 			$cle = $media['cle'];
 
-			if ( isset( $suivi[ $cle ] ) && get_post( $suivi[ $cle ] ) ) {
-				continue;
-			}
-
 			$fichier = ROLLING_DIR . '/assets/medias/' . $media['fichier'];
 
 			if ( ! is_readable( $fichier ) ) {
+				continue;
+			}
+
+			if ( isset( $suivi[ $cle ] ) && get_post( $suivi[ $cle ] ) ) {
+				self::rafraichir_media( (int) $suivi[ $cle ], $fichier );
 				continue;
 			}
 
@@ -479,6 +480,41 @@ class Rolling_Installateur {
 		update_option( self::OPTION_MEDIAS, $suivi, false );
 
 		return $suivi;
+	}
+
+	/**
+	 * Remplace le fichier d'une image de départ quand le thème en livre une nouvelle version (même pièce jointe :
+	 * les pages qui l'utilisent sont corrigées sans rien toucher). Nouveau nom de fichier pour passer outre les caches.
+	 * Une image remplacée par la cliente dans la médiathèque (autre nom de fichier) n'est jamais touchée.
+	 *
+	 * @param int    $id     Pièce jointe.
+	 * @param string $source Fichier du thème.
+	 */
+	private static function rafraichir_media( $id, $source ) {
+		$actuel = function_exists( 'wp_get_original_image_path' ) ? wp_get_original_image_path( $id ) : get_attached_file( $id );
+		if ( ! $actuel || ! is_readable( $actuel ) ) {
+			return;
+		}
+
+		$empreinte = md5_file( $source );
+		if ( md5_file( $actuel ) === $empreinte ) {
+			return;
+		}
+
+		$base = pathinfo( $source, PATHINFO_FILENAME );
+		$nom  = pathinfo( $actuel, PATHINFO_FILENAME );
+		if ( 0 !== strpos( $nom, $base ) ) {
+			return;
+		}
+
+		$nouveau = trailingslashit( dirname( $actuel ) ) . $base . '-' . substr( $empreinte, 0, 8 ) . '.' . pathinfo( $source, PATHINFO_EXTENSION );
+		if ( ! copy( $source, $nouveau ) ) {
+			return;
+		}
+
+		// L'ancien fichier reste en place : une page qui aurait gardé son adresse s'affiche toujours.
+		update_attached_file( $id, $nouveau );
+		wp_update_attachment_metadata( $id, wp_generate_attachment_metadata( $id, $nouveau ) );
 	}
 
 	// Blocs et modèles (Modèles > Mes modèles).

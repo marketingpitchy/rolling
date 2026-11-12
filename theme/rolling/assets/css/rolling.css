@@ -29,6 +29,7 @@ img, svg, video { max-width: 100%; }
 @property --rl-angle { syntax: "<angle>"; inherits: false; initial-value: 0deg; }
 @keyframes rl-anneau { to { --rl-angle: 360deg; } }
 @property --rl-s { syntax: "<integer>"; inherits: false; initial-value: 1; }
+@keyframes rl-pointilles { from { background-position: center bottom, center 0; } to { background-position: center bottom, center 12px; } }
 @keyframes rl-plan-hero { 0% { opacity: 0; } 3%, 25% { opacity: 1; } 28%, 100% { opacity: 0; } }
 @keyframes rl-stories-hero { from { background-size: 0% 100%, auto; } to { background-size: 100% 100%, auto; } }
 @keyframes rl-secondes-hero { from { --rl-s: 0; } to { --rl-s: 12; } }
@@ -110,8 +111,8 @@ body.elementor-editor-active #rl-ecran[data-rl-langue="fr"] #rl-version-fr, body
 /* ---------------------------------------------------------------- */
 /* Pied de page du thème                                             */
 /* ---------------------------------------------------------------- */
-.rl-pied { position: relative; overflow: hidden; background: linear-gradient(180deg, #17112C 0%, #0F0F12 60%); color: #FAF9F7; border-top: 1px solid rgba(255,255,255,0.08); --rl-focus: #C4B5FD; }
-.rl-pied::before { content: ''; position: absolute; width: 760px; height: 760px; right: -280px; top: -420px; border-radius: 50%; background: radial-gradient(closest-side, rgba(139,92,246,0.28), rgba(255,138,91,0.12) 55%, transparent 100%); pointer-events: none; }
+.rl-pied { position: relative; overflow: hidden; background: linear-gradient(180deg, #0F0F12 0%, #141022 55%, #0F0F12 100%); color: #FAF9F7; --rl-focus: #C4B5FD; }
+.rl-pied::before { content: ''; position: absolute; width: 760px; height: 760px; right: -280px; bottom: -460px; border-radius: 50%; background: radial-gradient(closest-side, rgba(139,92,246,0.28), rgba(255,138,91,0.12) 55%, transparent 100%); pointer-events: none; }
 .rl-pied__conteneur { position: relative; box-sizing: border-box; max-width: 1240px; margin: 0 auto; padding: 0 28px; }
 .rl-pied p, .rl-pied li { margin: 0; font-size: 15px; line-height: 1.6; color: #B6B0CC; }
 .rl-pied ul { margin: 0; padding: 0; list-style: none; }
