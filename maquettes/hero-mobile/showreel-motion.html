@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Motion, frise et showreel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Caveat:wght@700&family=Hanken+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root { --encre: #0F0F12; --paragraphe: #4A4858; --discret: #6E6B7B; --surface: #FAF9F7; --violet: #5B3BEA; --orange: #E0562A; }
+@property --n { syntax: '<integer>'; initial-value: 0; inherits: false; }
+@property --s { syntax: '<integer>'; initial-value: 0; inherits: false; }
+@property --f { syntax: '<integer>'; initial-value: 0; inherits: false; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: "Hanken Grotesk", system-ui, sans-serif; color: var(--encre); background: var(--surface); line-height: 1.6; }
+main { max-width: 1240px; margin: 0 auto; padding: 56px 16px 120px; }
+h1 { font-family: "Bricolage Grotesque"; font-weight: 650; font-size: clamp(32px, 4vw, 52px); letter-spacing: -.05em; line-height: 1.06; }
+h1 em, h2 em { font-style: normal; background: linear-gradient(90deg, #5B3BEA, #B5459E 55%, #EC5E2B); -webkit-background-clip: text; background-clip: text; color: transparent; padding: 0 .06em; margin: 0 -.06em; }
+h2.partie { margin-top: 88px; font-family: "Bricolage Grotesque"; font-weight: 650; font-size: clamp(28px, 3vw, 40px); letter-spacing: -.045em; line-height: 1.1; }
+.intro { margin-top: 16px; max-width: 800px; font-size: 18px; color: var(--paragraphe); }
+.regles { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+.regles span { padding: 6px 14px; border-radius: 999px; font-size: 14px; font-weight: 600; background: #fff; box-shadow: inset 0 0 0 1px rgba(15,15,18,.1); }
+.options { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(390px, 100%), 1fr)); gap: 40px 28px; margin-top: 36px; }
+.option h3 { font-family: "Bricolage Grotesque"; font-weight: 650; font-size: 24px; letter-spacing: -.035em; line-height: 1.2; }
+.lettre { display: inline-flex; align-items: center; justify-content: center; min-width: 30px; height: 30px; padding: 0 8px; margin-right: 8px; border-radius: 999px; font-size: 14px; color: #fff; background: linear-gradient(140deg, #5B3BEA, #8E4DE6); vertical-align: 3px; }
+.conseil h3::after, .conseil > .titre-option::after { content: "Notre conseil"; margin-left: 10px; padding: 3px 10px; border-radius: 999px; font: 700 12px "Hanken Grotesk"; letter-spacing: .06em; text-transform: uppercase; color: #fff; background: var(--orange); vertical-align: 4px; }
+.desc { margin-top: 8px; font-size: 16px; color: var(--paragraphe); }
+.annot { margin-top: 14px; font-size: 14px; color: var(--paragraphe); }
+.annot li { margin: 4px 0 0 18px; }
+.outils { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+button.btn { cursor: pointer; border: 0; padding: 9px 16px; border-radius: 999px; font: 700 14px "Hanken Grotesk"; background: #fff; color: var(--encre); box-shadow: inset 0 0 0 1px rgba(15,15,18,.12); }
+button.btn[aria-pressed="true"] { background: var(--encre); color: #fff; }
+button.btn:focus-visible { outline: 3px solid var(--violet); outline-offset: 2px; }
+
+/* ---------- Téléphone + écran de montage ---------- */
+.tel { width: 390px; max-width: 100%; margin-top: 18px; border-radius: 44px; padding: 10px; background: #111; box-shadow: 0 30px 60px -30px rgba(30,20,80,.45); }
+.ecran-tel { position: relative; overflow: hidden; border-radius: 36px; background: var(--surface); padding: 22px 20px 26px; }
+.ecran-tel::before { content: ""; position: absolute; inset: 0; background: radial-gradient(60% 40% at 0% 0%, rgba(167,139,250,.3), transparent 70%), radial-gradient(55% 40% at 100% 10%, rgba(255,138,91,.25), transparent 70%); pointer-events: none; }
+.mini-texte { position: relative; font-size: 13px; color: var(--discret); }
+.mini-texte b { display: block; font: 650 24px/1.05 "Bricolage Grotesque"; letter-spacing: -.05em; color: var(--encre); margin-bottom: 6px; }
+.mini-texte b .h { color: #D9531F; } .mini-texte b .i { color: var(--violet); }
+.visuel { position: relative; margin-top: 18px; }
+.moniteur { position: relative; border-radius: 26px; padding: 9px; background: rgba(255,255,255,.92); box-shadow: 0 22px 40px -18px rgba(40,20,120,.45); }
+.moniteur .zone { position: relative; height: 290px; border-radius: 19px; overflow: hidden; background: #16112C; }
+.plan { position: absolute; inset: 0; background: center / cover no-repeat; opacity: 0; animation: plan 12s infinite; }
+.plan:nth-child(1) { background-image: url(hero-mobile-imgs/hero-tournage.jpg); opacity: 1; }
+.plan:nth-child(2) { background-image: url(hero-mobile-imgs/hero-interview.jpg); background-position: 35% center; animation-delay: 3s; }
+.plan:nth-child(3) { background-image: url(hero-mobile-imgs/hero-demo-produit.jpg); background-position: center 40%; animation-delay: 6s; }
+.plan:nth-child(4) { animation-delay: 9s; }
+@keyframes plan { 0% { opacity: 0; } 3%, 25% { opacity: 1; } 28%, 100% { opacity: 0; } }
+.fige .plan { animation: none; opacity: 0; } .fige .plan:nth-child(4) { opacity: 1; }
+.fige .tc-s { animation-play-state: paused; }
+.fige .f1 .tete { animation: none; left: 88%; } .fige .f1 .clip { animation: none; } .fige .f1 .clip.k4 { opacity: 1; box-shadow: inset 0 0 0 2px rgba(255,255,255,.85); }
+.fige .seg i { animation: none; width: 100%; } .fige .seg:nth-child(4) i { width: 40%; }
+.etiquette { position: absolute; z-index: 3; top: 10px; left: 10px; display: inline-flex; align-items: center; gap: 6px; padding: 3px 9px; border-radius: 999px; font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: #fff; background: rgba(22,14,52,.66); }
+.etiquette::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: #FF4D4D; }
+.plaque { position: absolute; z-index: 3; left: 10px; right: 10px; bottom: 10px; display: flex; justify-content: space-between; align-items: center; padding: 8px 12px; border-radius: 14px; font: 700 14px/1.15 "Hanken Grotesk"; color: #fff; background: rgba(22,14,52,.62); }
+.plaque.claire { color: #2A1206; background: rgba(255,255,255,.62); } .plaque.claire em { font-style: normal; color: var(--violet); }
+.plaque .play { width: 22px; height: 22px; border-radius: 50%; background: rgba(255,255,255,.75); position: relative; }
+.plaque .play::after { content: ""; position: absolute; left: 8px; top: 6px; border-left: 8px solid #E0562A; border-top: 5px solid transparent; border-bottom: 5px solid transparent; }
+
+/* M1 : graphique animé */
+.m1 { background: radial-gradient(120% 120% at 15% 0%, #FFE6D8 0%, #FFC2A0 30%, #FF8A5B 64%, #E0562A 100%); }
+.m1 .grille { position: absolute; inset: 44px 16px 60px; background: linear-gradient(rgba(255,255,255,.35) 1px, transparent 1px) 0 0 / 100% 25%; border-bottom: 1px solid rgba(255,255,255,.6); }
+.m1 .chiffre { display: flex; flex-direction: column-reverse; position: absolute; left: 18px; top: 48px; font: 700 54px/1 "Bricolage Grotesque"; letter-spacing: -.05em; color: #fff; text-shadow: 0 6px 18px rgba(166,60,20,.35); animation: compte 3s ease-out infinite; counter-reset: n var(--n); }
+.m1 .chiffre::after { content: "+" counter(n) "%"; }
+.m1 .chiffre small { display: block; margin-top: 6px; font: 700 13px "Hanken Grotesk"; letter-spacing: 0; color: rgba(42,18,6,.8); text-shadow: none; }
+@keyframes compte { 0% { --n: 0; } 45%, 100% { --n: 87; } }
+.m1 .barres { position: absolute; right: 22px; bottom: 62px; display: flex; align-items: flex-end; gap: 7px; height: 120px; }
+.m1 .barres i { width: 18px; border-radius: 5px 5px 0 0; background: rgba(255,255,255,.75); transform-origin: bottom; animation: monte 3s cubic-bezier(.2,.9,.2,1) infinite; }
+.m1 .barres i:nth-child(1) { height: 34%; } .m1 .barres i:nth-child(2) { height: 52%; animation-delay: .12s; } .m1 .barres i:nth-child(3) { height: 70%; animation-delay: .24s; } .m1 .barres i:nth-child(4) { height: 100%; background: #0F0F12; animation-delay: .36s; }
+@keyframes monte { 0% { transform: scaleY(0); } 35%, 100% { transform: scaleY(1); } }
+.m1 svg { position: absolute; left: 14px; right: 14px; bottom: 60px; width: calc(100% - 28px); height: 120px; overflow: visible; }
+.m1 svg path { fill: none; stroke: #fff; stroke-width: 3; stroke-linecap: round; stroke-dasharray: 400; animation: trace 3s ease-out infinite; filter: drop-shadow(0 3px 6px rgba(166,60,20,.4)); }
+.m1 svg circle { fill: #fff; animation: point 3s ease-out infinite; }
+@keyframes trace { 0% { stroke-dashoffset: 400; } 55%, 100% { stroke-dashoffset: 0; } }
+@keyframes point { 0%, 50% { opacity: 0; transform: scale(0); } 60%, 100% { opacity: 1; transform: scale(1); } }
+.m1 svg circle { transform-box: fill-box; transform-origin: center; }
+
+/* M2 : formes en mouvement */
+.m2 { background: #FFF1E7; }
+.m2 .forme { position: absolute; }
+.m2 .rond { width: 92px; height: 92px; border-radius: 50%; left: 18px; top: 52px; background: radial-gradient(circle at 35% 30%, #fff, #FFD1BF 55%, #FF8A5B); animation: rebond 3s cubic-bezier(.3,0,.3,1) infinite; }
+.m2 .carre { width: 74px; height: 74px; border-radius: 20px; right: 34px; top: 46px; background: linear-gradient(140deg, #5B3BEA, #8E4DE6); animation: tourne 3s cubic-bezier(.6,0,.2,1) infinite; }
+.m2 .tri { width: 0; height: 0; left: 140px; top: 130px; border-left: 34px solid transparent; border-right: 34px solid transparent; border-bottom: 58px solid #3434E0; animation: tombe 3s cubic-bezier(.3,1.4,.5,1) infinite; }
+.m2 .pilule { height: 22px; border-radius: 999px; left: 18px; bottom: 74px; background: #E0562A; animation: allonge 3s cubic-bezier(.2,.9,.2,1) infinite; }
+.m2 .mot { position: absolute; left: 18px; bottom: 102px; font: 700 26px/1 "Bricolage Grotesque"; letter-spacing: -.05em; color: #0F0F12; animation: mot 3s ease-out infinite; }
+@keyframes rebond { 0% { transform: translateY(-120px); } 25% { transform: translateY(0); } 35% { transform: translateY(-26px); } 45%, 100% { transform: translateY(0); } }
+@keyframes tourne { 0% { transform: rotate(-90deg) scale(0); } 40%, 100% { transform: rotate(0) scale(1); } }
+@keyframes tombe { 0%, 15% { transform: translateY(-180px); } 45%, 100% { transform: translateY(0); } }
+@keyframes allonge { 0%, 20% { width: 0; } 55%, 100% { width: 190px; } }
+@keyframes mot { 0%, 35% { opacity: 0; transform: translateY(14px); } 55%, 100% { opacity: 1; transform: none; } }
+
+/* Ancienne vignette (pour comparer) */
+.m0 { background: radial-gradient(120% 120% at 20% 10%, #FFE6D8 0%, #FFC2A0 30%, #FF8A5B 64%, #E0562A 100%); }
+.m0::before { content: ""; position: absolute; left: 22px; top: 60px; width: 70px; height: 70px; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #fff, #FFE3D6 60%, #F8B79C); }
+.m0::after { content: ""; position: absolute; right: 20px; top: 50px; width: 90px; height: 80px; background: linear-gradient(#0F0F12, #0F0F12) right bottom / 16px 100% no-repeat, linear-gradient(rgba(255,255,255,.75), rgba(255,255,255,.75)) 48px bottom / 16px 74% no-repeat, linear-gradient(rgba(255,255,255,.6), rgba(255,255,255,.6)) 24px bottom / 16px 56% no-repeat, linear-gradient(rgba(255,255,255,.6), rgba(255,255,255,.6)) left bottom / 16px 38% no-repeat; }
+
+/* F1 : pistes de montage */
+.f1 { position: relative; margin-top: 12px; padding: 10px 12px 12px; border-radius: 18px; background: #16112C; color: #fff; box-shadow: 0 16px 30px -18px rgba(22,14,52,.7); }
+.f1 .haut { display: flex; align-items: center; justify-content: space-between; font: 700 12px "Hanken Grotesk"; color: #C9C3DE; }
+.f1 .tc { font: 700 15px "Bricolage Grotesque"; letter-spacing: .02em; color: #fff; font-variant-numeric: tabular-nums; }
+.tc-s { animation: secondes 12s linear infinite, images 1s steps(25) infinite; counter-reset: s var(--s) f var(--f); }
+.tc-s::after { content: "00:" counter(s, decimal-leading-zero) ":" counter(f, decimal-leading-zero); }
+@keyframes secondes { from { --s: 0; } to { --s: 12; } }
+@keyframes images { from { --f: 0; } to { --f: 24; } }
+.f1 .rec { display: inline-flex; align-items: center; gap: 6px; } .f1 .rec::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: #FF3B30; animation: clig 1s steps(2) infinite; }
+@keyframes clig { 50% { opacity: .25; } }
+.f1 .regle { position: relative; margin-top: 8px; height: 16px; background: repeating-linear-gradient(90deg, rgba(255,255,255,.45) 0 1px, transparent 1px 100%) 0 100% / 8.333% 6px repeat-x, repeating-linear-gradient(90deg, rgba(255,255,255,.2) 0 1px, transparent 1px 100%) 0 100% / 2.083% 3px repeat-x; display: flex; justify-content: space-between; font: 700 12px/1 "Hanken Grotesk"; color: #B6B0CC; font-variant-numeric: tabular-nums; }
+.f1 .pistes { position: relative; margin-top: 4px; }
+.f1 .piste { display: grid; grid-template-columns: 22px repeat(4, 1fr); gap: 3px; align-items: center; margin-top: 4px; }
+.f1 .piste > b { font-size: 12px; color: #8F89A8; }
+.f1 .clip { position: relative; height: 26px; border-radius: 6px; padding: 0 6px; overflow: hidden; font: 700 12px/26px "Hanken Grotesk"; white-space: nowrap; text-overflow: ellipsis; color: #fff; opacity: .55; animation: actif 12s infinite; }
+.f1 .clip:nth-child(3) { animation-delay: 3s; } .f1 .clip:nth-child(4) { animation-delay: 6s; } .f1 .clip:nth-child(5) { animation-delay: 9s; }
+@keyframes actif { 0%, 25% { opacity: 1; box-shadow: inset 0 0 0 2px rgba(255,255,255,.85); } 26%, 100% { opacity: .55; box-shadow: none; } }
+.k1 { background: #5B3BEA; } .k2 { background: #8E4DE6; } .k3 { background: #3434E0; } .k4 { background: #E0562A; }
+.f1 .audio { grid-column: 2 / -1; height: 20px; border-radius: 6px; background: rgba(140,142,255,.18); position: relative; overflow: hidden; }
+.f1 .audio::after { content: ""; position: absolute; inset: 3px 4px; background: repeating-linear-gradient(90deg, #8C8EFF 0 2px, transparent 2px 4px); -webkit-mask: linear-gradient(transparent 0 0), radial-gradient(60% 50% at 20% 50%, #000 40%, transparent 70%), radial-gradient(50% 50% at 55% 50%, #000 30%, transparent 75%), radial-gradient(40% 50% at 85% 50%, #000 45%, transparent 70%); mask: radial-gradient(60% 50% at 20% 50%, #000 40%, transparent 70%), radial-gradient(50% 50% at 55% 50%, #000 30%, transparent 75%), radial-gradient(40% 50% at 85% 50%, #000 45%, transparent 70%); }
+.f1 .tete { position: absolute; z-index: 2; top: -22px; bottom: -2px; left: 25px; width: 12px; margin-left: -6px; animation: tete-f1 12s linear infinite; }
+.f1 .tete::before { content: ""; position: absolute; top: 0; left: 0; width: 12px; height: 12px; background: #FF3B30; clip-path: polygon(0 0, 100% 0, 100% 60%, 50% 100%, 0 60%); }
+.f1 .tete::after { content: ""; position: absolute; top: 11px; bottom: 0; left: 5px; width: 2px; background: #FF3B30; box-shadow: 0 0 8px rgba(255,59,48,.7); }
+@keyframes tete-f1 { from { left: 25px; } to { left: 100%; } }
+
+/* F2 : façon stories */
+.segs { position: absolute; z-index: 4; top: 8px; left: 10px; right: 10px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px; }
+.seg { height: 4px; border-radius: 4px; background: rgba(255,255,255,.35); overflow: hidden; }
+.seg i { display: block; height: 100%; width: 0; background: #fff; animation: 12s linear infinite; }
+.seg:nth-child(1) i { animation-name: s1; } .seg:nth-child(2) i { animation-name: s2; } .seg:nth-child(3) i { animation-name: s3; } .seg:nth-child(4) i { animation-name: s4; }
+@keyframes s1 { 0% { width: 0; } 25%, 100% { width: 100%; } }
+@keyframes s2 { 0%, 25% { width: 0; } 50%, 100% { width: 100%; } }
+@keyframes s3 { 0%, 50% { width: 0; } 75%, 100% { width: 100%; } }
+@keyframes s4 { 0%, 75% { width: 0; } 100% { width: 100%; } }
+.f2 .etiquette { top: 22px; }
+.f2 .zone { height: 360px; }
+.pilule-tc { position: absolute; z-index: 4; right: 10px; top: 22px; padding: 3px 9px; border-radius: 999px; font: 700 12px "Hanken Grotesk"; color: #fff; background: rgba(22,14,52,.66); font-variant-numeric: tabular-nums; }
+.pilule-tc .tc-s::after { content: "00:" counter(s, decimal-leading-zero) " / 00:12"; }
+.f2 .chapitres { display: flex; justify-content: space-between; margin-top: 10px; padding: 0 4px; font: 700 12px "Hanken Grotesk"; color: var(--discret); }
+
+/* ---------- Showreel ---------- */
+.scene { position: relative; margin-top: 18px; padding: 34px 28px 40px; border-radius: 30px; background: #F3F0EC; overflow: hidden; transition: max-width .3s; max-width: 100%; }
+.scene[data-taille="mobile"] { max-width: 390px; padding: 28px 16px 32px; }
+.note { position: absolute; right: 40px; top: 6px; font: 700 26px "Caveat"; color: #D9531F; }
+.scene[data-taille="mobile"] .note { display: none; }
+.cadre { position: relative; margin: 0 auto; padding: 8px; border-radius: 38px; background: rgba(255,255,255,.9); box-shadow: 0 40px 80px -40px rgba(60,30,140,.55); }
+.scene[data-taille="mobile"] .cadre { padding: 5px; border-radius: 26px; }
+.ecran { position: relative; aspect-ratio: 16 / 9; border-radius: 30px; overflow: hidden; background: #16112C url(hero-mobile-imgs/hero-tournage.jpg) center / cover no-repeat; }
+.scene[data-taille="mobile"] .ecran { border-radius: 21px; }
+.ecran::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(12,8,30,.5), transparent 30%, transparent 65%, rgba(12,8,30,.55)); }
+.son { position: absolute; z-index: 3; right: 16px; top: 16px; padding: 7px 14px; border-radius: 999px; font: 700 13px "Hanken Grotesk"; color: #fff; background: rgba(22,14,52,.62); }
+.lect { position: absolute; z-index: 3; left: 50%; top: 50%; width: 72px; height: 72px; margin: -36px 0 0 -36px; border-radius: 50%; background: rgba(255,255,255,.85); box-shadow: 0 0 0 10px rgba(255,255,255,.25); }
+.lect::after { content: ""; position: absolute; left: 29px; top: 23px; border-left: 20px solid #E0562A; border-top: 13px solid transparent; border-bottom: 13px solid transparent; }
+.scene[data-taille="mobile"] .lect { transform: scale(.7); }
+.rec-tc { position: absolute; z-index: 3; left: 16px; top: 16px; display: inline-flex; align-items: center; gap: 7px; padding: 5px 11px; border-radius: 999px; font: 700 13px "Hanken Grotesk"; color: #fff; background: rgba(22,14,52,.62); font-variant-numeric: tabular-nums; opacity: 0; }
+.rec-tc::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: #FF3B30; animation: clig 1s steps(2) infinite; }
+.rec-tc .tc-s::after { content: "00:00:" counter(s, decimal-leading-zero) ":" counter(f, decimal-leading-zero); }
+.boutons { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 24px; }
+.boutons span { padding: 12px 20px; border-radius: 999px; font-size: 14px; font-weight: 700; background: var(--encre); color: #fff; }
+.boutons span + span { background: #fff; color: var(--encre); }
+
+/* S1 : ouverture cinéma */
+.s1 .bande { position: absolute; z-index: 4; left: 0; right: 0; height: 50%; background: #0B0816; transform: none; }
+.s1 .bande.h { top: 0; } .s1 .bande.b { bottom: 0; }
+.s1 .bande.h::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 2px; background: linear-gradient(90deg, transparent, #FF8A5B, transparent); }
+.s1 .cadre { transform: scale(.94); opacity: .5; }
+.s1.joue .cadre { animation: s1-cadre .9s cubic-bezier(.2,.8,.2,1) forwards; }
+.s1.joue .bande.h { animation: s1-h .9s cubic-bezier(.7,0,.15,1) .25s forwards; }
+.s1.joue .bande.b { animation: s1-b .9s cubic-bezier(.7,0,.15,1) .25s forwards; }
+.s1.joue .rec-tc { animation: apparait .4s ease-out 1.05s forwards; }
+.s1.joue .rec-tc .tc-s { animation: secondes 12s linear 1.05s infinite, images 1s steps(25) infinite; }
+@keyframes s1-cadre { to { transform: none; opacity: 1; } }
+@keyframes s1-h { 0% { transform: none; } 45% { transform: translateY(-78%); } 100% { transform: translateY(-101%); } }
+@keyframes s1-b { 0% { transform: none; } 45% { transform: translateY(78%); } 100% { transform: translateY(101%); } }
+@keyframes apparait { to { opacity: 1; } }
+
+/* S2 : grandit au défilement */
+.s2 { padding: 0; }
+.s2 .defile { height: 560px; overflow-y: auto; padding: 0 28px; scrollbar-width: thin; }
+.scene[data-taille="mobile"].s2 .defile { padding: 0 16px; height: 620px; }
+.s2 .avant, .s2 .apres { height: 380px; display: flex; align-items: center; justify-content: center; text-align: center; font-size: 15px; color: var(--discret); }
+.s2 .avant b { display: block; font: 650 28px/1.1 "Bricolage Grotesque"; letter-spacing: -.04em; color: var(--encre); margin-bottom: 6px; }
+.s2 .cadre { width: var(--w, 70%); border-radius: var(--r, 46px); }
+.s2 .ecran { border-radius: calc(var(--r, 46px) - 8px); }
+.s2 .lect { transform: scale(var(--l, .8)); }
+.s2 .boutons { opacity: var(--o, 0); transform: translateY(calc((1 - var(--o, 0)) * 14px)); }
+.scene[data-taille="mobile"].s2 .cadre { margin-left: calc(var(--m, 0) * -16px); margin-right: calc(var(--m, 0) * -16px); }
+
+/* S3 : projecteur qui s'allume */
+.s3 .ecran { clip-path: inset(50% 0 50% 0 round 30px); background-color: #0B0816; }
+.s3 .cadre::before { content: ""; position: absolute; inset: 8px; border-radius: 30px; background: #0B0816; }
+.scene[data-taille="mobile"].s3 .cadre::before { inset: 5px; border-radius: 21px; }
+.s3 .lumiere { position: absolute; z-index: 5; left: 6%; right: 6%; top: 50%; height: 2px; margin-top: -1px; background: #fff; box-shadow: 0 0 18px 4px rgba(255,209,191,.9), 0 0 50px 10px rgba(139,92,246,.5); transform: scaleX(0); opacity: 0; }
+.s3 .son, .s3 .lect { opacity: 0; }
+.s3.joue .lumiere { animation: s3-l 1s cubic-bezier(.2,.8,.2,1) forwards; }
+.s3.joue .ecran { animation: s3-e .7s cubic-bezier(.6,0,.2,1) .45s forwards, s3-flash .5s steps(1) 1.1s; }
+.s3.joue .son, .s3.joue .lect, .s3.joue .rec-tc { animation: apparait .4s ease-out 1.3s forwards; }
+.s3.joue .rec-tc .tc-s { animation: secondes 12s linear 1.3s infinite, images 1s steps(25) infinite; }
+@keyframes s3-l { 0% { transform: scaleX(0); opacity: 1; } 40% { transform: scaleX(1); opacity: 1; } 70% { opacity: 1; } 100% { transform: scaleX(1); opacity: 0; } }
+@keyframes s3-e { to { clip-path: inset(0 0 0 0 round 30px); } }
+@keyframes s3-flash { 0% { filter: brightness(1.6); } 30% { filter: brightness(.8); } 60% { filter: brightness(1.2); } 100% { filter: none; } }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  .plan:nth-child(1) { opacity: 1; }
+  .s1 .bande { display: none; } .s1 .cadre { transform: none; opacity: 1; } .rec-tc, .s3 .son, .s3 .lect { opacity: 1; }
+  .s3 .ecran { clip-path: none; } .s3 .lumiere { display: none; }
+  .m1 .chiffre::after { content: "+87%"; }
+}
+</style>
+</head>
+<body>
+<main>
+  <h1>Motion design, frise <em>et showreel.</em></h1>
+  <p class="intro">Trois sujets : la vignette motion design du hero mobile (trop vide en grand), la frise sous l’écran de montage (trop simple), et l’arrivée du showreel. Choisissez une option par sujet, elles se combinent librement.</p>
+  <div class="regles"><span>Rien ne bouge avec « réduire les animations »</span><span>Rien ne bouge dans l’éditeur</span><span>Textes modifiables dans Elementor</span><span>Sans bibliothèque JavaScript</span></div>
+
+  <!-- ============ 1. Hero mobile ============ -->
+  <h2 class="partie">1. Hero mobile : la vignette motion design et la frise.</h2>
+  <p class="intro">Deux téléphones, deux combinaisons. Le bouton « Arrêter sur le motion design » fige l’écran sur la 4e vignette pour la regarder.</p>
+
+  <div class="options">
+    <section class="option conseil">
+      <h3><span class="lettre">M1 + F1</span>Graphique animé et pistes de montage</h3>
+      <p class="desc"><b>M1</b> : la vignette devient un vrai motion design. Le chiffre compte jusqu’à +87 %, la courbe se dessine et les barres montent, en boucle de 3 s.<br><b>F1</b> : la frise devient un logiciel de montage. Timecode qui défile, règle graduée, une piste vidéo avec le nom de chaque plan (le plan affiché s’allume), une piste son, la tête de lecture rouge.</p>
+      <div class="outils"><button class="btn" type="button" aria-pressed="false" data-fige="t1">Arrêter sur le motion design</button></div>
+      <div class="tel"><div class="ecran-tel" id="t1">
+        <p class="mini-texte"><b>Le meilleur <span class="h">de l’humain.</span><br>Le meilleur <span class="i">de l’IA.</span></b>… boutons et preuve au-dessus …</p>
+        <div class="visuel">
+          <div class="moniteur"><div class="zone">
+            <div class="plan"><span class="etiquette">Tournage</span></div>
+            <div class="plan"><span class="etiquette">Interview</span><span class="plaque">3 gestes qui sauvent <span class="play"></span></span></div>
+            <div class="plan"><span class="etiquette">Démo produit</span></div>
+            <div class="plan m1"><span class="etiquette">Motion design</span><span class="grille"></span>
+              <span class="chiffre"><small>de vues sur vos vidéos internes</small></span>
+              <svg viewBox="0 0 300 120" preserveAspectRatio="none" aria-hidden="true"><path d="M0 110 C 50 100, 80 95, 120 80 S 190 60, 220 40 S 270 20, 300 8"/><circle cx="300" cy="8" r="6"/></svg>
+              <span class="barres"><i></i><i></i><i></i><i></i></span>
+              <span class="plaque claire"><span>Résultats <em>2026</em></span><span class="play"></span></span>
+            </div>
+          </div></div>
+          <div class="f1">
+            <div class="haut"><span class="tc"><span class="tc-s"></span></span><span class="rec">REC</span></div>
+            <div class="regle"><span>00:00</span><span>00:03</span><span>00:06</span><span>00:09</span><span>00:12</span></div>
+            <div class="pistes">
+              <div class="piste"><b>V1</b><span class="clip k1">Tournage</span><span class="clip k2">Interview</span><span class="clip k3">Démo</span><span class="clip k4">Motion</span></div>
+              <div class="piste"><b>A1</b><span class="audio"></span></div>
+              <span class="tete"></span>
+            </div>
+          </div>
+        </div>
+      </div></div>
+      <ul class="annot"><li>Le chiffre et sa légende sont de vrais textes Elementor (« +87 % » se remplace par le vôtre).</li><li>Les noms des clips sont de vrais textes : renommez-les comme les vignettes.</li><li>Même univers que les frises de L’agence et des Offres.</li></ul>
+    </section>
+
+    <section class="option">
+      <h3><span class="lettre">M2 + F2</span>Formes en mouvement et barre façon stories</h3>
+      <p class="desc"><b>M2</b> : une petite animation de formes (rond qui rebondit, carré qui pivote, triangle qui tombe, trait qui s’allonge) puis le mot « Résultats 2026 ».<br><b>F2</b> : plus de frise sous l’écran. Des barres de progression en haut de l’image, comme les stories Instagram : le geste que tout le monde connaît sur mobile. L’écran gagne en hauteur.</p>
+      <div class="outils"><button class="btn" type="button" aria-pressed="false" data-fige="t2">Arrêter sur le motion design</button></div>
+      <div class="tel"><div class="ecran-tel f2" id="t2">
+        <p class="mini-texte"><b>Le meilleur <span class="h">de l’humain.</span><br>Le meilleur <span class="i">de l’IA.</span></b>… boutons et preuve au-dessus …</p>
+        <div class="visuel">
+          <div class="moniteur"><div class="zone">
+            <div class="plan"><span class="etiquette">Tournage</span></div>
+            <div class="plan"><span class="etiquette">Interview</span><span class="plaque">3 gestes qui sauvent <span class="play"></span></span></div>
+            <div class="plan"><span class="etiquette">Démo produit</span></div>
+            <div class="plan m2"><span class="etiquette">Motion design</span>
+              <span class="forme rond"></span><span class="forme carre"></span><span class="forme tri"></span>
+              <span class="mot">Résultats 2026</span><span class="forme pilule"></span>
+              <span class="plaque claire">Vos chiffres en motion <span class="play"></span></span>
+            </div>
+            <div class="segs"><span class="seg"><i></i></span><span class="seg"><i></i></span><span class="seg"><i></i></span><span class="seg"><i></i></span></div>
+            <span class="pilule-tc"><span class="tc-s"></span></span>
+          </div></div>
+          <div class="chapitres"><span>Tournage</span><span>Interview</span><span>Démo</span><span>Motion</span></div>
+        </div>
+      </div></div>
+      <ul class="annot"><li>Plus léger, plus « réseaux sociaux ».</li><li>Les noms sous l’écran sont facultatifs.</li><li>Les formes sont des décors (pas de texte dedans).</li></ul>
+    </section>
+  </div>
+
+  <!-- ============ 2. Showreel ============ -->
+  <h2 class="partie">2. L’arrivée du showreel.</h2>
+  <p class="intro">L’effet se joue une fois, quand le showreel entre dans l’écran. La vidéo n’est pas chargée avant (comme aujourd’hui). Boutons « Ordinateur / Mobile » pour voir les deux tailles, « Rejouer » pour revoir l’effet.</p>
+
+  <div class="options" style="grid-template-columns: 1fr;">
+    <section class="option">
+      <h3><span class="lettre">S1</span>Ouverture cinéma</h3>
+      <p class="desc">Deux bandes noires ferment l’image, puis s’ouvrent comme un rideau de salle de cinéma. Le cadre se pose, le voyant REC et le timecode démarrent. Même famille que l’écran de chargement que vous avez choisi.</p>
+      <div class="outils"><button class="btn" type="button" data-rejouer="s1">Rejouer</button><button class="btn" type="button" aria-pressed="true" data-taille="s1:ordi">Ordinateur</button><button class="btn" type="button" aria-pressed="false" data-taille="s1:mobile">Mobile</button></div>
+      <div class="scene s1" id="s1"><span class="note">ce que nous faisons, en vrai</span>
+        <div class="cadre"><div class="ecran"><span class="bande h"></span><span class="bande b"></span><span class="rec-tc"><span class="tc-s"></span></span><span class="son">Activer le son</span><span class="lect"></span></div></div>
+        <div class="boutons"><span>Réserver un échange →</span><span>Voir les offres</span></div>
+      </div>
+    </section>
+
+    <section class="option conseil">
+      <h3><span class="lettre">S2</span>La vidéo grandit au défilement</h3>
+      <p class="desc">Le showreel arrive en carte plus petite, puis grandit à mesure que vous descendez, jusqu’à sa pleine largeur (bord à bord sur mobile). Les boutons apparaissent à la fin. L’effet suit le doigt ou la molette : c’est le visiteur qui « lance » la vidéo. <b>Faites défiler dans le cadre gris.</b></p>
+      <div class="outils"><button class="btn" type="button" aria-pressed="true" data-taille="s2:ordi">Ordinateur</button><button class="btn" type="button" aria-pressed="false" data-taille="s2:mobile">Mobile</button></div>
+      <div class="scene s2" id="s2"><div class="defile">
+        <div class="avant"><div><b>Faites défiler ↓</b>(section précédente)</div></div>
+        <div class="cadre"><div class="ecran"><span class="son">Activer le son</span><span class="lect"></span></div></div>
+        <div class="boutons"><span>Réserver un échange →</span><span>Voir les offres</span></div>
+        <div class="apres">(section suivante)</div>
+      </div></div>
+    </section>
+
+    <section class="option">
+      <h3><span class="lettre">S3</span>Le projecteur s’allume</h3>
+      <p class="desc">Un trait de lumière apparaît au centre, s’étire, puis l’image s’ouvre depuis ce trait avec un léger scintillement, comme un projecteur qu’on allume. Le bouton son et le timecode arrivent ensuite.</p>
+      <div class="outils"><button class="btn" type="button" data-rejouer="s3">Rejouer</button><button class="btn" type="button" aria-pressed="true" data-taille="s3:ordi">Ordinateur</button><button class="btn" type="button" aria-pressed="false" data-taille="s3:mobile">Mobile</button></div>
+      <div class="scene s3" id="s3"><span class="note">ce que nous faisons, en vrai</span>
+        <div class="cadre"><span class="lumiere"></span><div class="ecran"><span class="rec-tc"><span class="tc-s"></span></span><span class="son">Activer le son</span><span class="lect"></span></div></div>
+        <div class="boutons"><span>Réserver un échange →</span><span>Voir les offres</span></div>
+      </div>
+    </section>
+  </div>
+  <ul class="annot"><li>S2 utilise l’animation « au défilement » des navigateurs récents (Chrome, Edge, Safari 26). Sur les autres, le showreel s’affiche directement en grand.</li><li>Dans le thème, l’effet se règle dans une classe : la retirer suffit à revenir au showreel actuel.</li></ul>
+</main>
+<script>
+// Figer sur la vignette motion design
+document.querySelectorAll('[data-fige]').forEach(b => b.addEventListener('click', () => {
+  const t = document.getElementById(b.dataset.fige); const on = b.getAttribute('aria-pressed') !== 'true';
+  b.setAttribute('aria-pressed', on); t.classList.toggle('fige', on);
+}));
+// Rejouer / jouer à l'entrée dans l'écran
+const jouer = s => { s.classList.remove('joue'); void s.offsetWidth; s.classList.add('joue'); };
+document.querySelectorAll('[data-rejouer]').forEach(b => b.addEventListener('click', () => jouer(document.getElementById(b.dataset.rejouer))));
+const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting && !e.target.classList.contains('joue')) jouer(e.target); }), { threshold: .45 });
+document.querySelectorAll('.s1, .s3').forEach(s => io.observe(s));
+// Ordinateur / mobile
+document.querySelectorAll('[data-taille]').forEach(b => b.addEventListener('click', () => {
+  const [id, t] = b.dataset.taille.split(':'); const s = document.getElementById(id);
+  s.dataset.taille = t === 'mobile' ? 'mobile' : '';
+  document.querySelectorAll('[data-taille^="' + id + ':"]').forEach(x => x.setAttribute('aria-pressed', x === b));
+  if (id !== 's2') jouer(s); else maj();
+}));
+// S2 : progression au défilement dans le cadre gris
+const d = document.querySelector('.s2 .defile'), c = document.querySelector('.s2 .cadre');
+function maj() {
+  const mob = document.getElementById('s2').dataset.taille === 'mobile';
+  const r = c.getBoundingClientRect(), z = d.getBoundingClientRect();
+  let p = (z.bottom - r.top) / (z.height * .75); p = Math.max(0, Math.min(1, p));
+  const s = c.style;
+  s.setProperty('--w', mob ? 'calc(' + (86 + 14 * p) + '% + ' + (32 * p) + 'px)' : (68 + 32 * p) + '%');
+  s.setProperty('--r', (mob ? 26 - 26 * p : 46 - 14 * p) + 'px');
+  s.setProperty('--m', mob ? p : 0);
+  s.setProperty('--l', .7 + .3 * p);
+  document.querySelector('.s2 .boutons').style.setProperty('--o', Math.max(0, (p - .8) / .2));
+}
+d.addEventListener('scroll', maj, { passive: true }); maj();
+</script>
+</body>
+</html>

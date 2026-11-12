@@ -199,6 +199,11 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   « Une agence vidéo née chez Pitchy. » ; title / description proposés pour Rank Math. Carte IA : `visages` ne rétrécit plus
   (avatars sur le titre sous 1440 px). Landing : conteneur des logos en colonne (libellé à gauche des logos).
   Leçon : `F(nom, None, style)` sans flex-direction = ligne ⇒ toujours COLONNE si plusieurs enfants empilés.
+- **Maquette « Motion, frise et showreel »** (`maquettes/hero-mobile/showreel-motion.html`, copie /workspace, **à valider**) :
+  vignette motion du hero mobile jugée vide + frise « simplette » ⇒ M1 graphique animé (+87 % qui compte, courbe, barres) /
+  M2 formes en mouvement ; F1 pistes de montage (timecode, règle, piste V1 avec noms des plans, piste son, tête de lecture)
+  / F2 barres façon stories en haut de l'image ; conseil M1 + F1. Arrivée du showreel : S1 ouverture cinéma (bandes noires),
+  S2 grandit au défilement (animation-timeline, conseil), S3 projecteur qui s'allume.
 - **Chargement de page effet film** (demande avant la fin de la livraison 4) : maquette `maquettes/loading/maquette-loading.html`
   (copie /workspace/maquette-loading.html), 4 options : A amorce 3-2-1, B clap qui se ferme puis rideau, C ouverture
   cinéma (bandes noires + REC + timecode + règle avec la tête de lecture rouge des frises, plus de filet fin), D barre de lecture en haut sans écran. Conseil : C à l'arrivée (première page
