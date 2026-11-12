@@ -3,10 +3,14 @@
  "titre": "Rolling · Réalisations · Liste",
  "type": "e-flexbox",
  "composition": {
-  "xml_structure": "<e-flexbox configuration-id=\"Réalisations · liste\"><e-flexbox configuration-id=\"Réalisations · liste · contenu\"><e-paragraph configuration-id=\"Réalisations · cartes\"></e-paragraph><e-flexbox configuration-id=\"Réalisations · appel\"><e-paragraph configuration-id=\"Réalisations · appel · texte\"></e-paragraph><e-button configuration-id=\"Réalisations · appel · bouton\"></e-button></e-flexbox></e-flexbox></e-flexbox>",
+  "xml_structure": "<e-flexbox configuration-id=\"Réalisations · liste\"><e-flexbox configuration-id=\"Réalisations · liste · contenu\"><e-heading configuration-id=\"Réalisations · liste · titre masqué\"></e-heading><e-paragraph configuration-id=\"Réalisations · cartes\"></e-paragraph><e-flexbox configuration-id=\"Réalisations · appel\"><e-paragraph configuration-id=\"Réalisations · appel · texte\"></e-paragraph><e-button configuration-id=\"Réalisations · appel · bouton\"></e-button></e-flexbox></e-flexbox></e-flexbox>",
   "element_config": {
    "Réalisations · liste": {
     "tag": "section"
+   },
+   "Réalisations · liste · titre masqué": {
+    "tag": "h2",
+    "title": "Toutes nos réalisations vidéo"
    },
    "Réalisations · cartes": {
     "paragraph": "⟦widget:rolling-liste|contenu=realisations|classe=grille-3|filtres=both|tous=Toutes|plus=yes|plus_texte=Réalisations suivantes⟧"
@@ -28,6 +32,9 @@
    ],
    "Réalisations · liste · contenu": [
     "conteneur"
+   ],
+   "Réalisations · liste · titre masqué": [
+    "texte-masque"
    ],
    "Réalisations · appel": [
     "carte-verre",

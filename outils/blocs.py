@@ -1142,6 +1142,7 @@ rea_haut = haut_page('Réalisations · haut', 'Réalisations', [], 'Nos réalisa
                      "Articles, modules de formation, événements, lancements : voici ce que nos clients nous ont confié, et ce que notre <strong>agence vidéo</strong> en a fait. Chaque vidéo indique son contenu de départ.",
                      note='ce que nous faisons, en vrai', largeur='880px')
 rea_liste = section_liste('Réalisations · liste', [
+    H('Réalisations · liste · titre masqué', 'Toutes nos réalisations vidéo', 'h2', ['texte-masque']),
     W('Réalisations · cartes', 'rolling-liste', contenu='realisations', classe='grille-3', filtres='both', tous='Toutes', plus='yes', plus_texte='Réalisations suivantes'),
 ], [appel_milieu('Réalisations · appel', 'Et avec vos contenus, <em>ça donnerait quoi&nbsp;?</em>', 'margin-top: 24px;')])
 
@@ -1160,6 +1161,7 @@ blog_liste = section_liste('Blog · liste', [
 guides_haut = haut_page('Guides · haut', 'Ressources · Guides', ['pastille-bleue'], 'Nos guides vidéo, <em>à télécharger.</em>',
                         'Méthodes, modèles et check-lists pour faire de la vidéo votre meilleur canal. Gratuits, prêts à partager avec vos équipes.')
 guides_liste = section_liste('Guides · liste', [
+    H('Guides · liste · titre masqué', 'Tous nos guides', 'h2', ['texte-masque']),
     W('Guides · cartes', 'rolling-liste', contenu='guides', classe='grille-3', filtres='rolling_theme', tous='Tous les guides', nombre='12', plus='yes', plus_texte='Voir plus de guides'),
 ])
 
@@ -1173,6 +1175,7 @@ webinars_liste = section_liste('Webinars · liste', [
 replays_haut = haut_page('Replays · haut', 'Ressources · Replays', ['pastille-bleue'], 'Nos webinars, <em>à revoir quand vous voulez.</em>',
                          'Tous nos rendez-vous en direct, disponibles en replay. Choisissez un thème, regardez à votre rythme.')
 replays_liste = section_liste('Replays · liste', [
+    H('Replays · liste · titre masqué', 'Tous nos replays', 'h2', ['texte-masque']),
     W('Replays · cartes', 'rolling-liste', contenu='replays', classe='grille-3', filtres='rolling_theme', tous='Tous les replays', nombre='12', plus='yes', plus_texte='Voir plus de replays'),
 ])
 

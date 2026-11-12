@@ -3,10 +3,14 @@
  "titre": "Rolling · Guides · Liste",
  "type": "e-flexbox",
  "composition": {
-  "xml_structure": "<e-flexbox configuration-id=\"Guides · liste\"><e-flexbox configuration-id=\"Guides · liste · contenu\"><e-paragraph configuration-id=\"Guides · cartes\"></e-paragraph></e-flexbox></e-flexbox>",
+  "xml_structure": "<e-flexbox configuration-id=\"Guides · liste\"><e-flexbox configuration-id=\"Guides · liste · contenu\"><e-heading configuration-id=\"Guides · liste · titre masqué\"></e-heading><e-paragraph configuration-id=\"Guides · cartes\"></e-paragraph></e-flexbox></e-flexbox>",
   "element_config": {
    "Guides · liste": {
     "tag": "section"
+   },
+   "Guides · liste · titre masqué": {
+    "tag": "h2",
+    "title": "Tous nos guides"
    },
    "Guides · cartes": {
     "paragraph": "⟦widget:rolling-liste|contenu=guides|classe=grille-3|filtres=rolling_theme|tous=Tous les guides|nombre=12|plus=yes|plus_texte=Voir plus de guides⟧"
@@ -19,6 +23,9 @@
    ],
    "Guides · liste · contenu": [
     "conteneur"
+   ],
+   "Guides · liste · titre masqué": [
+    "texte-masque"
    ]
   },
   "style": {

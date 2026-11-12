@@ -1541,17 +1541,17 @@
     {
      "label": "offres-ligne",
      "description": "Ligne du tableau : libellé, puis une case par formule (la 3e sur fond sombre).",
-     "css": "position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0, 1fr) 250px 262px; gap: 0; padding: 0 8px 0 0; & > * { display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 2px; padding: 9px 24px; font-family: Hanken Grotesk; font-size: 15.5px; line-height: 1.4; text-align: center; color: var(--encre); border-top: 1px solid rgba(15,15,18,0.07); } & > :first-child { align-items: flex-start; padding-left: 36px; text-align: left; } & > :nth-child(3) { color: #ECE8F7; border-top-color: rgba(255,255,255,0.08); --rl-texte: #FFFFFF; --rl-legende: #B6B0CC; } @media(--mobile) { grid-template-columns: minmax(0, 1fr) 92px 96px; & > *, & > :first-child { padding: 10px; font-size: 14px; } }"
+     "css": "position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0, 1fr) 250px 262px; gap: 0; padding: 0 8px 0 0; & > * { display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 2px; padding: 9px 24px; font-family: Hanken Grotesk; font-size: 15.5px; line-height: 1.4; text-align: center; color: var(--encre); border-top: 1px solid rgba(15,15,18,0.07); } & > :nth-last-child(3) { align-items: flex-start; padding-left: 36px; text-align: left; } & > :last-child { color: #ECE8F7; border-top-color: rgba(255,255,255,0.08); --rl-texte: #FFFFFF; --rl-legende: #B6B0CC; } @media(--mobile) { grid-template-columns: minmax(0, 1fr) 92px 96px; & > *, & > :nth-last-child(3) { padding: 10px; font-size: 14px; } }"
     },
     {
      "label": "offres-groupe",
      "description": "Ligne de titre de groupe dans le tableau (avec offres-ligne) : une seule case, dans la première colonne.",
-     "css": "& > * { padding-top: 26px; padding-bottom: 6px; border-top: 0; }"
+     "css": "& > * { align-items: flex-start; padding-top: 26px; padding-bottom: 6px; padding-left: 36px; text-align: left; border-top: 0; } @media(--mobile) { & > * { padding-left: 10px; } }"
     },
     {
      "label": "offres-entete",
      "description": "Première ligne du tableau (avec offres-ligne) : titre, nom, prix et bouton de chaque formule.",
-     "css": "& > * { justify-content: flex-start; gap: 8px; padding-top: 34px; padding-bottom: 26px; border-top: 0; } & > :nth-child(3) { border-top: 0; }"
+     "css": "& > * { justify-content: flex-start; gap: 8px; padding-top: 34px; padding-bottom: 26px; border-top: 0; } & > :last-child { border-top: 0; }"
     },
     {
      "label": "offres-detail",
@@ -1701,7 +1701,7 @@
     {
      "label": "clap-grille",
      "description": "Cases du clap.",
-     "css": "display: grid; grid-template-columns: 1.6fr 0.7fr 1fr; gap: 0; padding: 0; & > * { display: flex; flex-direction: column; gap: 0; padding: 8px 14px 10px; } & > * + * { border-left: 1px solid rgba(255,255,255,0.14); }"
+     "css": "display: grid; grid-template-columns: 1.6fr 0.7fr 1fr; gap: 0; padding: 0; & > * { display: flex; flex-direction: column; gap: 0; padding: 8px 14px 10px; } & > :nth-last-child(-n+2) { border-left: 1px solid rgba(255,255,255,0.14); }"
     },
     {
      "label": "clap-champ",
@@ -1776,7 +1776,7 @@
     {
      "label": "comparatif-ligne",
      "description": "Ligne du comparatif : critère, 4 solutions, Rolling (mis en avant).",
-     "css": "display: grid; grid-template-columns: minmax(0, 1.5fr) repeat(4, minmax(0, 1fr)) minmax(0, 1.25fr); gap: 0; padding: 0; & > * { display: flex; flex-direction: column; justify-content: center; gap: 2px; padding: 14px 16px; font-family: Hanken Grotesk; font-size: 15px; line-height: 1.35; color: var(--paragraphe); border-top: 1px solid rgba(15,15,18,0.07); } & > :first-child { font-weight: 700; color: var(--encre); } & > :last-child { flex-direction: row; align-items: center; justify-content: flex-start; gap: 8px; font-weight: 700; color: #2A1A80; background: #EDE6FF; } @media(--tablet) { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); margin-top: 8px; border-radius: 18px; overflow: hidden; box-shadow: inset 0 0 0 1px rgba(15,15,18,0.08); & > * { padding: 10px 14px; font-size: 14px; } & > :first-child { grid-column: 1 / -1; border-top: 0; background: #FAF9F7; } & > :last-child { grid-column: 1 / -1; } }"
+     "css": "display: grid; grid-template-columns: minmax(0, 1.5fr) repeat(4, minmax(0, 1fr)) minmax(0, 1.25fr); gap: 0; padding: 0; & > * { display: flex; flex-direction: column; justify-content: center; gap: 2px; padding: 14px 16px; font-family: Hanken Grotesk; font-size: 15px; line-height: 1.35; color: var(--paragraphe); border-top: 1px solid rgba(15,15,18,0.07); } & > :nth-last-child(6) { font-weight: 700; color: var(--encre); } & > :last-child { flex-direction: row; align-items: center; justify-content: flex-start; gap: 8px; font-weight: 700; color: #2A1A80; background: #EDE6FF; } @media(--tablet) { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); margin-top: 8px; border-radius: 18px; overflow: hidden; box-shadow: inset 0 0 0 1px rgba(15,15,18,0.08); & > * { padding: 10px 14px; font-size: 14px; } & > :nth-last-child(6) { grid-column: 1 / -1; border-top: 0; background: #FAF9F7; } & > :last-child { grid-column: 1 / -1; } }"
     },
     {
      "label": "comparatif-entete",
