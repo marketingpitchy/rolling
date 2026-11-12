@@ -112,9 +112,9 @@ CLASSES = [
 
     # Pages (livraison 4).
     ('carte-vide', "Message d'une liste vide (avec carte-verre) : centré (ex. « Pas de webinar programmé »).", 'align-items: center; gap: 14px; padding: 48px 28px; text-align: center; @media(--mobile) { padding: 36px 22px; }'),
-    ('texte-herite', "Texte qui reprend la police, la taille, la graisse et la couleur de son parent (ex. le titre H1 posé dans la pastille du hero).", 'margin: 0; font-family: inherit; font-size: inherit; font-weight: inherit; line-height: inherit; letter-spacing: inherit; color: inherit;'),
+    ('texte-herite', "Texte qui reprend la police, la taille, la graisse et la couleur de son parent (ex. le titre H1 posé dans la pastille du hero).", 'margin: 0;', 'font-family: inherit; font-size: inherit; font-weight: inherit; line-height: inherit; letter-spacing: inherit; color: inherit;'),
     ('hero-montage', "Visuels du hero en mobile (sous 768 px) : les vignettes s'enchaînent dans un seul cadre (3 s chacune, dans l'ordre), avec des barres de progression façon stories en haut et un timecode. Sans effet sur ordinateur et tablette.",
-     "@media(--mobile) { display: block; height: 400px; margin-top: 4px; margin-bottom: 30px; isolation: isolate; "
+     "@media(--mobile) { display: block; height: 400px; margin-top: 4px; isolation: isolate; "
      "&::before { " + RAZ + "content: '00:' counter(rl-s, decimal-leading-zero) ' / 00:12' / ''; position: absolute; top: 34px; right: 22px; bottom: auto; left: auto; z-index: 3; width: auto; height: auto; padding: 4px 9px; border-radius: 999px; pointer-events: none; "
      "font-family: Hanken Grotesk; font-size: 12px; line-height: 1; font-weight: 700; font-variant-numeric: tabular-nums; color: #FFFFFF; background: rgba(22,14,52,0.66); box-shadow: none; counter-reset: rl-s var(--rl-s); animation: rl-secondes-hero 12s linear infinite; } "
      "&::after { content: ''; position: absolute; top: 20px; right: 22px; left: 22px; z-index: 3; height: 4px; border-radius: 4px; pointer-events: none; "
@@ -123,8 +123,6 @@ CLASSES = [
      "& > .e-con { position: absolute; top: 0; right: 0; bottom: 0; left: 0; width: auto; align-self: stretch; justify-self: stretch; z-index: 1; opacity: 0; padding: 10px; border-radius: 30px; --rl-rayon-photo: 21px; --rl-marge-vignette: 10px; animation: rl-plan-hero 12s infinite; } "
      "& > .e-con:nth-last-child(4) { opacity: 1; } & > .e-con:nth-last-child(3) { animation-delay: 3s; } & > .e-con:nth-last-child(2) { animation-delay: 6s; } & > .e-con:nth-last-child(1) { animation-delay: 9s; } "
      "& > .e-con > .e-con { height: 100%; aspect-ratio: auto; } & .bandeau-video { top: 24px; } }"),
-    ('chapitres-hero', "Noms des plans sous l'écran du hero, en mobile seulement (un mot par plan, mis dans un span). Masqué sur ordinateur et tablette.",
-     "display: none; @media(--mobile) { display: flex; justify-content: space-between; position: absolute; left: 6px; right: 6px; bottom: -28px; margin: 0; font-family: Hanken Grotesk; font-size: 12px; line-height: 1.2; font-weight: 700; color: var(--rl-texte-discret, #6E6B7B); }"),
     ('motion-formes', "Vignette motion design en mobile : fond pêche et formes qui s'animent (rond qui rebondit, carré qui pivote). Avec mot-motion pour le triangle et le trait. Sans effet sur ordinateur et tablette.",
      "@media(--mobile) { display: flex; flex-direction: column; justify-content: flex-end; padding: 0 18px 86px; background: linear-gradient(#FFF1E7, #FFF1E7); "
      "&::before { " + RAZ + "content: ''; position: absolute; z-index: 0; top: 66px; right: auto; bottom: auto; left: 18px; width: 92px; height: 92px; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #FFFFFF, #FFD1BF 55%, #FF8A5B); box-shadow: 0 14px 26px -14px rgba(166,60,20,0.55); animation: rl-forme-rebond 3s cubic-bezier(0.3,0,0.3,1) infinite; } "

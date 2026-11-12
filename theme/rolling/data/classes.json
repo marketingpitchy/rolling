@@ -24200,14 +24200,6 @@
                         "state": null
                     },
                     "props": {
-                        "font-family": {
-                            "$$type": "font-family",
-                            "value": "inherit"
-                        },
-                        "color": {
-                            "$$type": "color",
-                            "value": "inherit"
-                        },
                         "margin": {
                             "$$type": "size",
                             "value": {
@@ -24217,7 +24209,7 @@
                         }
                     },
                     "custom_css": {
-                        "raw": "Zm9udC1zaXplOiBpbmhlcml0OyBmb250LXdlaWdodDogaW5oZXJpdDsgbGluZS1oZWlnaHQ6IGluaGVyaXQ7IGxldHRlci1zcGFjaW5nOiBpbmhlcml0Ow=="
+                        "raw": "Zm9udC1mYW1pbHk6IGluaGVyaXQ7IGZvbnQtc2l6ZTogaW5oZXJpdDsgZm9udC13ZWlnaHQ6IGluaGVyaXQ7IGxpbmUtaGVpZ2h0OiBpbmhlcml0OyBsZXR0ZXItc3BhY2luZzogaW5oZXJpdDsgY29sb3I6IGluaGVyaXQ7"
                     }
                 }
             ]
@@ -24250,13 +24242,6 @@
                                         "size": 4,
                                         "unit": "px"
                                     }
-                                },
-                                "block-end": {
-                                    "$$type": "size",
-                                    "value": {
-                                        "size": 30,
-                                        "unit": "px"
-                                    }
                                 }
                             }
                         },
@@ -24268,100 +24253,6 @@
                     "custom_css": {
                         "raw": "aXNvbGF0aW9uOiBpc29sYXRlOyAmOjpiZWZvcmUgeyBwb3NpdGlvbjogcmVsYXRpdmU7IHRvcDogYXV0bzsgcmlnaHQ6IGF1dG87IGJvdHRvbTogYXV0bzsgbGVmdDogYXV0bzsgaGVpZ2h0OiBhdXRvOyBvcGFjaXR5OiAxOyBtaXgtYmxlbmQtbW9kZTogbm9ybWFsOyBib3JkZXI6IDA7IC13ZWJraXQtbWFzazogbm9uZTsgbWFzazogbm9uZTsgcGFkZGluZzogMDsgY29udGVudDogJzAwOicgY291bnRlcihybC1zLCBkZWNpbWFsLWxlYWRpbmctemVybykgJyAvIDAwOjEyJyAvICcnOyBwb3NpdGlvbjogYWJzb2x1dGU7IHRvcDogMzRweDsgcmlnaHQ6IDIycHg7IGJvdHRvbTogYXV0bzsgbGVmdDogYXV0bzsgei1pbmRleDogMzsgd2lkdGg6IGF1dG87IGhlaWdodDogYXV0bzsgcGFkZGluZzogNHB4IDlweDsgYm9yZGVyLXJhZGl1czogOTk5cHg7IHBvaW50ZXItZXZlbnRzOiBub25lOyBmb250LWZhbWlseTogSGFua2VuIEdyb3Rlc2s7IGZvbnQtc2l6ZTogMTJweDsgbGluZS1oZWlnaHQ6IDE7IGZvbnQtd2VpZ2h0OiA3MDA7IGZvbnQtdmFyaWFudC1udW1lcmljOiB0YWJ1bGFyLW51bXM7IGNvbG9yOiAjRkZGRkZGOyBiYWNrZ3JvdW5kOiByZ2JhKDIyLDE0LDUyLDAuNjYpOyBib3gtc2hhZG93OiBub25lOyBjb3VudGVyLXJlc2V0OiBybC1zIHZhcigtLXJsLXMpOyBhbmltYXRpb246IHJsLXNlY29uZGVzLWhlcm8gMTJzIGxpbmVhciBpbmZpbml0ZTsgfSAmOjphZnRlciB7IGNvbnRlbnQ6ICcnOyBwb3NpdGlvbjogYWJzb2x1dGU7IHRvcDogMjBweDsgcmlnaHQ6IDIycHg7IGxlZnQ6IDIycHg7IHotaW5kZXg6IDM7IGhlaWdodDogNHB4OyBib3JkZXItcmFkaXVzOiA0cHg7IHBvaW50ZXItZXZlbnRzOiBub25lOyBiYWNrZ3JvdW5kOiBsaW5lYXItZ3JhZGllbnQoI0ZGRkZGRiwgI0ZGRkZGRikgMCAwIC8gMjUlIDEwMCUgbm8tcmVwZWF0LCByZ2JhKDI1NSwyNTUsMjU1LDAuNDIpOyAtd2Via2l0LW1hc2s6IHJlcGVhdGluZy1saW5lYXItZ3JhZGllbnQoOTBkZWcsICMwMDAgMCBjYWxjKDI1JSAtIDRweCksIHRyYW5zcGFyZW50IGNhbGMoMjUlIC0gNHB4KSAyNSUpOyBtYXNrOiByZXBlYXRpbmctbGluZWFyLWdyYWRpZW50KDkwZGVnLCAjMDAwIDAgY2FsYygyNSUgLSA0cHgpLCB0cmFuc3BhcmVudCBjYWxjKDI1JSAtIDRweCkgMjUlKTsgYW5pbWF0aW9uOiBybC1zdG9yaWVzLWhlcm8gMTJzIGxpbmVhciBpbmZpbml0ZTsgfSAmID4gLmUtY29uIHsgcG9zaXRpb246IGFic29sdXRlOyB0b3A6IDA7IHJpZ2h0OiAwOyBib3R0b206IDA7IGxlZnQ6IDA7IHdpZHRoOiBhdXRvOyBhbGlnbi1zZWxmOiBzdHJldGNoOyBqdXN0aWZ5LXNlbGY6IHN0cmV0Y2g7IHotaW5kZXg6IDE7IG9wYWNpdHk6IDA7IHBhZGRpbmc6IDEwcHg7IGJvcmRlci1yYWRpdXM6IDMwcHg7IC0tcmwtcmF5b24tcGhvdG86IDIxcHg7IC0tcmwtbWFyZ2UtdmlnbmV0dGU6IDEwcHg7IGFuaW1hdGlvbjogcmwtcGxhbi1oZXJvIDEycyBpbmZpbml0ZTsgfSAmID4gLmUtY29uOm50aC1sYXN0LWNoaWxkKDQpIHsgb3BhY2l0eTogMTsgfSAmID4gLmUtY29uOm50aC1sYXN0LWNoaWxkKDMpIHsgYW5pbWF0aW9uLWRlbGF5OiAzczsgfSAmID4gLmUtY29uOm50aC1sYXN0LWNoaWxkKDIpIHsgYW5pbWF0aW9uLWRlbGF5OiA2czsgfSAmID4gLmUtY29uOm50aC1sYXN0LWNoaWxkKDEpIHsgYW5pbWF0aW9uLWRlbGF5OiA5czsgfSAmID4gLmUtY29uID4gLmUtY29uIHsgaGVpZ2h0OiAxMDAlOyBhc3BlY3QtcmF0aW86IGF1dG87IH0gJiAuYmFuZGVhdS12aWRlbyB7IHRvcDogMjRweDsgfQ=="
                     }
-                }
-            ]
-        },
-        {
-            "id": "g-da3ba65",
-            "label": "chapitres-hero",
-            "groupe": "Fiches et listes",
-            "description": "Noms des plans sous l'écran du hero, en mobile seulement (un mot par plan, mis dans un span). Masqué sur ordinateur et tablette.",
-            "variants": [
-                {
-                    "meta": {
-                        "breakpoint": "mobile",
-                        "state": null
-                    },
-                    "props": {
-                        "position": {
-                            "$$type": "string",
-                            "value": "absolute"
-                        },
-                        "inset-inline-end": {
-                            "$$type": "size",
-                            "value": {
-                                "size": 6,
-                                "unit": "px"
-                            }
-                        },
-                        "inset-block-end": {
-                            "$$type": "size",
-                            "value": {
-                                "size": -28,
-                                "unit": "px"
-                            }
-                        },
-                        "inset-inline-start": {
-                            "$$type": "size",
-                            "value": {
-                                "size": 6,
-                                "unit": "px"
-                            }
-                        },
-                        "font-family": {
-                            "$$type": "font-family",
-                            "value": "Hanken Grotesk"
-                        },
-                        "font-weight": {
-                            "$$type": "string",
-                            "value": "700"
-                        },
-                        "font-size": {
-                            "$$type": "size",
-                            "value": {
-                                "size": 12,
-                                "unit": "px"
-                            }
-                        },
-                        "line-height": {
-                            "$$type": "size",
-                            "value": {
-                                "size": "1.2",
-                                "unit": "custom"
-                            }
-                        },
-                        "margin": {
-                            "$$type": "size",
-                            "value": {
-                                "size": 0,
-                                "unit": "px"
-                            }
-                        },
-                        "display": {
-                            "$$type": "string",
-                            "value": "flex"
-                        },
-                        "justify-content": {
-                            "$$type": "string",
-                            "value": "space-between"
-                        }
-                    },
-                    "custom_css": {
-                        "raw": "Y29sb3I6IHZhcigtLXJsLXRleHRlLWRpc2NyZXQsICM2RTZCN0IpOw=="
-                    }
-                },
-                {
-                    "meta": {
-                        "breakpoint": "desktop",
-                        "state": null
-                    },
-                    "props": {
-                        "display": {
-                            "$$type": "string",
-                            "value": "none"
-                        }
-                    },
-                    "custom_css": null
                 }
             ]
         },

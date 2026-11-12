@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hero ordinateur</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Caveat:wght@700&family=Hanken+Grotesk:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root { --encre: #0F0F12; --paragraphe: #4A4858; --discret: #6E6B7B; --surface: #FAF9F7; --violet: #5B3BEA; --orange: #E0562A; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: "Hanken Grotesk", system-ui, sans-serif; color: var(--encre); background: #EEEBE6; line-height: 1.6; }
+.tete { max-width: 1280px; margin: 0 auto; padding: 56px 20px 0; }
+h1.m { font-family: "Bricolage Grotesque"; font-weight: 650; font-size: clamp(32px, 4vw, 52px); letter-spacing: -.05em; line-height: 1.06; }
+h1.m em { font-style: normal; background: linear-gradient(90deg, #5B3BEA, #B5459E 55%, #EC5E2B); -webkit-background-clip: text; background-clip: text; color: transparent; padding: 0 .06em; margin: 0 -.06em; }
+.intro { margin-top: 16px; max-width: 820px; font-size: 18px; color: var(--paragraphe); }
+.regles { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+.regles span { padding: 6px 14px; border-radius: 999px; font-size: 14px; font-weight: 600; background: #fff; box-shadow: inset 0 0 0 1px rgba(15,15,18,.1); }
+.option { max-width: 1280px; margin: 64px auto 0; padding: 0 20px; }
+.option h2 { font-family: "Bricolage Grotesque"; font-weight: 650; font-size: 28px; letter-spacing: -.035em; line-height: 1.2; }
+.lettre { display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; margin-right: 8px; border-radius: 50%; font-size: 15px; color: #fff; background: linear-gradient(140deg, #5B3BEA, #8E4DE6); vertical-align: 4px; }
+.conseil h2::after { content: "Notre conseil"; margin-left: 10px; padding: 3px 10px; border-radius: 999px; font: 700 12px "Hanken Grotesk"; letter-spacing: .06em; text-transform: uppercase; color: #fff; background: var(--orange); vertical-align: 5px; }
+.desc { margin-top: 8px; max-width: 900px; font-size: 16px; color: var(--paragraphe); }
+.ecran-site { position: relative; margin-top: 18px; height: 760px; overflow: hidden; border-radius: 24px; background: var(--surface); box-shadow: 0 30px 60px -40px rgba(30,20,80,.45); }
+.ecran-site::before { content: ""; position: absolute; inset: 0; background: radial-gradient(40% 50% at 0% 0%, rgba(167,139,250,.28), transparent 70%), radial-gradient(40% 50% at 100% 10%, rgba(255,138,91,.2), transparent 70%); pointer-events: none; }
+.nav { position: absolute; z-index: 9; top: 14px; left: 50%; width: 1100px; max-width: calc(100% - 40px); transform: translateX(-50%); display: flex; align-items: center; justify-content: space-between; padding: 12px 12px 12px 22px; border-radius: 999px; background: rgba(255,255,255,.8); box-shadow: 0 10px 30px -18px rgba(40,20,120,.35); font-size: 14px; color: var(--paragraphe); }
+.nav b { font: 650 24px "Bricolage Grotesque"; letter-spacing: -.05em; color: var(--encre); }
+.nav span.liens { display: flex; gap: 26px; align-items: center; }
+.nav .cta { padding: 10px 18px; border-radius: 999px; background: var(--encre); color: #fff; font-weight: 700; }
+.hero { position: absolute; inset: 0; display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 40px; max-width: 1180px; margin: 0 auto; padding: 90px 40px 0; }
+.textes { position: relative; z-index: 2; }
+.pastille { display: inline-flex; align-items: center; gap: 9px; padding: 7px 14px 7px 12px; border-radius: 999px; font-size: 14px; font-weight: 600; color: #4A2BB8; background: rgba(255,255,255,.7); }
+.pastille::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: #FF8A5B; box-shadow: 0 0 0 4px rgba(255,138,91,.22); }
+.accroche { margin-top: 24px; font: 650 56px/1.04 "Bricolage Grotesque"; letter-spacing: -.05em; }
+.accroche .h { background: linear-gradient(95deg, #C2410C, #E0562A 45%, #EC5E2B); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.accroche .i { background: linear-gradient(95deg, #3434E0, #5B3BEA 50%, #8E4DE6); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.chapo { margin-top: 22px; max-width: 540px; font: 600 19px/1.45 "Bricolage Grotesque"; letter-spacing: -.02em; }
+.chapo u { text-decoration: none; font: 700 1.2em/1 "Caveat"; color: #D9531F; }
+.boutons { display: flex; gap: 12px; margin-top: 32px; }
+.boutons span { padding: 14px 24px; border-radius: 999px; font-weight: 700; background: var(--encre); color: #fff; }
+.boutons span + span { background: #fff; color: var(--encre); box-shadow: 0 8px 20px -12px rgba(40,20,120,.3); }
+.preuve { margin-top: 20px; font-size: 13px; color: var(--discret); }
+.preuve b { color: var(--encre); }
+.visuel { position: relative; height: 600px; }
+
+/* Éléments communs */
+.vign { position: absolute; overflow: hidden; border-radius: 22px; background: #2A2233 center / cover no-repeat; box-shadow: 0 0 0 5px rgba(255,255,255,.85), 0 28px 50px -24px rgba(40,20,120,.5); }
+.etiquette { position: absolute; z-index: 2; top: 10px; left: 10px; display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; border-radius: 999px; font-size: 12px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: #fff; background: rgba(20,14,46,.55); }
+.etiquette::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: #FFD1BF; }
+.etiquette.rec::before { background: #FF3B30; }
+.plaque { position: absolute; z-index: 2; left: 8px; right: 8px; bottom: 8px; display: flex; align-items: center; justify-content: space-between; padding: 8px 10px; border-radius: 14px; font: 650 14px/1.05 "Bricolage Grotesque"; color: #fff; background: linear-gradient(160deg, rgba(22,14,52,.66), rgba(22,14,52,.46)); }
+.plaque i { font-style: normal; color: #FFD1BF; }
+.plaque .lect { flex: none; width: 24px; height: 24px; border-radius: 50%; background: rgba(255,255,255,.75); position: relative; }
+.plaque .lect::after { content: ""; position: absolute; left: 9px; top: 7px; border-left: 8px solid #E0562A; border-top: 5px solid transparent; border-bottom: 5px solid transparent; }
+.motion { background: #FFF1E7; }
+.motion::before { content: ""; position: absolute; left: 14%; top: 26%; width: 34%; aspect-ratio: 1; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #fff, #FFD1BF 55%, #FF8A5B); }
+.motion::after { content: ""; position: absolute; right: 14%; top: 22%; width: 26%; aspect-ratio: 1; border-radius: 22%; background: linear-gradient(140deg, #5B3BEA, #8E4DE6); }
+.motion .plaque { color: #0F0F12; background: rgba(255,255,255,.62); } .motion .plaque i { color: #3B1F9E; }
+.t { background-image: url(hero-mobile-imgs/hero-tournage.jpg); }
+.iv { background-image: url(hero-mobile-imgs/hero-interview.jpg); background-position: 38% center; }
+.d { background-image: url(hero-mobile-imgs/hero-demo-produit.jpg); background-position: center 40%; }
+@keyframes flotte { 50% { translate: 0 -10px; } }
+
+/* Aujourd'hui */
+.avant .cadre { position: absolute; inset: 0 0 0 0; border-radius: 40px; padding: 14px; background: rgba(255,255,255,.9); box-shadow: 0 40px 70px -30px rgba(40,20,120,.5); }
+.avant .cadre .vign.t { inset: 14px; border-radius: 28px; box-shadow: none; }
+.avant .iv { left: 30px; top: 230px; width: 190px; height: 300px; }
+.avant .d { right: 30px; top: 30px; width: 270px; height: 150px; }
+.avant .motion { right: 30px; top: 390px; width: 190px; height: 190px; }
+
+/* A · Collage aéré */
+.a .halo { position: absolute; inset: 40px 10px 60px 40px; border-radius: 50%; background: radial-gradient(closest-side, rgba(255,162,122,.45), rgba(196,181,253,.25) 60%, transparent); filter: blur(10px); }
+.a .t { left: 70px; top: 60px; width: 380px; height: 238px; rotate: -3deg; animation: flotte 8s ease-in-out infinite; }
+.a .iv { right: 0; top: 150px; width: 170px; height: 300px; rotate: 4deg; animation: flotte 8s -2s ease-in-out infinite; }
+.a .d { left: 20px; top: 350px; width: 270px; height: 152px; rotate: 2deg; animation: flotte 8s -4s ease-in-out infinite; }
+.a .motion { left: 300px; top: 400px; width: 170px; height: 170px; rotate: -5deg; animation: flotte 8s -6s ease-in-out infinite; }
+
+/* B · Photo fondue */
+.b .t { inset: 0 -40px 0 0; border-radius: 0; box-shadow: none; -webkit-mask: radial-gradient(ellipse 52% 50% at 56% 50%, #000 52%, transparent 100%); mask: radial-gradient(ellipse 52% 50% at 56% 50%, #000 52%, transparent 100%); }
+.b .t .etiquette { left: 46%; top: 12%; }
+.b .iv { left: 10px; top: 260px; width: 170px; height: 290px; rotate: -3deg; animation: flotte 8s ease-in-out infinite; }
+.b .motion { right: 10px; top: 400px; width: 170px; height: 170px; rotate: 4deg; animation: flotte 8s -3s ease-in-out infinite; }
+.b .d { right: 30px; top: 40px; width: 230px; height: 130px; rotate: 2deg; animation: flotte 8s -5s ease-in-out infinite; }
+
+/* C · Pellicule verticale */
+.c .bande { position: absolute; left: 120px; top: -140px; bottom: -140px; width: 300px; rotate: 7deg; padding: 0 26px; background: #16112C; box-shadow: 0 40px 60px -30px rgba(22,14,52,.6); overflow: hidden; }
+.c .bande::before, .c .bande::after { content: ""; position: absolute; z-index: 2; top: 0; bottom: 0; width: 12px; background: repeating-linear-gradient(180deg, transparent 0 9px, rgba(250,249,247,.85) 9px 22px, transparent 22px 30px); }
+.c .bande::before { left: 7px; } .c .bande::after { right: 7px; }
+.c .piste { display: flex; flex-direction: column; gap: 12px; animation: monte 24s linear infinite; }
+.c .cadre-p { position: relative; flex: none; height: 200px; border-radius: 10px; overflow: hidden; background-color: #222; background-position: center; background-size: cover; background-repeat: no-repeat; }
+.c .cadre-p.motion { background: #FFF1E7; }
+@keyframes monte { to { transform: translateY(calc(-50% - 6px)); } }
+.c .flottante { right: 0; top: 300px; width: 180px; height: 300px; rotate: -4deg; animation: flotte 8s ease-in-out infinite; }
+.c .tc { position: absolute; z-index: 3; right: 8px; top: 8px; padding: 2px 7px; border-radius: 6px; font: 700 12px "Hanken Grotesk"; color: #fff; background: rgba(22,14,52,.66); }
+
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; } }
+</style>
+</head>
+<body>
+<header class="tete">
+  <h1 class="m">Hero sur ordinateur : <em>plus léger.</em></h1>
+  <p class="intro">Aujourd’hui, le grand cadre blanc et la photo pleine hauteur forment un bloc lourd qui attire l’œil avant le texte. Trois façons d’alléger, avec les mêmes 4 vignettes (tournage, interview, démo, motion). Le texte de gauche ne change pas. La version mobile (écran avec les stories) reste telle quelle.</p>
+  <div class="regles"><span>Images remplaçables dans Elementor</span><span>Rien ne bouge avec « réduire les animations »</span><span>Rien ne bouge dans l’éditeur</span></div>
+</header>
+
+<section class="option">
+  <h2>Aujourd’hui</h2>
+  <p class="desc">Pour comparer.</p>
+  <div class="ecran-site avant">
+    <div class="nav"><b>« rolling</b><span class="liens"><span>Offres</span><span>Réalisations</span><span>Témoignages</span><span>Ressources</span><span>L’agence</span><span class="cta">Réserver un échange →</span></span></div>
+    <div class="hero">
+      <div class="textes">
+        <span class="pastille">Votre agence vidéo illimitée</span>
+        <p class="accroche">Le meilleur <span class="h">de l’humain.</span><br>Le meilleur <span class="i">de l’IA.</span></p>
+        <p class="chapo">Vos clients, vos candidats, vos collaborateurs s’informent tous en vidéo. Mais vos équipes n’ont pas le temps d’en faire ? Notre <b>agence vidéo</b> s’en charge, à prix fixe, <u>en illimité.</u></p>
+        <div class="boutons"><span>Réserver un échange →</span><span>Voir les offres</span></div>
+        <p class="preuve">Par les équipes de <b>Pitchy</b> — 13 ans de vidéo, 500+ grandes entreprises.</p>
+      </div>
+      <div class="visuel">
+        <div class="cadre"><div class="vign t"><span class="etiquette rec">Tournage</span></div></div>
+        <div class="vign d"><span class="etiquette">Démo produit</span></div>
+        <div class="vign iv"><span class="etiquette">Interview</span><span class="plaque"><span>3 gestes<br><i>qui sauvent</i></span><span class="lect"></span></span></div>
+        <div class="vign motion"><span class="etiquette" style="color:#0F0F12;background:rgba(255,255,255,.7)">Motion design</span><span class="plaque"><span>Vos chiffres<br><i>en motion</i></span><span class="lect"></span></span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="option conseil">
+  <h2><span class="lettre">A</span>Le collage aéré</h2>
+  <p class="desc">Plus de grand cadre ni de photo pleine hauteur : les 4 vignettes flottent librement, de tailles différentes, légèrement inclinées, sur un halo pêche. Il y a de l’air entre elles, le fond de la page passe au travers. Le regard va d’abord au titre, puis aux vidéos.</p>
+  <div class="ecran-site a">
+    <div class="nav"><b>« rolling</b><span class="liens"><span>Offres</span><span>Réalisations</span><span>Témoignages</span><span>Ressources</span><span>L’agence</span><span class="cta">Réserver un échange →</span></span></div>
+    <div class="hero">
+      <div class="textes">
+        <span class="pastille">Votre agence vidéo illimitée</span>
+        <p class="accroche">Le meilleur <span class="h">de l’humain.</span><br>Le meilleur <span class="i">de l’IA.</span></p>
+        <p class="chapo">Vos clients, vos candidats, vos collaborateurs s’informent tous en vidéo. Mais vos équipes n’ont pas le temps d’en faire ? Notre <b>agence vidéo</b> s’en charge, à prix fixe, <u>en illimité.</u></p>
+        <div class="boutons"><span>Réserver un échange →</span><span>Voir les offres</span></div>
+        <p class="preuve">Par les équipes de <b>Pitchy</b> — 13 ans de vidéo, 500+ grandes entreprises.</p>
+      </div>
+      <div class="visuel">
+        <span class="halo"></span>
+        <div class="vign t"><span class="etiquette rec">Tournage</span></div>
+        <div class="vign iv"><span class="etiquette">Interview</span><span class="plaque"><span>3 gestes<br><i>qui sauvent</i></span><span class="lect"></span></span></div>
+        <div class="vign d"><span class="etiquette">Démo produit</span></div>
+        <div class="vign motion"><span class="etiquette" style="color:#0F0F12;background:rgba(255,255,255,.7)">Motion design</span><span class="plaque"><span>Vos chiffres<br><i>en motion</i></span><span class="lect"></span></span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="option">
+  <h2><span class="lettre">B</span>La photo qui se fond dans la page</h2>
+  <p class="desc">La photo de tournage reste en grand, mais sans cadre : ses bords se fondent dans le fond de la page. Trois petites vignettes flottent par-dessus. Plus immersif, tout en laissant respirer le texte.</p>
+  <div class="ecran-site b">
+    <div class="nav"><b>« rolling</b><span class="liens"><span>Offres</span><span>Réalisations</span><span>Témoignages</span><span>Ressources</span><span>L’agence</span><span class="cta">Réserver un échange →</span></span></div>
+    <div class="hero">
+      <div class="textes">
+        <span class="pastille">Votre agence vidéo illimitée</span>
+        <p class="accroche">Le meilleur <span class="h">de l’humain.</span><br>Le meilleur <span class="i">de l’IA.</span></p>
+        <p class="chapo">Vos clients, vos candidats, vos collaborateurs s’informent tous en vidéo. Mais vos équipes n’ont pas le temps d’en faire ? Notre <b>agence vidéo</b> s’en charge, à prix fixe, <u>en illimité.</u></p>
+        <div class="boutons"><span>Réserver un échange →</span><span>Voir les offres</span></div>
+        <p class="preuve">Par les équipes de <b>Pitchy</b> — 13 ans de vidéo, 500+ grandes entreprises.</p>
+      </div>
+      <div class="visuel">
+        <div class="vign t"><span class="etiquette rec">Tournage</span></div>
+        <div class="vign d"><span class="etiquette">Démo produit</span></div>
+        <div class="vign iv"><span class="etiquette">Interview</span><span class="plaque"><span>3 gestes<br><i>qui sauvent</i></span><span class="lect"></span></span></div>
+        <div class="vign motion"><span class="etiquette" style="color:#0F0F12;background:rgba(255,255,255,.7)">Motion design</span><span class="plaque"><span>Vos chiffres<br><i>en motion</i></span><span class="lect"></span></span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="option">
+  <h2><span class="lettre">C</span>La pellicule verticale</h2>
+  <p class="desc">Une bande de film inclinée qui défile lentement vers le haut avec les plans (tournage, démo, motion…), et l’interview qui flotte à côté. Fine et légère, très « cinéma ». Elle s’arrête au survol.</p>
+  <div class="ecran-site c">
+    <div class="nav"><b>« rolling</b><span class="liens"><span>Offres</span><span>Réalisations</span><span>Témoignages</span><span>Ressources</span><span>L’agence</span><span class="cta">Réserver un échange →</span></span></div>
+    <div class="hero">
+      <div class="textes">
+        <span class="pastille">Votre agence vidéo illimitée</span>
+        <p class="accroche">Le meilleur <span class="h">de l’humain.</span><br>Le meilleur <span class="i">de l’IA.</span></p>
+        <p class="chapo">Vos clients, vos candidats, vos collaborateurs s’informent tous en vidéo. Mais vos équipes n’ont pas le temps d’en faire ? Notre <b>agence vidéo</b> s’en charge, à prix fixe, <u>en illimité.</u></p>
+        <div class="boutons"><span>Réserver un échange →</span><span>Voir les offres</span></div>
+        <p class="preuve">Par les équipes de <b>Pitchy</b> — 13 ans de vidéo, 500+ grandes entreprises.</p>
+      </div>
+      <div class="visuel">
+        <div class="bande"><div class="piste">
+          <div class="cadre-p t"><span class="etiquette rec">Tournage</span><span class="tc">00:01</span></div>
+          <div class="cadre-p d"><span class="etiquette">Démo produit</span><span class="tc">00:02</span></div>
+          <div class="cadre-p motion vign" style="position:relative;box-shadow:none;border-radius:10px"><span class="etiquette" style="color:#0F0F12;background:rgba(255,255,255,.7)">Motion</span><span class="tc">00:03</span></div>
+          <div class="cadre-p t" aria-hidden="true"><span class="etiquette rec">Tournage</span><span class="tc">00:01</span></div>
+          <div class="cadre-p d" aria-hidden="true"><span class="etiquette">Démo produit</span><span class="tc">00:02</span></div>
+          <div class="cadre-p motion vign" style="position:relative;box-shadow:none;border-radius:10px" aria-hidden="true"><span class="etiquette" style="color:#0F0F12;background:rgba(255,255,255,.7)">Motion</span><span class="tc">00:03</span></div>
+        </div></div>
+        <div class="vign iv flottante"><span class="etiquette">Interview</span><span class="plaque"><span>3 gestes<br><i>qui sauvent</i></span><span class="lect"></span></span></div>
+      </div>
+    </div>
+  </div>
+</section>
+<div style="height:80px"></div>
+</body>
+</html>

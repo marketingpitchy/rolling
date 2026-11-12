@@ -213,6 +213,12 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   longhands** du CSS de premier niveau ⇒ champ `brut` (4e élément du tuple dans classes_fiches.py), animation-timeline
   écrit après le raccourci ; fond qui doit écraser un dégradé : `background: linear-gradient(c, c)` (une couleur seule
   ne retire pas l'image).
+- **0.4.4** : police du H1 de la pastille = « inherit » pris comme nom de police par l'éditeur (police à empattements ;
+  reproduit sur wp2) ⇒ `texte-herite` en CSS brut (aucune prop native `inherit`). Noms des plans sous les stories retirés
+  (classe `chapitres-hero` supprimée ; chez la cliente : supprimer l'élément « Visuels · chapitres »).
+  **Maquette « Hero sur ordinateur : plus léger »** (`maquettes/hero-mobile/hero-ordinateur.html`, **à valider**) : bloc
+  d'images jugé trop massif ⇒ A collage aéré (conseil : 4 vignettes flottantes inclinées sur halo, plus de grand cadre),
+  B photo fondue dans la page (masque radial) + 3 vignettes, C pellicule verticale qui défile + interview flottante.
 - **Chargement de page effet film** (demande avant la fin de la livraison 4) : maquette `maquettes/loading/maquette-loading.html`
   (copie /workspace/maquette-loading.html), 4 options : A amorce 3-2-1, B clap qui se ferme puis rideau, C ouverture
   cinéma (bandes noires + REC + timecode + règle avec la tête de lecture rouge des frises, plus de filet fin), D barre de lecture en haut sans écran. Conseil : C à l'arrivée (première page
