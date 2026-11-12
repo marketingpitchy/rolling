@@ -177,7 +177,12 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   (copie /workspace/maquette-loading.html), 4 options : A amorce 3-2-1, B clap qui se ferme puis rideau, C ouverture
   cinéma (bandes noires + REC + timecode + règle avec la tête de lecture rouge des frises, plus de filet fin), D barre de lecture en haut sans écran. Conseil : C à l'arrivée (première page
   de la visite, sessionStorage), D entre les pages ; < 1,5 s, clic / Échap pour passer, rien avec « réduire les
-  animations », rien dans l'éditeur, pas sur la landing ; **C choisie (avec la tête de lecture), D entre les pages à confirmer**.
+  animations », rien dans l'éditeur, pas sur la landing ; **C choisie (avec la tête de lecture), D validée entre les pages**.
+  Option E ajoutée (idée de la cliente) : un document « (guillemets du logo) traverse le logo et devient une vidéo ▶,
+  tête de lecture sur la règle, puis ouverture comme C (1,5 s) ; **C ou E à choisir**.
+- Google Tag Manager : Custom Code d'Elementor Pro introuvable chez la cliente (absent sans licence active, testé) ;
+  proposé : vérifier la licence (`edit.php?post_type=elementor_snippet`) ou champ « Identifiant Google Tag Manager »
+  dans Personnaliser (le thème écrit le code dans le head et après body) ; GA4 dans GTM, mode Consentement.
 - FAQ : la cliente ajoute elle-même les réponses ; garder les questions telles quelles.
 - Le WordPress de production existe déjà chez la cliente : on livre seulement le thème (zip à importer).
 
