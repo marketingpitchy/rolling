@@ -195,7 +195,7 @@ class Rolling_Widget_Liste extends Rolling_Widget {
 		}
 
 		if ( 'liees' === $r['contenu'] ) {
-			$ids = array_values( array_filter( (array) Rolling_Contenus::valeur( 'videos', $courant ), 'get_post' ) );
+			$ids = Rolling_Contenus::realisations_liees( $courant );
 			return array( array_slice( $ids, $decalage, $total ), false );
 		}
 

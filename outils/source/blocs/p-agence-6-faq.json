@@ -1,0 +1,137 @@
+{
+ "cle": "p-agence-6-faq",
+ "titre": "Rolling · L'agence · 00:05 FAQ",
+ "type": "e-flexbox",
+ "composition": {
+  "xml_structure": "<e-flexbox configuration-id=\"L'agence · FAQ\"><e-flexbox configuration-id=\"L'agence · FAQ · contenu\"><e-flexbox configuration-id=\"L'agence · FAQ · en-tête\"><e-flexbox configuration-id=\"L'agence · FAQ · repère\"><e-paragraph configuration-id=\"L'agence · FAQ · timecode\"></e-paragraph><e-paragraph configuration-id=\"L'agence · FAQ · sur-titre\"></e-paragraph></e-flexbox><e-heading configuration-id=\"L'agence · FAQ · titre\"></e-heading></e-flexbox><e-flexbox configuration-id=\"L'agence · FAQ · questions\"><e-flexbox configuration-id=\"L'agence · FAQ · question 1\"><e-heading configuration-id=\"L'agence · FAQ · question 1 · titre\"></e-heading><e-paragraph configuration-id=\"L'agence · FAQ · question 1 · réponse\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"L'agence · FAQ · question 2\"><e-heading configuration-id=\"L'agence · FAQ · question 2 · titre\"></e-heading><e-paragraph configuration-id=\"L'agence · FAQ · question 2 · réponse\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"L'agence · FAQ · question 3\"><e-heading configuration-id=\"L'agence · FAQ · question 3 · titre\"></e-heading><e-paragraph configuration-id=\"L'agence · FAQ · question 3 · réponse\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"L'agence · FAQ · question 4\"><e-heading configuration-id=\"L'agence · FAQ · question 4 · titre\"></e-heading><e-paragraph configuration-id=\"L'agence · FAQ · question 4 · réponse\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"L'agence · FAQ · question 5\"><e-heading configuration-id=\"L'agence · FAQ · question 5 · titre\"></e-heading><e-paragraph configuration-id=\"L'agence · FAQ · question 5 · réponse\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox></e-flexbox>",
+  "element_config": {
+   "L'agence · FAQ": {
+    "tag": "section"
+   },
+   "L'agence · FAQ · timecode": {
+    "paragraph": "00:05"
+   },
+   "L'agence · FAQ · sur-titre": {
+    "paragraph": "Vos questions"
+   },
+   "L'agence · FAQ · titre": {
+    "tag": "h2",
+    "title": "Vos questions <em>sur Rolling.</em>"
+   },
+   "L'agence · FAQ · question 1 · titre": {
+    "tag": "h3",
+    "title": "Quel est le lien entre Rolling et Pitchy&nbsp;?"
+   },
+   "L'agence · FAQ · question 1 · réponse": {
+    "paragraph": "Rolling est née chez Pitchy, avec les mêmes fondateurs. Pitchy équipe les équipes qui créent leurs vidéos elles-mêmes&nbsp;; Rolling produit pour celles qui veulent déléguer."
+   },
+   "L'agence · FAQ · question 2 · titre": {
+    "tag": "h3",
+    "title": "Où êtes-vous basés&nbsp;?"
+   },
+   "L'agence · FAQ · question 2 · réponse": {
+    "paragraph": "À Paris. Nos équipes de tournage se déplacent dans toute la France."
+   },
+   "L'agence · FAQ · question 3 · titre": {
+    "tag": "h3",
+    "title": "Qui travaillera sur nos vidéos&nbsp;?"
+   },
+   "L'agence · FAQ · question 3 · réponse": {
+    "paragraph": "Une équipe dédiée&nbsp;: un directeur artistique et un chef de projet, avec nos motion designers, nos cadreurs et notre IA Factory."
+   },
+   "L'agence · FAQ · question 4 · titre": {
+    "tag": "h3",
+    "title": "Comment utilisez-vous l'IA&nbsp;?"
+   },
+   "L'agence · FAQ · question 4 · réponse": {
+    "paragraph": "Notre IA Factory accélère&nbsp;: pistes de scénario, voix off, sous-titres, traductions, déclinaisons. Nos créas gardent la direction artistique et la validation finale."
+   },
+   "L'agence · FAQ · question 5 · titre": {
+    "tag": "h3",
+    "title": "Nos données sont-elles protégées&nbsp;?"
+   },
+   "L'agence · FAQ · question 5 · réponse": {
+    "paragraph": "[À compléter&nbsp;: hébergement des données, outils d'IA utilisés, sécurité.]"
+   }
+  },
+  "classes": {
+   "L'agence · FAQ": [
+    "section",
+    "section-suite"
+   ],
+   "L'agence · FAQ · contenu": [
+    "conteneur",
+    "conteneur-etroit"
+   ],
+   "L'agence · FAQ · en-tête": [
+    "entete-section"
+   ],
+   "L'agence · FAQ · repère": [
+    "sur-titre"
+   ],
+   "L'agence · FAQ · timecode": [
+    "timecode"
+   ],
+   "L'agence · FAQ · titre": [
+    "titre-md"
+   ],
+   "L'agence · FAQ · questions": [
+    "liste-questions"
+   ],
+   "L'agence · FAQ · question 1": [
+    "carte-verre",
+    "carte-question"
+   ],
+   "L'agence · FAQ · question 1 · titre": [
+    "titre-question"
+   ],
+   "L'agence · FAQ · question 1 · réponse": [
+    "texte"
+   ],
+   "L'agence · FAQ · question 2": [
+    "carte-verre",
+    "carte-question"
+   ],
+   "L'agence · FAQ · question 2 · titre": [
+    "titre-question"
+   ],
+   "L'agence · FAQ · question 2 · réponse": [
+    "texte"
+   ],
+   "L'agence · FAQ · question 3": [
+    "carte-verre",
+    "carte-question"
+   ],
+   "L'agence · FAQ · question 3 · titre": [
+    "titre-question"
+   ],
+   "L'agence · FAQ · question 3 · réponse": [
+    "texte"
+   ],
+   "L'agence · FAQ · question 4": [
+    "carte-verre",
+    "carte-question"
+   ],
+   "L'agence · FAQ · question 4 · titre": [
+    "titre-question"
+   ],
+   "L'agence · FAQ · question 4 · réponse": [
+    "texte"
+   ],
+   "L'agence · FAQ · question 5": [
+    "carte-verre",
+    "carte-question"
+   ],
+   "L'agence · FAQ · question 5 · titre": [
+    "titre-question"
+   ],
+   "L'agence · FAQ · question 5 · réponse": [
+    "texte"
+   ]
+  },
+  "style": {
+   "L'agence · FAQ · contenu": "display: flex; flex-direction: column; gap: 0;"
+  }
+ },
+ "brut": {}
+}

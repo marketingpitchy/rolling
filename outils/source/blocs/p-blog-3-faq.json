@@ -1,0 +1,108 @@
+{
+ "cle": "p-blog-3-faq",
+ "titre": "Rolling · Blog · FAQ",
+ "type": "e-flexbox",
+ "composition": {
+  "xml_structure": "<e-flexbox configuration-id=\"Blog · FAQ\"><e-flexbox configuration-id=\"Blog · FAQ · contenu\"><e-flexbox configuration-id=\"Blog · FAQ · en-tête\"><e-heading configuration-id=\"Blog · FAQ · titre\"></e-heading></e-flexbox><e-flexbox configuration-id=\"Blog · FAQ · questions\"><e-flexbox configuration-id=\"Blog · FAQ · question 1\"><e-heading configuration-id=\"Blog · FAQ · question 1 · titre\"></e-heading><e-paragraph configuration-id=\"Blog · FAQ · question 1 · réponse\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Blog · FAQ · question 2\"><e-heading configuration-id=\"Blog · FAQ · question 2 · titre\"></e-heading><e-paragraph configuration-id=\"Blog · FAQ · question 2 · réponse\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Blog · FAQ · question 3\"><e-heading configuration-id=\"Blog · FAQ · question 3 · titre\"></e-heading><e-paragraph configuration-id=\"Blog · FAQ · question 3 · réponse\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Blog · FAQ · question 4\"><e-heading configuration-id=\"Blog · FAQ · question 4 · titre\"></e-heading><e-paragraph configuration-id=\"Blog · FAQ · question 4 · réponse\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox></e-flexbox>",
+  "element_config": {
+   "Blog · FAQ": {
+    "tag": "section"
+   },
+   "Blog · FAQ · titre": {
+    "tag": "h2",
+    "title": "Vos questions <em>sur le blog.</em>"
+   },
+   "Blog · FAQ · question 1 · titre": {
+    "tag": "h3",
+    "title": "À qui s'adressent vos articles&nbsp;?"
+   },
+   "Blog · FAQ · question 1 · réponse": {
+    "paragraph": "Aux équipes communication interne, RH, formation et marketing qui veulent faire plus de vidéos, sans y passer leurs journées."
+   },
+   "Blog · FAQ · question 2 · titre": {
+    "tag": "h3",
+    "title": "Pouvons-nous reprendre vos conseils dans nos équipes&nbsp;?"
+   },
+   "Blog · FAQ · question 2 · réponse": {
+    "paragraph": "Oui, c'est fait pour. Citez simplement la source."
+   },
+   "Blog · FAQ · question 3 · titre": {
+    "tag": "h3",
+    "title": "À quel rythme publiez-vous&nbsp;?"
+   },
+   "Blog · FAQ · question 3 · réponse": {
+    "paragraph": "[À confirmer&nbsp;: rythme de publication.]"
+   },
+   "Blog · FAQ · question 4 · titre": {
+    "tag": "h3",
+    "title": "Pouvons-nous vous proposer un sujet&nbsp;?"
+   },
+   "Blog · FAQ · question 4 · réponse": {
+    "paragraph": "Oui&nbsp;: écrivez-nous depuis la page Contact."
+   }
+  },
+  "classes": {
+   "Blog · FAQ": [
+    "section",
+    "section-suite"
+   ],
+   "Blog · FAQ · contenu": [
+    "conteneur",
+    "conteneur-etroit"
+   ],
+   "Blog · FAQ · en-tête": [
+    "entete-section"
+   ],
+   "Blog · FAQ · titre": [
+    "titre-md"
+   ],
+   "Blog · FAQ · questions": [
+    "liste-questions"
+   ],
+   "Blog · FAQ · question 1": [
+    "carte-verre",
+    "carte-question"
+   ],
+   "Blog · FAQ · question 1 · titre": [
+    "titre-question"
+   ],
+   "Blog · FAQ · question 1 · réponse": [
+    "texte"
+   ],
+   "Blog · FAQ · question 2": [
+    "carte-verre",
+    "carte-question"
+   ],
+   "Blog · FAQ · question 2 · titre": [
+    "titre-question"
+   ],
+   "Blog · FAQ · question 2 · réponse": [
+    "texte"
+   ],
+   "Blog · FAQ · question 3": [
+    "carte-verre",
+    "carte-question"
+   ],
+   "Blog · FAQ · question 3 · titre": [
+    "titre-question"
+   ],
+   "Blog · FAQ · question 3 · réponse": [
+    "texte"
+   ],
+   "Blog · FAQ · question 4": [
+    "carte-verre",
+    "carte-question"
+   ],
+   "Blog · FAQ · question 4 · titre": [
+    "titre-question"
+   ],
+   "Blog · FAQ · question 4 · réponse": [
+    "texte"
+   ]
+  },
+  "style": {
+   "Blog · FAQ · contenu": "display: flex; flex-direction: column; gap: 0;"
+  }
+ },
+ "brut": {}
+}

@@ -1,0 +1,67 @@
+{
+ "cle": "f5-page-texte",
+ "titre": "Rolling · Page de texte (mentions légales, CGV, confidentialité)",
+ "type": "e-flexbox",
+ "apercu": "page",
+ "composition": {
+  "xml_structure": "<e-flexbox configuration-id=\"Page de texte\"><e-flexbox configuration-id=\"Page de texte · haut\"><e-flexbox configuration-id=\"Page de texte · contenu\"><e-paragraph configuration-id=\"Page de texte · fil d’Ariane\"></e-paragraph><e-heading configuration-id=\"Page de texte · titre\"></e-heading><e-paragraph configuration-id=\"Page de texte · mise à jour\"></e-paragraph></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Page de texte · suite\"><e-flexbox configuration-id=\"Page de texte · colonne\"><e-paragraph configuration-id=\"Page de texte · texte\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox>",
+  "element_config": {
+   "Page de texte": {
+    "tag": "article"
+   },
+   "Page de texte · haut": {
+    "tag": "section"
+   },
+   "Page de texte · fil d’Ariane": {
+    "paragraph": "⟦widget:rolling-ariane⟧"
+   },
+   "Page de texte · titre": {
+    "tag": "h1",
+    "title": "⟦rolling-article|info=titre⟧"
+   },
+   "Page de texte · mise à jour": {
+    "paragraph": "⟦rolling-article|info=modifie⟧"
+   },
+   "Page de texte · suite": {
+    "tag": "section"
+   },
+   "Page de texte · texte": {
+    "paragraph": "⟦widget:rolling-contenu⟧"
+   }
+  },
+  "classes": {
+   "Page de texte · haut": [
+    "section",
+    "section-entete",
+    "entete-page",
+    "halos-haut"
+   ],
+   "Page de texte · contenu": [
+    "conteneur",
+    "conteneur-etroit"
+   ],
+   "Page de texte · titre": [
+    "titre-lg"
+   ],
+   "Page de texte · mise à jour": [
+    "texte-petit"
+   ],
+   "Page de texte · suite": [
+    "section",
+    "section-suite"
+   ],
+   "Page de texte · colonne": [
+    "conteneur",
+    "conteneur-etroit"
+   ]
+  },
+  "style": {
+   "Page de texte": "display: flex; flex-direction: column; gap: 0; align-items: stretch; padding: 0; width: 100%;",
+   "Page de texte · contenu": "display: flex; flex-direction: column; gap: 0;",
+   "Page de texte · titre": "margin-top: 24px;",
+   "Page de texte · mise à jour": "margin-top: 14px;",
+   "Page de texte · colonne": "display: flex; flex-direction: column; gap: 0;"
+  }
+ },
+ "brut": {}
+}

@@ -34,7 +34,14 @@ class Rolling_Dynamique {
 		'rolling_temoignage'  => 'f2-fiche-temoignage',
 		'post'                => 'f3-fiche-article',
 		'404'                 => 'f4-page-404',
+		'texte'               => 'f5-page-texte',
 	);
+
+	/**
+	 * Modèle de page « Page de texte » (mentions légales, CGV, confidentialité) : texte écrit dans l'éditeur WordPress,
+	 * mis en page par le modèle Elementor « Rolling · Page de texte ».
+	 */
+	const MODELE_TEXTE = 'modeles/texte.php';
 
 	/**
 	 * Branche les crochets.
@@ -242,6 +249,9 @@ class Rolling_Dynamique {
 			// Filtre (métier, format, thème) : vide si aucun terme coché.
 			return ! has_term( '', 'rolling_' . $cle, $id );
 		}
+		if ( 'videos' === $cle && 'rolling_temoignage' === get_post_type( $id ) ) {
+			return ! Rolling_Contenus::realisations_liees( $id );
+		}
 		if ( 'recit' === $cle ) {
 			return ! Rolling_Contenus::a_recit( $id );
 		}
@@ -262,6 +272,22 @@ class Rolling_Dynamique {
 		$valeur = Rolling_Contenus::valeur( $cle, $id );
 
 		return '' === $valeur || array() === $valeur || null === $valeur;
+	}
+
+	/**
+	 * Page du blog : la « page des articles » de WordPress si elle est réglée, sinon la page « blog » (page Elementor
+	 * qui affiche la liste des articles avec le widget « Rolling · Liste »).
+	 *
+	 * @return int
+	 */
+	public static function page_blog() {
+		$id = (int) get_option( 'page_for_posts' );
+		if ( ! $id ) {
+			$page = get_page_by_path( 'blog' );
+			$id   = $page ? (int) $page->ID : 0;
+		}
+
+		return $id;
 	}
 
 	/**
@@ -299,6 +325,8 @@ class Rolling_Dynamique {
 
 		if ( is_404() ) {
 			$type = '404';
+		} elseif ( is_page() && is_page_template( self::MODELE_TEXTE ) ) {
+			$type = 'texte';
 		} elseif ( is_singular( array_keys( self::FICHES ) ) ) {
 			$type = get_post_type();
 			// Un article construit avec Elementor garde sa propre mise en page.
@@ -435,8 +463,7 @@ class Rolling_Dynamique {
 	 * Affiche le modèle de la fiche courante.
 	 */
 	public static function afficher_fiche() {
-		$type   = is_404() ? '404' : get_post_type();
-		$modele = self::modele_fiche( $type );
+		$modele = self::$fiche ? self::$fiche : self::modele_fiche( is_404() ? '404' : get_post_type() );
 
 		if ( $modele ) {
 			echo \Elementor\Plugin::$instance->frontend->get_builder_content_for_display( $modele, false ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- HTML produit par Elementor.
@@ -476,6 +503,7 @@ class Rolling_Dynamique {
 			'rolling_temoignage'  => __( 'Fiche témoignage', 'rolling' ),
 			'post'                => __( 'Article de blog', 'rolling' ),
 			'404'                 => __( 'Page 404', 'rolling' ),
+			'texte'               => __( 'Page de texte (mentions légales, CGV, confidentialité)', 'rolling' ),
 		);
 		foreach ( $libelles as $type => $libelle ) {
 			$wp_customize->add_setting( 'rolling_modele_' . $type, array( 'sanitize_callback' => 'absint' ) );

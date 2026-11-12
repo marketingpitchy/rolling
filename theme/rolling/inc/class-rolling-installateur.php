@@ -776,14 +776,11 @@ class Rolling_Installateur {
 
 		set_theme_mod( 'nav_menu_locations', $emplacements );
 
-		// Page d'accueil et page des articles, seulement si rien n'est réglé.
+		// Page d'accueil, seulement si rien n'est réglé. Pas de « page des articles » : la page Blog est une page Elementor
+		// (liste des articles par le widget « Rolling · Liste »), que WordPress empêcherait sinon de modifier.
 		if ( 'posts' === get_option( 'show_on_front' ) && ! get_option( 'page_on_front' ) && ! empty( $pages['accueil'] ) ) {
 			update_option( 'show_on_front', 'page' );
 			update_option( 'page_on_front', $pages['accueil'] );
-
-			if ( ! empty( $pages['blog'] ) ) {
-				update_option( 'page_for_posts', $pages['blog'] );
-			}
 		}
 
 		// Réglages du Personnalisateur (textes du pied de page, bouton de l'en-tête).

@@ -42,7 +42,7 @@ class Rolling_Contenus {
 			return;
 		}
 
-		$videos = array_values( array_filter( (array) self::valeur( 'videos', (int) get_queried_object_id() ), 'get_post' ) );
+		$videos = self::realisations_liees( (int) get_queried_object_id() );
 		$page   = get_page_by_path( 'temoignages' );
 		$cible  = $videos ? get_permalink( (int) $videos[0] ) : ( $page ? get_permalink( $page ) : home_url( '/' ) );
 
@@ -224,6 +224,9 @@ class Rolling_Contenus {
 					'produit'  => array( 'lignes', __( 'Ce que nous avons produit', 'rolling' ), __( 'Une ligne par point (liste à coches).', 'rolling' ), array( 'texte' => __( 'Point', 'rolling' ) ) ),
 					'resultat' => array( 'zone', __( 'Le résultat', 'rolling' ), '' ),
 				),
+				__( 'Le témoignage du client (facultatif)', 'rolling' ) => array(
+					'temoignage' => array( 'relation', __( 'Témoignage lié', 'rolling' ), __( 'Cochez le témoignage de ce client : sa citation s’affiche sur cette fiche, et sa carte mène à cette vidéo. Vous pouvez aussi faire le lien depuis le témoignage (« Réalisations liées »).', 'rolling' ), 'rolling_temoignage' ),
+				),
 				__( 'Le générique (facultatif)', 'rolling' ) => array(
 					'generique' => array(
 						'lignes',
@@ -348,8 +351,12 @@ class Rolling_Contenus {
 	 * @return int
 	 */
 	public static function temoignage_lie( $realisation ) {
-		static $liens = null;
+		$propre = array_values( array_filter( (array) self::valeur( 'temoignage', $realisation ), 'get_post' ) );
+		if ( $propre ) {
+			return (int) $propre[0];
+		}
 
+		static $liens = null;
 		if ( null === $liens ) {
 			$liens = array();
 			foreach ( get_posts(
@@ -370,6 +377,36 @@ class Rolling_Contenus {
 
 		return $liens[ (int) $realisation ] ?? 0;
 	}
+
+	/**
+	 * Réalisations liées à un témoignage : cochées dans le témoignage, puis celles qui le citent (« Témoignage lié »).
+	 *
+	 * @param int $temoignage Témoignage.
+	 * @return int[]
+	 */
+	public static function realisations_liees( $temoignage ) {
+		static $inverse = null;
+		if ( null === $inverse ) {
+			$inverse = array();
+			foreach ( get_posts(
+				array(
+					'post_type'      => 'rolling_realisation',
+					'posts_per_page' => 300,
+					'fields'         => 'ids',
+					'no_found_rows'  => true,
+				)
+			) as $realisation ) {
+				foreach ( (array) self::valeur( 'temoignage', $realisation ) as $cible ) {
+					$inverse[ (int) $cible ][] = (int) $realisation;
+				}
+			}
+		}
+
+		$ids = array_merge( array_map( 'intval', (array) self::valeur( 'videos', $temoignage ) ), $inverse[ (int) $temoignage ] ?? array() );
+
+		return array_values( array_unique( array_filter( $ids, 'get_post' ) ) );
+	}
+
 
 	/**
 	 * Valeur d'un champ (lignes : tableau de lignes).

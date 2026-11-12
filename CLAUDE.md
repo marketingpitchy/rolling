@@ -180,6 +180,15 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
     modificateurs de classes déjà prioritaires (entete-page, titre-point-bleu…).
   - Photo des fondateurs : **pas dans le thème** (photo provisoire hero-interview.jpg) : la cliente l'importe et la
     remplace dans Elementor. Le contrôle automatique a refusé de la copier, puis a bloqué les commits suivants.
+- **0.4.1 (retours livraison 4, prête)** : modèle « Page de texte » (`modeles/texte.php`, fiche f5 : fil d'Ariane, H1,
+  « Mis à jour le », texte de l'éditeur WordPress) pour mentions légales / CGV / confidentialité ; Blog modifiable dans
+  Elementor (le thème ne pose plus « Page des articles » ; `Rolling_Dynamique::page_blog()` = page des articles sinon /blog/) ;
+  zones formulaire Contact + landing = un seul widget HTML ; Contact : rappel des 2 formules ; FAQ sur chaque page
+  (`FAQ_PAGES`, blocs p-…-faq) ; offres et comparatif refaits en mobile (critère = en-tête sombre, 3 lignes dessous) ;
+  tous les textes ≥ 12 px ; réalisation : champ « Témoignage lié » (`temoignage_lie` / `realisations_liees` dans les deux
+  sens). `blocs.py` supprime les fichiers des blocs qu'il ne produit plus. `.rl-fiche` : sélecteur `html body` (Hello
+  limite `.site-main` à 1140 px sur les pages à modèle).
+  Non reproduit : avatars sur le titre de la carte IA « Choisit · corrige · adapte » (infos demandées à la cliente).
 - **Chargement de page effet film** (demande avant la fin de la livraison 4) : maquette `maquettes/loading/maquette-loading.html`
   (copie /workspace/maquette-loading.html), 4 options : A amorce 3-2-1, B clap qui se ferme puis rideau, C ouverture
   cinéma (bandes noires + REC + timecode + règle avec la tête de lecture rouge des frises, plus de filet fin), D barre de lecture en haut sans écran. Conseil : C à l'arrivée (première page

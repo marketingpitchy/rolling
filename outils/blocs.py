@@ -1362,9 +1362,10 @@ QUESTIONS_OFFRES = [
 
 
 def bloc_faq(prefixe, timecode, surtitre, titre, questions, section_cls=None):
+    tete = entete_simple(prefixe, timecode, surtitre, titre) if timecode else F(prefixe + ' · en-tête', ['entete-section'], enfants=[H(prefixe + ' · titre', titre, 'h2', ['titre-md'])])
     return F(prefixe, ['section', 'section-suite'] + (section_cls or []), tag='section', enfants=[
         F(prefixe + ' · contenu', ['conteneur', 'conteneur-etroit'], COLONNE, enfants=[
-            entete_simple(prefixe, timecode, surtitre, titre),
+            tete,
             F(prefixe + ' · questions', ['liste-questions'], enfants=[
                 F(prefixe + ' · question %d' % n, ['carte-verre', 'carte-question'], enfants=[
                     H(prefixe + ' · question %d · titre' % n, q, 'h3', ['titre-question']),
@@ -1415,10 +1416,32 @@ contact_haut = F('Contact · échange', ['section', 'section-entete', 'entete-pa
                 ]),
             ]),
             F('Contact · emplacement', ['carte-verre', 'zone-calendrier'], enfants=[
-                P('Contact · emplacement · label', 'Emplacement réservé', ['label', 'label-violet']),
-                P('Contact · emplacement · titre', 'Votre calendrier HubSpot', ['titre-xs']),
-                P('Contact · emplacement · texte', "Remplacez ce texte par le calendrier HubSpot (élément HTML ou code court). La hauteur est réservée : la page ne saute pas quand il se charge.", ['texte-petit'], 'max-width: 34ch;'),
+                W('Contact · calendrier HubSpot', 'html', html='Collez ici le code du calendrier HubSpot (cet élément est un bloc HTML).'),
             ]),
+        ]),
+    ]),
+])
+
+contact_offres = F('Contact · formules', ['section', 'section-suite'], tag='section', enfants=[
+    F('Contact · formules · contenu', ['conteneur', 'conteneur-etroit'], COLONNE, enfants=[
+        F('Contact · formules · en-tête', ['entete-section'], enfants=[
+            H('Contact · formules · titre', 'Deux formules, <em>à prix fixe, en illimité.</em>', 'h2', ['titre-md']),
+            P('Contact · formules · introduction', "Un abonnement annuel, une équipe dédiée. Nous vous aidons à choisir pendant l'échange.", ['texte-intro']),
+        ]),
+        F('Contact · formules · cartes', ['grille-2'], enfants=[
+            F('Contact · formule Création', ['carte-pleine'], enfants=[
+                H('Contact · formule Création · nom', 'Création illimitée', 'h3', ['titre-xs']),
+                P('Contact · formule Création · prix', '1&nbsp;250&nbsp;€<span> / mois</span>', ['offres-prix']),
+                P('Contact · formule Création · texte', 'Tous vos contenus et vos projets, en vidéo.', ['texte-petit']),
+            ]),
+            F('Contact · formule Complet', ['carte-pleine', 'section-sombre', 'carte-prix-sombre'], enfants=[
+                H('Contact · formule Complet · nom', 'Création + Tournage', 'h3', ['titre-xs']),
+                P('Contact · formule Complet · prix', '2&nbsp;080&nbsp;€<span> / mois</span>', ['offres-prix']),
+                P('Contact · formule Complet · texte', 'Tout Création, plus le tournage et le motion fait main.', ['texte-petit']),
+            ]),
+        ]),
+        F('Contact · formules · bouton', ['rangee'], 'justify-content: center; margin-top: 28px;', enfants=[
+            B('Contact · formules · comparer', 'Comparer les formules', '/offres/', ['bouton-verre']),
         ]),
     ]),
 ])
@@ -1671,9 +1694,7 @@ landing_action = F('Landing · action', ['section', 'section-suite'], tag='secti
                 P('Landing · action · texte', 'Choisissez votre créneau : nous regardons ensemble vos contenus et vos projets, puis nous vous proposons vos 3 premières vidéos.', ['texte'], 'margin-top: 10px;'),
             ]),
             F('Landing · calendrier', ['carte-verre', 'zone-calendrier', 'zone-calendrier-court'], enfants=[
-                P('Landing · calendrier · label', 'Emplacement réservé', ['label', 'label-violet']),
-                P('Landing · calendrier · titre', 'Votre calendrier HubSpot', ['titre-xs']),
-                P('Landing · calendrier · texte', 'Remplacez ce texte par le calendrier HubSpot (élément HTML ou code court).', ['texte-petit'], 'max-width: 34ch;'),
+                W('Landing · calendrier HubSpot', 'html', html='Collez ici le code du calendrier HubSpot (cet élément est un bloc HTML).'),
             ]),
         ]),
     ]),
@@ -1725,25 +1746,98 @@ landing_final = F('Landing · appel final', ['section', 'section-sombre', 'secti
     ]),
 ])
 
+
+def typo(t):
+    """Espaces insécables de la typographie française avant ? ! : ;"""
+    import re as _re
+    return _re.sub(r' ([?!:;])', r'&nbsp;\1', t)
+
+
+FAQ_PAGES = {
+    'rea': ('Vos questions <em>sur nos réalisations.</em>', [
+        ('Quels types de vidéos réalisez-vous ?', 'Motion design, tournages, interviews, démos produit, avatars et voix off, formats courts pour les réseaux. Chaque réalisation indique son contenu de départ et le format livré.'),
+        ('Pouvez-vous partir de nos contenus existants ?', "Oui, c'est notre point de départ le plus fréquent : articles, modules de formation, présentations, notes internes. Nous en tirons des vidéos courtes, prêtes à diffuser."),
+        ('Combien de temps faut-il pour produire une vidéo ?', '[À confirmer : délai moyen entre le brief et la première version.]'),
+        ('Les vidéos respectent-elles notre charte graphique ?', "Oui. Votre directeur artistique s'appuie sur votre charte (couleurs, typographies, logo) pour chaque vidéo."),
+        ('Pouvons-nous voir des vidéos de notre secteur ?', "Oui : filtrez les réalisations par métier ou par format, ou demandez-nous des exemples pendant l'échange."),
+    ]),
+    'tem': ('Vos questions <em>sur nos clients.</em>', [
+        ('Qui sont vos clients ?', "Des équipes communication interne, RH, formation et marketing de grandes entreprises et d'ETI. Beaucoup nous connaissent depuis Pitchy."),
+        ("Pouvons-nous parler à l'un de vos clients ?", '[À confirmer : mise en relation avec un client référent.]'),
+        ('Travaillez-vous avec des entreprises de toutes tailles ?', '[À confirmer.]'),
+        ("Comment commence une collaboration ?", "Par un échange de 30 minutes. Nous définissons ensemble votre stratégie vidéo de l'année et vos 3 premières vidéos."),
+    ]),
+    'blog': ('Vos questions <em>sur le blog.</em>', [
+        ("À qui s'adressent vos articles ?", "Aux équipes communication interne, RH, formation et marketing qui veulent faire plus de vidéos, sans y passer leurs journées."),
+        ('Pouvons-nous reprendre vos conseils dans nos équipes ?', "Oui, c'est fait pour. Citez simplement la source."),
+        ('À quel rythme publiez-vous ?', '[À confirmer : rythme de publication.]'),
+        ('Pouvons-nous vous proposer un sujet ?', 'Oui : écrivez-nous depuis la page Contact.'),
+    ]),
+    'guides': ('Vos questions <em>sur nos guides.</em>', [
+        ('Les guides sont-ils gratuits ?', 'Oui. Laissez simplement votre adresse e-mail pour recevoir le guide.'),
+        ('Que devient notre adresse e-mail ?', '[À confirmer : usage des données, désinscription.]'),
+        ('Pouvons-nous partager un guide avec nos équipes ?', 'Oui, partagez-le librement en interne.'),
+        ('Publiez-vous souvent de nouveaux guides ?', '[À confirmer.]'),
+    ]),
+    'webinars': ('Vos questions <em>sur nos webinars.</em>', [
+        ('Les webinars sont-ils gratuits ?', "Oui, il suffit de s'inscrire."),
+        ('Combien de temps durent-ils ?', '45 minutes en général, questions comprises.'),
+        ('Et si nous ne sommes pas disponibles le jour J ?', 'Inscrivez-vous quand même : le replay est publié sur la page Replays après le direct. [À confirmer : envoi du replay aux inscrits.]'),
+        ('Faut-il installer un logiciel ?', "Non, le webinar se suit depuis votre navigateur. [À confirmer selon l'outil : Livestorm ou HubSpot.]"),
+    ]),
+    'replays': ('Vos questions <em>sur nos replays.</em>', [
+        ('Les replays sont-ils gratuits ?', 'Oui.'),
+        ('Combien de temps restent-ils en ligne ?', '[À confirmer.]'),
+        ('Pouvons-nous poser une question sur un replay ?', 'Oui : réservez un échange, nous y répondons avec plaisir.'),
+        ('Comment être prévenus des prochains webinars ?', '[À confirmer : newsletter ou page Webinars.]'),
+    ]),
+    'agence': ('Vos questions <em>sur Rolling.</em>', [
+        ('Quel est le lien entre Rolling et Pitchy ?', 'Rolling est née chez Pitchy, avec les mêmes fondateurs. Pitchy équipe les équipes qui créent leurs vidéos elles-mêmes ; Rolling produit pour celles qui veulent déléguer.'),
+        ('Où êtes-vous basés ?', 'À Paris. Nos équipes de tournage se déplacent dans toute la France.'),
+        ('Qui travaillera sur nos vidéos ?', 'Une équipe dédiée : un directeur artistique et un chef de projet, avec nos motion designers, nos cadreurs et notre IA Factory.'),
+        ("Comment utilisez-vous l'IA ?", 'Notre IA Factory accélère : pistes de scénario, voix off, sous-titres, traductions, déclinaisons. Nos créas gardent la direction artistique et la validation finale.'),
+        ('Nos données sont-elles protégées ?', "[À compléter : hébergement des données, outils d'IA utilisés, sécurité.]"),
+    ]),
+}
+NOMS_FAQ = {'rea': 'Réalisations', 'tem': 'Témoignages', 'blog': 'Blog', 'guides': 'Guides', 'webinars': 'Webinars', 'replays': 'Replays', 'agence': "L'agence"}
+FAQ_BLOCS = {cle: bloc_faq(NOMS_FAQ[cle] + ' · FAQ', '00:05' if cle == 'agence' else None, 'Vos questions', titre, [(typo(q), typo(r)) for q, r in qs])
+             for cle, (titre, qs) in FAQ_PAGES.items()}
+
 PAGES = [
-    ('Réalisations', [('p-rea-1-haut', 'Haut de page', rea_haut), ('p-rea-2-liste', 'Liste', rea_liste)]),
-    ('Témoignages', [('p-tem-1-haut', 'Haut de page', tem_haut), ('p-tem-2-liste', 'Liste', tem_liste)]),
-    ('Blog', [('p-blog-1-haut', 'Haut de page', blog_haut), ('p-blog-2-liste', 'Liste', blog_liste)]),
-    ('Guides', [('p-guides-1-haut', 'Haut de page', guides_haut), ('p-guides-2-liste', 'Liste', guides_liste)]),
-    ('Webinars', [('p-webinars-1-haut', 'Haut de page', webinars_haut), ('p-webinars-2-liste', 'Liste', webinars_liste)]),
-    ('Replays', [('p-replays-1-haut', 'Haut de page', replays_haut), ('p-replays-2-liste', 'Liste', replays_liste)]),
+    ('Réalisations', [('p-rea-1-haut', 'Haut de page', rea_haut), ('p-rea-2-liste', 'Liste', rea_liste), ('p-rea-3-faq', 'FAQ', FAQ_BLOCS['rea'])]),
+    ('Témoignages', [('p-tem-1-haut', 'Haut de page', tem_haut), ('p-tem-2-liste', 'Liste', tem_liste), ('p-tem-3-faq', 'FAQ', FAQ_BLOCS['tem'])]),
+    ('Blog', [('p-blog-1-haut', 'Haut de page', blog_haut), ('p-blog-2-liste', 'Liste', blog_liste), ('p-blog-3-faq', 'FAQ', FAQ_BLOCS['blog'])]),
+    ('Guides', [('p-guides-1-haut', 'Haut de page', guides_haut), ('p-guides-2-liste', 'Liste', guides_liste), ('p-guides-3-faq', 'FAQ', FAQ_BLOCS['guides'])]),
+    ('Webinars', [('p-webinars-1-haut', 'Haut de page', webinars_haut), ('p-webinars-2-liste', 'Liste', webinars_liste), ('p-webinars-3-faq', 'FAQ', FAQ_BLOCS['webinars'])]),
+    ('Replays', [('p-replays-1-haut', 'Haut de page', replays_haut), ('p-replays-2-liste', 'Liste', replays_liste), ('p-replays-3-faq', 'FAQ', FAQ_BLOCS['replays'])]),
     ('Offres', [('p-offres-1-haut', 'Haut de page', offres_haut), ('p-offres-2-formules', '00:01 Les formules', offres_tableau),
                 ('p-offres-3-tournage', '00:02 Création + Tournage', offres_ajout), ('p-offres-4-ensuite', '00:03 Et ensuite', offres_ensuite),
                 ('p-offres-5-faq', "00:04 FAQ de l'abonnement", offres_faq)]),
     ("L'agence", [('p-agence-1-haut', 'Haut de page', agence_haut), ('p-agence-2-histoire', '00:01 Notre histoire', agence_histoire),
                   ('p-agence-3-convictions', '00:02 Nos convictions', agence_convictions), ('p-agence-4-equipe', "00:03 L'équipe", agence_equipe),
-                  ('p-agence-5-lieu', '00:04 Où nous trouver', agence_lieu)]),
+                  ('p-agence-5-lieu', '00:04 Où nous trouver', agence_lieu), ('p-agence-6-faq', '00:05 FAQ', FAQ_BLOCS['agence'])]),
     ('Landing', [('p-landing-1-hero', 'Hero et logos', landing_hero), ('p-landing-2-constat', '00:01 Le constat', landing_douleur),
                  ('p-landing-3-pourquoi', '00:02 Pourquoi Rolling', landing_produit), ('p-landing-4-preuve', '00:03 Preuve sociale', landing_preuve),
                  ('p-landing-5-action', '00:04 Votre échange', landing_action), ('p-landing-6-objections', '00:05 Vos questions', landing_objections),
                  ('p-landing-7-final', 'Appel final', landing_final)]),
-    ('Contact', [('p-contact-1-echange', "L'échange et le calendrier", contact_haut), ('p-contact-2-faq', "FAQ de l'échange", contact_faq)]),
+    ('Contact', [('p-contact-1-echange', "L'échange et le calendrier", contact_haut), ('p-contact-2-formules', 'Rappel des formules', contact_offres), ('p-contact-3-faq', "FAQ de l'échange", contact_faq)]),
 ]
+
+
+page_texte = F('Page de texte', None, COLONNE + ' align-items: stretch; padding: 0; width: 100%;', tag='article', enfants=[
+    F('Page de texte · haut', ['section', 'section-entete', 'entete-page', 'halos-haut'], tag='section', enfants=[
+        F('Page de texte · contenu', ['conteneur', 'conteneur-etroit'], COLONNE, enfants=[
+            W('Page de texte · fil d’Ariane', 'rolling-ariane'),
+            H('Page de texte · titre', DYN('rolling-article', info='titre'), 'h1', ['titre-lg'], 'margin-top: 24px;'),
+            P('Page de texte · mise à jour', DYN('rolling-article', info='modifie'), ['texte-petit'], 'margin-top: 14px;'),
+        ]),
+    ]),
+    F('Page de texte · suite', ['section', 'section-suite'], tag='section', enfants=[
+        F('Page de texte · colonne', ['conteneur', 'conteneur-etroit'], COLONNE, enfants=[
+            W('Page de texte · texte', 'rolling-contenu'),
+        ]),
+    ]),
+])
 
 
 MODELES_SITE = [
@@ -1761,6 +1855,7 @@ MODELES_SITE = [
     ('f2-fiche-temoignage', 'Rolling · Fiche témoignage', fiche_temoignage, 'rolling_temoignage'),
     ('f3-fiche-article', 'Rolling · Article de blog', fiche_article, 'post'),
     ('f4-page-404', 'Rolling · Page 404', page_404, ''),
+    ('f5-page-texte', 'Rolling · Page de texte (mentions légales, CGV, confidentialité)', page_texte, 'page'),
 ]
 
 if __name__ == '__main__':
@@ -1796,3 +1891,12 @@ if __name__ == '__main__':
     with open(os.path.join(dossier, '99-page-complete.json'), 'w', encoding='utf8') as f:
         json.dump({'cle': '99-page-complete', 'titre': 'Rolling · Page complète (accueil)', 'type': 'page', 'assemble': cles}, f, ensure_ascii=False, indent=1)
     print('99-page-complete :', len(cles), 'blocs')
+    # Blocs retirés de ce script : leurs fichiers (sources et thème) sont supprimés, l'installateur les retire du site.
+    produits = set(cles) | {m[0] for m in MODELES_SITE} | {'99-page-complete'}
+    for page, sections in PAGES:
+        produits |= {c for c, _, _ in sections} | {'pc-' + sections[0][0].split('-')[1]}
+    for d in (dossier, os.path.join(ICI, '..', 'theme', 'rolling', 'data', 'blocs')):
+        for nom in sorted(os.listdir(d)):
+            if nom.endswith('.json') and nom[:-5] not in produits:
+                os.remove(os.path.join(d, nom))
+                print('Bloc retiré :', nom[:-5])

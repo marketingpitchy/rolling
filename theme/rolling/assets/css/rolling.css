@@ -148,7 +148,7 @@ body.elementor-editor-active #rl-ecran[data-rl-langue="fr"] #rl-version-fr, body
 }
 
 /* Fiches (réalisation, témoignage, article, 404) : pleine largeur, comme une page Elementor */
-.site-main.rl-fiche { max-width: none; width: 100%; margin: 0; padding: 0; }
+html body .site-main.rl-fiche { max-width: none; width: 100%; margin: 0; padding: 0; }
 
 @media (max-width: 640px) { .rl-pied__conteneur { padding: 0 20px; } }
 

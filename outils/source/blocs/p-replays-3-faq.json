@@ -1,0 +1,108 @@
+{
+ "cle": "p-replays-3-faq",
+ "titre": "Rolling · Replays · FAQ",
+ "type": "e-flexbox",
+ "composition": {
+  "xml_structure": "<e-flexbox configuration-id=\"Replays · FAQ\"><e-flexbox configuration-id=\"Replays · FAQ · contenu\"><e-flexbox configuration-id=\"Replays · FAQ · en-tête\"><e-heading configuration-id=\"Replays · FAQ · titre\"></e-heading></e-flexbox><e-flexbox configuration-id=\"Replays · FAQ · questions\"><e-flexbox configuration-id=\"Replays · FAQ · question 1\"><e-heading configuration-id=\"Replays · FAQ · question 1 · titre\"></e-heading><e-paragraph configuration-id=\"Replays · FAQ · question 1 · réponse\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Replays · FAQ · question 2\"><e-heading configuration-id=\"Replays · FAQ · question 2 · titre\"></e-heading><e-paragraph configuration-id=\"Replays · FAQ · question 2 · réponse\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Replays · FAQ · question 3\"><e-heading configuration-id=\"Replays · FAQ · question 3 · titre\"></e-heading><e-paragraph configuration-id=\"Replays · FAQ · question 3 · réponse\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Replays · FAQ · question 4\"><e-heading configuration-id=\"Replays · FAQ · question 4 · titre\"></e-heading><e-paragraph configuration-id=\"Replays · FAQ · question 4 · réponse\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox></e-flexbox>",
+  "element_config": {
+   "Replays · FAQ": {
+    "tag": "section"
+   },
+   "Replays · FAQ · titre": {
+    "tag": "h2",
+    "title": "Vos questions <em>sur nos replays.</em>"
+   },
+   "Replays · FAQ · question 1 · titre": {
+    "tag": "h3",
+    "title": "Les replays sont-ils gratuits&nbsp;?"
+   },
+   "Replays · FAQ · question 1 · réponse": {
+    "paragraph": "Oui."
+   },
+   "Replays · FAQ · question 2 · titre": {
+    "tag": "h3",
+    "title": "Combien de temps restent-ils en ligne&nbsp;?"
+   },
+   "Replays · FAQ · question 2 · réponse": {
+    "paragraph": "[À confirmer.]"
+   },
+   "Replays · FAQ · question 3 · titre": {
+    "tag": "h3",
+    "title": "Pouvons-nous poser une question sur un replay&nbsp;?"
+   },
+   "Replays · FAQ · question 3 · réponse": {
+    "paragraph": "Oui&nbsp;: réservez un échange, nous y répondons avec plaisir."
+   },
+   "Replays · FAQ · question 4 · titre": {
+    "tag": "h3",
+    "title": "Comment être prévenus des prochains webinars&nbsp;?"
+   },
+   "Replays · FAQ · question 4 · réponse": {
+    "paragraph": "[À confirmer&nbsp;: newsletter ou page Webinars.]"
+   }
+  },
+  "classes": {
+   "Replays · FAQ": [
+    "section",
+    "section-suite"
+   ],
+   "Replays · FAQ · contenu": [
+    "conteneur",
+    "conteneur-etroit"
+   ],
+   "Replays · FAQ · en-tête": [
+    "entete-section"
+   ],
+   "Replays · FAQ · titre": [
+    "titre-md"
+   ],
+   "Replays · FAQ · questions": [
+    "liste-questions"
+   ],
+   "Replays · FAQ · question 1": [
+    "carte-verre",
+    "carte-question"
+   ],
+   "Replays · FAQ · question 1 · titre": [
+    "titre-question"
+   ],
+   "Replays · FAQ · question 1 · réponse": [
+    "texte"
+   ],
+   "Replays · FAQ · question 2": [
+    "carte-verre",
+    "carte-question"
+   ],
+   "Replays · FAQ · question 2 · titre": [
+    "titre-question"
+   ],
+   "Replays · FAQ · question 2 · réponse": [
+    "texte"
+   ],
+   "Replays · FAQ · question 3": [
+    "carte-verre",
+    "carte-question"
+   ],
+   "Replays · FAQ · question 3 · titre": [
+    "titre-question"
+   ],
+   "Replays · FAQ · question 3 · réponse": [
+    "texte"
+   ],
+   "Replays · FAQ · question 4": [
+    "carte-verre",
+    "carte-question"
+   ],
+   "Replays · FAQ · question 4 · titre": [
+    "titre-question"
+   ],
+   "Replays · FAQ · question 4 · réponse": [
+    "texte"
+   ]
+  },
+  "style": {
+   "Replays · FAQ · contenu": "display: flex; flex-direction: column; gap: 0;"
+  }
+ },
+ "brut": {}
+}

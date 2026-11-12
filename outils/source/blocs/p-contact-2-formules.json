@@ -1,0 +1,105 @@
+{
+ "cle": "p-contact-2-formules",
+ "titre": "Rolling · Contact · Rappel des formules",
+ "type": "e-flexbox",
+ "composition": {
+  "xml_structure": "<e-flexbox configuration-id=\"Contact · formules\"><e-flexbox configuration-id=\"Contact · formules · contenu\"><e-flexbox configuration-id=\"Contact · formules · en-tête\"><e-heading configuration-id=\"Contact · formules · titre\"></e-heading><e-paragraph configuration-id=\"Contact · formules · introduction\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Contact · formules · cartes\"><e-flexbox configuration-id=\"Contact · formule Création\"><e-heading configuration-id=\"Contact · formule Création · nom\"></e-heading><e-paragraph configuration-id=\"Contact · formule Création · prix\"></e-paragraph><e-paragraph configuration-id=\"Contact · formule Création · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Contact · formule Complet\"><e-heading configuration-id=\"Contact · formule Complet · nom\"></e-heading><e-paragraph configuration-id=\"Contact · formule Complet · prix\"></e-paragraph><e-paragraph configuration-id=\"Contact · formule Complet · texte\"></e-paragraph></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Contact · formules · bouton\"><e-button configuration-id=\"Contact · formules · comparer\"></e-button></e-flexbox></e-flexbox></e-flexbox>",
+  "element_config": {
+   "Contact · formules": {
+    "tag": "section"
+   },
+   "Contact · formules · titre": {
+    "tag": "h2",
+    "title": "Deux formules, <em>à prix fixe, en illimité.</em>"
+   },
+   "Contact · formules · introduction": {
+    "paragraph": "Un abonnement annuel, une équipe dédiée. Nous vous aidons à choisir pendant l'échange."
+   },
+   "Contact · formule Création · nom": {
+    "tag": "h3",
+    "title": "Création illimitée"
+   },
+   "Contact · formule Création · prix": {
+    "paragraph": "1&nbsp;250&nbsp;€<span> / mois</span>"
+   },
+   "Contact · formule Création · texte": {
+    "paragraph": "Tous vos contenus et vos projets, en vidéo."
+   },
+   "Contact · formule Complet · nom": {
+    "tag": "h3",
+    "title": "Création + Tournage"
+   },
+   "Contact · formule Complet · prix": {
+    "paragraph": "2&nbsp;080&nbsp;€<span> / mois</span>"
+   },
+   "Contact · formule Complet · texte": {
+    "paragraph": "Tout Création, plus le tournage et le motion fait main."
+   },
+   "Contact · formules · comparer": {
+    "text": "Comparer les formules",
+    "link": {
+     "destination": "/offres/"
+    }
+   }
+  },
+  "classes": {
+   "Contact · formules": [
+    "section",
+    "section-suite"
+   ],
+   "Contact · formules · contenu": [
+    "conteneur",
+    "conteneur-etroit"
+   ],
+   "Contact · formules · en-tête": [
+    "entete-section"
+   ],
+   "Contact · formules · titre": [
+    "titre-md"
+   ],
+   "Contact · formules · introduction": [
+    "texte-intro"
+   ],
+   "Contact · formules · cartes": [
+    "grille-2"
+   ],
+   "Contact · formule Création": [
+    "carte-pleine"
+   ],
+   "Contact · formule Création · nom": [
+    "titre-xs"
+   ],
+   "Contact · formule Création · prix": [
+    "offres-prix"
+   ],
+   "Contact · formule Création · texte": [
+    "texte-petit"
+   ],
+   "Contact · formule Complet": [
+    "carte-pleine",
+    "section-sombre",
+    "carte-prix-sombre"
+   ],
+   "Contact · formule Complet · nom": [
+    "titre-xs"
+   ],
+   "Contact · formule Complet · prix": [
+    "offres-prix"
+   ],
+   "Contact · formule Complet · texte": [
+    "texte-petit"
+   ],
+   "Contact · formules · bouton": [
+    "rangee"
+   ],
+   "Contact · formules · comparer": [
+    "bouton-verre"
+   ]
+  },
+  "style": {
+   "Contact · formules · contenu": "display: flex; flex-direction: column; gap: 0;",
+   "Contact · formules · bouton": "justify-content: center; margin-top: 28px;"
+  }
+ },
+ "brut": {}
+}

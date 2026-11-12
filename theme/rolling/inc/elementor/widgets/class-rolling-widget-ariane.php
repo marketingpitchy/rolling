@@ -52,7 +52,7 @@ class Rolling_Widget_Ariane extends Rolling_Widget {
 			$page   = get_page_by_path( $slugs[ $type ] );
 			$parent = $page ? $page->ID : 0;
 		} elseif ( 'post' === $type ) {
-			$parent = (int) get_option( 'page_for_posts' );
+			$parent = Rolling_Dynamique::page_blog();
 		}
 
 		echo '<nav class="ariane" aria-label="' . esc_attr( $r['libelle'] ) . '"><ol>';

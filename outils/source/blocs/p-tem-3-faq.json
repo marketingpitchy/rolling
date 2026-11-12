@@ -1,0 +1,108 @@
+{
+ "cle": "p-tem-3-faq",
+ "titre": "Rolling · Témoignages · FAQ",
+ "type": "e-flexbox",
+ "composition": {
+  "xml_structure": "<e-flexbox configuration-id=\"Témoignages · FAQ\"><e-flexbox configuration-id=\"Témoignages · FAQ · contenu\"><e-flexbox configuration-id=\"Témoignages · FAQ · en-tête\"><e-heading configuration-id=\"Témoignages · FAQ · titre\"></e-heading></e-flexbox><e-flexbox configuration-id=\"Témoignages · FAQ · questions\"><e-flexbox configuration-id=\"Témoignages · FAQ · question 1\"><e-heading configuration-id=\"Témoignages · FAQ · question 1 · titre\"></e-heading><e-paragraph configuration-id=\"Témoignages · FAQ · question 1 · réponse\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Témoignages · FAQ · question 2\"><e-heading configuration-id=\"Témoignages · FAQ · question 2 · titre\"></e-heading><e-paragraph configuration-id=\"Témoignages · FAQ · question 2 · réponse\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Témoignages · FAQ · question 3\"><e-heading configuration-id=\"Témoignages · FAQ · question 3 · titre\"></e-heading><e-paragraph configuration-id=\"Témoignages · FAQ · question 3 · réponse\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Témoignages · FAQ · question 4\"><e-heading configuration-id=\"Témoignages · FAQ · question 4 · titre\"></e-heading><e-paragraph configuration-id=\"Témoignages · FAQ · question 4 · réponse\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox></e-flexbox>",
+  "element_config": {
+   "Témoignages · FAQ": {
+    "tag": "section"
+   },
+   "Témoignages · FAQ · titre": {
+    "tag": "h2",
+    "title": "Vos questions <em>sur nos clients.</em>"
+   },
+   "Témoignages · FAQ · question 1 · titre": {
+    "tag": "h3",
+    "title": "Qui sont vos clients&nbsp;?"
+   },
+   "Témoignages · FAQ · question 1 · réponse": {
+    "paragraph": "Des équipes communication interne, RH, formation et marketing de grandes entreprises et d'ETI. Beaucoup nous connaissent depuis Pitchy."
+   },
+   "Témoignages · FAQ · question 2 · titre": {
+    "tag": "h3",
+    "title": "Pouvons-nous parler à l'un de vos clients&nbsp;?"
+   },
+   "Témoignages · FAQ · question 2 · réponse": {
+    "paragraph": "[À confirmer&nbsp;: mise en relation avec un client référent.]"
+   },
+   "Témoignages · FAQ · question 3 · titre": {
+    "tag": "h3",
+    "title": "Travaillez-vous avec des entreprises de toutes tailles&nbsp;?"
+   },
+   "Témoignages · FAQ · question 3 · réponse": {
+    "paragraph": "[À confirmer.]"
+   },
+   "Témoignages · FAQ · question 4 · titre": {
+    "tag": "h3",
+    "title": "Comment commence une collaboration&nbsp;?"
+   },
+   "Témoignages · FAQ · question 4 · réponse": {
+    "paragraph": "Par un échange de 30 minutes. Nous définissons ensemble votre stratégie vidéo de l'année et vos 3 premières vidéos."
+   }
+  },
+  "classes": {
+   "Témoignages · FAQ": [
+    "section",
+    "section-suite"
+   ],
+   "Témoignages · FAQ · contenu": [
+    "conteneur",
+    "conteneur-etroit"
+   ],
+   "Témoignages · FAQ · en-tête": [
+    "entete-section"
+   ],
+   "Témoignages · FAQ · titre": [
+    "titre-md"
+   ],
+   "Témoignages · FAQ · questions": [
+    "liste-questions"
+   ],
+   "Témoignages · FAQ · question 1": [
+    "carte-verre",
+    "carte-question"
+   ],
+   "Témoignages · FAQ · question 1 · titre": [
+    "titre-question"
+   ],
+   "Témoignages · FAQ · question 1 · réponse": [
+    "texte"
+   ],
+   "Témoignages · FAQ · question 2": [
+    "carte-verre",
+    "carte-question"
+   ],
+   "Témoignages · FAQ · question 2 · titre": [
+    "titre-question"
+   ],
+   "Témoignages · FAQ · question 2 · réponse": [
+    "texte"
+   ],
+   "Témoignages · FAQ · question 3": [
+    "carte-verre",
+    "carte-question"
+   ],
+   "Témoignages · FAQ · question 3 · titre": [
+    "titre-question"
+   ],
+   "Témoignages · FAQ · question 3 · réponse": [
+    "texte"
+   ],
+   "Témoignages · FAQ · question 4": [
+    "carte-verre",
+    "carte-question"
+   ],
+   "Témoignages · FAQ · question 4 · titre": [
+    "titre-question"
+   ],
+   "Témoignages · FAQ · question 4 · réponse": [
+    "texte"
+   ]
+  },
+  "style": {
+   "Témoignages · FAQ · contenu": "display: flex; flex-direction: column; gap: 0;"
+  }
+ },
+ "brut": {}
+}

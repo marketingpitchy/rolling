@@ -176,7 +176,7 @@ class Rolling_Seo {
 			return;
 		}
 
-		$blog = get_option( 'page_for_posts' ) ? get_permalink( (int) get_option( 'page_for_posts' ) ) : home_url( '/' );
+		$blog = Rolling_Dynamique::page_blog() ? get_permalink( Rolling_Dynamique::page_blog() ) : home_url( '/' );
 		if ( is_category() ) {
 			$blog = add_query_arg( 'categorie', get_queried_object()->slug, $blog );
 		}

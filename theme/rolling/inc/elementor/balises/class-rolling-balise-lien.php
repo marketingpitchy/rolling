@@ -60,7 +60,7 @@ class Rolling_Balise_Lien extends Data_Tag {
 		$choix = (string) $this->get_settings( 'lien' );
 
 		if ( 'realisation' === $choix ) {
-			$videos = array_values( array_filter( (array) Rolling_Contenus::valeur( 'videos', $id ), 'get_post' ) );
+			$videos = Rolling_Contenus::realisations_liees( $id );
 			return $videos ? (string) get_permalink( (int) $videos[0] ) : '';
 		}
 

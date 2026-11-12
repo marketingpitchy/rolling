@@ -3,7 +3,7 @@
  "titre": "Rolling · Contact · L'échange et le calendrier",
  "type": "e-flexbox",
  "composition": {
-  "xml_structure": "<e-flexbox configuration-id=\"Contact · échange\"><e-flexbox configuration-id=\"Contact · contenu\"><e-flexbox configuration-id=\"Contact · textes\"><e-flexbox configuration-id=\"Contact · pastille\"><e-paragraph configuration-id=\"Contact · pastille · texte\"></e-paragraph></e-flexbox><e-heading configuration-id=\"Contact · titre\"></e-heading><e-paragraph configuration-id=\"Contact · introduction\"></e-paragraph><e-heading configuration-id=\"Contact · pendant\"></e-heading><e-flexbox configuration-id=\"Contact · coches\"><e-flexbox configuration-id=\"Contact\"><e-flexbox configuration-id=\"Contact · ligne 1\"><e-image configuration-id=\"Contact · coche 1\"></e-image><e-paragraph configuration-id=\"Contact · texte 1\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Contact · ligne 2\"><e-image configuration-id=\"Contact · coche 2\"></e-image><e-paragraph configuration-id=\"Contact · texte 2\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Contact · ligne 3\"><e-image configuration-id=\"Contact · coche 3\"></e-image><e-paragraph configuration-id=\"Contact · texte 3\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Contact · ligne 4\"><e-image configuration-id=\"Contact · coche 4\"></e-image><e-paragraph configuration-id=\"Contact · texte 4\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Contact · preuve\"><e-flexbox configuration-id=\"Contact · visages\"><e-image configuration-id=\"Contact · visage 1\"></e-image><e-image configuration-id=\"Contact · visage 2\"></e-image><e-image configuration-id=\"Contact · visage 3\"></e-image></e-flexbox><e-paragraph configuration-id=\"Contact · preuve · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Contact · écrire\"><e-heading configuration-id=\"Contact · écrire · titre\"></e-heading><e-paragraph configuration-id=\"Contact · écrire · texte\"></e-paragraph></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Contact · calendrier\"><e-flexbox configuration-id=\"Contact · clap\"><e-flexbox configuration-id=\"Contact · clap · corps\"><e-flexbox configuration-id=\"Contact · clap · cases\"><e-flexbox configuration-id=\"Contact · clap · Scène\"><e-paragraph configuration-id=\"Contact · clap · Scène · nom\"></e-paragraph><e-paragraph configuration-id=\"Contact · clap · Scène · valeur\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Contact · clap · Prise\"><e-paragraph configuration-id=\"Contact · clap · Prise · nom\"></e-paragraph><e-paragraph configuration-id=\"Contact · clap · Prise · valeur\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Contact · clap · Durée\"><e-paragraph configuration-id=\"Contact · clap · Durée · nom\"></e-paragraph><e-paragraph configuration-id=\"Contact · clap · Durée · valeur\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Contact · emplacement\"><e-paragraph configuration-id=\"Contact · emplacement · label\"></e-paragraph><e-paragraph configuration-id=\"Contact · emplacement · titre\"></e-paragraph><e-paragraph configuration-id=\"Contact · emplacement · texte\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox></e-flexbox>",
+  "xml_structure": "<e-flexbox configuration-id=\"Contact · échange\"><e-flexbox configuration-id=\"Contact · contenu\"><e-flexbox configuration-id=\"Contact · textes\"><e-flexbox configuration-id=\"Contact · pastille\"><e-paragraph configuration-id=\"Contact · pastille · texte\"></e-paragraph></e-flexbox><e-heading configuration-id=\"Contact · titre\"></e-heading><e-paragraph configuration-id=\"Contact · introduction\"></e-paragraph><e-heading configuration-id=\"Contact · pendant\"></e-heading><e-flexbox configuration-id=\"Contact · coches\"><e-flexbox configuration-id=\"Contact\"><e-flexbox configuration-id=\"Contact · ligne 1\"><e-image configuration-id=\"Contact · coche 1\"></e-image><e-paragraph configuration-id=\"Contact · texte 1\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Contact · ligne 2\"><e-image configuration-id=\"Contact · coche 2\"></e-image><e-paragraph configuration-id=\"Contact · texte 2\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Contact · ligne 3\"><e-image configuration-id=\"Contact · coche 3\"></e-image><e-paragraph configuration-id=\"Contact · texte 3\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Contact · ligne 4\"><e-image configuration-id=\"Contact · coche 4\"></e-image><e-paragraph configuration-id=\"Contact · texte 4\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Contact · preuve\"><e-flexbox configuration-id=\"Contact · visages\"><e-image configuration-id=\"Contact · visage 1\"></e-image><e-image configuration-id=\"Contact · visage 2\"></e-image><e-image configuration-id=\"Contact · visage 3\"></e-image></e-flexbox><e-paragraph configuration-id=\"Contact · preuve · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Contact · écrire\"><e-heading configuration-id=\"Contact · écrire · titre\"></e-heading><e-paragraph configuration-id=\"Contact · écrire · texte\"></e-paragraph></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Contact · calendrier\"><e-flexbox configuration-id=\"Contact · clap\"><e-flexbox configuration-id=\"Contact · clap · corps\"><e-flexbox configuration-id=\"Contact · clap · cases\"><e-flexbox configuration-id=\"Contact · clap · Scène\"><e-paragraph configuration-id=\"Contact · clap · Scène · nom\"></e-paragraph><e-paragraph configuration-id=\"Contact · clap · Scène · valeur\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Contact · clap · Prise\"><e-paragraph configuration-id=\"Contact · clap · Prise · nom\"></e-paragraph><e-paragraph configuration-id=\"Contact · clap · Prise · valeur\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Contact · clap · Durée\"><e-paragraph configuration-id=\"Contact · clap · Durée · nom\"></e-paragraph><e-paragraph configuration-id=\"Contact · clap · Durée · valeur\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Contact · emplacement\"><e-paragraph configuration-id=\"Contact · calendrier HubSpot\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox></e-flexbox>",
   "element_config": {
    "Contact · échange": {
     "tag": "section"
@@ -118,14 +118,8 @@
    "Contact · clap · Durée · valeur": {
     "paragraph": "30:00"
    },
-   "Contact · emplacement · label": {
-    "paragraph": "Emplacement réservé"
-   },
-   "Contact · emplacement · titre": {
-    "paragraph": "Votre calendrier HubSpot"
-   },
-   "Contact · emplacement · texte": {
-    "paragraph": "Remplacez ce texte par le calendrier HubSpot (élément HTML ou code court). La hauteur est réservée : la page ne saute pas quand il se charge."
+   "Contact · calendrier HubSpot": {
+    "paragraph": "⟦widget:html|html=Collez ici le code du calendrier HubSpot (cet élément est un bloc HTML).⟧"
    }
   },
   "classes": {
@@ -241,16 +235,6 @@
    "Contact · emplacement": [
     "carte-verre",
     "zone-calendrier"
-   ],
-   "Contact · emplacement · label": [
-    "label",
-    "label-violet"
-   ],
-   "Contact · emplacement · titre": [
-    "titre-xs"
-   ],
-   "Contact · emplacement · texte": [
-    "texte-petit"
    ]
   },
   "style": {
@@ -260,8 +244,7 @@
    "Contact · pendant": "margin-top: 36px;",
    "Contact · coches": "margin-top: 14px; padding: 0;",
    "Contact · preuve": "margin-top: 32px;",
-   "Contact · écrire": "margin-top: 36px;",
-   "Contact · emplacement · texte": "max-width: 34ch;"
+   "Contact · écrire": "margin-top: 36px;"
   }
  },
  "brut": {}

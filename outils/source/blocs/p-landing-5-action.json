@@ -3,7 +3,7 @@
  "titre": "Rolling · Landing · 00:04 Votre échange",
  "type": "e-flexbox",
  "composition": {
-  "xml_structure": "<e-flexbox configuration-id=\"Landing · action\"><e-flexbox configuration-id=\"Landing · action · contenu\"><e-flexbox configuration-id=\"Landing · action · bloc\"><e-flexbox configuration-id=\"Landing · action · textes\"><e-flexbox configuration-id=\"Landing · action · repère\"><e-paragraph configuration-id=\"Landing · action · timecode\"></e-paragraph><e-paragraph configuration-id=\"Landing · action · sur-titre\"></e-paragraph></e-flexbox><e-heading configuration-id=\"Landing · action · titre\"></e-heading><e-paragraph configuration-id=\"Landing · action · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Landing · calendrier\"><e-paragraph configuration-id=\"Landing · calendrier · label\"></e-paragraph><e-paragraph configuration-id=\"Landing · calendrier · titre\"></e-paragraph><e-paragraph configuration-id=\"Landing · calendrier · texte\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox></e-flexbox>",
+  "xml_structure": "<e-flexbox configuration-id=\"Landing · action\"><e-flexbox configuration-id=\"Landing · action · contenu\"><e-flexbox configuration-id=\"Landing · action · bloc\"><e-flexbox configuration-id=\"Landing · action · textes\"><e-flexbox configuration-id=\"Landing · action · repère\"><e-paragraph configuration-id=\"Landing · action · timecode\"></e-paragraph><e-paragraph configuration-id=\"Landing · action · sur-titre\"></e-paragraph></e-flexbox><e-heading configuration-id=\"Landing · action · titre\"></e-heading><e-paragraph configuration-id=\"Landing · action · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Landing · calendrier\"><e-paragraph configuration-id=\"Landing · calendrier HubSpot\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox></e-flexbox>",
   "element_config": {
    "Landing · action": {
     "_cssid": "landing-rdv",
@@ -22,14 +22,8 @@
    "Landing · action · texte": {
     "paragraph": "Choisissez votre créneau : nous regardons ensemble vos contenus et vos projets, puis nous vous proposons vos 3 premières vidéos."
    },
-   "Landing · calendrier · label": {
-    "paragraph": "Emplacement réservé"
-   },
-   "Landing · calendrier · titre": {
-    "paragraph": "Votre calendrier HubSpot"
-   },
-   "Landing · calendrier · texte": {
-    "paragraph": "Remplacez ce texte par le calendrier HubSpot (élément HTML ou code court)."
+   "Landing · calendrier HubSpot": {
+    "paragraph": "⟦widget:html|html=Collez ici le code du calendrier HubSpot (cet élément est un bloc HTML).⟧"
    }
   },
   "classes": {
@@ -61,24 +55,13 @@
     "carte-verre",
     "zone-calendrier",
     "zone-calendrier-court"
-   ],
-   "Landing · calendrier · label": [
-    "label",
-    "label-violet"
-   ],
-   "Landing · calendrier · titre": [
-    "titre-xs"
-   ],
-   "Landing · calendrier · texte": [
-    "texte-petit"
    ]
   },
   "style": {
    "Landing · action · contenu": "display: flex; flex-direction: column; gap: 0;",
    "Landing · action · textes": "display: flex; flex-direction: column; gap: 0;",
    "Landing · action · titre": "margin-top: 18px;",
-   "Landing · action · texte": "margin-top: 10px;",
-   "Landing · calendrier · texte": "max-width: 34ch;"
+   "Landing · action · texte": "margin-top: 10px;"
   }
  },
  "brut": {}

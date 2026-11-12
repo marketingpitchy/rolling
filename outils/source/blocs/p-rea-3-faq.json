@@ -1,0 +1,125 @@
+{
+ "cle": "p-rea-3-faq",
+ "titre": "Rolling · Réalisations · FAQ",
+ "type": "e-flexbox",
+ "composition": {
+  "xml_structure": "<e-flexbox configuration-id=\"Réalisations · FAQ\"><e-flexbox configuration-id=\"Réalisations · FAQ · contenu\"><e-flexbox configuration-id=\"Réalisations · FAQ · en-tête\"><e-heading configuration-id=\"Réalisations · FAQ · titre\"></e-heading></e-flexbox><e-flexbox configuration-id=\"Réalisations · FAQ · questions\"><e-flexbox configuration-id=\"Réalisations · FAQ · question 1\"><e-heading configuration-id=\"Réalisations · FAQ · question 1 · titre\"></e-heading><e-paragraph configuration-id=\"Réalisations · FAQ · question 1 · réponse\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Réalisations · FAQ · question 2\"><e-heading configuration-id=\"Réalisations · FAQ · question 2 · titre\"></e-heading><e-paragraph configuration-id=\"Réalisations · FAQ · question 2 · réponse\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Réalisations · FAQ · question 3\"><e-heading configuration-id=\"Réalisations · FAQ · question 3 · titre\"></e-heading><e-paragraph configuration-id=\"Réalisations · FAQ · question 3 · réponse\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Réalisations · FAQ · question 4\"><e-heading configuration-id=\"Réalisations · FAQ · question 4 · titre\"></e-heading><e-paragraph configuration-id=\"Réalisations · FAQ · question 4 · réponse\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Réalisations · FAQ · question 5\"><e-heading configuration-id=\"Réalisations · FAQ · question 5 · titre\"></e-heading><e-paragraph configuration-id=\"Réalisations · FAQ · question 5 · réponse\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox></e-flexbox>",
+  "element_config": {
+   "Réalisations · FAQ": {
+    "tag": "section"
+   },
+   "Réalisations · FAQ · titre": {
+    "tag": "h2",
+    "title": "Vos questions <em>sur nos réalisations.</em>"
+   },
+   "Réalisations · FAQ · question 1 · titre": {
+    "tag": "h3",
+    "title": "Quels types de vidéos réalisez-vous&nbsp;?"
+   },
+   "Réalisations · FAQ · question 1 · réponse": {
+    "paragraph": "Motion design, tournages, interviews, démos produit, avatars et voix off, formats courts pour les réseaux. Chaque réalisation indique son contenu de départ et le format livré."
+   },
+   "Réalisations · FAQ · question 2 · titre": {
+    "tag": "h3",
+    "title": "Pouvez-vous partir de nos contenus existants&nbsp;?"
+   },
+   "Réalisations · FAQ · question 2 · réponse": {
+    "paragraph": "Oui, c'est notre point de départ le plus fréquent&nbsp;: articles, modules de formation, présentations, notes internes. Nous en tirons des vidéos courtes, prêtes à diffuser."
+   },
+   "Réalisations · FAQ · question 3 · titre": {
+    "tag": "h3",
+    "title": "Combien de temps faut-il pour produire une vidéo&nbsp;?"
+   },
+   "Réalisations · FAQ · question 3 · réponse": {
+    "paragraph": "[À confirmer&nbsp;: délai moyen entre le brief et la première version.]"
+   },
+   "Réalisations · FAQ · question 4 · titre": {
+    "tag": "h3",
+    "title": "Les vidéos respectent-elles notre charte graphique&nbsp;?"
+   },
+   "Réalisations · FAQ · question 4 · réponse": {
+    "paragraph": "Oui. Votre directeur artistique s'appuie sur votre charte (couleurs, typographies, logo) pour chaque vidéo."
+   },
+   "Réalisations · FAQ · question 5 · titre": {
+    "tag": "h3",
+    "title": "Pouvons-nous voir des vidéos de notre secteur&nbsp;?"
+   },
+   "Réalisations · FAQ · question 5 · réponse": {
+    "paragraph": "Oui&nbsp;: filtrez les réalisations par métier ou par format, ou demandez-nous des exemples pendant l'échange."
+   }
+  },
+  "classes": {
+   "Réalisations · FAQ": [
+    "section",
+    "section-suite"
+   ],
+   "Réalisations · FAQ · contenu": [
+    "conteneur",
+    "conteneur-etroit"
+   ],
+   "Réalisations · FAQ · en-tête": [
+    "entete-section"
+   ],
+   "Réalisations · FAQ · titre": [
+    "titre-md"
+   ],
+   "Réalisations · FAQ · questions": [
+    "liste-questions"
+   ],
+   "Réalisations · FAQ · question 1": [
+    "carte-verre",
+    "carte-question"
+   ],
+   "Réalisations · FAQ · question 1 · titre": [
+    "titre-question"
+   ],
+   "Réalisations · FAQ · question 1 · réponse": [
+    "texte"
+   ],
+   "Réalisations · FAQ · question 2": [
+    "carte-verre",
+    "carte-question"
+   ],
+   "Réalisations · FAQ · question 2 · titre": [
+    "titre-question"
+   ],
+   "Réalisations · FAQ · question 2 · réponse": [
+    "texte"
+   ],
+   "Réalisations · FAQ · question 3": [
+    "carte-verre",
+    "carte-question"
+   ],
+   "Réalisations · FAQ · question 3 · titre": [
+    "titre-question"
+   ],
+   "Réalisations · FAQ · question 3 · réponse": [
+    "texte"
+   ],
+   "Réalisations · FAQ · question 4": [
+    "carte-verre",
+    "carte-question"
+   ],
+   "Réalisations · FAQ · question 4 · titre": [
+    "titre-question"
+   ],
+   "Réalisations · FAQ · question 4 · réponse": [
+    "texte"
+   ],
+   "Réalisations · FAQ · question 5": [
+    "carte-verre",
+    "carte-question"
+   ],
+   "Réalisations · FAQ · question 5 · titre": [
+    "titre-question"
+   ],
+   "Réalisations · FAQ · question 5 · réponse": [
+    "texte"
+   ]
+  },
+  "style": {
+   "Réalisations · FAQ · contenu": "display: flex; flex-direction: column; gap: 0;"
+  }
+ },
+ "brut": {}
+}
