@@ -173,6 +173,11 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
     modificateurs de classes déjà prioritaires (entete-page, titre-point-bleu…).
   - Photo des fondateurs : **pas dans le thème** (photo provisoire hero-interview.jpg) : la cliente l'importe et la
     remplace dans Elementor. Le contrôle automatique a refusé de la copier, puis a bloqué les commits suivants.
+- **Chargement de page effet film** (demande avant la fin de la livraison 4) : maquette `maquettes/loading/maquette-loading.html`
+  (copie /workspace/maquette-loading.html), 4 options : A amorce 3-2-1, B clap qui se ferme puis rideau, C ouverture
+  cinéma (bandes noires + REC + timecode), D barre de lecture en haut sans écran. Conseil : C à l'arrivée (première page
+  de la visite, sessionStorage), D entre les pages ; < 1,5 s, clic / Échap pour passer, rien avec « réduire les
+  animations », rien dans l'éditeur, pas sur la landing ; **en attente du choix**.
 - FAQ : la cliente ajoute elle-même les réponses ; garder les questions telles quelles.
 - Le WordPress de production existe déjà chez la cliente : on livre seulement le thème (zip à importer).
 
