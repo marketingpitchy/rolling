@@ -203,7 +203,16 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   vignette motion du hero mobile jugée vide + frise « simplette » ⇒ M1 graphique animé (+87 % qui compte, courbe, barres) /
   M2 formes en mouvement ; F1 pistes de montage (timecode, règle, piste V1 avec noms des plans, piste son, tête de lecture)
   / F2 barres façon stories en haut de l'image ; conseil M1 + F1. Arrivée du showreel : S1 ouverture cinéma (bandes noires),
-  S2 grandit au défilement (animation-timeline, conseil), S3 projecteur qui s'allume.
+  S2 grandit au défilement (animation-timeline, conseil), S3 projecteur qui s'allume. **Choix : M2 + F2 et S2** ⇒ **0.4.3** :
+  `hero-montage` refaite (barres stories = ::after masqué en 4 segments, `rl-stories-hero` ; timecode = ::before avec
+  compteur `--rl-s` (@property dans rolling.css), `content: … / ''` ; plus de timeline), `chapitres-hero` (p avec 4 span,
+  1er enfant de Visuels pour garder le compte nth-last-child), `motion-formes` + `mot-motion` (vignette motion mobile :
+  fond pêche, rond / carré = pseudo du cadre, triangle / trait = pseudo du mot ; mot animé par la couleur, pas de transform
+  sinon le triangle se cale sur le mot), plaque « Vos chiffres en motion » (aussi sur ordinateur) ; `showreel-grandit`
+  (72 % → 100 %, 88 % en mobile) et `apparait-defile` (boutons). Leçon : le convertisseur retire `animation` **et ses
+  longhands** du CSS de premier niveau ⇒ champ `brut` (4e élément du tuple dans classes_fiches.py), animation-timeline
+  écrit après le raccourci ; fond qui doit écraser un dégradé : `background: linear-gradient(c, c)` (une couleur seule
+  ne retire pas l'image).
 - **Chargement de page effet film** (demande avant la fin de la livraison 4) : maquette `maquettes/loading/maquette-loading.html`
   (copie /workspace/maquette-loading.html), 4 options : A amorce 3-2-1, B clap qui se ferme puis rideau, C ouverture
   cinéma (bandes noires + REC + timecode + règle avec la tête de lecture rouge des frises, plus de filet fin), D barre de lecture en haut sans écran. Conseil : C à l'arrivée (première page

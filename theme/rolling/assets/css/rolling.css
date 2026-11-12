@@ -28,8 +28,17 @@ img, svg, video { max-width: 100%; }
 @keyframes rl-defile { to { transform: translateX(-50%); } }
 @property --rl-angle { syntax: "<angle>"; inherits: false; initial-value: 0deg; }
 @keyframes rl-anneau { to { --rl-angle: 360deg; } }
+@property --rl-s { syntax: "<integer>"; inherits: false; initial-value: 1; }
 @keyframes rl-plan-hero { 0% { opacity: 0; } 3%, 25% { opacity: 1; } 28%, 100% { opacity: 0; } }
-@keyframes rl-tete-hero { from { left: 8px; } to { left: calc(100% - 20px); } }
+@keyframes rl-stories-hero { from { background-size: 0% 100%, auto; } to { background-size: 100% 100%, auto; } }
+@keyframes rl-secondes-hero { from { --rl-s: 0; } to { --rl-s: 12; } }
+@keyframes rl-forme-rebond { 0% { transform: translateY(-130px); } 25% { transform: none; } 35% { transform: translateY(-26px); } 45%, 100% { transform: none; } }
+@keyframes rl-forme-tourne { 0% { transform: rotate(-90deg) scale(0); } 40%, 100% { transform: none; } }
+@keyframes rl-forme-tombe { 0%, 15% { transform: translateY(-200px); } 45%, 100% { transform: none; } }
+@keyframes rl-forme-allonge { 0%, 20% { width: 0; } 55%, 100% { width: 190px; } }
+@keyframes rl-forme-mot { 0%, 35% { color: transparent; letter-spacing: 0.1em; } 55%, 100% { color: #0F0F12; letter-spacing: -0.05em; } }
+@keyframes rl-showreel-grandit { from { width: var(--rl-depart, 72%); } to { width: 100%; } }
+@keyframes rl-apparait-defile { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
 
 /* Rien ne bouge pour qui a choisi de réduire les animations, ni dans l'éditeur Elementor */
 @media (prefers-reduced-motion: reduce) {

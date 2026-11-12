@@ -66,13 +66,15 @@
    ],
    "Showreel · cadre": [
     "carte-verre",
-    "carte-ecran"
+    "carte-ecran",
+    "showreel-grandit"
    ],
    "Bouton son": [
     "bouton-son"
    ],
    "Showreel · boutons": [
-    "rangee"
+    "rangee",
+    "apparait-defile"
    ],
    "Showreel · bouton principal": [
     "bouton-principal"

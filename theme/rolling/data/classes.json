@@ -24226,7 +24226,7 @@
             "id": "g-1ec77e8",
             "label": "hero-montage",
             "groupe": "Fiches et listes",
-            "description": "Visuels du hero en mobile (sous 768 px) : écran de montage. Les vignettes s'enchaînent dans un seul cadre (3 s chacune, dans l'ordre), mini timeline dessous avec la tête de lecture rouge. Sans effet sur ordinateur et tablette.",
+            "description": "Visuels du hero en mobile (sous 768 px) : les vignettes s'enchaînent dans un seul cadre (3 s chacune, dans l'ordre), avec des barres de progression façon stories en haut et un timecode. Sans effet sur ordinateur et tablette.",
             "variants": [
                 {
                     "meta": {
@@ -24237,7 +24237,7 @@
                         "height": {
                             "$$type": "size",
                             "value": {
-                                "size": 372,
+                                "size": 400,
                                 "unit": "px"
                             }
                         },
@@ -24250,6 +24250,13 @@
                                         "size": 4,
                                         "unit": "px"
                                     }
+                                },
+                                "block-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 30,
+                                        "unit": "px"
+                                    }
                                 }
                             }
                         },
@@ -24259,7 +24266,353 @@
                         }
                     },
                     "custom_css": {
-                        "raw": "aXNvbGF0aW9uOiBpc29sYXRlOyAmOjpiZWZvcmUgeyBwb3NpdGlvbjogcmVsYXRpdmU7IHRvcDogYXV0bzsgcmlnaHQ6IGF1dG87IGJvdHRvbTogYXV0bzsgbGVmdDogYXV0bzsgaGVpZ2h0OiBhdXRvOyBvcGFjaXR5OiAxOyBtaXgtYmxlbmQtbW9kZTogbm9ybWFsOyBib3JkZXI6IDA7IC13ZWJraXQtbWFzazogbm9uZTsgbWFzazogbm9uZTsgcGFkZGluZzogMDsgY29udGVudDogJyc7IHBvc2l0aW9uOiBhYnNvbHV0ZTsgdG9wOiBhdXRvOyByaWdodDogYXV0bzsgYm90dG9tOiAwOyBsZWZ0OiA4cHg7IHotaW5kZXg6IDM7IHdpZHRoOiAxMnB4OyBoZWlnaHQ6IDU2cHg7IHBvaW50ZXItZXZlbnRzOiBub25lOyBiYWNrZ3JvdW5kOiAjRkYzQjMwOyBib3gtc2hhZG93OiBub25lOyBjbGlwLXBhdGg6IHBvbHlnb24oMCAwLCAxMDAlIDAsIDEwMCUgN3B4LCBjYWxjKDUwJSArIDFweCkgMTFweCwgY2FsYyg1MCUgKyAxcHgpIDEwMCUsIGNhbGMoNTAlIC0gMXB4KSAxMDAlLCBjYWxjKDUwJSAtIDFweCkgMTFweCwgMCA3cHgpOyBhbmltYXRpb246IHJsLXRldGUtaGVybyAxMnMgbGluZWFyIGluZmluaXRlOyB9ICY6OmFmdGVyIHsgY29udGVudDogJyc7IHBvc2l0aW9uOiBhYnNvbHV0ZTsgbGVmdDogMDsgcmlnaHQ6IDA7IGJvdHRvbTogMDsgei1pbmRleDogMjsgaGVpZ2h0OiA1MHB4OyBwYWRkaW5nOiA4cHg7IGJveC1zaXppbmc6IGJvcmRlci1ib3g7IGJvcmRlci1yYWRpdXM6IDE2cHg7IHBvaW50ZXItZXZlbnRzOiBub25lOyBib3gtc2hhZG93OiAwIDEwcHggMjRweCAtMTRweCByZ2JhKDQwLDIwLDEyMCwwLjM1KTsgYmFja2dyb3VuZDogcmVwZWF0aW5nLWxpbmVhci1ncmFkaWVudCg5MGRlZywgcmdiYSgyNTUsMjU1LDI1NSwwLjU1KSAwIDJweCwgcmdiYSgyNTUsMjU1LDI1NSwwKSAycHggNXB4KSAwIGNhbGMoMTAwJSAtIDZweCkgLyAxMDAlIDdweCBuby1yZXBlYXQgY29udGVudC1ib3gsIGxpbmVhci1ncmFkaWVudCgjNUIzQkVBLCAjNUIzQkVBKSAwIDAgLyBjYWxjKDI1JSAtIDRweCkgMTAwJSBuby1yZXBlYXQgY29udGVudC1ib3gsIGxpbmVhci1ncmFkaWVudCgjOEU0REU2LCAjOEU0REU2KSAzMy4zMzMlIDAgLyBjYWxjKDI1JSAtIDRweCkgMTAwJSBuby1yZXBlYXQgY29udGVudC1ib3gsIGxpbmVhci1ncmFkaWVudCgjMzQzNEUwLCAjMzQzNEUwKSA2Ni42NjclIDAgLyBjYWxjKDI1JSAtIDRweCkgMTAwJSBuby1yZXBlYXQgY29udGVudC1ib3gsIGxpbmVhci1ncmFkaWVudCgjRTA1NjJBLCAjRTA1NjJBKSAxMDAlIDAgLyBjYWxjKDI1JSAtIDRweCkgMTAwJSBuby1yZXBlYXQgY29udGVudC1ib3gsICNGRkZGRkY7IH0gJiA+IC5lLWNvbiB7IHBvc2l0aW9uOiBhYnNvbHV0ZTsgdG9wOiAwOyByaWdodDogMDsgYm90dG9tOiA2NnB4OyBsZWZ0OiAwOyB3aWR0aDogYXV0bzsgYWxpZ24tc2VsZjogc3RyZXRjaDsganVzdGlmeS1zZWxmOiBzdHJldGNoOyB6LWluZGV4OiAxOyBvcGFjaXR5OiAwOyBwYWRkaW5nOiAxMHB4OyBib3JkZXItcmFkaXVzOiAzMHB4OyAtLXJsLXJheW9uLXBob3RvOiAyMXB4OyAtLXJsLW1hcmdlLXZpZ25ldHRlOiAxMHB4OyBhbmltYXRpb246IHJsLXBsYW4taGVybyAxMnMgaW5maW5pdGU7IH0gJiA+IC5lLWNvbjpudGgtbGFzdC1jaGlsZCg0KSB7IG9wYWNpdHk6IDE7IH0gJiA+IC5lLWNvbjpudGgtbGFzdC1jaGlsZCgzKSB7IGFuaW1hdGlvbi1kZWxheTogM3M7IH0gJiA+IC5lLWNvbjpudGgtbGFzdC1jaGlsZCgyKSB7IGFuaW1hdGlvbi1kZWxheTogNnM7IH0gJiA+IC5lLWNvbjpudGgtbGFzdC1jaGlsZCgxKSB7IGFuaW1hdGlvbi1kZWxheTogOXM7IH0gJiA+IC5lLWNvbiA+IC5lLWNvbiB7IGhlaWdodDogMTAwJTsgYXNwZWN0LXJhdGlvOiBhdXRvOyB9"
+                        "raw": "aXNvbGF0aW9uOiBpc29sYXRlOyAmOjpiZWZvcmUgeyBwb3NpdGlvbjogcmVsYXRpdmU7IHRvcDogYXV0bzsgcmlnaHQ6IGF1dG87IGJvdHRvbTogYXV0bzsgbGVmdDogYXV0bzsgaGVpZ2h0OiBhdXRvOyBvcGFjaXR5OiAxOyBtaXgtYmxlbmQtbW9kZTogbm9ybWFsOyBib3JkZXI6IDA7IC13ZWJraXQtbWFzazogbm9uZTsgbWFzazogbm9uZTsgcGFkZGluZzogMDsgY29udGVudDogJzAwOicgY291bnRlcihybC1zLCBkZWNpbWFsLWxlYWRpbmctemVybykgJyAvIDAwOjEyJyAvICcnOyBwb3NpdGlvbjogYWJzb2x1dGU7IHRvcDogMzRweDsgcmlnaHQ6IDIycHg7IGJvdHRvbTogYXV0bzsgbGVmdDogYXV0bzsgei1pbmRleDogMzsgd2lkdGg6IGF1dG87IGhlaWdodDogYXV0bzsgcGFkZGluZzogNHB4IDlweDsgYm9yZGVyLXJhZGl1czogOTk5cHg7IHBvaW50ZXItZXZlbnRzOiBub25lOyBmb250LWZhbWlseTogSGFua2VuIEdyb3Rlc2s7IGZvbnQtc2l6ZTogMTJweDsgbGluZS1oZWlnaHQ6IDE7IGZvbnQtd2VpZ2h0OiA3MDA7IGZvbnQtdmFyaWFudC1udW1lcmljOiB0YWJ1bGFyLW51bXM7IGNvbG9yOiAjRkZGRkZGOyBiYWNrZ3JvdW5kOiByZ2JhKDIyLDE0LDUyLDAuNjYpOyBib3gtc2hhZG93OiBub25lOyBjb3VudGVyLXJlc2V0OiBybC1zIHZhcigtLXJsLXMpOyBhbmltYXRpb246IHJsLXNlY29uZGVzLWhlcm8gMTJzIGxpbmVhciBpbmZpbml0ZTsgfSAmOjphZnRlciB7IGNvbnRlbnQ6ICcnOyBwb3NpdGlvbjogYWJzb2x1dGU7IHRvcDogMjBweDsgcmlnaHQ6IDIycHg7IGxlZnQ6IDIycHg7IHotaW5kZXg6IDM7IGhlaWdodDogNHB4OyBib3JkZXItcmFkaXVzOiA0cHg7IHBvaW50ZXItZXZlbnRzOiBub25lOyBiYWNrZ3JvdW5kOiBsaW5lYXItZ3JhZGllbnQoI0ZGRkZGRiwgI0ZGRkZGRikgMCAwIC8gMjUlIDEwMCUgbm8tcmVwZWF0LCByZ2JhKDI1NSwyNTUsMjU1LDAuNDIpOyAtd2Via2l0LW1hc2s6IHJlcGVhdGluZy1saW5lYXItZ3JhZGllbnQoOTBkZWcsICMwMDAgMCBjYWxjKDI1JSAtIDRweCksIHRyYW5zcGFyZW50IGNhbGMoMjUlIC0gNHB4KSAyNSUpOyBtYXNrOiByZXBlYXRpbmctbGluZWFyLWdyYWRpZW50KDkwZGVnLCAjMDAwIDAgY2FsYygyNSUgLSA0cHgpLCB0cmFuc3BhcmVudCBjYWxjKDI1JSAtIDRweCkgMjUlKTsgYW5pbWF0aW9uOiBybC1zdG9yaWVzLWhlcm8gMTJzIGxpbmVhciBpbmZpbml0ZTsgfSAmID4gLmUtY29uIHsgcG9zaXRpb246IGFic29sdXRlOyB0b3A6IDA7IHJpZ2h0OiAwOyBib3R0b206IDA7IGxlZnQ6IDA7IHdpZHRoOiBhdXRvOyBhbGlnbi1zZWxmOiBzdHJldGNoOyBqdXN0aWZ5LXNlbGY6IHN0cmV0Y2g7IHotaW5kZXg6IDE7IG9wYWNpdHk6IDA7IHBhZGRpbmc6IDEwcHg7IGJvcmRlci1yYWRpdXM6IDMwcHg7IC0tcmwtcmF5b24tcGhvdG86IDIxcHg7IC0tcmwtbWFyZ2UtdmlnbmV0dGU6IDEwcHg7IGFuaW1hdGlvbjogcmwtcGxhbi1oZXJvIDEycyBpbmZpbml0ZTsgfSAmID4gLmUtY29uOm50aC1sYXN0LWNoaWxkKDQpIHsgb3BhY2l0eTogMTsgfSAmID4gLmUtY29uOm50aC1sYXN0LWNoaWxkKDMpIHsgYW5pbWF0aW9uLWRlbGF5OiAzczsgfSAmID4gLmUtY29uOm50aC1sYXN0LWNoaWxkKDIpIHsgYW5pbWF0aW9uLWRlbGF5OiA2czsgfSAmID4gLmUtY29uOm50aC1sYXN0LWNoaWxkKDEpIHsgYW5pbWF0aW9uLWRlbGF5OiA5czsgfSAmID4gLmUtY29uID4gLmUtY29uIHsgaGVpZ2h0OiAxMDAlOyBhc3BlY3QtcmF0aW86IGF1dG87IH0gJiAuYmFuZGVhdS12aWRlbyB7IHRvcDogMjRweDsgfQ=="
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-da3ba65",
+            "label": "chapitres-hero",
+            "groupe": "Fiches et listes",
+            "description": "Noms des plans sous l'écran du hero, en mobile seulement (un mot par plan, mis dans un span). Masqué sur ordinateur et tablette.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "mobile",
+                        "state": null
+                    },
+                    "props": {
+                        "position": {
+                            "$$type": "string",
+                            "value": "absolute"
+                        },
+                        "inset-inline-end": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 6,
+                                "unit": "px"
+                            }
+                        },
+                        "inset-block-end": {
+                            "$$type": "size",
+                            "value": {
+                                "size": -28,
+                                "unit": "px"
+                            }
+                        },
+                        "inset-inline-start": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 6,
+                                "unit": "px"
+                            }
+                        },
+                        "font-family": {
+                            "$$type": "font-family",
+                            "value": "Hanken Grotesk"
+                        },
+                        "font-weight": {
+                            "$$type": "string",
+                            "value": "700"
+                        },
+                        "font-size": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 12,
+                                "unit": "px"
+                            }
+                        },
+                        "line-height": {
+                            "$$type": "size",
+                            "value": {
+                                "size": "1.2",
+                                "unit": "custom"
+                            }
+                        },
+                        "margin": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 0,
+                                "unit": "px"
+                            }
+                        },
+                        "display": {
+                            "$$type": "string",
+                            "value": "flex"
+                        },
+                        "justify-content": {
+                            "$$type": "string",
+                            "value": "space-between"
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "Y29sb3I6IHZhcigtLXJsLXRleHRlLWRpc2NyZXQsICM2RTZCN0IpOw=="
+                    }
+                },
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "display": {
+                            "$$type": "string",
+                            "value": "none"
+                        }
+                    },
+                    "custom_css": null
+                }
+            ]
+        },
+        {
+            "id": "g-9fa7efc",
+            "label": "motion-formes",
+            "groupe": "Fiches et listes",
+            "description": "Vignette motion design en mobile : fond pêche et formes qui s'animent (rond qui rebondit, carré qui pivote). Avec mot-motion pour le triangle et le trait. Sans effet sur ordinateur et tablette.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "mobile",
+                        "state": null
+                    },
+                    "props": {
+                        "padding": {
+                            "$$type": "dimensions",
+                            "value": {
+                                "block-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 0,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 18,
+                                        "unit": "px"
+                                    }
+                                },
+                                "block-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 86,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 18,
+                                        "unit": "px"
+                                    }
+                                }
+                            }
+                        },
+                        "background": {
+                            "$$type": "background",
+                            "value": {
+                                "background-overlay": {
+                                    "$$type": "background-overlay",
+                                    "value": [
+                                        {
+                                            "$$type": "background-gradient-overlay",
+                                            "value": {
+                                                "type": {
+                                                    "$$type": "string",
+                                                    "value": "linear"
+                                                },
+                                                "stops": {
+                                                    "$$type": "gradient-color-stop",
+                                                    "value": [
+                                                        {
+                                                            "$$type": "color-stop",
+                                                            "value": {
+                                                                "color": {
+                                                                    "$$type": "color",
+                                                                    "value": "#FFF1E7"
+                                                                },
+                                                                "offset": {
+                                                                    "$$type": "number",
+                                                                    "value": 0
+                                                                }
+                                                            }
+                                                        },
+                                                        {
+                                                            "$$type": "color-stop",
+                                                            "value": {
+                                                                "color": {
+                                                                    "$$type": "color",
+                                                                    "value": "#FFF1E7"
+                                                                },
+                                                                "offset": {
+                                                                    "$$type": "number",
+                                                                    "value": 100
+                                                                }
+                                                            }
+                                                        }
+                                                    ]
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        "display": {
+                            "$$type": "string",
+                            "value": "flex"
+                        },
+                        "flex-direction": {
+                            "$$type": "string",
+                            "value": "column"
+                        },
+                        "justify-content": {
+                            "$$type": "string",
+                            "value": "flex-end"
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "Jjo6YmVmb3JlIHsgcG9zaXRpb246IHJlbGF0aXZlOyB0b3A6IGF1dG87IHJpZ2h0OiBhdXRvOyBib3R0b206IGF1dG87IGxlZnQ6IGF1dG87IGhlaWdodDogYXV0bzsgb3BhY2l0eTogMTsgbWl4LWJsZW5kLW1vZGU6IG5vcm1hbDsgYm9yZGVyOiAwOyAtd2Via2l0LW1hc2s6IG5vbmU7IG1hc2s6IG5vbmU7IHBhZGRpbmc6IDA7IGNvbnRlbnQ6ICcnOyBwb3NpdGlvbjogYWJzb2x1dGU7IHotaW5kZXg6IDA7IHRvcDogNjZweDsgcmlnaHQ6IGF1dG87IGJvdHRvbTogYXV0bzsgbGVmdDogMThweDsgd2lkdGg6IDkycHg7IGhlaWdodDogOTJweDsgYm9yZGVyLXJhZGl1czogNTAlOyBiYWNrZ3JvdW5kOiByYWRpYWwtZ3JhZGllbnQoY2lyY2xlIGF0IDM1JSAzMCUsICNGRkZGRkYsICNGRkQxQkYgNTUlLCAjRkY4QTVCKTsgYm94LXNoYWRvdzogMCAxNHB4IDI2cHggLTE0cHggcmdiYSgxNjYsNjAsMjAsMC41NSk7IGFuaW1hdGlvbjogcmwtZm9ybWUtcmVib25kIDNzIGN1YmljLWJlemllcigwLjMsMCwwLjMsMSkgaW5maW5pdGU7IH0gJjo6YWZ0ZXIgeyBjb250ZW50OiAnJzsgcG9zaXRpb246IGFic29sdXRlOyB6LWluZGV4OiAwOyB0b3A6IDc2cHg7IHJpZ2h0OiAzNHB4OyBib3R0b206IGF1dG87IGxlZnQ6IGF1dG87IHdpZHRoOiA3NHB4OyBoZWlnaHQ6IDc0cHg7IGJvcmRlci1yYWRpdXM6IDIwcHg7IGJhY2tncm91bmQ6IGxpbmVhci1ncmFkaWVudCgxNDBkZWcsICM1QjNCRUEsICM4RTRERTYpOyBib3gtc2hhZG93OiAwIDE0cHggMjZweCAtMTRweCByZ2JhKDc0LDQzLDE4NCwwLjYpOyBhbmltYXRpb246IHJsLWZvcm1lLXRvdXJuZSAzcyBjdWJpYy1iZXppZXIoMC42LDAsMC4yLDEpIGluZmluaXRlOyB9"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-485b297",
+            "label": "mot-motion",
+            "groupe": "Fiches et listes",
+            "description": "Grand mot de la vignette motion design en mobile (ex. « Résultats 2026 »), avec un triangle qui tombe et un trait qui s'allonge. Masqué sur ordinateur et tablette.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "mobile",
+                        "state": null
+                    },
+                    "props": {
+                        "position": {
+                            "$$type": "string",
+                            "value": "static"
+                        },
+                        "font-family": {
+                            "$$type": "font-family",
+                            "value": "Bricolage Grotesque"
+                        },
+                        "font-weight": {
+                            "$$type": "string",
+                            "value": "700"
+                        },
+                        "font-size": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 26,
+                                "unit": "px"
+                            }
+                        },
+                        "color": {
+                            "$$type": "color",
+                            "value": "#0F0F12"
+                        },
+                        "letter-spacing": {
+                            "$$type": "size",
+                            "value": {
+                                "size": -0.05,
+                                "unit": "em"
+                            }
+                        },
+                        "line-height": {
+                            "$$type": "size",
+                            "value": {
+                                "size": "1",
+                                "unit": "custom"
+                            }
+                        },
+                        "margin": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 0,
+                                "unit": "px"
+                            }
+                        },
+                        "display": {
+                            "$$type": "string",
+                            "value": "block"
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "Jjo6YmVmb3JlIHsgY29udGVudDogJyc7IHBvc2l0aW9uOiBhYnNvbHV0ZTsgei1pbmRleDogMDsgdG9wOiAxNDBweDsgbGVmdDogNDQlOyB3aWR0aDogMDsgaGVpZ2h0OiAwOyBib3JkZXItbGVmdDogMzRweCBzb2xpZCB0cmFuc3BhcmVudDsgYm9yZGVyLXJpZ2h0OiAzNHB4IHNvbGlkIHRyYW5zcGFyZW50OyBib3JkZXItYm90dG9tOiA1OHB4IHNvbGlkICMzNDM0RTA7IGFuaW1hdGlvbjogcmwtZm9ybWUtdG9tYmUgM3MgY3ViaWMtYmV6aWVyKDAuMywxLjQsMC41LDEpIGluZmluaXRlOyB9ICY6OmFmdGVyIHsgY29udGVudDogJyc7IGRpc3BsYXk6IGJsb2NrOyBtYXJnaW4tdG9wOiAxMnB4OyB3aWR0aDogMTkwcHg7IG1heC13aWR0aDogNzAlOyBoZWlnaHQ6IDIycHg7IGJvcmRlci1yYWRpdXM6IDk5OXB4OyBiYWNrZ3JvdW5kOiAjRTA1NjJBOyBhbmltYXRpb246IHJsLWZvcm1lLWFsbG9uZ2UgM3MgY3ViaWMtYmV6aWVyKDAuMiwwLjksMC4yLDEpIGluZmluaXRlOyB9"
+                    }
+                },
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "display": {
+                            "$$type": "string",
+                            "value": "none"
+                        }
+                    },
+                    "custom_css": null
+                }
+            ]
+        },
+        {
+            "id": "g-3faaa5c",
+            "label": "showreel-grandit",
+            "groupe": "Fiches et listes",
+            "description": "Cadre du showreel qui grandit au défilement (de 72 % à 100 % de la largeur ; de 88 % en mobile). Navigateurs sans cette fonction : affiché directement en grand.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "mobile",
+                        "state": null
+                    },
+                    "props": [],
+                    "custom_css": {
+                        "raw": "LS1ybC1kZXBhcnQ6IDg4JTs="
+                    }
+                },
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "width": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 100,
+                                "unit": "%"
+                            }
+                        },
+                        "align-self": {
+                            "$$type": "string",
+                            "value": "center"
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "LS1ybC1kZXBhcnQ6IDcyJTsgYW5pbWF0aW9uOiBybC1zaG93cmVlbC1ncmFuZGl0IGF1dG8gbGluZWFyIGJvdGg7IGFuaW1hdGlvbi10aW1lbGluZTogdmlldygpOyBhbmltYXRpb24tcmFuZ2U6IGVudHJ5IDAlIGNvdmVyIDQ1JTs="
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-dba13a9",
+            "label": "apparait-defile",
+            "groupe": "Fiches et listes",
+            "description": "Apparaît en fondu en remontant légèrement quand on le fait défiler dans l'écran (ex. boutons sous le showreel).",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": [],
+                    "custom_css": {
+                        "raw": "LS1ybC1yZXBlcmU6IDE7IGFuaW1hdGlvbjogcmwtYXBwYXJhaXQtZGVmaWxlIGF1dG8gbGluZWFyIGJvdGg7IGFuaW1hdGlvbi10aW1lbGluZTogdmlldygpOyBhbmltYXRpb24tcmFuZ2U6IGVudHJ5IDAlIGVudHJ5IDEwMCU7"
                     }
                 }
             ]

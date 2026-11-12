@@ -159,6 +159,7 @@ hero = F('Hero', ['section', 'section-entete', 'halos-haut'], tag='section', enf
             ]),
         ]),
         D('Visuels', ['lueur-peche', 'hero-montage'], 'position: relative; flex: 1 1 460px; min-width: 0; height: 680px; padding: 0; @media(--tablet) { height: auto; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; } @media(--mobile) { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }', enfants=[
+            P('Visuels · chapitres', '<span>Tournage</span><span>Interview</span><span>Démo</span><span>Motion</span>', ['chapitres-hero']),
             D('Tournage', ['cadre-verre', 'cadre-verre-grand'], 'position: absolute; left: 0; right: 0; top: 0; @media(--tablet) { position: relative; grid-column: 1 / -1; }', enfants=[
                 D('Tournage · photo', ['cadre-photo'], 'height: 652px; @media(--tablet) { height: 420px; } @media(--mobile) { height: 280px; }', enfants=[
                     I('Tournage · image', 'hero-tournage.jpg', 'Une caméra sur trépied, en plein tournage dans des bureaux', ['image-couvrante'], 'object-position: 56% 50%;'),
@@ -185,10 +186,11 @@ hero = F('Hero', ['section', 'section-entete', 'halos-haut'], tag='section', enf
                 ]),
             ]),
             D('Motion design', ['cadre-verre'], 'position: absolute; right: 28px; top: 432px; width: 208px; z-index: 2; @media(--tablet) { position: relative; right: auto; top: auto; width: auto; align-self: start; }', enfants=[
-                D('Motion design · vidéo', ['fond-video-orange', 'illus-motion'], 'aspect-ratio: 1 / 1; overflow: hidden; padding: 0; border-radius: 19px;', enfants=[
+                D('Motion design · vidéo', ['fond-video-orange', 'illus-motion', 'motion-formes'], 'aspect-ratio: 1 / 1; overflow: hidden; padding: 0; border-radius: 19px;', enfants=[
                     bandeau('Motion design · bandeau', 'Motion design', ['bandeau-clair']),
+                    P('Motion design · mot', 'Résultats 2026', ['mot-motion']),
                     F('Motion design · plaque', ['plaque-verre', 'plaque-bas', 'plaque-claire'], enfants=[
-                        P('Motion design · titre', 'Résultats<br><span>2026</span>', ['titre-vignette', 'titre-vignette-sombre']),
+                        P('Motion design · titre', 'Vos chiffres<br><span>en motion</span>', ['titre-vignette', 'titre-vignette-sombre']),
                         lecture('Motion design · lecture', verre=True),
                     ]),
                 ]),
@@ -233,13 +235,13 @@ showreel = F('Showreel', ['section', 'section-suite'], tag='section', enfants=[
             P('Annotation · texte', 'ce que nous faisons, en vrai', ['note-main']),
             I('Annotation · flèche', 'fleche-annotation.png', style='width: 34px; margin-top: 14px;'),
         ]),
-        D('Showreel · cadre', ['carte-verre', 'carte-ecran'], enfants=[
+        D('Showreel · cadre', ['carte-verre', 'carte-ecran', 'showreel-grandit'], enfants=[
             D('Showreel · écran', None, 'position: relative; overflow: hidden; padding: 0; border-radius: 30px; background: #2A2233; @media(--mobile) { border-radius: 22px; }', enfants=[
                 E('e-self-hosted-video', 'Showreel · vidéo', {'autoplay': True, 'mute': True, 'loop': True, 'playsinline': True, 'controls': True, 'preload': 'none', 'poster_enabled': True, 'poster': {'src': {'url': MEDIA + 'showreel-affiche.jpg'}, 'size': 'full'}}, None, 'display: block; width: 100%; aspect-ratio: 16 / 9;'),
                 B('Bouton son', 'Activer le son', '#rl-son', ['bouton-son']),
             ]),
         ]),
-        F('Showreel · boutons', ['rangee'], 'justify-content: center; margin-top: 28px;', enfants=[
+        F('Showreel · boutons', ['rangee', 'apparait-defile'], 'justify-content: center; margin-top: 28px;', enfants=[
             B('Showreel · bouton principal', 'Réserver un échange', '/contact/', ['bouton-principal']),
             B('Showreel · bouton secondaire', 'Voir les offres', '/offres/', ['bouton-verre']),
         ]),

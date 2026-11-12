@@ -113,17 +113,31 @@ CLASSES = [
     # Pages (livraison 4).
     ('carte-vide', "Message d'une liste vide (avec carte-verre) : centré (ex. « Pas de webinar programmé »).", 'align-items: center; gap: 14px; padding: 48px 28px; text-align: center; @media(--mobile) { padding: 36px 22px; }'),
     ('texte-herite', "Texte qui reprend la police, la taille, la graisse et la couleur de son parent (ex. le titre H1 posé dans la pastille du hero).", 'margin: 0; font-family: inherit; font-size: inherit; font-weight: inherit; line-height: inherit; letter-spacing: inherit; color: inherit;'),
-    ('hero-montage', "Visuels du hero en mobile (sous 768 px) : écran de montage. Les vignettes s'enchaînent dans un seul cadre (3 s chacune, dans l'ordre), mini timeline dessous avec la tête de lecture rouge. Sans effet sur ordinateur et tablette.",
-     "@media(--mobile) { display: block; height: 372px; margin-top: 4px; isolation: isolate; "
-     "&::before { " + RAZ + "content: ''; position: absolute; top: auto; right: auto; bottom: 0; left: 8px; z-index: 3; width: 12px; height: 56px; pointer-events: none; background: #FF3B30; box-shadow: none; "
-     "clip-path: polygon(0 0, 100% 0, 100% 7px, calc(50% + 1px) 11px, calc(50% + 1px) 100%, calc(50% - 1px) 100%, calc(50% - 1px) 11px, 0 7px); animation: rl-tete-hero 12s linear infinite; } "
-     "&::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; z-index: 2; height: 50px; padding: 8px; box-sizing: border-box; border-radius: 16px; pointer-events: none; box-shadow: 0 10px 24px -14px rgba(40,20,120,0.35); "
-     "background: repeating-linear-gradient(90deg, rgba(255,255,255,0.55) 0 2px, rgba(255,255,255,0) 2px 5px) 0 calc(100% - 6px) / 100% 7px no-repeat content-box, "
-     "linear-gradient(#5B3BEA, #5B3BEA) 0 0 / calc(25% - 4px) 100% no-repeat content-box, linear-gradient(#8E4DE6, #8E4DE6) 33.333% 0 / calc(25% - 4px) 100% no-repeat content-box, "
-     "linear-gradient(#3434E0, #3434E0) 66.667% 0 / calc(25% - 4px) 100% no-repeat content-box, linear-gradient(#E0562A, #E0562A) 100% 0 / calc(25% - 4px) 100% no-repeat content-box, #FFFFFF; } "
-     "& > .e-con { position: absolute; top: 0; right: 0; bottom: 66px; left: 0; width: auto; align-self: stretch; justify-self: stretch; z-index: 1; opacity: 0; padding: 10px; border-radius: 30px; --rl-rayon-photo: 21px; --rl-marge-vignette: 10px; animation: rl-plan-hero 12s infinite; } "
+    ('hero-montage', "Visuels du hero en mobile (sous 768 px) : les vignettes s'enchaînent dans un seul cadre (3 s chacune, dans l'ordre), avec des barres de progression façon stories en haut et un timecode. Sans effet sur ordinateur et tablette.",
+     "@media(--mobile) { display: block; height: 400px; margin-top: 4px; margin-bottom: 30px; isolation: isolate; "
+     "&::before { " + RAZ + "content: '00:' counter(rl-s, decimal-leading-zero) ' / 00:12' / ''; position: absolute; top: 34px; right: 22px; bottom: auto; left: auto; z-index: 3; width: auto; height: auto; padding: 4px 9px; border-radius: 999px; pointer-events: none; "
+     "font-family: Hanken Grotesk; font-size: 12px; line-height: 1; font-weight: 700; font-variant-numeric: tabular-nums; color: #FFFFFF; background: rgba(22,14,52,0.66); box-shadow: none; counter-reset: rl-s var(--rl-s); animation: rl-secondes-hero 12s linear infinite; } "
+     "&::after { content: ''; position: absolute; top: 20px; right: 22px; left: 22px; z-index: 3; height: 4px; border-radius: 4px; pointer-events: none; "
+     "background: linear-gradient(#FFFFFF, #FFFFFF) 0 0 / 25% 100% no-repeat, rgba(255,255,255,0.42); "
+     "-webkit-mask: repeating-linear-gradient(90deg, #000 0 calc(25% - 4px), transparent calc(25% - 4px) 25%); mask: repeating-linear-gradient(90deg, #000 0 calc(25% - 4px), transparent calc(25% - 4px) 25%); animation: rl-stories-hero 12s linear infinite; } "
+     "& > .e-con { position: absolute; top: 0; right: 0; bottom: 0; left: 0; width: auto; align-self: stretch; justify-self: stretch; z-index: 1; opacity: 0; padding: 10px; border-radius: 30px; --rl-rayon-photo: 21px; --rl-marge-vignette: 10px; animation: rl-plan-hero 12s infinite; } "
      "& > .e-con:nth-last-child(4) { opacity: 1; } & > .e-con:nth-last-child(3) { animation-delay: 3s; } & > .e-con:nth-last-child(2) { animation-delay: 6s; } & > .e-con:nth-last-child(1) { animation-delay: 9s; } "
-     "& > .e-con > .e-con { height: 100%; aspect-ratio: auto; } }"),
+     "& > .e-con > .e-con { height: 100%; aspect-ratio: auto; } & .bandeau-video { top: 24px; } }"),
+    ('chapitres-hero', "Noms des plans sous l'écran du hero, en mobile seulement (un mot par plan, mis dans un span). Masqué sur ordinateur et tablette.",
+     "display: none; @media(--mobile) { display: flex; justify-content: space-between; position: absolute; left: 6px; right: 6px; bottom: -28px; margin: 0; font-family: Hanken Grotesk; font-size: 12px; line-height: 1.2; font-weight: 700; color: var(--rl-texte-discret, #6E6B7B); }"),
+    ('motion-formes', "Vignette motion design en mobile : fond pêche et formes qui s'animent (rond qui rebondit, carré qui pivote). Avec mot-motion pour le triangle et le trait. Sans effet sur ordinateur et tablette.",
+     "@media(--mobile) { display: flex; flex-direction: column; justify-content: flex-end; padding: 0 18px 86px; background: linear-gradient(#FFF1E7, #FFF1E7); "
+     "&::before { " + RAZ + "content: ''; position: absolute; z-index: 0; top: 66px; right: auto; bottom: auto; left: 18px; width: 92px; height: 92px; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #FFFFFF, #FFD1BF 55%, #FF8A5B); box-shadow: 0 14px 26px -14px rgba(166,60,20,0.55); animation: rl-forme-rebond 3s cubic-bezier(0.3,0,0.3,1) infinite; } "
+     "&::after { content: ''; position: absolute; z-index: 0; top: 76px; right: 34px; bottom: auto; left: auto; width: 74px; height: 74px; border-radius: 20px; background: linear-gradient(140deg, #5B3BEA, #8E4DE6); box-shadow: 0 14px 26px -14px rgba(74,43,184,0.6); animation: rl-forme-tourne 3s cubic-bezier(0.6,0,0.2,1) infinite; } }"),
+    ('mot-motion', "Grand mot de la vignette motion design en mobile (ex. « Résultats 2026 »), avec un triangle qui tombe et un trait qui s'allonge. Masqué sur ordinateur et tablette.",
+     "display: none; @media(--mobile) { display: block; position: static; margin: 0; font-family: Bricolage Grotesque; font-size: 26px; line-height: 1; font-weight: 700; letter-spacing: -0.05em; color: #0F0F12; animation: rl-forme-mot 3s ease-out infinite; "
+     "&::before { content: ''; position: absolute; z-index: 0; top: 140px; left: 44%; width: 0; height: 0; border-left: 34px solid transparent; border-right: 34px solid transparent; border-bottom: 58px solid #3434E0; animation: rl-forme-tombe 3s cubic-bezier(0.3,1.4,0.5,1) infinite; } "
+     "&::after { content: ''; display: block; margin-top: 12px; width: 190px; max-width: 70%; height: 22px; border-radius: 999px; background: #E0562A; animation: rl-forme-allonge 3s cubic-bezier(0.2,0.9,0.2,1) infinite; } }"),
+    ('showreel-grandit', "Cadre du showreel qui grandit au défilement (de 72 % à 100 % de la largeur ; de 88 % en mobile). Navigateurs sans cette fonction : affiché directement en grand.",
+     "align-self: center; width: 100%; --rl-depart: 72%; @media(--mobile) { --rl-depart: 88%; }",
+     "animation: rl-showreel-grandit auto linear both; animation-timeline: view(); animation-range: entry 0% cover 45%;"),
+    ('apparait-defile', "Apparaît en fondu en remontant légèrement quand on le fait défiler dans l'écran (ex. boutons sous le showreel).",
+     "--rl-repere: 1;", "animation: rl-apparait-defile auto linear both; animation-timeline: view(); animation-range: entry 0% entry 100%;"),
     ('entete-page', "Haut d'une page intérieure (avec section-entete) : plus d'air sous l'en-tête.", 'padding: 184px 0 56px; @media(--tablet) { padding: 160px 0 48px; } @media(--mobile) { padding: 136px 0 40px; }'),
     ('appel-centre', "Bandeau d'appel (avec carte-verre et carte-appel) en grand et centré, au milieu d'une page.", 'justify-content: center; gap: 18px 28px; padding: 48px; border-radius: 40px; text-align: center; @media(--mobile) { padding: 28px; border-radius: 32px; }'),
     ('titre-encart', "Titre d'un encart d'appel (avec titre-xs) : un peu plus grand.", 'font-size: 28px; @media(--mobile) { font-size: 24px; }'),
@@ -299,7 +313,7 @@ def main():
     doublons = [c[0] for c in CLASSES if c[0] in existants]
     if doublons:
         raise SystemExit('Classes déjà définies ailleurs : ' + ', '.join(doublons))
-    d['groupes'].append({'nom': 'Fiches et listes', 'classes': [{'label': l, 'description': desc, 'css': css} for l, desc, css in CLASSES]})
+    d['groupes'].append({'nom': 'Fiches et listes', 'classes': [dict({'label': c[0], 'description': c[1], 'css': c[2]}, **({'brut': c[3]} if len(c) > 3 else {})) for c in CLASSES]})
     json.dump(d, open(chemin, 'w', encoding='utf8'), ensure_ascii=False, indent=1)
     print(len(CLASSES), 'classes dans « Fiches et listes »')
     feuille_editeur()
