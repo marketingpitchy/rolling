@@ -31,6 +31,12 @@ class Rolling_Seo {
 		add_filter( 'wp_sitemaps_posts_query_args', array( __CLASS__, 'sans_noindex' ) );
 		add_filter( 'rank_math/sitemap/entry', array( __CLASS__, 'entree_rank_math' ), 20, 3 );
 
+		// Yoast SEO : mêmes exclusions dans son plan du site, et la vidéo des réalisations dans son schéma.
+		add_filter( 'wpseo_exclude_from_sitemap_by_post_ids', array( __CLASS__, 'exclus_yoast' ) );
+		add_filter( 'wpseo_sitemap_exclude_taxonomy', array( __CLASS__, 'taxonomie_exclue_yoast' ), 10, 2 );
+		add_filter( 'wpseo_sitemap_exclude_author', '__return_empty_array' );
+		add_filter( 'wpseo_schema_graph', array( __CLASS__, 'video_yoast' ), 20, 2 );
+
 		// Archives inutiles : redirigées (301).
 		add_action( 'template_redirect', array( __CLASS__, 'archives' ), 1 );
 	}
@@ -166,6 +172,86 @@ class Rolling_Seo {
 		}
 
 		return $entree;
+	}
+
+	/**
+	 * Plan du site de Yoast : contenus en noindex et témoignages sans page.
+	 *
+	 * @param int[] $ids Contenus déjà exclus.
+	 * @return int[]
+	 */
+	public static function exclus_yoast( $ids ) {
+		$coches = get_posts(
+			array(
+				'post_type'      => 'any',
+				'post_status'    => 'publish',
+				'posts_per_page' => 1000, // phpcs:ignore WordPress.WP.PostsPerPage.posts_per_page_posts_per_page -- Liste d'ids pour le plan du site.
+				'fields'         => 'ids',
+				'no_found_rows'  => true,
+				'meta_key'       => self::CHAMP_NOINDEX, // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_key
+			)
+		);
+		$coches = array_filter( $coches, array( __CLASS__, 'est_noindex' ) );
+
+		return array_values( array_unique( array_map( 'intval', array_merge( (array) $ids, $coches, Rolling_Contenus::citations_seules() ) ) ) );
+	}
+
+	/**
+	 * Plan du site de Yoast : ni catégories ni étiquettes (leurs pages sont redirigées vers le blog).
+	 *
+	 * @param bool   $exclue   Déjà exclue.
+	 * @param string $taxonomie Taxonomie.
+	 * @return bool
+	 */
+	public static function taxonomie_exclue_yoast( $exclue, $taxonomie ) {
+		return in_array( $taxonomie, array( 'category', 'post_tag' ), true ) ? true : $exclue;
+	}
+
+	/**
+	 * Schéma de Yoast : ajoute la vidéo (VideoObject) sur la fiche d'une réalisation qui a une vidéo et une affiche.
+	 *
+	 * @param array  $graphe   Pièces du schéma.
+	 * @param object $contexte Contexte de Yoast.
+	 * @return array
+	 */
+	public static function video_yoast( $graphe, $contexte ) {
+		if ( ! is_singular( 'rolling_realisation' ) || ! is_array( $graphe ) ) {
+			return $graphe;
+		}
+
+		$id      = (int) get_queried_object_id();
+		$lien    = trim( (string) Rolling_Contenus::valeur( 'video', $id ) );
+		$affiche = get_the_post_thumbnail_url( $id, 'large' );
+		if ( '' === $lien || ! $affiche ) {
+			return $graphe;
+		}
+
+		$page  = isset( $contexte->canonical ) && $contexte->canonical ? $contexte->canonical : get_permalink( $id );
+		$texte = trim( wp_strip_all_tags( (string) Rolling_Contenus::valeur( 'chapo', $id ) ) );
+		$video = array(
+			'@type'            => 'VideoObject',
+			'@id'              => $page . '#video',
+			'name'             => wp_strip_all_tags( get_the_title( $id ) ),
+			'description'      => '' !== $texte ? $texte : wp_strip_all_tags( get_the_title( $id ) ),
+			'thumbnailUrl'     => $affiche,
+			'uploadDate'       => get_the_date( 'c', $id ),
+			'mainEntityOfPage' => array( '@id' => $page ),
+			'inLanguage'       => get_bloginfo( 'language' ),
+		);
+
+		if ( preg_match( '~(?:youtube\.com/(?:watch\?v=|embed/|shorts/)|youtu\.be/)([\w-]{11})~', $lien, $m ) ) {
+			$video['embedUrl'] = 'https://www.youtube.com/embed/' . $m[1];
+		} else {
+			$video['contentUrl'] = esc_url_raw( $lien );
+		}
+
+		if ( preg_match( '/^(?:(\d+):)?(\d{1,2}):(\d{2})$/', trim( (string) Rolling_Contenus::valeur( 'duree', $id ) ), $d ) ) {
+			$video['duration'] = 'PT' . ( $d[1] ? (int) $d[1] . 'H' : '' ) . (int) $d[2] . 'M' . (int) $d[3] . 'S';
+		}
+
+		$graphe[] = $video;
+
+		return $graphe;
 	}
 
 	/**

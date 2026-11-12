@@ -239,6 +239,14 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   les éléments atomiques d'Elementor 4 avant ; livraison dédiée : contenus traduisibles, textes fixes du thème, sélecteur).
   Docker : si `dockerd` échoue sur « timeout waiting for containerd », supprimer /var/run/docker/containerd/containerd.pid
   (pid périmé repris par un autre processus).
+- **0.4.8 : extension SEO = Yoast SEO** (décision cliente, à la place de Rank Math ; option A « extension » plutôt que
+  métas dans le thème). Yoast écrit title, description, canonical, Open Graph, schéma et plan du site ; le thème ajoute :
+  exclusions du plan du site Yoast (`wpseo_exclude_from_sitemap_by_post_ids` : pages cochées noindex + témoignages sans
+  récit `Rolling_Contenus::citations_seules()` ; catégories / étiquettes / auteurs exclus) et le **VideoObject** des
+  réalisations dans le graphe Yoast (`wpseo_schema_graph` : lien vidéo + image à la une obligatoires ; YouTube ⇒ embedUrl,
+  fichier ⇒ contentUrl ; description = chapô ; durée « 2:04 » ⇒ PT2M4S). Noindex ACF lu aussi par `wpseo_robots_array`.
+  Testé sur la copie avec Yoast 28.8 (zip hors git, scratchpad/plugins/yoast) : 1 title / 1 robots / 1 canonical / 1 schéma,
+  noindex ⇒ « noindex, follow » et hors plan du site, robots IA gardés. Yoast installé sur wp et wp2.
 - **Chargement de page effet film** (demande avant la fin de la livraison 4) : maquette `maquettes/loading/maquette-loading.html`
   (copie /workspace/maquette-loading.html), 4 options : A amorce 3-2-1, B clap qui se ferme puis rideau, C ouverture
   cinéma (bandes noires + REC + timecode + règle avec la tête de lecture rouge des frises, plus de filet fin), D barre de lecture en haut sans écran. Conseil : C à l'arrivée (première page
@@ -526,7 +534,7 @@ image, texte, « À lire aussi » ; colonne latérale = temps de lecture, partag
 
 ## Questions encore ouvertes
 
-- **Extension SEO (décidé)** : la cliente installe Rank Math (ou équivalent) pour les métas et l'indexation. C'est
+- **Extension SEO (décidé, mis à jour)** : **Yoast SEO** (plus Rank Math). La cliente installe Rank Math (ou équivalent) pour les métas et l'indexation. C'est
   **lui** l'outil unique des métas (title, description, canonical, OG, sitemap) ; exception demandée par la cliente :
   le thème pose le noindex des pages cochées (champ ACF `noindex`) et retire auteurs / catégories (0.3.1).
   Le thème n'ajoute que ce que l'extension ne fait pas (VideoObject des réalisations, à vérifier selon l'extension

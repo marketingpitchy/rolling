@@ -51,6 +51,29 @@ class Rolling_Contenus {
 	}
 
 	/**
+	 * Témoignages sans récit (citation seule : pas de page, redirigés vers la réalisation).
+	 *
+	 * @return int[]
+	 */
+	public static function citations_seules() {
+		return array_values(
+			array_filter(
+				get_posts(
+					array(
+						'post_type'      => 'rolling_temoignage',
+						'posts_per_page' => 500,
+						'fields'         => 'ids',
+						'no_found_rows'  => true,
+					)
+				),
+				function ( $id ) {
+					return ! self::a_recit( $id );
+				}
+			)
+		);
+	}
+
+	/**
 	 * Sitemap : seulement les témoignages qui ont une page (récit rempli).
 	 *
 	 * @param array  $args Requête.
@@ -62,19 +85,7 @@ class Rolling_Contenus {
 			return $args;
 		}
 
-		$seules = array_filter(
-			get_posts(
-				array(
-					'post_type'      => 'rolling_temoignage',
-					'posts_per_page' => 500,
-					'fields'         => 'ids',
-					'no_found_rows'  => true,
-				)
-			),
-			function ( $id ) {
-				return ! self::a_recit( $id );
-			}
-		);
+		$seules = self::citations_seules();
 		if ( $seules ) {
 			$args['post__not_in'] = array_merge( $args['post__not_in'] ?? array(), array_values( $seules ) ); // phpcs:ignore WordPressVIPMinimum.Performance.WPQueryParams.PostNotIn_post__not_in
 		}
