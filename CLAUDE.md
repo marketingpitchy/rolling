@@ -247,6 +247,13 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   fichier ⇒ contentUrl ; description = chapô ; durée « 2:04 » ⇒ PT2M4S). Noindex ACF lu aussi par `wpseo_robots_array`.
   Testé sur la copie avec Yoast 28.8 (zip hors git, scratchpad/plugins/yoast) : 1 title / 1 robots / 1 canonical / 1 schéma,
   noindex ⇒ « noindex, follow » et hors plan du site, robots IA gardés. Yoast installé sur wp et wp2.
+- **Livraison 5 envoyée (0.5.0) = recette finale** : métas de chaque page (`outils/metas.py` ⇒ /workspace/metas-seo.html,
+  contrôle 50-60 / 140-160 caractères, marque à la fin, title ≠ H1) ; compositions d'article reliées à leurs pièces jointes
+  (`{{media-id:clé}}` dans le bloc image + classe `wp-image-…` ⇒ dimensions et srcset ; blocs valides dans l'éditeur) ;
+  recette sur la copie avec Yoast (19 pages axe 0, Lighthouse a11y / bonnes pratiques 100, SEO 92 = description manquante,
+  perf mobile 74-87 sans cache ; redirections 301, 404, plan du site, robots) ⇒ /workspace/livraison-5-recette.html
+  (résultats + liste de contrôle avant / pendant / après la mise en ligne). Lighthouse : scratchpad/lh (npm lighthouse,
+  CHROME_PATH=/opt/pw-browsers/chromium). Adresses réelles : /agence/ (L'agence), /agence-video/ (landing).
 - **Chargement de page effet film** (demande avant la fin de la livraison 4) : maquette `maquettes/loading/maquette-loading.html`
   (copie /workspace/maquette-loading.html), 4 options : A amorce 3-2-1, B clap qui se ferme puis rideau, C ouverture
   cinéma (bandes noires + REC + timecode + règle avec la tête de lecture rouge des frises, plus de filet fin), D barre de lecture en haut sans écran. Conseil : C à l'arrivée (première page

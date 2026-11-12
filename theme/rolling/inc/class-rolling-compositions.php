@@ -75,7 +75,8 @@ class Rolling_Compositions {
 	}
 
 	/**
-	 * Remplace {{media:clé}} (image installée par le thème) et {{page:chemin}} (page du site).
+	 * Remplace {{media:clé|taille}} (adresse de l'image installée par le thème), {{media-id:clé}} (son id : WordPress
+	 * ajoute alors dimensions et srcset) et {{page:chemin}} (page du site).
 	 *
 	 * @param string $contenu Composition.
 	 * @return string
@@ -84,10 +85,14 @@ class Rolling_Compositions {
 		$medias = (array) get_option( Rolling_Installateur::OPTION_MEDIAS, array() );
 
 		return (string) preg_replace_callback(
-			'/\{\{(media|page):([\w-]+)\}\}/',
+			'/\{\{(media-id|media|page):([\w-]+)(?:\|([\w-]+))?\}\}/',
 			function ( $m ) use ( $medias ) {
+				$id = empty( $medias[ $m[2] ] ) ? 0 : (int) $medias[ $m[2] ];
+				if ( 'media-id' === $m[1] ) {
+					return (string) $id;
+				}
 				if ( 'media' === $m[1] ) {
-					$url = empty( $medias[ $m[2] ] ) ? '' : wp_get_attachment_image_url( (int) $medias[ $m[2] ], 'medium' );
+					$url = $id ? wp_get_attachment_image_url( $id, empty( $m[3] ) ? 'medium' : $m[3] ) : '';
 					return esc_url( $url ? $url : ROLLING_URL . '/assets/medias/' . $m[2] . '.jpg' );
 				}
 				$page = get_page_by_path( $m[2] );
