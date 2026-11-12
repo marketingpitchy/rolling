@@ -143,9 +143,9 @@ def lecture(nom, verre=False, style=None):
 hero = F('Hero', ['section', 'section-entete', 'halos-haut'], tag='section', enfants=[
     F('Hero · contenu', ['conteneur'], 'display: flex; flex-direction: row; flex-wrap: wrap; align-items: center; gap: 48px;', enfants=[
         F('Promesse', None, 'display: flex; flex-direction: column; flex: 1 1 560px; min-width: 0; gap: 0; padding: 40px 0 0; @media(--tablet) { padding: 0; }', enfants=[
-            F('Pastille', ['pastille'], enfants=[P('Pastille · texte', 'Votre agence vidéo illimitée')]),
-            H('Titre H1', "Le meilleur <u>de l'humain.</u><br>Le meilleur <b>de l'IA.</b>", 'h1', ['titre-lg'], 'margin-top: 26px;'),
-            P('Chapô', "Vos clients, vos candidats, vos collaborateurs s'informent tous en vidéo. Mais vos équipes n'ont pas le temps d'en faire ? La nôtre s'en charge, à prix fixe, <u>en illimité.</u>", ['chapo'], 'margin-top: 26px; max-width: 620px;'),
+            F('Pastille', ['pastille'], enfants=[H('Titre H1', 'Votre agence vidéo illimitée', 'h1', ['texte-herite'])]),
+            P('Accroche', "Le meilleur <u>de l'humain.</u><br>Le meilleur <b>de l'IA.</b>", ['titre-lg'], 'margin-top: 26px;'),
+            P('Chapô', "Vos clients, vos candidats, vos collaborateurs s'informent tous en vidéo. Mais vos équipes n'ont pas le temps d'en faire ? Notre <strong>agence vidéo</strong> s'en charge, à prix fixe, <u>en illimité.</u>", ['chapo'], 'margin-top: 26px; max-width: 620px;'),
             F('Boutons', ['rangee'], 'margin-top: 40px;', enfants=[
                 B('Bouton principal', 'Réserver un échange', '/contact/', ['bouton-principal']),
                 B('Bouton secondaire', 'Voir les offres', '/offres/', ['bouton-verre']),
@@ -158,7 +158,7 @@ hero = F('Hero', ['section', 'section-entete', 'halos-haut'], tag='section', enf
                 P('Preuve · texte', 'Par les équipes de <strong>Pitchy</strong> — 13 ans de vidéo, 500+ grandes entreprises.', ['texte-petit', 'texte-legende']),
             ]),
         ]),
-        D('Visuels', ['lueur-peche'], 'position: relative; flex: 1 1 460px; min-width: 0; height: 680px; padding: 0; @media(--tablet) { height: auto; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; } @media(--mobile) { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }', enfants=[
+        D('Visuels', ['lueur-peche', 'hero-montage'], 'position: relative; flex: 1 1 460px; min-width: 0; height: 680px; padding: 0; @media(--tablet) { height: auto; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; } @media(--mobile) { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }', enfants=[
             D('Tournage', ['cadre-verre', 'cadre-verre-grand'], 'position: absolute; left: 0; right: 0; top: 0; @media(--tablet) { position: relative; grid-column: 1 / -1; }', enfants=[
                 D('Tournage · photo', ['cadre-photo'], 'height: 652px; @media(--tablet) { height: 420px; } @media(--mobile) { height: 280px; }', enfants=[
                     I('Tournage · image', 'hero-tournage.jpg', 'Une caméra sur trépied, en plein tournage dans des bureaux', ['image-couvrante'], 'object-position: 56% 50%;'),
@@ -494,7 +494,7 @@ ia = F("Le meilleur de l'IA", ['section', 'section-sombre', 'fond-grille', 'halo
             F('IA · créas', ['carte-verre', 'carte-humain'], enfants=[
                 F('Créas · tête', None, LIGNE + ' min-height: 84px;', enfants=[
                     F('Créas · visages', ['visages'], enfants=[I('Créas · visage %d' % i, 'direction-%d.jpg' % i, taille='thumbnail') for i in (1, 2, 3)]),
-                    F('Créas · titres', None, COLONNE, enfants=[
+                    F('Créas · titres', None, COLONNE + ' min-width: 0;', enfants=[
                         P('Créas · rôle', 'Choisit · corrige · adapte', ['label', 'label-peche']),
                         H('Créas · titre', 'Directeur artistique,<br>chef de projet<br>&amp; motion designer', 'h3', ['titre-xs']),
                     ]),
@@ -632,7 +632,7 @@ def chiffre(nom, chiffres, lu, libelle):
     ])
 
 
-entete_equipe = entete('Équipe', '00:08', "L'équipe", [('Née chez <em>Pitchy.</em>', 'h2', ['titre-lg'])])
+entete_equipe = entete('Équipe', '00:08', "L'équipe", [('Une agence vidéo née chez <em>Pitchy.</em>', 'h2', ['titre-lg'])])
 entete_equipe.enfants += [
     P('Équipe · texte 1', "Rolling est lancée par les équipes de Pitchy, la plateforme française de création vidéo qui équipe les grandes entreprises depuis 13&nbsp;ans. Même exigence, nouvelle promesse&nbsp;: <strong>cette fois, c'est nous qui produisons.</strong>", ['texte']),
     P('Équipe · texte 2', 'Un studio motion intégré, une équipe tech qui industrialise la production, et treize ans passés à comprendre comment les grands comptes font — et regardent — de la vidéo.', ['texte']),
@@ -1585,7 +1585,7 @@ landing_hero = F('Landing · hero', ['section', 'section-entete', 'entete-page',
             ]),
         ]),
     ]),
-    F('Landing · logos', None, 'margin-top: 56px; width: 100%; padding: 0;', enfants=[
+    F('Landing · logos', None, COLONNE + ' margin-top: 56px; width: 100%; padding: 0;', enfants=[
         F('Landing · logos · titre', ['conteneur'], 'justify-content: center;', enfants=[
             P('Landing · logos · libellé', 'Ils nous font confiance', ['label'], 'text-align: center; width: 100%;'),
         ]),

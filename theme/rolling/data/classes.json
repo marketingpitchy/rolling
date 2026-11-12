@@ -17226,10 +17226,19 @@
                         "flex-direction": {
                             "$$type": "string",
                             "value": "row"
+                        },
+                        "flex": {
+                            "$$type": "flex",
+                            "value": {
+                                "flexShrink": {
+                                    "$$type": "number",
+                                    "value": 0
+                                }
+                            }
                         }
                     },
                     "custom_css": {
-                        "raw": "d2lkdGg6IGZpdC1jb250ZW50OyAmIGltZyB7IHdpZHRoOiAzNnB4OyBoZWlnaHQ6IDM2cHg7IGJvcmRlci1yYWRpdXM6IDUwJTsgb2JqZWN0LWZpdDogY292ZXI7IGJveC1zaGFkb3c6IDAgMCAwIDIuNXB4ICNGRkZGRkY7IH0gJiBpbWcgKyBpbWcsICYgPiAqICsgKiB7IG1hcmdpbi1sZWZ0OiAtMTBweDsgfQ=="
+                        "raw": "d2lkdGg6IGZpdC1jb250ZW50OyAmID4gKiB7IGZsZXgtc2hyaW5rOiAwOyB9ICYgaW1nIHsgd2lkdGg6IDM2cHg7IG1pbi13aWR0aDogMzZweDsgaGVpZ2h0OiAzNnB4OyBib3JkZXItcmFkaXVzOiA1MCU7IG9iamVjdC1maXQ6IGNvdmVyOyBib3gtc2hhZG93OiAwIDAgMCAyLjVweCAjRkZGRkZGOyB9ICYgaW1nICsgaW1nLCAmID4gKiArICogeyBtYXJnaW4tbGVmdDogLTEwcHg7IH0="
                     }
                 }
             ]
@@ -24175,6 +24184,82 @@
                     },
                     "custom_css": {
                         "raw": "d2lkdGg6IGZpdC1jb250ZW50Ow=="
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-09b19aa",
+            "label": "texte-herite",
+            "groupe": "Fiches et listes",
+            "description": "Texte qui reprend la police, la taille, la graisse et la couleur de son parent (ex. le titre H1 posé dans la pastille du hero).",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "font-family": {
+                            "$$type": "font-family",
+                            "value": "inherit"
+                        },
+                        "color": {
+                            "$$type": "color",
+                            "value": "inherit"
+                        },
+                        "margin": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 0,
+                                "unit": "px"
+                            }
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "Zm9udC1zaXplOiBpbmhlcml0OyBmb250LXdlaWdodDogaW5oZXJpdDsgbGluZS1oZWlnaHQ6IGluaGVyaXQ7IGxldHRlci1zcGFjaW5nOiBpbmhlcml0Ow=="
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-1ec77e8",
+            "label": "hero-montage",
+            "groupe": "Fiches et listes",
+            "description": "Visuels du hero en mobile (sous 768 px) : écran de montage. Les vignettes s'enchaînent dans un seul cadre (3 s chacune, dans l'ordre), mini timeline dessous avec la tête de lecture rouge. Sans effet sur ordinateur et tablette.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "mobile",
+                        "state": null
+                    },
+                    "props": {
+                        "height": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 372,
+                                "unit": "px"
+                            }
+                        },
+                        "margin": {
+                            "$$type": "dimensions",
+                            "value": {
+                                "block-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 4,
+                                        "unit": "px"
+                                    }
+                                }
+                            }
+                        },
+                        "display": {
+                            "$$type": "string",
+                            "value": "block"
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "aXNvbGF0aW9uOiBpc29sYXRlOyAmOjpiZWZvcmUgeyBwb3NpdGlvbjogcmVsYXRpdmU7IHRvcDogYXV0bzsgcmlnaHQ6IGF1dG87IGJvdHRvbTogYXV0bzsgbGVmdDogYXV0bzsgaGVpZ2h0OiBhdXRvOyBvcGFjaXR5OiAxOyBtaXgtYmxlbmQtbW9kZTogbm9ybWFsOyBib3JkZXI6IDA7IC13ZWJraXQtbWFzazogbm9uZTsgbWFzazogbm9uZTsgcGFkZGluZzogMDsgY29udGVudDogJyc7IHBvc2l0aW9uOiBhYnNvbHV0ZTsgdG9wOiBhdXRvOyByaWdodDogYXV0bzsgYm90dG9tOiAwOyBsZWZ0OiA4cHg7IHotaW5kZXg6IDM7IHdpZHRoOiAxMnB4OyBoZWlnaHQ6IDU2cHg7IHBvaW50ZXItZXZlbnRzOiBub25lOyBiYWNrZ3JvdW5kOiAjRkYzQjMwOyBib3gtc2hhZG93OiBub25lOyBjbGlwLXBhdGg6IHBvbHlnb24oMCAwLCAxMDAlIDAsIDEwMCUgN3B4LCBjYWxjKDUwJSArIDFweCkgMTFweCwgY2FsYyg1MCUgKyAxcHgpIDEwMCUsIGNhbGMoNTAlIC0gMXB4KSAxMDAlLCBjYWxjKDUwJSAtIDFweCkgMTFweCwgMCA3cHgpOyBhbmltYXRpb246IHJsLXRldGUtaGVybyAxMnMgbGluZWFyIGluZmluaXRlOyB9ICY6OmFmdGVyIHsgY29udGVudDogJyc7IHBvc2l0aW9uOiBhYnNvbHV0ZTsgbGVmdDogMDsgcmlnaHQ6IDA7IGJvdHRvbTogMDsgei1pbmRleDogMjsgaGVpZ2h0OiA1MHB4OyBwYWRkaW5nOiA4cHg7IGJveC1zaXppbmc6IGJvcmRlci1ib3g7IGJvcmRlci1yYWRpdXM6IDE2cHg7IHBvaW50ZXItZXZlbnRzOiBub25lOyBib3gtc2hhZG93OiAwIDEwcHggMjRweCAtMTRweCByZ2JhKDQwLDIwLDEyMCwwLjM1KTsgYmFja2dyb3VuZDogcmVwZWF0aW5nLWxpbmVhci1ncmFkaWVudCg5MGRlZywgcmdiYSgyNTUsMjU1LDI1NSwwLjU1KSAwIDJweCwgcmdiYSgyNTUsMjU1LDI1NSwwKSAycHggNXB4KSAwIGNhbGMoMTAwJSAtIDZweCkgLyAxMDAlIDdweCBuby1yZXBlYXQgY29udGVudC1ib3gsIGxpbmVhci1ncmFkaWVudCgjNUIzQkVBLCAjNUIzQkVBKSAwIDAgLyBjYWxjKDI1JSAtIDRweCkgMTAwJSBuby1yZXBlYXQgY29udGVudC1ib3gsIGxpbmVhci1ncmFkaWVudCgjOEU0REU2LCAjOEU0REU2KSAzMy4zMzMlIDAgLyBjYWxjKDI1JSAtIDRweCkgMTAwJSBuby1yZXBlYXQgY29udGVudC1ib3gsIGxpbmVhci1ncmFkaWVudCgjMzQzNEUwLCAjMzQzNEUwKSA2Ni42NjclIDAgLyBjYWxjKDI1JSAtIDRweCkgMTAwJSBuby1yZXBlYXQgY29udGVudC1ib3gsIGxpbmVhci1ncmFkaWVudCgjRTA1NjJBLCAjRTA1NjJBKSAxMDAlIDAgLyBjYWxjKDI1JSAtIDRweCkgMTAwJSBuby1yZXBlYXQgY29udGVudC1ib3gsICNGRkZGRkY7IH0gJiA+IC5lLWNvbiB7IHBvc2l0aW9uOiBhYnNvbHV0ZTsgdG9wOiAwOyByaWdodDogMDsgYm90dG9tOiA2NnB4OyBsZWZ0OiAwOyB3aWR0aDogYXV0bzsgYWxpZ24tc2VsZjogc3RyZXRjaDsganVzdGlmeS1zZWxmOiBzdHJldGNoOyB6LWluZGV4OiAxOyBvcGFjaXR5OiAwOyBwYWRkaW5nOiAxMHB4OyBib3JkZXItcmFkaXVzOiAzMHB4OyAtLXJsLXJheW9uLXBob3RvOiAyMXB4OyAtLXJsLW1hcmdlLXZpZ25ldHRlOiAxMHB4OyBhbmltYXRpb246IHJsLXBsYW4taGVybyAxMnMgaW5maW5pdGU7IH0gJiA+IC5lLWNvbjpudGgtbGFzdC1jaGlsZCg0KSB7IG9wYWNpdHk6IDE7IH0gJiA+IC5lLWNvbjpudGgtbGFzdC1jaGlsZCgzKSB7IGFuaW1hdGlvbi1kZWxheTogM3M7IH0gJiA+IC5lLWNvbjpudGgtbGFzdC1jaGlsZCgyKSB7IGFuaW1hdGlvbi1kZWxheTogNnM7IH0gJiA+IC5lLWNvbjpudGgtbGFzdC1jaGlsZCgxKSB7IGFuaW1hdGlvbi1kZWxheTogOXM7IH0gJiA+IC5lLWNvbiA+IC5lLWNvbiB7IGhlaWdodDogMTAwJTsgYXNwZWN0LXJhdGlvOiBhdXRvOyB9"
                     }
                 }
             ]

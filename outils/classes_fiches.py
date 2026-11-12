@@ -112,6 +112,18 @@ CLASSES = [
 
     # Pages (livraison 4).
     ('carte-vide', "Message d'une liste vide (avec carte-verre) : centré (ex. « Pas de webinar programmé »).", 'align-items: center; gap: 14px; padding: 48px 28px; text-align: center; @media(--mobile) { padding: 36px 22px; }'),
+    ('texte-herite', "Texte qui reprend la police, la taille, la graisse et la couleur de son parent (ex. le titre H1 posé dans la pastille du hero).", 'margin: 0; font-family: inherit; font-size: inherit; font-weight: inherit; line-height: inherit; letter-spacing: inherit; color: inherit;'),
+    ('hero-montage', "Visuels du hero en mobile (sous 768 px) : écran de montage. Les vignettes s'enchaînent dans un seul cadre (3 s chacune, dans l'ordre), mini timeline dessous avec la tête de lecture rouge. Sans effet sur ordinateur et tablette.",
+     "@media(--mobile) { display: block; height: 372px; margin-top: 4px; isolation: isolate; "
+     "&::before { " + RAZ + "content: ''; position: absolute; top: auto; right: auto; bottom: 0; left: 8px; z-index: 3; width: 12px; height: 56px; pointer-events: none; background: #FF3B30; box-shadow: none; "
+     "clip-path: polygon(0 0, 100% 0, 100% 7px, calc(50% + 1px) 11px, calc(50% + 1px) 100%, calc(50% - 1px) 100%, calc(50% - 1px) 11px, 0 7px); animation: rl-tete-hero 12s linear infinite; } "
+     "&::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; z-index: 2; height: 50px; padding: 8px; box-sizing: border-box; border-radius: 16px; pointer-events: none; box-shadow: 0 10px 24px -14px rgba(40,20,120,0.35); "
+     "background: repeating-linear-gradient(90deg, rgba(255,255,255,0.55) 0 2px, rgba(255,255,255,0) 2px 5px) 0 calc(100% - 6px) / 100% 7px no-repeat content-box, "
+     "linear-gradient(#5B3BEA, #5B3BEA) 0 0 / calc(25% - 4px) 100% no-repeat content-box, linear-gradient(#8E4DE6, #8E4DE6) 33.333% 0 / calc(25% - 4px) 100% no-repeat content-box, "
+     "linear-gradient(#3434E0, #3434E0) 66.667% 0 / calc(25% - 4px) 100% no-repeat content-box, linear-gradient(#E0562A, #E0562A) 100% 0 / calc(25% - 4px) 100% no-repeat content-box, #FFFFFF; } "
+     "& > .e-con { position: absolute; top: 0; right: 0; bottom: 66px; left: 0; width: auto; align-self: stretch; justify-self: stretch; z-index: 1; opacity: 0; padding: 10px; border-radius: 30px; --rl-rayon-photo: 21px; --rl-marge-vignette: 10px; animation: rl-plan-hero 12s infinite; } "
+     "& > .e-con:nth-last-child(4) { opacity: 1; } & > .e-con:nth-last-child(3) { animation-delay: 3s; } & > .e-con:nth-last-child(2) { animation-delay: 6s; } & > .e-con:nth-last-child(1) { animation-delay: 9s; } "
+     "& > .e-con > .e-con { height: 100%; aspect-ratio: auto; } }"),
     ('entete-page', "Haut d'une page intérieure (avec section-entete) : plus d'air sous l'en-tête.", 'padding: 184px 0 56px; @media(--tablet) { padding: 160px 0 48px; } @media(--mobile) { padding: 136px 0 40px; }'),
     ('appel-centre', "Bandeau d'appel (avec carte-verre et carte-appel) en grand et centré, au milieu d'une page.", 'justify-content: center; gap: 18px 28px; padding: 48px; border-radius: 40px; text-align: center; @media(--mobile) { padding: 28px; border-radius: 32px; }'),
     ('titre-encart', "Titre d'un encart d'appel (avec titre-xs) : un peu plus grand.", 'font-size: 28px; @media(--mobile) { font-size: 24px; }'),

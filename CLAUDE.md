@@ -189,6 +189,16 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   sens). `blocs.py` supprime les fichiers des blocs qu'il ne produit plus. `.rl-fiche` : sélecteur `html body` (Hello
   limite `.site-main` à 1140 px sur les pages à modèle).
   Non reproduit : avatars sur le titre de la carte IA « Choisit · corrige · adapte » (infos demandées à la cliente).
+- **0.4.2 (retours 0.4.1)** : hero mobile = **option C validée** (« écran de montage », maquette `maquettes/hero-mobile/`) :
+  classe `hero-montage` sur « Visuels » (mobile seulement) : vignettes empilées qui s'enchaînent (3 s, `rl-plan-hero`),
+  timeline 4 clips (::after) + tête de lecture (::before, `rl-tete-hero`) ; règles `& > .e-con` (spécificité 0,3,0 >
+  styles locaux 0,2,0) ; `align-self: stretch` obligatoire (Chrome aligne les éléments absolus : `align-self: start` local
+  les écrasait) ; sans animation, la 1re vignette reste visible. SEO accueil (règles SEO de la cliente : H1 avec le mot-clé,
+  gras = mot-clé seul) : **H1 = texte de la pastille « Votre agence vidéo illimitée »** (classe `texte-herite`), « Le meilleur
+  de l'humain… » devient un paragraphe `titre-lg` (« Accroche ») ; chapô « Notre **agence vidéo** s'en charge » ; H2 00:08
+  « Une agence vidéo née chez Pitchy. » ; title / description proposés pour Rank Math. Carte IA : `visages` ne rétrécit plus
+  (avatars sur le titre sous 1440 px). Landing : conteneur des logos en colonne (libellé à gauche des logos).
+  Leçon : `F(nom, None, style)` sans flex-direction = ligne ⇒ toujours COLONNE si plusieurs enfants empilés.
 - **Chargement de page effet film** (demande avant la fin de la livraison 4) : maquette `maquettes/loading/maquette-loading.html`
   (copie /workspace/maquette-loading.html), 4 options : A amorce 3-2-1, B clap qui se ferme puis rideau, C ouverture
   cinéma (bandes noires + REC + timecode + règle avec la tête de lecture rouge des frises, plus de filet fin), D barre de lecture en haut sans écran. Conseil : C à l'arrivée (première page

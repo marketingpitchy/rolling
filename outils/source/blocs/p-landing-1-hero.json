@@ -173,7 +173,7 @@
    "Landing · boutons": "margin-top: 32px;",
    "Landing · précision": "margin-top: 14px;",
    "Landing · preuve": "margin-top: 28px;",
-   "Landing · logos": "margin-top: 56px; width: 100%; padding: 0;",
+   "Landing · logos": "display: flex; flex-direction: column; gap: 0; margin-top: 56px; width: 100%; padding: 0;",
    "Landing · logos · titre": "justify-content: center;",
    "Landing · logos · libellé": "text-align: center; width: 100%;",
    "Landing · logos · bande": "margin-top: 22px; width: 100%; padding: 0;"

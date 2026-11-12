@@ -28,6 +28,8 @@ img, svg, video { max-width: 100%; }
 @keyframes rl-defile { to { transform: translateX(-50%); } }
 @property --rl-angle { syntax: "<angle>"; inherits: false; initial-value: 0deg; }
 @keyframes rl-anneau { to { --rl-angle: 360deg; } }
+@keyframes rl-plan-hero { 0% { opacity: 0; } 3%, 25% { opacity: 1; } 28%, 100% { opacity: 0; } }
+@keyframes rl-tete-hero { from { left: 8px; } to { left: calc(100% - 20px); } }
 
 /* Rien ne bouge pour qui a choisi de réduire les animations, ni dans l'éditeur Elementor */
 @media (prefers-reduced-motion: reduce) {
