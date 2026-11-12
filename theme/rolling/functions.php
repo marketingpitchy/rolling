@@ -24,6 +24,7 @@ require_once ROLLING_DIR . '/inc/class-rolling-contenus.php';
 require_once ROLLING_DIR . '/inc/class-rolling-webinars.php';
 require_once ROLLING_DIR . '/inc/class-rolling-dynamique.php';
 require_once ROLLING_DIR . '/inc/class-rolling-compositions.php';
+require_once ROLLING_DIR . '/inc/class-rolling-chargement.php';
 
 Rolling_Installateur::init();
 Rolling_Ressources::init();
@@ -33,3 +34,4 @@ Rolling_Seo::init();
 Rolling_Contenus::init();
 Rolling_Dynamique::init();
 Rolling_Compositions::init();
+Rolling_Chargement::init();

@@ -160,3 +160,38 @@ body.elementor-editor-active #rl-ecran[data-rl-langue="fr"] #rl-version-fr, body
 .rl-progression.rl-visible { opacity: 1; }
 .rl-progression__avance { position: absolute; top: 0; bottom: 0; left: 0; width: var(--rl-avance, 0%); background: linear-gradient(90deg, #5B3BEA, #8E4DE6 45%, #E0562A); }
 .rl-progression__chapitre { position: absolute; top: 0; bottom: 0; width: 3px; margin-left: -1px; background: #FAF9F7; }
+
+/* ---------------------------------------------------------------- */
+/* Chargement de page (partie du thème, comme l'en-tête)             */
+/* Ouverture cinéma : écran noir, logo, REC + timecode, tête de      */
+/* lecture sur la règle, puis les bandes noires s'écartent.          */
+/* ---------------------------------------------------------------- */
+.rl-intro, .rl-barre-page { display: none; }
+html.rl-intro-joue .rl-intro { display: block; position: fixed; inset: 0; z-index: 100000; cursor: pointer; animation: rl-intro-fin 0s linear 1.5s forwards; }
+.rl-intro__bande { position: absolute; left: 0; right: 0; height: 50.5%; background: #0F0F12; }
+.rl-intro__bande--haut { top: 0; animation: rl-intro-haut .7s cubic-bezier(.7, 0, .15, 1) .75s both; }
+.rl-intro__bande--bas { bottom: 0; animation: rl-intro-bas .7s cubic-bezier(.7, 0, .15, 1) .75s both; }
+.rl-intro__centre { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 18px; animation: rl-intro-centre .25s ease-in .65s both; }
+.rl-intro__logo img { display: block; width: clamp(150px, 18vw, 240px); height: auto; }
+.rl-intro__logo { color: #FFFFFF; font-family: "Bricolage Grotesque", sans-serif; font-size: 40px; font-weight: 750; letter-spacing: -.05em; }
+.rl-intro__ligne { display: flex; align-items: center; gap: 14px; font-family: "Bricolage Grotesque", sans-serif; font-size: 15px; font-weight: 650; letter-spacing: .1em; font-variant-numeric: tabular-nums; color: rgba(255, 255, 255, .75); }
+.rl-intro__rec { display: inline-flex; align-items: center; gap: 8px; padding: 4px 12px; border-radius: 999px; font-family: "Hanken Grotesk", sans-serif; font-size: 12px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: #FFFFFF; background: rgba(255, 255, 255, .08); }
+.rl-intro__rec::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: #FF3B30; box-shadow: 0 0 10px #FF3B30; }
+.rl-intro__regle { position: relative; display: block; width: min(520px, 76vw); height: 58px; margin-top: 8px; background: repeating-linear-gradient(90deg, rgba(255, 255, 255, .22) 0 1px, transparent 1px 13px) left 22px / 100% 8px no-repeat, repeating-linear-gradient(90deg, rgba(255, 255, 255, .45) 0 1px, transparent 1px 65px) left 17px / 100% 13px no-repeat; }
+.rl-intro__regle > span { position: absolute; top: 38px; font-family: "Bricolage Grotesque", sans-serif; font-size: 12px; font-weight: 650; letter-spacing: .08em; color: rgba(255, 255, 255, .55); }
+.rl-intro__regle > span:first-of-type { left: 0; }
+.rl-intro__regle > span:last-of-type { right: 0; }
+.rl-intro__tete { position: absolute; top: 0; left: 0; width: 18px; height: 22px; margin-left: -9px; background: linear-gradient(90deg, transparent 8px, rgba(255, 255, 255, .9) 8px 10px, transparent 10px) center 4px / 18px 9px no-repeat, linear-gradient(180deg, #FF6A5F, #FF3B30); clip-path: polygon(0 0, 100% 0, 100% 62%, 50% 100%, 0 62%); border-radius: 4px 4px 0 0; animation: rl-intro-lecture .55s cubic-bezier(.4, 0, .2, 1) .05s both; }
+.rl-intro__trait { position: absolute; top: 21px; left: 0; width: 2px; height: 26px; margin-left: -1px; background: linear-gradient(180deg, #FF3B30, rgba(255, 59, 48, 0)); box-shadow: 0 0 10px rgba(255, 59, 48, .6); animation: rl-intro-lecture .55s cubic-bezier(.4, 0, .2, 1) .05s both; }
+.rl-intro--passe { opacity: 0; transition: opacity .25s ease; }
+@keyframes rl-intro-lecture { from { left: 0; } to { left: 100%; } }
+@keyframes rl-intro-centre { to { opacity: 0; transform: scale(.96); } }
+@keyframes rl-intro-haut { 0% { transform: none; } 55% { transform: translateY(-76%); } 100% { transform: translateY(-101%); } }
+@keyframes rl-intro-bas { 0% { transform: none; } 55% { transform: translateY(76%); } 100% { transform: translateY(101%); } }
+@keyframes rl-intro-fin { to { visibility: hidden; pointer-events: none; } }
+
+/* Barre de lecture entre les pages */
+html.rl-barre-joue .rl-barre-page { display: block; position: fixed; z-index: 100000; top: var(--wp-admin--admin-bar--height, 0px); left: 0; right: 0; height: 3px; transform-origin: 0 50%; background: linear-gradient(90deg, #5B3BEA, #B5459E 55%, #FF8A5B); box-shadow: 0 0 12px rgba(181, 69, 158, .6); pointer-events: none; animation: rl-barre-avance .7s cubic-bezier(.3, .6, .2, 1) both, rl-barre-sortie .25s ease-in .75s forwards; }
+@keyframes rl-barre-avance { 0% { transform: scaleX(0); } 60% { transform: scaleX(.8); } 100% { transform: scaleX(1); } }
+@keyframes rl-barre-sortie { to { opacity: 0; visibility: hidden; } }
+@media (prefers-reduced-motion: reduce) { .rl-intro, .rl-barre-page { display: none !important; } }
