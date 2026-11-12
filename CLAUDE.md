@@ -232,6 +232,13 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   thème change (`rafraichir_media` : même pièce jointe, nouveau nom `<base>-<md5 8>`, ancien fichier gardé ; jamais si la
   cliente a mis un autre fichier). Écran « Votre vidéo » : l'image de fond se change par le Navigateur (« Écran · image de fond »).
   page-essai avec toutes les clés plante (modèles de cartes) ⇒ passer la liste des blocs de l'accueil.
+- **0.4.7** : `halo-centre` (appels finaux, 404) calé dans la section (top / bottom 7 %, largeur max 860 px centrée par
+  left/right) : plus coupé avant le pied de page. **La cliente n'installe pas Rank Math** (elle a Semrush, scan à la mise
+  en ligne) ⇒ personne n'écrit description / Open Graph / schémas : question posée (extension SEO ou métas par le thème).
+  Version anglaise expliquée (extension multilingue WPML ou Polylang, /en/, hreflang par l'extension ; à tester avec
+  les éléments atomiques d'Elementor 4 avant ; livraison dédiée : contenus traduisibles, textes fixes du thème, sélecteur).
+  Docker : si `dockerd` échoue sur « timeout waiting for containerd », supprimer /var/run/docker/containerd/containerd.pid
+  (pid périmé repris par un autre processus).
 - **Chargement de page effet film** (demande avant la fin de la livraison 4) : maquette `maquettes/loading/maquette-loading.html`
   (copie /workspace/maquette-loading.html), 4 options : A amorce 3-2-1, B clap qui se ferme puis rideau, C ouverture
   cinéma (bandes noires + REC + timecode + règle avec la tête de lecture rouge des frises, plus de filet fin), D barre de lecture en haut sans écran. Conseil : C à l'arrivée (première page

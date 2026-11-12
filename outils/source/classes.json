@@ -994,7 +994,7 @@
     },
     {
      "label": "halo-centre",
-     "css": "&::before { position: relative; top: auto; right: auto; bottom: auto; left: auto; height: auto; opacity: 1; mix-blend-mode: normal; border: 0; content: ''; position: absolute; z-index: -1; width: 860px; height: 860px; border-radius: 50%; pointer-events: none; left: 50%; top: 50%; margin: -430px 0 0 -430px; background: radial-gradient(closest-side, rgba(255,138,91,0.42), rgba(139,92,246,0.3) 52%, rgba(15,15,18,0) 100%); }",
+     "css": "&::before { position: relative; top: auto; right: auto; bottom: auto; left: auto; height: auto; opacity: 1; mix-blend-mode: normal; border: 0; content: ''; position: absolute; z-index: -1; width: auto; height: auto; border-radius: 50%; pointer-events: none; top: 7%; bottom: 7%; left: max(0px, calc(50% - 430px)); right: max(0px, calc(50% - 430px)); margin: 0; background: radial-gradient(closest-side, rgba(255,138,91,0.42), rgba(139,92,246,0.3) 52%, rgba(15,15,18,0) 100%); }",
      "description": "À ajouter à une section : grand halo pêche et violet au centre (CTA final).",
      "brut": "&::before { animation: rl-derive 20s ease-in-out infinite; }"
     },
