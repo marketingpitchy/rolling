@@ -179,10 +179,16 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   de la visite, sessionStorage), D entre les pages ; < 1,5 s, clic / Échap pour passer, rien avec « réduire les
   animations », rien dans l'éditeur, pas sur la landing ; **C choisie (avec la tête de lecture), D validée entre les pages**.
   Option E ajoutée (idée de la cliente) : un document « (guillemets du logo) traverse le logo et devient une vidéo ▶,
-  tête de lecture sur la règle, puis ouverture comme C (1,5 s) ; **C ou E à choisir**.
-- Google Tag Manager : Custom Code d'Elementor Pro introuvable chez la cliente (absent sans licence active, testé) ;
+  tête de lecture sur la règle, puis ouverture comme C (1,5 s). **Choix final : C** (E écartée) ⇒ à intégrer en 0.4.0.
+- Google Tag Manager : chez la cliente, le Custom Code d'Elementor Pro est dans le nouveau menu **Elementor > Éléments
+  personnalisés > Code** (capture du 12/11 ; absent sur ma copie sans licence) ⇒ elle y colle GTM (head + body début) ;
+  ne pas modifier les fichiers du thème (écrasés à chaque mise à jour). Ancienne note :
   proposé : vérifier la licence (`edit.php?post_type=elementor_snippet`) ou champ « Identifiant Google Tag Manager »
   dans Personnaliser (le thème écrit le code dans le head et après body) ; GA4 dans GTM, mode Consentement.
+- **Elementor 4.4.0** (sortie le 9/11/2026) testée sur wp2 (8081) avec le thème 0.3.2 + Pro 4.3.3 : rendu de la page
+  d'essai et de l'accueil identique au pixel (4.4.0 charge les images différées plus tard : faire défiler lentement avant
+  une capture pleine page), éditeur sans erreur JS, classes appliquées. Pro 4.4 non testée (pas accessible). wp2 reste en
+  4.4.0 pour tester la mise à jour 0.3.2 → 0.4.0 ; la construction reste sur wp (4.3.6).
 - FAQ : la cliente ajoute elle-même les réponses ; garder les questions telles quelles.
 - Le WordPress de production existe déjà chez la cliente : on livre seulement le thème (zip à importer).
 
