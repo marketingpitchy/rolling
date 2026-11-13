@@ -288,6 +288,14 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   `elementor-editor-preview` en 4.3.6) masque les variantes qui ne s'affichent pas sur le site. Carte vide atténuée par
   `:not(:has(.si-contexte))` (plus `:has(.etiquette-bientot)`, présent dans l'éditeur). La cliente doit remplacer le bloc
   déjà inséré (la mise à jour ne touche pas aux pages).
+- **0.5.3** : Ressources en mobile = **liste** (choix cliente parmi actuel / 1 par ligne / liste) : `grille-rubriques` 1 colonne,
+  `carte-rubrique` en grille 48 px + texte (picto `grid-row: 1 / span 3`). Hero : **2 versions** dans Mes modèles,
+  « Rolling · 01 Hero » (collage, dans la Page complète) et « Rolling · 01 Hero (version maquette : grande photo) »
+  (`01-hero-maquette`, hors Page complète : `BLOCS_VARIANTES` ; `bloc_hero(maquette)` + `POSITIONS_HERO`). Collage jugé pas
+  assez « verre » ⇒ cadres `cadre-verre` d'origine (14 px, plus de padding 6 px) + taches violet / lilas / pêche floues
+  derrière (`hero-collage::after`, z-index -1) : le verre laisse voir la couleur. Taille de police : fonctionne en
+  « local » sur ma copie ; causes probables chez elle = pastille de classe sélectionnée, taille mobile de la classe qui
+  passe devant la taille réglée sur ordinateur, cache.
 - **Chargement de page effet film** (demande avant la fin de la livraison 4) : maquette `maquettes/loading/maquette-loading.html`
   (copie /workspace/maquette-loading.html), 4 options : A amorce 3-2-1, B clap qui se ferme puis rideau, C ouverture
   cinéma (bandes noires + REC + timecode + règle avec la tête de lecture rouge des frises, plus de filet fin), D barre de lecture en haut sans écran. Conseil : C à l'arrivée (première page

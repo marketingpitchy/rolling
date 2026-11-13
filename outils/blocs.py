@@ -140,63 +140,96 @@ def lecture(nom, verre=False, style=None):
 # Hero
 # --------------------------------------------------------------------------------------------
 
-hero = F('Hero', ['section', 'section-entete', 'halos-haut'], tag='section', enfants=[
-    F('Hero · contenu', ['conteneur'], 'display: flex; flex-direction: row; flex-wrap: wrap; align-items: center; gap: 48px;', enfants=[
-        F('Promesse', None, 'display: flex; flex-direction: column; flex: 1 1 560px; min-width: 0; gap: 0; padding: 40px 0 0; @media(--tablet) { padding: 0; }', enfants=[
-            F('Pastille', ['pastille'], enfants=[H('Titre H1', 'Votre agence vidéo illimitée', 'h1', ['texte-herite'])]),
-            P('Accroche', "Le meilleur <u>de l'humain.</u><br>Le meilleur <b>de l'IA.</b>", ['titre-lg'], 'margin-top: 26px;'),
-            P('Chapô', "Vos clients, vos candidats, vos collaborateurs s'informent tous en vidéo. Mais vos équipes n'ont pas le temps d'en faire ? Notre <strong>agence vidéo</strong> s'en charge, à prix fixe, <u>en illimité.</u>", ['chapo'], 'margin-top: 26px; max-width: 620px;'),
-            F('Boutons', ['rangee'], 'margin-top: 40px;', enfants=[
-                B('Bouton principal', 'Réserver un échange', '/contact/', ['bouton-principal']),
-                B('Bouton secondaire', 'Voir les offres', '/offres/', ['bouton-verre']),
-            ]),
-            F('Preuve', ['rangee'], 'margin-top: 24px;', enfants=[
-                F('Visages', ['visages'], enfants=[
-                    I('Visage 1', 'visage-1.jpg', taille='thumbnail'), I('Visage 2', 'visage-2.jpg', taille='thumbnail'),
-                    I('Visage 3', 'visage-3.jpg', taille='thumbnail'), I('Visage 4', 'visage-4.jpg', taille='thumbnail'),
+TABLETTE_VISUELS = '@media(--tablet) { max-width: 100%; height: auto; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; } @media(--mobile) { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }'
+POSITIONS_HERO = {
+    # Collage aéré (0.4.5) : 4 vignettes inclinées qui flottent.
+    'collage': {
+        'visuels_cls': ['lueur-peche', 'hero-montage', 'hero-collage'],
+        'visuels': 'position: relative; flex: 1 1 460px; min-width: 0; max-width: 560px; height: 630px; margin: 0 auto; padding: 0; ' + TABLETTE_VISUELS,
+        'tournage': 'position: absolute; left: 60px; top: 50px; width: 380px; @media(--tablet) { position: relative; left: auto; top: auto; width: auto; grid-column: 1 / -1; }',
+        'tournage_photo': 'aspect-ratio: 16 / 10; @media(--tablet) { height: 420px; } @media(--mobile) { height: 280px; }',
+        'interview': 'position: absolute; right: 0; top: 110px; width: 190px; z-index: 2; @media(--tablet) { position: relative; right: auto; top: auto; width: auto; }',
+        'demo': 'position: absolute; left: 10px; top: 340px; width: 270px; z-index: 2; @media(--tablet) { position: relative; left: auto; top: auto; width: auto; align-self: start; } @media(--mobile) { grid-column: 1 / -1; order: 3; }',
+        'motion': 'position: absolute; left: 255px; top: 440px; width: 190px; z-index: 2; @media(--tablet) { position: relative; left: auto; top: auto; width: auto; align-self: start; }',
+    },
+    # Maquette d'origine : une grande photo de tournage, 3 vignettes posées dessus.
+    'maquette': {
+        'visuels_cls': ['lueur-peche', 'hero-montage'],
+        'visuels': 'position: relative; flex: 1 1 460px; min-width: 0; height: 680px; padding: 0; ' + TABLETTE_VISUELS.replace('max-width: 100%; ', ''),
+        'tournage': 'position: absolute; left: 0; right: 0; top: 0; @media(--tablet) { position: relative; grid-column: 1 / -1; }',
+        'tournage_photo': 'height: 652px; @media(--tablet) { height: 420px; } @media(--mobile) { height: 280px; }',
+        'interview': 'position: absolute; left: 28px; top: 252px; width: 208px; z-index: 2; @media(--tablet) { position: relative; left: auto; top: auto; width: auto; }',
+        'demo': 'position: absolute; right: 28px; top: 24px; width: 294px; z-index: 2; @media(--tablet) { position: relative; right: auto; top: auto; width: auto; align-self: start; } @media(--mobile) { grid-column: 1 / -1; order: 3; }',
+        'motion': 'position: absolute; right: 28px; top: 432px; width: 208px; z-index: 2; @media(--tablet) { position: relative; right: auto; top: auto; width: auto; align-self: start; }',
+    },
+}
+
+
+def bloc_hero(maquette=False):
+    """Hero de l'accueil. maquette=True : grand visuel de la maquette sur ordinateur (une grande photo et 3 vignettes
+    posées dessus) ; sinon collage aéré (hero-collage). Tablette et mobile identiques."""
+    P_ = POSITIONS_HERO['maquette' if maquette else 'collage']
+    return F('Hero', ['section', 'section-entete', 'halos-haut'], tag='section', enfants=[
+        F('Hero · contenu', ['conteneur'], 'display: flex; flex-direction: row; flex-wrap: wrap; align-items: center; gap: 48px;', enfants=[
+            F('Promesse', None, 'display: flex; flex-direction: column; flex: 1 1 560px; min-width: 0; gap: 0; padding: 40px 0 0; @media(--tablet) { padding: 0; }', enfants=[
+                F('Pastille', ['pastille'], enfants=[H('Titre H1', 'Votre agence vidéo illimitée', 'h1', ['texte-herite'])]),
+                P('Accroche', "Le meilleur <u>de l'humain.</u><br>Le meilleur <b>de l'IA.</b>", ['titre-lg'], 'margin-top: 26px;'),
+                P('Chapô', "Vos clients, vos candidats, vos collaborateurs s'informent tous en vidéo. Mais vos équipes n'ont pas le temps d'en faire ? Notre <strong>agence vidéo</strong> s'en charge, à prix fixe, <u>en illimité.</u>", ['chapo'], 'margin-top: 26px; max-width: 620px;'),
+                F('Boutons', ['rangee'], 'margin-top: 40px;', enfants=[
+                    B('Bouton principal', 'Réserver un échange', '/contact/', ['bouton-principal']),
+                    B('Bouton secondaire', 'Voir les offres', '/offres/', ['bouton-verre']),
                 ]),
-                P('Preuve · texte', 'Par les équipes de <strong>Pitchy</strong> — 13 ans de vidéo, 500+ grandes entreprises.', ['texte-petit', 'texte-legende']),
+                F('Preuve', ['rangee'], 'margin-top: 24px;', enfants=[
+                    F('Visages', ['visages'], enfants=[
+                        I('Visage 1', 'visage-1.jpg', taille='thumbnail'), I('Visage 2', 'visage-2.jpg', taille='thumbnail'),
+                        I('Visage 3', 'visage-3.jpg', taille='thumbnail'), I('Visage 4', 'visage-4.jpg', taille='thumbnail'),
+                    ]),
+                    P('Preuve · texte', 'Par les équipes de <strong>Pitchy</strong> — 13 ans de vidéo, 500+ grandes entreprises.', ['texte-petit', 'texte-legende']),
+                ]),
+            ]),
+            D('Visuels', P_['visuels_cls'], P_['visuels'], enfants=[
+                D('Tournage', ['cadre-verre', 'cadre-verre-grand'], P_['tournage'], enfants=[
+                    D('Tournage · photo', ['cadre-photo'], P_['tournage_photo'], enfants=[
+                        I('Tournage · image', 'hero-tournage.jpg', 'Une caméra sur trépied, en plein tournage dans des bureaux', ['image-couvrante'], 'object-position: 56% 50%;'),
+                        bandeau('Tournage · bandeau', 'Tournage', ['bandeau-rec']),
+                    ]),
+                ]),
+                D('Interview', ['cadre-verre'], P_['interview'], enfants=[
+                    D('Interview · vidéo', ['cadre-photo'], 'aspect-ratio: 9 / 16;', enfants=[
+                        I('Interview · image', 'hero-interview.jpg', 'Une experte filmée en interview', ['image-couvrante'], 'object-position: 53% 28%;'),
+                        bandeau('Interview · bandeau', 'Interview'),
+                        F('Interview · plaque', ['plaque-verre', 'plaque-bas'], enfants=[
+                            P('Interview · titre', '3 gestes<br><span>qui sauvent</span>', ['titre-vignette']),
+                            lecture('Interview · lecture', verre=True),
+                        ]),
+                    ]),
+                ]),
+                D('Démo produit', ['cadre-verre'], P_['demo'], enfants=[
+                    D('Démo produit · vidéo', ['cadre-photo'], 'aspect-ratio: 16 / 9;', enfants=[
+                        I('Démo produit · image', 'hero-demo-produit.jpg', "Un pot de crème ouvert flotte au-dessus d'une pierre", ['image-couvrante'], 'object-position: 50% 40%;'),
+                        bandeau('Démo produit · bandeau', 'Démo produit'),
+                        F('Démo produit · lecteur', ['plaque-verre', 'plaque-bas', 'plaque-lecteur'], enfants=[
+                            lecture('Démo produit · lecture', verre=True),
+                        ]),
+                    ]),
+                ]),
+                D('Motion design', ['cadre-verre'], P_['motion'], enfants=[
+                    D('Motion design · vidéo', ['fond-video-orange', 'illus-motion', 'motion-formes'], 'aspect-ratio: 1 / 1; overflow: hidden; padding: 0; border-radius: 19px;', enfants=[
+                        bandeau('Motion design · bandeau', 'Motion design', ['bandeau-clair']),
+                        P('Motion design · mot', 'Résultats 2026', ['mot-motion']),
+                        F('Motion design · plaque', ['plaque-verre', 'plaque-bas', 'plaque-claire'], enfants=[
+                            P('Motion design · titre', 'Vos chiffres<br><span>en motion</span>', ['titre-vignette', 'titre-vignette-sombre']),
+                            lecture('Motion design · lecture', verre=True),
+                        ]),
+                    ]),
+                ]),
             ]),
         ]),
-        D('Visuels', ['lueur-peche', 'hero-montage', 'hero-collage'], 'position: relative; flex: 1 1 460px; min-width: 0; max-width: 560px; height: 630px; margin: 0 auto; padding: 0; @media(--tablet) { max-width: 100%; height: auto; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; } @media(--mobile) { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }', enfants=[
-            D('Tournage', ['cadre-verre', 'cadre-verre-grand'], 'position: absolute; left: 60px; top: 50px; width: 380px; @media(--tablet) { position: relative; left: auto; top: auto; width: auto; grid-column: 1 / -1; }', enfants=[
-                D('Tournage · photo', ['cadre-photo'], 'aspect-ratio: 16 / 10; @media(--tablet) { height: 420px; } @media(--mobile) { height: 280px; }', enfants=[
-                    I('Tournage · image', 'hero-tournage.jpg', 'Une caméra sur trépied, en plein tournage dans des bureaux', ['image-couvrante'], 'object-position: 56% 50%;'),
-                    bandeau('Tournage · bandeau', 'Tournage', ['bandeau-rec']),
-                ]),
-            ]),
-            D('Interview', ['cadre-verre'], 'position: absolute; right: 0; top: 110px; width: 190px; z-index: 2; @media(--tablet) { position: relative; right: auto; top: auto; width: auto; }', enfants=[
-                D('Interview · vidéo', ['cadre-photo'], 'aspect-ratio: 9 / 16;', enfants=[
-                    I('Interview · image', 'hero-interview.jpg', 'Une experte filmée en interview', ['image-couvrante'], 'object-position: 53% 28%;'),
-                    bandeau('Interview · bandeau', 'Interview'),
-                    F('Interview · plaque', ['plaque-verre', 'plaque-bas'], enfants=[
-                        P('Interview · titre', '3 gestes<br><span>qui sauvent</span>', ['titre-vignette']),
-                        lecture('Interview · lecture', verre=True),
-                    ]),
-                ]),
-            ]),
-            D('Démo produit', ['cadre-verre'], 'position: absolute; left: 10px; top: 340px; width: 270px; z-index: 2; @media(--tablet) { position: relative; left: auto; top: auto; width: auto; align-self: start; } @media(--mobile) { grid-column: 1 / -1; order: 3; }', enfants=[
-                D('Démo produit · vidéo', ['cadre-photo'], 'aspect-ratio: 16 / 9;', enfants=[
-                    I('Démo produit · image', 'hero-demo-produit.jpg', "Un pot de crème ouvert flotte au-dessus d'une pierre", ['image-couvrante'], 'object-position: 50% 40%;'),
-                    bandeau('Démo produit · bandeau', 'Démo produit'),
-                    F('Démo produit · lecteur', ['plaque-verre', 'plaque-bas', 'plaque-lecteur'], enfants=[
-                        lecture('Démo produit · lecture', verre=True),
-                    ]),
-                ]),
-            ]),
-            D('Motion design', ['cadre-verre'], 'position: absolute; left: 255px; top: 440px; width: 190px; z-index: 2; @media(--tablet) { position: relative; left: auto; top: auto; width: auto; align-self: start; }', enfants=[
-                D('Motion design · vidéo', ['fond-video-orange', 'illus-motion', 'motion-formes'], 'aspect-ratio: 1 / 1; overflow: hidden; padding: 0; border-radius: 19px;', enfants=[
-                    bandeau('Motion design · bandeau', 'Motion design', ['bandeau-clair']),
-                    P('Motion design · mot', 'Résultats 2026', ['mot-motion']),
-                    F('Motion design · plaque', ['plaque-verre', 'plaque-bas', 'plaque-claire'], enfants=[
-                        P('Motion design · titre', 'Vos chiffres<br><span>en motion</span>', ['titre-vignette', 'titre-vignette-sombre']),
-                        lecture('Motion design · lecture', verre=True),
-                    ]),
-                ]),
-            ]),
-        ]),
-    ]),
-])
+    ])
+
+
+hero = bloc_hero()
+hero_maquette = bloc_hero(maquette=True)
 
 # --------------------------------------------------------------------------------------------
 # Ils nous font confiance (logos qui défilent)
@@ -780,6 +813,11 @@ BLOCS = [
     ('12-faq', 'Rolling · 12 FAQ', faq),
     ('14-ressources', 'Rolling · Ressources (blog, guides, webinars, replays)', ressources),
     ('13-final', 'Rolling · 13 Appel final', final),
+]
+
+# Blocs en plus, hors « Page complète (accueil) » : variantes au choix.
+BLOCS_VARIANTES = [
+    ('01-hero-maquette', 'Rolling · 01 Hero (version maquette : grande photo)', hero_maquette),
 ]
 
 # --------------------------------------------------------------------------------------------
@@ -1930,6 +1968,11 @@ if __name__ == '__main__':
         with open(os.path.join(dossier, cle + '.json'), 'w', encoding='utf8') as f:
             json.dump(donnees, f, ensure_ascii=False, indent=1)
         print(cle, len(donnees['composition']['xml_structure']), 'caractères de XML')
+    for cle, titre, racine in BLOCS_VARIANTES:
+        composition, brut = composer(racine)
+        with open(os.path.join(dossier, cle + '.json'), 'w', encoding='utf8') as f:
+            json.dump({'cle': cle, 'titre': titre, 'type': 'e-flexbox', 'composition': composition, 'brut': brut}, f, ensure_ascii=False, indent=1)
+        print(cle, len(composition['xml_structure']), 'caractères de XML')
     for cle, titre, racine, apercu in MODELES_SITE:
         composition, brut = composer(racine)
         donnees = {'cle': cle, 'titre': titre, 'type': 'e-flexbox', 'apercu': apercu, 'composition': composition, 'brut': brut}
@@ -1953,7 +1996,7 @@ if __name__ == '__main__':
         json.dump({'cle': '99-page-complete', 'titre': 'Rolling · Page complète (accueil)', 'type': 'page', 'assemble': cles}, f, ensure_ascii=False, indent=1)
     print('99-page-complete :', len(cles), 'blocs')
     # Blocs retirés de ce script : leurs fichiers (sources et thème) sont supprimés, l'installateur les retire du site.
-    produits = set(cles) | {m[0] for m in MODELES_SITE} | {'99-page-complete'}
+    produits = set(cles) | {m[0] for m in MODELES_SITE} | {m[0] for m in BLOCS_VARIANTES} | {'99-page-complete'}
     for page, sections in PAGES:
         produits |= {c for c, _, _ in sections} | {'pc-' + sections[0][0].split('-')[1]}
     for d in (dossier, os.path.join(ICI, '..', 'theme', 'rolling', 'data', 'blocs')):

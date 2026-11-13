@@ -6193,7 +6193,7 @@
             "id": "g-c13c2ee",
             "label": "carte-rubrique",
             "groupe": "Fiches et listes",
-            "description": "Carte d'une rubrique (avec carte-verre) : picto, titre, dernier contenu ou « Bientôt ». Plus discrète tant que la rubrique est vide.",
+            "description": "Carte d'une rubrique (avec carte-verre) : picto, titre, dernier contenu ou « Bientôt ». Plus discrète tant que la rubrique est vide. En mobile : une ligne de liste, picto à gauche.",
             "variants": [
                 {
                     "meta": {
@@ -6201,11 +6201,44 @@
                         "state": null
                     },
                     "props": {
-                        "padding": {
+                        "column-gap": {
                             "$$type": "size",
                             "value": {
                                 "size": 16,
                                 "unit": "px"
+                            }
+                        },
+                        "padding": {
+                            "$$type": "dimensions",
+                            "value": {
+                                "block-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 16,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 18,
+                                        "unit": "px"
+                                    }
+                                },
+                                "block-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 16,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 18,
+                                        "unit": "px"
+                                    }
+                                }
                             }
                         },
                         "border-radius": {
@@ -6215,16 +6248,21 @@
                                 "unit": "px"
                             }
                         },
-                        "gap": {
-                            "$$type": "size",
-                            "value": {
-                                "size": 8,
-                                "unit": "px"
-                            }
+                        "display": {
+                            "$$type": "string",
+                            "value": "grid"
+                        },
+                        "grid-template-columns": {
+                            "$$type": "string",
+                            "value": "48px minmax(0, 1fr)"
+                        },
+                        "align-content": {
+                            "$$type": "string",
+                            "value": "center"
                         }
                     },
                     "custom_css": {
-                        "raw": "JiAudGVtb2luLWxpZW4geyBnYXA6IDZweDsgZm9udC1zaXplOiAxNHB4OyB0ZXh0LWFsaWduOiBsZWZ0OyBqdXN0aWZ5LWNvbnRlbnQ6IGZsZXgtc3RhcnQ7IH0="
+                        "raw": "cm93LWdhcDogNHB4OyAmID4gKiB7IGdyaWQtY29sdW1uOiAyOyB9ICYgPiAucGljdG8tcnVicmlxdWUgeyBncmlkLWNvbHVtbjogMTsgZ3JpZC1yb3c6IDEgLyBzcGFuIDM7IGFsaWduLXNlbGY6IHN0YXJ0OyB9ICYgLnRlbW9pbi1saWVuIHsgbWFyZ2luLXRvcDogNHB4OyBnYXA6IDZweDsgZm9udC1zaXplOiAxNHB4OyB0ZXh0LWFsaWduOiBsZWZ0OyBqdXN0aWZ5LWNvbnRlbnQ6IGZsZXgtc3RhcnQ7IH0="
                     }
                 },
                 {
@@ -24385,7 +24423,7 @@
             "id": "g-69b0a3b",
             "label": "hero-collage",
             "groupe": "Fiches et listes",
-            "description": "Visuels du hero sur ordinateur (981 px et plus) : vignettes en collage aéré, cadres fins, légèrement inclinées, qui flottent doucement. Sans effet sur tablette et mobile.",
+            "description": "Visuels du hero sur ordinateur (981 px et plus) : vignettes en collage aéré dans leur cadre en verre (taches de couleur floues derrière, pour l'effet verre), légèrement inclinées, qui flottent doucement. Sans effet sur tablette et mobile.",
             "variants": [
                 {
                     "meta": {
@@ -24394,7 +24432,7 @@
                     },
                     "props": [],
                     "custom_css": {
-                        "raw": "LS1ybC1jb2xsYWdlOiAxOyBAbWVkaWEgKG1pbi13aWR0aDogOTgxcHgpIHsgJiA+IC5lLWNvbiB7IHBhZGRpbmc6IDZweDsgYm9yZGVyLXJhZGl1czogMjZweDsgLS1ybC1yYXlvbi1waG90bzogMjBweDsgLS1ybC1tYXJnZS12aWduZXR0ZTogMTBweDsgYW5pbWF0aW9uOiBybC1mbG90dGUgOHMgZWFzZS1pbi1vdXQgaW5maW5pdGU7IH0gJiA+IC5lLWNvbjpudGgtbGFzdC1jaGlsZCg0KSB7IHJvdGF0ZTogLTNkZWc7IH0gJiA+IC5lLWNvbjpudGgtbGFzdC1jaGlsZCgzKSB7IHJvdGF0ZTogNGRlZzsgYW5pbWF0aW9uLWRlbGF5OiAtMnM7IH0gJiA+IC5lLWNvbjpudGgtbGFzdC1jaGlsZCgyKSB7IHJvdGF0ZTogMmRlZzsgYW5pbWF0aW9uLWRlbGF5OiAtNHM7IH0gJiA+IC5lLWNvbjpudGgtbGFzdC1jaGlsZCgxKSB7IHJvdGF0ZTogLTVkZWc7IGFuaW1hdGlvbi1kZWxheTogLTZzOyB9IH0="
+                        "raw": "LS1ybC1jb2xsYWdlOiAxOyBAbWVkaWEgKG1pbi13aWR0aDogOTgxcHgpIHsgJjo6YWZ0ZXIgeyBjb250ZW50OiAnJzsgcG9zaXRpb246IGFic29sdXRlOyB6LWluZGV4OiAtMTsgdG9wOiA0JTsgcmlnaHQ6IC0yJTsgYm90dG9tOiAyJTsgbGVmdDogLTQlOyBwb2ludGVyLWV2ZW50czogbm9uZTsgYmFja2dyb3VuZDogcmFkaWFsLWdyYWRpZW50KDM4JSAzNCUgYXQgMjIlIDMwJSwgcmdiYSg5MSw1OSwyMzQsMC41NSksIHJnYmEoOTEsNTksMjM0LDApIDEwMCUpLCByYWRpYWwtZ3JhZGllbnQoMzQlIDMwJSBhdCA4MCUgMjglLCByZ2JhKDE5NiwxODEsMjUzLDAuNyksIHJnYmEoMTk2LDE4MSwyNTMsMCkgMTAwJSksIHJhZGlhbC1ncmFkaWVudCg0MCUgMzYlIGF0IDcwJSA3OCUsIHJnYmEoMjU1LDEzOCw5MSwwLjYyKSwgcmdiYSgyNTUsMTM4LDkxLDApIDEwMCUpLCByYWRpYWwtZ3JhZGllbnQoMzAlIDI4JSBhdCAyMCUgODAlLCByZ2JhKDI1NSwyMDksMTkxLDAuNyksIHJnYmEoMjU1LDIwOSwxOTEsMCkgMTAwJSk7IGZpbHRlcjogYmx1cigxOHB4KTsgfSAmID4gLmUtY29uIHsgYW5pbWF0aW9uOiBybC1mbG90dGUgOHMgZWFzZS1pbi1vdXQgaW5maW5pdGU7IH0gJiA+IC5lLWNvbjpudGgtbGFzdC1jaGlsZCg0KSB7IHJvdGF0ZTogLTNkZWc7IH0gJiA+IC5lLWNvbjpudGgtbGFzdC1jaGlsZCgzKSB7IHJvdGF0ZTogNGRlZzsgYW5pbWF0aW9uLWRlbGF5OiAtMnM7IH0gJiA+IC5lLWNvbjpudGgtbGFzdC1jaGlsZCgyKSB7IHJvdGF0ZTogMmRlZzsgYW5pbWF0aW9uLWRlbGF5OiAtNHM7IH0gJiA+IC5lLWNvbjpudGgtbGFzdC1jaGlsZCgxKSB7IHJvdGF0ZTogLTVkZWc7IGFuaW1hdGlvbi1kZWxheTogLTZzOyB9IH0="
                     }
                 }
             ]
@@ -25153,7 +25191,7 @@
             "id": "g-0a23b5e",
             "label": "grille-rubriques",
             "groupe": "Fiches et listes",
-            "description": "Grille des 4 rubriques (2 colonnes, même en mobile).",
+            "description": "Grille des 4 rubriques (2 colonnes ; en liste, une par ligne, en mobile).",
             "variants": [
                 {
                     "meta": {
@@ -25164,9 +25202,13 @@
                         "gap": {
                             "$$type": "size",
                             "value": {
-                                "size": 12,
+                                "size": 10,
                                 "unit": "px"
                             }
+                        },
+                        "grid-template-columns": {
+                            "$$type": "string",
+                            "value": "minmax(0, 1fr)"
                         }
                     },
                     "custom_css": null
