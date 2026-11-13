@@ -6,7 +6,7 @@
   {"label": "nuit", "type": "global-color-variable", "value": "#17112C", "description": "Haut du dégradé des sections sombres."},
   {"label": "nuit-2", "type": "global-color-variable", "value": "#1C1730", "description": "Surface pleine sur fond sombre (colonne Création + Tournage)."},
   {"label": "paragraphe", "type": "global-color-variable", "value": "#4A4858", "description": "Paragraphes et chapôs sur fond clair."},
-  {"label": "legende", "type": "global-color-variable", "value": "#6E6B7B", "description": "Légendes, mentions et petits labels sur fond clair."},
+  {"label": "legende", "type": "global-color-variable", "value": "#5F5C6C", "description": "Légendes, mentions et petits labels sur fond clair."},
   {"label": "eteint", "type": "global-color-variable", "value": "#8F89A8", "description": "Partie éteinte d'un grand titre (24 px et plus seulement)."},
   {"label": "violet", "type": "global-color-variable", "value": "#5B3BEA", "description": "Accent principal : mots-clés, timecodes, liens, chiffres."},
   {"label": "violet-fonce", "type": "global-color-variable", "value": "#4A2BB8", "description": "Texte des pastilles et étiquettes violettes."},

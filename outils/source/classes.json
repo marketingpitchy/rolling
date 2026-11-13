@@ -27,7 +27,7 @@
     {
      "label": "section-sombre",
      "description": "Fond nuit. Les textes, cartes en verre, boutons et étiquettes à l'intérieur passent seuls en version sombre.",
-     "css": "color: var(--blanc-chaud); background: linear-gradient(180deg, var(--nuit) 0%, var(--encre) 100%); --rl-texte: #FAF9F7; --rl-paragraphe: #C9C3DE; --rl-legende: #B6B0CC; --rl-accent: #C4B5FD; --rl-filet: rgba(255,255,255,0.12); --rl-degrade: linear-gradient(95deg, #C9BBFF 0%, #EBB0F2 45%, #FFA27A 100%); --rl-verre-fond: radial-gradient(70% 50% at 18% 0%, rgba(255,255,255,0.14), rgba(255,255,255,0) 72%), linear-gradient(150deg, rgba(255,255,255,0.09) 0%, rgba(255,255,255,0.03) 60%, rgba(255,255,255,0.06) 100%); --rl-verre-ombre: inset 0 1px 0 rgba(255,255,255,0.18), 0 40px 90px -46px rgba(0,0,0,0.8); --rl-verre-bord: linear-gradient(140deg, rgba(255,255,255,0.5), rgba(255,255,255,0.06) 32%, rgba(196,181,253,0.12) 62%, rgba(255,162,122,0.45)); --rl-bouton-fond: #FF8A5B; --rl-bouton-texte: #0F0F12; --rl-bouton-ombre: 0 18px 44px -14px rgba(255,138,91,0.6); --rl-verre-bouton-fond: rgba(255,255,255,0.1); --rl-verre-bouton-texte: #FFFFFF; --rl-verre-bouton-ombre: inset 0 1px 0 rgba(255,255,255,0.25), inset 0 0 0 1px rgba(255,255,255,0.14); --rl-etiquette-texte: #E9E2FF; --rl-etiquette-fond: linear-gradient(170deg, rgba(255,255,255,0.18), rgba(255,255,255,0.05)); --rl-etiquette-ombre: inset 0 1px 0 rgba(255,255,255,0.4), inset 0 0 0 1px rgba(255,255,255,0.12); --rl-focus: #C4B5FD;"
+     "css": "color: var(--blanc-chaud); background: linear-gradient(180deg, var(--nuit) 0%, var(--encre) 100%); background-color: #0F0F12; --rl-texte: #FAF9F7; --rl-paragraphe: #C9C3DE; --rl-legende: #B6B0CC; --rl-accent: #C4B5FD; --rl-degrade-humain: linear-gradient(95deg, #FFD1BF 0%, #FFB48C 50%, #FFA27A 100%); --rl-filet: rgba(255,255,255,0.12); --rl-degrade: linear-gradient(95deg, #C9BBFF 0%, #EBB0F2 45%, #FFA27A 100%); --rl-verre-fond: radial-gradient(70% 50% at 18% 0%, rgba(255,255,255,0.14), rgba(255,255,255,0) 72%), linear-gradient(150deg, rgba(255,255,255,0.09) 0%, rgba(255,255,255,0.03) 60%, rgba(255,255,255,0.06) 100%); --rl-verre-ombre: inset 0 1px 0 rgba(255,255,255,0.18), 0 40px 90px -46px rgba(0,0,0,0.8); --rl-verre-bord: linear-gradient(140deg, rgba(255,255,255,0.5), rgba(255,255,255,0.06) 32%, rgba(196,181,253,0.12) 62%, rgba(255,162,122,0.45)); --rl-bouton-fond: #FF8A5B; --rl-bouton-texte: #0F0F12; --rl-bouton-ombre: 0 18px 44px -14px rgba(255,138,91,0.6); --rl-verre-bouton-fond: rgba(255,255,255,0.1); --rl-verre-bouton-texte: #FFFFFF; --rl-verre-bouton-ombre: inset 0 1px 0 rgba(255,255,255,0.25), inset 0 0 0 1px rgba(255,255,255,0.14); --rl-etiquette-texte: #E9E2FF; --rl-etiquette-fond: linear-gradient(170deg, rgba(255,255,255,0.18), rgba(255,255,255,0.05)); --rl-etiquette-ombre: inset 0 1px 0 rgba(255,255,255,0.4), inset 0 0 0 1px rgba(255,255,255,0.12); --rl-focus: #C4B5FD;"
     },
     {
      "label": "section-chaude",
@@ -127,22 +127,22 @@
     {
      "label": "titre-xl",
      "description": "Titre-manifeste (72 px) : « Le meilleur de l'IA. ». Italique = dégradé de la section, gras = dégradé IA, souligné = dégradé humain.",
-     "css": "display: block; font-family: Bricolage Grotesque; font-size: clamp(42px, 5vw, 72px); line-height: 1.02; letter-spacing: -0.05em; font-weight: 650; color: var(--rl-texte, var(--encre)); & em, & i { font-style: normal; background-image: var(--rl-degrade, linear-gradient(95deg, #5B3BEA 0%, #8E4DE6 42%, #E0562A 100%)); -webkit-background-clip: text; padding: 0 0.06em; margin: 0 -0.06em; -webkit-box-decoration-break: clone; box-decoration-break: clone; background-clip: text; color: transparent; } & strong, & b { font-weight: inherit; background-image: linear-gradient(95deg, #3434E0 0%, #5B3BEA 50%, #8E4DE6 100%); -webkit-background-clip: text; background-clip: text; color: transparent; } & u { text-decoration: none; background-image: linear-gradient(95deg, #C2410C 0%, #E0562A 45%, #EC5E2B 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }"
+     "css": "display: block; font-family: Bricolage Grotesque; font-size: clamp(42px, 5vw, 72px); line-height: 1.02; letter-spacing: -0.05em; font-weight: 650; color: var(--rl-texte, var(--encre)); & em, & i { font-style: normal; background-image: var(--rl-degrade, linear-gradient(95deg, #5B3BEA 0%, #6F3FD6 42%, #C94A1E 100%)); -webkit-background-clip: text; padding: 0 0.06em; margin: 0 -0.06em; -webkit-box-decoration-break: clone; box-decoration-break: clone; background-clip: text; color: transparent; } & strong, & b { font-weight: inherit; background-image: linear-gradient(95deg, #3434E0 0%, #5B3BEA 50%, #8E4DE6 100%); -webkit-background-clip: text; background-clip: text; color: transparent; } & u { text-decoration: none; background-image: var(--rl-degrade-humain, linear-gradient(95deg, #B8400F 0%, #C94A1E 50%, #CF4F22 100%)); -webkit-background-clip: text; background-clip: text; color: transparent; }"
     },
     {
      "label": "titre-lg",
      "description": "Titre de section et H1 (58 px). Italique = dégradé de la section, gras = dégradé IA, souligné = dégradé humain.",
-     "css": "display: block; font-family: Bricolage Grotesque; font-size: clamp(34px, 4.15vw, 58px); line-height: 1.06; letter-spacing: -0.05em; font-weight: 650; color: var(--rl-texte, var(--encre)); & em, & i { font-style: normal; background-image: var(--rl-degrade, linear-gradient(95deg, #5B3BEA 0%, #8E4DE6 42%, #E0562A 100%)); -webkit-background-clip: text; padding: 0 0.06em; margin: 0 -0.06em; -webkit-box-decoration-break: clone; box-decoration-break: clone; background-clip: text; color: transparent; } & strong, & b { font-weight: inherit; background-image: linear-gradient(95deg, #3434E0 0%, #5B3BEA 50%, #8E4DE6 100%); -webkit-background-clip: text; background-clip: text; color: transparent; } & u { text-decoration: none; background-image: linear-gradient(95deg, #C2410C 0%, #E0562A 45%, #EC5E2B 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }"
+     "css": "display: block; font-family: Bricolage Grotesque; font-size: clamp(34px, 4.15vw, 58px); line-height: 1.06; letter-spacing: -0.05em; font-weight: 650; color: var(--rl-texte, var(--encre)); & em, & i { font-style: normal; background-image: var(--rl-degrade, linear-gradient(95deg, #5B3BEA 0%, #6F3FD6 42%, #C94A1E 100%)); -webkit-background-clip: text; padding: 0 0.06em; margin: 0 -0.06em; -webkit-box-decoration-break: clone; box-decoration-break: clone; background-clip: text; color: transparent; } & strong, & b { font-weight: inherit; background-image: linear-gradient(95deg, #3434E0 0%, #5B3BEA 50%, #8E4DE6 100%); -webkit-background-clip: text; background-clip: text; color: transparent; } & u { text-decoration: none; background-image: var(--rl-degrade-humain, linear-gradient(95deg, #B8400F 0%, #C94A1E 50%, #CF4F22 100%)); -webkit-background-clip: text; background-clip: text; color: transparent; }"
     },
     {
      "label": "titre-md",
      "description": "Titre de chapitre (48 px). Mêmes règles d'italique, gras et souligné.",
-     "css": "display: block; font-family: Bricolage Grotesque; font-size: clamp(30px, 3.4vw, 48px); line-height: 1.04; letter-spacing: -0.045em; font-weight: 650; color: var(--rl-texte, var(--encre)); & em, & i { font-style: normal; background-image: var(--rl-degrade, linear-gradient(95deg, #5B3BEA 0%, #8E4DE6 42%, #E0562A 100%)); -webkit-background-clip: text; padding: 0 0.06em; margin: 0 -0.06em; -webkit-box-decoration-break: clone; box-decoration-break: clone; background-clip: text; color: transparent; } & strong, & b { font-weight: inherit; background-image: linear-gradient(95deg, #3434E0 0%, #5B3BEA 50%, #8E4DE6 100%); -webkit-background-clip: text; background-clip: text; color: transparent; } & u { text-decoration: none; background-image: linear-gradient(95deg, #C2410C 0%, #E0562A 45%, #EC5E2B 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }"
+     "css": "display: block; font-family: Bricolage Grotesque; font-size: clamp(30px, 3.4vw, 48px); line-height: 1.04; letter-spacing: -0.045em; font-weight: 650; color: var(--rl-texte, var(--encre)); & em, & i { font-style: normal; background-image: var(--rl-degrade, linear-gradient(95deg, #5B3BEA 0%, #6F3FD6 42%, #C94A1E 100%)); -webkit-background-clip: text; padding: 0 0.06em; margin: 0 -0.06em; -webkit-box-decoration-break: clone; box-decoration-break: clone; background-clip: text; color: transparent; } & strong, & b { font-weight: inherit; background-image: linear-gradient(95deg, #3434E0 0%, #5B3BEA 50%, #8E4DE6 100%); -webkit-background-clip: text; background-clip: text; color: transparent; } & u { text-decoration: none; background-image: var(--rl-degrade-humain, linear-gradient(95deg, #B8400F 0%, #C94A1E 50%, #CF4F22 100%)); -webkit-background-clip: text; background-clip: text; color: transparent; }"
     },
     {
      "label": "titre-sm",
      "description": "Sous-partie d'une section (42 px) : équipe, direction artistique.",
-     "css": "display: block; font-family: Bricolage Grotesque; font-size: clamp(28px, 2.9vw, 42px); line-height: 1.05; letter-spacing: -0.045em; font-weight: 650; color: var(--rl-texte, var(--encre)); & em, & i { font-style: normal; background-image: var(--rl-degrade, linear-gradient(95deg, #5B3BEA 0%, #8E4DE6 42%, #E0562A 100%)); -webkit-background-clip: text; padding: 0 0.06em; margin: 0 -0.06em; -webkit-box-decoration-break: clone; box-decoration-break: clone; background-clip: text; color: transparent; } & strong, & b { font-weight: inherit; background-image: linear-gradient(95deg, #3434E0 0%, #5B3BEA 50%, #8E4DE6 100%); -webkit-background-clip: text; background-clip: text; color: transparent; } & u { text-decoration: none; background-image: linear-gradient(95deg, #C2410C 0%, #E0562A 45%, #EC5E2B 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }"
+     "css": "display: block; font-family: Bricolage Grotesque; font-size: clamp(28px, 2.9vw, 42px); line-height: 1.05; letter-spacing: -0.045em; font-weight: 650; color: var(--rl-texte, var(--encre)); & em, & i { font-style: normal; background-image: var(--rl-degrade, linear-gradient(95deg, #5B3BEA 0%, #6F3FD6 42%, #C94A1E 100%)); -webkit-background-clip: text; padding: 0 0.06em; margin: 0 -0.06em; -webkit-box-decoration-break: clone; box-decoration-break: clone; background-clip: text; color: transparent; } & strong, & b { font-weight: inherit; background-image: linear-gradient(95deg, #3434E0 0%, #5B3BEA 50%, #8E4DE6 100%); -webkit-background-clip: text; background-clip: text; color: transparent; } & u { text-decoration: none; background-image: var(--rl-degrade-humain, linear-gradient(95deg, #B8400F 0%, #C94A1E 50%, #CF4F22 100%)); -webkit-background-clip: text; background-clip: text; color: transparent; }"
     },
     {
      "label": "titre-xs",
@@ -207,7 +207,7 @@
     {
      "label": "accroche",
      "description": "Phrase d'appel courte avant un bouton (« Et avec vos contenus, ça donnerait quoi ? »). Italique = dégradé.",
-     "css": "display: block; font-family: Bricolage Grotesque; font-size: clamp(22px, 2.3vw, 30px); line-height: 1.15; font-weight: 650; letter-spacing: -0.04em; color: var(--rl-texte, var(--encre)); & em, & i { font-style: normal; background-image: var(--rl-degrade, linear-gradient(95deg, #5B3BEA 0%, #8E4DE6 42%, #E0562A 100%)); -webkit-background-clip: text; padding: 0 0.06em; margin: 0 -0.06em; -webkit-box-decoration-break: clone; box-decoration-break: clone; background-clip: text; color: transparent; }"
+     "css": "display: block; font-family: Bricolage Grotesque; font-size: clamp(24px, 2.3vw, 30px); line-height: 1.15; font-weight: 650; letter-spacing: -0.04em; color: var(--rl-texte, var(--encre)); & em, & i { font-style: normal; background-image: var(--rl-degrade, linear-gradient(95deg, #5B3BEA 0%, #6F3FD6 42%, #C94A1E 100%)); -webkit-background-clip: text; padding: 0 0.06em; margin: 0 -0.06em; -webkit-box-decoration-break: clone; box-decoration-break: clone; background-clip: text; color: transparent; }"
     },
     {
      "label": "fleche-resultat",
@@ -217,7 +217,7 @@
     {
      "label": "legende-ecran",
      "description": "Légende sous un écran ou un visuel (« Votre vidéo, prête à publier. »), centrée. Italique = dégradé.",
-     "css": "display: block; text-align: center; font-family: Bricolage Grotesque; font-size: 20px; line-height: 1.3; font-weight: 650; letter-spacing: -0.02em; color: var(--rl-texte, var(--encre)); & em, & i { font-style: normal; background-image: var(--rl-degrade, linear-gradient(95deg, #5B3BEA 0%, #8E4DE6 42%, #E0562A 100%)); -webkit-background-clip: text; padding: 0 0.06em; margin: 0 -0.06em; -webkit-box-decoration-break: clone; box-decoration-break: clone; background-clip: text; color: transparent; }"
+     "css": "display: block; text-align: center; font-family: Bricolage Grotesque; font-size: 20px; line-height: 1.3; font-weight: 650; letter-spacing: -0.02em; color: var(--rl-texte, var(--encre)); & em, & i { font-style: normal; background-image: var(--rl-degrade, linear-gradient(95deg, #5B3BEA 0%, #6F3FD6 42%, #C94A1E 100%)); -webkit-background-clip: text; padding: 0 0.06em; margin: 0 -0.06em; -webkit-box-decoration-break: clone; box-decoration-break: clone; background-clip: text; color: transparent; }"
     },
     {
      "label": "nom-membre",
@@ -332,7 +332,7 @@
     {
      "label": "bouton-soleil",
      "description": "Bouton pêche du CTA final, sur fond sombre seulement.",
-     "css": "display: inline-flex; width: fit-content; align-items: center; justify-content: center; gap: 10px; min-height: 60px; padding: 0 36px; border-radius: 999px; font-family: Hanken Grotesk; font-size: 17px; line-height: 1; font-weight: 700; text-align: center; color: #0F0F12; background: linear-gradient(100deg, #FFD1BF 0%, #FFA27A 45%, #FF8A5B 100%); box-shadow: inset 0 1px 0 rgba(255,255,255,0.7), 0 18px 44px -14px rgba(255,138,91,0.75); transition: transform 0.3s ease; &:hover { transform: translateY(-2px); } &::after { content: ''; flex-shrink: 0; width: 18px; height: 18px; background-color: currentColor; -webkit-mask: url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14'/%3E%3Cpath d='M13 6l6 6-6 6'/%3E%3C/svg%3E\") center / contain no-repeat; mask: url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14'/%3E%3Cpath d='M13 6l6 6-6 6'/%3E%3C/svg%3E\") center / contain no-repeat; }"
+     "css": "display: inline-flex; width: fit-content; align-items: center; justify-content: center; gap: 10px; min-height: 60px; padding: 0 36px; border-radius: 999px; font-family: Hanken Grotesk; font-size: 17px; line-height: 1; font-weight: 700; text-align: center; color: #0F0F12; background: linear-gradient(100deg, #FFD1BF 0%, #FFA27A 45%, #FF8A5B 100%); background-color: #FFA27A; box-shadow: inset 0 1px 0 rgba(255,255,255,0.7), 0 18px 44px -14px rgba(255,138,91,0.75); transition: transform 0.3s ease; &:hover { transform: translateY(-2px); } &::after { content: ''; flex-shrink: 0; width: 18px; height: 18px; background-color: currentColor; -webkit-mask: url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14'/%3E%3Cpath d='M13 6l6 6-6 6'/%3E%3C/svg%3E\") center / contain no-repeat; mask: url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14'/%3E%3Cpath d='M13 6l6 6-6 6'/%3E%3C/svg%3E\") center / contain no-repeat; }"
     },
     {
      "label": "bouton-petit",
@@ -362,12 +362,12 @@
     {
      "label": "etiquette-metier-bleu",
      "description": "Étiquette pleine « Marketing & communication », en tête de chapitre.",
-     "css": "display: inline-flex; width: fit-content; align-items: center; gap: 12px; padding: 12px 24px 12px 16px; border-radius: 999px; font-family: Bricolage Grotesque; font-size: 19px; line-height: 1.1; font-weight: 650; letter-spacing: -0.02em; color: #FFFFFF; white-space: nowrap; background: radial-gradient(80% 120% at 12% 0%, rgba(255,255,255,0.32), rgba(255,255,255,0) 60%), linear-gradient(100deg, #3434E0 0%, #5B3BEA 62%, #7B4DF2 100%); box-shadow: inset 0 1px 0 rgba(255,255,255,0.5), 0 18px 34px -16px rgba(52,52,224,0.75); @media(--mobile) { font-size: 16px; white-space: normal; } &::before { position: relative; top: auto; right: auto; bottom: auto; left: auto; height: auto; opacity: 1; mix-blend-mode: normal; border: 0; content: ''; flex-shrink: 0; width: 10px; height: 10px; border-radius: 50%; background: #FFFFFF; box-shadow: 0 0 0 4px rgba(255,255,255,0.28); }"
+     "css": "display: inline-flex; width: fit-content; align-items: center; gap: 12px; padding: 12px 24px 12px 16px; border-radius: 999px; font-family: Bricolage Grotesque; font-size: 19px; line-height: 1.1; font-weight: 650; letter-spacing: -0.02em; color: #FFFFFF; white-space: nowrap; background: radial-gradient(80% 120% at 12% 0%, rgba(255,255,255,0.32), rgba(255,255,255,0) 60%), linear-gradient(100deg, #3434E0 0%, #5B3BEA 62%, #7B4DF2 100%); background-color: #3434E0; box-shadow: inset 0 1px 0 rgba(255,255,255,0.5), 0 18px 34px -16px rgba(52,52,224,0.75); @media(--mobile) { font-size: 16px; white-space: normal; } &::before { position: relative; top: auto; right: auto; bottom: auto; left: auto; height: auto; opacity: 1; mix-blend-mode: normal; border: 0; content: ''; flex-shrink: 0; width: 10px; height: 10px; border-radius: 50%; background: #FFFFFF; box-shadow: 0 0 0 4px rgba(255,255,255,0.28); }"
     },
     {
      "label": "etiquette-metier-orange",
      "description": "Étiquette pleine « Com interne · RH · Formation », en tête de chapitre.",
-     "css": "display: inline-flex; width: fit-content; align-items: center; gap: 12px; padding: 12px 24px 12px 16px; border-radius: 999px; font-family: Bricolage Grotesque; font-size: 19px; line-height: 1.1; font-weight: 650; letter-spacing: -0.02em; color: #FFFFFF; white-space: nowrap; background: radial-gradient(80% 120% at 12% 0%, rgba(255,255,255,0.36), rgba(255,255,255,0) 60%), linear-gradient(100deg, #C2410C 0%, #E0562A 100%); box-shadow: inset 0 1px 0 rgba(255,255,255,0.55), 0 18px 34px -16px rgba(224,86,42,0.75); @media(--mobile) { font-size: 16px; white-space: normal; } &::before { position: relative; top: auto; right: auto; bottom: auto; left: auto; height: auto; opacity: 1; mix-blend-mode: normal; border: 0; content: ''; flex-shrink: 0; width: 10px; height: 10px; border-radius: 50%; background: #FFFFFF; box-shadow: 0 0 0 4px rgba(255,255,255,0.28); }"
+     "css": "display: inline-flex; width: fit-content; align-items: center; gap: 12px; padding: 12px 24px 12px 16px; border-radius: 999px; font-family: Bricolage Grotesque; font-size: 19px; line-height: 1.1; font-weight: 650; letter-spacing: -0.02em; color: #FFFFFF; white-space: nowrap; background: radial-gradient(80% 120% at 12% 0%, rgba(255,255,255,0.2), rgba(255,255,255,0) 60%), linear-gradient(100deg, #9A3412 0%, #B8400F 100%); background-color: #A63C14; box-shadow: inset 0 1px 0 rgba(255,255,255,0.55), 0 18px 34px -16px rgba(224,86,42,0.75); @media(--mobile) { font-size: 16px; white-space: normal; } &::before { position: relative; top: auto; right: auto; bottom: auto; left: auto; height: auto; opacity: 1; mix-blend-mode: normal; border: 0; content: ''; flex-shrink: 0; width: 10px; height: 10px; border-radius: 50%; background: #FFFFFF; box-shadow: 0 0 0 4px rgba(255,255,255,0.28); }"
     },
     {
      "label": "chip-bleu",
@@ -428,7 +428,7 @@
     {
      "label": "pilule-flux",
      "description": "Pilule claire en haut du schéma (« Vos contenus & vos briefs »), avec la flèche en pointillés vers le centre. Cachée sous 980 px.",
-     "css": "position: relative; display: inline-flex; width: fit-content; align-items: center; gap: 9px; margin-bottom: 46px; padding: 9px 16px; border-radius: 999px; white-space: nowrap; font-family: Hanken Grotesk; font-size: 14px; line-height: 1.2; font-weight: 700; color: #1B1820; background: linear-gradient(165deg, rgba(255,255,255,0.96) 0%, rgba(255,255,255,0.82) 100%); box-shadow: inset 0 1px 0 #FFFFFF, 0 10px 26px -14px rgba(0,0,0,0.6); &::after { content: ''; position: absolute; left: 50%; top: 100%; width: 14px; height: 52px; margin-left: -7px; pointer-events: none; background: url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 9' fill='none' stroke='%23C4B5FD' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M1.5 1.5 L7 7 L12.5 1.5'/%3E%3C/svg%3E\") center bottom / 12px 8px no-repeat, linear-gradient(180deg, #C4B5FD 0 6px, rgba(0,0,0,0) 6px 12px) center top / 2px 12px repeat-y content-box; padding-bottom: 4px; box-sizing: content-box; animation: rl-pointilles 0.9s linear infinite; } @media(--tablet) { display: none; }"
+     "css": "position: relative; display: inline-flex; width: fit-content; align-items: center; gap: 9px; margin-bottom: 46px; padding: 9px 16px; border-radius: 999px; white-space: nowrap; font-family: Hanken Grotesk; font-size: 14px; line-height: 1.2; font-weight: 700; color: #1B1820; background: linear-gradient(165deg, rgba(255,255,255,0.96) 0%, rgba(255,255,255,0.82) 100%); background-color: #EFEDF3; box-shadow: inset 0 1px 0 #FFFFFF, 0 10px 26px -14px rgba(0,0,0,0.6); &::after { content: ''; position: absolute; left: 50%; top: 100%; width: 14px; height: 52px; margin-left: -7px; pointer-events: none; background: url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 9' fill='none' stroke='%23C4B5FD' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M1.5 1.5 L7 7 L12.5 1.5'/%3E%3C/svg%3E\") center bottom / 12px 8px no-repeat, linear-gradient(180deg, #C4B5FD 0 6px, rgba(0,0,0,0) 6px 12px) center top / 2px 12px repeat-y content-box; padding-bottom: 4px; box-sizing: content-box; animation: rl-pointilles 0.9s linear infinite; } @media(--tablet) { display: none; }"
     },
     {
      "label": "pilule-label",
@@ -544,7 +544,7 @@
     {
      "label": "carte-prix-sombre",
      "description": "À ajouter à « carte-prix » avec « section-sombre » : formule mise en avant, fond nuit et lueur pêche.",
-     "css": "background: radial-gradient(90% 30% at 85% 0%, rgba(255,138,91,0.35), rgba(255,138,91,0) 70%), linear-gradient(180deg, #1C1730 0%, #0F0F12 100%);"
+     "css": "background: radial-gradient(90% 30% at 85% 0%, rgba(255,138,91,0.35), rgba(255,138,91,0) 70%), linear-gradient(180deg, #1C1730 0%, #0F0F12 100%); background-color: #0F0F12;"
     },
     {
      "label": "carte-promesses",
@@ -644,13 +644,13 @@
     {
      "label": "rec-libelle",
      "description": "Mention « REC » en haut à gauche d'une photo, avec le point rouge qui clignote.",
-     "css": "position: absolute; z-index: 3; top: 32px; left: 34px; width: fit-content; display: inline-flex; align-items: center; gap: 6px; font-family: Hanken Grotesk; font-size: 12px; line-height: 1; font-weight: 700; letter-spacing: 0.1em; font-variant-numeric: tabular-nums; color: #FFFFFF; text-shadow: 0 1px 6px rgba(0,0,0,0.35); &::before { content: ''; flex-shrink: 0; width: 7px; height: 7px; border-radius: 50%; background: #FF3B30; box-shadow: 0 0 0 3px rgba(255,59,48,0.28); }",
+     "css": "position: absolute; z-index: 3; top: 30px; left: 50px; width: fit-content; display: inline-flex; align-items: center; gap: 6px; font-family: Hanken Grotesk; font-size: 12px; line-height: 1; font-weight: 700; letter-spacing: 0.1em; font-variant-numeric: tabular-nums; color: #FFFFFF; padding: 5px 10px; border-radius: 999px; background: rgba(15,15,18,0.62); text-shadow: none; &::before { content: ''; flex-shrink: 0; width: 7px; height: 7px; border-radius: 50%; background: #FF3B30; box-shadow: 0 0 0 3px rgba(255,59,48,0.28); }",
      "brut": "&::before { animation: rl-clignote 1.6s ease-in-out infinite; }"
     },
     {
      "label": "rec-droite",
      "description": "À ajouter à « rec-libelle » : mention en haut à droite, sans point (durée 00:00:58).",
-     "css": "left: auto; right: 34px; &::before { display: none; }"
+     "css": "left: auto; right: 50px; &::before { display: none; }"
     },
     {
      "label": "image-couvrante",
@@ -721,7 +721,7 @@
     {
      "label": "ecran-video",
      "description": "Image de la vidéo dans le cadre : coins arrondis, dégradé violet, deux bulles de verre qui flottent.",
-     "css": "position: relative; width: 100%; height: 100%; padding: 0; border-radius: 22px; overflow: hidden; color: #FFFFFF; background: radial-gradient(130% 120% at 85% 15%, #9C7BF5 0%, #5C4BEE 34%, #3434E0 62%, #1C1C8E 100%); isolation: isolate; &::before { position: relative; top: auto; right: auto; bottom: auto; left: auto; height: auto; opacity: 1; mix-blend-mode: normal; border: 0; content: ''; position: absolute; z-index: 2; right: var(--rl-bulle1-droite, 14%); top: var(--rl-bulle1-haut, 24%); width: var(--rl-bulle1-taille, 118px); height: var(--rl-bulle1-taille, 118px); border-radius: 50%; pointer-events: none; background: rgba(255,255,255,0.22); backdrop-filter: blur(10px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.9), 0 20px 40px -18px rgba(20,10,80,0.6); transition: right 0.6s, top 0.6s, width 0.6s, height 0.6s; } &::after { content: ''; position: absolute; z-index: 2; right: var(--rl-bulle2-droite, 37%); top: var(--rl-bulle2-haut, 58%); width: 46px; height: 46px; border-radius: 14px; rotate: 14deg; pointer-events: none; background: rgba(255,209,191,0.5); backdrop-filter: blur(8px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.9); transition: right 0.6s, top 0.6s; }",
+     "css": "position: relative; width: 100%; height: 100%; padding: 0; border-radius: 22px; overflow: hidden; color: #FFFFFF; background: radial-gradient(130% 120% at 85% 15%, #9C7BF5 0%, #5C4BEE 34%, #3434E0 62%, #1C1C8E 100%); background-color: #3434E0; isolation: isolate; &::before { position: relative; top: auto; right: auto; bottom: auto; left: auto; height: auto; opacity: 1; mix-blend-mode: normal; border: 0; content: ''; position: absolute; z-index: 2; right: var(--rl-bulle1-droite, 14%); top: var(--rl-bulle1-haut, 24%); width: var(--rl-bulle1-taille, 118px); height: var(--rl-bulle1-taille, 118px); border-radius: 50%; pointer-events: none; background: rgba(255,255,255,0.22); backdrop-filter: blur(10px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.9), 0 20px 40px -18px rgba(20,10,80,0.6); transition: right 0.6s, top 0.6s, width 0.6s, height 0.6s; } &::after { content: ''; position: absolute; z-index: 2; right: var(--rl-bulle2-droite, 37%); top: var(--rl-bulle2-haut, 58%); width: 46px; height: 46px; border-radius: 14px; rotate: 14deg; pointer-events: none; background: rgba(255,209,191,0.5); backdrop-filter: blur(8px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.9); transition: right 0.6s, top 0.6s; }",
      "brut": "&::before { animation: rl-flotte 8s ease-in-out infinite; } &::after { animation: rl-flotte 8s ease-in-out -3s infinite; }"
     },
     {
@@ -863,7 +863,7 @@
     },
     {
      "label": "bandeau-clair",
-     "css": "color: #0F0F12; text-shadow: none; background: linear-gradient(165deg, rgba(255,255,255,0.72) 0%, rgba(255,255,255,0.32) 100%); &::before { background: #E0562A; box-shadow: 0 0 0 3px rgba(224,86,42,0.22); }",
+     "css": "color: #0F0F12; text-shadow: none; background: linear-gradient(165deg, rgba(255,255,255,0.72) 0%, rgba(255,255,255,0.32) 100%); background-color: rgba(255,255,255,0.5); &::before { background: #E0562A; box-shadow: 0 0 0 3px rgba(224,86,42,0.22); }",
      "description": "À ajouter à « bandeau-video » sur un fond clair ou orange : texte encre, point orange."
     },
     {
@@ -1266,7 +1266,7 @@
     {
      "label": "temoin-citation",
      "description": "Citation d'une carte, précédée d'un grand guillemet en dégradé.",
-     "css": "display: block; font-family: Bricolage Grotesque; font-size: 18px; line-height: 1.5; font-weight: 600; letter-spacing: -0.015em; color: var(--rl-texte, var(--encre)); &::before { content: '“'; display: block; height: 30px; margin-bottom: 4px; font-size: 72px; line-height: 1; background-image: linear-gradient(95deg, #5B3BEA 0%, #8E4DE6 42%, #E0562A 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }"
+     "css": "display: block; font-family: Bricolage Grotesque; font-size: 18px; line-height: 1.5; font-weight: 600; letter-spacing: -0.015em; color: var(--rl-texte, var(--encre)); &::before { content: '“'; display: block; height: 30px; margin-bottom: 4px; font-size: 72px; line-height: 1; background-image: linear-gradient(95deg, #5B3BEA 0%, #6F3FD6 42%, #C94A1E 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }"
     },
     {
      "label": "temoin-auteur",
@@ -1381,7 +1381,7 @@
     {
      "label": "cr-temps",
      "description": "Temps restant : « 22j 04:32:10 ».",
-     "css": "display: inline-flex; flex-direction: row; align-items: baseline; gap: 16px; font-family: Bricolage Grotesque; font-size: 20px; font-weight: 650; letter-spacing: -0.01em; color: #5B3BEA; font-variant-numeric: tabular-nums; & b { font-weight: 650; } & .cr-unite { margin-left: 2px; font-size: 0.72em; } & .cr-deux { margin: 0 5px; opacity: 0.55; } @media(--mobile) { font-size: 18px; gap: 12px; }"
+     "css": "display: inline-flex; flex-direction: row; align-items: baseline; gap: 16px; font-family: Bricolage Grotesque; font-size: 20px; font-weight: 650; letter-spacing: -0.01em; color: #5B3BEA; font-variant-numeric: tabular-nums; & b { font-weight: 650; } & .cr-unite { margin-left: 2px; font-size: 0.72em; } & .cr-deux { margin: 0 5px; color: var(--rl-legende, var(--legende)); } @media(--mobile) { font-size: 18px; gap: 12px; }"
     },
     {
      "label": "cr-direct",
@@ -1406,7 +1406,7 @@
     {
      "label": "webinar-date",
      "description": "Date du webinar dans un carré en dégradé (jour, mois, heure).",
-     "css": "display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; min-height: 132px; padding: 0; border-radius: 22px; text-align: center; color: #FFFFFF; background: radial-gradient(120% 100% at 20% 0%, #8E4DE6 0%, #5B3BEA 55%, #3434E0 100%); box-shadow: inset 0 1px 0 rgba(255,255,255,0.35), 0 18px 34px -18px rgba(52,52,224,0.6); @media(--tablet) { min-height: 96px; }"
+     "css": "display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; min-height: 132px; padding: 0; border-radius: 22px; text-align: center; color: #FFFFFF; background: radial-gradient(120% 100% at 20% 0%, #8E4DE6 0%, #5B3BEA 55%, #3434E0 100%); background-color: #5B3BEA; box-shadow: inset 0 1px 0 rgba(255,255,255,0.35), 0 18px 34px -18px rgba(52,52,224,0.6); @media(--tablet) { min-height: 96px; }"
     },
     {
      "label": "webinar-jour",
@@ -1770,7 +1770,7 @@
     {
      "label": "clip-barre",
      "description": "Barre colorée d'un clip, avec sa forme d'onde.",
-     "css": "position: relative; display: flex; flex-direction: row; align-items: center; gap: 10px; min-height: 64px; margin-bottom: 10px; padding: 0 16px; border-radius: 14px; overflow: hidden; font-family: Hanken Grotesk; font-size: 14px; font-weight: 700; color: #FFFFFF; background: linear-gradient(100deg, #3434E0, #5B3BEA); box-shadow: inset 0 1px 0 rgba(255,255,255,0.35), 0 14px 30px -18px rgba(76,48,170,0.7); &::before { position: relative; top: auto; right: auto; bottom: auto; left: auto; height: auto; opacity: 1; mix-blend-mode: normal; border: 0; -webkit-mask: none; mask: none; padding: 0; content: ''; position: absolute; top: auto; right: 0; bottom: 0; left: 0; width: auto; height: 22px; opacity: 0.35; background: repeating-linear-gradient(90deg, #FFFFFF 0 2px, transparent 2px 6px); -webkit-mask: linear-gradient(0deg, #000 0%, transparent 100%); mask: linear-gradient(0deg, #000 0%, transparent 100%); } & > * { position: relative; } @media(--mobile) { flex-wrap: wrap; gap: 6px 8px; padding: 10px 12px; }"
+     "css": "position: relative; display: flex; flex-direction: row; align-items: center; gap: 10px; min-height: 64px; margin-bottom: 10px; padding: 0 16px; border-radius: 14px; overflow: hidden; font-family: Hanken Grotesk; font-size: 14px; font-weight: 700; color: #FFFFFF; background: linear-gradient(100deg, #3434E0, #5B3BEA); background-color: #3434E0; box-shadow: inset 0 1px 0 rgba(255,255,255,0.35), 0 14px 30px -18px rgba(76,48,170,0.7); &::before { position: relative; top: auto; right: auto; bottom: auto; left: auto; height: auto; opacity: 1; mix-blend-mode: normal; border: 0; -webkit-mask: none; mask: none; padding: 0; content: ''; position: absolute; top: auto; right: 0; bottom: 0; left: 0; width: auto; height: 22px; opacity: 0.35; background: repeating-linear-gradient(90deg, #FFFFFF 0 2px, transparent 2px 6px); -webkit-mask: linear-gradient(0deg, #000 0%, transparent 100%); mask: linear-gradient(0deg, #000 0%, transparent 100%); } & > * { position: relative; } @media(--mobile) { flex-wrap: wrap; gap: 6px 8px; padding: 10px 12px; }"
     },
     {
      "label": "clip-numero",
@@ -1790,17 +1790,17 @@
     {
      "label": "clip-demande",
      "description": "Couleur du 2e clip (violet).",
-     "css": "& .clip-barre { background: linear-gradient(100deg, #5B3BEA, #8E4DE6); }"
+     "css": "& .clip-barre { background: linear-gradient(100deg, #5B3BEA, #7A45E0); background-color: #5B3BEA; }"
     },
     {
      "label": "clip-mauve",
      "description": "Couleur d'un clip mauve.",
-     "css": "& .clip-barre { background: linear-gradient(100deg, #8E4DE6, #B5459E); }"
+     "css": "& .clip-barre { background: linear-gradient(100deg, #6E3FD0, #923784); background-color: #7F3AAA; }"
     },
     {
      "label": "clip-final",
      "description": "Dernier clip (pêche) : la tête de lecture s'y arrête ; en mobile, elle le pointe.",
-     "css": "& .clip-barre { color: #0F0F12; background: linear-gradient(100deg, #FFD1BF, #FFA27A 55%, #FF8A5B); } & .clip-numero { color: #FFFFFF; background: rgba(15,15,18,0.55); } @media(--tablet) { &::before { top: 22px; left: -32px; width: 20px; height: 20px; border-radius: 4px 0 0 4px; background: linear-gradient(90deg, transparent 6px, rgba(255,255,255,0.9) 6px 14px, transparent 14px) center / 20px 2px no-repeat, linear-gradient(90deg, #FF6A5F, #FF3B30); clip-path: polygon(0 0, 62% 0, 100% 50%, 62% 100%, 0 100%); box-shadow: none; } }"
+     "css": "& .clip-barre { color: #0F0F12; background: linear-gradient(100deg, #FFD1BF, #FFA27A 55%, #FF8A5B); background-color: #FFA27A; } & .clip-numero { color: #FFFFFF; background: rgba(15,15,18,0.55); } @media(--tablet) { &::before { top: 22px; left: -32px; width: 20px; height: 20px; border-radius: 4px 0 0 4px; background: linear-gradient(90deg, transparent 6px, rgba(255,255,255,0.9) 6px 14px, transparent 14px) center / 20px 2px no-repeat, linear-gradient(90deg, #FF6A5F, #FF3B30); clip-path: polygon(0 0, 62% 0, 100% 50%, 62% 100%, 0 100%); box-shadow: none; } }"
     },
     {
      "label": "carte-ajout",
@@ -1840,7 +1840,7 @@
     {
      "label": "clap-corps",
      "description": "Corps du clap (sombre, avec une bande rayée en haut).",
-     "css": "position: relative; display: flex; flex-direction: column; gap: 0; padding: 10px 0 0; border-radius: 0 0 16px 16px; overflow: hidden; background: linear-gradient(160deg, #1C1730, #0F0F12); box-shadow: inset 0 0 0 1px rgba(255,255,255,0.08); &::before { position: relative; top: auto; right: auto; bottom: auto; left: auto; height: auto; opacity: 1; mix-blend-mode: normal; border: 0; -webkit-mask: none; mask: none; padding: 0; content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: auto; width: auto; height: 10px; background: repeating-linear-gradient(-55deg, #0F0F12 0 16px, #FAF9F7 16px 32px); }"
+     "css": "position: relative; display: flex; flex-direction: column; gap: 0; padding: 10px 0 0; border-radius: 0 0 16px 16px; overflow: hidden; background: linear-gradient(160deg, #1C1730, #0F0F12); background-color: #151022; box-shadow: inset 0 0 0 1px rgba(255,255,255,0.08); &::before { position: relative; top: auto; right: auto; bottom: auto; left: auto; height: auto; opacity: 1; mix-blend-mode: normal; border: 0; -webkit-mask: none; mask: none; padding: 0; content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: auto; width: auto; height: 10px; background: repeating-linear-gradient(-55deg, #0F0F12 0 16px, #FAF9F7 16px 32px); }"
     },
     {
      "label": "clap-grille",

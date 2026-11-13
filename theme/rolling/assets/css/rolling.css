@@ -67,7 +67,7 @@ body.elementor-editor-active .rl-entete, body.elementor-editor-preview .rl-entet
 body.elementor-editor-active #rl-ecran[data-rl-langue] [id^="rl-version-"] { display: none !important; }
 body.elementor-editor-active #rl-ecran[data-rl-langue="fr"] #rl-version-fr, body.elementor-editor-active #rl-ecran[data-rl-langue="en"] #rl-version-en, body.elementor-editor-active #rl-ecran[data-rl-langue="es"] #rl-version-es { display: block !important; }
 .rl-entete__barre { pointer-events: auto; position: relative; display: flex; align-items: center; justify-content: space-between; gap: 18px; box-sizing: border-box; max-width: 1184px; min-height: 68px; margin: 0 auto; padding: 8px 9px 8px 26px; border-radius: 999px;
-	background: radial-gradient(70% 50% at 18% 0%, rgba(255,255,255,0.95), rgba(255,255,255,0) 72%), linear-gradient(150deg, rgba(255,255,255,0.86) 0%, rgba(255,255,255,0.66) 55%, rgba(255,255,255,0.78) 100%);
+	background: radial-gradient(70% 50% at 18% 0%, rgba(255,255,255,0.95), rgba(255,255,255,0) 72%), linear-gradient(150deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.8) 55%, rgba(255,255,255,0.86) 100%); background-color: rgba(250,249,247,0.3);
 	-webkit-backdrop-filter: blur(28px) saturate(180%); backdrop-filter: blur(28px) saturate(180%);
 	box-shadow: inset 0 1px 0 #FFFFFF, 0 1px 2px rgba(15,15,18,0.04), 0 30px 70px -34px rgba(76,48,170,0.34); }
 .rl-entete__logo { display: inline-flex; align-items: center; min-height: 44px; }
@@ -87,7 +87,7 @@ body.elementor-editor-active #rl-ecran[data-rl-langue="fr"] #rl-version-fr, body
 .rl-menu .rl-ouvert > .sub-menu { display: block; }
 .rl-menu .sub-menu a { display: flex; flex-direction: column; align-items: flex-start; gap: 2px; min-height: 0; padding: 10px 14px; border-radius: 14px; font-weight: 700; color: #0F0F12; }
 .rl-menu .sub-menu a:hover, .rl-menu .sub-menu .current-menu-item > a { color: #5B3BEA; background: #F6F3FF; }
-.rl-sous-menu__aide { font-size: 14px; font-weight: 400; color: #6E6B7B; }
+.rl-sous-menu__aide { font-size: 14px; font-weight: 400; color: #5F5C6C; }
 .rl-bouton { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 48px; padding: 0 22px; border-radius: 999px; font-size: 15px; font-weight: 600; line-height: 1; color: #FFFFFF; background: #0F0F12; text-decoration: none; box-shadow: inset 0 1px 0 rgba(255,255,255,0.18), 0 16px 34px -14px rgba(15,15,18,0.55); transition: transform 0.3s ease; }
 .rl-bouton:hover { color: #FFFFFF; transform: translateY(-2px); }
 .rl-bouton svg { flex-shrink: 0; }
@@ -111,7 +111,7 @@ body.elementor-editor-active #rl-ecran[data-rl-langue="fr"] #rl-version-fr, body
 /* ---------------------------------------------------------------- */
 /* Pied de page du thème                                             */
 /* ---------------------------------------------------------------- */
-.rl-pied { position: relative; overflow: hidden; background: linear-gradient(180deg, #0F0F12 0%, #141022 55%, #0F0F12 100%); color: #FAF9F7; --rl-focus: #C4B5FD; }
+.rl-pied { position: relative; overflow: hidden; background: linear-gradient(180deg, #0F0F12 0%, #141022 55%, #0F0F12 100%); background-color: #0F0F12; color: #FAF9F7; --rl-focus: #C4B5FD; }
 .rl-pied::before { content: ''; position: absolute; width: 760px; height: 760px; right: -280px; bottom: -460px; border-radius: 50%; background: radial-gradient(closest-side, rgba(139,92,246,0.28), rgba(255,138,91,0.12) 55%, transparent 100%); pointer-events: none; }
 .rl-pied__conteneur { position: relative; box-sizing: border-box; max-width: 1240px; margin: 0 auto; padding: 0 28px; }
 .rl-pied p, .rl-pied li { margin: 0; font-size: 15px; line-height: 1.6; color: #B6B0CC; }
@@ -128,7 +128,7 @@ body.elementor-editor-active #rl-ecran[data-rl-langue="fr"] #rl-version-fr, body
 .rl-pied .rl-pied__reseau:hover { background: rgba(255,255,255,0.14); }
 .rl-pied__appel { display: flex; flex-direction: column; align-items: flex-start; gap: 16px; padding: 26px 28px; border-radius: 26px; background: rgba(255,255,255,0.05); box-shadow: inset 0 1px 0 rgba(255,255,255,0.12), inset 0 0 0 1px rgba(255,255,255,0.08); }
 .rl-pied .rl-pied__appel-titre { font-family: "Bricolage Grotesque", sans-serif; font-weight: 650; letter-spacing: -0.03em; font-size: 23px; line-height: 1.25; color: #FFFFFF; }
-.rl-pied .rl-pied__bouton { gap: 10px; min-height: 48px; padding: 0 22px; border-radius: 999px; font-size: 15px; font-weight: 700; color: #0F0F12; background: linear-gradient(100deg, #FFD1BF 0%, #FFA27A 45%, #FF8A5B 100%); box-shadow: inset 0 1px 0 rgba(255,255,255,0.7), 0 18px 44px -14px rgba(255,138,91,0.75); }
+.rl-pied .rl-pied__bouton { gap: 10px; min-height: 48px; padding: 0 22px; border-radius: 999px; font-size: 15px; font-weight: 700; color: #0F0F12; background: linear-gradient(100deg, #FFD1BF 0%, #FFA27A 45%, #FF8A5B 100%); background-color: #FFA27A; box-shadow: inset 0 1px 0 rgba(255,255,255,0.7), 0 18px 44px -14px rgba(255,138,91,0.75); }
 .rl-pied .rl-pied__bouton:hover { color: #0F0F12; text-decoration: none; }
 .rl-pied__colonnes { padding: 48px 0; }
 .rl-pied__liste-colonnes, .rl-pied__colonnes--simple { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 36px 28px; }
@@ -183,7 +183,7 @@ html.rl-intro-joue .rl-intro { display: block; position: fixed; inset: 0; z-inde
 .rl-intro__bande { position: absolute; left: 0; right: 0; height: 50.5%; background: #0F0F12; }
 .rl-intro__bande--haut { top: 0; animation: rl-intro-haut .7s cubic-bezier(.7, 0, .15, 1) .75s both; }
 .rl-intro__bande--bas { bottom: 0; animation: rl-intro-bas .7s cubic-bezier(.7, 0, .15, 1) .75s both; }
-.rl-intro__centre { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 18px; animation: rl-intro-centre .25s ease-in .65s both; }
+.rl-intro__centre { position: absolute; inset: 0; background-color: #0F0F12; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 18px; animation: rl-intro-centre .25s ease-in .65s both; }
 .rl-intro__logo img { display: block; width: clamp(150px, 18vw, 240px); height: auto; }
 .rl-intro__logo { color: #FFFFFF; font-family: "Bricolage Grotesque", sans-serif; font-size: 40px; font-weight: 750; letter-spacing: -.05em; }
 .rl-intro__ligne { display: flex; align-items: center; gap: 14px; font-family: "Bricolage Grotesque", sans-serif; font-size: 15px; font-weight: 650; letter-spacing: .1em; font-variant-numeric: tabular-nums; color: rgba(255, 255, 255, .75); }

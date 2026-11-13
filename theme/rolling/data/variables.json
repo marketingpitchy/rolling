@@ -75,7 +75,7 @@
         "type": "global-color-variable",
         "value": {
             "$$type": "color",
-            "value": "#6E6B7B"
+            "value": "#5F5C6C"
         },
         "description": "Légendes, mentions et petits labels sur fond clair."
     },

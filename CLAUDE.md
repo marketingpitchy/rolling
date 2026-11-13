@@ -296,6 +296,19 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   derrière (`hero-collage::after`, z-index -1) : le verre laisse voir la couleur. Taille de police : fonctionne en
   « local » sur ma copie ; causes probables chez elle = pastille de classe sélectionnée, taille mobile de la classe qui
   passe devant la taille réglée sur ordinateur, cache.
+- **0.5.4 (contrastes)** : la cliente voyait des contrastes faux sur les fonds foncés (IA et ailleurs). Cause : fonds foncés
+  = dégradés sans couleur unie dessous ⇒ les outils (Ally, WAVE, DevTools) remontent jusqu'au fond clair de la page et
+  voient du blanc sur blanc ; axe les classe « à vérifier », pas en erreur. **Règle : tout fond en dégradé qui porte du
+  texte a aussi un `background-color` uni** (section-sombre, carte-prix-sombre, ecran-video, bouton-soleil, etiquette-metier-*,
+  webinar-date, clip-barre et ses couleurs, clap-corps, pilule-flux, bandeau-clair, pied de page, intro, bouton du pied).
+  Vrais contrastes trop faibles corrigés : `--legende` #6E6B7B → #5F5C6C (labels sur fonds teintés), dégradé des mots
+  `#5B3BEA → #7A45E0 → #C94A1E` (au lieu de #8E4DE6 → #E0562A), dégradé humain `#B8400F → #C94A1E → #CF4F22`, étiquette
+  orange `#9A3412 → #B8400F`, clip mauve `#6E3FD0 → #923784`, milieu du dégradé des mots #6F3FD6, mots soulignés
+  (humain) en pêche clair dans les sections sombres (`--rl-degrade-humain` posé par section-sombre), `accroche` ≥ 24 px,
+  pilule de l'en-tête plus opaque (mire de la 404 dessous), deux-points du compte à rebours en gris légende, REC /
+  durée sur photo dans une pilule sombre. Outils : `scratchpad/tools/contraste-page.js <url> <largeur>` (tous les textes,
+  pire pixel sous le texte, dégradés compris) et `scratchpad/fonds2.js <urls>` (fond uni vu par les outils simples).
+  Reste : colonne sombre du tableau des offres (bande = `::before`, pas de fond sur les cases ; contraste réel bon).
 - **Chargement de page effet film** (demande avant la fin de la livraison 4) : maquette `maquettes/loading/maquette-loading.html`
   (copie /workspace/maquette-loading.html), 4 options : A amorce 3-2-1, B clap qui se ferme puis rideau, C ouverture
   cinéma (bandes noires + REC + timecode + règle avec la tête de lecture rouge des frises, plus de filet fin), D barre de lecture en haut sans écran. Conseil : C à l'arrivée (première page
