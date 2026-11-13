@@ -373,6 +373,13 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   `assets/img/affiche-video.webp?rl-video=<fichier>` remplacée par rolling.js par la 1re image (`video` muette) ; repère
   `si-image` vrai aussi si la réalisation a une vidéo. i.ytimg.com bloqué dans mon environnement (non visible ici).
   Timecode du formulaire jugé stressant ⇒ propositions faites (figé, lent, une seule fois).
+- **0.5.9** : astuce de l'écran replacée (ordinateur : à gauche des boutons, flèche vers le groupe Format, left -162 /
+  top -24 ; sous 1024 px : une ligne en 28 px, petite flèche vers le bas centrée dessous). Cartes « on voit pas les images »
+  chez la cliente (affiche d'attente restée : le remplacement par rolling.js ne s'est pas fait chez elle, cause non
+  trouvée, OK sur wp et wp2 4.4) ⇒ remplacement **côté serveur** : `Rolling_Dynamique::affiches_video( $html, $titre )`
+  appliqué à chaque carte du widget Liste (`video` muette `#t=0.1` + `span.screen-reader-text` = titre ; miniature
+  YouTube : alt = titre, sinon lien de vignette sans nom pour axe). Le script reste en secours.
+  Image de fond de l'écran : Navigateur > « Écran · image de fond » (dans IA · votre vidéo > Écran · scène > cadre > vidéo > fond).
 - **Chargement de page effet film** (demande avant la fin de la livraison 4) : maquette `maquettes/loading/maquette-loading.html`
   (copie /workspace/maquette-loading.html), 4 options : A amorce 3-2-1, B clap qui se ferme puis rideau, C ouverture
   cinéma (bandes noires + REC + timecode + règle avec la tête de lecture rouge des frises, plus de filet fin), D barre de lecture en haut sans écran. Conseil : C à l'arrivée (première page

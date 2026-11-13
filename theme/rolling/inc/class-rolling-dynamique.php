@@ -755,11 +755,39 @@ class Rolling_Dynamique {
 	}
 
 	/**
+	 * Cartes : l'affiche d'attente d'une vidéo en fichier (balise Image, réalisation sans image à la une) devient la
+	 * première image de la vidéo, écrite directement dans la page (sans dépendre du script).
+	 *
+	 * @param string $html  HTML d'une carte.
+	 * @param string $titre Titre du contenu (nom de la vignette pour les lecteurs d'écran).
+	 * @return string
+	 */
+	public static function affiches_video( $html, $titre = '' ) {
+		$html = (string) preg_replace_callback(
+			'~<img\b[^>]*\bsrc="[^"]*affiche-video\.webp\?rl-video=([^"&]+)[^"]*"[^>]*>~',
+			function ( $m ) use ( $titre ) {
+				$classe = preg_match( '~\bclass="([^"]*)"~', $m[0], $c ) ? $c[1] : 'image-couvrante';
+				$video  = rawurldecode( html_entity_decode( $m[1] ) );
+				$nom    = '' !== $titre ? '<span class="screen-reader-text">' . esc_html( $titre ) . '</span>' : '';
+
+				return '<video class="' . esc_attr( $classe ) . '" src="' . esc_url( $video ) . '#t=0.1" muted playsinline preload="metadata" aria-hidden="true" tabindex="-1"></video>' . $nom;
+			},
+			(string) $html
+		);
+		if ( '' !== $titre ) {
+			// Miniature YouTube sans texte de remplacement : elle porte le titre (sinon la vignette-lien n'a pas de nom).
+			$html = (string) preg_replace( '~(<img\b[^>]*\bsrc="https://i\.ytimg\.com/[^"]*"[^>]*\balt=")"~', '$1' . esc_attr( $titre ) . '"', $html );
+		}
+
+		return $html;
+	}
+
+	/**
 	 * Image d'un média installé par le thème (coche, bouton lecture…).
 	 *
-	 * @param string $cle   Clé du média.
+	 * @param string $cle    Clé du média.
 	 * @param string $taille Taille.
-	 * @param array  $attr  Attributs.
+	 * @param array  $attr   Attributs.
 	 * @return string
 	 */
 	public static function image_du_theme( $cle, $taille = 'thumbnail', $attr = array() ) {

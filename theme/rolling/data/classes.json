@@ -21813,7 +21813,7 @@
             "id": "g-5294b11",
             "label": "annotation-ecran",
             "groupe": "Fiches et listes",
-            "description": "Astuce manuscrite au-dessus de l'écran « Votre vidéo » (fond sombre), avec une flèche qui se dessine vers les boutons ; rolling.js l'efface au premier clic (identifiant rl-ecran-astuce). Au-dessus des boutons sous 1024 px.",
+            "description": "Astuce manuscrite à gauche des boutons de l'écran « Votre vidéo » (fond sombre), avec une flèche qui se dessine vers eux ; rolling.js l'efface au premier clic (identifiant rl-ecran-astuce). Au-dessus des boutons sous 1024 px, flèche vers le bas.",
             "variants": [
                 {
                     "meta": {
@@ -21832,21 +21832,16 @@
                             "$$type": "string",
                             "value": "relative"
                         },
+                        "font-size": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 28,
+                                "unit": "px"
+                            }
+                        },
                         "text-align": {
                             "$$type": "string",
                             "value": "center"
-                        },
-                        "padding": {
-                            "$$type": "dimensions",
-                            "value": {
-                                "inline-end": {
-                                    "$$type": "size",
-                                    "value": {
-                                        "size": 56,
-                                        "unit": "px"
-                                    }
-                                }
-                            }
                         },
                         "transform": {
                             "$$type": "transform",
@@ -21898,6 +21893,13 @@
                                 "unit": "auto"
                             }
                         },
+                        "width": {
+                            "$$type": "size",
+                            "value": {
+                                "size": null,
+                                "unit": "auto"
+                            }
+                        },
                         "margin": {
                             "$$type": "dimensions",
                             "value": {
@@ -21918,7 +21920,7 @@
                                 "block-end": {
                                     "$$type": "size",
                                     "value": {
-                                        "size": 6,
+                                        "size": 4,
                                         "unit": "px"
                                     }
                                 },
@@ -21933,7 +21935,7 @@
                         }
                     },
                     "custom_css": {
-                        "raw": "d2lkdGg6IGZpdC1jb250ZW50OyAmOjphZnRlciB7IGxlZnQ6IGF1dG87IHJpZ2h0OiAwOyB0b3A6IDEwcHg7IHdpZHRoOiA1MnB4OyBoZWlnaHQ6IDQwcHg7IHRyYW5zZm9ybTogcm90YXRlKDc1ZGVnKTsgfQ=="
+                        "raw": "d2hpdGUtc3BhY2U6IG5vd3JhcDsgJjo6YWZ0ZXIgeyBwb3NpdGlvbjogcmVsYXRpdmU7IGRpc3BsYXk6IGJsb2NrOyBsZWZ0OiBhdXRvOyB0b3A6IGF1dG87IHdpZHRoOiAzMHB4OyBoZWlnaHQ6IDM2cHg7IG1hcmdpbjogNHB4IGF1dG8gMDsgYmFja2dyb3VuZDogdXJsKCJkYXRhOmltYWdlL3N2Zyt4bWwsJTNDc3ZnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zycgdmlld0JveD0nMCAwIDQwIDQ2JyBmaWxsPSdub25lJyBzdHJva2U9JyUyM0ZGRDFCRicgc3Ryb2tlLXdpZHRoPSczJyBzdHJva2UtbGluZWNhcD0ncm91bmQnIHN0cm9rZS1saW5lam9pbj0ncm91bmQnJTNFJTNDcGF0aCBkPSdNMTAgMyBDIDI2IDEyLCAyOCAyNiwgMjAgNDEnLyUzRSUzQ3BhdGggZD0nTTEyIDMzIEwyMCA0MiBMMjggMzQnLyUzRSUzQy9zdmclM0UiKSBjZW50ZXIgLyBjb250YWluIG5vLXJlcGVhdDsgfQ=="
                     }
                 },
                 {
@@ -21956,14 +21958,14 @@
                         "inset-block-start": {
                             "$$type": "size",
                             "value": {
-                                "size": -34,
+                                "size": -24,
                                 "unit": "px"
                             }
                         },
                         "inset-inline-start": {
                             "$$type": "size",
                             "value": {
-                                "size": -158,
+                                "size": -162,
                                 "unit": "px"
                             }
                         },
@@ -22030,7 +22032,7 @@
                                                 "z": {
                                                     "$$type": "size",
                                                     "value": {
-                                                        "size": -6,
+                                                        "size": -5,
                                                         "unit": "deg"
                                                     }
                                                 }
@@ -22042,7 +22044,7 @@
                         }
                     },
                     "custom_css": {
-                        "raw": "d2hpdGUtc3BhY2U6IG5vcm1hbDsgcG9pbnRlci1ldmVudHM6IG5vbmU7ICY6OmFmdGVyIHsgY29udGVudDogJyc7IHBvc2l0aW9uOiBhYnNvbHV0ZTsgbGVmdDogMTAwJTsgdG9wOiAxNHB4OyB3aWR0aDogODRweDsgaGVpZ2h0OiA1NnB4OyBiYWNrZ3JvdW5kOiB1cmwoImRhdGE6aW1hZ2Uvc3ZnK3htbCwlM0NzdmcgeG1sbnM9J2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJyB2aWV3Qm94PScwIDAgOTAgNjAnIGZpbGw9J25vbmUnIHN0cm9rZT0nJTIzRkZEMUJGJyBzdHJva2Utd2lkdGg9JzMnIHN0cm9rZS1saW5lY2FwPSdyb3VuZCcgc3Ryb2tlLWxpbmVqb2luPSdyb3VuZCclM0UlM0NwYXRoIGQ9J000IDM0IEMgMjggNDYsIDU4IDQyLCA4MiAyMicvJTNFJTNDcGF0aCBkPSdNNjkgMTkgTDgzIDIxIEw4MCAzNScvJTNFJTNDL3N2ZyUzRSIpIGNlbnRlciAvIGNvbnRhaW4gbm8tcmVwZWF0OyBhbmltYXRpb246IHJsLXRyYWNlIDFzIGVhc2UgMC40cyBib3RoOyB9"
+                        "raw": "d2hpdGUtc3BhY2U6IG5vcm1hbDsgcG9pbnRlci1ldmVudHM6IG5vbmU7ICY6OmFmdGVyIHsgY29udGVudDogJyc7IHBvc2l0aW9uOiBhYnNvbHV0ZTsgbGVmdDogMTAwJTsgdG9wOiAxMnB4OyB3aWR0aDogODRweDsgaGVpZ2h0OiA1NnB4OyBiYWNrZ3JvdW5kOiB1cmwoImRhdGE6aW1hZ2Uvc3ZnK3htbCwlM0NzdmcgeG1sbnM9J2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJyB2aWV3Qm94PScwIDAgOTAgNjAnIGZpbGw9J25vbmUnIHN0cm9rZT0nJTIzRkZEMUJGJyBzdHJva2Utd2lkdGg9JzMnIHN0cm9rZS1saW5lY2FwPSdyb3VuZCcgc3Ryb2tlLWxpbmVqb2luPSdyb3VuZCclM0UlM0NwYXRoIGQ9J000IDE2IEMgMzAgNiwgNTggMTAsIDgyIDI4Jy8lM0UlM0NwYXRoIGQ9J002OCAzMCBMODMgMjkgTDc3IDE1Jy8lM0UlM0Mvc3ZnJTNFIikgY2VudGVyIC8gY29udGFpbiBuby1yZXBlYXQ7IGFuaW1hdGlvbjogcmwtdHJhY2UgMXMgZWFzZSAwLjRzIGJvdGg7IH0="
                     }
                 }
             ]

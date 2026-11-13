@@ -306,7 +306,7 @@ class Rolling_Widget_Liste extends Rolling_Widget {
 			setup_postdata( $post );
 			$carte = 0 === $rang && $modele_une ? $modele_une : $modele;
 			// Styles déjà chargés dans l'en-tête (Rolling_Dynamique::styles_des_modeles) : pas de feuille dans la grille.
-			echo \Elementor\Plugin::$instance->frontend->get_builder_content_for_display( $carte, false ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- HTML produit par Elementor.
+			echo Rolling_Dynamique::affiches_video( \Elementor\Plugin::$instance->frontend->get_builder_content_for_display( $carte, false ), get_the_title( $id ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- HTML produit par Elementor.
 		}
 		echo '</div>';
 		$post = $avant; // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited -- restauration.
