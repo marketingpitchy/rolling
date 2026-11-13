@@ -856,6 +856,9 @@ carte_realisation = F('Carte réalisation', ['carte-liste'], tag='article', enfa
 def carte_temoignage(une=False):
     p = 'Témoin à la une' if une else 'Témoin'
     return F('Carte témoignage' + (' à la une' if une else ''), ['carte-verre', 'temoin'] + (['temoin-une'] if une else []), tag='article', enfants=[
+        D(p + ' · vidéo', ['vignette-video', 'vignette-lecteur', 'si-video-liee'], 'margin-bottom: 6px;', enfants=[
+            W(p + ' · vidéo · lecteur', 'rolling-video', source='realisation', apercu='image', priorite='bas'),
+        ]),
         F(p + ' · haut', ['temoin-haut'], enfants=[
             I(p + ' · logo', DYN('rolling-image', image='logo'), cls=['temoin-logo', 'si-logo'], taille='medium'),
             P(p + ' · métier', DYN('rolling-terme', taxonomie='rolling_metier'), ['tag-orange', 'si-metier']),
@@ -870,7 +873,7 @@ def carte_temoignage(une=False):
             ]),
         ]),
         B(p + ' · lien cas client', 'Lire le cas client', FICHE, ['temoin-lien', 'si-recit']),
-        B(p + ' · lien vidéo', 'Voir la vidéo', DYN('rolling-lien', lien='realisation'), ['temoin-lien', 'sans-recit', 'si-videos']),
+        B(p + ' · lien réalisation', 'Voir la réalisation', DYN('rolling-lien', lien='realisation'), ['temoin-lien', 'sans-recit', 'si-videos']),
     ])
 
 
@@ -1081,6 +1084,9 @@ fiche_temoignage = F('Fiche témoignage', None, COLONNE + ' align-items: stretch
                     B('Fiche témoignage · appel · bouton', 'Réserver un échange', '/contact/', ['bouton-principal', 'bouton-petit']),
                 ]),
             ]),
+            D('Fiche témoignage · cadre vidéo', ['vignette-video', 'si-video-liee'], 'width: 100%; max-width: 1040px; margin: 48px auto 0;', enfants=[
+                W('Fiche témoignage · lecteur', 'rolling-video', source='realisation'),
+            ]),
         ]),
     ]),
     F('Fiche témoignage · chiffres', ['section', 'section-suite', 'si-chiffres'], tag='section', enfants=[
@@ -1114,9 +1120,9 @@ fiche_temoignage = F('Fiche témoignage', None, COLONNE + ' align-items: stretch
                     H('Fiche témoignage · accompagnement · titre', 'Notre accompagnement.', 'h2', ['titre-sm']),
                     W('Fiche témoignage · accompagnement · liste', 'rolling-coches', champ='accompagnement'),
                 ]),
-                F('Fiche témoignage · vidéos', ['pile', 'si-videos'], enfants=[
-                    H('Fiche témoignage · vidéos · titre', 'Les vidéos.', 'h2', ['titre-sm']),
-                    W('Fiche témoignage · vidéos · liste', 'rolling-liste', contenu='liees', nombre='6', classe='grille-2'),
+                F('Fiche témoignage · vidéos', ['pile', 'si-autres-videos'], enfants=[
+                    H('Fiche témoignage · vidéos · titre', 'Les autres vidéos.', 'h2', ['titre-sm']),
+                    W('Fiche témoignage · vidéos · liste', 'rolling-liste', contenu='liees_suite', nombre='6', classe='grille-2'),
                 ]),
             ]),
         ]),

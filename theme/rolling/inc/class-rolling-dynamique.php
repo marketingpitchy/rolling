@@ -418,6 +418,15 @@ class Rolling_Dynamique {
 		if ( 'videos' === $cle && 'rolling_temoignage' === get_post_type( $id ) ) {
 			return ! Rolling_Contenus::realisations_liees( $id );
 		}
+		if ( 'video_liee' === $cle ) {
+			// Témoignage : la première réalisation liée a une vidéo.
+			$liees = 'rolling_temoignage' === get_post_type( $id ) ? Rolling_Contenus::realisations_liees( $id ) : array();
+			return ! $liees || ! Rolling_Contenus::valeur( 'video', $liees[0] );
+		}
+		if ( 'autres_videos' === $cle ) {
+			// Témoignage : plus d'une réalisation liée (la première est en grand en haut de la fiche).
+			return count( Rolling_Contenus::realisations_liees( $id ) ) < 2;
+		}
 		if ( 'recit' === $cle ) {
 			return ! Rolling_Contenus::a_recit( $id );
 		}

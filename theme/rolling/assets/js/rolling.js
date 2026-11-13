@@ -316,7 +316,7 @@
 			return;
 		}
 		/* Fichier vidéo : aperçu muet en boucle tant que la vidéo est à l'écran (rien avec « réduire les animations ») */
-		if ( apercu && ! calme && 'IntersectionObserver' in window ) {
+		if ( apercu && ! calme && 'fixe' !== cadre.getAttribute( 'data-rl-apercu' ) && 'IntersectionObserver' in window ) {
 			new IntersectionObserver( function ( entrees ) {
 				entrees.forEach( function ( e ) {
 					if ( ! apercu.isConnected ) {
@@ -351,6 +351,7 @@
 				lecteur.playsInline = true;
 			}
 			cadre.appendChild( lecteur );
+			cadre.classList.add( 'lit' );
 			bouton.remove();
 			lecteur.focus();
 		} );

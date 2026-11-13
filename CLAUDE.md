@@ -331,6 +331,15 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   **Maquette « Témoignages avec vidéo »** (`maquettes/temoignages-video/`, copie /workspace, **à valider**) : carte
   témoignage avec la vignette de la réalisation liée (A lecture dans la carte, conseil ; B clic vers la réalisation) +
   lecteur en grand dans la fiche témoignage après le bandeau des infos.
+- **0.5.6** : calendrier HubSpot trop étroit (≈300 px : `zone-calendrier` centrait ses enfants ⇒ le bloc HTML se réduisait et
+  l'iframe prenait sa largeur par défaut) ⇒ `align-items: stretch`, widget et iframe à 100 %, cadre fin (padding 14 px),
+  iframe arrondie. Le fond blanc du calendrier vient de HubSpot (iframe d'un autre domaine : aucun CSS du site ne l'atteint).
+  Témoignages avec vidéo = **conseil suivi** (option A) : vignette de la 1re réalisation liée en haut de la carte (repère
+  `si-video-liee` = elle a une vidéo ; classe `vignette-lecteur` : zoom + barre au survol, rien une fois lancée `.lit`),
+  lecture dans la carte au clic ; widget Vidéo : réglages `source` (courant / réalisation liée), `apercu` (anime / image
+  fixe ⇒ `data-rl-apercu="fixe"`, pas d'aperçu muet dans les listes), `priorite` (haut = eager + fetchpriority, bas = lazy).
+  Fiche témoignage : grand lecteur après le bandeau des infos ; grille « Les autres vidéos. » (`liees_suite`, repère
+  `si-autres-videos` = 2 réalisations liées ou plus). Lien de la carte sans récit : « Voir la réalisation ».
 - **Chargement de page effet film** (demande avant la fin de la livraison 4) : maquette `maquettes/loading/maquette-loading.html`
   (copie /workspace/maquette-loading.html), 4 options : A amorce 3-2-1, B clap qui se ferme puis rideau, C ouverture
   cinéma (bandes noires + REC + timecode + règle avec la tête de lecture rouge des frises, plus de filet fin), D barre de lecture en haut sans écran. Conseil : C à l'arrivée (première page

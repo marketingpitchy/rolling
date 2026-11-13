@@ -36,13 +36,47 @@ class Rolling_Widget_Video extends Rolling_Widget {
 		/* translators: %s : titre de la vidéo. */
 		$this->texte( 'libelle', __( 'Bouton lecture, pour lecteur d’écran (%s = titre)', 'rolling' ), __( 'Lire la vidéo : %s', 'rolling' ) );
 		$this->texte( 'classe', __( 'Classes du cadre', 'rolling' ), 'cadre-photo video-fiche' );
+		$this->choix(
+			'source',
+			__( 'Vidéo de', 'rolling' ),
+			array(
+				'courant'     => __( 'Contenu affiché', 'rolling' ),
+				'realisation' => __( 'Réalisation liée (sur un témoignage)', 'rolling' ),
+			)
+		);
+		$this->choix(
+			'apercu',
+			__( 'Avant la lecture (fichier vidéo)', 'rolling' ),
+			array(
+				'anime' => __( 'Aperçu muet en boucle', 'rolling' ),
+				'image' => __( 'Image fixe', 'rolling' ),
+			)
+		);
+		$this->choix(
+			'priorite',
+			__( 'Chargement de l’image', 'rolling' ),
+			array(
+				'haut' => __( 'Tout de suite (haut de page)', 'rolling' ),
+				'bas'  => __( 'Différé (plus bas, listes)', 'rolling' ),
+			)
+		);
 		$this->end_controls_section();
 	}
 
 	/** Affichage. */
 	protected function render() {
-		$r     = $this->get_settings_for_display();
-		$id    = $this->contenu();
+		$r  = $this->get_settings_for_display();
+		$id = $this->contenu();
+		if ( 'realisation' === $r['source'] ) {
+			// Sur un témoignage : la première réalisation liée.
+			$liees = 'rolling_temoignage' === get_post_type( $id ) ? Rolling_Contenus::realisations_liees( $id ) : array();
+			$id    = $liees ? $liees[0] : 0;
+			if ( ! $id ) {
+				return;
+			}
+		}
+		$haut  = 'bas' !== $r['priorite'];
+		$fixe  = 'image' === $r['apercu'];
 		$video = (string) Rolling_Contenus::valeur( 'video', $id );
 		if ( ! $video && ! has_post_thumbnail( $id ) ) {
 			return;
@@ -52,26 +86,30 @@ class Rolling_Widget_Video extends Rolling_Widget {
 		$duree   = (string) Rolling_Contenus::valeur( 'duree', $id );
 		$titre   = get_the_title( $id );
 
-		echo '<div class="' . esc_attr( $r['classe'] ) . '"' . ( $video ? ' data-rl-video="' . esc_url( $video ) . '"' : '' ) . '>';
+		echo '<div class="' . esc_attr( $r['classe'] ) . '"' . ( $video ? ' data-rl-video="' . esc_url( $video ) . '"' : '' ) . ( $fixe ? ' data-rl-apercu="fixe"' : '' ) . '>';
 		if ( has_post_thumbnail( $id ) ) {
 			echo get_the_post_thumbnail( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- HTML de WordPress.
 				$id,
-				'large',
-				array(
+				$haut ? 'large' : 'medium_large',
+				$haut ? array(
 					'class'         => 'image-couvrante',
 					'loading'       => 'eager',
 					'fetchpriority' => 'high',
 					'alt'           => '',
+				) : array(
+					'class'   => 'image-couvrante',
+					'loading' => 'lazy',
+					'alt'     => '',
 				)
 			);
 		}
 		$youtube = self::id_youtube( $video );
 		if ( $youtube && ! has_post_thumbnail( $id ) ) {
 			// Sans image à la une : la miniature de la vidéo YouTube.
-			echo '<img class="image-couvrante" src="' . esc_url( 'https://i.ytimg.com/vi/' . $youtube . '/hqdefault.jpg' ) . '" width="480" height="360" alt="">';
+			echo '<img class="image-couvrante" src="' . esc_url( 'https://i.ytimg.com/vi/' . $youtube . '/hqdefault.jpg' ) . '" width="480" height="360" alt=""' . ( $haut ? '' : ' loading="lazy"' ) . '>';
 		} elseif ( $video && ! $youtube ) {
 			// Fichier vidéo : aperçu muet en boucle (lancé par rolling.js quand il est à l'écran, jamais avec « réduire les
-			// animations ») ; sans image à la une, sa première image sert d'affiche.
+			// animations », ni avec « Image fixe ») ; sans image à la une, sa première image sert d'affiche.
 			echo '<video class="image-couvrante apercu-video" src="' . esc_url( $video ) . '#t=0.1" muted loop playsinline preload="metadata" aria-hidden="true" tabindex="-1"></video>';
 		}
 		if ( $format ) {

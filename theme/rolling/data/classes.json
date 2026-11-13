@@ -1162,7 +1162,7 @@
             "id": "g-47ef713",
             "label": "zone-calendrier",
             "groupe": "Fiches et listes",
-            "description": "Emplacement du calendrier HubSpot (avec carte-verre) : hauteur réservée, la page ne saute pas au chargement.",
+            "description": "Emplacement du calendrier HubSpot (avec carte-verre) : hauteur réservée, la page ne saute pas au chargement ; le calendrier prend toute la largeur du cadre.",
             "variants": [
                 {
                     "meta": {
@@ -1178,36 +1178,10 @@
                             }
                         },
                         "padding": {
-                            "$$type": "dimensions",
+                            "$$type": "size",
                             "value": {
-                                "block-start": {
-                                    "$$type": "size",
-                                    "value": {
-                                        "size": 28,
-                                        "unit": "px"
-                                    }
-                                },
-                                "inline-end": {
-                                    "$$type": "size",
-                                    "value": {
-                                        "size": 20,
-                                        "unit": "px"
-                                    }
-                                },
-                                "block-end": {
-                                    "$$type": "size",
-                                    "value": {
-                                        "size": 28,
-                                        "unit": "px"
-                                    }
-                                },
-                                "inline-start": {
-                                    "$$type": "size",
-                                    "value": {
-                                        "size": 20,
-                                        "unit": "px"
-                                    }
-                                }
+                                "size": 10,
+                                "unit": "px"
                             }
                         }
                     },
@@ -1233,7 +1207,7 @@
                         "padding": {
                             "$$type": "size",
                             "value": {
-                                "size": 40,
+                                "size": 14,
                                 "unit": "px"
                             }
                         },
@@ -1250,10 +1224,12 @@
                         },
                         "align-items": {
                             "$$type": "string",
-                            "value": "center"
+                            "value": "stretch"
                         }
                     },
-                    "custom_css": null
+                    "custom_css": {
+                        "raw": "JiA+IC5lbGVtZW50b3Itd2lkZ2V0IHsgd2lkdGg6IDEwMCU7IH0gJiAubWVldGluZ3MtaWZyYW1lLWNvbnRhaW5lciwgJiBpZnJhbWUgeyBkaXNwbGF5OiBibG9jazsgd2lkdGg6IDEwMCUgIWltcG9ydGFudDsgbWluLXdpZHRoOiAwOyB9ICYgaWZyYW1lIHsgYm9yZGVyOiAwOyBib3JkZXItcmFkaXVzOiAxNnB4OyB9"
+                    }
                 }
             ]
         },
@@ -20019,6 +19995,42 @@
             ]
         },
         {
+            "id": "g-83783de",
+            "label": "si-video-liee",
+            "groupe": "Fiches et listes",
+            "description": "Repère sans style : le thème masque ce bloc quand le champ « video-liee » du contenu est vide.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": [],
+                    "custom_css": {
+                        "raw": "LS1ybC1yZXBlcmU6IDE7"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-eaeab9e",
+            "label": "si-autres-videos",
+            "groupe": "Fiches et listes",
+            "description": "Repère sans style : le thème masque ce bloc quand le champ « autres-videos » du contenu est vide.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": [],
+                    "custom_css": {
+                        "raw": "LS1ybC1yZXBlcmU6IDE7"
+                    }
+                }
+            ]
+        },
+        {
             "id": "g-05e0355",
             "label": "si-metier",
             "groupe": "Fiches et listes",
@@ -21647,6 +21659,29 @@
                         }
                     },
                     "custom_css": null
+                }
+            ]
+        },
+        {
+            "id": "g-5426d14",
+            "label": "vignette-lecteur",
+            "groupe": "Fiches et listes",
+            "description": "Vignette d'une vidéo qui se lit sur place (avec vignette-video, autour du widget Vidéo) : au survol, l'image zoome et une barre avance ; rien une fois la vidéo lancée.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "overflow": {
+                            "$$type": "string",
+                            "value": "hidden"
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "JiAuaW1hZ2UtY291dnJhbnRlIHsgdHJhbnNpdGlvbjogdHJhbnNmb3JtIDEuNHMgY3ViaWMtYmV6aWVyKDAuMiwwLjgsMC4yLDEpOyB9ICY6OmFmdGVyIHsgY29udGVudDogJyc7IHBvc2l0aW9uOiBhYnNvbHV0ZTsgei1pbmRleDogMzsgbGVmdDogOHB4OyBib3R0b206IDhweDsgd2lkdGg6IDA7IGhlaWdodDogNXB4OyBib3JkZXItcmFkaXVzOiAwIDAgMCAyMHB4OyBiYWNrZ3JvdW5kOiAjRkZEMUJGOyB0cmFuc2l0aW9uOiB3aWR0aCAwLjRzIGVhc2U7IHBvaW50ZXItZXZlbnRzOiBub25lOyB9ICY6aG92ZXIgLmltYWdlLWNvdXZyYW50ZSwgJjpmb2N1cy13aXRoaW4gLmltYWdlLWNvdXZyYW50ZSB7IHRyYW5zZm9ybTogc2NhbGUoMS4wNik7IH0gJjpob3Zlcjo6YWZ0ZXIsICY6Zm9jdXMtd2l0aGluOjphZnRlciB7IHdpZHRoOiBjYWxjKDEwMCUgLSAxNnB4KTsgdHJhbnNpdGlvbjogd2lkdGggN3MgbGluZWFyOyB9ICY6aGFzKC5saXQpIC5pbWFnZS1jb3V2cmFudGUgeyB0cmFuc2Zvcm06IG5vbmU7IH0gJjpoYXMoLmxpdCk6OmFmdGVyIHsgZGlzcGxheTogbm9uZTsgfQ=="
+                    }
                 }
             ]
         },

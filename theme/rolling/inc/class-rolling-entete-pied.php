@@ -50,7 +50,7 @@ class Rolling_Entete_Pied {
 	 * @return array
 	 */
 	public static function modeles_de_page( $modeles ) {
-		$modeles[ self::MODELE_LANDING ] = __( 'Landing : logo seul, sans menu', 'rolling' );
+		$modeles[ self::MODELE_LANDING ]            = __( 'Landing : logo seul, sans menu', 'rolling' );
 		$modeles[ Rolling_Dynamique::MODELE_TEXTE ] = __( 'Page de texte : mentions légales, CGV, confidentialité', 'rolling' );
 
 		return $modeles;

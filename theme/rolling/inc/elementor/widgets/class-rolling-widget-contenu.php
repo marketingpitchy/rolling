@@ -54,16 +54,16 @@ class Rolling_Widget_Contenu extends Rolling_Widget {
 			return $html;
 		}
 
-		$dom      = new DOMDocument();
-		$anciens  = libxml_use_internal_errors( true );
-		$charge   = $dom->loadHTML( '<?xml encoding="utf-8"?><div id="rl-racine">' . $html . '</div>', LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD );
+		$dom     = new DOMDocument();
+		$anciens = libxml_use_internal_errors( true );
+		$charge  = $dom->loadHTML( '<?xml encoding="utf-8"?><div id="rl-racine">' . $html . '</div>', LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD );
 		libxml_clear_errors();
 		libxml_use_internal_errors( $anciens );
 		if ( ! $charge ) {
 			return $html;
 		}
-		$xpath = new DOMXPath( $dom );
-		$classe = function ( $nom ) {
+		$xpath    = new DOMXPath( $dom );
+		$classe   = function ( $nom ) {
 			return "contains(concat(' ', normalize-space(@class), ' '), ' " . $nom . " ')";
 		};
 		$fragment = function ( $code ) use ( $dom ) {

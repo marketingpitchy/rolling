@@ -1164,6 +1164,16 @@
      "css": "--rl-repere: 1;"
     },
     {
+     "label": "si-video-liee",
+     "description": "Repère sans style : le thème masque ce bloc quand le champ « video-liee » du contenu est vide.",
+     "css": "--rl-repere: 1;"
+    },
+    {
+     "label": "si-autres-videos",
+     "description": "Repère sans style : le thème masque ce bloc quand le champ « autres-videos » du contenu est vide.",
+     "css": "--rl-repere: 1;"
+    },
+    {
      "label": "si-metier",
      "description": "Repère sans style : le thème masque ce bloc quand le champ « metier » du contenu est vide.",
      "css": "--rl-repere: 1;"
@@ -1332,6 +1342,11 @@
      "label": "video-fiche",
      "description": "Vidéo de la fiche : affiche au format 16:9, la vidéo se charge au clic.",
      "css": "aspect-ratio: 16 / 9; & iframe, & video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; z-index: 4; } & video.apercu-video { z-index: 0; object-fit: cover; pointer-events: none; }"
+    },
+    {
+     "label": "vignette-lecteur",
+     "description": "Vignette d'une vidéo qui se lit sur place (avec vignette-video, autour du widget Vidéo) : au survol, l'image zoome et une barre avance ; rien une fois la vidéo lancée.",
+     "css": "overflow: hidden; & .image-couvrante { transition: transform 1.4s cubic-bezier(0.2,0.8,0.2,1); } &::after { content: ''; position: absolute; z-index: 3; left: 8px; bottom: 8px; width: 0; height: 5px; border-radius: 0 0 0 20px; background: #FFD1BF; transition: width 0.4s ease; pointer-events: none; } &:hover .image-couvrante, &:focus-within .image-couvrante { transform: scale(1.06); } &:hover::after, &:focus-within::after { width: calc(100% - 16px); transition: width 7s linear; } &:has(.lit) .image-couvrante { transform: none; } &:has(.lit)::after { display: none; }"
     },
     {
      "label": "lecture-centre",
@@ -1844,8 +1859,8 @@
     },
     {
      "label": "zone-calendrier",
-     "description": "Emplacement du calendrier HubSpot (avec carte-verre) : hauteur réservée, la page ne saute pas au chargement.",
-     "css": "min-height: 640px; align-items: center; justify-content: center; gap: 10px; padding: 40px; text-align: center; @media(--mobile) { min-height: 560px; padding: 28px 20px; }"
+     "description": "Emplacement du calendrier HubSpot (avec carte-verre) : hauteur réservée, la page ne saute pas au chargement ; le calendrier prend toute la largeur du cadre.",
+     "css": "min-height: 640px; align-items: stretch; justify-content: center; gap: 10px; padding: 14px; text-align: center; & > .elementor-widget { width: 100%; } & .meetings-iframe-container, & iframe { display: block; width: 100% !important; min-width: 0; } & iframe { border: 0; border-radius: 16px; } @media(--mobile) { min-height: 560px; padding: 10px; }"
     },
     {
      "label": "agence-hero",
