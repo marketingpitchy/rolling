@@ -356,6 +356,13 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   (`maquettes/loading/loading-v2.html`, copie /workspace/maquette-loading-v2.html) : cause = fond du centre qui s'efface
   avant les bandes + palier à 76 % dans `rl-intro-haut/bas` ⇒ B 2,1 s (conseil) / C 2,5 s : bandes seules en noir, une
   ouverture continue cubic-bezier(.76,0,.24,1) pendant que le logo s'efface.
+- **Choix** : chargement = **B validé** (2,1 s, une seule ouverture) ⇒ à intégrer. Écran cliquable = **écriture manuscrite
+  de A + curseur de B**, à tester ⇒ maquette `maquettes/ecran-cliquable/ecran-cliquable-2.html` (copie
+  /workspace/maquette-ecran-realisations.html, **à valider**) : flèche dessinée, puis curseur qui clique 9:16, EN, retour
+  (une fois), puis 9:16 respire et l'annotation reste jusqu'au 1er clic. Même maquette, page Réalisations : la cliente ne
+  comprenait pas les 2 lignes de boutons (filtres métier puis format, sans nom) ⇒ proposé : nom de ligne « Métier » /
+  « Format » + « Tous » par ligne ; cartes sans image à la une = rien d'affiché chez elle ⇒ image de la vidéo : image à
+  la une > miniature YouTube > 1re image du fichier vidéo ; clic = fiche réalisation.
 - **Chargement de page effet film** (demande avant la fin de la livraison 4) : maquette `maquettes/loading/maquette-loading.html`
   (copie /workspace/maquette-loading.html), 4 options : A amorce 3-2-1, B clap qui se ferme puis rideau, C ouverture
   cinéma (bandes noires + REC + timecode + règle avec la tête de lecture rouge des frises, plus de filet fin), D barre de lecture en haut sans écran. Conseil : C à l'arrivée (première page
