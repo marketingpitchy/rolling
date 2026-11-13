@@ -1162,7 +1162,7 @@
             "id": "g-47ef713",
             "label": "zone-calendrier",
             "groupe": "Fiches et listes",
-            "description": "Emplacement du calendrier HubSpot (avec carte-verre) : hauteur réservée, la page ne saute pas au chargement ; le calendrier prend toute la largeur du cadre.",
+            "description": "Emplacement du calendrier HubSpot (avec carte-verre) : cadre calé sur la carte de HubSpot (400 px), hauteur réservée, la page ne saute pas au chargement ; place pour le timecode en haut à droite.",
             "variants": [
                 {
                     "meta": {
@@ -1178,10 +1178,36 @@
                             }
                         },
                         "padding": {
-                            "$$type": "size",
+                            "$$type": "dimensions",
                             "value": {
-                                "size": 10,
-                                "unit": "px"
+                                "block-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 50,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 6,
+                                        "unit": "px"
+                                    }
+                                },
+                                "block-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 6,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 6,
+                                        "unit": "px"
+                                    }
+                                }
                             }
                         }
                     },
@@ -1193,10 +1219,24 @@
                         "state": null
                     },
                     "props": {
+                        "width": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 100,
+                                "unit": "%"
+                            }
+                        },
                         "min-height": {
                             "$$type": "size",
                             "value": {
                                 "size": 640,
+                                "unit": "px"
+                            }
+                        },
+                        "max-width": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 440,
                                 "unit": "px"
                             }
                         },
@@ -1205,10 +1245,36 @@
                             "value": "center"
                         },
                         "padding": {
-                            "$$type": "size",
+                            "$$type": "dimensions",
                             "value": {
-                                "size": 14,
-                                "unit": "px"
+                                "block-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 52,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 10,
+                                        "unit": "px"
+                                    }
+                                },
+                                "block-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 10,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 10,
+                                        "unit": "px"
+                                    }
+                                }
                             }
                         },
                         "gap": {
@@ -1225,10 +1291,43 @@
                         "align-items": {
                             "$$type": "string",
                             "value": "stretch"
+                        },
+                        "margin": {
+                            "$$type": "dimensions",
+                            "value": {
+                                "block-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 0,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": null,
+                                        "unit": "auto"
+                                    }
+                                },
+                                "block-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 0,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": null,
+                                        "unit": "auto"
+                                    }
+                                }
+                            }
                         }
                     },
                     "custom_css": {
-                        "raw": "JiA+IC5lbGVtZW50b3Itd2lkZ2V0IHsgd2lkdGg6IDEwMCU7IH0gJiAubWVldGluZ3MtaWZyYW1lLWNvbnRhaW5lciwgJiBpZnJhbWUgeyBkaXNwbGF5OiBibG9jazsgd2lkdGg6IDEwMCUgIWltcG9ydGFudDsgbWluLXdpZHRoOiAwOyB9ICYgaWZyYW1lIHsgYm9yZGVyOiAwOyBib3JkZXItcmFkaXVzOiAxNnB4OyB9"
+                        "raw": "JiA+IC5lbGVtZW50b3Itd2lkZ2V0IHsgd2lkdGg6IDEwMCU7IH0gJiAubWVldGluZ3MtaWZyYW1lLWNvbnRhaW5lciwgJiBpZnJhbWUgeyBkaXNwbGF5OiBibG9jazsgd2lkdGg6IDEwMCUgIWltcG9ydGFudDsgbWluLXdpZHRoOiAwICFpbXBvcnRhbnQ7IH0gJiBpZnJhbWUgeyBib3JkZXI6IDA7IGhlaWdodDogNjgwcHggIWltcG9ydGFudDsgbWluLWhlaWdodDogMCAhaW1wb3J0YW50OyB9"
                     }
                 }
             ]
@@ -6357,7 +6456,7 @@
             "id": "g-9c4dac3",
             "label": "timecode-coin",
             "groupe": "Fiches et listes",
-            "description": "À ajouter à « timecode » : posé à cheval sur le bord haut, à droite d'un cadre (le cadre du formulaire de la page Contact).",
+            "description": "À ajouter à « timecode » : posé en haut à droite, à l'intérieur d'un cadre (le cadre du formulaire de la page Contact).",
             "variants": [
                 {
                     "meta": {
@@ -6365,10 +6464,17 @@
                         "state": null
                     },
                     "props": {
+                        "inset-block-start": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 12,
+                                "unit": "px"
+                            }
+                        },
                         "inset-inline-end": {
                             "$$type": "size",
                             "value": {
-                                "size": 16,
+                                "size": 12,
                                 "unit": "px"
                             }
                         }
@@ -6388,14 +6494,14 @@
                         "inset-block-start": {
                             "$$type": "size",
                             "value": {
-                                "size": -15,
+                                "size": 14,
                                 "unit": "px"
                             }
                         },
                         "inset-inline-end": {
                             "$$type": "size",
                             "value": {
-                                "size": 28,
+                                "size": 16,
                                 "unit": "px"
                             }
                         },
@@ -19981,6 +20087,24 @@
             "label": "si-temoignage-poste",
             "groupe": "Fiches et listes",
             "description": "Repère sans style : le thème masque ce bloc quand le champ « temoignage-poste » du contenu est vide.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": [],
+                    "custom_css": {
+                        "raw": "LS1ybC1yZXBlcmU6IDE7"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-eebf242",
+            "label": "si-temoignage-recit",
+            "groupe": "Fiches et listes",
+            "description": "Repère sans style : le thème masque ce bloc quand le champ « temoignage-recit » du contenu est vide.",
             "variants": [
                 {
                     "meta": {

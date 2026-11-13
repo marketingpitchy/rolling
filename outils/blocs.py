@@ -1031,6 +1031,7 @@ fiche_realisation = F('Fiche réalisation', None, COLONNE + ' align-items: stret
                         P('Fiche réalisation · citation · poste', DYN('rolling-champ', champ='poste', source='temoignage'), ['texte-petit', 'si-temoignage-poste']),
                     ]),
                 ]),
+                B('Fiche réalisation · citation · lien', 'Lire le cas client', DYN('rolling-lien', lien='fiche', source='temoignage'), ['temoin-lien', 'si-temoignage-recit']),
             ]),
             W('Fiche réalisation · transcription', 'rolling-transcription'),
         ]),

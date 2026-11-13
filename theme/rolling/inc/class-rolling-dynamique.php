@@ -433,6 +433,11 @@ class Rolling_Dynamique {
 		if ( 'temoignage_lie' === $cle ) {
 			return ! Rolling_Contenus::temoignage_lie( $id );
 		}
+		if ( 'temoignage_recit' === $cle ) {
+			// Le témoignage lié a un récit (sa fiche existe ; sinon elle renvoie vers la réalisation).
+			$temoignage = Rolling_Contenus::temoignage_lie( $id );
+			return ! $temoignage || ! Rolling_Contenus::a_recit( $temoignage );
+		}
 		if ( 0 === strpos( $cle, 'temoignage_' ) ) {
 			// Champ du témoignage lié à la réalisation affichée (« si-temoignage-portrait »…).
 			$temoignage = Rolling_Contenus::temoignage_lie( $id );

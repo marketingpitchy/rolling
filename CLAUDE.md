@@ -340,6 +340,14 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   fixe ⇒ `data-rl-apercu="fixe"`, pas d'aperçu muet dans les listes), `priorite` (haut = eager + fetchpriority, bas = lazy).
   Fiche témoignage : grand lecteur après le bandeau des infos ; grille « Les autres vidéos. » (`liees_suite`, repère
   `si-autres-videos` = 2 réalisations liées ou plus). Lien de la carte sans récit : « Voir la réalisation ».
+- **0.5.7** : fiche réalisation : bouton « Lire le cas client » sous la citation du témoignage lié (balise Lien `fiche` +
+  `source=temoignage`, repère `si-temoignage-recit` : seulement si le témoignage a un récit). Calendrier HubSpot reproduit
+  (hôtes meetings.hubspot.com, static.hsappstatic.net, api.hubspot.com, app.hubspot.com ajoutés à l'environnement « rolling ») :
+  le fond de l'iframe est transparent ; HubSpot dessine une carte blanche de 400 px centrée (iframe < 800 px), deux colonnes
+  date + heures à partir de ~800 px ; hauteur posée par son script 756 px, carte ~670 px. ⇒ `zone-calendrier` calée sur la
+  carte (max 440 px centré, iframe 680 px, padding 52/10/10) et `timecode-coin` **à l'intérieur** en haut à droite.
+  Fond rose chez la cliente : chez moi la même adresse donne une carte blanche ⇒ cause hors thème (réglage HubSpot ou
+  navigateur / extension) ; test proposé : ouvrir le lien HubSpot seul.
 - **Chargement de page effet film** (demande avant la fin de la livraison 4) : maquette `maquettes/loading/maquette-loading.html`
   (copie /workspace/maquette-loading.html), 4 options : A amorce 3-2-1, B clap qui se ferme puis rideau, C ouverture
   cinéma (bandes noires + REC + timecode + règle avec la tête de lecture rouge des frises, plus de filet fin), D barre de lecture en haut sans écran. Conseil : C à l'arrivée (première page
@@ -371,7 +379,8 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   (zips de la cliente, hors git, scratchpad/plugins), ACF 6.8.11. http://localhost:8080 (admin / admin).
   Démarrer dockerd à la main (`dockerd &`) si le socket manque. Les conteneurs n'ont pas le proxy :
   télécharger sur l'hôte puis `docker compose cp`.
-- Environnement cloud « rolling » (personnel) : autorise api.wordpress.org, downloads.wordpress.org, wordpress.org.
+- Environnement cloud « rolling » (personnel) : autorise api.wordpress.org, downloads.wordpress.org, wordpress.org,
+  meetings.hubspot.com, static.hsappstatic.net, api.hubspot.com, app.hubspot.com (calendrier de la cliente).
 - Elementor Pro n'a pas de traduction sur wordpress.org : une partie de l'interface Pro reste en anglais (comme chez la cliente).
 
 ## Méthode imposée

@@ -1164,6 +1164,11 @@
      "css": "--rl-repere: 1;"
     },
     {
+     "label": "si-temoignage-recit",
+     "description": "Repère sans style : le thème masque ce bloc quand le champ « temoignage-recit » du contenu est vide.",
+     "css": "--rl-repere: 1;"
+    },
+    {
      "label": "si-video-liee",
      "description": "Repère sans style : le thème masque ce bloc quand le champ « video-liee » du contenu est vide.",
      "css": "--rl-repere: 1;"
@@ -1854,13 +1859,13 @@
     },
     {
      "label": "timecode-coin",
-     "description": "À ajouter à « timecode » : posé à cheval sur le bord haut, à droite d'un cadre (le cadre du formulaire de la page Contact).",
-     "css": "position: absolute; top: -15px; right: 28px; z-index: 3; @media(--mobile) { right: 16px; }"
+     "description": "À ajouter à « timecode » : posé en haut à droite, à l'intérieur d'un cadre (le cadre du formulaire de la page Contact).",
+     "css": "position: absolute; top: 14px; right: 16px; z-index: 3; @media(--mobile) { top: 12px; right: 12px; }"
     },
     {
      "label": "zone-calendrier",
-     "description": "Emplacement du calendrier HubSpot (avec carte-verre) : hauteur réservée, la page ne saute pas au chargement ; le calendrier prend toute la largeur du cadre.",
-     "css": "min-height: 640px; align-items: stretch; justify-content: center; gap: 10px; padding: 14px; text-align: center; & > .elementor-widget { width: 100%; } & .meetings-iframe-container, & iframe { display: block; width: 100% !important; min-width: 0; } & iframe { border: 0; border-radius: 16px; } @media(--mobile) { min-height: 560px; padding: 10px; }"
+     "description": "Emplacement du calendrier HubSpot (avec carte-verre) : cadre calé sur la carte de HubSpot (400 px), hauteur réservée, la page ne saute pas au chargement ; place pour le timecode en haut à droite.",
+     "css": "width: 100%; max-width: 440px; margin: 0 auto; min-height: 640px; align-items: stretch; justify-content: center; gap: 10px; padding: 52px 10px 10px; text-align: center; & > .elementor-widget { width: 100%; } & .meetings-iframe-container, & iframe { display: block; width: 100% !important; min-width: 0 !important; } & iframe { border: 0; height: 680px !important; min-height: 0 !important; } @media(--mobile) { min-height: 560px; padding: 50px 6px 6px; }"
     },
     {
      "label": "agence-hero",
