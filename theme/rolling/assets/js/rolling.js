@@ -311,11 +311,32 @@
 
 	/* Vidéo d'une fiche : chargée seulement au clic (YouTube sans cookie, ou fichier de la médiathèque) */
 	document.querySelectorAll( '[data-rl-video]' ).forEach( function ( cadre ) {
-		var bouton = cadre.querySelector( 'button' );
+		var bouton = cadre.querySelector( 'button' ), apercu = cadre.querySelector( 'video.apercu-video' );
 		if ( ! bouton || editeur ) {
 			return;
 		}
+		/* Fichier vidéo : aperçu muet en boucle tant que la vidéo est à l'écran (rien avec « réduire les animations ») */
+		if ( apercu && ! calme && 'IntersectionObserver' in window ) {
+			new IntersectionObserver( function ( entrees ) {
+				entrees.forEach( function ( e ) {
+					if ( ! apercu.isConnected ) {
+						return;
+					}
+					if ( e.isIntersecting ) {
+						var p = apercu.play();
+						if ( p && p.catch ) {
+							p.catch( function () {} );
+						}
+					} else {
+						apercu.pause();
+					}
+				} );
+			}, { threshold: 0.35 } ).observe( cadre );
+		}
 		bouton.addEventListener( 'click', function () {
+			if ( apercu ) {
+				apercu.remove();
+			}
 			var url = cadre.getAttribute( 'data-rl-video' ), yt = url.match( /(?:youtu\.be\/|v=|embed\/|shorts\/)([\w-]{11})/ ), lecteur;
 			if ( yt ) {
 				lecteur = document.createElement( 'iframe' );
@@ -399,6 +420,24 @@
 			}
 		} );
 	} );
+
+	/* Timecode « REC » (classe timecode-rec) écrit 00:00:00:00 : il défile sur le site, à 25 images par seconde */
+	if ( ! calme && ! editeur ) {
+		document.querySelectorAll( '.timecode-rec' ).forEach( function ( t ) {
+			var m = t.textContent.trim().match( /^(\d{1,2}):(\d{2}):(\d{2})(?::(\d{2}))?$/ ), deux = function ( n ) { return ( '0' + n ).slice( -2 ); }, base, t0;
+			if ( ! m ) {
+				return;
+			}
+			base = ( ( +m[ 1 ] * 60 + +m[ 2 ] ) * 60 + +m[ 3 ] ) * 25 + +( m[ 4 ] || 0 );
+			t0 = performance.now();
+			t.setAttribute( 'aria-hidden', 'true' );
+			( function tic( n ) {
+				var img = base + Math.floor( ( n - t0 ) / 40 ), s = Math.floor( img / 25 );
+				t.textContent = deux( Math.floor( s / 3600 ) % 100 ) + ':' + deux( Math.floor( s / 60 ) % 60 ) + ':' + deux( s % 60 ) + ( m[ 4 ] ? ':' + deux( img % 25 ) : '' );
+				requestAnimationFrame( tic );
+			}( t0 ) );
+		} );
+	}
 
 	/* Frise de montage et clap : la tête de lecture avance, la barre du clap se ferme quand ils apparaissent (tout de suite dans l'éditeur ou sans animation) */
 	document.querySelectorAll( '.montage, .clap' ).forEach( function ( frise ) {

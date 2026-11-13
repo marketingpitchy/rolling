@@ -701,10 +701,22 @@ class Rolling_Dynamique {
 			'M' => 'M',
 		);
 		$html   = '';
+		$reste  = '';
+		// Caractères sans image en verre (virgule, « / », « : », « < », lettres…) : écrits en texte, dans le dégradé des
+		// chiffres. Les lettres seules (« mois », « min ») sont plus petites, comme une unité.
+		$texte_libre = function () use ( &$reste, &$html ) {
+			if ( '' === $reste ) {
+				return;
+			}
+			$unite = (bool) preg_match( '/^\p{L}+$/u', $reste );
+			$html .= '<span class="chiffre-texte' . ( $unite ? ' chiffre-unite' : '' ) . '" aria-hidden="true">' . esc_html( $reste ) . '</span>';
+			$reste = '';
+		};
 
 		foreach ( preg_split( '//u', $texte, -1, PREG_SPLIT_NO_EMPTY ) as $caractere ) {
 			$cle = ctype_digit( $caractere ) ? $caractere : ( $noms[ $caractere ] ?? '' );
 			if ( '' !== $cle && ! empty( $medias[ 'chiffre-' . $cle ] ) ) {
+				$texte_libre();
 				$html .= wp_get_attachment_image(
 					(int) $medias[ 'chiffre-' . $cle ],
 					'medium',
@@ -716,9 +728,13 @@ class Rolling_Dynamique {
 					)
 				);
 			} elseif ( preg_match( '/[\s\x{00A0}\x{202F}]/u', $caractere ) ) {
+				$texte_libre();
 				$html .= '<span class="espace-chiffre" aria-hidden="true"></span>';
+			} else {
+				$reste .= $caractere;
 			}
 		}
+		$texte_libre();
 
 		return $html;
 	}

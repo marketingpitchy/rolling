@@ -53,16 +53,27 @@ class Rolling_Widget_Video extends Rolling_Widget {
 		$titre   = get_the_title( $id );
 
 		echo '<div class="' . esc_attr( $r['classe'] ) . '"' . ( $video ? ' data-rl-video="' . esc_url( $video ) . '"' : '' ) . '>';
-		echo get_the_post_thumbnail( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- HTML de WordPress.
-			$id,
-			'large',
-			array(
-				'class'         => 'image-couvrante',
-				'loading'       => 'eager',
-				'fetchpriority' => 'high',
-				'alt'           => '',
-			)
-		);
+		if ( has_post_thumbnail( $id ) ) {
+			echo get_the_post_thumbnail( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- HTML de WordPress.
+				$id,
+				'large',
+				array(
+					'class'         => 'image-couvrante',
+					'loading'       => 'eager',
+					'fetchpriority' => 'high',
+					'alt'           => '',
+				)
+			);
+		}
+		$youtube = self::id_youtube( $video );
+		if ( $youtube && ! has_post_thumbnail( $id ) ) {
+			// Sans image à la une : la miniature de la vidéo YouTube.
+			echo '<img class="image-couvrante" src="' . esc_url( 'https://i.ytimg.com/vi/' . $youtube . '/hqdefault.jpg' ) . '" width="480" height="360" alt="">';
+		} elseif ( $video && ! $youtube ) {
+			// Fichier vidéo : aperçu muet en boucle (lancé par rolling.js quand il est à l'écran, jamais avec « réduire les
+			// animations ») ; sans image à la une, sa première image sert d'affiche.
+			echo '<video class="image-couvrante apercu-video" src="' . esc_url( $video ) . '#t=0.1" muted loop playsinline preload="metadata" aria-hidden="true" tabindex="-1"></video>';
+		}
 		if ( $format ) {
 			echo '<span class="bandeau-video">' . esc_html( $format ) . '</span>';
 		}
@@ -73,5 +84,15 @@ class Rolling_Widget_Video extends Rolling_Widget {
 			echo '<button type="button" class="lecture-centre" aria-label="' . esc_attr( sprintf( $r['libelle'], $titre ) ) . '">' . Rolling_Dynamique::image_du_theme( 'bouton-lecture', 'thumbnail' ) . '</button>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- image de wp_get_attachment_image().
 		}
 		echo '</div>';
+	}
+
+	/**
+	 * Identifiant d'une vidéo YouTube.
+	 *
+	 * @param string $url Lien.
+	 * @return string
+	 */
+	public static function id_youtube( $url ) {
+		return preg_match( '~(?:youtu\.be/|v=|embed/|shorts/)([\w-]{11})~', (string) $url, $m ) ? $m[1] : '';
 	}
 }

@@ -812,8 +812,8 @@
     },
     {
      "label": "chiffre-verre",
-     "description": "Nombre composé de chiffres en verre côte à côte (68 px de haut, 52 px sur mobile).",
-     "css": "display: inline-flex; flex-direction: row; align-items: flex-end; gap: 2px; padding: 0; filter: drop-shadow(0 8px 14px rgba(91,59,234,0.25)); & img { height: 68px; width: auto; } @media(--tablet) { & img { height: 52px; } }"
+     "description": "Nombre composé de chiffres en verre côte à côte (68 px de haut, 52 px sur mobile). Les caractères sans image (virgule, « / », « : », lettres) sont écrits dans le même dégradé.",
+     "css": "display: inline-flex; flex-direction: row; align-items: flex-end; gap: 2px; padding: 0; filter: drop-shadow(0 8px 14px rgba(91,59,234,0.25)); & img { height: 68px; width: auto; flex-shrink: 0; } & .chiffre-texte { display: block; font-family: Bricolage Grotesque; font-weight: 800; font-size: 60px; line-height: 0.95; letter-spacing: -0.02em; padding: 0 0.03em 0.05em; background: linear-gradient(180deg, #FFAB96 0%, #E697BD 45%, #A77BF0 100%); -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent; } & .chiffre-unite { font-size: 34px; padding-bottom: 0.12em; } @media(--tablet) { & img { height: 52px; } & .chiffre-texte { font-size: 46px; } & .chiffre-unite { font-size: 26px; } }"
     },
     {
      "label": "titre-vignette",
@@ -1311,7 +1311,7 @@
     {
      "label": "plaque-libre",
      "description": "Plaque en verre de chiffres clés en nombre libre (1 à n) : colonnes automatiques, 2 sous 980 px ; un chiffre impair seul en mobile prend la largeur.",
-     "css": "position: relative; display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); row-gap: 22px; padding: 28px 0; overflow: hidden; border-radius: 30px; background: radial-gradient(70% 60% at 15% 0%, rgba(255,255,255,0.95), rgba(255,255,255,0) 72%), linear-gradient(150deg, rgba(255,255,255,0.78), rgba(255,255,255,0.46)); backdrop-filter: blur(24px) saturate(170%); box-shadow: inset 0 1px 0 #FFFFFF, 0 30px 70px -34px rgba(76,48,170,0.34); & > * { display: flex; flex-direction: column; gap: 10px; padding: 4px 24px; box-shadow: -1px 0 0 rgba(91,59,234,0.16); } & .chiffre-verre img { height: 60px; width: auto; } & .espace-chiffre { display: inline-block; width: 12px; } @media(--tablet) { grid-template-columns: repeat(2, minmax(0, 1fr)); & > :last-child:nth-child(odd) { grid-column: 1 / -1; } & .chiffre-verre img { height: 46px; } } @media(--mobile) { & > * { padding: 4px 16px; } & .chiffre-verre img { height: 40px; } }"
+     "css": "position: relative; display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); row-gap: 22px; padding: 28px 0; overflow: hidden; border-radius: 30px; background: radial-gradient(70% 60% at 15% 0%, rgba(255,255,255,0.95), rgba(255,255,255,0) 72%), linear-gradient(150deg, rgba(255,255,255,0.78), rgba(255,255,255,0.46)); backdrop-filter: blur(24px) saturate(170%); box-shadow: inset 0 1px 0 #FFFFFF, 0 30px 70px -34px rgba(76,48,170,0.34); & > * { display: flex; flex-direction: column; gap: 10px; padding: 4px 24px; box-shadow: -1px 0 0 rgba(91,59,234,0.16); } & .chiffre-verre img { height: 60px; width: auto; } & .chiffre-verre .chiffre-texte { font-size: 54px; } & .chiffre-verre .chiffre-unite { font-size: 30px; } @media(--mobile) { & .chiffre-verre img { height: 44px; } & .chiffre-verre .chiffre-texte { font-size: 40px; } & .chiffre-verre .chiffre-unite { font-size: 22px; } } & .espace-chiffre { display: inline-block; width: 12px; } @media(--tablet) { grid-template-columns: repeat(2, minmax(0, 1fr)); & > :last-child:nth-child(odd) { grid-column: 1 / -1; } & .chiffre-verre img { height: 46px; } } @media(--mobile) { & > * { padding: 4px 16px; } & .chiffre-verre img { height: 40px; } }"
     },
     {
      "label": "cas-grille",
@@ -1331,7 +1331,7 @@
     {
      "label": "video-fiche",
      "description": "Vidéo de la fiche : affiche au format 16:9, la vidéo se charge au clic.",
-     "css": "aspect-ratio: 16 / 9; & iframe, & video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; z-index: 4; }"
+     "css": "aspect-ratio: 16 / 9; & iframe, & video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; z-index: 4; } & video.apercu-video { z-index: 0; object-fit: cover; pointer-events: none; }"
     },
     {
      "label": "lecture-centre",
@@ -1829,33 +1829,18 @@
     },
     {
      "label": "contact-cote",
-     "description": "Colonne du calendrier : le clap se pose sur son coin.",
+     "description": "Colonne du calendrier de la page Contact.",
      "css": "display: flex; flex-direction: column; gap: 0; padding: 0;"
     },
     {
-     "label": "clap",
-     "description": "Clap de cinéma (Scène, Prise, Durée) : la barre se ferme quand il apparaît.",
-     "css": "position: relative; z-index: 2; align-self: flex-end; width: min(330px, 100%); margin: 0 18px -46px 0; padding: 28px 0 0; transform: rotate(3deg); filter: drop-shadow(0 16px 24px rgba(15,15,18,0.3)); &::before { position: relative; top: auto; right: auto; bottom: auto; left: auto; height: auto; opacity: 1; mix-blend-mode: normal; border: 0; -webkit-mask: none; mask: none; padding: 0; content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: auto; width: auto; height: 24px; border-radius: 6px 6px 0 0; background: repeating-linear-gradient(-55deg, #0F0F12 0 16px, #FAF9F7 16px 32px); box-shadow: inset 0 0 0 2px #0F0F12; transform-origin: 6px 100%; transform: rotate(-14deg); transition: transform 0.5s cubic-bezier(0.5, -0.4, 0.6, 1.6) 0.5s; } &.vu::before { transform: rotate(0); } @media(--tablet) { align-self: flex-start; margin: 0 0 -40px 8px; }"
+     "label": "timecode-rec",
+     "description": "À ajouter à « timecode » : point rouge « REC » qui clignote devant le temps. Avec un temps écrit 00:00:00:00, il défile sur le site.",
+     "css": "display: inline-flex; align-items: center; gap: 8px; &::before { content: ''; display: block; flex-shrink: 0; width: 7px; height: 7px; border-radius: 50%; background: #FF3B30; box-shadow: 0 0 0 3px rgba(255,59,48,0.22); animation: rl-clignote 1.6s ease-in-out infinite; }"
     },
     {
-     "label": "clap-corps",
-     "description": "Corps du clap (sombre, avec une bande rayée en haut).",
-     "css": "position: relative; display: flex; flex-direction: column; gap: 0; padding: 10px 0 0; border-radius: 0 0 16px 16px; overflow: hidden; background: linear-gradient(160deg, #1C1730, #0F0F12); background-color: #151022; box-shadow: inset 0 0 0 1px rgba(255,255,255,0.08); &::before { position: relative; top: auto; right: auto; bottom: auto; left: auto; height: auto; opacity: 1; mix-blend-mode: normal; border: 0; -webkit-mask: none; mask: none; padding: 0; content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: auto; width: auto; height: 10px; background: repeating-linear-gradient(-55deg, #0F0F12 0 16px, #FAF9F7 16px 32px); }"
-    },
-    {
-     "label": "clap-grille",
-     "description": "Cases du clap.",
-     "css": "display: grid; grid-template-columns: 1.6fr 0.7fr 1fr; gap: 0; padding: 0; & > * { display: flex; flex-direction: column; gap: 0; padding: 8px 14px 10px; } & > :nth-last-child(-n+2) { border-left: 1px solid rgba(255,255,255,0.14); }"
-    },
-    {
-     "label": "clap-champ",
-     "description": "Nom d'une case du clap (Scène, Prise, Durée).",
-     "css": "font-family: Hanken Grotesk; font-size: 12px; line-height: 1.3; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #B6B0CC;"
-    },
-    {
-     "label": "clap-valeur",
-     "description": "Valeur d'une case du clap, écrite à la main.",
-     "css": "font-family: Caveat; font-size: 27px; line-height: 1.1; font-weight: 700; white-space: nowrap; color: #FFD1BF;"
+     "label": "timecode-coin",
+     "description": "À ajouter à « timecode » : posé à cheval sur le bord haut, à droite d'un cadre (le cadre du formulaire de la page Contact).",
+     "css": "position: absolute; top: -15px; right: 28px; z-index: 3; @media(--mobile) { right: 16px; }"
     },
     {
      "label": "zone-calendrier",

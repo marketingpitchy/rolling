@@ -271,7 +271,7 @@ class Rolling_Contenus {
 					'chiffres'       => array(
 						'lignes',
 						__( 'Chiffres clés', 'rolling' ),
-						__( 'Valeur en chiffres (0-9, +, %, k, M), ex. « 87 % » ou « 2 500+ », puis les mots dans le libellé. Aucun chiffre : la plaque n’apparaît pas.', 'rolling' ),
+						__( 'Valeur, ex. « 87 % », « 2 500+ », « 4,2/5 », « 35:00 » ou « <3 mois » : les chiffres, +, %, k et M en verre, les autres signes et les mots courts dans le même dégradé. La phrase va dans le libellé. Aucun chiffre : la plaque n’apparaît pas.', 'rolling' ),
 						array(
 							'valeur'  => __( 'Valeur', 'rolling' ),
 							'libelle' => __( 'Libellé', 'rolling' ),

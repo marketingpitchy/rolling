@@ -319,6 +319,18 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   ouverte avale toutes les classes écrites après (ordre inverse : titres, textes, boutons, section-sombre…). L'éditeur
   rend chaque classe à part ⇒ rien ne s'y voit. Idée : avertissement dans l'administration si un CSS de classe a des
   parenthèses / accolades non fermées.
+- **0.5.5** : Contact = **plus de clap** (choix cliente) : timecode `timecode` + `timecode-rec` (point REC) + `timecode-coin`
+  (à cheval sur le bord haut droit du cadre du formulaire) ; écrit 00:00:00:00, il défile (rolling.js, 25 i/s, rien avec
+  « réduire les animations » ni dans l'éditeur) ; classes clap-* retirées (gardées tant qu'une page s'en sert).
+  Chiffres clés : `chiffres_en_verre()` écrit les caractères sans image (« , / : < », lettres) en `span.chiffre-texte`
+  (dégradé #FFAB96 → #E697BD → #A77BF0 des chiffres), lettres seules = `chiffre-unite` plus petites ; tailles dans
+  `chiffre-verre` et `plaque-libre` (mobile 44 px). Valeurs de la cliente : « 4,2/5 », « 35:00 », « <3 mois ».
+  Vidéo des réalisations : sans image à la une ⇒ miniature YouTube (i.ytimg.com) ; fichier vidéo ⇒ `video.apercu-video`
+  muette en boucle, lancée quand visible (rolling.js), retirée au clic sur lecture ; `video-fiche` met l'aperçu sous le
+  bouton (`z-index: 0; pointer-events: none`).
+  **Maquette « Témoignages avec vidéo »** (`maquettes/temoignages-video/`, copie /workspace, **à valider**) : carte
+  témoignage avec la vignette de la réalisation liée (A lecture dans la carte, conseil ; B clic vers la réalisation) +
+  lecteur en grand dans la fiche témoignage après le bandeau des infos.
 - **Chargement de page effet film** (demande avant la fin de la livraison 4) : maquette `maquettes/loading/maquette-loading.html`
   (copie /workspace/maquette-loading.html), 4 options : A amorce 3-2-1, B clap qui se ferme puis rideau, C ouverture
   cinéma (bandes noires + REC + timecode + règle avec la tête de lecture rouge des frises, plus de filet fin), D barre de lecture en haut sans écran. Conseil : C à l'arrivée (première page

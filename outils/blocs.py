@@ -1506,15 +1506,8 @@ contact_haut = F('Contact · échange', ['section', 'section-entete', 'entete-pa
             ]),
         ]),
         F('Contact · calendrier', ['contact-cote'], enfants=[
-            F('Contact · clap', ['clap'], enfants=[
-                F('Contact · clap · corps', ['clap-corps'], enfants=[
-                    F('Contact · clap · cases', ['clap-grille'], enfants=[
-                        F('Contact · clap · %s' % champ, None, None, enfants=[P('Contact · clap · %s · nom' % champ, champ, ['clap-champ']), P('Contact · clap · %s · valeur' % champ, valeur, ['clap-valeur'])])
-                        for champ, valeur in [('Scène', 'Votre échange'), ('Prise', '1'), ('Durée', '30:00')]
-                    ]),
-                ]),
-            ]),
             F('Contact · emplacement', ['carte-verre', 'zone-calendrier'], enfants=[
+                P('Contact · timecode', '00:00:00:00', ['timecode', 'timecode-rec', 'timecode-coin']),
                 W('Contact · calendrier HubSpot', 'html', html='Collez ici le code du calendrier HubSpot (cet élément est un bloc HTML).'),
             ]),
         ]),

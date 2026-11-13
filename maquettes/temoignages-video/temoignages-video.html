@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Témoignages avec vidéo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Hanken+Grotesk:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root { --encre: #0F0F12; --paragraphe: #4A4858; --legende: #5F5C6C; --violet: #5B3BEA; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: "Hanken Grotesk", system-ui, sans-serif; color: var(--encre); background: #EEEBE6; line-height: 1.6; }
+.tete, .option { max-width: 1180px; margin: 0 auto; padding: 0 20px; }
+.tete { padding-top: 56px; }
+h1 { font: 650 clamp(32px, 4vw, 52px)/1.06 "Bricolage Grotesque"; letter-spacing: -.05em; }
+h1 em { font-style: normal; background: linear-gradient(95deg, #5B3BEA, #6F3FD6 42%, #C94A1E); -webkit-background-clip: text; background-clip: text; color: transparent; padding: 0 .06em; margin: 0 -.06em; }
+.intro { margin-top: 16px; max-width: 880px; font-size: 18px; color: var(--paragraphe); }
+.option { margin-top: 64px; }
+.option > h2 { font: 650 28px/1.2 "Bricolage Grotesque"; letter-spacing: -.035em; }
+.lettre { display: inline-flex; align-items: center; justify-content: center; min-width: 32px; height: 32px; padding: 0 8px; margin-right: 8px; border-radius: 999px; font-size: 15px; color: #fff; background: linear-gradient(135deg, #5B3BEA, #8E4DE6); }
+.conseil > h2::after { content: "Notre conseil"; margin-left: 10px; padding: 3px 10px; border-radius: 999px; font: 700 12px "Hanken Grotesk"; letter-spacing: .06em; text-transform: uppercase; color: #fff; background: var(--violet); vertical-align: middle; }
+.desc { margin-top: 8px; max-width: 900px; font-size: 16px; color: var(--paragraphe); }
+.scene { position: relative; margin-top: 18px; padding: 56px 40px; border-radius: 24px; overflow: hidden; isolation: isolate; background: #FAF9F7; box-shadow: 0 30px 60px -40px rgba(30,20,80,.45); }
+.scene::before { content: ""; position: absolute; z-index: -1; inset: 0; background: radial-gradient(40% 55% at 85% 10%, rgba(196,181,253,.5), transparent 70%), radial-gradient(40% 50% at 10% 95%, rgba(255,162,122,.35), transparent 70%); }
+.mur { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; align-items: start; }
+@media (max-width: 900px) { .mur { grid-template-columns: 1fr; } .scene { padding: 40px 16px; } }
+.carte { position: relative; display: flex; flex-direction: column; gap: 14px; padding: 18px 18px 22px; border-radius: 26px; background: linear-gradient(150deg, rgba(255,255,255,.8), rgba(255,255,255,.55)); backdrop-filter: blur(24px); box-shadow: inset 0 1px 0 #fff, 0 30px 70px -34px rgba(76,48,170,.34); }
+.carte .corps { display: flex; flex-direction: column; gap: 14px; padding: 4px 6px 0; }
+.logo { font: 800 16px "Bricolage Grotesque"; letter-spacing: -.02em; color: #2A2840; }
+.tag { width: fit-content; padding: 3px 11px; border-radius: 999px; font-size: 13px; font-weight: 600; color: #A63C14; background: #fff; box-shadow: inset 0 0 0 1px rgba(224,86,42,.2); }
+.haut { display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+.citation { font: 600 18px/1.45 "Bricolage Grotesque"; letter-spacing: -.01em; }
+.auteur { display: flex; align-items: center; gap: 12px; }
+.auteur i { width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(140deg, #C4B5FD, #FFD1BF); box-shadow: 0 0 0 3px #fff; flex: none; }
+.auteur b { display: block; font-size: 15px; } .auteur span { font-size: 14px; color: var(--legende); }
+.lien { width: fit-content; font-weight: 700; font-size: 15px; color: #4A2BB8; text-decoration: none; } .lien::after { content: " →"; }
+/* Vignette vidéo de la réalisation liée */
+.vignette { position: relative; display: block; aspect-ratio: 16 / 9; border-radius: 18px; overflow: hidden; background: #2A2233; cursor: pointer; border: 0; padding: 0; width: 100%; }
+.vignette .image { position: absolute; inset: 0; background: radial-gradient(60% 80% at 75% 30%, rgba(255,180,140,.9), transparent 60%), radial-gradient(90% 90% at 10% 100%, #5B3BEA, transparent 70%), linear-gradient(160deg, #3434E0, #1C1730); transition: transform .6s cubic-bezier(.2,.8,.2,1); }
+.vignette .image.b { background: radial-gradient(60% 80% at 30% 30%, rgba(196,181,253,.9), transparent 60%), radial-gradient(90% 90% at 90% 100%, #FF8A5B, transparent 70%), linear-gradient(160deg, #8E4DE6, #1C1730); }
+.vignette:hover .image { transform: scale(1.05); }
+.vignette::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(12,8,30,.45), rgba(12,8,30,0) 35%, rgba(12,8,30,0) 60%, rgba(12,8,30,.55)); }
+.bandeau { position: absolute; z-index: 2; top: 10px; left: 10px; padding: 5px 10px; border-radius: 999px; font: 800 12px/1 "Hanken Grotesk"; letter-spacing: .12em; text-transform: uppercase; color: #fff; background: rgba(20,14,46,.55); backdrop-filter: blur(14px); }
+.duree { position: absolute; z-index: 2; top: 10px; right: 10px; padding: 5px 9px; border-radius: 10px; font: 800 12px/1 "Hanken Grotesk"; color: #fff; background: rgba(20,14,46,.6); }
+.lecture { position: absolute; z-index: 2; left: 50%; top: 50%; width: 56px; height: 56px; margin: -28px 0 0 -28px; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #FFD1BF, #FF8A5B); box-shadow: 0 10px 24px -8px rgba(255,138,91,.8); }
+.lecture::after { content: ""; position: absolute; left: 22px; top: 18px; border-style: solid; border-width: 10px 0 10px 16px; border-color: transparent transparent transparent #0F0F12; }
+.barre { position: absolute; z-index: 2; left: 10px; right: 10px; bottom: 10px; height: 4px; border-radius: 4px; background: rgba(255,255,255,.3); overflow: hidden; }
+.barre i { display: block; height: 100%; width: 0; background: #fff; transition: width 2.4s linear; }
+.vignette:hover .barre i { width: 70%; }
+.lecteur { position: absolute; inset: 0; z-index: 3; display: none; align-items: center; justify-content: center; font: 700 14px "Hanken Grotesk"; color: #fff; background: #0F0F12; }
+.vignette.joue .lecteur { display: flex; }
+/* Fiche témoignage */
+.fiche { display: grid; grid-template-columns: minmax(0, 1fr); gap: 22px; max-width: 900px; margin: 0 auto; }
+.fiche h3 { font: 650 clamp(30px, 3.4vw, 44px)/1.05 "Bricolage Grotesque"; letter-spacing: -.045em; }
+.fiche h3 em { font-style: normal; background: linear-gradient(95deg, #5B3BEA, #6F3FD6 42%, #C94A1E); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.chapo { font: 600 19px/1.45 "Bricolage Grotesque"; color: #2A2840; }
+.bandeau-infos { display: flex; flex-wrap: wrap; gap: 10px 28px; padding: 16px 22px; border-radius: 20px; background: rgba(255,255,255,.7); box-shadow: inset 0 1px 0 #fff, inset 0 0 0 1px rgba(91,59,234,.1); font-size: 14px; }
+.bandeau-infos b { display: block; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--legende); }
+.cadre { padding: 12px; border-radius: 32px; background: linear-gradient(150deg, rgba(255,255,255,.5), rgba(255,255,255,.15)); box-shadow: inset 0 1.5px 0 rgba(255,255,255,.95), 0 32px 64px -24px rgba(10,6,30,.45); }
+.cadre .vignette { border-radius: 22px; }
+.cadre .lecture { width: 84px; height: 84px; margin: -42px 0 0 -42px; } .cadre .lecture::after { left: 34px; top: 28px; border-width: 14px 0 14px 22px; }
+.note { font-size: 14px; color: var(--legende); }
+.annot { display: inline-block; margin-top: 4px; padding: 2px 10px; border: 1.5px dashed #8E4DE6; border-radius: 8px; font-size: 13px; color: #4A2BB8; }
+</style>
+</head>
+<body>
+<div class="tete">
+  <h1>Témoignages : <em>la vidéo se voit.</em></h1>
+  <p class="intro">Aujourd'hui, un témoignage lié à une réalisation affiche seulement un lien « Voir la vidéo ». Proposition : la carte montre la vignette de la vidéo (image, format, durée, bouton lecture), et la fiche témoignage montre le lecteur juste après le chapô. Rien à saisir en plus : tout vient de la réalisation liée. Une carte sans réalisation liée ne change pas.</p>
+</div>
+
+<section class="option conseil">
+  <h2><span class="lettre">A</span>La vidéo se lit dans la carte</h2>
+  <p class="desc">La vignette de la réalisation liée en haut de la carte. Au survol, l'image zoome et la barre avance (comme sur la page Réalisations). Un clic lance la vidéo dans la carte, sans changer de page ; le lien « Voir la réalisation » reste dessous.</p>
+  <div class="scene"><div class="mur">
+    <article class="carte">
+      <button class="vignette" type="button" aria-label="Lire la vidéo (exemple)"><span class="image"></span><span class="bandeau">Motion design</span><span class="duree">1:28</span><span class="lecture"></span><span class="barre"><i></i></span><span class="lecteur">La vidéo se lance ici</span></button>
+      <div class="corps">
+        <div class="haut"><span class="logo">LOGO CLIENT</span><span class="tag">Com interne · RH</span></div>
+        <p class="citation">« Nous avions des centaines de pages que personne ne lisait. Aujourd'hui, nos équipes regardent. »</p>
+        <div class="auteur"><i></i><div><b>Prénom Nom</b><span>Responsable formation</span></div></div>
+        <a class="lien" href="#">Voir la réalisation</a>
+      </div>
+    </article>
+    <article class="carte">
+      <div class="corps">
+        <div class="haut"><span class="logo">LOGO CLIENT</span><span class="tag">Marketing</span></div>
+        <p class="citation">« Une équipe qui comprend nos sujets, et qui livre vite. »</p>
+        <div class="auteur"><i></i><div><b>Prénom Nom</b><span>Directrice communication</span></div></div>
+      </div>
+      <span class="annot">Sans réalisation liée : carte inchangée</span>
+    </article>
+    <article class="carte">
+      <button class="vignette" type="button" aria-label="Lire la vidéo (exemple)"><span class="image b"></span><span class="bandeau">Interview</span><span class="duree">2:04</span><span class="lecture"></span><span class="barre"><i></i></span><span class="lecteur">La vidéo se lance ici</span></button>
+      <div class="corps">
+        <div class="haut"><span class="logo">LOGO CLIENT</span><span class="tag">Com interne · RH</span></div>
+        <p class="citation">« Le format interview a donné la parole à nos équipes terrain. »</p>
+        <div class="auteur"><i></i><div><b>Prénom Nom</b><span>Responsable marque employeur</span></div></div>
+        <a class="lien" href="#">Lire le cas client</a>
+      </div>
+      <span class="annot">Avec un récit : le lien mène au cas client</span>
+    </article>
+  </div></div>
+</section>
+
+<section class="option">
+  <h2><span class="lettre">B</span>La vignette mène à la réalisation</h2>
+  <p class="desc">Même carte, mais le clic sur la vignette ouvre la page de la réalisation (la vidéo y démarre). Plus simple, mais le visiteur quitte la liste des témoignages.</p>
+  <p class="note">Visuellement identique à A ; seul le comportement au clic change.</p>
+</section>
+
+<section class="option">
+  <h2><span class="lettre">+</span>La fiche témoignage (cas client)</h2>
+  <p class="desc">Le lecteur de la vidéo liée arrive juste après le bandeau des infos, en grand, au lieu de la grille « Les vidéos. » en bas de page. Une deuxième vidéo liée reste dans la grille en bas.</p>
+  <div class="scene"><div class="fiche">
+    <h3>Titre du cas client, <em>en une phrase.</em></h3>
+    <p class="chapo">En deux phrases : qui ils sont, ce que nous avons fait ensemble.</p>
+    <div class="bandeau-infos"><span><b>Secteur</b>Distribution</span><span><b>Équipes</b>RH, formation</span><span><b>Formats</b>Motion, interview</span><span><b>Durée</b>3 mois</span></div>
+    <div class="cadre"><button class="vignette" type="button" aria-label="Lire la vidéo (exemple)"><span class="image"></span><span class="bandeau">Motion design</span><span class="duree">1:28</span><span class="lecture"></span><span class="barre"><i></i></span><span class="lecteur">La vidéo se lance ici</span></button></div>
+    <p class="note">Puis : le contexte, leur besoin, notre accompagnement, les chiffres.</p>
+  </div></div>
+</section>
+<p style="height:80px"></p>
+<script>
+document.querySelectorAll('.vignette').forEach(function (v) { v.addEventListener('click', function () { v.classList.toggle('joue'); }); });
+</script>
+</body>
+</html>

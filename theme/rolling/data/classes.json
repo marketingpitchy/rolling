@@ -5744,7 +5744,7 @@
                         }
                     },
                     "custom_css": {
-                        "raw": "JiBpZnJhbWUsICYgdmlkZW8geyBwb3NpdGlvbjogYWJzb2x1dGU7IHRvcDogMDsgbGVmdDogMDsgd2lkdGg6IDEwMCU7IGhlaWdodDogMTAwJTsgYm9yZGVyOiAwOyB6LWluZGV4OiA0OyB9"
+                        "raw": "JiBpZnJhbWUsICYgdmlkZW8geyBwb3NpdGlvbjogYWJzb2x1dGU7IHRvcDogMDsgbGVmdDogMDsgd2lkdGg6IDEwMCU7IGhlaWdodDogMTAwJTsgYm9yZGVyOiAwOyB6LWluZGV4OiA0OyB9ICYgdmlkZW8uYXBlcmN1LXZpZGVvIHsgei1pbmRleDogMDsgb2JqZWN0LWZpdDogY292ZXI7IHBvaW50ZXItZXZlbnRzOiBub25lOyB9"
                     }
                 }
             ]
@@ -6340,6 +6340,95 @@
                     "custom_css": {
                         "raw": "Jjpub3QoOmhhcyguc2ktY29udGV4dGUpKSB7IGJhY2tncm91bmQ6IHJnYmEoMjU1LDI1NSwyNTUsMC40NSk7IGJveC1zaGFkb3c6IGluc2V0IDAgMCAwIDFweCByZ2JhKDE1LDE1LDE4LDAuMDYpOyB9ICY6bm90KDpoYXMoLnNpLWNvbnRleHRlKSk6OmJlZm9yZSB7IGRpc3BsYXk6IG5vbmU7IH0gJjpub3QoOmhhcyguc2ktY29udGV4dGUpKSAucGljdG8tcnVicmlxdWUgeyBvcGFjaXR5OiAwLjY1OyB9"
                     }
+                }
+            ]
+        },
+        {
+            "id": "g-9dc26f5",
+            "label": "timecode-rec",
+            "groupe": "Fiches et listes",
+            "description": "À ajouter à « timecode » : point rouge « REC » qui clignote devant le temps. Avec un temps écrit 00:00:00:00, il défile sur le site.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "display": {
+                            "$$type": "string",
+                            "value": "inline-flex"
+                        },
+                        "gap": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 8,
+                                "unit": "px"
+                            }
+                        },
+                        "align-items": {
+                            "$$type": "string",
+                            "value": "center"
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "Jjo6YmVmb3JlIHsgY29udGVudDogJyc7IGRpc3BsYXk6IGJsb2NrOyBmbGV4LXNocmluazogMDsgd2lkdGg6IDdweDsgaGVpZ2h0OiA3cHg7IGJvcmRlci1yYWRpdXM6IDUwJTsgYmFja2dyb3VuZDogI0ZGM0IzMDsgYm94LXNoYWRvdzogMCAwIDAgM3B4IHJnYmEoMjU1LDU5LDQ4LDAuMjIpOyBhbmltYXRpb246IHJsLWNsaWdub3RlIDEuNnMgZWFzZS1pbi1vdXQgaW5maW5pdGU7IH0="
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-9c4dac3",
+            "label": "timecode-coin",
+            "groupe": "Fiches et listes",
+            "description": "À ajouter à « timecode » : posé à cheval sur le bord haut, à droite d'un cadre (le cadre du formulaire de la page Contact).",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "mobile",
+                        "state": null
+                    },
+                    "props": {
+                        "inset-inline-end": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 16,
+                                "unit": "px"
+                            }
+                        }
+                    },
+                    "custom_css": null
+                },
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "position": {
+                            "$$type": "string",
+                            "value": "absolute"
+                        },
+                        "inset-block-start": {
+                            "$$type": "size",
+                            "value": {
+                                "size": -15,
+                                "unit": "px"
+                            }
+                        },
+                        "inset-inline-end": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 28,
+                                "unit": "px"
+                            }
+                        },
+                        "z-index": {
+                            "$$type": "number",
+                            "value": 3
+                        }
+                    },
+                    "custom_css": null
                 }
             ]
         },
@@ -18161,7 +18250,7 @@
             "id": "g-7e33aed",
             "label": "chiffre-verre",
             "groupe": "Vidéo et images",
-            "description": "Nombre composé de chiffres en verre côte à côte (68 px de haut, 52 px sur mobile).",
+            "description": "Nombre composé de chiffres en verre côte à côte (68 px de haut, 52 px sur mobile). Les caractères sans image (virgule, « / », « : », lettres) sont écrits dans le même dégradé.",
             "variants": [
                 {
                     "meta": {
@@ -18170,7 +18259,7 @@
                     },
                     "props": [],
                     "custom_css": {
-                        "raw": "JiBpbWcgeyBoZWlnaHQ6IDUycHg7IH0="
+                        "raw": "JiBpbWcgeyBoZWlnaHQ6IDUycHg7IH0gJiAuY2hpZmZyZS10ZXh0ZSB7IGZvbnQtc2l6ZTogNDZweDsgfSAmIC5jaGlmZnJlLXVuaXRlIHsgZm9udC1zaXplOiAyNnB4OyB9"
                     }
                 },
                 {
@@ -18251,7 +18340,7 @@
                         }
                     },
                     "custom_css": {
-                        "raw": "JiBpbWcgeyBoZWlnaHQ6IDY4cHg7IHdpZHRoOiBhdXRvOyB9"
+                        "raw": "JiBpbWcgeyBoZWlnaHQ6IDY4cHg7IHdpZHRoOiBhdXRvOyBmbGV4LXNocmluazogMDsgfSAmIC5jaGlmZnJlLXRleHRlIHsgZGlzcGxheTogYmxvY2s7IGZvbnQtZmFtaWx5OiBCcmljb2xhZ2UgR3JvdGVzcXVlOyBmb250LXdlaWdodDogODAwOyBmb250LXNpemU6IDYwcHg7IGxpbmUtaGVpZ2h0OiAwLjk1OyBsZXR0ZXItc3BhY2luZzogLTAuMDJlbTsgcGFkZGluZzogMCAwLjAzZW0gMC4wNWVtOyBiYWNrZ3JvdW5kOiBsaW5lYXItZ3JhZGllbnQoMTgwZGVnLCAjRkZBQjk2IDAlLCAjRTY5N0JEIDQ1JSwgI0E3N0JGMCAxMDAlKTsgLXdlYmtpdC1iYWNrZ3JvdW5kLWNsaXA6IHRleHQ7IGJhY2tncm91bmQtY2xpcDogdGV4dDsgY29sb3I6IHRyYW5zcGFyZW50OyAtd2Via2l0LXRleHQtZmlsbC1jb2xvcjogdHJhbnNwYXJlbnQ7IH0gJiAuY2hpZmZyZS11bml0ZSB7IGZvbnQtc2l6ZTogMzRweDsgcGFkZGluZy1ib3R0b206IDAuMTJlbTsgfQ=="
                     }
                 }
             ]
@@ -21235,6 +21324,16 @@
             "variants": [
                 {
                     "meta": {
+                        "breakpoint": "mobile",
+                        "state": null
+                    },
+                    "props": [],
+                    "custom_css": {
+                        "raw": "JiAuY2hpZmZyZS12ZXJyZSBpbWcgeyBoZWlnaHQ6IDQ0cHg7IH0gJiAuY2hpZmZyZS12ZXJyZSAuY2hpZmZyZS10ZXh0ZSB7IGZvbnQtc2l6ZTogNDBweDsgfSAmIC5jaGlmZnJlLXZlcnJlIC5jaGlmZnJlLXVuaXRlIHsgZm9udC1zaXplOiAyMnB4OyB9ICYgPiAqIHsgcGFkZGluZzogNHB4IDE2cHg7IH0gJiAuY2hpZmZyZS12ZXJyZSBpbWcgeyBoZWlnaHQ6IDQwcHg7IH0="
+                    }
+                },
+                {
+                    "meta": {
                         "breakpoint": "tablet",
                         "state": null
                     },
@@ -21246,16 +21345,6 @@
                     },
                     "custom_css": {
                         "raw": "JiA+IDpsYXN0LWNoaWxkOm50aC1jaGlsZChvZGQpIHsgZ3JpZC1jb2x1bW46IDEgLyAtMTsgfSAmIC5jaGlmZnJlLXZlcnJlIGltZyB7IGhlaWdodDogNDZweDsgfQ=="
-                    }
-                },
-                {
-                    "meta": {
-                        "breakpoint": "mobile",
-                        "state": null
-                    },
-                    "props": [],
-                    "custom_css": {
-                        "raw": "JiA+ICogeyBwYWRkaW5nOiA0cHggMTZweDsgfSAmIC5jaGlmZnJlLXZlcnJlIGltZyB7IGhlaWdodDogNDBweDsgfQ=="
                     }
                 },
                 {
@@ -21452,7 +21541,7 @@
                         }
                     },
                     "custom_css": {
-                        "raw": "cm93LWdhcDogMjJweDsgYmFja2dyb3VuZC1pbWFnZTogcmFkaWFsLWdyYWRpZW50KDcwJSA2MCUgYXQgMTUlIDAlLCByZ2JhKDI1NSwyNTUsMjU1LDAuOTUpLCByZ2JhKDI1NSwyNTUsMjU1LDApIDcyJSksIGxpbmVhci1ncmFkaWVudCgxNTBkZWcsIHJnYmEoMjU1LDI1NSwyNTUsMC43OCksIHJnYmEoMjU1LDI1NSwyNTUsMC40NikpOyAmID4gKiB7IGRpc3BsYXk6IGZsZXg7IGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47IGdhcDogMTBweDsgcGFkZGluZzogNHB4IDI0cHg7IGJveC1zaGFkb3c6IC0xcHggMCAwIHJnYmEoOTEsNTksMjM0LDAuMTYpOyB9ICYgLmNoaWZmcmUtdmVycmUgaW1nIHsgaGVpZ2h0OiA2MHB4OyB3aWR0aDogYXV0bzsgfSAmIC5lc3BhY2UtY2hpZmZyZSB7IGRpc3BsYXk6IGlubGluZS1ibG9jazsgd2lkdGg6IDEycHg7IH0="
+                        "raw": "cm93LWdhcDogMjJweDsgYmFja2dyb3VuZC1pbWFnZTogcmFkaWFsLWdyYWRpZW50KDcwJSA2MCUgYXQgMTUlIDAlLCByZ2JhKDI1NSwyNTUsMjU1LDAuOTUpLCByZ2JhKDI1NSwyNTUsMjU1LDApIDcyJSksIGxpbmVhci1ncmFkaWVudCgxNTBkZWcsIHJnYmEoMjU1LDI1NSwyNTUsMC43OCksIHJnYmEoMjU1LDI1NSwyNTUsMC40NikpOyAmID4gKiB7IGRpc3BsYXk6IGZsZXg7IGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47IGdhcDogMTBweDsgcGFkZGluZzogNHB4IDI0cHg7IGJveC1zaGFkb3c6IC0xcHggMCAwIHJnYmEoOTEsNTksMjM0LDAuMTYpOyB9ICYgLmNoaWZmcmUtdmVycmUgaW1nIHsgaGVpZ2h0OiA2MHB4OyB3aWR0aDogYXV0bzsgfSAmIC5jaGlmZnJlLXZlcnJlIC5jaGlmZnJlLXRleHRlIHsgZm9udC1zaXplOiA1NHB4OyB9ICYgLmNoaWZmcmUtdmVycmUgLmNoaWZmcmUtdW5pdGUgeyBmb250LXNpemU6IDMwcHg7IH0gJiAuZXNwYWNlLWNoaWZmcmUgeyBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7IHdpZHRoOiAxMnB4OyB9"
                     }
                 }
             ]
@@ -27501,7 +27590,7 @@
             "id": "g-bfe7060",
             "label": "contact-cote",
             "groupe": "Fiches et listes",
-            "description": "Colonne du calendrier : le clap se pose sur son coin.",
+            "description": "Colonne du calendrier de la page Contact.",
             "variants": [
                 {
                     "meta": {
@@ -27533,588 +27622,6 @@
                         }
                     },
                     "custom_css": null
-                }
-            ]
-        },
-        {
-            "id": "g-0418a05",
-            "label": "clap",
-            "groupe": "Fiches et listes",
-            "description": "Clap de cinéma (Scène, Prise, Durée) : la barre se ferme quand il apparaît.",
-            "variants": [
-                {
-                    "meta": {
-                        "breakpoint": "tablet",
-                        "state": null
-                    },
-                    "props": {
-                        "margin": {
-                            "$$type": "dimensions",
-                            "value": {
-                                "block-start": {
-                                    "$$type": "size",
-                                    "value": {
-                                        "size": 0,
-                                        "unit": "px"
-                                    }
-                                },
-                                "inline-end": {
-                                    "$$type": "size",
-                                    "value": {
-                                        "size": 0,
-                                        "unit": "px"
-                                    }
-                                },
-                                "block-end": {
-                                    "$$type": "size",
-                                    "value": {
-                                        "size": -40,
-                                        "unit": "px"
-                                    }
-                                },
-                                "inline-start": {
-                                    "$$type": "size",
-                                    "value": {
-                                        "size": 8,
-                                        "unit": "px"
-                                    }
-                                }
-                            }
-                        },
-                        "align-self": {
-                            "$$type": "string",
-                            "value": "flex-start"
-                        }
-                    },
-                    "custom_css": null
-                },
-                {
-                    "meta": {
-                        "breakpoint": "desktop",
-                        "state": null
-                    },
-                    "props": {
-                        "width": {
-                            "$$type": "size",
-                            "value": {
-                                "size": "min(330px, 100%)",
-                                "unit": "custom"
-                            }
-                        },
-                        "position": {
-                            "$$type": "string",
-                            "value": "relative"
-                        },
-                        "z-index": {
-                            "$$type": "number",
-                            "value": 2
-                        },
-                        "padding": {
-                            "$$type": "dimensions",
-                            "value": {
-                                "block-start": {
-                                    "$$type": "size",
-                                    "value": {
-                                        "size": 28,
-                                        "unit": "px"
-                                    }
-                                },
-                                "inline-end": {
-                                    "$$type": "size",
-                                    "value": {
-                                        "size": 0,
-                                        "unit": "px"
-                                    }
-                                },
-                                "block-end": {
-                                    "$$type": "size",
-                                    "value": {
-                                        "size": 0,
-                                        "unit": "px"
-                                    }
-                                },
-                                "inline-start": {
-                                    "$$type": "size",
-                                    "value": {
-                                        "size": 0,
-                                        "unit": "px"
-                                    }
-                                }
-                            }
-                        },
-                        "margin": {
-                            "$$type": "dimensions",
-                            "value": {
-                                "block-start": {
-                                    "$$type": "size",
-                                    "value": {
-                                        "size": 0,
-                                        "unit": "px"
-                                    }
-                                },
-                                "inline-end": {
-                                    "$$type": "size",
-                                    "value": {
-                                        "size": 18,
-                                        "unit": "px"
-                                    }
-                                },
-                                "block-end": {
-                                    "$$type": "size",
-                                    "value": {
-                                        "size": -46,
-                                        "unit": "px"
-                                    }
-                                },
-                                "inline-start": {
-                                    "$$type": "size",
-                                    "value": {
-                                        "size": 0,
-                                        "unit": "px"
-                                    }
-                                }
-                            }
-                        },
-                        "filter": {
-                            "$$type": "filter",
-                            "value": [
-                                {
-                                    "$$type": "css-filter-func",
-                                    "value": {
-                                        "func": {
-                                            "$$type": "string",
-                                            "value": "drop-shadow"
-                                        },
-                                        "args": {
-                                            "$$type": "drop-shadow",
-                                            "value": {
-                                                "xAxis": {
-                                                    "$$type": "size",
-                                                    "value": {
-                                                        "size": 0,
-                                                        "unit": "px"
-                                                    }
-                                                },
-                                                "yAxis": {
-                                                    "$$type": "size",
-                                                    "value": {
-                                                        "size": 16,
-                                                        "unit": "px"
-                                                    }
-                                                },
-                                                "blur": {
-                                                    "$$type": "size",
-                                                    "value": {
-                                                        "size": 24,
-                                                        "unit": "px"
-                                                    }
-                                                },
-                                                "color": {
-                                                    "$$type": "color",
-                                                    "value": "rgba(15,15,18,0.3)"
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                            ]
-                        },
-                        "transform": {
-                            "$$type": "transform",
-                            "value": {
-                                "transform-functions": {
-                                    "$$type": "transform-functions",
-                                    "value": [
-                                        {
-                                            "$$type": "transform-rotate",
-                                            "value": {
-                                                "x": {
-                                                    "$$type": "size",
-                                                    "value": {
-                                                        "size": 0,
-                                                        "unit": "deg"
-                                                    }
-                                                },
-                                                "y": {
-                                                    "$$type": "size",
-                                                    "value": {
-                                                        "size": 0,
-                                                        "unit": "deg"
-                                                    }
-                                                },
-                                                "z": {
-                                                    "$$type": "size",
-                                                    "value": {
-                                                        "size": 3,
-                                                        "unit": "deg"
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    ]
-                                }
-                            }
-                        },
-                        "align-self": {
-                            "$$type": "string",
-                            "value": "flex-end"
-                        }
-                    },
-                    "custom_css": {
-                        "raw": "Jjo6YmVmb3JlIHsgcG9zaXRpb246IHJlbGF0aXZlOyB0b3A6IGF1dG87IHJpZ2h0OiBhdXRvOyBib3R0b206IGF1dG87IGxlZnQ6IGF1dG87IGhlaWdodDogYXV0bzsgb3BhY2l0eTogMTsgbWl4LWJsZW5kLW1vZGU6IG5vcm1hbDsgYm9yZGVyOiAwOyAtd2Via2l0LW1hc2s6IG5vbmU7IG1hc2s6IG5vbmU7IHBhZGRpbmc6IDA7IGNvbnRlbnQ6ICcnOyBwb3NpdGlvbjogYWJzb2x1dGU7IHRvcDogMDsgbGVmdDogMDsgcmlnaHQ6IDA7IGJvdHRvbTogYXV0bzsgd2lkdGg6IGF1dG87IGhlaWdodDogMjRweDsgYm9yZGVyLXJhZGl1czogNnB4IDZweCAwIDA7IGJhY2tncm91bmQ6IHJlcGVhdGluZy1saW5lYXItZ3JhZGllbnQoLTU1ZGVnLCAjMEYwRjEyIDAgMTZweCwgI0ZBRjlGNyAxNnB4IDMycHgpOyBib3gtc2hhZG93OiBpbnNldCAwIDAgMCAycHggIzBGMEYxMjsgdHJhbnNmb3JtLW9yaWdpbjogNnB4IDEwMCU7IHRyYW5zZm9ybTogcm90YXRlKC0xNGRlZyk7IHRyYW5zaXRpb246IHRyYW5zZm9ybSAwLjVzIGN1YmljLWJlemllcigwLjUsIC0wLjQsIDAuNiwgMS42KSAwLjVzOyB9ICYudnU6OmJlZm9yZSB7IHRyYW5zZm9ybTogcm90YXRlKDApOyB9"
-                    }
-                }
-            ]
-        },
-        {
-            "id": "g-47431bf",
-            "label": "clap-corps",
-            "groupe": "Fiches et listes",
-            "description": "Corps du clap (sombre, avec une bande rayée en haut).",
-            "variants": [
-                {
-                    "meta": {
-                        "breakpoint": "desktop",
-                        "state": null
-                    },
-                    "props": {
-                        "overflow": {
-                            "$$type": "string",
-                            "value": "hidden"
-                        },
-                        "position": {
-                            "$$type": "string",
-                            "value": "relative"
-                        },
-                        "padding": {
-                            "$$type": "dimensions",
-                            "value": {
-                                "block-start": {
-                                    "$$type": "size",
-                                    "value": {
-                                        "size": 10,
-                                        "unit": "px"
-                                    }
-                                },
-                                "inline-end": {
-                                    "$$type": "size",
-                                    "value": {
-                                        "size": 0,
-                                        "unit": "px"
-                                    }
-                                },
-                                "block-end": {
-                                    "$$type": "size",
-                                    "value": {
-                                        "size": 0,
-                                        "unit": "px"
-                                    }
-                                },
-                                "inline-start": {
-                                    "$$type": "size",
-                                    "value": {
-                                        "size": 0,
-                                        "unit": "px"
-                                    }
-                                }
-                            }
-                        },
-                        "border-radius": {
-                            "$$type": "border-radius-v2",
-                            "value": {
-                                "start-start": {
-                                    "$$type": "size",
-                                    "value": {
-                                        "size": 0,
-                                        "unit": "px"
-                                    }
-                                },
-                                "start-end": {
-                                    "$$type": "size",
-                                    "value": {
-                                        "size": 0,
-                                        "unit": "px"
-                                    }
-                                },
-                                "end-end": {
-                                    "$$type": "size",
-                                    "value": {
-                                        "size": 16,
-                                        "unit": "px"
-                                    }
-                                },
-                                "end-start": {
-                                    "$$type": "size",
-                                    "value": {
-                                        "size": 16,
-                                        "unit": "px"
-                                    }
-                                }
-                            }
-                        },
-                        "background": {
-                            "$$type": "background",
-                            "value": {
-                                "background-overlay": {
-                                    "$$type": "background-overlay",
-                                    "value": [
-                                        {
-                                            "$$type": "background-gradient-overlay",
-                                            "value": {
-                                                "type": {
-                                                    "$$type": "string",
-                                                    "value": "linear"
-                                                },
-                                                "stops": {
-                                                    "$$type": "gradient-color-stop",
-                                                    "value": [
-                                                        {
-                                                            "$$type": "color-stop",
-                                                            "value": {
-                                                                "color": {
-                                                                    "$$type": "color",
-                                                                    "value": "#1C1730"
-                                                                },
-                                                                "offset": {
-                                                                    "$$type": "number",
-                                                                    "value": 0
-                                                                }
-                                                            }
-                                                        },
-                                                        {
-                                                            "$$type": "color-stop",
-                                                            "value": {
-                                                                "color": {
-                                                                    "$$type": "color",
-                                                                    "value": "#0F0F12"
-                                                                },
-                                                                "offset": {
-                                                                    "$$type": "number",
-                                                                    "value": 100
-                                                                }
-                                                            }
-                                                        }
-                                                    ]
-                                                },
-                                                "angle": {
-                                                    "$$type": "number",
-                                                    "value": 160
-                                                }
-                                            }
-                                        }
-                                    ]
-                                },
-                                "color": {
-                                    "$$type": "color",
-                                    "value": "#151022"
-                                }
-                            }
-                        },
-                        "box-shadow": {
-                            "$$type": "box-shadow",
-                            "value": [
-                                {
-                                    "$$type": "shadow",
-                                    "value": {
-                                        "hOffset": {
-                                            "$$type": "size",
-                                            "value": {
-                                                "size": 0,
-                                                "unit": "px"
-                                            }
-                                        },
-                                        "vOffset": {
-                                            "$$type": "size",
-                                            "value": {
-                                                "size": 0,
-                                                "unit": "px"
-                                            }
-                                        },
-                                        "blur": {
-                                            "$$type": "size",
-                                            "value": {
-                                                "size": 0,
-                                                "unit": "px"
-                                            }
-                                        },
-                                        "spread": {
-                                            "$$type": "size",
-                                            "value": {
-                                                "size": 1,
-                                                "unit": "px"
-                                            }
-                                        },
-                                        "color": {
-                                            "$$type": "color",
-                                            "value": "rgba(255,255,255,0.08)"
-                                        },
-                                        "position": {
-                                            "$$type": "string",
-                                            "value": "inset"
-                                        }
-                                    }
-                                }
-                            ]
-                        },
-                        "display": {
-                            "$$type": "string",
-                            "value": "flex"
-                        },
-                        "flex-direction": {
-                            "$$type": "string",
-                            "value": "column"
-                        },
-                        "gap": {
-                            "$$type": "size",
-                            "value": {
-                                "size": 0,
-                                "unit": "px"
-                            }
-                        }
-                    },
-                    "custom_css": {
-                        "raw": "Jjo6YmVmb3JlIHsgcG9zaXRpb246IHJlbGF0aXZlOyB0b3A6IGF1dG87IHJpZ2h0OiBhdXRvOyBib3R0b206IGF1dG87IGxlZnQ6IGF1dG87IGhlaWdodDogYXV0bzsgb3BhY2l0eTogMTsgbWl4LWJsZW5kLW1vZGU6IG5vcm1hbDsgYm9yZGVyOiAwOyAtd2Via2l0LW1hc2s6IG5vbmU7IG1hc2s6IG5vbmU7IHBhZGRpbmc6IDA7IGNvbnRlbnQ6ICcnOyBwb3NpdGlvbjogYWJzb2x1dGU7IHRvcDogMDsgbGVmdDogMDsgcmlnaHQ6IDA7IGJvdHRvbTogYXV0bzsgd2lkdGg6IGF1dG87IGhlaWdodDogMTBweDsgYmFja2dyb3VuZDogcmVwZWF0aW5nLWxpbmVhci1ncmFkaWVudCgtNTVkZWcsICMwRjBGMTIgMCAxNnB4LCAjRkFGOUY3IDE2cHggMzJweCk7IH0="
-                    }
-                }
-            ]
-        },
-        {
-            "id": "g-ede7216",
-            "label": "clap-grille",
-            "groupe": "Fiches et listes",
-            "description": "Cases du clap.",
-            "variants": [
-                {
-                    "meta": {
-                        "breakpoint": "desktop",
-                        "state": null
-                    },
-                    "props": {
-                        "padding": {
-                            "$$type": "size",
-                            "value": {
-                                "size": 0,
-                                "unit": "px"
-                            }
-                        },
-                        "display": {
-                            "$$type": "string",
-                            "value": "grid"
-                        },
-                        "gap": {
-                            "$$type": "size",
-                            "value": {
-                                "size": 0,
-                                "unit": "px"
-                            }
-                        },
-                        "grid-template-columns": {
-                            "$$type": "string",
-                            "value": "1.6fr 0.7fr 1fr"
-                        }
-                    },
-                    "custom_css": {
-                        "raw": "JiA+ICogeyBkaXNwbGF5OiBmbGV4OyBmbGV4LWRpcmVjdGlvbjogY29sdW1uOyBnYXA6IDA7IHBhZGRpbmc6IDhweCAxNHB4IDEwcHg7IH0gJiA+IDpudGgtbGFzdC1jaGlsZCgtbisyKSB7IGJvcmRlci1sZWZ0OiAxcHggc29saWQgcmdiYSgyNTUsMjU1LDI1NSwwLjE0KTsgfQ=="
-                    }
-                }
-            ]
-        },
-        {
-            "id": "g-15e88b2",
-            "label": "clap-champ",
-            "groupe": "Fiches et listes",
-            "description": "Nom d'une case du clap (Scène, Prise, Durée).",
-            "variants": [
-                {
-                    "meta": {
-                        "breakpoint": "desktop",
-                        "state": null
-                    },
-                    "props": {
-                        "font-family": {
-                            "$$type": "font-family",
-                            "value": "Hanken Grotesk"
-                        },
-                        "font-weight": {
-                            "$$type": "string",
-                            "value": "700"
-                        },
-                        "font-size": {
-                            "$$type": "size",
-                            "value": {
-                                "size": 12,
-                                "unit": "px"
-                            }
-                        },
-                        "color": {
-                            "$$type": "color",
-                            "value": "#B6B0CC"
-                        },
-                        "letter-spacing": {
-                            "$$type": "size",
-                            "value": {
-                                "size": 0.14,
-                                "unit": "em"
-                            }
-                        },
-                        "line-height": {
-                            "$$type": "size",
-                            "value": {
-                                "size": "1.3",
-                                "unit": "custom"
-                            }
-                        },
-                        "text-transform": {
-                            "$$type": "string",
-                            "value": "uppercase"
-                        }
-                    },
-                    "custom_css": null
-                }
-            ]
-        },
-        {
-            "id": "g-6804d03",
-            "label": "clap-valeur",
-            "groupe": "Fiches et listes",
-            "description": "Valeur d'une case du clap, écrite à la main.",
-            "variants": [
-                {
-                    "meta": {
-                        "breakpoint": "desktop",
-                        "state": null
-                    },
-                    "props": {
-                        "font-family": {
-                            "$$type": "font-family",
-                            "value": "Caveat"
-                        },
-                        "font-weight": {
-                            "$$type": "string",
-                            "value": "700"
-                        },
-                        "font-size": {
-                            "$$type": "size",
-                            "value": {
-                                "size": 27,
-                                "unit": "px"
-                            }
-                        },
-                        "color": {
-                            "$$type": "color",
-                            "value": "#FFD1BF"
-                        },
-                        "line-height": {
-                            "$$type": "size",
-                            "value": {
-                                "size": "1.1",
-                                "unit": "custom"
-                            }
-                        }
-                    },
-                    "custom_css": {
-                        "raw": "d2hpdGUtc3BhY2U6IG5vd3JhcDs="
-                    }
                 }
             ]
         },
