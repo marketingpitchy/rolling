@@ -409,7 +409,8 @@ class Rolling_Dynamique {
 			return ! $id;
 		}
 		if ( 'image' === $cle ) {
-			return ! has_post_thumbnail( $id );
+			// Une réalisation sans image à la une montre l'image de sa vidéo.
+			return ! has_post_thumbnail( $id ) && ! Rolling_Contenus::valeur( 'video', $id );
 		}
 		if ( taxonomy_exists( 'rolling_' . $cle ) ) {
 			// Filtre (métier, format, thème) : vide si aucun terme coché.

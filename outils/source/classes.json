@@ -1354,6 +1354,11 @@
      "css": "overflow: hidden; & .image-couvrante { transition: transform 1.4s cubic-bezier(0.2,0.8,0.2,1); } &::after { content: ''; position: absolute; z-index: 3; left: 8px; bottom: 8px; width: 0; height: 5px; border-radius: 0 0 0 20px; background: #FFD1BF; transition: width 0.4s ease; pointer-events: none; } &:hover .image-couvrante, &:focus-within .image-couvrante { transform: scale(1.06); } &:hover::after, &:focus-within::after { width: calc(100% - 16px); transition: width 7s linear; } &:has(.lit) .image-couvrante { transform: none; } &:has(.lit)::after { display: none; }"
     },
     {
+     "label": "annotation-ecran",
+     "description": "Astuce manuscrite au-dessus de l'écran « Votre vidéo » (fond sombre), avec une flèche qui se dessine vers les boutons ; rolling.js l'efface au premier clic (identifiant rl-ecran-astuce). Au-dessus des boutons sous 1024 px.",
+     "css": "position: absolute; z-index: 2; left: -158px; top: -34px; width: 150px; margin: 0; font-family: Caveat; font-size: 30px; line-height: 1; font-weight: 700; color: #FFD1BF; white-space: normal; transform: rotate(-6deg); pointer-events: none; &::after { content: ''; position: absolute; left: 100%; top: 14px; width: 84px; height: 56px; background: url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 90 60' fill='none' stroke='%23FFD1BF' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 34 C 28 46, 58 42, 82 22'/%3E%3Cpath d='M69 19 L83 21 L80 35'/%3E%3C/svg%3E\") center / contain no-repeat; animation: rl-trace 1s ease 0.4s both; } @media(--tablet) { position: relative; left: auto; top: auto; width: fit-content; max-width: 100%; margin: 0 auto 6px; padding-right: 56px; text-align: center; transform: rotate(-3deg); &::after { left: auto; right: 0; top: 10px; width: 52px; height: 40px; transform: rotate(75deg); } }"
+    },
+    {
      "label": "lecture-centre",
      "description": "Bouton lecture centré (vidéo de la fiche), sans mouvement.",
      "css": "position: absolute; z-index: 3; top: 50%; left: 50%; width: 84px; height: 84px; margin: -42px 0 0 -42px; padding: 0; border: 0; border-radius: 50%; background: transparent; cursor: pointer; filter: drop-shadow(0 8px 14px rgba(255,138,91,0.55)); & img { display: block; width: 84px; height: 84px; } @media(--mobile) { width: 64px; height: 64px; margin: -32px 0 0 -32px; & img { width: 64px; height: 64px; } }"
@@ -1450,8 +1455,8 @@
     },
     {
      "label": "filtres-liste",
-     "description": "Filtres au-dessus d’une liste (boutons arrondis).",
-     "css": "display: flex; flex-direction: column; gap: 12px; margin-bottom: 40px; & ul { margin: 0; padding: 0; list-style: none; }"
+     "description": "Filtres au-dessus d’une liste (boutons arrondis) ; sur deux lignes, chaque ligne commence par son nom (Métier, Format).",
+     "css": "display: flex; flex-direction: column; gap: 12px; margin-bottom: 40px; & ul { margin: 0; padding: 0; list-style: none; align-items: center; } & .nom-filtre { min-width: 72px; font-family: Hanken Grotesk; font-size: 12px; line-height: 1.2; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: var(--legende); } @media(--mobile) { & .nom-filtre { width: 100%; } }"
     },
     {
      "label": "chip-filtre",

@@ -13,7 +13,7 @@
     "title": "Toutes nos réalisations vidéo"
    },
    "Réalisations · cartes": {
-    "paragraph": "⟦widget:rolling-liste|contenu=realisations|classe=grille-3|filtres=both|tous=Toutes|plus=yes|plus_texte=Réalisations suivantes⟧"
+    "paragraph": "⟦widget:rolling-liste|contenu=realisations|classe=grille-3|filtres=both|tous=Tous|plus=yes|plus_texte=Réalisations suivantes⟧"
    },
    "Réalisations · appel · texte": {
     "paragraph": "Et avec vos contenus, <em>ça donnerait quoi&nbsp;?</em>"

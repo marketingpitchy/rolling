@@ -363,6 +363,16 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   comprenait pas les 2 lignes de boutons (filtres métier puis format, sans nom) ⇒ proposé : nom de ligne « Métier » /
   « Format » + « Tous » par ligne ; cartes sans image à la une = rien d'affiché chez elle ⇒ image de la vidéo : image à
   la une > miniature YouTube > 1re image du fichier vidéo ; clic = fiche réalisation.
+- **0.5.8 (tout validé)** : chargement B (bandes seules en noir, centre sans fond, tête de lecture 0,9 s, ouverture 0,9 s à
+  1,15 s, cubic-bezier(.76,0,.24,1), fin 2,1 s, retrait 2,3 s) ; écran « Votre vidéo » : astuce `annotation-ecran` (P d'id
+  `rl-ecran-astuce`, Caveat #FFD1BF, flèche ::after qui se dessine `rl-trace` ; au-dessus des boutons sous 1024 px) +
+  démo au curseur (rolling.js : `.rl-curseur`, clics 9:16 / EN / 16:9 / FR une fois à 60 % visible, puis `.rl-appel` sur
+  9:16 ; premier clic du visiteur = astuce effacée ; drapeau `enDemo` car la barre d'espace appelle `click()`) ; filtres
+  sur deux lignes : nom de ligne (`li.nom-filtre`, réglages `nom_metier` / `nom_format`) + « Tous » par ligne qui ne
+  retire que son filtre ; cartes : balise Image « une » sans image à la une ⇒ miniature YouTube, sinon
+  `assets/img/affiche-video.webp?rl-video=<fichier>` remplacée par rolling.js par la 1re image (`video` muette) ; repère
+  `si-image` vrai aussi si la réalisation a une vidéo. i.ytimg.com bloqué dans mon environnement (non visible ici).
+  Timecode du formulaire jugé stressant ⇒ propositions faites (figé, lent, une seule fois).
 - **Chargement de page effet film** (demande avant la fin de la livraison 4) : maquette `maquettes/loading/maquette-loading.html`
   (copie /workspace/maquette-loading.html), 4 options : A amorce 3-2-1, B clap qui se ferme puis rideau, C ouverture
   cinéma (bandes noires + REC + timecode + règle avec la tête de lecture rouge des frises, plus de filet fin), D barre de lecture en haut sans écran. Conseil : C à l'arrivée (première page

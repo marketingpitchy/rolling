@@ -72,7 +72,7 @@ class Rolling_Chargement {
 	</div>
 </div>
 <div class="rl-barre-page" aria-hidden="true"></div>
-<script>(function(){var d=document.documentElement,e=document.querySelector('.rl-intro');if(!e||!d.classList.contains('rl-intro-joue')){if(e){e.remove();}return;}var t=e.querySelector('.rl-intro__tc'),t0=performance.now();(function tic(n){var ms=Math.min(n-t0,700),f=Math.floor(ms/40);t.textContent='00:00:'+(ms>=700?'01:00':'00:'+('0'+f).slice(-2));if(ms<700){requestAnimationFrame(tic);}}(t0));function fin(){e.classList.add('rl-intro--passe');setTimeout(function(){e.remove();},260);document.removeEventListener('keydown',touche);}function touche(v){if(v.key==='Escape'){fin();}}e.addEventListener('click',fin);document.addEventListener('keydown',touche);setTimeout(function(){if(e.isConnected){e.remove();}},1700);})();</script>
+<script>(function(){var d=document.documentElement,e=document.querySelector('.rl-intro');if(!e||!d.classList.contains('rl-intro-joue')){if(e){e.remove();}return;}var t=e.querySelector('.rl-intro__tc'),t0=performance.now();(function tic(n){var ms=Math.max(0,Math.min(n-t0-100,900)),f=Math.floor(ms/36);t.textContent='00:00:'+(ms>=900?'01:00':'00:'+('0'+f).slice(-2));if(ms<900){requestAnimationFrame(tic);}}(t0));function fin(){e.classList.add('rl-intro--passe');setTimeout(function(){e.remove();},260);document.removeEventListener('keydown',touche);}function touche(v){if(v.key==='Escape'){fin();}}e.addEventListener('click',fin);document.addEventListener('keydown',touche);setTimeout(function(){if(e.isConnected){e.remove();}},2300);})();</script>
 		<?php
 	}
 

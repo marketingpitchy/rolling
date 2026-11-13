@@ -21810,6 +21810,244 @@
             ]
         },
         {
+            "id": "g-5294b11",
+            "label": "annotation-ecran",
+            "groupe": "Fiches et listes",
+            "description": "Astuce manuscrite au-dessus de l'écran « Votre vidéo » (fond sombre), avec une flèche qui se dessine vers les boutons ; rolling.js l'efface au premier clic (identifiant rl-ecran-astuce). Au-dessus des boutons sous 1024 px.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "tablet",
+                        "state": null
+                    },
+                    "props": {
+                        "max-width": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 100,
+                                "unit": "%"
+                            }
+                        },
+                        "position": {
+                            "$$type": "string",
+                            "value": "relative"
+                        },
+                        "text-align": {
+                            "$$type": "string",
+                            "value": "center"
+                        },
+                        "padding": {
+                            "$$type": "dimensions",
+                            "value": {
+                                "inline-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 56,
+                                        "unit": "px"
+                                    }
+                                }
+                            }
+                        },
+                        "transform": {
+                            "$$type": "transform",
+                            "value": {
+                                "transform-functions": {
+                                    "$$type": "transform-functions",
+                                    "value": [
+                                        {
+                                            "$$type": "transform-rotate",
+                                            "value": {
+                                                "x": {
+                                                    "$$type": "size",
+                                                    "value": {
+                                                        "size": 0,
+                                                        "unit": "deg"
+                                                    }
+                                                },
+                                                "y": {
+                                                    "$$type": "size",
+                                                    "value": {
+                                                        "size": 0,
+                                                        "unit": "deg"
+                                                    }
+                                                },
+                                                "z": {
+                                                    "$$type": "size",
+                                                    "value": {
+                                                        "size": -3,
+                                                        "unit": "deg"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        "inset-inline-start": {
+                            "$$type": "size",
+                            "value": {
+                                "size": null,
+                                "unit": "auto"
+                            }
+                        },
+                        "inset-block-start": {
+                            "$$type": "size",
+                            "value": {
+                                "size": null,
+                                "unit": "auto"
+                            }
+                        },
+                        "margin": {
+                            "$$type": "dimensions",
+                            "value": {
+                                "block-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 0,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": null,
+                                        "unit": "auto"
+                                    }
+                                },
+                                "block-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 6,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": null,
+                                        "unit": "auto"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "d2lkdGg6IGZpdC1jb250ZW50OyAmOjphZnRlciB7IGxlZnQ6IGF1dG87IHJpZ2h0OiAwOyB0b3A6IDEwcHg7IHdpZHRoOiA1MnB4OyBoZWlnaHQ6IDQwcHg7IHRyYW5zZm9ybTogcm90YXRlKDc1ZGVnKTsgfQ=="
+                    }
+                },
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "width": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 150,
+                                "unit": "px"
+                            }
+                        },
+                        "position": {
+                            "$$type": "string",
+                            "value": "absolute"
+                        },
+                        "inset-block-start": {
+                            "$$type": "size",
+                            "value": {
+                                "size": -34,
+                                "unit": "px"
+                            }
+                        },
+                        "inset-inline-start": {
+                            "$$type": "size",
+                            "value": {
+                                "size": -158,
+                                "unit": "px"
+                            }
+                        },
+                        "z-index": {
+                            "$$type": "number",
+                            "value": 2
+                        },
+                        "font-family": {
+                            "$$type": "font-family",
+                            "value": "Caveat"
+                        },
+                        "font-weight": {
+                            "$$type": "string",
+                            "value": "700"
+                        },
+                        "font-size": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 30,
+                                "unit": "px"
+                            }
+                        },
+                        "color": {
+                            "$$type": "color",
+                            "value": "#FFD1BF"
+                        },
+                        "line-height": {
+                            "$$type": "size",
+                            "value": {
+                                "size": "1",
+                                "unit": "custom"
+                            }
+                        },
+                        "margin": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 0,
+                                "unit": "px"
+                            }
+                        },
+                        "transform": {
+                            "$$type": "transform",
+                            "value": {
+                                "transform-functions": {
+                                    "$$type": "transform-functions",
+                                    "value": [
+                                        {
+                                            "$$type": "transform-rotate",
+                                            "value": {
+                                                "x": {
+                                                    "$$type": "size",
+                                                    "value": {
+                                                        "size": 0,
+                                                        "unit": "deg"
+                                                    }
+                                                },
+                                                "y": {
+                                                    "$$type": "size",
+                                                    "value": {
+                                                        "size": 0,
+                                                        "unit": "deg"
+                                                    }
+                                                },
+                                                "z": {
+                                                    "$$type": "size",
+                                                    "value": {
+                                                        "size": -6,
+                                                        "unit": "deg"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "d2hpdGUtc3BhY2U6IG5vcm1hbDsgcG9pbnRlci1ldmVudHM6IG5vbmU7ICY6OmFmdGVyIHsgY29udGVudDogJyc7IHBvc2l0aW9uOiBhYnNvbHV0ZTsgbGVmdDogMTAwJTsgdG9wOiAxNHB4OyB3aWR0aDogODRweDsgaGVpZ2h0OiA1NnB4OyBiYWNrZ3JvdW5kOiB1cmwoImRhdGE6aW1hZ2Uvc3ZnK3htbCwlM0NzdmcgeG1sbnM9J2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJyB2aWV3Qm94PScwIDAgOTAgNjAnIGZpbGw9J25vbmUnIHN0cm9rZT0nJTIzRkZEMUJGJyBzdHJva2Utd2lkdGg9JzMnIHN0cm9rZS1saW5lY2FwPSdyb3VuZCcgc3Ryb2tlLWxpbmVqb2luPSdyb3VuZCclM0UlM0NwYXRoIGQ9J000IDM0IEMgMjggNDYsIDU4IDQyLCA4MiAyMicvJTNFJTNDcGF0aCBkPSdNNjkgMTkgTDgzIDIxIEw4MCAzNScvJTNFJTNDL3N2ZyUzRSIpIGNlbnRlciAvIGNvbnRhaW4gbm8tcmVwZWF0OyBhbmltYXRpb246IHJsLXRyYWNlIDFzIGVhc2UgMC40cyBib3RoOyB9"
+                    }
+                }
+            ]
+        },
+        {
             "id": "g-014f461",
             "label": "lecture-centre",
             "groupe": "Fiches et listes",
@@ -23458,8 +23696,18 @@
             "id": "g-5074f75",
             "label": "filtres-liste",
             "groupe": "Fiches et listes",
-            "description": "Filtres au-dessus d’une liste (boutons arrondis).",
+            "description": "Filtres au-dessus d’une liste (boutons arrondis) ; sur deux lignes, chaque ligne commence par son nom (Métier, Format).",
             "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "mobile",
+                        "state": null
+                    },
+                    "props": [],
+                    "custom_css": {
+                        "raw": "JiAubm9tLWZpbHRyZSB7IHdpZHRoOiAxMDAlOyB9"
+                    }
+                },
                 {
                     "meta": {
                         "breakpoint": "desktop",
@@ -23495,7 +23743,7 @@
                         }
                     },
                     "custom_css": {
-                        "raw": "JiB1bCB7IG1hcmdpbjogMDsgcGFkZGluZzogMDsgbGlzdC1zdHlsZTogbm9uZTsgfQ=="
+                        "raw": "JiB1bCB7IG1hcmdpbjogMDsgcGFkZGluZzogMDsgbGlzdC1zdHlsZTogbm9uZTsgYWxpZ24taXRlbXM6IGNlbnRlcjsgfSAmIC5ub20tZmlsdHJlIHsgbWluLXdpZHRoOiA3MnB4OyBmb250LWZhbWlseTogSGFua2VuIEdyb3Rlc2s7IGZvbnQtc2l6ZTogMTJweDsgbGluZS1oZWlnaHQ6IDEuMjsgZm9udC13ZWlnaHQ6IDgwMDsgbGV0dGVyLXNwYWNpbmc6IDAuMTRlbTsgdGV4dC10cmFuc2Zvcm06IHVwcGVyY2FzZTsgY29sb3I6IHZhcigtLWxlZ2VuZGUpOyB9"
                     }
                 }
             ]

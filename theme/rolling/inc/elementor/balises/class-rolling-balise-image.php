@@ -58,6 +58,16 @@ class Rolling_Balise_Image extends Data_Tag {
 		$choix = (string) $this->get_settings( 'image' );
 		$image = 'une' === $choix ? (int) get_post_thumbnail_id( $id ) : (int) Rolling_Contenus::valeur( $choix, $id );
 
+		if ( ! $image && 'une' === $choix ) {
+			$affiche = self::affiche_video( $id );
+			if ( $affiche ) {
+				return array(
+					'id'  => '',
+					'url' => $affiche,
+				);
+			}
+		}
+
 		return $image ? array(
 			'id'  => $image,
 			'url' => (string) wp_get_attachment_image_url( $image, 'full' ),
@@ -65,5 +75,25 @@ class Rolling_Balise_Image extends Data_Tag {
 			'id'  => '',
 			'url' => '',
 		);
+	}
+
+	/**
+	 * Image d'une vidéo sans image à la une : miniature YouTube, sinon affiche du thème qui porte le lien du fichier
+	 * (rolling.js la remplace par la première image de la vidéo).
+	 *
+	 * @param int $id Contenu.
+	 * @return string
+	 */
+	public static function affiche_video( $id ) {
+		$video = (string) Rolling_Contenus::valeur( 'video', $id );
+		if ( ! $video ) {
+			return '';
+		}
+		$youtube = Rolling_Widget_Video::id_youtube( $video );
+		if ( $youtube ) {
+			return 'https://i.ytimg.com/vi/' . $youtube . '/hqdefault.jpg';
+		}
+
+		return add_query_arg( 'rl-video', rawurlencode( $video ), ROLLING_URL . '/assets/img/affiche-video.webp' );
 	}
 }

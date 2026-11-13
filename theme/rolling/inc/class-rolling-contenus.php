@@ -227,7 +227,7 @@ class Rolling_Contenus {
 					'duree'         => array( 'texte', __( 'Durée de la vidéo', 'rolling' ), __( 'Ex. : 2:04', 'rolling' ) ),
 				),
 				__( 'La vidéo', 'rolling' ) => array(
-					'video'         => array( 'lien', __( 'Lien de la vidéo', 'rolling' ), __( 'Lien YouTube ou lien d’un fichier de la médiathèque. L’image à la une sert d’affiche.', 'rolling' ) ),
+					'video'         => array( 'lien', __( 'Lien de la vidéo', 'rolling' ), __( 'Lien YouTube ou lien d’un fichier de la médiathèque. L’image à la une sert d’affiche ; sans elle, la miniature YouTube ou la première image du fichier.', 'rolling' ) ),
 					'transcription' => array( 'zone', __( 'Transcription (facultatif)', 'rolling' ), __( 'Laissez vide : la ligne « Lire la transcription » n’apparaît pas.', 'rolling' ) ),
 				),
 				__( 'Le récit', 'rolling' ) => array(

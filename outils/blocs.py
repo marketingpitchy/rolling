@@ -478,6 +478,10 @@ def liste_icones(prefixe, lignes):
     ])
 
 
+astuce_ecran = P('Écran · astuce', 'Essayez un autre format&nbsp;!', ['annotation-ecran'])
+astuce_ecran.cfg['_cssid'] = 'rl-ecran-astuce'
+
+
 def version_ecran(langue, haut, titre, sous, cachee):
     return F('Écran · version ' + langue.upper(), ['version-langue'] + (['version-cachee'] if cachee else []), ancre='rl-version-' + langue, enfants=[
         P('Écran · ' + langue.upper() + ' · haut', haut, ['ecran-haut']),
@@ -537,6 +541,7 @@ ia = F("Le meilleur de l'IA", ['section', 'section-sombre', 'fond-grille', 'halo
             ]),
         ]),
         F('IA · votre vidéo', ['suite-fleche'], 'display: flex; flex-direction: column; align-items: center; gap: 0; width: 100%; max-width: 620px; margin: 72px auto 0; padding: 0;', enfants=[
+            astuce_ecran,
             F('Écran · boutons', ['rangee'], 'justify-content: center; margin-bottom: 18px;', enfants=[
                 F('Écran · formats', ['groupe-choix'], enfants=[P('Écran · formats · nom', 'Format', ['nom-groupe'])] + [
                     B('Écran · format ' + f, f, '#rl-format-' + f.replace(':', '-'), ['choix-ecran']) for f in ('16:9', '9:16', '1:1')]),
@@ -1249,7 +1254,7 @@ rea_haut = haut_page('Réalisations · haut', 'Réalisations', [], 'Nos réalisa
                      note='ce que nous faisons, en vrai', largeur='880px')
 rea_liste = section_liste('Réalisations · liste', [
     H('Réalisations · liste · titre masqué', 'Toutes nos réalisations vidéo', 'h2', ['texte-masque']),
-    W('Réalisations · cartes', 'rolling-liste', contenu='realisations', classe='grille-3', filtres='both', tous='Toutes', plus='yes', plus_texte='Réalisations suivantes'),
+    W('Réalisations · cartes', 'rolling-liste', contenu='realisations', classe='grille-3', filtres='both', tous='Tous', plus='yes', plus_texte='Réalisations suivantes'),
 ], [appel_milieu('Réalisations · appel', 'Et avec vos contenus, <em>ça donnerait quoi&nbsp;?</em>', 'margin-top: 24px;')])
 
 tem_haut = haut_page('Témoignages · haut', 'Témoignages', ['pastille-orange'], 'Ce que nos clients disent <u>de notre accompagnement.</u>',

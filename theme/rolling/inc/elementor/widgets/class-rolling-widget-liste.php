@@ -126,6 +126,8 @@ class Rolling_Widget_Liste extends Rolling_Widget {
 			)
 		);
 		$this->texte( 'tous', __( 'Filtres : premier bouton', 'rolling' ), __( 'Tout voir', 'rolling' ) );
+		$this->texte( 'nom_metier', __( 'Filtres sur deux lignes : nom de la ligne des métiers', 'rolling' ), __( 'Métier', 'rolling' ) );
+		$this->texte( 'nom_format', __( 'Filtres sur deux lignes : nom de la ligne des formats', 'rolling' ), __( 'Format', 'rolling' ) );
 		$this->add_control(
 			'plus',
 			array(
@@ -342,20 +344,29 @@ class Rolling_Widget_Liste extends Rolling_Widget {
 		/* translators: %s : contenu de la liste (Réalisations, Guides…). */
 		echo '<nav class="filtres-liste" aria-label="' . esc_attr( sprintf( __( 'Filtrer : %s', 'rolling' ), self::CONTENUS[ $r['contenu'] ][0] ?? '' ) ) . '">';
 		foreach ( $taxonomies as $rang => $taxonomie ) {
-			$actif  = self::filtre_demande( $taxonomie );
-			$termes = get_terms(
+			$actif     = self::filtre_demande( $taxonomie );
+			$termes    = get_terms(
 				array(
 					'taxonomy'   => $taxonomie,
 					'hide_empty' => true,
 				)
 			);
+			$plusieurs = count( $taxonomies ) > 1;
+			$ici       = $plusieurs ? remove_query_arg( array( $parametres[ $taxonomie ], 'voir' ) ) : $base;
 			echo '<ul class="rangee">';
-			if ( 0 === $rang ) {
+			if ( $plusieurs ) {
+				// Deux lignes : chacune porte son nom et son propre « Tous » (il ne retire que son filtre).
+				$nom = 'rolling_format' === $taxonomie ? $r['nom_format'] : $r['nom_metier'];
+				if ( '' !== trim( (string) $nom ) ) {
+					echo '<li class="nom-filtre">' . esc_html( $nom ) . '</li>';
+				}
+				echo '<li><a class="chip-filtre" href="' . esc_url( $ici ) . '"' . ( '' === $actif ? ' aria-current="page"' : '' ) . '>' . esc_html( $r['tous'] ) . '</a></li>';
+			} elseif ( 0 === $rang ) {
 				$aucun = ! array_filter( array_map( array( __CLASS__, 'filtre_demande' ), $taxonomies ) );
 				echo '<li><a class="chip-filtre" href="' . esc_url( $base ) . '"' . ( $aucun ? ' aria-current="page"' : '' ) . '>' . esc_html( $r['tous'] ) . '</a></li>';
 			}
 			foreach ( is_wp_error( $termes ) ? array() : $termes as $terme ) {
-				$lien = add_query_arg( $parametres[ $taxonomie ], $terme->slug, $base );
+				$lien = add_query_arg( $parametres[ $taxonomie ], $terme->slug, $plusieurs ? $ici : $base );
 				echo '<li><a class="chip-filtre" href="' . esc_url( $lien ) . '"' . ( $actif === $terme->slug ? ' aria-current="page"' : '' ) . '>' . esc_html( $terme->name ) . '</a></li>';
 			}
 			echo '</ul>';

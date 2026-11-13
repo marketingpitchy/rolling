@@ -260,6 +260,9 @@
 
 			lien.addEventListener( 'click', function ( e ) {
 				e.preventDefault();
+				if ( ! enDemo ) {
+					demarre();
+				}
 				choix[ type ] = valeur;
 				groupe.querySelectorAll( 'a[href*="#rl-"]' ).forEach( function ( autre ) {
 					autre.setAttribute( 'aria-pressed', autre === lien ? 'true' : 'false' );
@@ -268,6 +271,72 @@
 				annonce.textContent = lien.getAttribute( 'aria-label' );
 			} );
 		} );
+
+		/* Montrer que l'écran se pilote : l'astuce manuscrite (élément d'identifiant rl-ecran-astuce) reste jusqu'au
+		   premier clic du visiteur ; une fois, quand l'écran arrive à l'écran, un curseur clique tout seul sur 9:16,
+		   EN puis revient au départ ; ensuite le bouton 9:16 respire. Rien dans l'éditeur ni avec « réduire les animations ». */
+		var astuce = document.getElementById( 'rl-ecran-astuce' ), minuteries = [], curseur = null, appel = null, fini = false, enDemo = false;
+		function demarre() {
+			if ( fini ) {
+				return;
+			}
+			fini = true;
+			minuteries.forEach( clearTimeout );
+			if ( curseur ) {
+				curseur.remove();
+			}
+			if ( appel ) {
+				appel.classList.remove( 'rl-appel' );
+			}
+			if ( astuce ) {
+				astuce.style.transition = 'opacity .5s ease';
+				astuce.style.opacity = '0';
+			}
+		}
+		function boutonEcran( v ) {
+			return section.querySelector( 'a[href*="#rl-format-' + v + '"], a[href*="#rl-langue-' + v + '"]' );
+		}
+		appel = boutonEcran( '9-16' );
+		if ( ! calme && ! editeur && appel && 'IntersectionObserver' in window ) {
+			var hote = appel.parentElement.parentElement.parentElement, vu = false;
+			new IntersectionObserver( function ( entrees, obs ) {
+				if ( ! entrees[ 0 ].isIntersecting || vu || fini ) {
+					return;
+				}
+				vu = true;
+				obs.disconnect();
+				curseur = document.createElement( 'span' );
+				curseur.className = 'rl-curseur';
+				curseur.setAttribute( 'aria-hidden', 'true' );
+				hote.appendChild( curseur );
+				curseur.style.transform = 'translate(' + ( hote.offsetWidth / 2 ) + 'px,' + ( hote.offsetHeight * 0.55 ) + 'px)';
+				var t = 1500;
+				[ '9-16', 'en', '16-9', 'fr' ].forEach( function ( v ) {
+					var cible = boutonEcran( v );
+					if ( ! cible ) {
+						return;
+					}
+					minuteries.push( setTimeout( function () {
+						var r = cible.getBoundingClientRect(), h = hote.getBoundingClientRect();
+						curseur.style.opacity = '1';
+						curseur.style.transform = 'translate(' + ( r.left - h.left + r.width / 2 ) + 'px,' + ( r.top - h.top + r.height / 2 ) + 'px)';
+					}, t ) );
+					minuteries.push( setTimeout( function () {
+						curseur.classList.remove( 'rl-curseur--clic' );
+						void curseur.offsetWidth;
+						curseur.classList.add( 'rl-curseur--clic' );
+						enDemo = true;
+						cible.click();
+						enDemo = false;
+					}, t + 800 ) );
+					t += 1900;
+				} );
+				minuteries.push( setTimeout( function () {
+					curseur.style.opacity = '0';
+					appel.classList.add( 'rl-appel' );
+				}, t ) );
+			}, { threshold: 0.6 } ).observe( ecran );
+		}
 	} );
 
 	/* Webinars : compte à rebours réel jusqu'au début (heure de Paris, calculée dans le navigateur : compatible
@@ -307,6 +376,24 @@
 		if ( maj() && ! editeur ) {
 			var minuterie = setInterval( function () { if ( ! maj() ) { clearInterval( minuterie ); } }, 1000 );
 		}
+	} );
+
+	/* Carte d'une réalisation sans image à la une, vidéo en fichier : l'affiche du thème porte le lien du fichier ;
+	   elle est remplacée par la première image de la vidéo (muette, jamais lue). */
+	document.querySelectorAll( 'img[src*="rl-video="]' ).forEach( function ( img ) {
+		var m = img.getAttribute( 'src' ).match( /[?&]rl-video=([^&]+)/ ), v;
+		if ( ! m ) {
+			return;
+		}
+		v = document.createElement( 'video' );
+		v.className = img.className;
+		v.muted = true;
+		v.preload = 'metadata';
+		v.playsInline = true;
+		v.setAttribute( 'aria-hidden', 'true' );
+		v.setAttribute( 'tabindex', '-1' );
+		v.src = decodeURIComponent( m[ 1 ] ) + '#t=0.1';
+		img.replaceWith( v );
 	} );
 
 	/* Vidéo d'une fiche : chargée seulement au clic (YouTube sans cookie, ou fichier de la médiathèque) */
