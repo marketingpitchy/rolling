@@ -260,6 +260,11 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   4 cartes à liseré de couleur, dernier élément de chaque rubrique ou « Bientôt » non cliquable + bandeau « Me prévenir »
   = bloc HTML HubSpot qui disparaît quand tout est rempli) ; B à la une + 3 raccourcis (prochain webinar > dernier guide >
   dernier article) ; C chutier de montage (onglets dossiers + 3 dernières vignettes ; vide = triste, pour plus tard).
+  Retour : **mix A + B** (les liserés de couleur de A « ne font pas charte » ; garder l'image de B) ⇒ maquette
+  `maquettes/ressources-accueil/ressources-mix.html` (copie /workspace/maquette-ressources-mix.html, **à valider**) :
+  Mix 1 (conseil) grande vignette « à la une » (cadre fin + étiquette + plaque en verre, comme le hero ; prochain webinar >
+  dernier guide > dernier article ; vide = invitation « Me prévenir » HubSpot) + 4 rubriques en cartes de verre avec pictos
+  en verre violet / pêche ; Mix 2 rangée de 4 vignettes avec image, la 1re deux fois plus large (mobile : grande + 3 lignes).
 - **Chargement de page effet film** (demande avant la fin de la livraison 4) : maquette `maquettes/loading/maquette-loading.html`
   (copie /workspace/maquette-loading.html), 4 options : A amorce 3-2-1, B clap qui se ferme puis rideau, C ouverture
   cinéma (bandes noires + REC + timecode + règle avec la tête de lecture rouge des frises, plus de filet fin), D barre de lecture en haut sans écran. Conseil : C à l'arrivée (première page
