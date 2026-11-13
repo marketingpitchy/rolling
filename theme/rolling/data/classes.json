@@ -6286,7 +6286,7 @@
                         }
                     },
                     "custom_css": {
-                        "raw": "JjpoYXMoLmV0aXF1ZXR0ZS1iaWVudG90KSB7IGJhY2tncm91bmQ6IHJnYmEoMjU1LDI1NSwyNTUsMC40NSk7IGJveC1zaGFkb3c6IGluc2V0IDAgMCAwIDFweCByZ2JhKDE1LDE1LDE4LDAuMDYpOyB9ICY6aGFzKC5ldGlxdWV0dGUtYmllbnRvdCk6OmJlZm9yZSB7IGRpc3BsYXk6IG5vbmU7IH0gJjpoYXMoLmV0aXF1ZXR0ZS1iaWVudG90KSAucGljdG8tcnVicmlxdWUgeyBvcGFjaXR5OiAwLjY1OyB9"
+                        "raw": "Jjpub3QoOmhhcyguc2ktY29udGV4dGUpKSB7IGJhY2tncm91bmQ6IHJnYmEoMjU1LDI1NSwyNTUsMC40NSk7IGJveC1zaGFkb3c6IGluc2V0IDAgMCAwIDFweCByZ2JhKDE1LDE1LDE4LDAuMDYpOyB9ICY6bm90KDpoYXMoLnNpLWNvbnRleHRlKSk6OmJlZm9yZSB7IGRpc3BsYXk6IG5vbmU7IH0gJjpub3QoOmhhcyguc2ktY29udGV4dGUpKSAucGljdG8tcnVicmlxdWUgeyBvcGFjaXR5OiAwLjY1OyB9"
                     }
                 }
             ]

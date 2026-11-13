@@ -59,6 +59,7 @@ class Rolling_Dynamique {
 			add_filter( 'elementor/frontend/' . $type . '/should_render', array( __CLASS__, 'partie_facultative' ), 10, 2 );
 		}
 		add_action( 'elementor/frontend/before_render', array( __CLASS__, 'contexte_debut' ) );
+		add_action( 'elementor/preview/enqueue_styles', array( __CLASS__, 'apercu_contextes' ), 20 );
 		add_action( 'elementor/frontend/after_render', array( __CLASS__, 'contexte_fin' ) );
 	}
 
@@ -132,6 +133,31 @@ class Rolling_Dynamique {
 		if ( '' !== self::contexte_de( $element ) ) {
 			array_pop( self::$contextes );
 		}
+	}
+
+	/**
+	 * Aperçu de l'éditeur : l'éditeur affiche toutes les parties facultatives. Dans les conteneurs « contexte-… », seul
+	 * l'état réel reste visible (contenu publié, ou « Bientôt » si la rubrique est vide), comme sur le site.
+	 */
+	public static function apercu_contextes() {
+		$css = '';
+		foreach ( self::CONTEXTES as $nom ) {
+			$id = self::contenu_du_contexte( $nom );
+			$c  = 'html.elementor-html .contexte-' . $nom;
+			if ( $id ) {
+				$type = str_replace( 'rolling_', '', 'post' === get_post_type( $id ) ? 'article' : (string) get_post_type( $id ) );
+				$css .= $c . ' .sans-contexte{display:none!important}';
+				foreach ( array_diff( array( 'article', 'guide', 'webinar' ), array( $type ) ) as $autre ) {
+					$css .= $c . ' .si-type--' . $autre . '{display:none!important}';
+				}
+			} else {
+				$css .= $c . ' .si-contexte,' . $c . ' [class*="si-type--"]{display:none!important}'
+					. $c . '.carte-rubrique{background:rgba(255,255,255,.45)!important;box-shadow:inset 0 0 0 1px rgba(15,15,18,.06)!important}'
+					. $c . '.carte-rubrique::before{display:none!important}'
+					. $c . '.carte-rubrique .picto-rubrique{opacity:.65}';
+			}
+		}
+		wp_add_inline_style( 'rolling-editeur', $css );
 	}
 
 	/**

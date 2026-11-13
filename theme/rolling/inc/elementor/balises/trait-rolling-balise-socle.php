@@ -56,21 +56,38 @@ trait Rolling_Balise_Socle {
 	 * @return int
 	 */
 	protected function contenu() {
+		$source = (string) $this->get_settings( 'source' );
+		if ( in_array( $source, Rolling_Dynamique::CONTEXTES, true ) ) {
+			return Rolling_Dynamique::contenu_du_contexte( $source );
+		}
 		$id = Rolling_Dynamique::contenu_courant();
 
-		return 'temoignage' === $this->get_settings( 'source' ) ? Rolling_Contenus::temoignage_lie( $id ) : $id;
+		return 'temoignage' === $source ? Rolling_Contenus::temoignage_lie( $id ) : $id;
 	}
 
 	/**
-	 * Réglage « Lire dans » : le contenu affiché, ou le témoignage lié à la réalisation affichée.
+	 * Le réglage « Lire dans » désigne un contenu précis (dernier article…) plutôt que le contenu affiché.
+	 *
+	 * @return bool
+	 */
+	protected function source_precise() {
+		return in_array( (string) $this->get_settings( 'source' ), Rolling_Dynamique::CONTEXTES, true );
+	}
+
+	/**
+	 * Réglage « Lire dans » : le contenu affiché, le témoignage lié, ou un contenu précis (dernier article…).
 	 */
 	protected function source() {
 		$this->choix(
 			'source',
 			__( 'Lire dans', 'rolling' ),
 			array(
-				'courant'    => __( 'Le contenu affiché', 'rolling' ),
-				'temoignage' => __( 'Le témoignage lié (sur une fiche réalisation)', 'rolling' ),
+				'courant'          => __( 'Le contenu affiché', 'rolling' ),
+				'temoignage'       => __( 'Le témoignage lié (sur une fiche réalisation)', 'rolling' ),
+				'dernier-article'  => __( 'Le dernier article', 'rolling' ),
+				'dernier-guide'    => __( 'Le dernier guide', 'rolling' ),
+				'prochain-webinar' => __( 'Le prochain webinar', 'rolling' ),
+				'dernier-replay'   => __( 'Le dernier replay', 'rolling' ),
 			)
 		);
 	}

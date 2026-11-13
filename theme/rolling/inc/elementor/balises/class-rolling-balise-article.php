@@ -50,6 +50,7 @@ class Rolling_Balise_Article extends Tag {
 				'lecture_c' => __( 'Temps de lecture court (6 min de lecture)', 'rolling' ),
 			)
 		);
+		$this->source();
 	}
 
 	/**
@@ -80,7 +81,7 @@ class Rolling_Balise_Article extends Tag {
 
 	/** Affichage. */
 	public function render() {
-		$id = ! Rolling_Dynamique::en_contexte() && get_the_ID() && 'elementor_library' !== get_post_type() ? get_the_ID() : $this->contenu();
+		$id = ! $this->source_precise() && ! Rolling_Dynamique::en_contexte() && get_the_ID() && 'elementor_library' !== get_post_type() ? get_the_ID() : $this->contenu();
 		if ( 'elementor_library' === get_post_type( $id ) ) {
 			$dernier = get_posts(
 				array(

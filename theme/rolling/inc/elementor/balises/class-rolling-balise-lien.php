@@ -47,6 +47,7 @@ class Rolling_Balise_Lien extends Data_Tag {
 				'replay'      => __( 'Replay du webinar', 'rolling' ),
 			)
 		);
+		$this->source();
 	}
 
 	/**

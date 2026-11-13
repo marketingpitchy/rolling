@@ -43,6 +43,7 @@ class Rolling_Balise_Titre extends Tag {
 				'titre'  => __( 'Titre seul', 'rolling' ),
 			)
 		);
+		$this->source();
 	}
 
 	/** Affichage. */

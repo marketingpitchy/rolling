@@ -278,6 +278,16 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   Classes : ressources-grille, ressource-une, une-photo, une-sans-photo, plaque-une, titre-une, texte-une,
   grille-rubriques, carte-rubrique (`:has(.etiquette-bientot)` = carte discrète), picto-rubrique, etiquette-bientot.
   `page-essai.php` simule l'écran d'administration (sinon « image: invalid_value » sur les images dynamiques).
+- **0.5.2 (retours 0.5.1)** : grande case du bloc Ressources = **dernier article seulement** (avant : choix automatique
+  prochain webinar > dernier guide > dernier article, sans réglage ; variantes et compte à rebours retirés) ; sans article =
+  invitation « Nos premiers articles arrivent. » + HubSpot ; article sans image à la une ⇒ dégradé (`une-sans-photo` sous
+  l'image, image en `si-image`). Carte Blog = description + lien (pas de doublon du titre). « Bientôt » seulement dans les
+  cartes vides. Balises article / lien / titre / webinar / champ / image : réglage « Lire dans » = dernier article, dernier
+  guide, prochain webinar, dernier replay (`source`, rendu juste aussi dans l'éditeur). **Éditeur** : CSS en ligne de
+  l'aperçu (`Rolling_Dynamique::apercu_contextes`, préfixe `html.elementor-html` : le body de l'aperçu n'a pas
+  `elementor-editor-preview` en 4.3.6) masque les variantes qui ne s'affichent pas sur le site. Carte vide atténuée par
+  `:not(:has(.si-contexte))` (plus `:has(.etiquette-bientot)`, présent dans l'éditeur). La cliente doit remplacer le bloc
+  déjà inséré (la mise à jour ne touche pas aux pages).
 - **Chargement de page effet film** (demande avant la fin de la livraison 4) : maquette `maquettes/loading/maquette-loading.html`
   (copie /workspace/maquette-loading.html), 4 options : A amorce 3-2-1, B clap qui se ferme puis rideau, C ouverture
   cinéma (bandes noires + REC + timecode + règle avec la tête de lecture rouge des frises, plus de filet fin), D barre de lecture en haut sans écran. Conseil : C à l'arrivée (première page

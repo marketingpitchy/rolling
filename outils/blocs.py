@@ -713,11 +713,15 @@ final = F('Appel final', ['section', 'section-sombre', 'section-finale', 'halo-c
 # --------------------------------------------------------------------------------------------
 
 def rubrique(nom, contexte, picto, titre, description, dernier, lien_texte, lien):
+    """Carte d'une rubrique : « Bientôt » si elle est vide. dernier=None : la description reste affichée (blog, dont le
+    dernier article est déjà dans la grande case)."""
+    textes = [P('Rubrique %s · description' % nom, description, ['texte-petit'])] if dernier is None else [
+        P('Rubrique %s · description' % nom, description, ['texte-petit', 'sans-contexte']),
+        P('Rubrique %s · dernier' % nom, dernier, ['texte-petit', 'si-contexte'])]
     return F('Rubrique ' + nom, ['carte-verre', 'carte-rubrique', 'contexte-' + contexte], enfants=[
         I('Rubrique %s · picto' % nom, picto, cls=['picto-rubrique'], taille='medium'),
         H('Rubrique %s · titre' % nom, titre, 'h3', ['titre-xs']),
-        P('Rubrique %s · description' % nom, description, ['texte-petit', 'sans-contexte']),
-        P('Rubrique %s · dernier' % nom, dernier, ['texte-petit', 'si-contexte']),
+        *textes,
         P('Rubrique %s · bientôt' % nom, 'Bientôt', ['etiquette-bientot', 'sans-contexte']),
         B('Rubrique %s · lien' % nom, lien_texte, lien, ['temoin-lien', 'si-contexte'], 'margin-top: auto;'),
     ])
@@ -728,22 +732,15 @@ ressources = F('Ressources', ['section', 'halos-cotes'], tag='section', ancre='r
         entete('Ressources', '00:10', 'Ressources', [('Pour aller plus loin <em>en vidéo.</em>', 'h2', ['titre-lg'])],
                intro='Conseils, guides à télécharger, webinars en direct&nbsp;: nos ressources gratuites pour lancer la vidéo dans vos équipes.'),
         F('Ressources · grille', ['ressources-grille'], 'margin-top: 56px;', enfants=[
-            F('À la une', ['ressource-une', 'contexte-une'], enfants=[
+            F('À la une', ['ressource-une', 'contexte-dernier-article'], enfants=[
                 D('À la une · vignette', ['cadre-verre', 'si-contexte'], enfants=[
-                    D('À la une · photo', ['cadre-photo', 'une-photo'], enfants=[
-                        I('À la une · image', DYN('rolling-image', image='une'), cls=['image-couvrante'], taille='large'),
-                        P('À la une · étiquette webinar', 'Webinar en direct', ['bandeau-video', 'bandeau-rec', 'si-type--webinar']),
-                        P('À la une · étiquette guide', 'Guide à télécharger', ['bandeau-video', 'si-type--guide']),
-                        P('À la une · étiquette article', 'Article', ['bandeau-video', 'si-type--article']),
+                    D('À la une · photo', ['cadre-photo', 'une-photo', 'une-sans-photo'], enfants=[
+                        I('À la une · image', DYN('rolling-image', image='une', source='dernier-article'), cls=['image-couvrante', 'si-image'], taille='large'),
+                        P('À la une · étiquette', 'Dernier article', ['bandeau-video']),
                         F('À la une · plaque', ['plaque-une'], enfants=[
-                            F('À la une · compte à rebours', ['si-type--webinar'], 'padding: 0;', enfants=[W('À la une · compte à rebours · widget', 'rolling-compte-a-rebours')]),
-                            H('À la une · titre', DYN('rolling-article', info='titre'), 'h3', ['titre-une']),
-                            P('À la une · date', DYN('rolling-webinar', info='complete'), ['texte-une', 'si-type--webinar']),
-                            P('À la une · résumé', DYN('rolling-champ', champ='resume'), ['texte-une', 'si-type--guide', 'si-resume']),
-                            P('À la une · lecture', DYN('rolling-article', info='lecture_c'), ['texte-une', 'si-type--article']),
-                            B('À la une · inscription', "Je m'inscris", DYN('rolling-lien', lien='inscription'), ['bouton-soleil', 'bouton-petit', 'si-type--webinar']),
-                            B('À la une · télécharger', 'Télécharger le guide', DYN('rolling-lien', lien='lien'), ['bouton-soleil', 'bouton-petit', 'si-type--guide']),
-                            B('À la une · lire', "Lire l'article", DYN('rolling-lien', lien='fiche'), ['bouton-soleil', 'bouton-petit', 'si-type--article']),
+                            H('À la une · titre', DYN('rolling-article', info='titre', source='dernier-article'), 'h3', ['titre-une']),
+                            P('À la une · lecture', DYN('rolling-article', info='lecture_c', source='dernier-article'), ['texte-une']),
+                            B('À la une · lire', "Lire l'article", DYN('rolling-lien', lien='fiche', source='dernier-article'), ['bouton-soleil', 'bouton-petit']),
                         ]),
                     ]),
                 ]),
@@ -751,7 +748,7 @@ ressources = F('Ressources', ['section', 'halos-cotes'], tag='section', ancre='r
                     D('Invitation · fond', ['cadre-photo', 'une-photo', 'une-sans-photo'], enfants=[
                         P('Invitation · étiquette', 'Bientôt', ['bandeau-video']),
                         F('Invitation · plaque', ['plaque-une'], enfants=[
-                            H('Invitation · titre', 'Nos premiers guides et webinars arrivent.', 'h3', ['titre-une']),
+                            H('Invitation · titre', 'Nos premiers articles arrivent.', 'h3', ['titre-une']),
                             P('Invitation · texte', 'Laissez votre e-mail, nous vous prévenons dès leur sortie.', ['texte-une']),
                             W('Invitation · formulaire HubSpot', 'html', html='Collez ici le code du formulaire HubSpot (cet élément est un bloc HTML).'),
                         ]),
@@ -759,10 +756,10 @@ ressources = F('Ressources', ['section', 'halos-cotes'], tag='section', ancre='r
                 ]),
             ]),
             F('Ressources · rubriques', ['grille-rubriques'], enfants=[
-                rubrique('blog', 'dernier-article', 'picto-blog.webp', 'Le blog', 'Des conseils concrets pour vos vidéos.', DYN('rolling-article', info='titre'), 'Lire le blog', '/blog/'),
-                rubrique('guides', 'dernier-guide', 'picto-guides.webp', 'Les guides', 'Des guides pratiques à télécharger.', DYN('rolling-article', info='titre'), 'Voir les guides', '/guides/'),
-                rubrique('webinars', 'prochain-webinar', 'picto-webinars.webp', 'Les webinars', 'En direct avec nos équipes.', DYN('rolling-webinar', info='complete'), 'Voir les webinars', '/webinars/'),
-                rubrique('replays', 'dernier-replay', 'picto-replays.webp', 'Les replays', 'Les webinars, à revoir.', DYN('rolling-article', info='titre'), 'Voir les replays', '/replays/'),
+                rubrique('blog', 'dernier-article', 'picto-blog.webp', 'Le blog', 'Des conseils concrets pour vos vidéos.', None, 'Lire le blog', '/blog/'),
+                rubrique('guides', 'dernier-guide', 'picto-guides.webp', 'Les guides', 'Des guides pratiques à télécharger.', DYN('rolling-article', info='titre', source='dernier-guide'), 'Voir les guides', '/guides/'),
+                rubrique('webinars', 'prochain-webinar', 'picto-webinars.webp', 'Les webinars', 'En direct avec nos équipes.', DYN('rolling-webinar', info='complete', source='prochain-webinar'), 'Voir les webinars', '/webinars/'),
+                rubrique('replays', 'dernier-replay', 'picto-replays.webp', 'Les replays', 'Les webinars, à revoir.', DYN('rolling-article', info='titre', source='dernier-replay'), 'Voir les replays', '/replays/'),
             ]),
         ]),
     ]),

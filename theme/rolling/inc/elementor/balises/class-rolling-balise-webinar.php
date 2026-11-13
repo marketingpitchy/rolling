@@ -49,6 +49,7 @@ class Rolling_Balise_Webinar extends Tag {
 				'intervenants' => __( 'Intervenants (Thomas, Directeur Artistique, et Sophie, Chef de Projet)', 'rolling' ),
 			)
 		);
+		$this->source();
 	}
 
 	/** Affichage. */
