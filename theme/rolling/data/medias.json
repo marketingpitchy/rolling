@@ -610,5 +610,29 @@
   "fichier": "partage-copier.png",
   "alt": "",
   "titre": "Icône de partage : copier le lien"
+ },
+ {
+  "cle": "picto-blog",
+  "fichier": "picto-blog.webp",
+  "alt": "",
+  "titre": "Picto blog"
+ },
+ {
+  "cle": "picto-guides",
+  "fichier": "picto-guides.webp",
+  "alt": "",
+  "titre": "Picto guides"
+ },
+ {
+  "cle": "picto-webinars",
+  "fichier": "picto-webinars.webp",
+  "alt": "",
+  "titre": "Picto webinars"
+ },
+ {
+  "cle": "picto-replays",
+  "fichier": "picto-replays.webp",
+  "alt": "",
+  "titre": "Picto replays"
  }
 ]

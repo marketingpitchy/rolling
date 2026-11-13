@@ -9,6 +9,7 @@
 // phpcs:disable WordPress.Security.EscapeOutput.OutputNotEscaped, WordPress.WP.GlobalVariablesOverride.Prohibited -- Script de construction lancé en ligne de commande (wp eval-file) sur la copie de test, jamais sur le site.
 
 wp_set_current_user( 1 );
+set_current_screen( 'dashboard' ); // Écran d'administration simulé : Elementor garde alors les réglages complets des balises.
 $cles    = isset( $args[0] ) && $args[0] ? explode( ',', $args[0] ) : array_keys( get_option( 'rolling_modeles', array() ) );
 $suivi   = get_option( 'rolling_modeles', array() );
 $contenu = array();

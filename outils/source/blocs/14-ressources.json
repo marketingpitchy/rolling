@@ -1,0 +1,434 @@
+{
+ "cle": "14-ressources",
+ "titre": "Rolling · Ressources (blog, guides, webinars, replays)",
+ "type": "e-flexbox",
+ "composition": {
+  "xml_structure": "<e-flexbox configuration-id=\"Ressources\"><e-flexbox configuration-id=\"Ressources · contenu\"><e-flexbox configuration-id=\"Ressources · en-tête\"><e-flexbox configuration-id=\"Ressources · repère\"><e-paragraph configuration-id=\"Ressources · timecode\"></e-paragraph><e-paragraph configuration-id=\"Ressources · sur-titre\"></e-paragraph></e-flexbox><e-heading configuration-id=\"Ressources · titre\"></e-heading><e-paragraph configuration-id=\"Ressources · introduction\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Ressources · grille\"><e-flexbox configuration-id=\"À la une\"><e-div-block configuration-id=\"À la une · vignette\"><e-div-block configuration-id=\"À la une · photo\"><e-image configuration-id=\"À la une · image\"></e-image><e-paragraph configuration-id=\"À la une · étiquette webinar\"></e-paragraph><e-paragraph configuration-id=\"À la une · étiquette guide\"></e-paragraph><e-paragraph configuration-id=\"À la une · étiquette article\"></e-paragraph><e-flexbox configuration-id=\"À la une · plaque\"><e-flexbox configuration-id=\"À la une · compte à rebours\"><e-paragraph configuration-id=\"À la une · compte à rebours · widget\"></e-paragraph></e-flexbox><e-heading configuration-id=\"À la une · titre\"></e-heading><e-paragraph configuration-id=\"À la une · date\"></e-paragraph><e-paragraph configuration-id=\"À la une · résumé\"></e-paragraph><e-paragraph configuration-id=\"À la une · lecture\"></e-paragraph><e-button configuration-id=\"À la une · inscription\"></e-button><e-button configuration-id=\"À la une · télécharger\"></e-button><e-button configuration-id=\"À la une · lire\"></e-button></e-flexbox></e-div-block></e-div-block><e-div-block configuration-id=\"À la une · invitation\"><e-div-block configuration-id=\"Invitation · fond\"><e-paragraph configuration-id=\"Invitation · étiquette\"></e-paragraph><e-flexbox configuration-id=\"Invitation · plaque\"><e-heading configuration-id=\"Invitation · titre\"></e-heading><e-paragraph configuration-id=\"Invitation · texte\"></e-paragraph><e-paragraph configuration-id=\"Invitation · formulaire HubSpot\"></e-paragraph></e-flexbox></e-div-block></e-div-block></e-flexbox><e-flexbox configuration-id=\"Ressources · rubriques\"><e-flexbox configuration-id=\"Rubrique blog\"><e-image configuration-id=\"Rubrique blog · picto\"></e-image><e-heading configuration-id=\"Rubrique blog · titre\"></e-heading><e-paragraph configuration-id=\"Rubrique blog · description\"></e-paragraph><e-paragraph configuration-id=\"Rubrique blog · dernier\"></e-paragraph><e-paragraph configuration-id=\"Rubrique blog · bientôt\"></e-paragraph><e-button configuration-id=\"Rubrique blog · lien\"></e-button></e-flexbox><e-flexbox configuration-id=\"Rubrique guides\"><e-image configuration-id=\"Rubrique guides · picto\"></e-image><e-heading configuration-id=\"Rubrique guides · titre\"></e-heading><e-paragraph configuration-id=\"Rubrique guides · description\"></e-paragraph><e-paragraph configuration-id=\"Rubrique guides · dernier\"></e-paragraph><e-paragraph configuration-id=\"Rubrique guides · bientôt\"></e-paragraph><e-button configuration-id=\"Rubrique guides · lien\"></e-button></e-flexbox><e-flexbox configuration-id=\"Rubrique webinars\"><e-image configuration-id=\"Rubrique webinars · picto\"></e-image><e-heading configuration-id=\"Rubrique webinars · titre\"></e-heading><e-paragraph configuration-id=\"Rubrique webinars · description\"></e-paragraph><e-paragraph configuration-id=\"Rubrique webinars · dernier\"></e-paragraph><e-paragraph configuration-id=\"Rubrique webinars · bientôt\"></e-paragraph><e-button configuration-id=\"Rubrique webinars · lien\"></e-button></e-flexbox><e-flexbox configuration-id=\"Rubrique replays\"><e-image configuration-id=\"Rubrique replays · picto\"></e-image><e-heading configuration-id=\"Rubrique replays · titre\"></e-heading><e-paragraph configuration-id=\"Rubrique replays · description\"></e-paragraph><e-paragraph configuration-id=\"Rubrique replays · dernier\"></e-paragraph><e-paragraph configuration-id=\"Rubrique replays · bientôt\"></e-paragraph><e-button configuration-id=\"Rubrique replays · lien\"></e-button></e-flexbox></e-flexbox></e-flexbox></e-flexbox></e-flexbox>",
+  "element_config": {
+   "Ressources": {
+    "_cssid": "ressources",
+    "tag": "section"
+   },
+   "Ressources · timecode": {
+    "paragraph": "00:10"
+   },
+   "Ressources · sur-titre": {
+    "paragraph": "Ressources"
+   },
+   "Ressources · titre": {
+    "tag": "h2",
+    "title": "Pour aller plus loin <em>en vidéo.</em>"
+   },
+   "Ressources · introduction": {
+    "paragraph": "Conseils, guides à télécharger, webinars en direct&nbsp;: nos ressources gratuites pour lancer la vidéo dans vos équipes."
+   },
+   "À la une · image": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/dynamique/rolling-image/image=une.png"
+     },
+     "size": "large"
+    }
+   },
+   "À la une · étiquette webinar": {
+    "paragraph": "Webinar en direct"
+   },
+   "À la une · étiquette guide": {
+    "paragraph": "Guide à télécharger"
+   },
+   "À la une · étiquette article": {
+    "paragraph": "Article"
+   },
+   "À la une · compte à rebours · widget": {
+    "paragraph": "⟦widget:rolling-compte-a-rebours⟧"
+   },
+   "À la une · titre": {
+    "tag": "h3",
+    "title": "⟦rolling-article|info=titre⟧"
+   },
+   "À la une · date": {
+    "paragraph": "⟦rolling-webinar|info=complete⟧"
+   },
+   "À la une · résumé": {
+    "paragraph": "⟦rolling-champ|champ=resume⟧"
+   },
+   "À la une · lecture": {
+    "paragraph": "⟦rolling-article|info=lecture_c⟧"
+   },
+   "À la une · inscription": {
+    "text": "Je m'inscris",
+    "link": {
+     "destination": "⟦rolling-lien|lien=inscription⟧"
+    }
+   },
+   "À la une · télécharger": {
+    "text": "Télécharger le guide",
+    "link": {
+     "destination": "⟦rolling-lien|lien=lien⟧"
+    }
+   },
+   "À la une · lire": {
+    "text": "Lire l'article",
+    "link": {
+     "destination": "⟦rolling-lien|lien=fiche⟧"
+    }
+   },
+   "Invitation · étiquette": {
+    "paragraph": "Bientôt"
+   },
+   "Invitation · titre": {
+    "tag": "h3",
+    "title": "Nos premiers guides et webinars arrivent."
+   },
+   "Invitation · texte": {
+    "paragraph": "Laissez votre e-mail, nous vous prévenons dès leur sortie."
+   },
+   "Invitation · formulaire HubSpot": {
+    "paragraph": "⟦widget:html|html=Collez ici le code du formulaire HubSpot (cet élément est un bloc HTML).⟧"
+   },
+   "Rubrique blog · picto": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/picto-blog.webp"
+     },
+     "size": "medium"
+    }
+   },
+   "Rubrique blog · titre": {
+    "tag": "h3",
+    "title": "Le blog"
+   },
+   "Rubrique blog · description": {
+    "paragraph": "Des conseils concrets pour vos vidéos."
+   },
+   "Rubrique blog · dernier": {
+    "paragraph": "⟦rolling-article|info=titre⟧"
+   },
+   "Rubrique blog · bientôt": {
+    "paragraph": "Bientôt"
+   },
+   "Rubrique blog · lien": {
+    "text": "Lire le blog",
+    "link": {
+     "destination": "/blog/"
+    }
+   },
+   "Rubrique guides · picto": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/picto-guides.webp"
+     },
+     "size": "medium"
+    }
+   },
+   "Rubrique guides · titre": {
+    "tag": "h3",
+    "title": "Les guides"
+   },
+   "Rubrique guides · description": {
+    "paragraph": "Des guides pratiques à télécharger."
+   },
+   "Rubrique guides · dernier": {
+    "paragraph": "⟦rolling-article|info=titre⟧"
+   },
+   "Rubrique guides · bientôt": {
+    "paragraph": "Bientôt"
+   },
+   "Rubrique guides · lien": {
+    "text": "Voir les guides",
+    "link": {
+     "destination": "/guides/"
+    }
+   },
+   "Rubrique webinars · picto": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/picto-webinars.webp"
+     },
+     "size": "medium"
+    }
+   },
+   "Rubrique webinars · titre": {
+    "tag": "h3",
+    "title": "Les webinars"
+   },
+   "Rubrique webinars · description": {
+    "paragraph": "En direct avec nos équipes."
+   },
+   "Rubrique webinars · dernier": {
+    "paragraph": "⟦rolling-webinar|info=complete⟧"
+   },
+   "Rubrique webinars · bientôt": {
+    "paragraph": "Bientôt"
+   },
+   "Rubrique webinars · lien": {
+    "text": "Voir les webinars",
+    "link": {
+     "destination": "/webinars/"
+    }
+   },
+   "Rubrique replays · picto": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/picto-replays.webp"
+     },
+     "size": "medium"
+    }
+   },
+   "Rubrique replays · titre": {
+    "tag": "h3",
+    "title": "Les replays"
+   },
+   "Rubrique replays · description": {
+    "paragraph": "Les webinars, à revoir."
+   },
+   "Rubrique replays · dernier": {
+    "paragraph": "⟦rolling-article|info=titre⟧"
+   },
+   "Rubrique replays · bientôt": {
+    "paragraph": "Bientôt"
+   },
+   "Rubrique replays · lien": {
+    "text": "Voir les replays",
+    "link": {
+     "destination": "/replays/"
+    }
+   }
+  },
+  "classes": {
+   "Ressources": [
+    "section",
+    "halos-cotes"
+   ],
+   "Ressources · contenu": [
+    "conteneur"
+   ],
+   "Ressources · en-tête": [
+    "entete-section"
+   ],
+   "Ressources · repère": [
+    "sur-titre"
+   ],
+   "Ressources · timecode": [
+    "timecode"
+   ],
+   "Ressources · titre": [
+    "titre-lg"
+   ],
+   "Ressources · introduction": [
+    "texte-intro"
+   ],
+   "Ressources · grille": [
+    "ressources-grille"
+   ],
+   "À la une": [
+    "ressource-une",
+    "contexte-une"
+   ],
+   "À la une · vignette": [
+    "cadre-verre",
+    "si-contexte"
+   ],
+   "À la une · photo": [
+    "cadre-photo",
+    "une-photo"
+   ],
+   "À la une · image": [
+    "image-couvrante"
+   ],
+   "À la une · étiquette webinar": [
+    "bandeau-video",
+    "bandeau-rec",
+    "si-type--webinar"
+   ],
+   "À la une · étiquette guide": [
+    "bandeau-video",
+    "si-type--guide"
+   ],
+   "À la une · étiquette article": [
+    "bandeau-video",
+    "si-type--article"
+   ],
+   "À la une · plaque": [
+    "plaque-une"
+   ],
+   "À la une · compte à rebours": [
+    "si-type--webinar"
+   ],
+   "À la une · titre": [
+    "titre-une"
+   ],
+   "À la une · date": [
+    "texte-une",
+    "si-type--webinar"
+   ],
+   "À la une · résumé": [
+    "texte-une",
+    "si-type--guide",
+    "si-resume"
+   ],
+   "À la une · lecture": [
+    "texte-une",
+    "si-type--article"
+   ],
+   "À la une · inscription": [
+    "bouton-soleil",
+    "bouton-petit",
+    "si-type--webinar"
+   ],
+   "À la une · télécharger": [
+    "bouton-soleil",
+    "bouton-petit",
+    "si-type--guide"
+   ],
+   "À la une · lire": [
+    "bouton-soleil",
+    "bouton-petit",
+    "si-type--article"
+   ],
+   "À la une · invitation": [
+    "cadre-verre",
+    "sans-contexte"
+   ],
+   "Invitation · fond": [
+    "cadre-photo",
+    "une-photo",
+    "une-sans-photo"
+   ],
+   "Invitation · étiquette": [
+    "bandeau-video"
+   ],
+   "Invitation · plaque": [
+    "plaque-une"
+   ],
+   "Invitation · titre": [
+    "titre-une"
+   ],
+   "Invitation · texte": [
+    "texte-une"
+   ],
+   "Ressources · rubriques": [
+    "grille-rubriques"
+   ],
+   "Rubrique blog": [
+    "carte-verre",
+    "carte-rubrique",
+    "contexte-dernier-article"
+   ],
+   "Rubrique blog · picto": [
+    "picto-rubrique"
+   ],
+   "Rubrique blog · titre": [
+    "titre-xs"
+   ],
+   "Rubrique blog · description": [
+    "texte-petit",
+    "sans-contexte"
+   ],
+   "Rubrique blog · dernier": [
+    "texte-petit",
+    "si-contexte"
+   ],
+   "Rubrique blog · bientôt": [
+    "etiquette-bientot",
+    "sans-contexte"
+   ],
+   "Rubrique blog · lien": [
+    "temoin-lien",
+    "si-contexte"
+   ],
+   "Rubrique guides": [
+    "carte-verre",
+    "carte-rubrique",
+    "contexte-dernier-guide"
+   ],
+   "Rubrique guides · picto": [
+    "picto-rubrique"
+   ],
+   "Rubrique guides · titre": [
+    "titre-xs"
+   ],
+   "Rubrique guides · description": [
+    "texte-petit",
+    "sans-contexte"
+   ],
+   "Rubrique guides · dernier": [
+    "texte-petit",
+    "si-contexte"
+   ],
+   "Rubrique guides · bientôt": [
+    "etiquette-bientot",
+    "sans-contexte"
+   ],
+   "Rubrique guides · lien": [
+    "temoin-lien",
+    "si-contexte"
+   ],
+   "Rubrique webinars": [
+    "carte-verre",
+    "carte-rubrique",
+    "contexte-prochain-webinar"
+   ],
+   "Rubrique webinars · picto": [
+    "picto-rubrique"
+   ],
+   "Rubrique webinars · titre": [
+    "titre-xs"
+   ],
+   "Rubrique webinars · description": [
+    "texte-petit",
+    "sans-contexte"
+   ],
+   "Rubrique webinars · dernier": [
+    "texte-petit",
+    "si-contexte"
+   ],
+   "Rubrique webinars · bientôt": [
+    "etiquette-bientot",
+    "sans-contexte"
+   ],
+   "Rubrique webinars · lien": [
+    "temoin-lien",
+    "si-contexte"
+   ],
+   "Rubrique replays": [
+    "carte-verre",
+    "carte-rubrique",
+    "contexte-dernier-replay"
+   ],
+   "Rubrique replays · picto": [
+    "picto-rubrique"
+   ],
+   "Rubrique replays · titre": [
+    "titre-xs"
+   ],
+   "Rubrique replays · description": [
+    "texte-petit",
+    "sans-contexte"
+   ],
+   "Rubrique replays · dernier": [
+    "texte-petit",
+    "si-contexte"
+   ],
+   "Rubrique replays · bientôt": [
+    "etiquette-bientot",
+    "sans-contexte"
+   ],
+   "Rubrique replays · lien": [
+    "temoin-lien",
+    "si-contexte"
+   ]
+  },
+  "style": {
+   "Ressources · contenu": "display: flex; flex-direction: column; gap: 0;",
+   "Ressources · introduction": "max-width: 820px;",
+   "Ressources · grille": "margin-top: 56px;",
+   "À la une · compte à rebours": "padding: 0;",
+   "Rubrique blog · lien": "margin-top: auto;",
+   "Rubrique guides · lien": "margin-top: auto;",
+   "Rubrique webinars · lien": "margin-top: auto;",
+   "Rubrique replays · lien": "margin-top: auto;"
+  }
+ },
+ "brut": {}
+}

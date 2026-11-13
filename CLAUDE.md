@@ -265,6 +265,19 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   Mix 1 (conseil) grande vignette « à la une » (cadre fin + étiquette + plaque en verre, comme le hero ; prochain webinar >
   dernier guide > dernier article ; vide = invitation « Me prévenir » HubSpot) + 4 rubriques en cartes de verre avec pictos
   en verre violet / pêche ; Mix 2 rangée de 4 vignettes avec image, la 1re deux fois plus large (mobile : grande + 3 lignes).
+- **0.5.1 : bloc Ressources = Mix 1 validé**, après la FAQ de l'accueil (00:10, dans « Page complète (accueil) ») et
+  utilisable partout (Mes modèles : « Rolling · Ressources (blog, guides, webinars, replays) », clé `14-ressources`).
+  **Contextes** (`Rolling_Dynamique`, crochets `elementor/frontend/before_render` / `after_render`) : une classe repère
+  `contexte-une | contexte-dernier-article | contexte-dernier-guide | contexte-prochain-webinar | contexte-dernier-replay`
+  posée sur un conteneur empile un contenu ; `contenu_courant()` renvoie le haut de la pile ⇒ toutes les balises et repères
+  existants lisent ce contenu le temps du conteneur (« une » = prochain webinar > dernier guide > dernier article ;
+  0 si rien de publié). Repères `si-contexte` / `sans-contexte` (« Bientôt », invitation « Me prévenir » = widget HTML
+  HubSpot) et `si-type--webinar|guide|article`. La balise Article lisait `get_the_ID()` ⇒ passe par le contexte
+  (`en_contexte()`). Pictos en verre `picto-blog|guides|webinars|replays.webp` capturés depuis la maquette
+  (`outils/pictos-ressources.js` + `outils/captures/ressources.json`, marge transparente 24 px pour l'ombre).
+  Classes : ressources-grille, ressource-une, une-photo, une-sans-photo, plaque-une, titre-une, texte-une,
+  grille-rubriques, carte-rubrique (`:has(.etiquette-bientot)` = carte discrète), picto-rubrique, etiquette-bientot.
+  `page-essai.php` simule l'écran d'administration (sinon « image: invalid_value » sur les images dynamiques).
 - **Chargement de page effet film** (demande avant la fin de la livraison 4) : maquette `maquettes/loading/maquette-loading.html`
   (copie /workspace/maquette-loading.html), 4 options : A amorce 3-2-1, B clap qui se ferme puis rideau, C ouverture
   cinéma (bandes noires + REC + timecode + règle avec la tête de lecture rouge des frises, plus de filet fin), D barre de lecture en haut sans écran. Conseil : C à l'arrivée (première page

@@ -58,6 +58,132 @@ class Rolling_Dynamique {
 		foreach ( array( 'e-flexbox', 'e-div-block', 'widget' ) as $type ) {
 			add_filter( 'elementor/frontend/' . $type . '/should_render', array( __CLASS__, 'partie_facultative' ), 10, 2 );
 		}
+		add_action( 'elementor/frontend/before_render', array( __CLASS__, 'contexte_debut' ) );
+		add_action( 'elementor/frontend/after_render', array( __CLASS__, 'contexte_fin' ) );
+	}
+
+	/**
+	 * Pile des contextes en cours (id du contenu, 0 si la rubrique est vide).
+	 *
+	 * @var int[]
+	 */
+	private static $contextes = array();
+
+	/**
+	 * Contextes reconnus : classe repère « contexte-… » posée sur un conteneur. Le temps de ce conteneur, les balises
+	 * et les repères « si-… » lisent ce contenu au lieu de la page (ex. le bloc Ressources de l'accueil).
+	 */
+	const CONTEXTES = array( 'une', 'dernier-article', 'dernier-guide', 'prochain-webinar', 'dernier-replay' );
+
+	/**
+	 * Nom du contexte porté par un élément (classe « contexte-… »), sinon chaîne vide.
+	 *
+	 * @param \Elementor\Element_Base $element Élément.
+	 * @return string
+	 */
+	private static function contexte_de( $element ) {
+		static $libelles = null;
+
+		if ( null === $libelles ) {
+			$libelles = array();
+			$depot    = '\\Elementor\\Modules\\GlobalClasses\\Global_Classes_Repository';
+			if ( class_exists( $depot ) ) {
+				foreach ( $depot::make()->all()->get_items()->all() as $id => $classe ) {
+					$label = (string) ( $classe['label'] ?? '' );
+					if ( 0 === strpos( $label, 'contexte-' ) && in_array( substr( $label, 9 ), self::CONTEXTES, true ) ) {
+						$libelles[ $id ] = substr( $label, 9 );
+					}
+				}
+			}
+		}
+		if ( ! $libelles ) {
+			return '';
+		}
+
+		$reglages = $element->get_settings();
+		$classes  = $reglages['classes']['value'] ?? ( $reglages['classes'] ?? array() );
+		foreach ( is_array( $classes ) ? $classes : array() as $classe ) {
+			if ( isset( $libelles[ $classe ] ) ) {
+				return $libelles[ $classe ];
+			}
+		}
+
+		return '';
+	}
+
+	/**
+	 * Entrée dans un conteneur « contexte-… » : empile le contenu choisi.
+	 *
+	 * @param \Elementor\Element_Base $element Élément.
+	 */
+	public static function contexte_debut( $element ) {
+		$nom = self::contexte_de( $element );
+		if ( '' !== $nom ) {
+			self::$contextes[] = self::contenu_du_contexte( $nom );
+		}
+	}
+
+	/**
+	 * Sortie du conteneur : dépile.
+	 *
+	 * @param \Elementor\Element_Base $element Élément.
+	 */
+	public static function contexte_fin( $element ) {
+		if ( '' !== self::contexte_de( $element ) ) {
+			array_pop( self::$contextes );
+		}
+	}
+
+	/**
+	 * Un conteneur « contexte-… » est-il en cours d'affichage ?
+	 *
+	 * @return bool
+	 */
+	public static function en_contexte() {
+		return (bool) self::$contextes;
+	}
+
+	/**
+	 * Contenu d'un contexte : « une » = prochain webinar, sinon dernier guide, sinon dernier article.
+	 *
+	 * @param string $nom Contexte.
+	 * @return int 0 si rien n'est publié.
+	 */
+	public static function contenu_du_contexte( $nom ) {
+		$dernier = function ( $type ) {
+			$ids = get_posts(
+				array(
+					'post_type'      => $type,
+					'post_status'    => 'publish',
+					'posts_per_page' => 1,
+					'fields'         => 'ids',
+					'no_found_rows'  => true,
+				)
+			);
+			return $ids ? (int) $ids[0] : 0;
+		};
+
+		switch ( $nom ) {
+			case 'dernier-article':
+				return $dernier( 'post' );
+			case 'dernier-guide':
+				return $dernier( 'rolling_guide' );
+			case 'prochain-webinar':
+				$ids = Rolling_Webinars::liste( 'a_venir', 1 );
+				return $ids ? (int) $ids[0] : 0;
+			case 'dernier-replay':
+				$ids = Rolling_Webinars::liste( 'replay', 1 );
+				return $ids ? (int) $ids[0] : 0;
+			case 'une':
+				foreach ( array( 'prochain-webinar', 'dernier-guide', 'dernier-article' ) as $suivant ) {
+					$id = self::contenu_du_contexte( $suivant );
+					if ( $id ) {
+						return $id;
+					}
+				}
+		}
+
+		return 0;
 	}
 
 	/**
@@ -115,6 +241,10 @@ class Rolling_Dynamique {
 	 * @return int
 	 */
 	public static function contenu_courant() {
+		if ( self::$contextes ) {
+			return (int) end( self::$contextes );
+		}
+
 		$id = (int) get_the_ID();
 
 		if ( $id && 'elementor_library' === get_post_type( $id ) ) {
@@ -222,6 +352,12 @@ class Rolling_Dynamique {
 		$reste    = substr( $repere, $sans ? 5 : 3 );
 		$morceaux = explode( '--', $reste, 2 );
 
+		if ( isset( $morceaux[1] ) && 'type' === $morceaux[0] ) {
+			// « si-type--webinar » : type du contenu courant (article, guide, webinar, realisation, temoignage).
+			$type = (string) get_post_type( self::contenu_courant() );
+			$egal = str_replace( 'rolling_', '', 'post' === $type ? 'article' : $type ) === $morceaux[1];
+			return $sans ? ! $egal : $egal;
+		}
 		if ( isset( $morceaux[1] ) ) {
 			$egal = (string) Rolling_Contenus::valeur( str_replace( '-', '_', $morceaux[0] ), self::contenu_courant() ) === $morceaux[1];
 			return $sans ? ! $egal : $egal;
@@ -242,6 +378,10 @@ class Rolling_Dynamique {
 		$cle = str_replace( '-', '_', $cle );
 		$id  = self::contenu_courant();
 
+		if ( 'contexte' === $cle ) {
+			// « si-contexte » : le conteneur « contexte-… » a trouvé un contenu publié.
+			return ! $id;
+		}
 		if ( 'image' === $cle ) {
 			return ! has_post_thumbnail( $id );
 		}

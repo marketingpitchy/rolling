@@ -80,7 +80,7 @@ class Rolling_Balise_Article extends Tag {
 
 	/** Affichage. */
 	public function render() {
-		$id = get_the_ID() && 'elementor_library' !== get_post_type() ? get_the_ID() : $this->contenu();
+		$id = ! Rolling_Dynamique::en_contexte() && get_the_ID() && 'elementor_library' !== get_post_type() ? get_the_ID() : $this->contenu();
 		if ( 'elementor_library' === get_post_type( $id ) ) {
 			$dernier = get_posts(
 				array(
