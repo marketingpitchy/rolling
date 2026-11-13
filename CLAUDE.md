@@ -348,6 +348,14 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   carte (max 440 px centré, iframe 680 px, padding 52/10/10) et `timecode-coin` **à l'intérieur** en haut à droite.
   Fond rose chez la cliente : chez moi la même adresse donne une carte blanche ⇒ cause hors thème (réglage HubSpot ou
   navigateur / extension) ; test proposé : ouvrir le lien HubSpot seul.
+- **Maquettes (après 0.5.7, à valider, HubSpot « all good »)** : écran « Votre vidéo » à rendre visiblement cliquable
+  (`maquettes/ecran-cliquable/ecran-cliquable.html`, copie /workspace/maquette-ecran-cliquable.html ; capture 1 de la cliente
+  non reçue, supposée = cet écran) : A flèche manuscrite Caveat « Essayez un autre format ! » + bouton 9:16 qui respire
+  (conseil), B démo qui se lance seule (curseur qui clique 9:16, EN, retour), C boutons plus parlants (consigne, formes des
+  formats, reflet) ; tout s'efface au 1er clic. Chargement jugé trop rapide et bandes en 2 temps
+  (`maquettes/loading/loading-v2.html`, copie /workspace/maquette-loading-v2.html) : cause = fond du centre qui s'efface
+  avant les bandes + palier à 76 % dans `rl-intro-haut/bas` ⇒ B 2,1 s (conseil) / C 2,5 s : bandes seules en noir, une
+  ouverture continue cubic-bezier(.76,0,.24,1) pendant que le logo s'efface.
 - **Chargement de page effet film** (demande avant la fin de la livraison 4) : maquette `maquettes/loading/maquette-loading.html`
   (copie /workspace/maquette-loading.html), 4 options : A amorce 3-2-1, B clap qui se ferme puis rideau, C ouverture
   cinéma (bandes noires + REC + timecode + règle avec la tête de lecture rouge des frises, plus de filet fin), D barre de lecture en haut sans écran. Conseil : C à l'arrivée (première page
