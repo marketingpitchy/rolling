@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bloc Ressources</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Caveat:wght@700&family=Hanken+Grotesk:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root { --encre: #0F0F12; --paragraphe: #4A4858; --discret: #6E6B7B; --surface: #FAF9F7; --violet: #5B3BEA; --orange: #E0562A; --bleu: #3434E0; --mauve: #8E4DE6; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: "Hanken Grotesk", system-ui, sans-serif; color: var(--encre); background: #EEEBE6; line-height: 1.6; }
+.tete, .option { max-width: 1280px; margin: 0 auto; padding: 0 20px; }
+.tete { padding-top: 56px; }
+h1.m { font-family: "Bricolage Grotesque"; font-weight: 650; font-size: clamp(32px, 4vw, 52px); letter-spacing: -.05em; line-height: 1.06; }
+h1.m em, h2 em { font-style: normal; background: linear-gradient(95deg, #5B3BEA, #8E4DE6 42%, #E0562A); -webkit-background-clip: text; background-clip: text; color: transparent; padding: 0 .06em; margin: 0 -.06em; }
+.intro { margin-top: 16px; max-width: 840px; font-size: 18px; color: var(--paragraphe); }
+.regles { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+.regles span { padding: 6px 14px; border-radius: 999px; font-size: 14px; font-weight: 600; background: #fff; box-shadow: inset 0 0 0 1px rgba(15,15,18,.1); }
+.option { margin-top: 64px; }
+.option > h2.t { font-family: "Bricolage Grotesque"; font-weight: 650; font-size: 28px; letter-spacing: -.035em; line-height: 1.2; }
+.lettre { display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; margin-right: 8px; border-radius: 50%; font-size: 15px; color: #fff; background: linear-gradient(140deg, #5B3BEA, #8E4DE6); vertical-align: 4px; }
+.conseil > h2.t::after { content: "Notre conseil"; margin-left: 10px; padding: 3px 10px; border-radius: 999px; font: 700 12px "Hanken Grotesk"; letter-spacing: .06em; text-transform: uppercase; color: #fff; background: var(--orange); vertical-align: 5px; }
+.desc { margin-top: 8px; max-width: 920px; font-size: 16px; color: var(--paragraphe); }
+.outils { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+button.btn { cursor: pointer; border: 0; padding: 9px 16px; border-radius: 999px; font: 700 14px "Hanken Grotesk"; background: #fff; color: var(--encre); box-shadow: inset 0 0 0 1px rgba(15,15,18,.12); }
+button.btn[aria-pressed="true"] { background: var(--encre); color: #fff; }
+.annot { margin-top: 12px; font-size: 14px; color: var(--paragraphe); } .annot li { margin: 4px 0 0 18px; }
+
+/* Scène : un morceau de page d'accueil */
+.scene { margin-top: 16px; border-radius: 24px; overflow: hidden; background: var(--surface); box-shadow: 0 30px 60px -40px rgba(30,20,80,.45); transition: max-width .3s; max-width: 100%; }
+.scene[data-taille="mobile"] { max-width: 390px; }
+.sec { position: relative; padding: 96px 56px 104px; isolation: isolate; }
+.scene[data-taille="mobile"] .sec { padding: 72px 20px 80px; }
+.sec::before { content: ""; position: absolute; z-index: -1; inset: 0; background: radial-gradient(45% 50% at 0% 10%, rgba(196,181,253,.35), transparent 70%), radial-gradient(40% 50% at 100% 90%, rgba(255,162,122,.25), transparent 70%); }
+.reperes { display: flex; align-items: center; gap: 12px; font-size: 12px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: var(--discret); }
+.reperes b { padding: 4px 10px; border-radius: 999px; background: #fff; color: var(--violet); letter-spacing: .02em; box-shadow: 0 4px 14px -8px rgba(60,30,140,.4); }
+.reperes i { width: 28px; height: 1px; background: rgba(15,15,18,.2); }
+.sec h2 { margin-top: 20px; font: 650 clamp(32px, 4vw, 52px)/1.06 "Bricolage Grotesque"; letter-spacing: -.05em; }
+.scene[data-taille="mobile"] .sec h2 { font-size: 32px; }
+.sec .chapeau { margin-top: 16px; max-width: 620px; font-size: 18px; color: var(--paragraphe); }
+.scene[data-taille="mobile"] .sec .chapeau { font-size: 16px; }
+.etiq { display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; border-radius: 999px; font-size: 12px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+.bientot { color: #6E6B7B; background: rgba(15,15,18,.06); align-self: flex-start; }
+.lien { display: inline-flex; align-items: center; gap: 6px; font-weight: 700; font-size: 15px; color: var(--encre); text-decoration: none; }
+.lien::after { content: "→"; transition: transform .25s; }
+a.carte:hover .lien::after { transform: translateX(4px); }
+.icone { width: 46px; height: 46px; border-radius: 14px; display: grid; place-items: center; color: #fff; flex: none; box-shadow: inset 0 1px 0 rgba(255,255,255,.5), 0 10px 20px -10px rgba(40,20,120,.6); }
+.icone svg { width: 22px; height: 22px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.k1 { background: linear-gradient(140deg, #5B3BEA, #8E4DE6); } .k2 { background: linear-gradient(140deg, #8E4DE6, #B5459E); } .k3 { background: linear-gradient(140deg, #3434E0, #5B3BEA); } .k4 { background: linear-gradient(140deg, #E0562A, #FF8A5B); }
+.vide .si-contenu { display: none !important; } .plein .si-vide { display: none !important; }
+.pilule-tc { display: inline-flex; gap: 6px; align-items: center; padding: 3px 10px; border-radius: 999px; font: 700 12px "Hanken Grotesk"; color: #fff; background: #16112C; font-variant-numeric: tabular-nums; }
+.pilule-tc::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: #FF3B30; }
+
+/* Zone d'inscription (HubSpot) */
+.prevenu { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px 24px; margin-top: 28px; padding: 22px 26px; border-radius: 22px; background: #16112C; color: #fff; }
+.prevenu p { font: 650 19px/1.3 "Bricolage Grotesque"; letter-spacing: -.02em; }
+.prevenu p small { display: block; margin-top: 4px; font: 400 14px "Hanken Grotesk"; color: #C9C3DE; letter-spacing: 0; }
+.formulaire { display: flex; gap: 8px; flex: 1 1 320px; max-width: 460px; padding: 6px; border-radius: 999px; background: rgba(255,255,255,.1); box-shadow: inset 0 0 0 1px rgba(255,255,255,.18); }
+.formulaire span { flex: 1; padding: 8px 14px; font-size: 14px; color: #B6B0CC; }
+.formulaire b { padding: 9px 16px; border-radius: 999px; font-size: 14px; color: #0F0F12; background: linear-gradient(100deg, #FFD1BF, #FF8A5B); }
+.zone-note { margin-top: 6px; font: 700 20px "Caveat"; color: #D9531F; }
+
+/* A · Les 4 portes */
+.a .grille { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-top: 48px; }
+.scene[data-taille="mobile"].a .grille, .scene[data-taille="mobile"].a .grille { grid-template-columns: 1fr 1fr; gap: 12px; }
+.a .carte { position: relative; display: flex; flex-direction: column; gap: 14px; padding: 24px 22px 22px; border-radius: 26px; text-decoration: none; color: inherit; background: linear-gradient(150deg, rgba(255,255,255,.85), rgba(255,255,255,.55)); box-shadow: inset 0 1px 0 #fff, 0 30px 60px -36px rgba(76,48,170,.4); transition: transform .4s cubic-bezier(.2,.8,.2,1); overflow: hidden; }
+.a a.carte:hover { transform: translateY(-6px); }
+.a .carte::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 5px; background: var(--c); }
+.a .carte h3 { font: 650 23px/1.15 "Bricolage Grotesque"; letter-spacing: -.035em; }
+.a .carte p.txt { font-size: 15px; color: var(--paragraphe); }
+.a .carte .dernier { margin-top: auto; padding: 12px 14px; border-radius: 14px; background: rgba(91,59,234,.06); font-size: 14px; line-height: 1.35; }
+.a .carte .dernier small { display: block; margin-bottom: 4px; font-size: 12px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--discret); }
+.a .carte.inactive { background: rgba(255,255,255,.5); box-shadow: inset 0 0 0 1px rgba(15,15,18,.06); }
+.a .carte.inactive .icone { filter: grayscale(.6); opacity: .7; }
+.scene[data-taille="mobile"].a .carte { padding: 18px 16px; gap: 10px; border-radius: 20px; }
+.scene[data-taille="mobile"].a .carte h3 { font-size: 19px; }
+.scene[data-taille="mobile"].a .carte p.txt { display: none; }
+.scene[data-taille="mobile"].a .carte .dernier { font-size: 13px; padding: 10px; }
+
+/* B · À la une + 3 */
+.b .grille { display: grid; grid-template-columns: 1.25fr 1fr; gap: 22px; margin-top: 48px; }
+.scene[data-taille="mobile"].b .grille { grid-template-columns: minmax(0, 1fr); }
+.b .liste, .b .ligne, .b .une { min-width: 0; }
+.b .une { position: relative; display: flex; flex-direction: column; justify-content: flex-end; min-height: 380px; padding: 28px; border-radius: 30px; overflow: hidden; color: #fff; text-decoration: none; background: #16112C url(hero-mobile-imgs/hero-interview.jpg) center 30% / cover; box-shadow: 0 40px 70px -40px rgba(30,20,80,.7); }
+.b .une::before { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(22,14,52,.15) 20%, rgba(22,14,52,.88) 100%); }
+.b .une > * { position: relative; }
+.scene[data-taille="mobile"].b .une { min-height: 320px; padding: 22px; }
+.scene[data-taille="mobile"].b .une h3 { font-size: 24px; }
+.b .une h3 { margin-top: 12px; font: 650 30px/1.1 "Bricolage Grotesque"; letter-spacing: -.04em; }
+.b .une p { margin-top: 8px; font-size: 15px; color: #E9E2FF; }
+.b .une .lien { color: #fff; margin-top: 16px; }
+.b .une .formulaire { flex: none; align-self: stretch; }
+.b .une > .pilule-tc, .b .une > .etiq { align-self: flex-start; }
+.b .une.vide-une { background: linear-gradient(150deg, #2A1F5C, #16112C); justify-content: center; }
+.b .une.vide-une::before { background: radial-gradient(60% 60% at 80% 20%, rgba(255,138,91,.35), transparent 70%), radial-gradient(50% 60% at 10% 90%, rgba(91,59,234,.5), transparent 70%); }
+.b .liste { display: flex; flex-direction: column; gap: 12px; }
+.b .ligne { display: flex; align-items: center; gap: 16px; padding: 18px 20px; border-radius: 22px; text-decoration: none; color: inherit; background: rgba(255,255,255,.75); box-shadow: inset 0 1px 0 #fff, 0 20px 40px -30px rgba(76,48,170,.4); transition: transform .3s; }
+.b a.ligne:hover { transform: translateX(4px); }
+.b .ligne div { flex: 1; min-width: 0; }
+.b .ligne h3 { font: 650 19px/1.2 "Bricolage Grotesque"; letter-spacing: -.03em; }
+.b .ligne p { font-size: 14px; color: var(--paragraphe); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.b .ligne .fl { font-weight: 800; }
+
+/* C · Le chutier de montage */
+.c .chutier { display: grid; grid-template-columns: 240px 1fr; margin-top: 48px; border-radius: 26px; overflow: hidden; background: #16112C; color: #fff; box-shadow: 0 40px 70px -40px rgba(30,20,80,.7); }
+.scene[data-taille="mobile"].c .chutier { grid-template-columns: 1fr; }
+.c .dossiers { padding: 18px 12px; background: rgba(255,255,255,.04); border-right: 1px solid rgba(255,255,255,.08); }
+.scene[data-taille="mobile"].c .dossiers { display: flex; gap: 6px; overflow-x: auto; border-right: 0; border-bottom: 1px solid rgba(255,255,255,.08); }
+.c .dossiers .titre { padding: 0 10px 10px; font-size: 12px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: #8F89A8; }
+.scene[data-taille="mobile"].c .dossiers .titre { display: none; }
+.c .dos { display: flex; align-items: center; gap: 10px; width: 100%; padding: 10px; border: 0; border-radius: 12px; background: none; color: #C9C3DE; font: 600 15px "Hanken Grotesk"; text-align: left; cursor: pointer; white-space: nowrap; }
+.c .dos[aria-selected="true"] { background: rgba(255,255,255,.1); color: #fff; }
+.c .dos i { width: 12px; height: 12px; border-radius: 3px; background: var(--c); flex: none; }
+.c .dos em { margin-left: auto; font-style: normal; font-size: 12px; color: #8F89A8; font-variant-numeric: tabular-nums; }
+.c .contenu { padding: 22px; min-height: 300px; }
+.c .barre-ch { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; font-size: 13px; color: #B6B0CC; }
+.c .barre-ch .lien { color: #fff; font-size: 14px; }
+.c .grille { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.scene[data-taille="mobile"].c .grille { grid-template-columns: 1fr; }
+.c .elt { display: block; text-decoration: none; color: #fff; }
+.c .elt .vig { position: relative; aspect-ratio: 16 / 10; border-radius: 12px; background: #2A2233 center / cover; overflow: hidden; }
+.c .elt .vig .tc { position: absolute; right: 6px; bottom: 6px; padding: 2px 6px; border-radius: 6px; font: 700 12px "Hanken Grotesk"; background: rgba(15,15,18,.7); }
+.c .elt p { margin-top: 8px; font-size: 14px; line-height: 1.35; }
+.c .panneau { display: none; } .c .panneau.actif { display: block; }
+.c .vide-ch { display: grid; place-items: center; min-height: 230px; padding: 24px; text-align: center; border: 1.5px dashed rgba(255,255,255,.18); border-radius: 16px; color: #C9C3DE; }
+.c .vide-ch b { display: block; font: 650 20px "Bricolage Grotesque"; color: #fff; letter-spacing: -.02em; }
+
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+</head>
+<body>
+<header class="tete">
+  <h1 class="m">Accueil : un bloc <em>Ressources.</em></h1>
+  <p class="intro">Un bloc qui renvoie vers le blog, les guides, les webinars et les replays. Vous n’avez pas encore de contenus : chaque proposition se montre donc dans ses deux états. Utilisez les boutons « Sans contenu » / « Avec contenus » pour passer de l’un à l’autre, et « Ordinateur » / « Mobile » pour la taille. Place proposée : après la FAQ, juste avant l’appel final (timecode 00:10).</p>
+  <div class="regles"><span>Se remplit tout seul quand vous publiez</span><span>Rien ne pointe vers une page vide</span><span>Textes modifiables dans Elementor</span></div>
+</header>
+
+<!-- A -->
+<section class="option conseil" id="opt-a">
+  <h2 class="t"><span class="lettre">A</span>Les 4 portes</h2>
+  <p class="desc">Quatre cartes, une par rubrique, avec un liseré de couleur comme les clips de nos frises. Dès que la rubrique a du contenu, la carte affiche le dernier article, le dernier guide, le prochain webinar (avec son compte à rebours) ou le dernier replay, et devient cliquable. Tant qu’elle est vide, elle affiche « Bientôt », n’est pas cliquable, et un bandeau propose d’être prévenu (formulaire HubSpot).</p>
+  <div class="outils" data-cible="sa"><button class="btn" aria-pressed="true" data-etat="vide">Sans contenu</button><button class="btn" aria-pressed="false" data-etat="plein">Avec contenus</button><button class="btn" aria-pressed="true" data-taille="ordi">Ordinateur</button><button class="btn" aria-pressed="false" data-taille="mobile">Mobile</button></div>
+  <div class="scene a vide" id="sa"><div class="sec">
+    <div class="reperes"><b>00:10</b><i></i>Ressources</div>
+    <h2>Pour aller plus loin <em>en vidéo.</em></h2>
+    <p class="chapeau">Conseils, guides à télécharger, webinars en direct : nos ressources gratuites pour lancer la vidéo dans vos équipes.</p>
+    <div class="grille">
+      <div class="carte inactive si-vide" style="--c:#5B3BEA"><span class="icone k1"><svg viewBox="0 0 24 24"><path d="M4 5h11a3 3 0 0 1 3 3v11H7a3 3 0 0 1-3-3z"/><path d="M8 9h6M8 13h6"/></svg></span><h3>Le blog</h3><p class="txt">Des conseils concrets pour vos vidéos internes, RH et marketing.</p><span class="etiq bientot">Bientôt</span></div>
+      <a class="carte si-contenu" href="#" style="--c:#5B3BEA"><span class="icone k1"><svg viewBox="0 0 24 24"><path d="M4 5h11a3 3 0 0 1 3 3v11H7a3 3 0 0 1-3-3z"/><path d="M8 9h6M8 13h6"/></svg></span><h3>Le blog</h3><p class="txt">Des conseils concrets pour vos vidéos internes, RH et marketing.</p><p class="dernier"><small>Dernier article</small>Comment transformer un module de formation en 5 vidéos</p><span class="lien">Lire le blog</span></a>
+
+      <div class="carte inactive si-vide" style="--c:#8E4DE6"><span class="icone k2"><svg viewBox="0 0 24 24"><path d="M12 4v11M7 10l5 5 5-5"/><path d="M5 19h14"/></svg></span><h3>Les guides</h3><p class="txt">Des guides pratiques à télécharger, étape par étape.</p><span class="etiq bientot">Bientôt</span></div>
+      <a class="carte si-contenu" href="#" style="--c:#8E4DE6"><span class="icone k2"><svg viewBox="0 0 24 24"><path d="M12 4v11M7 10l5 5 5-5"/><path d="M5 19h14"/></svg></span><h3>Les guides</h3><p class="txt">Des guides pratiques à télécharger, étape par étape.</p><p class="dernier"><small>Nouveau · 24 pages</small>Le guide de l’onboarding en vidéo</p><span class="lien">Voir les guides</span></a>
+
+      <div class="carte inactive si-vide" style="--c:#3434E0"><span class="icone k3"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="13" height="12" rx="3"/><path d="M16 10l5-3v10l-5-3"/></svg></span><h3>Les webinars</h3><p class="txt">En direct avec nos équipes : méthodes, exemples, vos questions.</p><span class="etiq bientot">Bientôt</span></div>
+      <a class="carte si-contenu" href="#" style="--c:#3434E0"><span class="icone k3"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="13" height="12" rx="3"/><path d="M16 10l5-3v10l-5-3"/></svg></span><h3>Les webinars</h3><p class="txt">En direct avec nos équipes : méthodes, exemples, vos questions.</p><p class="dernier"><small>Prochain · 12 déc. · 11:00</small><span class="pilule-tc">Début dans 28j 04:32:10</span></p><span class="lien">Voir les webinars</span></a>
+
+      <div class="carte inactive si-vide" style="--c:#E0562A"><span class="icone k4"><svg viewBox="0 0 24 24"><path d="M4 12a8 8 0 1 0 3-6.2"/><path d="M4 4v4h4"/><path d="M10 9l5 3-5 3z"/></svg></span><h3>Les replays</h3><p class="txt">Les webinars passés, à revoir quand vous voulez.</p><span class="etiq bientot">Bientôt</span></div>
+      <a class="carte si-contenu" href="#" style="--c:#E0562A"><span class="icone k4"><svg viewBox="0 0 24 24"><path d="M4 12a8 8 0 1 0 3-6.2"/><path d="M4 4v4h4"/><path d="M10 9l5 3-5 3z"/></svg></span><h3>Les replays</h3><p class="txt">Les webinars passés, à revoir quand vous voulez.</p><p class="dernier"><small>Dernier replay</small>La vidéo interne qui est vraiment regardée</p><span class="lien">Voir les replays</span></a>
+    </div>
+    <div class="prevenu si-vide"><p>Nos premiers guides et webinars arrivent.<small>Laissez votre e-mail, nous vous prévenons.</small></p><div class="formulaire"><span>votre@entreprise.fr</span><b>Me prévenir</b></div></div>
+    <p class="zone-note si-vide">↑ bloc HTML : vous y collez votre formulaire HubSpot (supprimable)</p>
+  </div></div>
+  <ul class="annot"><li>Fonctionne dès aujourd’hui, sans contenu, et s’enrichit seul.</li><li>Chaque carte bascule toute seule de « Bientôt » à « active » dès la première publication de sa rubrique.</li><li>Le bandeau « prévenu » disparaît tout seul quand les 4 rubriques ont du contenu (ou vous le supprimez).</li></ul>
+</section>
+
+<!-- B -->
+<section class="option" id="opt-b">
+  <h2 class="t"><span class="lettre">B</span>À la une, plus 3 raccourcis</h2>
+  <p class="desc">Une grande carte photo met en avant la ressource la plus utile du moment, choisie dans cet ordre : le prochain webinar (avec compte à rebours), sinon le dernier guide, sinon le dernier article. À droite, trois lignes mènent aux autres rubriques. Sans contenu, la grande carte devient l’invitation à être prévenu.</p>
+  <div class="outils" data-cible="sb"><button class="btn" aria-pressed="true" data-etat="vide">Sans contenu</button><button class="btn" aria-pressed="false" data-etat="plein">Avec contenus</button><button class="btn" aria-pressed="true" data-taille="ordi">Ordinateur</button><button class="btn" aria-pressed="false" data-taille="mobile">Mobile</button></div>
+  <div class="scene b vide" id="sb"><div class="sec">
+    <div class="reperes"><b>00:10</b><i></i>Ressources</div>
+    <h2>Pour aller plus loin <em>en vidéo.</em></h2>
+    <p class="chapeau">Conseils, guides à télécharger, webinars en direct : nos ressources gratuites pour lancer la vidéo dans vos équipes.</p>
+    <div class="grille">
+      <a class="une si-contenu" href="#"><span class="pilule-tc">Début dans 28j 04:32:10</span><h3>Webinar : la vidéo interne qui est vraiment regardée.</h3><p>Jeudi 12 décembre · 11:00 · 45 minutes, avec Thomas et Sophie.</p><span class="lien">Je m’inscris</span></a>
+      <div class="une vide-une si-vide"><span class="etiq" style="color:#FFD1BF;background:rgba(255,255,255,.1)">Bientôt</span><h3>Nos premiers guides et webinars arrivent.</h3><p>Laissez votre e-mail, nous vous prévenons dès leur sortie.</p><div class="formulaire" style="margin-top:18px"><span>votre@entreprise.fr</span><b>Me prévenir</b></div></div>
+      <div class="liste">
+        <a class="ligne si-contenu" href="#"><span class="icone k1"><svg viewBox="0 0 24 24"><path d="M4 5h11a3 3 0 0 1 3 3v11H7a3 3 0 0 1-3-3z"/><path d="M8 9h6M8 13h6"/></svg></span><div><h3>Le blog</h3><p>Comment transformer un module de formation en 5 vidéos</p></div><span class="fl">→</span></a>
+        <a class="ligne si-contenu" href="#"><span class="icone k2"><svg viewBox="0 0 24 24"><path d="M12 4v11M7 10l5 5 5-5"/><path d="M5 19h14"/></svg></span><div><h3>Les guides</h3><p>Le guide de l’onboarding en vidéo · 24 pages</p></div><span class="fl">→</span></a>
+        <a class="ligne si-contenu" href="#"><span class="icone k4"><svg viewBox="0 0 24 24"><path d="M4 12a8 8 0 1 0 3-6.2"/><path d="M4 4v4h4"/><path d="M10 9l5 3-5 3z"/></svg></span><div><h3>Les replays</h3><p>La vidéo interne qui est vraiment regardée</p></div><span class="fl">→</span></a>
+        <div class="ligne si-vide"><span class="icone k1"><svg viewBox="0 0 24 24"><path d="M4 5h11a3 3 0 0 1 3 3v11H7a3 3 0 0 1-3-3z"/><path d="M8 9h6M8 13h6"/></svg></span><div><h3>Le blog</h3><p>Des conseils concrets pour vos vidéos</p></div><span class="etiq bientot">Bientôt</span></div>
+        <div class="ligne si-vide"><span class="icone k2"><svg viewBox="0 0 24 24"><path d="M12 4v11M7 10l5 5 5-5"/><path d="M5 19h14"/></svg></span><div><h3>Les guides</h3><p>Des guides pratiques à télécharger</p></div><span class="etiq bientot">Bientôt</span></div>
+        <div class="ligne si-vide"><span class="icone k3"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="13" height="12" rx="3"/><path d="M16 10l5-3v10l-5-3"/></svg></span><div><h3>Webinars et replays</h3><p>En direct, puis à revoir</p></div><span class="etiq bientot">Bientôt</span></div>
+      </div>
+    </div>
+  </div></div>
+  <ul class="annot"><li>Plus visuel et plus « magazine », mais une seule ressource vraiment mise en avant.</li><li>Il faut une belle image par webinar et par guide (image à la une).</li></ul>
+</section>
+
+<!-- C -->
+<section class="option" id="opt-c">
+  <h2 class="t"><span class="lettre">C</span>Le chutier de montage</h2>
+  <p class="desc">Un panneau sombre façon logiciel de montage : à gauche, 4 dossiers (Blog, Guides, Webinars, Replays) avec leur nombre d’éléments ; à droite, les 3 derniers éléments du dossier choisi, en vignettes avec timecode. Le plus « Rolling », le plus riche une fois rempli. Cliquez sur les dossiers.</p>
+  <div class="outils" data-cible="sc"><button class="btn" aria-pressed="true" data-etat="vide">Sans contenu</button><button class="btn" aria-pressed="false" data-etat="plein">Avec contenus</button><button class="btn" aria-pressed="true" data-taille="ordi">Ordinateur</button><button class="btn" aria-pressed="false" data-taille="mobile">Mobile</button></div>
+  <div class="scene c vide" id="sc"><div class="sec">
+    <div class="reperes"><b>00:10</b><i></i>Ressources</div>
+    <h2>Pour aller plus loin <em>en vidéo.</em></h2>
+    <p class="chapeau">Conseils, guides à télécharger, webinars en direct : nos ressources gratuites pour lancer la vidéo dans vos équipes.</p>
+    <div class="chutier">
+      <div class="dossiers" role="tablist"><p class="titre">Ressources</p>
+        <button class="dos" role="tab" aria-selected="true" data-p="0" style="--c:#5B3BEA"><i></i>Blog<em class="si-contenu">12</em><em class="si-vide">0</em></button>
+        <button class="dos" role="tab" aria-selected="false" data-p="1" style="--c:#8E4DE6"><i></i>Guides<em class="si-contenu">4</em><em class="si-vide">0</em></button>
+        <button class="dos" role="tab" aria-selected="false" data-p="2" style="--c:#3434E0"><i></i>Webinars<em class="si-contenu">2</em><em class="si-vide">0</em></button>
+        <button class="dos" role="tab" aria-selected="false" data-p="3" style="--c:#E0562A"><i></i>Replays<em class="si-contenu">6</em><em class="si-vide">0</em></button>
+      </div>
+      <div class="contenu">
+        <div class="panneau actif"><div class="barre-ch"><span>Blog · derniers articles</span><a class="lien si-contenu" href="#">Tout le blog</a></div>
+          <div class="grille si-contenu"><a class="elt" href="#"><div class="vig" style="background-image:url(hero-mobile-imgs/hero-tournage.jpg)"><span class="tc">6 min</span></div><p>Comment transformer un module de formation en 5 vidéos</p></a><a class="elt" href="#"><div class="vig" style="background-image:url(hero-mobile-imgs/hero-interview.jpg)"><span class="tc">4 min</span></div><p>Réussir l’interview d’un dirigeant en 30 minutes</p></a><a class="elt" href="#"><div class="vig" style="background-image:url(hero-mobile-imgs/hero-demo-produit.jpg)"><span class="tc">5 min</span></div><p>Démo produit : 3 erreurs à éviter</p></a></div>
+          <div class="vide-ch si-vide"><div><b>Premiers articles très bientôt.</b>Ce dossier se remplit dès votre première publication.</div></div></div>
+        <div class="panneau"><div class="barre-ch"><span>Guides · à télécharger</span><a class="lien si-contenu" href="#">Tous les guides</a></div>
+          <div class="grille si-contenu"><a class="elt" href="#"><div class="vig" style="background-image:url(hero-mobile-imgs/hero-interview.jpg)"><span class="tc">24 p.</span></div><p>Le guide de l’onboarding en vidéo</p></a></div>
+          <div class="vide-ch si-vide"><div><b>Premiers guides très bientôt.</b>Ce dossier se remplit dès votre première publication.</div></div></div>
+        <div class="panneau"><div class="barre-ch"><span>Webinars · à venir</span><a class="lien si-contenu" href="#">Tous les webinars</a></div>
+          <div class="grille si-contenu"><a class="elt" href="#"><div class="vig" style="background-image:url(hero-mobile-imgs/hero-tournage.jpg)"><span class="tc">12 déc.</span></div><p>La vidéo interne qui est vraiment regardée</p></a></div>
+          <div class="vide-ch si-vide"><div><b>Aucun webinar programmé.</b>Le prochain s’affichera ici avec son compte à rebours.</div></div></div>
+        <div class="panneau"><div class="barre-ch"><span>Replays · à revoir</span><a class="lien si-contenu" href="#">Tous les replays</a></div>
+          <div class="grille si-contenu"><a class="elt" href="#"><div class="vig" style="background-image:url(hero-mobile-imgs/hero-demo-produit.jpg)"><span class="tc">45:12</span></div><p>Lancer la vidéo dans les équipes RH</p></a></div>
+          <div class="vide-ch si-vide"><div><b>Pas encore de replay.</b>Les webinars passés arriveront ici.</div></div></div>
+      </div>
+    </div>
+  </div></div>
+  <ul class="annot"><li>Sans contenu, le panneau paraît vide : à réserver à plus tard, quand chaque rubrique aura quelques éléments.</li><li>Les dossiers sont de vrais onglets (accessibles au clavier).</li></ul>
+</section>
+<div style="height:80px"></div>
+<script>
+document.querySelectorAll('.outils').forEach(o => {
+  const s = document.getElementById(o.dataset.cible);
+  o.querySelectorAll('[data-etat]').forEach(b => b.addEventListener('click', () => {
+    s.classList.toggle('vide', b.dataset.etat === 'vide'); s.classList.toggle('plein', b.dataset.etat === 'plein');
+    o.querySelectorAll('[data-etat]').forEach(x => x.setAttribute('aria-pressed', x === b));
+  }));
+  o.querySelectorAll('[data-taille]').forEach(b => b.addEventListener('click', () => {
+    s.dataset.taille = b.dataset.taille === 'mobile' ? 'mobile' : '';
+    o.querySelectorAll('[data-taille]').forEach(x => x.setAttribute('aria-pressed', x === b));
+  }));
+});
+document.querySelectorAll('.chutier').forEach(c => c.querySelectorAll('.dos').forEach(d => d.addEventListener('click', () => {
+  c.querySelectorAll('.dos').forEach(x => x.setAttribute('aria-selected', x === d));
+  c.querySelectorAll('.panneau').forEach((p, i) => p.classList.toggle('actif', i === +d.dataset.p));
+})));
+</script>
+</body>
+</html>

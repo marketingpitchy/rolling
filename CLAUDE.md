@@ -254,6 +254,12 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   perf mobile 74-87 sans cache ; redirections 301, 404, plan du site, robots) ⇒ /workspace/livraison-5-recette.html
   (résultats + liste de contrôle avant / pendant / après la mise en ligne). Lighthouse : scratchpad/lh (npm lighthouse,
   CHROME_PATH=/opt/pw-browsers/chromium). Adresses réelles : /agence/ (L'agence), /agence-video/ (landing).
+- **Maquette « Bloc Ressources de l'accueil »** (`maquettes/ressources-accueil/ressources.html`, copie
+  /workspace/maquette-ressources-accueil.html, **à valider**) : bloc 00:10 entre la FAQ et l'appel final, vers blog,
+  guides, webinars, replays (pas encore de contenus ⇒ chaque option montrée vide / remplie). A les 4 portes (conseil :
+  4 cartes à liseré de couleur, dernier élément de chaque rubrique ou « Bientôt » non cliquable + bandeau « Me prévenir »
+  = bloc HTML HubSpot qui disparaît quand tout est rempli) ; B à la une + 3 raccourcis (prochain webinar > dernier guide >
+  dernier article) ; C chutier de montage (onglets dossiers + 3 dernières vignettes ; vide = triste, pour plus tard).
 - **Chargement de page effet film** (demande avant la fin de la livraison 4) : maquette `maquettes/loading/maquette-loading.html`
   (copie /workspace/maquette-loading.html), 4 options : A amorce 3-2-1, B clap qui se ferme puis rideau, C ouverture
   cinéma (bandes noires + REC + timecode + règle avec la tête de lecture rouge des frises, plus de filet fin), D barre de lecture en haut sans écran. Conseil : C à l'arrivée (première page
