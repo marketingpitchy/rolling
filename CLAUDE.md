@@ -313,7 +313,12 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   clap noir et blanc jugé hors charte ⇒ A clap en verre clair (conseil : barre rayée violet / verre, valeurs Caveat
   orange foncé, timecode REC qui tourne en pied) ; B plaque timecode en verre fumé sans clap (REC, scène manuscrite,
   compteur vers 30:00 + barre de progression) ; C clap en verre fumé (barre en dégradé violet → pêche, timecode en pilule).
-  Problème signalé sur l'accueil (13/11) : capture non reçue, source HTML reçue ⇒ description demandée.
+  Problème du 13/11 (« site cassé sur toutes les pages, bon dans l'éditeur ») : **parenthèse manquante dans le CSS
+  personnalisé de la classe `timecode`** modifiée par la cliente (`box-shadow: var(--rl-etiquette-ombre, … #000000;` sans `)`)
+  ⇒ en 4.4 toutes les classes d'une page sont dans un seul fichier `global-<id>-frontend-*.css` : une parenthèse
+  ouverte avale toutes les classes écrites après (ordre inverse : titres, textes, boutons, section-sombre…). L'éditeur
+  rend chaque classe à part ⇒ rien ne s'y voit. Idée : avertissement dans l'administration si un CSS de classe a des
+  parenthèses / accolades non fermées.
 - **Chargement de page effet film** (demande avant la fin de la livraison 4) : maquette `maquettes/loading/maquette-loading.html`
   (copie /workspace/maquette-loading.html), 4 options : A amorce 3-2-1, B clap qui se ferme puis rideau, C ouverture
   cinéma (bandes noires + REC + timecode + règle avec la tête de lecture rouge des frises, plus de filet fin), D barre de lecture en haut sans écran. Conseil : C à l'arrivée (première page
