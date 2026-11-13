@@ -309,6 +309,11 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   durée sur photo dans une pilule sombre. Outils : `scratchpad/tools/contraste-page.js <url> <largeur>` (tous les textes,
   pire pixel sous le texte, dégradés compris) et `scratchpad/fonds2.js <urls>` (fond uni vu par les outils simples).
   Reste : colonne sombre du tableau des offres (bande = `::before`, pas de fond sur les cases ; contraste réel bon).
+- **Maquette « Clap de la page Contact »** (`maquettes/clap/clap.html`, copie /workspace/maquette-clap.html, **à valider**) :
+  clap noir et blanc jugé hors charte ⇒ A clap en verre clair (conseil : barre rayée violet / verre, valeurs Caveat
+  orange foncé, timecode REC qui tourne en pied) ; B plaque timecode en verre fumé sans clap (REC, scène manuscrite,
+  compteur vers 30:00 + barre de progression) ; C clap en verre fumé (barre en dégradé violet → pêche, timecode en pilule).
+  Problème signalé sur l'accueil (13/11) : capture non reçue, source HTML reçue ⇒ description demandée.
 - **Chargement de page effet film** (demande avant la fin de la livraison 4) : maquette `maquettes/loading/maquette-loading.html`
   (copie /workspace/maquette-loading.html), 4 options : A amorce 3-2-1, B clap qui se ferme puis rideau, C ouverture
   cinéma (bandes noires + REC + timecode + règle avec la tête de lecture rouge des frises, plus de filet fin), D barre de lecture en haut sans écran. Conseil : C à l'arrivée (première page

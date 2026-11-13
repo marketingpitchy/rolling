@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Clap de la page Contact</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Caveat:wght@700&family=Hanken+Grotesk:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root { --encre: #0F0F12; --paragraphe: #4A4858; --legende: #5F5C6C; --surface: #FAF9F7; --violet: #5B3BEA; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: "Hanken Grotesk", system-ui, sans-serif; color: var(--encre); background: #EEEBE6; line-height: 1.6; }
+.tete, .option { max-width: 1180px; margin: 0 auto; padding: 0 20px; }
+.tete { padding-top: 56px; }
+h1 { font: 650 clamp(32px, 4vw, 52px)/1.06 "Bricolage Grotesque"; letter-spacing: -.05em; }
+h1 em { font-style: normal; background: linear-gradient(95deg, #5B3BEA, #6F3FD6 42%, #C94A1E); -webkit-background-clip: text; background-clip: text; color: transparent; padding: 0 .06em; margin: 0 -.06em; }
+.intro { margin-top: 16px; max-width: 860px; font-size: 18px; color: var(--paragraphe); }
+.outils { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+button.btn { cursor: pointer; border: 0; padding: 9px 16px; border-radius: 999px; font: 700 14px "Hanken Grotesk"; background: #fff; color: var(--encre); box-shadow: inset 0 0 0 1px rgba(15,15,18,.12); }
+.option { margin-top: 64px; }
+.option > h2 { font: 650 28px/1.2 "Bricolage Grotesque"; letter-spacing: -.035em; }
+.lettre { display: inline-flex; align-items: center; justify-content: center; min-width: 32px; height: 32px; padding: 0 8px; margin-right: 8px; border-radius: 999px; font-size: 15px; color: #fff; background: linear-gradient(135deg, #5B3BEA, #8E4DE6); }
+.conseil > h2::after { content: "Notre conseil"; margin-left: 10px; padding: 3px 10px; border-radius: 999px; font: 700 12px "Hanken Grotesk"; letter-spacing: .06em; text-transform: uppercase; color: #fff; background: var(--violet); vertical-align: middle; }
+.desc { margin-top: 8px; max-width: 900px; font-size: 16px; color: var(--paragraphe); }
+
+/* Scène : la colonne du calendrier de la page Contact, sur le fond de la page. */
+.scene { position: relative; margin-top: 18px; padding: 72px 48px 56px; border-radius: 24px; overflow: hidden; isolation: isolate; background: var(--surface); box-shadow: 0 30px 60px -40px rgba(30,20,80,.45); }
+.scene::before { content: ""; position: absolute; z-index: -1; inset: 0; background: radial-gradient(40% 55% at 85% 10%, rgba(196,181,253,.55), transparent 70%), radial-gradient(40% 50% at 10% 95%, rgba(255,162,122,.4), transparent 70%); }
+.colonne { display: flex; flex-direction: column; max-width: 560px; margin: 0 auto; }
+.calendrier { position: relative; display: flex; flex-direction: column; gap: 14px; min-height: 420px; padding: 72px 30px 34px; border-radius: 32px; background: linear-gradient(150deg, rgba(255,255,255,.72), rgba(255,255,255,.5)); backdrop-filter: blur(22px) saturate(180%); box-shadow: inset 0 1.5px 0 rgba(255,255,255,.95), inset 0 0 0 1px rgba(255,255,255,.6), 0 30px 60px -30px rgba(40,20,110,.4); }
+.calendrier b { font: 650 20px "Bricolage Grotesque"; letter-spacing: -.02em; }
+.cal-grille { display: grid; grid-template-columns: repeat(7, 1fr); gap: 8px; margin-top: 6px; }
+.cal-grille i { aspect-ratio: 1; border-radius: 10px; background: rgba(15,15,18,.05); }
+.cal-grille i.dispo { background: rgba(91,59,234,.14); }
+.cal-note { font-size: 14px; color: var(--legende); }
+
+/* Commun : le clap se pose sur le coin du calendrier. */
+.clap { position: relative; z-index: 2; align-self: flex-end; width: min(340px, 100%); margin: 0 18px -46px 0; padding-top: 30px; transform: rotate(3deg); }
+.barre { position: absolute; top: 0; left: 0; right: 0; height: 26px; border-radius: 8px 8px 2px 2px; transform-origin: 8px 100%; transform: rotate(-14deg); transition: transform .5s cubic-bezier(.5,-.4,.6,1.6) .3s; }
+.clap.ferme .barre { transform: rotate(0); }
+.cases { display: grid; grid-template-columns: 1.6fr .7fr 1fr; }
+.cases > div { display: flex; flex-direction: column; padding: 8px 14px 10px; }
+.cases > div + div { border-left: 1px solid var(--filet); }
+.nom { font-size: 12px; line-height: 1.3; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--nom); }
+.val { font: 700 27px/1.1 "Caveat"; white-space: nowrap; color: var(--val); }
+.tc { display: inline-flex; align-items: center; gap: 8px; width: fit-content; padding: 5px 12px; border-radius: 999px; font: 700 12px/1 "Hanken Grotesk"; letter-spacing: .06em; font-variant-numeric: tabular-nums; }
+.tc::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: #FF3B30; box-shadow: 0 0 0 3px rgba(255,59,48,.22); animation: rec 1.2s steps(2) infinite; }
+@keyframes rec { 50% { opacity: .25; } }
+
+/* A · Clap en verre clair */
+.a { --filet: rgba(91,59,234,.16); --nom: #5F5C6C; --val: #A63C14; filter: drop-shadow(0 18px 26px rgba(40,20,110,.28)); }
+.a .corps { border-radius: 4px 4px 22px 22px; padding: 12px 0 12px; background: linear-gradient(150deg, rgba(255,255,255,.78) 0%, rgba(255,255,255,.52) 55%, rgba(255,255,255,.66) 100%); backdrop-filter: blur(22px) saturate(190%); box-shadow: inset 0 1.5px 0 rgba(255,255,255,.95), inset 0 0 0 1.5px rgba(255,255,255,.7), inset 0 -10px 24px rgba(196,181,253,.25); }
+.a .barre { background: repeating-linear-gradient(-55deg, rgba(91,59,234,.9) 0 16px, rgba(255,255,255,.75) 16px 32px); backdrop-filter: blur(14px); box-shadow: inset 0 0 0 1.5px rgba(255,255,255,.85), inset 0 1px 0 #fff; }
+.a .pied { display: flex; justify-content: space-between; align-items: center; padding: 6px 14px 0; border-top: 1px solid var(--filet); margin-top: 4px; }
+.a .tc { color: #4A2BB8; background: linear-gradient(170deg, rgba(255,255,255,.95), rgba(255,255,255,.6)); box-shadow: inset 0 1px 0 #fff, inset 0 0 0 1px rgba(91,59,234,.16); }
+.a .pied small { font-size: 12px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--legende); }
+
+/* B · Plaque timecode (sans clap) */
+.b { width: min(360px, 100%); padding-top: 0; transform: rotate(-2deg); filter: drop-shadow(0 18px 26px rgba(40,20,110,.28)); }
+.b .barre { display: none; }
+.b .plaque { display: flex; flex-direction: column; gap: 6px; padding: 16px 20px 18px; border-radius: 24px; background: linear-gradient(160deg, rgba(22,14,52,.66), rgba(22,14,52,.46)); backdrop-filter: blur(18px) saturate(175%); box-shadow: inset 0 1px 0 rgba(255,255,255,.85), inset 0 0 0 1px rgba(255,255,255,.3); color: #fff; }
+.b .ligne { display: flex; justify-content: space-between; align-items: center; font-size: 12px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: #E9E2FF; }
+.b .ligne .tc { padding: 0; background: none; color: #fff; letter-spacing: .14em; }
+.b .grand { font: 650 40px/1 "Bricolage Grotesque"; letter-spacing: -.02em; font-variant-numeric: tabular-nums; }
+.b .grand span { font-size: .5em; color: #C9C3DE; margin-left: 4px; }
+.b .scene-txt { font: 700 27px/1.1 "Caveat"; color: #FFD1BF; }
+.b .progression { height: 4px; border-radius: 4px; background: rgba(255,255,255,.2); overflow: hidden; margin-top: 4px; }
+.b .progression i { display: block; height: 100%; width: 0; border-radius: inherit; background: linear-gradient(90deg, #C4B5FD, #FFA27A); transition: width .2s linear; }
+
+/* C · Clap en verre fumé */
+.c { --filet: rgba(255,255,255,.16); --nom: #C9C3DE; --val: #FFD1BF; filter: drop-shadow(0 18px 26px rgba(20,10,60,.35)); }
+.c .corps { border-radius: 4px 4px 22px 22px; padding: 12px 0 12px; background: linear-gradient(160deg, rgba(22,14,52,.7), rgba(22,14,52,.5)); backdrop-filter: blur(18px) saturate(175%); box-shadow: inset 0 1px 0 rgba(255,255,255,.85), inset 0 0 0 1px rgba(255,255,255,.3); }
+.c .barre { background: repeating-linear-gradient(-55deg, rgba(255,255,255,.88) 0 16px, transparent 16px 32px), linear-gradient(90deg, #5B3BEA, #8E4DE6 50%, #FF8A5B); box-shadow: inset 0 0 0 1.5px rgba(255,255,255,.6); }
+.c .pied { display: flex; justify-content: flex-end; padding: 6px 14px 0; border-top: 1px solid var(--filet); margin-top: 4px; }
+.c .tc { color: #fff; background: rgba(255,255,255,.12); box-shadow: inset 0 0 0 1px rgba(255,255,255,.22); }
+
+@media (max-width: 700px) { .scene { padding: 56px 16px 40px; } .clap { margin-right: 6px; } }
+@media (prefers-reduced-motion: reduce) { .barre { transition: none; } .tc::before { animation: none; } }
+</style>
+</head>
+<body>
+<div class="tete">
+  <h1>Le clap de la page Contact, <em>en verre.</em></h1>
+  <p class="intro">Le clap noir et blanc ne collait pas à la charte. Trois propositions en verre, posées sur le coin du calendrier HubSpot, avec un timecode qui tourne. Tout reste modifiable dans Elementor (textes et valeurs), et tout s'arrête avec « réduire les animations ».</p>
+  <div class="outils"><button class="btn" type="button" id="rejouer">Rejouer le clap</button></div>
+</div>
+
+<section class="option conseil">
+  <h2><span class="lettre">A</span>Clap en verre clair</h2>
+  <p class="desc">Même clap, même place, mais dans la matière des cadres de la charte : verre clair, liseré blanc, barre rayée violet et verre. En bas, un timecode qui tourne avec le point rouge « REC », comme sur les vignettes du site.</p>
+  <div class="scene"><div class="colonne">
+    <div class="clap a"><div class="barre"></div><div class="corps">
+      <div class="cases"><div><span class="nom">Scène</span><span class="val">Votre échange</span></div><div><span class="nom">Prise</span><span class="val">1</span></div><div><span class="nom">Durée</span><span class="val">30:00</span></div></div>
+      <div class="pied"><small>Rolling</small><span class="tc" data-tc>00:00:00:00</span></div>
+    </div></div>
+    <div class="calendrier"><b>Choisissez un créneau</b><div class="cal-grille"><i></i><i></i><i class="dispo"></i><i></i><i class="dispo"></i><i></i><i></i><i></i><i class="dispo"></i><i></i><i></i><i class="dispo"></i><i></i><i></i><i class="dispo"></i><i></i><i></i><i></i><i class="dispo"></i><i></i><i></i></div><p class="cal-note">Calendrier HubSpot (exemple)</p></div>
+  </div></div>
+</section>
+
+<section class="option">
+  <h2><span class="lettre">B</span>Plaque timecode, sans clap</h2>
+  <p class="desc">Plus de clap : une plaque en verre fumé, comme celles posées sur les photos du hero. « REC », la scène écrite à la main, et un compteur qui défile vers les 30 minutes de l'échange, avec une barre de progression aux couleurs de la charte.</p>
+  <div class="scene"><div class="colonne">
+    <div class="clap b"><div class="barre"></div><div class="plaque">
+      <div class="ligne"><span class="tc" data-tc>00:00:00:00</span><span>Prise 1</span></div>
+      <span class="scene-txt">Votre échange</span>
+      <span class="grand" data-compte>00:00<span>/ 30:00</span></span>
+      <span class="progression"><i data-barre></i></span>
+    </div></div>
+    <div class="calendrier"><b>Choisissez un créneau</b><div class="cal-grille"><i></i><i></i><i class="dispo"></i><i></i><i class="dispo"></i><i></i><i></i><i></i><i class="dispo"></i><i></i><i></i><i class="dispo"></i><i></i><i></i><i class="dispo"></i><i></i><i></i><i></i><i class="dispo"></i><i></i><i></i></div><p class="cal-note">Calendrier HubSpot (exemple)</p></div>
+  </div></div>
+</section>
+
+<section class="option">
+  <h2><span class="lettre">C</span>Clap en verre fumé</h2>
+  <p class="desc">Le clap garde sa forme, en verre fumé violet. La barre prend le dégradé violet → pêche de la charte, et le timecode passe en pilule sous les cases.</p>
+  <div class="scene"><div class="colonne">
+    <div class="clap c"><div class="barre"></div><div class="corps">
+      <div class="cases"><div><span class="nom">Scène</span><span class="val">Votre échange</span></div><div><span class="nom">Prise</span><span class="val">1</span></div><div><span class="nom">Durée</span><span class="val">30:00</span></div></div>
+      <div class="pied"><span class="tc" data-tc>00:00:00:00</span></div>
+    </div></div>
+    <div class="calendrier"><b>Choisissez un créneau</b><div class="cal-grille"><i></i><i></i><i class="dispo"></i><i></i><i class="dispo"></i><i></i><i></i><i></i><i class="dispo"></i><i></i><i></i><i class="dispo"></i><i></i><i></i><i class="dispo"></i><i></i><i></i><i></i><i class="dispo"></i><i></i><i></i></div><p class="cal-note">Calendrier HubSpot (exemple)</p></div>
+  </div></div>
+</section>
+<p style="height:80px"></p>
+
+<script>
+(function () {
+  var reduit = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var claps = document.querySelectorAll('.clap');
+  function fermer() { claps.forEach(function (c) { c.classList.remove('ferme'); void c.offsetWidth; setTimeout(function () { c.classList.add('ferme'); }, 50); }); }
+  document.getElementById('rejouer').addEventListener('click', fermer);
+  if (reduit) { claps.forEach(function (c) { c.classList.add('ferme'); }); return; }
+  fermer();
+  var t0 = performance.now(), deux = function (n) { return ('0' + n).slice(-2); };
+  (function tic(n) {
+    var ms = n - t0, s = Math.floor(ms / 1000), f = Math.floor((ms % 1000) / 40);
+    var tc = '00:' + deux(Math.floor(s / 60)) + ':' + deux(s % 60) + ':' + deux(f);
+    document.querySelectorAll('[data-tc]').forEach(function (e) { e.textContent = tc; });
+    var sim = (s * 20) % 1800; /* l'échange de 30 minutes défile en 90 s */
+    document.querySelectorAll('[data-compte]').forEach(function (e) { e.firstChild.nodeValue = deux(Math.floor(sim / 60)) + ':' + deux(sim % 60); });
+    document.querySelectorAll('[data-barre]').forEach(function (e) { e.style.width = (sim / 18) + '%'; });
+    requestAnimationFrame(tic);
+  }(t0));
+}());
+</script>
+</body>
+</html>
