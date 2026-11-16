@@ -1538,7 +1538,7 @@ contact_haut = F('Contact · échange', ['section', 'section-entete', 'entete-pa
         ]),
         F('Contact · calendrier', ['contact-cote'], enfants=[
             F('Contact · emplacement', ['carte-verre', 'zone-calendrier'], enfants=[
-                P('Contact · timecode', '00:00:00:00', ['timecode', 'timecode-rec', 'timecode-coin']),
+                P('Contact · timecode', '00:30:00', ['timecode', 'timecode-rec', 'timecode-coin']),
                 W('Contact · calendrier HubSpot', 'html', html='Collez ici le code du calendrier HubSpot (cet élément est un bloc HTML).'),
             ]),
         ]),

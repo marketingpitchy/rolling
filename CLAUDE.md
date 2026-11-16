@@ -372,7 +372,7 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   retire que son filtre ; cartes : balise Image « une » sans image à la une ⇒ miniature YouTube, sinon
   `assets/img/affiche-video.webp?rl-video=<fichier>` remplacée par rolling.js par la 1re image (`video` muette) ; repère
   `si-image` vrai aussi si la réalisation a une vidéo. i.ytimg.com bloqué dans mon environnement (non visible ici).
-  Timecode du formulaire jugé stressant ⇒ propositions faites (figé, lent, une seule fois).
+  Timecode du formulaire jugé stressant ⇒ **A (figé) choisi** (0.5.12).
 - **0.5.9** : astuce de l'écran replacée (ordinateur : à gauche des boutons, flèche vers le groupe Format, left -162 /
   top -24 ; sous 1024 px : une ligne en 28 px, petite flèche vers le bas centrée dessous). Cartes « on voit pas les images »
   chez la cliente (affiche d'attente restée : le remplacement par rolling.js ne s'est pas fait chez elle, cause non
@@ -411,6 +411,11 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   rebours en bas `compte-visuel` ; textes `webinar-textes`, `webinar-bas`) ; nouveau widget **Intervenants**
   (`rolling-intervenants`, pastilles d'initiales `avatars-initiales`, classe `intervenants-webinar`). Image à la une
   facultative. **Image du thème** : `screenshot.png` 1200×900 (logo sur carte en verre, halos), rendue par Playwright.
+- **0.5.12** : timecode du formulaire Contact = **option A (figé)** : texte « 00:30:00 » (durée de l'échange), point REC
+  fixe (plus d'animation `rl-clignote` dans `timecode-rec`), défilement retiré de rolling.js (la cliente change le texte
+  de son élément). Vignettes des cartes (`vignette-lien`) : voile `cadre-photo::after` allégé (34 % / 30 % au lieu de
+  55 / 60 + teintes) ; image d'un fichier vidéo prise à 2 s (`#t=2`, cartes et widget Vidéo en « image fixe ») au lieu de
+  0,1 s (souvent noire). Image à la une d'une réalisation = vignette des cartes (prioritaire sur la vidéo).
 - **Chargement de page effet film** (demande avant la fin de la livraison 4) : maquette `maquettes/loading/maquette-loading.html`
   (copie /workspace/maquette-loading.html), 4 options : A amorce 3-2-1, B clap qui se ferme puis rideau, C ouverture
   cinéma (bandes noires + REC + timecode + règle avec la tête de lecture rouge des frises, plus de filet fin), D barre de lecture en haut sans écran. Conseil : C à l'arrivée (première page

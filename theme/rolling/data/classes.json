@@ -5624,7 +5624,7 @@
                         }
                     },
                     "custom_css": {
-                        "raw": "JiAuaW1hZ2UtY291dnJhbnRlIHsgdHJhbnNpdGlvbjogdHJhbnNmb3JtIDEuNHMgY3ViaWMtYmV6aWVyKDAuMiwwLjgsMC4yLDEpOyB9ICYgLmJvdXRvbi1sZWN0dXJlIHsgdHJhbnNpdGlvbjogdHJhbnNmb3JtIDAuNHMgY3ViaWMtYmV6aWVyKDAuMiwwLjgsMC4yLDEpOyB9ICY6OmFmdGVyIHsgY29udGVudDogJyc7IHBvc2l0aW9uOiBhYnNvbHV0ZTsgei1pbmRleDogMzsgbGVmdDogOHB4OyBib3R0b206IDhweDsgd2lkdGg6IDA7IGhlaWdodDogNXB4OyBib3JkZXItcmFkaXVzOiAwIDAgMCAyMHB4OyBiYWNrZ3JvdW5kOiAjRkZEMUJGOyB0cmFuc2l0aW9uOiB3aWR0aCAwLjRzIGVhc2U7IH0gJjpob3ZlciAuaW1hZ2UtY291dnJhbnRlLCAmLmpvdWUgLmltYWdlLWNvdXZyYW50ZSB7IHRyYW5zZm9ybTogc2NhbGUoMS4wNik7IH0gJjpob3ZlciAuYm91dG9uLWxlY3R1cmUsICYuam91ZSAuYm91dG9uLWxlY3R1cmUgeyB0cmFuc2Zvcm06IHNjYWxlKDEuMTQpOyB9ICY6aG92ZXI6OmFmdGVyLCAmLmpvdWU6OmFmdGVyIHsgd2lkdGg6IGNhbGMoMTAwJSAtIDE2cHgpOyB0cmFuc2l0aW9uOiB3aWR0aCA3cyBsaW5lYXI7IH0="
+                        "raw": "JiAuY2FkcmUtcGhvdG86OmFmdGVyIHsgYmFja2dyb3VuZDogbGluZWFyLWdyYWRpZW50KDE4MGRlZywgcmdiYSgxMiw4LDMwLDAuMzQpIDAlLCByZ2JhKDEyLDgsMzAsMCkgMjYlLCByZ2JhKDEyLDgsMzAsMCkgNzIlLCByZ2JhKDEyLDgsMzAsMC4zKSAxMDAlKTsgfSAmIC5pbWFnZS1jb3V2cmFudGUgeyB0cmFuc2l0aW9uOiB0cmFuc2Zvcm0gMS40cyBjdWJpYy1iZXppZXIoMC4yLDAuOCwwLjIsMSk7IH0gJiAuYm91dG9uLWxlY3R1cmUgeyB0cmFuc2l0aW9uOiB0cmFuc2Zvcm0gMC40cyBjdWJpYy1iZXppZXIoMC4yLDAuOCwwLjIsMSk7IH0gJjo6YWZ0ZXIgeyBjb250ZW50OiAnJzsgcG9zaXRpb246IGFic29sdXRlOyB6LWluZGV4OiAzOyBsZWZ0OiA4cHg7IGJvdHRvbTogOHB4OyB3aWR0aDogMDsgaGVpZ2h0OiA1cHg7IGJvcmRlci1yYWRpdXM6IDAgMCAwIDIwcHg7IGJhY2tncm91bmQ6ICNGRkQxQkY7IHRyYW5zaXRpb246IHdpZHRoIDAuNHMgZWFzZTsgfSAmOmhvdmVyIC5pbWFnZS1jb3V2cmFudGUsICYuam91ZSAuaW1hZ2UtY291dnJhbnRlIHsgdHJhbnNmb3JtOiBzY2FsZSgxLjA2KTsgfSAmOmhvdmVyIC5ib3V0b24tbGVjdHVyZSwgJi5qb3VlIC5ib3V0b24tbGVjdHVyZSB7IHRyYW5zZm9ybTogc2NhbGUoMS4xNCk7IH0gJjpob3Zlcjo6YWZ0ZXIsICYuam91ZTo6YWZ0ZXIgeyB3aWR0aDogY2FsYygxMDAlIC0gMTZweCk7IHRyYW5zaXRpb246IHdpZHRoIDdzIGxpbmVhcjsgfQ=="
                     }
                 }
             ]
@@ -6803,7 +6803,7 @@
             "id": "g-9dc26f5",
             "label": "timecode-rec",
             "groupe": "Fiches et listes",
-            "description": "À ajouter à « timecode » : point rouge « REC » qui clignote devant le temps. Avec un temps écrit 00:00:00:00, il défile sur le site.",
+            "description": "À ajouter à « timecode » : point rouge « REC » fixe devant le temps (le temps ne défile pas).",
             "variants": [
                 {
                     "meta": {
@@ -6828,7 +6828,7 @@
                         }
                     },
                     "custom_css": {
-                        "raw": "Jjo6YmVmb3JlIHsgY29udGVudDogJyc7IGRpc3BsYXk6IGJsb2NrOyBmbGV4LXNocmluazogMDsgd2lkdGg6IDdweDsgaGVpZ2h0OiA3cHg7IGJvcmRlci1yYWRpdXM6IDUwJTsgYmFja2dyb3VuZDogI0ZGM0IzMDsgYm94LXNoYWRvdzogMCAwIDAgM3B4IHJnYmEoMjU1LDU5LDQ4LDAuMjIpOyBhbmltYXRpb246IHJsLWNsaWdub3RlIDEuNnMgZWFzZS1pbi1vdXQgaW5maW5pdGU7IH0="
+                        "raw": "Jjo6YmVmb3JlIHsgY29udGVudDogJyc7IGRpc3BsYXk6IGJsb2NrOyBmbGV4LXNocmluazogMDsgd2lkdGg6IDdweDsgaGVpZ2h0OiA3cHg7IGJvcmRlci1yYWRpdXM6IDUwJTsgYmFja2dyb3VuZDogI0ZGM0IzMDsgYm94LXNoYWRvdzogMCAwIDAgM3B4IHJnYmEoMjU1LDU5LDQ4LDAuMjIpOyB9"
                     }
                 }
             ]

@@ -1241,7 +1241,7 @@
     {
      "label": "vignette-lien",
      "description": "Vignette cliquable : au survol (ou au centre de l'écran sur mobile), l'image zoome et la barre de lecture avance.",
-     "css": "overflow: hidden; & .image-couvrante { transition: transform 1.4s cubic-bezier(0.2,0.8,0.2,1); } & .bouton-lecture { transition: transform 0.4s cubic-bezier(0.2,0.8,0.2,1); } &::after { content: ''; position: absolute; z-index: 3; left: 8px; bottom: 8px; width: 0; height: 5px; border-radius: 0 0 0 20px; background: #FFD1BF; transition: width 0.4s ease; } &:hover .image-couvrante, &.joue .image-couvrante { transform: scale(1.06); } &:hover .bouton-lecture, &.joue .bouton-lecture { transform: scale(1.14); } &:hover::after, &.joue::after { width: calc(100% - 16px); transition: width 7s linear; }"
+     "css": "overflow: hidden; & .cadre-photo::after { background: linear-gradient(180deg, rgba(12,8,30,0.34) 0%, rgba(12,8,30,0) 26%, rgba(12,8,30,0) 72%, rgba(12,8,30,0.3) 100%); } & .image-couvrante { transition: transform 1.4s cubic-bezier(0.2,0.8,0.2,1); } & .bouton-lecture { transition: transform 0.4s cubic-bezier(0.2,0.8,0.2,1); } &::after { content: ''; position: absolute; z-index: 3; left: 8px; bottom: 8px; width: 0; height: 5px; border-radius: 0 0 0 20px; background: #FFD1BF; transition: width 0.4s ease; } &:hover .image-couvrante, &.joue .image-couvrante { transform: scale(1.06); } &:hover .bouton-lecture, &.joue .bouton-lecture { transform: scale(1.14); } &:hover::after, &.joue::after { width: calc(100% - 16px); transition: width 7s linear; }"
     },
     {
      "label": "cadre-16-9",
@@ -1944,8 +1944,8 @@
     },
     {
      "label": "timecode-rec",
-     "description": "À ajouter à « timecode » : point rouge « REC » qui clignote devant le temps. Avec un temps écrit 00:00:00:00, il défile sur le site.",
-     "css": "display: inline-flex; align-items: center; gap: 8px; &::before { content: ''; display: block; flex-shrink: 0; width: 7px; height: 7px; border-radius: 50%; background: #FF3B30; box-shadow: 0 0 0 3px rgba(255,59,48,0.22); animation: rl-clignote 1.6s ease-in-out infinite; }"
+     "description": "À ajouter à « timecode » : point rouge « REC » fixe devant le temps (le temps ne défile pas).",
+     "css": "display: inline-flex; align-items: center; gap: 8px; &::before { content: ''; display: block; flex-shrink: 0; width: 7px; height: 7px; border-radius: 50%; background: #FF3B30; box-shadow: 0 0 0 3px rgba(255,59,48,0.22); }"
     },
     {
      "label": "timecode-coin",

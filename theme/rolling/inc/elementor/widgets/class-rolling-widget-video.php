@@ -110,7 +110,7 @@ class Rolling_Widget_Video extends Rolling_Widget {
 		} elseif ( $video && ! $youtube ) {
 			// Fichier vidéo : aperçu muet en boucle (lancé par rolling.js quand il est à l'écran, jamais avec « réduire les
 			// animations », ni avec « Image fixe ») ; sans image à la une, sa première image sert d'affiche.
-			echo '<video class="image-couvrante apercu-video" src="' . esc_url( $video ) . '#t=0.1" muted loop playsinline preload="metadata" aria-hidden="true" tabindex="-1"></video>';
+			echo '<video class="image-couvrante apercu-video" src="' . esc_url( $video ) . ( $fixe ? '#t=2' : '#t=0.1' ) . '" muted loop playsinline preload="metadata" aria-hidden="true" tabindex="-1"></video>';
 		}
 		if ( $format ) {
 			echo '<span class="bandeau-video">' . esc_html( $format ) . '</span>';

@@ -392,7 +392,7 @@
 		v.playsInline = true;
 		v.setAttribute( 'aria-hidden', 'true' );
 		v.setAttribute( 'tabindex', '-1' );
-		v.src = decodeURIComponent( m[ 1 ] ) + '#t=0.1';
+		v.src = decodeURIComponent( m[ 1 ] ) + '#t=2';
 		img.replaceWith( v );
 	} );
 
@@ -508,24 +508,6 @@
 			}
 		} );
 	} );
-
-	/* Timecode « REC » (classe timecode-rec) écrit 00:00:00:00 : il défile sur le site, à 25 images par seconde */
-	if ( ! calme && ! editeur ) {
-		document.querySelectorAll( '.timecode-rec' ).forEach( function ( t ) {
-			var m = t.textContent.trim().match( /^(\d{1,2}):(\d{2}):(\d{2})(?::(\d{2}))?$/ ), deux = function ( n ) { return ( '0' + n ).slice( -2 ); }, base, t0;
-			if ( ! m ) {
-				return;
-			}
-			base = ( ( +m[ 1 ] * 60 + +m[ 2 ] ) * 60 + +m[ 3 ] ) * 25 + +( m[ 4 ] || 0 );
-			t0 = performance.now();
-			t.setAttribute( 'aria-hidden', 'true' );
-			( function tic( n ) {
-				var img = base + Math.floor( ( n - t0 ) / 40 ), s = Math.floor( img / 25 );
-				t.textContent = deux( Math.floor( s / 3600 ) % 100 ) + ':' + deux( Math.floor( s / 60 ) % 60 ) + ':' + deux( s % 60 ) + ( m[ 4 ] ? ':' + deux( img % 25 ) : '' );
-				requestAnimationFrame( tic );
-			}( t0 ) );
-		} );
-	}
 
 	/* Frise de montage et clap : la tête de lecture avance, la barre du clap se ferme quand ils apparaissent (tout de suite dans l'éditeur ou sans animation) */
 	document.querySelectorAll( '.montage, .clap' ).forEach( function ( frise ) {

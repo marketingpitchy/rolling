@@ -770,7 +770,7 @@ class Rolling_Dynamique {
 				$video  = rawurldecode( html_entity_decode( $m[1] ) );
 				$nom    = '' !== $titre ? '<span class="screen-reader-text">' . esc_html( $titre ) . '</span>' : '';
 
-				return '<video class="' . esc_attr( $classe ) . '" src="' . esc_url( $video ) . '#t=0.1" muted playsinline preload="metadata" aria-hidden="true" tabindex="-1"></video>' . $nom;
+				return '<video class="' . esc_attr( $classe ) . '" src="' . esc_url( $video ) . '#t=2" muted playsinline preload="metadata" aria-hidden="true" tabindex="-1"></video>' . $nom;
 			},
 			(string) $html
 		);
