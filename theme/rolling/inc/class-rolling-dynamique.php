@@ -579,7 +579,7 @@ class Rolling_Dynamique {
 			return $ids;
 		}
 
-		$labels = array( 'filtres-liste', 'chip-filtre', 'rangee', 'liste-plus', 'bouton-verre', 'bouton-petit', 'plaque-libre', 'chiffre-verre', 'libelle-chiffre', 'texte-masque', 'liste-coches', 'ligne-coche', 'coche', 'texte', 'texte-petit', 'generique-liste', 'compte-rebours', 'cr-pilule', 'cr-point', 'cr-label', 'cr-temps', 'cr-direct', 'cr-fin', 'cadre-photo', 'video-fiche', 'image-couvrante', 'bandeau-video', 'duree', 'lecture-centre', 'transcription', 'masque-bords', 'logos-defilants', 'grille-6', 'carte-verre', 'tuile-logo', 'ariane', 'article-texte', 'sommaire', 'partage', 'partage-bouton', 'chip-neutre', 'resumer', 'label', 'label-violet', 'intervenants-webinar', 'avatars-initiales', 'carte-vide', 'titre-xs' );
+		$labels = array( 'filtres-liste', 'chip-filtre', 'rangee', 'liste-plus', 'bouton-verre', 'bouton-petit', 'plaque-libre', 'chiffre-verre', 'libelle-chiffre', 'texte-masque', 'liste-coches', 'ligne-coche', 'coche', 'texte', 'texte-petit', 'generique-liste', 'compte-rebours', 'cr-pilule', 'cr-point', 'cr-label', 'cr-temps', 'cr-direct', 'cr-fin', 'cadre-photo', 'video-fiche', 'image-couvrante', 'bandeau-video', 'duree', 'lecture-centre', 'transcription', 'masque-bords', 'logos-defilants', 'grille-6', 'carte-verre', 'tuile-logo', 'ariane', 'article-texte', 'sommaire', 'partage', 'partage-bouton', 'chip-neutre', 'resumer', 'label', 'label-violet', 'intervenants-webinar', 'avatars-initiales', 'carte-vide', 'titre-xs', 'plaque-large', 'temoins-courts' );
 		if ( preg_match_all( '/"(?:titre_)?classe(?:_texte)?":"([^"]+)"/', $donnees, $trouves ) ) {
 			foreach ( $trouves[1] as $liste ) {
 				$labels = array_merge( $labels, preg_split( '/\s+/', $liste ) );

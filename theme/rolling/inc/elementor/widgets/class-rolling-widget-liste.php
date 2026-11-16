@@ -101,6 +101,15 @@ class Rolling_Widget_Liste extends Rolling_Widget {
 			)
 		);
 		$this->add_control(
+			'avec_citation',
+			array(
+				'label'       => __( 'Témoignages : seulement ceux qui ont une citation', 'rolling' ),
+				'description' => __( 'Ex. : la landing, où chaque carte doit montrer une citation.', 'rolling' ),
+				'type'        => Controls_Manager::SWITCHER,
+				'default'     => '',
+			)
+		);
+		$this->add_control(
 			'premiere_une',
 			array(
 				'label'       => __( 'Première carte à la une (carte du thème)', 'rolling' ),
@@ -263,6 +272,14 @@ class Rolling_Widget_Liste extends Rolling_Widget {
 					'terms'    => $terme,
 				);
 			}
+		}
+
+		if ( 'temoignages' === $r['contenu'] && 'yes' === ( $r['avec_citation'] ?? '' ) ) {
+			$args['meta_query'][] = array( // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_query
+				'key'     => Rolling_Contenus::PREFIXE . 'citation',
+				'value'   => '',
+				'compare' => '!=',
+			);
 		}
 
 		$ids = get_posts( $args );

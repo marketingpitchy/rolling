@@ -1777,15 +1777,17 @@ landing_produit = F('Landing · pourquoi Rolling', ['section', 'halo-doux'], tag
                 ('Un prix fixe, en illimité.', 'Plus vous faites de vidéos, moins chacune vous coûte. Pas de devis à chaque projet.'),
             ], 1)
         ]),
-        H('Landing · résultats · titre', 'Ce que ça change pour nos clients', 'h3', ['label', 'label-violet'], 'margin: 64px 0 18px;'),
-        F('Landing · résultats', ['plaque-chiffres', 'plaque-3'], enfants=[
-            F('Landing · résultat %d' % n, ['chiffre-texte'], enfants=[
-                P('Landing · résultat %d · chiffre' % n, valeur, ['titre-md']),
-                P('Landing · résultat %d · texte' % n, texte, ['texte-petit']),
-            ]) for n, (valeur, texte) in enumerate([
-                ('<em>[87 %]</em>', "<strong>de complétion</strong> sur une série d'onboarding vidéo [chiffre à fournir]"),
-                ('<em>[x]</em>', '<strong>vidéos livrées par mois</strong> en moyenne par client [à fournir]'),
-                ('<em>[x jours]</em>', '<strong>pour une première version</strong> après votre brief [à fournir]'),
+        H('Landing · bénéfices · titre', 'Ce que ça change pour nos clients', 'h3', ['label', 'label-violet'], 'margin: 64px 0 18px;'),
+        F('Landing · bénéfices', ['plaque-benefices'], enfants=[
+            F('Landing · bénéfice %d' % n, None, COLONNE, enfants=[
+                I('Landing · bénéfice %d · coche' % n, 'coche-verre.png', cls=['coche'], taille='thumbnail'),
+                H('Landing · bénéfice %d · titre' % n, titre, 'h4', ['titre-benefice']),
+                P('Landing · bénéfice %d · texte' % n, texte, ['texte-petit']),
+            ]) for n, (titre, texte) in enumerate([
+                ('Vos contenus enfin regardés', 'Vos emails, modules et événements deviennent des vidéos que vos équipes ont envie de voir.'),
+                ('Zéro devis', 'Une demande, une vidéo&nbsp;: pas de négociation à chaque projet.'),
+                ('Toujours une vidéo en cours', 'Nous enchaînons les projets, sans attente entre deux commandes.'),
+                ('Tous vos formats', '16:9, 9:16, carré, sous-titres et langues, sans surcoût.'),
             ], 1)
         ]),
         F('Landing · appel', ['carte-verre', 'carte-appel'], 'margin-top: 28px;', enfants=[
@@ -1798,13 +1800,13 @@ landing_produit = F('Landing · pourquoi Rolling', ['section', 'halo-doux'], tag
 landing_preuve = F('Landing · preuve sociale', ['section', 'section-chaude'], tag='section', enfants=[
     F('Landing · preuve · contenu', ['conteneur'], COLONNE, enfants=[
         entete('Landing · preuve', '00:03', 'Ils nous font confiance', [('Née chez <em>Pitchy.</em>', 'h2', ['titre-md'])]),
-        F('Landing · chiffres', ['plaque-chiffres'], 'margin-bottom: 28px;', enfants=[
+        F('Landing · chiffres', ['plaque-libre', 'plaque-large'], 'margin-bottom: 28px;', enfants=[
             chiffre('Landing · ans', ['1', '3'], '13', 'ans de vidéo pour les entreprises'),
             chiffre('Landing · entreprises', ['5', '0', '0', 'plus'], '500+', 'grandes entreprises équipées'),
             chiffre('Landing · studio', ['1'], '1', 'studio motion &amp; tournage intégré'),
             chiffre('Landing · plateforme', ['1'], '1', 'plateforme de production propriétaire'),
         ]),
-        W('Landing · témoignages', 'rolling-liste', contenu='temoignages', nombre='3', classe='grille-3', une_auto=''),
+        W('Landing · témoignages', 'rolling-liste', contenu='temoignages', nombre='3', classe='grille-3 temoins-courts', une_auto='', avec_citation='yes'),
     ]),
 ])
 
@@ -1817,6 +1819,7 @@ landing_action = F('Landing · action', ['section', 'section-suite'], tag='secti
                 P('Landing · action · texte', 'Choisissez votre créneau : nous regardons ensemble vos contenus et vos projets, puis nous vous proposons vos 3 premières vidéos.', ['texte'], 'margin-top: 10px;'),
             ]),
             F('Landing · calendrier', ['carte-verre', 'zone-calendrier', 'zone-calendrier-court'], enfants=[
+                P('Landing · timecode du formulaire', '00:30:00', ['timecode', 'timecode-rec', 'timecode-coin']),
                 W('Landing · calendrier HubSpot', 'html', html='Collez ici le code du calendrier HubSpot (cet élément est un bloc HTML).'),
             ]),
         ]),

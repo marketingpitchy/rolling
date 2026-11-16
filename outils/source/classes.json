@@ -1336,7 +1336,27 @@
     {
      "label": "plaque-libre",
      "description": "Plaque en verre de chiffres clés en nombre libre (1 à n) : chaque chiffre suivi de son libellé sur la même ligne (le libellé passe dessous si la valeur est longue), colonnes automatiques ; en mobile, une ligne par chiffre.",
-     "css": "position: relative; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); row-gap: 16px; padding: 20px 0; overflow: hidden; border-radius: 30px; background: radial-gradient(70% 60% at 15% 0%, rgba(255,255,255,0.95), rgba(255,255,255,0) 72%), linear-gradient(150deg, rgba(255,255,255,0.78), rgba(255,255,255,0.46)); backdrop-filter: blur(24px) saturate(170%); box-shadow: inset 0 1px 0 #FFFFFF, 0 30px 70px -34px rgba(76,48,170,0.34); & > * { display: flex; flex-direction: row; flex-wrap: wrap; align-items: center; gap: 8px 14px; padding: 4px 22px; box-shadow: -1px 0 0 rgba(91,59,234,0.16); } & .chiffre-verre { flex-shrink: 0; } & .libelle-chiffre { flex: 1 1 120px; min-width: 0; font-size: 15.5px; } & .chiffre-verre img { height: 58px; width: auto; } & .chiffre-verre .chiffre-texte { font-size: 52px; } & .chiffre-verre .chiffre-unite { font-size: 28px; } & .espace-chiffre { display: inline-block; width: 12px; } &.plaque-large { grid-template-columns: repeat(2, minmax(0, 1fr)); } @media(--tablet) { grid-template-columns: repeat(2, minmax(0, 1fr)); & .chiffre-verre img { height: 48px; } } @media(--mobile) { grid-template-columns: minmax(0, 1fr); &.plaque-large { grid-template-columns: minmax(0, 1fr); } row-gap: 0; padding: 0 4px; & > * { padding: 14px 18px; box-shadow: 0 -1px 0 rgba(91,59,234,0.14); } & .chiffre-verre { min-width: 44px; } & .chiffre-verre img { height: 44px; } & .chiffre-verre .chiffre-texte { font-size: 40px; } & .chiffre-verre .chiffre-unite { font-size: 22px; } }"
+     "css": "position: relative; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); row-gap: 16px; padding: 20px 0; overflow: hidden; border-radius: 30px; background: radial-gradient(70% 60% at 15% 0%, rgba(255,255,255,0.95), rgba(255,255,255,0) 72%), linear-gradient(150deg, rgba(255,255,255,0.78), rgba(255,255,255,0.46)); backdrop-filter: blur(24px) saturate(170%); box-shadow: inset 0 1px 0 #FFFFFF, 0 30px 70px -34px rgba(76,48,170,0.34); & > * { display: flex; flex-direction: row; flex-wrap: wrap; align-items: center; gap: 8px 14px; padding: 4px 22px; box-shadow: -1px 0 0 rgba(91,59,234,0.16); } & .chiffre-verre { flex-shrink: 0; width: auto; } & .libelle-chiffre { flex: 1 1 120px; min-width: 0; font-size: 15.5px; } & .chiffre-verre img { height: 58px; width: auto; } & .chiffre-verre .chiffre-texte { font-size: 52px; } & .chiffre-verre .chiffre-unite { font-size: 28px; } & .espace-chiffre { display: inline-block; width: 12px; } &.plaque-large { grid-template-columns: repeat(2, minmax(0, 1fr)); } @media(--tablet) { grid-template-columns: repeat(2, minmax(0, 1fr)); & .chiffre-verre img { height: 48px; } } @media(--mobile) { grid-template-columns: minmax(0, 1fr); &.plaque-large { grid-template-columns: minmax(0, 1fr); } row-gap: 0; padding: 0 4px; & > * { padding: 14px 18px; box-shadow: 0 -1px 0 rgba(91,59,234,0.14); } & .chiffre-verre { min-width: 44px; } & .chiffre-verre img { height: 44px; } & .chiffre-verre .chiffre-texte { font-size: 40px; } & .chiffre-verre .chiffre-unite { font-size: 22px; } }"
+    },
+    {
+     "label": "plaque-large",
+     "description": "Avec plaque-libre : 2 colonnes, pour des valeurs longues (« 500+ », « 87 % ») ; une ligne par chiffre en mobile. Le widget Chiffres clés la pose tout seul.",
+     "css": "grid-template-columns: repeat(2, minmax(0, 1fr)); @media(--mobile) { grid-template-columns: minmax(0, 1fr); }"
+    },
+    {
+     "label": "plaque-benefices",
+     "description": "Plaque en verre de 4 bénéfices côte à côte (coche, titre, texte), séparés par des filets ; 2 × 2 sous 980 px, une liste en mobile.",
+     "css": "position: relative; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; padding: 26px 0; overflow: hidden; border-radius: 30px; background: radial-gradient(70% 60% at 15% 0%, rgba(255,255,255,0.95), rgba(255,255,255,0) 72%), linear-gradient(150deg, rgba(255,255,255,0.78), rgba(255,255,255,0.46)); backdrop-filter: blur(24px) saturate(170%); box-shadow: inset 0 1px 0 #FFFFFF, 0 30px 70px -34px rgba(76,48,170,0.34); & > * { gap: 8px; padding: 4px 26px; box-shadow: -1px 0 0 rgba(91,59,234,0.16); } & .coche { width: 34px; height: 34px; margin-bottom: 6px; } @media(--tablet) { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 26px; } @media(--mobile) { grid-template-columns: minmax(0, 1fr); row-gap: 0; padding: 0; & > * { padding: 20px 22px; box-shadow: 0 -1px 0 rgba(91,59,234,0.14); } }"
+    },
+    {
+     "label": "titre-benefice",
+     "description": "Titre d'un bénéfice (dans plaque-benefices).",
+     "css": "display: block; margin: 0; font-family: Bricolage Grotesque; font-size: 19px; line-height: 1.25; font-weight: 650; letter-spacing: -0.02em; color: var(--rl-texte, var(--encre));"
+    },
+    {
+     "label": "temoins-courts",
+     "description": "Liste de témoignages plus compacte (classe de la grille du widget Liste, ex. la landing) : citation en 16 px.",
+     "css": "align-items: start; & .temoin-citation { font-size: 16px; line-height: 1.55; font-weight: 500; } & .temoin-citation::before { height: 24px; font-size: 56px; }"
     },
     {
      "label": "cas-grille",

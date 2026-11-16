@@ -3,7 +3,7 @@
  "titre": "Rolling · Landing · 00:04 Votre échange",
  "type": "e-flexbox",
  "composition": {
-  "xml_structure": "<e-flexbox configuration-id=\"Landing · action\"><e-flexbox configuration-id=\"Landing · action · contenu\"><e-flexbox configuration-id=\"Landing · action · bloc\"><e-flexbox configuration-id=\"Landing · action · textes\"><e-flexbox configuration-id=\"Landing · action · repère\"><e-paragraph configuration-id=\"Landing · action · timecode\"></e-paragraph><e-paragraph configuration-id=\"Landing · action · sur-titre\"></e-paragraph></e-flexbox><e-heading configuration-id=\"Landing · action · titre\"></e-heading><e-paragraph configuration-id=\"Landing · action · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Landing · calendrier\"><e-paragraph configuration-id=\"Landing · calendrier HubSpot\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox></e-flexbox>",
+  "xml_structure": "<e-flexbox configuration-id=\"Landing · action\"><e-flexbox configuration-id=\"Landing · action · contenu\"><e-flexbox configuration-id=\"Landing · action · bloc\"><e-flexbox configuration-id=\"Landing · action · textes\"><e-flexbox configuration-id=\"Landing · action · repère\"><e-paragraph configuration-id=\"Landing · action · timecode\"></e-paragraph><e-paragraph configuration-id=\"Landing · action · sur-titre\"></e-paragraph></e-flexbox><e-heading configuration-id=\"Landing · action · titre\"></e-heading><e-paragraph configuration-id=\"Landing · action · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Landing · calendrier\"><e-paragraph configuration-id=\"Landing · timecode du formulaire\"></e-paragraph><e-paragraph configuration-id=\"Landing · calendrier HubSpot\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox></e-flexbox>",
   "element_config": {
    "Landing · action": {
     "_cssid": "landing-rdv",
@@ -21,6 +21,9 @@
    },
    "Landing · action · texte": {
     "paragraph": "Choisissez votre créneau : nous regardons ensemble vos contenus et vos projets, puis nous vous proposons vos 3 premières vidéos."
+   },
+   "Landing · timecode du formulaire": {
+    "paragraph": "00:30:00"
    },
    "Landing · calendrier HubSpot": {
     "paragraph": "⟦widget:html|html=Collez ici le code du calendrier HubSpot (cet élément est un bloc HTML).⟧"
@@ -55,6 +58,11 @@
     "carte-verre",
     "zone-calendrier",
     "zone-calendrier-court"
+   ],
+   "Landing · timecode du formulaire": [
+    "timecode",
+    "timecode-rec",
+    "timecode-coin"
    ]
   },
   "style": {

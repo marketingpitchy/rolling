@@ -443,6 +443,14 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   Vos contenus enfin regardés, **Zéro devis** (pas « Plus de devis », ambigu), Toujours une vidéo en cours, Tous vos formats ;
   preuve : témoignages **avec citation seulement** sur la landing (réglage de la liste à créer), citation 16 px (au lieu
   de titre-xs gras) ; variante avant / après rangée (lignes fixes Au départ / La vidéo, subgrid) ⇒ témoignages sans vidéo.
+- **0.5.14 (landing, « tout niquel go »)** : 00:02 « Ce que ça change pour nos clients » = 4 bénéfices (`plaque-benefices`,
+  coche en verre + `titre-benefice` h4 + texte-petit ; 2 × 2 sous 980 px, liste en mobile) à la place des chiffres [x] ;
+  00:03 chiffres au format B (`plaque-libre` + nouvelle classe globale `plaque-large`, prioritaire) ; témoignages de la
+  landing : réglage de la liste « seulement ceux qui ont une citation » (`avec_citation`, meta `_rolling_citation` ≠ '')
+  + classe de grille `temoins-courts` (citation 16 px, cartes alignées en haut) ; 00:04 timecode « 00:30:00 » dans le
+  cadre du calendrier (comme Contact). Leçons : lancer `python3 -I outils/classes_fiches.py` avant construire.sh (sinon
+  « Unknown global class label » et le bloc n'est pas reconstruit, construire.sh renvoie quand même 0 : chercher ERREUR
+  dans la sortie) ; dans `plaque-libre`, `.chiffre-verre` d'un conteneur Elementor a `width: 100 %` ⇒ `width: auto`.
 - **Chargement de page effet film** (demande avant la fin de la livraison 4) : maquette `maquettes/loading/maquette-loading.html`
   (copie /workspace/maquette-loading.html), 4 options : A amorce 3-2-1, B clap qui se ferme puis rideau, C ouverture
   cinéma (bandes noires + REC + timecode + règle avec la tête de lecture rouge des frises, plus de filet fin), D barre de lecture en haut sans écran. Conseil : C à l'arrivée (première page

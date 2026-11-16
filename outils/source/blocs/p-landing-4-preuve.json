@@ -107,7 +107,7 @@
     "paragraph": "plateforme de production propriétaire"
    },
    "Landing · témoignages": {
-    "paragraph": "⟦widget:rolling-liste|contenu=temoignages|nombre=3|classe=grille-3|une_auto=⟧"
+    "paragraph": "⟦widget:rolling-liste|contenu=temoignages|nombre=3|classe=grille-3 temoins-courts|une_auto=|avec_citation=yes⟧"
    }
   },
   "classes": {
@@ -131,7 +131,8 @@
     "titre-md"
    ],
    "Landing · chiffres": [
-    "plaque-chiffres"
+    "plaque-libre",
+    "plaque-large"
    ],
    "Landing · ans · nombre": [
     "chiffre-verre"
