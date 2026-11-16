@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rolling · landing à revoir</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Caveat:wght@700&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root { --ink:#0F0F12; --texte:#4A4858; --legende:#5F5C6C; --violet:#5B3BEA; }
+* { box-sizing: border-box; }
+body { margin: 0; color: var(--ink); font-family: 'Hanken Grotesk', system-ui, sans-serif; background: radial-gradient(40% 30% at 100% 0%, #FFE2D4, transparent 70%), radial-gradient(35% 30% at 0% 10%, #EDE6FF, transparent 70%), #FAF9F7; }
+h1, h2, h3, p, ul { margin: 0; }
+.jk { font-family: 'Bricolage Grotesque', system-ui, sans-serif; }
+em { font-style: normal; background: linear-gradient(95deg, #5B3BEA, #6F3FD6 42%, #C94A1E); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.conteneur { max-width: 1240px; margin: 0 auto; padding: 0 28px; }
+.intro { padding: 56px 0 8px; }
+.intro h1 { font-size: 30px; letter-spacing: -.035em; font-weight: 650; }
+.intro p { margin-top: 10px; max-width: 80ch; font-size: 16px; line-height: 1.55; color: var(--texte); }
+.partie { margin-top: 72px; }
+.partie > h2 { font-size: 24px; letter-spacing: -.03em; font-weight: 650; }
+.option { margin-top: 30px; }
+.option > h3 { display: flex; align-items: center; gap: 12px; font-size: 20px; letter-spacing: -.03em; font-weight: 650; }
+.lettre { display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 50%; font-size: 14px; color: #fff; background: #0F0F12; }
+.conseil .lettre { background: var(--violet); }
+.etiquette { padding: 3px 10px; border-radius: 999px; font-size: 12px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: #4A2BB8; background: #EDE6FF; }
+.desc { margin-top: 8px; max-width: 82ch; font-size: 15px; line-height: 1.55; color: var(--texte); }
+.scene { margin-top: 18px; padding: 30px; border-radius: 30px; background: rgba(255,255,255,.35); box-shadow: inset 0 0 0 1px rgba(15,15,18,.06); }
+.verre { border-radius: 26px; background: radial-gradient(70% 60% at 15% 0%, rgba(255,255,255,.95), rgba(255,255,255,0) 72%), linear-gradient(150deg, rgba(255,255,255,.8), rgba(255,255,255,.5)); box-shadow: inset 0 1px 0 #fff, 0 30px 70px -34px rgba(76,48,170,.34); }
+.label { font-size: 12px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: #4A2BB8; }
+.timecode { display: inline-flex; align-items: center; gap: 8px; padding: 6px 13px; border-radius: 999px; font-size: 12px; font-weight: 700; letter-spacing: .06em; color: #5B3BEA; background: linear-gradient(170deg, rgba(255,255,255,.95), rgba(255,255,255,.55)); box-shadow: inset 0 1px 0 #fff, inset 0 0 0 1px rgba(91,59,234,.16), 0 6px 16px -10px rgba(91,59,234,.5); }
+.rec::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: #FF3B30; box-shadow: 0 0 0 3px rgba(255,59,48,.22); }
+.bouton { display: inline-flex; align-items: center; min-height: 46px; padding: 0 20px; border-radius: 999px; font-size: 15px; font-weight: 700; color: #fff; background: #0F0F12; }
+
+/* 1 · Formulaire */
+.action { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: 40px; align-items: center; padding: 40px; }
+.action h3 { margin-top: 16px; font-family: 'Bricolage Grotesque'; font-size: 34px; line-height: 1.1; letter-spacing: -.04em; font-weight: 650; }
+.action p.t { margin-top: 10px; font-size: 16px; line-height: 1.6; color: var(--texte); }
+.cal { position: relative; width: 100%; max-width: 440px; margin: 0 auto; padding: 52px 10px 10px; border-radius: 26px; }
+.cal .tc { position: absolute; top: 14px; right: 16px; }
+.cal .faux { height: 300px; border-radius: 10px; background: #fff; box-shadow: 0 2px 8px rgba(15,15,18,.08); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; color: #33475B; font-size: 14px; }
+.cal .faux b { font-size: 18px; }
+
+/* 2 · Ce que ça change */
+.aa { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.carte-aa { display: flex; flex-direction: column; gap: 12px; padding: 10px 10px 20px; }
+.vign { position: relative; aspect-ratio: 16/9; border-radius: 18px; overflow: hidden; }
+.v1 { background: radial-gradient(60% 80% at 75% 30%, rgba(255,180,140,.9), transparent 60%), radial-gradient(90% 90% at 10% 100%, #5B3BEA, transparent 70%), linear-gradient(160deg, #3434E0, #1C1730); }
+.v2 { background: radial-gradient(60% 80% at 30% 30%, rgba(196,181,253,.9), transparent 60%), radial-gradient(90% 90% at 90% 100%, #FF8A5B, transparent 70%), linear-gradient(160deg, #8E4DE6, #1C1730); }
+.v3 { background: radial-gradient(70% 90% at 60% 20%, rgba(255,209,191,.9), transparent 60%), linear-gradient(160deg, #E0562A, #4A2BB8); }
+.duree { position: absolute; right: 12px; top: 12px; padding: 3px 8px; border-radius: 8px; font-size: 12px; font-weight: 800; color: #fff; background: rgba(15,15,18,.7); }
+.carte-aa .client { padding: 0 8px; font-size: 12px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: var(--legende); }
+.ligne-aa { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; padding: 0 8px; font-size: 14px; }
+.avant { padding: 5px 11px; border-radius: 999px; color: #A63C14; background: #fff; box-shadow: inset 0 0 0 1px rgba(224,86,42,.25); font-weight: 600; }
+.fleche { color: #C94A1E; font-weight: 800; }
+.apres { font-weight: 800; }
+.lien { padding: 0 8px; font-size: 14px; font-weight: 700; color: #4A2BB8; }
+
+.gains { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; padding: 24px 0; }
+.gains > div { display: flex; flex-direction: column; gap: 8px; padding: 4px 24px; box-shadow: -1px 0 0 rgba(91,59,234,.16); }
+.gains .pic { width: 40px; height: 40px; border-radius: 12px; display: flex; align-items: center; justify-content: center; background: linear-gradient(140deg, #EDE6FF, #FFE2D4); font-size: 18px; }
+.gains b { font-family: 'Bricolage Grotesque'; font-size: 18px; letter-spacing: -.02em; }
+.gains span { font-size: 14px; line-height: 1.5; color: var(--texte); }
+
+.citations { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.citations > div { padding: 22px; }
+.citations p { font-family: 'Bricolage Grotesque'; font-size: 18px; line-height: 1.35; font-weight: 650; letter-spacing: -.02em; }
+.citations small { display: block; margin-top: 10px; font-size: 13px; color: var(--legende); }
+
+/* 3 · Née chez Pitchy */
+.n { font-family: 'Bricolage Grotesque'; font-weight: 800; line-height: .9; letter-spacing: -.02em; background: linear-gradient(180deg, #FFAB96 0%, #E697BD 45%, #A77BF0 100%); -webkit-background-clip: text; background-clip: text; color: transparent; filter: drop-shadow(0 8px 14px rgba(91,59,234,.25)); }
+.l { font-size: 15.5px; line-height: 1.35; font-weight: 600; color: #2A2840; }
+.actuel { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); padding: 30px 8px; }
+.actuel > div { display: flex; flex-direction: column; gap: 10px; padding: 4px 24px; }
+.actuel > div + div { box-shadow: -1px 0 0 rgba(91,59,234,.16); }
+.actuel .n { font-size: 60px; }
+.cote { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 16px; padding: 20px 0; }
+.cote > div { display: flex; align-items: center; gap: 14px; padding: 4px 24px; box-shadow: -1px 0 0 rgba(91,59,234,.16); }
+.cote .n { font-size: 54px; flex-shrink: 0; }
+.trois { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+@media (max-width: 980px) {
+  .action { grid-template-columns: 1fr; padding: 20px; }
+  .aa, .citations { grid-template-columns: 1fr; }
+  .gains, .actuel { grid-template-columns: 1fr 1fr; row-gap: 18px; }
+  .cote, .trois { grid-template-columns: 1fr; padding: 0; row-gap: 0; }
+  .cote > div { padding: 14px 18px; box-shadow: 0 -1px 0 rgba(91,59,234,.14); }
+  .scene { padding: 16px; }
+}
+</style>
+</head>
+<body>
+<main>
+  <div class="conteneur intro">
+    <h1 class="jk">Landing : formulaire, résultats et chiffres.</h1>
+    <p>Trois parties de la landing à revoir. Rien n'est encore dans le thème. Les chiffres sont simulés par leur dégradé (sur le site : vos chiffres en verre).</p>
+  </div>
+
+  <div class="conteneur">
+    <!-- 1 -->
+    <section class="partie">
+      <h2 class="jk">1. Le formulaire (00:04 « Votre échange »)</h2>
+      <p class="desc">Comme sur la page Contact : le cadre du calendrier épouse la carte HubSpot, et le timecode figé « 00:30:00 » (durée de l'échange) est posé à l'intérieur, en haut à droite. Aujourd'hui, la landing a la place réservée en haut du cadre, mais pas le timecode.</p>
+      <div class="scene">
+        <div class="verre action">
+          <div>
+            <span class="timecode">00:04</span> <span class="label" style="margin-left:8px">Votre échange</span>
+            <h3>Réservez 30 minutes. <em>Repartez avec 3 vidéos à produire.</em></h3>
+            <p class="t">Choisissez votre créneau : nous regardons ensemble vos contenus et vos projets, puis nous vous proposons vos 3 premières vidéos.</p>
+          </div>
+          <div class="verre cal"><span class="timecode rec tc">00:30:00</span><div class="faux"><b>Calendrier HubSpot</b>votre code de réservation</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2 -->
+    <section class="partie">
+      <h2 class="jk">2. « Ce que ça change pour nos clients », sans chiffres</h2>
+      <p class="desc">Sans résultats chiffrés, mieux vaut montrer des preuves concrètes que des « [x] ». Trois idées :</p>
+
+      <div class="option conseil">
+        <h3 class="jk"><span class="lettre">A</span>Avant / après, tiré de vos réalisations <span class="etiquette">Conseil</span></h3>
+        <p class="desc">Les 3 dernières réalisations, avec leur « contenu de départ → vidéo produite » (champs déjà remplis dans vos réalisations). C'est la promesse de Rolling en preuve : vos documents deviennent des vidéos. Se met à jour tout seul, et chaque carte mène à la vidéo.</p>
+        <div class="scene">
+          <p class="label">Ce que ça change pour nos clients</p>
+          <div class="aa" style="margin-top:16px">
+            <div class="verre carte-aa"><div class="vign v1"><span class="duree">5:24</span></div><span class="client">Assurance · Communication interne</span><div class="ligne-aa"><span class="avant">Informations économiques</span><span class="fleche">→</span><span class="apres">Interview d'expert</span></div><span class="lien">Voir la vidéo →</span></div>
+            <div class="verre carte-aa"><div class="vign v2"><span class="duree">1:52</span></div><span class="client">Distribution · Événement</span><div class="ligne-aa"><span class="avant">Programme de l'événement</span><span class="fleche">→</span><span class="apres">Aftermovie</span></div><span class="lien">Voir la vidéo →</span></div>
+            <div class="verre carte-aa"><div class="vign v3"><span class="duree">3:53</span></div><span class="client">Énergie · Ressources humaines</span><div class="ligne-aa"><span class="avant">Présentation d'une prise de poste</span><span class="fleche">→</span><span class="apres">Interview</span></div><span class="lien">Voir la vidéo →</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="option">
+        <h3 class="jk"><span class="lettre">B</span>Ce que vous gagnez (sans chiffres)</h3>
+        <p class="desc">Quatre bénéfices concrets, que vous pouvez promettre sans statistique. Attention : proche des 3 cartes « Une équipe vidéo à l'année / IA Factory / Prix fixe » juste au-dessus, il faudrait éviter les redites.</p>
+        <div class="scene">
+          <p class="label">Ce que ça change pour nos clients</p>
+          <div class="verre gains" style="margin-top:16px">
+            <div><span class="pic">✦</span><b>Plus de devis</b><span>Une demande, une vidéo : pas de négociation à chaque projet.</span></div>
+            <div><span class="pic">◎</span><b>Un seul interlocuteur</b><span>Votre chef de projet connaît votre charte et vos équipes.</span></div>
+            <div><span class="pic">▶</span><b>Toujours une vidéo en cours</b><span>Nous enchaînons les projets, sans attente entre deux commandes.</span></div>
+            <div><span class="pic">⇄</span><b>Tous vos formats</b><span>16:9, 9:16, carré, sous-titres et langues, sans surcoût.</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="option">
+        <h3 class="jk"><span class="lettre">C</span>Retirer la partie</h3>
+        <p class="desc">La preuve sociale arrive juste après (00:03 « Née chez Pitchy » + 3 témoignages). On garde seulement l'encart « Et avec vos contenus, ça donnerait quoi ? » et son bouton. Plus court, et le jour où vous aurez des chiffres, la plaque revient.</p>
+      </div>
+    </section>
+
+    <!-- 3 -->
+    <section class="partie">
+      <h2 class="jk">3. Les chiffres de « Née chez Pitchy »</h2>
+      <p class="desc">Même format que les fiches témoignage (chiffre et libellé côte à côte). « 1 studio » et « 1 plateforme » sont des chiffres faibles : je propose soit de les garder (format B, 2 colonnes), soit d'en garder 3 vrais chiffres et de passer les deux « 1 » en texte dans l'intro.</p>
+      <div class="option">
+        <h3 class="jk"><span class="lettre">0</span>Aujourd'hui</h3>
+        <div class="scene"><div class="verre actuel"><div><span class="n">13</span><span class="l">ans de vidéo pour les entreprises</span></div><div><span class="n">500+</span><span class="l">grandes entreprises équipées</span></div><div><span class="n">1</span><span class="l">studio motion &amp; tournage intégré</span></div><div><span class="n">1</span><span class="l">plateforme de production propriétaire</span></div></div></div>
+      </div>
+      <div class="option conseil">
+        <h3 class="jk"><span class="lettre">B</span>Format B, les 4 chiffres <span class="etiquette">Conseil</span></h3>
+        <p class="desc">Comme les fiches témoignage : « 500+ » est une valeur longue, la plaque passe donc sur 2 colonnes pour que chaque libellé tienne à côté de son chiffre.</p>
+        <div class="scene"><div class="verre cote"><div><span class="n">13</span><span class="l">ans de vidéo pour les entreprises</span></div><div><span class="n">500+</span><span class="l">grandes entreprises équipées</span></div><div><span class="n">1</span><span class="l">studio motion &amp; tournage intégré</span></div><div><span class="n">1</span><span class="l">plateforme de production propriétaire</span></div></div></div>
+      </div>
+      <div class="option">
+        <h3 class="jk"><span class="lettre">B'</span>Format B, 2 vrais chiffres + une phrase</h3>
+        <p class="desc">Les deux chiffres forts seulement ; le studio intégré et la plateforme passent dans la phrase d'introduction.</p>
+        <div class="scene"><p class="desc" style="margin:0 0 14px">Rolling s'appuie sur <strong>un studio motion et tournage intégré</strong> et sur <strong>la plateforme de production de Pitchy</strong>.</p><div class="verre cote"><div><span class="n">13</span><span class="l">ans de vidéo pour les entreprises</span></div><div><span class="n">500+</span><span class="l">grandes entreprises équipées</span></div></div></div>
+      </div>
+    </section>
+    <p style="height:90px"></p>
+  </div>
+</main>
+</body>
+</html>

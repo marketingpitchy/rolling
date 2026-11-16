@@ -431,6 +431,12 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   preuve « Par les équipes de Pitchy - 13 ans de vidéo, +500 grandes entreprises. » mot pour mot, plus de « [adresse à
   confirmer] »). **Règle cliente** : quand elle transmet le site publié, reprendre dans les modèles du thème chaque texte
   qu'elle a modifié (pour ne pas les perdre si un modèle est refait).
+- **Maquette « Landing à revoir »** (`maquettes/landing-v2/landing.html`, copie /workspace/maquette-landing-v2.html,
+  **à valider**) : 1 formulaire 00:04 = timecode figé « 00:30:00 » dans le cadre du calendrier (comme Contact) ;
+  2 « Ce que ça change pour nos clients » sans chiffres : **A avant / après des 3 dernières réalisations (conseil,
+  champs avant / après existants, automatique)**, B 4 bénéfices sans chiffres (risque de redite avec les 3 cartes),
+  C retirer la partie (garder l'encart d'appel) ; 3 chiffres « Née chez Pitchy » au format B des fiches témoignage :
+  4 chiffres en 2 colonnes (conseil) ou B' 13 + 500+ seulement, studio et plateforme passés dans la phrase.
 - **Chargement de page effet film** (demande avant la fin de la livraison 4) : maquette `maquettes/loading/maquette-loading.html`
   (copie /workspace/maquette-loading.html), 4 options : A amorce 3-2-1, B clap qui se ferme puis rideau, C ouverture
   cinéma (bandes noires + REC + timecode + règle avec la tête de lecture rouge des frises, plus de filet fin), D barre de lecture en haut sans écran. Conseil : C à l'arrivée (première page
