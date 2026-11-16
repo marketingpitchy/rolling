@@ -188,6 +188,19 @@ class Rolling_Contenus {
 					'avatar-et-voix-off' => 'Avatar et voix off',
 				),
 			),
+			'rolling_usage'  => array(
+				'nom'    => __( 'Cas d’usage', 'rolling' ),
+				'un'     => __( 'Cas d’usage', 'rolling' ),
+				'types'  => array( 'rolling_realisation' ),
+				'termes' => array(
+					'evenement'                => 'Événement',
+					'onboarding'               => 'Onboarding',
+					'formation'                => 'Formation',
+					'lancement-produit'        => 'Lancement produit',
+					'marque-employeur'         => 'Marque employeur',
+					'communication-dirigeants' => 'Prise de parole des dirigeants',
+				),
+			),
 			'rolling_theme'  => array(
 				'nom'    => __( 'Thèmes', 'rolling' ),
 				'un'     => __( 'Thème', 'rolling' ),
@@ -231,7 +244,7 @@ class Rolling_Contenus {
 					'transcription' => array( 'zone', __( 'Transcription (facultatif)', 'rolling' ), __( 'Laissez vide : la ligne « Lire la transcription » n’apparaît pas.', 'rolling' ) ),
 				),
 				__( 'Le récit', 'rolling' ) => array(
-					'besoin'   => array( 'zone', __( 'Le besoin', 'rolling' ), '' ),
+					'besoin'   => array( 'zone', __( 'La problématique', 'rolling' ), __( 'Le défi du client, en deux ou trois phrases. (Le besoin détaillé se raconte dans le témoignage.)', 'rolling' ) ),
 					'produit'  => array( 'lignes', __( 'Ce que nous avons produit', 'rolling' ), __( 'Une ligne par point (liste à coches).', 'rolling' ), array( 'texte' => __( 'Point', 'rolling' ) ) ),
 					'resultat' => array( 'zone', __( 'Le résultat', 'rolling' ), '' ),
 				),
@@ -297,10 +310,11 @@ class Rolling_Contenus {
 			),
 			'rolling_webinar'     => array(
 				__( 'Le webinar', 'rolling' )       => array(
-					'resume' => array( 'zone', __( 'Résumé', 'rolling' ), __( 'Une ou deux phrases sous le titre.', 'rolling' ) ),
-					'date'   => array( 'date', __( 'Date', 'rolling' ), '' ),
-					'heure'  => array( 'heure', __( 'Heure de début (heure de Paris)', 'rolling' ), '' ),
-					'duree'  => array( 'nombre', __( 'Durée (minutes)', 'rolling' ), __( 'Par défaut : 45. À la fin, le webinar quitte la page Webinars.', 'rolling' ) ),
+					'resume'    => array( 'zone', __( 'Résumé', 'rolling' ), __( 'Une ou deux phrases sous le titre. Le détail va dans « Programme ».', 'rolling' ) ),
+					'programme' => array( 'lignes', __( 'Programme (facultatif)', 'rolling' ), __( 'Une ligne par point : affiché en liste à coches sous « Au programme ».', 'rolling' ), array( 'texte' => __( 'Point', 'rolling' ) ) ),
+					'date'      => array( 'date', __( 'Date', 'rolling' ), __( 'L’image à la une est facultative : sans elle, la carte affiche un grand visuel de date.', 'rolling' ) ),
+					'heure'     => array( 'heure', __( 'Heure de début (heure de Paris)', 'rolling' ), '' ),
+					'duree'     => array( 'nombre', __( 'Durée (minutes)', 'rolling' ), __( 'Par défaut : 45. À la fin, le webinar quitte la page Webinars.', 'rolling' ) ),
 				),
 				__( 'Les intervenants', 'rolling' ) => array(
 					'intervenants' => array(

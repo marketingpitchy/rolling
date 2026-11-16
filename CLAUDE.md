@@ -398,6 +398,19 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   **Maquette Webinars** (`maquettes/webinars/webinars.html`, copie /workspace/maquette-webinars.html, **à valider**) :
   nouveau champ « Programme (une ligne par point) » en liste à coches, résumé court ; sans image ⇒ visuel de date (jour,
   mois, heure, durée, compte à rebours) ; intervenants en pastilles d'initiales ; bouton + intervenants en bas.
+- **0.5.11** : réalisation : champ « besoin » renommé **« La problématique »** (clé `besoin` gardée ; titre de la fiche
+  « La problématique. ») — « Leur besoin. » reste dans le témoignage. **Cas d'usage** = nouvelle taxonomie `rolling_usage`
+  (réalisations ; termes de départ : Événement, Onboarding, Formation, Lancement produit, Marque employeur, Prise de parole
+  des dirigeants ; paramètre `?usage=`) : métier = équipe qui commande, format = type de vidéo, cas d'usage = occasion /
+  objectif ; widget Liste : filtres `usage` (métiers + cas d'usage) et `trois` (métiers, cas d'usage, formats ; page
+  Réalisations), réglage `nom_usage`, ligne masquée si aucun terme utilisé ; fiche réalisation : étiquette `si-usage`.
+  Le format « Événement » de départ doublonne avec le cas d'usage (à renommer par la cliente, ex. Aftermovie).
+  **Webinars = maquette validée** : champ `programme` (lignes) ⇒ widget Coches `champ=programme` dans `programme-webinar`
+  (`si-programme`) ; carte c7 refaite (`webinar-une` : visuel `webinar-visuel` = image `cadre-remplir si-image` OU
+  `webinar-affiche sans-image` (grande-date, affiche-jour / mois-nom / heure), bandeau « Prochain webinar », compte à
+  rebours en bas `compte-visuel` ; textes `webinar-textes`, `webinar-bas`) ; nouveau widget **Intervenants**
+  (`rolling-intervenants`, pastilles d'initiales `avatars-initiales`, classe `intervenants-webinar`). Image à la une
+  facultative. **Image du thème** : `screenshot.png` 1200×900 (logo sur carte en verre, halos), rendue par Playwright.
 - **Chargement de page effet film** (demande avant la fin de la livraison 4) : maquette `maquettes/loading/maquette-loading.html`
   (copie /workspace/maquette-loading.html), 4 options : A amorce 3-2-1, B clap qui se ferme puis rideau, C ouverture
   cinéma (bandes noires + REC + timecode + règle avec la tête de lecture rouge des frises, plus de filet fin), D barre de lecture en haut sans écran. Conseil : C à l'arrivée (première page

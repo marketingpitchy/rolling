@@ -41,6 +41,7 @@ class Rolling_Balise_Terme extends Tag {
 			array(
 				'rolling_metier' => __( 'Métier', 'rolling' ),
 				'rolling_format' => __( 'Format vidéo', 'rolling' ),
+				'rolling_usage'  => __( 'Cas d’usage', 'rolling' ),
 				'rolling_theme'  => __( 'Thème (guides, webinars)', 'rolling' ),
 				'category'       => __( 'Catégorie d’article', 'rolling' ),
 			)

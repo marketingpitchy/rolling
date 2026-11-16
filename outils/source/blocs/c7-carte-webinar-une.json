@@ -4,7 +4,7 @@
  "type": "e-flexbox",
  "apercu": "rolling_webinar",
  "composition": {
-  "xml_structure": "<e-flexbox configuration-id=\"Prochain webinar\"><e-div-block configuration-id=\"Prochain · cadre\"><e-image configuration-id=\"Prochain · image\"></e-image><e-paragraph configuration-id=\"Prochain · bandeau\"></e-paragraph></e-div-block><e-flexbox configuration-id=\"Prochain · textes\"><e-flexbox configuration-id=\"Prochain · infos\"><e-paragraph configuration-id=\"Prochain · thème\"></e-paragraph><e-paragraph configuration-id=\"Prochain · date\"></e-paragraph></e-flexbox><e-paragraph configuration-id=\"Prochain · compte à rebours\"></e-paragraph><e-heading configuration-id=\"Prochain · titre\"></e-heading><e-paragraph configuration-id=\"Prochain · résumé\"></e-paragraph><e-paragraph configuration-id=\"Prochain · intervenants\"></e-paragraph><e-button configuration-id=\"Prochain · bouton\"></e-button></e-flexbox></e-flexbox>",
+  "xml_structure": "<e-flexbox configuration-id=\"Prochain webinar\"><e-flexbox configuration-id=\"Prochain · visuel\"><e-div-block configuration-id=\"Prochain · cadre\"><e-image configuration-id=\"Prochain · image\"></e-image></e-div-block><e-flexbox configuration-id=\"Prochain · affiche\"><e-flexbox configuration-id=\"Prochain · grande date\"><e-paragraph configuration-id=\"Prochain · jour\"></e-paragraph><e-flexbox configuration-id=\"Prochain · mois et heure\"><e-paragraph configuration-id=\"Prochain · mois\"></e-paragraph><e-paragraph configuration-id=\"Prochain · heure\"></e-paragraph><e-paragraph configuration-id=\"Prochain · durée\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox><e-paragraph configuration-id=\"Prochain · bandeau\"></e-paragraph><e-flexbox configuration-id=\"Prochain · compte\"><e-paragraph configuration-id=\"Prochain · compte à rebours\"></e-paragraph></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Prochain · textes\"><e-flexbox configuration-id=\"Prochain · infos\"><e-paragraph configuration-id=\"Prochain · thème\"></e-paragraph><e-paragraph configuration-id=\"Prochain · date\"></e-paragraph></e-flexbox><e-heading configuration-id=\"Prochain · titre\"></e-heading><e-paragraph configuration-id=\"Prochain · résumé\"></e-paragraph><e-flexbox configuration-id=\"Prochain · programme\"><e-paragraph configuration-id=\"Prochain · programme · titre\"></e-paragraph><e-paragraph configuration-id=\"Prochain · programme · liste\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Prochain · bas\"><e-paragraph configuration-id=\"Prochain · intervenants\"></e-paragraph><e-button configuration-id=\"Prochain · bouton\"></e-button></e-flexbox></e-flexbox></e-flexbox>",
   "element_config": {
    "Prochain webinar": {
     "tag": "article"
@@ -17,17 +17,29 @@
      "size": "large"
     }
    },
+   "Prochain · jour": {
+    "paragraph": "⟦rolling-webinar|info=jour⟧"
+   },
+   "Prochain · mois": {
+    "paragraph": "⟦rolling-webinar|info=mois⟧"
+   },
+   "Prochain · heure": {
+    "paragraph": "⟦rolling-webinar|info=heure⟧"
+   },
+   "Prochain · durée": {
+    "paragraph": "⟦rolling-webinar|info=duree⟧"
+   },
    "Prochain · bandeau": {
     "paragraph": "Prochain webinar"
+   },
+   "Prochain · compte à rebours": {
+    "paragraph": "⟦widget:rolling-compte-a-rebours⟧"
    },
    "Prochain · thème": {
     "paragraph": "⟦rolling-terme|taxonomie=rolling_theme⟧"
    },
    "Prochain · date": {
     "paragraph": "⟦rolling-webinar|info=complete⟧"
-   },
-   "Prochain · compte à rebours": {
-    "paragraph": "⟦widget:rolling-compte-a-rebours⟧"
    },
    "Prochain · titre": {
     "tag": "h3",
@@ -36,8 +48,14 @@
    "Prochain · résumé": {
     "paragraph": "⟦rolling-champ|champ=resume⟧"
    },
+   "Prochain · programme · titre": {
+    "paragraph": "Au programme"
+   },
+   "Prochain · programme · liste": {
+    "paragraph": "⟦widget:rolling-coches|champ=programme⟧"
+   },
    "Prochain · intervenants": {
-    "paragraph": "⟦rolling-webinar|info=intervenants⟧"
+    "paragraph": "⟦widget:rolling-intervenants⟧"
    },
    "Prochain · bouton": {
     "text": "S'inscrire au webinar",
@@ -49,22 +67,51 @@
   "classes": {
    "Prochain webinar": [
     "carte-verre",
-    "carte-webinar-une"
+    "carte-webinar-une",
+    "webinar-une"
+   ],
+   "Prochain · visuel": [
+    "webinar-visuel"
    ],
    "Prochain · cadre": [
     "cadre-photo",
-    "cadre-16-10",
+    "cadre-remplir",
     "si-image"
    ],
    "Prochain · image": [
     "image-couvrante"
    ],
+   "Prochain · affiche": [
+    "webinar-affiche",
+    "sans-image"
+   ],
+   "Prochain · grande date": [
+    "grande-date"
+   ],
+   "Prochain · jour": [
+    "affiche-jour"
+   ],
+   "Prochain · mois et heure": [
+    "affiche-mois"
+   ],
+   "Prochain · mois": [
+    "affiche-mois-nom"
+   ],
+   "Prochain · heure": [
+    "affiche-heure"
+   ],
+   "Prochain · durée": [
+    "affiche-heure"
+   ],
    "Prochain · bandeau": [
     "bandeau-video",
     "bandeau-rec"
    ],
+   "Prochain · compte": [
+    "compte-visuel"
+   ],
    "Prochain · textes": [
-    "pile"
+    "webinar-textes"
    ],
    "Prochain · infos": [
     "rangee"
@@ -77,19 +124,25 @@
     "texte-petit"
    ],
    "Prochain · titre": [
-    "titre-md"
+    "titre-sm"
    ],
    "Prochain · résumé": [
     "texte",
     "si-resume"
    ],
-   "Prochain · intervenants": [
-    "texte-petit",
-    "si-intervenants"
+   "Prochain · programme": [
+    "programme-webinar",
+    "si-programme"
+   ],
+   "Prochain · programme · titre": [
+    "label",
+    "label-violet"
+   ],
+   "Prochain · bas": [
+    "webinar-bas"
    ],
    "Prochain · bouton": [
-    "bouton-principal",
-    "bouton-petit"
+    "bouton-principal"
    ]
   },
   "style": {}

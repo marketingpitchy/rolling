@@ -39,6 +39,7 @@ class Rolling_Widget_Coches extends Rolling_Widget {
 			array(
 				'accompagnement' => __( 'Notre accompagnement (témoignage)', 'rolling' ),
 				'produit'        => __( 'Ce que nous avons produit (réalisation)', 'rolling' ),
+				'programme'      => __( 'Programme (webinar)', 'rolling' ),
 			)
 		);
 		$this->texte( 'classe_texte', __( 'Classe du texte', 'rolling' ), 'texte' );

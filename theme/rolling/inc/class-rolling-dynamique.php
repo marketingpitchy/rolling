@@ -238,7 +238,7 @@ class Rolling_Dynamique {
 		foreach ( glob( ROLLING_DIR . '/inc/elementor/widgets/class-rolling-widget-*.php' ) as $fichier ) {
 			require_once $fichier;
 		}
-		foreach ( array( 'Rolling_Widget_Liste', 'Rolling_Widget_Chiffres', 'Rolling_Widget_Coches', 'Rolling_Widget_Generique', 'Rolling_Widget_Compte_A_Rebours', 'Rolling_Widget_Video', 'Rolling_Widget_Transcription', 'Rolling_Widget_Logos', 'Rolling_Widget_Ariane', 'Rolling_Widget_Contenu', 'Rolling_Widget_Sommaire', 'Rolling_Widget_Partage', 'Rolling_Widget_Resumer' ) as $classe ) {
+		foreach ( array( 'Rolling_Widget_Liste', 'Rolling_Widget_Chiffres', 'Rolling_Widget_Coches', 'Rolling_Widget_Generique', 'Rolling_Widget_Compte_A_Rebours', 'Rolling_Widget_Video', 'Rolling_Widget_Transcription', 'Rolling_Widget_Logos', 'Rolling_Widget_Ariane', 'Rolling_Widget_Contenu', 'Rolling_Widget_Sommaire', 'Rolling_Widget_Partage', 'Rolling_Widget_Resumer', 'Rolling_Widget_Intervenants' ) as $classe ) {
 			$gestionnaire->register( new $classe() );
 		}
 	}
@@ -579,7 +579,7 @@ class Rolling_Dynamique {
 			return $ids;
 		}
 
-		$labels = array( 'filtres-liste', 'chip-filtre', 'rangee', 'liste-plus', 'bouton-verre', 'bouton-petit', 'plaque-libre', 'chiffre-verre', 'libelle-chiffre', 'texte-masque', 'liste-coches', 'ligne-coche', 'coche', 'texte', 'texte-petit', 'generique-liste', 'compte-rebours', 'cr-pilule', 'cr-point', 'cr-label', 'cr-temps', 'cr-direct', 'cr-fin', 'cadre-photo', 'video-fiche', 'image-couvrante', 'bandeau-video', 'duree', 'lecture-centre', 'transcription', 'masque-bords', 'logos-defilants', 'grille-6', 'carte-verre', 'tuile-logo', 'ariane', 'article-texte', 'sommaire', 'partage', 'partage-bouton', 'chip-neutre', 'resumer', 'label', 'label-violet' );
+		$labels = array( 'filtres-liste', 'chip-filtre', 'rangee', 'liste-plus', 'bouton-verre', 'bouton-petit', 'plaque-libre', 'chiffre-verre', 'libelle-chiffre', 'texte-masque', 'liste-coches', 'ligne-coche', 'coche', 'texte', 'texte-petit', 'generique-liste', 'compte-rebours', 'cr-pilule', 'cr-point', 'cr-label', 'cr-temps', 'cr-direct', 'cr-fin', 'cadre-photo', 'video-fiche', 'image-couvrante', 'bandeau-video', 'duree', 'lecture-centre', 'transcription', 'masque-bords', 'logos-defilants', 'grille-6', 'carte-verre', 'tuile-logo', 'ariane', 'article-texte', 'sommaire', 'partage', 'partage-bouton', 'chip-neutre', 'resumer', 'label', 'label-violet', 'intervenants-webinar', 'avatars-initiales' );
 		if ( preg_match_all( '/"(?:titre_)?classe(?:_texte)?":"([^"]+)"/', $donnees, $trouves ) ) {
 			foreach ( $trouves[1] as $liste ) {
 				$labels = array_merge( $labels, preg_split( '/\s+/', $liste ) );

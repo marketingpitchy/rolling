@@ -119,6 +119,9 @@ class Rolling_Widget_Liste extends Rolling_Widget {
 					'rolling_metier' => __( 'Métiers', 'rolling' ),
 					'rolling_format' => __( 'Formats vidéo', 'rolling' ),
 					'both'           => __( 'Métiers et formats vidéo', 'rolling' ),
+					'usage'          => __( 'Métiers et cas d’usage', 'rolling' ),
+					'trois'          => __( 'Métiers, cas d’usage et formats vidéo', 'rolling' ),
+					'rolling_usage'  => __( 'Cas d’usage', 'rolling' ),
 					'rolling_theme'  => __( 'Thèmes', 'rolling' ),
 					'category'       => __( 'Catégories du blog', 'rolling' ),
 				),
@@ -128,6 +131,7 @@ class Rolling_Widget_Liste extends Rolling_Widget {
 		$this->texte( 'tous', __( 'Filtres : premier bouton', 'rolling' ), __( 'Tout voir', 'rolling' ) );
 		$this->texte( 'nom_metier', __( 'Filtres sur deux lignes : nom de la ligne des métiers', 'rolling' ), __( 'Métier', 'rolling' ) );
 		$this->texte( 'nom_format', __( 'Filtres sur deux lignes : nom de la ligne des formats', 'rolling' ), __( 'Format', 'rolling' ) );
+		$this->texte( 'nom_usage', __( 'Filtres sur deux lignes : nom de la ligne des cas d’usage', 'rolling' ), __( 'Cas d’usage', 'rolling' ) );
 		$this->add_control(
 			'plus',
 			array(
@@ -163,7 +167,23 @@ class Rolling_Widget_Liste extends Rolling_Widget {
 	}
 
 	/**
-	 * Filtre demandé dans l'adresse (?metier=…, ?format=…, ?theme=…, ?categorie=…).
+	 * Taxonomies d'un réglage « Filtres » (une ou plusieurs lignes).
+	 *
+	 * @param string $choix Réglage.
+	 * @return string[]
+	 */
+	private static function taxonomies_filtres( $choix ) {
+		$groupes = array(
+			'both'  => array( 'rolling_metier', 'rolling_format' ),
+			'usage' => array( 'rolling_metier', 'rolling_usage' ),
+			'trois' => array( 'rolling_metier', 'rolling_usage', 'rolling_format' ),
+		);
+
+		return $groupes[ $choix ] ?? array_filter( array( $choix ) );
+	}
+
+	/**
+	 * Filtre demandé dans l'adresse (?metier=…, ?format=…, ?usage=…, ?theme=…, ?categorie=…).
 	 *
 	 * @param string $taxonomie Taxonomie.
 	 * @return string
@@ -172,6 +192,7 @@ class Rolling_Widget_Liste extends Rolling_Widget {
 		$parametres = array(
 			'rolling_metier' => 'metier',
 			'rolling_format' => 'format',
+			'rolling_usage'  => 'usage',
 			'rolling_theme'  => 'theme',
 			'category'       => 'categorie',
 		);
@@ -230,7 +251,7 @@ class Rolling_Widget_Liste extends Rolling_Widget {
 			}
 		}
 
-		$filtres = 'both' === $r['filtres'] ? array( 'rolling_metier', 'rolling_format' ) : array_filter( array( $r['filtres'] ) );
+		$filtres = self::taxonomies_filtres( $r['filtres'] );
 		foreach ( $filtres as $taxonomie ) {
 			$terme = self::filtre_demande( $taxonomie );
 			if ( $terme ) {
@@ -328,7 +349,7 @@ class Rolling_Widget_Liste extends Rolling_Widget {
 	 * @param array $r Réglages.
 	 */
 	private function afficher_filtres( $r ) {
-		$taxonomies = 'both' === $r['filtres'] ? array( 'rolling_metier', 'rolling_format' ) : array_filter( array( $r['filtres'] ) );
+		$taxonomies = self::taxonomies_filtres( $r['filtres'] );
 		if ( ! $taxonomies ) {
 			return;
 		}
@@ -336,6 +357,7 @@ class Rolling_Widget_Liste extends Rolling_Widget {
 		$parametres = array(
 			'rolling_metier' => 'metier',
 			'rolling_format' => 'format',
+			'rolling_usage'  => 'usage',
 			'rolling_theme'  => 'theme',
 			'category'       => 'categorie',
 		);
@@ -352,11 +374,18 @@ class Rolling_Widget_Liste extends Rolling_Widget {
 				)
 			);
 			$plusieurs = count( $taxonomies ) > 1;
-			$ici       = $plusieurs ? remove_query_arg( array( $parametres[ $taxonomie ], 'voir' ) ) : $base;
+			if ( $plusieurs && ( is_wp_error( $termes ) || ! $termes ) ) {
+				continue; // Ligne sans terme utilisé (ex. aucun cas d'usage coché) : rien à filtrer.
+			}
+			$ici = $plusieurs ? remove_query_arg( array( $parametres[ $taxonomie ], 'voir' ) ) : $base;
 			echo '<ul class="rangee">';
 			if ( $plusieurs ) {
 				// Deux lignes : chacune porte son nom et son propre « Tous » (il ne retire que son filtre).
-				$nom = 'rolling_format' === $taxonomie ? $r['nom_format'] : $r['nom_metier'];
+				$noms = array(
+					'rolling_format' => $r['nom_format'],
+					'rolling_usage'  => $r['nom_usage'] ?? '',
+				);
+				$nom  = $noms[ $taxonomie ] ?? $r['nom_metier'];
 				if ( '' !== trim( (string) $nom ) ) {
 					echo '<li class="nom-filtre">' . esc_html( $nom ) . '</li>';
 				}

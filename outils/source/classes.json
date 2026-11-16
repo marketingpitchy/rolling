@@ -1189,6 +1189,16 @@
      "css": "--rl-repere: 1;"
     },
     {
+     "label": "si-usage",
+     "description": "Repère sans style : le thème masque ce bloc quand le champ « usage » du contenu est vide.",
+     "css": "--rl-repere: 1;"
+    },
+    {
+     "label": "si-programme",
+     "description": "Repère sans style : le thème masque ce bloc quand le champ « programme » du contenu est vide.",
+     "css": "--rl-repere: 1;"
+    },
+    {
      "label": "si-theme",
      "description": "Repère sans style : le thème masque ce bloc quand le champ « theme » du contenu est vide.",
      "css": "--rl-repere: 1;"
@@ -1424,6 +1434,76 @@
      "css": "display: grid; grid-template-columns: 132px minmax(0, 1fr) auto; gap: 28px; align-items: center; padding: 22px 28px 22px 22px; @media(--tablet) { grid-template-columns: 96px minmax(0, 1fr); gap: 20px; & > :last-child { grid-column: 1 / -1; justify-self: start; } } @media(--mobile) { padding: 16px; }"
     },
     {
+     "label": "webinar-une",
+     "description": "Carte du prochain webinar (avec carte-webinar-une) : visuel à gauche (image à la une, sinon grand visuel de date), textes à droite.",
+     "css": "grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 40px; align-items: stretch; padding: 14px 40px 14px 14px; @media(--tablet) { grid-template-columns: minmax(0, 1fr); gap: 6px; padding: 12px 12px 24px; }"
+    },
+    {
+     "label": "webinar-visuel",
+     "description": "Visuel du prochain webinar : cadre arrondi qui accueille l'image ou le grand visuel de date, l'étiquette et le compte à rebours.",
+     "css": "position: relative; display: flex; flex-direction: column; min-height: 380px; padding: 0; border-radius: 22px; overflow: hidden; background-color: #2A1F55; @media(--tablet) { min-height: 260px; }"
+    },
+    {
+     "label": "cadre-remplir",
+     "description": "Cadre photo qui remplit tout son parent (image du prochain webinar).",
+     "css": "position: absolute; top: 0; right: 0; bottom: 0; left: 0; border-radius: inherit;"
+    },
+    {
+     "label": "webinar-affiche",
+     "description": "Grand visuel de date du prochain webinar (sans image à la une) : jour, mois, heure et durée sur un fond violet → pêche.",
+     "css": "flex: 1; display: flex; flex-direction: column; justify-content: center; padding: 70px 28px 96px; color: #FFFFFF; background: radial-gradient(70% 60% at 85% 10%, rgba(255,162,122,0.75), rgba(255,162,122,0) 65%), radial-gradient(80% 80% at 0% 100%, rgba(139,92,246,0.9), rgba(139,92,246,0) 70%), linear-gradient(160deg, #4A2BB8, #1C1730); background-color: #2A1F55; @media(--tablet) { padding: 64px 22px 84px; }"
+    },
+    {
+     "label": "grande-date",
+     "description": "Jour en très grand, puis le mois, l'heure et la durée (visuel de date du webinar).",
+     "css": "display: flex; flex-direction: row; align-items: flex-end; gap: 16px; padding: 0;"
+    },
+    {
+     "label": "affiche-jour",
+     "description": "Jour du webinar en très grand (visuel de date).",
+     "css": "display: block; margin: 0; font-family: Bricolage Grotesque; font-size: 128px; line-height: 0.8; font-weight: 700; letter-spacing: -0.06em; color: #FFFFFF; @media(--tablet) { font-size: 92px; }"
+    },
+    {
+     "label": "affiche-mois",
+     "description": "Mois, heure et durée à côté du jour (visuel de date).",
+     "css": "display: flex; flex-direction: column; gap: 4px; padding: 0 0 6px;"
+    },
+    {
+     "label": "affiche-mois-nom",
+     "description": "Mois abrégé (visuel de date).",
+     "css": "display: block; margin: 0; font-family: Bricolage Grotesque; font-size: 32px; line-height: 1; font-weight: 650; letter-spacing: -0.03em; color: #FFFFFF; @media(--tablet) { font-size: 26px; }"
+    },
+    {
+     "label": "affiche-heure",
+     "description": "Heure ou durée sous le mois (visuel de date).",
+     "css": "display: block; margin: 0; font-family: Hanken Grotesk; font-size: 15px; line-height: 1.3; font-weight: 700; color: #FFD1BF;"
+    },
+    {
+     "label": "compte-visuel",
+     "description": "Compte à rebours posé en bas du visuel du webinar.",
+     "css": "position: absolute; z-index: 2; left: 14px; right: 14px; bottom: 14px; padding: 0; & .texte-masque { color: #FFFFFF; }"
+    },
+    {
+     "label": "webinar-textes",
+     "description": "Colonne de textes du prochain webinar : infos, titre, résumé, programme, intervenants et bouton.",
+     "css": "display: flex; flex-direction: column; gap: 16px; padding: 24px 0; @media(--tablet) { padding: 18px 10px 0; }"
+    },
+    {
+     "label": "programme-webinar",
+     "description": "Encadré « Au programme » du webinar (liste à coches sur fond lilas).",
+     "css": "display: flex; flex-direction: column; gap: 10px; padding: 18px 20px; border-radius: 18px; background-color: #F4F1FF;"
+    },
+    {
+     "label": "webinar-bas",
+     "description": "Bas de la carte du webinar : intervenants à gauche, bouton à droite (l'un sous l'autre en mobile).",
+     "css": "display: flex; flex-direction: row; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; padding: 6px 0 0;"
+    },
+    {
+     "label": "intervenants-webinar",
+     "description": "Intervenants du webinar : pastilles d'initiales, puis prénom et poste.",
+     "css": "display: flex; flex-direction: row; align-items: center; gap: 12px; & .avatars-initiales { display: flex; } & .avatars-initiales i { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; margin-left: -10px; border-radius: 50%; font-style: normal; font-family: Hanken Grotesk; font-size: 14px; font-weight: 800; color: #FFFFFF; background-color: #5B3BEA; border: 2px solid #FFFFFF; } & .avatars-initiales i:first-child { margin-left: 0; } & .avatars-initiales i:nth-child(2n) { background-color: #B8400F; } & .texte-petit { margin: 0; line-height: 1.4; } & strong { color: var(--encre); }"
+    },
+    {
      "label": "carte-webinar-une",
      "description": "Carte à la une (avec carte-verre) : image à gauche, textes à droite (prochain webinar, dernier article du blog) ; sans image, le texte prend toute la largeur.",
      "css": "display: grid; grid-column: 1 / -1; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 36px; align-items: center; padding: 12px 40px 12px 12px; & > :only-child { grid-column: 1 / -1; padding: 26px 0 26px 28px; } @media(--tablet) { grid-template-columns: minmax(0, 1fr); padding: 12px 12px 26px; & > :only-child { padding: 18px 14px 4px; } }"
@@ -1456,7 +1536,7 @@
     {
      "label": "filtres-liste",
      "description": "Filtres au-dessus d’une liste (boutons arrondis) ; sur deux lignes, chaque ligne commence par son nom (Métier, Format).",
-     "css": "display: flex; flex-direction: column; gap: 12px; margin-bottom: 40px; & ul { margin: 0; padding: 0; list-style: none; align-items: center; } & .nom-filtre { min-width: 72px; font-family: Hanken Grotesk; font-size: 12px; line-height: 1.2; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: var(--legende); } @media(--mobile) { & .nom-filtre { width: 100%; } }"
+     "css": "display: flex; flex-direction: column; gap: 12px; margin-bottom: 40px; & ul { margin: 0; padding: 0; list-style: none; align-items: center; } & .nom-filtre { min-width: 104px; font-family: Hanken Grotesk; font-size: 12px; line-height: 1.2; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: var(--legende); } @media(--mobile) { & .nom-filtre { width: 100%; } }"
     },
     {
      "label": "chip-filtre",
@@ -1572,6 +1652,11 @@
     {
      "label": "si-contexte",
      "description": "Repère sans style : affiché seulement si le conteneur « contexte-… » a trouvé un contenu publié.",
+     "css": "--rl-repere: 1;"
+    },
+    {
+     "label": "sans-image",
+     "description": "Repère sans style : affiché seulement quand le contenu n'a pas d'image à la une.",
      "css": "--rl-repere: 1;"
     },
     {
