@@ -416,6 +416,12 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   de son élément). Vignettes des cartes (`vignette-lien`) : voile `cadre-photo::after` allégé (34 % / 30 % au lieu de
   55 / 60 + teintes) ; image d'un fichier vidéo prise à 2 s (`#t=2`, cartes et widget Vidéo en « image fixe ») au lieu de
   0,1 s (souvent noire). Image à la une d'une réalisation = vignette des cartes (prioritaire sur la vidéo).
+- **Maquette « Chiffres de la fiche témoignage »** (`maquettes/chiffres-temoignage/chiffres.html`, copie
+  /workspace/maquette-chiffres-temoignage.html, **à valider**, « ne relance pas le thème avant ») : plaque `plaque-libre`
+  jugée trop écartée (4 colonnes égales, chiffre d'un caractère) ⇒ A plaque ajustée au contenu, **B chiffre + libellé côte
+  à côte (conseil ; mobile = liste, une ligne par chiffre)**, C centrée et chiffres plus grands, D chiffres dans le bandeau
+  du projet (une seule carte, plus de titre « En chiffres »). Prochaine version aussi : message « Aucune réalisation pour
+  ces filtres » + lien « Tout voir » quand une combinaison de filtres est vide (filtres cumulables : vérifié, ET logique).
 - **Chargement de page effet film** (demande avant la fin de la livraison 4) : maquette `maquettes/loading/maquette-loading.html`
   (copie /workspace/maquette-loading.html), 4 options : A amorce 3-2-1, B clap qui se ferme puis rideau, C ouverture
   cinéma (bandes noires + REC + timecode + règle avec la tête de lecture rouge des frises, plus de filet fin), D barre de lecture en haut sans écran. Conseil : C à l'arrivée (première page

@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rolling · chiffres de la fiche témoignage</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root { --ink:#0F0F12; --texte:#4A4858; --legende:#5F5C6C; --violet:#5B3BEA; }
+* { box-sizing: border-box; }
+body { margin: 0; color: var(--ink); font-family: 'Hanken Grotesk', system-ui, sans-serif; background: radial-gradient(40% 30% at 100% 0%, #FFE2D4, transparent 70%), radial-gradient(35% 30% at 0% 10%, #EDE6FF, transparent 70%), #FAF9F7; }
+h1, h2, h3, p { margin: 0; }
+.jk { font-family: 'Bricolage Grotesque', system-ui, sans-serif; }
+.conteneur { max-width: 1240px; margin: 0 auto; padding: 0 28px; }
+.intro { padding: 56px 0 8px; }
+.intro h1 { font-size: 30px; letter-spacing: -.035em; font-weight: 650; }
+.intro p { margin-top: 10px; max-width: 80ch; font-size: 16px; line-height: 1.55; color: var(--texte); }
+.option { margin-top: 64px; }
+.option > h2 { display: flex; align-items: center; gap: 12px; font-size: 22px; letter-spacing: -.03em; font-weight: 650; }
+.lettre { display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; border-radius: 50%; font-size: 15px; color: #fff; background: #0F0F12; }
+.conseil .lettre { background: var(--violet); }
+.etiquette { padding: 3px 10px; border-radius: 999px; font-size: 12px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: #4A2BB8; background: #EDE6FF; }
+.desc { margin-top: 8px; max-width: 80ch; font-size: 15px; line-height: 1.55; color: var(--texte); }
+.scene { margin-top: 22px; padding: 30px; border-radius: 30px; background: rgba(255,255,255,.35); box-shadow: inset 0 0 0 1px rgba(15,15,18,.06); }
+.label { font-size: 12px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: #4A2BB8; }
+
+/* Bandeau des infos (repère) */
+.bandeau { display: flex; align-items: center; gap: 22px; padding: 16px 20px; border-radius: 22px; background: #fff; box-shadow: 0 20px 40px -30px rgba(76,48,170,.35); font-size: 14px; }
+.bandeau span b { display: block; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--legende); }
+.bandeau .vide { flex: 1; }
+.bandeau .btn { padding: 10px 16px; border-radius: 999px; color: #fff; background: #0F0F12; font-weight: 700; }
+.suite { margin-top: 26px; display: grid; grid-template-columns: 1fr 1.3fr; gap: 28px; }
+.suite .citation { padding: 22px; border-radius: 22px; background: linear-gradient(160deg, #EDE6FF, #FFE2D4); font-family: 'Bricolage Grotesque'; font-size: 20px; line-height: 1.35; font-weight: 650; letter-spacing: -.02em; }
+.suite .recit h3 { font-family: 'Bricolage Grotesque'; font-size: 30px; letter-spacing: -.04em; font-weight: 650; }
+.suite .recit p { margin-top: 8px; font-size: 15px; line-height: 1.6; color: var(--texte); }
+
+/* Chiffres : rendu proche des chiffres en verre */
+.n { font-family: 'Bricolage Grotesque'; font-weight: 800; line-height: .9; letter-spacing: -.02em; background: linear-gradient(180deg, #FFAB96 0%, #E697BD 45%, #A77BF0 100%); -webkit-background-clip: text; background-clip: text; color: transparent; filter: drop-shadow(0 8px 14px rgba(91,59,234,.25)); }
+.l { font-size: 16px; line-height: 1.35; font-weight: 600; color: #2A2840; }
+.verre { border-radius: 30px; background: radial-gradient(70% 60% at 15% 0%, rgba(255,255,255,.95), rgba(255,255,255,0) 72%), linear-gradient(150deg, rgba(255,255,255,.78), rgba(255,255,255,.46)); box-shadow: inset 0 1px 0 #fff, 0 30px 70px -34px rgba(76,48,170,.34); }
+
+/* Actuel */
+.actuel { margin-top: 18px; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); padding: 28px 0; }
+.actuel > div { display: flex; flex-direction: column; gap: 10px; padding: 4px 24px; box-shadow: -1px 0 0 rgba(91,59,234,.16); }
+.actuel .n { font-size: 56px; }
+
+/* A · ajustée au contenu */
+.ajustee { margin-top: 14px; display: inline-flex; gap: 0; padding: 22px 6px; }
+.ajustee > div { display: flex; flex-direction: column; gap: 8px; padding: 2px 30px; }
+.ajustee > div + div { box-shadow: -1px 0 0 rgba(91,59,234,.16); }
+.ajustee .n { font-size: 52px; }
+.ajustee .l { max-width: 15ch; }
+
+/* B · chiffre et libellé côte à côte */
+.cote { margin-top: 14px; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); padding: 20px 8px; }
+.cote > div { display: flex; align-items: center; gap: 14px; padding: 4px 22px; }
+.cote > div + div { box-shadow: -1px 0 0 rgba(91,59,234,.16); }
+.cote .n { font-size: 54px; flex-shrink: 0; }
+.cote .l { font-size: 15.5px; }
+
+/* C · centrée */
+.centree { margin-top: 14px; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); padding: 26px 0; text-align: center; }
+.centree > div { display: flex; flex-direction: column; align-items: center; gap: 10px; padding: 4px 20px; }
+.centree > div + div { box-shadow: -1px 0 0 rgba(91,59,234,.16); }
+.centree .n { font-size: 64px; }
+
+/* D · dans le bandeau */
+.bloc-projet { padding: 8px; }
+.bloc-projet .bandeau { box-shadow: none; background: transparent; }
+.bloc-projet .rang { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); margin: 0 8px; padding: 18px 0 14px; border-top: 1px solid rgba(91,59,234,.14); }
+.bloc-projet .rang > div { display: flex; align-items: center; gap: 12px; padding: 0 20px; }
+.bloc-projet .rang > div + div { box-shadow: -1px 0 0 rgba(91,59,234,.14); }
+.bloc-projet .n { font-size: 44px; }
+.bloc-projet .l { font-size: 15px; }
+
+@media (max-width: 980px) {
+  .actuel, .centree { grid-template-columns: 1fr 1fr; row-gap: 18px; }
+  .cote, .bloc-projet .rang { grid-template-columns: 1fr; row-gap: 0; padding-top: 6px; padding-bottom: 6px; }
+  .cote > div, .bloc-projet .rang > div { padding: 12px 18px; }
+  .cote > div + div, .bloc-projet .rang > div + div { box-shadow: 0 -1px 0 rgba(91,59,234,.14); }
+  .cote .n { font-size: 44px; min-width: 40px; }
+  .ajustee { display: grid; grid-template-columns: 1fr 1fr; row-gap: 18px; }
+  .ajustee > div:nth-child(3), .centree > div:nth-child(3) { box-shadow: none; }
+  .bandeau { flex-wrap: wrap; } .bandeau .vide { display: none; }
+  .suite { grid-template-columns: 1fr; }
+  .scene { padding: 16px; }
+}
+</style>
+</head>
+<body>
+<main>
+  <div class="conteneur intro">
+    <h1 class="jk">Fiche témoignage : des chiffres moins écartés.</h1>
+    <p>Aujourd'hui, la plaque prend toute la largeur en 4 colonnes égales : un chiffre d'un caractère laisse environ 200 px vides à sa droite. Quatre propositions, avec le bandeau des infos au-dessus et le récit dessous pour juger l'ensemble. Sur le site, les chiffres restent vos chiffres en verre (ici simulés par leur dégradé). Ça vaut pour toutes les fiches témoignage, et pour 1 à n chiffres.</p>
+  </div>
+
+  <div class="conteneur">
+    <section class="option">
+      <h2 class="jk"><span class="lettre">0</span>Aujourd'hui</h2>
+      <div class="scene">
+        <div class="bandeau"><span><b>Secteur</b>Grande distribution</span><span><b>Équipes</b>SIRH</span><span><b>Formats</b>16:9</span><span class="vide"></span><span>Un projet similaire ?</span><span class="btn">Réserver un échange →</span></div>
+        <p class="label" style="margin-top:34px">En chiffres</p>
+        <div class="verre actuel"><div><span class="n">3</span><span class="l">vidéos</span></div><div><span class="n">3</span><span class="l">semaines de production</span></div><div><span class="n">2</span><span class="l">outils métiers valorisés</span></div><div><span class="n">5</span><span class="l">minutes par vidéo maximum</span></div></div>
+      </div>
+    </section>
+
+    <section class="option">
+      <h2 class="jk"><span class="lettre">A</span>Plaque ajustée au contenu</h2>
+      <p class="desc">La plaque ne prend que la place des chiffres et reste calée à gauche, sous le bandeau. Les colonnes se resserrent autour de chaque chiffre. Simple, mais la plaque change de largeur d'une fiche à l'autre.</p>
+      <div class="scene">
+        <div class="bandeau"><span><b>Secteur</b>Grande distribution</span><span><b>Équipes</b>SIRH</span><span><b>Formats</b>16:9</span><span class="vide"></span><span>Un projet similaire ?</span><span class="btn">Réserver un échange →</span></div>
+        <p class="label" style="margin-top:30px">En chiffres</p>
+        <div class="verre ajustee"><div><span class="n">3</span><span class="l">vidéos</span></div><div><span class="n">3</span><span class="l">semaines de production</span></div><div><span class="n">2</span><span class="l">outils métiers valorisés</span></div><div><span class="n">5</span><span class="l">minutes par vidéo maximum</span></div></div>
+      </div>
+    </section>
+
+    <section class="option conseil">
+      <h2 class="jk"><span class="lettre">B</span>Chiffre et libellé côte à côte <span class="etiquette">Conseil</span></h2>
+      <p class="desc">Le libellé passe à droite du chiffre : « 3 vidéos » se lit d'un coup, comme une phrase. La largeur se remplit naturellement et la plaque est moins haute. Fonctionne aussi avec des valeurs longues (« 4,2/5 », « 2 500+ ») : le libellé passe sur deux lignes. En mobile : une ligne par chiffre, comme une liste.</p>
+      <div class="scene">
+        <div class="bandeau"><span><b>Secteur</b>Grande distribution</span><span><b>Équipes</b>SIRH</span><span><b>Formats</b>16:9</span><span class="vide"></span><span>Un projet similaire ?</span><span class="btn">Réserver un échange →</span></div>
+        <p class="label" style="margin-top:30px">En chiffres</p>
+        <div class="verre cote"><div><span class="n">3</span><span class="l">vidéos</span></div><div><span class="n">3</span><span class="l">semaines de production</span></div><div><span class="n">2</span><span class="l">outils métiers valorisés</span></div><div><span class="n">5</span><span class="l">minutes par vidéo maximum</span></div></div>
+        <div class="suite"><p class="citation">« On devait produire trois vidéos en 3 semaines, on n'avait pas la bande passante… »</p><div class="recit"><h3>Le contexte.</h3><p>Un réseau de 150 000 collaborateurs à fédérer autour de ses outils métiers…</p></div></div>
+      </div>
+    </section>
+
+    <section class="option">
+      <h2 class="jk"><span class="lettre">C</span>Centrée, chiffres plus grands</h2>
+      <p class="desc">Même largeur qu'aujourd'hui, mais chaque chiffre est centré dans sa colonne et un peu plus grand : le vide se répartit des deux côtés et la plaque paraît équilibrée.</p>
+      <div class="scene">
+        <div class="bandeau"><span><b>Secteur</b>Grande distribution</span><span><b>Équipes</b>SIRH</span><span><b>Formats</b>16:9</span><span class="vide"></span><span>Un projet similaire ?</span><span class="btn">Réserver un échange →</span></div>
+        <p class="label" style="margin-top:30px">En chiffres</p>
+        <div class="verre centree"><div><span class="n">3</span><span class="l">vidéos</span></div><div><span class="n">3</span><span class="l">semaines de production</span></div><div><span class="n">2</span><span class="l">outils métiers valorisés</span></div><div><span class="n">5</span><span class="l">minutes par vidéo maximum</span></div></div>
+      </div>
+    </section>
+
+    <section class="option">
+      <h2 class="jk"><span class="lettre">D</span>Les chiffres dans le bandeau du projet</h2>
+      <p class="desc">Une seule carte « le projet » : les infos en haut, les chiffres juste dessous, séparés par un filet. Plus de titre « En chiffres » ni de seconde plaque : la page gagne environ 150 px de hauteur.</p>
+      <div class="scene">
+        <div class="verre bloc-projet">
+          <div class="bandeau"><span><b>Secteur</b>Grande distribution</span><span><b>Équipes</b>SIRH</span><span><b>Formats</b>16:9</span><span class="vide"></span><span>Un projet similaire ?</span><span class="btn">Réserver un échange →</span></div>
+          <div class="rang"><div><span class="n">3</span><span class="l">vidéos</span></div><div><span class="n">3</span><span class="l">semaines de production</span></div><div><span class="n">2</span><span class="l">outils métiers valorisés</span></div><div><span class="n">5</span><span class="l">minutes par vidéo maximum</span></div></div>
+        </div>
+      </div>
+    </section>
+    <p style="height:90px"></p>
+  </div>
+</main>
+</body>
+</html>
