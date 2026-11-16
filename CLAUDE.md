@@ -380,6 +380,24 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   appliqué à chaque carte du widget Liste (`video` muette `#t=0.1` + `span.screen-reader-text` = titre ; miniature
   YouTube : alt = titre, sinon lien de vignette sans nom pour axe). Le script reste en secours.
   Image de fond de l'écran : Navigateur > « Écran · image de fond » (dans IA · votre vidéo > Écran · scène > cadre > vidéo > fond).
+- **0.5.10 (contrastes « Accessibility » d'Elementor / Ally)** : règle du vérificateur reconstituée sur les 11 captures de
+  la cliente (`scratchpad/fonds6.js`) : il remonte au 1er ancêtre qui a un fond ; **dégradé seul (une couche) ⇒ sa 1re
+  couleur ; plusieurs couches ⇒ ignorées, il lit `background-color`** ; couleur translucide posée sur du blanc ; les
+  pseudo-éléments ne comptent pas ; un texte en dégradé (background-clip: text) sert de « fond » à ses enfants (« / mois »).
+  ⇒ **Règle** : fond translucide d'un élément à texte = 2 couches (`linear-gradient(c, c), linear-gradient(rgba(0,0,0,0),
+  rgba(0,0,0,0))` + `background-color: transparent`) pour que l'outil remonte au vrai fond uni ; ne pas écrire
+  `transparent` dans un dégradé (le convertisseur l'abandonne : `rgba(0,0,0,0)`). Appliqué : badges (var
+  `--rl-verre-bouton-fond`), timecode sombre (`--rl-etiquette-fond`), groupe-choix, bandeau-video, etiquette-carte,
+  plaque-verre, plaque-une, resume-offre-sombre, offres-resume-sombre, prix-degrade, ecran-video (2e couche ⇒ lit
+  #3434E0), pied (rl-badge, rl-pied__appel) ; clip-numero = `rgba(15,15,18,.62)` (passe même posé sur du blanc) ;
+  colonne sombre du tableau des offres = `background-color: #1C1730` + `background-clip: text` (invisible, lu par l'outil ;
+  pas sur la case unique des titres de groupe). Storyboard des offres : `note-main` visible en mobile dans
+  `cadre-storyboard`. Carte « à la une » sans image : marges du texte (26/28 px). Bouton de l'en-tête : Personnaliser >
+  « Rolling : en-tête et pied de page ». Carte « Aucun webinar » = Mes modèles « Rolling · Aucun webinar programmé »
+  (boutons centrés sur le site, à gauche seulement dans l'éditeur).
+  **Maquette Webinars** (`maquettes/webinars/webinars.html`, copie /workspace/maquette-webinars.html, **à valider**) :
+  nouveau champ « Programme (une ligne par point) » en liste à coches, résumé court ; sans image ⇒ visuel de date (jour,
+  mois, heure, durée, compte à rebours) ; intervenants en pastilles d'initiales ; bouton + intervenants en bas.
 - **Chargement de page effet film** (demande avant la fin de la livraison 4) : maquette `maquettes/loading/maquette-loading.html`
   (copie /workspace/maquette-loading.html), 4 options : A amorce 3-2-1, B clap qui se ferme puis rideau, C ouverture
   cinéma (bandes noires + REC + timecode + règle avec la tête de lecture rouge des frises, plus de filet fin), D barre de lecture en haut sans écran. Conseil : C à l'arrivée (première page

@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rolling · page Webinars plus soignée</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root { --ink:#0F0F12; --texte:#4A4858; --legende:#5F5C6C; --violet:#5B3BEA; }
+* { box-sizing: border-box; }
+body { margin: 0; color: var(--ink); font-family: 'Hanken Grotesk', system-ui, sans-serif; background: radial-gradient(40% 30% at 100% 0%, #FFE2D4, transparent 70%), radial-gradient(35% 30% at 0% 10%, #EDE6FF, transparent 70%), #FAF9F7; }
+h1, h2, h3, p, ul { margin: 0; }
+.jk { font-family: 'Bricolage Grotesque', system-ui, sans-serif; }
+.conteneur { max-width: 1240px; margin: 0 auto; padding: 0 28px; }
+:focus-visible { outline: 2px solid var(--violet); outline-offset: 2px; }
+.intro { padding: 56px 0 8px; }
+.intro h1 { font-size: 30px; letter-spacing: -.035em; font-weight: 650; }
+.intro p { margin-top: 10px; max-width: 78ch; font-size: 16px; line-height: 1.55; color: var(--texte); }
+.repere { display: inline-flex; align-items: center; gap: 10px; margin: 56px 0 16px; font-size: 13px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: #4A2BB8; }
+.repere::after { content: ''; width: 60px; height: 1px; background: rgba(91,59,234,.3); }
+.note { margin-top: 12px; font-size: 14px; line-height: 1.5; color: var(--legende); }
+.label { font-size: 12px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: #4A2BB8; }
+
+/* Carte du prochain webinar */
+.une { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 40px; align-items: stretch; padding: 14px 40px 14px 14px; border-radius: 30px; background: linear-gradient(150deg, rgba(255,255,255,.85), rgba(255,255,255,.6)); box-shadow: inset 0 1px 0 #fff, 0 30px 70px -34px rgba(76,48,170,.34); }
+.visuel { position: relative; min-height: 360px; border-radius: 22px; overflow: hidden; }
+.visuel.photo { background: radial-gradient(60% 70% at 70% 30%, rgba(255,180,140,.85), transparent 60%), radial-gradient(80% 80% at 10% 100%, #5B3BEA, transparent 70%), linear-gradient(160deg, #3434E0, #1C1730); }
+.visuel.date { display: flex; flex-direction: column; justify-content: space-between; padding: 26px; color: #fff; background: radial-gradient(70% 60% at 85% 10%, rgba(255,162,122,.75), transparent 65%), radial-gradient(80% 80% at 0% 100%, rgba(139,92,246,.9), transparent 70%), linear-gradient(160deg, #4A2BB8, #1C1730); background-color: #2A1F55; }
+.direct { align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; padding: 6px 12px; border-radius: 999px; font-size: 12px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; background: rgba(15,15,18,.5); }
+.direct::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: #FF3B30; box-shadow: 0 0 0 3px rgba(255,59,48,.3); }
+.grande-date { display: flex; align-items: flex-end; gap: 14px; }
+.jour { font-family: 'Bricolage Grotesque'; font-size: 120px; line-height: .8; font-weight: 700; letter-spacing: -.06em; }
+.mois { padding-bottom: 6px; font-family: 'Bricolage Grotesque'; font-size: 30px; line-height: 1; font-weight: 650; letter-spacing: -.03em; }
+.mois span { display: block; margin-top: 6px; font-family: 'Hanken Grotesk'; font-size: 15px; font-weight: 700; letter-spacing: 0; color: #FFD1BF; }
+.plaque { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 12px 14px; border-radius: 16px; background: rgba(22,14,52,.6); box-shadow: inset 0 1px 0 rgba(255,255,255,.4), inset 0 0 0 1px rgba(255,255,255,.18); font-size: 14px; font-weight: 700; }
+.compte { font-variant-numeric: tabular-nums; font-family: 'Bricolage Grotesque'; font-size: 18px; letter-spacing: .02em; color: #FFD1BF; }
+.textes { display: flex; flex-direction: column; gap: 16px; padding: 22px 0; }
+.infos { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; font-size: 14px; color: var(--legende); }
+.tag { padding: 4px 10px; border-radius: 999px; font-size: 13px; font-weight: 600; color: #A63C14; background: #fff; box-shadow: inset 0 0 0 1px rgba(224,86,42,.25); }
+.titre { font-family: 'Bricolage Grotesque'; font-size: clamp(28px, 3vw, 38px); line-height: 1.1; font-weight: 650; letter-spacing: -.04em; }
+.titre em { font-style: normal; background: linear-gradient(95deg, #5B3BEA, #6F3FD6 42%, #C94A1E); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.resume { font-size: 17px; line-height: 1.6; color: var(--texte); }
+.programme { display: flex; flex-direction: column; gap: 10px; padding: 18px 20px; border-radius: 18px; background: #F4F1FF; }
+.programme ul { display: flex; flex-direction: column; gap: 8px; padding: 0; list-style: none; }
+.programme li { position: relative; padding-left: 30px; font-size: 15.5px; line-height: 1.45; color: var(--ink); }
+.programme li::before { content: ''; position: absolute; left: 0; top: 1px; width: 20px; height: 20px; border-radius: 50%; background: linear-gradient(140deg, #FFAB96, #A77BF0); box-shadow: inset 0 1px 0 rgba(255,255,255,.7); }
+.programme li::after { content: ''; position: absolute; left: 6px; top: 6px; width: 7px; height: 4px; border-left: 2px solid #fff; border-bottom: 2px solid #fff; transform: rotate(-45deg); }
+.bas { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; padding-top: 6px; }
+.intervenants { display: flex; align-items: center; gap: 12px; }
+.avatars { display: flex; }
+.avatars i { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; margin-left: -10px; border-radius: 50%; font-style: normal; font-size: 14px; font-weight: 800; color: #fff; border: 2px solid #fff; }
+.avatars i:first-child { margin-left: 0; background: #5B3BEA; }
+.avatars i:last-child { background: #C94A1E; }
+.qui { font-size: 14px; line-height: 1.35; color: var(--legende); }
+.qui b { color: var(--ink); }
+.bouton { display: inline-flex; align-items: center; gap: 10px; min-height: 52px; padding: 0 24px; border-radius: 999px; font-size: 15px; font-weight: 700; color: #fff; background: #0F0F12; text-decoration: none; box-shadow: 0 16px 34px -16px rgba(15,15,18,.6); }
+
+/* Les suivants */
+.suivants { display: flex; flex-direction: column; gap: 14px; }
+.ligne { display: grid; grid-template-columns: 96px minmax(0, 1fr) auto; gap: 24px; align-items: center; padding: 16px 24px 16px 16px; border-radius: 22px; background: linear-gradient(150deg, rgba(255,255,255,.85), rgba(255,255,255,.6)); box-shadow: inset 0 1px 0 #fff, 0 20px 50px -34px rgba(76,48,170,.3); }
+.mini-date { display: flex; flex-direction: column; align-items: center; justify-content: center; height: 96px; border-radius: 16px; color: #fff; background: linear-gradient(160deg, #5B3BEA, #1C1730); background-color: #3A2A8A; }
+.mini-date b { font-family: 'Bricolage Grotesque'; font-size: 34px; line-height: 1; }
+.mini-date span { margin-top: 4px; font-size: 12px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+.ligne h3 { font-family: 'Bricolage Grotesque'; font-size: 20px; line-height: 1.2; font-weight: 650; letter-spacing: -.03em; }
+.ligne p { margin-top: 6px; font-size: 14px; color: var(--legende); }
+.bouton-clair { display: inline-flex; align-items: center; min-height: 44px; padding: 0 18px; border-radius: 999px; font-size: 14px; font-weight: 700; color: var(--ink); background: #fff; box-shadow: inset 0 0 0 1px rgba(15,15,18,.12); text-decoration: none; }
+
+@media (max-width: 980px) {
+  .une { grid-template-columns: minmax(0, 1fr); gap: 4px; padding: 12px 12px 22px; }
+  .visuel { min-height: 240px; }
+  .jour { font-size: 88px; }
+  .textes { padding: 18px 10px 0; }
+  .ligne { grid-template-columns: 72px minmax(0, 1fr); gap: 16px; padding: 14px; }
+  .ligne .bouton-clair { grid-column: 1 / -1; justify-self: start; }
+  .mini-date { height: 72px; }
+  .mini-date b { font-size: 26px; }
+}
+</style>
+</head>
+<body>
+<main>
+  <div class="conteneur intro">
+    <h1 class="jk">Page Webinars : une carte plus soignée.</h1>
+    <p>Le résumé reste court (une ou deux phrases) ; le programme passe dans un champ à part, « Programme (une ligne par point) », affiché en liste à coches. Sans image, la carte affiche un grand visuel de date (jour, mois, heure, durée, compte à rebours). Les intervenants ont des pastilles d'initiales (ou leur photo si vous l'ajoutez). Le bouton et le compte à rebours sont alignés en bas.</p>
+  </div>
+
+  <div class="conteneur">
+    <p class="repere">Sans image (votre cas actuel)</p>
+    <article class="une">
+      <div class="visuel date">
+        <span class="direct">En ligne · en direct</span>
+        <div>
+          <div class="grande-date"><span class="jour">27</span><span class="mois">nov.<span>11 h 30 · 30 min</span></span></div>
+        </div>
+        <div class="plaque"><span>Début dans</span><span class="compte">10 j 18:19:35</span></div>
+      </div>
+      <div class="textes">
+        <div class="infos"><span class="tag">IA &amp; vidéo</span><span>Vendredi 27 novembre 2026 · 11 h 30 · en ligne</span></div>
+        <h2 class="titre">Multipliez par 4 votre visibilité sur les IA <em>grâce à la vidéo.</em></h2>
+        <p class="resume">Vos clients posent leurs questions à ChatGPT ou Gemini avant de visiter un site. Découvrez comment la vidéo vous rend visible là où ils cherchent.</p>
+        <div class="programme">
+          <p class="label">Au programme · 30 minutes</p>
+          <ul>
+            <li>Pourquoi la vidéo pèse dans les sources que les IA consultent et citent</li>
+            <li>Les ingrédients d'une vidéo IA-friendly : formats, sous-titres, titres</li>
+            <li>Les canaux à privilégier : YouTube, site corporate</li>
+            <li>Session de questions / réponses</li>
+          </ul>
+        </div>
+        <div class="bas">
+          <div class="intervenants"><span class="avatars" aria-hidden="true"><i>C</i><i>V</i></span><p class="qui"><b>Constance</b>, Experte vidéo<br><b>Valentin</b>, Expert vidéo</p></div>
+          <a class="bouton" href="#">S'inscrire au webinar →</a>
+        </div>
+      </div>
+    </article>
+    <p class="note">Le titre garde la mise en forme : l'italique devient le dégradé, comme ailleurs sur le site.</p>
+
+    <p class="repere">Avec une image</p>
+    <article class="une">
+      <div class="visuel photo"><span class="direct" style="position:absolute;left:18px;top:18px;color:#fff">Prochain webinar</span><div class="plaque" style="position:absolute;left:12px;right:12px;bottom:12px;color:#fff"><span>Début dans</span><span class="compte">10 j 18:19:35</span></div></div>
+      <div class="textes">
+        <div class="infos"><span class="tag">IA &amp; vidéo</span><span>Vendredi 27 novembre 2026 · 11 h 30 · 30 min · en ligne</span></div>
+        <h2 class="titre">Multipliez par 4 votre visibilité sur les IA <em>grâce à la vidéo.</em></h2>
+        <p class="resume">Vos clients posent leurs questions à ChatGPT ou Gemini avant de visiter un site. Découvrez comment la vidéo vous rend visible là où ils cherchent.</p>
+        <div class="programme"><p class="label">Au programme · 30 minutes</p><ul><li>Pourquoi la vidéo pèse dans les sources des IA</li><li>Les ingrédients d'une vidéo IA-friendly</li><li>Questions / réponses</li></ul></div>
+        <div class="bas"><div class="intervenants"><span class="avatars" aria-hidden="true"><i>C</i><i>V</i></span><p class="qui"><b>Constance</b>, Experte vidéo<br><b>Valentin</b>, Expert vidéo</p></div><a class="bouton" href="#">S'inscrire au webinar →</a></div>
+      </div>
+    </article>
+
+    <p class="repere">Les suivants</p>
+    <div class="suivants">
+      <article class="ligne"><div class="mini-date"><b>03</b><span>déc.</span></div><div><h3>Onboarding : 5 vidéos qui changent les premiers jours</h3><p>Jeudi · 11 h 00 · 45 min · Thomas, Directeur Artistique et Sophie, Chef de Projet</p></div><a class="bouton-clair" href="#">S'inscrire</a></article>
+      <article class="ligne"><div class="mini-date"><b>17</b><span>déc.</span></div><div><h3>IA et vidéo : ce qui change pour vos équipes com</h3><p>Jeudi · 11 h 00 · 45 min</p></div><a class="bouton-clair" href="#">S'inscrire</a></article>
+    </div>
+    <p style="height:90px"></p>
+  </div>
+</main>
+</body>
+</html>
