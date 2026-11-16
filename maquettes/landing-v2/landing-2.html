@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rolling · landing, 2e tour</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Caveat:wght@700&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root { --ink:#0F0F12; --texte:#4A4858; --legende:#5F5C6C; --violet:#5B3BEA; }
+* { box-sizing: border-box; }
+body { margin: 0; color: var(--ink); font-family: 'Hanken Grotesk', system-ui, sans-serif; background: radial-gradient(40% 30% at 100% 0%, #FFE2D4, transparent 70%), radial-gradient(35% 30% at 0% 10%, #EDE6FF, transparent 70%), #FAF9F7; }
+h1, h2, h3, p, ul { margin: 0; }
+.jk { font-family: 'Bricolage Grotesque', system-ui, sans-serif; }
+em { font-style: normal; background: linear-gradient(95deg, #5B3BEA, #6F3FD6 42%, #C94A1E); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.conteneur { max-width: 1240px; margin: 0 auto; padding: 0 28px; }
+.intro { padding: 56px 0 8px; }
+.intro h1 { font-size: 30px; letter-spacing: -.035em; font-weight: 650; }
+.intro p { margin-top: 10px; max-width: 80ch; font-size: 16px; line-height: 1.55; color: var(--texte); }
+.partie { margin-top: 72px; }
+.partie > h2 { font-size: 24px; letter-spacing: -.03em; font-weight: 650; }
+.option { margin-top: 30px; }
+.option > h3 { display: flex; align-items: center; gap: 12px; font-size: 20px; letter-spacing: -.03em; font-weight: 650; }
+.lettre { display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 50%; font-size: 14px; color: #fff; background: #0F0F12; }
+.conseil .lettre { background: var(--violet); }
+.etiquette { padding: 3px 10px; border-radius: 999px; font-size: 12px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: #4A2BB8; background: #EDE6FF; }
+.desc { margin-top: 8px; max-width: 82ch; font-size: 15px; line-height: 1.55; color: var(--texte); }
+.scene { margin-top: 18px; padding: 30px; border-radius: 30px; background: rgba(255,255,255,.35); box-shadow: inset 0 0 0 1px rgba(15,15,18,.06); }
+.verre { border-radius: 26px; background: radial-gradient(70% 60% at 15% 0%, rgba(255,255,255,.95), rgba(255,255,255,0) 72%), linear-gradient(150deg, rgba(255,255,255,.8), rgba(255,255,255,.5)); box-shadow: inset 0 1px 0 #fff, 0 30px 70px -34px rgba(76,48,170,.34); }
+.label { font-size: 12px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: #4A2BB8; }
+.timecode { display: inline-flex; align-items: center; gap: 8px; padding: 6px 13px; border-radius: 999px; font-size: 12px; font-weight: 700; letter-spacing: .06em; color: #5B3BEA; background: linear-gradient(170deg, rgba(255,255,255,.95), rgba(255,255,255,.55)); box-shadow: inset 0 1px 0 #fff, inset 0 0 0 1px rgba(91,59,234,.16), 0 6px 16px -10px rgba(91,59,234,.5); }
+.rec::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: #FF3B30; box-shadow: 0 0 0 3px rgba(255,59,48,.22); }
+.bouton { display: inline-flex; align-items: center; min-height: 46px; padding: 0 20px; border-radius: 999px; font-size: 15px; font-weight: 700; color: #fff; background: #0F0F12; }
+
+/* 1 · Formulaire */
+.action { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: 40px; align-items: center; padding: 40px; }
+.action h3 { margin-top: 16px; font-family: 'Bricolage Grotesque'; font-size: 34px; line-height: 1.1; letter-spacing: -.04em; font-weight: 650; }
+.action p.t { margin-top: 10px; font-size: 16px; line-height: 1.6; color: var(--texte); }
+.cal { position: relative; width: 100%; max-width: 440px; margin: 0 auto; padding: 52px 10px 10px; border-radius: 26px; }
+.cal .tc { position: absolute; top: 14px; right: 16px; }
+.cal .faux { height: 300px; border-radius: 10px; background: #fff; box-shadow: 0 2px 8px rgba(15,15,18,.08); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; color: #33475B; font-size: 14px; }
+.cal .faux b { font-size: 18px; }
+
+/* 2 · Ce que ça change */
+.aa { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.carte-aa { display: flex; flex-direction: column; gap: 12px; padding: 10px 10px 20px; }
+.vign { position: relative; aspect-ratio: 16/9; border-radius: 18px; overflow: hidden; }
+.v1 { background: radial-gradient(60% 80% at 75% 30%, rgba(255,180,140,.9), transparent 60%), radial-gradient(90% 90% at 10% 100%, #5B3BEA, transparent 70%), linear-gradient(160deg, #3434E0, #1C1730); }
+.v2 { background: radial-gradient(60% 80% at 30% 30%, rgba(196,181,253,.9), transparent 60%), radial-gradient(90% 90% at 90% 100%, #FF8A5B, transparent 70%), linear-gradient(160deg, #8E4DE6, #1C1730); }
+.v3 { background: radial-gradient(70% 90% at 60% 20%, rgba(255,209,191,.9), transparent 60%), linear-gradient(160deg, #E0562A, #4A2BB8); }
+.duree { position: absolute; right: 12px; top: 12px; padding: 3px 8px; border-radius: 8px; font-size: 12px; font-weight: 800; color: #fff; background: rgba(15,15,18,.7); }
+.carte-aa .client { padding: 0 8px; font-size: 12px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: var(--legende); }
+.ligne-aa { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; padding: 0 8px; font-size: 14px; }
+.avant { padding: 5px 11px; border-radius: 999px; color: #A63C14; background: #fff; box-shadow: inset 0 0 0 1px rgba(224,86,42,.25); font-weight: 600; }
+.fleche { color: #C94A1E; font-weight: 800; }
+.apres { font-weight: 800; }
+.lien { padding: 0 8px; font-size: 14px; font-weight: 700; color: #4A2BB8; }
+
+.gains { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; padding: 24px 0; }
+.gains > div { display: flex; flex-direction: column; gap: 8px; padding: 4px 24px; box-shadow: -1px 0 0 rgba(91,59,234,.16); }
+.gains .pic { width: 40px; height: 40px; border-radius: 12px; display: flex; align-items: center; justify-content: center; background: linear-gradient(140deg, #EDE6FF, #FFE2D4); font-size: 18px; }
+.gains b { font-family: 'Bricolage Grotesque'; font-size: 18px; letter-spacing: -.02em; }
+.gains span { font-size: 14px; line-height: 1.5; color: var(--texte); }
+
+.citations { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.citations > div { padding: 22px; }
+.citations p { font-family: 'Bricolage Grotesque'; font-size: 18px; line-height: 1.35; font-weight: 650; letter-spacing: -.02em; }
+.citations small { display: block; margin-top: 10px; font-size: 13px; color: var(--legende); }
+
+/* 3 · Née chez Pitchy */
+.n { font-family: 'Bricolage Grotesque'; font-weight: 800; line-height: .9; letter-spacing: -.02em; background: linear-gradient(180deg, #FFAB96 0%, #E697BD 45%, #A77BF0 100%); -webkit-background-clip: text; background-clip: text; color: transparent; filter: drop-shadow(0 8px 14px rgba(91,59,234,.25)); }
+.l { font-size: 15.5px; line-height: 1.35; font-weight: 600; color: #2A2840; }
+.actuel { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); padding: 30px 8px; }
+.actuel > div { display: flex; flex-direction: column; gap: 10px; padding: 4px 24px; }
+.actuel > div + div { box-shadow: -1px 0 0 rgba(91,59,234,.16); }
+.actuel .n { font-size: 60px; }
+.cote { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 16px; padding: 20px 0; }
+.cote > div { display: flex; align-items: center; gap: 14px; padding: 4px 24px; box-shadow: -1px 0 0 rgba(91,59,234,.16); }
+.cote .n { font-size: 54px; flex-shrink: 0; }
+.trois { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+@media (max-width: 980px) {
+  .action { grid-template-columns: 1fr; padding: 20px; }
+  .aa, .citations { grid-template-columns: 1fr; }
+  .gains, .actuel { grid-template-columns: 1fr 1fr; row-gap: 18px; }
+  .cote, .trois { grid-template-columns: 1fr; padding: 0; row-gap: 0; }
+  .cote > div { padding: 14px 18px; box-shadow: 0 -1px 0 rgba(91,59,234,.14); }
+  .scene { padding: 16px; }
+}
+</style>
+<style>
+.aa2 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); grid-template-rows: auto auto auto auto auto; column-gap: 24px; row-gap: 0; }
+.carte-aa2 { display: grid; grid-template-rows: subgrid; grid-row: span 5; row-gap: 12px; padding: 10px 10px 20px; }
+.carte-aa2 .client { padding: 4px 8px 0; font-size: 12px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: var(--legende); }
+.etape { display: grid; grid-template-columns: 92px 1fr; align-items: baseline; gap: 10px; padding: 10px 8px 0; box-shadow: 0 -1px 0 rgba(91,59,234,.12); font-size: 15px; line-height: 1.4; }
+.etape span { font-size: 12px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: var(--legende); }
+.etape b { color: var(--ink); }
+.etape.fin span { color: #A63C14; }
+.carte-aa2 .lien { align-self: end; padding: 4px 8px 0; }
+.temoins { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; align-items: start; }
+.temoin { display: flex; flex-direction: column; gap: 14px; padding: 12px 12px 22px; }
+.temoin .haut { display: flex; justify-content: space-between; align-items: center; padding: 6px 10px 0; }
+.logo-f { font-family: 'Bricolage Grotesque'; font-weight: 800; font-size: 17px; letter-spacing: -.02em; color: #2A2840; }
+.tag { padding: 3px 10px; border-radius: 999px; font-size: 12px; font-weight: 700; color: #A63C14; background: #fff; box-shadow: inset 0 0 0 1px rgba(224,86,42,.25); }
+.cit { padding: 0 10px; font-size: 16px; line-height: 1.55; font-weight: 600; color: #2A2840; }
+.cit::before { content: '\201C'; display: block; height: 26px; font-family: 'Bricolage Grotesque'; font-size: 48px; line-height: 1; color: #5B3BEA; }
+.qui { display: flex; align-items: center; gap: 10px; margin: 0 10px; padding-top: 14px; box-shadow: 0 -1px 0 rgba(91,59,234,.12); font-size: 14px; }
+.qui i { width: 34px; height: 34px; border-radius: 50%; background: linear-gradient(140deg, #EDE6FF, #FFD1BF); flex-shrink: 0; }
+.qui small { display: block; color: var(--legende); font-size: 13px; }
+.avant-apres-mini { display: flex; gap: 14px; flex-wrap: wrap; font-size: 13px; padding: 0 10px; color: var(--legende); }
+.vieux { box-shadow: inset 0 0 0 2px rgba(166,60,20,.35); background: rgba(255,255,255,.35); } .vieux .vign { filter: grayscale(1); opacity: .5; }
+.barre { text-decoration: line-through; color: var(--legende); }
+.plan { display: grid; gap: 10px; margin-top: 16px; }
+.plan > div { display: grid; grid-template-columns: 70px 1fr; gap: 14px; align-items: center; padding: 12px 18px; border-radius: 16px; background: rgba(255,255,255,.6); font-size: 15px; }
+.plan .tcp { font-size: 12px; font-weight: 800; color: #5B3BEA; letter-spacing: .06em; }
+.plan .nouveau { box-shadow: inset 0 0 0 2px rgba(91,59,234,.35); }
+.plan small { color: var(--legende); font-size: 13px; }
+@media (max-width: 980px) {
+  .aa2, .temoins { grid-template-columns: 1fr; grid-template-rows: none; row-gap: 20px; }
+  .carte-aa2 { grid-template-rows: none; grid-row: auto; }
+  .plan > div { grid-template-columns: 1fr; gap: 2px; }
+}
+</style>
+</head>
+<body>
+<main>
+  <div class="conteneur intro">
+    <h1 class="jk">Landing, 2e tour : résultats et preuves.</h1>
+    <p>Validé : timecode 00:30:00 dans le cadre du formulaire, et chiffres de « Née chez Pitchy » au format B (côte à côte, 2 colonnes). Ici : comment éviter la redite avec les témoignages, et les témoignages allégés.</p>
+  </div>
+  <div class="conteneur">
+    <section class="partie">
+      <h2 class="jk">Le déroulé proposé (00:02 → 00:03)</h2>
+      <p class="desc">Oui, l'option A répétait les vidéos des témoignages juste en dessous. Je propose de séparer les rôles : « Ce que ça change » parle des bénéfices (sans vidéo), la preuve sociale montre les vidéos et les citations.</p>
+      <div class="scene plan">
+        <div><span class="tcp">00:02</span><span>Comparatif + 3 atouts <small>(inchangé)</small></span></div>
+        <div class="nouveau"><span class="tcp">00:02</span><span><b>Ce que ça change pour nos clients</b> : 4 bénéfices <small>(remplace les [x] chiffres)</small></span></div>
+        <div><span class="tcp">00:02</span><span>« Et avec vos contenus, ça donnerait quoi ? » + Réserver un échange <small>(inchangé)</small></span></div>
+        <div class="nouveau"><span class="tcp">00:03</span><span><b>Née chez Pitchy</b> : chiffres format B, puis 3 témoignages <b>avec citation seulement</b>, citation plus petite</span></div>
+      </div>
+    </section>
+
+    <section class="partie">
+      <h2 class="jk">1. « Ce que ça change pour nos clients » <span class="etiquette">Conseil</span></h2>
+      <p class="desc">Les 4 bénéfices que vous avez aimés. « Plus de devis » devient « Zéro devis ». Pour ne pas redire les 3 atouts au-dessus (équipe, IA Factory, prix fixe), j'ai remplacé « Un seul interlocuteur » par « Vos contenus enfin regardés » : c'est la réponse au constat 00:01 (emails ignorés, articles survolés…).</p>
+      <div class="scene">
+        <p class="label">Ce que ça change pour nos clients</p>
+        <div class="verre gains" style="margin-top:16px">
+          <div><span class="pic">◎</span><b>Vos contenus enfin regardés</b><span>Vos emails, modules et événements deviennent des vidéos que vos équipes ont envie de voir.</span></div>
+          <div><span class="pic">✦</span><b>Zéro devis</b><span>Une demande, une vidéo : pas de négociation à chaque projet.</span></div>
+          <div><span class="pic">▶</span><b>Toujours une vidéo en cours</b><span>Nous enchaînons les projets, sans attente entre deux commandes.</span></div>
+          <div><span class="pic">⇄</span><b>Tous vos formats</b><span>16:9, 9:16, carré, sous-titres et langues, sans surcoût.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="partie">
+      <h2 class="jk">2. Preuve sociale : chiffres B + témoignages allégés</h2>
+      <p class="desc">Sur la landing, la liste ne garde que les témoignages qui ont une citation (réglage de la liste). La citation passe de 20 px gras à 16 px : les cartes sont moins hautes et se lisent d'un coup d'œil. La vidéo reste en haut de la carte quand le témoignage est lié à une réalisation.</p>
+      <div class="scene">
+        <div class="verre cote"><div><span class="n">13</span><span class="l">ans de vidéo pour les entreprises</span></div><div><span class="n">500+</span><span class="l">grandes entreprises équipées</span></div><div><span class="n">1</span><span class="l">studio motion &amp; tournage intégré</span></div><div><span class="n">1</span><span class="l">plateforme de production propriétaire</span></div></div>
+        <div class="temoins" style="margin-top:24px">
+          <div class="verre temoin"><div class="haut"><span class="logo-f">Client A</span><span class="tag">RH</span></div><p class="cit">On devait produire trois vidéos en 3 semaines, sans la bande passante ni l'expertise. L'équipe nous a tout de suite rassurés sur leur accompagnement sur mesure, jusqu'à la livraison.</p><div class="qui"><i></i><span><b>Prénom Nom</b><small>Responsable RH</small></span></div></div>
+          <div class="verre temoin vieux"><div class="vign v2"><span class="duree">1:52</span></div><div class="haut"><span class="logo-f">Client B</span><span class="tag">Com' interne</span></div><p class="cit" style="font-weight:500;color:var(--legende)">Pas de citation ⇒ <b>n'apparaît plus</b> sur la landing (reste sur la page Témoignages).</p></div>
+          <div class="verre temoin"><div class="vign v3"><span class="duree">3:53</span></div><div class="haut"><span class="logo-f">Client C</span><span class="tag">Com' interne</span></div><p class="cit">Ils ont su me mettre à l'aise pendant le tournage et ont pu nous livrer en quelques jours seulement.</p><div class="qui"><i></i><span><b>Prénom Nom</b><small>Chargée de communication</small></span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="partie">
+      <h2 class="jk">Variante : l'avant / après, rangé</h2>
+      <p class="desc">Si vous préférez quand même les réalisations dans « Ce que ça change » : chaque information a sa ligne et sa place fixe (secteur, « Au départ », « La vidéo », lien en bas), alignées d'une carte à l'autre même si un texte passe sur 2 lignes. Dans ce cas, les témoignages en dessous montrent la citation seule (sans vidéo), sinon les vidéos apparaissent deux fois.</p>
+      <div class="scene">
+        <p class="label">Ce que ça change pour nos clients</p>
+        <div class="aa2" style="margin-top:16px">
+          <div class="verre carte-aa2"><div class="vign v1"><span class="duree">5:24</span></div><span class="client">Assurance · Com' interne</span><p class="etape"><span>Au départ</span>Informations économiques</p><p class="etape fin"><span>La vidéo</span><b>Interview d'expert</b></p><span class="lien">Voir la vidéo →</span></div>
+          <div class="verre carte-aa2"><div class="vign v2"><span class="duree">1:52</span></div><span class="client">Distribution · Événement</span><p class="etape"><span>Au départ</span>Programme de l'événement</p><p class="etape fin"><span>La vidéo</span><b>Aftermovie</b></p><span class="lien">Voir la vidéo →</span></div>
+          <div class="verre carte-aa2"><div class="vign v3"><span class="duree">3:53</span></div><span class="client">Énergie · RH</span><p class="etape"><span>Au départ</span>Présentation d'une prise de poste</p><p class="etape fin"><span>La vidéo</span><b>Interview</b></p><span class="lien">Voir la vidéo →</span></div>
+        </div>
+      </div>
+    </section>
+    <p style="height:90px"></p>
+  </div>
+</main>
+</body>
+</html>

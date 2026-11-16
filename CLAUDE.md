@@ -437,6 +437,12 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   champs avant / après existants, automatique)**, B 4 bénéfices sans chiffres (risque de redite avec les 3 cartes),
   C retirer la partie (garder l'encart d'appel) ; 3 chiffres « Née chez Pitchy » au format B des fiches témoignage :
   4 chiffres en 2 colonnes (conseil) ou B' 13 + 500+ seulement, studio et plateforme passés dans la phrase.
+- **Landing, retours** : timecode 00:30:00 **ok**, chiffres « Née chez Pitchy » = **B (4 chiffres, 2 colonnes)**. A répétait
+  les vidéos des témoignages ⇒ maquette `maquettes/landing-v2/landing-2.html` (copie /workspace/maquette-landing-2.html,
+  **à valider**) : « Ce que ça change » = 4 bénéfices (la cliente a aimé l'option B, appelée « C » dans son message) :
+  Vos contenus enfin regardés, **Zéro devis** (pas « Plus de devis », ambigu), Toujours une vidéo en cours, Tous vos formats ;
+  preuve : témoignages **avec citation seulement** sur la landing (réglage de la liste à créer), citation 16 px (au lieu
+  de titre-xs gras) ; variante avant / après rangée (lignes fixes Au départ / La vidéo, subgrid) ⇒ témoignages sans vidéo.
 - **Chargement de page effet film** (demande avant la fin de la livraison 4) : maquette `maquettes/loading/maquette-loading.html`
   (copie /workspace/maquette-loading.html), 4 options : A amorce 3-2-1, B clap qui se ferme puis rideau, C ouverture
   cinéma (bandes noires + REC + timecode + règle avec la tête de lecture rouge des frises, plus de filet fin), D barre de lecture en haut sans écran. Conseil : C à l'arrivée (première page
