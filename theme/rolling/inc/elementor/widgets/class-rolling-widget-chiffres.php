@@ -43,7 +43,15 @@ class Rolling_Widget_Chiffres extends Rolling_Widget {
 		if ( ! $chiffres ) {
 			return;
 		}
-		echo '<div class="' . esc_attr( $this->get_settings_for_display( 'classe' ) ) . '">';
+		// Une valeur de plus de 2 caractères (« 87 % », « 2 500+ ») ne tient pas à côté de son libellé sur 4 colonnes :
+		// la plaque passe alors sur 2 colonnes (règle « &.plaque-large » de la classe plaque-libre).
+		$large = false;
+		foreach ( $chiffres as $chiffre ) {
+			if ( mb_strlen( preg_replace( '/\s+/u', '', (string) $chiffre['valeur'] ) ) > 2 ) {
+				$large = true;
+			}
+		}
+		echo '<div class="' . esc_attr( $this->get_settings_for_display( 'classe' ) . ( $large ? ' plaque-large' : '' ) ) . '">';
 		foreach ( $chiffres as $chiffre ) {
 			echo '<div>';
 			echo '<div class="chiffre-verre">' . Rolling_Dynamique::chiffres_en_verre( $chiffre['valeur'] ) . '<span class="texte-masque">' . esc_html( $chiffre['valeur'] ) . '</span></div>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- images de wp_get_attachment_image().

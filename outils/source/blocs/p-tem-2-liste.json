@@ -9,7 +9,7 @@
     "tag": "section"
    },
    "Témoignages · cartes": {
-    "paragraph": "⟦widget:rolling-liste|contenu=temoignages|classe=mur-temoins|filtres=rolling_metier|tous=Tous|nombre=12|plus=yes|plus_texte=Voir plus de témoignages⟧"
+    "paragraph": "⟦widget:rolling-liste|contenu=temoignages|classe=mur-temoins|filtres=rolling_metier|tous=Tous|texte_aucun=Aucun témoignage pour ce métier.|nombre=12|plus=yes|plus_texte=Voir plus de témoignages⟧"
    }
   },
   "classes": {

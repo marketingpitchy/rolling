@@ -422,6 +422,15 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   à côte (conseil ; mobile = liste, une ligne par chiffre)**, C centrée et chiffres plus grands, D chiffres dans le bandeau
   du projet (une seule carte, plus de titre « En chiffres »). Prochaine version aussi : message « Aucune réalisation pour
   ces filtres » + lien « Tout voir » quand une combinaison de filtres est vide (filtres cumulables : vérifié, ET logique).
+- **0.5.13** : chiffres de la fiche témoignage = **B validé** (`plaque-libre` : chiffre + libellé côte à côte, colonnes
+  auto ≥ 220 px, libellé `flex 1 1 120px` ; mobile = liste une ligne par chiffre avec filets ; widget Chiffres ajoute
+  `plaque-large` (2 colonnes) si une valeur dépasse 2 caractères hors espaces, ex. « 87 % », « 2 500+ »). Widget Liste :
+  filtres sans résultat ⇒ carte `carte-verre carte-vide` « Aucune réalisation pour ces filtres. » + bouton « Tout voir »
+  (réglages `texte_aucun`, `texte_tout_voir` ; textes adaptés : témoignages / articles / guides / replays). **Textes de la
+  cliente repris dans le modèle Contact** (intro « Un premier contact pour faire le point… feuille de route vidéo… »,
+  preuve « Par les équipes de Pitchy - 13 ans de vidéo, +500 grandes entreprises. » mot pour mot, plus de « [adresse à
+  confirmer] »). **Règle cliente** : quand elle transmet le site publié, reprendre dans les modèles du thème chaque texte
+  qu'elle a modifié (pour ne pas les perdre si un modèle est refait).
 - **Chargement de page effet film** (demande avant la fin de la livraison 4) : maquette `maquettes/loading/maquette-loading.html`
   (copie /workspace/maquette-loading.html), 4 options : A amorce 3-2-1, B clap qui se ferme puis rideau, C ouverture
   cinéma (bandes noires + REC + timecode + règle avec la tête de lecture rouge des frises, plus de filet fin), D barre de lecture en haut sans écran. Conseil : C à l'arrivée (première page
@@ -472,6 +481,7 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   de WordPress et d'Elementor (dont vider le cache).
 - Jamais de vidéos ni de photos clients dans le dépôt git.
 - Répondre en français, simplement et court.
+- Site publié transmis par la cliente : relever ses textes modifiés et les reporter dans les modèles (blocs.py) avant toute refonte.
 
 ## Architecture technique (constatée dans Elementor 4.3.6, à respecter)
 

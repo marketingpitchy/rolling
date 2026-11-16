@@ -13,7 +13,7 @@
     "title": "Tous nos guides"
    },
    "Guides · cartes": {
-    "paragraph": "⟦widget:rolling-liste|contenu=guides|classe=grille-3|filtres=rolling_theme|tous=Tous les guides|nombre=12|plus=yes|plus_texte=Voir plus de guides⟧"
+    "paragraph": "⟦widget:rolling-liste|contenu=guides|classe=grille-3|filtres=rolling_theme|texte_aucun=Aucun guide sur ce thème.|tous=Tous les guides|nombre=12|plus=yes|plus_texte=Voir plus de guides⟧"
    }
   },
   "classes": {

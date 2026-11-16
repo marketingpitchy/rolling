@@ -22156,18 +22156,8 @@
             "id": "g-6274855",
             "label": "plaque-libre",
             "groupe": "Fiches et listes",
-            "description": "Plaque en verre de chiffres clés en nombre libre (1 à n) : colonnes automatiques, 2 sous 980 px ; un chiffre impair seul en mobile prend la largeur.",
+            "description": "Plaque en verre de chiffres clés en nombre libre (1 à n) : chaque chiffre suivi de son libellé sur la même ligne (le libellé passe dessous si la valeur est longue), colonnes automatiques ; en mobile, une ligne par chiffre.",
             "variants": [
-                {
-                    "meta": {
-                        "breakpoint": "mobile",
-                        "state": null
-                    },
-                    "props": [],
-                    "custom_css": {
-                        "raw": "JiAuY2hpZmZyZS12ZXJyZSBpbWcgeyBoZWlnaHQ6IDQ0cHg7IH0gJiAuY2hpZmZyZS12ZXJyZSAuY2hpZmZyZS10ZXh0ZSB7IGZvbnQtc2l6ZTogNDBweDsgfSAmIC5jaGlmZnJlLXZlcnJlIC5jaGlmZnJlLXVuaXRlIHsgZm9udC1zaXplOiAyMnB4OyB9ICYgPiAqIHsgcGFkZGluZzogNHB4IDE2cHg7IH0gJiAuY2hpZmZyZS12ZXJyZSBpbWcgeyBoZWlnaHQ6IDQwcHg7IH0="
-                    }
-                },
                 {
                     "meta": {
                         "breakpoint": "tablet",
@@ -22180,7 +22170,55 @@
                         }
                     },
                     "custom_css": {
-                        "raw": "JiA+IDpsYXN0LWNoaWxkOm50aC1jaGlsZChvZGQpIHsgZ3JpZC1jb2x1bW46IDEgLyAtMTsgfSAmIC5jaGlmZnJlLXZlcnJlIGltZyB7IGhlaWdodDogNDZweDsgfQ=="
+                        "raw": "JiAuY2hpZmZyZS12ZXJyZSBpbWcgeyBoZWlnaHQ6IDQ4cHg7IH0="
+                    }
+                },
+                {
+                    "meta": {
+                        "breakpoint": "mobile",
+                        "state": null
+                    },
+                    "props": {
+                        "padding": {
+                            "$$type": "dimensions",
+                            "value": {
+                                "block-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 0,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 4,
+                                        "unit": "px"
+                                    }
+                                },
+                                "block-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 0,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 4,
+                                        "unit": "px"
+                                    }
+                                }
+                            }
+                        },
+                        "grid-template-columns": {
+                            "$$type": "string",
+                            "value": "minmax(0, 1fr)"
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "cm93LWdhcDogMDsgJi5wbGFxdWUtbGFyZ2UgeyBncmlkLXRlbXBsYXRlLWNvbHVtbnM6IG1pbm1heCgwLCAxZnIpOyB9ICYgPiAqIHsgcGFkZGluZzogMTRweCAxOHB4OyBib3gtc2hhZG93OiAwIC0xcHggMCByZ2JhKDkxLDU5LDIzNCwwLjE0KTsgfSAmIC5jaGlmZnJlLXZlcnJlIHsgbWluLXdpZHRoOiA0NHB4OyB9ICYgLmNoaWZmcmUtdmVycmUgaW1nIHsgaGVpZ2h0OiA0NHB4OyB9ICYgLmNoaWZmcmUtdmVycmUgLmNoaWZmcmUtdGV4dGUgeyBmb250LXNpemU6IDQwcHg7IH0gJiAuY2hpZmZyZS12ZXJyZSAuY2hpZmZyZS11bml0ZSB7IGZvbnQtc2l6ZTogMjJweDsgfQ=="
                     }
                 },
                 {
@@ -22203,7 +22241,7 @@
                                 "block-start": {
                                     "$$type": "size",
                                     "value": {
-                                        "size": 28,
+                                        "size": 20,
                                         "unit": "px"
                                     }
                                 },
@@ -22217,7 +22255,7 @@
                                 "block-end": {
                                     "$$type": "size",
                                     "value": {
-                                        "size": 28,
+                                        "size": 20,
                                         "unit": "px"
                                     }
                                 },
@@ -22373,11 +22411,11 @@
                         },
                         "grid-template-columns": {
                             "$$type": "string",
-                            "value": "repeat(auto-fit, minmax(180px, 1fr))"
+                            "value": "repeat(auto-fit, minmax(220px, 1fr))"
                         }
                     },
                     "custom_css": {
-                        "raw": "cm93LWdhcDogMjJweDsgYmFja2dyb3VuZC1pbWFnZTogcmFkaWFsLWdyYWRpZW50KDcwJSA2MCUgYXQgMTUlIDAlLCByZ2JhKDI1NSwyNTUsMjU1LDAuOTUpLCByZ2JhKDI1NSwyNTUsMjU1LDApIDcyJSksIGxpbmVhci1ncmFkaWVudCgxNTBkZWcsIHJnYmEoMjU1LDI1NSwyNTUsMC43OCksIHJnYmEoMjU1LDI1NSwyNTUsMC40NikpOyAmID4gKiB7IGRpc3BsYXk6IGZsZXg7IGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47IGdhcDogMTBweDsgcGFkZGluZzogNHB4IDI0cHg7IGJveC1zaGFkb3c6IC0xcHggMCAwIHJnYmEoOTEsNTksMjM0LDAuMTYpOyB9ICYgLmNoaWZmcmUtdmVycmUgaW1nIHsgaGVpZ2h0OiA2MHB4OyB3aWR0aDogYXV0bzsgfSAmIC5jaGlmZnJlLXZlcnJlIC5jaGlmZnJlLXRleHRlIHsgZm9udC1zaXplOiA1NHB4OyB9ICYgLmNoaWZmcmUtdmVycmUgLmNoaWZmcmUtdW5pdGUgeyBmb250LXNpemU6IDMwcHg7IH0gJiAuZXNwYWNlLWNoaWZmcmUgeyBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7IHdpZHRoOiAxMnB4OyB9"
+                        "raw": "cm93LWdhcDogMTZweDsgYmFja2dyb3VuZC1pbWFnZTogcmFkaWFsLWdyYWRpZW50KDcwJSA2MCUgYXQgMTUlIDAlLCByZ2JhKDI1NSwyNTUsMjU1LDAuOTUpLCByZ2JhKDI1NSwyNTUsMjU1LDApIDcyJSksIGxpbmVhci1ncmFkaWVudCgxNTBkZWcsIHJnYmEoMjU1LDI1NSwyNTUsMC43OCksIHJnYmEoMjU1LDI1NSwyNTUsMC40NikpOyAmID4gKiB7IGRpc3BsYXk6IGZsZXg7IGZsZXgtZGlyZWN0aW9uOiByb3c7IGZsZXgtd3JhcDogd3JhcDsgYWxpZ24taXRlbXM6IGNlbnRlcjsgZ2FwOiA4cHggMTRweDsgcGFkZGluZzogNHB4IDIycHg7IGJveC1zaGFkb3c6IC0xcHggMCAwIHJnYmEoOTEsNTksMjM0LDAuMTYpOyB9ICYgLmNoaWZmcmUtdmVycmUgeyBmbGV4LXNocmluazogMDsgfSAmIC5saWJlbGxlLWNoaWZmcmUgeyBmbGV4OiAxIDEgMTIwcHg7IG1pbi13aWR0aDogMDsgZm9udC1zaXplOiAxNS41cHg7IH0gJiAuY2hpZmZyZS12ZXJyZSBpbWcgeyBoZWlnaHQ6IDU4cHg7IHdpZHRoOiBhdXRvOyB9ICYgLmNoaWZmcmUtdmVycmUgLmNoaWZmcmUtdGV4dGUgeyBmb250LXNpemU6IDUycHg7IH0gJiAuY2hpZmZyZS12ZXJyZSAuY2hpZmZyZS11bml0ZSB7IGZvbnQtc2l6ZTogMjhweDsgfSAmIC5lc3BhY2UtY2hpZmZyZSB7IGRpc3BsYXk6IGlubGluZS1ibG9jazsgd2lkdGg6IDEycHg7IH0gJi5wbGFxdWUtbGFyZ2UgeyBncmlkLXRlbXBsYXRlLWNvbHVtbnM6IHJlcGVhdCgyLCBtaW5tYXgoMCwgMWZyKSk7IH0="
                     }
                 }
             ]

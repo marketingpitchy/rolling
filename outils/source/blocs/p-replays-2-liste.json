@@ -13,7 +13,7 @@
     "title": "Tous nos replays"
    },
    "Replays · cartes": {
-    "paragraph": "⟦widget:rolling-liste|contenu=replays|classe=grille-3|filtres=rolling_theme|tous=Tous les replays|nombre=12|plus=yes|plus_texte=Voir plus de replays⟧"
+    "paragraph": "⟦widget:rolling-liste|contenu=replays|classe=grille-3|filtres=rolling_theme|texte_aucun=Aucun replay sur ce thème.|tous=Tous les replays|nombre=12|plus=yes|plus_texte=Voir plus de replays⟧"
    }
   },
   "classes": {

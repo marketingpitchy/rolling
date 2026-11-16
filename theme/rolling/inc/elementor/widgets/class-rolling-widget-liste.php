@@ -131,6 +131,8 @@ class Rolling_Widget_Liste extends Rolling_Widget {
 		$this->texte( 'tous', __( 'Filtres : premier bouton', 'rolling' ), __( 'Tout voir', 'rolling' ) );
 		$this->texte( 'nom_metier', __( 'Filtres sur deux lignes : nom de la ligne des métiers', 'rolling' ), __( 'Métier', 'rolling' ) );
 		$this->texte( 'nom_format', __( 'Filtres sur deux lignes : nom de la ligne des formats', 'rolling' ), __( 'Format', 'rolling' ) );
+		$this->texte( 'texte_aucun', __( 'Filtres sans résultat : message', 'rolling' ), __( 'Aucune réalisation pour ces filtres.', 'rolling' ) );
+		$this->texte( 'texte_tout_voir', __( 'Filtres sans résultat : bouton', 'rolling' ), __( 'Tout voir', 'rolling' ) );
 		$this->texte( 'nom_usage', __( 'Filtres sur deux lignes : nom de la ligne des cas d’usage', 'rolling' ), __( 'Cas d’usage', 'rolling' ) );
 		$this->add_control(
 			'plus',
@@ -307,6 +309,10 @@ class Rolling_Widget_Liste extends Rolling_Widget {
 			$vide = (int) $r['modele_vide'] ? (int) $r['modele_vide'] : ( 'webinars' === $r['contenu'] && ! (int) $r['decalage'] ? self::modele_du_theme( 'webinars', '-vide' ) : 0 );
 			if ( $vide ) {
 				echo \Elementor\Plugin::$instance->frontend->get_builder_content_for_display( $vide, false ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- HTML produit par Elementor.
+			} elseif ( array_filter( array_map( array( __CLASS__, 'filtre_demande' ), self::taxonomies_filtres( $r['filtres'] ) ) ) ) {
+				// Des filtres sont choisis mais aucun contenu ne correspond : le dire, et proposer de tout revoir.
+				$tout = remove_query_arg( array( 'metier', 'format', 'usage', 'theme', 'categorie', 'voir' ) );
+				echo '<div class="carte-verre carte-vide"><p class="titre-xs">' . esc_html( $r['texte_aucun'] ?? '' ) . '</p><a class="bouton-verre bouton-petit" href="' . esc_url( $tout ) . '">' . esc_html( $r['texte_tout_voir'] ?? '' ) . '</a></div>';
 			}
 			return;
 		}

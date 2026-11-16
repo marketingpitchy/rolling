@@ -184,7 +184,7 @@ def bloc_hero(maquette=False):
                         I('Visage 1', 'visage-1.jpg', taille='thumbnail'), I('Visage 2', 'visage-2.jpg', taille='thumbnail'),
                         I('Visage 3', 'visage-3.jpg', taille='thumbnail'), I('Visage 4', 'visage-4.jpg', taille='thumbnail'),
                     ]),
-                    P('Preuve · texte', 'Par les équipes de <strong>Pitchy</strong> — 13 ans de vidéo, 500+ grandes entreprises.', ['texte-petit', 'texte-legende']),
+                    P('Preuve · texte', 'Par les équipes de <strong>Pitchy</strong> - 13 ans de vidéo, +500 grandes entreprises.', ['texte-petit', 'texte-legende']),
                 ]),
             ]),
             D('Visuels', P_['visuels_cls'], P_['visuels'], enfants=[
@@ -736,7 +736,7 @@ final = F('Appel final', ['section', 'section-sombre', 'section-finale', 'halo-c
     I('Final · verre cannelé', 'final-verre-cannele.webp', cls=['decor-flottant'], taille='medium_large'),
     F('Final · contenu', ['conteneur'], COLONNE + ' align-items: center; z-index: 1;', enfants=[
         H('Final · titre', 'Vos vidéos&nbsp;? Nous nous en occupons.<br><em>Sans limite.</em>', 'h2', ['titre-lg', 'titre-souligne']),
-        P('Final · texte', '30 minutes pour passer en revue vos contenus et vos projets. Vous repartez avec votre stratégie vidéo et vos 3&nbsp;premières vidéos à produire.', ['texte-intro'], 'margin-top: 34px; max-width: 600px;'),
+        P('Final · texte', 'Un premier contact pour faire le point sur vos contenus et vos projets. Vous repartez avec une feuille de route vidéo et les 3&nbsp;premières vidéos à produire.', ['texte-intro'], 'margin-top: 34px; max-width: 600px;'),
         F('Final · bouton', None, 'display: flex; justify-content: center; margin-top: 38px; padding: 0;', enfants=[
             B('Final · réserver', 'Réserver un échange', '/contact/', ['bouton-soleil']),
         ]),
@@ -1279,20 +1279,20 @@ rea_liste = section_liste('Réalisations · liste', [
 tem_haut = haut_page('Témoignages · haut', 'Témoignages', ['pastille-orange'], 'Ce que nos clients disent <u>de notre accompagnement.</u>',
                      'Responsables RH, formation, communication interne ou marketing : ils nous ont confié leurs contenus. Leurs mots, tels quels.')
 tem_liste = section_liste('Témoignages · liste', [
-    W('Témoignages · cartes', 'rolling-liste', contenu='temoignages', classe='mur-temoins', filtres='rolling_metier', tous='Tous', nombre='12', plus='yes', plus_texte='Voir plus de témoignages'),
+    W('Témoignages · cartes', 'rolling-liste', contenu='temoignages', classe='mur-temoins', filtres='rolling_metier', tous='Tous', texte_aucun='Aucun témoignage pour ce métier.', nombre='12', plus='yes', plus_texte='Voir plus de témoignages'),
 ])
 
 blog_haut = haut_page('Blog · haut', 'Le blog', ['pastille-bleue'], 'Des conseils vidéo <em>pour vos équipes.</em>',
                       'Communication interne, RH, formation, marketing : nos méthodes pour que vos contenus soient enfin regardés.')
 blog_liste = section_liste('Blog · liste', [
-    W('Blog · cartes', 'rolling-liste', contenu='articles', classe='grille-3', filtres='category', tous='Tous les articles', nombre='10', premiere_une='yes', plus='yes', plus_texte='Articles suivants'),
+    W('Blog · cartes', 'rolling-liste', contenu='articles', classe='grille-3', filtres='category', tous='Tous les articles', texte_aucun='Aucun article dans cette catégorie.', nombre='10', premiere_une='yes', plus='yes', plus_texte='Articles suivants'),
 ])
 
 guides_haut = haut_page('Guides · haut', 'Ressources · Guides', ['pastille-bleue'], 'Nos guides vidéo, <em>à télécharger.</em>',
                         'Méthodes, modèles et check-lists pour faire de la vidéo votre meilleur canal. Gratuits, prêts à partager avec vos équipes.')
 guides_liste = section_liste('Guides · liste', [
     H('Guides · liste · titre masqué', 'Tous nos guides', 'h2', ['texte-masque']),
-    W('Guides · cartes', 'rolling-liste', contenu='guides', classe='grille-3', filtres='rolling_theme', tous='Tous les guides', nombre='12', plus='yes', plus_texte='Voir plus de guides'),
+    W('Guides · cartes', 'rolling-liste', contenu='guides', classe='grille-3', filtres='rolling_theme', texte_aucun='Aucun guide sur ce thème.', tous='Tous les guides', nombre='12', plus='yes', plus_texte='Voir plus de guides'),
 ])
 
 webinars_haut = haut_page('Webinars · haut', 'Ressources · Webinars', ['pastille-bleue'], 'Nos webinars, <em>en direct avec nos équipes.</em>',
@@ -1306,7 +1306,7 @@ replays_haut = haut_page('Replays · haut', 'Ressources · Replays', ['pastille-
                          'Tous nos rendez-vous en direct, disponibles en replay. Choisissez un thème, regardez à votre rythme.')
 replays_liste = section_liste('Replays · liste', [
     H('Replays · liste · titre masqué', 'Tous nos replays', 'h2', ['texte-masque']),
-    W('Replays · cartes', 'rolling-liste', contenu='replays', classe='grille-3', filtres='rolling_theme', tous='Tous les replays', nombre='12', plus='yes', plus_texte='Voir plus de replays'),
+    W('Replays · cartes', 'rolling-liste', contenu='replays', classe='grille-3', filtres='rolling_theme', texte_aucun='Aucun replay sur ce thème.', tous='Tous les replays', nombre='12', plus='yes', plus_texte='Voir plus de replays'),
 ])
 
 
@@ -1522,18 +1522,18 @@ contact_haut = F('Contact · échange', ['section', 'section-entete', 'entete-pa
         F('Contact · textes', None, COLONNE, enfants=[
             F('Contact · pastille', ['pastille'], enfants=[P('Contact · pastille · texte', '30 minutes, sans engagement')]),
             H('Contact · titre', 'Parlons de <em>vos vidéos.</em>', 'h1', ['titre-lg'], 'margin-top: 26px;'),
-            P('Contact · introduction', '30 minutes pour passer en revue vos contenus et vos projets. Vous repartez avec votre stratégie vidéo et vos 3&nbsp;premières vidéos à produire.', ['texte-intro'], 'margin-top: 22px;'),
+            P('Contact · introduction', 'Un premier contact pour faire le point sur vos contenus et vos projets. Vous repartez avec une feuille de route vidéo et les 3&nbsp;premières vidéos à produire.', ['texte-intro'], 'margin-top: 22px;'),
             H('Contact · pendant', "Pendant l'échange", 'h2', ['label'], 'margin-top: 36px;'),
             F('Contact · coches', None, 'margin-top: 14px; padding: 0;', enfants=[liste_coches('Contact', [
                 'Nous passons en revue vos contenus et vos projets', 'Nous choisissons ensemble vos 3 premières vidéos',
                 'Nous vous montrons des exemples de votre métier', "Vous connaissez le prix dès la fin de l'échange"])]),
             F('Contact · preuve', ['rangee'], 'margin-top: 32px;', enfants=[
                 F('Contact · visages', ['visages'], enfants=[I('Contact · visage %d' % n, 'visage-%d.jpg' % n, taille='thumbnail') for n in (1, 2, 3)]),
-                P('Contact · preuve · texte', 'Par les équipes de <strong>Pitchy</strong> — 13 ans de vidéo, 500+ grandes entreprises.', ['texte-petit']),
+                P('Contact · preuve · texte', 'Par les équipes de <strong>Pitchy</strong> - 13 ans de vidéo, +500 grandes entreprises.', ['texte-petit']),
             ]),
             F('Contact · écrire', ['carte-pleine'], 'margin-top: 36px;', enfants=[
                 H('Contact · écrire · titre', 'Vous préférez écrire&nbsp;?', 'h2', ['titre-xs']),
-                P('Contact · écrire · texte', 'Écrivez-nous à <a href="mailto:contact@agence-rolling.fr">contact@agence-rolling.fr</a> [adresse à confirmer]. Nous répondons sous 24 heures ouvrées.', ['texte']),
+                P('Contact · écrire · texte', 'Écrivez-nous à <a href="mailto:contact@agence-rolling.fr">contact@agence-rolling.fr</a>. Nous répondons sous 24 heures ouvrées.', ['texte']),
             ]),
         ]),
         F('Contact · calendrier', ['contact-cote'], enfants=[
@@ -1696,7 +1696,7 @@ landing_hero = F('Landing · hero', ['section', 'section-entete', 'entete-page',
             P('Landing · précision', '30 minutes, en visio. Vous repartez avec vos 3 premières vidéos à produire.', ['texte-petit'], 'margin-top: 14px;'),
             F('Landing · preuve', ['rangee'], 'margin-top: 28px;', enfants=[
                 F('Landing · visages', ['visages'], enfants=[I('Landing · visage %d' % n, 'visage-%d.jpg' % n, taille='thumbnail') for n in (1, 2, 3, 4)]),
-                P('Landing · preuve · texte', 'Par les équipes de <strong>Pitchy</strong> — 13 ans de vidéo, 500+ grandes entreprises.', ['texte-petit']),
+                P('Landing · preuve · texte', 'Par les équipes de <strong>Pitchy</strong> - 13 ans de vidéo, +500 grandes entreprises.', ['texte-petit']),
             ]),
         ]),
         F('Landing · visuel', ['vignette-video', 'flotte'], enfants=[
@@ -1862,7 +1862,7 @@ landing_final = F('Landing · appel final', ['section', 'section-sombre', 'secti
     I('Landing · final · verre cannelé', 'final-verre-cannele.webp', cls=['decor-flottant'], taille='medium_large'),
     F('Landing · final · contenu', ['conteneur'], COLONNE + ' align-items: center; z-index: 1;', enfants=[
         H('Landing · final · titre', 'Vos vidéos&nbsp;? Nous nous en occupons.<br><em>Sans limite.</em>', 'h2', ['titre-lg', 'titre-souligne']),
-        P('Landing · final · texte', '30 minutes pour passer en revue vos contenus et vos projets. Vous repartez avec votre stratégie vidéo et vos 3&nbsp;premières vidéos à produire.', ['texte-intro'], 'margin-top: 34px; max-width: 600px;'),
+        P('Landing · final · texte', 'Un premier contact pour faire le point sur vos contenus et vos projets. Vous repartez avec une feuille de route vidéo et les 3&nbsp;premières vidéos à produire.', ['texte-intro'], 'margin-top: 34px; max-width: 600px;'),
         F('Landing · final · bouton', None, 'display: flex; justify-content: center; margin-top: 38px; padding: 0;', enfants=[
             B('Landing · final · réserver', 'Réserver un échange', '#landing-rdv', ['bouton-soleil']),
         ]),
