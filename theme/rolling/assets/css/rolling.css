@@ -22,6 +22,7 @@ img, svg, video { max-width: 100%; }
 
 /* Animations nommées, utilisées par les classes Elementor (CSS personnalisé des classes) */
 @keyframes rl-derive { 0%, 100% { transform: translate3d(0, 0, 0) scale(1); } 50% { transform: translate3d(4%, -3%, 0) scale(1.06); } }
+@keyframes rl-mur { to { opacity: 1; transform: none; filter: none; } }
 @keyframes rl-flotte { 0%, 100% { transform: translate3d(0, 0, 0); } 50% { transform: translate3d(0, -12px, 0); } }
 @keyframes rl-clignote { 0%, 55% { opacity: 1; } 70%, 100% { opacity: 0.2; } }
 @keyframes rl-scintille { 50% { opacity: 0.55; } }

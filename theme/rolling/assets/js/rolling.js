@@ -452,6 +452,25 @@
 		document.querySelectorAll( 'a.vignette-lien' ).forEach( function ( v ) { centre.observe( v ); } );
 	}
 
+	/* Mur de montage (page Réalisations) : les cartes montent une à une en sortant du flou, une seule fois.
+	   Les cartes qui arrivent ensemble se suivent de 90 ms. Sans script, sans animation : tout reste visible. */
+	if ( ! calme && ! editeur && 'IntersectionObserver' in window ) {
+		document.querySelectorAll( '.mur-montage' ).forEach( function ( mur ) {
+			var vues = new IntersectionObserver( function ( entrees, obs ) {
+				var rang = 0;
+				entrees.forEach( function ( e ) {
+					if ( e.isIntersecting ) {
+						e.target.style.animationDelay = ( rang++ * 90 ) + 'ms';
+						e.target.classList.add( 'vu' );
+						obs.unobserve( e.target );
+					}
+				} );
+			}, { threshold: 0.12 } );
+			mur.classList.add( 'rl-anime' );
+			mur.querySelectorAll( ':scope > .mur-case' ).forEach( function ( c ) { vues.observe( c ); } );
+		} );
+	}
+
 	/* Article : barre de lecture (en haut de l'écran) avec un repère par chapitre, sommaire qui suit la lecture,
 	   bouton « Copier le lien » (partage natif sur téléphone). */
 	document.querySelectorAll( '[data-rl-article]' ).forEach( function ( texte ) {

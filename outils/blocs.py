@@ -1312,7 +1312,7 @@ rea_haut = haut_page('Réalisations · haut', 'Réalisations', [], 'Nos réalisa
                      note='ce que nous faisons, en vrai', largeur='880px')
 rea_liste = section_liste('Réalisations · liste', [
     H('Réalisations · liste · titre masqué', 'Toutes nos réalisations vidéo', 'h2', ['texte-masque']),
-    W('Réalisations · cartes', 'rolling-liste', contenu='realisations', classe='grille-3', filtres='trois', tous='Tous', plus='yes', plus_texte='Réalisations suivantes'),
+    W('Réalisations · cartes', 'rolling-liste', contenu='realisations', classe='mur-montage', filtres='trois', tous='Tous', plus='yes', plus_texte='Réalisations suivantes'),
 ], [appel_milieu('Réalisations · appel', 'Et avec vos contenus, <em>ça donnerait quoi&nbsp;?</em>', 'margin-top: 24px;')])
 
 tem_haut = haut_page('Témoignages · haut', 'Témoignages', ['pastille-orange'], 'Ce que nos clients disent <u>de notre accompagnement.</u>',

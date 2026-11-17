@@ -344,13 +344,22 @@ class Rolling_Widget_Liste extends Rolling_Widget {
 
 		global $post;
 		$avant = $post;
+		// Mur de montage (classe « mur-montage ») : chaque carte dans une case, la première en grand, les 9:16 en hauteur.
+		$mur = in_array( 'mur-montage', preg_split( '/\s+/', (string) $r['classe'] ), true );
 		echo '<div class="rl-liste ' . esc_attr( $r['classe'] ) . '">';
 		foreach ( $ids as $rang => $id ) {
 			$post = get_post( $id ); // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited -- boucle de cartes, restauré après.
 			setup_postdata( $post );
 			$carte = 0 === $rang && $modele_une ? $modele_une : $modele;
+			if ( $mur ) {
+				$case = 0 === $rang ? ' mur-large' : ( self::vertical( $id ) ? ' mur-haute' : '' );
+				echo '<div class="mur-case' . esc_attr( $case ) . '">';
+			}
 			// Styles déjà chargés dans l'en-tête (Rolling_Dynamique::styles_des_modeles) : pas de feuille dans la grille.
 			echo Rolling_Dynamique::affiches_video( \Elementor\Plugin::$instance->frontend->get_builder_content_for_display( $carte, false ), get_the_title( $id ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- HTML produit par Elementor.
+			if ( $mur ) {
+				echo '</div>';
+			}
 		}
 		echo '</div>';
 		$post = $avant; // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited -- restauration.
@@ -364,6 +373,23 @@ class Rolling_Widget_Liste extends Rolling_Widget {
 			$page = isset( $_GET['voir'] ) ? max( 1, absint( $_GET['voir'] ) ) : 1; // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 			echo '<p class="liste-plus"><a class="bouton-verre bouton-petit" href="' . esc_url( add_query_arg( 'voir', $page + 1 ) ) . '">' . esc_html( $r['plus_texte'] ) . '</a></p>';
 		}
+	}
+
+	/**
+	 * Réalisation au format vertical (format vidéo dont l'identifiant contient « 9-16 », ex. « Format 9:16 »).
+	 *
+	 * @param int $id Réalisation.
+	 * @return bool
+	 */
+	private static function vertical( $id ) {
+		$formats = get_the_terms( $id, 'rolling_format' );
+		foreach ( is_array( $formats ) ? $formats : array() as $format ) {
+			if ( false !== strpos( $format->slug, '9-16' ) ) {
+				return true;
+			}
+		}
+
+		return false;
 	}
 
 	/**

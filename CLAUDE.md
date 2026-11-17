@@ -480,6 +480,13 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   Articles et pages de texte : rappel donné = éditeur WordPress (compositions Rolling vues dans l'outil d'insertion sur ma
   copie ; chez la cliente introuvables : captures demandées) ; page de texte = modèle de page « Page de texte… » (ne pas
   insérer « Rolling · Page de texte » dans Elementor : « Retour à l'éditeur WordPress »).
+- **0.5.16 : page Réalisations = A « mur de montage » (go A)** : classe de grille `mur-montage` (widget Liste : si la
+  classe est présente, chaque carte va dans `div.mur-case`, la 1re en `mur-large` (2 col × 4 rangées), les réalisations
+  dont un format a un slug contenant `9-16` en `mur-haute` (3 rangées) ; grille 4 col, rangées 136 px, `dense` ; 3 col
+  sous 1024, 2 en mobile, durée masquée sur les petites cases mobiles). Apparition : rolling.js pose `rl-anime` sur le mur
+  (pas dans l'éditeur, pas avec « réduire les animations », sans script tout reste visible) puis `vu` sur chaque case
+  qui entre dans l'écran (90 ms d'écart entre cases arrivées ensemble), keyframes `rl-mur` (flou + montée). FAQ des
+  articles : puces qui débordaient (liste avec 20 px de marge dans `.wp-block-details`) ⇒ `padding-left: 46px`.
 - **Chargement de page effet film** (demande avant la fin de la livraison 4) : maquette `maquettes/loading/maquette-loading.html`
   (copie /workspace/maquette-loading.html), 4 options : A amorce 3-2-1, B clap qui se ferme puis rideau, C ouverture
   cinéma (bandes noires + REC + timecode + règle avec la tête de lecture rouge des frises, plus de filet fin), D barre de lecture en haut sans écran. Conseil : C à l'arrivée (première page

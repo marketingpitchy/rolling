@@ -84,6 +84,8 @@ body { --paragraphe: #4A4858; --encre: #0F0F12; --legende: #6E6B7B; --violet: #5
 .is-root-container .wp-block-details summary::after { content: '+'; flex-shrink: 0; width: 30px; height: 30px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 20px; line-height: 1; color: #FFFFFF; background: linear-gradient(140deg, #5B3BEA, #8E4DE6); }
 .is-root-container .wp-block-details[open] summary::after { content: '−'; }
 .is-root-container .wp-block-details > :not(summary) { margin: 0; padding: 0 20px 18px; font-family: Hanken Grotesk; font-size: 17px; line-height: 1.65; color: var(--rl-paragraphe, var(--paragraphe)); }
+.is-root-container .wp-block-details > ul, .is-root-container .wp-block-details > ol { padding-left: 46px; }
+.is-root-container .wp-block-details li + li { margin-top: 4px; }
 .is-root-container .rl-auteur { position: relative; margin: 40px 0 0; padding: 24px 24px 24px 116px; min-height: 120px; border-radius: 26px; background: #FFFFFF; box-shadow: inset 0 0 0 1px rgba(15,15,18,0.08); }
 .is-root-container .rl-auteur .rl-portrait { position: absolute; top: 24px; left: 24px; width: 72px; height: 72px; margin: 0; }
 .is-root-container .rl-auteur p { margin: 0; font-family: Hanken Grotesk; font-size: 15px; line-height: 1.55; color: var(--rl-paragraphe, var(--paragraphe)); }
