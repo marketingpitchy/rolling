@@ -495,6 +495,12 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   ressources. » (version compacte du bloc Ressources : Guides et REX, prochain webinar, dernier replay ; rubrique vide
   masquée, pas de « Bientôt ») ; B colonne de côté = dernier guide (couverture + Télécharger) entre Partager et Réserver ;
   C carte automatique après le 2e H2 (prochain webinar sinon dernier guide ; rien si < 3 chapitres). Conseil A + B.
+- **Ressources dans les articles, retours** : **B validé** (dernier guide dans la colonne de côté) ; **C validé** (carte au
+  milieu du texte, seulement à partir de 4 H2) ; A « plus de visuels » et pas encore de replays ⇒ maquette
+  `maquettes/article-ressources/article-ressources-2.html` (copie /workspace/maquette-article-ressources-2.html, **à valider**) :
+  A1 trois cartes illustrées (conseil : couverture du dernier guide, visuel de date du prochain webinar, vignette de la
+  dernière réalisation qui remplace « Replays » tant qu'il n'y en a pas) ; A2 guide en grand + 2 lignes ; rubrique vide
+  masquée (2 cartes si pas de webinar).
 - **Chargement de page effet film** (demande avant la fin de la livraison 4) : maquette `maquettes/loading/maquette-loading.html`
   (copie /workspace/maquette-loading.html), 4 options : A amorce 3-2-1, B clap qui se ferme puis rideau, C ouverture
   cinéma (bandes noires + REC + timecode + règle avec la tête de lecture rouge des frises, plus de filet fin), D barre de lecture en haut sans écran. Conseil : C à l'arrivée (première page
