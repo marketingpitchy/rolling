@@ -471,6 +471,15 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   témoignage : `encart-rex` (carte-verre, couverture 220 px + textes, avant « Les autres vidéos ») ; fiche réalisation :
   `rex-ligne` sous la citation. Page Guides : H1 « Guides et REX, à télécharger. », filtre « Tout voir ». Bloc Ressources :
   carte « Guides et REX ». encart-rex / rex-ligne dans `$prioritaires` (sinon carte-verre les remet en colonne).
+- **Maquette « Page Réalisations plus stylée »** (`maquettes/realisations-v2/realisations.html`, copie
+  /workspace/maquette-realisations-v2.html, **à valider**) : grille jugée « scolaire » ⇒ A mur de montage (conseil : tailles
+  selon le format, dernière en grand 2×3, 9:16 en hauteur, cartes qui montent en sortant du flou en cascade) ; B pistes de
+  montage (une piste par cas d'usage, V1/V2, règle, défilement horizontal, tête de lecture rouge qui allume les vidéos) ;
+  C ouverture cinéma (dernière réalisation en tête avec avant / après, grille régulière, chaque vignette s'ouvre par deux
+  bandes noires + REC, en cascade). Combinables (A + C). Une seule fois, rien avec « réduire les animations ».
+  Articles et pages de texte : rappel donné = éditeur WordPress (compositions Rolling vues dans l'outil d'insertion sur ma
+  copie ; chez la cliente introuvables : captures demandées) ; page de texte = modèle de page « Page de texte… » (ne pas
+  insérer « Rolling · Page de texte » dans Elementor : « Retour à l'éditeur WordPress »).
 - **Chargement de page effet film** (demande avant la fin de la livraison 4) : maquette `maquettes/loading/maquette-loading.html`
   (copie /workspace/maquette-loading.html), 4 options : A amorce 3-2-1, B clap qui se ferme puis rideau, C ouverture
   cinéma (bandes noires + REC + timecode + règle avec la tête de lecture rouge des frises, plus de filet fin), D barre de lecture en haut sans écran. Conseil : C à l'arrivée (première page

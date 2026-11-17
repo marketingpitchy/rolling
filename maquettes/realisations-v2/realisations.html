@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rolling · page Réalisations</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Caveat:wght@700&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root { --ink:#0F0F12; --texte:#4A4858; --legende:#5F5C6C; --violet:#5B3BEA; }
+* { box-sizing: border-box; }
+body { margin: 0; color: var(--ink); font-family: 'Hanken Grotesk', system-ui, sans-serif; background: radial-gradient(40% 30% at 100% 0%, #FFE2D4, transparent 70%), radial-gradient(35% 30% at 0% 10%, #EDE6FF, transparent 70%), #FAF9F7; }
+h1, h2, h3, p, ul { margin: 0; }
+.jk { font-family: 'Bricolage Grotesque', system-ui, sans-serif; }
+em { font-style: normal; background: linear-gradient(95deg, #5B3BEA, #6F3FD6 42%, #C94A1E); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.conteneur { max-width: 1240px; margin: 0 auto; padding: 0 28px; }
+.intro { padding: 56px 0 8px; }
+.intro h1 { font-size: 30px; letter-spacing: -.035em; font-weight: 650; }
+.intro p { margin-top: 10px; max-width: 80ch; font-size: 16px; line-height: 1.55; color: var(--texte); }
+.partie { margin-top: 72px; }
+.partie > h2 { font-size: 24px; letter-spacing: -.03em; font-weight: 650; }
+.option { margin-top: 30px; }
+.option > h3 { display: flex; align-items: center; gap: 12px; font-size: 20px; letter-spacing: -.03em; font-weight: 650; }
+.lettre { display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 50%; font-size: 14px; color: #fff; background: #0F0F12; }
+.conseil .lettre { background: var(--violet); }
+.etiquette { padding: 3px 10px; border-radius: 999px; font-size: 12px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: #4A2BB8; background: #EDE6FF; }
+.desc { margin-top: 8px; max-width: 82ch; font-size: 15px; line-height: 1.55; color: var(--texte); }
+.scene { margin-top: 18px; padding: 30px; border-radius: 30px; background: rgba(255,255,255,.35); box-shadow: inset 0 0 0 1px rgba(15,15,18,.06); }
+.verre { border-radius: 26px; background: radial-gradient(70% 60% at 15% 0%, rgba(255,255,255,.95), rgba(255,255,255,0) 72%), linear-gradient(150deg, rgba(255,255,255,.8), rgba(255,255,255,.5)); box-shadow: inset 0 1px 0 #fff, 0 30px 70px -34px rgba(76,48,170,.34); }
+.label { font-size: 12px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: #4A2BB8; }
+.timecode { display: inline-flex; align-items: center; gap: 8px; padding: 6px 13px; border-radius: 999px; font-size: 12px; font-weight: 700; letter-spacing: .06em; color: #5B3BEA; background: linear-gradient(170deg, rgba(255,255,255,.95), rgba(255,255,255,.55)); box-shadow: inset 0 1px 0 #fff, inset 0 0 0 1px rgba(91,59,234,.16), 0 6px 16px -10px rgba(91,59,234,.5); }
+.rec::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: #FF3B30; box-shadow: 0 0 0 3px rgba(255,59,48,.22); }
+.bouton { display: inline-flex; align-items: center; min-height: 46px; padding: 0 20px; border-radius: 999px; font-size: 15px; font-weight: 700; color: #fff; background: #0F0F12; }
+
+/* 1 · Formulaire */
+.action { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: 40px; align-items: center; padding: 40px; }
+.action h3 { margin-top: 16px; font-family: 'Bricolage Grotesque'; font-size: 34px; line-height: 1.1; letter-spacing: -.04em; font-weight: 650; }
+.action p.t { margin-top: 10px; font-size: 16px; line-height: 1.6; color: var(--texte); }
+.cal { position: relative; width: 100%; max-width: 440px; margin: 0 auto; padding: 52px 10px 10px; border-radius: 26px; }
+.cal .tc { position: absolute; top: 14px; right: 16px; }
+.cal .faux { height: 300px; border-radius: 10px; background: #fff; box-shadow: 0 2px 8px rgba(15,15,18,.08); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; color: #33475B; font-size: 14px; }
+.cal .faux b { font-size: 18px; }
+
+/* 2 · Ce que ça change */
+.aa { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.carte-aa { display: flex; flex-direction: column; gap: 12px; padding: 10px 10px 20px; }
+.vign { position: relative; aspect-ratio: 16/9; border-radius: 18px; overflow: hidden; }
+.v1 { background: radial-gradient(60% 80% at 75% 30%, rgba(255,180,140,.9), transparent 60%), radial-gradient(90% 90% at 10% 100%, #5B3BEA, transparent 70%), linear-gradient(160deg, #3434E0, #1C1730); }
+.v2 { background: radial-gradient(60% 80% at 30% 30%, rgba(196,181,253,.9), transparent 60%), radial-gradient(90% 90% at 90% 100%, #FF8A5B, transparent 70%), linear-gradient(160deg, #8E4DE6, #1C1730); }
+.v3 { background: radial-gradient(70% 90% at 60% 20%, rgba(255,209,191,.9), transparent 60%), linear-gradient(160deg, #E0562A, #4A2BB8); }
+.duree { position: absolute; right: 12px; top: 12px; padding: 3px 8px; border-radius: 8px; font-size: 12px; font-weight: 800; color: #fff; background: rgba(15,15,18,.7); }
+.carte-aa .client { padding: 0 8px; font-size: 12px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: var(--legende); }
+.ligne-aa { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; padding: 0 8px; font-size: 14px; }
+.avant { padding: 5px 11px; border-radius: 999px; color: #A63C14; background: #fff; box-shadow: inset 0 0 0 1px rgba(224,86,42,.25); font-weight: 600; }
+.fleche { color: #C94A1E; font-weight: 800; }
+.apres { font-weight: 800; }
+.lien { padding: 0 8px; font-size: 14px; font-weight: 700; color: #4A2BB8; }
+
+.gains { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; padding: 24px 0; }
+.gains > div { display: flex; flex-direction: column; gap: 8px; padding: 4px 24px; box-shadow: -1px 0 0 rgba(91,59,234,.16); }
+.gains .pic { width: 40px; height: 40px; border-radius: 12px; display: flex; align-items: center; justify-content: center; background: linear-gradient(140deg, #EDE6FF, #FFE2D4); font-size: 18px; }
+.gains b { font-family: 'Bricolage Grotesque'; font-size: 18px; letter-spacing: -.02em; }
+.gains span { font-size: 14px; line-height: 1.5; color: var(--texte); }
+
+.citations { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.citations > div { padding: 22px; }
+.citations p { font-family: 'Bricolage Grotesque'; font-size: 18px; line-height: 1.35; font-weight: 650; letter-spacing: -.02em; }
+.citations small { display: block; margin-top: 10px; font-size: 13px; color: var(--legende); }
+
+/* 3 · Née chez Pitchy */
+.n { font-family: 'Bricolage Grotesque'; font-weight: 800; line-height: .9; letter-spacing: -.02em; background: linear-gradient(180deg, #FFAB96 0%, #E697BD 45%, #A77BF0 100%); -webkit-background-clip: text; background-clip: text; color: transparent; filter: drop-shadow(0 8px 14px rgba(91,59,234,.25)); }
+.l { font-size: 15.5px; line-height: 1.35; font-weight: 600; color: #2A2840; }
+.actuel { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); padding: 30px 8px; }
+.actuel > div { display: flex; flex-direction: column; gap: 10px; padding: 4px 24px; }
+.actuel > div + div { box-shadow: -1px 0 0 rgba(91,59,234,.16); }
+.actuel .n { font-size: 60px; }
+.cote { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 16px; padding: 20px 0; }
+.cote > div { display: flex; align-items: center; gap: 14px; padding: 4px 24px; box-shadow: -1px 0 0 rgba(91,59,234,.16); }
+.cote .n { font-size: 54px; flex-shrink: 0; }
+.trois { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+@media (max-width: 980px) {
+  .action { grid-template-columns: 1fr; padding: 20px; }
+  .aa, .citations { grid-template-columns: 1fr; }
+  .gains, .actuel { grid-template-columns: 1fr 1fr; row-gap: 18px; }
+  .cote, .trois { grid-template-columns: 1fr; padding: 0; row-gap: 0; }
+  .cote > div { padding: 14px 18px; box-shadow: 0 -1px 0 rgba(91,59,234,.14); }
+  .scene { padding: 16px; }
+}
+</style>
+<style>
+.rejouer { display: inline-flex; align-items: center; gap: 8px; margin-top: 14px; min-height: 40px; padding: 0 16px; border: 0; border-radius: 999px; font: 700 14px 'Hanken Grotesk'; color: #fff; background: #0F0F12; cursor: pointer; }
+.rejouer::before { content: '↻'; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 22px; }
+.chip { padding: 8px 15px; border-radius: 999px; font-size: 14px; font-weight: 600; color: #2A2840; background: rgba(255,255,255,.75); box-shadow: inset 0 0 0 1px rgba(91,59,234,.14); }
+.chip.on { color: #fff; background: #0F0F12; box-shadow: none; }
+.v { position: relative; overflow: hidden; border-radius: 20px; background: #2A2233; }
+.v::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(12,8,30,.35), rgba(12,8,30,0) 30%, rgba(12,8,30,0) 60%, rgba(12,8,30,.55)); }
+.g1 { background: radial-gradient(60% 70% at 75% 25%, rgba(255,180,140,.9), transparent 60%), radial-gradient(90% 90% at 10% 100%, #5B3BEA, transparent 70%), linear-gradient(160deg, #3434E0, #1C1730); }
+.g2 { background: radial-gradient(60% 80% at 30% 30%, rgba(196,181,253,.9), transparent 60%), radial-gradient(90% 90% at 90% 100%, #FF8A5B, transparent 70%), linear-gradient(160deg, #8E4DE6, #1C1730); }
+.g3 { background: radial-gradient(70% 90% at 60% 20%, rgba(255,209,191,.9), transparent 60%), linear-gradient(160deg, #E0562A, #4A2BB8); }
+.g4 { background: radial-gradient(60% 60% at 20% 80%, rgba(255,162,122,.8), transparent 60%), linear-gradient(200deg, #2A2AB8, #0F0F12); }
+.g5 { background: radial-gradient(70% 70% at 70% 70%, rgba(237,230,255,.85), transparent 60%), linear-gradient(140deg, #5B3BEA, #A63C14); }
+.g6 { background: radial-gradient(60% 70% at 40% 30%, rgba(140,142,255,.9), transparent 60%), linear-gradient(170deg, #17112C, #4A2BB8); }
+.tag { position: absolute; z-index: 2; left: 12px; top: 12px; padding: 5px 11px; border-radius: 999px; font-size: 12px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: #fff; background: rgba(15,15,18,.62); }
+.dur { position: absolute; z-index: 2; right: 12px; bottom: 12px; padding: 3px 8px; border-radius: 8px; font-size: 12px; font-weight: 800; color: #fff; background: rgba(15,15,18,.7); }
+.play { position: absolute; z-index: 2; left: 50%; top: 50%; width: 54px; height: 54px; margin: -27px 0 0 -27px; border-radius: 50%; background: #FF8A5B; box-shadow: 0 10px 24px -8px rgba(255,138,91,.8); opacity: 0; transform: scale(.8); transition: .35s; }
+.play::before { content: ''; position: absolute; left: 22px; top: 18px; border-left: 15px solid #0F0F12; border-top: 9px solid transparent; border-bottom: 9px solid transparent; }
+.carte { display: flex; flex-direction: column; gap: 8px; color: inherit; text-decoration: none; }
+.carte:hover .play { opacity: 1; transform: none; }
+.carte:hover .v .fond { transform: scale(1.06); }
+.fond { position: absolute; inset: 0; transition: transform 1.4s cubic-bezier(.2,.8,.2,1); }
+.client { font-size: 12px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: var(--legende); }
+.titre { font-family: 'Bricolage Grotesque'; font-size: 19px; line-height: 1.2; letter-spacing: -.02em; font-weight: 650; }
+
+/* A : mur de montage */
+.mur { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); grid-auto-rows: 150px; grid-auto-flow: dense; gap: 20px; }
+.mur .carte { grid-row: span 2; }
+.mur .large { grid-column: span 2; grid-row: span 3; }
+.mur .haute { grid-row: span 3; }
+.mur .v { flex: 1; }
+.mur .large .titre { font-size: 26px; }
+.anim-a .carte { opacity: 0; transform: translateY(34px) scale(.97); filter: blur(8px); }
+.anim-a.joue .carte { animation: a-in .9s cubic-bezier(.2,.8,.2,1) forwards; animation-delay: calc(var(--i) * 110ms); }
+@keyframes a-in { to { opacity: 1; transform: none; filter: none; } }
+
+/* B : pistes de montage */
+.piste { position: relative; margin-top: 26px; }
+.piste-tete { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+.tc { display: inline-flex; align-items: center; gap: 7px; padding: 5px 12px; border-radius: 999px; font-size: 12px; font-weight: 700; color: #5B3BEA; background: rgba(255,255,255,.9); box-shadow: inset 0 0 0 1px rgba(91,59,234,.16); }
+.piste-tete b { font-family: 'Bricolage Grotesque'; font-size: 20px; letter-spacing: -.02em; }
+.piste-tete span.n { font-size: 14px; color: var(--legende); }
+.regle { height: 18px; margin-bottom: 10px; background: repeating-linear-gradient(90deg, rgba(91,59,234,.35) 0 1px, transparent 1px 24px), repeating-linear-gradient(90deg, rgba(91,59,234,.6) 0 1px, transparent 1px 120px); background-size: auto 8px, auto 16px; background-repeat: repeat-x; background-position: bottom; }
+.clips { display: flex; gap: 16px; overflow-x: auto; padding-bottom: 8px; scroll-snap-type: x mandatory; }
+.clips .carte { flex: 0 0 300px; scroll-snap-align: start; }
+.clips .carte .v { aspect-ratio: 16/9; }
+.clips .carte.vert { flex-basis: 150px; }
+.clips .carte.vert .v { aspect-ratio: 9/16; height: 266px; }
+.clips .carte:not(.vert) .v { height: 169px; }
+.tete { position: absolute; z-index: 5; top: 44px; bottom: 60px; left: 0; width: 2px; background: #FF3B30; opacity: 0; pointer-events: none; }
+.tete::before { content: ''; position: absolute; top: -10px; left: -7px; width: 16px; height: 14px; background: #FF3B30; clip-path: polygon(0 0, 100% 0, 100% 60%, 50% 100%, 0 60%); }
+.anim-b .carte { opacity: .12; filter: grayscale(1); }
+.anim-b.joue .tete { animation: b-tete 2.4s cubic-bezier(.6,0,.3,1) forwards; }
+.anim-b.joue .carte { animation: b-on .5s ease forwards; animation-delay: calc(var(--i) * 340ms + 150ms); }
+@keyframes b-tete { 0% { opacity: 1; left: 0; } 92% { opacity: 1; } 100% { opacity: 0; left: 100%; } }
+@keyframes b-on { to { opacity: 1; filter: none; } }
+
+/* C : obturateur */
+.une { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 32px; align-items: center; padding: 14px 36px 14px 14px; margin-bottom: 28px; }
+.une .v { aspect-ratio: 16/9; }
+.une .titre { font-size: 32px; line-height: 1.1; letter-spacing: -.04em; }
+.une p { font-size: 16px; line-height: 1.55; color: var(--texte); }
+.grille-c { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.grille-c .v { aspect-ratio: 16/10; }
+.volet::before, .volet .bas { content: ''; position: absolute; z-index: 3; left: 0; right: 0; height: 51%; background: #0F0F12; }
+.volet::before { top: 0; } .volet .bas { bottom: 0; }
+.rec { position: absolute; z-index: 4; left: 50%; top: 50%; transform: translate(-50%, -50%); display: flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 800; letter-spacing: .1em; color: #fff; opacity: 0; }
+.rec::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: #FF3B30; }
+.anim-c .carte { opacity: 0; }
+.anim-c.joue .carte { animation: c-carte .01s linear forwards; animation-delay: calc(var(--i) * 160ms); }
+.anim-c.joue .volet::before { animation: c-haut .9s cubic-bezier(.76,0,.24,1) forwards; animation-delay: calc(var(--i) * 160ms + 420ms); }
+.anim-c.joue .volet .bas { animation: c-bas .9s cubic-bezier(.76,0,.24,1) forwards; animation-delay: calc(var(--i) * 160ms + 420ms); }
+.anim-c.joue .rec { animation: c-rec .7s ease forwards; animation-delay: calc(var(--i) * 160ms); }
+@keyframes c-carte { to { opacity: 1; } }
+@keyframes c-haut { to { transform: translateY(-100%); } }
+@keyframes c-bas { to { transform: translateY(100%); } }
+@keyframes c-rec { 0% { opacity: 0; } 30% { opacity: 1; } 70% { opacity: 1; } 100% { opacity: 0; } }
+
+@media (max-width: 980px) {
+  .mur { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: 120px; gap: 14px; }
+  .mur .large { grid-column: span 2; grid-row: span 3; }
+  .une, .grille-c { grid-template-columns: 1fr; }
+  .une { padding: 12px 12px 22px; }
+  .clips .carte { flex-basis: 250px; }
+  .clips .carte:not(.vert) .v { height: 141px; }
+  .clips .carte.vert { flex-basis: 125px; } .clips .carte.vert .v { height: 222px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .anim-a .carte, .anim-b .carte, .anim-c .carte { opacity: 1 !important; transform: none !important; filter: none !important; animation: none !important; }
+  .volet::before, .volet .bas, .tete, .rec { display: none; }
+}
+</style>
+</head>
+<body>
+<main>
+  <div class="conteneur intro">
+    <h1 class="jk">Page Réalisations : trois façons de faire entrer les vidéos.</h1>
+    <p>Aujourd'hui : une grille régulière de cartes identiques qui s'affichent d'un coup. Trois propositions, toutes animées à l'arrivée dans l'écran (une seule fois, rien avec « réduire les animations »). Cliquez sur « Rejouer » pour revoir l'animation. Images simulées par des dégradés.</p>
+  </div>
+  <div class="conteneur">
+    <section class="partie">
+      <h2 class="jk">A. Le mur de montage <span class="etiquette">Conseil</span></h2>
+      <p class="desc">Les vidéos gardent leur vraie forme : la dernière réalisation en grand, les 9:16 en hauteur, les autres en 16:9. Les cartes montent une à une en sortant du flou, comme des plans qui se posent sur la table de montage. Au survol, l'image zoome et le bouton lecture apparaît. Automatique : la taille vient du format coché (« Format 9:16 ») et de la date.</p>
+      <div class="scene anim-a" id="sa"><div class="chips"><span class="chip on">Tout voir</span><span class="chip">Com interne · RH</span><span class="chip">Marketing</span><span class="chip">Événement</span><span class="chip">Onboarding</span><span class="chip">Formation</span></div><div class="mur"><a class="carte large" style="--i:0" href="#"><div class="v" ><div class="fond g1"></div><span class="tag">Interview</span><span class="dur">3:53</span><span class="play"></span></div><span class="client">Groupe A</span><span class="titre">13 jours de formation, une seule vidéo.</span></a><a class="carte " style="--i:1" href="#"><div class="v" ><div class="fond g2"></div><span class="tag">Aftermovie</span><span class="dur">1:52</span><span class="play"></span></div><span class="client">Groupe B</span><span class="titre">Un séminaire raconté en 2 minutes.</span></a><a class="carte haute" style="--i:2" href="#"><div class="v" ><div class="fond g3"></div><span class="tag">Format 9:16</span><span class="dur">0:45</span><span class="play"></span></div><span class="client">Groupe C</span><span class="titre">Les coulisses en vertical.</span></a><a class="carte " style="--i:3" href="#"><div class="v" ><div class="fond g4"></div><span class="tag">Motion design</span><span class="dur">1:20</span><span class="play"></span></div><span class="client">Groupe D</span><span class="titre">Le rapport RSE, épisode par épisode.</span></a><a class="carte " style="--i:4" href="#"><div class="v" ><div class="fond g5"></div><span class="tag">Démo produit</span><span class="dur">2:04</span><span class="play"></span></div><span class="client">Groupe E</span><span class="titre">Un lancement produit en 3 formats.</span></a><a class="carte haute" style="--i:5" href="#"><div class="v" ><div class="fond g6"></div><span class="tag">Format 9:16</span><span class="dur">0:30</span><span class="play"></span></div><span class="client">Groupe F</span><span class="titre">Une offre d'emploi en 30 secondes.</span></a><a class="carte " style="--i:6" href="#"><div class="v" ><div class="fond g1"></div><span class="tag">Tournage</span><span class="dur">2:40</span><span class="play"></span></div><span class="client">Groupe G</span><span class="titre">Les métiers du terrain, filmés chez eux.</span></a><a class="carte " style="--i:7" href="#"><div class="v" ><div class="fond g2"></div><span class="tag">Interview</span><span class="dur">4:10</span><span class="play"></span></div><span class="client">Groupe H</span><span class="titre">La parole aux dirigeants.</span></a></div></div>
+      <button class="rejouer" data-cible="sa">Rejouer</button>
+    </section>
+
+    <section class="partie">
+      <h2 class="jk">B. Les pistes de montage</h2>
+      <p class="desc">Une piste par cas d'usage (Événement, Onboarding…), comme dans un logiciel de montage : timecode V1, V2, règle graduée, vidéos côte à côte qui défilent au doigt ou à la souris. À l'arrivée, la tête de lecture rouge balaie la piste et « allume » chaque vidéo au passage. Les filtres deviennent les pistes elles-mêmes. Idéal quand il y aura beaucoup de réalisations.</p>
+      <div class="scene anim-b" id="sb"><div class="piste"><div class="piste-tete"><span class="tc">V1</span><b>Événement</b><span class="n">4 vidéos</span></div><div class="regle"></div><div class="clips"><a class="carte " style="--i:0" href="#"><div class="v" ><div class="fond g2"></div><span class="tag">Aftermovie</span><span class="dur">1:52</span><span class="play"></span></div><span class="client">Groupe B</span><span class="titre">Un séminaire raconté en 2 minutes.</span></a><a class="carte vert" style="--i:1" href="#"><div class="v" ><div class="fond g3"></div><span class="tag">Format 9:16</span><span class="dur">0:45</span><span class="play"></span></div><span class="client">Groupe C</span><span class="titre">Les coulisses en vertical.</span></a><a class="carte " style="--i:2" href="#"><div class="v" ><div class="fond g1"></div><span class="tag">Tournage</span><span class="dur">2:40</span><span class="play"></span></div><span class="client">Groupe G</span><span class="titre">Les métiers du terrain, filmés chez eux.</span></a><a class="carte " style="--i:3" href="#"><div class="v" ><div class="fond g4"></div><span class="tag">Motion design</span><span class="dur">1:20</span><span class="play"></span></div><span class="client">Groupe D</span><span class="titre">Le rapport RSE, épisode par épisode.</span></a></div><span class="tete"></span></div><div class="piste"><div class="piste-tete"><span class="tc">V2</span><b>Onboarding et formation</b><span class="n">4 vidéos</span></div><div class="regle"></div><div class="clips"><a class="carte " style="--i:0" href="#"><div class="v" ><div class="fond g1"></div><span class="tag">Interview</span><span class="dur">3:53</span><span class="play"></span></div><span class="client">Groupe A</span><span class="titre">13 jours de formation, une seule vidéo.</span></a><a class="carte vert" style="--i:1" href="#"><div class="v" ><div class="fond g6"></div><span class="tag">Format 9:16</span><span class="dur">0:30</span><span class="play"></span></div><span class="client">Groupe F</span><span class="titre">Une offre d'emploi en 30 secondes.</span></a><a class="carte " style="--i:2" href="#"><div class="v" ><div class="fond g5"></div><span class="tag">Démo produit</span><span class="dur">2:04</span><span class="play"></span></div><span class="client">Groupe E</span><span class="titre">Un lancement produit en 3 formats.</span></a><a class="carte " style="--i:3" href="#"><div class="v" ><div class="fond g2"></div><span class="tag">Interview</span><span class="dur">4:10</span><span class="play"></span></div><span class="client">Groupe H</span><span class="titre">La parole aux dirigeants.</span></a></div><span class="tete"></span></div></div>
+      <button class="rejouer" data-cible="sb">Rejouer</button>
+    </section>
+
+    <section class="partie">
+      <h2 class="jk">C. L'ouverture cinéma</h2>
+      <p class="desc">La dernière réalisation en tête, avec son avant / après et la lecture, puis une grille régulière. Chaque vignette s'ouvre comme l'écran de chargement du site : deux bandes noires qui s'écartent sur l'image, avec un « REC » qui clignote, en cascade. Le plus proche de l'identité « film » du site, la grille reste sage.</p>
+      <div class="scene anim-c" id="sc"><div class="verre une"><div class="v volet" ><div class="fond g1"></div><span class="tag">Interview</span><span class="dur">3:53</span><span class="play" style="opacity:1;transform:none"></span><span class="bas"></span><span class="rec">REC 00:00:00</span></div><div style="display:flex;flex-direction:column;gap:12px"><span class="label">La dernière réalisation</span><span class="client">Groupe A</span><span class="titre">13 jours de formation, une seule vidéo.</span><p>Au départ : un programme de formation de 40 pages. À l'arrivée : une interview de 4 minutes que les équipes regardent jusqu'au bout.</p><span class="lien-t" style="font-weight:700;color:#4A2BB8">Voir la réalisation →</span></div></div><div class="chips"><span class="chip on">Tout voir</span><span class="chip">Com interne · RH</span><span class="chip">Marketing</span><span class="chip">Événement</span><span class="chip">Onboarding</span><span class="chip">Formation</span></div><div class="grille-c"><a class="carte " style="--i:1" href="#"><div class="v volet" ><div class="fond g2"></div><span class="tag">Aftermovie</span><span class="dur">1:52</span><span class="play"></span><span class="bas"></span><span class="rec">REC 00:00:01</span></div><span class="client">Groupe B</span><span class="titre">Un séminaire raconté en 2 minutes.</span></a><a class="carte " style="--i:2" href="#"><div class="v volet" ><div class="fond g3"></div><span class="tag">Format 9:16</span><span class="dur">0:45</span><span class="play"></span><span class="bas"></span><span class="rec">REC 00:00:02</span></div><span class="client">Groupe C</span><span class="titre">Les coulisses en vertical.</span></a><a class="carte " style="--i:3" href="#"><div class="v volet" ><div class="fond g4"></div><span class="tag">Motion design</span><span class="dur">1:20</span><span class="play"></span><span class="bas"></span><span class="rec">REC 00:00:03</span></div><span class="client">Groupe D</span><span class="titre">Le rapport RSE, épisode par épisode.</span></a><a class="carte " style="--i:4" href="#"><div class="v volet" ><div class="fond g5"></div><span class="tag">Démo produit</span><span class="dur">2:04</span><span class="play"></span><span class="bas"></span><span class="rec">REC 00:00:04</span></div><span class="client">Groupe E</span><span class="titre">Un lancement produit en 3 formats.</span></a><a class="carte " style="--i:5" href="#"><div class="v volet" ><div class="fond g6"></div><span class="tag">Format 9:16</span><span class="dur">0:30</span><span class="play"></span><span class="bas"></span><span class="rec">REC 00:00:05</span></div><span class="client">Groupe F</span><span class="titre">Une offre d'emploi en 30 secondes.</span></a><a class="carte " style="--i:6" href="#"><div class="v volet" ><div class="fond g1"></div><span class="tag">Tournage</span><span class="dur">2:40</span><span class="play"></span><span class="bas"></span><span class="rec">REC 00:00:06</span></div><span class="client">Groupe G</span><span class="titre">Les métiers du terrain, filmés chez eux.</span></a></div></div>
+      <button class="rejouer" data-cible="sc">Rejouer</button>
+    </section>
+    <p class="desc" style="margin-top:40px">Les trois se combinent : par exemple le mur de montage (A) avec l'ouverture cinéma (C) sur chaque vignette.</p>
+    <p style="height:90px"></p>
+  </div>
+</main>
+<script>
+const obs = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('joue'); obs.unobserve(e.target); } }), { threshold: .25 });
+document.querySelectorAll('.scene').forEach(s => obs.observe(s));
+document.querySelectorAll('.rejouer').forEach(b => b.addEventListener('click', () => { const s = document.getElementById(b.dataset.cible); s.classList.remove('joue'); void s.offsetWidth; s.classList.add('joue'); }));
+document.querySelectorAll('a[href="#"]').forEach(a => a.addEventListener('click', e => e.preventDefault()));
+</script>
+</body>
+</html>
