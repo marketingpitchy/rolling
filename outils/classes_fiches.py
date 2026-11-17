@@ -11,7 +11,7 @@ REPERE = "Repère sans style : le thème masque ce bloc quand le champ « %s » 
 RAZ = "position: relative; top: auto; right: auto; bottom: auto; left: auto; height: auto; opacity: 1; mix-blend-mode: normal; border: 0; -webkit-mask: none; mask: none; padding: 0; "
 CLASSES = [
     # Repères des parties facultatives (aucun style : seulement lus par le thème).
-    *[(('si-' + c), REPERE % c, '--rl-repere: 1;') for c in ['chapo', 'logo', 'secteur', 'equipes', 'formats', 'duree', 'chiffres', 'citation', 'auteur', 'poste', 'portrait', 'videos', 'generique', 'besoin', 'resultat', 'contexte', 'pages', 'type-doc', 'resume', 'intervenants', 'image', 'avant', 'apres', 'client', 'produit', 'accompagnement', 'recit', 'temoignage-lie', 'temoignage-citation', 'temoignage-portrait', 'temoignage-poste', 'temoignage-recit', 'video-liee', 'autres-videos', 'metier', 'format', 'usage', 'programme', 'theme']],
+    *[(('si-' + c), REPERE % c, '--rl-repere: 1;') for c in ['chapo', 'logo', 'secteur', 'equipes', 'formats', 'duree', 'chiffres', 'citation', 'auteur', 'poste', 'portrait', 'videos', 'generique', 'besoin', 'resultat', 'contexte', 'pages', 'type-doc', 'resume', 'intervenants', 'image', 'avant', 'apres', 'client', 'produit', 'accompagnement', 'recit', 'temoignage-lie', 'temoignage-citation', 'temoignage-portrait', 'temoignage-poste', 'temoignage-recit', 'temoignage-logo', 'video-liee', 'autres-videos', 'metier', 'format', 'usage', 'programme', 'theme', 'rex']],
     ('si-mise-a-jour', "Repère sans style : affiché seulement quand l'article a été modifié après le jour de sa publication.", '--rl-repere: 1;'),
     ('sans-recit', "Repère sans style : affiché seulement quand le témoignage n'a pas de récit (citation seule, pas de page).", '--rl-repere: 1;'),
     ('sans-citation', "Repère sans style : affiché seulement quand le témoignage n'a pas de citation.", '--rl-repere: 1;'),
@@ -65,6 +65,16 @@ CLASSES = [
     ('titre-benefice', "Titre d'un bénéfice (dans plaque-benefices).", 'display: block; margin: 0; font-family: Bricolage Grotesque; font-size: 19px; line-height: 1.25; font-weight: 650; letter-spacing: -0.02em; color: var(--rl-texte, var(--encre));'),
     ('temoins-courts', "Liste de témoignages plus compacte (classe de la grille du widget Liste, ex. la landing) : citation en 16 px.",
      'align-items: start; & .temoin-citation { font-size: 16px; line-height: 1.55; font-weight: 500; } & .temoin-citation::before { height: 24px; font-size: 56px; }'),
+    ('couverture-logo', "Couverture d'un retour d'expérience sans image : logo du client (repris du témoignage lié) sur un fond pêche et lilas, au format 4:3.",
+     "position: relative; display: flex; align-items: center; justify-content: center; aspect-ratio: 4 / 3; padding: 12px; overflow: hidden; border-radius: var(--rl-rayon-photo, 22px); background: radial-gradient(70% 70% at 70% 30%, #FFE2D4, rgba(255,226,212,0) 70%), linear-gradient(160deg, #FFF1E7, #EDE6FF); background-color: #FFF1E7; "
+     "& .bandeau-video { background-image: none; background-color: rgba(15,15,18,0.62); } & .logo-couverture { width: auto; max-width: 62%; max-height: 38%; padding: 6% 9%; border-radius: 16px; object-fit: contain; background: #FFFFFF; box-shadow: 0 12px 30px -18px rgba(76,48,170,0.5); }"),
+    ('logo-couverture', "Logo du client posé au centre d'une couverture-logo.", 'display: block; height: auto;'),
+    ('encart-rex', "Encart « Télécharger le retour d'expérience » (avec carte-verre) : couverture à gauche, textes et bouton à droite ; l'un sous l'autre sous 980 px.",
+     "display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 28px; align-items: center; width: 100%; max-width: 820px; margin: 0 auto; padding: 14px 30px 14px 14px; --rl-rayon-photo: 18px; "
+     "& > :last-child { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; padding: 0; } @media(--tablet) { grid-template-columns: minmax(0, 1fr); gap: 16px; padding: 12px 12px 24px; & > :last-child { padding: 0 10px; } }"),
+    ('rex-ligne', "Ligne discrète « Le retour d'expérience » (avec carte-verre, fiche réalisation) : petite couverture, titre et pages, bouton.",
+     "display: grid; grid-template-columns: 84px minmax(0, 1fr) auto; gap: 18px; align-items: center; padding: 12px 18px 12px 12px; --rl-rayon-photo: 12px; "
+     "& .bandeau-video { display: none; } & .couverture-logo { padding: 6px; } & .logo-couverture { max-width: 84%; max-height: 72%; padding: 4px 6px; border-radius: 6px; box-shadow: none; } @media(--mobile) { grid-template-columns: 64px minmax(0, 1fr); & > :last-child { grid-column: 1 / -1; justify-self: start; } }"),
     ('cas-grille', "Fiche témoignage : citation à gauche, récit à droite ; sans citation, le récit se centre.",
      'display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr); gap: 56px; align-items: start; padding: 0; & > :only-child { grid-column: 1 / -1; width: 100%; max-width: 820px; justify-self: center; } @media(--tablet) { grid-template-columns: minmax(0, 1fr); gap: 40px; }'),
     ('cas-citation', 'Citation de la fiche témoignage (avec carte-verre et temoin) : fond lilas et pêche, reste visible pendant la lecture du récit sur ordinateur.', 'position: sticky; top: 120px; padding: 34px 38px; background: radial-gradient(70% 60% at 10% 0%, rgba(255,255,255,0.95), rgba(255,255,255,0) 72%), linear-gradient(160deg, rgba(237,230,255,0.9) 0%, rgba(255,226,212,0.7) 100%); & .temoin-citation { font-size: clamp(20px, 1.9vw, 25px); } @media(--tablet) { position: static; } @media(--mobile) { padding: 26px; }'),
@@ -151,6 +161,7 @@ CLASSES = [
     ('contexte-dernier-guide', "Repère sans style : dans ce conteneur, les balises lisent le dernier guide publié.", '--rl-repere: 1;'),
     ('contexte-prochain-webinar', "Repère sans style : dans ce conteneur, les balises lisent le prochain webinar.", '--rl-repere: 1;'),
     ('contexte-dernier-replay', "Repère sans style : dans ce conteneur, les balises lisent le dernier replay.", '--rl-repere: 1;'),
+    ('contexte-rex', "Repère sans style : dans ce conteneur, les balises lisent le retour d'expérience lié au témoignage affiché (ou au témoignage de la réalisation affichée).", '--rl-repere: 1;'),
     ('si-contexte', "Repère sans style : affiché seulement si le conteneur « contexte-… » a trouvé un contenu publié.", '--rl-repere: 1;'),
     ('sans-image', "Repère sans style : affiché seulement quand le contenu n'a pas d'image à la une.", '--rl-repere: 1;'),
     ('sans-contexte', "Repère sans style : affiché seulement si la rubrique du conteneur « contexte-… » est encore vide.", '--rl-repere: 1;'),

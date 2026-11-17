@@ -4,7 +4,7 @@
  "type": "e-flexbox",
  "apercu": "rolling_guide",
  "composition": {
-  "xml_structure": "<e-flexbox configuration-id=\"Carte guide\"><e-flexbox configuration-id=\"Guide · vignette\"><e-div-block configuration-id=\"Guide · cadre\"><e-image configuration-id=\"Guide · image\"></e-image><e-paragraph configuration-id=\"Guide · type\"></e-paragraph></e-div-block></e-flexbox><e-flexbox configuration-id=\"Guide · infos\"><e-paragraph configuration-id=\"Guide · thème\"></e-paragraph><e-paragraph configuration-id=\"Guide · pages\"></e-paragraph></e-flexbox><e-heading configuration-id=\"Guide · titre\"></e-heading><e-paragraph configuration-id=\"Guide · résumé\"></e-paragraph><e-button configuration-id=\"Guide · bouton\"></e-button></e-flexbox>",
+  "xml_structure": "<e-flexbox configuration-id=\"Carte guide\"><e-flexbox configuration-id=\"Guide · vignette\"><e-div-block configuration-id=\"Guide · cadre\"><e-image configuration-id=\"Guide · image\"></e-image><e-paragraph configuration-id=\"Guide · type\"></e-paragraph></e-div-block></e-flexbox><e-flexbox configuration-id=\"Guide · couverture logo\"><e-div-block configuration-id=\"Guide · fond du logo\"><e-image configuration-id=\"Guide · logo du client\"></e-image><e-paragraph configuration-id=\"Guide · type (couverture logo)\"></e-paragraph></e-div-block></e-flexbox><e-flexbox configuration-id=\"Guide · infos\"><e-paragraph configuration-id=\"Guide · thème\"></e-paragraph><e-paragraph configuration-id=\"Guide · pages\"></e-paragraph></e-flexbox><e-heading configuration-id=\"Guide · titre\"></e-heading><e-paragraph configuration-id=\"Guide · résumé\"></e-paragraph><e-button configuration-id=\"Guide · bouton\"></e-button><e-button configuration-id=\"Guide · lien témoignage\"></e-button></e-flexbox>",
   "element_config": {
    "Carte guide": {
     "tag": "article"
@@ -18,6 +18,17 @@
     }
    },
    "Guide · type": {
+    "paragraph": "⟦rolling-champ|champ=type_doc⟧"
+   },
+   "Guide · logo du client": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/dynamique/rolling-image/image=logo&source=temoignage.png"
+     },
+     "size": "medium"
+    }
+   },
+   "Guide · type (couverture logo)": {
     "paragraph": "⟦rolling-champ|champ=type_doc⟧"
    },
    "Guide · thème": {
@@ -37,9 +48,15 @@
     "paragraph": "⟦rolling-champ|champ=resume⟧"
    },
    "Guide · bouton": {
-    "text": "Télécharger le guide",
+    "text": "Télécharger",
     "link": {
      "destination": "⟦rolling-lien|lien=lien⟧"
+    }
+   },
+   "Guide · lien témoignage": {
+    "text": "Lire le témoignage",
+    "link": {
+     "destination": "⟦rolling-lien|lien=fiche|source=temoignage⟧"
     }
    }
   },
@@ -59,6 +76,21 @@
     "image-couvrante"
    ],
    "Guide · type": [
+    "bandeau-video",
+    "si-type-doc"
+   ],
+   "Guide · couverture logo": [
+    "vignette-lien",
+    "sans-image",
+    "si-temoignage-logo"
+   ],
+   "Guide · fond du logo": [
+    "couverture-logo"
+   ],
+   "Guide · logo du client": [
+    "logo-couverture"
+   ],
+   "Guide · type (couverture logo)": [
     "bandeau-video",
     "si-type-doc"
    ],
@@ -84,10 +116,15 @@
    "Guide · bouton": [
     "bouton-verre",
     "bouton-petit"
+   ],
+   "Guide · lien témoignage": [
+    "temoin-lien",
+    "si-temoignage-recit"
    ]
   },
   "style": {
-   "Guide · vignette": "padding: 0; border-radius: 22px;"
+   "Guide · vignette": "padding: 0; border-radius: 22px;",
+   "Guide · couverture logo": "padding: 0; border-radius: 22px;"
   }
  },
  "brut": {}

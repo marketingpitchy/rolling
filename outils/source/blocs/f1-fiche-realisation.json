@@ -4,7 +4,7 @@
  "type": "e-flexbox",
  "apercu": "rolling_realisation",
  "composition": {
-  "xml_structure": "<e-flexbox configuration-id=\"Fiche réalisation\"><e-flexbox configuration-id=\"Fiche réalisation · haut\"><e-flexbox configuration-id=\"Fiche réalisation · haut · contenu\"><e-paragraph configuration-id=\"Fiche réalisation · fil d’Ariane\"></e-paragraph><e-flexbox configuration-id=\"Fiche réalisation · étiquettes\"><e-paragraph configuration-id=\"Fiche réalisation · métier\"></e-paragraph><e-paragraph configuration-id=\"Fiche réalisation · format\"></e-paragraph><e-paragraph configuration-id=\"Fiche réalisation · cas d’usage\"></e-paragraph></e-flexbox><e-heading configuration-id=\"Fiche réalisation · titre\"></e-heading><e-flexbox configuration-id=\"Fiche réalisation · transformation\"><e-flexbox configuration-id=\"Fiche réalisation · avant après\"><e-paragraph configuration-id=\"Fiche réalisation · avant (orange)\"></e-paragraph><e-paragraph configuration-id=\"Fiche réalisation · avant (bleu)\"></e-paragraph><e-paragraph configuration-id=\"Fiche réalisation · après\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Fiche réalisation · vidéo\"><e-flexbox configuration-id=\"Fiche réalisation · vidéo · contenu\"><e-div-block configuration-id=\"Fiche réalisation · cadre vidéo\"><e-paragraph configuration-id=\"Fiche réalisation · lecteur\"></e-paragraph></e-div-block></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Fiche réalisation · récit\"><e-flexbox configuration-id=\"Fiche réalisation · récit · contenu\"><e-flexbox configuration-id=\"Fiche réalisation · besoin\"><e-heading configuration-id=\"Fiche réalisation · besoin · titre\"></e-heading><e-paragraph configuration-id=\"Fiche réalisation · besoin · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Fiche réalisation · produit\"><e-heading configuration-id=\"Fiche réalisation · produit · titre\"></e-heading><e-paragraph configuration-id=\"Fiche réalisation · produit · liste\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Fiche réalisation · résultat\"><e-heading configuration-id=\"Fiche réalisation · résultat · titre\"></e-heading><e-paragraph configuration-id=\"Fiche réalisation · résultat · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Fiche réalisation · citation du client\"><e-paragraph configuration-id=\"Fiche réalisation · citation · texte\"></e-paragraph><e-flexbox configuration-id=\"Fiche réalisation · citation · auteur\"><e-image configuration-id=\"Fiche réalisation · citation · portrait\"></e-image><e-flexbox configuration-id=\"Fiche réalisation · citation · personne\"><e-paragraph configuration-id=\"Fiche réalisation · citation · nom\"></e-paragraph><e-paragraph configuration-id=\"Fiche réalisation · citation · poste\"></e-paragraph></e-flexbox></e-flexbox><e-button configuration-id=\"Fiche réalisation · citation · lien\"></e-button></e-flexbox><e-paragraph configuration-id=\"Fiche réalisation · transcription\"></e-paragraph></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Fiche réalisation · générique\"><e-flexbox configuration-id=\"Fiche réalisation · générique · contenu\"><e-flexbox configuration-id=\"Fiche réalisation · générique · filet\"><e-paragraph configuration-id=\"Fiche réalisation · générique · timecode\"></e-paragraph><e-paragraph configuration-id=\"Fiche réalisation · générique · fin\"></e-paragraph></e-flexbox><e-heading configuration-id=\"Fiche réalisation · générique · titre\"></e-heading><e-paragraph configuration-id=\"Fiche réalisation · générique · lignes\"></e-paragraph><e-flexbox configuration-id=\"Fiche réalisation · générique · signature\"><e-paragraph configuration-id=\"Fiche réalisation · générique · production\"></e-paragraph><e-image configuration-id=\"Fiche réalisation · générique · logo\"></e-image></e-flexbox><e-button configuration-id=\"Fiche réalisation · générique · bouton\"></e-button></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Fiche réalisation · autres\"><e-flexbox configuration-id=\"Fiche réalisation · autres · contenu\"><e-heading configuration-id=\"Fiche réalisation · autres · titre\"></e-heading><e-paragraph configuration-id=\"Fiche réalisation · autres · liste\"></e-paragraph></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Appel final\"><e-image configuration-id=\"Final · verre cannelé\"></e-image><e-flexbox configuration-id=\"Final · contenu\"><e-heading configuration-id=\"Final · titre\"></e-heading><e-paragraph configuration-id=\"Final · texte\"></e-paragraph><e-flexbox configuration-id=\"Final · bouton\"><e-button configuration-id=\"Final · réserver\"></e-button></e-flexbox><e-flexbox configuration-id=\"Final · badges\"><e-flexbox configuration-id=\"Final · badge · IA sécurisée\"><e-image configuration-id=\"Final · badge · IA sécurisée · icône\"></e-image><e-paragraph configuration-id=\"Final · badge · IA sécurisée · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Final · badge · Données hébergées en Europe\"><e-image configuration-id=\"Final · badge · Données hébergées en Europe · icône\"></e-image><e-paragraph configuration-id=\"Final · badge · Données hébergées en Europe · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Final · badge · Conforme RGPD\"><e-image configuration-id=\"Final · badge · Conforme RGPD · icône\"></e-image><e-paragraph configuration-id=\"Final · badge · Conforme RGPD · texte\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox></e-flexbox></e-flexbox>",
+  "xml_structure": "<e-flexbox configuration-id=\"Fiche réalisation\"><e-flexbox configuration-id=\"Fiche réalisation · haut\"><e-flexbox configuration-id=\"Fiche réalisation · haut · contenu\"><e-paragraph configuration-id=\"Fiche réalisation · fil d’Ariane\"></e-paragraph><e-flexbox configuration-id=\"Fiche réalisation · étiquettes\"><e-paragraph configuration-id=\"Fiche réalisation · métier\"></e-paragraph><e-paragraph configuration-id=\"Fiche réalisation · format\"></e-paragraph><e-paragraph configuration-id=\"Fiche réalisation · cas d’usage\"></e-paragraph></e-flexbox><e-heading configuration-id=\"Fiche réalisation · titre\"></e-heading><e-flexbox configuration-id=\"Fiche réalisation · transformation\"><e-flexbox configuration-id=\"Fiche réalisation · avant après\"><e-paragraph configuration-id=\"Fiche réalisation · avant (orange)\"></e-paragraph><e-paragraph configuration-id=\"Fiche réalisation · avant (bleu)\"></e-paragraph><e-paragraph configuration-id=\"Fiche réalisation · après\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Fiche réalisation · vidéo\"><e-flexbox configuration-id=\"Fiche réalisation · vidéo · contenu\"><e-div-block configuration-id=\"Fiche réalisation · cadre vidéo\"><e-paragraph configuration-id=\"Fiche réalisation · lecteur\"></e-paragraph></e-div-block></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Fiche réalisation · récit\"><e-flexbox configuration-id=\"Fiche réalisation · récit · contenu\"><e-flexbox configuration-id=\"Fiche réalisation · besoin\"><e-heading configuration-id=\"Fiche réalisation · besoin · titre\"></e-heading><e-paragraph configuration-id=\"Fiche réalisation · besoin · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Fiche réalisation · produit\"><e-heading configuration-id=\"Fiche réalisation · produit · titre\"></e-heading><e-paragraph configuration-id=\"Fiche réalisation · produit · liste\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Fiche réalisation · résultat\"><e-heading configuration-id=\"Fiche réalisation · résultat · titre\"></e-heading><e-paragraph configuration-id=\"Fiche réalisation · résultat · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Fiche réalisation · citation du client\"><e-paragraph configuration-id=\"Fiche réalisation · citation · texte\"></e-paragraph><e-flexbox configuration-id=\"Fiche réalisation · citation · auteur\"><e-image configuration-id=\"Fiche réalisation · citation · portrait\"></e-image><e-flexbox configuration-id=\"Fiche réalisation · citation · personne\"><e-paragraph configuration-id=\"Fiche réalisation · citation · nom\"></e-paragraph><e-paragraph configuration-id=\"Fiche réalisation · citation · poste\"></e-paragraph></e-flexbox></e-flexbox><e-button configuration-id=\"Fiche réalisation · citation · lien\"></e-button></e-flexbox><e-flexbox configuration-id=\"Fiche réalisation · REX\"><e-div-block configuration-id=\"Fiche réalisation · REX · couverture\"><e-image configuration-id=\"Fiche réalisation · REX · image\"></e-image><e-paragraph configuration-id=\"Fiche réalisation · REX · type\"></e-paragraph></e-div-block><e-div-block configuration-id=\"Fiche réalisation · REX · couverture logo\"><e-image configuration-id=\"Fiche réalisation · REX · logo du client\"></e-image><e-paragraph configuration-id=\"Fiche réalisation · REX · type (couverture logo)\"></e-paragraph></e-div-block><e-flexbox configuration-id=\"Fiche réalisation · REX · textes\"><e-paragraph configuration-id=\"Fiche réalisation · REX · titre\"></e-paragraph><e-paragraph configuration-id=\"Fiche réalisation · REX · pages\"></e-paragraph></e-flexbox><e-button configuration-id=\"Fiche réalisation · REX · bouton\"></e-button></e-flexbox><e-paragraph configuration-id=\"Fiche réalisation · transcription\"></e-paragraph></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Fiche réalisation · générique\"><e-flexbox configuration-id=\"Fiche réalisation · générique · contenu\"><e-flexbox configuration-id=\"Fiche réalisation · générique · filet\"><e-paragraph configuration-id=\"Fiche réalisation · générique · timecode\"></e-paragraph><e-paragraph configuration-id=\"Fiche réalisation · générique · fin\"></e-paragraph></e-flexbox><e-heading configuration-id=\"Fiche réalisation · générique · titre\"></e-heading><e-paragraph configuration-id=\"Fiche réalisation · générique · lignes\"></e-paragraph><e-flexbox configuration-id=\"Fiche réalisation · générique · signature\"><e-paragraph configuration-id=\"Fiche réalisation · générique · production\"></e-paragraph><e-image configuration-id=\"Fiche réalisation · générique · logo\"></e-image></e-flexbox><e-button configuration-id=\"Fiche réalisation · générique · bouton\"></e-button></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Fiche réalisation · autres\"><e-flexbox configuration-id=\"Fiche réalisation · autres · contenu\"><e-heading configuration-id=\"Fiche réalisation · autres · titre\"></e-heading><e-paragraph configuration-id=\"Fiche réalisation · autres · liste\"></e-paragraph></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Appel final\"><e-image configuration-id=\"Final · verre cannelé\"></e-image><e-flexbox configuration-id=\"Final · contenu\"><e-heading configuration-id=\"Final · titre\"></e-heading><e-paragraph configuration-id=\"Final · texte\"></e-paragraph><e-flexbox configuration-id=\"Final · bouton\"><e-button configuration-id=\"Final · réserver\"></e-button></e-flexbox><e-flexbox configuration-id=\"Final · badges\"><e-flexbox configuration-id=\"Final · badge · IA sécurisée\"><e-image configuration-id=\"Final · badge · IA sécurisée · icône\"></e-image><e-paragraph configuration-id=\"Final · badge · IA sécurisée · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Final · badge · Données hébergées en Europe\"><e-image configuration-id=\"Final · badge · Données hébergées en Europe · icône\"></e-image><e-paragraph configuration-id=\"Final · badge · Données hébergées en Europe · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Final · badge · Conforme RGPD\"><e-image configuration-id=\"Final · badge · Conforme RGPD · icône\"></e-image><e-paragraph configuration-id=\"Final · badge · Conforme RGPD · texte\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox></e-flexbox></e-flexbox>",
   "element_config": {
    "Fiche réalisation": {
     "tag": "article"
@@ -88,6 +88,40 @@
     "text": "Lire le cas client",
     "link": {
      "destination": "⟦rolling-lien|lien=fiche|source=temoignage⟧"
+    }
+   },
+   "Fiche réalisation · REX · image": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/dynamique/rolling-image/image=une.png"
+     },
+     "size": "medium"
+    }
+   },
+   "Fiche réalisation · REX · type": {
+    "paragraph": "⟦rolling-champ|champ=type_doc⟧"
+   },
+   "Fiche réalisation · REX · logo du client": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/dynamique/rolling-image/image=logo&source=temoignage.png"
+     },
+     "size": "medium"
+    }
+   },
+   "Fiche réalisation · REX · type (couverture logo)": {
+    "paragraph": "⟦rolling-champ|champ=type_doc⟧"
+   },
+   "Fiche réalisation · REX · titre": {
+    "paragraph": "⟦rolling-article|info=titre⟧"
+   },
+   "Fiche réalisation · REX · pages": {
+    "paragraph": "⟦rolling-champ|champ=pages|apres= pages⟧"
+   },
+   "Fiche réalisation · REX · bouton": {
+    "text": "Télécharger",
+    "link": {
+     "destination": "⟦rolling-lien|lien=lien⟧"
     }
    },
    "Fiche réalisation · transcription": {
@@ -313,6 +347,50 @@
    "Fiche réalisation · citation · lien": [
     "temoin-lien",
     "si-temoignage-recit"
+   ],
+   "Fiche réalisation · REX": [
+    "carte-verre",
+    "rex-ligne",
+    "contexte-rex",
+    "si-rex"
+   ],
+   "Fiche réalisation · REX · couverture": [
+    "cadre-photo",
+    "cadre-4-3",
+    "si-image"
+   ],
+   "Fiche réalisation · REX · image": [
+    "image-couvrante"
+   ],
+   "Fiche réalisation · REX · type": [
+    "bandeau-video",
+    "si-type-doc"
+   ],
+   "Fiche réalisation · REX · couverture logo": [
+    "couverture-logo",
+    "sans-image",
+    "si-temoignage-logo"
+   ],
+   "Fiche réalisation · REX · logo du client": [
+    "logo-couverture"
+   ],
+   "Fiche réalisation · REX · type (couverture logo)": [
+    "bandeau-video",
+    "si-type-doc"
+   ],
+   "Fiche réalisation · REX · textes": [
+    "pile-serree"
+   ],
+   "Fiche réalisation · REX · titre": [
+    "cas-info-valeur"
+   ],
+   "Fiche réalisation · REX · pages": [
+    "texte-petit",
+    "si-pages"
+   ],
+   "Fiche réalisation · REX · bouton": [
+    "bouton-verre",
+    "bouton-petit"
    ],
    "Fiche réalisation · générique": [
     "section",

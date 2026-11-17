@@ -903,6 +903,18 @@ class Rolling_Installateur {
 			}
 			$faits[] = 'termes:' . $taxonomie;
 		}
+		// Termes ajoutés par une mise à jour : chacun une seule fois (un terme supprimé par la cliente ne revient pas).
+		foreach ( Rolling_Contenus::taxonomies() as $taxonomie => $t ) {
+			foreach ( $t['ajouts'] ?? array() as $slug => $terme ) {
+				if ( in_array( 'terme:' . $taxonomie . ':' . $slug, $faits, true ) ) {
+					continue;
+				}
+				if ( ! term_exists( $slug, $taxonomie ) ) {
+					wp_insert_term( $terme, $taxonomie, array( 'slug' => $slug ) );
+				}
+				$faits[] = 'terme:' . $taxonomie . ':' . $slug;
+			}
+		}
 
 		$emplacements = get_theme_mod( 'nav_menu_locations', array() );
 		foreach ( $config['menus'] ?? array() as $menu ) {

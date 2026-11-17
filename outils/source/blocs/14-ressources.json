@@ -93,10 +93,10 @@
    },
    "Rubrique guides · titre": {
     "tag": "h3",
-    "title": "Les guides"
+    "title": "Guides et REX"
    },
    "Rubrique guides · description": {
-    "paragraph": "Des guides pratiques à télécharger."
+    "paragraph": "Guides pratiques et retours d’expérience clients, à télécharger."
    },
    "Rubrique guides · dernier": {
     "paragraph": "⟦rolling-article|info=titre|source=dernier-guide⟧"
@@ -105,7 +105,7 @@
     "paragraph": "Bientôt"
    },
    "Rubrique guides · lien": {
-    "text": "Voir les guides",
+    "text": "Voir les guides et REX",
     "link": {
      "destination": "/guides/"
     }

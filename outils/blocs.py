@@ -795,7 +795,7 @@ ressources = F('Ressources', ['section', 'halos-cotes'], tag='section', ancre='r
             ]),
             F('Ressources · rubriques', ['grille-rubriques'], enfants=[
                 rubrique('blog', 'dernier-article', 'picto-blog.webp', 'Le blog', 'Des conseils concrets pour vos vidéos.', None, 'Lire le blog', '/blog/'),
-                rubrique('guides', 'dernier-guide', 'picto-guides.webp', 'Les guides', 'Des guides pratiques à télécharger.', DYN('rolling-article', info='titre', source='dernier-guide'), 'Voir les guides', '/guides/'),
+                rubrique('guides', 'dernier-guide', 'picto-guides.webp', 'Guides et REX', 'Guides pratiques et retours d’expérience clients, à télécharger.', DYN('rolling-article', info='titre', source='dernier-guide'), 'Voir les guides et REX', '/guides/'),
                 rubrique('webinars', 'prochain-webinar', 'picto-webinars.webp', 'Les webinars', 'En direct avec nos équipes.', DYN('rolling-webinar', info='complete', source='prochain-webinar'), 'Voir les webinars', '/webinars/'),
                 rubrique('replays', 'dernier-replay', 'picto-replays.webp', 'Les replays', 'Les webinars, à revoir.', DYN('rolling-article', info='titre', source='dernier-replay'), 'Voir les replays', '/replays/'),
             ]),
@@ -931,14 +931,35 @@ carte_guide = F('Carte guide', ['carte-guide'], tag='article', enfants=[
             P('Guide · type', DYN('rolling-champ', champ='type_doc'), ['bandeau-video', 'si-type-doc']),
         ]),
     ]),
+    F('Guide · couverture logo', ['vignette-lien', 'sans-image', 'si-temoignage-logo'], 'padding: 0; border-radius: 22px;', enfants=[
+        D('Guide · fond du logo', ['couverture-logo'], enfants=[
+            I('Guide · logo du client', DYN('rolling-image', image='logo', source='temoignage'), cls=['logo-couverture'], taille='medium'),
+            P('Guide · type (couverture logo)', DYN('rolling-champ', champ='type_doc'), ['bandeau-video', 'si-type-doc']),
+        ]),
+    ]),
     F('Guide · infos', ['rangee'], enfants=[
         P('Guide · thème', DYN('rolling-terme', taxonomie='rolling_theme'), ['tag-orange', 'si-theme']),
         P('Guide · pages', DYN('rolling-champ', champ='pages', apres=' pages'), ['texte-petit', 'si-pages']),
     ]),
     H('Guide · titre', DYN('rolling-article', info='titre'), 'h3', ['titre-xs', 'lien-titre'], lien=HUBSPOT),
     P('Guide · résumé', DYN('rolling-champ', champ='resume'), ['texte-petit', 'si-resume']),
-    B('Guide · bouton', 'Télécharger le guide', HUBSPOT, ['bouton-verre', 'bouton-petit']),
+    B('Guide · bouton', 'Télécharger', HUBSPOT, ['bouton-verre', 'bouton-petit']),
+    B('Guide · lien témoignage', 'Lire le témoignage', DYN('rolling-lien', lien='fiche', source='temoignage'), ['temoin-lien', 'si-temoignage-recit']),
 ])
+
+def couvertures_rex(p, taille):
+    """Couverture du retour d'expérience lu (image à la une, sinon logo du client du témoignage lié)."""
+    return [
+        D(p + ' · couverture', ['cadre-photo', 'cadre-4-3', 'si-image'], enfants=[
+            I(p + ' · image', DYN('rolling-image', image='une'), cls=['image-couvrante'], taille=taille),
+            P(p + ' · type', DYN('rolling-champ', champ='type_doc'), ['bandeau-video', 'si-type-doc']),
+        ]),
+        D(p + ' · couverture logo', ['couverture-logo', 'sans-image', 'si-temoignage-logo'], enfants=[
+            I(p + ' · logo du client', DYN('rolling-image', image='logo', source='temoignage'), cls=['logo-couverture'], taille='medium'),
+            P(p + ' · type (couverture logo)', DYN('rolling-champ', champ='type_doc'), ['bandeau-video', 'si-type-doc']),
+        ]),
+    ]
+
 
 INSCRIPTION = DYN('rolling-lien', lien='inscription')
 carte_webinar = F('Carte webinar', ['carte-verre', 'carte-webinar'], tag='article', enfants=[
@@ -1057,6 +1078,13 @@ fiche_realisation = F('Fiche réalisation', None, COLONNE + ' align-items: stret
                 ]),
                 B('Fiche réalisation · citation · lien', 'Lire le cas client', DYN('rolling-lien', lien='fiche', source='temoignage'), ['temoin-lien', 'si-temoignage-recit']),
             ]),
+            F('Fiche réalisation · REX', ['carte-verre', 'rex-ligne', 'contexte-rex', 'si-rex'], enfants=couvertures_rex('Fiche réalisation · REX', 'medium') + [
+                F('Fiche réalisation · REX · textes', ['pile-serree'], enfants=[
+                    P('Fiche réalisation · REX · titre', DYN('rolling-article', info='titre'), ['cas-info-valeur']),
+                    P('Fiche réalisation · REX · pages', DYN('rolling-champ', champ='pages', apres=' pages'), ['texte-petit', 'si-pages']),
+                ]),
+                B('Fiche réalisation · REX · bouton', 'Télécharger', HUBSPOT, ['bouton-verre', 'bouton-petit']),
+            ]),
             W('Fiche réalisation · transcription', 'rolling-transcription'),
         ]),
     ]),
@@ -1144,6 +1172,17 @@ fiche_temoignage = F('Fiche témoignage', None, COLONNE + ' align-items: stretch
                 F('Fiche témoignage · accompagnement', ['pile', 'si-accompagnement'], enfants=[
                     H('Fiche témoignage · accompagnement · titre', 'Notre accompagnement.', 'h2', ['titre-sm']),
                     W('Fiche témoignage · accompagnement · liste', 'rolling-coches', champ='accompagnement'),
+                ]),
+                F('Fiche témoignage · REX', ['carte-verre', 'encart-rex', 'contexte-rex', 'si-rex'], enfants=couvertures_rex('Fiche témoignage · REX', 'medium_large') + [
+                    F('Fiche témoignage · REX · textes', None, enfants=[
+                        F('Fiche témoignage · REX · repère', ['rangee'], enfants=[
+                            P('Fiche témoignage · REX · label', 'Pour aller plus loin', ['label', 'label-violet']),
+                            P('Fiche témoignage · REX · pages', DYN('rolling-champ', champ='pages', apres=' pages'), ['texte-petit', 'si-pages']),
+                        ]),
+                        H('Fiche témoignage · REX · titre', DYN('rolling-article', info='titre'), 'h2', ['titre-xs']),
+                        P('Fiche témoignage · REX · résumé', DYN('rolling-champ', champ='resume'), ['texte', 'si-resume']),
+                        B('Fiche témoignage · REX · bouton', 'Télécharger le retour d’expérience', HUBSPOT, ['bouton-principal', 'bouton-petit']),
+                    ]),
                 ]),
                 F('Fiche témoignage · vidéos', ['pile', 'si-autres-videos'], enfants=[
                     H('Fiche témoignage · vidéos · titre', 'Les autres vidéos.', 'h2', ['titre-sm']),
@@ -1288,11 +1327,11 @@ blog_liste = section_liste('Blog · liste', [
     W('Blog · cartes', 'rolling-liste', contenu='articles', classe='grille-3', filtres='category', tous='Tous les articles', texte_aucun='Aucun article dans cette catégorie.', nombre='10', premiere_une='yes', plus='yes', plus_texte='Articles suivants'),
 ])
 
-guides_haut = haut_page('Guides · haut', 'Ressources · Guides', ['pastille-bleue'], 'Nos guides vidéo, <em>à télécharger.</em>',
-                        'Méthodes, modèles et check-lists pour faire de la vidéo votre meilleur canal. Gratuits, prêts à partager avec vos équipes.')
+guides_haut = haut_page('Guides · haut', 'Ressources · Guides et REX', ['pastille-bleue'], 'Guides et REX, <em>à télécharger.</em>',
+                        'Méthodes, check-lists et retours d’expérience (REX) de nos clients, pour faire de la vidéo votre meilleur canal. Gratuits, prêts à partager avec vos équipes.')
 guides_liste = section_liste('Guides · liste', [
-    H('Guides · liste · titre masqué', 'Tous nos guides', 'h2', ['texte-masque']),
-    W('Guides · cartes', 'rolling-liste', contenu='guides', classe='grille-3', filtres='rolling_theme', texte_aucun='Aucun guide sur ce thème.', tous='Tous les guides', nombre='12', plus='yes', plus_texte='Voir plus de guides'),
+    H('Guides · liste · titre masqué', 'Tous nos guides et REX', 'h2', ['texte-masque']),
+    W('Guides · cartes', 'rolling-liste', contenu='guides', classe='grille-3', filtres='rolling_theme', texte_aucun='Aucun document sur ce thème.', tous='Tout voir', nombre='12', plus='yes', plus_texte='Voir plus'),
 ])
 
 webinars_haut = haut_page('Webinars · haut', 'Ressources · Webinars', ['pastille-bleue'], 'Nos webinars, <em>en direct avec nos équipes.</em>',

@@ -5954,6 +5954,265 @@
             ]
         },
         {
+            "id": "g-041de9e",
+            "label": "encart-rex",
+            "groupe": "Fiches et listes",
+            "description": "Encart « Télécharger le retour d'expérience » (avec carte-verre) : couverture à gauche, textes et bouton à droite ; l'un sous l'autre sous 980 px.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "tablet",
+                        "state": null
+                    },
+                    "props": {
+                        "padding": {
+                            "$$type": "dimensions",
+                            "value": {
+                                "block-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 12,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 12,
+                                        "unit": "px"
+                                    }
+                                },
+                                "block-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 24,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 12,
+                                        "unit": "px"
+                                    }
+                                }
+                            }
+                        },
+                        "gap": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 16,
+                                "unit": "px"
+                            }
+                        },
+                        "grid-template-columns": {
+                            "$$type": "string",
+                            "value": "minmax(0, 1fr)"
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "JiA+IDpsYXN0LWNoaWxkIHsgcGFkZGluZzogMCAxMHB4OyB9"
+                    }
+                },
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "width": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 100,
+                                "unit": "%"
+                            }
+                        },
+                        "max-width": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 820,
+                                "unit": "px"
+                            }
+                        },
+                        "padding": {
+                            "$$type": "dimensions",
+                            "value": {
+                                "block-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 14,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 30,
+                                        "unit": "px"
+                                    }
+                                },
+                                "block-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 14,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 14,
+                                        "unit": "px"
+                                    }
+                                }
+                            }
+                        },
+                        "display": {
+                            "$$type": "string",
+                            "value": "grid"
+                        },
+                        "gap": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 28,
+                                "unit": "px"
+                            }
+                        },
+                        "grid-template-columns": {
+                            "$$type": "string",
+                            "value": "220px minmax(0, 1fr)"
+                        },
+                        "align-items": {
+                            "$$type": "string",
+                            "value": "center"
+                        },
+                        "margin": {
+                            "$$type": "dimensions",
+                            "value": {
+                                "block-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 0,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": null,
+                                        "unit": "auto"
+                                    }
+                                },
+                                "block-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 0,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": null,
+                                        "unit": "auto"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "LS1ybC1yYXlvbi1waG90bzogMThweDsgJiA+IDpsYXN0LWNoaWxkIHsgZGlzcGxheTogZmxleDsgZmxleC1kaXJlY3Rpb246IGNvbHVtbjsgYWxpZ24taXRlbXM6IGZsZXgtc3RhcnQ7IGdhcDogMTBweDsgcGFkZGluZzogMDsgfQ=="
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-daad3d0",
+            "label": "rex-ligne",
+            "groupe": "Fiches et listes",
+            "description": "Ligne discrète « Le retour d'expérience » (avec carte-verre, fiche réalisation) : petite couverture, titre et pages, bouton.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "mobile",
+                        "state": null
+                    },
+                    "props": {
+                        "grid-template-columns": {
+                            "$$type": "string",
+                            "value": "64px minmax(0, 1fr)"
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "JiA+IDpsYXN0LWNoaWxkIHsgZ3JpZC1jb2x1bW46IDEgLyAtMTsganVzdGlmeS1zZWxmOiBzdGFydDsgfQ=="
+                    }
+                },
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "padding": {
+                            "$$type": "dimensions",
+                            "value": {
+                                "block-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 12,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 18,
+                                        "unit": "px"
+                                    }
+                                },
+                                "block-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 12,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 12,
+                                        "unit": "px"
+                                    }
+                                }
+                            }
+                        },
+                        "display": {
+                            "$$type": "string",
+                            "value": "grid"
+                        },
+                        "gap": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 18,
+                                "unit": "px"
+                            }
+                        },
+                        "grid-template-columns": {
+                            "$$type": "string",
+                            "value": "84px minmax(0, 1fr) auto"
+                        },
+                        "align-items": {
+                            "$$type": "string",
+                            "value": "center"
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "LS1ybC1yYXlvbi1waG90bzogMTJweDsgJiAuYmFuZGVhdS12aWRlbyB7IGRpc3BsYXk6IG5vbmU7IH0gJiAuY291dmVydHVyZS1sb2dvIHsgcGFkZGluZzogNnB4OyB9ICYgLmxvZ28tY291dmVydHVyZSB7IG1heC13aWR0aDogODQlOyBtYXgtaGVpZ2h0OiA3MiU7IHBhZGRpbmc6IDRweCA2cHg7IGJvcmRlci1yYWRpdXM6IDZweDsgYm94LXNoYWRvdzogbm9uZTsgfQ=="
+                    }
+                }
+            ]
+        },
+        {
             "id": "g-c3cb98f",
             "label": "cas-citation",
             "groupe": "Fiches et listes",
@@ -20817,6 +21076,24 @@
             ]
         },
         {
+            "id": "g-23986e3",
+            "label": "si-temoignage-logo",
+            "groupe": "Fiches et listes",
+            "description": "Repère sans style : le thème masque ce bloc quand le champ « temoignage-logo » du contenu est vide.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": [],
+                    "custom_css": {
+                        "raw": "LS1ybC1yZXBlcmU6IDE7"
+                    }
+                }
+            ]
+        },
+        {
             "id": "g-83783de",
             "label": "si-video-liee",
             "groupe": "Fiches et listes",
@@ -20929,6 +21206,24 @@
             "label": "si-theme",
             "groupe": "Fiches et listes",
             "description": "Repère sans style : le thème masque ce bloc quand le champ « theme » du contenu est vide.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": [],
+                    "custom_css": {
+                        "raw": "LS1ybC1yZXBlcmU6IDE7"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-9c934fe",
+            "label": "si-rex",
+            "groupe": "Fiches et listes",
+            "description": "Repère sans style : le thème masque ce bloc quand le champ « rex » du contenu est vide.",
             "variants": [
                 {
                     "meta": {
@@ -22778,6 +23073,93 @@
                     "custom_css": {
                         "raw": "JiAudGVtb2luLWNpdGF0aW9uIHsgZm9udC1zaXplOiAxNnB4OyBsaW5lLWhlaWdodDogMS41NTsgZm9udC13ZWlnaHQ6IDUwMDsgfSAmIC50ZW1vaW4tY2l0YXRpb246OmJlZm9yZSB7IGhlaWdodDogMjRweDsgZm9udC1zaXplOiA1NnB4OyB9"
                     }
+                }
+            ]
+        },
+        {
+            "id": "g-1351667",
+            "label": "couverture-logo",
+            "groupe": "Fiches et listes",
+            "description": "Couverture d'un retour d'expérience sans image : logo du client (repris du témoignage lié) sur un fond pêche et lilas, au format 4:3.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "overflow": {
+                            "$$type": "string",
+                            "value": "hidden"
+                        },
+                        "aspect-ratio": {
+                            "$$type": "string",
+                            "value": "4 / 3"
+                        },
+                        "position": {
+                            "$$type": "string",
+                            "value": "relative"
+                        },
+                        "padding": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 12,
+                                "unit": "px"
+                            }
+                        },
+                        "background": {
+                            "$$type": "background",
+                            "value": {
+                                "color": {
+                                    "$$type": "color",
+                                    "value": "#FFF1E7"
+                                }
+                            }
+                        },
+                        "display": {
+                            "$$type": "string",
+                            "value": "flex"
+                        },
+                        "justify-content": {
+                            "$$type": "string",
+                            "value": "center"
+                        },
+                        "align-items": {
+                            "$$type": "string",
+                            "value": "center"
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "YmFja2dyb3VuZC1pbWFnZTogcmFkaWFsLWdyYWRpZW50KDcwJSA3MCUgYXQgNzAlIDMwJSwgI0ZGRTJENCwgcmdiYSgyNTUsMjI2LDIxMiwwKSA3MCUpLCBsaW5lYXItZ3JhZGllbnQoMTYwZGVnLCAjRkZGMUU3LCAjRURFNkZGKTsgYm9yZGVyLXJhZGl1czogdmFyKC0tcmwtcmF5b24tcGhvdG8sIDIycHgpOyAmIC5iYW5kZWF1LXZpZGVvIHsgYmFja2dyb3VuZC1pbWFnZTogbm9uZTsgYmFja2dyb3VuZC1jb2xvcjogcmdiYSgxNSwxNSwxOCwwLjYyKTsgfSAmIC5sb2dvLWNvdXZlcnR1cmUgeyB3aWR0aDogYXV0bzsgbWF4LXdpZHRoOiA2MiU7IG1heC1oZWlnaHQ6IDM4JTsgcGFkZGluZzogNiUgOSU7IGJvcmRlci1yYWRpdXM6IDE2cHg7IG9iamVjdC1maXQ6IGNvbnRhaW47IGJhY2tncm91bmQ6ICNGRkZGRkY7IGJveC1zaGFkb3c6IDAgMTJweCAzMHB4IC0xOHB4IHJnYmEoNzYsNDgsMTcwLDAuNSk7IH0="
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-451ee2c",
+            "label": "logo-couverture",
+            "groupe": "Fiches et listes",
+            "description": "Logo du client posé au centre d'une couverture-logo.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "display": {
+                            "$$type": "string",
+                            "value": "block"
+                        },
+                        "height": {
+                            "$$type": "size",
+                            "value": {
+                                "size": null,
+                                "unit": "auto"
+                            }
+                        }
+                    },
+                    "custom_css": null
                 }
             ]
         },
@@ -27112,6 +27494,24 @@
             "label": "contexte-dernier-replay",
             "groupe": "Fiches et listes",
             "description": "Repère sans style : dans ce conteneur, les balises lisent le dernier replay.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": [],
+                    "custom_css": {
+                        "raw": "LS1ybC1yZXBlcmU6IDE7"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-06db9bb",
+            "label": "contexte-rex",
+            "groupe": "Fiches et listes",
+            "description": "Repère sans style : dans ce conteneur, les balises lisent le retour d'expérience lié au témoignage affiché (ou au témoignage de la réalisation affichée).",
             "variants": [
                 {
                     "meta": {

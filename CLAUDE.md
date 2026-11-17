@@ -458,6 +458,19 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   = logo du client du témoignage lié, bouton « Télécharger » pour toutes les cartes, lien « Lire le témoignage » (si récit).
   Fiche témoignage : encart après le récit, avant « Les autres vidéos » (validé dans le principe) ; fiche réalisation :
   ligne discrète sous la citation (REX du témoignage lié, validé dans le principe). Pas de lien dans les cartes des listes.
+- **0.5.15 : retours d'expérience (REX), maquette validée « go pour tout », nom de page « Guides et REX »** : REX = guide
+  avec thème `retours-experience` (« Retours d'expérience », créé une fois par l'installateur via `ajouts` de la
+  taxonomie : fait `terme:<tax>:<slug>`, un terme supprimé par la cliente ne revient pas) + champ guide `temoignage`
+  (relation). `Rolling_Contenus::rex( $id )` (témoignage, ou témoignage lié d'une réalisation) ; contexte `contexte-rex`
+  + repère `si-rex`. **Leçon : Elementor lance `before_render` puis rend le contenu, et lit `should_render` APRÈS** ⇒ un
+  repère posé sur le conteneur « contexte-… » lui-même se lit dans le contexte (le guide) : `si-rex` vrai si le contenu
+  courant est un guide. Corrigé aussi : `si-contexte` hors contexte relisait « ! id » (la section « Le contexte. » du
+  témoignage s'affichait même vide) ⇒ seulement dans un contexte. Carte guide : couverture logo du client si pas
+  d'image (`couverture-logo`, `logo-couverture`, repère `si-temoignage-logo`, balise Image `source=temoignage` qui lit le
+  champ `temoignage` du guide), bouton « Télécharger », lien « Lire le témoignage » (si-temoignage-recit). Fiche
+  témoignage : `encart-rex` (carte-verre, couverture 220 px + textes, avant « Les autres vidéos ») ; fiche réalisation :
+  `rex-ligne` sous la citation. Page Guides : H1 « Guides et REX, à télécharger. », filtre « Tout voir ». Bloc Ressources :
+  carte « Guides et REX ». encart-rex / rex-ligne dans `$prioritaires` (sinon carte-verre les remet en colonne).
 - **Chargement de page effet film** (demande avant la fin de la livraison 4) : maquette `maquettes/loading/maquette-loading.html`
   (copie /workspace/maquette-loading.html), 4 options : A amorce 3-2-1, B clap qui se ferme puis rideau, C ouverture
   cinéma (bandes noires + REC + timecode + règle avec la tête de lecture rouge des frises, plus de filet fin), D barre de lecture en haut sans écran. Conseil : C à l'arrivée (première page

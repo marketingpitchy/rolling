@@ -211,6 +211,10 @@ class Rolling_Contenus {
 					'marketing-video'       => 'Marketing vidéo',
 					'ia-video'              => 'IA & vidéo',
 				),
+				// Termes ajoutés après la première installation : créés une seule fois chacun.
+				'ajouts' => array(
+					'retours-experience' => 'Retours d’expérience',
+				),
 			),
 		);
 	}
@@ -302,10 +306,11 @@ class Rolling_Contenus {
 			),
 			'rolling_guide'       => array(
 				__( 'Le guide', 'rolling' ) => array(
-					'resume'   => array( 'zone', __( 'Résumé', 'rolling' ), __( 'Une phrase sous le titre.', 'rolling' ) ),
-					'type_doc' => array( 'texte', __( 'Type', 'rolling' ), __( 'Ex. : Guide PDF, Check-list, Modèle.', 'rolling' ) ),
-					'pages'    => array( 'nombre', __( 'Nombre de pages', 'rolling' ), '' ),
-					'lien'     => array( 'lien', __( 'Lien de la page HubSpot', 'rolling' ), __( 'Le bouton « Télécharger le guide » ouvre ce lien.', 'rolling' ) ),
+					'resume'     => array( 'zone', __( 'Résumé', 'rolling' ), __( 'Une phrase sous le titre.', 'rolling' ) ),
+					'type_doc'   => array( 'texte', __( 'Type', 'rolling' ), __( 'Ex. : Guide PDF, Check-list, Modèle, Retour d’expérience. Affiché sur l’image de la carte.', 'rolling' ) ),
+					'pages'      => array( 'nombre', __( 'Nombre de pages', 'rolling' ), '' ),
+					'lien'       => array( 'lien', __( 'Lien de la page HubSpot', 'rolling' ), __( 'Le bouton « Télécharger » ouvre ce lien.', 'rolling' ) ),
+					'temoignage' => array( 'relation', __( 'Témoignage lié (retour d’expérience)', 'rolling' ), __( 'Pour un retour d’expérience (thème « Retours d’expérience ») : cochez le témoignage du client. Un encart « Télécharger le retour d’expérience » s’affiche alors sur sa fiche témoignage et sur la fiche de la réalisation liée ; sans image à la une, la carte montre le logo du client.', 'rolling' ), 'rolling_temoignage' ),
 				),
 			),
 			'rolling_webinar'     => array(
@@ -432,6 +437,42 @@ class Rolling_Contenus {
 		return array_values( array_unique( array_filter( $ids, 'get_post' ) ) );
 	}
 
+
+	/**
+	 * Retour d'expérience (guide) lié à un témoignage, ou au témoignage lié d'une réalisation.
+	 *
+	 * @param int $id Témoignage ou réalisation.
+	 * @return int 0 si aucun.
+	 */
+	public static function rex( $id ) {
+		$type = get_post_type( $id );
+		if ( 'rolling_realisation' === $type ) {
+			$id = self::temoignage_lie( $id );
+		} elseif ( 'rolling_temoignage' !== $type ) {
+			return 0;
+		}
+
+		static $guides = null;
+		if ( null === $guides ) {
+			$guides = array();
+			foreach ( get_posts(
+				array(
+					'post_type'      => 'rolling_guide',
+					'posts_per_page' => 200,
+					'fields'         => 'ids',
+					'no_found_rows'  => true,
+				)
+			) as $guide ) {
+				foreach ( (array) self::valeur( 'temoignage', $guide ) as $temoignage ) {
+					if ( ! isset( $guides[ (int) $temoignage ] ) ) {
+						$guides[ (int) $temoignage ] = (int) $guide;
+					}
+				}
+			}
+		}
+
+		return $id ? ( $guides[ (int) $id ] ?? 0 ) : 0;
+	}
 
 	/**
 	 * Valeur d'un champ (lignes : tableau de lignes).

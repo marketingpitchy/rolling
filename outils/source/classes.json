@@ -1169,6 +1169,11 @@
      "css": "--rl-repere: 1;"
     },
     {
+     "label": "si-temoignage-logo",
+     "description": "Repère sans style : le thème masque ce bloc quand le champ « temoignage-logo » du contenu est vide.",
+     "css": "--rl-repere: 1;"
+    },
+    {
      "label": "si-video-liee",
      "description": "Repère sans style : le thème masque ce bloc quand le champ « video-liee » du contenu est vide.",
      "css": "--rl-repere: 1;"
@@ -1201,6 +1206,11 @@
     {
      "label": "si-theme",
      "description": "Repère sans style : le thème masque ce bloc quand le champ « theme » du contenu est vide.",
+     "css": "--rl-repere: 1;"
+    },
+    {
+     "label": "si-rex",
+     "description": "Repère sans style : le thème masque ce bloc quand le champ « rex » du contenu est vide.",
      "css": "--rl-repere: 1;"
     },
     {
@@ -1357,6 +1367,26 @@
      "label": "temoins-courts",
      "description": "Liste de témoignages plus compacte (classe de la grille du widget Liste, ex. la landing) : citation en 16 px.",
      "css": "align-items: start; & .temoin-citation { font-size: 16px; line-height: 1.55; font-weight: 500; } & .temoin-citation::before { height: 24px; font-size: 56px; }"
+    },
+    {
+     "label": "couverture-logo",
+     "description": "Couverture d'un retour d'expérience sans image : logo du client (repris du témoignage lié) sur un fond pêche et lilas, au format 4:3.",
+     "css": "position: relative; display: flex; align-items: center; justify-content: center; aspect-ratio: 4 / 3; padding: 12px; overflow: hidden; border-radius: var(--rl-rayon-photo, 22px); background: radial-gradient(70% 70% at 70% 30%, #FFE2D4, rgba(255,226,212,0) 70%), linear-gradient(160deg, #FFF1E7, #EDE6FF); background-color: #FFF1E7; & .bandeau-video { background-image: none; background-color: rgba(15,15,18,0.62); } & .logo-couverture { width: auto; max-width: 62%; max-height: 38%; padding: 6% 9%; border-radius: 16px; object-fit: contain; background: #FFFFFF; box-shadow: 0 12px 30px -18px rgba(76,48,170,0.5); }"
+    },
+    {
+     "label": "logo-couverture",
+     "description": "Logo du client posé au centre d'une couverture-logo.",
+     "css": "display: block; height: auto;"
+    },
+    {
+     "label": "encart-rex",
+     "description": "Encart « Télécharger le retour d'expérience » (avec carte-verre) : couverture à gauche, textes et bouton à droite ; l'un sous l'autre sous 980 px.",
+     "css": "display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 28px; align-items: center; width: 100%; max-width: 820px; margin: 0 auto; padding: 14px 30px 14px 14px; --rl-rayon-photo: 18px; & > :last-child { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; padding: 0; } @media(--tablet) { grid-template-columns: minmax(0, 1fr); gap: 16px; padding: 12px 12px 24px; & > :last-child { padding: 0 10px; } }"
+    },
+    {
+     "label": "rex-ligne",
+     "description": "Ligne discrète « Le retour d'expérience » (avec carte-verre, fiche réalisation) : petite couverture, titre et pages, bouton.",
+     "css": "display: grid; grid-template-columns: 84px minmax(0, 1fr) auto; gap: 18px; align-items: center; padding: 12px 18px 12px 12px; --rl-rayon-photo: 12px; & .bandeau-video { display: none; } & .couverture-logo { padding: 6px; } & .logo-couverture { max-width: 84%; max-height: 72%; padding: 4px 6px; border-radius: 6px; box-shadow: none; } @media(--mobile) { grid-template-columns: 64px minmax(0, 1fr); & > :last-child { grid-column: 1 / -1; justify-self: start; } }"
     },
     {
      "label": "cas-grille",
@@ -1667,6 +1697,11 @@
     {
      "label": "contexte-dernier-replay",
      "description": "Repère sans style : dans ce conteneur, les balises lisent le dernier replay.",
+     "css": "--rl-repere: 1;"
+    },
+    {
+     "label": "contexte-rex",
+     "description": "Repère sans style : dans ce conteneur, les balises lisent le retour d'expérience lié au témoignage affiché (ou au témoignage de la réalisation affichée).",
      "css": "--rl-repere: 1;"
     },
     {

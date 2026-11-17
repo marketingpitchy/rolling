@@ -83,7 +83,7 @@ trait Rolling_Balise_Socle {
 			__( 'Lire dans', 'rolling' ),
 			array(
 				'courant'          => __( 'Le contenu affiché', 'rolling' ),
-				'temoignage'       => __( 'Le témoignage lié (sur une fiche réalisation)', 'rolling' ),
+				'temoignage'       => __( 'Le témoignage lié (fiche réalisation, retour d’expérience)', 'rolling' ),
 				'dernier-article'  => __( 'Le dernier article', 'rolling' ),
 				'dernier-guide'    => __( 'Le dernier guide', 'rolling' ),
 				'prochain-webinar' => __( 'Le prochain webinar', 'rolling' ),

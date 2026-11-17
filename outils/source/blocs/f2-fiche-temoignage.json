@@ -4,7 +4,7 @@
  "type": "e-flexbox",
  "apercu": "rolling_temoignage",
  "composition": {
-  "xml_structure": "<e-flexbox configuration-id=\"Fiche témoignage\"><e-flexbox configuration-id=\"Fiche témoignage · haut\"><e-flexbox configuration-id=\"Fiche témoignage · haut · contenu\"><e-paragraph configuration-id=\"Fiche témoignage · fil d’Ariane\"></e-paragraph><e-flexbox configuration-id=\"Fiche témoignage · étiquettes\"><e-div-block configuration-id=\"Fiche témoignage · logo\"><e-image configuration-id=\"Fiche témoignage · logo · image\"></e-image></e-div-block><e-paragraph configuration-id=\"Fiche témoignage · métier\"></e-paragraph></e-flexbox><e-heading configuration-id=\"Fiche témoignage · titre\"></e-heading><e-paragraph configuration-id=\"Fiche témoignage · chapô\"></e-paragraph><e-flexbox configuration-id=\"Fiche témoignage · bandeau\"><e-flexbox configuration-id=\"Fiche témoignage · infos\"><e-flexbox configuration-id=\"Fiche témoignage · Secteur\"><e-paragraph configuration-id=\"Fiche témoignage · Secteur · libellé\"></e-paragraph><e-paragraph configuration-id=\"Fiche témoignage · Secteur · valeur\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Fiche témoignage · Équipes\"><e-paragraph configuration-id=\"Fiche témoignage · Équipes · libellé\"></e-paragraph><e-paragraph configuration-id=\"Fiche témoignage · Équipes · valeur\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Fiche témoignage · Formats\"><e-paragraph configuration-id=\"Fiche témoignage · Formats · libellé\"></e-paragraph><e-paragraph configuration-id=\"Fiche témoignage · Formats · valeur\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Fiche témoignage · Durée\"><e-paragraph configuration-id=\"Fiche témoignage · Durée · libellé\"></e-paragraph><e-paragraph configuration-id=\"Fiche témoignage · Durée · valeur\"></e-paragraph></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Fiche témoignage · appel\"><e-paragraph configuration-id=\"Fiche témoignage · appel · texte\"></e-paragraph><e-button configuration-id=\"Fiche témoignage · appel · bouton\"></e-button></e-flexbox></e-flexbox><e-div-block configuration-id=\"Fiche témoignage · cadre vidéo\"><e-paragraph configuration-id=\"Fiche témoignage · lecteur\"></e-paragraph></e-div-block></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Fiche témoignage · chiffres\"><e-flexbox configuration-id=\"Fiche témoignage · chiffres · contenu\"><e-heading configuration-id=\"Fiche témoignage · chiffres · titre\"></e-heading><e-paragraph configuration-id=\"Fiche témoignage · chiffres · plaque\"></e-paragraph></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Fiche témoignage · cas\"><e-flexbox configuration-id=\"Fiche témoignage · cas · grille\"><e-flexbox configuration-id=\"Fiche témoignage · citation\"><e-paragraph configuration-id=\"Fiche témoignage · citation · texte\"></e-paragraph><e-flexbox configuration-id=\"Fiche témoignage · citation · auteur\"><e-image configuration-id=\"Fiche témoignage · citation · portrait\"></e-image><e-flexbox configuration-id=\"Fiche témoignage · citation · personne\"><e-paragraph configuration-id=\"Fiche témoignage · citation · nom\"></e-paragraph><e-paragraph configuration-id=\"Fiche témoignage · citation · poste\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Fiche témoignage · récit\"><e-flexbox configuration-id=\"Fiche témoignage · contexte\"><e-heading configuration-id=\"Fiche témoignage · contexte · titre\"></e-heading><e-paragraph configuration-id=\"Fiche témoignage · contexte · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Fiche témoignage · besoin\"><e-heading configuration-id=\"Fiche témoignage · besoin · titre\"></e-heading><e-paragraph configuration-id=\"Fiche témoignage · besoin · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Fiche témoignage · accompagnement\"><e-heading configuration-id=\"Fiche témoignage · accompagnement · titre\"></e-heading><e-paragraph configuration-id=\"Fiche témoignage · accompagnement · liste\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Fiche témoignage · vidéos\"><e-heading configuration-id=\"Fiche témoignage · vidéos · titre\"></e-heading><e-paragraph configuration-id=\"Fiche témoignage · vidéos · liste\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Appel final\"><e-image configuration-id=\"Final · verre cannelé\"></e-image><e-flexbox configuration-id=\"Final · contenu\"><e-heading configuration-id=\"Final · titre\"></e-heading><e-paragraph configuration-id=\"Final · texte\"></e-paragraph><e-flexbox configuration-id=\"Final · bouton\"><e-button configuration-id=\"Final · réserver\"></e-button></e-flexbox><e-flexbox configuration-id=\"Final · badges\"><e-flexbox configuration-id=\"Final · badge · IA sécurisée\"><e-image configuration-id=\"Final · badge · IA sécurisée · icône\"></e-image><e-paragraph configuration-id=\"Final · badge · IA sécurisée · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Final · badge · Données hébergées en Europe\"><e-image configuration-id=\"Final · badge · Données hébergées en Europe · icône\"></e-image><e-paragraph configuration-id=\"Final · badge · Données hébergées en Europe · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Final · badge · Conforme RGPD\"><e-image configuration-id=\"Final · badge · Conforme RGPD · icône\"></e-image><e-paragraph configuration-id=\"Final · badge · Conforme RGPD · texte\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox></e-flexbox></e-flexbox>",
+  "xml_structure": "<e-flexbox configuration-id=\"Fiche témoignage\"><e-flexbox configuration-id=\"Fiche témoignage · haut\"><e-flexbox configuration-id=\"Fiche témoignage · haut · contenu\"><e-paragraph configuration-id=\"Fiche témoignage · fil d’Ariane\"></e-paragraph><e-flexbox configuration-id=\"Fiche témoignage · étiquettes\"><e-div-block configuration-id=\"Fiche témoignage · logo\"><e-image configuration-id=\"Fiche témoignage · logo · image\"></e-image></e-div-block><e-paragraph configuration-id=\"Fiche témoignage · métier\"></e-paragraph></e-flexbox><e-heading configuration-id=\"Fiche témoignage · titre\"></e-heading><e-paragraph configuration-id=\"Fiche témoignage · chapô\"></e-paragraph><e-flexbox configuration-id=\"Fiche témoignage · bandeau\"><e-flexbox configuration-id=\"Fiche témoignage · infos\"><e-flexbox configuration-id=\"Fiche témoignage · Secteur\"><e-paragraph configuration-id=\"Fiche témoignage · Secteur · libellé\"></e-paragraph><e-paragraph configuration-id=\"Fiche témoignage · Secteur · valeur\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Fiche témoignage · Équipes\"><e-paragraph configuration-id=\"Fiche témoignage · Équipes · libellé\"></e-paragraph><e-paragraph configuration-id=\"Fiche témoignage · Équipes · valeur\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Fiche témoignage · Formats\"><e-paragraph configuration-id=\"Fiche témoignage · Formats · libellé\"></e-paragraph><e-paragraph configuration-id=\"Fiche témoignage · Formats · valeur\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Fiche témoignage · Durée\"><e-paragraph configuration-id=\"Fiche témoignage · Durée · libellé\"></e-paragraph><e-paragraph configuration-id=\"Fiche témoignage · Durée · valeur\"></e-paragraph></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Fiche témoignage · appel\"><e-paragraph configuration-id=\"Fiche témoignage · appel · texte\"></e-paragraph><e-button configuration-id=\"Fiche témoignage · appel · bouton\"></e-button></e-flexbox></e-flexbox><e-div-block configuration-id=\"Fiche témoignage · cadre vidéo\"><e-paragraph configuration-id=\"Fiche témoignage · lecteur\"></e-paragraph></e-div-block></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Fiche témoignage · chiffres\"><e-flexbox configuration-id=\"Fiche témoignage · chiffres · contenu\"><e-heading configuration-id=\"Fiche témoignage · chiffres · titre\"></e-heading><e-paragraph configuration-id=\"Fiche témoignage · chiffres · plaque\"></e-paragraph></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Fiche témoignage · cas\"><e-flexbox configuration-id=\"Fiche témoignage · cas · grille\"><e-flexbox configuration-id=\"Fiche témoignage · citation\"><e-paragraph configuration-id=\"Fiche témoignage · citation · texte\"></e-paragraph><e-flexbox configuration-id=\"Fiche témoignage · citation · auteur\"><e-image configuration-id=\"Fiche témoignage · citation · portrait\"></e-image><e-flexbox configuration-id=\"Fiche témoignage · citation · personne\"><e-paragraph configuration-id=\"Fiche témoignage · citation · nom\"></e-paragraph><e-paragraph configuration-id=\"Fiche témoignage · citation · poste\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Fiche témoignage · récit\"><e-flexbox configuration-id=\"Fiche témoignage · contexte\"><e-heading configuration-id=\"Fiche témoignage · contexte · titre\"></e-heading><e-paragraph configuration-id=\"Fiche témoignage · contexte · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Fiche témoignage · besoin\"><e-heading configuration-id=\"Fiche témoignage · besoin · titre\"></e-heading><e-paragraph configuration-id=\"Fiche témoignage · besoin · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Fiche témoignage · accompagnement\"><e-heading configuration-id=\"Fiche témoignage · accompagnement · titre\"></e-heading><e-paragraph configuration-id=\"Fiche témoignage · accompagnement · liste\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Fiche témoignage · REX\"><e-div-block configuration-id=\"Fiche témoignage · REX · couverture\"><e-image configuration-id=\"Fiche témoignage · REX · image\"></e-image><e-paragraph configuration-id=\"Fiche témoignage · REX · type\"></e-paragraph></e-div-block><e-div-block configuration-id=\"Fiche témoignage · REX · couverture logo\"><e-image configuration-id=\"Fiche témoignage · REX · logo du client\"></e-image><e-paragraph configuration-id=\"Fiche témoignage · REX · type (couverture logo)\"></e-paragraph></e-div-block><e-flexbox configuration-id=\"Fiche témoignage · REX · textes\"><e-flexbox configuration-id=\"Fiche témoignage · REX · repère\"><e-paragraph configuration-id=\"Fiche témoignage · REX · label\"></e-paragraph><e-paragraph configuration-id=\"Fiche témoignage · REX · pages\"></e-paragraph></e-flexbox><e-heading configuration-id=\"Fiche témoignage · REX · titre\"></e-heading><e-paragraph configuration-id=\"Fiche témoignage · REX · résumé\"></e-paragraph><e-button configuration-id=\"Fiche témoignage · REX · bouton\"></e-button></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Fiche témoignage · vidéos\"><e-heading configuration-id=\"Fiche témoignage · vidéos · titre\"></e-heading><e-paragraph configuration-id=\"Fiche témoignage · vidéos · liste\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Appel final\"><e-image configuration-id=\"Final · verre cannelé\"></e-image><e-flexbox configuration-id=\"Final · contenu\"><e-heading configuration-id=\"Final · titre\"></e-heading><e-paragraph configuration-id=\"Final · texte\"></e-paragraph><e-flexbox configuration-id=\"Final · bouton\"><e-button configuration-id=\"Final · réserver\"></e-button></e-flexbox><e-flexbox configuration-id=\"Final · badges\"><e-flexbox configuration-id=\"Final · badge · IA sécurisée\"><e-image configuration-id=\"Final · badge · IA sécurisée · icône\"></e-image><e-paragraph configuration-id=\"Final · badge · IA sécurisée · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Final · badge · Données hébergées en Europe\"><e-image configuration-id=\"Final · badge · Données hébergées en Europe · icône\"></e-image><e-paragraph configuration-id=\"Final · badge · Données hébergées en Europe · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Final · badge · Conforme RGPD\"><e-image configuration-id=\"Final · badge · Conforme RGPD · icône\"></e-image><e-paragraph configuration-id=\"Final · badge · Conforme RGPD · texte\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox></e-flexbox></e-flexbox>",
   "element_config": {
    "Fiche témoignage": {
     "tag": "article"
@@ -119,6 +119,47 @@
    },
    "Fiche témoignage · accompagnement · liste": {
     "paragraph": "⟦widget:rolling-coches|champ=accompagnement⟧"
+   },
+   "Fiche témoignage · REX · image": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/dynamique/rolling-image/image=une.png"
+     },
+     "size": "medium_large"
+    }
+   },
+   "Fiche témoignage · REX · type": {
+    "paragraph": "⟦rolling-champ|champ=type_doc⟧"
+   },
+   "Fiche témoignage · REX · logo du client": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/dynamique/rolling-image/image=logo&source=temoignage.png"
+     },
+     "size": "medium"
+    }
+   },
+   "Fiche témoignage · REX · type (couverture logo)": {
+    "paragraph": "⟦rolling-champ|champ=type_doc⟧"
+   },
+   "Fiche témoignage · REX · label": {
+    "paragraph": "Pour aller plus loin"
+   },
+   "Fiche témoignage · REX · pages": {
+    "paragraph": "⟦rolling-champ|champ=pages|apres= pages⟧"
+   },
+   "Fiche témoignage · REX · titre": {
+    "tag": "h2",
+    "title": "⟦rolling-article|info=titre⟧"
+   },
+   "Fiche témoignage · REX · résumé": {
+    "paragraph": "⟦rolling-champ|champ=resume⟧"
+   },
+   "Fiche témoignage · REX · bouton": {
+    "text": "Télécharger le retour d’expérience",
+    "link": {
+     "destination": "⟦rolling-lien|lien=lien⟧"
+    }
    },
    "Fiche témoignage · vidéos · titre": {
     "tag": "h2",
@@ -345,6 +386,58 @@
    ],
    "Fiche témoignage · accompagnement · titre": [
     "titre-sm"
+   ],
+   "Fiche témoignage · REX": [
+    "carte-verre",
+    "encart-rex",
+    "contexte-rex",
+    "si-rex"
+   ],
+   "Fiche témoignage · REX · couverture": [
+    "cadre-photo",
+    "cadre-4-3",
+    "si-image"
+   ],
+   "Fiche témoignage · REX · image": [
+    "image-couvrante"
+   ],
+   "Fiche témoignage · REX · type": [
+    "bandeau-video",
+    "si-type-doc"
+   ],
+   "Fiche témoignage · REX · couverture logo": [
+    "couverture-logo",
+    "sans-image",
+    "si-temoignage-logo"
+   ],
+   "Fiche témoignage · REX · logo du client": [
+    "logo-couverture"
+   ],
+   "Fiche témoignage · REX · type (couverture logo)": [
+    "bandeau-video",
+    "si-type-doc"
+   ],
+   "Fiche témoignage · REX · repère": [
+    "rangee"
+   ],
+   "Fiche témoignage · REX · label": [
+    "label",
+    "label-violet"
+   ],
+   "Fiche témoignage · REX · pages": [
+    "texte-petit",
+    "si-pages"
+   ],
+   "Fiche témoignage · REX · titre": [
+    "titre-xs"
+   ],
+   "Fiche témoignage · REX · résumé": [
+    "texte",
+    "si-resume"
+   ],
+   "Fiche témoignage · REX · bouton": [
+    "bouton-principal",
+    "bouton-petit"
    ],
    "Fiche témoignage · vidéos": [
     "pile",

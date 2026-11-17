@@ -74,7 +74,7 @@ class Rolling_Dynamique {
 	 * Contextes reconnus : classe repère « contexte-… » posée sur un conteneur. Le temps de ce conteneur, les balises
 	 * et les repères « si-… » lisent ce contenu au lieu de la page (ex. le bloc Ressources de l'accueil).
 	 */
-	const CONTEXTES = array( 'une', 'dernier-article', 'dernier-guide', 'prochain-webinar', 'dernier-replay' );
+	const CONTEXTES = array( 'une', 'dernier-article', 'dernier-guide', 'prochain-webinar', 'dernier-replay', 'rex' );
 
 	/**
 	 * Nom du contexte porté par un élément (classe « contexte-… »), sinon chaîne vide.
@@ -200,6 +200,9 @@ class Rolling_Dynamique {
 			case 'dernier-replay':
 				$ids = Rolling_Webinars::liste( 'replay', 1 );
 				return $ids ? (int) $ids[0] : 0;
+			case 'rex':
+				// Retour d'expérience du témoignage affiché (ou du témoignage lié à la réalisation affichée).
+				return Rolling_Contenus::rex( self::contenu_courant() );
 			case 'une':
 				foreach ( array( 'prochain-webinar', 'dernier-guide', 'dernier-article' ) as $suivant ) {
 					$id = self::contenu_du_contexte( $suivant );
@@ -404,7 +407,7 @@ class Rolling_Dynamique {
 		$cle = str_replace( '-', '_', $cle );
 		$id  = self::contenu_courant();
 
-		if ( 'contexte' === $cle ) {
+		if ( 'contexte' === $cle && self::$contextes ) {
 			// « si-contexte » : le conteneur « contexte-… » a trouvé un contenu publié.
 			return ! $id;
 		}
@@ -427,6 +430,11 @@ class Rolling_Dynamique {
 		if ( 'autres_videos' === $cle ) {
 			// Témoignage : plus d'une réalisation liée (la première est en grand en haut de la fiche).
 			return count( Rolling_Contenus::realisations_liees( $id ) ) < 2;
+		}
+		if ( 'rex' === $cle ) {
+			// Témoignage ou réalisation : un retour d'expérience y est lié. Le repère se lit après le rendu du
+			// conteneur, donc dans son contexte « contexte-rex » : le contenu courant est alors le guide lui-même.
+			return 'rolling_guide' === get_post_type( $id ) ? false : ! Rolling_Contenus::rex( $id );
 		}
 		if ( 'recit' === $cle ) {
 			return ! Rolling_Contenus::a_recit( $id );
