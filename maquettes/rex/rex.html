@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rolling · retours d'expérience</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Caveat:wght@700&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root { --ink:#0F0F12; --texte:#4A4858; --legende:#5F5C6C; --violet:#5B3BEA; }
+* { box-sizing: border-box; }
+body { margin: 0; color: var(--ink); font-family: 'Hanken Grotesk', system-ui, sans-serif; background: radial-gradient(40% 30% at 100% 0%, #FFE2D4, transparent 70%), radial-gradient(35% 30% at 0% 10%, #EDE6FF, transparent 70%), #FAF9F7; }
+h1, h2, h3, p, ul { margin: 0; }
+.jk { font-family: 'Bricolage Grotesque', system-ui, sans-serif; }
+em { font-style: normal; background: linear-gradient(95deg, #5B3BEA, #6F3FD6 42%, #C94A1E); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.conteneur { max-width: 1240px; margin: 0 auto; padding: 0 28px; }
+.intro { padding: 56px 0 8px; }
+.intro h1 { font-size: 30px; letter-spacing: -.035em; font-weight: 650; }
+.intro p { margin-top: 10px; max-width: 80ch; font-size: 16px; line-height: 1.55; color: var(--texte); }
+.partie { margin-top: 72px; }
+.partie > h2 { font-size: 24px; letter-spacing: -.03em; font-weight: 650; }
+.option { margin-top: 30px; }
+.option > h3 { display: flex; align-items: center; gap: 12px; font-size: 20px; letter-spacing: -.03em; font-weight: 650; }
+.lettre { display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 50%; font-size: 14px; color: #fff; background: #0F0F12; }
+.conseil .lettre { background: var(--violet); }
+.etiquette { padding: 3px 10px; border-radius: 999px; font-size: 12px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: #4A2BB8; background: #EDE6FF; }
+.desc { margin-top: 8px; max-width: 82ch; font-size: 15px; line-height: 1.55; color: var(--texte); }
+.scene { margin-top: 18px; padding: 30px; border-radius: 30px; background: rgba(255,255,255,.35); box-shadow: inset 0 0 0 1px rgba(15,15,18,.06); }
+.verre { border-radius: 26px; background: radial-gradient(70% 60% at 15% 0%, rgba(255,255,255,.95), rgba(255,255,255,0) 72%), linear-gradient(150deg, rgba(255,255,255,.8), rgba(255,255,255,.5)); box-shadow: inset 0 1px 0 #fff, 0 30px 70px -34px rgba(76,48,170,.34); }
+.label { font-size: 12px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: #4A2BB8; }
+.timecode { display: inline-flex; align-items: center; gap: 8px; padding: 6px 13px; border-radius: 999px; font-size: 12px; font-weight: 700; letter-spacing: .06em; color: #5B3BEA; background: linear-gradient(170deg, rgba(255,255,255,.95), rgba(255,255,255,.55)); box-shadow: inset 0 1px 0 #fff, inset 0 0 0 1px rgba(91,59,234,.16), 0 6px 16px -10px rgba(91,59,234,.5); }
+.rec::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: #FF3B30; box-shadow: 0 0 0 3px rgba(255,59,48,.22); }
+.bouton { display: inline-flex; align-items: center; min-height: 46px; padding: 0 20px; border-radius: 999px; font-size: 15px; font-weight: 700; color: #fff; background: #0F0F12; }
+
+/* 1 · Formulaire */
+.action { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: 40px; align-items: center; padding: 40px; }
+.action h3 { margin-top: 16px; font-family: 'Bricolage Grotesque'; font-size: 34px; line-height: 1.1; letter-spacing: -.04em; font-weight: 650; }
+.action p.t { margin-top: 10px; font-size: 16px; line-height: 1.6; color: var(--texte); }
+.cal { position: relative; width: 100%; max-width: 440px; margin: 0 auto; padding: 52px 10px 10px; border-radius: 26px; }
+.cal .tc { position: absolute; top: 14px; right: 16px; }
+.cal .faux { height: 300px; border-radius: 10px; background: #fff; box-shadow: 0 2px 8px rgba(15,15,18,.08); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; color: #33475B; font-size: 14px; }
+.cal .faux b { font-size: 18px; }
+
+/* 2 · Ce que ça change */
+.aa { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.carte-aa { display: flex; flex-direction: column; gap: 12px; padding: 10px 10px 20px; }
+.vign { position: relative; aspect-ratio: 16/9; border-radius: 18px; overflow: hidden; }
+.v1 { background: radial-gradient(60% 80% at 75% 30%, rgba(255,180,140,.9), transparent 60%), radial-gradient(90% 90% at 10% 100%, #5B3BEA, transparent 70%), linear-gradient(160deg, #3434E0, #1C1730); }
+.v2 { background: radial-gradient(60% 80% at 30% 30%, rgba(196,181,253,.9), transparent 60%), radial-gradient(90% 90% at 90% 100%, #FF8A5B, transparent 70%), linear-gradient(160deg, #8E4DE6, #1C1730); }
+.v3 { background: radial-gradient(70% 90% at 60% 20%, rgba(255,209,191,.9), transparent 60%), linear-gradient(160deg, #E0562A, #4A2BB8); }
+.duree { position: absolute; right: 12px; top: 12px; padding: 3px 8px; border-radius: 8px; font-size: 12px; font-weight: 800; color: #fff; background: rgba(15,15,18,.7); }
+.carte-aa .client { padding: 0 8px; font-size: 12px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: var(--legende); }
+.ligne-aa { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; padding: 0 8px; font-size: 14px; }
+.avant { padding: 5px 11px; border-radius: 999px; color: #A63C14; background: #fff; box-shadow: inset 0 0 0 1px rgba(224,86,42,.25); font-weight: 600; }
+.fleche { color: #C94A1E; font-weight: 800; }
+.apres { font-weight: 800; }
+.lien { padding: 0 8px; font-size: 14px; font-weight: 700; color: #4A2BB8; }
+
+.gains { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; padding: 24px 0; }
+.gains > div { display: flex; flex-direction: column; gap: 8px; padding: 4px 24px; box-shadow: -1px 0 0 rgba(91,59,234,.16); }
+.gains .pic { width: 40px; height: 40px; border-radius: 12px; display: flex; align-items: center; justify-content: center; background: linear-gradient(140deg, #EDE6FF, #FFE2D4); font-size: 18px; }
+.gains b { font-family: 'Bricolage Grotesque'; font-size: 18px; letter-spacing: -.02em; }
+.gains span { font-size: 14px; line-height: 1.5; color: var(--texte); }
+
+.citations { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.citations > div { padding: 22px; }
+.citations p { font-family: 'Bricolage Grotesque'; font-size: 18px; line-height: 1.35; font-weight: 650; letter-spacing: -.02em; }
+.citations small { display: block; margin-top: 10px; font-size: 13px; color: var(--legende); }
+
+/* 3 · Née chez Pitchy */
+.n { font-family: 'Bricolage Grotesque'; font-weight: 800; line-height: .9; letter-spacing: -.02em; background: linear-gradient(180deg, #FFAB96 0%, #E697BD 45%, #A77BF0 100%); -webkit-background-clip: text; background-clip: text; color: transparent; filter: drop-shadow(0 8px 14px rgba(91,59,234,.25)); }
+.l { font-size: 15.5px; line-height: 1.35; font-weight: 600; color: #2A2840; }
+.actuel { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); padding: 30px 8px; }
+.actuel > div { display: flex; flex-direction: column; gap: 10px; padding: 4px 24px; }
+.actuel > div + div { box-shadow: -1px 0 0 rgba(91,59,234,.16); }
+.actuel .n { font-size: 60px; }
+.cote { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 16px; padding: 20px 0; }
+.cote > div { display: flex; align-items: center; gap: 14px; padding: 4px 24px; box-shadow: -1px 0 0 rgba(91,59,234,.16); }
+.cote .n { font-size: 54px; flex-shrink: 0; }
+.trois { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+@media (max-width: 980px) {
+  .action { grid-template-columns: 1fr; padding: 20px; }
+  .aa, .citations { grid-template-columns: 1fr; }
+  .gains, .actuel { grid-template-columns: 1fr 1fr; row-gap: 18px; }
+  .cote, .trois { grid-template-columns: 1fr; padding: 0; row-gap: 0; }
+  .cote > div { padding: 14px 18px; box-shadow: 0 -1px 0 rgba(91,59,234,.14); }
+  .scene { padding: 16px; }
+}
+</style>
+<style>
+.filtres { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 22px; }
+.filtres .nom { width: 70px; font-size: 12px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: var(--legende); }
+.chip { padding: 8px 15px; border-radius: 999px; font-size: 14px; font-weight: 600; color: #2A2840; background: rgba(255,255,255,.75); box-shadow: inset 0 0 0 1px rgba(91,59,234,.14); }
+.chip.on { color: #fff; background: #0F0F12; box-shadow: none; }
+.grille { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; margin-top: 28px; }
+.carte-g { display: flex; flex-direction: column; gap: 12px; }
+.couv { position: relative; aspect-ratio: 4/3; border-radius: 22px; overflow: hidden; box-shadow: 0 24px 50px -30px rgba(76,48,170,.45); }
+.c1 { background: radial-gradient(60% 70% at 80% 20%, rgba(255,180,140,.9), transparent 60%), linear-gradient(160deg, #5B3BEA, #1C1730); }
+.c2 { background: radial-gradient(60% 70% at 20% 20%, rgba(196,181,253,.9), transparent 60%), linear-gradient(160deg, #3434E0, #17112C); }
+.c3 { background: radial-gradient(70% 70% at 70% 30%, #FFE2D4, transparent 70%), linear-gradient(160deg, #FFF1E7, #EDE6FF); display: flex; align-items: center; justify-content: center; }
+.c3 .logo-client { padding: 14px 22px; border-radius: 16px; background: #fff; font-family: 'Bricolage Grotesque'; font-weight: 800; font-size: 22px; color: #2A2840; box-shadow: 0 12px 30px -18px rgba(76,48,170,.5); }
+.bande { position: absolute; left: 12px; top: 12px; padding: 5px 11px; border-radius: 999px; font-size: 12px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: #fff; background: rgba(15,15,18,.62); }
+.infos { display: flex; gap: 12px; align-items: center; font-size: 14px; color: var(--legende); }
+.tag { padding: 3px 10px; border-radius: 999px; font-size: 12px; font-weight: 700; color: #A63C14; background: #fff; box-shadow: inset 0 0 0 1px rgba(224,86,42,.25); }
+.carte-g h3 { font-family: 'Bricolage Grotesque'; font-size: 21px; line-height: 1.2; letter-spacing: -.02em; font-weight: 650; }
+.carte-g p { font-size: 15px; line-height: 1.5; color: var(--texte); }
+.bv { align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; min-height: 42px; padding: 0 18px; border-radius: 999px; font-size: 14px; font-weight: 700; color: #0F0F12; background: rgba(255,255,255,.85); box-shadow: inset 0 0 0 1px rgba(91,59,234,.18), 0 8px 20px -14px rgba(76,48,170,.5); }
+.bv::after { content: '↓'; }
+.lien-t { font-size: 14px; font-weight: 700; color: #4A2BB8; }
+.page { padding: 28px; border-radius: 26px; background: rgba(255,255,255,.5); }
+.page .h4 { font-family: 'Bricolage Grotesque'; font-size: 30px; letter-spacing: -.04em; font-weight: 650; }
+.gris { height: 12px; border-radius: 6px; background: rgba(91,59,234,.10); margin-top: 10px; }
+.bloc-gris { border-radius: 18px; background: rgba(91,59,234,.08); display: flex; align-items: center; justify-content: center; font-size: 13px; color: var(--legende); }
+.encart { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 28px; align-items: center; padding: 14px 30px 14px 14px; margin: 28px auto 0; max-width: 820px; }
+.encart .couv { border-radius: 18px; }
+.encart .txt { display: flex; flex-direction: column; gap: 10px; }
+.encart h4 { font-family: 'Bricolage Grotesque'; font-size: 24px; line-height: 1.15; letter-spacing: -.03em; font-weight: 650; }
+.encart p { font-size: 15px; line-height: 1.5; color: var(--texte); }
+.bp { align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; min-height: 46px; padding: 0 20px; border-radius: 999px; font-size: 15px; font-weight: 700; color: #fff; background: #0F0F12; }
+.bp::after { content: '↓'; }
+.annot { font-family: 'Caveat'; font-size: 27px; color: #C94A1E; }
+.mini { display: grid; grid-template-columns: 84px minmax(0, 1fr) auto; gap: 18px; align-items: center; padding: 12px 18px 12px 12px; margin-top: 14px; }
+.mini .couv { border-radius: 12px; box-shadow: none; }
+.mini b { font-family: 'Bricolage Grotesque'; font-size: 17px; letter-spacing: -.02em; }
+.mini small { display: block; margin-top: 2px; font-size: 13px; color: var(--legende); }
+.citation-r { padding: 26px 28px; border-radius: 26px; background: linear-gradient(160deg, rgba(237,230,255,.9), rgba(255,226,212,.7)); }
+.citation-r p { font-family: 'Bricolage Grotesque'; font-size: 20px; line-height: 1.4; font-weight: 600; letter-spacing: -.02em; color: #2A2840; }
+.citation-r p.desc { font-family: "Hanken Grotesk"; font-size: 15px; font-weight: 400; letter-spacing: 0; color: var(--legende); }
+.deux { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 28px; align-items: start; }
+.noms { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin-top: 14px; }
+.noms > div { padding: 18px; }
+.noms b { display: block; font-family: 'Bricolage Grotesque'; font-size: 18px; }
+.noms span { font-size: 14px; color: var(--texte); }
+@media (max-width: 980px) {
+  .grille, .noms, .deux { grid-template-columns: 1fr; }
+  .encart { grid-template-columns: 1fr; padding: 12px 12px 22px; gap: 16px; }
+  .encart .txt { padding: 0 10px; }
+  .mini { grid-template-columns: 64px minmax(0, 1fr); }
+  .mini .bv { grid-column: 1 / -1; }
+  .filtres .nom { width: 100%; }
+}
+</style>
+</head>
+<body>
+<main>
+  <div class="conteneur intro">
+    <h1 class="jk">Retours d'expérience (REX) : page Guides et fiches.</h1>
+    <p>Un REX se crée comme un guide (lien vers votre page HubSpot), avec le thème « Retours d'expérience » et un nouveau champ « Témoignage lié ». Il apparaît alors à trois endroits, sans rien saisir de plus.</p>
+  </div>
+  <div class="conteneur">
+    <section class="partie">
+      <h2 class="jk">1. Le nom de la page</h2>
+      <p class="desc">« Cas client » désigne déjà la page d'un témoignage avec récit (« Lire le cas client »). Pour éviter la confusion, je propose <b>« Guides et retours d'expérience »</b> (H1) et, dans le sous-menu Ressources, <b>« Guides et REX »</b> si vous voulez court. L'adresse /guides/ ne change pas.</p>
+      <div class="noms">
+        <div class="verre"><span class="etiquette">Conseil</span><b style="margin-top:10px">Guides et retours d'expérience.</b><span>Clair, sans doublon avec « cas client ».</span></div>
+        <div class="verre"><b>Guides et cas clients.</b><span>Votre idée : parlant, mais « cas client » = aussi les témoignages.</span></div>
+        <div class="verre"><b>Ressources à télécharger.</b><span>Neutre, englobe tout ce qui viendra.</span></div>
+      </div>
+    </section>
+
+    <section class="partie">
+      <h2 class="jk">2. Page Guides : le filtre « Retours d'expérience »</h2>
+      <p class="desc">Le REX est une carte comme les autres. Sur l'image, la bande indique le type (« Retour d'expérience », champ « Type de document » déjà existant). Sans image, je propose le logo du client (repris du témoignage lié) sur un fond pêche et lilas. Sous la carte, un lien vers le témoignage.</p>
+      <div class="scene">
+        <h3 class="jk" style="font-size:34px;letter-spacing:-.04em;font-weight:650">Guides et <em>retours d'expérience.</em></h3>
+        <div class="filtres"><span class="nom">Thème</span><span class="chip">Tous</span><span class="chip on">Retours d'expérience</span><span class="chip">Communication interne</span><span class="chip">RH</span><span class="chip">Formation</span></div>
+        <div class="grille">
+          <div class="carte-g"><div class="couv c1"><span class="bande">Retour d'expérience</span></div><div class="infos"><span class="tag">Retours d'expérience</span><span>12 pages</span></div><h3>Comment Client A a lancé sa série d'onboarding vidéo.</h3><p>Le contexte, la méthode, les vidéos produites et ce que ça a changé pour les équipes.</p><span class="bv">Télécharger</span><span class="lien-t">Lire le témoignage →</span></div>
+          <div class="carte-g"><div class="couv c3"><span class="bande">Retour d'expérience</span><span class="logo-client">Client B</span></div><div class="infos"><span class="tag">Retours d'expérience</span><span>8 pages</span></div><h3>Client B : un aftermovie par événement, sans agence au devis.</h3><p>Exemple sans image : le logo du client sert de couverture.</p><span class="bv">Télécharger</span><span class="lien-t">Lire le témoignage →</span></div>
+          <div class="carte-g"><div class="couv c2"><span class="bande">Retour d'expérience</span></div><div class="infos"><span class="tag">Retours d'expérience</span><span>10 pages</span></div><h3>Client C : 40 vidéos de formation en un an.</h3><p>Comment l'équipe formation a remplacé ses modules PowerPoint.</p><span class="bv">Télécharger</span><span class="lien-t">Lire le témoignage →</span></div>
+        </div>
+        <p class="desc" style="margin-top:22px">Bouton : « Télécharger » pour toutes les cartes (guides et REX), le type est déjà dans la bande. Le lien « Lire le témoignage » n'apparaît que si le témoignage a un récit.</p>
+      </div>
+    </section>
+
+    <section class="partie">
+      <h2 class="jk">3. Fiche témoignage : l'encart après le récit</h2>
+      <p class="desc">Placé à la fin du récit, quand le lecteur est convaincu : couverture, type et nombre de pages, titre du REX, résumé, bouton. Avant « Les autres vidéos ». Absent si aucun REX n'est lié.</p>
+      <div class="scene">
+        <div class="page">
+          <h3 class="h4">Client A : l'expertise vidéo qui manquait à l'équipe.</h3>
+          <div class="gris" style="width:70%"></div>
+          <div class="bloc-gris" style="height:64px;margin-top:18px">Bandeau du projet (secteur, équipes, formats, durée)</div>
+          <div class="bloc-gris" style="height:160px;margin-top:14px">Vidéo</div>
+          <div class="bloc-gris" style="height:110px;margin-top:14px">Récit : Le contexte. Leur besoin. Notre accompagnement.</div>
+          <div class="verre encart">
+            <div class="couv c1"><span class="bande">Retour d'expérience</span></div>
+            <div class="txt">
+              <span class="label">Pour aller plus loin · 12 pages</span>
+              <h4>Comment Client A a lancé sa série d'onboarding vidéo.</h4>
+              <p>Le contexte, la méthode, les vidéos produites et ce que ça a changé pour les équipes.</p>
+              <span class="bp">Télécharger le retour d'expérience</span>
+            </div>
+          </div>
+          <div class="bloc-gris" style="height:70px;margin-top:28px">Les autres vidéos.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="partie">
+      <h2 class="jk">4. Fiche réalisation : une ligne sous la citation</h2>
+      <p class="desc">La réalisation reprend le REX de son témoignage lié, en plus discret : petite couverture, titre, bouton. Absent si le témoignage n'a pas de REX.</p>
+      <div class="scene">
+        <div class="deux">
+          <div class="bloc-gris" style="height:260px">Vidéo de la réalisation</div>
+          <div>
+            <div class="citation-r"><p>« Ils ont su me mettre à l'aise pendant le tournage et ont pu nous livrer en quelques jours seulement. »</p><p class="desc" style="margin-top:10px">Prénom Nom, Chargée de communication</p><p style="margin-top:12px"><span class="lien-t">Lire le cas client →</span></p></div>
+            <div class="verre mini"><div class="couv c1"></div><div><b>Le retour d'expérience de Client A</b><small>12 pages · PDF</small></div><span class="bv">Télécharger</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <p style="height:90px"></p>
+  </div>
+</main>
+</body>
+</html>

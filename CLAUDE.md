@@ -451,6 +451,13 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   cadre du calendrier (comme Contact). Leçons : lancer `python3 -I outils/classes_fiches.py` avant construire.sh (sinon
   « Unknown global class label » et le bloc n'est pas reconstruit, construire.sh renvoie quand même 0 : chercher ERREUR
   dans la sortie) ; dans `plaque-libre`, `.chiffre-verre` d'un conteneur Elementor a `width: 100 %` ⇒ `width: auto`.
+- **Maquette « Retours d'expérience »** (`maquettes/rex/rex.html`, copie /workspace/maquette-rex.html, **à valider**) : REX =
+  guide (lien HubSpot) avec thème « Retours d'expérience » (filtre de la page Guides) + nouveau champ « Témoignage lié »
+  (un REX a toujours un témoignage). Nom de page proposé « Guides et retours d'expérience » (« cas client » = déjà les
+  témoignages ; idée cliente « Guides et cas clients »). Carte : bande « Retour d'expérience » (champ type_doc), sans image
+  = logo du client du témoignage lié, bouton « Télécharger » pour toutes les cartes, lien « Lire le témoignage » (si récit).
+  Fiche témoignage : encart après le récit, avant « Les autres vidéos » (validé dans le principe) ; fiche réalisation :
+  ligne discrète sous la citation (REX du témoignage lié, validé dans le principe). Pas de lien dans les cartes des listes.
 - **Chargement de page effet film** (demande avant la fin de la livraison 4) : maquette `maquettes/loading/maquette-loading.html`
   (copie /workspace/maquette-loading.html), 4 options : A amorce 3-2-1, B clap qui se ferme puis rideau, C ouverture
   cinéma (bandes noires + REC + timecode + règle avec la tête de lecture rouge des frises, plus de filet fin), D barre de lecture en haut sans écran. Conseil : C à l'arrivée (première page
