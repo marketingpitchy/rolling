@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rolling · ressources dans les articles</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Caveat:wght@700&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root { --ink:#0F0F12; --texte:#4A4858; --legende:#5F5C6C; --violet:#5B3BEA; }
+* { box-sizing: border-box; }
+body { margin: 0; color: var(--ink); font-family: 'Hanken Grotesk', system-ui, sans-serif; background: radial-gradient(40% 30% at 100% 0%, #FFE2D4, transparent 70%), radial-gradient(35% 30% at 0% 10%, #EDE6FF, transparent 70%), #FAF9F7; }
+h1, h2, h3, p, ul { margin: 0; }
+.jk { font-family: 'Bricolage Grotesque', system-ui, sans-serif; }
+em { font-style: normal; background: linear-gradient(95deg, #5B3BEA, #6F3FD6 42%, #C94A1E); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.conteneur { max-width: 1240px; margin: 0 auto; padding: 0 28px; }
+.intro { padding: 56px 0 8px; }
+.intro h1 { font-size: 30px; letter-spacing: -.035em; font-weight: 650; }
+.intro p { margin-top: 10px; max-width: 80ch; font-size: 16px; line-height: 1.55; color: var(--texte); }
+.partie { margin-top: 72px; }
+.partie > h2 { font-size: 24px; letter-spacing: -.03em; font-weight: 650; }
+.option { margin-top: 30px; }
+.option > h3 { display: flex; align-items: center; gap: 12px; font-size: 20px; letter-spacing: -.03em; font-weight: 650; }
+.lettre { display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 50%; font-size: 14px; color: #fff; background: #0F0F12; }
+.conseil .lettre { background: var(--violet); }
+.etiquette { padding: 3px 10px; border-radius: 999px; font-size: 12px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: #4A2BB8; background: #EDE6FF; }
+.desc { margin-top: 8px; max-width: 82ch; font-size: 15px; line-height: 1.55; color: var(--texte); }
+.scene { margin-top: 18px; padding: 30px; border-radius: 30px; background: rgba(255,255,255,.35); box-shadow: inset 0 0 0 1px rgba(15,15,18,.06); }
+.verre { border-radius: 26px; background: radial-gradient(70% 60% at 15% 0%, rgba(255,255,255,.95), rgba(255,255,255,0) 72%), linear-gradient(150deg, rgba(255,255,255,.8), rgba(255,255,255,.5)); box-shadow: inset 0 1px 0 #fff, 0 30px 70px -34px rgba(76,48,170,.34); }
+.label { font-size: 12px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: #4A2BB8; }
+.timecode { display: inline-flex; align-items: center; gap: 8px; padding: 6px 13px; border-radius: 999px; font-size: 12px; font-weight: 700; letter-spacing: .06em; color: #5B3BEA; background: linear-gradient(170deg, rgba(255,255,255,.95), rgba(255,255,255,.55)); box-shadow: inset 0 1px 0 #fff, inset 0 0 0 1px rgba(91,59,234,.16), 0 6px 16px -10px rgba(91,59,234,.5); }
+.rec::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: #FF3B30; box-shadow: 0 0 0 3px rgba(255,59,48,.22); }
+.bouton { display: inline-flex; align-items: center; min-height: 46px; padding: 0 20px; border-radius: 999px; font-size: 15px; font-weight: 700; color: #fff; background: #0F0F12; }
+
+/* 1 · Formulaire */
+.action { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: 40px; align-items: center; padding: 40px; }
+.action h3 { margin-top: 16px; font-family: 'Bricolage Grotesque'; font-size: 34px; line-height: 1.1; letter-spacing: -.04em; font-weight: 650; }
+.action p.t { margin-top: 10px; font-size: 16px; line-height: 1.6; color: var(--texte); }
+.cal { position: relative; width: 100%; max-width: 440px; margin: 0 auto; padding: 52px 10px 10px; border-radius: 26px; }
+.cal .tc { position: absolute; top: 14px; right: 16px; }
+.cal .faux { height: 300px; border-radius: 10px; background: #fff; box-shadow: 0 2px 8px rgba(15,15,18,.08); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; color: #33475B; font-size: 14px; }
+.cal .faux b { font-size: 18px; }
+
+/* 2 · Ce que ça change */
+.aa { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.carte-aa { display: flex; flex-direction: column; gap: 12px; padding: 10px 10px 20px; }
+.vign { position: relative; aspect-ratio: 16/9; border-radius: 18px; overflow: hidden; }
+.v1 { background: radial-gradient(60% 80% at 75% 30%, rgba(255,180,140,.9), transparent 60%), radial-gradient(90% 90% at 10% 100%, #5B3BEA, transparent 70%), linear-gradient(160deg, #3434E0, #1C1730); }
+.v2 { background: radial-gradient(60% 80% at 30% 30%, rgba(196,181,253,.9), transparent 60%), radial-gradient(90% 90% at 90% 100%, #FF8A5B, transparent 70%), linear-gradient(160deg, #8E4DE6, #1C1730); }
+.v3 { background: radial-gradient(70% 90% at 60% 20%, rgba(255,209,191,.9), transparent 60%), linear-gradient(160deg, #E0562A, #4A2BB8); }
+.duree { position: absolute; right: 12px; top: 12px; padding: 3px 8px; border-radius: 8px; font-size: 12px; font-weight: 800; color: #fff; background: rgba(15,15,18,.7); }
+.carte-aa .client { padding: 0 8px; font-size: 12px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: var(--legende); }
+.ligne-aa { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; padding: 0 8px; font-size: 14px; }
+.avant { padding: 5px 11px; border-radius: 999px; color: #A63C14; background: #fff; box-shadow: inset 0 0 0 1px rgba(224,86,42,.25); font-weight: 600; }
+.fleche { color: #C94A1E; font-weight: 800; }
+.apres { font-weight: 800; }
+.lien { padding: 0 8px; font-size: 14px; font-weight: 700; color: #4A2BB8; }
+
+.gains { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; padding: 24px 0; }
+.gains > div { display: flex; flex-direction: column; gap: 8px; padding: 4px 24px; box-shadow: -1px 0 0 rgba(91,59,234,.16); }
+.gains .pic { width: 40px; height: 40px; border-radius: 12px; display: flex; align-items: center; justify-content: center; background: linear-gradient(140deg, #EDE6FF, #FFE2D4); font-size: 18px; }
+.gains b { font-family: 'Bricolage Grotesque'; font-size: 18px; letter-spacing: -.02em; }
+.gains span { font-size: 14px; line-height: 1.5; color: var(--texte); }
+
+.citations { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.citations > div { padding: 22px; }
+.citations p { font-family: 'Bricolage Grotesque'; font-size: 18px; line-height: 1.35; font-weight: 650; letter-spacing: -.02em; }
+.citations small { display: block; margin-top: 10px; font-size: 13px; color: var(--legende); }
+
+/* 3 · Née chez Pitchy */
+.n { font-family: 'Bricolage Grotesque'; font-weight: 800; line-height: .9; letter-spacing: -.02em; background: linear-gradient(180deg, #FFAB96 0%, #E697BD 45%, #A77BF0 100%); -webkit-background-clip: text; background-clip: text; color: transparent; filter: drop-shadow(0 8px 14px rgba(91,59,234,.25)); }
+.l { font-size: 15.5px; line-height: 1.35; font-weight: 600; color: #2A2840; }
+.actuel { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); padding: 30px 8px; }
+.actuel > div { display: flex; flex-direction: column; gap: 10px; padding: 4px 24px; }
+.actuel > div + div { box-shadow: -1px 0 0 rgba(91,59,234,.16); }
+.actuel .n { font-size: 60px; }
+.cote { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 16px; padding: 20px 0; }
+.cote > div { display: flex; align-items: center; gap: 14px; padding: 4px 24px; box-shadow: -1px 0 0 rgba(91,59,234,.16); }
+.cote .n { font-size: 54px; flex-shrink: 0; }
+.trois { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+@media (max-width: 980px) {
+  .action { grid-template-columns: 1fr; padding: 20px; }
+  .aa, .citations { grid-template-columns: 1fr; }
+  .gains, .actuel { grid-template-columns: 1fr 1fr; row-gap: 18px; }
+  .cote, .trois { grid-template-columns: 1fr; padding: 0; row-gap: 0; }
+  .cote > div { padding: 14px 18px; box-shadow: 0 -1px 0 rgba(91,59,234,.14); }
+  .scene { padding: 16px; }
+}
+</style>
+<style>
+.art { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 56px; align-items: start; }
+.art-texte p { margin-top: 18px; font-size: 18px; line-height: 1.7; color: var(--texte); }
+.art-texte .h3 { margin-top: 40px; font-family: 'Bricolage Grotesque'; font-size: 30px; letter-spacing: -.04em; font-weight: 650; }
+.art-texte .art-titre { font-family: 'Bricolage Grotesque'; font-size: 44px; line-height: 1.05; letter-spacing: -.05em; font-weight: 650; }
+.colonne { position: sticky; top: 20px; display: flex; flex-direction: column; gap: 16px; }
+.boite { padding: 20px; }
+.boite b { font-family: 'Bricolage Grotesque'; font-size: 17px; letter-spacing: -.02em; }
+.boite .petit { display: block; margin-top: 6px; font-size: 14px; line-height: 1.5; color: var(--texte); }
+.repere { position: relative; outline: 2px dashed #C94A1E; outline-offset: 8px; border-radius: 26px; }
+.repere > .annot-tag { position: absolute; z-index: 3; top: -36px; left: 0; font-family: 'Caveat'; font-size: 28px; font-weight: 700; color: #C94A1E; white-space: nowrap; }
+.picto { width: 52px; height: 52px; border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 22px; color: #4A2BB8; background: radial-gradient(70% 70% at 30% 20%, #fff, rgba(255,255,255,0) 70%), linear-gradient(140deg, #EDE6FF, #C4B5FD); box-shadow: inset 0 1px 0 #fff, 0 10px 22px -12px rgba(91,59,234,.6); }
+.picto.p2 { background: radial-gradient(70% 70% at 30% 20%, #fff, rgba(255,255,255,0) 70%), linear-gradient(140deg, #FFE2D4, #FFB89A); color: #A63C14; }
+/* A */
+.ressources-a { margin-top: 48px; padding: 30px; }
+.ressources-a h3 { margin: 0; font-size: 26px; }
+.trois { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: 18px; }
+.rub { display: flex; flex-direction: column; gap: 8px; padding: 18px; border-radius: 20px; background: rgba(255,255,255,.75); box-shadow: inset 0 0 0 1px rgba(91,59,234,.1); }
+.rub b { font-family: 'Bricolage Grotesque'; font-size: 18px; letter-spacing: -.02em; }
+.rub .dernier { font-size: 14px; line-height: 1.45; color: var(--texte); }
+.rub .lien { margin-top: auto; font-size: 14px; font-weight: 700; color: #4A2BB8; }
+/* B */
+.guide-b { padding: 12px 12px 18px; display: flex; flex-direction: column; gap: 10px; }
+.couv { position: relative; aspect-ratio: 4/3; border-radius: 16px; background: radial-gradient(60% 70% at 80% 20%, rgba(255,180,140,.9), transparent 60%), linear-gradient(160deg, #5B3BEA, #1C1730); }
+.couv span { position: absolute; left: 10px; top: 10px; padding: 4px 10px; border-radius: 999px; font-size: 12px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: #fff; background: rgba(15,15,18,.62); }
+.guide-b b { padding: 0 6px; font-family: 'Bricolage Grotesque'; font-size: 17px; line-height: 1.25; letter-spacing: -.02em; }
+.bv { align-self: flex-start; margin-left: 6px; display: inline-flex; align-items: center; gap: 8px; min-height: 40px; padding: 0 16px; border-radius: 999px; font-size: 14px; font-weight: 700; color: #0F0F12; background: #fff; box-shadow: inset 0 0 0 1px rgba(91,59,234,.18); }
+/* C */
+.encart-c { display: grid; grid-template-columns: 72px minmax(0, 1fr) auto; gap: 18px; align-items: center; margin-top: 30px; padding: 18px 22px 18px 18px; }
+.encart-c .date { display: flex; flex-direction: column; align-items: center; justify-content: center; height: 72px; border-radius: 16px; color: #fff; background: radial-gradient(70% 60% at 85% 10%, rgba(255,162,122,.75), rgba(255,162,122,0) 65%), linear-gradient(160deg, #4A2BB8, #1C1730); }
+.encart-c .date b { font-family: 'Bricolage Grotesque'; font-size: 26px; line-height: 1; }
+.encart-c .date small { font-size: 12px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+.encart-c .t b { display: block; font-family: 'Bricolage Grotesque'; font-size: 19px; line-height: 1.25; letter-spacing: -.02em; }
+.encart-c .t span { font-size: 14px; color: var(--texte); }
+.bp { display: inline-flex; align-items: center; min-height: 44px; padding: 0 18px; border-radius: 999px; font-size: 14px; font-weight: 700; color: #fff; background: #0F0F12; white-space: nowrap; }
+@media (max-width: 980px) {
+  .art { grid-template-columns: 1fr; gap: 32px; }
+  .colonne { position: static; }
+  .trois { grid-template-columns: 1fr; }
+  .rub { display: grid; grid-template-columns: 52px minmax(0, 1fr); column-gap: 14px; }
+  .rub .picto { grid-row: 1 / span 3; }
+  .encart-c { grid-template-columns: 60px minmax(0, 1fr); }
+  .encart-c .date { height: 60px; }
+  .encart-c .bp { grid-column: 1 / -1; justify-self: start; }
+  .art-texte .art-titre { font-size: 32px; }
+}
+</style>
+</head>
+<body>
+<main>
+  <div class="conteneur intro">
+    <h1 class="jk">Articles : faire découvrir les autres ressources.</h1>
+    <p>Trois emplacements possibles, montrés ensemble sur un article type (les pointillés et les notes manuscrites sont des annotations). Tout est automatique : le thème va chercher le dernier guide, le prochain webinar, le dernier replay. Une rubrique vide ne s'affiche pas (pas de « Bientôt » dans un article).</p>
+  </div>
+  <div class="conteneur">
+    <section class="partie">
+      <div class="scene">
+        <div class="art">
+          <div class="art-texte">
+            <span class="label">Communication interne · 6 min</span>
+            <p class="art-titre jk" style="margin-top:12px;color:var(--ink)">Pourquoi vos emails internes ne sont plus lus.</p>
+            <p>Les équipes reçoivent des dizaines de messages par jour. Les informations importantes se perdent, et les mêmes questions reviennent.</p>
+            <h2 class="jk h3">Le problème n'est pas le contenu.</h2>
+            <p>Vos contenus sont bons. Mais un long texte demande un effort que peu de collaborateurs font entre deux réunions.</p>
+            <div class="verre encart-c repere"><span class="annot-tag">C · au milieu du texte, après le 2e chapitre</span><div class="date"><b>04</b><small>déc.</small></div><div class="t"><b>Webinar : la vidéo au service de l'onboarding.</b><span>Jeudi 4 décembre · 11 h · 45 min</span></div><span class="bp">S'inscrire</span></div>
+            <h2 class="jk h3">Ce que change la vidéo.</h2>
+            <p>Une vidéo de deux minutes se regarde jusqu'au bout, sur un téléphone, dans le métro. Elle se partage, elle se retient.</p>
+            <div class="verre ressources-a repere"><span class="annot-tag">A · en fin d'article, avant « À lire aussi »</span>
+              <span class="label">Pour aller plus loin</span>
+              <h3 class="jk" style="margin-top:8px">Nos autres ressources.</h3>
+              <div class="trois">
+                <div class="rub"><span class="picto">▤</span><b>Guides et REX</b><span class="dernier">Le guide de l'onboarding en vidéo</span><span class="lien">Voir les guides →</span></div>
+                <div class="rub"><span class="picto p2">◉</span><b>Prochain webinar</b><span class="dernier">Jeudi 4 décembre · 11 h</span><span class="lien">Je m'inscris →</span></div>
+                <div class="rub"><span class="picto">▶</span><b>Replays</b><span class="dernier">Tourner chez vous sans studio</span><span class="lien">Voir les replays →</span></div>
+              </div>
+            </div>
+            <h2 class="jk h3" style="font-size:24px">À lire aussi.</h2>
+            <p style="font-size:15px">(cartes d'articles, inchangées)</p>
+          </div>
+          <div class="colonne">
+            <div class="verre boite"><b>Sommaire</b><span class="petit">Le problème n'est pas le contenu.<br>Ce que change la vidéo.</span></div>
+            <div class="verre boite"><b>Partager · Résumer avec</b><span class="petit">LinkedIn, X, e-mail… ChatGPT, Claude…</span></div>
+            <div class="verre guide-b repere"><span class="annot-tag">B · colonne de côté</span><div class="couv"><span>Guide PDF</span></div><span class="label" style="padding:0 6px">À télécharger</span><b>Le guide de l'onboarding en vidéo.</b><span class="bv">Télécharger ↓</span></div>
+            <div class="verre boite"><b>Réserver un échange</b><span class="petit">30 minutes pour faire le point sur vos contenus.</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="partie">
+      <h2 class="jk">Les trois emplacements</h2>
+      <p class="desc"><b>A. En fin d'article (conseil)</b> : « Nos autres ressources. », version compacte du bloc Ressources de l'accueil (mêmes pictos en verre) : Guides et REX, prochain webinar, dernier replay. Le lecteur a fini l'article : c'est le bon moment pour lui proposer la suite. En mobile, une liste.</p>
+      <p class="desc"><b>B. Dans la colonne de côté</b> : le dernier guide, avec sa couverture et « Télécharger », entre « Partager » et « Réserver un échange ». Visible pendant toute la lecture sur ordinateur ; en mobile, il passe sous l'article.</p>
+      <p class="desc"><b>C. Au milieu du texte</b> : une carte posée automatiquement après le 2e chapitre (prochain webinar, sinon dernier guide). La plus visible, mais elle coupe la lecture : à garder pour les articles longs (rien si l'article a moins de 3 chapitres).</p>
+      <p class="desc">Conseil : <b>A + B</b>. A s'ajoute au modèle d'article (modifiable dans Elementor), B dans la colonne de côté. C en option si vous voulez pousser les webinars.</p>
+    </section>
+    <p style="height:90px"></p>
+  </div>
+</main>
+</body>
+</html>

@@ -487,6 +487,14 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   (pas dans l'éditeur, pas avec « réduire les animations », sans script tout reste visible) puis `vu` sur chaque case
   qui entre dans l'écran (90 ms d'écart entre cases arrivées ensemble), keyframes `rl-mur` (flou + montée). FAQ des
   articles : puces qui débordaient (liste avec 20 px de marge dans `.wp-block-details`) ⇒ `padding-left: 46px`.
+- **Elementor 4.4.1** (16/11/2026) testé sur wp2 avec le thème 0.5.16 : page d'essai de l'accueil identique à wp 4.3.6
+  (0,01 % de pixels différents, même hauteur), axe 0, éditeur sans erreur JS ⇒ mise à jour sans risque pour le thème.
+  wp2 est maintenant en 4.4.1 (zip dans scratchpad/plugins/el441).
+- **Maquette « Ressources dans les articles »** (`maquettes/article-ressources/article-ressources.html`, copie
+  /workspace/maquette-article-ressources.html, **à valider**) : A fin d'article avant « À lire aussi » = « Nos autres
+  ressources. » (version compacte du bloc Ressources : Guides et REX, prochain webinar, dernier replay ; rubrique vide
+  masquée, pas de « Bientôt ») ; B colonne de côté = dernier guide (couverture + Télécharger) entre Partager et Réserver ;
+  C carte automatique après le 2e H2 (prochain webinar sinon dernier guide ; rien si < 3 chapitres). Conseil A + B.
 - **Chargement de page effet film** (demande avant la fin de la livraison 4) : maquette `maquettes/loading/maquette-loading.html`
   (copie /workspace/maquette-loading.html), 4 options : A amorce 3-2-1, B clap qui se ferme puis rideau, C ouverture
   cinéma (bandes noires + REC + timecode + règle avec la tête de lecture rouge des frises, plus de filet fin), D barre de lecture en haut sans écran. Conseil : C à l'arrivée (première page
