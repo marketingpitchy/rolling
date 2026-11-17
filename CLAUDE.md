@@ -526,6 +526,11 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   rolling.js ne reconnaissait plus les bandes (animation coupée) ⇒ repère `--rl-defile: 1` (propriété `@property` non
   héritée dans rolling.css) sur `logos-defilants` et `equipe-defilante` ⇒ `rl-defile-statique` (plusieurs lignes).
   `classes_fiches.py` : `feuille_editeur` lit `c[2]` (tuples à 4 éléments acceptés).
+- **0.5.19 : L'agence 00:03 qui défile** : bloc « Rolling · L'agence · 00:03 L'équipe (version qui défile) »
+  (`p-agence-4-equipe-defile`, ajouté à BLOCS_VARIANTES après sa définition : `bloc_agence_equipe(defile)` +
+  `grille_ou_bande()`) : créas et experts IA en deux bandes `masque-bords` > `equipe-defilante`. Marion (créas) =
+  « Responsable Agence vidéo » et en dernier, comme à l'accueil, dans les deux versions. Test wp2 : attendre
+  `wp option get siteurl` (et pas `wp core version`, qui répond sans base) avant d'installer.
 - **Chargement de page effet film** (demande avant la fin de la livraison 4) : maquette `maquettes/loading/maquette-loading.html`
   (copie /workspace/maquette-loading.html), 4 options : A amorce 3-2-1, B clap qui se ferme puis rideau, C ouverture
   cinéma (bandes noires + REC + timecode + règle avec la tête de lecture rouge des frises, plus de filet fin), D barre de lecture en haut sans écran. Conseil : C à l'arrivée (première page

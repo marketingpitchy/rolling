@@ -1777,21 +1777,32 @@ agence_convictions = F("L'agence · convictions", ['section', 'section-chaude'],
     ]),
 ])
 
-agence_equipe = F("L'agence · équipe", ['section'], tag='section', enfants=[
-    F("L'agence · équipe · contenu", ['conteneur'], COLONNE, enfants=[
-        entete_simple("L'agence · équipe", '00:03', "L'équipe", 'Les visages <em>derrière vos vidéos.</em>'),
-        H("L'agence · créas · titre", 'Nos créas.', 'h3', ['titre-sm']),
-        F("L'agence · créas", ['grille-equipe'], 'margin-top: 36px;', enfants=[
-            membre("L'agence créas", c, n, p) for c, n, p in [('thomas', 'Thomas', 'Directeur Artistique'), ('alex', 'Alex', 'Responsable Équipe Motion Design'), ('victor', 'Victor', 'Motion Designer'),
-                                                             ('vincent', 'Vincent', 'Cadreur'), ('marion-t', 'Marion', 'Responsable Studio'), ('sophie', 'Sophie', 'Chef de Projet')]
+def grille_ou_bande(nom, membres, style, defile):
+    """Portraits en grille centrée, ou en bande qui défile (masque-bords > equipe-defilante, comme les logos)."""
+    if not defile:
+        return F(nom, ['grille-equipe'], style, enfants=membres)
+    return F(nom + ' · bande', ['masque-bords'], style, enfants=[F(nom, ['equipe-defilante'], enfants=membres)])
+
+
+def bloc_agence_equipe(defile=False):
+    cr = [membre("L'agence créas", c, n, p) for c, n, p in [('thomas', 'Thomas', 'Directeur Artistique'), ('alex', 'Alex', 'Responsable Équipe Motion Design'), ('victor', 'Victor', 'Motion Designer'),
+                                                           ('vincent', 'Vincent', 'Cadreur'), ('sophie', 'Sophie', 'Chef de Projet'), ('marion-t', 'Marion', 'Responsable Agence vidéo')]]
+    ex = [membre("L'agence experts", c, n, p) for c, n, p in [('ronan', 'Ronan', 'Directeur Technique'), ('marion-l', 'Marion', 'Développeuse Full-Stack'), ('ines', 'Inès', 'DevOps'),
+                                                             ('hakim', 'Hakim', 'Développeur Back-End'), ('maxime', 'Maxime', 'Product Manager Senior')]]
+    return F("L'agence · équipe", ['section'], tag='section', enfants=[
+        F("L'agence · équipe · contenu", ['conteneur'], COLONNE, enfants=[
+            entete_simple("L'agence · équipe", '00:03', "L'équipe", 'Les visages <em>derrière vos vidéos.</em>'),
+            H("L'agence · créas · titre", 'Nos créas.', 'h3', ['titre-sm']),
+            grille_ou_bande("L'agence · créas", cr, 'margin-top: 36px;', defile),
+            H("L'agence · experts · titre", 'Nos experts <b>IA.</b>', 'h3', ['titre-sm'], 'margin-top: 88px;'),
+            grille_ou_bande("L'agence · experts", ex, 'margin-top: 36px;', defile),
         ]),
-        H("L'agence · experts · titre", 'Nos experts <b>IA.</b>', 'h3', ['titre-sm'], 'margin-top: 88px;'),
-        F("L'agence · experts", ['grille-equipe'], 'margin-top: 36px;', enfants=[
-            membre("L'agence experts", c, n, p) for c, n, p in [('ronan', 'Ronan', 'Directeur Technique'), ('marion-l', 'Marion', 'Développeuse Full-Stack'), ('ines', 'Inès', 'DevOps'),
-                                                               ('hakim', 'Hakim', 'Développeur Back-End'), ('maxime', 'Maxime', 'Product Manager Senior')]
-        ]),
-    ]),
-])
+    ])
+
+
+agence_equipe = bloc_agence_equipe()
+agence_equipe_defile = bloc_agence_equipe(True)
+BLOCS_VARIANTES.append(('p-agence-4-equipe-defile', "Rolling · L'agence · 00:03 L'équipe (version qui défile)", agence_equipe_defile))
 
 agence_lieu = F("L'agence · où nous trouver", ['section', 'section-lilas'], tag='section', enfants=[
     F("L'agence · lieu · contenu", ['conteneur', 'agence-lieu'], enfants=[
