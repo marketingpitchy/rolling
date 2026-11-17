@@ -3,7 +3,7 @@
  "titre": "Rolling · 09 Le meilleur de l'humain",
  "type": "e-flexbox",
  "composition": {
-  "xml_structure": "<e-flexbox configuration-id=\"Le meilleur de l'humain\"><e-flexbox configuration-id=\"Humain · contenu\"><e-flexbox configuration-id=\"Humain · en-tête\"><e-flexbox configuration-id=\"Humain · repère\"><e-paragraph configuration-id=\"Humain · timecode\"></e-paragraph><e-paragraph configuration-id=\"Humain · sur-titre\"></e-paragraph></e-flexbox><e-heading configuration-id=\"Humain · titre\"></e-heading><e-paragraph configuration-id=\"Humain · introduction\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Humain · direction artistique\"><e-div-block configuration-id=\"DA · visuel\"><e-paragraph configuration-id=\"DA · note accroche\"></e-paragraph><e-image configuration-id=\"DA · flèche\"></e-image><e-image configuration-id=\"DA · vidéo annotée\"></e-image><e-paragraph configuration-id=\"DA · note rythme\"></e-paragraph><e-paragraph configuration-id=\"DA · note charte\"></e-paragraph></e-div-block><e-flexbox configuration-id=\"DA · colonne texte\"><e-paragraph configuration-id=\"DA · étiquette\"></e-paragraph><e-heading configuration-id=\"DA · titre\"></e-heading><e-paragraph configuration-id=\"DA · texte\"></e-paragraph><e-flexbox configuration-id=\"DA · liste wrap\"><e-flexbox configuration-id=\"DA · liste\"><e-flexbox configuration-id=\"DA · liste · ligne 1\"><e-image configuration-id=\"DA · liste · coche 1\"></e-image><e-paragraph configuration-id=\"DA · liste · texte 1\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"DA · liste · ligne 2\"><e-image configuration-id=\"DA · liste · coche 2\"></e-image><e-paragraph configuration-id=\"DA · liste · texte 2\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"DA · liste · ligne 3\"><e-image configuration-id=\"DA · liste · coche 3\"></e-image><e-paragraph configuration-id=\"DA · liste · texte 3\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"DA · liste · ligne 4\"><e-image configuration-id=\"DA · liste · coche 4\"></e-image><e-paragraph configuration-id=\"DA · liste · texte 4\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox><e-flexbox configuration-id=\"DA · contact\"><e-image configuration-id=\"DA · contact · photo\"></e-image><e-paragraph configuration-id=\"DA · contact · texte\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Humain · équipe\"><e-heading configuration-id=\"Équipe · titre\"></e-heading><e-flexbox configuration-id=\"Équipe · portraits\"><e-flexbox configuration-id=\"Équipe · Thomas\"><e-image configuration-id=\"Équipe · Thomas · photo\"></e-image><e-paragraph configuration-id=\"Équipe · Thomas · prénom\"></e-paragraph><e-paragraph configuration-id=\"Équipe · Thomas · poste\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Équipe · Alex\"><e-image configuration-id=\"Équipe · Alex · photo\"></e-image><e-paragraph configuration-id=\"Équipe · Alex · prénom\"></e-paragraph><e-paragraph configuration-id=\"Équipe · Alex · poste\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Équipe · Victor\"><e-image configuration-id=\"Équipe · Victor · photo\"></e-image><e-paragraph configuration-id=\"Équipe · Victor · prénom\"></e-paragraph><e-paragraph configuration-id=\"Équipe · Victor · poste\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Équipe · Vincent\"><e-image configuration-id=\"Équipe · Vincent · photo\"></e-image><e-paragraph configuration-id=\"Équipe · Vincent · prénom\"></e-paragraph><e-paragraph configuration-id=\"Équipe · Vincent · poste\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Équipe · Marion\"><e-image configuration-id=\"Équipe · Marion · photo\"></e-image><e-paragraph configuration-id=\"Équipe · Marion · prénom\"></e-paragraph><e-paragraph configuration-id=\"Équipe · Marion · poste\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Équipe · Sophie\"><e-image configuration-id=\"Équipe · Sophie · photo\"></e-image><e-paragraph configuration-id=\"Équipe · Sophie · prénom\"></e-paragraph><e-paragraph configuration-id=\"Équipe · Sophie · poste\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox></e-flexbox></e-flexbox>",
+  "xml_structure": "<e-flexbox configuration-id=\"Le meilleur de l'humain\"><e-flexbox configuration-id=\"Humain · contenu\"><e-flexbox configuration-id=\"Humain · en-tête\"><e-flexbox configuration-id=\"Humain · repère\"><e-paragraph configuration-id=\"Humain · timecode\"></e-paragraph><e-paragraph configuration-id=\"Humain · sur-titre\"></e-paragraph></e-flexbox><e-heading configuration-id=\"Humain · titre\"></e-heading><e-paragraph configuration-id=\"Humain · introduction\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Humain · direction artistique\"><e-div-block configuration-id=\"DA · visuel\"><e-paragraph configuration-id=\"DA · note accroche\"></e-paragraph><e-image configuration-id=\"DA · flèche\"></e-image><e-image configuration-id=\"DA · vidéo annotée\"></e-image><e-paragraph configuration-id=\"DA · note rythme\"></e-paragraph><e-paragraph configuration-id=\"DA · note charte\"></e-paragraph></e-div-block><e-flexbox configuration-id=\"DA · colonne texte\"><e-paragraph configuration-id=\"DA · étiquette\"></e-paragraph><e-heading configuration-id=\"DA · titre\"></e-heading><e-paragraph configuration-id=\"DA · texte\"></e-paragraph><e-flexbox configuration-id=\"DA · liste wrap\"><e-flexbox configuration-id=\"DA · liste\"><e-flexbox configuration-id=\"DA · liste · ligne 1\"><e-image configuration-id=\"DA · liste · coche 1\"></e-image><e-paragraph configuration-id=\"DA · liste · texte 1\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"DA · liste · ligne 2\"><e-image configuration-id=\"DA · liste · coche 2\"></e-image><e-paragraph configuration-id=\"DA · liste · texte 2\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"DA · liste · ligne 3\"><e-image configuration-id=\"DA · liste · coche 3\"></e-image><e-paragraph configuration-id=\"DA · liste · texte 3\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"DA · liste · ligne 4\"><e-image configuration-id=\"DA · liste · coche 4\"></e-image><e-paragraph configuration-id=\"DA · liste · texte 4\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox><e-flexbox configuration-id=\"DA · contact\"><e-image configuration-id=\"DA · contact · photo\"></e-image><e-paragraph configuration-id=\"DA · contact · texte\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Humain · équipe\"><e-heading configuration-id=\"Équipe · titre\"></e-heading><e-flexbox configuration-id=\"Équipe · portraits\"><e-flexbox configuration-id=\"Équipe · Thomas\"><e-image configuration-id=\"Équipe · Thomas · photo\"></e-image><e-paragraph configuration-id=\"Équipe · Thomas · prénom\"></e-paragraph><e-paragraph configuration-id=\"Équipe · Thomas · poste\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Équipe · Alex\"><e-image configuration-id=\"Équipe · Alex · photo\"></e-image><e-paragraph configuration-id=\"Équipe · Alex · prénom\"></e-paragraph><e-paragraph configuration-id=\"Équipe · Alex · poste\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Équipe · Victor\"><e-image configuration-id=\"Équipe · Victor · photo\"></e-image><e-paragraph configuration-id=\"Équipe · Victor · prénom\"></e-paragraph><e-paragraph configuration-id=\"Équipe · Victor · poste\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Équipe · Vincent\"><e-image configuration-id=\"Équipe · Vincent · photo\"></e-image><e-paragraph configuration-id=\"Équipe · Vincent · prénom\"></e-paragraph><e-paragraph configuration-id=\"Équipe · Vincent · poste\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Équipe · Sophie\"><e-image configuration-id=\"Équipe · Sophie · photo\"></e-image><e-paragraph configuration-id=\"Équipe · Sophie · prénom\"></e-paragraph><e-paragraph configuration-id=\"Équipe · Sophie · poste\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Équipe · Marion\"><e-image configuration-id=\"Équipe · Marion · photo\"></e-image><e-paragraph configuration-id=\"Équipe · Marion · prénom\"></e-paragraph><e-paragraph configuration-id=\"Équipe · Marion · poste\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox></e-flexbox></e-flexbox>",
   "element_config": {
    "Le meilleur de l'humain": {
     "_cssid": "humain",
@@ -178,21 +178,6 @@
    "Équipe · Vincent · poste": {
     "paragraph": "Cadreur"
    },
-   "Équipe · Marion · photo": {
-    "image": {
-     "src": {
-      "url": "https://media.rolling.invalid/equipe-marion-t.jpg",
-      "alt": "Marion, Responsable Studio"
-     },
-     "size": "medium"
-    }
-   },
-   "Équipe · Marion · prénom": {
-    "paragraph": "Marion"
-   },
-   "Équipe · Marion · poste": {
-    "paragraph": "Responsable Studio"
-   },
    "Équipe · Sophie · photo": {
     "image": {
      "src": {
@@ -207,6 +192,21 @@
    },
    "Équipe · Sophie · poste": {
     "paragraph": "Chef de Projet"
+   },
+   "Équipe · Marion · photo": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/equipe-marion-t.jpg",
+      "alt": "Marion, Responsable Agence vidéo"
+     },
+     "size": "medium"
+    }
+   },
+   "Équipe · Marion · prénom": {
+    "paragraph": "Marion"
+   },
+   "Équipe · Marion · poste": {
+    "paragraph": "Responsable Agence vidéo"
    }
   },
   "classes": {
@@ -360,18 +360,6 @@
    "Équipe · Vincent · poste": [
     "poste-membre"
    ],
-   "Équipe · Marion": [
-    "membre-equipe"
-   ],
-   "Équipe · Marion · photo": [
-    "portrait"
-   ],
-   "Équipe · Marion · prénom": [
-    "nom-membre"
-   ],
-   "Équipe · Marion · poste": [
-    "poste-membre"
-   ],
    "Équipe · Sophie": [
     "membre-equipe"
    ],
@@ -382,6 +370,18 @@
     "nom-membre"
    ],
    "Équipe · Sophie · poste": [
+    "poste-membre"
+   ],
+   "Équipe · Marion": [
+    "membre-equipe"
+   ],
+   "Équipe · Marion · photo": [
+    "portrait"
+   ],
+   "Équipe · Marion · prénom": [
+    "nom-membre"
+   ],
+   "Équipe · Marion · poste": [
     "poste-membre"
    ]
   },

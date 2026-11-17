@@ -579,7 +579,25 @@ ia = F("Le meilleur de l'IA", ['section', 'section-sombre', 'fond-grille', 'halo
 # 00:06 Le meilleur de l'humain
 # --------------------------------------------------------------------------------------------
 
-humain = F("Le meilleur de l'humain", ['section', 'section-chaude', 'halos-chauds'], tag='section', ancre='humain', enfants=[
+def portraits_equipe(defile=False):
+    """Portraits de « Le réseau de talents » : en grille centrée, ou en bande qui défile (comme les logos)."""
+    membres = [
+        membre('Équipe', 'thomas', 'Thomas', 'Directeur Artistique'),
+        membre('Équipe', 'alex', 'Alex', 'Responsable Équipe Motion Design'),
+        membre('Équipe', 'victor', 'Victor', 'Motion Designer'),
+        membre('Équipe', 'vincent', 'Vincent', 'Cadreur'),
+        membre('Équipe', 'sophie', 'Sophie', 'Chef de Projet'),
+        membre('Équipe', 'marion-t', 'Marion', 'Responsable Agence vidéo'),
+    ]
+    if not defile:
+        return F('Équipe · portraits', ['grille-equipe'], 'margin-top: 36px;', enfants=membres)
+    return F('Équipe · bande', ['masque-bords'], 'margin-top: 36px;', enfants=[
+        F('Équipe · portraits', ['equipe-defilante'], enfants=membres),
+    ])
+
+
+def bloc_humain(defile=False):
+    return F("Le meilleur de l'humain", ['section', 'section-chaude', 'halos-chauds'], tag='section', ancre='humain', enfants=[
     F('Humain · contenu', ['conteneur'], COLONNE, enfants=[
         entete('Humain', '00:06', 'Derrière chaque vidéo', [("Le meilleur <em>de l'humain.</em>", 'h2', ['titre-xl'])],
                intro="<strong>L'IA va vite. Nos créatifs font la différence.</strong> Une équipe créa derrière chaque vidéo pour un résultat qui accroche et respecte votre charte."),
@@ -604,17 +622,14 @@ humain = F("Le meilleur de l'humain", ['section', 'section-chaude', 'halos-chaud
         ]),
         F('Humain · équipe', None, COLONNE + ' margin-top: 110px;', enfants=[
             H('Équipe · titre', 'Le réseau de talents qui <em>sublime vos vidéos.</em>', 'h3', ['titre-sm']),
-            F('Équipe · portraits', ['grille-equipe'], 'margin-top: 36px;', enfants=[
-                membre('Équipe', 'thomas', 'Thomas', 'Directeur Artistique'),
-                membre('Équipe', 'alex', 'Alex', 'Responsable Équipe Motion Design'),
-                membre('Équipe', 'victor', 'Victor', 'Motion Designer'),
-                membre('Équipe', 'vincent', 'Vincent', 'Cadreur'),
-                membre('Équipe', 'marion-t', 'Marion', 'Responsable Studio'),
-                membre('Équipe', 'sophie', 'Sophie', 'Chef de Projet'),
-            ]),
+            portraits_equipe(defile),
         ]),
     ]),
 ])
+
+
+humain = bloc_humain()
+humain_defile = bloc_humain(True)
 
 # --------------------------------------------------------------------------------------------
 # 00:07 L'offre (version courte de l'accueil)
@@ -823,6 +838,7 @@ BLOCS = [
 # Blocs en plus, hors « Page complète (accueil) » : variantes au choix.
 BLOCS_VARIANTES = [
     ('01-hero-maquette', 'Rolling · 01 Hero (version maquette : grande photo)', hero_maquette),
+    ('09-humain-defile', "Rolling · 09 Le meilleur de l'humain (version équipe qui défile)", humain_defile),
 ]
 
 # --------------------------------------------------------------------------------------------

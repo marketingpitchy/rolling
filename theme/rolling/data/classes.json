@@ -5519,7 +5519,7 @@
                         }
                     },
                     "custom_css": {
-                        "raw": "d2lkdGg6IG1heC1jb250ZW50OyAmID4gKiB7IGZsZXg6IDAgMCAxODZweDsgfSBhbmltYXRpb246IHJsLWRlZmlsZSA0NnMgbGluZWFyIGluZmluaXRlOw=="
+                        "raw": "LS1ybC1kZWZpbGU6IDE7IHdpZHRoOiBtYXgtY29udGVudDsgJiA+ICogeyBmbGV4OiAwIDAgMTg2cHg7IH0gYW5pbWF0aW9uOiBybC1kZWZpbGUgNDZzIGxpbmVhciBpbmZpbml0ZTs="
                     }
                 }
             ]
@@ -24066,6 +24066,87 @@
                         }
                     },
                     "custom_css": null
+                }
+            ]
+        },
+        {
+            "id": "g-a89e799",
+            "label": "equipe-defilante",
+            "groupe": "Fiches et listes",
+            "description": "Portraits de l'équipe en bande qui défile en continu, comme les logos (dans un conteneur masque-bords) : arrêt au survol et au clavier, sur plusieurs lignes avec « réduire les animations ». Remplacez par grille-equipe pour une grille fixe.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "mobile",
+                        "state": null
+                    },
+                    "props": [],
+                    "custom_css": {
+                        "raw": "JiA+ICogeyBmbGV4OiAwIDAgMTUwcHg7IH0="
+                    }
+                },
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "padding": {
+                            "$$type": "dimensions",
+                            "value": {
+                                "block-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 10,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 0,
+                                        "unit": "px"
+                                    }
+                                },
+                                "block-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 18,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 0,
+                                        "unit": "px"
+                                    }
+                                }
+                            }
+                        },
+                        "display": {
+                            "$$type": "string",
+                            "value": "flex"
+                        },
+                        "flex-direction": {
+                            "$$type": "string",
+                            "value": "row"
+                        },
+                        "gap": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 12,
+                                "unit": "px"
+                            }
+                        },
+                        "flex-wrap": {
+                            "$$type": "string",
+                            "value": "nowrap"
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "LS1ybC1kZWZpbGU6IDE7IHdpZHRoOiBtYXgtY29udGVudDsgJiA+ICogeyBmbGV4OiAwIDAgMTg2cHg7IH0gYW5pbWF0aW9uOiBybC1kZWZpbGUgNTBzIGxpbmVhciBpbmZpbml0ZTs="
+                    }
                 }
             ]
         },

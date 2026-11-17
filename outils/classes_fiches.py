@@ -103,6 +103,8 @@ CLASSES = [
      'display: flex; flex-direction: column; align-items: center; justify-content: center; height: 72px; padding: 0; border-radius: 16px; background: radial-gradient(70% 60% at 85% 10%, rgba(255,162,122,0.75), rgba(255,162,122,0) 65%), linear-gradient(160deg, #4A2BB8, #1C1730); background-color: #2A1F55; @media(--mobile) { height: 60px; }'),
     ('date-mini-jour', "Jour de la petite date.", 'display: block; margin: 0; font-family: Bricolage Grotesque; font-size: 26px; line-height: 1; font-weight: 650; color: #FFFFFF;'),
     ('date-mini-mois', "Mois de la petite date.", 'display: block; margin: 0; font-family: Hanken Grotesk; font-size: 12px; line-height: 1.3; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: #FFFFFF;'),
+    ('equipe-defilante', "Portraits de l'équipe en bande qui défile en continu, comme les logos (dans un conteneur masque-bords) : arrêt au survol et au clavier, sur plusieurs lignes avec « réduire les animations ». Remplacez par grille-equipe pour une grille fixe.",
+     '--rl-defile: 1; display: flex; flex-direction: row; flex-wrap: nowrap; gap: 12px; width: max-content; padding: 10px 0 18px; & > * { flex: 0 0 186px; } @media(--mobile) { & > * { flex: 0 0 150px; } }', 'animation: rl-defile 50s linear infinite;'),
     ('cas-grille', "Fiche témoignage : citation à gauche, récit à droite ; sans citation, le récit se centre.",
      'display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr); gap: 56px; align-items: start; padding: 0; & > :only-child { grid-column: 1 / -1; width: 100%; max-width: 820px; justify-self: center; } @media(--tablet) { grid-template-columns: minmax(0, 1fr); gap: 40px; }'),
     ('cas-citation', 'Citation de la fiche témoignage (avec carte-verre et temoin) : fond lilas et pêche, reste visible pendant la lecture du récit sur ordinateur.', 'position: sticky; top: 120px; padding: 34px 38px; background: radial-gradient(70% 60% at 10% 0%, rgba(255,255,255,0.95), rgba(255,255,255,0) 72%), linear-gradient(160deg, rgba(237,230,255,0.9) 0%, rgba(255,226,212,0.7) 100%); & .temoin-citation { font-size: clamp(20px, 1.9vw, 25px); } @media(--tablet) { position: static; } @media(--mobile) { padding: 26px; }'),
@@ -383,7 +385,7 @@ def deplier(css, racine):
 
 def feuille_editeur():
     """Aperçu des articles dans l'éditeur WordPress : polices + règles de la classe article-texte (dépliées)."""
-    css = next(c for l, d, c in CLASSES if l == 'article-texte')
+    css = next(c[2] for c in CLASSES if c[0] == 'article-texte')
     polices = [l for l in open(os.path.join(ICI, '..', 'theme', 'rolling', 'assets', 'css', 'rolling.css'), encoding='utf8') if l.startswith('@font-face')]
     racine = '.is-root-container'
     extra = """

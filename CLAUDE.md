@@ -518,6 +518,14 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   à la ligne). A bande qui défile en continu comme les logos (conseil : arrêt au survol / clavier, sur plusieurs lignes
   avec « réduire les animations ») ; B carrousel à flèches + points (scroll-snap, rien d'automatique) ; C portrait à la une
   au centre, voisins atténués, suivant toutes les 3 s + flèches. Version à côté de l'actuelle dans Mes modèles.
+- **0.5.18 : équipe qui défile (A validé)** : bloc « Rolling · 09 Le meilleur de l'humain (version équipe qui défile) »
+  (`09-humain-defile` dans BLOCS_VARIANTES, `bloc_humain(defile)` + `portraits_equipe()`) : portraits dans
+  `masque-bords` > `equipe-defilante` (même mécanique que les logos : animation `rl-defile` en brut, copie par rolling.js,
+  arrêt au survol / clavier). Textes de la cliente repris : Marion = « Responsable Agence vidéo », Marion en dernier
+  (Tomasz ajouté par elle sur son site : pas de photo dans le thème). **Corrigé** : avec « réduire les animations »,
+  rolling.js ne reconnaissait plus les bandes (animation coupée) ⇒ repère `--rl-defile: 1` (propriété `@property` non
+  héritée dans rolling.css) sur `logos-defilants` et `equipe-defilante` ⇒ `rl-defile-statique` (plusieurs lignes).
+  `classes_fiches.py` : `feuille_editeur` lit `c[2]` (tuples à 4 éléments acceptés).
 - **Chargement de page effet film** (demande avant la fin de la livraison 4) : maquette `maquettes/loading/maquette-loading.html`
   (copie /workspace/maquette-loading.html), 4 options : A amorce 3-2-1, B clap qui se ferme puis rideau, C ouverture
   cinéma (bandes noires + REC + timecode + règle avec la tête de lecture rouge des frises, plus de filet fin), D barre de lecture en haut sans écran. Conseil : C à l'arrivée (première page

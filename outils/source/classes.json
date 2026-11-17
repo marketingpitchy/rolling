@@ -925,7 +925,7 @@
     {
      "label": "logos-defilants",
      "description": "Bande de logos qui défile en continu. Retirez cette classe pour arrêter le défilement : les logos s'affichent alors en grille.",
-     "css": "display: flex; flex-direction: row; flex-wrap: nowrap; gap: 12px; width: max-content; padding: 14px 0 30px; & > * { flex: 0 0 186px; }",
+     "css": "--rl-defile: 1; display: flex; flex-direction: row; flex-wrap: nowrap; gap: 12px; width: max-content; padding: 14px 0 30px; & > * { flex: 0 0 186px; }",
      "brut": "animation: rl-defile 46s linear infinite;"
     },
     {
@@ -1452,6 +1452,12 @@
      "label": "date-mini-mois",
      "description": "Mois de la petite date.",
      "css": "display: block; margin: 0; font-family: Hanken Grotesk; font-size: 12px; line-height: 1.3; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: #FFFFFF;"
+    },
+    {
+     "label": "equipe-defilante",
+     "description": "Portraits de l'équipe en bande qui défile en continu, comme les logos (dans un conteneur masque-bords) : arrêt au survol et au clavier, sur plusieurs lignes avec « réduire les animations ». Remplacez par grille-equipe pour une grille fixe.",
+     "css": "--rl-defile: 1; display: flex; flex-direction: row; flex-wrap: nowrap; gap: 12px; width: max-content; padding: 10px 0 18px; & > * { flex: 0 0 186px; } @media(--mobile) { & > * { flex: 0 0 150px; } }",
+     "brut": "animation: rl-defile 50s linear infinite;"
     },
     {
      "label": "cas-grille",

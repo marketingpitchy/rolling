@@ -26,6 +26,7 @@ img, svg, video { max-width: 100%; }
 @keyframes rl-flotte { 0%, 100% { transform: translate3d(0, 0, 0); } 50% { transform: translate3d(0, -12px, 0); } }
 @keyframes rl-clignote { 0%, 55% { opacity: 1; } 70%, 100% { opacity: 0.2; } }
 @keyframes rl-scintille { 50% { opacity: 0.55; } }
+@property --rl-defile { syntax: '*'; inherits: false; }
 @keyframes rl-defile { to { transform: translateX(-50%); } }
 @property --rl-angle { syntax: "<angle>"; inherits: false; initial-value: 0deg; }
 @keyframes rl-anneau { to { --rl-angle: 360deg; } }

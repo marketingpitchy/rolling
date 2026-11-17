@@ -103,9 +103,11 @@
 	var conteneurs = document.querySelectorAll( '.e-flexbox-base, .e-div-block-base, .e-con, .rl-logos' );
 
 	conteneurs.forEach( function ( bande, index ) {
-		var anim = window.getComputedStyle( bande ).animationName || '';
+		var style = window.getComputedStyle( bande );
+		var anim = style.animationName || '';
 
-		if ( anim.indexOf( 'rl-defile' ) === -1 ) {
+		// Repère --rl-defile (non hérité) : la bande est reconnue même quand « réduire les animations » coupe l'animation.
+		if ( anim.indexOf( 'rl-defile' ) === -1 && '1' !== style.getPropertyValue( '--rl-defile' ).trim() ) {
 			return;
 		}
 
