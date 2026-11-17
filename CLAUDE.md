@@ -512,6 +512,12 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   ≥ 4 H2 (réglage `encart`), contexte `webinar-ou-guide`, classes `encart-milieu`, `date-mini*` ; enveloppe
   `.rl-encart-milieu` et règles `& a` / `& img` de `article-texte` en `:not(.rl-encart-milieu …)`. Leçon test : réinstaller
   la même version ne relance pas l'installateur ⇒ `Rolling_Installateur::installer()` à la main.
+- **Maquette « Équipe en carrousel »** (`maquettes/equipe-carrousel/equipe-carrousel.html`, copie
+  /workspace/maquette-equipe-carrousel.html, **à valider**) : demande « une version des photos en carrousel, un modèle
+  supplémentaire » = les portraits de l'équipe (« Le réseau de talents qui sublime vos vidéos. », 7 portraits, le 7e seul
+  à la ligne). A bande qui défile en continu comme les logos (conseil : arrêt au survol / clavier, sur plusieurs lignes
+  avec « réduire les animations ») ; B carrousel à flèches + points (scroll-snap, rien d'automatique) ; C portrait à la une
+  au centre, voisins atténués, suivant toutes les 3 s + flèches. Version à côté de l'actuelle dans Mes modèles.
 - **Chargement de page effet film** (demande avant la fin de la livraison 4) : maquette `maquettes/loading/maquette-loading.html`
   (copie /workspace/maquette-loading.html), 4 options : A amorce 3-2-1, B clap qui se ferme puis rideau, C ouverture
   cinéma (bandes noires + REC + timecode + règle avec la tête de lecture rouge des frises, plus de filet fin), D barre de lecture en haut sans écran. Conseil : C à l'arrivée (première page

@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rolling · équipe en carrousel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Caveat:wght@700&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root { --ink:#0F0F12; --texte:#4A4858; --legende:#5F5C6C; --violet:#5B3BEA; }
+* { box-sizing: border-box; }
+body { margin: 0; color: var(--ink); font-family: 'Hanken Grotesk', system-ui, sans-serif; background: radial-gradient(40% 30% at 100% 0%, #FFE2D4, transparent 70%), radial-gradient(35% 30% at 0% 10%, #EDE6FF, transparent 70%), #FAF9F7; }
+h1, h2, h3, p, ul { margin: 0; }
+.jk { font-family: 'Bricolage Grotesque', system-ui, sans-serif; }
+em { font-style: normal; background: linear-gradient(95deg, #5B3BEA, #6F3FD6 42%, #C94A1E); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.conteneur { max-width: 1240px; margin: 0 auto; padding: 0 28px; }
+.intro { padding: 56px 0 8px; }
+.intro h1 { font-size: 30px; letter-spacing: -.035em; font-weight: 650; }
+.intro p { margin-top: 10px; max-width: 80ch; font-size: 16px; line-height: 1.55; color: var(--texte); }
+.partie { margin-top: 72px; }
+.partie > h2 { font-size: 24px; letter-spacing: -.03em; font-weight: 650; }
+.option { margin-top: 30px; }
+.option > h3 { display: flex; align-items: center; gap: 12px; font-size: 20px; letter-spacing: -.03em; font-weight: 650; }
+.lettre { display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 50%; font-size: 14px; color: #fff; background: #0F0F12; }
+.conseil .lettre { background: var(--violet); }
+.etiquette { padding: 3px 10px; border-radius: 999px; font-size: 12px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: #4A2BB8; background: #EDE6FF; }
+.desc { margin-top: 8px; max-width: 82ch; font-size: 15px; line-height: 1.55; color: var(--texte); }
+.scene { margin-top: 18px; padding: 30px; border-radius: 30px; background: rgba(255,255,255,.35); box-shadow: inset 0 0 0 1px rgba(15,15,18,.06); }
+.verre { border-radius: 26px; background: radial-gradient(70% 60% at 15% 0%, rgba(255,255,255,.95), rgba(255,255,255,0) 72%), linear-gradient(150deg, rgba(255,255,255,.8), rgba(255,255,255,.5)); box-shadow: inset 0 1px 0 #fff, 0 30px 70px -34px rgba(76,48,170,.34); }
+.label { font-size: 12px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: #4A2BB8; }
+.timecode { display: inline-flex; align-items: center; gap: 8px; padding: 6px 13px; border-radius: 999px; font-size: 12px; font-weight: 700; letter-spacing: .06em; color: #5B3BEA; background: linear-gradient(170deg, rgba(255,255,255,.95), rgba(255,255,255,.55)); box-shadow: inset 0 1px 0 #fff, inset 0 0 0 1px rgba(91,59,234,.16), 0 6px 16px -10px rgba(91,59,234,.5); }
+.rec::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: #FF3B30; box-shadow: 0 0 0 3px rgba(255,59,48,.22); }
+.bouton { display: inline-flex; align-items: center; min-height: 46px; padding: 0 20px; border-radius: 999px; font-size: 15px; font-weight: 700; color: #fff; background: #0F0F12; }
+
+/* 1 · Formulaire */
+.action { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: 40px; align-items: center; padding: 40px; }
+.action h3 { margin-top: 16px; font-family: 'Bricolage Grotesque'; font-size: 34px; line-height: 1.1; letter-spacing: -.04em; font-weight: 650; }
+.action p.t { margin-top: 10px; font-size: 16px; line-height: 1.6; color: var(--texte); }
+.cal { position: relative; width: 100%; max-width: 440px; margin: 0 auto; padding: 52px 10px 10px; border-radius: 26px; }
+.cal .tc { position: absolute; top: 14px; right: 16px; }
+.cal .faux { height: 300px; border-radius: 10px; background: #fff; box-shadow: 0 2px 8px rgba(15,15,18,.08); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; color: #33475B; font-size: 14px; }
+.cal .faux b { font-size: 18px; }
+
+/* 2 · Ce que ça change */
+.aa { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.carte-aa { display: flex; flex-direction: column; gap: 12px; padding: 10px 10px 20px; }
+.vign { position: relative; aspect-ratio: 16/9; border-radius: 18px; overflow: hidden; }
+.v1 { background: radial-gradient(60% 80% at 75% 30%, rgba(255,180,140,.9), transparent 60%), radial-gradient(90% 90% at 10% 100%, #5B3BEA, transparent 70%), linear-gradient(160deg, #3434E0, #1C1730); }
+.v2 { background: radial-gradient(60% 80% at 30% 30%, rgba(196,181,253,.9), transparent 60%), radial-gradient(90% 90% at 90% 100%, #FF8A5B, transparent 70%), linear-gradient(160deg, #8E4DE6, #1C1730); }
+.v3 { background: radial-gradient(70% 90% at 60% 20%, rgba(255,209,191,.9), transparent 60%), linear-gradient(160deg, #E0562A, #4A2BB8); }
+.duree { position: absolute; right: 12px; top: 12px; padding: 3px 8px; border-radius: 8px; font-size: 12px; font-weight: 800; color: #fff; background: rgba(15,15,18,.7); }
+.carte-aa .client { padding: 0 8px; font-size: 12px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: var(--legende); }
+.ligne-aa { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; padding: 0 8px; font-size: 14px; }
+.avant { padding: 5px 11px; border-radius: 999px; color: #A63C14; background: #fff; box-shadow: inset 0 0 0 1px rgba(224,86,42,.25); font-weight: 600; }
+.fleche { color: #C94A1E; font-weight: 800; }
+.apres { font-weight: 800; }
+.lien { padding: 0 8px; font-size: 14px; font-weight: 700; color: #4A2BB8; }
+
+.gains { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; padding: 24px 0; }
+.gains > div { display: flex; flex-direction: column; gap: 8px; padding: 4px 24px; box-shadow: -1px 0 0 rgba(91,59,234,.16); }
+.gains .pic { width: 40px; height: 40px; border-radius: 12px; display: flex; align-items: center; justify-content: center; background: linear-gradient(140deg, #EDE6FF, #FFE2D4); font-size: 18px; }
+.gains b { font-family: 'Bricolage Grotesque'; font-size: 18px; letter-spacing: -.02em; }
+.gains span { font-size: 14px; line-height: 1.5; color: var(--texte); }
+
+.citations { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.citations > div { padding: 22px; }
+.citations p { font-family: 'Bricolage Grotesque'; font-size: 18px; line-height: 1.35; font-weight: 650; letter-spacing: -.02em; }
+.citations small { display: block; margin-top: 10px; font-size: 13px; color: var(--legende); }
+
+/* 3 · Née chez Pitchy */
+.n { font-family: 'Bricolage Grotesque'; font-weight: 800; line-height: .9; letter-spacing: -.02em; background: linear-gradient(180deg, #FFAB96 0%, #E697BD 45%, #A77BF0 100%); -webkit-background-clip: text; background-clip: text; color: transparent; filter: drop-shadow(0 8px 14px rgba(91,59,234,.25)); }
+.l { font-size: 15.5px; line-height: 1.35; font-weight: 600; color: #2A2840; }
+.actuel { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); padding: 30px 8px; }
+.actuel > div { display: flex; flex-direction: column; gap: 10px; padding: 4px 24px; }
+.actuel > div + div { box-shadow: -1px 0 0 rgba(91,59,234,.16); }
+.actuel .n { font-size: 60px; }
+.cote { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 16px; padding: 20px 0; }
+.cote > div { display: flex; align-items: center; gap: 14px; padding: 4px 24px; box-shadow: -1px 0 0 rgba(91,59,234,.16); }
+.cote .n { font-size: 54px; flex-shrink: 0; }
+.trois { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+@media (max-width: 980px) {
+  .action { grid-template-columns: 1fr; padding: 20px; }
+  .aa, .citations { grid-template-columns: 1fr; }
+  .gains, .actuel { grid-template-columns: 1fr 1fr; row-gap: 18px; }
+  .cote, .trois { grid-template-columns: 1fr; padding: 0; row-gap: 0; }
+  .cote > div { padding: 14px 18px; box-shadow: 0 -1px 0 rgba(91,59,234,.14); }
+  .scene { padding: 16px; }
+}
+</style>
+<style>
+.titre-eq { font-family: 'Bricolage Grotesque'; font-size: 40px; line-height: 1.05; letter-spacing: -.05em; font-weight: 650; text-align: center; }
+.membre { flex: 0 0 auto; width: 176px; display: flex; flex-direction: column; align-items: center; gap: 6px; text-align: center; scroll-snap-align: center; }
+.portrait { width: 136px; height: 136px; border-radius: 50%; border: 5px solid #fff; box-shadow: 0 18px 36px -20px rgba(76,48,170,.55); display: flex; align-items: center; justify-content: center; font-family: 'Bricolage Grotesque'; font-size: 40px; font-weight: 650; color: #fff; }
+.membre b { margin-top: 8px; font-size: 16px; }
+.membre span { font-size: 14px; line-height: 1.35; color: var(--texte); }
+.c1 { background: linear-gradient(140deg, #5B3BEA, #1C1730); } .c2 { background: linear-gradient(140deg, #8E4DE6, #E0562A); } .c3 { background: linear-gradient(140deg, #3434E0, #8E4DE6); } .c4 { background: linear-gradient(140deg, #E0562A, #4A2BB8); }
+/* A : bande continue */
+.bande { margin-top: 34px; overflow: hidden; -webkit-mask: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent); mask: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent); }
+.piste { display: flex; gap: 12px; width: max-content; animation: defile 40s linear infinite; padding: 8px 0 14px; }
+.bande:hover .piste, .bande:focus-within .piste { animation-play-state: paused; }
+@keyframes defile { to { transform: translateX(-50%); } }
+/* B : flèches */
+.carrousel { position: relative; margin-top: 34px; }
+.fenetre { display: flex; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; padding: 8px 4px 14px; scrollbar-width: none; }
+.fenetre::-webkit-scrollbar { display: none; }
+.nav { display: flex; justify-content: center; align-items: center; gap: 14px; margin-top: 14px; }
+.fl { width: 48px; height: 48px; border: 0; border-radius: 50%; font-size: 20px; color: #0F0F12; background: #fff; box-shadow: inset 0 0 0 1px rgba(91,59,234,.18), 0 10px 24px -14px rgba(76,48,170,.5); cursor: pointer; }
+.fl:hover { color: #fff; background: #5B3BEA; }
+.points { display: flex; gap: 8px; }
+.points i { width: 8px; height: 8px; border-radius: 999px; background: rgba(91,59,234,.25); transition: width .3s; }
+.points i.on { width: 26px; background: #5B3BEA; }
+/* C : grand portrait au centre */
+.scene-c { position: relative; margin-top: 30px; display: flex; justify-content: center; align-items: center; gap: 20px; min-height: 300px; }
+.scene-c .membre { transition: transform .5s cubic-bezier(.2,.8,.2,1), opacity .5s; opacity: .55; transform: scale(.82); }
+.scene-c .membre.centre { opacity: 1; transform: scale(1.15); }
+.scene-c .membre.centre .portrait { border-color: #fff; box-shadow: 0 0 0 4px rgba(91,59,234,.35), 0 24px 40px -18px rgba(76,48,170,.7); }
+.scene-c .membre.cache { display: none; }
+@media (max-width: 980px) { .titre-eq { font-size: 28px; } .membre { width: 140px; } .portrait { width: 108px; height: 108px; font-size: 32px; } .scene-c .membre:not(.centre):not(.voisin) { display: none; } }
+@media (prefers-reduced-motion: reduce) { .piste { animation: none; flex-wrap: wrap; width: auto; justify-content: center; } .scene-c .membre { transition: none; } }
+</style>
+</head>
+<body>
+<main>
+  <div class="conteneur intro">
+    <h1 class="jk">L'équipe en carrousel : trois propositions.</h1>
+    <p>Aujourd'hui les portraits sont alignés, et le 7e passe seul à la ligne. Une version supplémentaire dans Mes modèles, à côté de l'actuelle : les portraits défilent sur une seule ligne. Les portraits restent des éléments Elementor (photo, prénom, poste) : on en ajoute ou on en retire librement. Initiales à la place des photos dans la maquette.</p>
+  </div>
+  <div class="conteneur">
+    <section class="partie">
+      <h2 class="jk">A. La bande qui défile <span class="etiquette">Conseil</span></h2>
+      <p class="desc">Comme la bande de logos clients : défilement continu et lent, fondu sur les bords, arrêt au survol et au clavier, rien avec « réduire les animations » (les portraits s'affichent alors sur plusieurs lignes). Aucun bouton à gérer, ça marche avec 5 comme avec 20 personnes.</p>
+      <div class="scene"><p class="titre-eq">Le réseau de talents qui <em>sublime vos vidéos.</em></p><div class="bande"><div class="piste"><div class="membre "><div class="portrait c1">T</div><b>Thomas</b><span>Directeur Artistique</span></div><div class="membre "><div class="portrait c2">A</div><b>Alex</b><span>Responsable Équipe Motion Design</span></div><div class="membre "><div class="portrait c3">V</div><b>Victor</b><span>Motion Designer</span></div><div class="membre "><div class="portrait c4">V</div><b>Vincent</b><span>Cadreur</span></div><div class="membre "><div class="portrait c1">T</div><b>Tomasz</b><span>Motion Designer</span></div><div class="membre "><div class="portrait c2">S</div><b>Sophie</b><span>Chef de Projet</span></div><div class="membre "><div class="portrait c3">M</div><b>Marion</b><span>Responsable Agence vidéo</span></div><div aria-hidden="true" class="membre "><div class="portrait c1">T</div><b>Thomas</b><span>Directeur Artistique</span></div><div aria-hidden="true" class="membre "><div class="portrait c2">A</div><b>Alex</b><span>Responsable Équipe Motion Design</span></div><div aria-hidden="true" class="membre "><div class="portrait c3">V</div><b>Victor</b><span>Motion Designer</span></div><div aria-hidden="true" class="membre "><div class="portrait c4">V</div><b>Vincent</b><span>Cadreur</span></div><div aria-hidden="true" class="membre "><div class="portrait c1">T</div><b>Tomasz</b><span>Motion Designer</span></div><div aria-hidden="true" class="membre "><div class="portrait c2">S</div><b>Sophie</b><span>Chef de Projet</span></div><div aria-hidden="true" class="membre "><div class="portrait c3">M</div><b>Marion</b><span>Responsable Agence vidéo</span></div></div></div></div>
+    </section>
+    <section class="partie">
+      <h2 class="jk">B. Le carrousel à flèches</h2>
+      <p class="desc">Le visiteur fait défiler lui-même : flèches précédent / suivant et points de position ; au doigt sur téléphone. Rien ne bouge tout seul.</p>
+      <div class="scene"><p class="titre-eq">Le réseau de talents qui <em>sublime vos vidéos.</em></p><div class="carrousel"><div class="fenetre" id="fen" tabindex="0" role="region" aria-label="Portraits de l'équipe"><div class="membre "><div class="portrait c1">T</div><b>Thomas</b><span>Directeur Artistique</span></div><div class="membre "><div class="portrait c2">A</div><b>Alex</b><span>Responsable Équipe Motion Design</span></div><div class="membre "><div class="portrait c3">V</div><b>Victor</b><span>Motion Designer</span></div><div class="membre "><div class="portrait c4">V</div><b>Vincent</b><span>Cadreur</span></div><div class="membre "><div class="portrait c1">T</div><b>Tomasz</b><span>Motion Designer</span></div><div class="membre "><div class="portrait c2">S</div><b>Sophie</b><span>Chef de Projet</span></div><div class="membre "><div class="portrait c3">M</div><b>Marion</b><span>Responsable Agence vidéo</span></div></div><div class="nav"><button class="fl" id="prec" aria-label="Portraits précédents">←</button><div class="points" id="pts"><i class="on"></i><i></i><i></i></div><button class="fl" id="suiv" aria-label="Portraits suivants">→</button></div></div></div>
+    </section>
+    <section class="partie">
+      <h2 class="jk">C. Le portrait à la une</h2>
+      <p class="desc">Un portrait au centre, plus grand, les voisins plus petits et atténués ; toutes les 3 secondes la personne suivante passe au centre (flèches pour avancer soi-même). Plus « présentation », met chaque personne en avant.</p>
+      <div class="scene"><p class="titre-eq">Le réseau de talents qui <em>sublime vos vidéos.</em></p><div class="scene-c" id="sc"><div class="membre "><div class="portrait c1">T</div><b>Thomas</b><span>Directeur Artistique</span></div><div class="membre "><div class="portrait c2">A</div><b>Alex</b><span>Responsable Équipe Motion Design</span></div><div class="membre "><div class="portrait c3">V</div><b>Victor</b><span>Motion Designer</span></div><div class="membre "><div class="portrait c4">V</div><b>Vincent</b><span>Cadreur</span></div><div class="membre "><div class="portrait c1">T</div><b>Tomasz</b><span>Motion Designer</span></div><div class="membre "><div class="portrait c2">S</div><b>Sophie</b><span>Chef de Projet</span></div><div class="membre "><div class="portrait c3">M</div><b>Marion</b><span>Responsable Agence vidéo</span></div></div><div class="nav"><button class="fl" id="cprec" aria-label="Personne précédente">←</button><button class="fl" id="csuiv" aria-label="Personne suivante">→</button></div></div>
+    </section>
+    <p style="height:90px"></p>
+  </div>
+</main>
+<script>
+const f = document.getElementById('fen'), pts = [...document.querySelectorAll('#pts i')];
+const pas = () => f.clientWidth * .8;
+document.getElementById('suiv').onclick = () => f.scrollBy({ left: pas() });
+document.getElementById('prec').onclick = () => f.scrollBy({ left: -pas() });
+f.addEventListener('scroll', () => { const r = f.scrollLeft / Math.max(1, f.scrollWidth - f.clientWidth); const k = Math.round(r * (pts.length - 1)); pts.forEach((p, i) => p.classList.toggle('on', i === k)); });
+const ms = [...document.querySelectorAll('#sc .membre')]; let c = 0;
+function place() { const n = ms.length; ms.forEach((m, i) => { const d = (i - c + n) % n; const rel = d > n / 2 ? d - n : d; m.classList.toggle('centre', rel === 0); m.classList.toggle('voisin', Math.abs(rel) === 1); m.classList.toggle('cache', Math.abs(rel) > 2); m.style.order = rel + 10; }); }
+place();
+const calme = matchMedia('(prefers-reduced-motion: reduce)').matches; let t = calme ? null : setInterval(() => { c = (c + 1) % ms.length; place(); }, 3000);
+const stop = () => { clearInterval(t); t = null; };
+document.getElementById('csuiv').onclick = () => { stop(); c = (c + 1) % ms.length; place(); };
+document.getElementById('cprec').onclick = () => { stop(); c = (c - 1 + ms.length) % ms.length; place(); };
+document.getElementById('sc').addEventListener('mouseenter', stop);
+</script>
+</body>
+</html>
