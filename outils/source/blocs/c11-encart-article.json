@@ -1,0 +1,166 @@
+{
+ "cle": "c11-encart-article",
+ "titre": "Rolling · Encart au milieu des articles",
+ "type": "e-flexbox",
+ "apercu": "post",
+ "composition": {
+  "xml_structure": "<e-flexbox configuration-id=\"Encart au milieu des articles\"><e-flexbox configuration-id=\"Encart · date\"><e-paragraph configuration-id=\"Encart · jour\"></e-paragraph><e-paragraph configuration-id=\"Encart · mois\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Encart · guide\"><e-div-block configuration-id=\"Encart · guide · couverture\"><e-image configuration-id=\"Encart · guide · image\"></e-image><e-paragraph configuration-id=\"Encart · guide · type\"></e-paragraph></e-div-block><e-div-block configuration-id=\"Encart · guide · couverture logo\"><e-image configuration-id=\"Encart · guide · logo du client\"></e-image><e-paragraph configuration-id=\"Encart · guide · type (couverture logo)\"></e-paragraph></e-div-block><e-div-block configuration-id=\"Encart · guide · couverture dégradé\"><e-image configuration-id=\"Encart · guide · picto du guide\"></e-image></e-div-block></e-flexbox><e-flexbox configuration-id=\"Encart · textes\"><e-paragraph configuration-id=\"Encart · rubrique webinar\"></e-paragraph><e-paragraph configuration-id=\"Encart · rubrique guide\"></e-paragraph><e-paragraph configuration-id=\"Encart · titre\"></e-paragraph><e-paragraph configuration-id=\"Encart · date complète\"></e-paragraph><e-paragraph configuration-id=\"Encart · résumé\"></e-paragraph></e-flexbox><e-button configuration-id=\"Encart · inscription\"></e-button><e-button configuration-id=\"Encart · téléchargement\"></e-button></e-flexbox>",
+  "element_config": {
+   "Encart · jour": {
+    "paragraph": "⟦rolling-webinar|info=jour⟧"
+   },
+   "Encart · mois": {
+    "paragraph": "⟦rolling-webinar|info=mois⟧"
+   },
+   "Encart · guide · image": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/dynamique/rolling-image/image=une.png"
+     },
+     "size": "medium"
+    }
+   },
+   "Encart · guide · type": {
+    "paragraph": "⟦rolling-champ|champ=type_doc⟧"
+   },
+   "Encart · guide · logo du client": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/dynamique/rolling-image/image=logo&source=temoignage.png"
+     },
+     "size": "medium"
+    }
+   },
+   "Encart · guide · type (couverture logo)": {
+    "paragraph": "⟦rolling-champ|champ=type_doc⟧"
+   },
+   "Encart · guide · picto du guide": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/picto-guides.webp"
+     },
+     "size": "medium"
+    }
+   },
+   "Encart · rubrique webinar": {
+    "paragraph": "Prochain webinar"
+   },
+   "Encart · rubrique guide": {
+    "paragraph": "À télécharger"
+   },
+   "Encart · titre": {
+    "paragraph": "⟦rolling-article|info=titre⟧"
+   },
+   "Encart · date complète": {
+    "paragraph": "⟦rolling-webinar|info=complete⟧"
+   },
+   "Encart · résumé": {
+    "paragraph": "⟦rolling-champ|champ=resume⟧"
+   },
+   "Encart · inscription": {
+    "text": "S’inscrire",
+    "link": {
+     "destination": "⟦rolling-lien|lien=inscription⟧"
+    }
+   },
+   "Encart · téléchargement": {
+    "text": "Télécharger",
+    "link": {
+     "destination": "⟦rolling-lien|lien=lien⟧"
+    }
+   }
+  },
+  "classes": {
+   "Encart au milieu des articles": [
+    "carte-verre",
+    "encart-milieu",
+    "contexte-webinar-ou-guide",
+    "si-contexte"
+   ],
+   "Encart · date": [
+    "date-mini",
+    "si-type--webinar"
+   ],
+   "Encart · jour": [
+    "date-mini-jour"
+   ],
+   "Encart · mois": [
+    "date-mini-mois"
+   ],
+   "Encart · guide": [
+    "si-type--guide"
+   ],
+   "Encart · guide · couverture": [
+    "cadre-photo",
+    "cadre-4-3",
+    "si-image"
+   ],
+   "Encart · guide · image": [
+    "image-couvrante"
+   ],
+   "Encart · guide · type": [
+    "bandeau-video",
+    "si-type-doc"
+   ],
+   "Encart · guide · couverture logo": [
+    "couverture-logo",
+    "sans-image",
+    "si-temoignage-logo"
+   ],
+   "Encart · guide · logo du client": [
+    "logo-couverture"
+   ],
+   "Encart · guide · type (couverture logo)": [
+    "bandeau-video",
+    "si-type-doc"
+   ],
+   "Encart · guide · couverture dégradé": [
+    "couverture-degrade",
+    "sans-image",
+    "sans-temoignage-logo"
+   ],
+   "Encart · guide · picto du guide": [
+    "picto-couverture"
+   ],
+   "Encart · textes": [
+    "pile-serree"
+   ],
+   "Encart · rubrique webinar": [
+    "label",
+    "label-violet",
+    "si-type--webinar"
+   ],
+   "Encart · rubrique guide": [
+    "label",
+    "label-violet",
+    "si-type--guide"
+   ],
+   "Encart · titre": [
+    "titre-benefice"
+   ],
+   "Encart · date complète": [
+    "texte-petit",
+    "si-type--webinar"
+   ],
+   "Encart · résumé": [
+    "texte-petit",
+    "si-type--guide",
+    "si-resume"
+   ],
+   "Encart · inscription": [
+    "bouton-principal",
+    "bouton-petit",
+    "si-type--webinar"
+   ],
+   "Encart · téléchargement": [
+    "bouton-principal",
+    "bouton-petit",
+    "si-type--guide"
+   ]
+  },
+  "style": {
+   "Encart · guide": "display: flex; flex-direction: column; gap: 0; padding: 0;"
+  }
+ },
+ "brut": {}
+}

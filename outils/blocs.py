@@ -961,6 +961,15 @@ def couvertures_rex(p, taille):
     ]
 
 
+def couvertures_guide(p, taille):
+    """Couverture du guide lu : image à la une, sinon logo du client (REX), sinon dégradé avec picto."""
+    return couvertures_rex(p, taille) + [
+        D(p + ' · couverture dégradé', ['couverture-degrade', 'sans-image', 'sans-temoignage-logo'], enfants=[
+            I(p + ' · picto du guide', 'picto-guides.webp', cls=['picto-couverture'], taille='medium'),
+        ]),
+    ]
+
+
 INSCRIPTION = DYN('rolling-lien', lien='inscription')
 carte_webinar = F('Carte webinar', ['carte-verre', 'carte-webinar'], tag='article', enfants=[
     F('Webinar · date', ['webinar-date'], enfants=[
@@ -1194,6 +1203,23 @@ fiche_temoignage = F('Fiche témoignage', None, COLONNE + ' align-items: stretch
     final,
 ])
 
+encart_article = F('Encart au milieu des articles', ['carte-verre', 'encart-milieu', 'contexte-webinar-ou-guide', 'si-contexte'], enfants=[
+    F('Encart · date', ['date-mini', 'si-type--webinar'], enfants=[
+        P('Encart · jour', DYN('rolling-webinar', info='jour'), ['date-mini-jour']),
+        P('Encart · mois', DYN('rolling-webinar', info='mois'), ['date-mini-mois']),
+    ]),
+] + [F('Encart · guide', ['si-type--guide'], COLONNE + ' padding: 0;', enfants=couvertures_guide('Encart · guide', 'medium'))] + [
+    F('Encart · textes', ['pile-serree'], enfants=[
+        P('Encart · rubrique webinar', 'Prochain webinar', ['label', 'label-violet', 'si-type--webinar']),
+        P('Encart · rubrique guide', 'À télécharger', ['label', 'label-violet', 'si-type--guide']),
+        P('Encart · titre', DYN('rolling-article', info='titre'), ['titre-benefice']),
+        P('Encart · date complète', DYN('rolling-webinar', info='complete'), ['texte-petit', 'si-type--webinar']),
+        P('Encart · résumé', DYN('rolling-champ', champ='resume'), ['texte-petit', 'si-type--guide', 'si-resume']),
+    ]),
+    B('Encart · inscription', 'S’inscrire', INSCRIPTION, ['bouton-principal', 'bouton-petit', 'si-type--webinar']),
+    B('Encart · téléchargement', 'Télécharger', HUBSPOT, ['bouton-principal', 'bouton-petit', 'si-type--guide']),
+])
+
 fiche_article = F('Fiche article', None, COLONNE + ' align-items: stretch; padding: 0; width: 100%;', tag='article', enfants=[
     F('Article · haut', ['section', 'section-entete'], tag='section', enfants=[
         F('Article · grille', ['conteneur', 'article-grille'], enfants=[
@@ -1210,6 +1236,44 @@ fiche_article = F('Fiche article', None, COLONNE + ' align-items: stretch; paddi
                     I('Article · image · fichier', DYN('rolling-image', image='une'), cls=['image-couvrante'], taille='large'),
                 ]),
                 W('Article · texte', 'rolling-contenu'),
+                F('Article · ressources', ['carte-verre', 'bloc-ressources-article', 'si-ressources'], enfants=[
+                    P('Article · ressources · label', 'Pour aller plus loin', ['label', 'label-violet']),
+                    H('Article · ressources · titre', 'Nos autres <em>ressources.</em>', 'h2', ['titre-xs']),
+                    F('Article · ressources · cartes', ['ressources-article'], enfants=[
+                        F('Ressource guide', ['carte-verre', 'carte-ressource', 'contexte-dernier-guide', 'si-contexte'], enfants=couvertures_guide('Ressource guide', 'medium_large') + [
+                            P('Ressource guide · rubrique', 'Guides et REX', ['label', 'label-violet']),
+                            P('Ressource guide · titre', DYN('rolling-article', info='titre'), ['titre-benefice']),
+                            B('Ressource guide · lien', 'Télécharger', HUBSPOT, ['temoin-lien']),
+                        ]),
+                        F('Ressource webinar', ['carte-verre', 'carte-ressource', 'contexte-prochain-webinar', 'si-contexte'], enfants=[
+                            D('Ressource webinar · image', ['cadre-photo', 'cadre-4-3', 'si-image'], enfants=[
+                                I('Ressource webinar · image · fichier', DYN('rolling-image', image='une'), cls=['image-couvrante'], taille='medium_large'),
+                            ]),
+                            F('Ressource webinar · date', ['webinar-affiche', 'affiche-petite', 'sans-image'], enfants=[
+                                P('Ressource webinar · jour', DYN('rolling-webinar', info='jour'), ['affiche-jour']),
+                                P('Ressource webinar · mois', DYN('rolling-webinar', info='mois'), ['affiche-mois-nom']),
+                                P('Ressource webinar · heure', DYN('rolling-webinar', info='heure'), ['affiche-heure']),
+                            ]),
+                            P('Ressource webinar · rubrique', 'Prochain webinar', ['label', 'label-violet']),
+                            P('Ressource webinar · titre', DYN('rolling-article', info='titre'), ['titre-benefice']),
+                            B('Ressource webinar · lien', 'Je m’inscris', INSCRIPTION, ['temoin-lien']),
+                        ]),
+                        F('Ressource replay ou réalisation', ['carte-verre', 'carte-ressource', 'contexte-replay-ou-realisation', 'si-contexte'], enfants=[
+                            D('Ressource replay · image', ['cadre-photo', 'cadre-4-3', 'si-image'], enfants=[
+                                I('Ressource replay · image · fichier', DYN('rolling-image', image='une'), cls=['image-couvrante'], taille='medium_large'),
+                            ]),
+                            F('Ressource replay · date', ['webinar-affiche', 'affiche-petite', 'sans-image', 'si-type--webinar'], enfants=[
+                                P('Ressource replay · jour', DYN('rolling-webinar', info='jour'), ['affiche-jour']),
+                                P('Ressource replay · mois', DYN('rolling-webinar', info='mois'), ['affiche-mois-nom']),
+                            ]),
+                            P('Ressource replay · rubrique replay', 'Replays', ['label', 'label-violet', 'si-type--webinar']),
+                            P('Ressource replay · rubrique réalisation', 'Nos réalisations', ['label', 'label-violet', 'si-type--realisation']),
+                            P('Ressource replay · titre', DYN('rolling-article', info='titre'), ['titre-benefice']),
+                            B('Ressource replay · lien replay', 'Voir le replay', DYN('rolling-lien', lien='replay'), ['temoin-lien', 'si-type--webinar']),
+                            B('Ressource replay · lien réalisation', 'Voir la vidéo', FICHE, ['temoin-lien', 'si-type--realisation']),
+                        ]),
+                    ]),
+                ]),
             ]),
             F('Article · outils', ['article-cote'], enfants=[
                 F('Article · outils · colle', ['article-cote-colle'], enfants=[
@@ -1238,6 +1302,13 @@ fiche_article = F('Fiche article', None, COLONNE + ' align-items: stretch; paddi
                         F('Article · résumer', ['rangee', 'resumer'], enfants=[
                             B('Article · résumer · %s' % nom, nom, DYN('rolling-partage', vers=cle), ['bouton-ia'], onglet=True)
                             for cle, nom in [('chatgpt', 'ChatGPT'), ('claude', 'Claude'), ('perplexity', 'Perplexity'), ('lechat', 'Le Chat')]
+                        ]),
+                    ]),
+                    F('Article · guide', ['carte-verre', 'carte-outils', 'guide-cote', 'contexte-dernier-guide', 'si-contexte'], enfants=couvertures_guide('Article · guide', 'medium') + [
+                        F('Article · guide · textes', ['pile-serree'], enfants=[
+                            P('Article · guide · label', 'À télécharger', ['label']),
+                            P('Article · guide · titre', DYN('rolling-article', info='titre'), ['cas-info-valeur']),
+                            B('Article · guide · lien', 'Télécharger', HUBSPOT, ['temoin-lien']),
                         ]),
                     ]),
                     F('Article · appel', ['carte-verre', 'section-sombre', 'carte-sombre'], enfants=[
@@ -2016,6 +2087,7 @@ MODELES_SITE = [
     ('c8-carte-replay', 'Rolling · Carte replay', carte_replay, 'rolling_webinar'),
     ('c9-carte-article-une', 'Rolling · Carte article à la une', carte_article_une, 'post'),
     ('c10-aucun-webinar', 'Rolling · Aucun webinar programmé', aucun_webinar, ''),
+    ('c11-encart-article', 'Rolling · Encart au milieu des articles', encart_article, 'post'),
     ('f1-fiche-realisation', 'Rolling · Fiche réalisation', fiche_realisation, 'rolling_realisation'),
     ('f2-fiche-temoignage', 'Rolling · Fiche témoignage', fiche_temoignage, 'rolling_temoignage'),
     ('f3-fiche-article', 'Rolling · Article de blog', fiche_article, 'post'),

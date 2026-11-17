@@ -14,10 +14,10 @@ body { --paragraphe: #4A4858; --encre: #0F0F12; --legende: #6E6B7B; --violet: #5
 .is-root-container .rl-chiffre-valeur { font-family: "Bricolage Grotesque"; font-weight: 800; font-size: 56px; line-height: 1; color: #8E4DE6; }
 .is-root-container > p, .is-root-container > ul, .is-root-container > ol { margin: 20px 0 0; font-family: Hanken Grotesk; font-size: 18px; line-height: 1.7; color: var(--rl-paragraphe, var(--paragraphe)); }
 .is-root-container strong { color: var(--rl-texte, var(--encre)); }
-.is-root-container a { color: #5B3BEA; text-decoration: underline; }
+.is-root-container a:not(.rl-encart-milieu a) { color: #5B3BEA; text-decoration: underline; }
 .is-root-container > h2 { margin: 52px 0 0; font-family: Bricolage Grotesque; font-weight: 650; font-size: clamp(26px, 2.6vw, 34px); line-height: 1.15; letter-spacing: -0.04em; color: var(--rl-texte, var(--encre)); scroll-margin-top: 110px; }
 .is-root-container > h3 { margin: 32px 0 0; font-family: Bricolage Grotesque; font-weight: 650; font-size: 23px; letter-spacing: -0.035em; color: var(--rl-texte, var(--encre)); }
-.is-root-container img { max-width: 100%; height: auto; border-radius: 22px; }
+.is-root-container img:not(.rl-encart-milieu img) { max-width: 100%; height: auto; border-radius: 22px; }
 .is-root-container figure { margin: 32px 0; }
 .is-root-container blockquote { margin: 28px 0; padding: 20px 24px; border-left: 3px solid #5B3BEA; border-radius: 0 18px 18px 0; background: #EDE6FF; font-family: Bricolage Grotesque; font-size: 20px; line-height: 1.5; font-weight: 600; }
 @media (max-width: 767px) {

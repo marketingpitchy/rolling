@@ -4,7 +4,7 @@
  "type": "e-flexbox",
  "apercu": "post",
  "composition": {
-  "xml_structure": "<e-flexbox configuration-id=\"Fiche article\"><e-flexbox configuration-id=\"Article · haut\"><e-flexbox configuration-id=\"Article · grille\"><e-flexbox configuration-id=\"Article · principal\"><e-paragraph configuration-id=\"Article · fil d’Ariane\"></e-paragraph><e-heading configuration-id=\"Article · titre\"></e-heading><e-flexbox configuration-id=\"Article · infos\"><e-paragraph configuration-id=\"Article · catégorie\"></e-paragraph><e-paragraph configuration-id=\"Article · publié\"></e-paragraph><e-paragraph configuration-id=\"Article · mis à jour\"></e-paragraph><e-paragraph configuration-id=\"Article · lecture\"></e-paragraph></e-flexbox><e-div-block configuration-id=\"Article · image\"><e-image configuration-id=\"Article · image · fichier\"></e-image></e-div-block><e-paragraph configuration-id=\"Article · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Article · outils\"><e-flexbox configuration-id=\"Article · outils · colle\"><e-flexbox configuration-id=\"Article · lecture et sommaire\"><e-paragraph configuration-id=\"Article · lecture · libellé\"></e-paragraph><e-paragraph configuration-id=\"Article · lecture · durée\"></e-paragraph><e-paragraph configuration-id=\"Article · sommaire · libellé\"></e-paragraph><e-paragraph configuration-id=\"Article · sommaire\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Article · partage et IA\"><e-paragraph configuration-id=\"Article · partage · libellé\"></e-paragraph><e-flexbox configuration-id=\"Article · partage\"><e-flexbox configuration-id=\"Article · partage · LinkedIn\"><e-image configuration-id=\"Article · partage · LinkedIn · icône\"></e-image><e-paragraph configuration-id=\"Article · partage · LinkedIn · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Article · partage · Facebook\"><e-image configuration-id=\"Article · partage · Facebook · icône\"></e-image><e-paragraph configuration-id=\"Article · partage · Facebook · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Article · partage · X\"><e-image configuration-id=\"Article · partage · X · icône\"></e-image><e-paragraph configuration-id=\"Article · partage · X · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Article · partage · WhatsApp\"><e-image configuration-id=\"Article · partage · WhatsApp · icône\"></e-image><e-paragraph configuration-id=\"Article · partage · WhatsApp · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Article · partage · E-mail\"><e-image configuration-id=\"Article · partage · E-mail · icône\"></e-image><e-paragraph configuration-id=\"Article · partage · E-mail · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Article · partage · Copier\"><e-image configuration-id=\"Article · partage · Copier · icône\"></e-image><e-paragraph configuration-id=\"Article · partage · Copier · texte\"></e-paragraph></e-flexbox></e-flexbox><e-paragraph configuration-id=\"Article · résumer · libellé\"></e-paragraph><e-flexbox configuration-id=\"Article · résumer\"><e-button configuration-id=\"Article · résumer · ChatGPT\"></e-button><e-button configuration-id=\"Article · résumer · Claude\"></e-button><e-button configuration-id=\"Article · résumer · Perplexity\"></e-button><e-button configuration-id=\"Article · résumer · Le Chat\"></e-button></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Article · appel\"><e-paragraph configuration-id=\"Article · appel · titre\"></e-paragraph><e-paragraph configuration-id=\"Article · appel · texte\"></e-paragraph><e-button configuration-id=\"Article · appel · bouton\"></e-button></e-flexbox></e-flexbox></e-flexbox></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Article · à lire aussi\"><e-flexbox configuration-id=\"Article · à lire aussi · contenu\"><e-heading configuration-id=\"Article · à lire aussi · titre\"></e-heading><e-paragraph configuration-id=\"Article · à lire aussi · liste\"></e-paragraph></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Appel final\"><e-image configuration-id=\"Final · verre cannelé\"></e-image><e-flexbox configuration-id=\"Final · contenu\"><e-heading configuration-id=\"Final · titre\"></e-heading><e-paragraph configuration-id=\"Final · texte\"></e-paragraph><e-flexbox configuration-id=\"Final · bouton\"><e-button configuration-id=\"Final · réserver\"></e-button></e-flexbox><e-flexbox configuration-id=\"Final · badges\"><e-flexbox configuration-id=\"Final · badge · IA sécurisée\"><e-image configuration-id=\"Final · badge · IA sécurisée · icône\"></e-image><e-paragraph configuration-id=\"Final · badge · IA sécurisée · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Final · badge · Données hébergées en Europe\"><e-image configuration-id=\"Final · badge · Données hébergées en Europe · icône\"></e-image><e-paragraph configuration-id=\"Final · badge · Données hébergées en Europe · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Final · badge · Conforme RGPD\"><e-image configuration-id=\"Final · badge · Conforme RGPD · icône\"></e-image><e-paragraph configuration-id=\"Final · badge · Conforme RGPD · texte\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox></e-flexbox></e-flexbox>",
+  "xml_structure": "<e-flexbox configuration-id=\"Fiche article\"><e-flexbox configuration-id=\"Article · haut\"><e-flexbox configuration-id=\"Article · grille\"><e-flexbox configuration-id=\"Article · principal\"><e-paragraph configuration-id=\"Article · fil d’Ariane\"></e-paragraph><e-heading configuration-id=\"Article · titre\"></e-heading><e-flexbox configuration-id=\"Article · infos\"><e-paragraph configuration-id=\"Article · catégorie\"></e-paragraph><e-paragraph configuration-id=\"Article · publié\"></e-paragraph><e-paragraph configuration-id=\"Article · mis à jour\"></e-paragraph><e-paragraph configuration-id=\"Article · lecture\"></e-paragraph></e-flexbox><e-div-block configuration-id=\"Article · image\"><e-image configuration-id=\"Article · image · fichier\"></e-image></e-div-block><e-paragraph configuration-id=\"Article · texte\"></e-paragraph><e-flexbox configuration-id=\"Article · ressources\"><e-paragraph configuration-id=\"Article · ressources · label\"></e-paragraph><e-heading configuration-id=\"Article · ressources · titre\"></e-heading><e-flexbox configuration-id=\"Article · ressources · cartes\"><e-flexbox configuration-id=\"Ressource guide\"><e-div-block configuration-id=\"Ressource guide · couverture\"><e-image configuration-id=\"Ressource guide · image\"></e-image><e-paragraph configuration-id=\"Ressource guide · type\"></e-paragraph></e-div-block><e-div-block configuration-id=\"Ressource guide · couverture logo\"><e-image configuration-id=\"Ressource guide · logo du client\"></e-image><e-paragraph configuration-id=\"Ressource guide · type (couverture logo)\"></e-paragraph></e-div-block><e-div-block configuration-id=\"Ressource guide · couverture dégradé\"><e-image configuration-id=\"Ressource guide · picto du guide\"></e-image></e-div-block><e-paragraph configuration-id=\"Ressource guide · rubrique\"></e-paragraph><e-paragraph configuration-id=\"Ressource guide · titre\"></e-paragraph><e-button configuration-id=\"Ressource guide · lien\"></e-button></e-flexbox><e-flexbox configuration-id=\"Ressource webinar\"><e-div-block configuration-id=\"Ressource webinar · image\"><e-image configuration-id=\"Ressource webinar · image · fichier\"></e-image></e-div-block><e-flexbox configuration-id=\"Ressource webinar · date\"><e-paragraph configuration-id=\"Ressource webinar · jour\"></e-paragraph><e-paragraph configuration-id=\"Ressource webinar · mois\"></e-paragraph><e-paragraph configuration-id=\"Ressource webinar · heure\"></e-paragraph></e-flexbox><e-paragraph configuration-id=\"Ressource webinar · rubrique\"></e-paragraph><e-paragraph configuration-id=\"Ressource webinar · titre\"></e-paragraph><e-button configuration-id=\"Ressource webinar · lien\"></e-button></e-flexbox><e-flexbox configuration-id=\"Ressource replay ou réalisation\"><e-div-block configuration-id=\"Ressource replay · image\"><e-image configuration-id=\"Ressource replay · image · fichier\"></e-image></e-div-block><e-flexbox configuration-id=\"Ressource replay · date\"><e-paragraph configuration-id=\"Ressource replay · jour\"></e-paragraph><e-paragraph configuration-id=\"Ressource replay · mois\"></e-paragraph></e-flexbox><e-paragraph configuration-id=\"Ressource replay · rubrique replay\"></e-paragraph><e-paragraph configuration-id=\"Ressource replay · rubrique réalisation\"></e-paragraph><e-paragraph configuration-id=\"Ressource replay · titre\"></e-paragraph><e-button configuration-id=\"Ressource replay · lien replay\"></e-button><e-button configuration-id=\"Ressource replay · lien réalisation\"></e-button></e-flexbox></e-flexbox></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Article · outils\"><e-flexbox configuration-id=\"Article · outils · colle\"><e-flexbox configuration-id=\"Article · lecture et sommaire\"><e-paragraph configuration-id=\"Article · lecture · libellé\"></e-paragraph><e-paragraph configuration-id=\"Article · lecture · durée\"></e-paragraph><e-paragraph configuration-id=\"Article · sommaire · libellé\"></e-paragraph><e-paragraph configuration-id=\"Article · sommaire\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Article · partage et IA\"><e-paragraph configuration-id=\"Article · partage · libellé\"></e-paragraph><e-flexbox configuration-id=\"Article · partage\"><e-flexbox configuration-id=\"Article · partage · LinkedIn\"><e-image configuration-id=\"Article · partage · LinkedIn · icône\"></e-image><e-paragraph configuration-id=\"Article · partage · LinkedIn · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Article · partage · Facebook\"><e-image configuration-id=\"Article · partage · Facebook · icône\"></e-image><e-paragraph configuration-id=\"Article · partage · Facebook · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Article · partage · X\"><e-image configuration-id=\"Article · partage · X · icône\"></e-image><e-paragraph configuration-id=\"Article · partage · X · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Article · partage · WhatsApp\"><e-image configuration-id=\"Article · partage · WhatsApp · icône\"></e-image><e-paragraph configuration-id=\"Article · partage · WhatsApp · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Article · partage · E-mail\"><e-image configuration-id=\"Article · partage · E-mail · icône\"></e-image><e-paragraph configuration-id=\"Article · partage · E-mail · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Article · partage · Copier\"><e-image configuration-id=\"Article · partage · Copier · icône\"></e-image><e-paragraph configuration-id=\"Article · partage · Copier · texte\"></e-paragraph></e-flexbox></e-flexbox><e-paragraph configuration-id=\"Article · résumer · libellé\"></e-paragraph><e-flexbox configuration-id=\"Article · résumer\"><e-button configuration-id=\"Article · résumer · ChatGPT\"></e-button><e-button configuration-id=\"Article · résumer · Claude\"></e-button><e-button configuration-id=\"Article · résumer · Perplexity\"></e-button><e-button configuration-id=\"Article · résumer · Le Chat\"></e-button></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Article · guide\"><e-div-block configuration-id=\"Article · guide · couverture\"><e-image configuration-id=\"Article · guide · image\"></e-image><e-paragraph configuration-id=\"Article · guide · type\"></e-paragraph></e-div-block><e-div-block configuration-id=\"Article · guide · couverture logo\"><e-image configuration-id=\"Article · guide · logo du client\"></e-image><e-paragraph configuration-id=\"Article · guide · type (couverture logo)\"></e-paragraph></e-div-block><e-div-block configuration-id=\"Article · guide · couverture dégradé\"><e-image configuration-id=\"Article · guide · picto du guide\"></e-image></e-div-block><e-flexbox configuration-id=\"Article · guide · textes\"><e-paragraph configuration-id=\"Article · guide · label\"></e-paragraph><e-paragraph configuration-id=\"Article · guide · titre\"></e-paragraph><e-button configuration-id=\"Article · guide · lien\"></e-button></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Article · appel\"><e-paragraph configuration-id=\"Article · appel · titre\"></e-paragraph><e-paragraph configuration-id=\"Article · appel · texte\"></e-paragraph><e-button configuration-id=\"Article · appel · bouton\"></e-button></e-flexbox></e-flexbox></e-flexbox></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Article · à lire aussi\"><e-flexbox configuration-id=\"Article · à lire aussi · contenu\"><e-heading configuration-id=\"Article · à lire aussi · titre\"></e-heading><e-paragraph configuration-id=\"Article · à lire aussi · liste\"></e-paragraph></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Appel final\"><e-image configuration-id=\"Final · verre cannelé\"></e-image><e-flexbox configuration-id=\"Final · contenu\"><e-heading configuration-id=\"Final · titre\"></e-heading><e-paragraph configuration-id=\"Final · texte\"></e-paragraph><e-flexbox configuration-id=\"Final · bouton\"><e-button configuration-id=\"Final · réserver\"></e-button></e-flexbox><e-flexbox configuration-id=\"Final · badges\"><e-flexbox configuration-id=\"Final · badge · IA sécurisée\"><e-image configuration-id=\"Final · badge · IA sécurisée · icône\"></e-image><e-paragraph configuration-id=\"Final · badge · IA sécurisée · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Final · badge · Données hébergées en Europe\"><e-image configuration-id=\"Final · badge · Données hébergées en Europe · icône\"></e-image><e-paragraph configuration-id=\"Final · badge · Données hébergées en Europe · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Final · badge · Conforme RGPD\"><e-image configuration-id=\"Final · badge · Conforme RGPD · icône\"></e-image><e-paragraph configuration-id=\"Final · badge · Conforme RGPD · texte\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox></e-flexbox></e-flexbox>",
   "element_config": {
    "Fiche article": {
     "tag": "article"
@@ -41,6 +41,119 @@
    },
    "Article · texte": {
     "paragraph": "⟦widget:rolling-contenu⟧"
+   },
+   "Article · ressources · label": {
+    "paragraph": "Pour aller plus loin"
+   },
+   "Article · ressources · titre": {
+    "tag": "h2",
+    "title": "Nos autres <em>ressources.</em>"
+   },
+   "Ressource guide · image": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/dynamique/rolling-image/image=une.png"
+     },
+     "size": "medium_large"
+    }
+   },
+   "Ressource guide · type": {
+    "paragraph": "⟦rolling-champ|champ=type_doc⟧"
+   },
+   "Ressource guide · logo du client": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/dynamique/rolling-image/image=logo&source=temoignage.png"
+     },
+     "size": "medium"
+    }
+   },
+   "Ressource guide · type (couverture logo)": {
+    "paragraph": "⟦rolling-champ|champ=type_doc⟧"
+   },
+   "Ressource guide · picto du guide": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/picto-guides.webp"
+     },
+     "size": "medium"
+    }
+   },
+   "Ressource guide · rubrique": {
+    "paragraph": "Guides et REX"
+   },
+   "Ressource guide · titre": {
+    "paragraph": "⟦rolling-article|info=titre⟧"
+   },
+   "Ressource guide · lien": {
+    "text": "Télécharger",
+    "link": {
+     "destination": "⟦rolling-lien|lien=lien⟧"
+    }
+   },
+   "Ressource webinar · image · fichier": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/dynamique/rolling-image/image=une.png"
+     },
+     "size": "medium_large"
+    }
+   },
+   "Ressource webinar · jour": {
+    "paragraph": "⟦rolling-webinar|info=jour⟧"
+   },
+   "Ressource webinar · mois": {
+    "paragraph": "⟦rolling-webinar|info=mois⟧"
+   },
+   "Ressource webinar · heure": {
+    "paragraph": "⟦rolling-webinar|info=heure⟧"
+   },
+   "Ressource webinar · rubrique": {
+    "paragraph": "Prochain webinar"
+   },
+   "Ressource webinar · titre": {
+    "paragraph": "⟦rolling-article|info=titre⟧"
+   },
+   "Ressource webinar · lien": {
+    "text": "Je m’inscris",
+    "link": {
+     "destination": "⟦rolling-lien|lien=inscription⟧"
+    }
+   },
+   "Ressource replay · image · fichier": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/dynamique/rolling-image/image=une.png"
+     },
+     "size": "medium_large"
+    }
+   },
+   "Ressource replay · jour": {
+    "paragraph": "⟦rolling-webinar|info=jour⟧"
+   },
+   "Ressource replay · mois": {
+    "paragraph": "⟦rolling-webinar|info=mois⟧"
+   },
+   "Ressource replay · rubrique replay": {
+    "paragraph": "Replays"
+   },
+   "Ressource replay · rubrique réalisation": {
+    "paragraph": "Nos réalisations"
+   },
+   "Ressource replay · titre": {
+    "paragraph": "⟦rolling-article|info=titre⟧"
+   },
+   "Ressource replay · lien replay": {
+    "text": "Voir le replay",
+    "link": {
+     "destination": "⟦rolling-lien|lien=replay⟧"
+    }
+   },
+   "Ressource replay · lien réalisation": {
+    "text": "Voir la vidéo",
+    "link": {
+     "destination": "⟦rolling-lien|lien=fiche⟧"
+    }
    },
    "Article · lecture · libellé": {
     "paragraph": "Temps de lecture"
@@ -188,6 +301,48 @@
      "isTargetBlank": true
     }
    },
+   "Article · guide · image": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/dynamique/rolling-image/image=une.png"
+     },
+     "size": "medium"
+    }
+   },
+   "Article · guide · type": {
+    "paragraph": "⟦rolling-champ|champ=type_doc⟧"
+   },
+   "Article · guide · logo du client": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/dynamique/rolling-image/image=logo&source=temoignage.png"
+     },
+     "size": "medium"
+    }
+   },
+   "Article · guide · type (couverture logo)": {
+    "paragraph": "⟦rolling-champ|champ=type_doc⟧"
+   },
+   "Article · guide · picto du guide": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/picto-guides.webp"
+     },
+     "size": "medium"
+    }
+   },
+   "Article · guide · label": {
+    "paragraph": "À télécharger"
+   },
+   "Article · guide · titre": {
+    "paragraph": "⟦rolling-article|info=titre⟧"
+   },
+   "Article · guide · lien": {
+    "text": "Télécharger",
+    "link": {
+     "destination": "⟦rolling-lien|lien=lien⟧"
+    }
+   },
    "Article · appel · titre": {
     "paragraph": "Et si ce contenu devenait <em>une vidéo&nbsp;?</em>"
    },
@@ -308,6 +463,154 @@
    "Article · image · fichier": [
     "image-couvrante"
    ],
+   "Article · ressources": [
+    "carte-verre",
+    "bloc-ressources-article",
+    "si-ressources"
+   ],
+   "Article · ressources · label": [
+    "label",
+    "label-violet"
+   ],
+   "Article · ressources · titre": [
+    "titre-xs"
+   ],
+   "Article · ressources · cartes": [
+    "ressources-article"
+   ],
+   "Ressource guide": [
+    "carte-verre",
+    "carte-ressource",
+    "contexte-dernier-guide",
+    "si-contexte"
+   ],
+   "Ressource guide · couverture": [
+    "cadre-photo",
+    "cadre-4-3",
+    "si-image"
+   ],
+   "Ressource guide · image": [
+    "image-couvrante"
+   ],
+   "Ressource guide · type": [
+    "bandeau-video",
+    "si-type-doc"
+   ],
+   "Ressource guide · couverture logo": [
+    "couverture-logo",
+    "sans-image",
+    "si-temoignage-logo"
+   ],
+   "Ressource guide · logo du client": [
+    "logo-couverture"
+   ],
+   "Ressource guide · type (couverture logo)": [
+    "bandeau-video",
+    "si-type-doc"
+   ],
+   "Ressource guide · couverture dégradé": [
+    "couverture-degrade",
+    "sans-image",
+    "sans-temoignage-logo"
+   ],
+   "Ressource guide · picto du guide": [
+    "picto-couverture"
+   ],
+   "Ressource guide · rubrique": [
+    "label",
+    "label-violet"
+   ],
+   "Ressource guide · titre": [
+    "titre-benefice"
+   ],
+   "Ressource guide · lien": [
+    "temoin-lien"
+   ],
+   "Ressource webinar": [
+    "carte-verre",
+    "carte-ressource",
+    "contexte-prochain-webinar",
+    "si-contexte"
+   ],
+   "Ressource webinar · image": [
+    "cadre-photo",
+    "cadre-4-3",
+    "si-image"
+   ],
+   "Ressource webinar · image · fichier": [
+    "image-couvrante"
+   ],
+   "Ressource webinar · date": [
+    "webinar-affiche",
+    "affiche-petite",
+    "sans-image"
+   ],
+   "Ressource webinar · jour": [
+    "affiche-jour"
+   ],
+   "Ressource webinar · mois": [
+    "affiche-mois-nom"
+   ],
+   "Ressource webinar · heure": [
+    "affiche-heure"
+   ],
+   "Ressource webinar · rubrique": [
+    "label",
+    "label-violet"
+   ],
+   "Ressource webinar · titre": [
+    "titre-benefice"
+   ],
+   "Ressource webinar · lien": [
+    "temoin-lien"
+   ],
+   "Ressource replay ou réalisation": [
+    "carte-verre",
+    "carte-ressource",
+    "contexte-replay-ou-realisation",
+    "si-contexte"
+   ],
+   "Ressource replay · image": [
+    "cadre-photo",
+    "cadre-4-3",
+    "si-image"
+   ],
+   "Ressource replay · image · fichier": [
+    "image-couvrante"
+   ],
+   "Ressource replay · date": [
+    "webinar-affiche",
+    "affiche-petite",
+    "sans-image",
+    "si-type--webinar"
+   ],
+   "Ressource replay · jour": [
+    "affiche-jour"
+   ],
+   "Ressource replay · mois": [
+    "affiche-mois-nom"
+   ],
+   "Ressource replay · rubrique replay": [
+    "label",
+    "label-violet",
+    "si-type--webinar"
+   ],
+   "Ressource replay · rubrique réalisation": [
+    "label",
+    "label-violet",
+    "si-type--realisation"
+   ],
+   "Ressource replay · titre": [
+    "titre-benefice"
+   ],
+   "Ressource replay · lien replay": [
+    "temoin-lien",
+    "si-type--webinar"
+   ],
+   "Ressource replay · lien réalisation": [
+    "temoin-lien",
+    "si-type--realisation"
+   ],
    "Article · outils": [
     "article-cote"
    ],
@@ -391,6 +694,57 @@
    ],
    "Article · résumer · Le Chat": [
     "bouton-ia"
+   ],
+   "Article · guide": [
+    "carte-verre",
+    "carte-outils",
+    "guide-cote",
+    "contexte-dernier-guide",
+    "si-contexte"
+   ],
+   "Article · guide · couverture": [
+    "cadre-photo",
+    "cadre-4-3",
+    "si-image"
+   ],
+   "Article · guide · image": [
+    "image-couvrante"
+   ],
+   "Article · guide · type": [
+    "bandeau-video",
+    "si-type-doc"
+   ],
+   "Article · guide · couverture logo": [
+    "couverture-logo",
+    "sans-image",
+    "si-temoignage-logo"
+   ],
+   "Article · guide · logo du client": [
+    "logo-couverture"
+   ],
+   "Article · guide · type (couverture logo)": [
+    "bandeau-video",
+    "si-type-doc"
+   ],
+   "Article · guide · couverture dégradé": [
+    "couverture-degrade",
+    "sans-image",
+    "sans-temoignage-logo"
+   ],
+   "Article · guide · picto du guide": [
+    "picto-couverture"
+   ],
+   "Article · guide · textes": [
+    "pile-serree"
+   ],
+   "Article · guide · label": [
+    "label"
+   ],
+   "Article · guide · titre": [
+    "cas-info-valeur"
+   ],
+   "Article · guide · lien": [
+    "temoin-lien"
    ],
    "Article · appel": [
     "carte-verre",

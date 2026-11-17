@@ -37,6 +37,15 @@ class Rolling_Widget_Contenu extends Rolling_Widget {
 		/* translators: %s : titre de la vidéo. */
 		$this->texte( 'libelle_video', __( 'Bouton des vidéos (%s = titre)', 'rolling' ), __( 'Lire la vidéo : %s', 'rolling' ) );
 		$this->texte( 'libelle_tableau', __( 'Nom des tableaux sans légende (lecteurs d’écran)', 'rolling' ), __( 'Tableau', 'rolling' ) );
+		$this->add_control(
+			'encart',
+			array(
+				'label'       => __( 'Encart au milieu des articles', 'rolling' ),
+				'description' => __( 'À partir de 4 chapitres (intertitres « Titre 2 »), le prochain webinar, sinon le dernier guide, s’affiche avant le 3e chapitre. Modèle : Mes modèles « Rolling · Encart au milieu des articles ».', 'rolling' ),
+				'type'        => Controls_Manager::SWITCHER,
+				'default'     => 'yes',
+			)
+		);
 		$this->end_controls_section();
 	}
 
@@ -195,9 +204,34 @@ class Rolling_Widget_Contenu extends Rolling_Widget {
 		$this->add_render_attribute( '_wrapper', 'class', 'elementor-widget-theme-post-content' );
 	}
 
+	/**
+	 * Encart au milieu d'un article d'au moins 4 chapitres : le modèle « Rolling · Encart au milieu des articles »
+	 * (prochain webinar, sinon dernier guide) avant le 3e intertitre. Rien si aucun des deux n'est publié.
+	 *
+	 * @param string $texte Texte de l'article.
+	 * @return string
+	 */
+	private static function encart_milieu( $texte ) {
+		if ( 'post' !== get_post_type( Rolling_Dynamique::contenu_courant() ) || preg_match_all( '/<h2[\s>]/i', $texte, $titres, PREG_OFFSET_CAPTURE ) < 4 ) {
+			return $texte;
+		}
+		$modele = Rolling_Dynamique::modele_fiche( 'encart' );
+		$encart = $modele ? \Elementor\Plugin::$instance->frontend->get_builder_content_for_display( $modele, false ) : '';
+		if ( false === strpos( $encart, 'encart-milieu' ) ) {
+			return $texte;
+		}
+		$position = $titres[0][2][1];
+
+		return substr( $texte, 0, $position ) . '<div class="rl-encart-milieu">' . $encart . '</div>' . substr( $texte, $position );
+	}
+
 	/** Affichage. */
 	protected function render() {
-		$r = $this->get_settings_for_display();
-		echo '<div class="' . esc_attr( $r['classe'] ) . '" data-rl-article>' . self::enrichir( self::contenu_article(), (string) $r['libelle_video'], (string) $r['libelle_tableau'] ) . '</div>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- contenu de l'article, filtré par WordPress.
+		$r     = $this->get_settings_for_display();
+		$texte = self::enrichir( self::contenu_article(), (string) $r['libelle_video'], (string) $r['libelle_tableau'] );
+		if ( 'yes' === ( $r['encart'] ?? 'yes' ) ) {
+			$texte = self::encart_milieu( $texte );
+		}
+		echo '<div class="' . esc_attr( $r['classe'] ) . '" data-rl-article>' . $texte . '</div>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- contenu de l'article, filtré par WordPress.
 	}
 }

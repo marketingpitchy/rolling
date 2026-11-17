@@ -501,6 +501,17 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   A1 trois cartes illustrées (conseil : couverture du dernier guide, visuel de date du prochain webinar, vignette de la
   dernière réalisation qui remplace « Replays » tant qu'il n'y en a pas) ; A2 guide en grand + 2 lignes ; rubrique vide
   masquée (2 cartes si pas de webinar).
+- **0.5.17 : ressources dans les articles (A1 + B + C validés)** : fin d'article `bloc-ressources-article` (carte-verre,
+  repère `si-ressources` = au moins un guide / prochain webinar / replay ou réalisation) + grille `ressources-article`
+  (auto-fit ≥ 200 px) de `carte-ressource` (image en haut ; en mobile, lignes 112 px + texte) : dernier guide
+  (`couvertures_guide` = image > logo du client > `couverture-degrade` + picto), prochain webinar (image ou
+  `webinar-affiche affiche-petite`), contexte `replay-ou-realisation` (dernier replay, sinon dernière réalisation ;
+  `si-type--webinar` / `si-type--realisation`). Colonne : `guide-cote` (dernier guide en petit, horizontal pour ne pas
+  rallonger la colonne collante). Milieu : modèle `c11-encart-article` (« Rolling · Encart au milieu des articles »,
+  choisi aussi dans Personnaliser via FICHES['encart']) inséré par le widget Texte de l'article avant le 3e H2 si
+  ≥ 4 H2 (réglage `encart`), contexte `webinar-ou-guide`, classes `encart-milieu`, `date-mini*` ; enveloppe
+  `.rl-encart-milieu` et règles `& a` / `& img` de `article-texte` en `:not(.rl-encart-milieu …)`. Leçon test : réinstaller
+  la même version ne relance pas l'installateur ⇒ `Rolling_Installateur::installer()` à la main.
 - **Chargement de page effet film** (demande avant la fin de la livraison 4) : maquette `maquettes/loading/maquette-loading.html`
   (copie /workspace/maquette-loading.html), 4 options : A amorce 3-2-1, B clap qui se ferme puis rideau, C ouverture
   cinéma (bandes noires + REC + timecode + règle avec la tête de lecture rouge des frises, plus de filet fin), D barre de lecture en haut sans écran. Conseil : C à l'arrivée (première page

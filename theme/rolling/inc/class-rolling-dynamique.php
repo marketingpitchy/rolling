@@ -35,6 +35,7 @@ class Rolling_Dynamique {
 		'post'                => 'f3-fiche-article',
 		'404'                 => 'f4-page-404',
 		'texte'               => 'f5-page-texte',
+		'encart'              => 'c11-encart-article',
 	);
 
 	/**
@@ -74,7 +75,7 @@ class Rolling_Dynamique {
 	 * Contextes reconnus : classe repère « contexte-… » posée sur un conteneur. Le temps de ce conteneur, les balises
 	 * et les repères « si-… » lisent ce contenu au lieu de la page (ex. le bloc Ressources de l'accueil).
 	 */
-	const CONTEXTES = array( 'une', 'dernier-article', 'dernier-guide', 'prochain-webinar', 'dernier-replay', 'rex' );
+	const CONTEXTES = array( 'une', 'dernier-article', 'dernier-guide', 'prochain-webinar', 'dernier-replay', 'rex', 'webinar-ou-guide', 'replay-ou-realisation' );
 
 	/**
 	 * Nom du contexte porté par un élément (classe « contexte-… »), sinon chaîne vide.
@@ -147,7 +148,7 @@ class Rolling_Dynamique {
 			if ( $id ) {
 				$type = str_replace( 'rolling_', '', 'post' === get_post_type( $id ) ? 'article' : (string) get_post_type( $id ) );
 				$css .= $c . ' .sans-contexte{display:none!important}';
-				foreach ( array_diff( array( 'article', 'guide', 'webinar' ), array( $type ) ) as $autre ) {
+				foreach ( array_diff( array( 'article', 'guide', 'webinar', 'realisation' ), array( $type ) ) as $autre ) {
 					$css .= $c . ' .si-type--' . $autre . '{display:none!important}';
 				}
 			} else {
@@ -200,6 +201,14 @@ class Rolling_Dynamique {
 			case 'dernier-replay':
 				$ids = Rolling_Webinars::liste( 'replay', 1 );
 				return $ids ? (int) $ids[0] : 0;
+			case 'webinar-ou-guide':
+				// Encart au milieu des articles : le prochain webinar, sinon le dernier guide.
+				$id = self::contenu_du_contexte( 'prochain-webinar' );
+				return $id ? $id : self::contenu_du_contexte( 'dernier-guide' );
+			case 'replay-ou-realisation':
+				// Fin d'article : le dernier replay, sinon la dernière réalisation (tant qu'il n'y a pas de replay).
+				$id = self::contenu_du_contexte( 'dernier-replay' );
+				return $id ? $id : $dernier( 'rolling_realisation' );
 			case 'rex':
 				// Retour d'expérience du témoignage affiché (ou du témoignage lié à la réalisation affichée).
 				return Rolling_Contenus::rex( self::contenu_courant() );
@@ -431,6 +440,15 @@ class Rolling_Dynamique {
 			// Témoignage : plus d'une réalisation liée (la première est en grand en haut de la fiche).
 			return count( Rolling_Contenus::realisations_liees( $id ) ) < 2;
 		}
+		if ( 'ressources' === $cle ) {
+			// Fin d'article : au moins une ressource à montrer (guide, prochain webinar, replay ou réalisation).
+			foreach ( array( 'dernier-guide', 'prochain-webinar', 'replay-ou-realisation' ) as $nom ) {
+				if ( self::contenu_du_contexte( $nom ) ) {
+					return false;
+				}
+			}
+			return true;
+		}
 		if ( 'rex' === $cle ) {
 			// Témoignage ou réalisation : un retour d'expérience y est lié. Le repère se lit après le rendu du
 			// conteneur, donc dans son contexte « contexte-rex » : le contenu courant est alors le guide lui-même.
@@ -616,11 +634,12 @@ class Rolling_Dynamique {
 	 */
 	private static function modeles_des_listes( $document ) {
 		$donnees = (string) get_post_meta( $document, '_elementor_data', true );
+		// Texte de l'article : l'encart du milieu (modèle choisi dans Personnaliser) est affiché dedans.
+		$ids = false !== strpos( $donnees, 'rolling-contenu' ) ? array( self::modele_fiche( 'encart' ) ) : array();
 		if ( false === strpos( $donnees, 'rolling-liste' ) ) {
-			return array();
+			return array_filter( $ids );
 		}
 
-		$ids = array();
 		foreach ( (array) get_option( Rolling_Installateur::OPTION_MODELES, array() ) as $cle => $info ) {
 			if ( 0 === strpos( (string) $cle, 'c' ) && ! empty( $info['post_id'] ) ) {
 				$ids[] = (int) $info['post_id'];
@@ -693,6 +712,7 @@ class Rolling_Dynamique {
 			'post'                => __( 'Article de blog', 'rolling' ),
 			'404'                 => __( 'Page 404', 'rolling' ),
 			'texte'               => __( 'Page de texte (mentions légales, CGV, confidentialité)', 'rolling' ),
+			'encart'              => __( 'Encart au milieu des articles (à partir de 4 chapitres)', 'rolling' ),
 		);
 		foreach ( $libelles as $type => $libelle ) {
 			$wp_customize->add_setting( 'rolling_modele_' . $type, array( 'sanitize_callback' => 'absint' ) );

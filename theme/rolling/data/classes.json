@@ -6213,6 +6213,490 @@
             ]
         },
         {
+            "id": "g-9731778",
+            "label": "bloc-ressources-article",
+            "groupe": "Fiches et listes",
+            "description": "Fin d'article « Nos autres ressources » (avec carte-verre) : label, titre et cartes illustrées.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "mobile",
+                        "state": null
+                    },
+                    "props": {
+                        "padding": {
+                            "$$type": "dimensions",
+                            "value": {
+                                "block-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 18,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 16,
+                                        "unit": "px"
+                                    }
+                                },
+                                "block-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 18,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 16,
+                                        "unit": "px"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "custom_css": null
+                },
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "padding": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 28,
+                                "unit": "px"
+                            }
+                        },
+                        "margin": {
+                            "$$type": "dimensions",
+                            "value": {
+                                "block-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 56,
+                                        "unit": "px"
+                                    }
+                                }
+                            }
+                        },
+                        "display": {
+                            "$$type": "string",
+                            "value": "flex"
+                        },
+                        "flex-direction": {
+                            "$$type": "string",
+                            "value": "column"
+                        },
+                        "gap": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 6,
+                                "unit": "px"
+                            }
+                        }
+                    },
+                    "custom_css": null
+                }
+            ]
+        },
+        {
+            "id": "g-d32407a",
+            "label": "carte-ressource",
+            "groupe": "Fiches et listes",
+            "description": "Carte illustrée d'une ressource (avec carte-verre) : image en haut, rubrique, titre, lien.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "mobile",
+                        "state": null
+                    },
+                    "props": {
+                        "column-gap": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 14,
+                                "unit": "px"
+                            }
+                        },
+                        "padding": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 10,
+                                "unit": "px"
+                            }
+                        },
+                        "display": {
+                            "$$type": "string",
+                            "value": "grid"
+                        },
+                        "grid-template-columns": {
+                            "$$type": "string",
+                            "value": "112px minmax(0, 1fr)"
+                        },
+                        "align-items": {
+                            "$$type": "string",
+                            "value": "start"
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "cm93LWdhcDogNHB4OyAtLXJsLXJheW9uLXBob3RvOiAxMnB4OyAmID4gLmNhZHJlLXBob3RvLCAmID4gLmNvdXZlcnR1cmUtbG9nbywgJiA+IC5jb3V2ZXJ0dXJlLWRlZ3JhZGUsICYgPiAud2ViaW5hci1hZmZpY2hlIHsgZ3JpZC1yb3c6IDEgLyBzcGFuIDM7IH0gJiAubGFiZWwsICYgLnRpdHJlLWJlbmVmaWNlLCAmIC50ZW1vaW4tbGllbiB7IHBhZGRpbmc6IDA7IH0gJiAudGl0cmUtYmVuZWZpY2UgeyBmb250LXNpemU6IDE2cHg7IH0gJiAuYmFuZGVhdS12aWRlbyB7IGRpc3BsYXk6IG5vbmU7IH0gJiAuYWZmaWNoZS1wZXRpdGUgeyBwYWRkaW5nOiAwIDEycHg7IH0gJiAuYWZmaWNoZS1wZXRpdGUgLmFmZmljaGUtam91ciB7IGZvbnQtc2l6ZTogMzRweDsgfSAmIC5hZmZpY2hlLXBldGl0ZSAuYWZmaWNoZS1tb2lzLW5vbSB7IGZvbnQtc2l6ZTogMTRweDsgfSAmIC5hZmZpY2hlLXBldGl0ZSAuYWZmaWNoZS1oZXVyZSB7IGRpc3BsYXk6IG5vbmU7IH0gJiAucGljdG8tY291dmVydHVyZSB7IHdpZHRoOiA0MHB4OyB9"
+                    }
+                },
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "padding": {
+                            "$$type": "dimensions",
+                            "value": {
+                                "block-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 10,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 10,
+                                        "unit": "px"
+                                    }
+                                },
+                                "block-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 18,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 10,
+                                        "unit": "px"
+                                    }
+                                }
+                            }
+                        },
+                        "display": {
+                            "$$type": "string",
+                            "value": "flex"
+                        },
+                        "flex-direction": {
+                            "$$type": "string",
+                            "value": "column"
+                        },
+                        "gap": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 10,
+                                "unit": "px"
+                            }
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "LS1ybC1yYXlvbi1waG90bzogMThweDsgJiAubGFiZWwsICYgLnRpdHJlLWJlbmVmaWNlIHsgcGFkZGluZzogMCA2cHg7IH0gJiAudGVtb2luLWxpZW4geyBtYXJnaW4tdG9wOiBhdXRvOyBwYWRkaW5nOiAwIDZweDsgfSAmIC50aXRyZS1iZW5lZmljZSB7IGZvbnQtc2l6ZTogMThweDsgfQ=="
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-7a3bdda",
+            "label": "affiche-petite",
+            "groupe": "Fiches et listes",
+            "description": "Avec webinar-affiche : visuel de date en petit format (4:3), pour les cartes.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "tablet",
+                        "state": null
+                    },
+                    "props": [],
+                    "custom_css": {
+                        "raw": "JiAuYWZmaWNoZS1qb3VyIHsgZm9udC1zaXplOiA2NHB4OyB9"
+                    }
+                },
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "aspect-ratio": {
+                            "$$type": "string",
+                            "value": "4 / 3"
+                        },
+                        "padding": {
+                            "$$type": "dimensions",
+                            "value": {
+                                "block-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 0,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 22,
+                                        "unit": "px"
+                                    }
+                                },
+                                "block-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 0,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 22,
+                                        "unit": "px"
+                                    }
+                                }
+                            }
+                        },
+                        "flex": {
+                            "$$type": "flex",
+                            "value": {
+                                "flexGrow": {
+                                    "$$type": "number",
+                                    "value": 0
+                                },
+                                "flexShrink": {
+                                    "$$type": "number",
+                                    "value": 1
+                                },
+                                "flexBasis": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": "auto",
+                                        "unit": "custom"
+                                    }
+                                }
+                            }
+                        },
+                        "justify-content": {
+                            "$$type": "string",
+                            "value": "center"
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "Ym9yZGVyLXJhZGl1czogdmFyKC0tcmwtcmF5b24tcGhvdG8sIDE4cHgpOyAmIC5hZmZpY2hlLWpvdXIgeyBmb250LXNpemU6IDY0cHg7IH0gJiAuYWZmaWNoZS1tb2lzLW5vbSB7IGZvbnQtc2l6ZTogMjJweDsgfSAmIC5hZmZpY2hlLWhldXJlIHsgbWFyZ2luLXRvcDogNnB4OyBmb250LXNpemU6IDE0cHg7IH0="
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-fe84eaf",
+            "label": "guide-cote",
+            "groupe": "Fiches et listes",
+            "description": "Dernier guide dans la colonne de l'article (avec carte-verre et carte-outils) : petite couverture à gauche, titre et lien à droite.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "padding": {
+                            "$$type": "dimensions",
+                            "value": {
+                                "block-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 12,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 16,
+                                        "unit": "px"
+                                    }
+                                },
+                                "block-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 12,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 12,
+                                        "unit": "px"
+                                    }
+                                }
+                            }
+                        },
+                        "display": {
+                            "$$type": "string",
+                            "value": "grid"
+                        },
+                        "gap": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 14,
+                                "unit": "px"
+                            }
+                        },
+                        "grid-template-columns": {
+                            "$$type": "string",
+                            "value": "88px minmax(0, 1fr)"
+                        },
+                        "align-items": {
+                            "$$type": "string",
+                            "value": "center"
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "LS1ybC1yYXlvbi1waG90bzogMTJweDsgJiAuYmFuZGVhdS12aWRlbyB7IGRpc3BsYXk6IG5vbmU7IH0gJiAucGljdG8tY291dmVydHVyZSB7IHdpZHRoOiA0MHB4OyB9ICYgLmNvdXZlcnR1cmUtbG9nbyB7IHBhZGRpbmc6IDZweDsgfSAmIC5sb2dvLWNvdXZlcnR1cmUgeyBtYXgtd2lkdGg6IDg0JTsgbWF4LWhlaWdodDogNzIlOyBwYWRkaW5nOiA0cHggNnB4OyBib3JkZXItcmFkaXVzOiA2cHg7IGJveC1zaGFkb3c6IG5vbmU7IH0="
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-213b1a9",
+            "label": "encart-milieu",
+            "groupe": "Fiches et listes",
+            "description": "Encart au milieu des articles (avec carte-verre) : date du webinar ou couverture du guide, textes, bouton ; le bouton passe dessous en mobile.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "mobile",
+                        "state": null
+                    },
+                    "props": {
+                        "padding": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 16,
+                                "unit": "px"
+                            }
+                        },
+                        "grid-template-columns": {
+                            "$$type": "string",
+                            "value": "60px minmax(0, 1fr)"
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "JiA+IDpsYXN0LWNoaWxkIHsgZ3JpZC1jb2x1bW46IDEgLyAtMTsganVzdGlmeS1zZWxmOiBzdGFydDsgfQ=="
+                    }
+                },
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "padding": {
+                            "$$type": "dimensions",
+                            "value": {
+                                "block-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 18,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 22,
+                                        "unit": "px"
+                                    }
+                                },
+                                "block-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 18,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 18,
+                                        "unit": "px"
+                                    }
+                                }
+                            }
+                        },
+                        "margin": {
+                            "$$type": "dimensions",
+                            "value": {
+                                "block-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 34,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 0,
+                                        "unit": "px"
+                                    }
+                                },
+                                "block-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 8,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 0,
+                                        "unit": "px"
+                                    }
+                                }
+                            }
+                        },
+                        "display": {
+                            "$$type": "string",
+                            "value": "grid"
+                        },
+                        "gap": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 18,
+                                "unit": "px"
+                            }
+                        },
+                        "grid-template-columns": {
+                            "$$type": "string",
+                            "value": "72px minmax(0, 1fr) auto"
+                        },
+                        "align-items": {
+                            "$$type": "string",
+                            "value": "center"
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "LS1ybC1yYXlvbi1waG90bzogMTRweDsgJiAuYmFuZGVhdS12aWRlbyB7IGRpc3BsYXk6IG5vbmU7IH0gJiAucGljdG8tY291dmVydHVyZSB7IHdpZHRoOiAzNnB4OyB9ICYgLmNvdXZlcnR1cmUtbG9nbyB7IHBhZGRpbmc6IDVweDsgfSAmIC5sb2dvLWNvdXZlcnR1cmUgeyBtYXgtd2lkdGg6IDg0JTsgbWF4LWhlaWdodDogNzIlOyBwYWRkaW5nOiAzcHggNXB4OyBib3JkZXItcmFkaXVzOiA2cHg7IGJveC1zaGFkb3c6IG5vbmU7IH0gJiAudGl0cmUtYmVuZWZpY2UgeyBmb250LXNpemU6IDE4cHg7IH0="
+                    }
+                }
+            ]
+        },
+        {
             "id": "g-c3cb98f",
             "label": "cas-citation",
             "groupe": "Fiches et listes",
@@ -21238,6 +21722,24 @@
             ]
         },
         {
+            "id": "g-73d6145",
+            "label": "si-ressources",
+            "groupe": "Fiches et listes",
+            "description": "Repère sans style : le thème masque ce bloc quand le champ « ressources » du contenu est vide.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": [],
+                    "custom_css": {
+                        "raw": "LS1ybC1yZXBlcmU6IDE7"
+                    }
+                }
+            ]
+        },
+        {
             "id": "g-299bd48",
             "label": "si-mise-a-jour",
             "groupe": "Fiches et listes",
@@ -23229,6 +23731,341 @@
                     "custom_css": {
                         "raw": "Z3JpZC1hdXRvLWZsb3c6IGRlbnNlOyBnYXA6IDI4cHggMjRweDsgJiA+IC5tdXItY2FzZSB7IGdyaWQtcm93OiBzcGFuIDI7IGRpc3BsYXk6IGZsZXg7IGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47IG1pbi13aWR0aDogMDsgfSAmID4gLm11ci1jYXNlLm11ci1sYXJnZSB7IGdyaWQtY29sdW1uOiBzcGFuIDI7IGdyaWQtcm93OiBzcGFuIDQ7IH0gJiA+IC5tdXItY2FzZS5tdXItaGF1dGUgeyBncmlkLXJvdzogc3BhbiAzOyB9ICYgLm11ci1jYXNlID4gLmVsZW1lbnRvciB7IGRpc3BsYXk6IGNvbnRlbnRzOyB9ICYgLm11ci1jYXNlIC5jYXJ0ZS1saXN0ZSB7IGZsZXg6IDEgMSBhdXRvOyBtaW4taGVpZ2h0OiAwOyBnYXA6IDEycHg7IH0gJiAubXVyLWNhc2UgLnZpZ25ldHRlLXZpZGVvIHsgZGlzcGxheTogZmxleDsgZmxleC1kaXJlY3Rpb246IGNvbHVtbjsgZmxleDogMSAxIGF1dG87IG1pbi1oZWlnaHQ6IDExMHB4OyB9ICYgLm11ci1jYXNlIC52aWduZXR0ZS12aWRlbyA+IC5jYWRyZS1waG90byB7IGZsZXg6IDEgMSBhdXRvOyBtaW4taGVpZ2h0OiAwOyBhc3BlY3QtcmF0aW86IGF1dG87IH0gJiAubXVyLWNhc2UgLmF2YW50LWFwcmVzIHsgZGlzcGxheTogbm9uZTsgfSAmIC5tdXItbGFyZ2UgLnRpdHJlLXhzIHsgZm9udC1zaXplOiAyOHB4OyB9ICYucmwtYW5pbWUgPiAubXVyLWNhc2UgeyBvcGFjaXR5OiAwOyB0cmFuc2Zvcm06IHRyYW5zbGF0ZVkoMzRweCkgc2NhbGUoMC45Nyk7IGZpbHRlcjogYmx1cig4cHgpOyB9ICYucmwtYW5pbWUgPiAubXVyLWNhc2UudnUgeyBhbmltYXRpb246IHJsLW11ciAwLjlzIGN1YmljLWJlemllcigwLjIsIDAuOCwgMC4yLCAxKSBmb3J3YXJkczsgfQ=="
                     }
+                }
+            ]
+        },
+        {
+            "id": "g-39461cc",
+            "label": "ressources-article",
+            "groupe": "Fiches et listes",
+            "description": "Cartes illustrées de la fin d'article : 3 côte à côte (2 s'il en manque une), une par ligne en mobile.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "padding": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 0,
+                                "unit": "px"
+                            }
+                        },
+                        "margin": {
+                            "$$type": "dimensions",
+                            "value": {
+                                "block-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 14,
+                                        "unit": "px"
+                                    }
+                                }
+                            }
+                        },
+                        "display": {
+                            "$$type": "string",
+                            "value": "grid"
+                        },
+                        "gap": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 16,
+                                "unit": "px"
+                            }
+                        },
+                        "grid-template-columns": {
+                            "$$type": "string",
+                            "value": "repeat(auto-fit, minmax(200px, 1fr))"
+                        }
+                    },
+                    "custom_css": null
+                }
+            ]
+        },
+        {
+            "id": "g-d972f3a",
+            "label": "couverture-degrade",
+            "groupe": "Fiches et listes",
+            "description": "Couverture d'un guide sans image ni logo client : dégradé de la charte et picto en verre.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "aspect-ratio": {
+                            "$$type": "string",
+                            "value": "4 / 3"
+                        },
+                        "padding": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 0,
+                                "unit": "px"
+                            }
+                        },
+                        "background": {
+                            "$$type": "background",
+                            "value": {
+                                "color": {
+                                    "$$type": "color",
+                                    "value": "#2A1F55"
+                                }
+                            }
+                        },
+                        "display": {
+                            "$$type": "string",
+                            "value": "flex"
+                        },
+                        "justify-content": {
+                            "$$type": "string",
+                            "value": "center"
+                        },
+                        "align-items": {
+                            "$$type": "string",
+                            "value": "center"
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "YmFja2dyb3VuZC1pbWFnZTogcmFkaWFsLWdyYWRpZW50KDYwJSA3MCUgYXQgODAlIDIwJSwgcmdiYSgyNTUsMTgwLDE0MCwwLjg1KSwgcmdiYSgyNTUsMTgwLDE0MCwwKSA2MCUpLCBsaW5lYXItZ3JhZGllbnQoMTYwZGVnLCAjNUIzQkVBLCAjMUMxNzMwKTsgYm9yZGVyLXJhZGl1czogdmFyKC0tcmwtcmF5b24tcGhvdG8sIDE4cHgpOw=="
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-f01fa27",
+            "label": "picto-couverture",
+            "groupe": "Fiches et listes",
+            "description": "Picto en verre au centre d'une couverture-degrade.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "width": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 76,
+                                "unit": "px"
+                            }
+                        },
+                        "display": {
+                            "$$type": "string",
+                            "value": "block"
+                        },
+                        "height": {
+                            "$$type": "size",
+                            "value": {
+                                "size": null,
+                                "unit": "auto"
+                            }
+                        }
+                    },
+                    "custom_css": null
+                }
+            ]
+        },
+        {
+            "id": "g-e95ab11",
+            "label": "date-mini",
+            "groupe": "Fiches et listes",
+            "description": "Petite date du webinar (jour, mois) sur fond violet, dans l'encart du milieu des articles.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "mobile",
+                        "state": null
+                    },
+                    "props": {
+                        "height": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 60,
+                                "unit": "px"
+                            }
+                        }
+                    },
+                    "custom_css": null
+                },
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "height": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 72,
+                                "unit": "px"
+                            }
+                        },
+                        "padding": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 0,
+                                "unit": "px"
+                            }
+                        },
+                        "border-radius": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 16,
+                                "unit": "px"
+                            }
+                        },
+                        "background": {
+                            "$$type": "background",
+                            "value": {
+                                "color": {
+                                    "$$type": "color",
+                                    "value": "#2A1F55"
+                                }
+                            }
+                        },
+                        "display": {
+                            "$$type": "string",
+                            "value": "flex"
+                        },
+                        "flex-direction": {
+                            "$$type": "string",
+                            "value": "column"
+                        },
+                        "justify-content": {
+                            "$$type": "string",
+                            "value": "center"
+                        },
+                        "align-items": {
+                            "$$type": "string",
+                            "value": "center"
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "YmFja2dyb3VuZC1pbWFnZTogcmFkaWFsLWdyYWRpZW50KDcwJSA2MCUgYXQgODUlIDEwJSwgcmdiYSgyNTUsMTYyLDEyMiwwLjc1KSwgcmdiYSgyNTUsMTYyLDEyMiwwKSA2NSUpLCBsaW5lYXItZ3JhZGllbnQoMTYwZGVnLCAjNEEyQkI4LCAjMUMxNzMwKTs="
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-47079d7",
+            "label": "date-mini-jour",
+            "groupe": "Fiches et listes",
+            "description": "Jour de la petite date.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "font-family": {
+                            "$$type": "font-family",
+                            "value": "Bricolage Grotesque"
+                        },
+                        "font-size": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 26,
+                                "unit": "px"
+                            }
+                        },
+                        "color": {
+                            "$$type": "color",
+                            "value": "#FFFFFF"
+                        },
+                        "line-height": {
+                            "$$type": "size",
+                            "value": {
+                                "size": "1",
+                                "unit": "custom"
+                            }
+                        },
+                        "margin": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 0,
+                                "unit": "px"
+                            }
+                        },
+                        "display": {
+                            "$$type": "string",
+                            "value": "block"
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "Zm9udC13ZWlnaHQ6IDY1MDs="
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-fd9f57d",
+            "label": "date-mini-mois",
+            "groupe": "Fiches et listes",
+            "description": "Mois de la petite date.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "font-family": {
+                            "$$type": "font-family",
+                            "value": "Hanken Grotesk"
+                        },
+                        "font-weight": {
+                            "$$type": "string",
+                            "value": "800"
+                        },
+                        "font-size": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 12,
+                                "unit": "px"
+                            }
+                        },
+                        "color": {
+                            "$$type": "color",
+                            "value": "#FFFFFF"
+                        },
+                        "letter-spacing": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 0.1,
+                                "unit": "em"
+                            }
+                        },
+                        "line-height": {
+                            "$$type": "size",
+                            "value": {
+                                "size": "1.3",
+                                "unit": "custom"
+                            }
+                        },
+                        "text-transform": {
+                            "$$type": "string",
+                            "value": "uppercase"
+                        },
+                        "margin": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 0,
+                                "unit": "px"
+                            }
+                        },
+                        "display": {
+                            "$$type": "string",
+                            "value": "block"
+                        }
+                    },
+                    "custom_css": null
                 }
             ]
         },
@@ -26769,7 +27606,7 @@
                         }
                     },
                     "custom_css": {
-                        "raw": "JiA+IHAsICYgPiB1bCwgJiA+IG9sIHsgbWFyZ2luOiAyMHB4IDAgMDsgZm9udC1mYW1pbHk6IEhhbmtlbiBHcm90ZXNrOyBmb250LXNpemU6IDE4cHg7IGxpbmUtaGVpZ2h0OiAxLjc7IGNvbG9yOiB2YXIoLS1ybC1wYXJhZ3JhcGhlLCB2YXIoLS1wYXJhZ3JhcGhlKSk7IH0gJiBzdHJvbmcgeyBjb2xvcjogdmFyKC0tcmwtdGV4dGUsIHZhcigtLWVuY3JlKSk7IH0gJiBhIHsgY29sb3I6ICM1QjNCRUE7IHRleHQtZGVjb3JhdGlvbjogdW5kZXJsaW5lOyB9ICYgPiBoMiB7IG1hcmdpbjogNTJweCAwIDA7IGZvbnQtZmFtaWx5OiBCcmljb2xhZ2UgR3JvdGVzcXVlOyBmb250LXdlaWdodDogNjUwOyBmb250LXNpemU6IGNsYW1wKDI2cHgsIDIuNnZ3LCAzNHB4KTsgbGluZS1oZWlnaHQ6IDEuMTU7IGxldHRlci1zcGFjaW5nOiAtMC4wNGVtOyBjb2xvcjogdmFyKC0tcmwtdGV4dGUsIHZhcigtLWVuY3JlKSk7IHNjcm9sbC1tYXJnaW4tdG9wOiAxMTBweDsgfSAmID4gaDMgeyBtYXJnaW46IDMycHggMCAwOyBmb250LWZhbWlseTogQnJpY29sYWdlIEdyb3Rlc3F1ZTsgZm9udC13ZWlnaHQ6IDY1MDsgZm9udC1zaXplOiAyM3B4OyBsZXR0ZXItc3BhY2luZzogLTAuMDM1ZW07IGNvbG9yOiB2YXIoLS1ybC10ZXh0ZSwgdmFyKC0tZW5jcmUpKTsgfSAmIGltZyB7IG1heC13aWR0aDogMTAwJTsgaGVpZ2h0OiBhdXRvOyBib3JkZXItcmFkaXVzOiAyMnB4OyB9ICYgZmlndXJlIHsgbWFyZ2luOiAzMnB4IDA7IH0gJiBibG9ja3F1b3RlIHsgbWFyZ2luOiAyOHB4IDA7IHBhZGRpbmc6IDIwcHggMjRweDsgYm9yZGVyLWxlZnQ6IDNweCBzb2xpZCAjNUIzQkVBOyBib3JkZXItcmFkaXVzOiAwIDE4cHggMThweCAwOyBiYWNrZ3JvdW5kOiAjRURFNkZGOyBmb250LWZhbWlseTogQnJpY29sYWdlIEdyb3Rlc3F1ZTsgZm9udC1zaXplOiAyMHB4OyBsaW5lLWhlaWdodDogMS41OyBmb250LXdlaWdodDogNjAwOyB9ICYgLmNvY2hlLCAmIC5jaGlmZnJlLXZlcnJlIGltZywgJiAubGVjdHVyZS1jZW50cmUgaW1nIHsgYm9yZGVyLXJhZGl1czogMDsgfSAmIC53cC1ibG9jay10YWJsZSB7IG1hcmdpbjogMzJweCAwIDA7IG92ZXJmbG93LXg6IGF1dG87IGJvcmRlci1yYWRpdXM6IDE4cHg7IGJhY2tncm91bmQ6ICNGRkZGRkY7IGJveC1zaGFkb3c6IGluc2V0IDAgMCAwIDFweCByZ2JhKDE1LDE1LDE4LDAuMDgpLCAwIDE4cHggNDBweCAtMjhweCByZ2JhKDcwLDQwLDE1MCwwLjQ1KTsgfSAmIC53cC1ibG9jay10YWJsZTpmb2N1cy12aXNpYmxlIHsgb3V0bGluZTogM3B4IHNvbGlkICM1QjNCRUE7IG91dGxpbmUtb2Zmc2V0OiAzcHg7IH0gJiAud3AtYmxvY2stdGFibGUgdGFibGUgeyB3aWR0aDogMTAwJTsgbWluLXdpZHRoOiA1NDBweDsgbWFyZ2luOiAwOyBib3JkZXI6IDA7IGJvcmRlci1jb2xsYXBzZTogY29sbGFwc2U7IGZvbnQtZmFtaWx5OiBIYW5rZW4gR3JvdGVzazsgZm9udC1zaXplOiAxNnB4OyBsaW5lLWhlaWdodDogMS40NTsgdGV4dC1hbGlnbjogbGVmdDsgfSAmIC53cC1ibG9jay10YWJsZSB0aGVhZCB7IGJvcmRlcjogMDsgfSAmIC53cC1ibG9jay10YWJsZSB0aCB7IHBhZGRpbmc6IDE0cHggMThweDsgYm9yZGVyOiAwOyBiYWNrZ3JvdW5kOiAjNUIzQkVBOyBjb2xvcjogI0ZGRkZGRjsgZm9udC1mYW1pbHk6IEJyaWNvbGFnZSBHcm90ZXNxdWU7IGZvbnQtd2VpZ2h0OiA2NTA7IGZvbnQtc2l6ZTogMTZweDsgbGV0dGVyLXNwYWNpbmc6IC0wLjAyZW07IHZlcnRpY2FsLWFsaWduOiBib3R0b207IHRleHQtYWxpZ246IGxlZnQ7IH0gJiAud3AtYmxvY2stdGFibGUgdGQgeyBwYWRkaW5nOiAxNHB4IDE4cHg7IGJvcmRlcjogMDsgYm9yZGVyLXRvcDogMXB4IHNvbGlkIHJnYmEoMTUsMTUsMTgsMC4wNyk7IGNvbG9yOiB2YXIoLS1ybC1wYXJhZ3JhcGhlLCB2YXIoLS1wYXJhZ3JhcGhlKSk7IHZlcnRpY2FsLWFsaWduOiB0b3A7IH0gJiAud3AtYmxvY2stdGFibGUgdGJvZHkgdHI6bnRoLWNoaWxkKGV2ZW4pIHRkIHsgYmFja2dyb3VuZDogI0ZBRjlGNzsgfSAmIC53cC1ibG9jay10YWJsZSB0ZDpmaXJzdC1jaGlsZCB7IGNvbG9yOiB2YXIoLS1ybC10ZXh0ZSwgdmFyKC0tZW5jcmUpKTsgZm9udC13ZWlnaHQ6IDYwMDsgfSAmIC53cC1ibG9jay10YWJsZSBmaWdjYXB0aW9uIHsgbWFyZ2luOiAwOyBwYWRkaW5nOiAxMnB4IDE4cHggMTRweDsgYm9yZGVyLXRvcDogMXB4IHNvbGlkIHJnYmEoMTUsMTUsMTgsMC4wNyk7IGZvbnQtc2l6ZTogMTRweDsgdGV4dC1hbGlnbjogbGVmdDsgY29sb3I6IHZhcigtLXJsLWxlZ2VuZGUsIHZhcigtLWxlZ2VuZGUpKTsgfSAmIC53cC1ibG9jay10YWJsZS5pcy1zdHlsZS1jb21wYXJhdGlmIHRoIHsgYmFja2dyb3VuZDogI0YzRjBGQTsgY29sb3I6IHZhcigtLXJsLXRleHRlLCB2YXIoLS1lbmNyZSkpOyB9ICYgLndwLWJsb2NrLXRhYmxlLmlzLXN0eWxlLWNvbXBhcmF0aWYgdGg6bGFzdC1jaGlsZCB7IGJhY2tncm91bmQ6ICM1QjNCRUE7IGNvbG9yOiAjRkZGRkZGOyB9ICYgLndwLWJsb2NrLXRhYmxlLmlzLXN0eWxlLWNvbXBhcmF0aWYgdGQ6bGFzdC1jaGlsZCB7IGJhY2tncm91bmQ6ICNFREU2RkY7IGNvbG9yOiAjMkExQTgwOyBmb250LXdlaWdodDogNjAwOyB9ICYgLndwLWJsb2NrLXRhYmxlLmlzLXN0eWxlLWNvbXBhcmF0aWYgdGJvZHkgdHI6bnRoLWNoaWxkKGV2ZW4pIHRkOmxhc3QtY2hpbGQgeyBiYWNrZ3JvdW5kOiAjRTREQUZGOyB9ICYgLmxpc3RlLWNvY2hlcyB7IG1hcmdpbjogMThweCAwIDA7IHBhZGRpbmc6IDA7IGxpc3Qtc3R5bGU6IG5vbmU7IH0gJiAubGlnbmUtY29jaGUgeyBmb250LWZhbWlseTogSGFua2VuIEdyb3Rlc2s7IGZvbnQtc2l6ZTogMThweDsgbGluZS1oZWlnaHQ6IDEuNjsgY29sb3I6IHZhcigtLXJsLXBhcmFncmFwaGUsIHZhcigtLXBhcmFncmFwaGUpKTsgfSAmIC5pcy1zdHlsZS1ldGFwZXMgeyBjb3VudGVyLXJlc2V0OiBybC1ldGFwZTsgZGlzcGxheTogZ3JpZDsgZ2FwOiAxNHB4OyBtYXJnaW46IDIycHggMCAwOyBwYWRkaW5nOiAwOyBsaXN0LXN0eWxlOiBub25lOyB9ICYgLmlzLXN0eWxlLWV0YXBlcyA+IGxpIHsgY291bnRlci1pbmNyZW1lbnQ6IHJsLWV0YXBlOyBwb3NpdGlvbjogcmVsYXRpdmU7IHBhZGRpbmctbGVmdDogNDhweDsgbWluLWhlaWdodDogMzRweDsgfSAmIC5pcy1zdHlsZS1ldGFwZXMgPiBsaTo6YmVmb3JlIHsgY29udGVudDogY291bnRlcihybC1ldGFwZSk7IHBvc2l0aW9uOiBhYnNvbHV0ZTsgdG9wOiAwOyBsZWZ0OiAwOyB3aWR0aDogMzRweDsgaGVpZ2h0OiAzNHB4OyBib3JkZXItcmFkaXVzOiA1MCU7IGRpc3BsYXk6IGZsZXg7IGFsaWduLWl0ZW1zOiBjZW50ZXI7IGp1c3RpZnktY29udGVudDogY2VudGVyOyBmb250LWZhbWlseTogQnJpY29sYWdlIEdyb3Rlc3F1ZTsgZm9udC13ZWlnaHQ6IDY1MDsgZm9udC1zaXplOiAxNnB4OyBsaW5lLWhlaWdodDogMTsgY29sb3I6ICNGRkZGRkY7IGJhY2tncm91bmQ6IGxpbmVhci1ncmFkaWVudCgxNDBkZWcsICM1QjNCRUEsICM4RTRERTYpOyB9ICYgLnJsLWVuLWJyZWYsICYgLnJsLWEtcmV0ZW5pciB7IG1hcmdpbjogMzJweCAwIDA7IHBhZGRpbmc6IDI4cHg7IGJvcmRlci1yYWRpdXM6IDI2cHg7IGJhY2tncm91bmQ6IGxpbmVhci1ncmFkaWVudCgxMjBkZWcsIHJnYmEoMjM3LDIzMCwyNTUsMC45NSksIHJnYmEoMjU1LDI0MSwyMzEsMC45KSk7IH0gJiAucmwtYS1yZXRlbmlyIHsgYmFja2dyb3VuZDogbGluZWFyLWdyYWRpZW50KDEyMGRlZywgcmdiYSgyNTUsMjQxLDIzMSwwLjk1KSwgcmdiYSgyNTUsMjI0LDIwNiwwLjcpKTsgfSAmIC5ybC1sYWJlbCB7IG1hcmdpbjogMDsgZm9udC1mYW1pbHk6IEhhbmtlbiBHcm90ZXNrOyBmb250LXNpemU6IDEycHg7IGxpbmUtaGVpZ2h0OiAxLjM7IGZvbnQtd2VpZ2h0OiA3MDA7IGxldHRlci1zcGFjaW5nOiAwLjE2ZW07IHRleHQtdHJhbnNmb3JtOiB1cHBlcmNhc2U7IGNvbG9yOiAjNUIzQkVBOyB9ICYgLnJsLWEtcmV0ZW5pciBoMiwgJiAucmwtZW5jYXJ0LWd1aWRlIGgzIHsgbWFyZ2luOiAwOyBmb250LWZhbWlseTogQnJpY29sYWdlIEdyb3Rlc3F1ZTsgZm9udC13ZWlnaHQ6IDY1MDsgZm9udC1zaXplOiAyM3B4OyBsaW5lLWhlaWdodDogMS4yOyBsZXR0ZXItc3BhY2luZzogLTAuMDM1ZW07IGNvbG9yOiB2YXIoLS1ybC10ZXh0ZSwgdmFyKC0tZW5jcmUpKTsgfSAmIC5ybC1lbi1icmVmIC5saXN0ZS1jb2NoZXMsICYgLnJsLWEtcmV0ZW5pciAubGlzdGUtY29jaGVzIHsgbWFyZ2luLXRvcDogMTRweDsgfSAmIC5ybC1lbi1icmVmIC5saWduZS1jb2NoZSwgJiAucmwtYS1yZXRlbmlyIC5saWduZS1jb2NoZSB7IGZvbnQtc2l6ZTogMTdweDsgfSAmIC5ybC1hdmlzIHsgcG9zaXRpb246IHJlbGF0aXZlOyBtYXJnaW46IDIycHggMCAwOyBwYWRkaW5nOiAyOHB4IDI4cHggMjhweCAxMDJweDsgYm9yZGVyLXJhZGl1czogMjZweDsgYmFja2dyb3VuZDogI0ZGRkZGRjsgYm94LXNoYWRvdzogMCAxcHggMnB4IHJnYmEoMTUsMTUsMTgsMC4wNSksIDAgMjRweCA1MHB4IC0zMHB4IHJnYmEoNzYsNDgsMTcwLDAuMyk7IH0gJiAucmwtYXZpcyAucmwtcG9ydHJhaXQgeyBwb3NpdGlvbjogYWJzb2x1dGU7IHRvcDogMjhweDsgbGVmdDogMjhweDsgd2lkdGg6IDU2cHg7IGhlaWdodDogNTZweDsgbWFyZ2luOiAwOyB9ICYgLnJsLWF2aXMgLnJsLXBvcnRyYWl0IGltZywgJiAucmwtYXV0ZXVyIC5ybC1wb3J0cmFpdCBpbWcgeyB3aWR0aDogMTAwJTsgaGVpZ2h0OiAxMDAlOyBvYmplY3QtZml0OiBjb3ZlcjsgYm9yZGVyLXJhZGl1czogNTAlOyBib3gtc2hhZG93OiAwIDAgMCAzcHggI0ZGRkZGRiwgMCAxMHB4IDIwcHggLTEwcHggcmdiYSg3MCw0MCwxNTAsMC41KTsgfSAmIC5ybC1hdmlzIHAgeyBtYXJnaW46IDA7IGZvbnQtZmFtaWx5OiBIYW5rZW4gR3JvdGVzazsgZm9udC1zaXplOiAxN3B4OyBsaW5lLWhlaWdodDogMS42NTsgY29sb3I6IHZhcigtLXJsLXBhcmFncmFwaGUsIHZhcigtLXBhcmFncmFwaGUpKTsgfSAmIC5ybC1hdmlzIHAgKyBwIHsgbWFyZ2luLXRvcDogOHB4OyBmb250LXNpemU6IDE1cHg7IH0gJiAucmwtYXZpcyBzdHJvbmcsICYgLnJsLWF1dGV1ciBzdHJvbmcgeyBjb2xvcjogdmFyKC0tcmwtdGV4dGUsIHZhcigtLWVuY3JlKSk7IH0gJiAucmwtY2hpZmZyZS1jbGUgeyBkaXNwbGF5OiBmbGV4OyBmbGV4LWRpcmVjdGlvbjogcm93OyBmbGV4LXdyYXA6IHdyYXA7IGFsaWduLWl0ZW1zOiBjZW50ZXI7IGNvbHVtbi1nYXA6IDI0cHg7IHJvdy1nYXA6IDZweDsgbWFyZ2luOiAzMnB4IDAgMDsgcGFkZGluZzogMjRweCAyOHB4OyBib3JkZXItcmFkaXVzOiAyNnB4OyBiYWNrZ3JvdW5kOiBsaW5lYXItZ3JhZGllbnQoMTIwZGVnLCByZ2JhKDIzNywyMzAsMjU1LDAuOSksIHJnYmEoMjU1LDI0MSwyMzEsMC44NSkpOyB9ICYgLnJsLWNoaWZmcmUtY2xlID4gKiwgJiAucmwtY2hpZmZyZS1jbGUgPiAud3AtYmxvY2stZ3JvdXBfX2lubmVyLWNvbnRhaW5lciA+ICogeyBtYXJnaW46IDA7IH0gJiAucmwtY2hpZmZyZS1jbGUgLndwLWJsb2NrLWdyb3VwX19pbm5lci1jb250YWluZXIgeyBkaXNwbGF5OiBjb250ZW50czsgfSAmIC5ybC1jaGlmZnJlLXZhbGV1ciB7IGZsZXgtc2hyaW5rOiAwOyBtYXJnaW46IDA7IH0gJiAucmwtY2hpZmZyZS12YWxldXIgLmNoaWZmcmUtdmVycmUgaW1nIHsgaGVpZ2h0OiA2NHB4OyB9ICYgLnJsLWNoaWZmcmUtdGV4dGUgeyBmbGV4OiAxIDEgMjYwcHg7IGZvbnQtZmFtaWx5OiBCcmljb2xhZ2UgR3JvdGVzcXVlOyBmb250LXdlaWdodDogNjUwOyBmb250LXNpemU6IDIxcHg7IGxpbmUtaGVpZ2h0OiAxLjM7IGxldHRlci1zcGFjaW5nOiAtMC4wMmVtOyBjb2xvcjogdmFyKC0tcmwtdGV4dGUsIHZhcigtLWVuY3JlKSk7IH0gJiAucmwtc291cmNlIHsgZmxleDogMSAxIDEwMCU7IHBhZGRpbmctbGVmdDogMDsgZm9udC1mYW1pbHk6IEhhbmtlbiBHcm90ZXNrOyBmb250LXNpemU6IDE1cHg7IGNvbG9yOiB2YXIoLS1ybC1sZWdlbmRlLCB2YXIoLS1sZWdlbmRlKSk7IH0gJiAucmwtZW5jYXJ0LWd1aWRlIHsgZGlzcGxheTogZ3JpZDsgZ3JpZC10ZW1wbGF0ZS1jb2x1bW5zOiAxODBweCBtaW5tYXgoMCwgMWZyKTsgY29sdW1uLWdhcDogMjJweDsgYWxpZ24taXRlbXM6IGNlbnRlcjsgbWFyZ2luOiAzMnB4IDAgMDsgcGFkZGluZzogMTZweDsgYm9yZGVyLXJhZGl1czogMjZweDsgYmFja2dyb3VuZDogI0ZGRkZGRjsgYm94LXNoYWRvdzogMCAxcHggMnB4IHJnYmEoMTUsMTUsMTgsMC4wNSksIDAgMjRweCA1MHB4IC0zMHB4IHJnYmEoNzYsNDgsMTcwLDAuMyk7IH0gJiAucmwtZW5jYXJ0LWd1aWRlIC53cC1ibG9jay1ncm91cF9faW5uZXItY29udGFpbmVyIHsgZGlzcGxheTogY29udGVudHM7IH0gJiAucmwtZW5jYXJ0LWd1aWRlIC53cC1ibG9jay1pbWFnZSB7IGdyaWQtcm93OiAxIC8gc3BhbiA0OyBtYXJnaW46IDA7IGFzcGVjdC1yYXRpbzogNCAvIDM7IG92ZXJmbG93OiBoaWRkZW47IGJvcmRlci1yYWRpdXM6IDE4cHg7IH0gJiAucmwtZW5jYXJ0LWd1aWRlIC53cC1ibG9jay1pbWFnZSBpbWcgeyB3aWR0aDogMTAwJTsgaGVpZ2h0OiAxMDAlOyBvYmplY3QtZml0OiBjb3ZlcjsgYm9yZGVyLXJhZGl1czogMDsgfSAmIC5ybC1lbmNhcnQtZ3VpZGUgPiA6bm90KC53cC1ibG9jay1pbWFnZSksICYgLnJsLWVuY2FydC1ndWlkZSAud3AtYmxvY2stZ3JvdXBfX2lubmVyLWNvbnRhaW5lciA+IDpub3QoLndwLWJsb2NrLWltYWdlKSB7IGdyaWQtY29sdW1uOiAyOyBtYXJnaW46IDA7IH0gJiAucmwtZW5jYXJ0LWd1aWRlIGgzIHsgbWFyZ2luOiA2cHggMCAxMnB4OyBmb250LXNpemU6IDIycHg7IH0gJiAucmwtZW5jYXJ0LWFwcGVsIHsgZGlzcGxheTogZmxleDsgZmxleC1kaXJlY3Rpb246IHJvdzsgZmxleC13cmFwOiB3cmFwOyBhbGlnbi1pdGVtczogY2VudGVyOyBqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWJldHdlZW47IGNvbHVtbi1nYXA6IDIycHg7IHJvdy1nYXA6IDE0cHg7IG1hcmdpbjogMzJweCAwIDA7IHBhZGRpbmc6IDI0cHggMjhweDsgYm9yZGVyLXJhZGl1czogMjZweDsgYmFja2dyb3VuZDogbGluZWFyLWdyYWRpZW50KDE2MGRlZywgIzFDMTczMCwgIzBGMEYxMik7IH0gJiAucmwtZW5jYXJ0LWFwcGVsIC53cC1ibG9jay1ncm91cF9faW5uZXItY29udGFpbmVyIHsgZGlzcGxheTogY29udGVudHM7IH0gJiAucmwtZW5jYXJ0LWFwcGVsIHAgeyBmbGV4OiAxIDEgMzIwcHg7IG1hcmdpbjogMDsgZm9udC1mYW1pbHk6IEhhbmtlbiBHcm90ZXNrOyBmb250LXNpemU6IDE1cHg7IGxpbmUtaGVpZ2h0OiAxLjU7IGNvbG9yOiAjQzlDM0RFOyB9ICYgLnJsLWVuY2FydC1hcHBlbCBwIHN0cm9uZyB7IGRpc3BsYXk6IGJsb2NrOyBtYXJnaW4tYm90dG9tOiA2cHg7IGZvbnQtZmFtaWx5OiBCcmljb2xhZ2UgR3JvdGVzcXVlOyBmb250LXdlaWdodDogNjUwOyBmb250LXNpemU6IDIzcHg7IGxpbmUtaGVpZ2h0OiAxLjI7IGxldHRlci1zcGFjaW5nOiAtMC4wMzVlbTsgY29sb3I6ICNGRkZGRkY7IH0gJiAud3AtYmxvY2stYnV0dG9ucyB7IGRpc3BsYXk6IGZsZXg7IGZsZXgtd3JhcDogd3JhcDsgZ2FwOiAxMnB4OyBtYXJnaW46IDA7IH0gJiAud3AtYmxvY2stYnV0dG9uX19saW5rIHsgZGlzcGxheTogaW5saW5lLWZsZXg7IGFsaWduLWl0ZW1zOiBjZW50ZXI7IGp1c3RpZnktY29udGVudDogY2VudGVyOyBnYXA6IDEwcHg7IG1pbi1oZWlnaHQ6IDQ4cHg7IHBhZGRpbmc6IDAgMjJweDsgYm9yZGVyOiAwOyBib3JkZXItcmFkaXVzOiA5OTlweDsgZm9udC1mYW1pbHk6IEhhbmtlbiBHcm90ZXNrOyBmb250LXNpemU6IDE1cHg7IGxpbmUtaGVpZ2h0OiAxOyBmb250LXdlaWdodDogNjAwOyB0ZXh0LWRlY29yYXRpb246IG5vbmU7IGNvbG9yOiAjMEYwRjEyOyBiYWNrZ3JvdW5kOiAjRkZGRkZGOyBib3gtc2hhZG93OiBpbnNldCAwIDFweCAwICNGRkZGRkYsIGluc2V0IDAgMCAwIDFweCByZ2JhKDE1LDE1LDE4LDAuMSksIDAgMTBweCAyNHB4IC0xNHB4IHJnYmEoNzAsNDAsMTUwLDAuNDUpOyB9ICYgLndwLWJsb2NrLWJ1dHRvbl9fbGluazpob3ZlciB7IGNvbG9yOiAjRkZGRkZGOyBiYWNrZ3JvdW5kOiAjNUIzQkVBOyB9ICYgLnJsLWVuY2FydC1hcHBlbCAud3AtYmxvY2stYnV0dG9uX19saW5rIHsgY29sb3I6ICMwRjBGMTI7IGJhY2tncm91bmQ6IGxpbmVhci1ncmFkaWVudCgxMzVkZWcsICNGRkQxQkYsICNGRjhBNUIpOyBib3gtc2hhZG93OiAwIDEycHggMjhweCAtMTRweCByZ2JhKDI1NSwxMzgsOTEsMC44KTsgfSAmIC5ybC1lbmNhcnQtYXBwZWwgLndwLWJsb2NrLWJ1dHRvbl9fbGluazpob3ZlciB7IGNvbG9yOiAjMEYwRjEyOyBiYWNrZ3JvdW5kOiAjRkZGRkZGOyB9ICYgLnJsLWZhcSB7IGRpc3BsYXk6IGdyaWQ7IGdhcDogMTBweDsgbWFyZ2luOiAyMnB4IDAgMDsgfSAmIC5ybC1mYXEgLndwLWJsb2NrLWdyb3VwX19pbm5lci1jb250YWluZXIgeyBkaXNwbGF5OiBncmlkOyBnYXA6IDEwcHg7IH0gJiAud3AtYmxvY2stZGV0YWlscyB7IG1hcmdpbjogMDsgYm9yZGVyLXJhZGl1czogMThweDsgYmFja2dyb3VuZDogI0ZGRkZGRjsgYm94LXNoYWRvdzogaW5zZXQgMCAwIDAgMXB4IHJnYmEoMTUsMTUsMTgsMC4wOCk7IH0gJiAud3AtYmxvY2stZGV0YWlscyBzdW1tYXJ5IHsgbGlzdC1zdHlsZTogbm9uZTsgZGlzcGxheTogZmxleDsganVzdGlmeS1jb250ZW50OiBzcGFjZS1iZXR3ZWVuOyBhbGlnbi1pdGVtczogY2VudGVyOyBnYXA6IDE2cHg7IG1pbi1oZWlnaHQ6IDU2cHg7IHBhZGRpbmc6IDE0cHggMjBweDsgY3Vyc29yOiBwb2ludGVyOyBmb250LWZhbWlseTogQnJpY29sYWdlIEdyb3Rlc3F1ZTsgZm9udC13ZWlnaHQ6IDY1MDsgZm9udC1zaXplOiAxOHB4OyBsaW5lLWhlaWdodDogMS4zOyBsZXR0ZXItc3BhY2luZzogLTAuMDJlbTsgY29sb3I6IHZhcigtLXJsLXRleHRlLCB2YXIoLS1lbmNyZSkpOyB9ICYgLndwLWJsb2NrLWRldGFpbHMgc3VtbWFyeTo6LXdlYmtpdC1kZXRhaWxzLW1hcmtlciB7IGRpc3BsYXk6IG5vbmU7IH0gJiAud3AtYmxvY2stZGV0YWlscyBzdW1tYXJ5OjphZnRlciB7IGNvbnRlbnQ6ICcrJzsgZmxleC1zaHJpbms6IDA7IHdpZHRoOiAzMHB4OyBoZWlnaHQ6IDMwcHg7IGJvcmRlci1yYWRpdXM6IDUwJTsgZGlzcGxheTogaW5saW5lLWZsZXg7IGFsaWduLWl0ZW1zOiBjZW50ZXI7IGp1c3RpZnktY29udGVudDogY2VudGVyOyBmb250LXNpemU6IDIwcHg7IGxpbmUtaGVpZ2h0OiAxOyBjb2xvcjogI0ZGRkZGRjsgYmFja2dyb3VuZDogbGluZWFyLWdyYWRpZW50KDE0MGRlZywgIzVCM0JFQSwgIzhFNERFNik7IH0gJiAud3AtYmxvY2stZGV0YWlsc1tvcGVuXSBzdW1tYXJ5OjphZnRlciB7IGNvbnRlbnQ6ICfiiJInOyB9ICYgLndwLWJsb2NrLWRldGFpbHMgPiA6bm90KHN1bW1hcnkpIHsgbWFyZ2luOiAwOyBwYWRkaW5nOiAwIDIwcHggMThweDsgZm9udC1mYW1pbHk6IEhhbmtlbiBHcm90ZXNrOyBmb250LXNpemU6IDE3cHg7IGxpbmUtaGVpZ2h0OiAxLjY1OyBjb2xvcjogdmFyKC0tcmwtcGFyYWdyYXBoZSwgdmFyKC0tcGFyYWdyYXBoZSkpOyB9ICYgLndwLWJsb2NrLWRldGFpbHMgPiB1bCwgJiAud3AtYmxvY2stZGV0YWlscyA+IG9sIHsgcGFkZGluZy1sZWZ0OiA0NnB4OyB9ICYgLndwLWJsb2NrLWRldGFpbHMgbGkgKyBsaSB7IG1hcmdpbi10b3A6IDRweDsgfSAmIC5ybC1hdXRldXIgeyBwb3NpdGlvbjogcmVsYXRpdmU7IG1hcmdpbjogNDBweCAwIDA7IHBhZGRpbmc6IDI0cHggMjRweCAyNHB4IDExNnB4OyBtaW4taGVpZ2h0OiAxMjBweDsgYm9yZGVyLXJhZGl1czogMjZweDsgYmFja2dyb3VuZDogI0ZGRkZGRjsgYm94LXNoYWRvdzogaW5zZXQgMCAwIDAgMXB4IHJnYmEoMTUsMTUsMTgsMC4wOCk7IH0gJiAucmwtYXV0ZXVyIC5ybC1wb3J0cmFpdCB7IHBvc2l0aW9uOiBhYnNvbHV0ZTsgdG9wOiAyNHB4OyBsZWZ0OiAyNHB4OyB3aWR0aDogNzJweDsgaGVpZ2h0OiA3MnB4OyBtYXJnaW46IDA7IH0gJiAucmwtYXV0ZXVyIHAgeyBtYXJnaW46IDA7IGZvbnQtZmFtaWx5OiBIYW5rZW4gR3JvdGVzazsgZm9udC1zaXplOiAxNXB4OyBsaW5lLWhlaWdodDogMS41NTsgY29sb3I6IHZhcigtLXJsLXBhcmFncmFwaGUsIHZhcigtLXBhcmFncmFwaGUpKTsgfSAmIC5ybC1hdXRldXIgLnJsLWxhYmVsIHsgY29sb3I6IHZhcigtLXJsLWxlZ2VuZGUsIHZhcigtLWxlZ2VuZGUpKTsgfSAmIC5ybC1hdXRldXIgLnJsLW5vbSB7IG1hcmdpbi10b3A6IDRweDsgZm9udC1mYW1pbHk6IEJyaWNvbGFnZSBHcm90ZXNxdWU7IGZvbnQtd2VpZ2h0OiA2NTA7IGZvbnQtc2l6ZTogMjNweDsgbGluZS1oZWlnaHQ6IDEuMjsgbGV0dGVyLXNwYWNpbmc6IC0wLjAzNWVtOyBjb2xvcjogdmFyKC0tcmwtdGV4dGUsIHZhcigtLWVuY3JlKSk7IH0gJiAucmwtYXV0ZXVyIC5ybC1iaW8geyBtYXJnaW4tdG9wOiA4cHg7IH0gJiAucmwtYXV0ZXVyIGEgeyBkaXNwbGF5OiBpbmxpbmUtZmxleDsgbWluLWhlaWdodDogMzJweDsgYWxpZ24taXRlbXM6IGNlbnRlcjsgbWFyZ2luLXRvcDogNnB4OyBmb250LXdlaWdodDogNjAwOyB9ICYgLndwLWJsb2NrLWVtYmVkLCAmIC53cC1ibG9jay12aWRlbyB7IG1hcmdpbjogMzJweCAwIDA7IH0gJiAud3AtYmxvY2stZW1iZWRfX3dyYXBwZXI6OmJlZm9yZSB7IGRpc3BsYXk6IG5vbmU7IH0gJiAud3AtYmxvY2stZW1iZWQgLnZpZGVvLWZpY2hlIHsgLS1ybC1yYXlvbi1waG90bzogMjJweDsgfSAmIC53cC1ibG9jay1lbWJlZCBpZnJhbWUgeyB3aWR0aDogMTAwJTsgaGVpZ2h0OiBhdXRvOyBhc3BlY3QtcmF0aW86IDE2IC8gOTsgYm9yZGVyOiAwOyBib3JkZXItcmFkaXVzOiAyMnB4OyB9ICYgLndwLWJsb2NrLXZpZGVvIHZpZGVvIHsgd2lkdGg6IDEwMCU7IGJvcmRlci1yYWRpdXM6IDIycHg7IH0gJiAud3AtYmxvY2stZW1iZWQgZmlnY2FwdGlvbiwgJiAud3AtYmxvY2stdmlkZW8gZmlnY2FwdGlvbiwgJiAud3AtYmxvY2staW1hZ2UgZmlnY2FwdGlvbiB7IG1hcmdpbjogMTBweCAwIDA7IGZvbnQtc2l6ZTogMTRweDsgZm9udC1zdHlsZTogbm9ybWFsOyB0ZXh0LWFsaWduOiBsZWZ0OyBjb2xvcjogdmFyKC0tcmwtbGVnZW5kZSwgdmFyKC0tbGVnZW5kZSkpOyB9"
+                        "raw": "JiA+IHAsICYgPiB1bCwgJiA+IG9sIHsgbWFyZ2luOiAyMHB4IDAgMDsgZm9udC1mYW1pbHk6IEhhbmtlbiBHcm90ZXNrOyBmb250LXNpemU6IDE4cHg7IGxpbmUtaGVpZ2h0OiAxLjc7IGNvbG9yOiB2YXIoLS1ybC1wYXJhZ3JhcGhlLCB2YXIoLS1wYXJhZ3JhcGhlKSk7IH0gJiBzdHJvbmcgeyBjb2xvcjogdmFyKC0tcmwtdGV4dGUsIHZhcigtLWVuY3JlKSk7IH0gJiBhOm5vdCgucmwtZW5jYXJ0LW1pbGlldSBhKSB7IGNvbG9yOiAjNUIzQkVBOyB0ZXh0LWRlY29yYXRpb246IHVuZGVybGluZTsgfSAmID4gaDIgeyBtYXJnaW46IDUycHggMCAwOyBmb250LWZhbWlseTogQnJpY29sYWdlIEdyb3Rlc3F1ZTsgZm9udC13ZWlnaHQ6IDY1MDsgZm9udC1zaXplOiBjbGFtcCgyNnB4LCAyLjZ2dywgMzRweCk7IGxpbmUtaGVpZ2h0OiAxLjE1OyBsZXR0ZXItc3BhY2luZzogLTAuMDRlbTsgY29sb3I6IHZhcigtLXJsLXRleHRlLCB2YXIoLS1lbmNyZSkpOyBzY3JvbGwtbWFyZ2luLXRvcDogMTEwcHg7IH0gJiA+IGgzIHsgbWFyZ2luOiAzMnB4IDAgMDsgZm9udC1mYW1pbHk6IEJyaWNvbGFnZSBHcm90ZXNxdWU7IGZvbnQtd2VpZ2h0OiA2NTA7IGZvbnQtc2l6ZTogMjNweDsgbGV0dGVyLXNwYWNpbmc6IC0wLjAzNWVtOyBjb2xvcjogdmFyKC0tcmwtdGV4dGUsIHZhcigtLWVuY3JlKSk7IH0gJiBpbWc6bm90KC5ybC1lbmNhcnQtbWlsaWV1IGltZykgeyBtYXgtd2lkdGg6IDEwMCU7IGhlaWdodDogYXV0bzsgYm9yZGVyLXJhZGl1czogMjJweDsgfSAmIGZpZ3VyZSB7IG1hcmdpbjogMzJweCAwOyB9ICYgYmxvY2txdW90ZSB7IG1hcmdpbjogMjhweCAwOyBwYWRkaW5nOiAyMHB4IDI0cHg7IGJvcmRlci1sZWZ0OiAzcHggc29saWQgIzVCM0JFQTsgYm9yZGVyLXJhZGl1czogMCAxOHB4IDE4cHggMDsgYmFja2dyb3VuZDogI0VERTZGRjsgZm9udC1mYW1pbHk6IEJyaWNvbGFnZSBHcm90ZXNxdWU7IGZvbnQtc2l6ZTogMjBweDsgbGluZS1oZWlnaHQ6IDEuNTsgZm9udC13ZWlnaHQ6IDYwMDsgfSAmIC5jb2NoZSwgJiAuY2hpZmZyZS12ZXJyZSBpbWcsICYgLmxlY3R1cmUtY2VudHJlIGltZyB7IGJvcmRlci1yYWRpdXM6IDA7IH0gJiAud3AtYmxvY2stdGFibGUgeyBtYXJnaW46IDMycHggMCAwOyBvdmVyZmxvdy14OiBhdXRvOyBib3JkZXItcmFkaXVzOiAxOHB4OyBiYWNrZ3JvdW5kOiAjRkZGRkZGOyBib3gtc2hhZG93OiBpbnNldCAwIDAgMCAxcHggcmdiYSgxNSwxNSwxOCwwLjA4KSwgMCAxOHB4IDQwcHggLTI4cHggcmdiYSg3MCw0MCwxNTAsMC40NSk7IH0gJiAud3AtYmxvY2stdGFibGU6Zm9jdXMtdmlzaWJsZSB7IG91dGxpbmU6IDNweCBzb2xpZCAjNUIzQkVBOyBvdXRsaW5lLW9mZnNldDogM3B4OyB9ICYgLndwLWJsb2NrLXRhYmxlIHRhYmxlIHsgd2lkdGg6IDEwMCU7IG1pbi13aWR0aDogNTQwcHg7IG1hcmdpbjogMDsgYm9yZGVyOiAwOyBib3JkZXItY29sbGFwc2U6IGNvbGxhcHNlOyBmb250LWZhbWlseTogSGFua2VuIEdyb3Rlc2s7IGZvbnQtc2l6ZTogMTZweDsgbGluZS1oZWlnaHQ6IDEuNDU7IHRleHQtYWxpZ246IGxlZnQ7IH0gJiAud3AtYmxvY2stdGFibGUgdGhlYWQgeyBib3JkZXI6IDA7IH0gJiAud3AtYmxvY2stdGFibGUgdGggeyBwYWRkaW5nOiAxNHB4IDE4cHg7IGJvcmRlcjogMDsgYmFja2dyb3VuZDogIzVCM0JFQTsgY29sb3I6ICNGRkZGRkY7IGZvbnQtZmFtaWx5OiBCcmljb2xhZ2UgR3JvdGVzcXVlOyBmb250LXdlaWdodDogNjUwOyBmb250LXNpemU6IDE2cHg7IGxldHRlci1zcGFjaW5nOiAtMC4wMmVtOyB2ZXJ0aWNhbC1hbGlnbjogYm90dG9tOyB0ZXh0LWFsaWduOiBsZWZ0OyB9ICYgLndwLWJsb2NrLXRhYmxlIHRkIHsgcGFkZGluZzogMTRweCAxOHB4OyBib3JkZXI6IDA7IGJvcmRlci10b3A6IDFweCBzb2xpZCByZ2JhKDE1LDE1LDE4LDAuMDcpOyBjb2xvcjogdmFyKC0tcmwtcGFyYWdyYXBoZSwgdmFyKC0tcGFyYWdyYXBoZSkpOyB2ZXJ0aWNhbC1hbGlnbjogdG9wOyB9ICYgLndwLWJsb2NrLXRhYmxlIHRib2R5IHRyOm50aC1jaGlsZChldmVuKSB0ZCB7IGJhY2tncm91bmQ6ICNGQUY5Rjc7IH0gJiAud3AtYmxvY2stdGFibGUgdGQ6Zmlyc3QtY2hpbGQgeyBjb2xvcjogdmFyKC0tcmwtdGV4dGUsIHZhcigtLWVuY3JlKSk7IGZvbnQtd2VpZ2h0OiA2MDA7IH0gJiAud3AtYmxvY2stdGFibGUgZmlnY2FwdGlvbiB7IG1hcmdpbjogMDsgcGFkZGluZzogMTJweCAxOHB4IDE0cHg7IGJvcmRlci10b3A6IDFweCBzb2xpZCByZ2JhKDE1LDE1LDE4LDAuMDcpOyBmb250LXNpemU6IDE0cHg7IHRleHQtYWxpZ246IGxlZnQ7IGNvbG9yOiB2YXIoLS1ybC1sZWdlbmRlLCB2YXIoLS1sZWdlbmRlKSk7IH0gJiAud3AtYmxvY2stdGFibGUuaXMtc3R5bGUtY29tcGFyYXRpZiB0aCB7IGJhY2tncm91bmQ6ICNGM0YwRkE7IGNvbG9yOiB2YXIoLS1ybC10ZXh0ZSwgdmFyKC0tZW5jcmUpKTsgfSAmIC53cC1ibG9jay10YWJsZS5pcy1zdHlsZS1jb21wYXJhdGlmIHRoOmxhc3QtY2hpbGQgeyBiYWNrZ3JvdW5kOiAjNUIzQkVBOyBjb2xvcjogI0ZGRkZGRjsgfSAmIC53cC1ibG9jay10YWJsZS5pcy1zdHlsZS1jb21wYXJhdGlmIHRkOmxhc3QtY2hpbGQgeyBiYWNrZ3JvdW5kOiAjRURFNkZGOyBjb2xvcjogIzJBMUE4MDsgZm9udC13ZWlnaHQ6IDYwMDsgfSAmIC53cC1ibG9jay10YWJsZS5pcy1zdHlsZS1jb21wYXJhdGlmIHRib2R5IHRyOm50aC1jaGlsZChldmVuKSB0ZDpsYXN0LWNoaWxkIHsgYmFja2dyb3VuZDogI0U0REFGRjsgfSAmIC5saXN0ZS1jb2NoZXMgeyBtYXJnaW46IDE4cHggMCAwOyBwYWRkaW5nOiAwOyBsaXN0LXN0eWxlOiBub25lOyB9ICYgLmxpZ25lLWNvY2hlIHsgZm9udC1mYW1pbHk6IEhhbmtlbiBHcm90ZXNrOyBmb250LXNpemU6IDE4cHg7IGxpbmUtaGVpZ2h0OiAxLjY7IGNvbG9yOiB2YXIoLS1ybC1wYXJhZ3JhcGhlLCB2YXIoLS1wYXJhZ3JhcGhlKSk7IH0gJiAuaXMtc3R5bGUtZXRhcGVzIHsgY291bnRlci1yZXNldDogcmwtZXRhcGU7IGRpc3BsYXk6IGdyaWQ7IGdhcDogMTRweDsgbWFyZ2luOiAyMnB4IDAgMDsgcGFkZGluZzogMDsgbGlzdC1zdHlsZTogbm9uZTsgfSAmIC5pcy1zdHlsZS1ldGFwZXMgPiBsaSB7IGNvdW50ZXItaW5jcmVtZW50OiBybC1ldGFwZTsgcG9zaXRpb246IHJlbGF0aXZlOyBwYWRkaW5nLWxlZnQ6IDQ4cHg7IG1pbi1oZWlnaHQ6IDM0cHg7IH0gJiAuaXMtc3R5bGUtZXRhcGVzID4gbGk6OmJlZm9yZSB7IGNvbnRlbnQ6IGNvdW50ZXIocmwtZXRhcGUpOyBwb3NpdGlvbjogYWJzb2x1dGU7IHRvcDogMDsgbGVmdDogMDsgd2lkdGg6IDM0cHg7IGhlaWdodDogMzRweDsgYm9yZGVyLXJhZGl1czogNTAlOyBkaXNwbGF5OiBmbGV4OyBhbGlnbi1pdGVtczogY2VudGVyOyBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjsgZm9udC1mYW1pbHk6IEJyaWNvbGFnZSBHcm90ZXNxdWU7IGZvbnQtd2VpZ2h0OiA2NTA7IGZvbnQtc2l6ZTogMTZweDsgbGluZS1oZWlnaHQ6IDE7IGNvbG9yOiAjRkZGRkZGOyBiYWNrZ3JvdW5kOiBsaW5lYXItZ3JhZGllbnQoMTQwZGVnLCAjNUIzQkVBLCAjOEU0REU2KTsgfSAmIC5ybC1lbi1icmVmLCAmIC5ybC1hLXJldGVuaXIgeyBtYXJnaW46IDMycHggMCAwOyBwYWRkaW5nOiAyOHB4OyBib3JkZXItcmFkaXVzOiAyNnB4OyBiYWNrZ3JvdW5kOiBsaW5lYXItZ3JhZGllbnQoMTIwZGVnLCByZ2JhKDIzNywyMzAsMjU1LDAuOTUpLCByZ2JhKDI1NSwyNDEsMjMxLDAuOSkpOyB9ICYgLnJsLWEtcmV0ZW5pciB7IGJhY2tncm91bmQ6IGxpbmVhci1ncmFkaWVudCgxMjBkZWcsIHJnYmEoMjU1LDI0MSwyMzEsMC45NSksIHJnYmEoMjU1LDIyNCwyMDYsMC43KSk7IH0gJiAucmwtbGFiZWwgeyBtYXJnaW46IDA7IGZvbnQtZmFtaWx5OiBIYW5rZW4gR3JvdGVzazsgZm9udC1zaXplOiAxMnB4OyBsaW5lLWhlaWdodDogMS4zOyBmb250LXdlaWdodDogNzAwOyBsZXR0ZXItc3BhY2luZzogMC4xNmVtOyB0ZXh0LXRyYW5zZm9ybTogdXBwZXJjYXNlOyBjb2xvcjogIzVCM0JFQTsgfSAmIC5ybC1hLXJldGVuaXIgaDIsICYgLnJsLWVuY2FydC1ndWlkZSBoMyB7IG1hcmdpbjogMDsgZm9udC1mYW1pbHk6IEJyaWNvbGFnZSBHcm90ZXNxdWU7IGZvbnQtd2VpZ2h0OiA2NTA7IGZvbnQtc2l6ZTogMjNweDsgbGluZS1oZWlnaHQ6IDEuMjsgbGV0dGVyLXNwYWNpbmc6IC0wLjAzNWVtOyBjb2xvcjogdmFyKC0tcmwtdGV4dGUsIHZhcigtLWVuY3JlKSk7IH0gJiAucmwtZW4tYnJlZiAubGlzdGUtY29jaGVzLCAmIC5ybC1hLXJldGVuaXIgLmxpc3RlLWNvY2hlcyB7IG1hcmdpbi10b3A6IDE0cHg7IH0gJiAucmwtZW4tYnJlZiAubGlnbmUtY29jaGUsICYgLnJsLWEtcmV0ZW5pciAubGlnbmUtY29jaGUgeyBmb250LXNpemU6IDE3cHg7IH0gJiAucmwtYXZpcyB7IHBvc2l0aW9uOiByZWxhdGl2ZTsgbWFyZ2luOiAyMnB4IDAgMDsgcGFkZGluZzogMjhweCAyOHB4IDI4cHggMTAycHg7IGJvcmRlci1yYWRpdXM6IDI2cHg7IGJhY2tncm91bmQ6ICNGRkZGRkY7IGJveC1zaGFkb3c6IDAgMXB4IDJweCByZ2JhKDE1LDE1LDE4LDAuMDUpLCAwIDI0cHggNTBweCAtMzBweCByZ2JhKDc2LDQ4LDE3MCwwLjMpOyB9ICYgLnJsLWF2aXMgLnJsLXBvcnRyYWl0IHsgcG9zaXRpb246IGFic29sdXRlOyB0b3A6IDI4cHg7IGxlZnQ6IDI4cHg7IHdpZHRoOiA1NnB4OyBoZWlnaHQ6IDU2cHg7IG1hcmdpbjogMDsgfSAmIC5ybC1hdmlzIC5ybC1wb3J0cmFpdCBpbWcsICYgLnJsLWF1dGV1ciAucmwtcG9ydHJhaXQgaW1nIHsgd2lkdGg6IDEwMCU7IGhlaWdodDogMTAwJTsgb2JqZWN0LWZpdDogY292ZXI7IGJvcmRlci1yYWRpdXM6IDUwJTsgYm94LXNoYWRvdzogMCAwIDAgM3B4ICNGRkZGRkYsIDAgMTBweCAyMHB4IC0xMHB4IHJnYmEoNzAsNDAsMTUwLDAuNSk7IH0gJiAucmwtYXZpcyBwIHsgbWFyZ2luOiAwOyBmb250LWZhbWlseTogSGFua2VuIEdyb3Rlc2s7IGZvbnQtc2l6ZTogMTdweDsgbGluZS1oZWlnaHQ6IDEuNjU7IGNvbG9yOiB2YXIoLS1ybC1wYXJhZ3JhcGhlLCB2YXIoLS1wYXJhZ3JhcGhlKSk7IH0gJiAucmwtYXZpcyBwICsgcCB7IG1hcmdpbi10b3A6IDhweDsgZm9udC1zaXplOiAxNXB4OyB9ICYgLnJsLWF2aXMgc3Ryb25nLCAmIC5ybC1hdXRldXIgc3Ryb25nIHsgY29sb3I6IHZhcigtLXJsLXRleHRlLCB2YXIoLS1lbmNyZSkpOyB9ICYgLnJsLWNoaWZmcmUtY2xlIHsgZGlzcGxheTogZmxleDsgZmxleC1kaXJlY3Rpb246IHJvdzsgZmxleC13cmFwOiB3cmFwOyBhbGlnbi1pdGVtczogY2VudGVyOyBjb2x1bW4tZ2FwOiAyNHB4OyByb3ctZ2FwOiA2cHg7IG1hcmdpbjogMzJweCAwIDA7IHBhZGRpbmc6IDI0cHggMjhweDsgYm9yZGVyLXJhZGl1czogMjZweDsgYmFja2dyb3VuZDogbGluZWFyLWdyYWRpZW50KDEyMGRlZywgcmdiYSgyMzcsMjMwLDI1NSwwLjkpLCByZ2JhKDI1NSwyNDEsMjMxLDAuODUpKTsgfSAmIC5ybC1jaGlmZnJlLWNsZSA+ICosICYgLnJsLWNoaWZmcmUtY2xlID4gLndwLWJsb2NrLWdyb3VwX19pbm5lci1jb250YWluZXIgPiAqIHsgbWFyZ2luOiAwOyB9ICYgLnJsLWNoaWZmcmUtY2xlIC53cC1ibG9jay1ncm91cF9faW5uZXItY29udGFpbmVyIHsgZGlzcGxheTogY29udGVudHM7IH0gJiAucmwtY2hpZmZyZS12YWxldXIgeyBmbGV4LXNocmluazogMDsgbWFyZ2luOiAwOyB9ICYgLnJsLWNoaWZmcmUtdmFsZXVyIC5jaGlmZnJlLXZlcnJlIGltZyB7IGhlaWdodDogNjRweDsgfSAmIC5ybC1jaGlmZnJlLXRleHRlIHsgZmxleDogMSAxIDI2MHB4OyBmb250LWZhbWlseTogQnJpY29sYWdlIEdyb3Rlc3F1ZTsgZm9udC13ZWlnaHQ6IDY1MDsgZm9udC1zaXplOiAyMXB4OyBsaW5lLWhlaWdodDogMS4zOyBsZXR0ZXItc3BhY2luZzogLTAuMDJlbTsgY29sb3I6IHZhcigtLXJsLXRleHRlLCB2YXIoLS1lbmNyZSkpOyB9ICYgLnJsLXNvdXJjZSB7IGZsZXg6IDEgMSAxMDAlOyBwYWRkaW5nLWxlZnQ6IDA7IGZvbnQtZmFtaWx5OiBIYW5rZW4gR3JvdGVzazsgZm9udC1zaXplOiAxNXB4OyBjb2xvcjogdmFyKC0tcmwtbGVnZW5kZSwgdmFyKC0tbGVnZW5kZSkpOyB9ICYgLnJsLWVuY2FydC1ndWlkZSB7IGRpc3BsYXk6IGdyaWQ7IGdyaWQtdGVtcGxhdGUtY29sdW1uczogMTgwcHggbWlubWF4KDAsIDFmcik7IGNvbHVtbi1nYXA6IDIycHg7IGFsaWduLWl0ZW1zOiBjZW50ZXI7IG1hcmdpbjogMzJweCAwIDA7IHBhZGRpbmc6IDE2cHg7IGJvcmRlci1yYWRpdXM6IDI2cHg7IGJhY2tncm91bmQ6ICNGRkZGRkY7IGJveC1zaGFkb3c6IDAgMXB4IDJweCByZ2JhKDE1LDE1LDE4LDAuMDUpLCAwIDI0cHggNTBweCAtMzBweCByZ2JhKDc2LDQ4LDE3MCwwLjMpOyB9ICYgLnJsLWVuY2FydC1ndWlkZSAud3AtYmxvY2stZ3JvdXBfX2lubmVyLWNvbnRhaW5lciB7IGRpc3BsYXk6IGNvbnRlbnRzOyB9ICYgLnJsLWVuY2FydC1ndWlkZSAud3AtYmxvY2staW1hZ2UgeyBncmlkLXJvdzogMSAvIHNwYW4gNDsgbWFyZ2luOiAwOyBhc3BlY3QtcmF0aW86IDQgLyAzOyBvdmVyZmxvdzogaGlkZGVuOyBib3JkZXItcmFkaXVzOiAxOHB4OyB9ICYgLnJsLWVuY2FydC1ndWlkZSAud3AtYmxvY2staW1hZ2UgaW1nIHsgd2lkdGg6IDEwMCU7IGhlaWdodDogMTAwJTsgb2JqZWN0LWZpdDogY292ZXI7IGJvcmRlci1yYWRpdXM6IDA7IH0gJiAucmwtZW5jYXJ0LWd1aWRlID4gOm5vdCgud3AtYmxvY2staW1hZ2UpLCAmIC5ybC1lbmNhcnQtZ3VpZGUgLndwLWJsb2NrLWdyb3VwX19pbm5lci1jb250YWluZXIgPiA6bm90KC53cC1ibG9jay1pbWFnZSkgeyBncmlkLWNvbHVtbjogMjsgbWFyZ2luOiAwOyB9ICYgLnJsLWVuY2FydC1ndWlkZSBoMyB7IG1hcmdpbjogNnB4IDAgMTJweDsgZm9udC1zaXplOiAyMnB4OyB9ICYgLnJsLWVuY2FydC1hcHBlbCB7IGRpc3BsYXk6IGZsZXg7IGZsZXgtZGlyZWN0aW9uOiByb3c7IGZsZXgtd3JhcDogd3JhcDsgYWxpZ24taXRlbXM6IGNlbnRlcjsganVzdGlmeS1jb250ZW50OiBzcGFjZS1iZXR3ZWVuOyBjb2x1bW4tZ2FwOiAyMnB4OyByb3ctZ2FwOiAxNHB4OyBtYXJnaW46IDMycHggMCAwOyBwYWRkaW5nOiAyNHB4IDI4cHg7IGJvcmRlci1yYWRpdXM6IDI2cHg7IGJhY2tncm91bmQ6IGxpbmVhci1ncmFkaWVudCgxNjBkZWcsICMxQzE3MzAsICMwRjBGMTIpOyB9ICYgLnJsLWVuY2FydC1hcHBlbCAud3AtYmxvY2stZ3JvdXBfX2lubmVyLWNvbnRhaW5lciB7IGRpc3BsYXk6IGNvbnRlbnRzOyB9ICYgLnJsLWVuY2FydC1hcHBlbCBwIHsgZmxleDogMSAxIDMyMHB4OyBtYXJnaW46IDA7IGZvbnQtZmFtaWx5OiBIYW5rZW4gR3JvdGVzazsgZm9udC1zaXplOiAxNXB4OyBsaW5lLWhlaWdodDogMS41OyBjb2xvcjogI0M5QzNERTsgfSAmIC5ybC1lbmNhcnQtYXBwZWwgcCBzdHJvbmcgeyBkaXNwbGF5OiBibG9jazsgbWFyZ2luLWJvdHRvbTogNnB4OyBmb250LWZhbWlseTogQnJpY29sYWdlIEdyb3Rlc3F1ZTsgZm9udC13ZWlnaHQ6IDY1MDsgZm9udC1zaXplOiAyM3B4OyBsaW5lLWhlaWdodDogMS4yOyBsZXR0ZXItc3BhY2luZzogLTAuMDM1ZW07IGNvbG9yOiAjRkZGRkZGOyB9ICYgLndwLWJsb2NrLWJ1dHRvbnMgeyBkaXNwbGF5OiBmbGV4OyBmbGV4LXdyYXA6IHdyYXA7IGdhcDogMTJweDsgbWFyZ2luOiAwOyB9ICYgLndwLWJsb2NrLWJ1dHRvbl9fbGluayB7IGRpc3BsYXk6IGlubGluZS1mbGV4OyBhbGlnbi1pdGVtczogY2VudGVyOyBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjsgZ2FwOiAxMHB4OyBtaW4taGVpZ2h0OiA0OHB4OyBwYWRkaW5nOiAwIDIycHg7IGJvcmRlcjogMDsgYm9yZGVyLXJhZGl1czogOTk5cHg7IGZvbnQtZmFtaWx5OiBIYW5rZW4gR3JvdGVzazsgZm9udC1zaXplOiAxNXB4OyBsaW5lLWhlaWdodDogMTsgZm9udC13ZWlnaHQ6IDYwMDsgdGV4dC1kZWNvcmF0aW9uOiBub25lOyBjb2xvcjogIzBGMEYxMjsgYmFja2dyb3VuZDogI0ZGRkZGRjsgYm94LXNoYWRvdzogaW5zZXQgMCAxcHggMCAjRkZGRkZGLCBpbnNldCAwIDAgMCAxcHggcmdiYSgxNSwxNSwxOCwwLjEpLCAwIDEwcHggMjRweCAtMTRweCByZ2JhKDcwLDQwLDE1MCwwLjQ1KTsgfSAmIC53cC1ibG9jay1idXR0b25fX2xpbms6aG92ZXIgeyBjb2xvcjogI0ZGRkZGRjsgYmFja2dyb3VuZDogIzVCM0JFQTsgfSAmIC5ybC1lbmNhcnQtYXBwZWwgLndwLWJsb2NrLWJ1dHRvbl9fbGluayB7IGNvbG9yOiAjMEYwRjEyOyBiYWNrZ3JvdW5kOiBsaW5lYXItZ3JhZGllbnQoMTM1ZGVnLCAjRkZEMUJGLCAjRkY4QTVCKTsgYm94LXNoYWRvdzogMCAxMnB4IDI4cHggLTE0cHggcmdiYSgyNTUsMTM4LDkxLDAuOCk7IH0gJiAucmwtZW5jYXJ0LWFwcGVsIC53cC1ibG9jay1idXR0b25fX2xpbms6aG92ZXIgeyBjb2xvcjogIzBGMEYxMjsgYmFja2dyb3VuZDogI0ZGRkZGRjsgfSAmIC5ybC1mYXEgeyBkaXNwbGF5OiBncmlkOyBnYXA6IDEwcHg7IG1hcmdpbjogMjJweCAwIDA7IH0gJiAucmwtZmFxIC53cC1ibG9jay1ncm91cF9faW5uZXItY29udGFpbmVyIHsgZGlzcGxheTogZ3JpZDsgZ2FwOiAxMHB4OyB9ICYgLndwLWJsb2NrLWRldGFpbHMgeyBtYXJnaW46IDA7IGJvcmRlci1yYWRpdXM6IDE4cHg7IGJhY2tncm91bmQ6ICNGRkZGRkY7IGJveC1zaGFkb3c6IGluc2V0IDAgMCAwIDFweCByZ2JhKDE1LDE1LDE4LDAuMDgpOyB9ICYgLndwLWJsb2NrLWRldGFpbHMgc3VtbWFyeSB7IGxpc3Qtc3R5bGU6IG5vbmU7IGRpc3BsYXk6IGZsZXg7IGp1c3RpZnktY29udGVudDogc3BhY2UtYmV0d2VlbjsgYWxpZ24taXRlbXM6IGNlbnRlcjsgZ2FwOiAxNnB4OyBtaW4taGVpZ2h0OiA1NnB4OyBwYWRkaW5nOiAxNHB4IDIwcHg7IGN1cnNvcjogcG9pbnRlcjsgZm9udC1mYW1pbHk6IEJyaWNvbGFnZSBHcm90ZXNxdWU7IGZvbnQtd2VpZ2h0OiA2NTA7IGZvbnQtc2l6ZTogMThweDsgbGluZS1oZWlnaHQ6IDEuMzsgbGV0dGVyLXNwYWNpbmc6IC0wLjAyZW07IGNvbG9yOiB2YXIoLS1ybC10ZXh0ZSwgdmFyKC0tZW5jcmUpKTsgfSAmIC53cC1ibG9jay1kZXRhaWxzIHN1bW1hcnk6Oi13ZWJraXQtZGV0YWlscy1tYXJrZXIgeyBkaXNwbGF5OiBub25lOyB9ICYgLndwLWJsb2NrLWRldGFpbHMgc3VtbWFyeTo6YWZ0ZXIgeyBjb250ZW50OiAnKyc7IGZsZXgtc2hyaW5rOiAwOyB3aWR0aDogMzBweDsgaGVpZ2h0OiAzMHB4OyBib3JkZXItcmFkaXVzOiA1MCU7IGRpc3BsYXk6IGlubGluZS1mbGV4OyBhbGlnbi1pdGVtczogY2VudGVyOyBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjsgZm9udC1zaXplOiAyMHB4OyBsaW5lLWhlaWdodDogMTsgY29sb3I6ICNGRkZGRkY7IGJhY2tncm91bmQ6IGxpbmVhci1ncmFkaWVudCgxNDBkZWcsICM1QjNCRUEsICM4RTRERTYpOyB9ICYgLndwLWJsb2NrLWRldGFpbHNbb3Blbl0gc3VtbWFyeTo6YWZ0ZXIgeyBjb250ZW50OiAn4oiSJzsgfSAmIC53cC1ibG9jay1kZXRhaWxzID4gOm5vdChzdW1tYXJ5KSB7IG1hcmdpbjogMDsgcGFkZGluZzogMCAyMHB4IDE4cHg7IGZvbnQtZmFtaWx5OiBIYW5rZW4gR3JvdGVzazsgZm9udC1zaXplOiAxN3B4OyBsaW5lLWhlaWdodDogMS42NTsgY29sb3I6IHZhcigtLXJsLXBhcmFncmFwaGUsIHZhcigtLXBhcmFncmFwaGUpKTsgfSAmIC53cC1ibG9jay1kZXRhaWxzID4gdWwsICYgLndwLWJsb2NrLWRldGFpbHMgPiBvbCB7IHBhZGRpbmctbGVmdDogNDZweDsgfSAmIC53cC1ibG9jay1kZXRhaWxzIGxpICsgbGkgeyBtYXJnaW4tdG9wOiA0cHg7IH0gJiAucmwtYXV0ZXVyIHsgcG9zaXRpb246IHJlbGF0aXZlOyBtYXJnaW46IDQwcHggMCAwOyBwYWRkaW5nOiAyNHB4IDI0cHggMjRweCAxMTZweDsgbWluLWhlaWdodDogMTIwcHg7IGJvcmRlci1yYWRpdXM6IDI2cHg7IGJhY2tncm91bmQ6ICNGRkZGRkY7IGJveC1zaGFkb3c6IGluc2V0IDAgMCAwIDFweCByZ2JhKDE1LDE1LDE4LDAuMDgpOyB9ICYgLnJsLWF1dGV1ciAucmwtcG9ydHJhaXQgeyBwb3NpdGlvbjogYWJzb2x1dGU7IHRvcDogMjRweDsgbGVmdDogMjRweDsgd2lkdGg6IDcycHg7IGhlaWdodDogNzJweDsgbWFyZ2luOiAwOyB9ICYgLnJsLWF1dGV1ciBwIHsgbWFyZ2luOiAwOyBmb250LWZhbWlseTogSGFua2VuIEdyb3Rlc2s7IGZvbnQtc2l6ZTogMTVweDsgbGluZS1oZWlnaHQ6IDEuNTU7IGNvbG9yOiB2YXIoLS1ybC1wYXJhZ3JhcGhlLCB2YXIoLS1wYXJhZ3JhcGhlKSk7IH0gJiAucmwtYXV0ZXVyIC5ybC1sYWJlbCB7IGNvbG9yOiB2YXIoLS1ybC1sZWdlbmRlLCB2YXIoLS1sZWdlbmRlKSk7IH0gJiAucmwtYXV0ZXVyIC5ybC1ub20geyBtYXJnaW4tdG9wOiA0cHg7IGZvbnQtZmFtaWx5OiBCcmljb2xhZ2UgR3JvdGVzcXVlOyBmb250LXdlaWdodDogNjUwOyBmb250LXNpemU6IDIzcHg7IGxpbmUtaGVpZ2h0OiAxLjI7IGxldHRlci1zcGFjaW5nOiAtMC4wMzVlbTsgY29sb3I6IHZhcigtLXJsLXRleHRlLCB2YXIoLS1lbmNyZSkpOyB9ICYgLnJsLWF1dGV1ciAucmwtYmlvIHsgbWFyZ2luLXRvcDogOHB4OyB9ICYgLnJsLWF1dGV1ciBhIHsgZGlzcGxheTogaW5saW5lLWZsZXg7IG1pbi1oZWlnaHQ6IDMycHg7IGFsaWduLWl0ZW1zOiBjZW50ZXI7IG1hcmdpbi10b3A6IDZweDsgZm9udC13ZWlnaHQ6IDYwMDsgfSAmIC53cC1ibG9jay1lbWJlZCwgJiAud3AtYmxvY2stdmlkZW8geyBtYXJnaW46IDMycHggMCAwOyB9ICYgLndwLWJsb2NrLWVtYmVkX193cmFwcGVyOjpiZWZvcmUgeyBkaXNwbGF5OiBub25lOyB9ICYgLndwLWJsb2NrLWVtYmVkIC52aWRlby1maWNoZSB7IC0tcmwtcmF5b24tcGhvdG86IDIycHg7IH0gJiAud3AtYmxvY2stZW1iZWQgaWZyYW1lIHsgd2lkdGg6IDEwMCU7IGhlaWdodDogYXV0bzsgYXNwZWN0LXJhdGlvOiAxNiAvIDk7IGJvcmRlcjogMDsgYm9yZGVyLXJhZGl1czogMjJweDsgfSAmIC53cC1ibG9jay12aWRlbyB2aWRlbyB7IHdpZHRoOiAxMDAlOyBib3JkZXItcmFkaXVzOiAyMnB4OyB9ICYgLndwLWJsb2NrLWVtYmVkIGZpZ2NhcHRpb24sICYgLndwLWJsb2NrLXZpZGVvIGZpZ2NhcHRpb24sICYgLndwLWJsb2NrLWltYWdlIGZpZ2NhcHRpb24geyBtYXJnaW46IDEwcHggMCAwOyBmb250LXNpemU6IDE0cHg7IGZvbnQtc3R5bGU6IG5vcm1hbDsgdGV4dC1hbGlnbjogbGVmdDsgY29sb3I6IHZhcigtLXJsLWxlZ2VuZGUsIHZhcigtLWxlZ2VuZGUpKTsgfQ=="
                     }
                 }
             ]
@@ -27581,6 +28418,78 @@
             "label": "contexte-rex",
             "groupe": "Fiches et listes",
             "description": "Repère sans style : dans ce conteneur, les balises lisent le retour d'expérience lié au témoignage affiché (ou au témoignage de la réalisation affichée).",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": [],
+                    "custom_css": {
+                        "raw": "LS1ybC1yZXBlcmU6IDE7"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-0bcf9bf",
+            "label": "contexte-webinar-ou-guide",
+            "groupe": "Fiches et listes",
+            "description": "Repère sans style : dans ce conteneur, les balises lisent le prochain webinar, sinon le dernier guide (encart au milieu des articles).",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": [],
+                    "custom_css": {
+                        "raw": "LS1ybC1yZXBlcmU6IDE7"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-b96a086",
+            "label": "contexte-replay-ou-realisation",
+            "groupe": "Fiches et listes",
+            "description": "Repère sans style : dans ce conteneur, les balises lisent le dernier replay, sinon la dernière réalisation (fin des articles).",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": [],
+                    "custom_css": {
+                        "raw": "LS1ybC1yZXBlcmU6IDE7"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-7c6f93d",
+            "label": "si-type--realisation",
+            "groupe": "Fiches et listes",
+            "description": "Repère sans style : affiché seulement si le contenu lu est une réalisation.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": [],
+                    "custom_css": {
+                        "raw": "LS1ybC1yZXBlcmU6IDE7"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-8b1e8f2",
+            "label": "sans-temoignage-logo",
+            "groupe": "Fiches et listes",
+            "description": "Repère sans style : affiché seulement si le guide n'a pas de témoignage lié avec un logo.",
             "variants": [
                 {
                     "meta": {
