@@ -24024,7 +24024,7 @@
             "id": "g-8216235",
             "label": "mur-montage",
             "groupe": "Fiches et listes",
-            "description": "Mur de montage (classe de la grille du widget Liste, page Réalisations) : la dernière réalisation en grand, les 9:16 en hauteur, les autres en 16:9 ; les cartes montent une à une en sortant du flou (rolling.js, une seule fois). 3 colonnes sous 1024 px, 2 en mobile.",
+            "description": "Mur de montage (classe de la grille du widget Liste, page Réalisations) : 3 colonnes, la dernière réalisation en grand (2 × 2), les 9:16 en hauteur, les autres en 16:9 ; chaque vignette dans un cadre en verre, client et titre dessous ; les cartes montent une à une en sortant du flou (rolling.js, une seule fois). 2 colonnes sous 1024 px, 1 en mobile.",
             "variants": [
                 {
                     "meta": {
@@ -24032,9 +24032,16 @@
                         "state": null
                     },
                     "props": {
+                        "gap": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 22,
+                                "unit": "px"
+                            }
+                        },
                         "grid-template-columns": {
                             "$$type": "string",
-                            "value": "repeat(3, minmax(0, 1fr))"
+                            "value": "repeat(2, minmax(0, 1fr))"
                         }
                     },
                     "custom_css": null
@@ -24048,17 +24055,17 @@
                         "gap": {
                             "$$type": "size",
                             "value": {
-                                "size": 14,
+                                "size": 18,
                                 "unit": "px"
                             }
                         },
                         "grid-template-columns": {
                             "$$type": "string",
-                            "value": "repeat(2, minmax(0, 1fr))"
+                            "value": "minmax(0, 1fr)"
                         }
                     },
                     "custom_css": {
-                        "raw": "JiAudGl0cmUteHMgeyBmb250LXNpemU6IDE3cHg7IH0gJiAubXVyLWxhcmdlIC50aXRyZS14cyB7IGZvbnQtc2l6ZTogMjJweDsgfSAmIC5sYWJlbCB7IGZvbnQtc2l6ZTogMTJweDsgfSAmIC5tdXItY2FzZTpub3QoLm11ci1sYXJnZSkgLmR1cmVlIHsgZGlzcGxheTogbm9uZTsgfSAmIC5tdXItY2FzZSAucGlsZS1zZXJyZWUgeyBsZWZ0OiAxMXB4OyByaWdodDogMTFweDsgYm90dG9tOiAxMXB4OyBwYWRkaW5nOiA4cHggMTBweDsgfSAmIC5tdXItY2FzZSAucGlsZS1zZXJyZWUgLnRpdHJlLXhzIHsgZm9udC1zaXplOiAxNHB4OyB9ICYgLm11ci1sYXJnZSAucGlsZS1zZXJyZWUgLnRpdHJlLXhzIHsgZm9udC1zaXplOiAxOHB4OyB9ICYgLmV4dHJhaXQtcGFzdGlsbGUgeyBsZWZ0OiA4cHg7IGJvdHRvbTogOHB4OyBwYWRkaW5nOiA1cHggOXB4OyB9"
+                        "raw": "JiA+IC5tdXItY2FzZS5tdXItbGFyZ2UsICYgPiAubXVyLWNhc2UubXVyLWhhdXRlIHsgZ3JpZC1jb2x1bW46IGF1dG87IGdyaWQtcm93OiBhdXRvOyB9ICYgLm11ci1sYXJnZSAudmlnbmV0dGUtdmlkZW8gPiAuY2FkcmUtcGhvdG8geyBhc3BlY3QtcmF0aW86IDE2IC8gOTsgbWluLWhlaWdodDogMDsgfSAmIC5tdXItaGF1dGUgLnZpZ25ldHRlLXZpZGVvID4gLmNhZHJlLXBob3RvIHsgYXNwZWN0LXJhdGlvOiA0IC8gNTsgbWluLWhlaWdodDogMDsgfSAmIC5leHRyYWl0LWNhZHJlIHsgbWluLWhlaWdodDogMDsgfSAmIC5leHRyYWl0LWNhc2U6bm90KC5tdXItaGF1dGUpIC5leHRyYWl0LXZpZGVvIHsgYXNwZWN0LXJhdGlvOiAxNiAvIDk7IH0gJiAubXVyLWhhdXRlIC5leHRyYWl0LXZpZGVvIHsgYXNwZWN0LXJhdGlvOiA0IC8gNTsgfSAmIC5tdXItY2FzZSAucGlsZS1zZXJyZWUgLnRpdHJlLXhzLCAmIC5tdXItbGFyZ2UgLnBpbGUtc2VycmVlIC50aXRyZS14cyB7IGZvbnQtc2l6ZTogMThweDsgfQ=="
                     }
                 },
                 {
@@ -24078,13 +24085,13 @@
                         "gap": {
                             "$$type": "size",
                             "value": {
-                                "size": 24,
+                                "size": 28,
                                 "unit": "px"
                             }
                         },
                         "grid-template-columns": {
                             "$$type": "string",
-                            "value": "repeat(4, minmax(0, 1fr))"
+                            "value": "repeat(3, minmax(0, 1fr))"
                         },
                         "grid-auto-rows": {
                             "$$type": "size",
@@ -24095,7 +24102,7 @@
                         }
                     },
                     "custom_css": {
-                        "raw": "Z3JpZC1hdXRvLWZsb3c6IGRlbnNlOyBpc29sYXRpb246IGlzb2xhdGU7ICYgPiAubXVyLWNhc2UgeyBncmlkLXJvdzogc3BhbiAxOyBkaXNwbGF5OiBmbGV4OyBmbGV4LWRpcmVjdGlvbjogY29sdW1uOyBtaW4td2lkdGg6IDA7IH0gJiA+IC5tdXItY2FzZS5tdXItbGFyZ2UgeyBncmlkLWNvbHVtbjogc3BhbiAyOyBncmlkLXJvdzogc3BhbiAyOyB9ICYgPiAubXVyLWNhc2UubXVyLWhhdXRlIHsgZ3JpZC1yb3c6IHNwYW4gMzsgfSAmIC5tdXItY2FzZSA+IC5lbGVtZW50b3IgeyBkaXNwbGF5OiBjb250ZW50czsgfSAmIC5tdXItY2FzZSAuY2FydGUtbGlzdGUgeyBmbGV4OiAxIDEgYXV0bzsgbWluLWhlaWdodDogMDsgZ2FwOiAxMnB4OyB9ICYgLm11ci1jYXNlIC52aWduZXR0ZS12aWRlbyB7IGRpc3BsYXk6IGZsZXg7IGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47IGZsZXg6IDEgMSBhdXRvOyB9ICYgLm11ci1jYXNlIC52aWduZXR0ZS12aWRlbyA+IC5jYWRyZS1waG90byB7IGZsZXg6IDEgMSBhdXRvOyBtaW4taGVpZ2h0OiAwOyBhc3BlY3QtcmF0aW86IDE2IC8gOTsgfSAmIC5tdXItbGFyZ2UgLnZpZ25ldHRlLXZpZGVvID4gLmNhZHJlLXBob3RvLCAmIC5tdXItaGF1dGUgLnZpZ25ldHRlLXZpZGVvID4gLmNhZHJlLXBob3RvIHsgYXNwZWN0LXJhdGlvOiBhdXRvOyBtaW4taGVpZ2h0OiAxNjBweDsgfSAmIC5tdXItY2FzZSAuYXZhbnQtYXByZXMgeyBkaXNwbGF5OiBub25lOyB9ICYgLm11ci1sYXJnZSAudGl0cmUteHMgeyBmb250LXNpemU6IDI4cHg7IH0gJjo6YmVmb3JlIHsgY29udGVudDogJyc7IHBvc2l0aW9uOiBhYnNvbHV0ZTsgei1pbmRleDogLTE7IGxlZnQ6IC0xMCU7IHRvcDogNiU7IHdpZHRoOiA1MiU7IGhlaWdodDogNDYlOyBib3JkZXItcmFkaXVzOiA1MCU7IHBvaW50ZXItZXZlbnRzOiBub25lOyBiYWNrZ3JvdW5kOiByYWRpYWwtZ3JhZGllbnQoY2xvc2VzdC1zaWRlLCByZ2JhKDE2NywxMjMsMjQwLDAuNDIpLCByZ2JhKDE2NywxMjMsMjQwLDApKTsgZmlsdGVyOiBibHVyKDMwcHgpOyB9ICY6OmFmdGVyIHsgY29udGVudDogJyc7IHBvc2l0aW9uOiBhYnNvbHV0ZTsgei1pbmRleDogLTE7IHJpZ2h0OiAtMTAlOyBib3R0b206IDQlOyB3aWR0aDogNTAlOyBoZWlnaHQ6IDQ2JTsgYm9yZGVyLXJhZGl1czogNTAlOyBwb2ludGVyLWV2ZW50czogbm9uZTsgYmFja2dyb3VuZDogcmFkaWFsLWdyYWRpZW50KGNsb3Nlc3Qtc2lkZSwgcmdiYSgyNTUsMTcxLDE1MCwwLjUpLCByZ2JhKDI1NSwxNzEsMTUwLDApKTsgZmlsdGVyOiBibHVyKDMwcHgpOyB9ICYgLm11ci1jYXNlIC5jYXJ0ZS1saXN0ZSB7IHBvc2l0aW9uOiByZWxhdGl2ZTsgcGFkZGluZzogN3B4OyBnYXA6IDA7IGJvcmRlci1yYWRpdXM6IDI0cHg7IGJhY2tncm91bmQ6IHJhZGlhbC1ncmFkaWVudCg3MCUgNjAlIGF0IDE1JSAwJSwgcmdiYSgyNTUsMjU1LDI1NSwwLjkpLCByZ2JhKDI1NSwyNTUsMjU1LDApIDcyJSksIGxpbmVhci1ncmFkaWVudCgxNTBkZWcsIHJnYmEoMjU1LDI1NSwyNTUsMC43KSwgcmdiYSgyNTUsMjU1LDI1NSwwLjQpKTsgYmFja2Ryb3AtZmlsdGVyOiBibHVyKDE4cHgpIHNhdHVyYXRlKDE2MCUpOyBib3gtc2hhZG93OiBpbnNldCAwIDFweCAwICNGRkZGRkYsIGluc2V0IDAgMCAwIDFweCByZ2JhKDI1NSwyNTUsMjU1LDAuNiksIDAgMjZweCA2MHB4IC0zMnB4IHJnYmEoNzYsNDgsMTcwLDAuNCk7IH0gJiAubXVyLWNhc2UgLnZpZ25ldHRlLXZpZGVvIHsgcGFkZGluZzogMDsgYm9yZGVyLXJhZGl1czogMThweDsgYmFja2dyb3VuZDogdHJhbnNwYXJlbnQ7IGJveC1zaGFkb3c6IG5vbmU7IC0tcmwtcmF5b24tcGhvdG86IDE4cHg7IH0gJiAubXVyLWNhc2UgLnBpbGUtc2VycmVlIHsgcG9zaXRpb246IGFic29sdXRlOyB6LWluZGV4OiA0OyBsZWZ0OiAxN3B4OyByaWdodDogMTdweDsgYm90dG9tOiAxN3B4OyB3aWR0aDogYXV0bzsgZ2FwOiAzcHg7IHBhZGRpbmc6IDEycHggMTRweDsgYm9yZGVyLXJhZGl1czogMTZweDsgYmFja2dyb3VuZDogcmdiYSgyMiwxNCw1MiwwLjgyKTsgYmFja2Ryb3AtZmlsdGVyOiBibHVyKDE0cHgpOyBib3gtc2hhZG93OiBpbnNldCAwIDFweCAwIHJnYmEoMjU1LDI1NSwyNTUsMC4yMik7IC0tcmwtdGV4dGU6ICNGQUY5Rjc7IC0tcmwtbGVnZW5kZTogI0U5RTJGRjsgLS1ybC1hY2NlbnQ6ICNDNEI1RkQ7IH0gJiAubXVyLWNhc2UgLnBpbGUtc2VycmVlIC50aXRyZS14cyB7IGZvbnQtc2l6ZTogMThweDsgfSAmIC5tdXItbGFyZ2UgLnBpbGUtc2VycmVlIC50aXRyZS14cyB7IGZvbnQtc2l6ZTogMjVweDsgfSAmIC5tdXItY2FzZSAuY2FkcmUtcGhvdG8gLmR1cmVlIHsgdG9wOiAxNHB4OyBib3R0b206IGF1dG87IH0gJiAuZXh0cmFpdC1jYWRyZSB7IGRpc3BsYXk6IGZsZXg7IGZsZXg6IDEgMSBhdXRvOyBtaW4taGVpZ2h0OiAwOyBwYWRkaW5nOiA3cHg7IGJvcmRlci1yYWRpdXM6IDI0cHg7IGJhY2tncm91bmQ6IHJhZGlhbC1ncmFkaWVudCg3MCUgNjAlIGF0IDE1JSAwJSwgcmdiYSgyNTUsMjU1LDI1NSwwLjkpLCByZ2JhKDI1NSwyNTUsMjU1LDApIDcyJSksIGxpbmVhci1ncmFkaWVudCgxNTBkZWcsIHJnYmEoMjU1LDI1NSwyNTUsMC43KSwgcmdiYSgyNTUsMjU1LDI1NSwwLjQpKTsgYmFja2Ryb3AtZmlsdGVyOiBibHVyKDE4cHgpIHNhdHVyYXRlKDE2MCUpOyBib3gtc2hhZG93OiBpbnNldCAwIDFweCAwICNGRkZGRkYsIGluc2V0IDAgMCAwIDFweCByZ2JhKDI1NSwyNTUsMjU1LDAuNiksIDAgMjZweCA2MHB4IC0zMnB4IHJnYmEoNzYsNDgsMTcwLDAuNCk7IH0gJiAuZXh0cmFpdC12aWRlbyB7IHBvc2l0aW9uOiByZWxhdGl2ZTsgZmxleDogMSAxIGF1dG87IG92ZXJmbG93OiBoaWRkZW47IGJvcmRlci1yYWRpdXM6IDE4cHg7IGFzcGVjdC1yYXRpbzogMTYgLyA5OyBiYWNrZ3JvdW5kOiBsaW5lYXItZ3JhZGllbnQoMTYwZGVnLCAjMzQzNEUwLCAjMUMxNzMwKTsgfSAmIC5tdXItaGF1dGUgLmV4dHJhaXQtdmlkZW8geyBhc3BlY3QtcmF0aW86IGF1dG87IH0gJiAuZXh0cmFpdC12aWRlbyB2aWRlbyB7IHBvc2l0aW9uOiBhYnNvbHV0ZTsgdG9wOiAwOyBsZWZ0OiAwOyB3aWR0aDogMTAwJTsgaGVpZ2h0OiAxMDAlOyBvYmplY3QtZml0OiBjb3ZlcjsgfSAmIC5leHRyYWl0LXBhc3RpbGxlIHsgcG9zaXRpb246IGFic29sdXRlOyB6LWluZGV4OiAyOyBsZWZ0OiAxMnB4OyBib3R0b206IDEycHg7IGRpc3BsYXk6IGlubGluZS1mbGV4OyBhbGlnbi1pdGVtczogY2VudGVyOyBnYXA6IDdweDsgcGFkZGluZzogNnB4IDEycHg7IGJvcmRlci1yYWRpdXM6IDk5OXB4OyBmb250LWZhbWlseTogSGFua2VuIEdyb3Rlc2s7IGZvbnQtc2l6ZTogMTJweDsgbGluZS1oZWlnaHQ6IDE7IGZvbnQtd2VpZ2h0OiA4MDA7IGxldHRlci1zcGFjaW5nOiAwLjFlbTsgdGV4dC10cmFuc2Zvcm06IHVwcGVyY2FzZTsgY29sb3I6ICNGRkZGRkY7IGJhY2tncm91bmQ6IHJnYmEoMTUsMTUsMTgsMC42Mik7IH0gJiAuZXh0cmFpdC1wYXN0aWxsZTo6YmVmb3JlIHsgY29udGVudDogJ+KGuyc7IGZvbnQtc2l6ZTogMTNweDsgbGV0dGVyLXNwYWNpbmc6IDA7IH0gJi5ybC1hbmltZSA+IC5tdXItY2FzZSB7IG9wYWNpdHk6IDA7IHRyYW5zZm9ybTogdHJhbnNsYXRlWSgzNHB4KSBzY2FsZSgwLjk3KTsgZmlsdGVyOiBibHVyKDhweCk7IH0gJi5ybC1hbmltZSA+IC5tdXItY2FzZS52dSB7IGFuaW1hdGlvbjogcmwtbXVyIDAuOXMgY3ViaWMtYmV6aWVyKDAuMiwgMC44LCAwLjIsIDEpIGZvcndhcmRzOyB9"
+                        "raw": "aXNvbGF0aW9uOiBpc29sYXRlOyBncmlkLWF1dG8tZmxvdzogZGVuc2U7ICY6OmJlZm9yZSB7IGNvbnRlbnQ6ICcnOyBwb3NpdGlvbjogYWJzb2x1dGU7IHotaW5kZXg6IC0xOyBsZWZ0OiAtMTAlOyB0b3A6IDYlOyB3aWR0aDogNTIlOyBoZWlnaHQ6IDQ2JTsgYm9yZGVyLXJhZGl1czogNTAlOyBwb2ludGVyLWV2ZW50czogbm9uZTsgYmFja2dyb3VuZDogcmFkaWFsLWdyYWRpZW50KGNsb3Nlc3Qtc2lkZSwgcmdiYSgxNjcsMTIzLDI0MCwwLjQyKSwgcmdiYSgxNjcsMTIzLDI0MCwwKSk7IGZpbHRlcjogYmx1cigzMHB4KTsgfSAmOjphZnRlciB7IGNvbnRlbnQ6ICcnOyBwb3NpdGlvbjogYWJzb2x1dGU7IHotaW5kZXg6IC0xOyByaWdodDogLTEwJTsgYm90dG9tOiA0JTsgd2lkdGg6IDUwJTsgaGVpZ2h0OiA0NiU7IGJvcmRlci1yYWRpdXM6IDUwJTsgcG9pbnRlci1ldmVudHM6IG5vbmU7IGJhY2tncm91bmQ6IHJhZGlhbC1ncmFkaWVudChjbG9zZXN0LXNpZGUsIHJnYmEoMjU1LDE3MSwxNTAsMC41KSwgcmdiYSgyNTUsMTcxLDE1MCwwKSk7IGZpbHRlcjogYmx1cigzMHB4KTsgfSAmID4gLm11ci1jYXNlIHsgZ3JpZC1yb3c6IHNwYW4gMTsgZGlzcGxheTogZmxleDsgZmxleC1kaXJlY3Rpb246IGNvbHVtbjsgbWluLXdpZHRoOiAwOyB9ICYgPiAubXVyLWNhc2UubXVyLWxhcmdlIHsgZ3JpZC1jb2x1bW46IHNwYW4gMjsgZ3JpZC1yb3c6IHNwYW4gMjsgfSAmID4gLm11ci1jYXNlLm11ci1oYXV0ZSB7IGdyaWQtcm93OiBzcGFuIDI7IH0gJiAubXVyLWNhc2UgPiAuZWxlbWVudG9yIHsgZGlzcGxheTogY29udGVudHM7IH0gJiAubXVyLWNhc2UgLmNhcnRlLWxpc3RlIHsgcG9zaXRpb246IHJlbGF0aXZlOyBmbGV4OiAxIDEgYXV0bzsgbWluLWhlaWdodDogMDsgZ2FwOiAwOyBwYWRkaW5nOiA3cHggN3B4IDE2cHg7IGJvcmRlci1yYWRpdXM6IDI0cHg7IGJhY2tncm91bmQ6IHJhZGlhbC1ncmFkaWVudCg3MCUgNjAlIGF0IDE1JSAwJSwgcmdiYSgyNTUsMjU1LDI1NSwwLjkpLCByZ2JhKDI1NSwyNTUsMjU1LDApIDcyJSksIGxpbmVhci1ncmFkaWVudCgxNTBkZWcsIHJnYmEoMjU1LDI1NSwyNTUsMC43KSwgcmdiYSgyNTUsMjU1LDI1NSwwLjQpKTsgYmFja2Ryb3AtZmlsdGVyOiBibHVyKDE4cHgpIHNhdHVyYXRlKDE2MCUpOyBib3gtc2hhZG93OiBpbnNldCAwIDFweCAwICNGRkZGRkYsIGluc2V0IDAgMCAwIDFweCByZ2JhKDI1NSwyNTUsMjU1LDAuNiksIDAgMjZweCA2MHB4IC0zMnB4IHJnYmEoNzYsNDgsMTcwLDAuNCk7IH0gJiAubXVyLWNhc2UgLnZpZ25ldHRlLXZpZGVvIHsgZGlzcGxheTogZmxleDsgZmxleC1kaXJlY3Rpb246IGNvbHVtbjsgZmxleDogMCAwIGF1dG87IHBhZGRpbmc6IDA7IGJvcmRlci1yYWRpdXM6IDE4cHg7IGJhY2tncm91bmQ6IHRyYW5zcGFyZW50OyBib3gtc2hhZG93OiBub25lOyAtLXJsLXJheW9uLXBob3RvOiAxOHB4OyB9ICYgLm11ci1jYXNlIC52aWduZXR0ZS12aWRlbyA+IC5jYWRyZS1waG90byB7IGZsZXg6IDEgMSBhdXRvOyBtaW4taGVpZ2h0OiAwOyBhc3BlY3QtcmF0aW86IDE2IC8gOTsgfSAmIC5tdXItbGFyZ2UgLnZpZ25ldHRlLXZpZGVvLCAmIC5tdXItaGF1dGUgLnZpZ25ldHRlLXZpZGVvIHsgZmxleDogMSAxIGF1dG87IH0gJiAubXVyLWxhcmdlIC52aWduZXR0ZS12aWRlbyA+IC5jYWRyZS1waG90bywgJiAubXVyLWhhdXRlIC52aWduZXR0ZS12aWRlbyA+IC5jYWRyZS1waG90byB7IGFzcGVjdC1yYXRpbzogYXV0bzsgbWluLWhlaWdodDogMjAwcHg7IH0gJiAubXVyLWNhc2UgLnBpbGUtc2VycmVlIHsgZ2FwOiA0cHg7IHBhZGRpbmc6IDE0cHggMTBweCAwOyB9ICYgLm11ci1jYXNlIC5waWxlLXNlcnJlZSAudGl0cmUteHMgeyBmb250LXNpemU6IDE5cHg7IH0gJiAubXVyLWxhcmdlIC5waWxlLXNlcnJlZSAudGl0cmUteHMgeyBmb250LXNpemU6IDI2cHg7IH0gJiAubXVyLWNhc2UgLmF2YW50LWFwcmVzIHsgZGlzcGxheTogbm9uZTsgfSAmIC5leHRyYWl0LWNhZHJlIHsgZGlzcGxheTogZmxleDsgZmxleDogMSAxIGF1dG87IG1pbi1oZWlnaHQ6IDIwMHB4OyBwYWRkaW5nOiA3cHg7IGJvcmRlci1yYWRpdXM6IDI0cHg7IGJhY2tncm91bmQ6IHJhZGlhbC1ncmFkaWVudCg3MCUgNjAlIGF0IDE1JSAwJSwgcmdiYSgyNTUsMjU1LDI1NSwwLjkpLCByZ2JhKDI1NSwyNTUsMjU1LDApIDcyJSksIGxpbmVhci1ncmFkaWVudCgxNTBkZWcsIHJnYmEoMjU1LDI1NSwyNTUsMC43KSwgcmdiYSgyNTUsMjU1LDI1NSwwLjQpKTsgYmFja2Ryb3AtZmlsdGVyOiBibHVyKDE4cHgpIHNhdHVyYXRlKDE2MCUpOyBib3gtc2hhZG93OiBpbnNldCAwIDFweCAwICNGRkZGRkYsIGluc2V0IDAgMCAwIDFweCByZ2JhKDI1NSwyNTUsMjU1LDAuNiksIDAgMjZweCA2MHB4IC0zMnB4IHJnYmEoNzYsNDgsMTcwLDAuNCk7IH0gJiAuZXh0cmFpdC12aWRlbyB7IHBvc2l0aW9uOiByZWxhdGl2ZTsgZmxleDogMSAxIGF1dG87IG92ZXJmbG93OiBoaWRkZW47IGJvcmRlci1yYWRpdXM6IDE4cHg7IGJhY2tncm91bmQ6IGxpbmVhci1ncmFkaWVudCgxNjBkZWcsICMzNDM0RTAsICMxQzE3MzApOyB9ICYgLmV4dHJhaXQtdmlkZW8gdmlkZW8geyBwb3NpdGlvbjogYWJzb2x1dGU7IHRvcDogMDsgbGVmdDogMDsgd2lkdGg6IDEwMCU7IGhlaWdodDogMTAwJTsgb2JqZWN0LWZpdDogY292ZXI7IH0gJiAuZXh0cmFpdC1wYXN0aWxsZSB7IHBvc2l0aW9uOiBhYnNvbHV0ZTsgei1pbmRleDogMjsgbGVmdDogMTJweDsgYm90dG9tOiAxMnB4OyBkaXNwbGF5OiBpbmxpbmUtZmxleDsgYWxpZ24taXRlbXM6IGNlbnRlcjsgZ2FwOiA3cHg7IHBhZGRpbmc6IDZweCAxMnB4OyBib3JkZXItcmFkaXVzOiA5OTlweDsgZm9udC1mYW1pbHk6IEhhbmtlbiBHcm90ZXNrOyBmb250LXNpemU6IDEycHg7IGxpbmUtaGVpZ2h0OiAxOyBmb250LXdlaWdodDogODAwOyBsZXR0ZXItc3BhY2luZzogMC4xZW07IHRleHQtdHJhbnNmb3JtOiB1cHBlcmNhc2U7IGNvbG9yOiAjRkZGRkZGOyBiYWNrZ3JvdW5kOiByZ2JhKDE1LDE1LDE4LDAuNjIpOyB9ICYgLmV4dHJhaXQtcGFzdGlsbGU6OmJlZm9yZSB7IGNvbnRlbnQ6ICfihrsnOyBmb250LXNpemU6IDEzcHg7IGxldHRlci1zcGFjaW5nOiAwOyB9ICYucmwtYW5pbWUgPiAubXVyLWNhc2UgeyBvcGFjaXR5OiAwOyB0cmFuc2Zvcm06IHRyYW5zbGF0ZVkoMzRweCkgc2NhbGUoMC45Nyk7IGZpbHRlcjogYmx1cig4cHgpOyB9ICYucmwtYW5pbWUgPiAubXVyLWNhc2UudnUgeyBhbmltYXRpb246IHJsLW11ciAwLjlzIGN1YmljLWJlemllcigwLjIsIDAuOCwgMC4yLCAxKSBmb3J3YXJkczsgfQ=="
                     }
                 }
             ]
@@ -33071,18 +33078,8 @@
             "id": "g-7606bf5",
             "label": "scene-bulles",
             "groupe": "Fiches et listes",
-            "description": "Showreel et ses bulles de citations : les bulles flottent autour de la vidéo ; sous la vidéo en mobile.",
+            "description": "Showreel et ses bulles de citations : les bulles sous la vidéo, qui en chevauchent le bas.",
             "variants": [
-                {
-                    "meta": {
-                        "breakpoint": "mobile",
-                        "state": null
-                    },
-                    "props": [],
-                    "custom_css": {
-                        "raw": "JiA+IC5lbGVtZW50b3Itd2lkZ2V0LXJvbGxpbmctbGlzdGUgeyBwb3NpdGlvbjogcmVsYXRpdmU7IHBvaW50ZXItZXZlbnRzOiBhdXRvOyB9"
-                    }
-                },
                 {
                     "meta": {
                         "breakpoint": "desktop",
@@ -33110,7 +33107,7 @@
                         }
                     },
                     "custom_css": {
-                        "raw": "JiA+IC5lbGVtZW50b3Itd2lkZ2V0LXJvbGxpbmctbGlzdGUgeyBwb3NpdGlvbjogYWJzb2x1dGU7IHotaW5kZXg6IDU7IHRvcDogMDsgcmlnaHQ6IDA7IGJvdHRvbTogMDsgbGVmdDogMDsgbWFyZ2luOiAwOyBwb2ludGVyLWV2ZW50czogbm9uZTsgfQ=="
+                        "raw": "JiA+IC5lbGVtZW50b3Itd2lkZ2V0LXJvbGxpbmctbGlzdGUgeyBwb3NpdGlvbjogcmVsYXRpdmU7IHotaW5kZXg6IDU7IG1hcmdpbjogMDsgfQ=="
                     }
                 }
             ]
@@ -33119,18 +33116,63 @@
             "id": "g-0e1feea",
             "label": "bulles-showreel",
             "groupe": "Fiches et listes",
-            "description": "Liste des bulles de citations (classe de la grille du widget Liste, carte « Bulle de citation ») : 3 bulles autour du showreel, qui flottent ; l'une sous l'autre en mobile.",
+            "description": "Liste des bulles de citations (classe de la grille du widget Liste, carte « Bulle de citation ») : 3 bulles alignées sous le showreel, qui ne chevauchent que le bas de la vidéo ; l'une sous l'autre en mobile.",
             "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "tablet",
+                        "state": null
+                    },
+                    "props": {
+                        "margin": {
+                            "$$type": "dimensions",
+                            "value": {
+                                "block-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": -32,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 16,
+                                        "unit": "px"
+                                    }
+                                },
+                                "block-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 0,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 16,
+                                        "unit": "px"
+                                    }
+                                }
+                            }
+                        },
+                        "gap": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 14,
+                                "unit": "px"
+                            }
+                        }
+                    },
+                    "custom_css": null
+                },
                 {
                     "meta": {
                         "breakpoint": "mobile",
                         "state": null
                     },
                     "props": {
-                        "position": {
-                            "$$type": "string",
-                            "value": "relative"
-                        },
                         "margin": {
                             "$$type": "dimensions",
                             "value": {
@@ -33140,16 +33182,29 @@
                                         "size": 16,
                                         "unit": "px"
                                     }
+                                },
+                                "inline-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 0,
+                                        "unit": "px"
+                                    }
+                                },
+                                "block-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 0,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 0,
+                                        "unit": "px"
+                                    }
                                 }
                             }
-                        },
-                        "display": {
-                            "$$type": "string",
-                            "value": "flex"
-                        },
-                        "flex-direction": {
-                            "$$type": "string",
-                            "value": "column"
                         },
                         "gap": {
                             "$$type": "size",
@@ -33157,10 +33212,14 @@
                                 "size": 12,
                                 "unit": "px"
                             }
+                        },
+                        "grid-template-columns": {
+                            "$$type": "string",
+                            "value": "minmax(0, 1fr)"
                         }
                     },
                     "custom_css": {
-                        "raw": "cG9pbnRlci1ldmVudHM6IGF1dG87ICYgLmJ1bGxlLWNpdGF0aW9uIHsgcG9zaXRpb246IHJlbGF0aXZlOyB0b3A6IGF1dG87IHJpZ2h0OiBhdXRvOyBib3R0b206IGF1dG87IGxlZnQ6IGF1dG87IHdpZHRoOiAxMDAlOyByb3RhdGU6IDBkZWc7IGFuaW1hdGlvbjogbm9uZTsgfSAmID4gZGl2Om50aC1sYXN0LW9mLXR5cGUobikgLmJ1bGxlLWNpdGF0aW9uIHsgbGVmdDogYXV0bzsgcmlnaHQ6IGF1dG87IHRvcDogYXV0bzsgYm90dG9tOiBhdXRvOyByb3RhdGU6IDBkZWc7IH0="
+                        "raw": "JiA+IGRpdjpudGgtbGFzdC1vZi10eXBlKG4pIC5idWxsZS1jaXRhdGlvbiB7IHJvdGF0ZTogMGRlZzsgfQ=="
                     }
                 },
                 {
@@ -33171,35 +33230,7 @@
                     "props": {
                         "position": {
                             "$$type": "string",
-                            "value": "absolute"
-                        },
-                        "inset-block-start": {
-                            "$$type": "size",
-                            "value": {
-                                "size": 0,
-                                "unit": "px"
-                            }
-                        },
-                        "inset-inline-end": {
-                            "$$type": "size",
-                            "value": {
-                                "size": 0,
-                                "unit": "px"
-                            }
-                        },
-                        "inset-block-end": {
-                            "$$type": "size",
-                            "value": {
-                                "size": 0,
-                                "unit": "px"
-                            }
-                        },
-                        "inset-inline-start": {
-                            "$$type": "size",
-                            "value": {
-                                "size": 0,
-                                "unit": "px"
-                            }
+                            "value": "relative"
                         },
                         "z-index": {
                             "$$type": "number",
@@ -33212,13 +33243,57 @@
                                 "unit": "px"
                             }
                         },
+                        "margin": {
+                            "$$type": "dimensions",
+                            "value": {
+                                "block-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": -42,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 28,
+                                        "unit": "px"
+                                    }
+                                },
+                                "block-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 0,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 28,
+                                        "unit": "px"
+                                    }
+                                }
+                            }
+                        },
                         "display": {
                             "$$type": "string",
-                            "value": "block"
+                            "value": "grid"
+                        },
+                        "gap": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 20,
+                                "unit": "px"
+                            }
+                        },
+                        "grid-template-columns": {
+                            "$$type": "string",
+                            "value": "repeat(3, minmax(0, 1fr))"
                         }
                     },
                     "custom_css": {
-                        "raw": "cG9pbnRlci1ldmVudHM6IG5vbmU7ICYgLmJ1bGxlLWNpdGF0aW9uIHsgcG9zaXRpb246IGFic29sdXRlOyB3aWR0aDogbWluKDI5MHB4LCAzNiUpOyBwb2ludGVyLWV2ZW50czogYXV0bzsgYW5pbWF0aW9uOiBybC1mbG90dGUgNnMgZWFzZS1pbi1vdXQgaW5maW5pdGU7IH0gJiA+IGRpdjpudGgtbGFzdC1vZi10eXBlKDMpIC5idWxsZS1jaXRhdGlvbiB7IGxlZnQ6IC0xNHB4OyB0b3A6IDY0cHg7IHJvdGF0ZTogLTJkZWc7IH0gJiA+IGRpdjpudGgtbGFzdC1vZi10eXBlKDIpIC5idWxsZS1jaXRhdGlvbiB7IHJpZ2h0OiAtMTRweDsgdG9wOiAzOCU7IHJvdGF0ZTogMmRlZzsgYW5pbWF0aW9uLWRlbGF5OiAtMnM7IH0gJiA+IGRpdjpudGgtbGFzdC1vZi10eXBlKDEpIC5idWxsZS1jaXRhdGlvbiB7IGxlZnQ6IDIyJTsgYm90dG9tOiAtMzBweDsgcm90YXRlOiAtMWRlZzsgYW5pbWF0aW9uLWRlbGF5OiAtNHM7IH0="
+                        "raw": "JiA+IGRpdjpudGgtbGFzdC1vZi10eXBlKDMpIC5idWxsZS1jaXRhdGlvbiB7IHJvdGF0ZTogLTEuNWRlZzsgfSAmID4gZGl2Om50aC1sYXN0LW9mLXR5cGUoMSkgLmJ1bGxlLWNpdGF0aW9uIHsgcm90YXRlOiAxLjVkZWc7IH0="
                     }
                 }
             ]

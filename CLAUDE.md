@@ -623,6 +623,11 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
     B vidéo pleine largeur, bulles en rangée sous la vidéo (chevauchent 40 px du bas), C une bulle à la fois dans un coin.
   - 404 : rien à régler dans WordPress (gabarit 404 du thème automatique) ; modèle choisi dans Personnaliser > « Rolling :
     modèles des fiches », modifié dans Mes modèles « Rolling · Page 404 ».
+- **0.6.2** : bulles du showreel = **option B** (`bulles-showreel` en grille de 3 sous la vidéo, marge -42 px : ne chevauchent
+  que le bas ; 1 colonne en mobile ; `scene-bulles` ne met plus le widget en absolu). Mur des réalisations jugé illisible
+  (cases trop petites, plaque de titre sur l'image) ⇒ **3 colonnes** (2 sous 1024, 1 en mobile), client + titre **sous**
+  l'image dans le cadre en verre (plus de plaque fumée), grande case 2 × 2, 9:16 sur **2 rangées** (≈ 0,64 : peu de recadrage),
+  extraits remplissent leur case (min 200 px) ; en mobile, tout en une colonne (9:16 en 4:5).
 - **Chargement de page effet film** (demande avant la fin de la livraison 4) : maquette `maquettes/loading/maquette-loading.html`
   (copie /workspace/maquette-loading.html), 4 options : A amorce 3-2-1, B clap qui se ferme puis rideau, C ouverture
   cinéma (bandes noires + REC + timecode + règle avec la tête de lecture rouge des frises, plus de filet fin), D barre de lecture en haut sans écran. Conseil : C à l'arrivée (première page
