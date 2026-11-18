@@ -657,13 +657,19 @@ offre = F("L'offre", ['section', 'halos-offre'], tag='section', ancre='offres', 
             formule('Création + Tournage', ['section-sombre', 'carte-prix-sombre'], '2&nbsp;080&nbsp;€<span> / mois</span>', ['prix-degrade'], 'Soit 25&nbsp;000&nbsp;€ / an', 'Tout Création, plus le tournage et le motion fait main', ['resume-offre-sombre'],
                     ['Captation offerte, partout en France', 'Interviews, témoignages et événements', 'Avatars et vidéos produit', 'Motion 100&nbsp;% fait main, sans IA'], badge='Le plus complet'),
         ]),
-        F('Offre · promesses', ['carte-verre', 'grand-bloc', 'carte-promesses'], 'margin-top: 28px;', enfants=[
-            H('Promesses · titre', "L'illimité qui tient ses promesses&nbsp;:", 'h3', ['titre-xs']),
-            F('Promesses · liste', ['grille-4'], 'margin-top: 8px;', enfants=[
-                F('Promesse %d' % n, ['ligne-coche'], enfants=[
-                    I('Promesse %d · chiffre' % n, 'chiffre-%d.webp' % n, cls=['picto-verre'], style='height: 40px;', taille='medium'),
-                    P('Promesse %d · texte' % n, t, ['texte-petit']),
-                ]) for n, t in enumerate(['<strong>Un projet traité à fond</strong> à la fois', '<strong>1 projet = 1 vidéo livrée</strong>, prête à publier', '<strong>Des allers-retours cadrés</strong>, pour livrer vite', '<strong>1 abonnement = 1 équipe métier</strong>'], 1)
+        F('Offre · promesses', None, COLONNE + ' margin-top: 44px; padding: 0;', enfants=[
+            H('Promesses · titre', "L'illimité qui tient <em>ses promesses.</em>", 'h3', ['titre-xs'], 'text-align: center;'),
+            F('Promesses · cartes', ['cartes-mini'], enfants=[
+                F('Promesse %d' % n, ['carte-verre', 'carte-mini'], enfants=[
+                    I('Promesse %d · chiffre' % n, 'chiffre-%d.webp' % n, cls=['chiffre-mini'], taille='medium'),
+                    H('Promesse %d · titre' % n, t, 'h4', ['titre-mini']),
+                    P('Promesse %d · note' % n, m, ['note-jeu']),
+                ]) for n, (t, m) in enumerate([
+                    ('Un projet traité à fond, à la fois.', 'focus total'),
+                    ('1 projet = 1 vidéo livrée.', 'prête à poster'),
+                    ('Des allers-retours cadrés.', 'sans ping-pong'),
+                    ('1 abonnement = 1 équipe métier.', 'vos experts'),
+                ], 1)
             ]),
         ]),
         F('Offre · boutons', ['rangee'], 'justify-content: center; margin-top: 36px;', enfants=[

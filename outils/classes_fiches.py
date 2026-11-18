@@ -424,6 +424,18 @@ CLASSES = [
      "width: 256px; min-height: 300px; margin: 0 -12px; justify-content: space-between; gap: 18px; padding: 24px; text-align: left; transition: transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1); "
      "@media(--mobile) { display: grid; grid-template-columns: 52px minmax(0, 1fr); align-items: center; column-gap: 16px; row-gap: 12px; min-height: 0; margin: 0; padding: 20px 20px 18px; }",
      "@media (max-width: 767px) { & > .note-jeu { grid-column: 1 / -1; grid-row: 2; } & > :not(.note-jeu):not(.chiffre-jeu):not(.elementor-element-overlay) { grid-column: 2; grid-row: 1; min-width: 0; } }"),
+    ('cartes-mini', "Accueil : rangée de 4 petites cartes à jouer (promesses de l'illimité, version courte de la page Offres), inclinées en éventail, qui se redressent au survol ; 2 × 2 sous 1024 px et en mobile, droites.",
+     "display: flex; flex-direction: row; justify-content: center; align-items: flex-start; gap: 0; width: 100%; margin-top: 22px; padding: 6px 0 22px; "
+     "& > .carte-mini:nth-last-child(4) { transform: rotate(-6deg) translateY(12px); } & > .carte-mini:nth-last-child(3) { transform: rotate(-2deg); } "
+     "& > .carte-mini:nth-last-child(2) { transform: rotate(2deg) translateY(2px); } & > .carte-mini:nth-last-child(1) { transform: rotate(6deg) translateY(14px); } "
+     "& > .carte-mini:hover { z-index: 5; transform: rotate(0deg) translateY(-10px) scale(1.04); } "
+     "@media(--tablet) { flex-wrap: wrap; gap: 14px; max-width: 600px; margin-left: auto; margin-right: auto; & > .carte-mini, & > .carte-mini:nth-last-child(n) { width: calc(50% - 7px); margin: 0; transform: none; } & > .carte-mini:hover { transform: translateY(-6px); } } "
+     "@media(--mobile) { gap: 12px; padding: 0; & > .carte-mini, & > .carte-mini:nth-last-child(n) { width: calc(50% - 6px); } }"),
+    ('carte-mini', "Petite carte à jouer de l'accueil (avec carte-verre) : chiffre en verre, titre court, note manuscrite.",
+     "width: 214px; min-height: 190px; margin: 0 -8px; justify-content: space-between; gap: 12px; padding: 20px; text-align: left; transition: transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1); "
+     "@media(--mobile) { min-height: 0; padding: 16px 14px; gap: 10px; & > .note-jeu { font-size: 21px; } }"),
+    ('chiffre-mini', "Chiffre en verre d'une petite carte à jouer.", "display: block; width: auto; height: 64px; max-width: 100%; object-fit: contain; object-position: left center; @media(--mobile) { height: 46px; }"),
+    ('titre-mini', "Titre d'une petite carte à jouer.", "font-family: Bricolage Grotesque; font-weight: 650; font-size: 19px; line-height: 1.15; letter-spacing: -0.025em; color: var(--rl-texte, var(--encre)); @media(--mobile) { font-size: 16px; }"),
     ('chiffre-jeu', "Grand chiffre en verre d'une carte à jouer.", "display: block; width: auto; height: 92px; max-width: 100%; object-fit: contain; object-position: left center; @media(--mobile) { width: 52px; height: 56px; object-position: center; }", "@media (max-width: 767px) { grid-column: 1; grid-row: 1; }"),
     ('note-jeu', "Note manuscrite en bas d'une carte à jouer (Caveat, orange foncé).", "display: block; font-family: Caveat; font-size: 28px; line-height: 1; font-weight: 700; color: #A63C14; transform: rotate(-3deg); transform-origin: left center; @media(--mobile) { font-size: 26px; }", "@media (max-width: 767px) { grid-column: 1 / -1; grid-row: 2; white-space: nowrap; }"),
 

@@ -3,7 +3,7 @@
  "titre": "Rolling · 10 L'offre",
  "type": "e-flexbox",
  "composition": {
-  "xml_structure": "<e-flexbox configuration-id=\"L'offre\"><e-flexbox configuration-id=\"Offre · contenu\"><e-flexbox configuration-id=\"Offre · en-tête\"><e-flexbox configuration-id=\"Offre · repère\"><e-paragraph configuration-id=\"Offre · timecode\"></e-paragraph><e-paragraph configuration-id=\"Offre · sur-titre\"></e-paragraph></e-flexbox><e-heading configuration-id=\"Offre · titre\"></e-heading><e-paragraph configuration-id=\"Offre · introduction\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Offre · formules\"><e-flexbox configuration-id=\"Formule · Création illimitée\"><e-heading configuration-id=\"Création illimitée · nom\"></e-heading><e-paragraph configuration-id=\"Création illimitée · prix\"></e-paragraph><e-paragraph configuration-id=\"Création illimitée · annuel\"></e-paragraph><e-paragraph configuration-id=\"Création illimitée · résumé\"></e-paragraph><e-flexbox configuration-id=\"Création illimitée · coches wrap\"><e-flexbox configuration-id=\"Création illimitée · coches\"><e-flexbox configuration-id=\"Création illimitée · coches · ligne 1\"><e-image configuration-id=\"Création illimitée · coches · coche 1\"></e-image><e-paragraph configuration-id=\"Création illimitée · coches · texte 1\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Création illimitée · coches · ligne 2\"><e-image configuration-id=\"Création illimitée · coches · coche 2\"></e-image><e-paragraph configuration-id=\"Création illimitée · coches · texte 2\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Création illimitée · coches · ligne 3\"><e-image configuration-id=\"Création illimitée · coches · coche 3\"></e-image><e-paragraph configuration-id=\"Création illimitée · coches · texte 3\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Création illimitée · coches · ligne 4\"><e-image configuration-id=\"Création illimitée · coches · coche 4\"></e-image><e-paragraph configuration-id=\"Création illimitée · coches · texte 4\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Formule · Création + Tournage\"><e-paragraph configuration-id=\"Création + Tournage · badge\"></e-paragraph><e-heading configuration-id=\"Création + Tournage · nom\"></e-heading><e-paragraph configuration-id=\"Création + Tournage · prix\"></e-paragraph><e-paragraph configuration-id=\"Création + Tournage · annuel\"></e-paragraph><e-paragraph configuration-id=\"Création + Tournage · résumé\"></e-paragraph><e-flexbox configuration-id=\"Création + Tournage · coches wrap\"><e-flexbox configuration-id=\"Création + Tournage · coches\"><e-flexbox configuration-id=\"Création + Tournage · coches · ligne 1\"><e-image configuration-id=\"Création + Tournage · coches · coche 1\"></e-image><e-paragraph configuration-id=\"Création + Tournage · coches · texte 1\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Création + Tournage · coches · ligne 2\"><e-image configuration-id=\"Création + Tournage · coches · coche 2\"></e-image><e-paragraph configuration-id=\"Création + Tournage · coches · texte 2\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Création + Tournage · coches · ligne 3\"><e-image configuration-id=\"Création + Tournage · coches · coche 3\"></e-image><e-paragraph configuration-id=\"Création + Tournage · coches · texte 3\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Création + Tournage · coches · ligne 4\"><e-image configuration-id=\"Création + Tournage · coches · coche 4\"></e-image><e-paragraph configuration-id=\"Création + Tournage · coches · texte 4\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Offre · promesses\"><e-heading configuration-id=\"Promesses · titre\"></e-heading><e-flexbox configuration-id=\"Promesses · liste\"><e-flexbox configuration-id=\"Promesse 1\"><e-image configuration-id=\"Promesse 1 · chiffre\"></e-image><e-paragraph configuration-id=\"Promesse 1 · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Promesse 2\"><e-image configuration-id=\"Promesse 2 · chiffre\"></e-image><e-paragraph configuration-id=\"Promesse 2 · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Promesse 3\"><e-image configuration-id=\"Promesse 3 · chiffre\"></e-image><e-paragraph configuration-id=\"Promesse 3 · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Promesse 4\"><e-image configuration-id=\"Promesse 4 · chiffre\"></e-image><e-paragraph configuration-id=\"Promesse 4 · texte\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Offre · boutons\"><e-button configuration-id=\"Offre · bouton principal\"></e-button><e-button configuration-id=\"Offre · bouton secondaire\"></e-button></e-flexbox></e-flexbox></e-flexbox>",
+  "xml_structure": "<e-flexbox configuration-id=\"L'offre\"><e-flexbox configuration-id=\"Offre · contenu\"><e-flexbox configuration-id=\"Offre · en-tête\"><e-flexbox configuration-id=\"Offre · repère\"><e-paragraph configuration-id=\"Offre · timecode\"></e-paragraph><e-paragraph configuration-id=\"Offre · sur-titre\"></e-paragraph></e-flexbox><e-heading configuration-id=\"Offre · titre\"></e-heading><e-paragraph configuration-id=\"Offre · introduction\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Offre · formules\"><e-flexbox configuration-id=\"Formule · Création illimitée\"><e-heading configuration-id=\"Création illimitée · nom\"></e-heading><e-paragraph configuration-id=\"Création illimitée · prix\"></e-paragraph><e-paragraph configuration-id=\"Création illimitée · annuel\"></e-paragraph><e-paragraph configuration-id=\"Création illimitée · résumé\"></e-paragraph><e-flexbox configuration-id=\"Création illimitée · coches wrap\"><e-flexbox configuration-id=\"Création illimitée · coches\"><e-flexbox configuration-id=\"Création illimitée · coches · ligne 1\"><e-image configuration-id=\"Création illimitée · coches · coche 1\"></e-image><e-paragraph configuration-id=\"Création illimitée · coches · texte 1\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Création illimitée · coches · ligne 2\"><e-image configuration-id=\"Création illimitée · coches · coche 2\"></e-image><e-paragraph configuration-id=\"Création illimitée · coches · texte 2\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Création illimitée · coches · ligne 3\"><e-image configuration-id=\"Création illimitée · coches · coche 3\"></e-image><e-paragraph configuration-id=\"Création illimitée · coches · texte 3\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Création illimitée · coches · ligne 4\"><e-image configuration-id=\"Création illimitée · coches · coche 4\"></e-image><e-paragraph configuration-id=\"Création illimitée · coches · texte 4\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Formule · Création + Tournage\"><e-paragraph configuration-id=\"Création + Tournage · badge\"></e-paragraph><e-heading configuration-id=\"Création + Tournage · nom\"></e-heading><e-paragraph configuration-id=\"Création + Tournage · prix\"></e-paragraph><e-paragraph configuration-id=\"Création + Tournage · annuel\"></e-paragraph><e-paragraph configuration-id=\"Création + Tournage · résumé\"></e-paragraph><e-flexbox configuration-id=\"Création + Tournage · coches wrap\"><e-flexbox configuration-id=\"Création + Tournage · coches\"><e-flexbox configuration-id=\"Création + Tournage · coches · ligne 1\"><e-image configuration-id=\"Création + Tournage · coches · coche 1\"></e-image><e-paragraph configuration-id=\"Création + Tournage · coches · texte 1\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Création + Tournage · coches · ligne 2\"><e-image configuration-id=\"Création + Tournage · coches · coche 2\"></e-image><e-paragraph configuration-id=\"Création + Tournage · coches · texte 2\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Création + Tournage · coches · ligne 3\"><e-image configuration-id=\"Création + Tournage · coches · coche 3\"></e-image><e-paragraph configuration-id=\"Création + Tournage · coches · texte 3\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Création + Tournage · coches · ligne 4\"><e-image configuration-id=\"Création + Tournage · coches · coche 4\"></e-image><e-paragraph configuration-id=\"Création + Tournage · coches · texte 4\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Offre · promesses\"><e-heading configuration-id=\"Promesses · titre\"></e-heading><e-flexbox configuration-id=\"Promesses · cartes\"><e-flexbox configuration-id=\"Promesse 1\"><e-image configuration-id=\"Promesse 1 · chiffre\"></e-image><e-heading configuration-id=\"Promesse 1 · titre\"></e-heading><e-paragraph configuration-id=\"Promesse 1 · note\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Promesse 2\"><e-image configuration-id=\"Promesse 2 · chiffre\"></e-image><e-heading configuration-id=\"Promesse 2 · titre\"></e-heading><e-paragraph configuration-id=\"Promesse 2 · note\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Promesse 3\"><e-image configuration-id=\"Promesse 3 · chiffre\"></e-image><e-heading configuration-id=\"Promesse 3 · titre\"></e-heading><e-paragraph configuration-id=\"Promesse 3 · note\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Promesse 4\"><e-image configuration-id=\"Promesse 4 · chiffre\"></e-image><e-heading configuration-id=\"Promesse 4 · titre\"></e-heading><e-paragraph configuration-id=\"Promesse 4 · note\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Offre · boutons\"><e-button configuration-id=\"Offre · bouton principal\"></e-button><e-button configuration-id=\"Offre · bouton secondaire\"></e-button></e-flexbox></e-flexbox></e-flexbox>",
   "element_config": {
    "L'offre": {
     "_cssid": "offres",
@@ -147,7 +147,7 @@
    },
    "Promesses · titre": {
     "tag": "h3",
-    "title": "L'illimité qui tient ses promesses&nbsp;:"
+    "title": "L'illimité qui tient <em>ses promesses.</em>"
    },
    "Promesse 1 · chiffre": {
     "image": {
@@ -157,8 +157,12 @@
      "size": "medium"
     }
    },
-   "Promesse 1 · texte": {
-    "paragraph": "<strong>Un projet traité à fond</strong> à la fois"
+   "Promesse 1 · titre": {
+    "tag": "h4",
+    "title": "Un projet traité à fond, à la fois."
+   },
+   "Promesse 1 · note": {
+    "paragraph": "focus total"
    },
    "Promesse 2 · chiffre": {
     "image": {
@@ -168,8 +172,12 @@
      "size": "medium"
     }
    },
-   "Promesse 2 · texte": {
-    "paragraph": "<strong>1 projet = 1 vidéo livrée</strong>, prête à publier"
+   "Promesse 2 · titre": {
+    "tag": "h4",
+    "title": "1 projet = 1 vidéo livrée."
+   },
+   "Promesse 2 · note": {
+    "paragraph": "prête à poster"
    },
    "Promesse 3 · chiffre": {
     "image": {
@@ -179,8 +187,12 @@
      "size": "medium"
     }
    },
-   "Promesse 3 · texte": {
-    "paragraph": "<strong>Des allers-retours cadrés</strong>, pour livrer vite"
+   "Promesse 3 · titre": {
+    "tag": "h4",
+    "title": "Des allers-retours cadrés."
+   },
+   "Promesse 3 · note": {
+    "paragraph": "sans ping-pong"
    },
    "Promesse 4 · chiffre": {
     "image": {
@@ -190,8 +202,12 @@
      "size": "medium"
     }
    },
-   "Promesse 4 · texte": {
-    "paragraph": "<strong>1 abonnement = 1 équipe métier</strong>"
+   "Promesse 4 · titre": {
+    "tag": "h4",
+    "title": "1 abonnement = 1 équipe métier."
+   },
+   "Promesse 4 · note": {
+    "paragraph": "vos experts"
    },
    "Offre · bouton principal": {
     "text": "Réserver un échange",
@@ -349,52 +365,63 @@
    "Création + Tournage · coches · texte 4": [
     "texte-petit"
    ],
-   "Offre · promesses": [
-    "carte-verre",
-    "grand-bloc",
-    "carte-promesses"
-   ],
    "Promesses · titre": [
     "titre-xs"
    ],
-   "Promesses · liste": [
-    "grille-4"
+   "Promesses · cartes": [
+    "cartes-mini"
    ],
    "Promesse 1": [
-    "ligne-coche"
+    "carte-verre",
+    "carte-mini"
    ],
    "Promesse 1 · chiffre": [
-    "picto-verre"
+    "chiffre-mini"
    ],
-   "Promesse 1 · texte": [
-    "texte-petit"
+   "Promesse 1 · titre": [
+    "titre-mini"
+   ],
+   "Promesse 1 · note": [
+    "note-jeu"
    ],
    "Promesse 2": [
-    "ligne-coche"
+    "carte-verre",
+    "carte-mini"
    ],
    "Promesse 2 · chiffre": [
-    "picto-verre"
+    "chiffre-mini"
    ],
-   "Promesse 2 · texte": [
-    "texte-petit"
+   "Promesse 2 · titre": [
+    "titre-mini"
+   ],
+   "Promesse 2 · note": [
+    "note-jeu"
    ],
    "Promesse 3": [
-    "ligne-coche"
+    "carte-verre",
+    "carte-mini"
    ],
    "Promesse 3 · chiffre": [
-    "picto-verre"
+    "chiffre-mini"
    ],
-   "Promesse 3 · texte": [
-    "texte-petit"
+   "Promesse 3 · titre": [
+    "titre-mini"
+   ],
+   "Promesse 3 · note": [
+    "note-jeu"
    ],
    "Promesse 4": [
-    "ligne-coche"
+    "carte-verre",
+    "carte-mini"
    ],
    "Promesse 4 · chiffre": [
-    "picto-verre"
+    "chiffre-mini"
    ],
-   "Promesse 4 · texte": [
-    "texte-petit"
+   "Promesse 4 · titre": [
+    "titre-mini"
+   ],
+   "Promesse 4 · note": [
+    "note-jeu"
    ],
    "Offre · boutons": [
     "rangee"
@@ -414,12 +441,8 @@
    "Création illimitée · coches wrap": "padding: 0;",
    "Création + Tournage · annuel": "margin-top: -10px;",
    "Création + Tournage · coches wrap": "padding: 0;",
-   "Offre · promesses": "margin-top: 28px;",
-   "Promesses · liste": "margin-top: 8px;",
-   "Promesse 1 · chiffre": "height: 40px;",
-   "Promesse 2 · chiffre": "height: 40px;",
-   "Promesse 3 · chiffre": "height: 40px;",
-   "Promesse 4 · chiffre": "height: 40px;",
+   "Offre · promesses": "display: flex; flex-direction: column; gap: 0; margin-top: 44px; padding: 0;",
+   "Promesses · titre": "text-align: center;",
    "Offre · boutons": "justify-content: center; margin-top: 36px;"
   }
  },

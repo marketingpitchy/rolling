@@ -689,6 +689,10 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   + mobile (requêtes de conteneur) : A cartes à jouer courtes sans phrase, 2 × 2 en mobile (conseil) ; B mêmes cartes,
   titres reformulés (aucune phrase identique à Offres) ; C étiquettes collées (stickers). Doublon : pas de pénalité pour
   un petit bloc répété.
+- **0.6.10 : promesses de l'accueil = A validé** : bloc `10-offre`, la carte « L'illimité qui tient ses promesses : » (liste)
+  devient un titre h3 centré + `cartes-mini` > 4 × `carte-verre carte-mini` (`chiffre-mini`, `titre-mini` h4, `note-jeu`),
+  mêmes titres que la page Offres sans la phrase ; éventail par nth-last-child, 2 × 2 sous 1024 px (600 px max) et en mobile.
+  `carte-mini` prioritaire. Classe `carte-promesses` gardée (pages existantes). La cliente remplace le bloc sur son accueil.
 - **Chargement de page effet film** (demande avant la fin de la livraison 4) : maquette `maquettes/loading/maquette-loading.html`
   (copie /workspace/maquette-loading.html), 4 options : A amorce 3-2-1, B clap qui se ferme puis rideau, C ouverture
   cinéma (bandes noires + REC + timecode + règle avec la tête de lecture rouge des frises, plus de filet fin), D barre de lecture en haut sans écran. Conseil : C à l'arrivée (première page
