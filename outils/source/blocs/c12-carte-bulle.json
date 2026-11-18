@@ -1,0 +1,38 @@
+{
+ "cle": "c12-carte-bulle",
+ "titre": "Rolling · Bulle de citation (autour du showreel)",
+ "type": "e-flexbox",
+ "apercu": "rolling_temoignage",
+ "composition": {
+  "xml_structure": "<e-flexbox configuration-id=\"Bulle de citation\"><e-paragraph configuration-id=\"Bulle · citation\"></e-paragraph><e-paragraph configuration-id=\"Bulle · auteur\"></e-paragraph><e-paragraph configuration-id=\"Bulle · poste\"></e-paragraph></e-flexbox>",
+  "element_config": {
+   "Bulle · citation": {
+    "paragraph": "⟦rolling-champ|champ=citation⟧"
+   },
+   "Bulle · auteur": {
+    "paragraph": "⟦rolling-champ|champ=auteur⟧"
+   },
+   "Bulle · poste": {
+    "paragraph": "⟦rolling-champ|champ=poste⟧"
+   }
+  },
+  "classes": {
+   "Bulle de citation": [
+    "bulle-citation"
+   ],
+   "Bulle · citation": [
+    "bulle-texte"
+   ],
+   "Bulle · auteur": [
+    "bulle-auteur",
+    "si-auteur"
+   ],
+   "Bulle · poste": [
+    "texte-petit",
+    "si-poste"
+   ]
+  },
+  "style": {}
+ },
+ "brut": {}
+}

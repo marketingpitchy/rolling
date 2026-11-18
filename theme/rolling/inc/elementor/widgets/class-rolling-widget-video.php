@@ -42,8 +42,20 @@ class Rolling_Widget_Video extends Rolling_Widget {
 			array(
 				'courant'     => __( 'Contenu affiché', 'rolling' ),
 				'realisation' => __( 'Réalisation liée (sur un témoignage)', 'rolling' ),
+				'lien'        => __( 'Lien ci-dessous (Vimeo, YouTube ou fichier)', 'rolling' ),
 			)
 		);
+		$this->texte( 'lien', __( 'Lien de la vidéo (si « Lien ci-dessous »)', 'rolling' ), '' );
+		$this->texte( 'titre', __( 'Titre de la vidéo (si « Lien ci-dessous »)', 'rolling' ), __( 'Showreel', 'rolling' ) );
+		$this->choix(
+			'mode',
+			__( 'Lien : avant le clic', 'rolling' ),
+			array(
+				'boucle' => __( 'Aperçu muet en boucle, puis le son au clic', 'rolling' ),
+				'clic'   => __( 'Image seulement, lecture au clic', 'rolling' ),
+			)
+		);
+		$this->texte( 'son', __( 'Lien : texte du bouton son', 'rolling' ), __( 'Activer le son', 'rolling' ) );
 		$this->choix(
 			'apercu',
 			__( 'Avant la lecture (fichier vidéo)', 'rolling' ),
@@ -67,6 +79,10 @@ class Rolling_Widget_Video extends Rolling_Widget {
 	protected function render() {
 		$r  = $this->get_settings_for_display();
 		$id = $this->contenu();
+		if ( 'lien' === $r['source'] ) {
+			$this->rendre_lien( $r );
+			return;
+		}
 		if ( 'realisation' === $r['source'] ) {
 			// Sur un témoignage : la première réalisation liée.
 			$liees = 'rolling_temoignage' === get_post_type( $id ) ? Rolling_Contenus::realisations_liees( $id ) : array();
@@ -122,6 +138,31 @@ class Rolling_Widget_Video extends Rolling_Widget {
 			echo '<button type="button" class="lecture-centre" aria-label="' . esc_attr( sprintf( $r['libelle'], $titre ) ) . '">' . Rolling_Dynamique::image_du_theme( 'bouton-lecture', 'thumbnail' ) . '</button>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- image de wp_get_attachment_image().
 		}
 		echo '</div>';
+	}
+
+	/**
+	 * Vidéo d'un lien (ex. le showreel de la landing) : un calque posé sur l'image d'affiche du cadre (élément Image
+	 * d'Elementor, modifiable). rolling.js y charge l'aperçu muet quand il est à l'écran, puis le lecteur avec le son au
+	 * clic. Vimeo : titre, nom et photo du compte masqués.
+	 *
+	 * @param array $r Réglages.
+	 */
+	private function rendre_lien( $r ) {
+		$url = trim( (string) $r['lien'] );
+		if ( '' === $url ) {
+			if ( \Elementor\Plugin::$instance->editor->is_edit_mode() ) {
+				echo '<p class="bandeau-video" style="top:auto;bottom:14px">' . esc_html__( 'Vidéo : collez le lien dans les réglages du widget', 'rolling' ) . '</p>';
+			}
+			return;
+		}
+		$titre  = '' !== trim( (string) $r['titre'] ) ? $r['titre'] : __( 'Vidéo', 'rolling' );
+		$boucle = 'clic' !== $r['mode'];
+		echo '<div class="video-calque" data-rl-video="' . esc_url( $url ) . '" data-rl-mode="' . ( $boucle ? 'boucle' : 'clic' ) . '">';
+		echo '<button type="button" class="video-calque-bouton" aria-label="' . esc_attr( sprintf( $r['libelle'], $titre ) ) . '">';
+		if ( $boucle ) {
+			echo '<span class="pastille-son">' . esc_html( $r['son'] ) . '</span>';
+		}
+		echo '</button></div>';
 	}
 
 	/**

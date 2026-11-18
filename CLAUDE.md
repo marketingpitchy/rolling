@@ -573,6 +573,36 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   pastille, IA) ; **pas de défilement en 5B** (3-4 personnes visibles par moitié) : grilles 4 + 3 et 3 + 2 ; phrases sous
   les titres proposées ; poste de Tomasz à compléter ; 6C puis « Née chez Pitchy, déjà à l'œuvre. » : A plaque de chiffres
   (13, +500, 1 studio, 1 plateforme) + 3 dernières réalisations + bouton (conseil), B chiffres en colonne + 3 cartes portrait.
+- **Choix finaux** : 6C + **A** (plaque de chiffres + 3 réalisations) ; 4C ok ; 5B jugé bizarre ⇒ **retour à l'horizontal (5A, bandes)**.
+- **0.6.0 (livrée)** :
+  - « +500 » partout (chiffres en verre `plus, 5, 0, 0`), tirets longs retirés des textes (cases « — » du comparatif ⇒ « Non »).
+  - **Showreel par lien** : widget Vidéo, `source=lien` + `lien`, `titre`, `mode` (boucle | clic), `son` ; rend un calque
+    `div.video-calque[data-rl-video][data-rl-mode]` + `button.video-calque-bouton` (+ `span.pastille-son`) posé sur l'image
+    d'affiche (élément Image d'Elementor) d'un cadre `cadre-showreel` (règle `& > .elementor-widget-rolling-video` en absolu).
+    rolling.js `lecteurLien()` : Vimeo `player.vimeo.com/video/ID?h=…&dnt=1&title=0&byline=0&portrait=0&badge=0&vimeo_logo=0`
+    + `background=1&muted=1&loop=1` (aperçu, compte Vimeo payant) ou `autoplay=1` (clic) ; YouTube nocookie ; fichier.
+    Aperçu chargé quand visible, après `load` ; rien avec « réduire les animations » ni dans l'éditeur ; hôte `rl-boucle` /
+    `rl-lit`. Fond iframe en `container-type: size` (max(100cqw, 177.78cqh)) ; vidéo en `object-fit: cover`.
+    Landing (hero) et Contact (showreel) ; lien vide = rien sur le site, rappel dans l'éditeur.
+  - **Témoignages** : `mur-temoins` devient un mur maçonné (colonnes CSS), le widget Liste met chaque carte dans
+    `div.macon-case macon-court|moyen|long|une` (citation ≤ 70 / ≥ 170 caractères) ; taches de couleur en pseudo-éléments de la
+    grille ; automatique sur la page existante (même classe).
+  - **Extraits vidéo** : type `rolling_extrait` (menu sous Réalisations : `menu` dans types()), champs video / format
+    (16-9, 9-16, 1-1) / description ; widget Liste réglages `extraits` (défaut 3, mur de montage seulement) et `texte_extrait`
+    (« Studio Rolling ») ; `div.mur-case.extrait-case > .extrait-cadre > .extrait-video[role=img]` (vidéo muette, rolling.js la lance
+    quand visible) ; mur de montage en verre (cadre 7 px, plaque de titre en verre fumé rgba(22,14,52,.82) : .72 échouait au
+    contrôle Ally) ; filtres (`filtres-liste`) dans une barre en verre partout.
+  - **Offres 4C** : `promesses-jeu` > `cartes-jeu` > `carte-verre carte-jeu` (chiffre-jeu, titre-xs h4, texte-petit, note-jeu) ;
+    inclinaisons par `nth-last-child`.
+  - **L'agence 5A** : `equipe-bandes` > `bande-creas` / `bande-fondu` (pastille-ensemble) / `section-sombre bande-ia`
+    (halos propres, pas halos-nuit : coupure nette en haut) ; experts en `portrait-sombre`.
+  - **Contact** : `p-contact-4-showreel` (cadre-cinema, bulles = widget Liste `carte_theme=bulle` ⇒ modèle `c12-carte-bulle`,
+    `citations_courtes` = les 3 plus courtes, classe `bulles-showreel` ; `scene-bulles` met le widget en absolu) et
+    `p-contact-5-realisations` (plaque-libre + plaque-large, Liste `grille-verre`, extraits=0).
+  - Leçons : dans l'aperçu de l'éditeur, le widget Liste écrit un `<style>` avant chaque carte ⇒ compter les cartes avec
+    `div:nth-last-of-type()` (pas nth-last-child) ; les classes globales des cartes arrivent quelques secondes après
+    l'ouverture de l'éditeur (attendre ~12 s avant une capture) ; `bouton-son` existait déjà (nom de classe en double ⇒
+    `classes_fiches.py` refuse) ; page d'essai modifiée à la main : supprimer `_elementor_element_cache`.
 - **Chargement de page effet film** (demande avant la fin de la livraison 4) : maquette `maquettes/loading/maquette-loading.html`
   (copie /workspace/maquette-loading.html), 4 options : A amorce 3-2-1, B clap qui se ferme puis rideau, C ouverture
   cinéma (bandes noires + REC + timecode + règle avec la tête de lecture rouge des frises, plus de filet fin), D barre de lecture en haut sans écran. Conseil : C à l'arrivée (première page

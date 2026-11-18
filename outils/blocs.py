@@ -422,7 +422,7 @@ methode = F('La méthode', ['section', 'section-lilas'], tag='section', ancre='m
         entete('Méthode', '00:03', 'La méthode', [('Vous avez le fond. <em>Nous produisons la forme.</em>', 'h2', ['titre-lg'])]),
         F('Méthode · étapes', ['grille-etapes'], enfants=[
             etape(1, 'Partagez vos contenus et vos projets.', "Articles, présentations, modules de formation, vos propres rushs, mais aussi lancements ou événements à tourner&nbsp;: nous priorisons ensemble ce qui part en vidéo en premier."),
-            etape(2, 'Nous produisons, un projet à la fois.', "Motion, habillage ou tournage, selon le projet et votre formule — à votre charte, sous l'œil d'un directeur artistique dédié. Traité à fond, livré, nous enchaînons."),
+            etape(2, 'Nous produisons, un projet à la fois.', "Motion, habillage ou tournage, selon le projet et votre formule, à votre charte, sous l'œil d'un directeur artistique dédié. Traité à fond, livré, nous enchaînons."),
             etape(3, 'Vous diffusez. Partout.', "Des vidéos prêtes à l'emploi, déclinées dans tous les formats&nbsp;: horizontal, vertical, carré. Pour vos réseaux, vos sites, votre intranet et vos formations."),
         ]),
     ]),
@@ -689,7 +689,7 @@ def chiffre(nom, chiffres, lu, libelle):
 entete_equipe = entete('Équipe', '00:08', "L'équipe", [('Une agence vidéo née chez <em>Pitchy.</em>', 'h2', ['titre-lg'])])
 entete_equipe.enfants += [
     P('Équipe · texte 1', "Rolling est lancée par les équipes de Pitchy, la plateforme française de création vidéo qui équipe les grandes entreprises depuis 13&nbsp;ans. Même exigence, nouvelle promesse&nbsp;: <strong>cette fois, c'est nous qui produisons.</strong>", ['texte']),
-    P('Équipe · texte 2', 'Un studio motion intégré, une équipe tech qui industrialise la production, et treize ans passés à comprendre comment les grands comptes font — et regardent — de la vidéo.', ['texte']),
+    P('Équipe · texte 2', 'Un studio motion intégré, une équipe tech qui industrialise la production, et treize ans passés à comprendre comment les grands comptes font et regardent de la vidéo.', ['texte']),
 ]
 
 equipe = F('Née chez Pitchy', ['section'], tag='section', enfants=[
@@ -698,7 +698,7 @@ equipe = F('Née chez Pitchy', ['section'], tag='section', enfants=[
         D('Équipe · chiffres', ['lueur-peche'], 'padding: 0;', enfants=[
             F('Chiffres · plaque', ['plaque-chiffres'], enfants=[
                 chiffre('Ans', ['1', '3'], '13', 'ans de vidéo pour les entreprises'),
-                chiffre('Entreprises', ['5', '0', '0', 'plus'], '500+', 'grandes entreprises équipées'),
+                chiffre('Entreprises', ['plus', '5', '0', '0'], '+500', 'grandes entreprises équipées'),
                 chiffre('Studio', ['1'], '1', 'studio motion &amp; tournage intégré'),
                 chiffre('Plateforme', ['1'], '1', 'plateforme de production propriétaire'),
             ]),
@@ -707,7 +707,7 @@ equipe = F('Née chez Pitchy', ['section'], tag='section', enfants=[
             I('Témoignage · photo', 'temoin-julie-charlemagne.jpg', 'Julie Charlemagne', ['portrait', 'portrait-moyen'], taille='thumbnail'),
             F('Témoignage · texte', None, COLONNE, enfants=[
                 P('Témoignage · citation', "«&nbsp;On n'avait pas la bande passante, et on n'avait pas l'expertise. Donc on devait absolument faire appel à quelqu'un qui avait le savoir-faire et qui était professionnel et l'équipe Rolling (ex Pitchy Studio) nous a tout de suite rassuré sur leur accompagnement sur mesure si bien de l'expression des besoins jusqu'à la livraison des vidéos.&nbsp;»", ['texte-citation']),
-                P('Témoignage · auteur', '<strong>Julie Charlemagne</strong> — Responsable Fonctionnel SIRH, Groupement Mousquetaires', ['texte-petit'], 'margin-top: 16px;'),
+                P('Témoignage · auteur', '<strong>Julie Charlemagne</strong>, Responsable Fonctionnel SIRH, Groupement Mousquetaires', ['texte-petit'], 'margin-top: 16px;'),
             ]),
             B('Témoignage · bouton', 'Voir le cas client', '/temoignages/', ['bouton-principal', 'bouton-petit']),
         ]),
@@ -896,6 +896,13 @@ def carte_temoignage(une=False):
         B(p + ' · lien cas client', 'Lire le cas client', FICHE, ['temoin-lien', 'si-recit']),
         B(p + ' · lien réalisation', 'Voir la réalisation', DYN('rolling-lien', lien='realisation'), ['temoin-lien', 'sans-recit', 'si-videos']),
     ])
+
+
+carte_bulle = F('Bulle de citation', ['bulle-citation'], enfants=[
+    P('Bulle · citation', DYN('rolling-champ', champ='citation'), ['bulle-texte']),
+    P('Bulle · auteur', DYN('rolling-champ', champ='auteur'), ['bulle-auteur', 'si-auteur']),
+    P('Bulle · poste', DYN('rolling-champ', champ='poste'), ['texte-petit', 'si-poste']),
+])
 
 
 carte_article = F('Carte article', ['carte-liste'], tag='article', enfants=[
@@ -1565,15 +1572,25 @@ offres_ajout = F('Offres · Création + Tournage', ['section', 'section-suite'],
                 'Sans IA : nos motion designers dessinent chaque plan à la main, pour vos sujets les plus sensibles.',
                 ['Sans IA', 'Sur mesure', '100&nbsp;% fait main'], 'chip-neutre'),
         ]),
-        F('Offres · promesses', ['carte-verre', 'grand-bloc', 'carte-promesses'], 'margin-top: 28px;', enfants=[
-            H('Offres · promesses · titre', "L'illimité qui tient ses promesses&nbsp;:", 'h3', ['titre-xs']),
-            F('Offres · promesses · liste', ['grille-4'], 'margin-top: 8px;', enfants=[
-                F('Offres · promesse %d' % n, ['ligne-coche'], enfants=[
-                    I('Offres · promesse %d · chiffre' % n, 'chiffre-%d.webp' % n, cls=['picto-verre'], style='height: 40px;', taille='medium'),
-                    P('Offres · promesse %d · texte' % n, t, ['texte-petit']),
-                ]) for n, t in enumerate(['<strong>Un projet traité à fond</strong> à la fois', '<strong>1 projet = 1 vidéo livrée</strong>, prête à publier', '<strong>Des allers-retours cadrés</strong>, pour livrer vite', '<strong>1 abonnement = 1 équipe métier</strong>'], 1)
+        F('Offres · promesses', ['promesses-jeu'], 'margin-top: 96px;', enfants=[
+            P('Offres · promesses · sur-titre', 'Nos règles du jeu', ['label', 'label-violet']),
+            H('Offres · promesses · titre', "L'illimité qui tient <em>ses promesses.</em>", 'h3', ['titre-md'], 'margin-top: 14px;'),
+            F('Offres · promesses · cartes', ['cartes-jeu'], enfants=[
+                F('Offres · promesse %d' % n, ['carte-verre', 'carte-jeu'], enfants=[
+                    I('Offres · promesse %d · chiffre' % n, 'chiffre-%d.webp' % n, cls=['chiffre-jeu'], taille='medium'),
+                    F('Offres · promesse %d · textes' % n, ['pile-serree'], enfants=[
+                        H('Offres · promesse %d · titre' % n, t, 'h4', ['titre-xs']),
+                        P('Offres · promesse %d · texte' % n, x, ['texte-petit']),
+                    ]),
+                    P('Offres · promesse %d · note' % n, m, ['note-jeu']),
+                ]) for n, (t, x, m) in enumerate([
+                    ('Un projet traité à fond, à la fois.', "Toute l'équipe sur votre vidéo en cours.", 'focus total'),
+                    ('1 projet = 1 vidéo livrée.', 'Prête à publier, à votre charte.', 'prête à poster'),
+                    ('Des allers-retours cadrés.', 'Des retours groupés, pour livrer vite.', 'sans ping-pong'),
+                    ('1 abonnement = 1 équipe métier.', 'Une équipe qui connaît vos sujets.', 'vos experts'),
+                ], 1)
             ]),
-            P('Offres · promesses · note', "C'est notre façon de garantir la même qualité et la même vitesse — à tous nos abonnés.", ['texte-petit'], 'margin-top: 10px;'),
+            P('Offres · promesses · note', "C'est notre façon de garantir la même qualité et la même vitesse, à tous nos abonnés.", ['texte'], 'margin-top: 8px; text-align: center;'),
         ]),
     ]),
 ])
@@ -1695,6 +1712,39 @@ contact_offres = F('Contact · formules', ['section', 'section-suite'], tag='sec
     ]),
 ])
 
+contact_showreel = F('Contact · showreel', ['section', 'section-suite'], tag='section', enfants=[
+    F('Contact · showreel · contenu', ['conteneur'], COLONNE, enfants=[
+        entete_simple('Contact · showreel', '00:01', 'Le showreel', 'Ce que nous faisons, <em>en une minute.</em>'),
+        F('Contact · showreel · scène', ['scene-bulles'], 'margin-top: 48px;', enfants=[
+            D('Contact · showreel · cadre', ['cadre-photo', 'cadre-cinema', 'cadre-showreel'], enfants=[
+                I('Contact · showreel · affiche', 'showreel-affiche.jpg', '', ['image-couvrante'], taille='large'),
+                W('Contact · showreel · vidéo', 'rolling-video', source='lien', mode='boucle', titre='Showreel Rolling', libelle='Lire avec le son : %s'),
+                P('Contact · showreel · bandeau', 'Showreel', ['bandeau-video']),
+                P('Contact · showreel · durée', '0:59', ['duree']),
+                I('Contact · showreel · lecture', 'bouton-lecture.png', cls=['lecture-centre'], taille='thumbnail'),
+            ]),
+            W('Contact · showreel · citations', 'rolling-liste', contenu='temoignages', nombre='3', classe='bulles-showreel', carte_theme='bulle', citations_courtes='yes', une_auto=''),
+        ]),
+    ]),
+])
+
+contact_realisations = F('Contact · réalisations', ['section', 'section-suite'], tag='section', enfants=[
+    F('Contact · réalisations · contenu', ['conteneur'], COLONNE, enfants=[
+        entete_simple('Contact · réalisations', '00:02', 'Déjà à l’œuvre', 'Née chez Pitchy, <em>déjà à l’œuvre.</em>'),
+        F('Contact · chiffres', ['plaque-libre', 'plaque-large'], 'margin-top: 48px;', enfants=[
+            chiffre('Contact · ans', ['1', '3'], '13', 'ans de vidéo pour les entreprises'),
+            chiffre('Contact · entreprises', ['plus', '5', '0', '0'], '+500', 'grandes entreprises équipées'),
+            chiffre('Contact · studio', ['1'], '1', 'studio motion &amp; tournage intégré'),
+            chiffre('Contact · plateforme', ['1'], '1', 'plateforme de production propriétaire'),
+        ]),
+        H('Contact · réalisations · titre masqué', 'Nos dernières réalisations', 'h3', ['texte-masque']),
+        W('Contact · réalisations · liste', 'rolling-liste', contenu='realisations', nombre='3', classe='grille-verre', extraits='0'),
+        F('Contact · réalisations · bouton', ['rangee'], 'justify-content: center; margin-top: 36px;', enfants=[
+            B('Contact · réalisations · toutes', 'Voir toutes les réalisations', '/realisations/', ['bouton-principal']),
+        ]),
+    ]),
+])
+
 contact_faq = F('Contact · FAQ', ['section', 'section-lilas'], tag='section', enfants=[
     F('Contact · FAQ · contenu', ['conteneur', 'conteneur-etroit'], COLONNE, enfants=[
         F('Contact · FAQ · en-tête', ['entete-section'], enfants=[H('Contact · FAQ · titre', "Vos questions <em>sur l'échange.</em>", 'h2', ['titre-md'])]),
@@ -1736,7 +1786,7 @@ agence_histoire = F("L'agence · histoire", ['section', 'section-suite'], tag='s
     F("L'agence · histoire · contenu", ['conteneur'], COLONNE, enfants=[
         entete_simple("L'agence · histoire", '00:01', 'Notre histoire', "Cette fois, <em>c'est nous qui produisons.</em>"),
         montage("L'agence · histoire", '00:00:00', '13:00:00', [
-            (None, 'Pitchy · depuis 13 ans', 'Pitchy équipe les entreprises.', 'Pitchy, la plateforme française de création vidéo, donne aux équipes com, RH et formation de 500+ grandes entreprises les outils pour faire leurs vidéos.', None),
+            (None, 'Pitchy · depuis 13 ans', 'Pitchy équipe les entreprises.', 'Pitchy, la plateforme française de création vidéo, donne aux équipes com, RH et formation de +500 grandes entreprises les outils pour faire leurs vidéos.', None),
             ('clip-demande', 'Vos demandes', '«&nbsp;Et si vous le faisiez pour nous&nbsp;?&nbsp;»', "Beaucoup de nos clients créent leurs vidéos avec Pitchy. D'autres nous demandaient de les produire pour eux, de l'idée à la livraison.", None),
             ('clip-final', 'Rolling · novembre 2026', 'Rolling est lancée.', "Les équipes de Pitchy lancent leur agence vidéo en abonnement&nbsp;: nos créas, notre studio et notre IA Factory produisent pour vous. Pitchy continue, à côté.", 'En cours'),
         ]),
@@ -1770,7 +1820,7 @@ agence_convictions = F("L'agence · convictions", ['section', 'section-chaude'],
         ]),
         F("L'agence · chiffres", ['plaque-chiffres'], 'margin-top: 56px;', enfants=[
             chiffre("L'agence · ans", ['1', '3'], '13', 'ans de vidéo pour les entreprises'),
-            chiffre("L'agence · entreprises", ['5', '0', '0', 'plus'], '500+', 'grandes entreprises équipées'),
+            chiffre("L'agence · entreprises", ['plus', '5', '0', '0'], '+500', 'grandes entreprises équipées'),
             chiffre("L'agence · studio", ['1'], '1', 'studio motion &amp; tournage intégré'),
             chiffre("L'agence · plateforme", ['1'], '1', 'plateforme de production propriétaire'),
         ]),
@@ -1787,15 +1837,25 @@ def grille_ou_bande(nom, membres, style, defile):
 def bloc_agence_equipe(defile=False):
     cr = [membre("L'agence créas", c, n, p) for c, n, p in [('thomas', 'Thomas', 'Directeur Artistique'), ('alex', 'Alex', 'Responsable Équipe Motion Design'), ('victor', 'Victor', 'Motion Designer'),
                                                            ('vincent', 'Vincent', 'Cadreur'), ('sophie', 'Sophie', 'Chef de Projet'), ('marion-t', 'Marion', 'Responsable Agence vidéo')]]
-    ex = [membre("L'agence experts", c, n, p) for c, n, p in [('ronan', 'Ronan', 'Directeur Technique'), ('marion-l', 'Marion', 'Développeuse Full-Stack'), ('ines', 'Inès', 'DevOps'),
-                                                             ('hakim', 'Hakim', 'Développeur Back-End'), ('maxime', 'Maxime', 'Product Manager Senior')]]
-    return F("L'agence · équipe", ['section'], tag='section', enfants=[
-        F("L'agence · équipe · contenu", ['conteneur'], COLONNE, enfants=[
-            entete_simple("L'agence · équipe", '00:03', "L'équipe", 'Les visages <em>derrière vos vidéos.</em>'),
-            H("L'agence · créas · titre", 'Nos créas.', 'h3', ['titre-sm']),
-            grille_ou_bande("L'agence · créas", cr, 'margin-top: 36px;', defile),
-            H("L'agence · experts · titre", 'Nos experts <b>IA.</b>', 'h3', ['titre-sm'], 'margin-top: 88px;'),
-            grille_ou_bande("L'agence · experts", ex, 'margin-top: 36px;', defile),
+    ex = [membre("L'agence experts", c, n, p, sombre=True) for c, n, p in [('ronan', 'Ronan', 'Directeur Technique'), ('marion-l', 'Marion', 'Développeuse Full-Stack'), ('ines', 'Inès', 'DevOps'),
+                                                                          ('hakim', 'Hakim', 'Développeur Back-End'), ('maxime', 'Maxime', 'Product Manager Senior')]]
+    # Créas sur le fond pêche, fondu, experts IA sur le fond foncé (comme l'accueil : l'humain en couleur, l'IA en foncé).
+    return F("L'agence · équipe", ['equipe-bandes'], tag='section', enfants=[
+        F("L'agence · bande créas", ['bande-creas'], enfants=[
+            F("L'agence · bande créas · contenu", ['conteneur'], COLONNE, enfants=[
+                entete_simple("L'agence · équipe", '00:03', "L'équipe", 'Les visages <em>derrière vos vidéos.</em>'),
+                H("L'agence · créas · titre", 'Nos <em>créas.</em>', 'h3', ['titre-sm']),
+                grille_ou_bande("L'agence · créas", cr, 'margin-top: 36px;', defile),
+            ]),
+        ]),
+        F("L'agence · ensemble", ['bande-fondu'], enfants=[
+            P("L'agence · ensemble · pastille", 'Ensemble sur chaque projet', ['pastille-ensemble']),
+        ]),
+        F("L'agence · bande experts", ['section-sombre', 'bande-ia'], enfants=[
+            F("L'agence · bande experts · contenu", ['conteneur'], COLONNE, enfants=[
+                H("L'agence · experts · titre", 'Nos experts <em>IA.</em>', 'h3', ['titre-sm']),
+                grille_ou_bande("L'agence · experts", ex, 'margin-top: 36px;', defile),
+            ]),
         ]),
     ])
 
@@ -1837,8 +1897,9 @@ landing_hero = F('Landing · hero', ['section', 'section-entete', 'entete-page',
             ]),
         ]),
         F('Landing · visuel', ['vignette-video', 'flotte'], enfants=[
-            D('Landing · visuel · cadre', ['cadre-photo', 'cadre-4-3'], enfants=[
+            D('Landing · visuel · cadre', ['cadre-photo', 'cadre-4-3', 'cadre-showreel'], enfants=[
                 I('Landing · visuel · image', 'hero-tournage.jpg', "Caméra en plein tournage, l'écran de contrôle montre une interview", ['image-couvrante'], taille='large'),
+                W('Landing · visuel · vidéo', 'rolling-video', source='lien', mode='boucle', titre='Showreel Rolling', libelle='Lire avec le son : %s'),
                 P('Landing · visuel · bandeau', 'Showreel', ['bandeau-video']),
                 P('Landing · visuel · durée', '0:59', ['duree']),
                 I('Landing · visuel · lecture', 'bouton-lecture.png', cls=['lecture-centre'], taille='thumbnail'),
@@ -1875,8 +1936,8 @@ COMPARATIF = [
     ('Volume de vidéos', ['Selon disponibilité', "Selon l'équipe", 'Limité', 'Par projet'], 'Illimité'),
     ('Motion, tournage, interviews, avatars', ['Une spécialité', "Selon l'équipe", 'Modèles', 'Oui'], "Tout, à l'année"),
     ('Tous les formats et les langues', ['En option', "Selon l'équipe", 'Limité', 'En option'], 'Inclus'),
-    ('Directeur artistique dédié', ['—', "Selon l'équipe", '—', 'Oui'], 'Inclus'),
-    ('Expertise com interne, RH, formation', ['Variable', 'Oui', '—', 'Rare'], '13 ans, 500+ clients'),
+    ('Directeur artistique dédié', ['Non', "Selon l'équipe", 'Non', 'Oui'], 'Inclus'),
+    ('Expertise com interne, RH, formation', ['Variable', 'Oui', 'Non', 'Rare'], '13 ans, +500 clients'),
 ]
 SOLUTIONS = ['Freelance', 'Studio interne', 'En interne avec Canva', 'Agence de pub']
 
@@ -1939,7 +2000,7 @@ landing_preuve = F('Landing · preuve sociale', ['section', 'section-chaude'], t
         entete('Landing · preuve', '00:03', 'Ils nous font confiance', [('Née chez <em>Pitchy.</em>', 'h2', ['titre-md'])]),
         F('Landing · chiffres', ['plaque-libre', 'plaque-large'], 'margin-bottom: 28px;', enfants=[
             chiffre('Landing · ans', ['1', '3'], '13', 'ans de vidéo pour les entreprises'),
-            chiffre('Landing · entreprises', ['5', '0', '0', 'plus'], '500+', 'grandes entreprises équipées'),
+            chiffre('Landing · entreprises', ['plus', '5', '0', '0'], '+500', 'grandes entreprises équipées'),
             chiffre('Landing · studio', ['1'], '1', 'studio motion &amp; tournage intégré'),
             chiffre('Landing · plateforme', ['1'], '1', 'plateforme de production propriétaire'),
         ]),
@@ -2083,7 +2144,8 @@ PAGES = [
                  ('p-landing-3-pourquoi', '00:02 Pourquoi Rolling', landing_produit), ('p-landing-4-preuve', '00:03 Preuve sociale', landing_preuve),
                  ('p-landing-5-action', '00:04 Votre échange', landing_action), ('p-landing-6-objections', '00:05 Vos questions', landing_objections),
                  ('p-landing-7-final', 'Appel final', landing_final)]),
-    ('Contact', [('p-contact-1-echange', "L'échange et le calendrier", contact_haut), ('p-contact-2-formules', 'Rappel des formules', contact_offres), ('p-contact-3-faq', "FAQ de l'échange", contact_faq)]),
+    ('Contact', [('p-contact-1-echange', "L'échange et le calendrier", contact_haut), ('p-contact-2-formules', 'Rappel des formules', contact_offres), ('p-contact-3-faq', "FAQ de l'échange", contact_faq),
+                 ('p-contact-4-showreel', '00:01 Le showreel et les citations', contact_showreel), ('p-contact-5-realisations', '00:02 Chiffres et dernières réalisations', contact_realisations)]),
 ]
 
 
@@ -2115,6 +2177,7 @@ MODELES_SITE = [
     ('c9-carte-article-une', 'Rolling · Carte article à la une', carte_article_une, 'post'),
     ('c10-aucun-webinar', 'Rolling · Aucun webinar programmé', aucun_webinar, ''),
     ('c11-encart-article', 'Rolling · Encart au milieu des articles', encart_article, 'post'),
+    ('c12-carte-bulle', 'Rolling · Bulle de citation (autour du showreel)', carte_bulle, 'rolling_temoignage'),
     ('f1-fiche-realisation', 'Rolling · Fiche réalisation', fiche_realisation, 'rolling_realisation'),
     ('f2-fiche-temoignage', 'Rolling · Fiche témoignage', fiche_temoignage, 'rolling_temoignage'),
     ('f3-fiche-article', 'Rolling · Article de blog', fiche_article, 'post'),

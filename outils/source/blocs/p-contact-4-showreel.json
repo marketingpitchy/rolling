@@ -1,0 +1,97 @@
+{
+ "cle": "p-contact-4-showreel",
+ "titre": "Rolling · Contact · 00:01 Le showreel et les citations",
+ "type": "e-flexbox",
+ "composition": {
+  "xml_structure": "<e-flexbox configuration-id=\"Contact · showreel\"><e-flexbox configuration-id=\"Contact · showreel · contenu\"><e-flexbox configuration-id=\"Contact · showreel · en-tête\"><e-flexbox configuration-id=\"Contact · showreel · repère\"><e-paragraph configuration-id=\"Contact · showreel · timecode\"></e-paragraph><e-paragraph configuration-id=\"Contact · showreel · sur-titre\"></e-paragraph></e-flexbox><e-heading configuration-id=\"Contact · showreel · titre\"></e-heading></e-flexbox><e-flexbox configuration-id=\"Contact · showreel · scène\"><e-div-block configuration-id=\"Contact · showreel · cadre\"><e-image configuration-id=\"Contact · showreel · affiche\"></e-image><e-paragraph configuration-id=\"Contact · showreel · vidéo\"></e-paragraph><e-paragraph configuration-id=\"Contact · showreel · bandeau\"></e-paragraph><e-paragraph configuration-id=\"Contact · showreel · durée\"></e-paragraph><e-image configuration-id=\"Contact · showreel · lecture\"></e-image></e-div-block><e-paragraph configuration-id=\"Contact · showreel · citations\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox>",
+  "element_config": {
+   "Contact · showreel": {
+    "tag": "section"
+   },
+   "Contact · showreel · timecode": {
+    "paragraph": "00:01"
+   },
+   "Contact · showreel · sur-titre": {
+    "paragraph": "Le showreel"
+   },
+   "Contact · showreel · titre": {
+    "tag": "h2",
+    "title": "Ce que nous faisons, <em>en une minute.</em>"
+   },
+   "Contact · showreel · affiche": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/showreel-affiche.jpg"
+     },
+     "size": "large"
+    }
+   },
+   "Contact · showreel · vidéo": {
+    "paragraph": "⟦widget:rolling-video|source=lien|mode=boucle|titre=Showreel Rolling|libelle=Lire avec le son : %s⟧"
+   },
+   "Contact · showreel · bandeau": {
+    "paragraph": "Showreel"
+   },
+   "Contact · showreel · durée": {
+    "paragraph": "0:59"
+   },
+   "Contact · showreel · lecture": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/bouton-lecture.png"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "Contact · showreel · citations": {
+    "paragraph": "⟦widget:rolling-liste|contenu=temoignages|nombre=3|classe=bulles-showreel|carte_theme=bulle|citations_courtes=yes|une_auto=⟧"
+   }
+  },
+  "classes": {
+   "Contact · showreel": [
+    "section",
+    "section-suite"
+   ],
+   "Contact · showreel · contenu": [
+    "conteneur"
+   ],
+   "Contact · showreel · en-tête": [
+    "entete-section"
+   ],
+   "Contact · showreel · repère": [
+    "sur-titre"
+   ],
+   "Contact · showreel · timecode": [
+    "timecode"
+   ],
+   "Contact · showreel · titre": [
+    "titre-md"
+   ],
+   "Contact · showreel · scène": [
+    "scene-bulles"
+   ],
+   "Contact · showreel · cadre": [
+    "cadre-photo",
+    "cadre-cinema",
+    "cadre-showreel"
+   ],
+   "Contact · showreel · affiche": [
+    "image-couvrante"
+   ],
+   "Contact · showreel · bandeau": [
+    "bandeau-video"
+   ],
+   "Contact · showreel · durée": [
+    "duree"
+   ],
+   "Contact · showreel · lecture": [
+    "lecture-centre"
+   ]
+  },
+  "style": {
+   "Contact · showreel · contenu": "display: flex; flex-direction: column; gap: 0;",
+   "Contact · showreel · scène": "margin-top: 48px;"
+  }
+ },
+ "brut": {}
+}

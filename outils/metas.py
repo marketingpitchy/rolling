@@ -40,7 +40,7 @@ METAS = [
      "30 minutes en visio avec notre agence vidéo pour passer en revue vos contenus. Vous repartez avec vos 3 premières vidéos à produire et le prix de votre formule."),
     ("L'agence", '/agence/', "Rolling, l'agence vidéo née chez Pitchy.",
      'Agence vidéo à Paris, par les fondateurs de Pitchy | Rolling',
-     "Rolling, c'est l'équipe de Pitchy : 13 ans de vidéo et 500+ grandes entreprises. Créatifs, experts IA et tournages partout en France, depuis Paris."),
+     "Rolling, c'est l'équipe de Pitchy : 13 ans de vidéo et +500 grandes entreprises. Créatifs, experts IA et tournages partout en France, depuis Paris."),
     ('Landing (Google Ads, en noindex)', '/agence-video/', "L'agence vidéo qui transforme vos contenus en vidéos, en illimité.",
      'Agence vidéo en abonnement : vidéos illimitées | Rolling',
      "Rolling, agence de production vidéo à Paris : vos emails, articles et modules deviennent des vidéos, à prix fixe et en illimité. Réservez 30 minutes."),

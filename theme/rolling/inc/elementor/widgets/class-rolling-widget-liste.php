@@ -87,6 +87,7 @@ class Rolling_Widget_Liste extends Rolling_Widget {
 			array(
 				'normale' => __( 'Normale', 'rolling' ),
 				'une'     => __( 'À la une (grande carte)', 'rolling' ),
+				'bulle'   => __( 'Bulle de citation (témoignages)', 'rolling' ),
 			)
 		);
 		$this->choix( 'modele', __( 'Modèle de carte', 'rolling' ), self::modeles( __( 'Carte du thème', 'rolling' ) ), '0' );
@@ -109,6 +110,26 @@ class Rolling_Widget_Liste extends Rolling_Widget {
 				'default'     => '',
 			)
 		);
+		$this->add_control(
+			'citations_courtes',
+			array(
+				'label'       => __( 'Témoignages : les citations les plus courtes', 'rolling' ),
+				'description' => __( 'Ex. : les bulles autour du showreel de la page Contact.', 'rolling' ),
+				'type'        => Controls_Manager::SWITCHER,
+				'default'     => '',
+			)
+		);
+		$this->add_control(
+			'extraits',
+			array(
+				'label'       => __( 'Mur de montage : un extrait vidéo toutes les … réalisations', 'rolling' ),
+				'description' => __( 'Réalisations > Extraits vidéo. 0 : aucun extrait.', 'rolling' ),
+				'type'        => Controls_Manager::NUMBER,
+				'default'     => 3,
+				'min'         => 0,
+			)
+		);
+		$this->texte( 'texte_extrait', __( 'Mur de montage : pastille des extraits', 'rolling' ), __( 'Studio Rolling', 'rolling' ) );
 		$this->add_control(
 			'premiere_une',
 			array(
@@ -167,10 +188,11 @@ class Rolling_Widget_Liste extends Rolling_Widget {
 		$suivi = get_option( Rolling_Installateur::OPTION_MODELES, array() );
 		$cle   = ( self::CONTENUS[ $contenu ][1] ?? '' ) . $suffixe;
 		$cles  = array(
-			'c2-carte-temoignage-une' => 'c3-carte-temoignage-une',
-			'c6-carte-webinar-une'    => 'c7-carte-webinar-une',
-			'c4-carte-article-une'    => 'c9-carte-article-une',
-			'c6-carte-webinar-vide'   => 'c10-aucun-webinar',
+			'c2-carte-temoignage-une'   => 'c3-carte-temoignage-une',
+			'c6-carte-webinar-une'      => 'c7-carte-webinar-une',
+			'c4-carte-article-une'      => 'c9-carte-article-une',
+			'c6-carte-webinar-vide'     => 'c10-aucun-webinar',
+			'c2-carte-temoignage-bulle' => 'c12-carte-bulle',
 		);
 		$cle   = $cles[ $cle ] ?? $cle;
 
@@ -274,12 +296,26 @@ class Rolling_Widget_Liste extends Rolling_Widget {
 			}
 		}
 
-		if ( 'temoignages' === $r['contenu'] && 'yes' === ( $r['avec_citation'] ?? '' ) ) {
+		if ( 'temoignages' === $r['contenu'] && ( 'yes' === ( $r['avec_citation'] ?? '' ) || 'yes' === ( $r['citations_courtes'] ?? '' ) ) ) {
 			$args['meta_query'][] = array( // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_query
 				'key'     => Rolling_Contenus::PREFIXE . 'citation',
 				'value'   => '',
 				'compare' => '!=',
 			);
+		}
+
+		if ( 'temoignages' === $r['contenu'] && 'yes' === ( $r['citations_courtes'] ?? '' ) ) {
+			// Les citations les plus courtes (ex. bulles autour du showreel) : pas de « à la une », pas de suite.
+			$args['posts_per_page'] = 60;
+			$args['offset']         = 0;
+			$ids                    = get_posts( $args );
+			usort(
+				$ids,
+				function ( $a, $b ) {
+					return mb_strlen( (string) Rolling_Contenus::valeur( 'citation', $a ) ) <=> mb_strlen( (string) Rolling_Contenus::valeur( 'citation', $b ) );
+				}
+			);
+			return array( array_slice( $ids, 0, $total ), false );
 		}
 
 		$ids = get_posts( $args );
@@ -307,7 +343,7 @@ class Rolling_Widget_Liste extends Rolling_Widget {
 	protected function render() {
 		$r                   = $this->get_settings_for_display();
 		list( $ids, $reste ) = $this->contenus( $r );
-		$variante            = 'une' === ( $r['carte_theme'] ?? '' ) ? '-une' : '';
+		$variante            = in_array( $r['carte_theme'] ?? '', array( 'une', 'bulle' ), true ) ? '-' . $r['carte_theme'] : '';
 		$modele              = (int) $r['modele'] ? (int) $r['modele'] : self::modele_du_theme( $r['contenu'], $variante );
 		$modele              = $modele ? $modele : self::modele_du_theme( $r['contenu'] );
 		$modele_une          = (int) $r['modele_une'];
@@ -345,7 +381,11 @@ class Rolling_Widget_Liste extends Rolling_Widget {
 		global $post;
 		$avant = $post;
 		// Mur de montage (classe « mur-montage ») : chaque carte dans une case, la première en grand, les 9:16 en hauteur.
-		$mur = in_array( 'mur-montage', preg_split( '/\s+/', (string) $r['classe'] ), true );
+		$classes = preg_split( '/\s+/', (string) $r['classe'] );
+		$mur     = in_array( 'mur-montage', $classes, true );
+		// Mur maçonné des témoignages (« mur-temoins ») : chaque carte dans une case à la taille de sa citation.
+		$macon    = in_array( 'mur-temoins', $classes, true );
+		$extraits = $mur ? self::extraits( $r, count( $ids ) ) : array();
 		echo '<div class="rl-liste ' . esc_attr( $r['classe'] ) . '">';
 		foreach ( $ids as $rang => $id ) {
 			$post = get_post( $id ); // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited -- boucle de cartes, restauré après.
@@ -355,10 +395,17 @@ class Rolling_Widget_Liste extends Rolling_Widget {
 				$case = 0 === $rang ? ' mur-large' : ( self::vertical( $id ) ? ' mur-haute' : '' );
 				echo '<div class="mur-case' . esc_attr( $case ) . '">';
 			}
+			if ( $macon ) {
+				echo '<div class="macon-case ' . esc_attr( 0 === $rang && $modele_une ? 'macon-une' : self::longueur_citation( $id ) ) . '">';
+			}
 			// Styles déjà chargés dans l'en-tête (Rolling_Dynamique::styles_des_modeles) : pas de feuille dans la grille.
 			echo Rolling_Dynamique::affiches_video( \Elementor\Plugin::$instance->frontend->get_builder_content_for_display( $carte, false ), get_the_title( $id ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- HTML produit par Elementor.
-			if ( $mur ) {
+			if ( $mur || $macon ) {
 				echo '</div>';
+			}
+			$pas = (int) ( $r['extraits'] ?? 0 );
+			if ( $extraits && $pas > 0 && 0 === ( $rang + 1 ) % $pas ) {
+				self::afficher_extrait( array_shift( $extraits ), (string) ( $r['texte_extrait'] ?? '' ) );
 			}
 		}
 		echo '</div>';
@@ -373,6 +420,75 @@ class Rolling_Widget_Liste extends Rolling_Widget {
 			$page = isset( $_GET['voir'] ) ? max( 1, absint( $_GET['voir'] ) ) : 1; // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 			echo '<p class="liste-plus"><a class="bouton-verre bouton-petit" href="' . esc_url( add_query_arg( 'voir', $page + 1 ) ) . '">' . esc_html( $r['plus_texte'] ) . '</a></p>';
 		}
+	}
+
+	/**
+	 * Taille d'une carte témoignage selon sa citation : courte, moyenne ou longue.
+	 *
+	 * @param int $id Témoignage.
+	 * @return string
+	 */
+	private static function longueur_citation( $id ) {
+		$n = mb_strlen( trim( wp_strip_all_tags( (string) Rolling_Contenus::valeur( 'citation', $id ) ) ) );
+		if ( ! $n ) {
+			return 'macon-moyen';
+		}
+
+		return $n <= 70 ? 'macon-court' : ( $n >= 170 ? 'macon-long' : 'macon-moyen' );
+	}
+
+	/**
+	 * Extraits vidéo (Réalisations > Extraits vidéo) glissés dans le mur de montage, pour la page affichée.
+	 *
+	 * @param array $r      Réglages.
+	 * @param int   $cartes Nombre de réalisations affichées.
+	 * @return int[]
+	 */
+	private static function extraits( $r, $cartes ) {
+		$pas = (int) ( $r['extraits'] ?? 0 );
+		if ( $pas < 1 || $cartes < $pas || ! post_type_exists( 'rolling_extrait' ) ) {
+			return array();
+		}
+		$places = intdiv( $cartes, $pas );
+		$page   = isset( $_GET['voir'] ) ? max( 1, absint( $_GET['voir'] ) ) : 1; // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+
+		return get_posts(
+			array(
+				'post_type'      => 'rolling_extrait',
+				'posts_per_page' => $places,
+				'offset'         => ( $page - 1 ) * $places,
+				'orderby'        => array(
+					'menu_order' => 'ASC',
+					'date'       => 'DESC',
+				),
+				'fields'         => 'ids',
+				'no_found_rows'  => true,
+				'meta_key'       => Rolling_Contenus::PREFIXE . 'video', // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_key
+				'meta_compare'   => '!=',
+				'meta_value'     => '', // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_value
+			)
+		);
+	}
+
+	/**
+	 * Un extrait vidéo dans le mur : vidéo muette en boucle (lancée par rolling.js quand elle est à l'écran), sans titre
+	 * ni lien ; image fixe avec « réduire les animations ».
+	 *
+	 * @param int    $id       Extrait.
+	 * @param string $pastille Texte de la pastille.
+	 */
+	private static function afficher_extrait( $id, $pastille ) {
+		$video  = (string) Rolling_Contenus::valeur( 'video', $id );
+		$format = (string) Rolling_Contenus::valeur( 'format', $id );
+		$texte  = (string) Rolling_Contenus::valeur( 'description', $id );
+		$image  = has_post_thumbnail( $id ) ? get_the_post_thumbnail_url( $id, 'medium_large' ) : '';
+		echo '<div class="mur-case extrait-case' . ( '9-16' === $format ? ' mur-haute' : '' ) . '"><div class="extrait-cadre">';
+		echo '<div class="extrait-video"' . ( '' !== $texte ? ' role="img" aria-label="' . esc_attr( $texte ) . '"' : '' ) . '>';
+		echo '<video src="' . esc_url( $video . ( $image ? '' : '#t=0.5' ) ) . '"' . ( $image ? ' poster="' . esc_url( $image ) . '"' : '' ) . ' muted loop playsinline preload="' . ( $image ? 'none' : 'metadata' ) . '" aria-hidden="true" tabindex="-1"></video>';
+		if ( '' !== trim( $pastille ) ) {
+			echo '<span class="extrait-pastille" aria-hidden="true">' . esc_html( $pastille ) . '</span>';
+		}
+		echo '</div></div></div>';
 	}
 
 	/**

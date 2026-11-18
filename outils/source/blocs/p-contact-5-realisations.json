@@ -1,0 +1,200 @@
+{
+ "cle": "p-contact-5-realisations",
+ "titre": "Rolling · Contact · 00:02 Chiffres et dernières réalisations",
+ "type": "e-flexbox",
+ "composition": {
+  "xml_structure": "<e-flexbox configuration-id=\"Contact · réalisations\"><e-flexbox configuration-id=\"Contact · réalisations · contenu\"><e-flexbox configuration-id=\"Contact · réalisations · en-tête\"><e-flexbox configuration-id=\"Contact · réalisations · repère\"><e-paragraph configuration-id=\"Contact · réalisations · timecode\"></e-paragraph><e-paragraph configuration-id=\"Contact · réalisations · sur-titre\"></e-paragraph></e-flexbox><e-heading configuration-id=\"Contact · réalisations · titre\"></e-heading></e-flexbox><e-flexbox configuration-id=\"Contact · chiffres\"><e-flexbox configuration-id=\"Chiffre · Contact · ans\"><e-flexbox configuration-id=\"Contact · ans · nombre\"><e-image configuration-id=\"Contact · ans · chiffre 1\"></e-image><e-image configuration-id=\"Contact · ans · chiffre 2\"></e-image><e-paragraph configuration-id=\"Contact · ans · valeur lue\"></e-paragraph></e-flexbox><e-paragraph configuration-id=\"Contact · ans · libellé\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Chiffre · Contact · entreprises\"><e-flexbox configuration-id=\"Contact · entreprises · nombre\"><e-image configuration-id=\"Contact · entreprises · chiffre 1\"></e-image><e-image configuration-id=\"Contact · entreprises · chiffre 2\"></e-image><e-image configuration-id=\"Contact · entreprises · chiffre 3\"></e-image><e-image configuration-id=\"Contact · entreprises · chiffre 4\"></e-image><e-paragraph configuration-id=\"Contact · entreprises · valeur lue\"></e-paragraph></e-flexbox><e-paragraph configuration-id=\"Contact · entreprises · libellé\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Chiffre · Contact · studio\"><e-flexbox configuration-id=\"Contact · studio · nombre\"><e-image configuration-id=\"Contact · studio · chiffre 1\"></e-image><e-paragraph configuration-id=\"Contact · studio · valeur lue\"></e-paragraph></e-flexbox><e-paragraph configuration-id=\"Contact · studio · libellé\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Chiffre · Contact · plateforme\"><e-flexbox configuration-id=\"Contact · plateforme · nombre\"><e-image configuration-id=\"Contact · plateforme · chiffre 1\"></e-image><e-paragraph configuration-id=\"Contact · plateforme · valeur lue\"></e-paragraph></e-flexbox><e-paragraph configuration-id=\"Contact · plateforme · libellé\"></e-paragraph></e-flexbox></e-flexbox><e-heading configuration-id=\"Contact · réalisations · titre masqué\"></e-heading><e-paragraph configuration-id=\"Contact · réalisations · liste\"></e-paragraph><e-flexbox configuration-id=\"Contact · réalisations · bouton\"><e-button configuration-id=\"Contact · réalisations · toutes\"></e-button></e-flexbox></e-flexbox></e-flexbox>",
+  "element_config": {
+   "Contact · réalisations": {
+    "tag": "section"
+   },
+   "Contact · réalisations · timecode": {
+    "paragraph": "00:02"
+   },
+   "Contact · réalisations · sur-titre": {
+    "paragraph": "Déjà à l’œuvre"
+   },
+   "Contact · réalisations · titre": {
+    "tag": "h2",
+    "title": "Née chez Pitchy, <em>déjà à l’œuvre.</em>"
+   },
+   "Contact · ans · chiffre 1": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/chiffre-1.webp"
+     },
+     "size": "medium"
+    }
+   },
+   "Contact · ans · chiffre 2": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/chiffre-3.webp"
+     },
+     "size": "medium"
+    }
+   },
+   "Contact · ans · valeur lue": {
+    "paragraph": "13"
+   },
+   "Contact · ans · libellé": {
+    "paragraph": "ans de vidéo pour les entreprises"
+   },
+   "Contact · entreprises · chiffre 1": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/chiffre-plus.webp"
+     },
+     "size": "medium"
+    }
+   },
+   "Contact · entreprises · chiffre 2": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/chiffre-5.webp"
+     },
+     "size": "medium"
+    }
+   },
+   "Contact · entreprises · chiffre 3": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/chiffre-0.webp"
+     },
+     "size": "medium"
+    }
+   },
+   "Contact · entreprises · chiffre 4": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/chiffre-0.webp"
+     },
+     "size": "medium"
+    }
+   },
+   "Contact · entreprises · valeur lue": {
+    "paragraph": "+500"
+   },
+   "Contact · entreprises · libellé": {
+    "paragraph": "grandes entreprises équipées"
+   },
+   "Contact · studio · chiffre 1": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/chiffre-1.webp"
+     },
+     "size": "medium"
+    }
+   },
+   "Contact · studio · valeur lue": {
+    "paragraph": "1"
+   },
+   "Contact · studio · libellé": {
+    "paragraph": "studio motion &amp; tournage intégré"
+   },
+   "Contact · plateforme · chiffre 1": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/chiffre-1.webp"
+     },
+     "size": "medium"
+    }
+   },
+   "Contact · plateforme · valeur lue": {
+    "paragraph": "1"
+   },
+   "Contact · plateforme · libellé": {
+    "paragraph": "plateforme de production propriétaire"
+   },
+   "Contact · réalisations · titre masqué": {
+    "tag": "h3",
+    "title": "Nos dernières réalisations"
+   },
+   "Contact · réalisations · liste": {
+    "paragraph": "⟦widget:rolling-liste|contenu=realisations|nombre=3|classe=grille-verre|extraits=0⟧"
+   },
+   "Contact · réalisations · toutes": {
+    "text": "Voir toutes les réalisations",
+    "link": {
+     "destination": "/realisations/"
+    }
+   }
+  },
+  "classes": {
+   "Contact · réalisations": [
+    "section",
+    "section-suite"
+   ],
+   "Contact · réalisations · contenu": [
+    "conteneur"
+   ],
+   "Contact · réalisations · en-tête": [
+    "entete-section"
+   ],
+   "Contact · réalisations · repère": [
+    "sur-titre"
+   ],
+   "Contact · réalisations · timecode": [
+    "timecode"
+   ],
+   "Contact · réalisations · titre": [
+    "titre-md"
+   ],
+   "Contact · chiffres": [
+    "plaque-libre",
+    "plaque-large"
+   ],
+   "Contact · ans · nombre": [
+    "chiffre-verre"
+   ],
+   "Contact · ans · valeur lue": [
+    "texte-masque"
+   ],
+   "Contact · ans · libellé": [
+    "libelle-chiffre"
+   ],
+   "Contact · entreprises · nombre": [
+    "chiffre-verre"
+   ],
+   "Contact · entreprises · valeur lue": [
+    "texte-masque"
+   ],
+   "Contact · entreprises · libellé": [
+    "libelle-chiffre"
+   ],
+   "Contact · studio · nombre": [
+    "chiffre-verre"
+   ],
+   "Contact · studio · valeur lue": [
+    "texte-masque"
+   ],
+   "Contact · studio · libellé": [
+    "libelle-chiffre"
+   ],
+   "Contact · plateforme · nombre": [
+    "chiffre-verre"
+   ],
+   "Contact · plateforme · valeur lue": [
+    "texte-masque"
+   ],
+   "Contact · plateforme · libellé": [
+    "libelle-chiffre"
+   ],
+   "Contact · réalisations · titre masqué": [
+    "texte-masque"
+   ],
+   "Contact · réalisations · bouton": [
+    "rangee"
+   ],
+   "Contact · réalisations · toutes": [
+    "bouton-principal"
+   ]
+  },
+  "style": {
+   "Contact · réalisations · contenu": "display: flex; flex-direction: column; gap: 0;",
+   "Contact · chiffres": "margin-top: 48px;",
+   "Contact · réalisations · bouton": "justify-content: center; margin-top: 36px;"
+  }
+ },
+ "brut": {}
+}

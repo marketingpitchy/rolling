@@ -43,7 +43,7 @@ class Rolling_Widget_Chiffres extends Rolling_Widget {
 		if ( ! $chiffres ) {
 			return;
 		}
-		// Une valeur de plus de 2 caractères (« 87 % », « 2 500+ ») ne tient pas à côté de son libellé sur 4 colonnes :
+		// Une valeur de plus de 2 caractères (« 87 % », « +2 500 ») ne tient pas à côté de son libellé sur 4 colonnes :
 		// la plaque passe alors sur 2 colonnes (règle « &.plaque-large » de la classe plaque-libre).
 		$large = false;
 		foreach ( $chiffres as $chiffre ) {

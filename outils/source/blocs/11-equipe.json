@@ -22,7 +22,7 @@
     "paragraph": "Rolling est lancée par les équipes de Pitchy, la plateforme française de création vidéo qui équipe les grandes entreprises depuis 13&nbsp;ans. Même exigence, nouvelle promesse&nbsp;: <strong>cette fois, c'est nous qui produisons.</strong>"
    },
    "Équipe · texte 2": {
-    "paragraph": "Un studio motion intégré, une équipe tech qui industrialise la production, et treize ans passés à comprendre comment les grands comptes font — et regardent — de la vidéo."
+    "paragraph": "Un studio motion intégré, une équipe tech qui industrialise la production, et treize ans passés à comprendre comment les grands comptes font et regardent de la vidéo."
    },
    "Ans · chiffre 1": {
     "image": {
@@ -49,7 +49,7 @@
    "Entreprises · chiffre 1": {
     "image": {
      "src": {
-      "url": "https://media.rolling.invalid/chiffre-5.webp"
+      "url": "https://media.rolling.invalid/chiffre-plus.webp"
      },
      "size": "medium"
     }
@@ -57,7 +57,7 @@
    "Entreprises · chiffre 2": {
     "image": {
      "src": {
-      "url": "https://media.rolling.invalid/chiffre-0.webp"
+      "url": "https://media.rolling.invalid/chiffre-5.webp"
      },
      "size": "medium"
     }
@@ -73,13 +73,13 @@
    "Entreprises · chiffre 4": {
     "image": {
      "src": {
-      "url": "https://media.rolling.invalid/chiffre-plus.webp"
+      "url": "https://media.rolling.invalid/chiffre-0.webp"
      },
      "size": "medium"
     }
    },
    "Entreprises · valeur lue": {
-    "paragraph": "500+"
+    "paragraph": "+500"
    },
    "Entreprises · libellé": {
     "paragraph": "grandes entreprises équipées"
@@ -125,7 +125,7 @@
     "paragraph": "«&nbsp;On n'avait pas la bande passante, et on n'avait pas l'expertise. Donc on devait absolument faire appel à quelqu'un qui avait le savoir-faire et qui était professionnel et l'équipe Rolling (ex Pitchy Studio) nous a tout de suite rassuré sur leur accompagnement sur mesure si bien de l'expression des besoins jusqu'à la livraison des vidéos.&nbsp;»"
    },
    "Témoignage · auteur": {
-    "paragraph": "<strong>Julie Charlemagne</strong> — Responsable Fonctionnel SIRH, Groupement Mousquetaires"
+    "paragraph": "<strong>Julie Charlemagne</strong>, Responsable Fonctionnel SIRH, Groupement Mousquetaires"
    },
    "Témoignage · bouton": {
     "text": "Voir le cas client",

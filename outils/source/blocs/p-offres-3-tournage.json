@@ -3,7 +3,7 @@
  "titre": "Rolling · Offres · 00:02 Création + Tournage",
  "type": "e-flexbox",
  "composition": {
-  "xml_structure": "<e-flexbox configuration-id=\"Offres · Création + Tournage\"><e-flexbox configuration-id=\"Offres · ajout · contenu\"><e-flexbox configuration-id=\"Offres · ajout · en-tête\"><e-flexbox configuration-id=\"Offres · ajout · repère\"><e-paragraph configuration-id=\"Offres · ajout · timecode\"></e-paragraph><e-paragraph configuration-id=\"Offres · ajout · sur-titre\"></e-paragraph></e-flexbox><e-heading configuration-id=\"Offres · ajout · titre\"></e-heading></e-flexbox><e-flexbox configuration-id=\"Offres · ajout · cartes\"><e-flexbox configuration-id=\"Offres · captation\"><e-div-block configuration-id=\"Offres · captation · cadre\"><e-image configuration-id=\"Offres · captation · photo\"></e-image><e-paragraph configuration-id=\"Offres · captation · rec\"></e-paragraph><e-paragraph configuration-id=\"Offres · captation · durée\"></e-paragraph></e-div-block><e-flexbox configuration-id=\"Offres · captation · textes\"><e-paragraph configuration-id=\"Offres · captation · label\"></e-paragraph><e-heading configuration-id=\"Offres · captation · titre\"></e-heading><e-paragraph configuration-id=\"Offres · captation · texte\"></e-paragraph><e-flexbox configuration-id=\"Offres · captation · étiquettes\"><e-paragraph configuration-id=\"Offres · captation · étiquette 1\"></e-paragraph><e-paragraph configuration-id=\"Offres · captation · étiquette 2\"></e-paragraph><e-paragraph configuration-id=\"Offres · captation · étiquette 3\"></e-paragraph><e-paragraph configuration-id=\"Offres · captation · étiquette 4\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Offres · fait main\"><e-div-block configuration-id=\"Offres · fait main · visuel\"><e-paragraph configuration-id=\"Offres · fait main · annotation\"></e-paragraph></e-div-block><e-flexbox configuration-id=\"Offres · fait main · textes\"><e-paragraph configuration-id=\"Offres · fait main · label\"></e-paragraph><e-heading configuration-id=\"Offres · fait main · titre\"></e-heading><e-paragraph configuration-id=\"Offres · fait main · texte\"></e-paragraph><e-flexbox configuration-id=\"Offres · fait main · étiquettes\"><e-paragraph configuration-id=\"Offres · fait main · étiquette 1\"></e-paragraph><e-paragraph configuration-id=\"Offres · fait main · étiquette 2\"></e-paragraph><e-paragraph configuration-id=\"Offres · fait main · étiquette 3\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Offres · promesses\"><e-heading configuration-id=\"Offres · promesses · titre\"></e-heading><e-flexbox configuration-id=\"Offres · promesses · liste\"><e-flexbox configuration-id=\"Offres · promesse 1\"><e-image configuration-id=\"Offres · promesse 1 · chiffre\"></e-image><e-paragraph configuration-id=\"Offres · promesse 1 · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Offres · promesse 2\"><e-image configuration-id=\"Offres · promesse 2 · chiffre\"></e-image><e-paragraph configuration-id=\"Offres · promesse 2 · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Offres · promesse 3\"><e-image configuration-id=\"Offres · promesse 3 · chiffre\"></e-image><e-paragraph configuration-id=\"Offres · promesse 3 · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Offres · promesse 4\"><e-image configuration-id=\"Offres · promesse 4 · chiffre\"></e-image><e-paragraph configuration-id=\"Offres · promesse 4 · texte\"></e-paragraph></e-flexbox></e-flexbox><e-paragraph configuration-id=\"Offres · promesses · note\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox>",
+  "xml_structure": "<e-flexbox configuration-id=\"Offres · Création + Tournage\"><e-flexbox configuration-id=\"Offres · ajout · contenu\"><e-flexbox configuration-id=\"Offres · ajout · en-tête\"><e-flexbox configuration-id=\"Offres · ajout · repère\"><e-paragraph configuration-id=\"Offres · ajout · timecode\"></e-paragraph><e-paragraph configuration-id=\"Offres · ajout · sur-titre\"></e-paragraph></e-flexbox><e-heading configuration-id=\"Offres · ajout · titre\"></e-heading></e-flexbox><e-flexbox configuration-id=\"Offres · ajout · cartes\"><e-flexbox configuration-id=\"Offres · captation\"><e-div-block configuration-id=\"Offres · captation · cadre\"><e-image configuration-id=\"Offres · captation · photo\"></e-image><e-paragraph configuration-id=\"Offres · captation · rec\"></e-paragraph><e-paragraph configuration-id=\"Offres · captation · durée\"></e-paragraph></e-div-block><e-flexbox configuration-id=\"Offres · captation · textes\"><e-paragraph configuration-id=\"Offres · captation · label\"></e-paragraph><e-heading configuration-id=\"Offres · captation · titre\"></e-heading><e-paragraph configuration-id=\"Offres · captation · texte\"></e-paragraph><e-flexbox configuration-id=\"Offres · captation · étiquettes\"><e-paragraph configuration-id=\"Offres · captation · étiquette 1\"></e-paragraph><e-paragraph configuration-id=\"Offres · captation · étiquette 2\"></e-paragraph><e-paragraph configuration-id=\"Offres · captation · étiquette 3\"></e-paragraph><e-paragraph configuration-id=\"Offres · captation · étiquette 4\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Offres · fait main\"><e-div-block configuration-id=\"Offres · fait main · visuel\"><e-paragraph configuration-id=\"Offres · fait main · annotation\"></e-paragraph></e-div-block><e-flexbox configuration-id=\"Offres · fait main · textes\"><e-paragraph configuration-id=\"Offres · fait main · label\"></e-paragraph><e-heading configuration-id=\"Offres · fait main · titre\"></e-heading><e-paragraph configuration-id=\"Offres · fait main · texte\"></e-paragraph><e-flexbox configuration-id=\"Offres · fait main · étiquettes\"><e-paragraph configuration-id=\"Offres · fait main · étiquette 1\"></e-paragraph><e-paragraph configuration-id=\"Offres · fait main · étiquette 2\"></e-paragraph><e-paragraph configuration-id=\"Offres · fait main · étiquette 3\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Offres · promesses\"><e-paragraph configuration-id=\"Offres · promesses · sur-titre\"></e-paragraph><e-heading configuration-id=\"Offres · promesses · titre\"></e-heading><e-flexbox configuration-id=\"Offres · promesses · cartes\"><e-flexbox configuration-id=\"Offres · promesse 1\"><e-image configuration-id=\"Offres · promesse 1 · chiffre\"></e-image><e-flexbox configuration-id=\"Offres · promesse 1 · textes\"><e-heading configuration-id=\"Offres · promesse 1 · titre\"></e-heading><e-paragraph configuration-id=\"Offres · promesse 1 · texte\"></e-paragraph></e-flexbox><e-paragraph configuration-id=\"Offres · promesse 1 · note\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Offres · promesse 2\"><e-image configuration-id=\"Offres · promesse 2 · chiffre\"></e-image><e-flexbox configuration-id=\"Offres · promesse 2 · textes\"><e-heading configuration-id=\"Offres · promesse 2 · titre\"></e-heading><e-paragraph configuration-id=\"Offres · promesse 2 · texte\"></e-paragraph></e-flexbox><e-paragraph configuration-id=\"Offres · promesse 2 · note\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Offres · promesse 3\"><e-image configuration-id=\"Offres · promesse 3 · chiffre\"></e-image><e-flexbox configuration-id=\"Offres · promesse 3 · textes\"><e-heading configuration-id=\"Offres · promesse 3 · titre\"></e-heading><e-paragraph configuration-id=\"Offres · promesse 3 · texte\"></e-paragraph></e-flexbox><e-paragraph configuration-id=\"Offres · promesse 3 · note\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Offres · promesse 4\"><e-image configuration-id=\"Offres · promesse 4 · chiffre\"></e-image><e-flexbox configuration-id=\"Offres · promesse 4 · textes\"><e-heading configuration-id=\"Offres · promesse 4 · titre\"></e-heading><e-paragraph configuration-id=\"Offres · promesse 4 · texte\"></e-paragraph></e-flexbox><e-paragraph configuration-id=\"Offres · promesse 4 · note\"></e-paragraph></e-flexbox></e-flexbox><e-paragraph configuration-id=\"Offres · promesses · note\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox>",
   "element_config": {
    "Offres · Création + Tournage": {
     "tag": "section"
@@ -83,9 +83,12 @@
    "Offres · fait main · étiquette 3": {
     "paragraph": "100&nbsp;% fait main"
    },
+   "Offres · promesses · sur-titre": {
+    "paragraph": "Nos règles du jeu"
+   },
    "Offres · promesses · titre": {
     "tag": "h3",
-    "title": "L'illimité qui tient ses promesses&nbsp;:"
+    "title": "L'illimité qui tient <em>ses promesses.</em>"
    },
    "Offres · promesse 1 · chiffre": {
     "image": {
@@ -95,8 +98,15 @@
      "size": "medium"
     }
    },
+   "Offres · promesse 1 · titre": {
+    "tag": "h4",
+    "title": "Un projet traité à fond, à la fois."
+   },
    "Offres · promesse 1 · texte": {
-    "paragraph": "<strong>Un projet traité à fond</strong> à la fois"
+    "paragraph": "Toute l'équipe sur votre vidéo en cours."
+   },
+   "Offres · promesse 1 · note": {
+    "paragraph": "focus total"
    },
    "Offres · promesse 2 · chiffre": {
     "image": {
@@ -106,8 +116,15 @@
      "size": "medium"
     }
    },
+   "Offres · promesse 2 · titre": {
+    "tag": "h4",
+    "title": "1 projet = 1 vidéo livrée."
+   },
    "Offres · promesse 2 · texte": {
-    "paragraph": "<strong>1 projet = 1 vidéo livrée</strong>, prête à publier"
+    "paragraph": "Prête à publier, à votre charte."
+   },
+   "Offres · promesse 2 · note": {
+    "paragraph": "prête à poster"
    },
    "Offres · promesse 3 · chiffre": {
     "image": {
@@ -117,8 +134,15 @@
      "size": "medium"
     }
    },
+   "Offres · promesse 3 · titre": {
+    "tag": "h4",
+    "title": "Des allers-retours cadrés."
+   },
    "Offres · promesse 3 · texte": {
-    "paragraph": "<strong>Des allers-retours cadrés</strong>, pour livrer vite"
+    "paragraph": "Des retours groupés, pour livrer vite."
+   },
+   "Offres · promesse 3 · note": {
+    "paragraph": "sans ping-pong"
    },
    "Offres · promesse 4 · chiffre": {
     "image": {
@@ -128,11 +152,18 @@
      "size": "medium"
     }
    },
+   "Offres · promesse 4 · titre": {
+    "tag": "h4",
+    "title": "1 abonnement = 1 équipe métier."
+   },
    "Offres · promesse 4 · texte": {
-    "paragraph": "<strong>1 abonnement = 1 équipe métier</strong>"
+    "paragraph": "Une équipe qui connaît vos sujets."
+   },
+   "Offres · promesse 4 · note": {
+    "paragraph": "vos experts"
    },
    "Offres · promesses · note": {
-    "paragraph": "C'est notre façon de garantir la même qualité et la même vitesse — à tous nos abonnés."
+    "paragraph": "C'est notre façon de garantir la même qualité et la même vitesse, à tous nos abonnés."
    }
   },
   "classes": {
@@ -242,67 +273,105 @@
     "chip-neutre"
    ],
    "Offres · promesses": [
-    "carte-verre",
-    "grand-bloc",
-    "carte-promesses"
+    "promesses-jeu"
+   ],
+   "Offres · promesses · sur-titre": [
+    "label",
+    "label-violet"
    ],
    "Offres · promesses · titre": [
-    "titre-xs"
+    "titre-md"
    ],
-   "Offres · promesses · liste": [
-    "grille-4"
+   "Offres · promesses · cartes": [
+    "cartes-jeu"
    ],
    "Offres · promesse 1": [
-    "ligne-coche"
+    "carte-verre",
+    "carte-jeu"
    ],
    "Offres · promesse 1 · chiffre": [
-    "picto-verre"
+    "chiffre-jeu"
+   ],
+   "Offres · promesse 1 · textes": [
+    "pile-serree"
+   ],
+   "Offres · promesse 1 · titre": [
+    "titre-xs"
    ],
    "Offres · promesse 1 · texte": [
     "texte-petit"
    ],
+   "Offres · promesse 1 · note": [
+    "note-jeu"
+   ],
    "Offres · promesse 2": [
-    "ligne-coche"
+    "carte-verre",
+    "carte-jeu"
    ],
    "Offres · promesse 2 · chiffre": [
-    "picto-verre"
+    "chiffre-jeu"
+   ],
+   "Offres · promesse 2 · textes": [
+    "pile-serree"
+   ],
+   "Offres · promesse 2 · titre": [
+    "titre-xs"
    ],
    "Offres · promesse 2 · texte": [
     "texte-petit"
    ],
+   "Offres · promesse 2 · note": [
+    "note-jeu"
+   ],
    "Offres · promesse 3": [
-    "ligne-coche"
+    "carte-verre",
+    "carte-jeu"
    ],
    "Offres · promesse 3 · chiffre": [
-    "picto-verre"
+    "chiffre-jeu"
+   ],
+   "Offres · promesse 3 · textes": [
+    "pile-serree"
+   ],
+   "Offres · promesse 3 · titre": [
+    "titre-xs"
    ],
    "Offres · promesse 3 · texte": [
     "texte-petit"
    ],
+   "Offres · promesse 3 · note": [
+    "note-jeu"
+   ],
    "Offres · promesse 4": [
-    "ligne-coche"
+    "carte-verre",
+    "carte-jeu"
    ],
    "Offres · promesse 4 · chiffre": [
-    "picto-verre"
+    "chiffre-jeu"
+   ],
+   "Offres · promesse 4 · textes": [
+    "pile-serree"
+   ],
+   "Offres · promesse 4 · titre": [
+    "titre-xs"
    ],
    "Offres · promesse 4 · texte": [
     "texte-petit"
    ],
+   "Offres · promesse 4 · note": [
+    "note-jeu"
+   ],
    "Offres · promesses · note": [
-    "texte-petit"
+    "texte"
    ]
   },
   "style": {
    "Offres · ajout · contenu": "display: flex; flex-direction: column; gap: 0;",
    "Offres · captation · étiquettes": "margin-top: 6px;",
    "Offres · fait main · étiquettes": "margin-top: 6px;",
-   "Offres · promesses": "margin-top: 28px;",
-   "Offres · promesses · liste": "margin-top: 8px;",
-   "Offres · promesse 1 · chiffre": "height: 40px;",
-   "Offres · promesse 2 · chiffre": "height: 40px;",
-   "Offres · promesse 3 · chiffre": "height: 40px;",
-   "Offres · promesse 4 · chiffre": "height: 40px;",
-   "Offres · promesses · note": "margin-top: 10px;"
+   "Offres · promesses": "margin-top: 96px;",
+   "Offres · promesses · titre": "margin-top: 14px;",
+   "Offres · promesses · note": "margin-top: 8px; text-align: center;"
   }
  },
  "brut": {}

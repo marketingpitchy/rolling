@@ -454,6 +454,38 @@
 		img.replaceWith( v );
 	} );
 
+	/* Lecteur d'un lien Vimeo, YouTube ou fichier. fond = aperçu muet en boucle, sans commandes ni titre. */
+	function lecteurLien( url, fond, titre ) {
+		var vimeo = url.match( /vimeo\.com\/(?:video\/)?(\d+)(?:\/([0-9a-f]+))?/ ), hash = url.match( /[?&]h=([0-9a-f]+)/ );
+		var yt = url.match( /(?:youtu\.be\/|v=|embed\/|shorts\/)([\w-]{11})/ ), el;
+		if ( vimeo ) {
+			var cle = vimeo[ 2 ] || ( hash ? hash[ 1 ] : '' );
+			el = document.createElement( 'iframe' );
+			el.src = 'https://player.vimeo.com/video/' + vimeo[ 1 ] + '?' + ( cle ? 'h=' + cle + '&' : '' ) + 'dnt=1&title=0&byline=0&portrait=0&badge=0&vimeo_logo=0&' +
+				( fond ? 'background=1&muted=1&loop=1&autopause=0' : 'autoplay=1' );
+		} else if ( yt ) {
+			el = document.createElement( 'iframe' );
+			el.src = 'https://www.youtube-nocookie.com/embed/' + yt[ 1 ] + '?rel=0&playsinline=1&' +
+				( fond ? 'autoplay=1&mute=1&loop=1&controls=0&disablekb=1&playlist=' + yt[ 1 ] : 'autoplay=1' );
+		} else {
+			el = document.createElement( 'video' );
+			el.src = url;
+			el.playsInline = true;
+			el.autoplay = true;
+			if ( fond ) {
+				el.muted = true;
+				el.loop = true;
+			} else {
+				el.controls = true;
+			}
+			return el;
+		}
+		el.allow = 'autoplay; fullscreen; picture-in-picture; encrypted-media';
+		el.allowFullscreen = true;
+		el.title = titre;
+		return el;
+	}
+
 	/* Vidéo d'une fiche : chargée seulement au clic (YouTube sans cookie, ou fichier de la médiathèque) */
 	document.querySelectorAll( '[data-rl-video]' ).forEach( function ( cadre ) {
 		var bouton = cadre.querySelector( 'button' ), apercu = cadre.querySelector( 'video.apercu-video' );
@@ -478,11 +510,49 @@
 				} );
 			}, { threshold: 0.35 } ).observe( cadre );
 		}
+		/* Lien (widget Vidéo, « Lien ci-dessous ») : calque posé sur l'image d'affiche du cadre */
+		var calque = cadre.classList.contains( 'video-calque' ), hote = calque ? ( cadre.closest( '.elementor-widget' ) || cadre ).parentElement : null;
+		if ( calque && 'boucle' === cadre.getAttribute( 'data-rl-mode' ) && ! calme && 'IntersectionObserver' in window ) {
+			var vue = new IntersectionObserver( function ( entrees ) {
+				if ( ! entrees[ 0 ].isIntersecting || cadre.classList.contains( 'lit' ) ) {
+					return;
+				}
+				vue.disconnect();
+				var lancer = function () {
+					var fond = lecteurLien( cadre.getAttribute( 'data-rl-video' ), true, bouton.getAttribute( 'aria-label' ) );
+					if ( fond ) {
+						fond.setAttribute( 'tabindex', '-1' );
+						fond.setAttribute( 'aria-hidden', 'true' );
+						fond.classList.add( 'video-calque-fond' );
+						cadre.insertBefore( fond, bouton );
+						hote.classList.add( 'rl-boucle' );
+					}
+				};
+				// Après le chargement de la page : l'aperçu ne retarde pas l'affichage de l'image d'affiche.
+				if ( 'complete' === document.readyState ) {
+					setTimeout( lancer, 300 );
+				} else {
+					window.addEventListener( 'load', function () { setTimeout( lancer, 300 ); } );
+				}
+			}, { threshold: 0.35 } );
+			vue.observe( cadre );
+		}
 		bouton.addEventListener( 'click', function () {
 			if ( apercu ) {
 				apercu.remove();
 			}
 			var url = cadre.getAttribute( 'data-rl-video' ), yt = url.match( /(?:youtu\.be\/|v=|embed\/|shorts\/)([\w-]{11})/ ), lecteur;
+			if ( calque ) {
+				cadre.querySelectorAll( '.video-calque-fond' ).forEach( function ( f ) { f.remove(); } );
+				lecteur = lecteurLien( url, false, bouton.getAttribute( 'aria-label' ) );
+				cadre.appendChild( lecteur );
+				cadre.classList.add( 'lit' );
+				hote.classList.remove( 'rl-boucle' );
+				hote.classList.add( 'rl-lit' );
+				bouton.remove();
+				lecteur.focus();
+				return;
+			}
 			if ( yt ) {
 				lecteur = document.createElement( 'iframe' );
 				lecteur.src = 'https://www.youtube-nocookie.com/embed/' + yt[ 1 ] + '?autoplay=1&rel=0';
@@ -501,6 +571,25 @@
 			lecteur.focus();
 		} );
 	} );
+
+	/* Extraits vidéo du mur de montage : muets, en boucle, seulement quand ils sont à l'écran (rien avec « réduire les animations ») */
+	if ( ! calme && ! editeur && 'IntersectionObserver' in window ) {
+		var extraits = new IntersectionObserver( function ( entrees ) {
+			entrees.forEach( function ( e ) {
+				var v = e.target;
+				if ( e.isIntersecting ) {
+					v.preload = 'auto';
+					var p = v.play();
+					if ( p && p.catch ) {
+						p.catch( function () {} );
+					}
+				} else {
+					v.pause();
+				}
+			} );
+		}, { threshold: 0.25 } );
+		document.querySelectorAll( '.extrait-video video' ).forEach( function ( v ) { extraits.observe( v ); } );
+	}
 
 	/* Vignettes des listes : sur un écran tactile, celle qui passe au centre de l'écran « démarre » */
 	if ( ! calme && ! editeur && window.matchMedia( '(hover: none)' ).matches && 'IntersectionObserver' in window ) {

@@ -43,7 +43,7 @@
    "Landing · entreprises · chiffre 1": {
     "image": {
      "src": {
-      "url": "https://media.rolling.invalid/chiffre-5.webp"
+      "url": "https://media.rolling.invalid/chiffre-plus.webp"
      },
      "size": "medium"
     }
@@ -51,7 +51,7 @@
    "Landing · entreprises · chiffre 2": {
     "image": {
      "src": {
-      "url": "https://media.rolling.invalid/chiffre-0.webp"
+      "url": "https://media.rolling.invalid/chiffre-5.webp"
      },
      "size": "medium"
     }
@@ -67,13 +67,13 @@
    "Landing · entreprises · chiffre 4": {
     "image": {
      "src": {
-      "url": "https://media.rolling.invalid/chiffre-plus.webp"
+      "url": "https://media.rolling.invalid/chiffre-0.webp"
      },
      "size": "medium"
     }
    },
    "Landing · entreprises · valeur lue": {
-    "paragraph": "500+"
+    "paragraph": "+500"
    },
    "Landing · entreprises · libellé": {
     "paragraph": "grandes entreprises équipées"

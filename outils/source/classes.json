@@ -1320,8 +1320,8 @@
     },
     {
      "label": "mur-temoins",
-     "description": "Mur de témoignages : 3 colonnes, 2 sous 980 px, 1 sur mobile.",
-     "css": "display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; align-items: stretch; padding: 0; @media(--tablet) { grid-template-columns: repeat(2, minmax(0, 1fr)); } @media(--mobile) { grid-template-columns: minmax(0, 1fr); }"
+     "description": "Mur maçonné des témoignages (classe de la grille du widget Liste) : 3 colonnes sans trou, chaque carte à la hauteur de sa citation (courte écrite plus grand, longue plus petit), taches de couleur derrière le verre ; le témoignage à la une sur toute la largeur. 2 colonnes sous 1024 px, 1 en mobile.",
+     "css": "position: relative; isolation: isolate; display: block; column-count: 3; column-gap: 22px; padding: 0; &::before { content: ''; position: absolute; z-index: -1; left: -10%; top: 6%; width: 52%; height: 46%; border-radius: 50%; pointer-events: none; background: radial-gradient(closest-side, rgba(167,123,240,0.42), rgba(167,123,240,0)); filter: blur(30px); } &::after { content: ''; position: absolute; z-index: -1; right: -10%; bottom: 4%; width: 50%; height: 46%; border-radius: 50%; pointer-events: none; background: radial-gradient(closest-side, rgba(255,171,150,0.5), rgba(255,171,150,0)); filter: blur(30px); } & > .macon-case { display: flex; flex-direction: column; margin: 0 0 22px; break-inside: avoid; } & > .macon-une { column-span: all; margin-bottom: 26px; } & .macon-case > .elementor { display: contents; } & .macon-case .temoin { flex: 1 1 auto; } & .macon-court .temoin-citation { font-size: 24px; line-height: 1.25; letter-spacing: -0.025em; } & .macon-long .temoin-citation { font-size: 16.5px; line-height: 1.55; } @media(--tablet) { column-count: 2; } @media(--mobile) { column-count: 1; & .macon-court .temoin-citation { font-size: 21px; } }"
     },
     {
      "label": "cas-logo",
@@ -1355,7 +1355,7 @@
     },
     {
      "label": "plaque-large",
-     "description": "Avec plaque-libre : 2 colonnes, pour des valeurs longues (« 500+ », « 87 % ») ; une ligne par chiffre en mobile. Le widget Chiffres clés la pose tout seul.",
+     "description": "Avec plaque-libre : 2 colonnes, pour des valeurs longues (« +500 », « 87 % ») ; une ligne par chiffre en mobile. Le widget Chiffres clés la pose tout seul.",
      "css": "grid-template-columns: repeat(2, minmax(0, 1fr)); @media(--mobile) { grid-template-columns: minmax(0, 1fr); }"
     },
     {
@@ -1396,7 +1396,7 @@
     {
      "label": "mur-montage",
      "description": "Mur de montage (classe de la grille du widget Liste, page Réalisations) : la dernière réalisation en grand, les 9:16 en hauteur, les autres en 16:9 ; les cartes montent une à une en sortant du flou (rolling.js, une seule fois). 3 colonnes sous 1024 px, 2 en mobile.",
-     "css": "display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); grid-auto-rows: 136px; grid-auto-flow: dense; gap: 28px 24px; & > .mur-case { grid-row: span 2; display: flex; flex-direction: column; min-width: 0; } & > .mur-case.mur-large { grid-column: span 2; grid-row: span 4; } & > .mur-case.mur-haute { grid-row: span 3; } & .mur-case > .elementor { display: contents; } & .mur-case .carte-liste { flex: 1 1 auto; min-height: 0; gap: 12px; } & .mur-case .vignette-video { display: flex; flex-direction: column; flex: 1 1 auto; min-height: 110px; } & .mur-case .vignette-video > .cadre-photo { flex: 1 1 auto; min-height: 0; aspect-ratio: auto; } & .mur-case .avant-apres { display: none; } & .mur-large .titre-xs { font-size: 28px; } &.rl-anime > .mur-case { opacity: 0; transform: translateY(34px) scale(0.97); filter: blur(8px); } &.rl-anime > .mur-case.vu { animation: rl-mur 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; } @media(--tablet) { grid-template-columns: repeat(3, minmax(0, 1fr)); } @media(--mobile) { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: 112px; gap: 22px 14px; & > .mur-case.mur-large { grid-row: span 3; } & .titre-xs { font-size: 17px; } & .mur-large .titre-xs { font-size: 22px; } & .label { font-size: 12px; } & .mur-case:not(.mur-large) .duree { display: none; } }"
+     "css": "display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); grid-auto-rows: 136px; grid-auto-flow: dense; gap: 28px 24px; & > .mur-case { grid-row: span 2; display: flex; flex-direction: column; min-width: 0; } & > .mur-case.mur-large { grid-column: span 2; grid-row: span 4; } & > .mur-case.mur-haute { grid-row: span 3; } & .mur-case > .elementor { display: contents; } & .mur-case .carte-liste { flex: 1 1 auto; min-height: 0; gap: 12px; } & .mur-case .vignette-video { display: flex; flex-direction: column; flex: 1 1 auto; min-height: 110px; } & .mur-case .vignette-video > .cadre-photo { flex: 1 1 auto; min-height: 0; aspect-ratio: auto; } & .mur-case .avant-apres { display: none; } & .mur-large .titre-xs { font-size: 28px; } position: relative; isolation: isolate; &::before { content: ''; position: absolute; z-index: -1; left: -10%; top: 6%; width: 52%; height: 46%; border-radius: 50%; pointer-events: none; background: radial-gradient(closest-side, rgba(167,123,240,0.42), rgba(167,123,240,0)); filter: blur(30px); } &::after { content: ''; position: absolute; z-index: -1; right: -10%; bottom: 4%; width: 50%; height: 46%; border-radius: 50%; pointer-events: none; background: radial-gradient(closest-side, rgba(255,171,150,0.5), rgba(255,171,150,0)); filter: blur(30px); } & .mur-case .carte-liste { position: relative; padding: 7px; gap: 0; border-radius: 24px; background: radial-gradient(70% 60% at 15% 0%, rgba(255,255,255,0.9), rgba(255,255,255,0) 72%), linear-gradient(150deg, rgba(255,255,255,0.7), rgba(255,255,255,0.4)); backdrop-filter: blur(18px) saturate(160%); box-shadow: inset 0 1px 0 #FFFFFF, inset 0 0 0 1px rgba(255,255,255,0.6), 0 26px 60px -32px rgba(76,48,170,0.4); } & .mur-case .vignette-video { padding: 0; border-radius: 18px; background: transparent; box-shadow: none; --rl-rayon-photo: 18px; } & .mur-case .pile-serree { position: absolute; z-index: 4; left: 17px; right: 17px; bottom: 17px; width: auto; gap: 3px; padding: 12px 14px; border-radius: 16px; background: rgba(22,14,52,0.82); backdrop-filter: blur(14px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.22); --rl-texte: #FAF9F7; --rl-legende: #E9E2FF; --rl-accent: #C4B5FD; } & .mur-case .pile-serree .titre-xs { font-size: 18px; } & .mur-large .pile-serree .titre-xs { font-size: 25px; } & .mur-case .cadre-photo .duree { top: 14px; bottom: auto; } & .extrait-cadre { display: flex; flex: 1 1 auto; min-height: 110px; padding: 7px; border-radius: 24px; background: radial-gradient(70% 60% at 15% 0%, rgba(255,255,255,0.9), rgba(255,255,255,0) 72%), linear-gradient(150deg, rgba(255,255,255,0.7), rgba(255,255,255,0.4)); backdrop-filter: blur(18px) saturate(160%); box-shadow: inset 0 1px 0 #FFFFFF, inset 0 0 0 1px rgba(255,255,255,0.6), 0 26px 60px -32px rgba(76,48,170,0.4); } & .extrait-video { position: relative; flex: 1 1 auto; overflow: hidden; border-radius: 18px; background: linear-gradient(160deg, #3434E0, #1C1730); } & .extrait-video video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; } & .extrait-pastille { position: absolute; z-index: 2; left: 12px; bottom: 12px; display: inline-flex; align-items: center; gap: 7px; padding: 6px 12px; border-radius: 999px; font-family: Hanken Grotesk; font-size: 12px; line-height: 1; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: #FFFFFF; background: rgba(15,15,18,0.62); } & .extrait-pastille::before { content: '↻'; font-size: 13px; letter-spacing: 0; } &.rl-anime > .mur-case { opacity: 0; transform: translateY(34px) scale(0.97); filter: blur(8px); } &.rl-anime > .mur-case.vu { animation: rl-mur 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; } @media(--tablet) { grid-template-columns: repeat(3, minmax(0, 1fr)); } @media(--mobile) { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: 112px; gap: 22px 14px; & > .mur-case.mur-large { grid-row: span 3; } & .titre-xs { font-size: 17px; } & .mur-large .titre-xs { font-size: 22px; } & .label { font-size: 12px; } & .mur-case:not(.mur-large) .duree { display: none; } & .mur-case .pile-serree { left: 11px; right: 11px; bottom: 11px; padding: 8px 10px; } & .mur-case .pile-serree .titre-xs { font-size: 14px; } & .mur-large .pile-serree .titre-xs { font-size: 18px; } & .extrait-pastille { left: 8px; bottom: 8px; padding: 5px 9px; } }"
     },
     {
      "label": "bloc-ressources-article",
@@ -2202,6 +2202,111 @@
      "label": "mire-signal",
      "description": "« Signal perdu · 04:04 » au centre de la mire.",
      "css": "position: relative; z-index: 1; display: inline-flex; align-items: center; gap: 10px; padding: 10px 18px; border-radius: 999px; font-family: Hanken Grotesk; font-size: 14px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; white-space: nowrap; color: #FFFFFF; background: rgba(15,15,18,0.88); &::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: #FF3B30; box-shadow: 0 0 0 3px rgba(255,59,48,0.28); animation: rl-clignote 1.6s ease-in-out infinite; } @media(--mobile) { font-size: 12px; padding: 8px 14px; }"
+    },
+    {
+     "label": "cadre-showreel",
+     "description": "Cadre d'un showreel par lien (avec cadre-photo) : le widget Vidéo « Lien ci-dessous » se pose sur l'image d'affiche ; l'aperçu muet tourne en boucle, le lecteur avec le son s'ouvre au clic.",
+     "css": "& > .elementor-widget-rolling-video { position: absolute; top: 0; right: 0; bottom: 0; left: 0; z-index: 0; margin: 0; } & .lecture-centre { pointer-events: none; transition: opacity 0.4s ease; } &.rl-boucle .lecture-centre { opacity: 0; } &.rl-boucle .pastille-son { display: inline-flex; } &.rl-lit .bandeau-video, &.rl-lit .duree, &.rl-lit .lecture-centre { display: none; } &.rl-lit::after { display: none; }"
+    },
+    {
+     "label": "video-calque",
+     "description": "Calque du widget Vidéo (« Lien ci-dessous ») posé sur l'image d'affiche : aperçu en boucle, puis lecteur.",
+     "css": "position: absolute; top: 0; right: 0; bottom: 0; left: 0; overflow: hidden; container-type: size; & > iframe, & > video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; background: #000000; } & > .video-calque-fond { top: 50%; left: 50%; width: max(100cqw, 177.78cqh); height: max(100cqh, 56.25cqw); transform: translate(-50%, -50%); background: transparent; pointer-events: none; } & > video.video-calque-fond { top: 0; left: 0; width: 100%; height: 100%; transform: none; object-fit: cover; }"
+    },
+    {
+     "label": "video-calque-bouton",
+     "description": "Bouton invisible qui couvre la vidéo : lance le lecteur avec le son.",
+     "css": "position: absolute; z-index: 1; top: 0; right: 0; bottom: 0; left: 0; width: 100%; height: 100%; padding: 0; border: 0; border-radius: inherit; background-color: transparent; cursor: pointer; &:focus-visible { outline: 3px solid #FFFFFF; outline-offset: -6px; }"
+    },
+    {
+     "label": "pastille-son",
+     "description": "Pastille « Activer le son » sur un showreel qui tourne en boucle (visible pendant l'aperçu).",
+     "css": "position: absolute; left: 16px; bottom: 16px; display: none; align-items: center; gap: 8px; min-height: 40px; padding: 0 16px; border-radius: 999px; font-family: Hanken Grotesk; font-size: 14px; line-height: 1; font-weight: 700; color: #FFFFFF; background: rgba(15,15,18,0.78); background-color: #0F0F12; &::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: #FF3B30; box-shadow: 0 0 0 3px rgba(255,59,48,0.3); }"
+    },
+    {
+     "label": "cadre-cinema",
+     "description": "Cadre au format cinéma (21:9), 4:3 en mobile.",
+     "css": "aspect-ratio: 21 / 9; @media(--mobile) { aspect-ratio: 4 / 3; }"
+    },
+    {
+     "label": "scene-bulles",
+     "description": "Showreel et ses bulles de citations : les bulles flottent autour de la vidéo ; sous la vidéo en mobile.",
+     "css": "position: relative; display: flex; flex-direction: column; padding: 0; & > .elementor-widget-rolling-liste { position: absolute; z-index: 5; top: 0; right: 0; bottom: 0; left: 0; margin: 0; pointer-events: none; } @media(--mobile) { & > .elementor-widget-rolling-liste { position: relative; pointer-events: auto; } }"
+    },
+    {
+     "label": "bulles-showreel",
+     "description": "Liste des bulles de citations (classe de la grille du widget Liste, carte « Bulle de citation ») : 3 bulles autour du showreel, qui flottent ; l'une sous l'autre en mobile.",
+     "css": "position: absolute; z-index: 5; top: 0; right: 0; bottom: 0; left: 0; display: block; padding: 0; pointer-events: none; & .bulle-citation { position: absolute; width: min(290px, 36%); pointer-events: auto; animation: rl-flotte 6s ease-in-out infinite; } & > div:nth-last-of-type(3) .bulle-citation { left: -14px; top: 64px; rotate: -2deg; } & > div:nth-last-of-type(2) .bulle-citation { right: -14px; top: 38%; rotate: 2deg; animation-delay: -2s; } & > div:nth-last-of-type(1) .bulle-citation { left: 22%; bottom: -30px; rotate: -1deg; animation-delay: -4s; } @media(--mobile) { position: relative; display: flex; flex-direction: column; gap: 12px; margin-top: 16px; pointer-events: auto; & .bulle-citation { position: relative; top: auto; right: auto; bottom: auto; left: auto; width: 100%; rotate: 0deg; animation: none; } & > div:nth-last-of-type(n) .bulle-citation { left: auto; right: auto; top: auto; bottom: auto; rotate: 0deg; } }"
+    },
+    {
+     "label": "bulle-citation",
+     "description": "Bulle de citation en verre (carte « Bulle de citation ») : citation courte, nom et poste.",
+     "css": "display: flex; flex-direction: column; gap: 4px; margin: 0; padding: 16px 18px; border-radius: 20px; background: radial-gradient(70% 60% at 15% 0%, rgba(255,255,255,0.95), rgba(255,255,255,0) 72%), linear-gradient(150deg, rgba(255,255,255,0.86), rgba(255,255,255,0.66)); background-color: #FFFFFF; backdrop-filter: blur(18px) saturate(160%); box-shadow: inset 0 1px 0 #FFFFFF, 0 24px 50px -24px rgba(15,15,18,0.45);"
+    },
+    {
+     "label": "bulle-texte",
+     "description": "Citation d'une bulle (entre guillemets).",
+     "css": "display: block; margin-bottom: 6px; font-family: Bricolage Grotesque; font-size: 16px; line-height: 1.35; font-weight: 650; letter-spacing: -0.015em; color: var(--encre); &::before { content: '« '; } &::after { content: ' »'; }"
+    },
+    {
+     "label": "bulle-auteur",
+     "description": "Nom de la personne sous une bulle.",
+     "css": "display: block; font-family: Hanken Grotesk; font-size: 13px; line-height: 1.3; font-weight: 700; color: var(--encre);"
+    },
+    {
+     "label": "grille-verre",
+     "description": "Grille de 3 cartes de réalisations en verre qui se soulèvent (ex. page Contact) ; une par ligne sous 980 px.",
+     "css": "display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; margin-top: 32px; padding: 0; & .carte-liste { height: 100%; padding: 8px 8px 20px; gap: 12px; border-radius: 26px; background: radial-gradient(70% 60% at 15% 0%, rgba(255,255,255,0.9), rgba(255,255,255,0) 72%), linear-gradient(150deg, rgba(255,255,255,0.74), rgba(255,255,255,0.46)); backdrop-filter: blur(18px) saturate(160%); box-shadow: inset 0 1px 0 #FFFFFF, inset 0 0 0 1px rgba(255,255,255,0.6), 0 30px 70px -34px rgba(76,48,170,0.34); transition: transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1); } & .carte-liste:hover { transform: translateY(-6px); } & .vignette-video { padding: 0; background: transparent; box-shadow: none; } & .pile-serree, & .avant-apres { padding: 0 12px; } @media(--tablet) { grid-template-columns: minmax(0, 1fr); }"
+    },
+    {
+     "label": "promesses-jeu",
+     "description": "Promesses de l'illimité en cartes à jouer : sur-titre, titre et note centrés.",
+     "css": "display: flex; flex-direction: column; align-items: center; gap: 0; padding: 0; text-align: center;"
+    },
+    {
+     "label": "cartes-jeu",
+     "description": "Rangée de cartes à jouer en éventail (cartes inclinées qui se redressent au survol) ; 2 par ligne sous 1024 px, une par ligne en mobile, droites.",
+     "css": "display: flex; flex-direction: row; justify-content: center; align-items: flex-start; gap: 0; width: 100%; margin-top: 40px; padding: 10px 0 30px; & > .carte-jeu:nth-last-child(4) { transform: rotate(-7deg) translateY(16px); } & > .carte-jeu:nth-last-child(3) { transform: rotate(-2deg); } & > .carte-jeu:nth-last-child(2) { transform: rotate(3deg) translateY(2px); } & > .carte-jeu:nth-last-child(1) { transform: rotate(8deg) translateY(18px); } & > .carte-jeu:hover { z-index: 5; transform: rotate(0deg) translateY(-14px) scale(1.04); } @media(--tablet) { flex-wrap: wrap; gap: 16px; & > .carte-jeu, & > .carte-jeu:nth-last-child(n) { width: calc(50% - 8px); margin: 0; transform: none; } & > .carte-jeu:hover { transform: translateY(-6px); } } @media(--mobile) { & > .carte-jeu, & > .carte-jeu:nth-last-child(n) { width: 100%; } }"
+    },
+    {
+     "label": "carte-jeu",
+     "description": "Carte à jouer (avec carte-verre) : grand chiffre en verre, titre, phrase et note manuscrite.",
+     "css": "width: 256px; min-height: 300px; margin: 0 -12px; justify-content: space-between; gap: 18px; padding: 24px; text-align: left; transition: transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1); @media(--mobile) { display: grid; grid-template-columns: 56px minmax(0, 1fr); align-items: center; gap: 6px 16px; min-height: 0; padding: 20px; & > :last-child { grid-column: 1 / -1; } }"
+    },
+    {
+     "label": "chiffre-jeu",
+     "description": "Grand chiffre en verre d'une carte à jouer.",
+     "css": "display: block; width: auto; height: 92px; max-width: 100%; object-fit: contain; object-position: left center; @media(--mobile) { height: 60px; }"
+    },
+    {
+     "label": "note-jeu",
+     "description": "Note manuscrite en bas d'une carte à jouer (Caveat, orange foncé).",
+     "css": "display: block; font-family: Caveat; font-size: 28px; line-height: 1; font-weight: 700; color: #A63C14; transform: rotate(-3deg); transform-origin: left center;"
+    },
+    {
+     "label": "equipe-bandes",
+     "description": "Section en bandes (L'agence, 00:03) : créas sur fond pêche, fondu, experts IA sur fond foncé.",
+     "css": "position: relative; display: flex; flex-direction: column; padding: 0; overflow: clip; overflow-clip-margin: 24px; isolation: isolate;"
+    },
+    {
+     "label": "bande-creas",
+     "description": "Bande des créas : fond pêche et halos lilas / pêche.",
+     "css": "position: relative; display: flex; flex-direction: column; padding: 124px 0 72px; overflow: clip; isolation: isolate; background: linear-gradient(180deg, #FAF9F7 0%, #FFF1E7 70%, #FFF1E7 100%); background-color: #FFF1E7; &::before { position: relative; top: auto; right: auto; bottom: auto; left: auto; height: auto; opacity: 1; mix-blend-mode: normal; border: 0; content: ''; position: absolute; z-index: -1; left: -260px; top: -120px; width: 760px; height: 760px; border-radius: 50%; pointer-events: none; background: radial-gradient(closest-side, rgba(196,181,253,0.5), rgba(196,181,253,0)); } &::after { content: ''; position: absolute; z-index: -1; right: -300px; bottom: -260px; width: 820px; height: 820px; border-radius: 50%; pointer-events: none; background: radial-gradient(closest-side, rgba(255,162,122,0.45), rgba(255,162,122,0)); } @media(--tablet) { padding: 84px 0 56px; } @media(--mobile) { padding: 72px 0 48px; }"
+    },
+    {
+     "label": "bande-fondu",
+     "description": "Fondu de la couleur des créas au foncé des experts IA, avec la pastille « Ensemble sur chaque projet ».",
+     "css": "display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 160px; padding: 0; background: linear-gradient(180deg, #FFF1E7 0%, #EADCF3 26%, #8C6BD8 54%, #2A1E4E 80%, #17112C 100%); background-color: #6F55B8; @media(--mobile) { min-height: 120px; }"
+    },
+    {
+     "label": "pastille-ensemble",
+     "description": "Pastille blanche « Ensemble sur chaque projet », avec un point pêche et un point violet.",
+     "css": "display: inline-flex; align-items: center; gap: 10px; width: fit-content; padding: 10px 18px; border-radius: 999px; font-family: Hanken Grotesk; font-size: 15px; line-height: 1.2; font-weight: 700; color: #0F0F12; background: #FFFFFF; box-shadow: 0 10px 30px -10px rgba(15,15,18,0.5); &::before { content: ''; flex-shrink: 0; width: 26px; height: 12px; background: radial-gradient(circle at 6px 6px, #FF8A5B 5.5px, rgba(255,138,91,0) 6px), radial-gradient(circle at 20px 6px, #5B3BEA 5.5px, rgba(91,59,234,0) 6px); }"
+    },
+    {
+     "label": "bande-ia",
+     "description": "Bande des experts IA (avec section-sombre et halos-nuit) : fond foncé de la charte, portraits cerclés de violet.",
+     "css": "position: relative; display: flex; flex-direction: column; padding: 72px 0 124px; overflow: clip; isolation: isolate; &::before { position: relative; top: auto; right: auto; bottom: auto; left: auto; height: auto; opacity: 1; mix-blend-mode: normal; border: 0; content: ''; position: absolute; z-index: -1; left: -12%; top: 18%; width: 720px; height: 720px; border-radius: 50%; pointer-events: none; background: radial-gradient(closest-side, rgba(139,92,246,0.4), rgba(15,15,18,0)); } &::after { content: ''; position: absolute; z-index: -1; right: -14%; bottom: -40%; width: 820px; height: 820px; border-radius: 50%; pointer-events: none; background: radial-gradient(closest-side, rgba(255,138,91,0.3), rgba(15,15,18,0)); } & .portrait { box-shadow: 0 0 0 4px rgba(196,181,253,0.55), 0 0 0 10px rgba(91,59,234,0.22), 0 0 46px -6px rgba(140,142,255,0.75); } @media(--tablet) { padding: 56px 0 84px; } @media(--mobile) { padding: 48px 0 72px; }"
     },
     {
      "label": "liens-utiles",

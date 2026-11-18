@@ -122,6 +122,18 @@ class Rolling_Contenus {
 				'supports'  => array( 'title', 'thumbnail', 'revisions' ),
 				'titre'     => __( 'Titre du cas (ex. : l’expertise vidéo qui manquait à l’équipe SIRH.)', 'rolling' ),
 			),
+			'rolling_extrait'     => array(
+				'pluriel'   => __( 'Extraits vidéo', 'rolling' ),
+				'singulier' => __( 'Extrait vidéo', 'rolling' ),
+				'feminin'   => false,
+				'slug'      => '',
+				'public'    => false,
+				'icone'     => 'dashicons-controls-repeat',
+				'position'  => 21,
+				'menu'      => 'edit.php?post_type=rolling_realisation',
+				'supports'  => array( 'title', 'thumbnail' ),
+				'titre'     => __( 'Nom de l’extrait (pour vous, non affiché)', 'rolling' ),
+			),
 			'rolling_logo'        => array(
 				'pluriel'   => __( 'Logos clients', 'rolling' ),
 				'singulier' => __( 'Logo client', 'rolling' ),
@@ -259,7 +271,7 @@ class Rolling_Contenus {
 					'generique' => array(
 						'lignes',
 						__( 'Lignes du générique', 'rolling' ),
-						__( 'Ex. : Client — Fnac Darty ; Direction artistique — Thomas. Laissez vide : pas de générique.', 'rolling' ),
+						__( 'Ex. : Client, Fnac Darty ; Direction artistique, Thomas. Laissez vide : pas de générique.', 'rolling' ),
 						array(
 							'role'   => __( 'Intitulé', 'rolling' ),
 							'valeur' => __( 'Valeur', 'rolling' ),
@@ -288,7 +300,7 @@ class Rolling_Contenus {
 					'chiffres'       => array(
 						'lignes',
 						__( 'Chiffres clés', 'rolling' ),
-						__( 'Valeur, ex. « 87 % », « 2 500+ », « 4,2/5 », « 35:00 » ou « <3 mois » : les chiffres, +, %, k et M en verre, les autres signes et les mots courts dans le même dégradé. La phrase va dans le libellé. Aucun chiffre : la plaque n’apparaît pas.', 'rolling' ),
+						__( 'Valeur, ex. « 87 % », « +2 500 », « 4,2/5 », « 35:00 » ou « <3 mois » : les chiffres, +, %, k et M en verre, les autres signes et les mots courts dans le même dégradé. La phrase va dans le libellé. Aucun chiffre : la plaque n’apparaît pas.', 'rolling' ),
 						array(
 							'valeur'  => __( 'Valeur', 'rolling' ),
 							'libelle' => __( 'Libellé', 'rolling' ),
@@ -297,6 +309,22 @@ class Rolling_Contenus {
 					'contexte'       => array( 'zone', __( 'Le contexte', 'rolling' ), __( 'Contexte, besoin, accompagnement ou chiffres remplis : la page « cas client » existe et la carte mène à « Lire le cas client ».', 'rolling' ) ),
 					'besoin'         => array( 'zone', __( 'Leur besoin', 'rolling' ), '' ),
 					'accompagnement' => array( 'lignes', __( 'Notre accompagnement', 'rolling' ), __( 'Une ligne par étape (liste à coches).', 'rolling' ), array( 'texte' => __( 'Étape', 'rolling' ) ) ),
+				),
+			),
+			'rolling_extrait'     => array(
+				__( 'L’extrait', 'rolling' ) => array(
+					'video'       => array( 'lien', __( 'Fichier vidéo', 'rolling' ), __( 'Lien d’un fichier de la médiathèque (.mp4 court, quelques secondes, sans son : il tourne en boucle, muet). Il se glisse entre les réalisations de la page Réalisations, sans titre ni lien. L’image (facultative) s’affiche avec « réduire les animations ».', 'rolling' ) ),
+					'format'      => array(
+						'choix',
+						__( 'Format', 'rolling' ),
+						__( 'Un 9:16 prend une case haute dans le mur.', 'rolling' ),
+						array(
+							'16-9' => '16:9',
+							'9-16' => '9:16',
+							'1-1'  => '1:1',
+						),
+					),
+					'description' => array( 'texte', __( 'Description (lue par les lecteurs d’écran)', 'rolling' ), __( 'Ex. : tournage d’une interview en studio.', 'rolling' ) ),
 				),
 			),
 			'rolling_logo'        => array(
@@ -506,7 +534,7 @@ class Rolling_Contenus {
 					'publicly_queryable'  => $t['public'],
 					'exclude_from_search' => ! $t['public'],
 					'show_ui'             => true,
-					'show_in_menu'        => true,
+					'show_in_menu'        => $t['menu'] ?? true,
 					'show_in_rest'        => true,
 					'menu_icon'           => $t['icone'],
 					'menu_position'       => $t['position'],

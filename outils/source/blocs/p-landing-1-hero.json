@@ -3,7 +3,7 @@
  "titre": "Rolling · Landing · Hero et logos",
  "type": "e-flexbox",
  "composition": {
-  "xml_structure": "<e-flexbox configuration-id=\"Landing · hero\"><e-flexbox configuration-id=\"Landing · hero · contenu\"><e-flexbox configuration-id=\"Landing · textes\"><e-flexbox configuration-id=\"Landing · pastille\"><e-paragraph configuration-id=\"Landing · pastille · texte\"></e-paragraph></e-flexbox><e-heading configuration-id=\"Landing · titre\"></e-heading><e-paragraph configuration-id=\"Landing · chapô\"></e-paragraph><e-flexbox configuration-id=\"Landing · boutons\"><e-button configuration-id=\"Landing · réserver\"></e-button><e-button configuration-id=\"Landing · offres\"></e-button></e-flexbox><e-paragraph configuration-id=\"Landing · précision\"></e-paragraph><e-flexbox configuration-id=\"Landing · preuve\"><e-flexbox configuration-id=\"Landing · visages\"><e-image configuration-id=\"Landing · visage 1\"></e-image><e-image configuration-id=\"Landing · visage 2\"></e-image><e-image configuration-id=\"Landing · visage 3\"></e-image><e-image configuration-id=\"Landing · visage 4\"></e-image></e-flexbox><e-paragraph configuration-id=\"Landing · preuve · texte\"></e-paragraph></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Landing · visuel\"><e-div-block configuration-id=\"Landing · visuel · cadre\"><e-image configuration-id=\"Landing · visuel · image\"></e-image><e-paragraph configuration-id=\"Landing · visuel · bandeau\"></e-paragraph><e-paragraph configuration-id=\"Landing · visuel · durée\"></e-paragraph><e-image configuration-id=\"Landing · visuel · lecture\"></e-image></e-div-block></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Landing · logos\"><e-flexbox configuration-id=\"Landing · logos · titre\"><e-paragraph configuration-id=\"Landing · logos · libellé\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Landing · logos · bande\"><e-paragraph configuration-id=\"Landing · logos · liste\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox>",
+  "xml_structure": "<e-flexbox configuration-id=\"Landing · hero\"><e-flexbox configuration-id=\"Landing · hero · contenu\"><e-flexbox configuration-id=\"Landing · textes\"><e-flexbox configuration-id=\"Landing · pastille\"><e-paragraph configuration-id=\"Landing · pastille · texte\"></e-paragraph></e-flexbox><e-heading configuration-id=\"Landing · titre\"></e-heading><e-paragraph configuration-id=\"Landing · chapô\"></e-paragraph><e-flexbox configuration-id=\"Landing · boutons\"><e-button configuration-id=\"Landing · réserver\"></e-button><e-button configuration-id=\"Landing · offres\"></e-button></e-flexbox><e-paragraph configuration-id=\"Landing · précision\"></e-paragraph><e-flexbox configuration-id=\"Landing · preuve\"><e-flexbox configuration-id=\"Landing · visages\"><e-image configuration-id=\"Landing · visage 1\"></e-image><e-image configuration-id=\"Landing · visage 2\"></e-image><e-image configuration-id=\"Landing · visage 3\"></e-image><e-image configuration-id=\"Landing · visage 4\"></e-image></e-flexbox><e-paragraph configuration-id=\"Landing · preuve · texte\"></e-paragraph></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Landing · visuel\"><e-div-block configuration-id=\"Landing · visuel · cadre\"><e-image configuration-id=\"Landing · visuel · image\"></e-image><e-paragraph configuration-id=\"Landing · visuel · vidéo\"></e-paragraph><e-paragraph configuration-id=\"Landing · visuel · bandeau\"></e-paragraph><e-paragraph configuration-id=\"Landing · visuel · durée\"></e-paragraph><e-image configuration-id=\"Landing · visuel · lecture\"></e-image></e-div-block></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Landing · logos\"><e-flexbox configuration-id=\"Landing · logos · titre\"><e-paragraph configuration-id=\"Landing · logos · libellé\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Landing · logos · bande\"><e-paragraph configuration-id=\"Landing · logos · liste\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox>",
   "element_config": {
    "Landing · hero": {
     "tag": "section"
@@ -77,6 +77,9 @@
      "size": "large"
     }
    },
+   "Landing · visuel · vidéo": {
+    "paragraph": "⟦widget:rolling-video|source=lien|mode=boucle|titre=Showreel Rolling|libelle=Lire avec le son : %s⟧"
+   },
    "Landing · visuel · bandeau": {
     "paragraph": "Showreel"
    },
@@ -145,7 +148,8 @@
    ],
    "Landing · visuel · cadre": [
     "cadre-photo",
-    "cadre-4-3"
+    "cadre-4-3",
+    "cadre-showreel"
    ],
    "Landing · visuel · image": [
     "image-couvrante"

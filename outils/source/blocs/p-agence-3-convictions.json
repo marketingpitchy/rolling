@@ -83,7 +83,7 @@
    "L'agence · entreprises · chiffre 1": {
     "image": {
      "src": {
-      "url": "https://media.rolling.invalid/chiffre-5.webp"
+      "url": "https://media.rolling.invalid/chiffre-plus.webp"
      },
      "size": "medium"
     }
@@ -91,7 +91,7 @@
    "L'agence · entreprises · chiffre 2": {
     "image": {
      "src": {
-      "url": "https://media.rolling.invalid/chiffre-0.webp"
+      "url": "https://media.rolling.invalid/chiffre-5.webp"
      },
      "size": "medium"
     }
@@ -107,13 +107,13 @@
    "L'agence · entreprises · chiffre 4": {
     "image": {
      "src": {
-      "url": "https://media.rolling.invalid/chiffre-plus.webp"
+      "url": "https://media.rolling.invalid/chiffre-0.webp"
      },
      "size": "medium"
     }
    },
    "L'agence · entreprises · valeur lue": {
-    "paragraph": "500+"
+    "paragraph": "+500"
    },
    "L'agence · entreprises · libellé": {
     "paragraph": "grandes entreprises équipées"
