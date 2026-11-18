@@ -454,6 +454,33 @@
 		img.replaceWith( v );
 	} );
 
+	/* Son de l'aperçu en boucle (Vimeo, YouTube ou fichier), sans recharger la vidéo */
+	function sonFond( fond, actif ) {
+		if ( 'VIDEO' === fond.tagName ) {
+			fond.muted = ! actif;
+			if ( actif ) {
+				var p = fond.play();
+				if ( p && p.catch ) {
+					p.catch( function () {} );
+				}
+			}
+			return;
+		}
+		var fenetre = fond.contentWindow;
+		if ( ! fenetre ) {
+			return;
+		}
+		if ( fond.src.indexOf( 'player.vimeo.com' ) !== -1 ) {
+			fenetre.postMessage( JSON.stringify( { method: 'setMuted', value: ! actif } ), 'https://player.vimeo.com' );
+			fenetre.postMessage( JSON.stringify( { method: 'setVolume', value: actif ? 1 : 0 } ), 'https://player.vimeo.com' );
+		} else {
+			fenetre.postMessage( JSON.stringify( { event: 'command', func: actif ? 'unMute' : 'mute', args: [] } ), '*' );
+			if ( actif ) {
+				fenetre.postMessage( JSON.stringify( { event: 'command', func: 'setVolume', args: [ 100 ] } ), '*' );
+			}
+		}
+	}
+
 	/* Lecteur d'un lien Vimeo, YouTube ou fichier. fond = aperçu muet en boucle, sans commandes ni titre. */
 	function lecteurLien( url, fond, titre ) {
 		var vimeo = url.match( /vimeo\.com\/(?:video\/)?(\d+)(?:\/([0-9a-f]+))?/ ), hash = url.match( /[?&]h=([0-9a-f]+)/ );
@@ -466,7 +493,7 @@
 		} else if ( yt ) {
 			el = document.createElement( 'iframe' );
 			el.src = 'https://www.youtube-nocookie.com/embed/' + yt[ 1 ] + '?rel=0&playsinline=1&' +
-				( fond ? 'autoplay=1&mute=1&loop=1&controls=0&disablekb=1&playlist=' + yt[ 1 ] : 'autoplay=1' );
+				( fond ? 'autoplay=1&mute=1&loop=1&controls=0&disablekb=1&enablejsapi=1&playlist=' + yt[ 1 ] : 'autoplay=1' );
 		} else {
 			el = document.createElement( 'video' );
 			el.src = url;
@@ -539,6 +566,7 @@
 						var pret = function () {
 							fond.classList.add( 'pret' );
 							hote.classList.add( 'rl-boucle' );
+							bouton.setAttribute( 'aria-pressed', 'false' );
 						};
 						fond.setAttribute( 'tabindex', '-1' );
 						fond.setAttribute( 'aria-hidden', 'true' );
@@ -558,6 +586,19 @@
 				apercu.remove();
 			}
 			var url = cadre.getAttribute( 'data-rl-video' ), yt = url.match( /(?:youtu\.be\/|v=|embed\/|shorts\/)([\w-]{11})/ ), lecteur;
+			var fondEnCours = calque ? cadre.querySelector( '.video-calque-fond.pret' ) : null;
+			if ( fondEnCours ) {
+				// L'aperçu tourne : on active (ou coupe) le son sur place, la vidéo garde son cadrage plein cadre.
+				var pastille = cadre.querySelector( '.pastille-son' ), actif = 'true' !== bouton.getAttribute( 'aria-pressed' );
+				sonFond( fondEnCours, actif );
+				bouton.setAttribute( 'aria-pressed', actif ? 'true' : 'false' );
+				if ( pastille ) {
+					pastille.textContent = pastille.getAttribute( actif ? 'data-rl-son-off' : 'data-rl-son-on' );
+					bouton.setAttribute( 'aria-label', pastille.textContent + ' : ' + ( bouton.getAttribute( 'data-rl-titre' ) || '' ) );
+				}
+				hote.classList.toggle( 'rl-son', actif );
+				return;
+			}
 			if ( calque ) {
 				cadre.querySelectorAll( '.video-calque-fond' ).forEach( function ( f ) { f.remove(); } );
 				lecteur = lecteurLien( url, false, bouton.getAttribute( 'aria-label' ) );
@@ -614,6 +655,30 @@
 		}, { rootMargin: '-40% 0px -40% 0px' } );
 		document.querySelectorAll( 'a.vignette-lien' ).forEach( function ( v ) { centre.observe( v ); } );
 	}
+
+	/* Mur de montage : vrai mur maçonné (rangées de 8 px, chaque case garde la hauteur de son contenu : 16:9, 9:16,
+	   grande case 16:9 sur 2 colonnes). Sans script (et dans l'éditeur) : rangées automatiques. */
+	document.querySelectorAll( '.mur-montage' ).forEach( function ( mur ) {
+		var largeur = 0;
+		var caler = function () {
+			var ecart = parseFloat( window.getComputedStyle( mur ).columnGap ) || 0;
+			mur.classList.add( 'rl-macon' );
+			mur.querySelectorAll( ':scope > .mur-case' ).forEach( function ( c ) {
+				c.style.setProperty( '--rl-rangs', String( Math.max( 1, Math.ceil( ( c.offsetHeight + ecart ) / 8 ) ) ) );
+			} );
+		};
+		caler();
+		window.addEventListener( 'resize', function () {
+			if ( mur.offsetWidth !== largeur ) {
+				largeur = mur.offsetWidth;
+				caler();
+			}
+		} );
+		if ( document.fonts && document.fonts.ready ) {
+			document.fonts.ready.then( caler );
+		}
+		window.addEventListener( 'load', caler );
+	} );
 
 	/* Mur de montage (page Réalisations) : les cartes montent une à une en sortant du flou, une seule fois.
 	   Les cartes qui arrivent ensemble se suivent de 90 ms. Sans script, sans animation : tout reste visible. */

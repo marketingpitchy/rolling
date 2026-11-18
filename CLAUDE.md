@@ -628,6 +628,15 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   (cases trop petites, plaque de titre sur l'image) ⇒ **3 colonnes** (2 sous 1024, 1 en mobile), client + titre **sous**
   l'image dans le cadre en verre (plus de plaque fumée), grande case 2 × 2, 9:16 sur **2 rangées** (≈ 0,64 : peu de recadrage),
   extraits remplissent leur case (min 200 px) ; en mobile, tout en une colonne (9:16 en 4:5).
+- **0.6.3** : showreel par lien : pendant l'aperçu en boucle, **le clic active le son sur place** (plus de lecteur Vimeo avec
+  bandes noires) : `sonFond()` (fichier : `muted` ; Vimeo : postMessage `setMuted` / `setVolume` ; YouTube : `enablejsapi=1`
+  + `unMute`), 2e clic = couper ; pastille « Activer le son » / « Couper le son » (réglage `son_off`), `aria-pressed`.
+  Le lecteur classique (avec commandes) ne s'ouvre plus que si l'aperçu n'a pas démarré (« réduire les animations »,
+  mode clic). Contact : pastille du son remontée au-dessus des bulles (`scene-bulles .pastille-son` bottom 64 px).
+  Mur des réalisations = **vrai mur maçonné** : rolling.js pose `rl-macon` (rangées de 8 px, `--rl-rangs` = hauteur réelle
+  de chaque case) ⇒ chaque case garde ses proportions : 16:9 partout (grande case 16:9 sur 2 colonnes, plus aplatie),
+  9:16 vraiment vertical (réalisation au format 9:16 et extrait au format 9:16) ; sans script / éditeur : rangées auto.
+  Vimeo : son par postMessage non testable ici (player.vimeo.com bloqué) ⇒ à vérifier chez la cliente.
 - **Chargement de page effet film** (demande avant la fin de la livraison 4) : maquette `maquettes/loading/maquette-loading.html`
   (copie /workspace/maquette-loading.html), 4 options : A amorce 3-2-1, B clap qui se ferme puis rideau, C ouverture
   cinéma (bandes noires + REC + timecode + règle avec la tête de lecture rouge des frises, plus de filet fin), D barre de lecture en haut sans écran. Conseil : C à l'arrivée (première page

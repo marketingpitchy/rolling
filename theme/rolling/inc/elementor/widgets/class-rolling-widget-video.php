@@ -56,6 +56,7 @@ class Rolling_Widget_Video extends Rolling_Widget {
 			)
 		);
 		$this->texte( 'son', __( 'Lien : texte du bouton son', 'rolling' ), __( 'Activer le son', 'rolling' ) );
+		$this->texte( 'son_off', __( 'Lien : texte du bouton pour couper le son', 'rolling' ), __( 'Couper le son', 'rolling' ) );
 		$this->choix(
 			'apercu',
 			__( 'Avant la lecture (fichier vidéo)', 'rolling' ),
@@ -158,9 +159,10 @@ class Rolling_Widget_Video extends Rolling_Widget {
 		$titre  = '' !== trim( (string) $r['titre'] ) ? $r['titre'] : __( 'Vidéo', 'rolling' );
 		$boucle = 'clic' !== $r['mode'];
 		echo '<div class="video-calque" data-rl-video="' . esc_url( $url ) . '" data-rl-mode="' . ( $boucle ? 'boucle' : 'clic' ) . '">';
-		echo '<button type="button" class="video-calque-bouton" aria-label="' . esc_attr( sprintf( $r['libelle'], $titre ) ) . '">';
+		echo '<button type="button" class="video-calque-bouton" aria-label="' . esc_attr( sprintf( $r['libelle'], $titre ) ) . '" data-rl-titre="' . esc_attr( $titre ) . '">';
 		if ( $boucle ) {
-			echo '<span class="pastille-son">' . esc_html( $r['son'] ) . '</span>';
+			// Pendant l'aperçu, un clic active le son sans changer d'affichage (la vidéo reste en plein cadre) ; un 2e clic le coupe.
+			echo '<span class="pastille-son" data-rl-son-on="' . esc_attr( $r['son'] ) . '" data-rl-son-off="' . esc_attr( '' !== trim( (string) ( $r['son_off'] ?? '' ) ) ? $r['son_off'] : __( 'Couper le son', 'rolling' ) ) . '">' . esc_html( $r['son'] ) . '</span>';
 		}
 		echo '</button></div>';
 	}
