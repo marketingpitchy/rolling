@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rolling · nouveautés, suite (offres, agence, contact)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Caveat:wght@700&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* Les photos de l'équipe ne sont pas dans git : les jetons EQ (nom) sont remplacés à la copie dans /workspace. */
+:root { --ink:#0F0F12; --texte:#4A4858; --legende:#5F5C6C; --violet:#5B3BEA; }
+* { box-sizing: border-box; }
+body { margin: 0; color: var(--ink); font-family: 'Hanken Grotesk', system-ui, sans-serif; background: #FAF9F7; }
+h1, h2, h3, h4, p, ul, blockquote, figure { margin: 0; }
+a { color: inherit; }
+em { font-style: normal; padding-inline: .06em; margin-inline: -.06em; background: linear-gradient(95deg, #5B3BEA, #6F3FD6 42%, #C94A1E); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.conteneur { max-width: 1240px; margin: 0 auto; padding: 0 28px; }
+.intro { padding: 56px 0 8px; }
+.intro h1 { font-family: 'Bricolage Grotesque'; font-size: 32px; letter-spacing: -.035em; font-weight: 650; }
+.intro p { margin-top: 10px; max-width: 82ch; font-size: 16px; line-height: 1.55; color: var(--texte); }
+.partie { margin-top: 80px; }
+.partie > .conteneur > h2 { display: flex; align-items: center; gap: 12px; font-family: 'Bricolage Grotesque'; font-size: 27px; letter-spacing: -.03em; font-weight: 650; }
+.num { display: inline-flex; align-items: center; justify-content: center; min-width: 40px; height: 36px; padding: 0 8px; border-radius: 12px; font-size: 16px; color: #fff; background: #0F0F12; }
+.desc { margin-top: 8px; max-width: 84ch; font-size: 15px; line-height: 1.55; color: var(--texte); }
+.desc b { color: var(--ink); }
+.option { margin-top: 30px; }
+.option > h3 { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; font-family: 'Bricolage Grotesque'; font-size: 21px; letter-spacing: -.03em; font-weight: 650; }
+.lettre { display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 50%; font-size: 14px; color: #fff; background: #0F0F12; }
+.conseil .lettre { background: var(--violet); }
+.etiquette { padding: 3px 10px; border-radius: 999px; font-family: 'Hanken Grotesk'; font-size: 12px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: #4A2BB8; background: #EDE6FF; }
+.scene { position: relative; margin-top: 18px; padding: 34px; border-radius: 32px; overflow: hidden; isolation: isolate; background: #FAF9F7; box-shadow: inset 0 0 0 1px rgba(15,15,18,.06); }
+.taches::before, .taches::after { content: ''; position: absolute; z-index: -1; border-radius: 50%; filter: blur(60px); pointer-events: none; }
+.taches::before { width: 46%; height: 70%; left: -8%; top: -10%; background: radial-gradient(closest-side, rgba(167,123,240,.55), rgba(167,123,240,0)); }
+.taches::after { width: 44%; height: 70%; right: -6%; bottom: -16%; background: radial-gradient(closest-side, rgba(255,171,150,.6), rgba(255,171,150,0)); }
+.verre { border-radius: 26px; background: radial-gradient(70% 60% at 15% 0%, rgba(255,255,255,.9), rgba(255,255,255,0) 72%), linear-gradient(150deg, rgba(255,255,255,.72), rgba(255,255,255,.42)); background-color: transparent; -webkit-backdrop-filter: blur(18px) saturate(1.3); backdrop-filter: blur(18px) saturate(1.3); box-shadow: inset 0 1px 0 #fff, inset 0 0 0 1px rgba(255,255,255,.6), 0 30px 70px -34px rgba(76,48,170,.34); }
+.label { font-size: 12px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: #4A2BB8; }
+.timecode { display: inline-flex; align-items: center; gap: 8px; padding: 6px 13px; border-radius: 999px; font-size: 12px; font-weight: 700; letter-spacing: .06em; color: #5B3BEA; background: linear-gradient(170deg, rgba(255,255,255,.95), rgba(255,255,255,.55)); box-shadow: inset 0 1px 0 #fff, inset 0 0 0 1px rgba(91,59,234,.16), 0 6px 16px -10px rgba(91,59,234,.5); }
+.titre-sec { margin-top: 14px; font-family: 'Bricolage Grotesque'; font-size: 42px; line-height: 1.06; letter-spacing: -.045em; font-weight: 650; }
+.chapo { margin-top: 14px; max-width: 60ch; font-size: 17px; line-height: 1.55; color: var(--texte); }
+.bouton { display: inline-flex; align-items: center; gap: 8px; min-height: 48px; padding: 0 22px; border-radius: 999px; font: 700 15px 'Hanken Grotesk'; color: #fff; background: #0F0F12; text-decoration: none; }
+.bouton::after { content: '→'; }
+.bouton-verre { color: var(--ink); background: rgba(255,255,255,.75); box-shadow: inset 0 0 0 1px rgba(91,59,234,.2); }
+.chiffre-verre { font-family: 'Bricolage Grotesque'; font-weight: 800; line-height: .85; letter-spacing: -.03em; background: linear-gradient(180deg, #FFAB96 0%, #E697BD 45%, #A77BF0 100%); -webkit-background-clip: text; background-clip: text; color: transparent; filter: drop-shadow(0 10px 16px rgba(91,59,234,.28)); }
+.v { position: relative; overflow: hidden; border-radius: 18px; background: #2A2233; }
+.g1 { background: radial-gradient(60% 70% at 75% 25%, rgba(255,180,140,.9), transparent 60%), radial-gradient(90% 90% at 10% 100%, #5B3BEA, transparent 70%), linear-gradient(160deg, #3434E0, #1C1730); }
+.g2 { background: radial-gradient(60% 80% at 30% 30%, rgba(196,181,253,.9), transparent 60%), radial-gradient(90% 90% at 90% 100%, #FF8A5B, transparent 70%), linear-gradient(160deg, #8E4DE6, #1C1730); }
+.g3 { background: radial-gradient(70% 90% at 60% 20%, rgba(255,209,191,.9), transparent 60%), linear-gradient(160deg, #E0562A, #4A2BB8); }
+.g6 { background: radial-gradient(60% 70% at 40% 30%, rgba(140,142,255,.9), transparent 60%), linear-gradient(170deg, #17112C, #4A2BB8); }
+.tag { position: absolute; z-index: 2; left: 12px; top: 12px; padding: 5px 11px; border-radius: 999px; font-size: 12px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: #fff; background: rgba(15,15,18,.62); }
+.dur { position: absolute; z-index: 2; right: 12px; bottom: 12px; padding: 3px 8px; border-radius: 8px; font-size: 12px; font-weight: 800; color: #fff; background: rgba(15,15,18,.7); }
+.play { position: absolute; z-index: 2; left: 50%; top: 50%; width: 72px; height: 72px; margin: -36px 0 0 -36px; border: 0; border-radius: 50%; background: #FF8A5B; box-shadow: 0 0 0 12px rgba(255,138,91,.25), 0 14px 30px -8px rgba(255,138,91,.8); cursor: pointer; }
+.play::before { content: ''; position: absolute; left: 29px; top: 24px; border-left: 20px solid #0F0F12; border-top: 12px solid transparent; border-bottom: 12px solid transparent; }
+.client { font-size: 12px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: var(--legende); }
+.titre-carte { font-family: 'Bricolage Grotesque'; font-size: 20px; line-height: 1.2; letter-spacing: -.02em; font-weight: 650; }
+.note { margin-top: 14px; padding: 12px 16px; border-radius: 14px; font-size: 14px; line-height: 1.55; color: #2A2840; background: #FFF1E7; }
+
+/* 4C, version 2 : plus de « Règle n°1 » */
+.cartes-c { display: flex; justify-content: center; margin-top: 34px; padding: 10px 0 20px; }
+.carte-jeu { position: relative; width: 252px; min-height: 290px; margin: 0 -14px; display: flex; flex-direction: column; justify-content: space-between; gap: 16px; padding: 24px; transform: rotate(var(--r)) translateY(var(--y)); transition: transform .45s cubic-bezier(.2,.8,.2,1); }
+.carte-jeu:hover, .carte-jeu:focus-visible { transform: rotate(0) translateY(-14px) scale(1.04); z-index: 5; outline: none; }
+.carte-jeu:focus-visible { box-shadow: 0 0 0 3px #5B3BEA, 0 30px 70px -34px rgba(76,48,170,.34); }
+.carte-jeu .chiffre-verre { font-size: 92px; }
+.carte-jeu h4 { font-family: 'Bricolage Grotesque'; font-size: 22px; line-height: 1.12; letter-spacing: -.03em; font-weight: 650; }
+.carte-jeu p { margin-top: 8px; font-size: 15px; line-height: 1.5; color: var(--texte); }
+.carte-jeu .bas { font-family: 'Caveat'; font-size: 27px; line-height: 1; color: #A63C14; }
+.poids { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin-top: 18px; }
+.poids div { padding: 14px 16px; border-radius: 16px; background: #fff; box-shadow: inset 0 0 0 1px rgba(15,15,18,.07); font-size: 14px; line-height: 1.45; color: var(--texte); }
+.poids b { display: block; font-family: 'Bricolage Grotesque'; font-size: 20px; color: var(--ink); }
+
+/* 5B : vrais fonds, pleine largeur */
+.equipes { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); isolation: isolate; overflow: hidden; }
+.equipes::before { content: ''; position: absolute; inset: 0; z-index: -2; background: linear-gradient(90deg, #FFF1E7 0%, #FFF7F1 30%, #E6D8F2 44%, #7B5FC9 50%, #2A1E4E 56%, #17112C 70%, #0F0F12 100%); }
+.equipes::after { content: ''; position: absolute; inset: 0; z-index: -1; pointer-events: none; background: radial-gradient(30% 50% at 8% 0%, rgba(196,181,253,.55), rgba(196,181,253,0) 70%), radial-gradient(26% 46% at 32% 100%, rgba(255,162,122,.45), rgba(255,162,122,0) 70%), radial-gradient(30% 55% at 92% 0%, rgba(139,92,246,.42), rgba(15,15,18,0) 70%), radial-gradient(26% 50% at 70% 100%, rgba(255,138,91,.28), rgba(15,15,18,0) 70%); }
+.eq-cote { padding: 110px 40px 110px; }
+.eq-cote.creas { padding-left: max(28px, calc((100vw - 1240px) / 2 + 28px)); padding-right: 70px; }
+.eq-cote.ia { color: #FAF9F7; padding-right: max(28px, calc((100vw - 1240px) / 2 + 28px)); padding-left: 70px; }
+.eq-cote .label { display: block; }
+.eq-cote.ia .label { color: #C4B5FD; }
+.eq-cote h4 { margin-top: 12px; font-family: 'Bricolage Grotesque'; font-size: 42px; letter-spacing: -.045em; font-weight: 650; }
+.eq-cote.ia em { background: linear-gradient(95deg, #C9BBFF, #EBB0F2 45%, #FFA27A); -webkit-background-clip: text; background-clip: text; }
+.eq-cote > p { margin-top: 10px; max-width: 42ch; font-size: 16px; line-height: 1.55; color: var(--texte); }
+.eq-cote.ia > p { color: #C9C3DE; }
+.portraits { display: flex; flex-wrap: wrap; justify-content: center; gap: 26px 16px; margin-top: 34px; }
+.portraits figure { display: flex; flex-direction: column; align-items: center; gap: 8px; width: 112px; text-align: center; }
+.creas .portraits { max-width: calc(4 * 112px + 3 * 16px); }
+.ia .portraits { max-width: calc(3 * 112px + 2 * 16px); }
+.portraits img { width: 104px; height: 104px; border-radius: 50%; object-fit: cover; border: 4px solid #fff; box-shadow: 0 16px 34px -16px rgba(76,48,170,.55); background: #EDE6FF; }
+.ia .portraits img { border-color: rgba(196,181,253,.6); box-shadow: 0 0 0 6px rgba(91,59,234,.22), 0 0 44px -6px rgba(140,142,255,.75); background: #2A1E4E; }
+.portraits b { display: block; font-size: 15px; }
+.portraits span { font-size: 13px; line-height: 1.35; color: var(--legende); }
+.ia .portraits span { color: #B6B0CC; }
+.fondu-milieu { position: absolute; inset: 0; pointer-events: none; }
+.pastille-ensemble { position: absolute; z-index: 3; left: 50%; top: 50%; transform: translate(-50%, -50%) rotate(-90deg); display: inline-flex; align-items: center; gap: 10px; padding: 10px 18px; border-radius: 999px; white-space: nowrap; font-size: 15px; font-weight: 700; color: #0F0F12; background: rgba(255,255,255,.9); box-shadow: 0 10px 30px -10px rgba(15,15,18,.5); }
+.pastille-ensemble::before { content: ''; width: 26px; height: 12px; background: radial-gradient(circle at 6px 6px, #FF8A5B 5.5px, transparent 6px), radial-gradient(circle at 20px 6px, #5B3BEA 5.5px, transparent 6px); }
+
+/* 6C : showreel + bulles */
+.show-c { position: relative; margin-top: 34px; }
+.show-c .v { aspect-ratio: 21 / 9; border-radius: 28px; }
+.bulle { position: absolute; z-index: 3; max-width: 280px; padding: 16px 18px; border-radius: 20px; font-size: 15px; line-height: 1.4; font-weight: 600; }
+.bulle small { display: block; margin-top: 8px; font-size: 12.5px; font-weight: 600; color: var(--legende); }
+.bulle.b1 { left: -10px; top: 70px; rotate: -2deg; animation: flotte 6s ease-in-out infinite; }
+.bulle.b2 { right: -10px; top: 40%; rotate: 2deg; animation: flotte 7s ease-in-out infinite reverse; }
+.bulle.b3 { left: 22%; bottom: -26px; rotate: -1deg; animation: flotte 6.5s ease-in-out infinite; }
+@keyframes flotte { 50% { translate: 0 -8px; } }
+
+/* Nouvelle partie : 3 dernières réalisations + chiffres clés */
+.plaque { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); padding: 26px 8px; }
+.plaque > div { display: flex; align-items: center; gap: 14px; padding: 4px 22px; }
+.plaque > div + div { box-shadow: -1px 0 0 rgba(91,59,234,.16); }
+.plaque .chiffre-verre { font-size: 58px; flex-shrink: 0; }
+.plaque span:not(.chiffre-verre) { font-size: 15px; line-height: 1.35; font-weight: 600; color: #2A2840; }
+.trois { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; margin-top: 26px; }
+.carte-r { display: flex; flex-direction: column; gap: 10px; padding: 8px 8px 18px; text-decoration: none; transition: transform .4s cubic-bezier(.2,.8,.2,1); }
+.carte-r:hover { transform: translateY(-6px); }
+.carte-r .v { aspect-ratio: 16 / 10; }
+.carte-r .client, .carte-r .titre-carte { padding: 0 10px; }
+.pied-trois { display: flex; justify-content: center; margin-top: 30px; }
+.split { display: grid; grid-template-columns: 300px minmax(0, 1fr); gap: 22px; margin-top: 30px; align-items: stretch; }
+.colonne-chiffres { display: flex; flex-direction: column; justify-content: space-between; gap: 6px; padding: 22px 24px; }
+.colonne-chiffres > div { display: flex; align-items: center; gap: 14px; padding: 10px 0; }
+.colonne-chiffres > div + div { box-shadow: 0 -1px 0 rgba(91,59,234,.14); }
+.colonne-chiffres .chiffre-verre { width: 108px; font-size: 46px; flex-shrink: 0; }
+.colonne-chiffres span:not(.chiffre-verre) { font-size: 15px; line-height: 1.35; font-weight: 600; color: #2A2840; }
+.split .trois { margin-top: 0; }
+.split .carte-r .v { aspect-ratio: 4 / 5; }
+.entete-split { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 16px; }
+
+@media (max-width: 980px) {
+  .equipes { grid-template-columns: 1fr; }
+  .equipes::before { background: linear-gradient(180deg, #FFF1E7 0%, #FFF7F1 36%, #E6D8F2 46%, #7B5FC9 50%, #2A1E4E 54%, #17112C 66%, #0F0F12 100%); }
+  .eq-cote.creas, .eq-cote.ia { padding: 72px 28px; }
+  .equipes::before { background: none; }
+  .eq-cote.creas { background: linear-gradient(180deg, #FFF1E7, #FFF7F1); }
+  .eq-cote.ia { background: linear-gradient(180deg, #17112C, #0F0F12); background-color: #0F0F12; }
+  .fondu-milieu { position: relative; inset: auto; height: 130px; background: linear-gradient(180deg, #FFF7F1 0%, #E6D8F2 25%, #7B5FC9 50%, #2A1E4E 75%, #17112C 100%); background-color: #7B5FC9; }
+  .pastille-ensemble { transform: translate(-50%, -50%); }
+  .portraits, .creas .portraits, .ia .portraits { justify-content: center; max-width: none; }
+  .plaque { grid-template-columns: 1fr 1fr; row-gap: 16px; }
+  .plaque > div:nth-child(3) { box-shadow: none; }
+  .trois { grid-template-columns: 1fr 1fr; }
+  .split { grid-template-columns: 1fr; }
+  .split .carte-r .v { aspect-ratio: 16 / 10; }
+  .cartes-c { flex-wrap: wrap; gap: 14px; }
+  .carte-jeu { margin: 0; transform: none; width: calc(50% - 7px); min-height: 0; }
+}
+@media (max-width: 600px) {
+  .conteneur { padding: 0 16px; }
+  .scene { padding: 18px; border-radius: 24px; }
+  .titre-sec, .eq-cote h4 { font-size: 30px; }
+  .eq-cote.creas, .eq-cote.ia { padding: 56px 16px; }
+  .portraits { gap: 18px 10px; }
+  .portraits figure { width: 100px; }
+  .portraits img { width: 86px; height: 86px; }
+  .carte-jeu { width: 100%; flex-direction: row; flex-wrap: wrap; align-items: center; gap: 4px 16px; padding: 18px; }
+  .carte-jeu .chiffre-verre { font-size: 62px; width: 50px; }
+  .carte-jeu > div { flex: 1 1 180px; }
+  .carte-jeu .bas { flex-basis: 100%; }
+  .poids { grid-template-columns: 1fr; }
+  .show-c .v { aspect-ratio: 4 / 3; }
+  .bulle { position: relative; left: auto; right: auto; top: auto; bottom: auto; max-width: none; margin-top: 12px; rotate: 0deg; }
+  .plaque { grid-template-columns: 1fr; padding: 6px 4px; row-gap: 0; }
+  .plaque > div { padding: 14px 16px; }
+  .plaque > div + div { box-shadow: 0 -1px 0 rgba(91,59,234,.14); }
+  .trois { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+</style>
+</head>
+<body>
+<main>
+<div class="conteneur">
+  <header class="intro">
+    <h1>Nouveautés, suite : offres, agence, contact.</h1>
+    <p>Choix notés : 1B (aperçu Vimeo en boucle), 2A (mur maçonné), 3A (extraits glissés dans le mur). Ci-dessous : 4C corrigée, 5B avec les vrais fonds et les vraies photos, 6C suivie de la nouvelle partie « 3 dernières réalisations + chiffres clés ».</p>
+  </header>
+</div>
+
+<!-- 4C v2 -->
+<section class="partie" aria-labelledby="t4">
+  <div class="conteneur">
+    <h2 id="t4"><span class="num">4C</span>Offres : cartes à jouer, sans chiffre en double.</h2>
+    <p class="desc">« Règle n°1 » est retiré : il ne reste que le grand chiffre en verre, le titre, la phrase et la note manuscrite. Au survol (ou au clavier), la carte se redresse et passe devant. En mobile, les cartes sont droites, chiffre à gauche.</p>
+    <div class="scene taches">
+      <span class="label">Nos règles du jeu</span>
+      <h3 class="titre-sec">L'illimité qui tient <em>ses promesses.</em></h3>
+      <div class="cartes-c">
+        <div class="carte-jeu verre" style="--r:-7deg;--y:16px" tabindex="0"><span class="chiffre-verre" aria-hidden="true">1</span><div><h4>Un projet traité à fond, à la fois.</h4><p>Toute l'équipe sur votre vidéo en cours.</p></div><span class="bas">focus total</span></div>
+        <div class="carte-jeu verre" style="--r:-2deg;--y:0px" tabindex="0"><span class="chiffre-verre" aria-hidden="true">2</span><div><h4>1 projet = 1 vidéo livrée.</h4><p>Prête à publier, à votre charte.</p></div><span class="bas">prête à poster</span></div>
+        <div class="carte-jeu verre" style="--r:3deg;--y:2px" tabindex="0"><span class="chiffre-verre" aria-hidden="true">3</span><div><h4>Des allers-retours cadrés.</h4><p>Des retours groupés, pour livrer vite.</p></div><span class="bas">sans ping-pong</span></div>
+        <div class="carte-jeu verre" style="--r:8deg;--y:18px" tabindex="0"><span class="chiffre-verre" aria-hidden="true">4</span><div><h4>1 abonnement = 1 équipe métier.</h4><p>Une équipe qui connaît vos sujets.</p></div><span class="bas">vos experts</span></div>
+      </div>
+    </div>
+    <div class="poids">
+      <div><b>0 image, 0 script</b>Inclinaison et redressement en CSS seulement (une rotation), comme les cartes qui se soulèvent ailleurs sur le site.</div>
+      <div><b>Moins de 1 Ko</b>de style en plus, dans la feuille de styles déjà chargée. Aucun effet sur la vitesse de la page.</div>
+      <div><b>Accessible</b>Rien ne bouge avec « réduire les animations » ; les cartes restent lisibles, inclinées ou non.</div>
+    </div>
+  </div>
+</section>
+
+<!-- 5B réel -->
+<section class="partie" aria-labelledby="t5">
+  <div class="conteneur">
+    <h2 id="t5"><span class="num">5B</span>L'agence : côte à côte, avec les vrais fonds.</h2>
+    <p class="desc">Fonds de la charte : à gauche le fond pêche des sections « humain » (avec les halos lilas et pêche), à droite le fond foncé des sections IA (halos violet et orange). Le fondu se fait sur toute la hauteur, au milieu de l'écran, avec la pastille « Ensemble ». En mobile : créas, fondu vertical, puis experts IA.</p>
+    <p class="desc"><b>Les photos ne défilent pas dans cette version</b> : chaque moitié ne montrerait que 3 ou 4 personnes à la fois. En grille, tout le monde est visible d'un coup (créas en 2 lignes de 4 et 3, IA en 2 lignes de 3 et 2). La version « qui défile » reste dans Mes modèles pour l'ancienne mise en page.</p>
+  </div>
+  <div class="equipes" style="margin-top:24px">
+    <div class="eq-cote creas">
+      <span class="label">Les créas</span>
+      <h3 class="titre-sec" style="margin-top:12px">Nos <em>créas.</em></h3>
+      <p>Motion, tournage, montage : les talents qui donnent forme à vos messages.</p>
+      <div class="portraits">
+        <figure><img src="__EQ_Victor__" alt=""><figcaption><b>Victor</b><span>Motion Designer</span></figcaption></figure>
+        <figure><img src="__EQ_Vincent__" alt=""><figcaption><b>Vincent</b><span>Cadreur</span></figcaption></figure>
+        <figure><img src="__EQ_Sophie__" alt=""><figcaption><b>Sophie</b><span>Chef de Projet</span></figcaption></figure>
+        <figure><img src="__EQ_Thomas__" alt=""><figcaption><b>Thomas</b><span>Directeur Artistique</span></figcaption></figure>
+        <figure><img src="__EQ_Alex_M__" alt=""><figcaption><b>Alex</b><span>Responsable Équipe Motion Design</span></figcaption></figure>
+        <figure><img src="__EQ_Thomasz__" alt=""><figcaption><b>Tomasz</b><span>[Poste]</span></figcaption></figure>
+        <figure><img src="__EQ_Marion__" alt=""><figcaption><b>Marion</b><span>Responsable Agence vidéo</span></figcaption></figure>
+      </div>
+    </div>
+    <div class="fondu-milieu"><span class="pastille-ensemble">Ensemble sur chaque projet</span></div>
+    <div class="eq-cote ia">
+      <span class="label">Les experts IA</span>
+      <h3 class="titre-sec" style="margin-top:12px">Nos experts <em>IA.</em></h3>
+      <p>Ils construisent et règlent les outils qui font gagner du temps à chaque production.</p>
+      <div class="portraits">
+        <figure><img src="__EQ_InU00e8s__" alt=""><figcaption><b>Inès</b><span>DevOps</span></figcaption></figure>
+        <figure><img src="__EQ_Hakim__" alt=""><figcaption><b>Hakim</b><span>Développeur Back-End</span></figcaption></figure>
+        <figure><img src="__EQ_Maxime__" alt=""><figcaption><b>Maxime</b><span>Product Manager Senior</span></figcaption></figure>
+        <figure><img src="__EQ_Ronan__" alt=""><figcaption><b>Ronan</b><span>Directeur Technique</span></figcaption></figure>
+        <figure><img src="__EQ_Marion_T__" alt=""><figcaption><b>Marion</b><span>Développeuse Full-Stack</span></figcaption></figure>
+      </div>
+    </div>
+  </div>
+  <div class="conteneur"><p class="note">Les phrases sous les titres sont des propositions (à valider ou à supprimer). Le poste de Tomasz est à compléter.</p></div>
+</section>
+
+<!-- 6C + nouvelle partie -->
+<section class="partie" aria-labelledby="t6">
+  <div class="conteneur">
+    <h2 id="t6"><span class="num">6C</span>Contact : showreel en grand, puis réalisations et chiffres.</h2>
+    <p class="desc">Ordre de la page : formulaire, FAQ, <b>showreel + citations en bulles</b>, <b>nouvelle partie</b>, Ressources. Les citations et les réalisations sont reprises automatiquement (témoignages avec citation, 3 dernières réalisations). Les deux parties sont aussi dans Mes modèles pour d'autres pages.</p>
+    <div class="scene taches">
+      <span class="timecode">00:03</span>
+      <h3 class="titre-sec">Ce que nous faisons, <em>en une minute.</em></h3>
+      <div class="show-c">
+        <div class="v g6"><span class="tag">Showreel</span><span class="dur">0:59</span><button class="play" type="button" aria-label="Lire le showreel"></button></div>
+        <div class="bulle verre b1">« Un vrai partenaire. »<small>Anne L., Directrice de la communication</small></div>
+        <div class="bulle verre b2">« Rapide, beau, simple. »<small>Claire P., Directrice marque employeur</small></div>
+        <div class="bulle verre b3">« Nos messages internes sont enfin regardés. »<small>Julie C., Responsable Fonctionnel SIRH</small></div>
+      </div>
+    </div>
+
+    <div class="option conseil">
+      <h3><span class="lettre">A</span>Nouvelle partie : plaque de chiffres, puis 3 réalisations <span class="etiquette">Conseil</span></h3>
+      <p class="desc">La plaque de chiffres en verre (format des fiches témoignage : chiffre + libellé côte à côte), puis les 3 dernières réalisations en cartes de verre qui se soulèvent, et un bouton vers la page Réalisations. En mobile, chiffres en liste, puis une carte par ligne.</p>
+      <div class="scene taches">
+        <span class="timecode">00:04</span>
+        <h3 class="titre-sec">Née chez Pitchy, <em>déjà à l'œuvre.</em></h3>
+        <div class="plaque verre" style="margin-top:28px">
+          <div><span class="chiffre-verre" aria-hidden="true">13</span><span>ans de vidéo pour les entreprises</span></div>
+          <div><span class="chiffre-verre" aria-hidden="true">+500</span><span>grandes entreprises équipées</span></div>
+          <div><span class="chiffre-verre" aria-hidden="true">1</span><span>studio motion &amp; tournage intégré</span></div>
+          <div><span class="chiffre-verre" aria-hidden="true">1</span><span>plateforme de production propriétaire</span></div>
+        </div>
+        <div class="trois">
+          <a class="carte-r verre" href="#t6"><div class="v g1"><span class="tag">Motion</span><span class="dur">1:30</span></div><span class="client">Client</span><span class="titre-carte">Le lancement de la nouvelle offre.</span></a>
+          <a class="carte-r verre" href="#t6"><div class="v g2"><span class="tag">Interview</span><span class="dur">2:04</span></div><span class="client">Client</span><span class="titre-carte">Le mot du dirigeant.</span></a>
+          <a class="carte-r verre" href="#t6"><div class="v g3"><span class="tag">Formation</span><span class="dur">3:10</span></div><span class="client">Client</span><span class="titre-carte">Le module sécurité, en vidéo.</span></a>
+        </div>
+        <div class="pied-trois"><a class="bouton" href="#t6">Voir toutes les réalisations</a></div>
+      </div>
+    </div>
+
+    <div class="option">
+      <h3><span class="lettre">B</span>Nouvelle partie : chiffres en colonne, réalisations à côté</h3>
+      <p class="desc">Les chiffres empilés dans une colonne en verre à gauche, les 3 réalisations en format portrait à droite. Plus compact, plus « magazine ». En mobile, chiffres d'abord puis les cartes.</p>
+      <div class="scene taches">
+        <div class="entete-split">
+          <div><span class="timecode">00:04</span><h3 class="titre-sec">Née chez Pitchy, <em>déjà à l'œuvre.</em></h3></div>
+          <a class="bouton bouton-verre" href="#t6">Voir toutes les réalisations</a>
+        </div>
+        <div class="split">
+          <div class="colonne-chiffres verre">
+            <div><span class="chiffre-verre" aria-hidden="true">13</span><span>ans de vidéo pour les entreprises</span></div>
+            <div><span class="chiffre-verre" aria-hidden="true">+500</span><span>grandes entreprises équipées</span></div>
+            <div><span class="chiffre-verre" aria-hidden="true">1</span><span>studio motion &amp; tournage intégré</span></div>
+            <div><span class="chiffre-verre" aria-hidden="true">1</span><span>plateforme de production propriétaire</span></div>
+          </div>
+          <div class="trois">
+            <a class="carte-r verre" href="#t6"><div class="v g1"><span class="tag">Motion</span></div><span class="client">Client</span><span class="titre-carte">Le lancement de la nouvelle offre.</span></a>
+            <a class="carte-r verre" href="#t6"><div class="v g2"><span class="tag">Interview</span></div><span class="client">Client</span><span class="titre-carte">Le mot du dirigeant.</span></a>
+            <a class="carte-r verre" href="#t6"><div class="v g3"><span class="tag">Formation</span></div><span class="client">Client</span><span class="titre-carte">Le module sécurité, en vidéo.</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<div style="height:90px"></div>
+</main>
+</body>
+</html>

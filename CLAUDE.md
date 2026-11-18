@@ -563,6 +563,16 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   couleur → experts IA sombre avec pastille « Ensemble sur chaque projet » (conseil), B côte à côte fondu au centre ;
   6 contact « melting pot » après formulaire + FAQ : A mosaïque en verre (showreel, 2 citations, 13 / +500, 2 réalisations,
   « Toutes nos réalisations ») (conseil), B bande de réalisations + citations qui tournent, C showreel cinéma + bulles.
+- **Choix maquette Nouveautés** : **1B** (aperçu Vimeo muet en boucle + son au clic ; la cliente aura le lien adapté),
+  **2A** (mur maçonné), **3A** (extraits glissés dans le mur), **4C** (cartes à jouer ; poids : CSS seul, 0 image / 0 script),
+  **5B** (côte à côte), **6C** (showreel + bulles) + nouvelle partie dessous. Maquette de suite
+  (`maquettes/nouveautes-v6/suite.html`, photos de l'équipe = jetons `__EQ_<fichier>__` remplacés à la copie
+  /workspace/maquette-nouveautes-suite.html depuis scratchpad/imgs, **à valider**) : 4C sans « Règle n°1 » (chiffre en
+  double) ; 5B en vrai (pleine largeur, fond pêche + halos à gauche, fond sombre nuit → encre + halos à droite, fondu au
+  milieu sur toute la hauteur, pastille « Ensemble sur chaque projet » verticale ; mobile : créas, bande de fondu avec la
+  pastille, IA) ; **pas de défilement en 5B** (3-4 personnes visibles par moitié) : grilles 4 + 3 et 3 + 2 ; phrases sous
+  les titres proposées ; poste de Tomasz à compléter ; 6C puis « Née chez Pitchy, déjà à l'œuvre. » : A plaque de chiffres
+  (13, +500, 1 studio, 1 plateforme) + 3 dernières réalisations + bouton (conseil), B chiffres en colonne + 3 cartes portrait.
 - **Chargement de page effet film** (demande avant la fin de la livraison 4) : maquette `maquettes/loading/maquette-loading.html`
   (copie /workspace/maquette-loading.html), 4 options : A amorce 3-2-1, B clap qui se ferme puis rideau, C ouverture
   cinéma (bandes noires + REC + timecode + règle avec la tête de lecture rouge des frises, plus de filet fin), D barre de lecture en haut sans écran. Conseil : C à l'arrivée (première page
