@@ -2011,7 +2011,7 @@ landing_preuve = F('Landing · preuve sociale', ['section', 'section-chaude'], t
 landing_action = F('Landing · action', ['section', 'section-suite'], tag='section', ancre='landing-rdv', enfants=[
     F('Landing · action · contenu', ['conteneur'], COLONNE, enfants=[
         F('Landing · action · bloc', ['carte-verre', 'grand-bloc', 'landing-action'], enfants=[
-            F('Landing · action · textes', None, COLONNE, enfants=[
+            F('Landing · action · textes', None, COLONNE + ' padding: 0;', enfants=[
                 F('Landing · action · repère', ['sur-titre'], enfants=[P('Landing · action · timecode', '00:04', ['timecode']), P('Landing · action · sur-titre', 'Votre échange')]),
                 H('Landing · action · titre', 'Réservez 30 minutes. <em>Repartez avec 3 vidéos à produire.</em>', 'h2', ['titre-sm'], 'margin-top: 18px;'),
                 P('Landing · action · texte', 'Choisissez votre créneau : nous regardons ensemble vos contenus et vos projets, puis nous vous proposons vos 3 premières vidéos.', ['texte'], 'margin-top: 10px;'),

@@ -665,6 +665,17 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   d'un seul tenant ⇒ c'est ce que Google et les lecteurs d'écran lisent. Bloc Ressources mobile cassé chez la cliente (texte
   dans la colonne du picto) **non reproduit** (wp 4.3.6 et wp2 4.4.1 corrects) ⇒ le placement du picto est aussi porté par
   `picto-rubrique` (brut mobile `grid-column: 1; grid-row: 1 / span 3`), sans dépendre des règles `& > *` de `carte-rubrique`.
+- **0.6.7 (retours mobile)** : calendrier HubSpot : il lui faut **≥ 345 px** (grille 7 × 50 px), sinon barre de défilement
+  horizontale dans l'iframe ; la hauteur forcée (680 px !important) ajoutait une barre verticale ⇒ hauteur laissée à HubSpot,
+  `zone-calendrier` en **pleine largeur d'écran en mobile** (brut : `width: 100vw; margin-left/right: calc(50% - 50vw)`),
+  `landing-action` sans cadre en mobile (fond = 2 couches transparentes, Ally) ; tester avec
+  `chromium.launch({ ignoreDefaultArgs: ['--hide-scrollbars'] })` (barres classiques). Page de texte ouverte avec
+  « Modifier avec Elementor » : Elementor convertit le contenu en conteneur + widget « Éditeur de texte » ⇒ police Roboto,
+  hors des règles `& > p` d'`article-texte` ⇒ règles doublées pour `.elementor-widget-text-editor > …` (+ `.elementor-text-editor`
+  de l'éditeur), padding des `.e-con` à 0. Cartes à jouer mobile : placement porté par `note-jeu` (ligne 2, pleine largeur,
+  sans retour à la ligne) et `chiffre-jeu` (colonne 1) en brut, plus par `:last-child`. Programme du webinar : 15 px en mobile.
+  Passage mobile 360 / 390 de 16 pages (`scratchpad/audit-mob.js` : débordements, textes < 12 px ; `full390.js` + `planche.py`
+  pour revoir les captures, images différées forcées). **Toujours revoir le mobile avant de livrer.**
 - **Chargement de page effet film** (demande avant la fin de la livraison 4) : maquette `maquettes/loading/maquette-loading.html`
   (copie /workspace/maquette-loading.html), 4 options : A amorce 3-2-1, B clap qui se ferme puis rideau, C ouverture
   cinéma (bandes noires + REC + timecode + règle avec la tête de lecture rouge des frises, plus de filet fin), D barre de lecture en haut sans écran. Conseil : C à l'arrivée (première page

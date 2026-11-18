@@ -67,7 +67,7 @@
   },
   "style": {
    "Landing · action · contenu": "display: flex; flex-direction: column; gap: 0;",
-   "Landing · action · textes": "display: flex; flex-direction: column; gap: 0;",
+   "Landing · action · textes": "display: flex; flex-direction: column; gap: 0; padding: 0;",
    "Landing · action · titre": "margin-top: 18px;",
    "Landing · action · texte": "margin-top: 10px;"
   }
