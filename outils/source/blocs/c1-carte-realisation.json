@@ -4,7 +4,7 @@
  "type": "e-flexbox",
  "apercu": "rolling_realisation",
  "composition": {
-  "xml_structure": "<e-flexbox configuration-id=\"Carte réalisation\"><e-flexbox configuration-id=\"Réalisation · vignette\"><e-div-block configuration-id=\"Réalisation · cadre\"><e-image configuration-id=\"Réalisation · image\"></e-image><e-paragraph configuration-id=\"Réalisation · format\"></e-paragraph><e-paragraph configuration-id=\"Réalisation · durée\"></e-paragraph><e-image configuration-id=\"Réalisation · lecture\"></e-image></e-div-block></e-flexbox><e-flexbox configuration-id=\"Réalisation · textes\"><e-paragraph configuration-id=\"Réalisation · client\"></e-paragraph><e-heading configuration-id=\"Réalisation · titre\"></e-heading></e-flexbox><e-flexbox configuration-id=\"Réalisation · avant après\"><e-paragraph configuration-id=\"Réalisation · avant (orange)\"></e-paragraph><e-paragraph configuration-id=\"Réalisation · avant (bleu)\"></e-paragraph><e-paragraph configuration-id=\"Réalisation · après\"></e-paragraph></e-flexbox></e-flexbox>",
+  "xml_structure": "<e-flexbox configuration-id=\"Carte réalisation\"><e-flexbox configuration-id=\"Réalisation · vignette\"><e-div-block configuration-id=\"Réalisation · cadre\"><e-image configuration-id=\"Réalisation · image\"></e-image><e-paragraph configuration-id=\"Réalisation · format\"></e-paragraph><e-paragraph configuration-id=\"Réalisation · durée\"></e-paragraph><e-image configuration-id=\"Réalisation · lecture\"></e-image></e-div-block></e-flexbox><e-flexbox configuration-id=\"Réalisation · textes\"><e-paragraph configuration-id=\"Réalisation · client\"></e-paragraph><e-heading configuration-id=\"Réalisation · titre\"></e-heading><e-button configuration-id=\"Réalisation · lien\"></e-button></e-flexbox><e-flexbox configuration-id=\"Réalisation · avant après\"><e-paragraph configuration-id=\"Réalisation · avant (orange)\"></e-paragraph><e-paragraph configuration-id=\"Réalisation · avant (bleu)\"></e-paragraph><e-paragraph configuration-id=\"Réalisation · après\"></e-paragraph></e-flexbox></e-flexbox>",
   "element_config": {
    "Carte réalisation": {
     "tag": "article"
@@ -42,6 +42,12 @@
    "Réalisation · titre": {
     "tag": "h3",
     "title": "⟦rolling-titre|forme=titre⟧",
+    "link": {
+     "destination": "⟦rolling-lien|lien=fiche⟧"
+    }
+   },
+   "Réalisation · lien": {
+    "text": "Voir la réalisation",
     "link": {
      "destination": "⟦rolling-lien|lien=fiche⟧"
     }
@@ -93,6 +99,9 @@
    "Réalisation · titre": [
     "titre-xs",
     "lien-titre"
+   ],
+   "Réalisation · lien": [
+    "temoin-lien"
    ],
    "Réalisation · avant après": [
     "avant-apres",

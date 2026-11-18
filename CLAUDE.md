@@ -693,6 +693,14 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   devient un titre h3 centré + `cartes-mini` > 4 × `carte-verre carte-mini` (`chiffre-mini`, `titre-mini` h4, `note-jeu`),
   mêmes titres que la page Offres sans la phrase ; éventail par nth-last-child, 2 × 2 sous 1024 px (600 px max) et en mobile.
   `carte-mini` prioritaire. Classe `carte-promesses` gardée (pages existantes). La cliente remplace le bloc sur son accueil.
+- **0.6.11** : showreel de l'accueil (fichier .mp4 par lien : gris sur le site chez la cliente, bon dans l'éditeur ; lien
+  direct .mp4 testé chez moi = lu ⇒ cause côté lien / consentement / codec, non reproduite) ⇒ `03-showreel` = **par lien**
+  comme la landing (`cadre-photo cadre-16-9 cadre-showreel` + widget Rolling · Vidéo `source=lien mode=boucle` ; Vimeo
+  `background=1` : ni titre, ni photo, ni logo ; son au clic sur place) ; ancienne version fichier =
+  `03-showreel-fichier` (BLOCS_VARIANTES, `bloc_showreel(fichier)`). Avant / Après : nom du client facultatif
+  (`client-exemple`, `&:empty { display: none }` ; rappel en pointillés dans l'éditeur via `apercu_contextes`).
+  Carte réalisation : lien « Voir la réalisation → » (`temoin-lien`, pas « En savoir plus » : texte de lien non
+  descriptif pour Lighthouse / SEO).
 - **Chargement de page effet film** (demande avant la fin de la livraison 4) : maquette `maquettes/loading/maquette-loading.html`
   (copie /workspace/maquette-loading.html), 4 options : A amorce 3-2-1, B clap qui se ferme puis rideau, C ouverture
   cinéma (bandes noires + REC + timecode + règle avec la tête de lecture rouge des frises, plus de filet fin), D barre de lecture en haut sans écran. Conseil : C à l'arrivée (première page

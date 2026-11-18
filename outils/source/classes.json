@@ -2304,6 +2304,11 @@
      "css": "font-family: Bricolage Grotesque; font-weight: 650; font-size: 19px; line-height: 1.15; letter-spacing: -0.025em; color: var(--rl-texte, var(--encre)); @media(--mobile) { font-size: 16px; }"
     },
     {
+     "label": "client-exemple",
+     "description": "Accueil, Avant → Après : nom du client au-dessus de la légende (petites capitales). Facultatif : laissé vide, il ne s'affiche pas.",
+     "css": "display: block; font-family: Hanken Grotesk; font-size: 12px; line-height: 1.3; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: var(--rl-legende, var(--legende)); &:empty { display: none; }"
+    },
+    {
      "label": "chiffre-jeu",
      "description": "Grand chiffre en verre d'une carte à jouer.",
      "css": "display: block; width: auto; height: 92px; max-width: 100%; object-fit: contain; object-position: left center; @media(--mobile) { width: 52px; height: 56px; object-position: center; }",

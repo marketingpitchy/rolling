@@ -436,6 +436,8 @@ CLASSES = [
      "@media(--mobile) { min-height: 0; padding: 16px 14px; gap: 10px; & > .note-jeu { font-size: 21px; } }"),
     ('chiffre-mini', "Chiffre en verre d'une petite carte à jouer.", "display: block; width: auto; height: 64px; max-width: 100%; object-fit: contain; object-position: left center; @media(--mobile) { height: 46px; }"),
     ('titre-mini', "Titre d'une petite carte à jouer.", "font-family: Bricolage Grotesque; font-weight: 650; font-size: 19px; line-height: 1.15; letter-spacing: -0.025em; color: var(--rl-texte, var(--encre)); @media(--mobile) { font-size: 16px; }"),
+    ('client-exemple', "Accueil, Avant → Après : nom du client au-dessus de la légende (petites capitales). Facultatif : laissé vide, il ne s'affiche pas.",
+     "display: block; font-family: Hanken Grotesk; font-size: 12px; line-height: 1.3; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: var(--rl-legende, var(--legende)); &:empty { display: none; }"),
     ('chiffre-jeu', "Grand chiffre en verre d'une carte à jouer.", "display: block; width: auto; height: 92px; max-width: 100%; object-fit: contain; object-position: left center; @media(--mobile) { width: 52px; height: 56px; object-position: center; }", "@media (max-width: 767px) { grid-column: 1; grid-row: 1; }"),
     ('note-jeu', "Note manuscrite en bas d'une carte à jouer (Caveat, orange foncé).", "display: block; font-family: Caveat; font-size: 28px; line-height: 1; font-weight: 700; color: #A63C14; transform: rotate(-3deg); transform-origin: left center; @media(--mobile) { font-size: 26px; }", "@media (max-width: 767px) { grid-column: 1 / -1; grid-row: 2; white-space: nowrap; }"),
 

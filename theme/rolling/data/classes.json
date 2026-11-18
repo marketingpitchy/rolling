@@ -34836,6 +34836,62 @@
             ]
         },
         {
+            "id": "g-59ecf23",
+            "label": "client-exemple",
+            "groupe": "Fiches et listes",
+            "description": "Accueil, Avant → Après : nom du client au-dessus de la légende (petites capitales). Facultatif : laissé vide, il ne s'affiche pas.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "font-family": {
+                            "$$type": "font-family",
+                            "value": "Hanken Grotesk"
+                        },
+                        "font-weight": {
+                            "$$type": "string",
+                            "value": "800"
+                        },
+                        "font-size": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 12,
+                                "unit": "px"
+                            }
+                        },
+                        "letter-spacing": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 0.14,
+                                "unit": "em"
+                            }
+                        },
+                        "line-height": {
+                            "$$type": "size",
+                            "value": {
+                                "size": "1.3",
+                                "unit": "custom"
+                            }
+                        },
+                        "text-transform": {
+                            "$$type": "string",
+                            "value": "uppercase"
+                        },
+                        "display": {
+                            "$$type": "string",
+                            "value": "block"
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "Y29sb3I6IHZhcigtLXJsLWxlZ2VuZGUsIHZhcigtLWxlZ2VuZGUpKTsgJjplbXB0eSB7IGRpc3BsYXk6IG5vbmU7IH0="
+                    }
+                }
+            ]
+        },
+        {
             "id": "g-71fa6c6",
             "label": "chiffre-jeu",
             "groupe": "Fiches et listes",

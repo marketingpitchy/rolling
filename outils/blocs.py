@@ -261,24 +261,37 @@ logos = F('Ils nous font confiance', ['section', 'section-suite'], tag='section'
 # Showreel
 # --------------------------------------------------------------------------------------------
 
-showreel = F('Showreel', ['section', 'section-suite'], tag='section', enfants=[
-    F('Showreel · contenu', ['conteneur'], 'display: flex; flex-direction: column; gap: 0;', enfants=[
-        F('Annotation', None, 'display: flex; flex-direction: row; justify-content: flex-end; align-items: flex-start; gap: 6px; margin-bottom: 6px; padding: 0 30px 0 0; @media(--tablet) { display: none; }', enfants=[
-            P('Annotation · texte', 'ce que nous faisons, en vrai', ['note-main']),
-            I('Annotation · flèche', 'fleche-annotation.png', style='width: 34px; margin-top: 14px;'),
-        ]),
-        D('Showreel · cadre', ['carte-verre', 'carte-ecran', 'showreel-grandit'], enfants=[
-            D('Showreel · écran', None, 'position: relative; overflow: hidden; padding: 0; border-radius: 30px; background: #2A2233; @media(--mobile) { border-radius: 22px; }', enfants=[
-                E('e-self-hosted-video', 'Showreel · vidéo', {'autoplay': True, 'mute': True, 'loop': True, 'playsinline': True, 'controls': True, 'preload': 'none', 'poster_enabled': True, 'poster': {'src': {'url': MEDIA + 'showreel-affiche.jpg'}, 'size': 'full'}}, None, 'display: block; width: 100%; aspect-ratio: 16 / 9;'),
-                B('Bouton son', 'Activer le son', '#rl-son', ['bouton-son']),
+def bloc_showreel(fichier=False):
+    """Showreel de l'accueil : par lien (Vimeo, YouTube ou .mp4, widget Rolling · Vidéo) ou, en variante, fichier de la médiathèque."""
+    if fichier:
+        ecran = D('Showreel · écran', None, 'position: relative; overflow: hidden; padding: 0; border-radius: 30px; background: #2A2233; @media(--mobile) { border-radius: 22px; }', enfants=[
+            E('e-self-hosted-video', 'Showreel · vidéo', {'autoplay': True, 'mute': True, 'loop': True, 'playsinline': True, 'controls': True, 'preload': 'none', 'poster_enabled': True, 'poster': {'src': {'url': MEDIA + 'showreel-affiche.jpg'}, 'size': 'full'}}, None, 'display: block; width: 100%; aspect-ratio: 16 / 9;'),
+            B('Bouton son', 'Activer le son', '#rl-son', ['bouton-son']),
+        ])
+    else:
+        ecran = D('Showreel · écran', ['cadre-photo', 'cadre-16-9', 'cadre-showreel'], enfants=[
+            I('Showreel · affiche', 'showreel-affiche.jpg', '', ['image-couvrante'], taille='large'),
+            W('Showreel · vidéo', 'rolling-video', source='lien', mode='boucle', titre='Showreel Rolling', libelle='Lire avec le son : %s'),
+            P('Showreel · bandeau', 'Showreel', ['bandeau-video']),
+            I('Showreel · lecture', 'bouton-lecture.png', cls=['lecture-centre'], taille='thumbnail'),
+        ])
+    return F('Showreel', ['section', 'section-suite'], tag='section', enfants=[
+        F('Showreel · contenu', ['conteneur'], 'display: flex; flex-direction: column; gap: 0;', enfants=[
+            F('Annotation', None, 'display: flex; flex-direction: row; justify-content: flex-end; align-items: flex-start; gap: 6px; margin-bottom: 6px; padding: 0 30px 0 0; @media(--tablet) { display: none; }', enfants=[
+                P('Annotation · texte', 'ce que nous faisons, en vrai', ['note-main']),
+                I('Annotation · flèche', 'fleche-annotation.png', style='width: 34px; margin-top: 14px;'),
+            ]),
+            D('Showreel · cadre', ['carte-verre', 'carte-ecran', 'showreel-grandit'], enfants=[ecran]),
+            F('Showreel · boutons', ['rangee', 'apparait-defile'], 'justify-content: center; margin-top: 28px;', enfants=[
+                B('Showreel · bouton principal', 'Réserver un échange', '/contact/', ['bouton-principal']),
+                B('Showreel · bouton secondaire', 'Voir les offres', '/offres/', ['bouton-verre']),
             ]),
         ]),
-        F('Showreel · boutons', ['rangee', 'apparait-defile'], 'justify-content: center; margin-top: 28px;', enfants=[
-            B('Showreel · bouton principal', 'Réserver un échange', '/contact/', ['bouton-principal']),
-            B('Showreel · bouton secondaire', 'Voir les offres', '/offres/', ['bouton-verre']),
-        ]),
-    ]),
-])
+    ])
+
+
+showreel = bloc_showreel()
+showreel_fichier = bloc_showreel(True)
 
 # --------------------------------------------------------------------------------------------
 # Morceaux des sections
@@ -437,9 +450,12 @@ def exemple(n, image, alt, depart, tag, resultat):
         F('Exemple %d · vignette' % n, ['carte-verre', 'carte-vignette'], enfants=[
             I('Exemple %d · image' % n, image, alt, ['image-vignette'], taille='medium_large'),
         ]),
-        F('Exemple %d · légende' % n, ['rangee'], enfants=[
-            P('Exemple %d · avant' % n, depart, [tag]),
-            P('Exemple %d · après' % n, resultat, ['fleche-resultat']),
+        F('Exemple %d · textes' % n, None, 'display: flex; flex-direction: column; gap: 8px; padding: 0;', enfants=[
+            P('Exemple %d · client' % n, '', ['client-exemple']),
+            F('Exemple %d · légende' % n, ['rangee'], enfants=[
+                P('Exemple %d · avant' % n, depart, [tag]),
+                P('Exemple %d · après' % n, resultat, ['fleche-resultat']),
+            ]),
         ]),
     ])
 
@@ -845,6 +861,7 @@ BLOCS = [
 BLOCS_VARIANTES = [
     ('01-hero-maquette', 'Rolling · 01 Hero (version maquette : grande photo)', hero_maquette),
     ('09-humain-defile', "Rolling · 09 Le meilleur de l'humain (version équipe qui défile)", humain_defile),
+    ('03-showreel-fichier', 'Rolling · 03 Showreel (version fichier vidéo de la médiathèque)', showreel_fichier),
 ]
 
 # --------------------------------------------------------------------------------------------
@@ -875,6 +892,7 @@ carte_realisation = F('Carte réalisation', ['carte-liste'], tag='article', enfa
     F('Réalisation · textes', ['pile-serree'], enfants=[
         P('Réalisation · client', DYN('rolling-champ', champ='client'), ['label', 'si-client']),
         H('Réalisation · titre', DYN('rolling-titre', forme='titre'), 'h3', ['titre-xs', 'lien-titre'], lien=FICHE),
+        B('Réalisation · lien', 'Voir la réalisation', FICHE, ['temoin-lien']),
     ]),
     avant_apres('Réalisation'),
 ])

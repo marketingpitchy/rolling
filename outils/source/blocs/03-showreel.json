@@ -3,7 +3,7 @@
  "titre": "Rolling · 03 Showreel",
  "type": "e-flexbox",
  "composition": {
-  "xml_structure": "<e-flexbox configuration-id=\"Showreel\"><e-flexbox configuration-id=\"Showreel · contenu\"><e-flexbox configuration-id=\"Annotation\"><e-paragraph configuration-id=\"Annotation · texte\"></e-paragraph><e-image configuration-id=\"Annotation · flèche\"></e-image></e-flexbox><e-div-block configuration-id=\"Showreel · cadre\"><e-div-block configuration-id=\"Showreel · écran\"><e-self-hosted-video configuration-id=\"Showreel · vidéo\"></e-self-hosted-video><e-button configuration-id=\"Bouton son\"></e-button></e-div-block></e-div-block><e-flexbox configuration-id=\"Showreel · boutons\"><e-button configuration-id=\"Showreel · bouton principal\"></e-button><e-button configuration-id=\"Showreel · bouton secondaire\"></e-button></e-flexbox></e-flexbox></e-flexbox>",
+  "xml_structure": "<e-flexbox configuration-id=\"Showreel\"><e-flexbox configuration-id=\"Showreel · contenu\"><e-flexbox configuration-id=\"Annotation\"><e-paragraph configuration-id=\"Annotation · texte\"></e-paragraph><e-image configuration-id=\"Annotation · flèche\"></e-image></e-flexbox><e-div-block configuration-id=\"Showreel · cadre\"><e-div-block configuration-id=\"Showreel · écran\"><e-image configuration-id=\"Showreel · affiche\"></e-image><e-paragraph configuration-id=\"Showreel · vidéo\"></e-paragraph><e-paragraph configuration-id=\"Showreel · bandeau\"></e-paragraph><e-image configuration-id=\"Showreel · lecture\"></e-image></e-div-block></e-div-block><e-flexbox configuration-id=\"Showreel · boutons\"><e-button configuration-id=\"Showreel · bouton principal\"></e-button><e-button configuration-id=\"Showreel · bouton secondaire\"></e-button></e-flexbox></e-flexbox></e-flexbox>",
   "element_config": {
    "Showreel": {
     "tag": "section"
@@ -19,25 +19,26 @@
      "size": "full"
     }
    },
-   "Showreel · vidéo": {
-    "autoplay": true,
-    "mute": true,
-    "loop": true,
-    "playsinline": true,
-    "controls": true,
-    "preload": "none",
-    "poster_enabled": true,
-    "poster": {
+   "Showreel · affiche": {
+    "image": {
      "src": {
       "url": "https://media.rolling.invalid/showreel-affiche.jpg"
      },
-     "size": "full"
+     "size": "large"
     }
    },
-   "Bouton son": {
-    "text": "Activer le son",
-    "link": {
-     "destination": "#rl-son"
+   "Showreel · vidéo": {
+    "paragraph": "⟦widget:rolling-video|source=lien|mode=boucle|titre=Showreel Rolling|libelle=Lire avec le son : %s⟧"
+   },
+   "Showreel · bandeau": {
+    "paragraph": "Showreel"
+   },
+   "Showreel · lecture": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/bouton-lecture.png"
+     },
+     "size": "thumbnail"
     }
    },
    "Showreel · bouton principal": {
@@ -69,8 +70,19 @@
     "carte-ecran",
     "showreel-grandit"
    ],
-   "Bouton son": [
-    "bouton-son"
+   "Showreel · écran": [
+    "cadre-photo",
+    "cadre-16-9",
+    "cadre-showreel"
+   ],
+   "Showreel · affiche": [
+    "image-couvrante"
+   ],
+   "Showreel · bandeau": [
+    "bandeau-video"
+   ],
+   "Showreel · lecture": [
+    "lecture-centre"
    ],
    "Showreel · boutons": [
     "rangee",
@@ -87,8 +99,6 @@
    "Showreel · contenu": "display: flex; flex-direction: column; gap: 0;",
    "Annotation": "display: flex; flex-direction: row; justify-content: flex-end; align-items: flex-start; gap: 6px; margin-bottom: 6px; padding: 0 30px 0 0; @media(--tablet) { display: none; }",
    "Annotation · flèche": "width: 34px; margin-top: 14px;",
-   "Showreel · écran": "position: relative; overflow: hidden; padding: 0; border-radius: 30px; background: #2A2233; @media(--mobile) { border-radius: 22px; }",
-   "Showreel · vidéo": "display: block; width: 100%; aspect-ratio: 16 / 9;",
    "Showreel · boutons": "justify-content: center; margin-top: 28px;"
   }
  },

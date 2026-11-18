@@ -160,6 +160,9 @@ class Rolling_Dynamique {
 					. $c . '.carte-rubrique .picto-rubrique{opacity:.65}';
 			}
 		}
+		// Nom du client facultatif (Avant → Après) : caché sur le site s'il est vide, rappel cliquable dans l'éditeur.
+		$css .= 'html.elementor-html .elementor .client-exemple:empty{display:block!important;min-height:16px;outline:1px dashed rgba(91,59,234,.35);outline-offset:3px}'
+			. 'html.elementor-html .elementor .client-exemple:empty::before{content:"Nom du client (facultatif)";opacity:.6;font-weight:600;letter-spacing:0;text-transform:none}';
 		wp_add_inline_style( 'rolling-editeur', $css );
 	}
 

@@ -3,7 +3,7 @@
  "titre": "Rolling · 07 Avant Après",
  "type": "e-flexbox",
  "composition": {
-  "xml_structure": "<e-flexbox configuration-id=\"Avant Après\"><e-flexbox configuration-id=\"Exemples · contenu\"><e-flexbox configuration-id=\"Exemples · en-tête\"><e-flexbox configuration-id=\"Exemples · repère\"><e-paragraph configuration-id=\"Exemples · timecode\"></e-paragraph><e-paragraph configuration-id=\"Exemples · sur-titre\"></e-paragraph></e-flexbox><e-heading configuration-id=\"Exemples · titre\"></e-heading></e-flexbox><e-flexbox configuration-id=\"Exemples · grille\"><e-flexbox configuration-id=\"Exemple 1\"><e-flexbox configuration-id=\"Exemple 1 · vignette\"><e-image configuration-id=\"Exemple 1 · image\"></e-image></e-flexbox><e-flexbox configuration-id=\"Exemple 1 · légende\"><e-paragraph configuration-id=\"Exemple 1 · avant\"></e-paragraph><e-paragraph configuration-id=\"Exemple 1 · après\"></e-paragraph></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Exemple 2\"><e-flexbox configuration-id=\"Exemple 2 · vignette\"><e-image configuration-id=\"Exemple 2 · image\"></e-image></e-flexbox><e-flexbox configuration-id=\"Exemple 2 · légende\"><e-paragraph configuration-id=\"Exemple 2 · avant\"></e-paragraph><e-paragraph configuration-id=\"Exemple 2 · après\"></e-paragraph></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Exemple 3\"><e-flexbox configuration-id=\"Exemple 3 · vignette\"><e-image configuration-id=\"Exemple 3 · image\"></e-image></e-flexbox><e-flexbox configuration-id=\"Exemple 3 · légende\"><e-paragraph configuration-id=\"Exemple 3 · avant\"></e-paragraph><e-paragraph configuration-id=\"Exemple 3 · après\"></e-paragraph></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Exemple 4\"><e-flexbox configuration-id=\"Exemple 4 · vignette\"><e-image configuration-id=\"Exemple 4 · image\"></e-image></e-flexbox><e-flexbox configuration-id=\"Exemple 4 · légende\"><e-paragraph configuration-id=\"Exemple 4 · avant\"></e-paragraph><e-paragraph configuration-id=\"Exemple 4 · après\"></e-paragraph></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Exemple 5\"><e-flexbox configuration-id=\"Exemple 5 · vignette\"><e-image configuration-id=\"Exemple 5 · image\"></e-image></e-flexbox><e-flexbox configuration-id=\"Exemple 5 · légende\"><e-paragraph configuration-id=\"Exemple 5 · avant\"></e-paragraph><e-paragraph configuration-id=\"Exemple 5 · après\"></e-paragraph></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Exemple 6\"><e-flexbox configuration-id=\"Exemple 6 · vignette\"><e-image configuration-id=\"Exemple 6 · image\"></e-image></e-flexbox><e-flexbox configuration-id=\"Exemple 6 · légende\"><e-paragraph configuration-id=\"Exemple 6 · avant\"></e-paragraph><e-paragraph configuration-id=\"Exemple 6 · après\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Exemples · appel\"><e-paragraph configuration-id=\"Exemples · question\"></e-paragraph><e-button configuration-id=\"Exemples · bouton\"></e-button></e-flexbox></e-flexbox></e-flexbox>",
+  "xml_structure": "<e-flexbox configuration-id=\"Avant Après\"><e-flexbox configuration-id=\"Exemples · contenu\"><e-flexbox configuration-id=\"Exemples · en-tête\"><e-flexbox configuration-id=\"Exemples · repère\"><e-paragraph configuration-id=\"Exemples · timecode\"></e-paragraph><e-paragraph configuration-id=\"Exemples · sur-titre\"></e-paragraph></e-flexbox><e-heading configuration-id=\"Exemples · titre\"></e-heading></e-flexbox><e-flexbox configuration-id=\"Exemples · grille\"><e-flexbox configuration-id=\"Exemple 1\"><e-flexbox configuration-id=\"Exemple 1 · vignette\"><e-image configuration-id=\"Exemple 1 · image\"></e-image></e-flexbox><e-flexbox configuration-id=\"Exemple 1 · textes\"><e-paragraph configuration-id=\"Exemple 1 · client\"></e-paragraph><e-flexbox configuration-id=\"Exemple 1 · légende\"><e-paragraph configuration-id=\"Exemple 1 · avant\"></e-paragraph><e-paragraph configuration-id=\"Exemple 1 · après\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Exemple 2\"><e-flexbox configuration-id=\"Exemple 2 · vignette\"><e-image configuration-id=\"Exemple 2 · image\"></e-image></e-flexbox><e-flexbox configuration-id=\"Exemple 2 · textes\"><e-paragraph configuration-id=\"Exemple 2 · client\"></e-paragraph><e-flexbox configuration-id=\"Exemple 2 · légende\"><e-paragraph configuration-id=\"Exemple 2 · avant\"></e-paragraph><e-paragraph configuration-id=\"Exemple 2 · après\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Exemple 3\"><e-flexbox configuration-id=\"Exemple 3 · vignette\"><e-image configuration-id=\"Exemple 3 · image\"></e-image></e-flexbox><e-flexbox configuration-id=\"Exemple 3 · textes\"><e-paragraph configuration-id=\"Exemple 3 · client\"></e-paragraph><e-flexbox configuration-id=\"Exemple 3 · légende\"><e-paragraph configuration-id=\"Exemple 3 · avant\"></e-paragraph><e-paragraph configuration-id=\"Exemple 3 · après\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Exemple 4\"><e-flexbox configuration-id=\"Exemple 4 · vignette\"><e-image configuration-id=\"Exemple 4 · image\"></e-image></e-flexbox><e-flexbox configuration-id=\"Exemple 4 · textes\"><e-paragraph configuration-id=\"Exemple 4 · client\"></e-paragraph><e-flexbox configuration-id=\"Exemple 4 · légende\"><e-paragraph configuration-id=\"Exemple 4 · avant\"></e-paragraph><e-paragraph configuration-id=\"Exemple 4 · après\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Exemple 5\"><e-flexbox configuration-id=\"Exemple 5 · vignette\"><e-image configuration-id=\"Exemple 5 · image\"></e-image></e-flexbox><e-flexbox configuration-id=\"Exemple 5 · textes\"><e-paragraph configuration-id=\"Exemple 5 · client\"></e-paragraph><e-flexbox configuration-id=\"Exemple 5 · légende\"><e-paragraph configuration-id=\"Exemple 5 · avant\"></e-paragraph><e-paragraph configuration-id=\"Exemple 5 · après\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Exemple 6\"><e-flexbox configuration-id=\"Exemple 6 · vignette\"><e-image configuration-id=\"Exemple 6 · image\"></e-image></e-flexbox><e-flexbox configuration-id=\"Exemple 6 · textes\"><e-paragraph configuration-id=\"Exemple 6 · client\"></e-paragraph><e-flexbox configuration-id=\"Exemple 6 · légende\"><e-paragraph configuration-id=\"Exemple 6 · avant\"></e-paragraph><e-paragraph configuration-id=\"Exemple 6 · après\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Exemples · appel\"><e-paragraph configuration-id=\"Exemples · question\"></e-paragraph><e-button configuration-id=\"Exemples · bouton\"></e-button></e-flexbox></e-flexbox></e-flexbox>",
   "element_config": {
    "Avant Après": {
     "_cssid": "exemples",
@@ -28,6 +28,9 @@
      "size": "medium_large"
     }
    },
+   "Exemple 1 · client": {
+    "paragraph": ""
+   },
    "Exemple 1 · avant": {
     "paragraph": "Article de blog"
    },
@@ -42,6 +45,9 @@
      },
      "size": "medium_large"
     }
+   },
+   "Exemple 2 · client": {
+    "paragraph": ""
    },
    "Exemple 2 · avant": {
     "paragraph": "Page web produit"
@@ -58,6 +64,9 @@
      "size": "medium_large"
     }
    },
+   "Exemple 3 · client": {
+    "paragraph": ""
+   },
    "Exemple 3 · avant": {
     "paragraph": "Module de formation"
    },
@@ -72,6 +81,9 @@
      },
      "size": "medium_large"
     }
+   },
+   "Exemple 4 · client": {
+    "paragraph": ""
    },
    "Exemple 4 · avant": {
     "paragraph": "Communiqué"
@@ -88,6 +100,9 @@
      "size": "medium_large"
     }
    },
+   "Exemple 5 · client": {
+    "paragraph": ""
+   },
    "Exemple 5 · avant": {
     "paragraph": "Rapport PPT"
    },
@@ -102,6 +117,9 @@
      },
      "size": "medium_large"
     }
+   },
+   "Exemple 6 · client": {
+    "paragraph": ""
    },
    "Exemple 6 · avant": {
     "paragraph": "Séminaire &amp; équipes"
@@ -149,6 +167,9 @@
    "Exemple 1 · image": [
     "image-vignette"
    ],
+   "Exemple 1 · client": [
+    "client-exemple"
+   ],
    "Exemple 1 · légende": [
     "rangee"
    ],
@@ -164,6 +185,9 @@
    ],
    "Exemple 2 · image": [
     "image-vignette"
+   ],
+   "Exemple 2 · client": [
+    "client-exemple"
    ],
    "Exemple 2 · légende": [
     "rangee"
@@ -181,6 +205,9 @@
    "Exemple 3 · image": [
     "image-vignette"
    ],
+   "Exemple 3 · client": [
+    "client-exemple"
+   ],
    "Exemple 3 · légende": [
     "rangee"
    ],
@@ -196,6 +223,9 @@
    ],
    "Exemple 4 · image": [
     "image-vignette"
+   ],
+   "Exemple 4 · client": [
+    "client-exemple"
    ],
    "Exemple 4 · légende": [
     "rangee"
@@ -213,6 +243,9 @@
    "Exemple 5 · image": [
     "image-vignette"
    ],
+   "Exemple 5 · client": [
+    "client-exemple"
+   ],
    "Exemple 5 · légende": [
     "rangee"
    ],
@@ -228,6 +261,9 @@
    ],
    "Exemple 6 · image": [
     "image-vignette"
+   ],
+   "Exemple 6 · client": [
+    "client-exemple"
    ],
    "Exemple 6 · légende": [
     "rangee"
@@ -251,11 +287,17 @@
   "style": {
    "Exemples · contenu": "display: flex; flex-direction: column; gap: 0;",
    "Exemple 1": "display: flex; flex-direction: column; gap: 16px; padding: 0;",
+   "Exemple 1 · textes": "display: flex; flex-direction: column; gap: 8px; padding: 0;",
    "Exemple 2": "display: flex; flex-direction: column; gap: 16px; padding: 0;",
+   "Exemple 2 · textes": "display: flex; flex-direction: column; gap: 8px; padding: 0;",
    "Exemple 3": "display: flex; flex-direction: column; gap: 16px; padding: 0;",
+   "Exemple 3 · textes": "display: flex; flex-direction: column; gap: 8px; padding: 0;",
    "Exemple 4": "display: flex; flex-direction: column; gap: 16px; padding: 0;",
+   "Exemple 4 · textes": "display: flex; flex-direction: column; gap: 8px; padding: 0;",
    "Exemple 5": "display: flex; flex-direction: column; gap: 16px; padding: 0;",
+   "Exemple 5 · textes": "display: flex; flex-direction: column; gap: 8px; padding: 0;",
    "Exemple 6": "display: flex; flex-direction: column; gap: 16px; padding: 0;",
+   "Exemple 6 · textes": "display: flex; flex-direction: column; gap: 8px; padding: 0;",
    "Exemples · appel": "justify-content: center; margin-top: 64px; text-align: center;"
   }
  },
