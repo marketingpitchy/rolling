@@ -588,7 +588,7 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
     `div.macon-case macon-court|moyen|long|une` (citation ≤ 70 / ≥ 170 caractères) ; taches de couleur en pseudo-éléments de la
     grille ; automatique sur la page existante (même classe).
   - **Extraits vidéo** : type `rolling_extrait` (menu sous Réalisations : `menu` dans types()), champs video / format
-    (16-9, 9-16, 1-1) / description ; widget Liste réglages `extraits` (défaut 3, mur de montage seulement) et `texte_extrait`
+    (16-9, 9-16, 1-1) / description ; widget Liste réglages `extraits` (défaut 2 depuis 0.6.1, mur de montage seulement) et `texte_extrait`
     (« Studio Rolling ») ; `div.mur-case.extrait-case > .extrait-cadre > .extrait-video[role=img]` (vidéo muette, rolling.js la lance
     quand visible) ; mur de montage en verre (cadre 7 px, plaque de titre en verre fumé rgba(22,14,52,.82) : .72 échouait au
     contrôle Ally) ; filtres (`filtres-liste`) dans une barre en verre partout.
@@ -603,6 +603,26 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
     `div:nth-last-of-type()` (pas nth-last-child) ; les classes globales des cartes arrivent quelques secondes après
     l'ouverture de l'éditeur (attendre ~12 s avant une capture) ; `bouton-son` existait déjà (nom de classe en double ⇒
     `classes_fiches.py` refuse) ; page d'essai modifiée à la main : supprimer `_elementor_element_cache`.
+- **0.6.1 (retours 0.6.0)** :
+  - Filtres des listes : seulement les termes utilisés par le type de la liste (`object_ids` = contenus publiés ;
+    webinars / replays = `Rolling_Webinars::liste`) : « IA & vidéo » (thème d'un webinar) ne s'affiche plus dans Guides.
+  - L'agence : `bande-creas` = fond clair #FAF9F7 + touches orangées (halos en % inclus dans la bande : plus de coupure
+    nette aux bords) ; `bande-fondu` = dégradé progressif (smoothstep, 11 arrêts) #FAF9F7 → #17112C sur 260 px (plus de
+    bande violette) ; `bande-ia` = section-sombre, halos en % aussi.
+  - Mur des réalisations : rangées automatiques, cases normales en 16:9 (`aspect-ratio` sur le cadre), grande case 2 × 2,
+    9:16 sur 3 rangées (léger recadrage seulement) ; image des cartes réalisation en « large » ; miniatures YouTube en
+    `maxresdefault` (1280 × 720) avec repli `hqdefault` par rolling.js (image de 120 px = pas de HD) ; 1 extrait toutes les
+    2 réalisations (défaut du widget + bloc).
+  - Showreel en boucle : plus d'image d'affiche visible (classe `cadre-showreel`, CSS brut : `@media (prefers-reduced-motion:
+    no-preference) { &:has(.video-calque[data-rl-mode=boucle]) …}` ⇒ image masquée, fond sombre) ; la vidéo se charge dès que
+    le cadre est visible et apparaît en fondu (`.pret`, iframe : load + 700 ms ; fichier : playing). Leçon : un `@media` autre
+    que `@media(--x)` doit aller dans le champ brut (sinon le convertisseur le jette).
+  - **Maquette « Bulles du showreel »** (`maquettes/nouveautes-v6/bulles-contact.html`, copie
+    /workspace/maquette-bulles-contact.html, **à valider**) : les bulles cachaient les textes de la vidéo ⇒ A vidéo à 64 %
+    au centre, bulles dans les marges (ne mordent que le bord ; « Showreel » et « Activer le son » à droite) (conseil),
+    B vidéo pleine largeur, bulles en rangée sous la vidéo (chevauchent 40 px du bas), C une bulle à la fois dans un coin.
+  - 404 : rien à régler dans WordPress (gabarit 404 du thème automatique) ; modèle choisi dans Personnaliser > « Rolling :
+    modèles des fiches », modifié dans Mes modèles « Rolling · Page 404 ».
 - **Chargement de page effet film** (demande avant la fin de la livraison 4) : maquette `maquettes/loading/maquette-loading.html`
   (copie /workspace/maquette-loading.html), 4 options : A amorce 3-2-1, B clap qui se ferme puis rideau, C ouverture
   cinéma (bandes noires + REC + timecode + règle avec la tête de lecture rouge des frises, plus de filet fin), D barre de lecture en haut sans écran. Conseil : C à l'arrivée (première page

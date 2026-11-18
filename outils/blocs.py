@@ -860,7 +860,7 @@ def avant_apres(prefixe):
 carte_realisation = F('Carte réalisation', ['carte-liste'], tag='article', enfants=[
     F('Réalisation · vignette', ['vignette-video', 'vignette-lien', 'si-image'], lien=FICHE, enfants=[
         D('Réalisation · cadre', ['cadre-photo', 'cadre-16-9'], enfants=[
-            I('Réalisation · image', DYN('rolling-image', image='une'), cls=['image-couvrante'], taille='medium_large'),
+            I('Réalisation · image', DYN('rolling-image', image='une'), cls=['image-couvrante'], taille='large'),
             P('Réalisation · format', DYN('rolling-terme', taxonomie='rolling_format'), ['bandeau-video', 'si-format']),
             P('Réalisation · durée', DYN('rolling-champ', champ='duree'), ['duree', 'si-duree']),
             lecture('Réalisation · lecture'),
@@ -1406,7 +1406,7 @@ rea_haut = haut_page('Réalisations · haut', 'Réalisations', [], 'Nos réalisa
                      note='ce que nous faisons, en vrai', largeur='880px')
 rea_liste = section_liste('Réalisations · liste', [
     H('Réalisations · liste · titre masqué', 'Toutes nos réalisations vidéo', 'h2', ['texte-masque']),
-    W('Réalisations · cartes', 'rolling-liste', contenu='realisations', classe='mur-montage', filtres='trois', tous='Tous', plus='yes', plus_texte='Réalisations suivantes'),
+    W('Réalisations · cartes', 'rolling-liste', contenu='realisations', classe='mur-montage', extraits='2', filtres='trois', tous='Tous', plus='yes', plus_texte='Réalisations suivantes'),
 ], [appel_milieu('Réalisations · appel', 'Et avec vos contenus, <em>ça donnerait quoi&nbsp;?</em>', 'margin-top: 24px;')])
 
 tem_haut = haut_page('Témoignages · haut', 'Témoignages', ['pastille-orange'], 'Ce que nos clients disent <u>de notre accompagnement.</u>',

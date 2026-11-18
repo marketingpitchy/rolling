@@ -486,6 +486,21 @@
 		return el;
 	}
 
+	/* Miniatures YouTube en haute définition (maxresdefault) : si la vidéo n'en a pas (image grise de 120 px), on revient à hqdefault */
+	document.querySelectorAll( 'img[src*="i.ytimg.com"][src*="/maxresdefault."]' ).forEach( function ( img ) {
+		var repli = function () {
+			if ( img.src.indexOf( '/maxresdefault.' ) !== -1 && ( ! img.naturalWidth || img.naturalWidth <= 120 ) ) {
+				img.removeAttribute( 'srcset' );
+				img.src = img.src.replace( '/maxresdefault.', '/hqdefault.' );
+			}
+		};
+		if ( img.complete ) {
+			repli();
+		}
+		img.addEventListener( 'load', repli );
+		img.addEventListener( 'error', repli );
+	} );
+
 	/* Vidéo d'une fiche : chargée seulement au clic (YouTube sans cookie, ou fichier de la médiathèque) */
 	document.querySelectorAll( '[data-rl-video]' ).forEach( function ( cadre ) {
 		var bouton = cadre.querySelector( 'button' ), apercu = cadre.querySelector( 'video.apercu-video' );
@@ -521,19 +536,20 @@
 				var lancer = function () {
 					var fond = lecteurLien( cadre.getAttribute( 'data-rl-video' ), true, bouton.getAttribute( 'aria-label' ) );
 					if ( fond ) {
+						var pret = function () {
+							fond.classList.add( 'pret' );
+							hote.classList.add( 'rl-boucle' );
+						};
 						fond.setAttribute( 'tabindex', '-1' );
 						fond.setAttribute( 'aria-hidden', 'true' );
 						fond.classList.add( 'video-calque-fond' );
+						// La vidéo apparaît en fondu une fois prête (iframe chargée, ou fichier qui joue).
+						fond.addEventListener( 'IFRAME' === fond.tagName ? 'load' : 'playing', function () { setTimeout( pret, 'IFRAME' === fond.tagName ? 700 : 0 ); } );
 						cadre.insertBefore( fond, bouton );
-						hote.classList.add( 'rl-boucle' );
 					}
 				};
-				// Après le chargement de la page : l'aperçu ne retarde pas l'affichage de l'image d'affiche.
-				if ( 'complete' === document.readyState ) {
-					setTimeout( lancer, 300 );
-				} else {
-					window.addEventListener( 'load', function () { setTimeout( lancer, 300 ); } );
-				}
+				// Lancé dès que le cadre est visible (pas d'image d'affiche avant le showreel).
+				setTimeout( lancer, 0 );
 			}, { threshold: 0.35 } );
 			vue.observe( cadre );
 		}

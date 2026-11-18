@@ -91,7 +91,7 @@ class Rolling_Balise_Image extends Data_Tag {
 		}
 		$youtube = Rolling_Widget_Video::id_youtube( $video );
 		if ( $youtube ) {
-			return 'https://i.ytimg.com/vi/' . $youtube . '/hqdefault.jpg';
+			return 'https://i.ytimg.com/vi/' . $youtube . '/maxresdefault.jpg'; // 1280 × 720 ; rolling.js revient à hqdefault si elle n'existe pas.
 		}
 
 		return add_query_arg( 'rl-video', rawurlencode( $video ), ROLLING_URL . '/assets/img/affiche-video.webp' );

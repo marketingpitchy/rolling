@@ -125,7 +125,7 @@ class Rolling_Widget_Liste extends Rolling_Widget {
 				'label'       => __( 'Mur de montage : un extrait vidéo toutes les … réalisations', 'rolling' ),
 				'description' => __( 'Réalisations > Extraits vidéo. 0 : aucun extrait.', 'rolling' ),
 				'type'        => Controls_Manager::NUMBER,
-				'default'     => 3,
+				'default'     => 2,
 				'min'         => 0,
 			)
 		);
@@ -423,6 +423,36 @@ class Rolling_Widget_Liste extends Rolling_Widget {
 	}
 
 	/**
+	 * Contenus publiés du type d'une liste (pour ne proposer que les filtres qui ont des cartes).
+	 *
+	 * @param string $contenu Réglage « Contenu ».
+	 * @return int[]
+	 */
+	private static function contenus_publies( $contenu ) {
+		if ( in_array( $contenu, array( 'webinars', 'replays' ), true ) ) {
+			$ids = Rolling_Webinars::liste( 'webinars' === $contenu ? 'a_venir' : 'replay' );
+			return $ids ? $ids : array( 0 );
+		}
+		$types = array(
+			'realisations' => 'rolling_realisation',
+			'temoignages'  => 'rolling_temoignage',
+			'articles'     => 'post',
+			'guides'       => 'rolling_guide',
+		);
+		$ids   = get_posts(
+			array(
+				'post_type'      => $types[ $contenu ] ?? 'post',
+				'post_status'    => 'publish',
+				'posts_per_page' => 1000,
+				'fields'         => 'ids',
+				'no_found_rows'  => true,
+			)
+		);
+
+		return $ids ? $ids : array( 0 );
+	}
+
+	/**
 	 * Taille d'une carte témoignage selon sa citation : courte, moyenne ou longue.
 	 *
 	 * @param int $id Témoignage.
@@ -531,11 +561,13 @@ class Rolling_Widget_Liste extends Rolling_Widget {
 		/* translators: %s : contenu de la liste (Réalisations, Guides…). */
 		echo '<nav class="filtres-liste" aria-label="' . esc_attr( sprintf( __( 'Filtrer : %s', 'rolling' ), self::CONTENUS[ $r['contenu'] ][0] ?? '' ) ) . '">';
 		foreach ( $taxonomies as $rang => $taxonomie ) {
-			$actif     = self::filtre_demande( $taxonomie );
+			$actif = self::filtre_demande( $taxonomie );
+			// Seulement les termes utilisés par ce type de contenu (les thèmes servent aux guides et aux webinars).
 			$termes    = get_terms(
 				array(
 					'taxonomy'   => $taxonomie,
 					'hide_empty' => true,
+					'object_ids' => self::contenus_publies( $r['contenu'] ),
 				)
 			);
 			$plusieurs = count( $taxonomies ) > 1;

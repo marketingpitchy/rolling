@@ -122,7 +122,7 @@ class Rolling_Widget_Video extends Rolling_Widget {
 		$youtube = self::id_youtube( $video );
 		if ( $youtube && ! has_post_thumbnail( $id ) ) {
 			// Sans image à la une : la miniature de la vidéo YouTube.
-			echo '<img class="image-couvrante" src="' . esc_url( 'https://i.ytimg.com/vi/' . $youtube . '/hqdefault.jpg' ) . '" width="480" height="360" alt=""' . ( $haut ? '' : ' loading="lazy"' ) . '>';
+			echo '<img class="image-couvrante" src="' . esc_url( 'https://i.ytimg.com/vi/' . $youtube . '/maxresdefault.jpg' ) . '" width="1280" height="720" alt=""' . ( $haut ? '' : ' loading="lazy"' ) . '>';
 		} elseif ( $video && ! $youtube ) {
 			// Fichier vidéo : aperçu muet en boucle (lancé par rolling.js quand il est à l'écran, jamais avec « réduire les
 			// animations », ni avec « Image fixe ») ; sans image à la une, sa première image sert d'affiche.

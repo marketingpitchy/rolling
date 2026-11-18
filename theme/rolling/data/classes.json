@@ -7685,7 +7685,7 @@
                     },
                     "props": [],
                     "custom_css": {
-                        "raw": "JiA+IC5lbGVtZW50b3Itd2lkZ2V0LXJvbGxpbmctdmlkZW8geyBwb3NpdGlvbjogYWJzb2x1dGU7IHRvcDogMDsgcmlnaHQ6IDA7IGJvdHRvbTogMDsgbGVmdDogMDsgei1pbmRleDogMDsgbWFyZ2luOiAwOyB9ICYgLmxlY3R1cmUtY2VudHJlIHsgcG9pbnRlci1ldmVudHM6IG5vbmU7IHRyYW5zaXRpb246IG9wYWNpdHkgMC40cyBlYXNlOyB9ICYucmwtYm91Y2xlIC5sZWN0dXJlLWNlbnRyZSB7IG9wYWNpdHk6IDA7IH0gJi5ybC1ib3VjbGUgLnBhc3RpbGxlLXNvbiB7IGRpc3BsYXk6IGlubGluZS1mbGV4OyB9ICYucmwtbGl0IC5iYW5kZWF1LXZpZGVvLCAmLnJsLWxpdCAuZHVyZWUsICYucmwtbGl0IC5sZWN0dXJlLWNlbnRyZSB7IGRpc3BsYXk6IG5vbmU7IH0gJi5ybC1saXQ6OmFmdGVyIHsgZGlzcGxheTogbm9uZTsgfQ=="
+                        "raw": "JiA+IC5lbGVtZW50b3Itd2lkZ2V0LXJvbGxpbmctdmlkZW8geyBwb3NpdGlvbjogYWJzb2x1dGU7IHRvcDogMDsgcmlnaHQ6IDA7IGJvdHRvbTogMDsgbGVmdDogMDsgei1pbmRleDogMDsgbWFyZ2luOiAwOyB9ICYgLmxlY3R1cmUtY2VudHJlIHsgcG9pbnRlci1ldmVudHM6IG5vbmU7IHRyYW5zaXRpb246IG9wYWNpdHkgMC40cyBlYXNlOyB9ICYucmwtYm91Y2xlIC5sZWN0dXJlLWNlbnRyZSB7IG9wYWNpdHk6IDA7IH0gJi5ybC1ib3VjbGUgLnBhc3RpbGxlLXNvbiB7IGRpc3BsYXk6IGlubGluZS1mbGV4OyB9ICYucmwtbGl0IC5iYW5kZWF1LXZpZGVvLCAmLnJsLWxpdCAuZHVyZWUsICYucmwtbGl0IC5sZWN0dXJlLWNlbnRyZSB7IGRpc3BsYXk6IG5vbmU7IH0gJi5ybC1saXQ6OmFmdGVyIHsgZGlzcGxheTogbm9uZTsgfSBAbWVkaWEgKHByZWZlcnMtcmVkdWNlZC1tb3Rpb246IG5vLXByZWZlcmVuY2UpIHsgJjpoYXMoLnZpZGVvLWNhbHF1ZVtkYXRhLXJsLW1vZGU9Ym91Y2xlXSkgeyBiYWNrZ3JvdW5kOiBsaW5lYXItZ3JhZGllbnQoMTYwZGVnLCAjMTcxMTJDIDAlLCAjMkEyMjMzIDEwMCUpOyB9ICY6aGFzKC52aWRlby1jYWxxdWVbZGF0YS1ybC1tb2RlPWJvdWNsZV0pID4gLmltYWdlLWNvdXZyYW50ZSB7IHZpc2liaWxpdHk6IGhpZGRlbjsgfSB9"
                     }
                 }
             ]
@@ -7879,7 +7879,7 @@
             "id": "g-8ffa301",
             "label": "bande-ia",
             "groupe": "Fiches et listes",
-            "description": "Bande des experts IA (avec section-sombre et halos-nuit) : fond foncé de la charte, portraits cerclés de violet.",
+            "description": "Bande des experts IA (avec section-sombre) : fond foncé de la charte, portraits cerclés de violet.",
             "variants": [
                 {
                     "meta": {
@@ -8018,7 +8018,7 @@
                         }
                     },
                     "custom_css": {
-                        "raw": "b3ZlcmZsb3c6IGNsaXA7IGlzb2xhdGlvbjogaXNvbGF0ZTsgJjo6YmVmb3JlIHsgcG9zaXRpb246IHJlbGF0aXZlOyB0b3A6IGF1dG87IHJpZ2h0OiBhdXRvOyBib3R0b206IGF1dG87IGxlZnQ6IGF1dG87IGhlaWdodDogYXV0bzsgb3BhY2l0eTogMTsgbWl4LWJsZW5kLW1vZGU6IG5vcm1hbDsgYm9yZGVyOiAwOyBjb250ZW50OiAnJzsgcG9zaXRpb246IGFic29sdXRlOyB6LWluZGV4OiAtMTsgbGVmdDogLTEyJTsgdG9wOiAxOCU7IHdpZHRoOiA3MjBweDsgaGVpZ2h0OiA3MjBweDsgYm9yZGVyLXJhZGl1czogNTAlOyBwb2ludGVyLWV2ZW50czogbm9uZTsgYmFja2dyb3VuZDogcmFkaWFsLWdyYWRpZW50KGNsb3Nlc3Qtc2lkZSwgcmdiYSgxMzksOTIsMjQ2LDAuNCksIHJnYmEoMTUsMTUsMTgsMCkpOyB9ICY6OmFmdGVyIHsgY29udGVudDogJyc7IHBvc2l0aW9uOiBhYnNvbHV0ZTsgei1pbmRleDogLTE7IHJpZ2h0OiAtMTQlOyBib3R0b206IC00MCU7IHdpZHRoOiA4MjBweDsgaGVpZ2h0OiA4MjBweDsgYm9yZGVyLXJhZGl1czogNTAlOyBwb2ludGVyLWV2ZW50czogbm9uZTsgYmFja2dyb3VuZDogcmFkaWFsLWdyYWRpZW50KGNsb3Nlc3Qtc2lkZSwgcmdiYSgyNTUsMTM4LDkxLDAuMyksIHJnYmEoMTUsMTUsMTgsMCkpOyB9ICYgLnBvcnRyYWl0IHsgYm94LXNoYWRvdzogMCAwIDAgNHB4IHJnYmEoMTk2LDE4MSwyNTMsMC41NSksIDAgMCAwIDEwcHggcmdiYSg5MSw1OSwyMzQsMC4yMiksIDAgMCA0NnB4IC02cHggcmdiYSgxNDAsMTQyLDI1NSwwLjc1KTsgfQ=="
+                        "raw": "b3ZlcmZsb3c6IGNsaXA7IGlzb2xhdGlvbjogaXNvbGF0ZTsgJjo6YmVmb3JlIHsgcG9zaXRpb246IHJlbGF0aXZlOyB0b3A6IGF1dG87IHJpZ2h0OiBhdXRvOyBib3R0b206IGF1dG87IGxlZnQ6IGF1dG87IGhlaWdodDogYXV0bzsgb3BhY2l0eTogMTsgbWl4LWJsZW5kLW1vZGU6IG5vcm1hbDsgYm9yZGVyOiAwOyBjb250ZW50OiAnJzsgcG9zaXRpb246IGFic29sdXRlOyB6LWluZGV4OiAtMTsgbGVmdDogLTEwJTsgdG9wOiAxMiU7IHdpZHRoOiA1MCU7IGhlaWdodDogNzYlOyBib3JkZXItcmFkaXVzOiA1MCU7IHBvaW50ZXItZXZlbnRzOiBub25lOyBiYWNrZ3JvdW5kOiByYWRpYWwtZ3JhZGllbnQoY2xvc2VzdC1zaWRlLCByZ2JhKDEzOSw5MiwyNDYsMC4zKSwgcmdiYSgyMywxNyw0NCwwKSk7IH0gJjo6YWZ0ZXIgeyBjb250ZW50OiAnJzsgcG9zaXRpb246IGFic29sdXRlOyB6LWluZGV4OiAtMTsgcmlnaHQ6IC04JTsgdG9wOiAyMCU7IHdpZHRoOiA0NCU7IGhlaWdodDogNzQlOyBib3JkZXItcmFkaXVzOiA1MCU7IHBvaW50ZXItZXZlbnRzOiBub25lOyBiYWNrZ3JvdW5kOiByYWRpYWwtZ3JhZGllbnQoY2xvc2VzdC1zaWRlLCByZ2JhKDI1NSwxMzgsOTEsMC4yKSwgcmdiYSgxNSwxNSwxOCwwKSk7IH0gJiAucG9ydHJhaXQgeyBib3gtc2hhZG93OiAwIDAgMCA0cHggcmdiYSgxOTYsMTgxLDI1MywwLjU1KSwgMCAwIDAgMTBweCByZ2JhKDkxLDU5LDIzNCwwLjIyKSwgMCAwIDQ2cHggLTZweCByZ2JhKDE0MCwxNDIsMjU1LDAuNzUpOyB9"
                     }
                 }
             ]
@@ -24045,20 +24045,20 @@
                         "state": null
                     },
                     "props": {
+                        "gap": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 14,
+                                "unit": "px"
+                            }
+                        },
                         "grid-template-columns": {
                             "$$type": "string",
                             "value": "repeat(2, minmax(0, 1fr))"
-                        },
-                        "grid-auto-rows": {
-                            "$$type": "size",
-                            "value": {
-                                "size": 112,
-                                "unit": "px"
-                            }
                         }
                     },
                     "custom_css": {
-                        "raw": "Z2FwOiAyMnB4IDE0cHg7ICYgPiAubXVyLWNhc2UubXVyLWxhcmdlIHsgZ3JpZC1yb3c6IHNwYW4gMzsgfSAmIC50aXRyZS14cyB7IGZvbnQtc2l6ZTogMTdweDsgfSAmIC5tdXItbGFyZ2UgLnRpdHJlLXhzIHsgZm9udC1zaXplOiAyMnB4OyB9ICYgLmxhYmVsIHsgZm9udC1zaXplOiAxMnB4OyB9ICYgLm11ci1jYXNlOm5vdCgubXVyLWxhcmdlKSAuZHVyZWUgeyBkaXNwbGF5OiBub25lOyB9ICYgLm11ci1jYXNlIC5waWxlLXNlcnJlZSB7IGxlZnQ6IDExcHg7IHJpZ2h0OiAxMXB4OyBib3R0b206IDExcHg7IHBhZGRpbmc6IDhweCAxMHB4OyB9ICYgLm11ci1jYXNlIC5waWxlLXNlcnJlZSAudGl0cmUteHMgeyBmb250LXNpemU6IDE0cHg7IH0gJiAubXVyLWxhcmdlIC5waWxlLXNlcnJlZSAudGl0cmUteHMgeyBmb250LXNpemU6IDE4cHg7IH0gJiAuZXh0cmFpdC1wYXN0aWxsZSB7IGxlZnQ6IDhweDsgYm90dG9tOiA4cHg7IHBhZGRpbmc6IDVweCA5cHg7IH0="
+                        "raw": "JiAudGl0cmUteHMgeyBmb250LXNpemU6IDE3cHg7IH0gJiAubXVyLWxhcmdlIC50aXRyZS14cyB7IGZvbnQtc2l6ZTogMjJweDsgfSAmIC5sYWJlbCB7IGZvbnQtc2l6ZTogMTJweDsgfSAmIC5tdXItY2FzZTpub3QoLm11ci1sYXJnZSkgLmR1cmVlIHsgZGlzcGxheTogbm9uZTsgfSAmIC5tdXItY2FzZSAucGlsZS1zZXJyZWUgeyBsZWZ0OiAxMXB4OyByaWdodDogMTFweDsgYm90dG9tOiAxMXB4OyBwYWRkaW5nOiA4cHggMTBweDsgfSAmIC5tdXItY2FzZSAucGlsZS1zZXJyZWUgLnRpdHJlLXhzIHsgZm9udC1zaXplOiAxNHB4OyB9ICYgLm11ci1sYXJnZSAucGlsZS1zZXJyZWUgLnRpdHJlLXhzIHsgZm9udC1zaXplOiAxOHB4OyB9ICYgLmV4dHJhaXQtcGFzdGlsbGUgeyBsZWZ0OiA4cHg7IGJvdHRvbTogOHB4OyBwYWRkaW5nOiA1cHggOXB4OyB9"
                     }
                 },
                 {
@@ -24075,6 +24075,13 @@
                             "$$type": "string",
                             "value": "grid"
                         },
+                        "gap": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 24,
+                                "unit": "px"
+                            }
+                        },
                         "grid-template-columns": {
                             "$$type": "string",
                             "value": "repeat(4, minmax(0, 1fr))"
@@ -24082,13 +24089,13 @@
                         "grid-auto-rows": {
                             "$$type": "size",
                             "value": {
-                                "size": 136,
-                                "unit": "px"
+                                "size": null,
+                                "unit": "auto"
                             }
                         }
                     },
                     "custom_css": {
-                        "raw": "Z3JpZC1hdXRvLWZsb3c6IGRlbnNlOyBnYXA6IDI4cHggMjRweDsgaXNvbGF0aW9uOiBpc29sYXRlOyAmID4gLm11ci1jYXNlIHsgZ3JpZC1yb3c6IHNwYW4gMjsgZGlzcGxheTogZmxleDsgZmxleC1kaXJlY3Rpb246IGNvbHVtbjsgbWluLXdpZHRoOiAwOyB9ICYgPiAubXVyLWNhc2UubXVyLWxhcmdlIHsgZ3JpZC1jb2x1bW46IHNwYW4gMjsgZ3JpZC1yb3c6IHNwYW4gNDsgfSAmID4gLm11ci1jYXNlLm11ci1oYXV0ZSB7IGdyaWQtcm93OiBzcGFuIDM7IH0gJiAubXVyLWNhc2UgPiAuZWxlbWVudG9yIHsgZGlzcGxheTogY29udGVudHM7IH0gJiAubXVyLWNhc2UgLmNhcnRlLWxpc3RlIHsgZmxleDogMSAxIGF1dG87IG1pbi1oZWlnaHQ6IDA7IGdhcDogMTJweDsgfSAmIC5tdXItY2FzZSAudmlnbmV0dGUtdmlkZW8geyBkaXNwbGF5OiBmbGV4OyBmbGV4LWRpcmVjdGlvbjogY29sdW1uOyBmbGV4OiAxIDEgYXV0bzsgbWluLWhlaWdodDogMTEwcHg7IH0gJiAubXVyLWNhc2UgLnZpZ25ldHRlLXZpZGVvID4gLmNhZHJlLXBob3RvIHsgZmxleDogMSAxIGF1dG87IG1pbi1oZWlnaHQ6IDA7IGFzcGVjdC1yYXRpbzogYXV0bzsgfSAmIC5tdXItY2FzZSAuYXZhbnQtYXByZXMgeyBkaXNwbGF5OiBub25lOyB9ICYgLm11ci1sYXJnZSAudGl0cmUteHMgeyBmb250LXNpemU6IDI4cHg7IH0gJjo6YmVmb3JlIHsgY29udGVudDogJyc7IHBvc2l0aW9uOiBhYnNvbHV0ZTsgei1pbmRleDogLTE7IGxlZnQ6IC0xMCU7IHRvcDogNiU7IHdpZHRoOiA1MiU7IGhlaWdodDogNDYlOyBib3JkZXItcmFkaXVzOiA1MCU7IHBvaW50ZXItZXZlbnRzOiBub25lOyBiYWNrZ3JvdW5kOiByYWRpYWwtZ3JhZGllbnQoY2xvc2VzdC1zaWRlLCByZ2JhKDE2NywxMjMsMjQwLDAuNDIpLCByZ2JhKDE2NywxMjMsMjQwLDApKTsgZmlsdGVyOiBibHVyKDMwcHgpOyB9ICY6OmFmdGVyIHsgY29udGVudDogJyc7IHBvc2l0aW9uOiBhYnNvbHV0ZTsgei1pbmRleDogLTE7IHJpZ2h0OiAtMTAlOyBib3R0b206IDQlOyB3aWR0aDogNTAlOyBoZWlnaHQ6IDQ2JTsgYm9yZGVyLXJhZGl1czogNTAlOyBwb2ludGVyLWV2ZW50czogbm9uZTsgYmFja2dyb3VuZDogcmFkaWFsLWdyYWRpZW50KGNsb3Nlc3Qtc2lkZSwgcmdiYSgyNTUsMTcxLDE1MCwwLjUpLCByZ2JhKDI1NSwxNzEsMTUwLDApKTsgZmlsdGVyOiBibHVyKDMwcHgpOyB9ICYgLm11ci1jYXNlIC5jYXJ0ZS1saXN0ZSB7IHBvc2l0aW9uOiByZWxhdGl2ZTsgcGFkZGluZzogN3B4OyBnYXA6IDA7IGJvcmRlci1yYWRpdXM6IDI0cHg7IGJhY2tncm91bmQ6IHJhZGlhbC1ncmFkaWVudCg3MCUgNjAlIGF0IDE1JSAwJSwgcmdiYSgyNTUsMjU1LDI1NSwwLjkpLCByZ2JhKDI1NSwyNTUsMjU1LDApIDcyJSksIGxpbmVhci1ncmFkaWVudCgxNTBkZWcsIHJnYmEoMjU1LDI1NSwyNTUsMC43KSwgcmdiYSgyNTUsMjU1LDI1NSwwLjQpKTsgYmFja2Ryb3AtZmlsdGVyOiBibHVyKDE4cHgpIHNhdHVyYXRlKDE2MCUpOyBib3gtc2hhZG93OiBpbnNldCAwIDFweCAwICNGRkZGRkYsIGluc2V0IDAgMCAwIDFweCByZ2JhKDI1NSwyNTUsMjU1LDAuNiksIDAgMjZweCA2MHB4IC0zMnB4IHJnYmEoNzYsNDgsMTcwLDAuNCk7IH0gJiAubXVyLWNhc2UgLnZpZ25ldHRlLXZpZGVvIHsgcGFkZGluZzogMDsgYm9yZGVyLXJhZGl1czogMThweDsgYmFja2dyb3VuZDogdHJhbnNwYXJlbnQ7IGJveC1zaGFkb3c6IG5vbmU7IC0tcmwtcmF5b24tcGhvdG86IDE4cHg7IH0gJiAubXVyLWNhc2UgLnBpbGUtc2VycmVlIHsgcG9zaXRpb246IGFic29sdXRlOyB6LWluZGV4OiA0OyBsZWZ0OiAxN3B4OyByaWdodDogMTdweDsgYm90dG9tOiAxN3B4OyB3aWR0aDogYXV0bzsgZ2FwOiAzcHg7IHBhZGRpbmc6IDEycHggMTRweDsgYm9yZGVyLXJhZGl1czogMTZweDsgYmFja2dyb3VuZDogcmdiYSgyMiwxNCw1MiwwLjgyKTsgYmFja2Ryb3AtZmlsdGVyOiBibHVyKDE0cHgpOyBib3gtc2hhZG93OiBpbnNldCAwIDFweCAwIHJnYmEoMjU1LDI1NSwyNTUsMC4yMik7IC0tcmwtdGV4dGU6ICNGQUY5Rjc7IC0tcmwtbGVnZW5kZTogI0U5RTJGRjsgLS1ybC1hY2NlbnQ6ICNDNEI1RkQ7IH0gJiAubXVyLWNhc2UgLnBpbGUtc2VycmVlIC50aXRyZS14cyB7IGZvbnQtc2l6ZTogMThweDsgfSAmIC5tdXItbGFyZ2UgLnBpbGUtc2VycmVlIC50aXRyZS14cyB7IGZvbnQtc2l6ZTogMjVweDsgfSAmIC5tdXItY2FzZSAuY2FkcmUtcGhvdG8gLmR1cmVlIHsgdG9wOiAxNHB4OyBib3R0b206IGF1dG87IH0gJiAuZXh0cmFpdC1jYWRyZSB7IGRpc3BsYXk6IGZsZXg7IGZsZXg6IDEgMSBhdXRvOyBtaW4taGVpZ2h0OiAxMTBweDsgcGFkZGluZzogN3B4OyBib3JkZXItcmFkaXVzOiAyNHB4OyBiYWNrZ3JvdW5kOiByYWRpYWwtZ3JhZGllbnQoNzAlIDYwJSBhdCAxNSUgMCUsIHJnYmEoMjU1LDI1NSwyNTUsMC45KSwgcmdiYSgyNTUsMjU1LDI1NSwwKSA3MiUpLCBsaW5lYXItZ3JhZGllbnQoMTUwZGVnLCByZ2JhKDI1NSwyNTUsMjU1LDAuNyksIHJnYmEoMjU1LDI1NSwyNTUsMC40KSk7IGJhY2tkcm9wLWZpbHRlcjogYmx1cigxOHB4KSBzYXR1cmF0ZSgxNjAlKTsgYm94LXNoYWRvdzogaW5zZXQgMCAxcHggMCAjRkZGRkZGLCBpbnNldCAwIDAgMCAxcHggcmdiYSgyNTUsMjU1LDI1NSwwLjYpLCAwIDI2cHggNjBweCAtMzJweCByZ2JhKDc2LDQ4LDE3MCwwLjQpOyB9ICYgLmV4dHJhaXQtdmlkZW8geyBwb3NpdGlvbjogcmVsYXRpdmU7IGZsZXg6IDEgMSBhdXRvOyBvdmVyZmxvdzogaGlkZGVuOyBib3JkZXItcmFkaXVzOiAxOHB4OyBiYWNrZ3JvdW5kOiBsaW5lYXItZ3JhZGllbnQoMTYwZGVnLCAjMzQzNEUwLCAjMUMxNzMwKTsgfSAmIC5leHRyYWl0LXZpZGVvIHZpZGVvIHsgcG9zaXRpb246IGFic29sdXRlOyB0b3A6IDA7IGxlZnQ6IDA7IHdpZHRoOiAxMDAlOyBoZWlnaHQ6IDEwMCU7IG9iamVjdC1maXQ6IGNvdmVyOyB9ICYgLmV4dHJhaXQtcGFzdGlsbGUgeyBwb3NpdGlvbjogYWJzb2x1dGU7IHotaW5kZXg6IDI7IGxlZnQ6IDEycHg7IGJvdHRvbTogMTJweDsgZGlzcGxheTogaW5saW5lLWZsZXg7IGFsaWduLWl0ZW1zOiBjZW50ZXI7IGdhcDogN3B4OyBwYWRkaW5nOiA2cHggMTJweDsgYm9yZGVyLXJhZGl1czogOTk5cHg7IGZvbnQtZmFtaWx5OiBIYW5rZW4gR3JvdGVzazsgZm9udC1zaXplOiAxMnB4OyBsaW5lLWhlaWdodDogMTsgZm9udC13ZWlnaHQ6IDgwMDsgbGV0dGVyLXNwYWNpbmc6IDAuMWVtOyB0ZXh0LXRyYW5zZm9ybTogdXBwZXJjYXNlOyBjb2xvcjogI0ZGRkZGRjsgYmFja2dyb3VuZDogcmdiYSgxNSwxNSwxOCwwLjYyKTsgfSAmIC5leHRyYWl0LXBhc3RpbGxlOjpiZWZvcmUgeyBjb250ZW50OiAn4oa7JzsgZm9udC1zaXplOiAxM3B4OyBsZXR0ZXItc3BhY2luZzogMDsgfSAmLnJsLWFuaW1lID4gLm11ci1jYXNlIHsgb3BhY2l0eTogMDsgdHJhbnNmb3JtOiB0cmFuc2xhdGVZKDM0cHgpIHNjYWxlKDAuOTcpOyBmaWx0ZXI6IGJsdXIoOHB4KTsgfSAmLnJsLWFuaW1lID4gLm11ci1jYXNlLnZ1IHsgYW5pbWF0aW9uOiBybC1tdXIgMC45cyBjdWJpYy1iZXppZXIoMC4yLCAwLjgsIDAuMiwgMSkgZm9yd2FyZHM7IH0="
+                        "raw": "Z3JpZC1hdXRvLWZsb3c6IGRlbnNlOyBpc29sYXRpb246IGlzb2xhdGU7ICYgPiAubXVyLWNhc2UgeyBncmlkLXJvdzogc3BhbiAxOyBkaXNwbGF5OiBmbGV4OyBmbGV4LWRpcmVjdGlvbjogY29sdW1uOyBtaW4td2lkdGg6IDA7IH0gJiA+IC5tdXItY2FzZS5tdXItbGFyZ2UgeyBncmlkLWNvbHVtbjogc3BhbiAyOyBncmlkLXJvdzogc3BhbiAyOyB9ICYgPiAubXVyLWNhc2UubXVyLWhhdXRlIHsgZ3JpZC1yb3c6IHNwYW4gMzsgfSAmIC5tdXItY2FzZSA+IC5lbGVtZW50b3IgeyBkaXNwbGF5OiBjb250ZW50czsgfSAmIC5tdXItY2FzZSAuY2FydGUtbGlzdGUgeyBmbGV4OiAxIDEgYXV0bzsgbWluLWhlaWdodDogMDsgZ2FwOiAxMnB4OyB9ICYgLm11ci1jYXNlIC52aWduZXR0ZS12aWRlbyB7IGRpc3BsYXk6IGZsZXg7IGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47IGZsZXg6IDEgMSBhdXRvOyB9ICYgLm11ci1jYXNlIC52aWduZXR0ZS12aWRlbyA+IC5jYWRyZS1waG90byB7IGZsZXg6IDEgMSBhdXRvOyBtaW4taGVpZ2h0OiAwOyBhc3BlY3QtcmF0aW86IDE2IC8gOTsgfSAmIC5tdXItbGFyZ2UgLnZpZ25ldHRlLXZpZGVvID4gLmNhZHJlLXBob3RvLCAmIC5tdXItaGF1dGUgLnZpZ25ldHRlLXZpZGVvID4gLmNhZHJlLXBob3RvIHsgYXNwZWN0LXJhdGlvOiBhdXRvOyBtaW4taGVpZ2h0OiAxNjBweDsgfSAmIC5tdXItY2FzZSAuYXZhbnQtYXByZXMgeyBkaXNwbGF5OiBub25lOyB9ICYgLm11ci1sYXJnZSAudGl0cmUteHMgeyBmb250LXNpemU6IDI4cHg7IH0gJjo6YmVmb3JlIHsgY29udGVudDogJyc7IHBvc2l0aW9uOiBhYnNvbHV0ZTsgei1pbmRleDogLTE7IGxlZnQ6IC0xMCU7IHRvcDogNiU7IHdpZHRoOiA1MiU7IGhlaWdodDogNDYlOyBib3JkZXItcmFkaXVzOiA1MCU7IHBvaW50ZXItZXZlbnRzOiBub25lOyBiYWNrZ3JvdW5kOiByYWRpYWwtZ3JhZGllbnQoY2xvc2VzdC1zaWRlLCByZ2JhKDE2NywxMjMsMjQwLDAuNDIpLCByZ2JhKDE2NywxMjMsMjQwLDApKTsgZmlsdGVyOiBibHVyKDMwcHgpOyB9ICY6OmFmdGVyIHsgY29udGVudDogJyc7IHBvc2l0aW9uOiBhYnNvbHV0ZTsgei1pbmRleDogLTE7IHJpZ2h0OiAtMTAlOyBib3R0b206IDQlOyB3aWR0aDogNTAlOyBoZWlnaHQ6IDQ2JTsgYm9yZGVyLXJhZGl1czogNTAlOyBwb2ludGVyLWV2ZW50czogbm9uZTsgYmFja2dyb3VuZDogcmFkaWFsLWdyYWRpZW50KGNsb3Nlc3Qtc2lkZSwgcmdiYSgyNTUsMTcxLDE1MCwwLjUpLCByZ2JhKDI1NSwxNzEsMTUwLDApKTsgZmlsdGVyOiBibHVyKDMwcHgpOyB9ICYgLm11ci1jYXNlIC5jYXJ0ZS1saXN0ZSB7IHBvc2l0aW9uOiByZWxhdGl2ZTsgcGFkZGluZzogN3B4OyBnYXA6IDA7IGJvcmRlci1yYWRpdXM6IDI0cHg7IGJhY2tncm91bmQ6IHJhZGlhbC1ncmFkaWVudCg3MCUgNjAlIGF0IDE1JSAwJSwgcmdiYSgyNTUsMjU1LDI1NSwwLjkpLCByZ2JhKDI1NSwyNTUsMjU1LDApIDcyJSksIGxpbmVhci1ncmFkaWVudCgxNTBkZWcsIHJnYmEoMjU1LDI1NSwyNTUsMC43KSwgcmdiYSgyNTUsMjU1LDI1NSwwLjQpKTsgYmFja2Ryb3AtZmlsdGVyOiBibHVyKDE4cHgpIHNhdHVyYXRlKDE2MCUpOyBib3gtc2hhZG93OiBpbnNldCAwIDFweCAwICNGRkZGRkYsIGluc2V0IDAgMCAwIDFweCByZ2JhKDI1NSwyNTUsMjU1LDAuNiksIDAgMjZweCA2MHB4IC0zMnB4IHJnYmEoNzYsNDgsMTcwLDAuNCk7IH0gJiAubXVyLWNhc2UgLnZpZ25ldHRlLXZpZGVvIHsgcGFkZGluZzogMDsgYm9yZGVyLXJhZGl1czogMThweDsgYmFja2dyb3VuZDogdHJhbnNwYXJlbnQ7IGJveC1zaGFkb3c6IG5vbmU7IC0tcmwtcmF5b24tcGhvdG86IDE4cHg7IH0gJiAubXVyLWNhc2UgLnBpbGUtc2VycmVlIHsgcG9zaXRpb246IGFic29sdXRlOyB6LWluZGV4OiA0OyBsZWZ0OiAxN3B4OyByaWdodDogMTdweDsgYm90dG9tOiAxN3B4OyB3aWR0aDogYXV0bzsgZ2FwOiAzcHg7IHBhZGRpbmc6IDEycHggMTRweDsgYm9yZGVyLXJhZGl1czogMTZweDsgYmFja2dyb3VuZDogcmdiYSgyMiwxNCw1MiwwLjgyKTsgYmFja2Ryb3AtZmlsdGVyOiBibHVyKDE0cHgpOyBib3gtc2hhZG93OiBpbnNldCAwIDFweCAwIHJnYmEoMjU1LDI1NSwyNTUsMC4yMik7IC0tcmwtdGV4dGU6ICNGQUY5Rjc7IC0tcmwtbGVnZW5kZTogI0U5RTJGRjsgLS1ybC1hY2NlbnQ6ICNDNEI1RkQ7IH0gJiAubXVyLWNhc2UgLnBpbGUtc2VycmVlIC50aXRyZS14cyB7IGZvbnQtc2l6ZTogMThweDsgfSAmIC5tdXItbGFyZ2UgLnBpbGUtc2VycmVlIC50aXRyZS14cyB7IGZvbnQtc2l6ZTogMjVweDsgfSAmIC5tdXItY2FzZSAuY2FkcmUtcGhvdG8gLmR1cmVlIHsgdG9wOiAxNHB4OyBib3R0b206IGF1dG87IH0gJiAuZXh0cmFpdC1jYWRyZSB7IGRpc3BsYXk6IGZsZXg7IGZsZXg6IDEgMSBhdXRvOyBtaW4taGVpZ2h0OiAwOyBwYWRkaW5nOiA3cHg7IGJvcmRlci1yYWRpdXM6IDI0cHg7IGJhY2tncm91bmQ6IHJhZGlhbC1ncmFkaWVudCg3MCUgNjAlIGF0IDE1JSAwJSwgcmdiYSgyNTUsMjU1LDI1NSwwLjkpLCByZ2JhKDI1NSwyNTUsMjU1LDApIDcyJSksIGxpbmVhci1ncmFkaWVudCgxNTBkZWcsIHJnYmEoMjU1LDI1NSwyNTUsMC43KSwgcmdiYSgyNTUsMjU1LDI1NSwwLjQpKTsgYmFja2Ryb3AtZmlsdGVyOiBibHVyKDE4cHgpIHNhdHVyYXRlKDE2MCUpOyBib3gtc2hhZG93OiBpbnNldCAwIDFweCAwICNGRkZGRkYsIGluc2V0IDAgMCAwIDFweCByZ2JhKDI1NSwyNTUsMjU1LDAuNiksIDAgMjZweCA2MHB4IC0zMnB4IHJnYmEoNzYsNDgsMTcwLDAuNCk7IH0gJiAuZXh0cmFpdC12aWRlbyB7IHBvc2l0aW9uOiByZWxhdGl2ZTsgZmxleDogMSAxIGF1dG87IG92ZXJmbG93OiBoaWRkZW47IGJvcmRlci1yYWRpdXM6IDE4cHg7IGFzcGVjdC1yYXRpbzogMTYgLyA5OyBiYWNrZ3JvdW5kOiBsaW5lYXItZ3JhZGllbnQoMTYwZGVnLCAjMzQzNEUwLCAjMUMxNzMwKTsgfSAmIC5tdXItaGF1dGUgLmV4dHJhaXQtdmlkZW8geyBhc3BlY3QtcmF0aW86IGF1dG87IH0gJiAuZXh0cmFpdC12aWRlbyB2aWRlbyB7IHBvc2l0aW9uOiBhYnNvbHV0ZTsgdG9wOiAwOyBsZWZ0OiAwOyB3aWR0aDogMTAwJTsgaGVpZ2h0OiAxMDAlOyBvYmplY3QtZml0OiBjb3ZlcjsgfSAmIC5leHRyYWl0LXBhc3RpbGxlIHsgcG9zaXRpb246IGFic29sdXRlOyB6LWluZGV4OiAyOyBsZWZ0OiAxMnB4OyBib3R0b206IDEycHg7IGRpc3BsYXk6IGlubGluZS1mbGV4OyBhbGlnbi1pdGVtczogY2VudGVyOyBnYXA6IDdweDsgcGFkZGluZzogNnB4IDEycHg7IGJvcmRlci1yYWRpdXM6IDk5OXB4OyBmb250LWZhbWlseTogSGFua2VuIEdyb3Rlc2s7IGZvbnQtc2l6ZTogMTJweDsgbGluZS1oZWlnaHQ6IDE7IGZvbnQtd2VpZ2h0OiA4MDA7IGxldHRlci1zcGFjaW5nOiAwLjFlbTsgdGV4dC10cmFuc2Zvcm06IHVwcGVyY2FzZTsgY29sb3I6ICNGRkZGRkY7IGJhY2tncm91bmQ6IHJnYmEoMTUsMTUsMTgsMC42Mik7IH0gJiAuZXh0cmFpdC1wYXN0aWxsZTo6YmVmb3JlIHsgY29udGVudDogJ+KGuyc7IGZvbnQtc2l6ZTogMTNweDsgbGV0dGVyLXNwYWNpbmc6IDA7IH0gJi5ybC1hbmltZSA+IC5tdXItY2FzZSB7IG9wYWNpdHk6IDA7IHRyYW5zZm9ybTogdHJhbnNsYXRlWSgzNHB4KSBzY2FsZSgwLjk3KTsgZmlsdGVyOiBibHVyKDhweCk7IH0gJi5ybC1hbmltZSA+IC5tdXItY2FzZS52dSB7IGFuaW1hdGlvbjogcmwtbXVyIDAuOXMgY3ViaWMtYmV6aWVyKDAuMiwgMC44LCAwLjIsIDEpIGZvcndhcmRzOyB9"
                     }
                 }
             ]
@@ -32825,7 +32832,7 @@
                         }
                     },
                     "custom_css": {
-                        "raw": "Y29udGFpbmVyLXR5cGU6IHNpemU7ICYgPiBpZnJhbWUsICYgPiB2aWRlbyB7IHBvc2l0aW9uOiBhYnNvbHV0ZTsgdG9wOiAwOyBsZWZ0OiAwOyB3aWR0aDogMTAwJTsgaGVpZ2h0OiAxMDAlOyBib3JkZXI6IDA7IGJhY2tncm91bmQ6ICMwMDAwMDA7IH0gJiA+IC52aWRlby1jYWxxdWUtZm9uZCB7IHRvcDogNTAlOyBsZWZ0OiA1MCU7IHdpZHRoOiBtYXgoMTAwY3F3LCAxNzcuNzhjcWgpOyBoZWlnaHQ6IG1heCgxMDBjcWgsIDU2LjI1Y3F3KTsgdHJhbnNmb3JtOiB0cmFuc2xhdGUoLTUwJSwgLTUwJSk7IGJhY2tncm91bmQ6IHRyYW5zcGFyZW50OyBwb2ludGVyLWV2ZW50czogbm9uZTsgfSAmID4gdmlkZW8udmlkZW8tY2FscXVlLWZvbmQgeyB0b3A6IDA7IGxlZnQ6IDA7IHdpZHRoOiAxMDAlOyBoZWlnaHQ6IDEwMCU7IHRyYW5zZm9ybTogbm9uZTsgb2JqZWN0LWZpdDogY292ZXI7IH0="
+                        "raw": "Y29udGFpbmVyLXR5cGU6IHNpemU7ICYgPiBpZnJhbWUsICYgPiB2aWRlbyB7IHBvc2l0aW9uOiBhYnNvbHV0ZTsgdG9wOiAwOyBsZWZ0OiAwOyB3aWR0aDogMTAwJTsgaGVpZ2h0OiAxMDAlOyBib3JkZXI6IDA7IGJhY2tncm91bmQ6ICMwMDAwMDA7IH0gJiA+IC52aWRlby1jYWxxdWUtZm9uZCB7IHRvcDogNTAlOyBsZWZ0OiA1MCU7IHdpZHRoOiBtYXgoMTAwY3F3LCAxNzcuNzhjcWgpOyBoZWlnaHQ6IG1heCgxMDBjcWgsIDU2LjI1Y3F3KTsgdHJhbnNmb3JtOiB0cmFuc2xhdGUoLTUwJSwgLTUwJSk7IGJhY2tncm91bmQ6IHRyYW5zcGFyZW50OyBwb2ludGVyLWV2ZW50czogbm9uZTsgb3BhY2l0eTogMDsgdHJhbnNpdGlvbjogb3BhY2l0eSAwLjhzIGVhc2U7IH0gJiA+IC52aWRlby1jYWxxdWUtZm9uZC5wcmV0IHsgb3BhY2l0eTogMTsgfSAmID4gdmlkZW8udmlkZW8tY2FscXVlLWZvbmQgeyB0b3A6IDA7IGxlZnQ6IDA7IHdpZHRoOiAxMDAlOyBoZWlnaHQ6IDEwMCU7IHRyYW5zZm9ybTogbm9uZTsgb2JqZWN0LWZpdDogY292ZXI7IH0="
                     }
                 }
             ]
@@ -34001,7 +34008,7 @@
             "id": "g-d6384fc",
             "label": "bande-creas",
             "groupe": "Fiches et listes",
-            "description": "Bande des créas : fond pêche et halos lilas / pêche.",
+            "description": "Bande des créas : fond clair de la charte avec des touches orangées.",
             "variants": [
                 {
                     "meta": {
@@ -34029,7 +34036,7 @@
                                 "block-end": {
                                     "$$type": "size",
                                     "value": {
-                                        "size": 56,
+                                        "size": 48,
                                         "unit": "px"
                                     }
                                 },
@@ -34071,7 +34078,7 @@
                                 "block-end": {
                                     "$$type": "size",
                                     "value": {
-                                        "size": 48,
+                                        "size": 40,
                                         "unit": "px"
                                     }
                                 },
@@ -34117,7 +34124,7 @@
                                 "block-end": {
                                     "$$type": "size",
                                     "value": {
-                                        "size": 72,
+                                        "size": 64,
                                         "unit": "px"
                                     }
                                 },
@@ -34128,6 +34135,72 @@
                                         "unit": "px"
                                     }
                                 }
+                            }
+                        },
+                        "background": {
+                            "$$type": "background",
+                            "value": {
+                                "color": {
+                                    "$$type": "color",
+                                    "value": "#FAF9F7"
+                                }
+                            }
+                        },
+                        "display": {
+                            "$$type": "string",
+                            "value": "flex"
+                        },
+                        "flex-direction": {
+                            "$$type": "string",
+                            "value": "column"
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "b3ZlcmZsb3c6IGNsaXA7IGlzb2xhdGlvbjogaXNvbGF0ZTsgJjo6YmVmb3JlIHsgcG9zaXRpb246IHJlbGF0aXZlOyB0b3A6IGF1dG87IHJpZ2h0OiBhdXRvOyBib3R0b206IGF1dG87IGxlZnQ6IGF1dG87IGhlaWdodDogYXV0bzsgb3BhY2l0eTogMTsgbWl4LWJsZW5kLW1vZGU6IG5vcm1hbDsgYm9yZGVyOiAwOyBjb250ZW50OiAnJzsgcG9zaXRpb246IGFic29sdXRlOyB6LWluZGV4OiAtMTsgcmlnaHQ6IC04JTsgdG9wOiA2JTsgd2lkdGg6IDQ4JTsgaGVpZ2h0OiA4OCU7IGJvcmRlci1yYWRpdXM6IDUwJTsgcG9pbnRlci1ldmVudHM6IG5vbmU7IGJhY2tncm91bmQ6IHJhZGlhbC1ncmFkaWVudChjbG9zZXN0LXNpZGUsIHJnYmEoMjU1LDEzOCw5MSwwLjI2KSwgcmdiYSgyNTUsMTM4LDkxLDApKTsgfSAmOjphZnRlciB7IGNvbnRlbnQ6ICcnOyBwb3NpdGlvbjogYWJzb2x1dGU7IHotaW5kZXg6IC0xOyBsZWZ0OiAtMTAlOyB0b3A6IDE4JTsgd2lkdGg6IDQwJTsgaGVpZ2h0OiA3MCU7IGJvcmRlci1yYWRpdXM6IDUwJTsgcG9pbnRlci1ldmVudHM6IG5vbmU7IGJhY2tncm91bmQ6IHJhZGlhbC1ncmFkaWVudChjbG9zZXN0LXNpZGUsIHJnYmEoMjU1LDIwOSwxOTEsMC41KSwgcmdiYSgyNTUsMjA5LDE5MSwwKSk7IH0="
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-62a948b",
+            "label": "bande-fondu",
+            "groupe": "Fiches et listes",
+            "description": "Fondu progressif du fond clair des créas au fond foncé de la charte (experts IA), avec la pastille « Ensemble sur chaque projet ».",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "mobile",
+                        "state": null
+                    },
+                    "props": {
+                        "min-height": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 180,
+                                "unit": "px"
+                            }
+                        }
+                    },
+                    "custom_css": null
+                },
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "min-height": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 260,
+                                "unit": "px"
+                            }
+                        },
+                        "padding": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 0,
+                                "unit": "px"
                             }
                         },
                         "background": {
@@ -34164,7 +34237,85 @@
                                                             "value": {
                                                                 "color": {
                                                                     "$$type": "color",
-                                                                    "value": "#FFF1E7"
+                                                                    "value": "#F4F3F1"
+                                                                },
+                                                                "offset": {
+                                                                    "$$type": "number",
+                                                                    "value": 10
+                                                                }
+                                                            }
+                                                        },
+                                                        {
+                                                            "$$type": "color-stop",
+                                                            "value": {
+                                                                "color": {
+                                                                    "$$type": "color",
+                                                                    "value": "#E2E1E2"
+                                                                },
+                                                                "offset": {
+                                                                    "$$type": "number",
+                                                                    "value": 20
+                                                                }
+                                                            }
+                                                        },
+                                                        {
+                                                            "$$type": "color-stop",
+                                                            "value": {
+                                                                "color": {
+                                                                    "$$type": "color",
+                                                                    "value": "#C9C7CB"
+                                                                },
+                                                                "offset": {
+                                                                    "$$type": "number",
+                                                                    "value": 30
+                                                                }
+                                                            }
+                                                        },
+                                                        {
+                                                            "$$type": "color-stop",
+                                                            "value": {
+                                                                "color": {
+                                                                    "$$type": "color",
+                                                                    "value": "#AAA7B0"
+                                                                },
+                                                                "offset": {
+                                                                    "$$type": "number",
+                                                                    "value": 40
+                                                                }
+                                                            }
+                                                        },
+                                                        {
+                                                            "$$type": "color-stop",
+                                                            "value": {
+                                                                "color": {
+                                                                    "$$type": "color",
+                                                                    "value": "#888592"
+                                                                },
+                                                                "offset": {
+                                                                    "$$type": "number",
+                                                                    "value": 50
+                                                                }
+                                                            }
+                                                        },
+                                                        {
+                                                            "$$type": "color-stop",
+                                                            "value": {
+                                                                "color": {
+                                                                    "$$type": "color",
+                                                                    "value": "#676373"
+                                                                },
+                                                                "offset": {
+                                                                    "$$type": "number",
+                                                                    "value": 60
+                                                                }
+                                                            }
+                                                        },
+                                                        {
+                                                            "$$type": "color-stop",
+                                                            "value": {
+                                                                "color": {
+                                                                    "$$type": "color",
+                                                                    "value": "#484358"
                                                                 },
                                                                 "offset": {
                                                                     "$$type": "number",
@@ -34177,152 +34328,24 @@
                                                             "value": {
                                                                 "color": {
                                                                     "$$type": "color",
-                                                                    "value": "#FFF1E7"
-                                                                },
-                                                                "offset": {
-                                                                    "$$type": "number",
-                                                                    "value": 100
-                                                                }
-                                                            }
-                                                        }
-                                                    ]
-                                                },
-                                                "angle": {
-                                                    "$$type": "number",
-                                                    "value": 180
-                                                }
-                                            }
-                                        }
-                                    ]
-                                },
-                                "color": {
-                                    "$$type": "color",
-                                    "value": "#FFF1E7"
-                                }
-                            }
-                        },
-                        "display": {
-                            "$$type": "string",
-                            "value": "flex"
-                        },
-                        "flex-direction": {
-                            "$$type": "string",
-                            "value": "column"
-                        }
-                    },
-                    "custom_css": {
-                        "raw": "b3ZlcmZsb3c6IGNsaXA7IGlzb2xhdGlvbjogaXNvbGF0ZTsgJjo6YmVmb3JlIHsgcG9zaXRpb246IHJlbGF0aXZlOyB0b3A6IGF1dG87IHJpZ2h0OiBhdXRvOyBib3R0b206IGF1dG87IGxlZnQ6IGF1dG87IGhlaWdodDogYXV0bzsgb3BhY2l0eTogMTsgbWl4LWJsZW5kLW1vZGU6IG5vcm1hbDsgYm9yZGVyOiAwOyBjb250ZW50OiAnJzsgcG9zaXRpb246IGFic29sdXRlOyB6LWluZGV4OiAtMTsgbGVmdDogLTI2MHB4OyB0b3A6IC0xMjBweDsgd2lkdGg6IDc2MHB4OyBoZWlnaHQ6IDc2MHB4OyBib3JkZXItcmFkaXVzOiA1MCU7IHBvaW50ZXItZXZlbnRzOiBub25lOyBiYWNrZ3JvdW5kOiByYWRpYWwtZ3JhZGllbnQoY2xvc2VzdC1zaWRlLCByZ2JhKDE5NiwxODEsMjUzLDAuNSksIHJnYmEoMTk2LDE4MSwyNTMsMCkpOyB9ICY6OmFmdGVyIHsgY29udGVudDogJyc7IHBvc2l0aW9uOiBhYnNvbHV0ZTsgei1pbmRleDogLTE7IHJpZ2h0OiAtMzAwcHg7IGJvdHRvbTogLTI2MHB4OyB3aWR0aDogODIwcHg7IGhlaWdodDogODIwcHg7IGJvcmRlci1yYWRpdXM6IDUwJTsgcG9pbnRlci1ldmVudHM6IG5vbmU7IGJhY2tncm91bmQ6IHJhZGlhbC1ncmFkaWVudChjbG9zZXN0LXNpZGUsIHJnYmEoMjU1LDE2MiwxMjIsMC40NSksIHJnYmEoMjU1LDE2MiwxMjIsMCkpOyB9"
-                    }
-                }
-            ]
-        },
-        {
-            "id": "g-62a948b",
-            "label": "bande-fondu",
-            "groupe": "Fiches et listes",
-            "description": "Fondu de la couleur des créas au foncé des experts IA, avec la pastille « Ensemble sur chaque projet ».",
-            "variants": [
-                {
-                    "meta": {
-                        "breakpoint": "mobile",
-                        "state": null
-                    },
-                    "props": {
-                        "min-height": {
-                            "$$type": "size",
-                            "value": {
-                                "size": 120,
-                                "unit": "px"
-                            }
-                        }
-                    },
-                    "custom_css": null
-                },
-                {
-                    "meta": {
-                        "breakpoint": "desktop",
-                        "state": null
-                    },
-                    "props": {
-                        "min-height": {
-                            "$$type": "size",
-                            "value": {
-                                "size": 160,
-                                "unit": "px"
-                            }
-                        },
-                        "padding": {
-                            "$$type": "size",
-                            "value": {
-                                "size": 0,
-                                "unit": "px"
-                            }
-                        },
-                        "background": {
-                            "$$type": "background",
-                            "value": {
-                                "background-overlay": {
-                                    "$$type": "background-overlay",
-                                    "value": [
-                                        {
-                                            "$$type": "background-gradient-overlay",
-                                            "value": {
-                                                "type": {
-                                                    "$$type": "string",
-                                                    "value": "linear"
-                                                },
-                                                "stops": {
-                                                    "$$type": "gradient-color-stop",
-                                                    "value": [
-                                                        {
-                                                            "$$type": "color-stop",
-                                                            "value": {
-                                                                "color": {
-                                                                    "$$type": "color",
-                                                                    "value": "#FFF1E7"
-                                                                },
-                                                                "offset": {
-                                                                    "$$type": "number",
-                                                                    "value": 0
-                                                                }
-                                                            }
-                                                        },
-                                                        {
-                                                            "$$type": "color-stop",
-                                                            "value": {
-                                                                "color": {
-                                                                    "$$type": "color",
-                                                                    "value": "#EADCF3"
-                                                                },
-                                                                "offset": {
-                                                                    "$$type": "number",
-                                                                    "value": 26
-                                                                }
-                                                            }
-                                                        },
-                                                        {
-                                                            "$$type": "color-stop",
-                                                            "value": {
-                                                                "color": {
-                                                                    "$$type": "color",
-                                                                    "value": "#8C6BD8"
-                                                                },
-                                                                "offset": {
-                                                                    "$$type": "number",
-                                                                    "value": 54
-                                                                }
-                                                            }
-                                                        },
-                                                        {
-                                                            "$$type": "color-stop",
-                                                            "value": {
-                                                                "color": {
-                                                                    "$$type": "color",
-                                                                    "value": "#2A1E4E"
+                                                                    "value": "#2F2941"
                                                                 },
                                                                 "offset": {
                                                                     "$$type": "number",
                                                                     "value": 80
+                                                                }
+                                                            }
+                                                        },
+                                                        {
+                                                            "$$type": "color-stop",
+                                                            "value": {
+                                                                "color": {
+                                                                    "$$type": "color",
+                                                                    "value": "#1D1732"
+                                                                },
+                                                                "offset": {
+                                                                    "$$type": "number",
+                                                                    "value": 90
                                                                 }
                                                             }
                                                         },
@@ -34351,7 +34374,7 @@
                                 },
                                 "color": {
                                     "$$type": "color",
-                                    "value": "#6F55B8"
+                                    "value": "#888592"
                                 }
                             }
                         },
