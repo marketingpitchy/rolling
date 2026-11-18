@@ -643,6 +643,13 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   départ de la souris ; rien sur tactile, éditeur, « réduire les animations »). Extraits : format **1:1** (`extrait-carre`),
   **ordre** = champ « Ordre » (encadré « Attributs », `page-attributes` ; la requête trie déjà menu_order puis date),
   **liseré différent** : cadre pêche → lilas avec bordure pointillée orange (insert, pas un cas client).
+- **Maquette « Cadre des extraits et filtres »** (`maquettes/nouveautes-v6/extraits-filtres.html`, copie
+  /workspace/maquette-extraits-filtres.html, **à valider**) : pointillés des extraits jugés « brouillon » ⇒ A viseur de
+  caméra (4 coins + REC, cadre pêche léger) (conseil), B liseré dégradé pêche → violet, C pellicule (perforations, cadre
+  foncé), D verre fumé sombre + note « dans les coulisses », E onglet « Studio Rolling » au-dessus. Filtres trop hauts
+  (3 lignes), pas de menu déroulant : F1 onglets Métier / Cas d'usage / Format + une rangée (point pêche = filtre choisi)
+  (conseil), F2 une seule ligne qui défile, F3 phrase à compléter (mots qui changent au clic), F4 bouton « Filtrer » qui
+  ouvre les lignes dans la page + filtres actifs en pastilles.
 - **Chargement de page effet film** (demande avant la fin de la livraison 4) : maquette `maquettes/loading/maquette-loading.html`
   (copie /workspace/maquette-loading.html), 4 options : A amorce 3-2-1, B clap qui se ferme puis rideau, C ouverture
   cinéma (bandes noires + REC + timecode + règle avec la tête de lecture rouge des frises, plus de filet fin), D barre de lecture en haut sans écran. Conseil : C à l'arrivée (première page

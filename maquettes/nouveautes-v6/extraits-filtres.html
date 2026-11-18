@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rolling · cadre des extraits et filtres</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Caveat:wght@700&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root { --ink:#0F0F12; --texte:#4A4858; --legende:#5F5C6C; --violet:#5B3BEA; }
+* { box-sizing: border-box; }
+body { margin: 0; color: var(--ink); font-family: 'Hanken Grotesk', system-ui, sans-serif; background: #FAF9F7; }
+h1, h2, h3, p, ul { margin: 0; }
+ul { padding: 0; list-style: none; }
+.conteneur { max-width: 1240px; margin: 0 auto; padding: 0 28px; }
+.intro { padding: 56px 0 8px; }
+.intro h1 { font-family: 'Bricolage Grotesque'; font-size: 32px; letter-spacing: -.035em; font-weight: 650; }
+.intro p { margin-top: 10px; max-width: 82ch; font-size: 16px; line-height: 1.55; color: var(--texte); }
+.partie { margin-top: 72px; }
+.partie > h2 { font-family: 'Bricolage Grotesque'; font-size: 27px; letter-spacing: -.03em; font-weight: 650; }
+.partie > p { margin-top: 8px; max-width: 82ch; font-size: 15px; line-height: 1.55; color: var(--texte); }
+.option { margin-top: 40px; }
+.option > h3 { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; font-family: 'Bricolage Grotesque'; font-size: 21px; letter-spacing: -.03em; font-weight: 650; }
+.lettre { display: inline-flex; align-items: center; justify-content: center; min-width: 30px; height: 30px; padding: 0 8px; border-radius: 999px; font-size: 14px; color: #fff; background: #0F0F12; }
+.conseil .lettre { background: var(--violet); }
+.etiquette { padding: 3px 10px; border-radius: 999px; font-family: 'Hanken Grotesk'; font-size: 12px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: #4A2BB8; background: #EDE6FF; }
+.desc { margin-top: 8px; max-width: 84ch; font-size: 15px; line-height: 1.55; color: var(--texte); }
+.scene { position: relative; margin-top: 16px; padding: 28px; border-radius: 30px; overflow: hidden; isolation: isolate; background: #FAF9F7; box-shadow: inset 0 0 0 1px rgba(15,15,18,.06); }
+.scene::before, .scene::after { content: ''; position: absolute; z-index: -1; border-radius: 50%; filter: blur(50px); pointer-events: none; }
+.scene::before { width: 45%; height: 80%; left: -8%; top: -10%; background: radial-gradient(closest-side, rgba(167,123,240,.45), transparent); }
+.scene::after { width: 45%; height: 80%; right: -8%; bottom: -20%; background: radial-gradient(closest-side, rgba(255,171,150,.5), transparent); }
+
+/* Mini mur */
+.mur { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; align-items: start; }
+.carte { padding: 7px 7px 14px; border-radius: 24px; background: radial-gradient(70% 60% at 15% 0%, rgba(255,255,255,.9), transparent 72%), linear-gradient(150deg, rgba(255,255,255,.72), rgba(255,255,255,.42)); box-shadow: inset 0 1px 0 #fff, inset 0 0 0 1px rgba(255,255,255,.6), 0 26px 60px -32px rgba(76,48,170,.4); }
+.v { position: relative; overflow: hidden; border-radius: 18px; aspect-ratio: 16 / 9; }
+.g1 { background: radial-gradient(60% 70% at 75% 25%, rgba(255,180,140,.9), transparent 60%), radial-gradient(90% 90% at 10% 100%, #5B3BEA, transparent 70%), linear-gradient(160deg, #3434E0, #1C1730); }
+.g2 { background: radial-gradient(60% 80% at 30% 30%, rgba(196,181,253,.9), transparent 60%), radial-gradient(90% 90% at 90% 100%, #FF8A5B, transparent 70%), linear-gradient(160deg, #8E4DE6, #1C1730); }
+.g3 { background: radial-gradient(70% 90% at 60% 20%, rgba(255,209,191,.9), transparent 60%), linear-gradient(160deg, #E0562A, #4A2BB8); }
+.tag { position: absolute; z-index: 2; left: 10px; top: 10px; padding: 5px 10px; border-radius: 999px; font-size: 11.5px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: #fff; background: rgba(15,15,18,.62); }
+.dur { position: absolute; z-index: 2; right: 10px; top: 10px; padding: 3px 8px; border-radius: 8px; font-size: 12px; font-weight: 800; color: #fff; background: rgba(15,15,18,.7); }
+.client { display: block; margin: 12px 8px 4px; font-size: 12px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: var(--legende); }
+.titre { display: block; margin: 0 8px; font-family: 'Bricolage Grotesque'; font-size: 17px; line-height: 1.2; letter-spacing: -.02em; font-weight: 650; }
+.studio { position: absolute; z-index: 3; left: 10px; bottom: 10px; display: inline-flex; align-items: center; gap: 6px; padding: 5px 10px; border-radius: 999px; font-size: 11.5px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: #fff; background: rgba(15,15,18,.62); }
+.studio::before { content: '↻'; }
+.carre .v { aspect-ratio: 1 / 1; }
+.boucle { background-size: 220% 220%; animation: boucle 6s ease-in-out infinite alternate; }
+@keyframes boucle { to { background-position: 100% 100%; } }
+
+/* A · liseré dégradé */
+.xa { padding: 3px; border-radius: 24px; background: linear-gradient(135deg, #FF8A5B, #E697BD 45%, #8E4DE6); box-shadow: 0 24px 50px -28px rgba(142,77,230,.55); }
+.xa .in { padding: 5px; border-radius: 21px; background: #FFF7F1; }
+/* B · pellicule */
+.xb { position: relative; padding: 6px 22px; border-radius: 16px; background: #17112C; box-shadow: 0 24px 50px -28px rgba(15,15,18,.6); }
+.xb::before, .xb::after { content: ''; position: absolute; top: 8px; bottom: 8px; width: 9px; background: repeating-linear-gradient(180deg, rgba(255,255,255,.85) 0 7px, transparent 7px 15px); border-radius: 2px; }
+.xb::before { left: 7px; } .xb::after { right: 7px; }
+.xb .v { border-radius: 6px; }
+/* C · viseur caméra */
+.xc { padding: 7px; border-radius: 24px; background: #FFF7F1; box-shadow: inset 0 0 0 1px rgba(255,138,91,.35), 0 24px 50px -28px rgba(166,60,20,.35); }
+.xc .v::after { content: ''; position: absolute; z-index: 2; inset: 12px; pointer-events: none;
+  background:
+    linear-gradient(#fff, #fff) left top / 20px 2.5px, linear-gradient(#fff, #fff) left top / 2.5px 20px,
+    linear-gradient(#fff, #fff) right top / 20px 2.5px, linear-gradient(#fff, #fff) right top / 2.5px 20px,
+    linear-gradient(#fff, #fff) left bottom / 20px 2.5px, linear-gradient(#fff, #fff) left bottom / 2.5px 20px,
+    linear-gradient(#fff, #fff) right bottom / 20px 2.5px, linear-gradient(#fff, #fff) right bottom / 2.5px 20px;
+  background-repeat: no-repeat; opacity: .9; }
+.xc .rec { position: absolute; z-index: 3; right: 40px; top: 22px; display: inline-flex; align-items: center; gap: 6px; font-size: 11.5px; font-weight: 800; letter-spacing: .12em; color: #fff; text-shadow: 0 1px 4px rgba(0,0,0,.5); }
+.xc .rec::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: #FF3B30; box-shadow: 0 0 0 3px rgba(255,59,48,.3); animation: clig 1.4s steps(2) infinite; }
+@keyframes clig { 50% { opacity: .2; } }
+.xc .studio { left: 20px; bottom: 18px; }
+/* D · verre fumé sombre */
+.xd { padding: 7px; border-radius: 24px; background: linear-gradient(150deg, rgba(23,17,44,.92), rgba(42,30,78,.82)); box-shadow: inset 0 1px 0 rgba(255,255,255,.18), 0 26px 60px -30px rgba(23,17,44,.8); }
+.xd .legende-d { display: block; margin: 10px 8px 4px; font-family: 'Caveat'; font-size: 27px; line-height: 1; color: #FFD1BF; }
+/* E · onglet au-dessus */
+.xe { position: relative; margin-top: 18px; padding: 7px; border-radius: 0 24px 24px 24px; background: linear-gradient(150deg, #FFE7DA, #FFF1E7); box-shadow: 0 24px 50px -28px rgba(166,60,20,.35); }
+.xe .onglet { position: absolute; left: 0; top: -26px; display: inline-flex; align-items: center; gap: 6px; height: 27px; padding: 0 14px; border-radius: 14px 14px 0 0; font-size: 12px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: #A63C14; background: #FFE7DA; }
+.xe .onglet::before { content: '↻'; }
+
+/* Filtres */
+.filtres-actuel { display: flex; flex-direction: column; gap: 10px; width: fit-content; max-width: 100%; padding: 12px 16px; border-radius: 26px; background: rgba(255,255,255,.7); box-shadow: inset 0 0 0 1px rgba(255,255,255,.6), 0 20px 40px -30px rgba(76,48,170,.35); }
+.ligne-f { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.nom { min-width: 104px; font-size: 12px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: var(--legende); }
+.chip { display: inline-flex; align-items: center; min-height: 38px; padding: 0 15px; border: 0; border-radius: 999px; font: 600 14px 'Hanken Grotesk'; color: #2A2840; background: linear-gradient(170deg, rgba(255,255,255,.95), rgba(255,255,255,.6)); box-shadow: inset 0 0 0 1px rgba(15,15,18,.08); cursor: pointer; white-space: nowrap; }
+.chip[aria-pressed="true"], .chip.on { color: #fff; background: #0F0F12; box-shadow: none; }
+.chip:focus-visible, .onglet-f:focus-visible { outline: 3px solid #5B3BEA; outline-offset: 2px; }
+.compte { margin-left: auto; font-size: 14px; color: var(--legende); }
+/* F1 · une seule rangée */
+.f1 { display: flex; align-items: center; gap: 8px; padding: 8px; border-radius: 999px; background: rgba(255,255,255,.72); box-shadow: inset 0 0 0 1px rgba(255,255,255,.6), 0 20px 40px -30px rgba(76,48,170,.35); overflow-x: auto; scrollbar-width: none; -webkit-mask: linear-gradient(90deg, #000 92%, transparent); mask: linear-gradient(90deg, #000 92%, transparent); }
+.f1::-webkit-scrollbar { display: none; }
+.f1 .sep { flex-shrink: 0; width: 1px; height: 24px; margin: 0 6px; background: rgba(91,59,234,.25); }
+.f1 .groupe { flex-shrink: 0; padding: 0 4px 0 6px; font-size: 11.5px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: var(--legende); }
+/* F2 · onglets + une rangée */
+.f2 { display: flex; flex-direction: column; gap: 12px; width: fit-content; max-width: 100%; padding: 10px; border-radius: 26px; background: rgba(255,255,255,.72); box-shadow: inset 0 0 0 1px rgba(255,255,255,.6), 0 20px 40px -30px rgba(76,48,170,.35); }
+.f2 .onglets { display: inline-flex; gap: 4px; width: fit-content; padding: 4px; border-radius: 999px; background: rgba(15,15,18,.05); }
+.onglet-f { display: inline-flex; align-items: center; gap: 6px; min-height: 36px; padding: 0 16px; border: 0; border-radius: 999px; font: 700 14px 'Hanken Grotesk'; color: #4A4858; background: transparent; cursor: pointer; }
+.onglet-f[aria-selected="true"] { color: #0F0F12; background: #fff; box-shadow: 0 4px 12px -6px rgba(15,15,18,.3); }
+.onglet-f .pt { width: 7px; height: 7px; border-radius: 50%; background: #FF8A5B; }
+.f2 .panneau { display: flex; flex-wrap: wrap; gap: 8px; padding: 0 4px 4px; }
+.f2 .panneau[hidden] { display: none; }
+/* F3 · phrase à compléter */
+.f3 { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 8px; font-family: 'Bricolage Grotesque'; font-size: 26px; line-height: 1.4; letter-spacing: -.03em; font-weight: 600; color: #2A2840; }
+.f3 .mot { display: inline-flex; align-items: center; gap: 6px; padding: 2px 14px; border: 0; border-radius: 999px; font: inherit; color: #4A2BB8; background: #EDE6FF; cursor: pointer; }
+.f3 .mot::after { content: '↻'; font-size: 16px; opacity: .7; }
+.f3 .mot.change { animation: pop .3s ease; }
+@keyframes pop { 50% { transform: scale(1.06); } }
+.f3-note { margin-top: 10px; font-size: 14px; color: var(--legende); }
+/* F4 · actifs + bouton Filtres qui déroule en place */
+.f4 { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.f4 .bouton-f { display: inline-flex; align-items: center; gap: 8px; min-height: 40px; padding: 0 16px; border: 0; border-radius: 999px; font: 700 14px 'Hanken Grotesk'; color: #fff; background: #0F0F12; cursor: pointer; }
+.f4 .bouton-f::before { content: ''; width: 14px; height: 10px; background: linear-gradient(#fff, #fff) 0 0 / 100% 2px, linear-gradient(#fff, #fff) 2px 4px / 10px 2px, linear-gradient(#fff, #fff) 4px 8px / 6px 2px; background-repeat: no-repeat; }
+.f4 .actif { display: inline-flex; align-items: center; gap: 8px; min-height: 36px; padding: 0 8px 0 14px; border-radius: 999px; font-size: 14px; font-weight: 600; color: #4A2BB8; background: #EDE6FF; }
+.f4 .actif button { width: 22px; height: 22px; border: 0; border-radius: 50%; font-size: 14px; line-height: 1; color: #4A2BB8; background: #fff; cursor: pointer; }
+.f4-panneau { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .35s ease; }
+.f4-panneau.ouvert { grid-template-rows: 1fr; }
+.f4-panneau > div { overflow: hidden; }
+.f4-panneau .filtres-actuel { margin-top: 12px; }
+.sous { margin-top: 10px; font-size: 13px; color: var(--legende); }
+
+@media (max-width: 980px) {
+  .mur { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 600px) {
+  .conteneur { padding: 0 16px; }
+  .scene { padding: 16px; }
+  .mur { grid-template-columns: 1fr; }
+  .f3 { font-size: 21px; }
+  .nom { width: 100%; }
+}
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
+</style>
+</head>
+<body>
+<main class="conteneur">
+  <header class="intro">
+    <h1>Cadre des extraits et filtres : propositions.</h1>
+    <p>Deux sujets pour la page Réalisations. Les images sont des fonds de couleur. Mon conseil est en violet.</p>
+  </header>
+
+  <section class="partie" aria-labelledby="t1">
+    <h2 id="t1">1. Le cadre des extraits « Studio Rolling ».</h2>
+    <p>Chaque option montre un mur avec 2 cas clients (cadre en verre, inchangé) et un extrait. Le but : voir tout de suite que l'extrait est un insert, sans faire « brouillon ».</p>
+
+    <div class="option conseil">
+      <h3><span class="lettre">A</span>Viseur de caméra <span class="etiquette">Conseil</span></h3>
+      <p class="desc">Les 4 coins du cadrage d'une caméra sur l'image et un point REC qui clignote : on comprend « images de tournage ». Cadre pêche très léger autour. Dans l'univers vidéo de la charte, sans alourdir.</p>
+      <div class="scene">
+        <div class="mur">
+          <div class="carte"><div class="v g1"><span class="tag">Interview</span><span class="dur">5:24</span></div><span class="client">Groupama</span><span class="titre">Interview d'expert économie.</span></div>
+          <div class="xc carre"><div class="v g3 boucle" role="img" aria-label="Extrait : prise de parole au micro"><span class="rec">REC</span><span class="studio">Studio Rolling</span></div></div>
+          <div class="carte"><div class="v g2"><span class="tag">Aftermovie</span><span class="dur">1:52</span></div><span class="client">Fnac Darty</span><span class="titre">Aftermovie événementiel.</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="option">
+      <h3><span class="lettre">B</span>Liseré dégradé</h3>
+      <p class="desc">Un anneau continu pêche → rose → violet (les couleurs des chiffres en verre) autour de l'extrait. Net et élégant, très « marque ».</p>
+      <div class="scene">
+        <div class="mur">
+          <div class="carte"><div class="v g1"><span class="tag">Interview</span><span class="dur">5:24</span></div><span class="client">Groupama</span><span class="titre">Interview d'expert économie.</span></div>
+          <div class="xa carre"><div class="in"><div class="v g3 boucle" role="img" aria-label="Extrait : prise de parole au micro"><span class="studio">Studio Rolling</span></div></div></div>
+          <div class="carte"><div class="v g2"><span class="tag">Aftermovie</span><span class="dur">1:52</span></div><span class="client">Fnac Darty</span><span class="titre">Aftermovie événementiel.</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="option">
+      <h3><span class="lettre">C</span>Pellicule</h3>
+      <p class="desc">Cadre foncé avec les perforations d'une pellicule sur les côtés. Le plus « film », très visible. Un peu plus chargé.</p>
+      <div class="scene">
+        <div class="mur">
+          <div class="carte"><div class="v g1"><span class="tag">Interview</span><span class="dur">5:24</span></div><span class="client">Groupama</span><span class="titre">Interview d'expert économie.</span></div>
+          <div class="xb carre"><div class="v g3 boucle" role="img" aria-label="Extrait : prise de parole au micro"><span class="studio">Studio Rolling</span></div></div>
+          <div class="carte"><div class="v g2"><span class="tag">Aftermovie</span><span class="dur">1:52</span></div><span class="client">Fnac Darty</span><span class="titre">Aftermovie événementiel.</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="option">
+      <h3><span class="lettre">D</span>Verre fumé sombre</h3>
+      <p class="desc">Même cadre en verre que les cas clients, mais foncé, avec une note manuscrite « dans les coulisses » dessous. Le contraste clair / foncé suffit à les distinguer.</p>
+      <div class="scene">
+        <div class="mur">
+          <div class="carte"><div class="v g1"><span class="tag">Interview</span><span class="dur">5:24</span></div><span class="client">Groupama</span><span class="titre">Interview d'expert économie.</span></div>
+          <div class="xd carre"><div class="v g3 boucle" role="img" aria-label="Extrait : prise de parole au micro"><span class="studio">Studio Rolling</span></div><span class="legende-d">dans les coulisses</span></div>
+          <div class="carte"><div class="v g2"><span class="tag">Aftermovie</span><span class="dur">1:52</span></div><span class="client">Fnac Darty</span><span class="titre">Aftermovie événementiel.</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="option">
+      <h3><span class="lettre">E</span>Onglet « Studio Rolling »</h3>
+      <p class="desc">Un cadre pêche uni avec un onglet au-dessus, comme un dossier de rushes. La pastille sur l'image disparaît (elle passe dans l'onglet).</p>
+      <div class="scene">
+        <div class="mur">
+          <div class="carte"><div class="v g1"><span class="tag">Interview</span><span class="dur">5:24</span></div><span class="client">Groupama</span><span class="titre">Interview d'expert économie.</span></div>
+          <div class="xe carre"><span class="onglet">Studio Rolling</span><div class="v g3 boucle" role="img" aria-label="Extrait : prise de parole au micro"></div></div>
+          <div class="carte"><div class="v g2"><span class="tag">Aftermovie</span><span class="dur">1:52</span></div><span class="client">Fnac Darty</span><span class="titre">Aftermovie événementiel.</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="partie" aria-labelledby="t2">
+    <h2 id="t2">2. Des filtres plus compacts (sans menu déroulant).</h2>
+    <p>Aujourd'hui : 3 lignes de boutons (rappel ci-dessous). Les options gardent des boutons visibles en un clic, avec les vrais noms de vos filtres. Toutes sont cliquables dans la maquette.</p>
+    <div class="scene" style="margin-top:16px">
+      <p class="sous" style="margin:0 0 10px">Version actuelle</p>
+      <div class="filtres-actuel">
+        <div class="ligne-f"><span class="nom">Métier</span><span class="chip on">Tous</span><span class="chip">Com interne · RH · Formation</span><span class="chip">Marketing &amp; communication</span></div>
+        <div class="ligne-f"><span class="nom">Cas d'usage</span><span class="chip on">Tous</span><span class="chip">Événement</span><span class="chip">Onboarding</span><span class="chip">Formation</span><span class="chip">Lancement produit</span></div>
+        <div class="ligne-f"><span class="nom">Format</span><span class="chip on">Tous</span><span class="chip">Aftermovie</span><span class="chip">Démo produit</span><span class="chip">Interview</span><span class="chip">Module e-learning SCORM</span><span class="chip">Motion design</span></div>
+      </div>
+    </div>
+
+    <div class="option conseil">
+      <h3><span class="lettre">F1</span>Onglets, puis une seule rangée <span class="etiquette">Conseil</span></h3>
+      <p class="desc">Trois onglets (Métier, Cas d'usage, Format), une seule rangée de boutons visible à la fois. Un point pêche signale l'onglet où un filtre est choisi. Deux lignes au lieu de trois, en mobile la rangée défile au doigt.</p>
+      <div class="scene">
+        <div class="f2" id="f2">
+          <div class="onglets" role="tablist" aria-label="Filtrer par">
+            <button class="onglet-f" role="tab" aria-selected="false" aria-controls="p-metier" id="o-metier">Métier</button>
+            <button class="onglet-f" role="tab" aria-selected="false" aria-controls="p-usage" id="o-usage">Cas d'usage</button>
+            <button class="onglet-f" role="tab" aria-selected="true" aria-controls="p-format" id="o-format">Format <span class="pt" aria-label="(filtre choisi)"></span></button>
+          </div>
+          <div class="panneau" role="tabpanel" id="p-metier" aria-labelledby="o-metier" hidden><button class="chip" aria-pressed="true">Tous</button><button class="chip" aria-pressed="false">Com interne · RH · Formation</button><button class="chip" aria-pressed="false">Marketing &amp; communication</button></div>
+          <div class="panneau" role="tabpanel" id="p-usage" aria-labelledby="o-usage" hidden><button class="chip" aria-pressed="true">Tous</button><button class="chip" aria-pressed="false">Événement</button><button class="chip" aria-pressed="false">Onboarding</button><button class="chip" aria-pressed="false">Formation</button><button class="chip" aria-pressed="false">Lancement produit</button></div>
+          <div class="panneau" role="tabpanel" id="p-format" aria-labelledby="o-format"><button class="chip" aria-pressed="false">Tous</button><button class="chip" aria-pressed="false">Aftermovie</button><button class="chip" aria-pressed="true">Démo produit</button><button class="chip" aria-pressed="false">Interview</button><button class="chip" aria-pressed="false">Module e-learning SCORM</button><button class="chip" aria-pressed="false">Motion design</button></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="option">
+      <h3><span class="lettre">F2</span>Une seule ligne qui défile</h3>
+      <p class="desc">Tous les filtres sur une seule ligne en verre, séparés par groupe (petit nom gris + trait). La ligne défile à la souris (molette / glisser) ou au doigt. La plus compacte, mais une partie des filtres est cachée à droite.</p>
+      <div class="scene">
+        <div class="f1" tabindex="0" aria-label="Filtres (faire défiler)">
+          <span class="chip on">Tout voir</span><span class="sep"></span>
+          <span class="groupe">Métier</span><span class="chip">Com interne · RH · Formation</span><span class="chip">Marketing &amp; communication</span><span class="sep"></span>
+          <span class="groupe">Cas d'usage</span><span class="chip">Événement</span><span class="chip">Onboarding</span><span class="chip">Formation</span><span class="chip">Lancement produit</span><span class="sep"></span>
+          <span class="groupe">Format</span><span class="chip">Aftermovie</span><span class="chip">Démo produit</span><span class="chip">Interview</span><span class="chip">Module e-learning SCORM</span><span class="chip">Motion design</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="option">
+      <h3><span class="lettre">F3</span>Une phrase à compléter</h3>
+      <p class="desc">Les filtres deviennent une phrase : chaque mot violet change au clic (il passe au choix suivant). Très original, une seule ligne, mais on voit moins vite toutes les possibilités.</p>
+      <div class="scene">
+        <p class="f3">Je cherche <button class="mot" data-choix="un format|un aftermovie|une démo produit|une interview|un module e-learning|du motion design">un format</button> pour <button class="mot" data-choix="mes équipes|la com interne, RH, formation|le marketing">mes équipes</button>, à l'occasion <button class="mot" data-choix="de tout projet|d'un événement|d'un onboarding|d'une formation|d'un lancement produit">de tout projet</button>.</p>
+        <p class="f3-note">Cliquez sur un mot violet.</p>
+      </div>
+    </div>
+
+    <div class="option">
+      <h3><span class="lettre">F4</span>Bouton « Filtrer » qui ouvre les filtres dans la page</h3>
+      <p class="desc">Fermé : un bouton « Filtrer » et les filtres choisis en pastilles (avec une croix pour les retirer). Ouvert : les 3 lignes s'ouvrent sous le bouton, dans la page (pas de menu par-dessus les vidéos). Le plus discret quand rien n'est choisi.</p>
+      <div class="scene">
+        <div class="f4"><button class="bouton-f" id="b-f4" aria-expanded="false" aria-controls="f4p">Filtrer</button><span class="actif">Démo produit <button aria-label="Retirer le filtre Démo produit">×</button></span></div>
+        <div class="f4-panneau" id="f4p"><div>
+          <div class="filtres-actuel">
+            <div class="ligne-f"><span class="nom">Métier</span><span class="chip on">Tous</span><span class="chip">Com interne · RH · Formation</span><span class="chip">Marketing &amp; communication</span></div>
+            <div class="ligne-f"><span class="nom">Cas d'usage</span><span class="chip on">Tous</span><span class="chip">Événement</span><span class="chip">Onboarding</span><span class="chip">Formation</span></div>
+            <div class="ligne-f"><span class="nom">Format</span><span class="chip">Tous</span><span class="chip on">Démo produit</span><span class="chip">Interview</span><span class="chip">Motion design</span></div>
+          </div>
+        </div></div>
+      </div>
+    </div>
+  </section>
+  <div style="height:80px"></div>
+</main>
+<script>
+// F1 : onglets
+document.querySelectorAll('#f2 [role="tab"]').forEach(function (o) {
+  o.addEventListener('click', function () {
+    document.querySelectorAll('#f2 [role="tab"]').forEach(function (x) { x.setAttribute('aria-selected', x === o ? 'true' : 'false'); });
+    document.querySelectorAll('#f2 [role="tabpanel"]').forEach(function (p) { p.hidden = p.id !== o.getAttribute('aria-controls'); });
+  });
+});
+document.querySelectorAll('#f2 .panneau').forEach(function (p) {
+  p.addEventListener('click', function (e) {
+    var b = e.target.closest('.chip'); if (!b) return;
+    p.querySelectorAll('.chip').forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+    var onglet = document.getElementById(p.getAttribute('aria-labelledby')), pt = onglet.querySelector('.pt'), tous = b.textContent === 'Tous';
+    if (tous && pt) pt.remove();
+    if (!tous && !pt) { var s = document.createElement('span'); s.className = 'pt'; s.setAttribute('aria-label', '(filtre choisi)'); onglet.appendChild(s); }
+  });
+});
+// F3 : mots qui changent
+document.querySelectorAll('.f3 .mot').forEach(function (m) {
+  var choix = m.getAttribute('data-choix').split('|'), i = 0;
+  m.addEventListener('click', function () { i = (i + 1) % choix.length; m.textContent = choix[i]; m.classList.remove('change'); void m.offsetWidth; m.classList.add('change'); });
+});
+// F4 : ouvrir dans la page
+document.getElementById('b-f4').addEventListener('click', function () {
+  var p = document.getElementById('f4p'), ouvert = p.classList.toggle('ouvert');
+  this.setAttribute('aria-expanded', ouvert ? 'true' : 'false');
+});
+</script>
+</body>
+</html>
