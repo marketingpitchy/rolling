@@ -108,6 +108,123 @@
 		} );
 	}
 
+	/* Filtres sur plusieurs groupes (Métier, Cas d'usage, Format) : onglets, une seule rangée visible à la fois.
+	   L'onglet ouvert au départ = le premier groupe où un filtre est choisi. Un point pêche marque ces onglets.
+	   Aussi dans l'éditeur (listes réaffichées : voir la surveillance plus bas). */
+	var navsFiltres = 0;
+	function ongletsFiltres( nav ) {
+		var rangees = nav.querySelectorAll( ':scope > ul' ), onglets, ouvert = 0, n = navsFiltres++;
+		if ( nav.classList.contains( 'rl-onglets' ) || rangees.length < 2 ) {
+			return;
+		}
+		onglets = document.createElement( 'div' );
+		onglets.className = 'onglets-filtres';
+		onglets.setAttribute( 'role', 'tablist' );
+		onglets.setAttribute( 'aria-label', nav.getAttribute( 'aria-label' ) || '' );
+		var boutons = [];
+		rangees.forEach( function ( ul, i ) {
+			var nom = ul.querySelector( '.nom-filtre' ), choisi = ul.querySelector( '.chip-filtre[aria-current]' ), puces = ul.querySelectorAll( '.chip-filtre' );
+			var actif = !! choisi && choisi !== puces[ 0 ];
+			var bouton = document.createElement( 'button' );
+			bouton.type = 'button';
+			bouton.className = 'onglet-filtre';
+			bouton.id = 'rl-onglet-' + n + '-' + i;
+			bouton.setAttribute( 'role', 'tab' );
+			bouton.textContent = nom ? nom.textContent : String( i + 1 );
+			if ( actif ) {
+				var point = document.createElement( 'span' );
+				point.className = 'point-filtre';
+				point.setAttribute( 'aria-hidden', 'true' );
+				bouton.appendChild( point );
+				var lu = document.createElement( 'span' );
+				lu.className = 'screen-reader-text';
+				lu.textContent = ' (filtre choisi)';
+				bouton.appendChild( lu );
+				if ( ! boutons.some( function ( b ) { return b.actif; } ) ) {
+					ouvert = i;
+				}
+			}
+			var panneau = document.createElement( 'div' );
+			panneau.className = 'panneau-filtre';
+			panneau.id = 'rl-filtres-' + n + '-' + i;
+			panneau.setAttribute( 'role', 'tabpanel' );
+			panneau.setAttribute( 'aria-labelledby', bouton.id );
+			ul.parentNode.insertBefore( panneau, ul );
+			panneau.appendChild( ul );
+			bouton.setAttribute( 'aria-controls', panneau.id );
+			boutons.push( { el: bouton, ul: panneau, actif: actif } );
+			onglets.appendChild( bouton );
+		} );
+		var choisir = function ( k, focus ) {
+			boutons.forEach( function ( b, i ) {
+				b.el.setAttribute( 'aria-selected', i === k ? 'true' : 'false' );
+				b.el.tabIndex = i === k ? 0 : -1;
+				b.ul.hidden = i !== k;
+			} );
+			if ( focus ) {
+				boutons[ k ].el.focus();
+			}
+		};
+		boutons.forEach( function ( b, i ) {
+			b.el.addEventListener( 'click', function () { choisir( i ); } );
+			b.el.addEventListener( 'keydown', function ( e ) {
+				if ( 'ArrowRight' === e.key || 'ArrowLeft' === e.key ) {
+					e.preventDefault();
+					choisir( ( i + ( 'ArrowRight' === e.key ? 1 : boutons.length - 1 ) ) % boutons.length, true );
+				}
+			} );
+		} );
+		nav.insertBefore( onglets, nav.querySelector( '.panneau-filtre' ) );
+		nav.classList.add( 'rl-onglets' );
+		choisir( ouvert );
+	}
+	document.querySelectorAll( '.filtres-liste' ).forEach( ongletsFiltres );
+
+	/* Mur de montage : vrai mur maçonné (rangées de 8 px, chaque case garde la hauteur de son contenu : 16:9, 9:16,
+	   grande case 16:9 sur 2 colonnes). Sans script : rangées automatiques. Dans l'éditeur, la liste est affichée
+	   (et réaffichée à chaque réglage) après le chargement du script : on surveille la page pour caler chaque mur. */
+	function murMacon( mur ) {
+		if ( mur.rlCaler ) {
+			mur.rlCaler();
+			return;
+		}
+		var largeur = 0;
+		var caler = function () {
+			var ecart = parseFloat( window.getComputedStyle( mur ).columnGap ) || 0;
+			mur.classList.add( 'rl-macon' );
+			mur.querySelectorAll( ':scope > .mur-case' ).forEach( function ( c ) {
+				c.style.setProperty( '--rl-rangs', String( Math.max( 1, Math.ceil( ( c.offsetHeight + ecart ) / 8 ) ) ) );
+			} );
+		};
+		mur.rlCaler = caler;
+		caler();
+		if ( 'ResizeObserver' in window ) {
+			new ResizeObserver( function () {
+				if ( mur.offsetWidth !== largeur ) {
+					largeur = mur.offsetWidth;
+					window.requestAnimationFrame( caler );
+				}
+			} ).observe( mur );
+		}
+		// Une image qui arrive change la hauteur de sa case.
+		mur.addEventListener( 'load', caler, true );
+		if ( document.fonts && document.fonts.ready ) {
+			document.fonts.ready.then( caler );
+		}
+		window.addEventListener( 'load', caler );
+	}
+	document.querySelectorAll( '.mur-montage' ).forEach( murMacon );
+	if ( editeur && 'MutationObserver' in window ) {
+		var attenteMur = 0;
+		new MutationObserver( function () {
+			clearTimeout( attenteMur );
+			attenteMur = setTimeout( function () {
+				document.querySelectorAll( '.mur-montage' ).forEach( murMacon );
+				document.querySelectorAll( '.filtres-liste:not(.rl-onglets)' ).forEach( ongletsFiltres );
+			}, 150 );
+		} ).observe( document.body, { childList: true, subtree: true } );
+	}
+
 	if ( editeur ) {
 		new MutationObserver( function ( changements ) {
 			changements.forEach( function ( c ) {
@@ -656,75 +773,6 @@
 		document.querySelectorAll( 'a.vignette-lien' ).forEach( function ( v ) { centre.observe( v ); } );
 	}
 
-	/* Filtres sur plusieurs groupes (Métier, Cas d'usage, Format) : onglets, une seule rangée visible à la fois.
-	   L'onglet ouvert au départ = le premier groupe où un filtre est choisi. Un point pêche marque ces onglets. */
-	document.querySelectorAll( '.filtres-liste' ).forEach( function ( nav, n ) {
-		var rangees = nav.querySelectorAll( ':scope > ul' ), onglets, ouvert = 0;
-		if ( rangees.length < 2 ) {
-			return;
-		}
-		onglets = document.createElement( 'div' );
-		onglets.className = 'onglets-filtres';
-		onglets.setAttribute( 'role', 'tablist' );
-		onglets.setAttribute( 'aria-label', nav.getAttribute( 'aria-label' ) || '' );
-		var boutons = [];
-		rangees.forEach( function ( ul, i ) {
-			var nom = ul.querySelector( '.nom-filtre' ), choisi = ul.querySelector( '.chip-filtre[aria-current]' ), puces = ul.querySelectorAll( '.chip-filtre' );
-			var actif = !! choisi && choisi !== puces[ 0 ];
-			var bouton = document.createElement( 'button' );
-			bouton.type = 'button';
-			bouton.className = 'onglet-filtre';
-			bouton.id = 'rl-onglet-' + n + '-' + i;
-			bouton.setAttribute( 'role', 'tab' );
-			bouton.textContent = nom ? nom.textContent : String( i + 1 );
-			if ( actif ) {
-				var point = document.createElement( 'span' );
-				point.className = 'point-filtre';
-				point.setAttribute( 'aria-hidden', 'true' );
-				bouton.appendChild( point );
-				var lu = document.createElement( 'span' );
-				lu.className = 'screen-reader-text';
-				lu.textContent = ' (filtre choisi)';
-				bouton.appendChild( lu );
-				if ( ! boutons.some( function ( b ) { return b.actif; } ) ) {
-					ouvert = i;
-				}
-			}
-			var panneau = document.createElement( 'div' );
-			panneau.className = 'panneau-filtre';
-			panneau.id = 'rl-filtres-' + n + '-' + i;
-			panneau.setAttribute( 'role', 'tabpanel' );
-			panneau.setAttribute( 'aria-labelledby', bouton.id );
-			ul.parentNode.insertBefore( panneau, ul );
-			panneau.appendChild( ul );
-			bouton.setAttribute( 'aria-controls', panneau.id );
-			boutons.push( { el: bouton, ul: panneau, actif: actif } );
-			onglets.appendChild( bouton );
-		} );
-		var choisir = function ( k, focus ) {
-			boutons.forEach( function ( b, i ) {
-				b.el.setAttribute( 'aria-selected', i === k ? 'true' : 'false' );
-				b.el.tabIndex = i === k ? 0 : -1;
-				b.ul.hidden = i !== k;
-			} );
-			if ( focus ) {
-				boutons[ k ].el.focus();
-			}
-		};
-		boutons.forEach( function ( b, i ) {
-			b.el.addEventListener( 'click', function () { choisir( i ); } );
-			b.el.addEventListener( 'keydown', function ( e ) {
-				if ( 'ArrowRight' === e.key || 'ArrowLeft' === e.key ) {
-					e.preventDefault();
-					choisir( ( i + ( 'ArrowRight' === e.key ? 1 : boutons.length - 1 ) ) % boutons.length, true );
-				}
-			} );
-		} );
-		nav.insertBefore( onglets, nav.querySelector( '.panneau-filtre' ) );
-		nav.classList.add( 'rl-onglets' );
-		choisir( ouvert );
-	} );
-
 	/* Mur de montage : au survol d'une réalisation (souris seulement), sa vidéo se lance sans le son dans la vignette ;
 	   elle se met en pause quand la souris part. Rien sur écran tactile, dans l'éditeur ni avec « réduire les animations ». */
 	if ( ! calme && ! editeur && window.matchMedia( '(hover: hover) and (pointer: fine)' ).matches ) {
@@ -771,30 +819,6 @@
 			} );
 		} );
 	}
-
-	/* Mur de montage : vrai mur maçonné (rangées de 8 px, chaque case garde la hauteur de son contenu : 16:9, 9:16,
-	   grande case 16:9 sur 2 colonnes). Sans script (et dans l'éditeur) : rangées automatiques. */
-	document.querySelectorAll( '.mur-montage' ).forEach( function ( mur ) {
-		var largeur = 0;
-		var caler = function () {
-			var ecart = parseFloat( window.getComputedStyle( mur ).columnGap ) || 0;
-			mur.classList.add( 'rl-macon' );
-			mur.querySelectorAll( ':scope > .mur-case' ).forEach( function ( c ) {
-				c.style.setProperty( '--rl-rangs', String( Math.max( 1, Math.ceil( ( c.offsetHeight + ecart ) / 8 ) ) ) );
-			} );
-		};
-		caler();
-		window.addEventListener( 'resize', function () {
-			if ( mur.offsetWidth !== largeur ) {
-				largeur = mur.offsetWidth;
-				caler();
-			}
-		} );
-		if ( document.fonts && document.fonts.ready ) {
-			document.fonts.ready.then( caler );
-		}
-		window.addEventListener( 'load', caler );
-	} );
 
 	/* Mur de montage (page Réalisations) : les cartes montent une à une en sortant du flou, une seule fois.
 	   Les cartes qui arrivent ensemble se suivent de 90 ms. Sans script, sans animation : tout reste visible. */

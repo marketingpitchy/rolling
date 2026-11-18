@@ -676,6 +676,11 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   sans retour à la ligne) et `chiffre-jeu` (colonne 1) en brut, plus par `:last-child`. Programme du webinar : 15 px en mobile.
   Passage mobile 360 / 390 de 16 pages (`scratchpad/audit-mob.js` : débordements, textes < 12 px ; `full390.js` + `planche.py`
   pour revoir les captures, images différées forcées). **Toujours revoir le mobile avant de livrer.**
+- **0.6.8** : page Réalisations « ancien design » dans l'éditeur = mur sans calage maçonné (trous) et filtres sans onglets :
+  rolling.js s'arrête tôt dans l'éditeur (`if ( editeur ) { … return; }`) et la liste y est affichée après le script.
+  ⇒ `murMacon()` et `ongletsFiltres()` placés **avant** ce retour, et dans l'éditeur un MutationObserver (150 ms) les relance
+  sur chaque liste réaffichée (garde : `mur.rlCaler`, classe `rl-onglets`) ; ResizeObserver + chargement des images recalent
+  le mur. Test : `scratchpad/ed-mur2.js <base> <id>` (wp 4.3.6 et wp2 4.4.1).
 - **Chargement de page effet film** (demande avant la fin de la livraison 4) : maquette `maquettes/loading/maquette-loading.html`
   (copie /workspace/maquette-loading.html), 4 options : A amorce 3-2-1, B clap qui se ferme puis rideau, C ouverture
   cinéma (bandes noires + REC + timecode + règle avec la tête de lecture rouge des frises, plus de filet fin), D barre de lecture en haut sans écran. Conseil : C à l'arrivée (première page
