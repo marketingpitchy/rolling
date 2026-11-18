@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rolling · promesses de l'accueil (00:07)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Caveat:wght@700&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root { --ink:#0F0F12; --texte:#4A4858; --legende:#5F5C6C; --violet:#5B3BEA; }
+* { box-sizing: border-box; }
+body { margin: 0; color: var(--ink); font-family: 'Hanken Grotesk', system-ui, sans-serif; background: #FAF9F7; }
+h1, h2, h3, h4, p, ul { margin: 0; }
+ul { padding: 0; list-style: none; }
+em { font-style: normal; padding-inline: .06em; margin-inline: -.06em; background: linear-gradient(95deg, #5B3BEA, #6F3FD6 42%, #C94A1E); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.conteneur { max-width: 1240px; margin: 0 auto; padding: 0 28px; }
+.intro { padding: 56px 0 8px; }
+.intro h1 { font-family: 'Bricolage Grotesque'; font-size: 32px; letter-spacing: -.035em; font-weight: 650; }
+.intro p { margin-top: 10px; max-width: 86ch; font-size: 16px; line-height: 1.55; color: var(--texte); }
+.intro p + p { margin-top: 8px; }
+.intro b { color: var(--ink); }
+.option { margin-top: 72px; }
+.option > h2 { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; font-family: 'Bricolage Grotesque'; font-size: 24px; letter-spacing: -.03em; font-weight: 650; }
+.lettre { display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; border-radius: 50%; font-size: 15px; color: #fff; background: #0F0F12; }
+.conseil .lettre { background: var(--violet); }
+.etiquette { padding: 3px 10px; border-radius: 999px; font-size: 12px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: #4A2BB8; background: #EDE6FF; }
+.desc { margin-top: 8px; max-width: 86ch; font-size: 15px; line-height: 1.55; color: var(--texte); }
+.desc b { color: var(--ink); }
+.vues { display: grid; grid-template-columns: minmax(0, 1fr); gap: 28px; align-items: start; margin-top: 18px; }
+.vue-nom { margin-bottom: 8px; font-size: 12px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: var(--legende); }
+.telephone { width: 390px; border-radius: 34px; padding: 10px; background: #0F0F12; }
+.telephone .ecran { border-radius: 26px; }
+
+/* Écran : même HTML pour l'ordinateur et le téléphone (requêtes de conteneur). */
+.ecran { container-type: inline-size; position: relative; overflow: hidden; isolation: isolate; padding: 48px 40px 44px; border-radius: 32px; background: #FAF9F7; box-shadow: inset 0 0 0 1px rgba(15,15,18,.06); }
+.ecran::before, .ecran::after { content: ''; position: absolute; z-index: -1; border-radius: 50%; filter: blur(60px); pointer-events: none; }
+.ecran::before { width: 50%; height: 60%; left: -10%; top: 6%; background: radial-gradient(closest-side, rgba(167,123,240,.5), rgba(167,123,240,0)); }
+.ecran::after { width: 46%; height: 60%; right: -8%; bottom: 0; background: radial-gradient(closest-side, rgba(255,171,150,.55), rgba(255,171,150,0)); }
+.verre { border-radius: 26px; background: radial-gradient(70% 60% at 15% 0%, rgba(255,255,255,.9), rgba(255,255,255,0) 72%), linear-gradient(150deg, rgba(255,255,255,.72), rgba(255,255,255,.42)); -webkit-backdrop-filter: blur(18px) saturate(1.3); backdrop-filter: blur(18px) saturate(1.3); box-shadow: inset 0 1px 0 #fff, inset 0 0 0 1px rgba(255,255,255,.6), 0 30px 70px -34px rgba(76,48,170,.34); }
+.timecode { display: inline-flex; align-items: center; padding: 6px 13px; border-radius: 999px; font-size: 12px; font-weight: 700; letter-spacing: .06em; color: #5B3BEA; background: rgba(255,255,255,.9); box-shadow: inset 0 0 0 1px rgba(91,59,234,.16); }
+.repere { display: flex; align-items: center; gap: 12px; font-size: 12px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: var(--legende); }
+.repere::after { content: ''; order: 1; width: 40px; height: 1px; background: rgba(15,15,18,.2); }
+.repere span:last-child { order: 2; }
+.titre-sec { margin-top: 16px; font-family: 'Bricolage Grotesque'; font-size: 48px; line-height: 1.04; letter-spacing: -.045em; font-weight: 650; }
+.chapo { margin-top: 14px; max-width: 58ch; font-size: 17px; line-height: 1.55; color: var(--texte); }
+.chapo b { color: var(--ink); }
+.formules { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 36px; }
+.formule { position: relative; padding: 26px; border-radius: 26px; background: #fff; box-shadow: 0 1px 2px rgba(15,15,18,.05), 0 24px 50px -30px rgba(76,48,170,.3); }
+.formule.sombre { color: #FAF9F7; background: linear-gradient(160deg, #1C1730, #0F0F12); background-color: #0F0F12; }
+.formule h3 { font-family: 'Bricolage Grotesque'; font-size: 23px; letter-spacing: -.03em; font-weight: 650; }
+.prix { margin-top: 10px; font-family: 'Bricolage Grotesque'; font-size: 40px; letter-spacing: -.04em; font-weight: 650; }
+.prix span { font-size: 15px; font-family: 'Hanken Grotesk'; font-weight: 500; letter-spacing: 0; }
+.sombre .prix { background: linear-gradient(95deg, #C4B5FD, #FFD1BF); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.annuel { font-size: 14px; color: var(--legende); }
+.sombre .annuel { color: #C9C3DE; }
+.coches { display: grid; gap: 8px; margin-top: 16px; font-size: 14px; line-height: 1.45; color: var(--texte); }
+.sombre .coches { color: #C9C3DE; }
+.coches li { display: flex; gap: 10px; }
+.coches li::before { content: '✓'; flex: 0 0 20px; height: 20px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 800; color: #fff; background: linear-gradient(140deg, #E697BD, #A77BF0); }
+.badge { position: absolute; top: -12px; right: 20px; padding: 5px 12px; border-radius: 999px; font-size: 12px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: #9A3412; background: #FFD1BF; }
+.boutons { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 36px; }
+.bouton { display: inline-flex; align-items: center; gap: 8px; min-height: 48px; padding: 0 22px; border-radius: 999px; font: 700 15px 'Hanken Grotesk'; color: #fff; background: #0F0F12; text-decoration: none; }
+.bouton::after { content: '→'; }
+.bouton-verre { color: var(--ink); background: rgba(255,255,255,.8); box-shadow: inset 0 0 0 1px rgba(91,59,234,.2); }
+.bouton-verre::after { content: none; }
+.chiffre-verre { font-family: 'Bricolage Grotesque'; font-weight: 800; line-height: .85; letter-spacing: -.03em; background: linear-gradient(180deg, #FFAB96 0%, #E697BD 45%, #A77BF0 100%); -webkit-background-clip: text; background-clip: text; color: transparent; filter: drop-shadow(0 8px 12px rgba(91,59,234,.28)); }
+.note-main { font-family: 'Caveat'; font-size: 27px; line-height: 1; font-weight: 700; color: #A63C14; }
+.titre-promesses { margin-top: 44px; text-align: center; font-family: 'Bricolage Grotesque'; font-size: 23px; letter-spacing: -.03em; font-weight: 650; }
+
+/* Actuel (rappel) */
+.actuel { margin-top: 28px; padding: 26px 30px; }
+.actuel h4 { font-family: 'Bricolage Grotesque'; font-size: 21px; letter-spacing: -.03em; font-weight: 650; }
+.actuel ul { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; margin-top: 14px; }
+.actuel li { display: flex; gap: 10px; align-items: center; font-size: 14px; line-height: 1.4; color: var(--texte); }
+.actuel li b { color: var(--ink); }
+.actuel .chiffre-verre { font-size: 40px; }
+
+/* A et B : petites cartes à jouer */
+.mini-jeu { display: flex; justify-content: center; margin-top: 22px; padding: 6px 0 22px; }
+.mini { position: relative; width: 214px; min-height: 190px; margin: 0 -8px; display: flex; flex-direction: column; justify-content: space-between; gap: 12px; padding: 20px; transform: rotate(var(--r)) translateY(var(--y)); transition: transform .45s cubic-bezier(.2,.8,.2,1); }
+.mini:hover { transform: rotate(0) translateY(-10px) scale(1.04); z-index: 5; }
+.mini .chiffre-verre { font-size: 64px; }
+.mini h4 { font-family: 'Bricolage Grotesque'; font-size: 19px; line-height: 1.15; letter-spacing: -.025em; font-weight: 650; }
+.mini .note-main { transform: rotate(-3deg); transform-origin: left center; }
+
+/* C : étiquettes collées sur une bande */
+.bande { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; margin-top: 22px; }
+.sticker { display: flex; align-items: center; gap: 12px; padding: 12px 18px 12px 14px; border-radius: 999px; transform: rotate(var(--r)); }
+.sticker .chiffre-verre { font-size: 40px; }
+.sticker b { display: block; font-family: 'Bricolage Grotesque'; font-size: 16px; line-height: 1.15; letter-spacing: -.02em; font-weight: 650; }
+.sticker .note-main { display: block; margin-top: 2px; font-size: 22px; }
+
+@container (max-width: 620px) {
+  .ecran { padding: 36px 16px 32px; }
+  .titre-sec { font-size: 34px; }
+  .chapo { font-size: 16px; }
+  .formules { grid-template-columns: 1fr; gap: 16px; margin-top: 26px; }
+  .formule { padding: 22px; }
+  .titre-promesses { margin-top: 34px; font-size: 21px; }
+  .actuel { padding: 20px; }
+  .actuel ul { grid-template-columns: 1fr; gap: 12px; }
+  /* Cartes : 2 × 2, droites, plus courtes */
+  .mini-jeu { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; padding: 0; }
+  .mini { width: auto; min-height: 0; margin: 0; padding: 16px 14px; gap: 10px; transform: none; }
+  .mini .chiffre-verre { font-size: 46px; }
+  .mini h4 { font-size: 16px; }
+  .mini .note-main { font-size: 22px; white-space: nowrap; }
+  /* Étiquettes : 2 × 2 */
+  .bande { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .sticker { flex-direction: column; align-items: flex-start; gap: 6px; padding: 14px; border-radius: 22px; }
+  .sticker .chiffre-verre { font-size: 34px; }
+  .sticker b { font-size: 15px; }
+  .sticker .note-main { font-size: 21px; white-space: nowrap; }
+  .boutons { flex-direction: column; align-items: center; }
+}
+@media (max-width: 1000px) {
+  .vues { grid-template-columns: 1fr; }
+}
+@media (max-width: 440px) {
+  .conteneur { padding: 0 12px; }
+  .telephone { width: 100%; }
+}
+</style>
+</head>
+<body>
+<main>
+<div class="conteneur intro">
+  <h1>Accueil · 00:07 L'offre : les promesses en cartes.</h1>
+  <p>Aujourd'hui, l'accueil montre les 4 promesses de l'illimité en simple liste, alors que la page Offres les montre en cartes à jouer. Les options ci-dessous rendent l'accueil cohérent avec Offres, en <b>version courte</b> : les 2 formules ne changent pas, seules les promesses changent. Chaque option est montrée sur ordinateur et sur mobile (390 px).</p>
+  <p><b>Et le contenu en double ?</b> Google ne pénalise pas un petit bloc répété sur deux pages du même site : ce qui compte, c'est que le contenu principal de chaque page soit différent (c'est le cas, l'accueil et Offres n'ont pas le même rôle). La version courte (sans les phrases) évite déjà la répétition mot pour mot ; l'option B l'évite complètement avec d'autres titres.</p>
+</div>
+
+<section class="conteneur option">
+  <h2><span class="lettre">0</span>Actuel, pour comparer</h2>
+  <p class="desc">Liste numérotée dans une carte en verre, sous les deux formules.</p>
+  <div class="vues">
+    <div><p class="vue-nom">Ordinateur</p>
+      <div class="ecran">
+        <div class="repere"><span class="timecode">00:07</span><span>L'offre</span></div>
+        <h3 class="titre-sec">Un prix fixe. <em>Des vidéos sans fin.</em></h3>
+        <div class="verre actuel">
+          <h4>L'illimité qui tient ses promesses&nbsp;:</h4>
+          <ul>
+            <li><span class="chiffre-verre" aria-hidden="true">1</span><span><b>Un projet traité à fond</b> à la fois</span></li>
+            <li><span class="chiffre-verre" aria-hidden="true">2</span><span><b>1 projet = 1 vidéo livrée</b>, prête à publier</span></li>
+            <li><span class="chiffre-verre" aria-hidden="true">3</span><span><b>Des allers-retours cadrés</b>, pour livrer vite</span></li>
+            <li><span class="chiffre-verre" aria-hidden="true">4</span><span><b>1 abonnement = 1 équipe métier</b></span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div><p class="vue-nom">Mobile</p>
+      <div class="telephone"><div class="ecran">
+        <div class="repere"><span class="timecode">00:07</span><span>L'offre</span></div>
+        <h3 class="titre-sec">Un prix fixe. <em>Des vidéos sans fin.</em></h3>
+        <div class="verre actuel">
+          <h4>L'illimité qui tient ses promesses&nbsp;:</h4>
+          <ul>
+            <li><span class="chiffre-verre" aria-hidden="true">1</span><span><b>Un projet traité à fond</b> à la fois</span></li>
+            <li><span class="chiffre-verre" aria-hidden="true">2</span><span><b>1 projet = 1 vidéo livrée</b>, prête à publier</span></li>
+            <li><span class="chiffre-verre" aria-hidden="true">3</span><span><b>Des allers-retours cadrés</b>, pour livrer vite</span></li>
+            <li><span class="chiffre-verre" aria-hidden="true">4</span><span><b>1 abonnement = 1 équipe métier</b></span></li>
+          </ul>
+        </div>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<section class="conteneur option conseil">
+  <h2><span class="lettre">A</span>Cartes à jouer, version courte <span class="etiquette">Conseil</span></h2>
+  <p class="desc">Les 4 cartes de la page Offres, plus petites (214 px au lieu de 256) et <b>sans la phrase d'explication</b> : chiffre en verre, titre, note manuscrite. Même éventail incliné, qui se redresse au survol. En mobile : <b>2 × 2</b>, droites (moins haut qu'une carte par ligne). Mêmes titres que la page Offres : cohérence immédiate, et la page Offres garde la version complète avec les phrases.</p>
+  <div class="vues">
+    <div><p class="vue-nom">Ordinateur</p>
+      <div class="ecran">
+        <div class="repere"><span class="timecode">00:07</span><span>L'offre</span></div>
+        <h3 class="titre-sec">Un prix fixe. <em>Des vidéos sans fin.</em></h3>
+        <p class="chapo">Deux formules, un abonnement annuel, une qualité garantie. <b>Et comme le prix est fixe, plus vous faites de vidéos, moins chacune vous coûte.</b></p>
+        <div class="formules">
+          <article class="formule"><h3>Création illimitée</h3><p class="prix">1&nbsp;250&nbsp;€<span> / mois</span></p><p class="annuel">Soit 15&nbsp;000&nbsp;€ / an</p>
+            <ul class="coches"><li>Vos écrits, vos vidéos et vos nouveaux projets</li><li>Motion design 2D et 3D, montage, voix off</li><li>Sous-titres, langues et tous les formats</li><li>Un directeur artistique et un chef de projet dédiés</li></ul></article>
+          <article class="formule sombre"><p class="badge">Le plus complet</p><h3>Création + Tournage</h3><p class="prix">2&nbsp;080&nbsp;€<span> / mois</span></p><p class="annuel">Soit 25&nbsp;000&nbsp;€ / an</p>
+            <ul class="coches"><li>Captation offerte, partout en France</li><li>Interviews, témoignages et événements</li><li>Avatars et vidéos produit</li><li>Motion 100&nbsp;% fait main, sans IA</li></ul></article>
+        </div>
+        <h4 class="titre-promesses">L'illimité qui tient <em>ses promesses.</em></h4>
+        <div class="mini-jeu"><div class="mini verre" style="--r:-6deg;--y:12px"><span class="chiffre-verre" aria-hidden="true">1</span><h4>Un projet traité à fond, à la fois.</h4><span class="note-main">focus total</span></div><div class="mini verre" style="--r:-2deg;--y:0px"><span class="chiffre-verre" aria-hidden="true">2</span><h4>1 projet = 1 vidéo livrée.</h4><span class="note-main">prête à poster</span></div><div class="mini verre" style="--r:2deg;--y:2px"><span class="chiffre-verre" aria-hidden="true">3</span><h4>Des allers-retours cadrés.</h4><span class="note-main">sans ping-pong</span></div><div class="mini verre" style="--r:6deg;--y:14px"><span class="chiffre-verre" aria-hidden="true">4</span><h4>1 abonnement = 1 équipe métier.</h4><span class="note-main">vos experts</span></div></div>
+        <div class="boutons"><a class="bouton" href="#">Réserver un échange</a><a class="bouton bouton-verre" href="#">Voir les offres</a></div>
+      </div>
+    </div>
+    <div><p class="vue-nom">Mobile</p>
+      <div class="telephone"><div class="ecran">
+        <div class="repere"><span class="timecode">00:07</span><span>L'offre</span></div>
+        <h3 class="titre-sec">Un prix fixe. <em>Des vidéos sans fin.</em></h3>
+        <p class="chapo">Deux formules, un abonnement annuel, une qualité garantie. <b>Et comme le prix est fixe, plus vous faites de vidéos, moins chacune vous coûte.</b></p>
+        <div class="formules">
+          <article class="formule"><h3>Création illimitée</h3><p class="prix">1&nbsp;250&nbsp;€<span> / mois</span></p><p class="annuel">Soit 15&nbsp;000&nbsp;€ / an</p>
+            <ul class="coches"><li>Vos écrits, vos vidéos et vos nouveaux projets</li><li>Motion design 2D et 3D, montage, voix off</li><li>Sous-titres, langues et tous les formats</li><li>Un directeur artistique et un chef de projet dédiés</li></ul></article>
+          <article class="formule sombre"><p class="badge">Le plus complet</p><h3>Création + Tournage</h3><p class="prix">2&nbsp;080&nbsp;€<span> / mois</span></p><p class="annuel">Soit 25&nbsp;000&nbsp;€ / an</p>
+            <ul class="coches"><li>Captation offerte, partout en France</li><li>Interviews, témoignages et événements</li><li>Avatars et vidéos produit</li><li>Motion 100&nbsp;% fait main, sans IA</li></ul></article>
+        </div>
+        <h4 class="titre-promesses">L'illimité qui tient <em>ses promesses.</em></h4>
+        <div class="mini-jeu"><div class="mini verre" style="--r:-6deg;--y:12px"><span class="chiffre-verre" aria-hidden="true">1</span><h4>Un projet traité à fond, à la fois.</h4><span class="note-main">focus total</span></div><div class="mini verre" style="--r:-2deg;--y:0px"><span class="chiffre-verre" aria-hidden="true">2</span><h4>1 projet = 1 vidéo livrée.</h4><span class="note-main">prête à poster</span></div><div class="mini verre" style="--r:2deg;--y:2px"><span class="chiffre-verre" aria-hidden="true">3</span><h4>Des allers-retours cadrés.</h4><span class="note-main">sans ping-pong</span></div><div class="mini verre" style="--r:6deg;--y:14px"><span class="chiffre-verre" aria-hidden="true">4</span><h4>1 abonnement = 1 équipe métier.</h4><span class="note-main">vos experts</span></div></div>
+        <div class="boutons"><a class="bouton" href="#">Réserver un échange</a><a class="bouton bouton-verre" href="#">Voir les offres</a></div>
+      </div></div>
+    </div>
+  </div>
+</section>
+<section class="conteneur option">
+  <h2><span class="lettre">B</span>Cartes à jouer, titres propres à l'accueil</h2>
+  <p class="desc">Même mise en page que A, mais les titres sont <b>reformulés</b> (même idée, autres mots) : aucune phrase identique entre l'accueil et Offres. Les notes manuscrites restent les mêmes : c'est la signature qui fait le lien entre les deux pages.</p>
+  <div class="vues">
+    <div><p class="vue-nom">Ordinateur</p>
+      <div class="ecran">
+        <div class="repere"><span class="timecode">00:07</span><span>L'offre</span></div>
+        <h3 class="titre-sec">Un prix fixe. <em>Des vidéos sans fin.</em></h3>
+        <p class="chapo">Deux formules, un abonnement annuel, une qualité garantie. <b>Et comme le prix est fixe, plus vous faites de vidéos, moins chacune vous coûte.</b></p>
+        <div class="formules">
+          <article class="formule"><h3>Création illimitée</h3><p class="prix">1&nbsp;250&nbsp;€<span> / mois</span></p><p class="annuel">Soit 15&nbsp;000&nbsp;€ / an</p>
+            <ul class="coches"><li>Vos écrits, vos vidéos et vos nouveaux projets</li><li>Motion design 2D et 3D, montage, voix off</li><li>Sous-titres, langues et tous les formats</li><li>Un directeur artistique et un chef de projet dédiés</li></ul></article>
+          <article class="formule sombre"><p class="badge">Le plus complet</p><h3>Création + Tournage</h3><p class="prix">2&nbsp;080&nbsp;€<span> / mois</span></p><p class="annuel">Soit 25&nbsp;000&nbsp;€ / an</p>
+            <ul class="coches"><li>Captation offerte, partout en France</li><li>Interviews, témoignages et événements</li><li>Avatars et vidéos produit</li><li>Motion 100&nbsp;% fait main, sans IA</li></ul></article>
+        </div>
+        <h4 class="titre-promesses">L'illimité qui tient <em>ses promesses.</em></h4>
+        <div class="mini-jeu"><div class="mini verre" style="--r:-6deg;--y:12px"><span class="chiffre-verre" aria-hidden="true">1</span><h4>Toute l'équipe sur votre vidéo.</h4><span class="note-main">focus total</span></div><div class="mini verre" style="--r:-2deg;--y:0px"><span class="chiffre-verre" aria-hidden="true">2</span><h4>Chaque projet livré, prêt à publier.</h4><span class="note-main">prête à poster</span></div><div class="mini verre" style="--r:2deg;--y:2px"><span class="chiffre-verre" aria-hidden="true">3</span><h4>Vos retours groupés, pour aller vite.</h4><span class="note-main">sans ping-pong</span></div><div class="mini verre" style="--r:6deg;--y:14px"><span class="chiffre-verre" aria-hidden="true">4</span><h4>Une équipe qui connaît votre métier.</h4><span class="note-main">vos experts</span></div></div>
+        <div class="boutons"><a class="bouton" href="#">Réserver un échange</a><a class="bouton bouton-verre" href="#">Voir les offres</a></div>
+      </div>
+    </div>
+    <div><p class="vue-nom">Mobile</p>
+      <div class="telephone"><div class="ecran">
+        <div class="repere"><span class="timecode">00:07</span><span>L'offre</span></div>
+        <h3 class="titre-sec">Un prix fixe. <em>Des vidéos sans fin.</em></h3>
+        <p class="chapo">Deux formules, un abonnement annuel, une qualité garantie. <b>Et comme le prix est fixe, plus vous faites de vidéos, moins chacune vous coûte.</b></p>
+        <div class="formules">
+          <article class="formule"><h3>Création illimitée</h3><p class="prix">1&nbsp;250&nbsp;€<span> / mois</span></p><p class="annuel">Soit 15&nbsp;000&nbsp;€ / an</p>
+            <ul class="coches"><li>Vos écrits, vos vidéos et vos nouveaux projets</li><li>Motion design 2D et 3D, montage, voix off</li><li>Sous-titres, langues et tous les formats</li><li>Un directeur artistique et un chef de projet dédiés</li></ul></article>
+          <article class="formule sombre"><p class="badge">Le plus complet</p><h3>Création + Tournage</h3><p class="prix">2&nbsp;080&nbsp;€<span> / mois</span></p><p class="annuel">Soit 25&nbsp;000&nbsp;€ / an</p>
+            <ul class="coches"><li>Captation offerte, partout en France</li><li>Interviews, témoignages et événements</li><li>Avatars et vidéos produit</li><li>Motion 100&nbsp;% fait main, sans IA</li></ul></article>
+        </div>
+        <h4 class="titre-promesses">L'illimité qui tient <em>ses promesses.</em></h4>
+        <div class="mini-jeu"><div class="mini verre" style="--r:-6deg;--y:12px"><span class="chiffre-verre" aria-hidden="true">1</span><h4>Toute l'équipe sur votre vidéo.</h4><span class="note-main">focus total</span></div><div class="mini verre" style="--r:-2deg;--y:0px"><span class="chiffre-verre" aria-hidden="true">2</span><h4>Chaque projet livré, prêt à publier.</h4><span class="note-main">prête à poster</span></div><div class="mini verre" style="--r:2deg;--y:2px"><span class="chiffre-verre" aria-hidden="true">3</span><h4>Vos retours groupés, pour aller vite.</h4><span class="note-main">sans ping-pong</span></div><div class="mini verre" style="--r:6deg;--y:14px"><span class="chiffre-verre" aria-hidden="true">4</span><h4>Une équipe qui connaît votre métier.</h4><span class="note-main">vos experts</span></div></div>
+        <div class="boutons"><a class="bouton" href="#">Réserver un échange</a><a class="bouton bouton-verre" href="#">Voir les offres</a></div>
+      </div></div>
+    </div>
+  </div>
+</section>
+<section class="conteneur option">
+  <h2><span class="lettre">C</span>Étiquettes collées</h2>
+  <p class="desc">Plus léger : 4 étiquettes en verre légèrement de travers, comme des stickers, sur une seule rangée (chiffre, titre très court, note). En mobile : 2 × 2. Moins « cartes à jouer », donc moins de lien visuel avec la page Offres, mais la section reste plus courte.</p>
+  <div class="vues">
+    <div><p class="vue-nom">Ordinateur</p>
+      <div class="ecran">
+        <div class="repere"><span class="timecode">00:07</span><span>L'offre</span></div>
+        <h3 class="titre-sec">Un prix fixe. <em>Des vidéos sans fin.</em></h3>
+        <p class="chapo">Deux formules, un abonnement annuel, une qualité garantie. <b>Et comme le prix est fixe, plus vous faites de vidéos, moins chacune vous coûte.</b></p>
+        <div class="formules">
+          <article class="formule"><h3>Création illimitée</h3><p class="prix">1&nbsp;250&nbsp;€<span> / mois</span></p><p class="annuel">Soit 15&nbsp;000&nbsp;€ / an</p>
+            <ul class="coches"><li>Vos écrits, vos vidéos et vos nouveaux projets</li><li>Motion design 2D et 3D, montage, voix off</li><li>Sous-titres, langues et tous les formats</li><li>Un directeur artistique et un chef de projet dédiés</li></ul></article>
+          <article class="formule sombre"><p class="badge">Le plus complet</p><h3>Création + Tournage</h3><p class="prix">2&nbsp;080&nbsp;€<span> / mois</span></p><p class="annuel">Soit 25&nbsp;000&nbsp;€ / an</p>
+            <ul class="coches"><li>Captation offerte, partout en France</li><li>Interviews, témoignages et événements</li><li>Avatars et vidéos produit</li><li>Motion 100&nbsp;% fait main, sans IA</li></ul></article>
+        </div>
+        <h4 class="titre-promesses">L'illimité qui tient <em>ses promesses.</em></h4>
+        <div class="bande"><div class="sticker verre" style="--r:-2deg"><span class="chiffre-verre" aria-hidden="true">1</span><span><b>Un projet à fond, à la fois</b><span class="note-main">focus total</span></span></div><div class="sticker verre" style="--r:1.5deg"><span class="chiffre-verre" aria-hidden="true">2</span><span><b>1 projet = 1 vidéo</b><span class="note-main">prête à poster</span></span></div><div class="sticker verre" style="--r:-1deg"><span class="chiffre-verre" aria-hidden="true">3</span><span><b>Allers-retours cadrés</b><span class="note-main">sans ping-pong</span></span></div><div class="sticker verre" style="--r:2deg"><span class="chiffre-verre" aria-hidden="true">4</span><span><b>1 équipe métier</b><span class="note-main">vos experts</span></span></div></div>
+        <div class="boutons"><a class="bouton" href="#">Réserver un échange</a><a class="bouton bouton-verre" href="#">Voir les offres</a></div>
+      </div>
+    </div>
+    <div><p class="vue-nom">Mobile</p>
+      <div class="telephone"><div class="ecran">
+        <div class="repere"><span class="timecode">00:07</span><span>L'offre</span></div>
+        <h3 class="titre-sec">Un prix fixe. <em>Des vidéos sans fin.</em></h3>
+        <p class="chapo">Deux formules, un abonnement annuel, une qualité garantie. <b>Et comme le prix est fixe, plus vous faites de vidéos, moins chacune vous coûte.</b></p>
+        <div class="formules">
+          <article class="formule"><h3>Création illimitée</h3><p class="prix">1&nbsp;250&nbsp;€<span> / mois</span></p><p class="annuel">Soit 15&nbsp;000&nbsp;€ / an</p>
+            <ul class="coches"><li>Vos écrits, vos vidéos et vos nouveaux projets</li><li>Motion design 2D et 3D, montage, voix off</li><li>Sous-titres, langues et tous les formats</li><li>Un directeur artistique et un chef de projet dédiés</li></ul></article>
+          <article class="formule sombre"><p class="badge">Le plus complet</p><h3>Création + Tournage</h3><p class="prix">2&nbsp;080&nbsp;€<span> / mois</span></p><p class="annuel">Soit 25&nbsp;000&nbsp;€ / an</p>
+            <ul class="coches"><li>Captation offerte, partout en France</li><li>Interviews, témoignages et événements</li><li>Avatars et vidéos produit</li><li>Motion 100&nbsp;% fait main, sans IA</li></ul></article>
+        </div>
+        <h4 class="titre-promesses">L'illimité qui tient <em>ses promesses.</em></h4>
+        <div class="bande"><div class="sticker verre" style="--r:-2deg"><span class="chiffre-verre" aria-hidden="true">1</span><span><b>Un projet à fond, à la fois</b><span class="note-main">focus total</span></span></div><div class="sticker verre" style="--r:1.5deg"><span class="chiffre-verre" aria-hidden="true">2</span><span><b>1 projet = 1 vidéo</b><span class="note-main">prête à poster</span></span></div><div class="sticker verre" style="--r:-1deg"><span class="chiffre-verre" aria-hidden="true">3</span><span><b>Allers-retours cadrés</b><span class="note-main">sans ping-pong</span></span></div><div class="sticker verre" style="--r:2deg"><span class="chiffre-verre" aria-hidden="true">4</span><span><b>1 équipe métier</b><span class="note-main">vos experts</span></span></div></div>
+        <div class="boutons"><a class="bouton" href="#">Réserver un échange</a><a class="bouton bouton-verre" href="#">Voir les offres</a></div>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+
+</main>
+</body>
+</html>

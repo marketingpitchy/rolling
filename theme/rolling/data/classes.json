@@ -1247,7 +1247,7 @@
             "id": "g-47ef713",
             "label": "zone-calendrier",
             "groupe": "Fiches et listes",
-            "description": "Emplacement du calendrier HubSpot (avec carte-verre) : cadre calé sur la carte de HubSpot (400 px), hauteur laissée à HubSpot (sinon barres de défilement dans le calendrier), hauteur réservée, la page ne saute pas au chargement ; place pour le timecode en haut à droite. En mobile, pleine largeur de l'écran (HubSpot a besoin de 345 px, sinon barre de défilement).",
+            "description": "Emplacement du calendrier HubSpot (avec carte-verre) : cadre calé sur la carte de HubSpot (400 px), hauteur laissée à HubSpot (sinon barres de défilement dans le calendrier), hauteur réservée, la page ne saute pas au chargement ; place pour le timecode en haut à droite. En mobile, largeur de la page, et au moins 357 px (HubSpot a besoin de 345 px, sinon barre de défilement) : sur les petits écrans, le cadre déborde un peu sur les marges.",
             "variants": [
                 {
                     "meta": {
@@ -1275,21 +1275,21 @@
                                 "inline-end": {
                                     "$$type": "size",
                                     "value": {
-                                        "size": 0,
+                                        "size": 6,
                                         "unit": "px"
                                     }
                                 },
                                 "block-end": {
                                     "$$type": "size",
                                     "value": {
-                                        "size": 0,
+                                        "size": 6,
                                         "unit": "px"
                                     }
                                 },
                                 "inline-start": {
                                     "$$type": "size",
                                     "value": {
-                                        "size": 0,
+                                        "size": 6,
                                         "unit": "px"
                                     }
                                 }
@@ -1298,7 +1298,7 @@
                         "border-radius": {
                             "$$type": "size",
                             "value": {
-                                "size": 0,
+                                "size": 22,
                                 "unit": "px"
                             }
                         }
@@ -1419,7 +1419,7 @@
                         }
                     },
                     "custom_css": {
-                        "raw": "JiA+IC5lbGVtZW50b3Itd2lkZ2V0IHsgd2lkdGg6IDEwMCU7IH0gJiAubWVldGluZ3MtaWZyYW1lLWNvbnRhaW5lciwgJiBpZnJhbWUgeyBkaXNwbGF5OiBibG9jazsgd2lkdGg6IDEwMCUgIWltcG9ydGFudDsgbWluLXdpZHRoOiAwICFpbXBvcnRhbnQ7IH0gJiBpZnJhbWUgeyBib3JkZXI6IDA7IH0gQG1lZGlhIChtYXgtd2lkdGg6IDc2N3B4KSB7IHdpZHRoOiAxMDB2dzsgbWF4LXdpZHRoOiAxMDB2dzsgbWFyZ2luLWxlZnQ6IGNhbGMoNTAlIC0gNTB2dyk7IG1hcmdpbi1yaWdodDogY2FsYyg1MCUgLSA1MHZ3KTsgfQ=="
+                        "raw": "JiA+IC5lbGVtZW50b3Itd2lkZ2V0IHsgd2lkdGg6IDEwMCU7IH0gJiAubWVldGluZ3MtaWZyYW1lLWNvbnRhaW5lciwgJiBpZnJhbWUgeyBkaXNwbGF5OiBibG9jazsgd2lkdGg6IDEwMCUgIWltcG9ydGFudDsgbWluLXdpZHRoOiAwICFpbXBvcnRhbnQ7IH0gJiBpZnJhbWUgeyBib3JkZXI6IDA7IH0gQG1lZGlhIChtYXgtd2lkdGg6IDc2N3B4KSB7IHdpZHRoOiBtYXgoMzU3cHgsIDEwMCUpOyBtYXgtd2lkdGg6IDEwMHZ3OyBtYXJnaW4tbGVmdDogY2FsYyg1MCUgLSBtYXgoMTc4LjVweCwgNTAlKSk7IG1hcmdpbi1yaWdodDogY2FsYyg1MCUgLSBtYXgoMTc4LjVweCwgNTAlKSk7IH0="
                     }
                 }
             ]

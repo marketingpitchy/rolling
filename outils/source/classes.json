@@ -2107,9 +2107,9 @@
     },
     {
      "label": "zone-calendrier",
-     "description": "Emplacement du calendrier HubSpot (avec carte-verre) : cadre calé sur la carte de HubSpot (400 px), hauteur laissée à HubSpot (sinon barres de défilement dans le calendrier), hauteur réservée, la page ne saute pas au chargement ; place pour le timecode en haut à droite. En mobile, pleine largeur de l'écran (HubSpot a besoin de 345 px, sinon barre de défilement).",
-     "css": "width: 100%; max-width: 440px; margin: 0 auto; min-height: 640px; align-items: stretch; justify-content: center; gap: 10px; padding: 52px 10px 10px; text-align: center; & > .elementor-widget { width: 100%; } & .meetings-iframe-container, & iframe { display: block; width: 100% !important; min-width: 0 !important; } & iframe { border: 0; } @media(--mobile) { min-height: 560px; padding: 50px 0 0; border-radius: 0; }",
-     "brut": "@media (max-width: 767px) { width: 100vw; max-width: 100vw; margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw); }"
+     "description": "Emplacement du calendrier HubSpot (avec carte-verre) : cadre calé sur la carte de HubSpot (400 px), hauteur laissée à HubSpot (sinon barres de défilement dans le calendrier), hauteur réservée, la page ne saute pas au chargement ; place pour le timecode en haut à droite. En mobile, largeur de la page, et au moins 357 px (HubSpot a besoin de 345 px, sinon barre de défilement) : sur les petits écrans, le cadre déborde un peu sur les marges.",
+     "css": "width: 100%; max-width: 440px; margin: 0 auto; min-height: 640px; align-items: stretch; justify-content: center; gap: 10px; padding: 52px 10px 10px; text-align: center; & > .elementor-widget { width: 100%; } & .meetings-iframe-container, & iframe { display: block; width: 100% !important; min-width: 0 !important; } & iframe { border: 0; } @media(--mobile) { min-height: 560px; padding: 50px 6px 6px; border-radius: 22px; }",
+     "brut": "@media (max-width: 767px) { width: max(357px, 100%); max-width: 100vw; margin-left: calc(50% - max(178.5px, 50%)); margin-right: calc(50% - max(178.5px, 50%)); }"
     },
     {
      "label": "agence-hero",

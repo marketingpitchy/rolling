@@ -681,6 +681,14 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   ⇒ `murMacon()` et `ongletsFiltres()` placés **avant** ce retour, et dans l'éditeur un MutationObserver (150 ms) les relance
   sur chaque liste réaffichée (garde : `mur.rlCaler`, classe `rl-onglets`) ; ResizeObserver + chargement des images recalent
   le mur. Test : `scratchpad/ed-mur2.js <base> <id>` (wp 4.3.6 et wp2 4.4.1).
+- **0.6.9** : calendrier « trop large, pas d'espace à gauche et à droite » ⇒ `zone-calendrier` mobile = largeur de la page,
+  au moins 357 px (345 + 2 × 6 de padding) : brut `width: max(357px, 100%)` + `margin-left/right: calc(50% - max(178.5px, 50%))`,
+  rayon 22 px ; marges normales dès ~375 px, presque bord à bord à 360. `zoom` sur l'iframe ne marche pas (HubSpot voit la
+  largeur avant zoom, la barre revient). **Maquette « Promesses de l'accueil »** (`maquettes/offre-accueil/promesses-accueil.html`,
+  copie /workspace/maquette-promesses-accueil.html, **à valider**) : 00:07 de l'accueil en cartes comme Offres, ordinateur
+  + mobile (requêtes de conteneur) : A cartes à jouer courtes sans phrase, 2 × 2 en mobile (conseil) ; B mêmes cartes,
+  titres reformulés (aucune phrase identique à Offres) ; C étiquettes collées (stickers). Doublon : pas de pénalité pour
+  un petit bloc répété.
 - **Chargement de page effet film** (demande avant la fin de la livraison 4) : maquette `maquettes/loading/maquette-loading.html`
   (copie /workspace/maquette-loading.html), 4 options : A amorce 3-2-1, B clap qui se ferme puis rideau, C ouverture
   cinéma (bandes noires + REC + timecode + règle avec la tête de lecture rouge des frises, plus de filet fin), D barre de lecture en haut sans écran. Conseil : C à l'arrivée (première page
