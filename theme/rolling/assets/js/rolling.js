@@ -656,6 +656,53 @@
 		document.querySelectorAll( 'a.vignette-lien' ).forEach( function ( v ) { centre.observe( v ); } );
 	}
 
+	/* Mur de montage : au survol d'une réalisation (souris seulement), sa vidéo se lance sans le son dans la vignette ;
+	   elle se met en pause quand la souris part. Rien sur écran tactile, dans l'éditeur ni avec « réduire les animations ». */
+	if ( ! calme && ! editeur && window.matchMedia( '(hover: hover) and (pointer: fine)' ).matches ) {
+		document.querySelectorAll( '.mur-montage .mur-case[data-rl-survol]' ).forEach( function ( c ) {
+			var cadre = c.querySelector( '.cadre-photo' ), lecteur = null, minuteur = 0;
+			if ( ! cadre ) {
+				return;
+			}
+			c.addEventListener( 'mouseenter', function () {
+				clearTimeout( minuteur );
+				if ( lecteur ) {
+					if ( 'VIDEO' === lecteur.tagName ) {
+						var p = lecteur.play();
+						if ( p && p.catch ) {
+							p.catch( function () {} );
+						}
+					}
+					c.classList.add( 'rl-survol' );
+					return;
+				}
+				// Petit délai : un simple passage de la souris ne charge rien.
+				minuteur = setTimeout( function () {
+					lecteur = lecteurLien( c.getAttribute( 'data-rl-survol' ), true, '' );
+					lecteur.classList.add( 'apercu-survol' );
+					lecteur.setAttribute( 'aria-hidden', 'true' );
+					lecteur.setAttribute( 'tabindex', '-1' );
+					lecteur.addEventListener( 'IFRAME' === lecteur.tagName ? 'load' : 'playing', function () {
+						setTimeout( function () { lecteur.classList.add( 'pret' ); }, 'IFRAME' === lecteur.tagName ? 600 : 0 );
+					} );
+					cadre.appendChild( lecteur );
+					c.classList.add( 'rl-survol' );
+				}, 250 );
+			} );
+			c.addEventListener( 'mouseleave', function () {
+				clearTimeout( minuteur );
+				c.classList.remove( 'rl-survol' );
+				if ( lecteur && 'VIDEO' === lecteur.tagName ) {
+					lecteur.pause();
+				} else if ( lecteur ) {
+					// YouTube / Vimeo : retiré (rien ne tourne en arrière-plan).
+					lecteur.remove();
+					lecteur = null;
+				}
+			} );
+		} );
+	}
+
 	/* Mur de montage : vrai mur maçonné (rangées de 8 px, chaque case garde la hauteur de son contenu : 16:9, 9:16,
 	   grande case 16:9 sur 2 colonnes). Sans script (et dans l'éditeur) : rangées automatiques. */
 	document.querySelectorAll( '.mur-montage' ).forEach( function ( mur ) {

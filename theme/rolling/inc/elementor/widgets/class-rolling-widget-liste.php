@@ -393,7 +393,9 @@ class Rolling_Widget_Liste extends Rolling_Widget {
 			$carte = 0 === $rang && $modele_une ? $modele_une : $modele;
 			if ( $mur ) {
 				$case = 0 === $rang ? ' mur-large' : ( self::vertical( $id ) ? ' mur-haute' : '' );
-				echo '<div class="mur-case' . esc_attr( $case ) . '">';
+				$survol = (string) Rolling_Contenus::valeur( 'video', $id );
+				// Au survol (ordinateur), rolling.js lance cette vidéo sans le son dans la vignette.
+				echo '<div class="mur-case' . esc_attr( $case ) . '"' . ( '' !== $survol ? ' data-rl-survol="' . esc_url( $survol ) . '"' : '' ) . '>';
 			}
 			if ( $macon ) {
 				echo '<div class="macon-case ' . esc_attr( 0 === $rang && $modele_une ? 'macon-une' : self::longueur_citation( $id ) ) . '">';
@@ -512,7 +514,11 @@ class Rolling_Widget_Liste extends Rolling_Widget {
 		$format = (string) Rolling_Contenus::valeur( 'format', $id );
 		$texte  = (string) Rolling_Contenus::valeur( 'description', $id );
 		$image  = has_post_thumbnail( $id ) ? get_the_post_thumbnail_url( $id, 'medium_large' ) : '';
-		echo '<div class="mur-case extrait-case' . ( '9-16' === $format ? ' mur-haute' : '' ) . '"><div class="extrait-cadre">';
+		$formes = array(
+			'9-16' => ' mur-haute',
+			'1-1'  => ' extrait-carre',
+		);
+		echo '<div class="mur-case extrait-case' . esc_attr( $formes[ $format ] ?? '' ) . '"><div class="extrait-cadre">';
 		echo '<div class="extrait-video"' . ( '' !== $texte ? ' role="img" aria-label="' . esc_attr( $texte ) . '"' : '' ) . '>';
 		echo '<video src="' . esc_url( $video . ( $image ? '' : '#t=0.5' ) ) . '"' . ( $image ? ' poster="' . esc_url( $image ) . '"' : '' ) . ' muted loop playsinline preload="' . ( $image ? 'none' : 'metadata' ) . '" aria-hidden="true" tabindex="-1"></video>';
 		if ( '' !== trim( $pastille ) ) {

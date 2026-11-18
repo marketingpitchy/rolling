@@ -131,7 +131,7 @@ class Rolling_Contenus {
 				'icone'     => 'dashicons-controls-repeat',
 				'position'  => 21,
 				'menu'      => 'edit.php?post_type=rolling_realisation',
-				'supports'  => array( 'title', 'thumbnail' ),
+				'supports'  => array( 'title', 'thumbnail', 'page-attributes' ),
 				'titre'     => __( 'Nom de l’extrait (pour vous, non affiché)', 'rolling' ),
 			),
 			'rolling_logo'        => array(
@@ -324,7 +324,7 @@ class Rolling_Contenus {
 							'1-1'  => '1:1',
 						),
 					),
-					'description' => array( 'texte', __( 'Description (lue par les lecteurs d’écran)', 'rolling' ), __( 'Ex. : tournage d’une interview en studio.', 'rolling' ) ),
+					'description' => array( 'texte', __( 'Description (lue par les lecteurs d’écran)', 'rolling' ), __( 'Ex. : tournage d’une interview en studio. Ordre d’apparition dans la page : encadré « Attributs », champ « Ordre » (0 = premier, puis 1, 2…).', 'rolling' ) ),
 				),
 			),
 			'rolling_logo'        => array(

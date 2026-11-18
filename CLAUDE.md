@@ -637,6 +637,12 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   de chaque case) ⇒ chaque case garde ses proportions : 16:9 partout (grande case 16:9 sur 2 colonnes, plus aplatie),
   9:16 vraiment vertical (réalisation au format 9:16 et extrait au format 9:16) ; sans script / éditeur : rangées auto.
   Vimeo : son par postMessage non testable ici (player.vimeo.com bloqué) ⇒ à vérifier chez la cliente.
+- **0.6.4** : mur des réalisations : **lecture au survol** sans le son (souris seulement, 250 ms de délai ; `data-rl-survol`
+  = lien vidéo de la réalisation posé par le widget Liste sur la `mur-case` ; rolling.js réutilise `lecteurLien(url, true)`,
+  vidéo `.apercu-survol` dans le `.cadre-photo` (container-type size, iframe en cover), fondu `.pret`, pause / retrait au
+  départ de la souris ; rien sur tactile, éditeur, « réduire les animations »). Extraits : format **1:1** (`extrait-carre`),
+  **ordre** = champ « Ordre » (encadré « Attributs », `page-attributes` ; la requête trie déjà menu_order puis date),
+  **liseré différent** : cadre pêche → lilas avec bordure pointillée orange (insert, pas un cas client).
 - **Chargement de page effet film** (demande avant la fin de la livraison 4) : maquette `maquettes/loading/maquette-loading.html`
   (copie /workspace/maquette-loading.html), 4 options : A amorce 3-2-1, B clap qui se ferme puis rideau, C ouverture
   cinéma (bandes noires + REC + timecode + règle avec la tête de lecture rouge des frises, plus de filet fin), D barre de lecture en haut sans écran. Conseil : C à l'arrivée (première page
