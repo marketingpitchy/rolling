@@ -6697,6 +6697,50 @@
             ]
         },
         {
+            "id": "g-fc74883",
+            "label": "defile-mobile",
+            "groupe": "Fiches et listes",
+            "description": "À ajouter à grille-equipe : en mobile, les portraits défilent en bande comme les logos (arrêt au toucher, plusieurs lignes avec « réduire les animations ») ; grille normale sur ordinateur et tablette.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "mobile",
+                        "state": null
+                    },
+                    "props": {
+                        "gap": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 12,
+                                "unit": "px"
+                            }
+                        },
+                        "flex-wrap": {
+                            "$$type": "string",
+                            "value": "nowrap"
+                        },
+                        "justify-content": {
+                            "$$type": "string",
+                            "value": "flex-start"
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "d2lkdGg6IG1heC1jb250ZW50OyAmID4gKiB7IGZsZXg6IDAgMCAxNTBweDsgbWF4LXdpZHRoOiBub25lOyB9"
+                    }
+                },
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": [],
+                    "custom_css": {
+                        "raw": "QG1lZGlhIChtYXgtd2lkdGg6IDc2N3B4KSB7IC0tcmwtZGVmaWxlOiAxOyBhbmltYXRpb246IHJsLWRlZmlsZSA0MHMgbGluZWFyIGluZmluaXRlOyB9"
+                    }
+                }
+            ]
+        },
+        {
             "id": "g-c3cb98f",
             "label": "cas-citation",
             "groupe": "Fiches et listes",
@@ -16790,7 +16834,7 @@
                         }
                     },
                     "custom_css": {
-                        "raw": "JiA+ICogeyBwYWRkaW5nOiAyMHB4IDE2cHg7IH0gJiA+ICogKyAqIHsgYm9yZGVyLWxlZnQ6IDA7IH0gJiA+IDpudGgtY2hpbGQob2RkKSB7IGJvcmRlci1yaWdodDogMXB4IHNvbGlkIHJnYmEoOTEsNTksMjM0LDAuMTYpOyB9ICYgPiA6bnRoLWNoaWxkKC1uKzIpIHsgYm9yZGVyLWJvdHRvbTogMXB4IHNvbGlkIHJnYmEoOTEsNTksMjM0LDAuMTYpOyB9"
+                        "raw": "JiA+ICogeyBwYWRkaW5nOiAyMHB4IDE0cHg7IG1pbi13aWR0aDogMDsgfSAmID4gKiArICogeyBib3JkZXItbGVmdDogMDsgfSAmID4gOm50aC1jaGlsZChvZGQpIHsgYm9yZGVyLXJpZ2h0OiAxcHggc29saWQgcmdiYSg5MSw1OSwyMzQsMC4xNik7IH0gJiA+IDpudGgtY2hpbGQoLW4rMikgeyBib3JkZXItYm90dG9tOiAxcHggc29saWQgcmdiYSg5MSw1OSwyMzQsMC4xNik7IH0="
                     }
                 },
                 {
@@ -20133,7 +20177,7 @@
                     },
                     "props": [],
                     "custom_css": {
-                        "raw": "JiBpbWcgeyBoZWlnaHQ6IDUycHg7IH0gJiAuY2hpZmZyZS10ZXh0ZSB7IGZvbnQtc2l6ZTogNDZweDsgfSAmIC5jaGlmZnJlLXVuaXRlIHsgZm9udC1zaXplOiAyNnB4OyB9"
+                        "raw": "JiBpbWcgeyBtYXgtaGVpZ2h0OiA1MnB4OyB9ICYgLmNoaWZmcmUtdGV4dGUgeyBmb250LXNpemU6IDQ2cHg7IH0gJiAuY2hpZmZyZS11bml0ZSB7IGZvbnQtc2l6ZTogMjZweDsgfQ=="
                     }
                 },
                 {
@@ -20142,6 +20186,13 @@
                         "state": null
                     },
                     "props": {
+                        "max-width": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 100,
+                                "unit": "%"
+                            }
+                        },
                         "padding": {
                             "$$type": "size",
                             "value": {
@@ -20214,7 +20265,7 @@
                         }
                     },
                     "custom_css": {
-                        "raw": "JiBpbWcgeyBoZWlnaHQ6IDY4cHg7IHdpZHRoOiBhdXRvOyBmbGV4LXNocmluazogMDsgfSAmIC5jaGlmZnJlLXRleHRlIHsgZGlzcGxheTogYmxvY2s7IGZvbnQtZmFtaWx5OiBCcmljb2xhZ2UgR3JvdGVzcXVlOyBmb250LXdlaWdodDogODAwOyBmb250LXNpemU6IDYwcHg7IGxpbmUtaGVpZ2h0OiAwLjk1OyBsZXR0ZXItc3BhY2luZzogLTAuMDJlbTsgcGFkZGluZzogMCAwLjAzZW0gMC4wNWVtOyBiYWNrZ3JvdW5kOiBsaW5lYXItZ3JhZGllbnQoMTgwZGVnLCAjRkZBQjk2IDAlLCAjRTY5N0JEIDQ1JSwgI0E3N0JGMCAxMDAlKTsgLXdlYmtpdC1iYWNrZ3JvdW5kLWNsaXA6IHRleHQ7IGJhY2tncm91bmQtY2xpcDogdGV4dDsgY29sb3I6IHRyYW5zcGFyZW50OyAtd2Via2l0LXRleHQtZmlsbC1jb2xvcjogdHJhbnNwYXJlbnQ7IH0gJiAuY2hpZmZyZS11bml0ZSB7IGZvbnQtc2l6ZTogMzRweDsgcGFkZGluZy1ib3R0b206IDAuMTJlbTsgfQ=="
+                        "raw": "JiBpbWcgeyBoZWlnaHQ6IGF1dG87IHdpZHRoOiBhdXRvOyBtYXgtaGVpZ2h0OiA2OHB4OyBtaW4td2lkdGg6IDA7IGZsZXg6IDAgMSBhdXRvOyB9ICYgLmNoaWZmcmUtdGV4dGUgeyBkaXNwbGF5OiBibG9jazsgZm9udC1mYW1pbHk6IEJyaWNvbGFnZSBHcm90ZXNxdWU7IGZvbnQtd2VpZ2h0OiA4MDA7IGZvbnQtc2l6ZTogNjBweDsgbGluZS1oZWlnaHQ6IDAuOTU7IGxldHRlci1zcGFjaW5nOiAtMC4wMmVtOyBwYWRkaW5nOiAwIDAuMDNlbSAwLjA1ZW07IGJhY2tncm91bmQ6IGxpbmVhci1ncmFkaWVudCgxODBkZWcsICNGRkFCOTYgMCUsICNFNjk3QkQgNDUlLCAjQTc3QkYwIDEwMCUpOyAtd2Via2l0LWJhY2tncm91bmQtY2xpcDogdGV4dDsgYmFja2dyb3VuZC1jbGlwOiB0ZXh0OyBjb2xvcjogdHJhbnNwYXJlbnQ7IC13ZWJraXQtdGV4dC1maWxsLWNvbG9yOiB0cmFuc3BhcmVudDsgfSAmIC5jaGlmZnJlLXVuaXRlIHsgZm9udC1zaXplOiAzNHB4OyBwYWRkaW5nLWJvdHRvbTogMC4xMmVtOyB9"
                     }
                 }
             ]
@@ -23356,7 +23407,7 @@
                         }
                     },
                     "custom_css": {
-                        "raw": "JiAuY2hpZmZyZS12ZXJyZSBpbWcgeyBoZWlnaHQ6IDQ4cHg7IH0="
+                        "raw": "JiAuY2hpZmZyZS12ZXJyZSBpbWcgeyBtYXgtaGVpZ2h0OiA0OHB4OyB9"
                     }
                 },
                 {
@@ -23404,7 +23455,7 @@
                         }
                     },
                     "custom_css": {
-                        "raw": "cm93LWdhcDogMDsgJi5wbGFxdWUtbGFyZ2UgeyBncmlkLXRlbXBsYXRlLWNvbHVtbnM6IG1pbm1heCgwLCAxZnIpOyB9ICYgPiAqIHsgcGFkZGluZzogMTRweCAxOHB4OyBib3gtc2hhZG93OiAwIC0xcHggMCByZ2JhKDkxLDU5LDIzNCwwLjE0KTsgfSAmIC5jaGlmZnJlLXZlcnJlIHsgbWluLXdpZHRoOiA0NHB4OyB9ICYgLmNoaWZmcmUtdmVycmUgaW1nIHsgaGVpZ2h0OiA0NHB4OyB9ICYgLmNoaWZmcmUtdmVycmUgLmNoaWZmcmUtdGV4dGUgeyBmb250LXNpemU6IDQwcHg7IH0gJiAuY2hpZmZyZS12ZXJyZSAuY2hpZmZyZS11bml0ZSB7IGZvbnQtc2l6ZTogMjJweDsgfQ=="
+                        "raw": "cm93LWdhcDogMDsgJi5wbGFxdWUtbGFyZ2UgeyBncmlkLXRlbXBsYXRlLWNvbHVtbnM6IG1pbm1heCgwLCAxZnIpOyB9ICYgPiAqIHsgcGFkZGluZzogMTRweCAxOHB4OyBib3gtc2hhZG93OiAwIC0xcHggMCByZ2JhKDkxLDU5LDIzNCwwLjE0KTsgfSAmIC5jaGlmZnJlLXZlcnJlIHsgbWluLXdpZHRoOiA0NHB4OyB9ICYgLmNoaWZmcmUtdmVycmUgaW1nIHsgbWF4LWhlaWdodDogNDRweDsgfSAmIC5jaGlmZnJlLXZlcnJlIC5jaGlmZnJlLXRleHRlIHsgZm9udC1zaXplOiA0MHB4OyB9ICYgLmNoaWZmcmUtdmVycmUgLmNoaWZmcmUtdW5pdGUgeyBmb250LXNpemU6IDIycHg7IH0="
                     }
                 },
                 {
@@ -23601,7 +23652,7 @@
                         }
                     },
                     "custom_css": {
-                        "raw": "cm93LWdhcDogMTZweDsgYmFja2dyb3VuZC1pbWFnZTogcmFkaWFsLWdyYWRpZW50KDcwJSA2MCUgYXQgMTUlIDAlLCByZ2JhKDI1NSwyNTUsMjU1LDAuOTUpLCByZ2JhKDI1NSwyNTUsMjU1LDApIDcyJSksIGxpbmVhci1ncmFkaWVudCgxNTBkZWcsIHJnYmEoMjU1LDI1NSwyNTUsMC43OCksIHJnYmEoMjU1LDI1NSwyNTUsMC40NikpOyAmID4gKiB7IGRpc3BsYXk6IGZsZXg7IGZsZXgtZGlyZWN0aW9uOiByb3c7IGZsZXgtd3JhcDogd3JhcDsgYWxpZ24taXRlbXM6IGNlbnRlcjsgZ2FwOiA4cHggMTRweDsgcGFkZGluZzogNHB4IDIycHg7IGJveC1zaGFkb3c6IC0xcHggMCAwIHJnYmEoOTEsNTksMjM0LDAuMTYpOyB9ICYgLmNoaWZmcmUtdmVycmUgeyBmbGV4LXNocmluazogMDsgd2lkdGg6IGF1dG87IH0gJiAubGliZWxsZS1jaGlmZnJlIHsgZmxleDogMSAxIDEyMHB4OyBtaW4td2lkdGg6IDA7IGZvbnQtc2l6ZTogMTUuNXB4OyB9ICYgLmNoaWZmcmUtdmVycmUgaW1nIHsgaGVpZ2h0OiA1OHB4OyB3aWR0aDogYXV0bzsgfSAmIC5jaGlmZnJlLXZlcnJlIC5jaGlmZnJlLXRleHRlIHsgZm9udC1zaXplOiA1MnB4OyB9ICYgLmNoaWZmcmUtdmVycmUgLmNoaWZmcmUtdW5pdGUgeyBmb250LXNpemU6IDI4cHg7IH0gJiAuZXNwYWNlLWNoaWZmcmUgeyBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7IHdpZHRoOiAxMnB4OyB9ICYucGxhcXVlLWxhcmdlIHsgZ3JpZC10ZW1wbGF0ZS1jb2x1bW5zOiByZXBlYXQoMiwgbWlubWF4KDAsIDFmcikpOyB9"
+                        "raw": "cm93LWdhcDogMTZweDsgYmFja2dyb3VuZC1pbWFnZTogcmFkaWFsLWdyYWRpZW50KDcwJSA2MCUgYXQgMTUlIDAlLCByZ2JhKDI1NSwyNTUsMjU1LDAuOTUpLCByZ2JhKDI1NSwyNTUsMjU1LDApIDcyJSksIGxpbmVhci1ncmFkaWVudCgxNTBkZWcsIHJnYmEoMjU1LDI1NSwyNTUsMC43OCksIHJnYmEoMjU1LDI1NSwyNTUsMC40NikpOyAmID4gKiB7IGRpc3BsYXk6IGZsZXg7IGZsZXgtZGlyZWN0aW9uOiByb3c7IGZsZXgtd3JhcDogd3JhcDsgYWxpZ24taXRlbXM6IGNlbnRlcjsgZ2FwOiA4cHggMTRweDsgcGFkZGluZzogNHB4IDIycHg7IGJveC1zaGFkb3c6IC0xcHggMCAwIHJnYmEoOTEsNTksMjM0LDAuMTYpOyB9ICYgLmNoaWZmcmUtdmVycmUgeyBmbGV4LXNocmluazogMDsgd2lkdGg6IGF1dG87IH0gJiAubGliZWxsZS1jaGlmZnJlIHsgZmxleDogMSAxIDEyMHB4OyBtaW4td2lkdGg6IDA7IGZvbnQtc2l6ZTogMTUuNXB4OyB9ICYgLmNoaWZmcmUtdmVycmUgaW1nIHsgbWF4LWhlaWdodDogNThweDsgfSAmIC5jaGlmZnJlLXZlcnJlIC5jaGlmZnJlLXRleHRlIHsgZm9udC1zaXplOiA1MnB4OyB9ICYgLmNoaWZmcmUtdmVycmUgLmNoaWZmcmUtdW5pdGUgeyBmb250LXNpemU6IDI4cHg7IH0gJiAuZXNwYWNlLWNoaWZmcmUgeyBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7IHdpZHRoOiAxMnB4OyB9ICYucGxhcXVlLWxhcmdlIHsgZ3JpZC10ZW1wbGF0ZS1jb2x1bW5zOiByZXBlYXQoMiwgbWlubWF4KDAsIDFmcikpOyB9"
                     }
                 }
             ]
@@ -29958,7 +30009,7 @@
             "id": "g-e2f1d55",
             "label": "picto-rubrique",
             "groupe": "Fiches et listes",
-            "description": "Picto en verre d'une rubrique (image de 96 px dont 24 px de marge pour l'ombre : le picto mesure 48 px).",
+            "description": "Picto en verre d'une rubrique (image de 96 px dont 24 px de marge pour l'ombre : le picto mesure 48 px) ; en mobile, à gauche sur la hauteur de la carte.",
             "variants": [
                 {
                     "meta": {
@@ -29993,7 +30044,7 @@
                         }
                     },
                     "custom_css": {
-                        "raw": "bWF4LXdpZHRoOiBub25lOw=="
+                        "raw": "bWF4LXdpZHRoOiBub25lOyBAbWVkaWEgKG1heC13aWR0aDogNzY3cHgpIHsgZ3JpZC1jb2x1bW46IDE7IGdyaWQtcm93OiAxIC8gc3BhbiAzOyBhbGlnbi1zZWxmOiBzdGFydDsgfQ=="
                     }
                 }
             ]

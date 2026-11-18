@@ -657,6 +657,14 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   avec un filtre choisi, point pêche + texte masqué « (filtre choisi) », flèches gauche / droite ; sans script : une ligne par
   groupe ; mobile : rangée qui défile. **Leçon** : `filtres-liste` est définie dans classes_fiches.py (groupe « Fiches et
   listes », réécrit à chaque construction) : la barre en verre ajoutée en 0.6.0 dans classes.json avait été écrasée.
+- **0.6.6** : experts IA de l'accueil qui **défilent en mobile** (nouvelle classe modificatrice `defile-mobile` sur
+  `grille-equipe` : en mobile seulement `--rl-defile: 1` + animation `rl-defile` en brut sous `@media (max-width: 767px)`,
+  rolling.js clone les portraits ; `.rl-defile-zone { overflow-x: clip }` dans rolling.css ; prioritaire). Chiffres en verre :
+  images qui rétrécissent (`max-height` + `flex: 0 1 auto` au lieu d'une hauteur fixe) ⇒ « +500 » entier dans les 2 colonnes
+  mobiles de `plaque-chiffres`. SEO des chiffres : images en alt vide, texte « valeur lue » (`texte-masque`, clip) = « +500 »
+  d'un seul tenant ⇒ c'est ce que Google et les lecteurs d'écran lisent. Bloc Ressources mobile cassé chez la cliente (texte
+  dans la colonne du picto) **non reproduit** (wp 4.3.6 et wp2 4.4.1 corrects) ⇒ le placement du picto est aussi porté par
+  `picto-rubrique` (brut mobile `grid-column: 1; grid-row: 1 / span 3`), sans dépendre des règles `& > *` de `carte-rubrique`.
 - **Chargement de page effet film** (demande avant la fin de la livraison 4) : maquette `maquettes/loading/maquette-loading.html`
   (copie /workspace/maquette-loading.html), 4 options : A amorce 3-2-1, B clap qui se ferme puis rideau, C ouverture
   cinéma (bandes noires + REC + timecode + règle avec la tête de lecture rouge des frises, plus de filet fin), D barre de lecture en haut sans écran. Conseil : C à l'arrivée (première page

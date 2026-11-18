@@ -56,6 +56,7 @@ body.elementor-editor-preview .montage::before, body.elementor-editor-preview .m
 
 /* Défilement des logos : copie ajoutée par le script, arrêt au survol et au clavier */
 .rl-defile-pause, .rl-defile-zone:hover .rl-defile, .rl-defile-zone:focus-within .rl-defile { animation-play-state: paused !important; }
+.rl-defile-zone { overflow-x: clip; }
 .rl-defile-statique { flex-wrap: wrap !important; width: auto !important; justify-content: center; animation: none !important; }
 
 /* ---------------------------------------------------------------- */

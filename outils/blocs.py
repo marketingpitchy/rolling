@@ -564,7 +564,7 @@ ia = F("Le meilleur de l'IA", ['section', 'section-sombre', 'fond-grille', 'halo
         ]),
         F('IA · experts', None, COLONNE + ' margin-top: 104px;', enfants=[
             H('Experts · titre', 'Nos experts <em>IA.</em>', 'h3', ['titre-sm']),
-            F('Experts · portraits', ['grille-equipe'], 'margin-top: 36px;', enfants=[
+            F('Experts · portraits', ['grille-equipe', 'defile-mobile'], 'margin-top: 36px;', enfants=[
                 membre('Experts', 'ronan', 'Ronan', 'Directeur Technique', True),
                 membre('Experts', 'marion-l', 'Marion', 'Développeuse Full-Stack', True),
                 membre('Experts', 'ines', 'Inès', 'DevOps', True),
