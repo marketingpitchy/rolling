@@ -24024,7 +24024,7 @@
             "id": "g-8216235",
             "label": "mur-montage",
             "groupe": "Fiches et listes",
-            "description": "Mur de montage (classe de la grille du widget Liste, page Réalisations) : 3 colonnes, la dernière réalisation en grand (2 × 2), les 9:16 en vertical, les autres en 16:9 (mur maçonné : chaque case garde ses proportions, rangées de 8 px calées par rolling.js) ; chaque vignette dans un cadre en verre, client et titre dessous ; au survol, la vidéo se lance sans le son ; extraits vidéo (Studio Rolling) dans un cadre pêche à liseré pointillé, au format 16:9, 9:16 ou 1:1 ; les cartes montent une à une en sortant du flou (rolling.js, une seule fois). 2 colonnes sous 1024 px, 1 en mobile.",
+            "description": "Mur de montage (classe de la grille du widget Liste, page Réalisations) : 3 colonnes, la dernière réalisation en grand (2 × 2), les 9:16 en vertical, les autres en 16:9 (mur maçonné : chaque case garde ses proportions, rangées de 8 px calées par rolling.js) ; chaque vignette dans un cadre en verre, client et titre dessous ; au survol, la vidéo se lance sans le son ; extraits vidéo (Studio Rolling) dans un cadre pêche avec les coins d'un viseur de caméra et un REC, au format 16:9, 9:16 ou 1:1 ; les cartes montent une à une en sortant du flou (rolling.js, une seule fois). 2 colonnes sous 1024 px, 1 en mobile.",
             "variants": [
                 {
                     "meta": {
@@ -24102,7 +24102,7 @@
                         }
                     },
                     "custom_css": {
-                        "raw": "aXNvbGF0aW9uOiBpc29sYXRlOyBncmlkLWF1dG8tZmxvdzogZGVuc2U7ICY6OmJlZm9yZSB7IGNvbnRlbnQ6ICcnOyBwb3NpdGlvbjogYWJzb2x1dGU7IHotaW5kZXg6IC0xOyBsZWZ0OiAtMTAlOyB0b3A6IDYlOyB3aWR0aDogNTIlOyBoZWlnaHQ6IDQ2JTsgYm9yZGVyLXJhZGl1czogNTAlOyBwb2ludGVyLWV2ZW50czogbm9uZTsgYmFja2dyb3VuZDogcmFkaWFsLWdyYWRpZW50KGNsb3Nlc3Qtc2lkZSwgcmdiYSgxNjcsMTIzLDI0MCwwLjQyKSwgcmdiYSgxNjcsMTIzLDI0MCwwKSk7IGZpbHRlcjogYmx1cigzMHB4KTsgfSAmOjphZnRlciB7IGNvbnRlbnQ6ICcnOyBwb3NpdGlvbjogYWJzb2x1dGU7IHotaW5kZXg6IC0xOyByaWdodDogLTEwJTsgYm90dG9tOiA0JTsgd2lkdGg6IDUwJTsgaGVpZ2h0OiA0NiU7IGJvcmRlci1yYWRpdXM6IDUwJTsgcG9pbnRlci1ldmVudHM6IG5vbmU7IGJhY2tncm91bmQ6IHJhZGlhbC1ncmFkaWVudChjbG9zZXN0LXNpZGUsIHJnYmEoMjU1LDE3MSwxNTAsMC41KSwgcmdiYSgyNTUsMTcxLDE1MCwwKSk7IGZpbHRlcjogYmx1cigzMHB4KTsgfSAmID4gLm11ci1jYXNlIHsgZ3JpZC1yb3c6IHNwYW4gMTsgYWxpZ24tc2VsZjogc3RhcnQ7IGRpc3BsYXk6IGZsZXg7IGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47IG1pbi13aWR0aDogMDsgfSAmID4gLm11ci1jYXNlLm11ci1sYXJnZSB7IGdyaWQtY29sdW1uOiBzcGFuIDI7IGdyaWQtcm93OiBzcGFuIDI7IH0gJiA+IC5tdXItY2FzZS5tdXItaGF1dGUgeyBncmlkLXJvdzogc3BhbiAyOyB9ICYucmwtbWFjb24geyBncmlkLWF1dG8tcm93czogOHB4OyByb3ctZ2FwOiAwOyB9ICYucmwtbWFjb24gPiAubXVyLWNhc2UsICYucmwtbWFjb24gPiAubXVyLWNhc2UubXVyLWxhcmdlLCAmLnJsLW1hY29uID4gLm11ci1jYXNlLm11ci1oYXV0ZSB7IGdyaWQtcm93OiBzcGFuIHZhcigtLXJsLXJhbmdzLCA0MCk7IH0gJiAubXVyLWNhc2UgPiAuZWxlbWVudG9yIHsgZGlzcGxheTogY29udGVudHM7IH0gJiAubXVyLWNhc2UgLmNhcnRlLWxpc3RlIHsgcG9zaXRpb246IHJlbGF0aXZlOyBmbGV4OiAxIDEgYXV0bzsgbWluLWhlaWdodDogMDsgZ2FwOiAwOyBwYWRkaW5nOiA3cHggN3B4IDE2cHg7IGJvcmRlci1yYWRpdXM6IDI0cHg7IGJhY2tncm91bmQ6IHJhZGlhbC1ncmFkaWVudCg3MCUgNjAlIGF0IDE1JSAwJSwgcmdiYSgyNTUsMjU1LDI1NSwwLjkpLCByZ2JhKDI1NSwyNTUsMjU1LDApIDcyJSksIGxpbmVhci1ncmFkaWVudCgxNTBkZWcsIHJnYmEoMjU1LDI1NSwyNTUsMC43KSwgcmdiYSgyNTUsMjU1LDI1NSwwLjQpKTsgYmFja2Ryb3AtZmlsdGVyOiBibHVyKDE4cHgpIHNhdHVyYXRlKDE2MCUpOyBib3gtc2hhZG93OiBpbnNldCAwIDFweCAwICNGRkZGRkYsIGluc2V0IDAgMCAwIDFweCByZ2JhKDI1NSwyNTUsMjU1LDAuNiksIDAgMjZweCA2MHB4IC0zMnB4IHJnYmEoNzYsNDgsMTcwLDAuNCk7IH0gJiAubXVyLWNhc2UgLnZpZ25ldHRlLXZpZGVvIHsgZGlzcGxheTogZmxleDsgZmxleC1kaXJlY3Rpb246IGNvbHVtbjsgZmxleDogMCAwIGF1dG87IHBhZGRpbmc6IDA7IGJvcmRlci1yYWRpdXM6IDE4cHg7IGJhY2tncm91bmQ6IHRyYW5zcGFyZW50OyBib3gtc2hhZG93OiBub25lOyAtLXJsLXJheW9uLXBob3RvOiAxOHB4OyB9ICYgLm11ci1jYXNlIC52aWduZXR0ZS12aWRlbyA+IC5jYWRyZS1waG90byB7IGZsZXg6IDEgMSBhdXRvOyBtaW4taGVpZ2h0OiAwOyBhc3BlY3QtcmF0aW86IDE2IC8gOTsgfSAmIC5tdXItaGF1dGUgLnZpZ25ldHRlLXZpZGVvID4gLmNhZHJlLXBob3RvIHsgYXNwZWN0LXJhdGlvOiA5IC8gMTY7IH0gJiAubXVyLWNhc2UgLmNhZHJlLXBob3RvIHsgY29udGFpbmVyLXR5cGU6IHNpemU7IH0gJiAuYXBlcmN1LXN1cnZvbCB7IHBvc2l0aW9uOiBhYnNvbHV0ZTsgei1pbmRleDogMTsgdG9wOiA1MCU7IGxlZnQ6IDUwJTsgd2lkdGg6IG1heCgxMDBjcXcsIDE3Ny43OGNxaCk7IGhlaWdodDogbWF4KDEwMGNxaCwgNTYuMjVjcXcpOyBib3JkZXI6IDA7IHRyYW5zZm9ybTogdHJhbnNsYXRlKC01MCUsIC01MCUpOyBiYWNrZ3JvdW5kOiB0cmFuc3BhcmVudDsgcG9pbnRlci1ldmVudHM6IG5vbmU7IG9wYWNpdHk6IDA7IHRyYW5zaXRpb246IG9wYWNpdHkgMC41cyBlYXNlOyB9ICYgdmlkZW8uYXBlcmN1LXN1cnZvbCB7IHRvcDogMDsgbGVmdDogMDsgd2lkdGg6IDEwMCU7IGhlaWdodDogMTAwJTsgdHJhbnNmb3JtOiBub25lOyBvYmplY3QtZml0OiBjb3ZlcjsgfSAmIC5ybC1zdXJ2b2wgLmFwZXJjdS1zdXJ2b2wucHJldCB7IG9wYWNpdHk6IDE7IH0gJiAucmwtc3Vydm9sIC5ib3V0b24tbGVjdHVyZSB7IG9wYWNpdHk6IDA7IH0gJiAubXVyLWNhc2UgLnBpbGUtc2VycmVlIHsgZ2FwOiA0cHg7IHBhZGRpbmc6IDE0cHggMTBweCAwOyB9ICYgLm11ci1jYXNlIC5waWxlLXNlcnJlZSAudGl0cmUteHMgeyBmb250LXNpemU6IDE5cHg7IH0gJiAubXVyLWxhcmdlIC5waWxlLXNlcnJlZSAudGl0cmUteHMgeyBmb250LXNpemU6IDI2cHg7IH0gJiAubXVyLWNhc2UgLmF2YW50LWFwcmVzIHsgZGlzcGxheTogbm9uZTsgfSAmIC5leHRyYWl0LWNhZHJlIHsgZGlzcGxheTogZmxleDsgZmxleDogMCAwIGF1dG87IHBhZGRpbmc6IDVweDsgYm9yZGVyOiAycHggZGFzaGVkIHJnYmEoMjU1LDEzOCw5MSwwLjcpOyBib3JkZXItcmFkaXVzOiAyNHB4OyBiYWNrZ3JvdW5kOiBsaW5lYXItZ3JhZGllbnQoMTUwZGVnLCByZ2JhKDI1NSwyNDEsMjMxLDAuOSksIHJnYmEoMjM3LDIzMCwyNTUsMC43NSkpOyBiYWNrZHJvcC1maWx0ZXI6IGJsdXIoMThweCkgc2F0dXJhdGUoMTYwJSk7IGJveC1zaGFkb3c6IDAgMjZweCA2MHB4IC0zMnB4IHJnYmEoMTY2LDYwLDIwLDAuMzUpOyB9ICYgLmV4dHJhaXQtY2FycmUgLmV4dHJhaXQtdmlkZW8geyBhc3BlY3QtcmF0aW86IDEgLyAxOyB9ICYgLmV4dHJhaXQtdmlkZW8geyBwb3NpdGlvbjogcmVsYXRpdmU7IGZsZXg6IDEgMSBhdXRvOyBvdmVyZmxvdzogaGlkZGVuOyBib3JkZXItcmFkaXVzOiAxOHB4OyBhc3BlY3QtcmF0aW86IDE2IC8gOTsgYmFja2dyb3VuZDogbGluZWFyLWdyYWRpZW50KDE2MGRlZywgIzM0MzRFMCwgIzFDMTczMCk7IH0gJiAubXVyLWhhdXRlIC5leHRyYWl0LXZpZGVvIHsgYXNwZWN0LXJhdGlvOiA5IC8gMTY7IH0gJiAuZXh0cmFpdC12aWRlbyB2aWRlbyB7IHBvc2l0aW9uOiBhYnNvbHV0ZTsgdG9wOiAwOyBsZWZ0OiAwOyB3aWR0aDogMTAwJTsgaGVpZ2h0OiAxMDAlOyBvYmplY3QtZml0OiBjb3ZlcjsgfSAmIC5leHRyYWl0LXBhc3RpbGxlIHsgcG9zaXRpb246IGFic29sdXRlOyB6LWluZGV4OiAyOyBsZWZ0OiAxMnB4OyBib3R0b206IDEycHg7IGRpc3BsYXk6IGlubGluZS1mbGV4OyBhbGlnbi1pdGVtczogY2VudGVyOyBnYXA6IDdweDsgcGFkZGluZzogNnB4IDEycHg7IGJvcmRlci1yYWRpdXM6IDk5OXB4OyBmb250LWZhbWlseTogSGFua2VuIEdyb3Rlc2s7IGZvbnQtc2l6ZTogMTJweDsgbGluZS1oZWlnaHQ6IDE7IGZvbnQtd2VpZ2h0OiA4MDA7IGxldHRlci1zcGFjaW5nOiAwLjFlbTsgdGV4dC10cmFuc2Zvcm06IHVwcGVyY2FzZTsgY29sb3I6ICNGRkZGRkY7IGJhY2tncm91bmQ6IHJnYmEoMTUsMTUsMTgsMC42Mik7IH0gJiAuZXh0cmFpdC1wYXN0aWxsZTo6YmVmb3JlIHsgY29udGVudDogJ+KGuyc7IGZvbnQtc2l6ZTogMTNweDsgbGV0dGVyLXNwYWNpbmc6IDA7IH0gJi5ybC1hbmltZSA+IC5tdXItY2FzZSB7IG9wYWNpdHk6IDA7IHRyYW5zZm9ybTogdHJhbnNsYXRlWSgzNHB4KSBzY2FsZSgwLjk3KTsgZmlsdGVyOiBibHVyKDhweCk7IH0gJi5ybC1hbmltZSA+IC5tdXItY2FzZS52dSB7IGFuaW1hdGlvbjogcmwtbXVyIDAuOXMgY3ViaWMtYmV6aWVyKDAuMiwgMC44LCAwLjIsIDEpIGZvcndhcmRzOyB9"
+                        "raw": "aXNvbGF0aW9uOiBpc29sYXRlOyBncmlkLWF1dG8tZmxvdzogZGVuc2U7ICY6OmJlZm9yZSB7IGNvbnRlbnQ6ICcnOyBwb3NpdGlvbjogYWJzb2x1dGU7IHotaW5kZXg6IC0xOyBsZWZ0OiAtMTAlOyB0b3A6IDYlOyB3aWR0aDogNTIlOyBoZWlnaHQ6IDQ2JTsgYm9yZGVyLXJhZGl1czogNTAlOyBwb2ludGVyLWV2ZW50czogbm9uZTsgYmFja2dyb3VuZDogcmFkaWFsLWdyYWRpZW50KGNsb3Nlc3Qtc2lkZSwgcmdiYSgxNjcsMTIzLDI0MCwwLjQyKSwgcmdiYSgxNjcsMTIzLDI0MCwwKSk7IGZpbHRlcjogYmx1cigzMHB4KTsgfSAmOjphZnRlciB7IGNvbnRlbnQ6ICcnOyBwb3NpdGlvbjogYWJzb2x1dGU7IHotaW5kZXg6IC0xOyByaWdodDogLTEwJTsgYm90dG9tOiA0JTsgd2lkdGg6IDUwJTsgaGVpZ2h0OiA0NiU7IGJvcmRlci1yYWRpdXM6IDUwJTsgcG9pbnRlci1ldmVudHM6IG5vbmU7IGJhY2tncm91bmQ6IHJhZGlhbC1ncmFkaWVudChjbG9zZXN0LXNpZGUsIHJnYmEoMjU1LDE3MSwxNTAsMC41KSwgcmdiYSgyNTUsMTcxLDE1MCwwKSk7IGZpbHRlcjogYmx1cigzMHB4KTsgfSAmID4gLm11ci1jYXNlIHsgZ3JpZC1yb3c6IHNwYW4gMTsgYWxpZ24tc2VsZjogc3RhcnQ7IGRpc3BsYXk6IGZsZXg7IGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47IG1pbi13aWR0aDogMDsgfSAmID4gLm11ci1jYXNlLm11ci1sYXJnZSB7IGdyaWQtY29sdW1uOiBzcGFuIDI7IGdyaWQtcm93OiBzcGFuIDI7IH0gJiA+IC5tdXItY2FzZS5tdXItaGF1dGUgeyBncmlkLXJvdzogc3BhbiAyOyB9ICYucmwtbWFjb24geyBncmlkLWF1dG8tcm93czogOHB4OyByb3ctZ2FwOiAwOyB9ICYucmwtbWFjb24gPiAubXVyLWNhc2UsICYucmwtbWFjb24gPiAubXVyLWNhc2UubXVyLWxhcmdlLCAmLnJsLW1hY29uID4gLm11ci1jYXNlLm11ci1oYXV0ZSB7IGdyaWQtcm93OiBzcGFuIHZhcigtLXJsLXJhbmdzLCA0MCk7IH0gJiAubXVyLWNhc2UgPiAuZWxlbWVudG9yIHsgZGlzcGxheTogY29udGVudHM7IH0gJiAubXVyLWNhc2UgLmNhcnRlLWxpc3RlIHsgcG9zaXRpb246IHJlbGF0aXZlOyBmbGV4OiAxIDEgYXV0bzsgbWluLWhlaWdodDogMDsgZ2FwOiAwOyBwYWRkaW5nOiA3cHggN3B4IDE2cHg7IGJvcmRlci1yYWRpdXM6IDI0cHg7IGJhY2tncm91bmQ6IHJhZGlhbC1ncmFkaWVudCg3MCUgNjAlIGF0IDE1JSAwJSwgcmdiYSgyNTUsMjU1LDI1NSwwLjkpLCByZ2JhKDI1NSwyNTUsMjU1LDApIDcyJSksIGxpbmVhci1ncmFkaWVudCgxNTBkZWcsIHJnYmEoMjU1LDI1NSwyNTUsMC43KSwgcmdiYSgyNTUsMjU1LDI1NSwwLjQpKTsgYmFja2Ryb3AtZmlsdGVyOiBibHVyKDE4cHgpIHNhdHVyYXRlKDE2MCUpOyBib3gtc2hhZG93OiBpbnNldCAwIDFweCAwICNGRkZGRkYsIGluc2V0IDAgMCAwIDFweCByZ2JhKDI1NSwyNTUsMjU1LDAuNiksIDAgMjZweCA2MHB4IC0zMnB4IHJnYmEoNzYsNDgsMTcwLDAuNCk7IH0gJiAubXVyLWNhc2UgLnZpZ25ldHRlLXZpZGVvIHsgZGlzcGxheTogZmxleDsgZmxleC1kaXJlY3Rpb246IGNvbHVtbjsgZmxleDogMCAwIGF1dG87IHBhZGRpbmc6IDA7IGJvcmRlci1yYWRpdXM6IDE4cHg7IGJhY2tncm91bmQ6IHRyYW5zcGFyZW50OyBib3gtc2hhZG93OiBub25lOyAtLXJsLXJheW9uLXBob3RvOiAxOHB4OyB9ICYgLm11ci1jYXNlIC52aWduZXR0ZS12aWRlbyA+IC5jYWRyZS1waG90byB7IGZsZXg6IDEgMSBhdXRvOyBtaW4taGVpZ2h0OiAwOyBhc3BlY3QtcmF0aW86IDE2IC8gOTsgfSAmIC5tdXItaGF1dGUgLnZpZ25ldHRlLXZpZGVvID4gLmNhZHJlLXBob3RvIHsgYXNwZWN0LXJhdGlvOiA5IC8gMTY7IH0gJiAubXVyLWNhc2UgLmNhZHJlLXBob3RvIHsgY29udGFpbmVyLXR5cGU6IHNpemU7IH0gJiAuYXBlcmN1LXN1cnZvbCB7IHBvc2l0aW9uOiBhYnNvbHV0ZTsgei1pbmRleDogMTsgdG9wOiA1MCU7IGxlZnQ6IDUwJTsgd2lkdGg6IG1heCgxMDBjcXcsIDE3Ny43OGNxaCk7IGhlaWdodDogbWF4KDEwMGNxaCwgNTYuMjVjcXcpOyBib3JkZXI6IDA7IHRyYW5zZm9ybTogdHJhbnNsYXRlKC01MCUsIC01MCUpOyBiYWNrZ3JvdW5kOiB0cmFuc3BhcmVudDsgcG9pbnRlci1ldmVudHM6IG5vbmU7IG9wYWNpdHk6IDA7IHRyYW5zaXRpb246IG9wYWNpdHkgMC41cyBlYXNlOyB9ICYgdmlkZW8uYXBlcmN1LXN1cnZvbCB7IHRvcDogMDsgbGVmdDogMDsgd2lkdGg6IDEwMCU7IGhlaWdodDogMTAwJTsgdHJhbnNmb3JtOiBub25lOyBvYmplY3QtZml0OiBjb3ZlcjsgfSAmIC5ybC1zdXJ2b2wgLmFwZXJjdS1zdXJ2b2wucHJldCB7IG9wYWNpdHk6IDE7IH0gJiAucmwtc3Vydm9sIC5ib3V0b24tbGVjdHVyZSB7IG9wYWNpdHk6IDA7IH0gJiAubXVyLWNhc2UgLnBpbGUtc2VycmVlIHsgZ2FwOiA0cHg7IHBhZGRpbmc6IDE0cHggMTBweCAwOyB9ICYgLm11ci1jYXNlIC5waWxlLXNlcnJlZSAudGl0cmUteHMgeyBmb250LXNpemU6IDE5cHg7IH0gJiAubXVyLWxhcmdlIC5waWxlLXNlcnJlZSAudGl0cmUteHMgeyBmb250LXNpemU6IDI2cHg7IH0gJiAubXVyLWNhc2UgLmF2YW50LWFwcmVzIHsgZGlzcGxheTogbm9uZTsgfSAmIC5leHRyYWl0LWNhZHJlIHsgZGlzcGxheTogZmxleDsgZmxleDogMCAwIGF1dG87IHBhZGRpbmc6IDdweDsgYm9yZGVyLXJhZGl1czogMjRweDsgYmFja2dyb3VuZC1jb2xvcjogI0ZGRjdGMTsgYm94LXNoYWRvdzogaW5zZXQgMCAwIDAgMXB4IHJnYmEoMjU1LDEzOCw5MSwwLjM1KSwgMCAyNHB4IDUwcHggLTI4cHggcmdiYSgxNjYsNjAsMjAsMC4zNSk7IH0gJiAuZXh0cmFpdC12aWRlbzo6YWZ0ZXIgeyBjb250ZW50OiAnJzsgcG9zaXRpb246IGFic29sdXRlOyB6LWluZGV4OiAyOyB0b3A6IDEycHg7IHJpZ2h0OiAxMnB4OyBib3R0b206IDEycHg7IGxlZnQ6IDEycHg7IHBvaW50ZXItZXZlbnRzOiBub25lOyBvcGFjaXR5OiAwLjk7IGJhY2tncm91bmQ6IGxpbmVhci1ncmFkaWVudCgjRkZGRkZGLCAjRkZGRkZGKSBsZWZ0IHRvcCAvIDIwcHggMi41cHggbm8tcmVwZWF0LCBsaW5lYXItZ3JhZGllbnQoI0ZGRkZGRiwgI0ZGRkZGRikgbGVmdCB0b3AgLyAyLjVweCAyMHB4IG5vLXJlcGVhdCwgbGluZWFyLWdyYWRpZW50KCNGRkZGRkYsICNGRkZGRkYpIHJpZ2h0IHRvcCAvIDIwcHggMi41cHggbm8tcmVwZWF0LCBsaW5lYXItZ3JhZGllbnQoI0ZGRkZGRiwgI0ZGRkZGRikgcmlnaHQgdG9wIC8gMi41cHggMjBweCBuby1yZXBlYXQsIGxpbmVhci1ncmFkaWVudCgjRkZGRkZGLCAjRkZGRkZGKSBsZWZ0IGJvdHRvbSAvIDIwcHggMi41cHggbm8tcmVwZWF0LCBsaW5lYXItZ3JhZGllbnQoI0ZGRkZGRiwgI0ZGRkZGRikgbGVmdCBib3R0b20gLyAyLjVweCAyMHB4IG5vLXJlcGVhdCwgbGluZWFyLWdyYWRpZW50KCNGRkZGRkYsICNGRkZGRkYpIHJpZ2h0IGJvdHRvbSAvIDIwcHggMi41cHggbm8tcmVwZWF0LCBsaW5lYXItZ3JhZGllbnQoI0ZGRkZGRiwgI0ZGRkZGRikgcmlnaHQgYm90dG9tIC8gMi41cHggMjBweCBuby1yZXBlYXQ7IH0gJiAuZXh0cmFpdC12aWRlbzo6YmVmb3JlIHsgY29udGVudDogJ1JFQyc7IHBvc2l0aW9uOiBhYnNvbHV0ZTsgei1pbmRleDogMzsgdG9wOiAyMnB4OyByaWdodDogNDBweDsgcGFkZGluZy1sZWZ0OiAxNXB4OyBmb250LWZhbWlseTogSGFua2VuIEdyb3Rlc2s7IGZvbnQtc2l6ZTogMTEuNXB4OyBsaW5lLWhlaWdodDogMTsgZm9udC13ZWlnaHQ6IDgwMDsgbGV0dGVyLXNwYWNpbmc6IDAuMTJlbTsgY29sb3I6ICNGRkZGRkY7IHRleHQtc2hhZG93OiAwIDFweCA0cHggcmdiYSgwLDAsMCwwLjYpOyBiYWNrZ3JvdW5kOiByYWRpYWwtZ3JhZGllbnQoY2lyY2xlIGF0IDRweCA1MCUsICNGRjNCMzAgNHB4LCByZ2JhKDI1NSw1OSw0OCwwKSA0LjVweCk7IGFuaW1hdGlvbjogcmwtY2xpZ25vdGUgMS40cyBzdGVwcygyKSBpbmZpbml0ZTsgfSAmIC5leHRyYWl0LXBhc3RpbGxlIHsgbGVmdDogMjBweDsgYm90dG9tOiAxOHB4OyB9ICYgLmV4dHJhaXQtY2FycmUgLmV4dHJhaXQtdmlkZW8geyBhc3BlY3QtcmF0aW86IDEgLyAxOyB9ICYgLmV4dHJhaXQtdmlkZW8geyBwb3NpdGlvbjogcmVsYXRpdmU7IGZsZXg6IDEgMSBhdXRvOyBvdmVyZmxvdzogaGlkZGVuOyBib3JkZXItcmFkaXVzOiAxOHB4OyBhc3BlY3QtcmF0aW86IDE2IC8gOTsgYmFja2dyb3VuZDogbGluZWFyLWdyYWRpZW50KDE2MGRlZywgIzM0MzRFMCwgIzFDMTczMCk7IH0gJiAubXVyLWhhdXRlIC5leHRyYWl0LXZpZGVvIHsgYXNwZWN0LXJhdGlvOiA5IC8gMTY7IH0gJiAuZXh0cmFpdC12aWRlbyB2aWRlbyB7IHBvc2l0aW9uOiBhYnNvbHV0ZTsgdG9wOiAwOyBsZWZ0OiAwOyB3aWR0aDogMTAwJTsgaGVpZ2h0OiAxMDAlOyBvYmplY3QtZml0OiBjb3ZlcjsgfSAmIC5leHRyYWl0LXBhc3RpbGxlIHsgcG9zaXRpb246IGFic29sdXRlOyB6LWluZGV4OiAyOyBsZWZ0OiAxMnB4OyBib3R0b206IDEycHg7IGRpc3BsYXk6IGlubGluZS1mbGV4OyBhbGlnbi1pdGVtczogY2VudGVyOyBnYXA6IDdweDsgcGFkZGluZzogNnB4IDEycHg7IGJvcmRlci1yYWRpdXM6IDk5OXB4OyBmb250LWZhbWlseTogSGFua2VuIEdyb3Rlc2s7IGZvbnQtc2l6ZTogMTJweDsgbGluZS1oZWlnaHQ6IDE7IGZvbnQtd2VpZ2h0OiA4MDA7IGxldHRlci1zcGFjaW5nOiAwLjFlbTsgdGV4dC10cmFuc2Zvcm06IHVwcGVyY2FzZTsgY29sb3I6ICNGRkZGRkY7IGJhY2tncm91bmQ6IHJnYmEoMTUsMTUsMTgsMC42Mik7IH0gJiAuZXh0cmFpdC1wYXN0aWxsZTo6YmVmb3JlIHsgY29udGVudDogJ+KGuyc7IGZvbnQtc2l6ZTogMTNweDsgbGV0dGVyLXNwYWNpbmc6IDA7IH0gJi5ybC1hbmltZSA+IC5tdXItY2FzZSB7IG9wYWNpdHk6IDA7IHRyYW5zZm9ybTogdHJhbnNsYXRlWSgzNHB4KSBzY2FsZSgwLjk3KTsgZmlsdGVyOiBibHVyKDhweCk7IH0gJi5ybC1hbmltZSA+IC5tdXItY2FzZS52dSB7IGFuaW1hdGlvbjogcmwtbXVyIDAuOXMgY3ViaWMtYmV6aWVyKDAuMiwgMC44LCAwLjIsIDEpIGZvcndhcmRzOyB9"
                     }
                 }
             ]
@@ -27429,16 +27429,31 @@
             "id": "g-5074f75",
             "label": "filtres-liste",
             "groupe": "Fiches et listes",
-            "description": "Filtres au-dessus d’une liste (boutons arrondis) ; sur deux lignes, chaque ligne commence par son nom (Métier, Format).",
+            "description": "Filtres au-dessus d'une liste, dans une barre en verre ; avec plusieurs groupes (Métier, Cas d'usage, Format), rolling.js en fait des onglets : une seule rangée de boutons visible à la fois, un point pêche sur l'onglet où un filtre est choisi (sans script : une ligne par groupe).",
             "variants": [
                 {
                     "meta": {
                         "breakpoint": "mobile",
                         "state": null
                     },
-                    "props": [],
+                    "props": {
+                        "width": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 100,
+                                "unit": "%"
+                            }
+                        },
+                        "border-radius": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 22,
+                                "unit": "px"
+                            }
+                        }
+                    },
                     "custom_css": {
-                        "raw": "JiAubm9tLWZpbHRyZSB7IHdpZHRoOiAxMDAlOyB9"
+                        "raw": "JiAubm9tLWZpbHRyZSB7IHdpZHRoOiAxMDAlOyB9ICYucmwtb25nbGV0cyB1bCB7IGZsZXgtd3JhcDogbm93cmFwOyBvdmVyZmxvdy14OiBhdXRvOyBzY3JvbGxiYXItd2lkdGg6IG5vbmU7IHBhZGRpbmctYm90dG9tOiAycHg7IH0gJi5ybC1vbmdsZXRzIGxpIHsgZmxleC1zaHJpbms6IDA7IH0="
                     }
                 },
                 {
@@ -27447,6 +27462,20 @@
                         "state": null
                     },
                     "props": {
+                        "max-width": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 100,
+                                "unit": "%"
+                            }
+                        },
+                        "padding": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 10,
+                                "unit": "px"
+                            }
+                        },
                         "margin": {
                             "$$type": "dimensions",
                             "value": {
@@ -27458,6 +27487,193 @@
                                     }
                                 }
                             }
+                        },
+                        "border-radius": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 26,
+                                "unit": "px"
+                            }
+                        },
+                        "background": {
+                            "$$type": "background",
+                            "value": {
+                                "color": {
+                                    "$$type": "color",
+                                    "value": "transparent"
+                                }
+                            }
+                        },
+                        "box-shadow": {
+                            "$$type": "box-shadow",
+                            "value": [
+                                {
+                                    "$$type": "shadow",
+                                    "value": {
+                                        "hOffset": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 0,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "vOffset": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 1,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "blur": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 0,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "spread": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 0,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "color": {
+                                            "$$type": "color",
+                                            "value": "#FFFFFF"
+                                        },
+                                        "position": {
+                                            "$$type": "string",
+                                            "value": "inset"
+                                        }
+                                    }
+                                },
+                                {
+                                    "$$type": "shadow",
+                                    "value": {
+                                        "hOffset": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 0,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "vOffset": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 0,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "blur": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 0,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "spread": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 1,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "color": {
+                                            "$$type": "color",
+                                            "value": "rgba(255,255,255,0.6)"
+                                        },
+                                        "position": {
+                                            "$$type": "string",
+                                            "value": "inset"
+                                        }
+                                    }
+                                },
+                                {
+                                    "$$type": "shadow",
+                                    "value": {
+                                        "hOffset": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 0,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "vOffset": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 20,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "blur": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 40,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "spread": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": -30,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "color": {
+                                            "$$type": "color",
+                                            "value": "rgba(76,48,170,0.35)"
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        "backdrop-filter": {
+                            "$$type": "backdrop-filter",
+                            "value": [
+                                {
+                                    "$$type": "css-filter-func",
+                                    "value": {
+                                        "func": {
+                                            "$$type": "string",
+                                            "value": "blur"
+                                        },
+                                        "args": {
+                                            "$$type": "blur",
+                                            "value": {
+                                                "size": {
+                                                    "$$type": "size",
+                                                    "value": {
+                                                        "size": 18,
+                                                        "unit": "px"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "$$type": "css-filter-func",
+                                    "value": {
+                                        "func": {
+                                            "$$type": "string",
+                                            "value": "saturate"
+                                        },
+                                        "args": {
+                                            "$$type": "intensity",
+                                            "value": {
+                                                "size": {
+                                                    "$$type": "size",
+                                                    "value": {
+                                                        "size": 160,
+                                                        "unit": "%"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            ]
                         },
                         "display": {
                             "$$type": "string",
@@ -27476,7 +27692,7 @@
                         }
                     },
                     "custom_css": {
-                        "raw": "JiB1bCB7IG1hcmdpbjogMDsgcGFkZGluZzogMDsgbGlzdC1zdHlsZTogbm9uZTsgYWxpZ24taXRlbXM6IGNlbnRlcjsgfSAmIC5ub20tZmlsdHJlIHsgbWluLXdpZHRoOiAxMDRweDsgZm9udC1mYW1pbHk6IEhhbmtlbiBHcm90ZXNrOyBmb250LXNpemU6IDEycHg7IGxpbmUtaGVpZ2h0OiAxLjI7IGZvbnQtd2VpZ2h0OiA4MDA7IGxldHRlci1zcGFjaW5nOiAwLjE0ZW07IHRleHQtdHJhbnNmb3JtOiB1cHBlcmNhc2U7IGNvbG9yOiB2YXIoLS1sZWdlbmRlKTsgfQ=="
+                        "raw": "d2lkdGg6IGZpdC1jb250ZW50OyBiYWNrZ3JvdW5kLWltYWdlOiByYWRpYWwtZ3JhZGllbnQoNzAlIDYwJSBhdCAxNSUgMCUsIHJnYmEoMjU1LDI1NSwyNTUsMC45KSwgcmdiYSgyNTUsMjU1LDI1NSwwKSA3MiUpLCBsaW5lYXItZ3JhZGllbnQoMTUwZGVnLCByZ2JhKDI1NSwyNTUsMjU1LDAuNzIpLCByZ2JhKDI1NSwyNTUsMjU1LDAuNDIpKTsgJiB1bCB7IG1hcmdpbjogMDsgcGFkZGluZzogMCA0cHg7IGxpc3Qtc3R5bGU6IG5vbmU7IGFsaWduLWl0ZW1zOiBjZW50ZXI7IH0gJiAubm9tLWZpbHRyZSB7IG1pbi13aWR0aDogMTA0cHg7IGZvbnQtZmFtaWx5OiBIYW5rZW4gR3JvdGVzazsgZm9udC1zaXplOiAxMnB4OyBsaW5lLWhlaWdodDogMS4yOyBmb250LXdlaWdodDogODAwOyBsZXR0ZXItc3BhY2luZzogMC4xNGVtOyB0ZXh0LXRyYW5zZm9ybTogdXBwZXJjYXNlOyBjb2xvcjogdmFyKC0tbGVnZW5kZSk7IH0gJi5ybC1vbmdsZXRzIC5ub20tZmlsdHJlIHsgZGlzcGxheTogbm9uZTsgfSAmIC5wYW5uZWF1LWZpbHRyZVtoaWRkZW5dIHsgZGlzcGxheTogbm9uZTsgfSAmIC5wYW5uZWF1LWZpbHRyZSA+IHVsIHsgZmxleC13cmFwOiB3cmFwOyB9ICYgLm9uZ2xldHMtZmlsdHJlcyB7IGRpc3BsYXk6IGlubGluZS1mbGV4OyBmbGV4LXdyYXA6IHdyYXA7IGdhcDogNHB4OyB3aWR0aDogZml0LWNvbnRlbnQ7IG1heC13aWR0aDogMTAwJTsgcGFkZGluZzogNHB4OyBib3JkZXItcmFkaXVzOiA5OTlweDsgYmFja2dyb3VuZDogcmdiYSgxNSwxNSwxOCwwLjA1KTsgfSAmIC5vbmdsZXQtZmlsdHJlIHsgZGlzcGxheTogaW5saW5lLWZsZXg7IGFsaWduLWl0ZW1zOiBjZW50ZXI7IGdhcDogN3B4OyBtaW4taGVpZ2h0OiAzOHB4OyBwYWRkaW5nOiAwIDE2cHg7IGJvcmRlcjogMDsgYm9yZGVyLXJhZGl1czogOTk5cHg7IGZvbnQtZmFtaWx5OiBIYW5rZW4gR3JvdGVzazsgZm9udC1zaXplOiAxNHB4OyBmb250LXdlaWdodDogNzAwOyBsaW5lLWhlaWdodDogMTsgY29sb3I6ICM0QTQ4NTg7IGJhY2tncm91bmQtY29sb3I6IHRyYW5zcGFyZW50OyBjdXJzb3I6IHBvaW50ZXI7IH0gJiAub25nbGV0LWZpbHRyZVthcmlhLXNlbGVjdGVkPXRydWVdIHsgY29sb3I6ICMwRjBGMTI7IGJhY2tncm91bmQtY29sb3I6ICNGRkZGRkY7IGJveC1zaGFkb3c6IDAgNHB4IDEycHggLTZweCByZ2JhKDE1LDE1LDE4LDAuMyk7IH0gJiAub25nbGV0LWZpbHRyZTpmb2N1cy12aXNpYmxlIHsgb3V0bGluZTogM3B4IHNvbGlkICM1QjNCRUE7IG91dGxpbmUtb2Zmc2V0OiAycHg7IH0gJiAucG9pbnQtZmlsdHJlIHsgd2lkdGg6IDdweDsgaGVpZ2h0OiA3cHg7IGJvcmRlci1yYWRpdXM6IDUwJTsgYmFja2dyb3VuZC1jb2xvcjogI0ZGOEE1QjsgfQ=="
                     }
                 }
             ]

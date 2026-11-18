@@ -656,6 +656,75 @@
 		document.querySelectorAll( 'a.vignette-lien' ).forEach( function ( v ) { centre.observe( v ); } );
 	}
 
+	/* Filtres sur plusieurs groupes (Métier, Cas d'usage, Format) : onglets, une seule rangée visible à la fois.
+	   L'onglet ouvert au départ = le premier groupe où un filtre est choisi. Un point pêche marque ces onglets. */
+	document.querySelectorAll( '.filtres-liste' ).forEach( function ( nav, n ) {
+		var rangees = nav.querySelectorAll( ':scope > ul' ), onglets, ouvert = 0;
+		if ( rangees.length < 2 ) {
+			return;
+		}
+		onglets = document.createElement( 'div' );
+		onglets.className = 'onglets-filtres';
+		onglets.setAttribute( 'role', 'tablist' );
+		onglets.setAttribute( 'aria-label', nav.getAttribute( 'aria-label' ) || '' );
+		var boutons = [];
+		rangees.forEach( function ( ul, i ) {
+			var nom = ul.querySelector( '.nom-filtre' ), choisi = ul.querySelector( '.chip-filtre[aria-current]' ), puces = ul.querySelectorAll( '.chip-filtre' );
+			var actif = !! choisi && choisi !== puces[ 0 ];
+			var bouton = document.createElement( 'button' );
+			bouton.type = 'button';
+			bouton.className = 'onglet-filtre';
+			bouton.id = 'rl-onglet-' + n + '-' + i;
+			bouton.setAttribute( 'role', 'tab' );
+			bouton.textContent = nom ? nom.textContent : String( i + 1 );
+			if ( actif ) {
+				var point = document.createElement( 'span' );
+				point.className = 'point-filtre';
+				point.setAttribute( 'aria-hidden', 'true' );
+				bouton.appendChild( point );
+				var lu = document.createElement( 'span' );
+				lu.className = 'screen-reader-text';
+				lu.textContent = ' (filtre choisi)';
+				bouton.appendChild( lu );
+				if ( ! boutons.some( function ( b ) { return b.actif; } ) ) {
+					ouvert = i;
+				}
+			}
+			var panneau = document.createElement( 'div' );
+			panneau.className = 'panneau-filtre';
+			panneau.id = 'rl-filtres-' + n + '-' + i;
+			panneau.setAttribute( 'role', 'tabpanel' );
+			panneau.setAttribute( 'aria-labelledby', bouton.id );
+			ul.parentNode.insertBefore( panneau, ul );
+			panneau.appendChild( ul );
+			bouton.setAttribute( 'aria-controls', panneau.id );
+			boutons.push( { el: bouton, ul: panneau, actif: actif } );
+			onglets.appendChild( bouton );
+		} );
+		var choisir = function ( k, focus ) {
+			boutons.forEach( function ( b, i ) {
+				b.el.setAttribute( 'aria-selected', i === k ? 'true' : 'false' );
+				b.el.tabIndex = i === k ? 0 : -1;
+				b.ul.hidden = i !== k;
+			} );
+			if ( focus ) {
+				boutons[ k ].el.focus();
+			}
+		};
+		boutons.forEach( function ( b, i ) {
+			b.el.addEventListener( 'click', function () { choisir( i ); } );
+			b.el.addEventListener( 'keydown', function ( e ) {
+				if ( 'ArrowRight' === e.key || 'ArrowLeft' === e.key ) {
+					e.preventDefault();
+					choisir( ( i + ( 'ArrowRight' === e.key ? 1 : boutons.length - 1 ) ) % boutons.length, true );
+				}
+			} );
+		} );
+		nav.insertBefore( onglets, nav.querySelector( '.panneau-filtre' ) );
+		nav.classList.add( 'rl-onglets' );
+		choisir( ouvert );
+	} );
+
 	/* Mur de montage : au survol d'une réalisation (souris seulement), sa vidéo se lance sans le son dans la vignette ;
 	   elle se met en pause quand la souris part. Rien sur écran tactile, dans l'éditeur ni avec « réduire les animations ». */
 	if ( ! calme && ! editeur && window.matchMedia( '(hover: hover) and (pointer: fine)' ).matches ) {

@@ -650,6 +650,13 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   (3 lignes), pas de menu déroulant : F1 onglets Métier / Cas d'usage / Format + une rangée (point pêche = filtre choisi)
   (conseil), F2 une seule ligne qui défile, F3 phrase à compléter (mots qui changent au clic), F4 bouton « Filtrer » qui
   ouvre les lignes dans la page + filtres actifs en pastilles.
+- **0.6.5 (choix 1A + F1)** : extraits = **viseur de caméra** (cadre pêche #FFF7F1 + filet pêche, 4 coins blancs en
+  `extrait-video::after`, « REC » + point rouge clignotant en `::before`, pastille en bas à gauche). Filtres = **onglets** :
+  rolling.js transforme une `nav.filtres-liste` à plusieurs `ul` en `div.onglets-filtres[role=tablist]` + chaque `ul` enveloppé
+  dans `div.panneau-filtre[role=tabpanel]` (role sur l'ul = erreur axe aria-allowed-role / listitem), onglet ouvert = 1er groupe
+  avec un filtre choisi, point pêche + texte masqué « (filtre choisi) », flèches gauche / droite ; sans script : une ligne par
+  groupe ; mobile : rangée qui défile. **Leçon** : `filtres-liste` est définie dans classes_fiches.py (groupe « Fiches et
+  listes », réécrit à chaque construction) : la barre en verre ajoutée en 0.6.0 dans classes.json avait été écrasée.
 - **Chargement de page effet film** (demande avant la fin de la livraison 4) : maquette `maquettes/loading/maquette-loading.html`
   (copie /workspace/maquette-loading.html), 4 options : A amorce 3-2-1, B clap qui se ferme puis rideau, C ouverture
   cinéma (bandes noires + REC + timecode + règle avec la tête de lecture rouge des frises, plus de filet fin), D barre de lecture en haut sans écran. Conseil : C à l'arrivée (première page
