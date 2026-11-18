@@ -61,6 +61,7 @@ class Rolling_Dynamique {
 		}
 		add_action( 'elementor/frontend/before_render', array( __CLASS__, 'contexte_debut' ) );
 		add_action( 'elementor/preview/enqueue_styles', array( __CLASS__, 'apercu_contextes' ), 20 );
+		add_action( 'elementor/preview/enqueue_styles', array( __CLASS__, 'styles_apercu' ), 5 );
 		add_action( 'elementor/frontend/after_render', array( __CLASS__, 'contexte_fin' ) );
 	}
 
@@ -572,6 +573,23 @@ class Rolling_Dynamique {
 			$modeles = array_merge( $modeles, self::modeles_des_listes( $modele ) );
 		}
 
+		foreach ( array_unique( array_filter( $modeles ) ) as $modele ) {
+			do_action( 'elementor/post/render', $modele ); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound, WordPress.NamingConventions.ValidHookName.UseUnderscores -- crochet d'Elementor.
+			\Elementor\Core\Files\CSS\Post::create( $modele )->enqueue();
+		}
+	}
+
+	/**
+	 * Aperçu de l'éditeur : styles de tous les modèles de cartes (et de l'encart des articles). Sans eux, les cartes
+	 * d'une liste s'affichent dans l'éditeur sans leur mise en page interne (rangées au lieu de colonnes…).
+	 */
+	public static function styles_apercu() {
+		$modeles = array( self::modele_fiche( 'encart' ) );
+		foreach ( (array) get_option( Rolling_Installateur::OPTION_MODELES, array() ) as $cle => $info ) {
+			if ( 0 === strpos( (string) $cle, 'c' ) && ! empty( $info['post_id'] ) ) {
+				$modeles[] = (int) $info['post_id'];
+			}
+		}
 		foreach ( array_unique( array_filter( $modeles ) ) as $modele ) {
 			do_action( 'elementor/post/render', $modele ); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound, WordPress.NamingConventions.ValidHookName.UseUnderscores -- crochet d'Elementor.
 			\Elementor\Core\Files\CSS\Post::create( $modele )->enqueue();

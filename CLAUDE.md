@@ -531,6 +531,13 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   `grille_ou_bande()`) : créas et experts IA en deux bandes `masque-bords` > `equipe-defilante`. Marion (créas) =
   « Responsable Agence vidéo » et en dernier, comme à l'accueil, dans les deux versions. Test wp2 : attendre
   `wp option get siteurl` (et pas `wp core version`, qui répond sans base) avant d'installer.
+- **0.5.20 : cartes des listes cassées dans l'éditeur** (carte « à la une » du blog en rangées, bon sur le site) :
+  reproduit. Cause : dans l'aperçu, l'éditeur injecte après coup un `<style>` avec ses styles de base
+  (`.elementor .e-flexbox-base { flex-direction: row }`, même spécificité que les styles locaux) **après** les feuilles
+  `local-<id>-preview-desktop.css` des modèles de cartes ⇒ les styles locaux des cartes perdent. Correctif : rolling.js
+  (aperçu seulement) déplace en fin de `<body>` les feuilles `local-*` sauf celle de la page modifiée (`elementor-preview=`),
+  dont l'éditeur gère les styles en direct ; + `Rolling_Dynamique::styles_apercu` (crochet `elementor/preview/enqueue_styles`)
+  charge les styles de tous les modèles `c*` et de l'encart. Vérifié sur wp (4.3.6) et wp2 (4.4.1).
 - **Chargement de page effet film** (demande avant la fin de la livraison 4) : maquette `maquettes/loading/maquette-loading.html`
   (copie /workspace/maquette-loading.html), 4 options : A amorce 3-2-1, B clap qui se ferme puis rideau, C ouverture
   cinéma (bandes noires + REC + timecode + règle avec la tête de lecture rouge des frises, plus de filet fin), D barre de lecture en haut sans écran. Conseil : C à l'arrivée (première page

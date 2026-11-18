@@ -52,6 +52,20 @@
 	 * Dans l'éditeur : l'écran « Votre vidéo » suit l'élément sélectionné. Sélectionner le bouton 9:16 ou EN change
 	 * le format ou la langue affichés ; sélectionner un texte d'une version (même depuis la Structure) l'affiche.
 	 */
+	/*
+	 * Aperçu de l'éditeur : l'éditeur ajoute ses styles de base après les feuilles des modèles de cartes (listes,
+	 * encart des articles) et les écrase (conteneurs en rangée). Ces feuilles passent en fin de page, sauf celle de
+	 * la page modifiée, dont l'éditeur gère lui-même les styles en direct.
+	 */
+	if ( editeur ) {
+		var apercu = ( window.location.search.match( /[?&]elementor-preview=(\d+)/ ) || [] )[ 1 ];
+		document.querySelectorAll( 'link[rel="stylesheet"][href*="/elementor/css/local-"]' ).forEach( function ( feuille ) {
+			if ( ! apercu || feuille.href.indexOf( '/local-' + apercu + '-' ) === -1 ) {
+				document.body.appendChild( feuille );
+			}
+		} );
+	}
+
 	if ( editeur ) {
 		new MutationObserver( function ( changements ) {
 			changements.forEach( function ( c ) {
