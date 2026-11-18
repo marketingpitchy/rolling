@@ -550,6 +550,19 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   `<style id="rl-renfort-cartes">` avec `Styles_Renderer::make( breakpoints, 'html body .elementor' )` (même API en 4.3.6
   et 4.4.1). Test `scratchpad/ed-blog5.js` : feuilles `local-*` des modèles bloquées + renfort JS retiré + styles de base
   ajoutés en dernier ⇒ colonne ; témoin sans le style PHP ⇒ ligne (bug reproduit ainsi).
+- **0.5.22 validée** (« c'est fixé » pour le blog). **Maquette « Nouveautés »** (`maquettes/nouveautes-v6/nouveautes.html`,
+  copie /workspace/maquette-nouveautes.html, **à valider**) : 1 landing = vrai showreel Vimeo dans le hero (widget Vidéo,
+  nouveau réglage lien ; titre / nom / photo du compte Pitchy masqués par `title=0&byline=0&portrait=0`, sinon réglage
+  d'intégration Vimeo ou .mp4) : A lecture au clic dans le cadre (conseil), B aperçu muet en boucle (Vimeo payant
+  « background » ou .mp4) ; 2 témoignages plus de verre + cartes à la taille de la citation (courte / moyenne / longue) :
+  A mur maçonné en colonnes (conseil), B rangées équilibrées (largeur selon la longueur) ; 3 réalisations : nouveau
+  contenu « Extraits vidéo » (fichier court muet, format, description, sans fiche) : A glissés dans le mur toutes les
+  3 réalisations, pastille « Studio Rolling » (conseil), B bande « Dans les coulisses » entre les rangées ; + cadres en
+  verre et titre en plaque de verre fumé ; 4 offres « L'illimité qui tient ses promesses » : A 4 cartes en verre (conseil),
+  B bande sombre, C cartes à jouer en éventail (phrases d'explication proposées) ; 5 L'agence : A fondu vertical créas
+  couleur → experts IA sombre avec pastille « Ensemble sur chaque projet » (conseil), B côte à côte fondu au centre ;
+  6 contact « melting pot » après formulaire + FAQ : A mosaïque en verre (showreel, 2 citations, 13 / +500, 2 réalisations,
+  « Toutes nos réalisations ») (conseil), B bande de réalisations + citations qui tournent, C showreel cinéma + bulles.
 - **Chargement de page effet film** (demande avant la fin de la livraison 4) : maquette `maquettes/loading/maquette-loading.html`
   (copie /workspace/maquette-loading.html), 4 options : A amorce 3-2-1, B clap qui se ferme puis rideau, C ouverture
   cinéma (bandes noires + REC + timecode + règle avec la tête de lecture rouge des frises, plus de filet fin), D barre de lecture en haut sans écran. Conseil : C à l'arrivée (première page
@@ -760,7 +773,10 @@ image, texte, « À lire aussi » ; colonne latérale = temps de lecture, partag
 - CTA principal « Réserver un échange », secondaire « Voir les offres ».
 - Pitchy cité ouvertement ; ne pas nommer Pitchy Studio (sauf citation client verbatim).
 - Titres en phrase avec point final. Capitales seulement dans les intitulés de poste.
-- Typo française : espace insécable avant ? ! : ; — guillemets « » — « 500+ », « 30 minutes ». Pas d'emoji.
+- Typo française : espace insécable avant ? ! : ; , guillemets « », « 30 minutes ». Pas d'emoji.
+- **« +500 » (jamais « 500+ »)** et **aucun tiret long « — »** dans les textes (« ça fait très IA », demande du 18/11) :
+  à corriger partout à la prochaine version (blocs.py : méthode, équipe, témoignage, note des offres, comparatif ; chiffres
+  en verre « + 5 0 0 » ; textes des classes / widgets / contenus).
 - Mot-clé principal : « agence vidéo ».
 - À ne pas véhiculer : agence de pub type Havas/Publicis, usine low cost, agence au devis.
 

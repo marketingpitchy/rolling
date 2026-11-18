@@ -1,0 +1,639 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rolling · nouveautés (landing, témoignages, réalisations, offres, agence, contact)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Caveat:wght@700&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root { --ink:#0F0F12; --texte:#4A4858; --legende:#5F5C6C; --violet:#5B3BEA; }
+* { box-sizing: border-box; }
+body { margin: 0; color: var(--ink); font-family: 'Hanken Grotesk', system-ui, sans-serif; background: #FAF9F7; }
+h1, h2, h3, h4, p, ul, blockquote, figure { margin: 0; }
+ul { padding: 0; list-style: none; }
+a { color: inherit; }
+em { font-style: normal; padding-inline: .06em; margin-inline: -.06em; background: linear-gradient(95deg, #5B3BEA, #6F3FD6 42%, #C94A1E); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.conteneur { max-width: 1240px; margin: 0 auto; padding: 0 28px; }
+.intro { padding: 56px 0 8px; }
+.intro h1 { font-family: 'Bricolage Grotesque'; font-size: 32px; letter-spacing: -.035em; font-weight: 650; }
+.intro p { margin-top: 10px; max-width: 82ch; font-size: 16px; line-height: 1.55; color: var(--texte); }
+.sommaire { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+.sommaire a { padding: 8px 14px; border-radius: 999px; font-size: 14px; font-weight: 700; text-decoration: none; background: #fff; box-shadow: inset 0 0 0 1px rgba(91,59,234,.16); }
+.partie { margin-top: 88px; }
+.partie > h2 { display: flex; align-items: center; gap: 12px; font-family: 'Bricolage Grotesque'; font-size: 27px; letter-spacing: -.03em; font-weight: 650; }
+.partie > h2 .num { display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 12px; font-size: 16px; color: #fff; background: #0F0F12; }
+.partie > p.demande { margin-top: 8px; max-width: 82ch; font-size: 15px; line-height: 1.55; color: var(--texte); }
+.option { margin-top: 36px; }
+.option > h3 { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; font-family: 'Bricolage Grotesque'; font-size: 21px; letter-spacing: -.03em; font-weight: 650; }
+.lettre { display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 50%; font-size: 14px; color: #fff; background: #0F0F12; }
+.conseil .lettre { background: var(--violet); }
+.etiquette { padding: 3px 10px; border-radius: 999px; font-family: 'Hanken Grotesk'; font-size: 12px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: #4A2BB8; background: #EDE6FF; }
+.desc { margin-top: 8px; max-width: 84ch; font-size: 15px; line-height: 1.55; color: var(--texte); }
+.desc b { color: var(--ink); }
+.scene { position: relative; margin-top: 18px; padding: 34px; border-radius: 32px; overflow: hidden; isolation: isolate; background: #FAF9F7; box-shadow: inset 0 0 0 1px rgba(15,15,18,.06); }
+/* Taches de couleur derrière le verre */
+.taches::before, .taches::after { content: ''; position: absolute; z-index: -1; border-radius: 50%; filter: blur(60px); pointer-events: none; }
+.taches::before { width: 46%; height: 70%; left: -8%; top: -10%; background: radial-gradient(closest-side, rgba(167,123,240,.55), rgba(167,123,240,0)); }
+.taches::after { width: 44%; height: 70%; right: -6%; bottom: -16%; background: radial-gradient(closest-side, rgba(255,171,150,.6), rgba(255,171,150,0)); }
+.verre { border-radius: 26px; background: radial-gradient(70% 60% at 15% 0%, rgba(255,255,255,.9), rgba(255,255,255,0) 72%), linear-gradient(150deg, rgba(255,255,255,.72), rgba(255,255,255,.42)); background-color: transparent; -webkit-backdrop-filter: blur(18px) saturate(1.3); backdrop-filter: blur(18px) saturate(1.3); box-shadow: inset 0 1px 0 #fff, inset 0 0 0 1px rgba(255,255,255,.6), 0 30px 70px -34px rgba(76,48,170,.34); }
+.label { font-size: 12px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: #4A2BB8; }
+.timecode { display: inline-flex; align-items: center; gap: 8px; padding: 6px 13px; border-radius: 999px; font-size: 12px; font-weight: 700; letter-spacing: .06em; color: #5B3BEA; background: linear-gradient(170deg, rgba(255,255,255,.95), rgba(255,255,255,.55)); box-shadow: inset 0 1px 0 #fff, inset 0 0 0 1px rgba(91,59,234,.16), 0 6px 16px -10px rgba(91,59,234,.5); }
+.titre-sec { margin-top: 14px; font-family: 'Bricolage Grotesque'; font-size: 38px; line-height: 1.08; letter-spacing: -.045em; font-weight: 650; }
+.bouton { display: inline-flex; align-items: center; gap: 8px; min-height: 46px; padding: 0 20px; border: 0; border-radius: 999px; font: 700 15px 'Hanken Grotesk'; color: #fff; background: #0F0F12; text-decoration: none; cursor: pointer; }
+.bouton-verre { color: var(--ink); background: rgba(255,255,255,.75); box-shadow: inset 0 0 0 1px rgba(91,59,234,.2); }
+.rejouer { display: inline-flex; align-items: center; gap: 8px; margin-top: 14px; min-height: 40px; padding: 0 16px; border: 0; border-radius: 999px; font: 700 14px 'Hanken Grotesk'; color: #fff; background: #0F0F12; cursor: pointer; }
+.rejouer::before { content: '↻'; }
+.note { margin-top: 12px; padding: 12px 16px; border-radius: 14px; font-size: 14px; line-height: 1.55; color: #2A2840; background: #FFF1E7; }
+
+/* Faux visuels vidéo (pas d'images clients dans la maquette) */
+.v { position: relative; overflow: hidden; border-radius: 18px; background: #2A2233; }
+.g1 { background: radial-gradient(60% 70% at 75% 25%, rgba(255,180,140,.9), transparent 60%), radial-gradient(90% 90% at 10% 100%, #5B3BEA, transparent 70%), linear-gradient(160deg, #3434E0, #1C1730); }
+.g2 { background: radial-gradient(60% 80% at 30% 30%, rgba(196,181,253,.9), transparent 60%), radial-gradient(90% 90% at 90% 100%, #FF8A5B, transparent 70%), linear-gradient(160deg, #8E4DE6, #1C1730); }
+.g3 { background: radial-gradient(70% 90% at 60% 20%, rgba(255,209,191,.9), transparent 60%), linear-gradient(160deg, #E0562A, #4A2BB8); }
+.g4 { background: radial-gradient(60% 60% at 20% 80%, rgba(255,162,122,.8), transparent 60%), linear-gradient(200deg, #2A2AB8, #0F0F12); }
+.g5 { background: radial-gradient(70% 70% at 70% 70%, rgba(237,230,255,.85), transparent 60%), linear-gradient(140deg, #5B3BEA, #A63C14); }
+.g6 { background: radial-gradient(60% 70% at 40% 30%, rgba(140,142,255,.9), transparent 60%), linear-gradient(170deg, #17112C, #4A2BB8); }
+/* « Vidéo » en boucle simulée : le fond se déplace */
+.boucle { background-size: 220% 220%; animation: boucle 6s ease-in-out infinite alternate; }
+@keyframes boucle { 0% { background-position: 0% 0%; } 100% { background-position: 100% 100%; } }
+.tag { position: absolute; z-index: 2; left: 12px; top: 12px; padding: 5px 11px; border-radius: 999px; font-size: 12px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: #fff; background: rgba(15,15,18,.62); }
+.dur { position: absolute; z-index: 2; right: 12px; bottom: 12px; padding: 3px 8px; border-radius: 8px; font-size: 12px; font-weight: 800; color: #fff; background: rgba(15,15,18,.7); }
+.play { position: absolute; z-index: 2; left: 50%; top: 50%; width: 64px; height: 64px; margin: -32px 0 0 -32px; border: 0; border-radius: 50%; background: #FF8A5B; box-shadow: 0 0 0 10px rgba(255,138,91,.25), 0 14px 30px -8px rgba(255,138,91,.8); cursor: pointer; }
+.play::before { content: ''; position: absolute; left: 26px; top: 21px; border-left: 18px solid #0F0F12; border-top: 11px solid transparent; border-bottom: 11px solid transparent; }
+.client { font-size: 12px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: var(--legende); }
+.titre-carte { font-family: 'Bricolage Grotesque'; font-size: 19px; line-height: 1.2; letter-spacing: -.02em; font-weight: 650; }
+.chips { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; padding: 8px; border-radius: 999px; }
+.chip { padding: 8px 15px; border-radius: 999px; font-size: 14px; font-weight: 600; color: #2A2840; background: rgba(255,255,255,.6); box-shadow: inset 0 0 0 1px rgba(91,59,234,.12); }
+.chip.on { color: #fff; background: #0F0F12; box-shadow: none; }
+.chips .nom { padding: 0 6px 0 10px; font-size: 12px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: var(--legende); }
+.logo-client { display: inline-flex; align-items: center; height: 26px; padding: 0 10px; border-radius: 7px; font-size: 12px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: #5F5C6C; background: rgba(15,15,18,.06); }
+.portrait { flex-shrink: 0; display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; font-size: 14px; font-weight: 800; color: #fff; background: linear-gradient(140deg, #8E4DE6, #FF8A5B); }
+.lien { font-size: 14px; font-weight: 700; color: #4A2BB8; text-decoration: none; }
+.lien::after { content: ' →'; }
+
+/* 1 · Landing : showreel Vimeo */
+.hero-l { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 48px; align-items: center; }
+.hero-l h4 { font-family: 'Bricolage Grotesque'; font-size: 40px; line-height: 1.05; letter-spacing: -.045em; font-weight: 650; }
+.hero-l p.t { margin-top: 14px; font-size: 17px; line-height: 1.55; color: var(--texte); }
+.cadre-video { position: relative; padding: 14px; border-radius: 30px; transform: rotate(1.2deg); }
+.ecran { position: relative; aspect-ratio: 16 / 9; border-radius: 18px; overflow: hidden; }
+.lecteur { position: absolute; inset: 0; display: none; background: #000; }
+.lecteur .image { position: absolute; inset: 0; opacity: .9; }
+.lecteur .barre { position: absolute; left: 12px; right: 12px; bottom: 10px; display: flex; align-items: center; gap: 10px; padding: 8px 12px; border-radius: 10px; background: rgba(15,15,18,.6); color: #fff; font-size: 12px; font-weight: 700; }
+.lecteur .barre i { flex: 1; height: 4px; border-radius: 2px; background: linear-gradient(90deg, #FF8A5B 0 22%, rgba(255,255,255,.35) 22%); }
+.lecteur .barre span { width: 0; height: 0; border-left: 9px solid #fff; border-top: 6px solid transparent; border-bottom: 6px solid transparent; }
+.joue .lecteur { display: block; }
+.joue .play, .joue .tag, .joue .dur { display: none; }
+.masques { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+.masques span { padding: 5px 11px; border-radius: 999px; font-size: 13px; font-weight: 700; color: #2A2840; background: #fff; box-shadow: inset 0 0 0 1px rgba(15,15,18,.08); text-decoration: line-through; text-decoration-color: #C94A1E; }
+.son { position: absolute; z-index: 3; right: 14px; bottom: 14px; display: inline-flex; align-items: center; gap: 8px; min-height: 40px; padding: 0 16px; border: 0; border-radius: 999px; font: 700 14px 'Hanken Grotesk'; color: #fff; background: rgba(15,15,18,.66); cursor: pointer; }
+.son::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: #FF3B30; box-shadow: 0 0 0 3px rgba(255,59,48,.3); }
+
+/* 2 · Témoignages */
+.une-t { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 0; overflow: hidden; margin-bottom: 22px; }
+.une-t .v { border-radius: 0; min-height: 260px; }
+.une-t .txt { display: flex; flex-direction: column; gap: 14px; padding: 30px; }
+.cit { display: flex; flex-direction: column; gap: 14px; padding: 22px; break-inside: avoid; }
+.cit blockquote { font-family: 'Bricolage Grotesque'; font-weight: 650; letter-spacing: -.02em; line-height: 1.3; }
+.cit .court blockquote, .cit.court blockquote { font-size: 23px; }
+.cit blockquote { font-size: 18px; }
+.cit.long blockquote { font-size: 16.5px; line-height: 1.45; font-weight: 600; }
+.cit .qui { display: flex; align-items: center; gap: 12px; font-size: 14px; line-height: 1.35; }
+.cit .qui b { display: block; }
+.cit .qui span { color: var(--legende); font-size: 13px; }
+.cit .v { aspect-ratio: 16 / 9; }
+.cit .guillemet { font-family: 'Bricolage Grotesque'; font-size: 54px; line-height: .5; height: 22px; font-weight: 800; background: linear-gradient(180deg, #FFAB96, #A77BF0); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.macon { column-count: 3; column-gap: 20px; }
+.macon .cit { margin-bottom: 20px; display: flex; }
+.rangs { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 20px; grid-auto-flow: dense; }
+.rangs .cit.court { grid-column: span 2; }
+.rangs .cit.moyen { grid-column: span 3; }
+.rangs .cit.long { grid-column: span 4; }
+.legende-taille { position: absolute; right: 14px; top: 14px; padding: 3px 9px; border-radius: 999px; font-size: 11.5px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: #4A2BB8; background: #EDE6FF; }
+.cit { position: relative; }
+
+/* 3 · Réalisations */
+.mur { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); grid-auto-rows: 136px; grid-auto-flow: dense; gap: 20px; }
+.case { display: flex; flex-direction: column; gap: 8px; grid-row: span 2; }
+.case.large { grid-column: span 2; grid-row: span 4; }
+.case.haute { grid-row: span 3; }
+.case .v { flex: 1; }
+.case.large .titre-carte { font-size: 25px; }
+.cadre-v { flex: 1; display: flex; padding: 7px; border-radius: 24px; }
+.cadre-v .v { flex: 1; }
+.extrait .v::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(12,8,30,0) 55%, rgba(12,8,30,.45)); }
+.extrait .studio { position: absolute; z-index: 2; left: 12px; bottom: 12px; display: inline-flex; align-items: center; gap: 7px; padding: 5px 11px; border-radius: 999px; font-size: 12px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: #fff; background: rgba(15,15,18,.55); }
+.extrait .studio::before { content: '↻'; font-size: 13px; }
+.carte-titre { padding: 2px 6px 0; display: flex; flex-direction: column; gap: 4px; }
+.plaque-titre { position: absolute; z-index: 2; left: 10px; right: 10px; bottom: 10px; display: flex; flex-direction: column; gap: 3px; padding: 12px 14px; border-radius: 16px; color: #fff; background: rgba(22,14,52,.56); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); box-shadow: inset 0 1px 0 rgba(255,255,255,.25); }
+.plaque-titre .client { color: #E9E2FF; }
+.plaque-titre .titre-carte { font-size: 17px; }
+.case.large .plaque-titre .titre-carte { font-size: 23px; }
+.entracte { grid-column: 1 / -1; grid-row: span 2; position: relative; overflow: hidden; border-radius: 24px; padding: 14px 0; }
+.entracte .piste { display: flex; gap: 14px; width: max-content; height: 100%; animation: defile 38s linear infinite; }
+.entracte .piste .v { width: 290px; height: 100%; flex-shrink: 0; border-radius: 14px; }
+.entracte .piste .v.vert { width: 140px; }
+.entracte .titre-e { position: absolute; z-index: 3; left: 24px; top: 50%; transform: translateY(-50%); padding: 14px 18px; border-radius: 18px; max-width: 230px; }
+.entracte .titre-e b { display: block; font-family: 'Bricolage Grotesque'; font-size: 18px; letter-spacing: -.02em; }
+.entracte .titre-e span { font-size: 13px; color: var(--texte); }
+@keyframes defile { to { transform: translateX(-50%); } }
+.mur-fixe { grid-auto-rows: 120px; }
+
+/* 4 · Offres : les promesses */
+.actuel-o { padding: 26px 30px; border-radius: 26px; background: linear-gradient(120deg, #FFF1E7, #FFE7DC); }
+.actuel-o .h { font-family: 'Bricolage Grotesque'; font-size: 18px; letter-spacing: -.02em; }
+.actuel-o ul { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; margin-top: 14px; font-size: 12px; line-height: 1.4; color: var(--texte); }
+.actuel-o li { display: flex; gap: 8px; }
+.actuel-o li i { font-style: normal; font-family: 'Bricolage Grotesque'; font-size: 24px; font-weight: 800; color: #C4A2F0; }
+.chiffre-verre { font-family: 'Bricolage Grotesque'; font-weight: 800; line-height: .85; letter-spacing: -.03em; background: linear-gradient(180deg, #FFAB96 0%, #E697BD 45%, #A77BF0 100%); -webkit-background-clip: text; background-clip: text; color: transparent; filter: drop-shadow(0 10px 16px rgba(91,59,234,.28)); }
+.promesses-a { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; margin-top: 30px; }
+.promesse { display: flex; flex-direction: column; gap: 12px; padding: 26px 24px 28px; transition: transform .4s cubic-bezier(.2,.8,.2,1); }
+.promesse:hover { transform: translateY(-6px); }
+.promesse .chiffre-verre { font-size: 84px; }
+.promesse h4 { font-family: 'Bricolage Grotesque'; font-size: 21px; line-height: 1.15; letter-spacing: -.03em; font-weight: 650; }
+.promesse p { font-size: 15.5px; line-height: 1.5; color: var(--texte); }
+.sombre { color: #FAF9F7; background: radial-gradient(50% 70% at 0% 0%, rgba(91,59,234,.55), transparent 70%), radial-gradient(45% 60% at 100% 100%, rgba(224,86,42,.42), transparent 70%), #0F0F12; background-color: #0F0F12; }
+.sombre .label { color: #C4B5FD; }
+.sombre em { background: linear-gradient(95deg, #C4B5FD, #FFD1BF); -webkit-background-clip: text; background-clip: text; }
+.promesses-b { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); margin-top: 34px; }
+.promesses-b > div { display: flex; flex-direction: column; gap: 12px; padding: 4px 26px 6px; box-shadow: -1px 0 0 rgba(196,181,253,.22); }
+.promesses-b > div:first-child { box-shadow: none; padding-left: 0; }
+.promesses-b .chiffre-verre { font-size: 72px; filter: drop-shadow(0 0 22px rgba(167,123,240,.55)); }
+.promesses-b h4 { font-family: 'Bricolage Grotesque'; font-size: 21px; line-height: 1.15; letter-spacing: -.03em; font-weight: 650; }
+.promesses-b p { font-size: 15.5px; line-height: 1.5; color: #C9C3DE; }
+.cartes-c { display: flex; justify-content: center; margin-top: 34px; padding: 10px 0 20px; }
+.carte-jeu { width: 250px; min-height: 300px; margin: 0 -14px; display: flex; flex-direction: column; justify-content: space-between; gap: 16px; padding: 22px; transform: rotate(var(--r)) translateY(var(--y)); transition: transform .45s cubic-bezier(.2,.8,.2,1), z-index 0s; position: relative; }
+.carte-jeu:hover, .carte-jeu:focus-within { transform: rotate(0) translateY(-14px) scale(1.04); z-index: 5; }
+.carte-jeu .haut { display: flex; justify-content: space-between; align-items: start; }
+.carte-jeu .chiffre-verre { font-size: 64px; }
+.carte-jeu .regle { font-size: 12px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: #4A2BB8; }
+.carte-jeu h4 { font-family: 'Bricolage Grotesque'; font-size: 22px; line-height: 1.12; letter-spacing: -.03em; font-weight: 650; }
+.carte-jeu p { font-size: 15px; line-height: 1.5; color: var(--texte); }
+.carte-jeu .bas { font-family: 'Caveat'; font-size: 27px; color: #A63C14; }
+
+/* 5 · L'agence */
+.portraits { display: flex; flex-wrap: wrap; justify-content: center; gap: 26px; }
+.portraits figure { display: flex; flex-direction: column; align-items: center; gap: 6px; width: 124px; text-align: center; }
+.rond { width: 104px; height: 104px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Bricolage Grotesque'; font-size: 30px; font-weight: 700; color: #fff; border: 4px solid #fff; box-shadow: 0 14px 30px -14px rgba(76,48,170,.5); }
+.portraits figcaption b { display: block; font-size: 15px; }
+.portraits figcaption span { font-size: 13px; color: var(--legende); }
+.r1 { background: linear-gradient(140deg, #8E4DE6, #FF8A5B); } .r2 { background: linear-gradient(140deg, #3434E0, #A77BF0); } .r3 { background: linear-gradient(140deg, #E0562A, #8E4DE6); }
+.agence-a { border-radius: 28px; overflow: hidden; }
+.agence-a .creas { padding: 46px 40px 60px; background: radial-gradient(40% 60% at 10% 0%, rgba(167,123,240,.35), transparent 70%), radial-gradient(40% 60% at 95% 20%, rgba(255,171,150,.55), transparent 70%), #FFF1E7; background-color: #FFF1E7; }
+.agence-a .fondu { position: relative; height: 150px; background: linear-gradient(180deg, #FFF1E7 0%, #E9DDF4 22%, #8C6BD8 52%, #2A1E4E 78%, #0F0F12 100%); background-color: #6F55B8; display: flex; align-items: center; justify-content: center; }
+.ensemble { display: inline-flex; align-items: center; gap: 10px; padding: 10px 18px; border-radius: 999px; font-size: 15px; font-weight: 700; color: #0F0F12; background: rgba(255,255,255,.88); box-shadow: 0 10px 30px -10px rgba(15,15,18,.5); }
+.ensemble i { font-style: normal; display: inline-flex; gap: 4px; }
+.ensemble i::before, .ensemble i::after { content: ''; width: 12px; height: 12px; border-radius: 50%; }
+.ensemble i::before { background: #FF8A5B; }
+.ensemble i::after { background: #5B3BEA; }
+.agence-a .ia { padding: 60px 40px 50px; color: #FAF9F7; background: radial-gradient(45% 60% at 85% 100%, rgba(91,59,234,.5), transparent 70%), radial-gradient(30% 40% at 5% 30%, rgba(52,52,224,.35), transparent 70%), #0F0F12; background-color: #0F0F12; }
+.agence-a h4, .agence-b h4 { font-family: 'Bricolage Grotesque'; font-size: 34px; letter-spacing: -.045em; font-weight: 650; margin-bottom: 28px; }
+.ia .portraits figcaption span, .cote-ia .portraits figcaption span { color: #C9C3DE; }
+.ia .rond, .cote-ia .rond { border-color: rgba(196,181,253,.55); box-shadow: 0 0 0 6px rgba(91,59,234,.25), 0 0 40px -6px rgba(140,142,255,.7); }
+.ia em, .cote-ia em { background: linear-gradient(95deg, #C4B5FD, #8C8EFF); -webkit-background-clip: text; background-clip: text; }
+.agence-b { display: grid; grid-template-columns: minmax(0, 1fr) 120px minmax(0, 1fr); border-radius: 28px; overflow: hidden; }
+.cote-creas { padding: 40px 30px; background: radial-gradient(60% 50% at 20% 0%, rgba(167,123,240,.35), transparent 70%), radial-gradient(50% 50% at 80% 100%, rgba(255,171,150,.55), transparent 70%), #FFF1E7; background-color: #FFF1E7; }
+.cote-ia { padding: 40px 30px; color: #FAF9F7; background: radial-gradient(60% 60% at 80% 100%, rgba(91,59,234,.5), transparent 70%), #0F0F12; background-color: #0F0F12; }
+.milieu { position: relative; background: linear-gradient(90deg, #FFF1E7, #8C6BD8 50%, #0F0F12); background-color: #6F55B8; }
+.milieu .ensemble { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%) rotate(-90deg); white-space: nowrap; }
+.agence-b .portraits { gap: 18px; }
+.agence-b .portraits figure { width: 110px; }
+.agence-b .rond { width: 88px; height: 88px; font-size: 26px; }
+
+/* 6 · Contact */
+.bento { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); grid-auto-rows: 150px; gap: 18px; }
+.bento > * { min-width: 0; }
+.bento .show { grid-column: span 2; grid-row: span 3; display: flex; flex-direction: column; padding: 10px; }
+.bento .show .v { flex: 1; }
+.bento .show p { padding: 12px 8px 4px; font-size: 14px; color: var(--texte); }
+.bento .cit { grid-row: span 2; justify-content: space-between; }
+.bento .cit blockquote { font-size: 17px; }
+.bento .chiffres { grid-column: span 2; display: flex; align-items: center; justify-content: space-around; gap: 10px; padding: 18px; }
+.bento .chiffres div { display: flex; align-items: center; gap: 12px; }
+.bento .chiffres .chiffre-verre { font-size: 54px; }
+.bento .chiffres span:not(.chiffre-verre) { max-width: 15ch; font-size: 14.5px; font-weight: 600; line-height: 1.3; color: #2A2840; }
+.bento .rea { grid-row: span 2; display: flex; flex-direction: column; padding: 8px; }
+.bento .rea .v { flex: 1; }
+.bento .tout { grid-column: span 2; grid-row: span 2; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; gap: 14px; padding: 28px; }
+.bento .tout b { font-family: 'Bricolage Grotesque'; font-size: 26px; letter-spacing: -.03em; line-height: 1.1; }
+.bento .tout span { font-size: 15px; color: var(--texte); }
+.bento .rea .titre-carte { padding: 8px 6px 2px; font-size: 15px; }
+.bande-c { position: relative; overflow: hidden; margin-top: 26px; }
+.bande-c .piste { display: flex; gap: 16px; width: max-content; animation: defile 42s linear infinite; }
+.bande-c .item { width: 300px; display: flex; flex-direction: column; gap: 8px; padding: 8px; }
+.bande-c .item .v { aspect-ratio: 16 / 9; }
+.bande-c .item .titre-carte { padding: 2px 6px 4px; font-size: 15px; }
+.masque-bords { -webkit-mask: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); mask: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
+.cit-tournante { position: relative; max-width: 760px; margin: 30px auto 0; min-height: 150px; text-align: center; }
+.cit-tournante .cit { position: absolute; inset: 0; align-items: center; opacity: 0; animation: tourne 15s infinite; }
+.cit-tournante .cit:nth-child(2) { animation-delay: 5s; }
+.cit-tournante .cit:nth-child(3) { animation-delay: 10s; }
+@keyframes tourne { 0%, 3% { opacity: 0; transform: translateY(10px); } 6%, 30% { opacity: 1; transform: none; } 33%, 100% { opacity: 0; transform: translateY(-10px); } }
+.show-c { position: relative; }
+.show-c .v { aspect-ratio: 21 / 9; border-radius: 26px; }
+.bulle { position: absolute; z-index: 3; max-width: 270px; padding: 16px 18px; border-radius: 20px; font-size: 15px; line-height: 1.4; font-weight: 600; }
+.bulle small { display: block; margin-top: 8px; font-size: 12.5px; font-weight: 600; color: var(--legende); }
+.bulle.b1 { left: -10px; top: 26px; transform: rotate(-2deg); animation: flotte 6s ease-in-out infinite; }
+.bulle.b2 { right: -10px; top: 40%; transform: rotate(2deg); animation: flotte 7s ease-in-out infinite reverse; }
+.bulle.b3 { left: 22%; bottom: -26px; transform: rotate(-1deg); animation: flotte 6.5s ease-in-out infinite; }
+@keyframes flotte { 50% { translate: 0 -8px; } }
+
+@media (max-width: 980px) {
+  .hero-l, .une-t { grid-template-columns: 1fr; }
+  .macon { column-count: 2; }
+  .rangs { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .rangs .cit.court, .rangs .cit.moyen { grid-column: span 1; }
+  .rangs .cit.long { grid-column: span 2; }
+  .mur { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: 110px; gap: 12px; }
+  .case.large { grid-row: span 3; }
+  .promesses-a { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .promesses-b { grid-template-columns: 1fr 1fr; row-gap: 26px; }
+  .promesses-b > div:nth-child(3) { box-shadow: none; padding-left: 0; }
+  .cartes-c { flex-wrap: wrap; gap: 14px; }
+  .carte-jeu { margin: 0; --r: 0deg !important; --y: 0px !important; width: calc(50% - 7px); min-height: 0; }
+  .agence-b { grid-template-columns: 1fr; }
+  .milieu { height: 110px; background: linear-gradient(180deg, #FFF1E7, #8C6BD8 50%, #0F0F12); }
+  .milieu .ensemble { transform: translate(-50%, -50%); }
+  .bento { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .bento .chiffres, .bento .tout { grid-column: span 2; }
+}
+@media (max-width: 600px) {
+  .conteneur { padding: 0 16px; }
+  .scene { padding: 16px; border-radius: 24px; }
+  .titre-sec { font-size: 28px; }
+  .hero-l h4 { font-size: 30px; }
+  .macon { column-count: 1; }
+  .rangs { grid-template-columns: 1fr; }
+  .rangs .cit.long { grid-column: span 1; }
+  .case .titre-carte, .case .client { font-size: 12px; }
+  .plaque-titre { padding: 8px 10px; }
+  .plaque-titre .titre-carte, .case.large .plaque-titre .titre-carte { font-size: 14px; }
+  .case:not(.large) .dur { display: none; }
+  .promesses-a, .promesses-b { grid-template-columns: 1fr; }
+  .promesses-b > div { box-shadow: 0 -1px 0 rgba(196,181,253,.22) !important; padding: 16px 0 !important; flex-direction: row; flex-wrap: wrap; align-items: center; }
+  .promesse { flex-direction: row; flex-wrap: wrap; align-items: center; padding: 18px; }
+  .promesse .chiffre-verre { font-size: 56px; width: 56px; }
+  .promesse h4, .promesses-b h4 { flex: 1 1 160px; }
+  .promesse p, .promesses-b p { flex-basis: 100%; }
+  .promesses-b .chiffre-verre { font-size: 56px; width: 56px; }
+  .carte-jeu { width: 100%; }
+  .agence-a .creas, .agence-a .ia { padding: 32px 16px; }
+  .agence-a h4, .agence-b h4 { font-size: 27px; }
+  .portraits { gap: 14px; }
+  .portraits figure { width: 96px; }
+  .rond, .agence-b .rond { width: 80px; height: 80px; font-size: 22px; }
+  .bento { grid-template-columns: 1fr; grid-auto-rows: auto; }
+  .bento .show, .bento .chiffres, .bento .tout, .bento .rea { grid-column: auto; grid-row: auto; }
+  .bento .show .v { aspect-ratio: 16 / 9; }
+  .bento .rea .v { aspect-ratio: 16 / 9; }
+  .bento .chiffres { flex-direction: column; align-items: flex-start; }
+  .show-c .v { aspect-ratio: 4 / 3; }
+  .bulle { position: relative; left: auto !important; right: auto !important; top: auto !important; bottom: auto !important; max-width: none; margin-top: 12px; transform: none !important; }
+  .entracte .titre-e { left: 12px; max-width: 170px; padding: 10px 12px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  .cit-tournante { min-height: 0; }
+  .cit-tournante .cit { position: relative; opacity: 1; margin-bottom: 12px; }
+  .entracte .piste, .bande-c .piste { flex-wrap: wrap; width: auto; }
+}
+</style>
+</head>
+<body>
+<main>
+<div class="conteneur">
+  <header class="intro">
+    <h1>Nouveautés : propositions à valider.</h1>
+    <p>Une partie par demande, plusieurs options à chaque fois. Mon conseil est en violet. Les images sont des fonds de couleur (pas de vidéos ni de photos clients dans la maquette) ; les citations et noms sont des exemples. Rien n'est encore dans le thème.</p>
+    <p>Nouvelle règle d'écriture prise en compte ici et appliquée partout à la prochaine version : <b>« +500 »</b> (et plus « 500+ »), et plus de tirets longs dans les textes.</p>
+    <nav class="sommaire" aria-label="Parties">
+      <a href="#landing">1. Landing : showreel Vimeo</a><a href="#temoignages">2. Témoignages</a><a href="#realisations">3. Réalisations</a><a href="#offres">4. Offres</a><a href="#agence">5. L'agence</a><a href="#contact">6. Contact</a>
+    </nav>
+  </header>
+
+  <!-- 1 · LANDING -->
+  <section class="partie" id="landing" aria-labelledby="t-landing">
+    <h2 id="t-landing"><span class="num">1</span>Landing : un vrai showreel dans le hero.</h2>
+    <p class="demande">Aujourd'hui, c'est une image avec un bouton lecture. Vous collez le lien Vimeo dans le widget « Rolling · Vidéo » (nouveau réglage « Lien de la vidéo »). Le thème demande à Vimeo de masquer le titre, le nom du compte et la photo de profil. Rien ne se charge avant le clic : la page reste rapide.</p>
+
+    <div class="option conseil">
+      <h3><span class="lettre">A</span>Lecture dans le cadre, au clic <span class="etiquette">Conseil</span></h3>
+      <p class="desc">L'image d'affiche (celle de votre choix) reste visible au chargement. Au clic, le lecteur Vimeo s'ouvre dans le même cadre en verre, avec le son, sans titre, sans nom ni photo de compte. Fonctionne sur tous les comptes Vimeo.</p>
+      <div class="scene taches">
+        <div class="hero-l">
+          <div>
+            <span class="timecode">Agence de production vidéo à Paris</span>
+            <h4 style="margin-top:18px">L'agence vidéo qui transforme vos contenus <em>en vidéos, en illimité.</em></h4>
+            <p class="t">Rolling est l'agence de production vidéo en abonnement des équipes com, RH et formation.</p>
+          </div>
+          <div class="cadre-video verre">
+            <div class="ecran v g2" id="ecran-a">
+              <span class="tag">Showreel</span><span class="dur">0:59</span>
+              <button class="play" type="button" aria-label="Lire le showreel" onclick="this.closest('.ecran').classList.add('joue')"></button>
+              <div class="lecteur" aria-hidden="true"><div class="image g2 boucle"></div><div class="barre"><span></span><i></i>0:13 / 0:59</div></div>
+            </div>
+          </div>
+        </div>
+        <div class="masques" aria-label="Masqué par le thème"><span>Titre de la vidéo</span><span>Nom du compte Pitchy</span><span>Photo de profil</span><span>Bouton « J'aime »</span></div>
+      </div>
+      <p class="note">À savoir : sur Vimeo, le propriétaire du compte peut forcer l'affichage de son nom. Si la photo Pitchy apparaît encore, dans Vimeo : la vidéo > Partager > Intégrer > décocher « Portrait », « Titre » et « Byline » (ou « Laisser le spectateur choisir »). Solution la plus propre : envoyer le fichier .mp4 dans la médiathèque (aucune marque Vimeo).</p>
+    </div>
+
+    <div class="option">
+      <h3><span class="lettre">B</span>Aperçu muet en boucle, puis le son au clic</h3>
+      <p class="desc">Le showreel tourne en silence dans le cadre dès qu'il est visible (comme sur l'accueil), avec un bouton « Activer le son ». Plus vivant, mais demande un compte Vimeo payant (mode « arrière-plan ») ou le fichier .mp4 dans la médiathèque. Rien ne bouge avec « réduire les animations ».</p>
+      <div class="scene taches">
+        <div class="hero-l">
+          <div>
+            <span class="timecode">Agence de production vidéo à Paris</span>
+            <h4 style="margin-top:18px">L'agence vidéo qui transforme vos contenus <em>en vidéos, en illimité.</em></h4>
+          </div>
+          <div class="cadre-video verre">
+            <div class="ecran v g1 boucle"><span class="tag">Showreel</span><button class="son" type="button">Activer le son</button></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2 · TÉMOIGNAGES -->
+  <section class="partie" id="temoignages" aria-labelledby="t-temoignages">
+    <h2 id="t-temoignages"><span class="num">2</span>Témoignages : plus de verre, des cartes à la bonne taille.</h2>
+    <p class="demande">Les cartes ont aujourd'hui toutes la même hauteur : une citation courte laisse un grand vide. Dans les deux options, le thème mesure la citation (courte, moyenne, longue) et adapte la carte et la taille du texte. Taches de couleur derrière, cartes en verre, filtres dans une barre en verre.</p>
+
+    <div class="option conseil">
+      <h3><span class="lettre">A</span>Mur maçonné <span class="etiquette">Conseil</span></h3>
+      <p class="desc">Trois colonnes ; chaque carte prend la hauteur de sa citation, sans trou. Les citations courtes sont écrites plus grand (elles « claquent »), les longues plus petit. Les cartes avec vidéo gardent leur vignette en haut. Deux colonnes sur tablette, une sur téléphone.</p>
+      <div class="scene taches">
+        <div class="chips verre" style="margin-bottom:22px"><span class="nom">Métier</span><span class="chip on">Tous</span><span class="chip">Communication interne</span><span class="chip">RH</span><span class="chip">Formation</span></div>
+        <div class="une-t verre">
+          <div class="v g1"><button class="play" type="button" aria-label="Lire la vidéo du témoignage à la une"></button><span class="tag">À la une</span></div>
+          <div class="txt">
+            <span class="logo-client">Logo client</span>
+            <blockquote class="titre-carte" style="font-size:24px">« Nos messages internes sont enfin regardés jusqu'au bout. »</blockquote>
+            <div class="qui" style="display:flex;gap:12px;align-items:center"><span class="portrait">JC</span><span><b>Julie C.</b><br><span style="font-size:13px;color:var(--legende)">Responsable Fonctionnel SIRH</span></span></div>
+            <a class="lien" href="#temoignages">Lire le cas client</a>
+          </div>
+        </div>
+        <div class="macon">
+          <article class="cit court verre"><span class="logo-client">Logo client</span><span class="guillemet" aria-hidden="true">“</span><blockquote>« Un vrai partenaire. »</blockquote><div class="qui"><span class="portrait">AL</span><span><b>Anne L.</b><span>Directrice de la communication</span></span></div></article>
+          <article class="cit moyen verre"><div class="v g3"><button class="play" type="button" aria-label="Lire la vidéo"></button></div><span class="logo-client">Logo client</span><blockquote>« Nous avons lancé notre parcours d'onboarding en vidéo en trois semaines. »</blockquote><div class="qui"><span class="portrait">TM</span><span><b>Thomas M.</b><span>Responsable RH</span></span></div><a class="lien" href="#temoignages">Voir la réalisation</a></article>
+          <article class="cit long verre"><span class="logo-client">Logo client</span><span class="guillemet" aria-hidden="true">“</span><blockquote>« Avant Rolling, chaque vidéo demandait un devis, trois semaines et beaucoup d'énergie. Aujourd'hui, nous envoyons un article le lundi et la vidéo part à nos équipes en fin de semaine. Le format en abonnement a changé notre façon de communiquer. »</blockquote><div class="qui"><span class="portrait">SB</span><span><b>Sarah B.</b><span>Chargée de communication interne</span></span></div><a class="lien" href="#temoignages">Lire le cas client</a></article>
+          <article class="cit moyen verre"><span class="logo-client">Logo client</span><span class="guillemet" aria-hidden="true">“</span><blockquote>« Une équipe qui comprend nos sujets RH sans qu'on ait besoin de tout réexpliquer. »</blockquote><div class="qui"><span class="portrait">KD</span><span><b>Karim D.</b><span>Responsable formation</span></span></div></article>
+          <article class="cit court verre"><span class="logo-client">Logo client</span><span class="guillemet" aria-hidden="true">“</span><blockquote>« Rapide, beau, simple. »</blockquote><div class="qui"><span class="portrait">CP</span><span><b>Claire P.</b><span>Directrice marque employeur</span></span></div></article>
+          <article class="cit moyen verre"><div class="v g6"><button class="play" type="button" aria-label="Lire la vidéo"></button></div><span class="logo-client">Logo client</span><blockquote>« 40 vidéos de formation en un an, toutes à notre charte. »</blockquote><div class="qui"><span class="portrait">ER</span><span><b>Élise R.</b><span>Learning manager</span></span></div></article>
+        </div>
+      </div>
+    </div>
+
+    <div class="option">
+      <h3><span class="lettre">B</span>Rangées équilibrées</h3>
+      <p class="desc">La grille garde des rangées alignées, mais la largeur dépend de la citation : courte = 1/3, moyenne = 1/2, longue = 2/3. Résultat : des cartes de hauteur proche sur une même rangée, sans vide. Lecture de gauche à droite, plus « rangée » que A, un peu moins vivante.</p>
+      <div class="scene taches">
+        <div class="rangs">
+          <article class="cit court verre"><span class="legende-taille">Courte</span><span class="logo-client">Logo client</span><blockquote>« Un vrai partenaire. »</blockquote><div class="qui"><span class="portrait">AL</span><span><b>Anne L.</b><span>Directrice de la communication</span></span></div></article>
+          <article class="cit long verre"><span class="legende-taille">Longue</span><span class="logo-client">Logo client</span><blockquote>« Avant Rolling, chaque vidéo demandait un devis, trois semaines et beaucoup d'énergie. Aujourd'hui, nous envoyons un article le lundi et la vidéo part à nos équipes en fin de semaine. »</blockquote><div class="qui"><span class="portrait">SB</span><span><b>Sarah B.</b><span>Chargée de communication interne</span></span></div></article>
+          <article class="cit moyen verre"><span class="legende-taille">Moyenne</span><span class="logo-client">Logo client</span><blockquote>« Une équipe qui comprend nos sujets RH sans qu'on ait besoin de tout réexpliquer. »</blockquote><div class="qui"><span class="portrait">KD</span><span><b>Karim D.</b><span>Responsable formation</span></span></div></article>
+          <article class="cit moyen verre"><span class="legende-taille">Moyenne</span><span class="logo-client">Logo client</span><blockquote>« Nous avons lancé notre parcours d'onboarding en vidéo en trois semaines. »</blockquote><div class="qui"><span class="portrait">TM</span><span><b>Thomas M.</b><span>Responsable RH</span></span></div></article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 · RÉALISATIONS -->
+  <section class="partie" id="realisations" aria-labelledby="t-realisations">
+    <h2 id="t-realisations"><span class="num">3</span>Réalisations : vos extraits internes en boucle, et plus de verre.</h2>
+    <p class="demande">Nouveau contenu dans l'administration : <b>Réalisations > Extraits vidéo</b> (fichier vidéo court, muet, format 16:9, 9:16 ou 1:1, une phrase de description pour l'accessibilité). Pas de fiche, pas de lien : ils habillent la page. Ils tournent en boucle seulement quand ils sont visibles, et restent sur une image fixe avec « réduire les animations ». Les filtres ne les retirent pas (ils ne sont pas des projets clients).</p>
+
+    <div class="option conseil">
+      <h3><span class="lettre">A</span>Extraits glissés dans le mur <span class="etiquette">Conseil</span></h3>
+      <p class="desc">Le thème intercale un extrait toutes les 3 réalisations (réglable dans le widget Liste). Un extrait n'a ni titre ni bouton : juste la vidéo qui tourne et une pastille « Studio Rolling ». Les 9:16 prennent une case haute. Plus de verre : chaque vignette est posée dans un cadre en verre, le titre passe dans une plaque en verre fumé sur l'image, des taches de couleur derrière le mur.</p>
+      <div class="scene taches">
+        <div class="chips verre" style="margin-bottom:22px"><span class="nom">Métier</span><span class="chip on">Tous</span><span class="chip">Communication interne</span><span class="chip">RH</span><span class="chip">Formation</span></div>
+        <div class="mur">
+          <a class="case large" href="#realisations"><div class="cadre-v verre"><div class="v g1"><span class="tag">Motion</span><span class="dur">2:04</span><div class="plaque-titre"><span class="client">Client</span><span class="titre-carte">Le lancement de la nouvelle offre, en 90 secondes.</span></div></div></div></a>
+          <div class="case haute extrait"><div class="cadre-v verre"><div class="v g3 boucle" role="img" aria-label="Extrait : tournage d'une interview en studio"><span class="studio">Studio Rolling</span></div></div></div>
+          <a class="case" href="#realisations"><div class="cadre-v verre"><div class="v g2"><span class="tag">Interview</span><div class="plaque-titre"><span class="client">Client</span><span class="titre-carte">Le mot du dirigeant.</span></div></div></div></a>
+          <a class="case" href="#realisations"><div class="cadre-v verre"><div class="v g4"><span class="tag">Tutoriel</span><div class="plaque-titre"><span class="client">Client</span><span class="titre-carte">Prendre en main le nouvel outil RH.</span></div></div></div></a>
+          <a class="case haute" href="#realisations"><div class="cadre-v verre"><div class="v g5"><span class="tag">9:16</span><div class="plaque-titre"><span class="client">Client</span><span class="titre-carte">Série réseaux sociaux.</span></div></div></div></a>
+          <div class="case extrait"><div class="cadre-v verre"><div class="v g6 boucle" role="img" aria-label="Extrait : animation de logo en motion design"><span class="studio">Studio Rolling</span></div></div></div>
+          <a class="case" href="#realisations"><div class="cadre-v verre"><div class="v g3"><span class="tag">Aftermovie</span><div class="plaque-titre"><span class="client">Client</span><span class="titre-carte">Séminaire annuel.</span></div></div></div></a>
+          <a class="case" href="#realisations"><div class="cadre-v verre"><div class="v g1"><span class="tag">Formation</span><div class="plaque-titre"><span class="client">Client</span><span class="titre-carte">Module sécurité.</span></div></div></div></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="option">
+      <h3><span class="lettre">B</span>Entractes : une bande d'extraits entre les rangées</h3>
+      <p class="desc">Les réalisations restent entre elles ; toutes les 2 rangées, une bande en verre fait défiler les extraits en continu (comme les logos), avec une petite plaque « Dans les coulisses ». Arrêt au survol, plusieurs lignes fixes avec « réduire les animations ». Plus spectaculaire, mais la bande coupe un peu la lecture des projets.</p>
+      <div class="scene taches">
+        <div class="mur mur-fixe">
+          <a class="case" href="#realisations"><div class="cadre-v verre"><div class="v g1"><div class="plaque-titre"><span class="client">Client</span><span class="titre-carte">Le mot du dirigeant.</span></div></div></div></a>
+          <a class="case" href="#realisations"><div class="cadre-v verre"><div class="v g2"><div class="plaque-titre"><span class="client">Client</span><span class="titre-carte">Onboarding RH.</span></div></div></div></a>
+          <a class="case" href="#realisations"><div class="cadre-v verre"><div class="v g4"><div class="plaque-titre"><span class="client">Client</span><span class="titre-carte">Module sécurité.</span></div></div></div></a>
+          <a class="case" href="#realisations"><div class="cadre-v verre"><div class="v g5"><div class="plaque-titre"><span class="client">Client</span><span class="titre-carte">Série réseaux sociaux.</span></div></div></div></a>
+          <div class="entracte verre">
+            <div class="titre-e verre"><b>Dans les coulisses.</b><span>Extraits de nos productions internes.</span></div>
+            <div class="piste" aria-hidden="true">
+              <div class="v g3 boucle"></div><div class="v g6 boucle vert"></div><div class="v g1 boucle"></div><div class="v g5 boucle"></div><div class="v g2 boucle vert"></div><div class="v g4 boucle"></div>
+              <div class="v g3 boucle"></div><div class="v g6 boucle vert"></div><div class="v g1 boucle"></div><div class="v g5 boucle"></div><div class="v g2 boucle vert"></div><div class="v g4 boucle"></div>
+            </div>
+          </div>
+          <a class="case" href="#realisations"><div class="cadre-v verre"><div class="v g6"><div class="plaque-titre"><span class="client">Client</span><span class="titre-carte">Aftermovie.</span></div></div></div></a>
+          <a class="case" href="#realisations"><div class="cadre-v verre"><div class="v g3"><div class="plaque-titre"><span class="client">Client</span><span class="titre-carte">Lancement produit.</span></div></div></div></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 · OFFRES -->
+  <section class="partie" id="offres" aria-labelledby="t-offres">
+    <h2 id="t-offres"><span class="num">4</span>Offres : « L'illimité qui tient ses promesses ».</h2>
+    <p class="demande">Aujourd'hui (rappel ci-dessous) : textes en 12 px, chiffres pâles, tout tient sur une ligne. Dans les trois options : chiffres en verre en grand, titre lisible (21 px), une phrase d'explication en 15 px. Les phrases d'explication sont <b>proposées</b>, à valider.</p>
+    <div class="actuel-o" style="margin-top:18px" aria-label="Version actuelle">
+      <p class="h">L'illimité qui tient ses promesses :</p>
+      <ul><li><i>1</i><span><b>Un projet traité à fond</b> à la fois</span></li><li><i>2</i><span><b>1 projet = 1 vidéo livrée</b>, prête à publier</span></li><li><i>3</i><span><b>Des allers-retours cadrés</b>, pour livrer vite</span></li><li><i>4</i><span><b>1 abonnement = 1 équipe métier</b></span></li></ul>
+    </div>
+
+    <div class="option conseil">
+      <h3><span class="lettre">A</span>Quatre cartes en verre <span class="etiquette">Conseil</span></h3>
+      <p class="desc">Une carte par promesse, gros chiffre en verre, la carte se soulève au survol. Deux par ligne sur tablette ; en mobile, chiffre et titre côte à côte, phrase dessous.</p>
+      <div class="scene taches">
+        <span class="label">Nos règles du jeu</span>
+        <h4 class="titre-sec">L'illimité qui tient <em>ses promesses.</em></h4>
+        <div class="promesses-a">
+          <div class="promesse verre"><span class="chiffre-verre" aria-hidden="true">1</span><h4>Un projet traité à fond, à la fois.</h4><p>Toute l'équipe se concentre sur votre vidéo en cours, puis passe à la suivante.</p></div>
+          <div class="promesse verre"><span class="chiffre-verre" aria-hidden="true">2</span><h4>1 projet = 1 vidéo livrée.</h4><p>Prête à publier : montée, sous-titrée, à votre charte.</p></div>
+          <div class="promesse verre"><span class="chiffre-verre" aria-hidden="true">3</span><h4>Des allers-retours cadrés.</h4><p>Des retours groupés à chaque étape, pour livrer vite sans tourner en rond.</p></div>
+          <div class="promesse verre"><span class="chiffre-verre" aria-hidden="true">4</span><h4>1 abonnement = 1 équipe métier.</h4><p>Com interne, RH ou formation : une équipe qui connaît vos sujets.</p></div>
+        </div>
+        <p style="margin-top:22px;font-size:15px;color:var(--texte)">C'est notre façon de garantir la même qualité et la même vitesse, à tous nos abonnés.</p>
+      </div>
+    </div>
+
+    <div class="option">
+      <h3><span class="lettre">B</span>Bande sombre, chiffres lumineux</h3>
+      <p class="desc">La partie passe sur le fond foncé de la charte (comme la partie IA de l'accueil) : chiffres en verre qui brillent, texte clair. Casse le rythme de la page Offres, très lisible.</p>
+      <div class="scene sombre">
+        <span class="label">Nos règles du jeu</span>
+        <h4 class="titre-sec">L'illimité qui tient <em>ses promesses.</em></h4>
+        <div class="promesses-b">
+          <div><span class="chiffre-verre" aria-hidden="true">1</span><h4>Un projet traité à fond, à la fois.</h4><p>Toute l'équipe se concentre sur votre vidéo en cours.</p></div>
+          <div><span class="chiffre-verre" aria-hidden="true">2</span><h4>1 projet = 1 vidéo livrée.</h4><p>Prête à publier : montée, sous-titrée, à votre charte.</p></div>
+          <div><span class="chiffre-verre" aria-hidden="true">3</span><h4>Des allers-retours cadrés.</h4><p>Des retours groupés, pour livrer vite.</p></div>
+          <div><span class="chiffre-verre" aria-hidden="true">4</span><h4>1 abonnement = 1 équipe métier.</h4><p>Une équipe qui connaît vos sujets.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="option">
+      <h3><span class="lettre">C</span>Cartes à jouer, en éventail</h3>
+      <p class="desc">Les 4 promesses comme des cartes « règle du jeu » légèrement inclinées ; au survol (ou au clavier), la carte se redresse et passe devant. Le plus « fun », avec une note manuscrite en bas de chaque carte. En mobile, cartes droites l'une sous l'autre.</p>
+      <div class="scene taches">
+        <span class="label">Nos règles du jeu</span>
+        <h4 class="titre-sec">L'illimité qui tient <em>ses promesses.</em></h4>
+        <div class="cartes-c">
+          <div class="carte-jeu verre" style="--r:-7deg;--y:16px" tabindex="0"><div class="haut"><span class="regle">Règle n°1</span><span class="chiffre-verre" aria-hidden="true">1</span></div><div><h4>Un projet traité à fond, à la fois.</h4><p>Toute l'équipe sur votre vidéo en cours.</p></div><span class="bas">focus total</span></div>
+          <div class="carte-jeu verre" style="--r:-2deg;--y:0px" tabindex="0"><div class="haut"><span class="regle">Règle n°2</span><span class="chiffre-verre" aria-hidden="true">2</span></div><div><h4>1 projet = 1 vidéo livrée.</h4><p>Prête à publier, à votre charte.</p></div><span class="bas">prête à poster</span></div>
+          <div class="carte-jeu verre" style="--r:3deg;--y:2px" tabindex="0"><div class="haut"><span class="regle">Règle n°3</span><span class="chiffre-verre" aria-hidden="true">3</span></div><div><h4>Des allers-retours cadrés.</h4><p>Des retours groupés, pour livrer vite.</p></div><span class="bas">sans ping-pong</span></div>
+          <div class="carte-jeu verre" style="--r:8deg;--y:18px" tabindex="0"><div class="haut"><span class="regle">Règle n°4</span><span class="chiffre-verre" aria-hidden="true">4</span></div><div><h4>1 abonnement = 1 équipe métier.</h4><p>Une équipe qui connaît vos sujets.</p></div><span class="bas">vos experts</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 · AGENCE -->
+  <section class="partie" id="agence" aria-labelledby="t-agence">
+    <h2 id="t-agence"><span class="num">5</span>L'agence : créas en couleur, experts IA sur fond foncé.</h2>
+    <p class="demande">Comme sur l'accueil (humain en couleur, IA en foncé). Le fondu entre les deux montre qu'ils travaillent ensemble, chacun avec son métier. Fonctionne avec les deux versions du bloc (grille et portraits qui défilent). Portraits remplacés ici par des initiales.</p>
+
+    <div class="option conseil">
+      <h3><span class="lettre">A</span>Fondu vertical, de la couleur au foncé <span class="etiquette">Conseil</span></h3>
+      <p class="desc">Les créas sur le fond pêche et lilas ; dessous, la couleur glisse vers le foncé, avec une pastille « Ensemble sur chaque projet » au milieu du fondu. Les experts IA sur fond foncé, portraits cerclés d'un halo violet. En mobile, même principe.</p>
+      <div class="scene" style="padding:0">
+        <div class="agence-a">
+          <div class="creas">
+            <h4>Nos <em>créas.</em></h4>
+            <div class="portraits">
+              <figure><span class="rond r1">V</span><figcaption><b>Victor</b><span>Motion Designer</span></figcaption></figure>
+              <figure><span class="rond r3">V</span><figcaption><b>Vincent</b><span>Cadreur</span></figcaption></figure>
+              <figure><span class="rond r1">S</span><figcaption><b>Sophie</b><span>Chef de Projet</span></figcaption></figure>
+              <figure><span class="rond r3">T</span><figcaption><b>Thomas</b><span>Directeur Artistique</span></figcaption></figure>
+              <figure><span class="rond r1">A</span><figcaption><b>Alex</b><span>Responsable Équipe Motion Design</span></figcaption></figure>
+              <figure><span class="rond r3">M</span><figcaption><b>Marion</b><span>Responsable Agence vidéo</span></figcaption></figure>
+            </div>
+          </div>
+          <div class="fondu"><span class="ensemble"><i aria-hidden="true"></i>Ensemble sur chaque projet</span></div>
+          <div class="ia">
+            <h4>Nos experts <em>IA.</em></h4>
+            <div class="portraits">
+              <figure><span class="rond r2">I</span><figcaption><b>Inès</b><span>DevOps</span></figcaption></figure>
+              <figure><span class="rond r2">H</span><figcaption><b>Hakim</b><span>Développeur Back-End</span></figcaption></figure>
+              <figure><span class="rond r2">M</span><figcaption><b>Maxime</b><span>Product Manager Senior</span></figcaption></figure>
+              <figure><span class="rond r2">R</span><figcaption><b>Ronan</b><span>Directeur Technique</span></figcaption></figure>
+              <figure><span class="rond r2">M</span><figcaption><b>Marion</b><span>Développeuse Full-Stack</span></figcaption></figure>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="option">
+      <h3><span class="lettre">B</span>Côte à côte, fondu au centre</h3>
+      <p class="desc">Une seule grande carte coupée en deux : créas à gauche en couleur, experts IA à droite en foncé, fondu au milieu avec la pastille. Montre bien « deux métiers, une équipe », mais les portraits sont plus petits. En mobile, l'un sous l'autre avec un fondu vertical.</p>
+      <div class="scene" style="padding:0">
+        <div class="agence-b">
+          <div class="cote-creas">
+            <h4>Nos <em>créas.</em></h4>
+            <div class="portraits">
+              <figure><span class="rond r1">V</span><figcaption><b>Victor</b><span>Motion Designer</span></figcaption></figure>
+              <figure><span class="rond r3">V</span><figcaption><b>Vincent</b><span>Cadreur</span></figcaption></figure>
+              <figure><span class="rond r1">S</span><figcaption><b>Sophie</b><span>Chef de Projet</span></figcaption></figure>
+              <figure><span class="rond r3">T</span><figcaption><b>Thomas</b><span>Directeur Artistique</span></figcaption></figure>
+            </div>
+          </div>
+          <div class="milieu"><span class="ensemble"><i aria-hidden="true"></i>Ensemble</span></div>
+          <div class="cote-ia">
+            <h4>Nos experts <em>IA.</em></h4>
+            <div class="portraits">
+              <figure><span class="rond r2">I</span><figcaption><b>Inès</b><span>DevOps</span></figcaption></figure>
+              <figure><span class="rond r2">H</span><figcaption><b>Hakim</b><span>Développeur Back-End</span></figcaption></figure>
+              <figure><span class="rond r2">M</span><figcaption><b>Maxime</b><span>Product Manager Senior</span></figcaption></figure>
+              <figure><span class="rond r2">R</span><figcaption><b>Ronan</b><span>Directeur Technique</span></figcaption></figure>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6 · CONTACT -->
+  <section class="partie" id="contact" aria-labelledby="t-contact">
+    <h2 id="t-contact"><span class="num">6</span>Contact : une partie « melting pot ».</h2>
+    <p class="demande">Placée après le formulaire et la FAQ, avant le bloc Ressources. Tout est automatique : dernières réalisations, citations des témoignages (celles qui en ont une), showreel de votre choix. Bloc aussi disponible dans Mes modèles pour d'autres pages.</p>
+
+    <div class="option conseil">
+      <h3><span class="lettre">A</span>Mosaïque en verre <span class="etiquette">Conseil</span></h3>
+      <p class="desc">Le showreel en grand, deux citations courtes, la plaque de chiffres (13 ans, +500) et les 2 dernières réalisations. Tout en cartes de verre sur taches de couleur. Une colonne sur téléphone.</p>
+      <div class="scene taches">
+        <span class="timecode">00:03</span>
+        <h4 class="titre-sec">En attendant <em>notre échange.</em></h4>
+        <div class="bento" style="margin-top:30px">
+          <div class="show verre"><div class="v g1"><span class="tag">Showreel</span><span class="dur">0:59</span><button class="play" type="button" aria-label="Lire le showreel"></button></div><p>Une minute pour voir ce que nous produisons chaque semaine.</p></div>
+          <article class="cit court verre"><blockquote>« Un vrai partenaire. »</blockquote><div class="qui"><span class="portrait">AL</span><span><b>Anne L.</b><span>Directrice de la communication</span></span></div></article>
+          <article class="cit court verre"><blockquote>« Rapide, beau, simple. »</blockquote><div class="qui"><span class="portrait">CP</span><span><b>Claire P.</b><span>Directrice marque employeur</span></span></div></article>
+          <div class="chiffres verre"><div><span class="chiffre-verre" aria-hidden="true">13</span><span>ans de vidéo pour les entreprises</span></div><div><span class="chiffre-verre" aria-hidden="true">+500</span><span>grandes entreprises équipées</span></div></div>
+          <a class="rea verre" href="#contact"><div class="v g3"><span class="tag">Motion</span></div><span class="titre-carte">Le lancement de la nouvelle offre.</span></a>
+          <a class="rea verre" href="#contact"><div class="v g5"><span class="tag">Interview</span></div><span class="titre-carte">Le mot du dirigeant.</span></a>
+          <div class="tout verre"><b>Toutes nos réalisations.</b><span>Motion, tournage, interviews, tutoriels : parcourez les vidéos produites pour nos clients.</span><a class="bouton" href="#contact">Voir les réalisations</a></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="option">
+      <h3><span class="lettre">B</span>Bande de réalisations + citations qui tournent</h3>
+      <p class="desc">Les dernières réalisations défilent en continu (comme les logos, arrêt au survol), puis une citation à la fois, qui change toutes les 5 secondes. Plus léger que A, sans showreel. Avec « réduire les animations » : vignettes sur plusieurs lignes et citations l'une sous l'autre.</p>
+      <div class="scene taches">
+        <span class="timecode">00:03</span>
+        <h4 class="titre-sec">Ils nous ont fait <em>confiance.</em></h4>
+        <div class="bande-c masque-bords">
+          <div class="piste">
+            <a class="item verre" href="#contact"><div class="v g1"></div><span class="titre-carte">Le mot du dirigeant.</span></a>
+            <a class="item verre" href="#contact"><div class="v g2"></div><span class="titre-carte">Onboarding RH.</span></a>
+            <a class="item verre" href="#contact"><div class="v g3"></div><span class="titre-carte">Lancement produit.</span></a>
+            <a class="item verre" href="#contact"><div class="v g4"></div><span class="titre-carte">Module sécurité.</span></a>
+            <a class="item verre" href="#contact" tabindex="-1" aria-hidden="true"><div class="v g1"></div><span class="titre-carte">Le mot du dirigeant.</span></a>
+            <a class="item verre" href="#contact" tabindex="-1" aria-hidden="true"><div class="v g2"></div><span class="titre-carte">Onboarding RH.</span></a>
+            <a class="item verre" href="#contact" tabindex="-1" aria-hidden="true"><div class="v g3"></div><span class="titre-carte">Lancement produit.</span></a>
+            <a class="item verre" href="#contact" tabindex="-1" aria-hidden="true"><div class="v g4"></div><span class="titre-carte">Module sécurité.</span></a>
+          </div>
+        </div>
+        <div class="cit-tournante">
+          <article class="cit court"><blockquote>« Un vrai partenaire. »</blockquote><div class="qui"><span class="portrait">AL</span><span><b>Anne L.</b><span>Directrice de la communication</span></span></div></article>
+          <article class="cit court"><blockquote>« Nos messages internes sont enfin regardés. »</blockquote><div class="qui"><span class="portrait">JC</span><span><b>Julie C.</b><span>Responsable Fonctionnel SIRH</span></span></div></article>
+          <article class="cit court"><blockquote>« Rapide, beau, simple. »</blockquote><div class="qui"><span class="portrait">CP</span><span><b>Claire P.</b><span>Directrice marque employeur</span></span></div></article>
+        </div>
+      </div>
+    </div>
+
+    <div class="option">
+      <h3><span class="lettre">C</span>Showreel en grand, citations en bulles</h3>
+      <p class="desc">Le showreel en format cinéma sur toute la largeur, trois citations en bulles de verre qui flottent autour. Le plus spectaculaire, mais redit le showreel de l'accueil. En mobile, les bulles passent sous la vidéo.</p>
+      <div class="scene taches">
+        <span class="timecode">00:03</span>
+        <h4 class="titre-sec">Ce que nous faisons, <em>en une minute.</em></h4>
+        <div class="show-c" style="margin-top:34px">
+          <div class="v g6"><button class="play" type="button" aria-label="Lire le showreel"></button></div>
+          <div class="bulle verre b1">« Un vrai partenaire. »<small>Anne L., Directrice de la communication</small></div>
+          <div class="bulle verre b2">« Rapide, beau, simple. »<small>Claire P., Directrice marque employeur</small></div>
+          <div class="bulle verre b3">« Nos messages internes sont enfin regardés. »<small>Julie C., Responsable Fonctionnel SIRH</small></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div style="height:90px"></div>
+</div>
+</main>
+</body>
+</html>
