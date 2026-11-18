@@ -62,6 +62,7 @@ class Rolling_Dynamique {
 		add_action( 'elementor/frontend/before_render', array( __CLASS__, 'contexte_debut' ) );
 		add_action( 'elementor/preview/enqueue_styles', array( __CLASS__, 'apercu_contextes' ), 20 );
 		add_action( 'elementor/preview/enqueue_styles', array( __CLASS__, 'styles_apercu' ), 5 );
+		add_action( 'wp_footer', array( __CLASS__, 'renfort_apercu' ), 99 );
 		add_action( 'elementor/frontend/after_render', array( __CLASS__, 'contexte_fin' ) );
 	}
 
@@ -593,6 +594,60 @@ class Rolling_Dynamique {
 		foreach ( array_unique( array_filter( $modeles ) ) as $modele ) {
 			do_action( 'elementor/post/render', $modele ); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound, WordPress.NamingConventions.ValidHookName.UseUnderscores -- crochet d'Elementor.
 			\Elementor\Core\Files\CSS\Post::create( $modele )->enqueue();
+		}
+	}
+
+	/**
+	 * Aperçu de l'éditeur : styles locaux des modèles de cartes écrits directement dans la page, avec un sélecteur
+	 * plus fort (« html body .elementor .e-… »). L'éditeur ajoute ses styles de base (`.elementor .e-flexbox-base`)
+	 * après les feuilles des modèles ; selon l'ordre de chargement, les cartes perdaient leurs réglages (textes en
+	 * ligne). Écrits ici, à partir des données des modèles, ils ne dépendent plus d'aucun fichier ni de l'ordre.
+	 */
+	public static function renfort_apercu() {
+		$renderer = '\\Elementor\\Modules\\AtomicWidgets\\Styles\\Styles_Renderer';
+		$outils   = '\\Elementor\\Modules\\AtomicWidgets\\Utils\\Utils';
+		$filtre   = '\\Elementor\\Modules\\AtomicWidgets\\Styles\\Atomic_Widget_Styles';
+		if ( ! class_exists( '\\Elementor\\Plugin' ) || ! class_exists( $renderer ) || ! class_exists( $outils ) || ! class_exists( $filtre ) ) {
+			return;
+		}
+		$elementor = \Elementor\Plugin::$instance;
+		if ( empty( $elementor->preview ) || ! $elementor->preview->is_preview_mode() ) {
+			return;
+		}
+		$modifie = (int) $elementor->preview->get_post_id();
+		$modeles = array( self::modele_fiche( 'encart' ) );
+		foreach ( (array) get_option( Rolling_Installateur::OPTION_MODELES, array() ) as $cle => $info ) {
+			if ( 0 === strpos( (string) $cle, 'c' ) && ! empty( $info['post_id'] ) ) {
+				$modeles[] = (int) $info['post_id'];
+			}
+		}
+		// Modèles choisis dans les réglages des listes de la page (ex. une carte « V2 » modifiée).
+		$modeles = array_merge( $modeles, self::modeles_des_listes( $modifie ) );
+		$styles  = array();
+		foreach ( array_unique( array_filter( $modeles ) ) as $modele ) {
+			if ( $modele === $modifie ) {
+				continue; // La page modifiée : l'éditeur gère ses styles en direct.
+			}
+			$outils::traverse_post_elements(
+				(string) $modele,
+				function ( $element ) use ( &$styles ) {
+					if ( ! empty( $element['styles'] ) && is_array( $element['styles'] ) ) {
+						$styles = array_merge( $styles, $element['styles'] );
+					}
+				}
+			);
+		}
+		if ( ! $styles ) {
+			return;
+		}
+		try {
+			$css = $renderer::make( $elementor->breakpoints->get_breakpoints_config(), 'html body .elementor' )
+				->render( $filtre::get_license_based_filtered_styles( $styles ) );
+		} catch ( \Throwable $e ) {
+			return;
+		}
+		if ( $css ) {
+			echo '<style id="rl-renfort-cartes">' . str_replace( '</', '<\/', $css ) . '</style>' . "\n"; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- CSS produit par Elementor à partir des modèles.
 		}
 	}
 

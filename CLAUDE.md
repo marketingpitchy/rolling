@@ -544,6 +544,12 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   `html body ` devant chaque sélecteur (spécificité > `.elementor .e-flexbox-base`). Vérifié sur wp et wp2, y compris
   « pire cas » simulé (feuilles remises en tête + styles de base ajoutés en dernier) : colonne. Si ça persiste chez elle :
   demander version affichée, Ctrl+F5, et le HTML de l'aperçu (feuilles `local-*` présentes ?).
+- **0.5.22 : toujours cassé chez la cliente en 0.5.21** ⇒ correctif côté serveur, sans fichier ni ordre :
+  `Rolling_Dynamique::renfort_apercu` (wp_footer, aperçu de l'éditeur seulement) lit les styles locaux des modèles de
+  cartes (c*, encart, modèles choisis dans les listes de la page ; pas la page modifiée) et les écrit dans
+  `<style id="rl-renfort-cartes">` avec `Styles_Renderer::make( breakpoints, 'html body .elementor' )` (même API en 4.3.6
+  et 4.4.1). Test `scratchpad/ed-blog5.js` : feuilles `local-*` des modèles bloquées + renfort JS retiré + styles de base
+  ajoutés en dernier ⇒ colonne ; témoin sans le style PHP ⇒ ligne (bug reproduit ainsi).
 - **Chargement de page effet film** (demande avant la fin de la livraison 4) : maquette `maquettes/loading/maquette-loading.html`
   (copie /workspace/maquette-loading.html), 4 options : A amorce 3-2-1, B clap qui se ferme puis rideau, C ouverture
   cinéma (bandes noires + REC + timecode + règle avec la tête de lecture rouge des frises, plus de filet fin), D barre de lecture en haut sans écran. Conseil : C à l'arrivée (première page
