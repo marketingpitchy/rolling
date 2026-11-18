@@ -538,6 +538,12 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   (aperçu seulement) déplace en fin de `<body>` les feuilles `local-*` sauf celle de la page modifiée (`elementor-preview=`),
   dont l'éditeur gère les styles en direct ; + `Rolling_Dynamique::styles_apercu` (crochet `elementor/preview/enqueue_styles`)
   charge les styles de tous les modèles `c*` et de l'encart. Vérifié sur wp (4.3.6) et wp2 (4.4.1).
+- **0.5.21 : cartes toujours cassées dans l'éditeur chez la cliente après 0.5.20** (non reproduit chez moi, même avec
+  « Méthode d'impression CSS : intégrée ») ⇒ correctif rendu indépendant de l'ordre : rolling.js recopie, dans l'aperçu,
+  les règles des feuilles `local-*` des modèles (sauf la page modifiée) dans un `<style data-rl-renfort>` avec
+  `html body ` devant chaque sélecteur (spécificité > `.elementor .e-flexbox-base`). Vérifié sur wp et wp2, y compris
+  « pire cas » simulé (feuilles remises en tête + styles de base ajoutés en dernier) : colonne. Si ça persiste chez elle :
+  demander version affichée, Ctrl+F5, et le HTML de l'aperçu (feuilles `local-*` présentes ?).
 - **Chargement de page effet film** (demande avant la fin de la livraison 4) : maquette `maquettes/loading/maquette-loading.html`
   (copie /workspace/maquette-loading.html), 4 options : A amorce 3-2-1, B clap qui se ferme puis rideau, C ouverture
   cinéma (bandes noires + REC + timecode + règle avec la tête de lecture rouge des frises, plus de filet fin), D barre de lecture en haut sans écran. Conseil : C à l'arrivée (première page

@@ -59,10 +59,52 @@
 	 */
 	if ( editeur ) {
 		var apercu = ( window.location.search.match( /[?&]elementor-preview=(\d+)/ ) || [] )[ 1 ];
-		document.querySelectorAll( 'link[rel="stylesheet"][href*="/elementor/css/local-"]' ).forEach( function ( feuille ) {
-			if ( ! apercu || feuille.href.indexOf( '/local-' + apercu + '-' ) === -1 ) {
-				document.body.appendChild( feuille );
+		// Recopie des règles avec « html body » devant : plus prioritaires que les styles de base de l'éditeur,
+		// quel que soit l'ordre dans lequel l'éditeur les ajoute.
+		var renforcer = function ( feuille ) {
+			var regles, texte = '';
+			try {
+				regles = feuille.sheet && feuille.sheet.cssRules;
+			} catch ( e ) {
+				return;
 			}
+			if ( ! regles || feuille.getAttribute( 'data-rl-renforce' ) ) {
+				return;
+			}
+			var ecrire = function ( liste ) {
+				var sortie = '';
+				Array.prototype.forEach.call( liste, function ( r ) {
+					if ( r.selectorText ) {
+						sortie += r.selectorText.split( ',' ).map( function ( sel ) {
+							return 'html body ' + sel.trim();
+						} ).join( ',' ) + '{' + r.style.cssText + '}';
+					} else if ( r.cssRules && r.conditionText ) {
+						sortie += '@media ' + r.conditionText + '{' + ecrire( r.cssRules ) + '}';
+					}
+				} );
+				return sortie;
+			};
+			texte = ecrire( regles );
+			if ( feuille.media && feuille.media.mediaText && 'all' !== feuille.media.mediaText ) {
+				texte = '@media ' + feuille.media.mediaText + '{' + texte + '}';
+			}
+			var style = document.createElement( 'style' );
+			style.setAttribute( 'data-rl-renfort', feuille.href.split( '/' ).pop().split( '?' )[ 0 ] );
+			style.textContent = texte;
+			document.body.appendChild( style );
+			feuille.setAttribute( 'data-rl-renforce', '1' );
+		};
+		document.querySelectorAll( 'link[rel="stylesheet"][href*="/elementor/css/local-"]' ).forEach( function ( feuille ) {
+			if ( apercu && feuille.href.indexOf( '/local-' + apercu + '-' ) !== -1 ) {
+				return;
+			}
+			document.body.appendChild( feuille );
+			if ( feuille.sheet ) {
+				renforcer( feuille );
+			}
+			feuille.addEventListener( 'load', function () {
+				renforcer( feuille );
+			} );
 		} );
 	}
 
