@@ -1,0 +1,300 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Rolling · newsletter</title><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Caveat:wght@700&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet"><style>
+:root { --ink:#0F0F12; --texte:#4A4858; --legende:#5F5C6C; --violet:#5B3BEA; }
+* { box-sizing: border-box; }
+body { margin: 0; color: var(--ink); font-family: 'Hanken Grotesk', system-ui, sans-serif; background: #FAF9F7; }
+h1, h2, h3, h4, p, ul { margin: 0; }
+ul { padding: 0; list-style: none; }
+em { font-style: normal; padding-inline: .06em; margin-inline: -.06em; background: linear-gradient(95deg, #5B3BEA, #6F3FD6 42%, #C94A1E); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.conteneur { max-width: 1240px; margin: 0 auto; padding: 0 28px; }
+.intro { padding: 56px 0 8px; }
+.intro h1 { font-family: 'Bricolage Grotesque'; font-size: 32px; letter-spacing: -.035em; font-weight: 650; }
+.intro p { margin-top: 10px; max-width: 86ch; font-size: 16px; line-height: 1.55; color: var(--texte); }
+.intro p + p { margin-top: 8px; }
+.intro b { color: var(--ink); }
+.option { margin-top: 72px; }
+.option > h2 { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; font-family: 'Bricolage Grotesque'; font-size: 24px; letter-spacing: -.03em; font-weight: 650; }
+.lettre { display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; border-radius: 50%; font-size: 15px; color: #fff; background: #0F0F12; }
+.conseil .lettre { background: var(--violet); }
+.etiquette { padding: 3px 10px; border-radius: 999px; font-size: 12px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: #4A2BB8; background: #EDE6FF; }
+.desc { margin-top: 8px; max-width: 86ch; font-size: 15px; line-height: 1.55; color: var(--texte); }
+.desc b { color: var(--ink); }
+.vues { display: grid; grid-template-columns: minmax(0, 1fr); gap: 28px; align-items: start; margin-top: 18px; }
+.vue-nom { margin-bottom: 8px; font-size: 12px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: var(--legende); }
+.telephone { width: 390px; border-radius: 34px; padding: 10px; background: #0F0F12; }
+.telephone .ecran { border-radius: 26px; }
+
+/* Écran : même HTML pour l'ordinateur et le téléphone (requêtes de conteneur). */
+.ecran { container-type: inline-size; position: relative; overflow: hidden; isolation: isolate; padding: 48px 40px 44px; border-radius: 32px; background: #FAF9F7; box-shadow: inset 0 0 0 1px rgba(15,15,18,.06); }
+.ecran::before, .ecran::after { content: ''; position: absolute; z-index: -1; border-radius: 50%; filter: blur(60px); pointer-events: none; }
+.ecran::before { width: 50%; height: 60%; left: -10%; top: 6%; background: radial-gradient(closest-side, rgba(167,123,240,.5), rgba(167,123,240,0)); }
+.ecran::after { width: 46%; height: 60%; right: -8%; bottom: 0; background: radial-gradient(closest-side, rgba(255,171,150,.55), rgba(255,171,150,0)); }
+.verre { border-radius: 26px; background: radial-gradient(70% 60% at 15% 0%, rgba(255,255,255,.9), rgba(255,255,255,0) 72%), linear-gradient(150deg, rgba(255,255,255,.72), rgba(255,255,255,.42)); -webkit-backdrop-filter: blur(18px) saturate(1.3); backdrop-filter: blur(18px) saturate(1.3); box-shadow: inset 0 1px 0 #fff, inset 0 0 0 1px rgba(255,255,255,.6), 0 30px 70px -34px rgba(76,48,170,.34); }
+.timecode { display: inline-flex; align-items: center; padding: 6px 13px; border-radius: 999px; font-size: 12px; font-weight: 700; letter-spacing: .06em; color: #5B3BEA; background: rgba(255,255,255,.9); box-shadow: inset 0 0 0 1px rgba(91,59,234,.16); }
+.repere { display: flex; align-items: center; gap: 12px; font-size: 12px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: var(--legende); }
+.repere::after { content: ''; order: 1; width: 40px; height: 1px; background: rgba(15,15,18,.2); }
+.repere span:last-child { order: 2; }
+.titre-sec { margin-top: 16px; font-family: 'Bricolage Grotesque'; font-size: 48px; line-height: 1.04; letter-spacing: -.045em; font-weight: 650; }
+.chapo { margin-top: 14px; max-width: 58ch; font-size: 17px; line-height: 1.55; color: var(--texte); }
+.chapo b { color: var(--ink); }
+.formules { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 36px; }
+.formule { position: relative; padding: 26px; border-radius: 26px; background: #fff; box-shadow: 0 1px 2px rgba(15,15,18,.05), 0 24px 50px -30px rgba(76,48,170,.3); }
+.formule.sombre { color: #FAF9F7; background: linear-gradient(160deg, #1C1730, #0F0F12); background-color: #0F0F12; }
+.formule h3 { font-family: 'Bricolage Grotesque'; font-size: 23px; letter-spacing: -.03em; font-weight: 650; }
+.prix { margin-top: 10px; font-family: 'Bricolage Grotesque'; font-size: 40px; letter-spacing: -.04em; font-weight: 650; }
+.prix span { font-size: 15px; font-family: 'Hanken Grotesk'; font-weight: 500; letter-spacing: 0; }
+.sombre .prix { background: linear-gradient(95deg, #C4B5FD, #FFD1BF); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.annuel { font-size: 14px; color: var(--legende); }
+.sombre .annuel { color: #C9C3DE; }
+.coches { display: grid; gap: 8px; margin-top: 16px; font-size: 14px; line-height: 1.45; color: var(--texte); }
+.sombre .coches { color: #C9C3DE; }
+.coches li { display: flex; gap: 10px; }
+.coches li::before { content: '✓'; flex: 0 0 20px; height: 20px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 800; color: #fff; background: linear-gradient(140deg, #E697BD, #A77BF0); }
+.badge { position: absolute; top: -12px; right: 20px; padding: 5px 12px; border-radius: 999px; font-size: 12px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: #9A3412; background: #FFD1BF; }
+.boutons { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 36px; }
+.bouton { display: inline-flex; align-items: center; gap: 8px; min-height: 48px; padding: 0 22px; border-radius: 999px; font: 700 15px 'Hanken Grotesk'; color: #fff; background: #0F0F12; text-decoration: none; }
+.bouton::after { content: '→'; }
+.bouton-verre { color: var(--ink); background: rgba(255,255,255,.8); box-shadow: inset 0 0 0 1px rgba(91,59,234,.2); }
+.bouton-verre::after { content: none; }
+.chiffre-verre { font-family: 'Bricolage Grotesque'; font-weight: 800; line-height: .85; letter-spacing: -.03em; background: linear-gradient(180deg, #FFAB96 0%, #E697BD 45%, #A77BF0 100%); -webkit-background-clip: text; background-clip: text; color: transparent; filter: drop-shadow(0 8px 12px rgba(91,59,234,.28)); }
+.note-main { font-family: 'Caveat'; font-size: 27px; line-height: 1; font-weight: 700; color: #A63C14; }
+.titre-promesses { margin-top: 44px; text-align: center; font-family: 'Bricolage Grotesque'; font-size: 23px; letter-spacing: -.03em; font-weight: 650; }
+
+
+/* A et B : petites cartes à jouer */
+.mini-jeu { display: flex; justify-content: center; margin-top: 22px; padding: 6px 0 22px; }
+.mini { position: relative; width: 214px; min-height: 190px; margin: 0 -8px; display: flex; flex-direction: column; justify-content: space-between; gap: 12px; padding: 20px; transform: rotate(var(--r)) translateY(var(--y)); transition: transform .45s cubic-bezier(.2,.8,.2,1); }
+.mini:hover { transform: rotate(0) translateY(-10px) scale(1.04); z-index: 5; }
+.mini .chiffre-verre { font-size: 64px; }
+.mini h4 { font-family: 'Bricolage Grotesque'; font-size: 19px; line-height: 1.15; letter-spacing: -.025em; font-weight: 650; }
+.mini .note-main { transform: rotate(-3deg); transform-origin: left center; }
+
+@container (max-width: 620px) { .mini-jeu { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; padding: 0; } .mini { width: auto; min-height: 0; margin: 0; padding: 16px 14px; gap: 10px; transform: none; } .mini .chiffre-verre { font-size: 46px; } .mini h4 { font-size: 16px; } .mini .note-main { font-size: 22px; white-space: nowrap; } .boutons { flex-direction: column; align-items: center; } }
+
+.ecran.long { padding-bottom: 56px; }
+.ecran + .ecran { margin-top: 0; }
+.sous-titre { margin-top: 26px; font-family: 'Bricolage Grotesque'; font-size: 30px; line-height: 1.1; letter-spacing: -.04em; font-weight: 650; }
+.label-v { font-size: 12px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: #4A2BB8; }
+.annot { display: inline-block; margin-top: 10px; padding: 4px 10px; border: 1px dashed #A63C14; border-radius: 10px; font-size: 13px; color: #A63C14; background: #FFF7F1; }
+
+/* Vignettes d'exemple (dégradés, sans photo) */
+.vig { position: relative; aspect-ratio: 16 / 9; overflow: hidden; border-radius: 18px; color: #fff; }
+.vig b { position: absolute; left: 16px; bottom: 14px; right: 60px; font-family: 'Bricolage Grotesque'; font-size: 20px; line-height: 1.1; letter-spacing: -.02em; }
+.vig .tag { position: absolute; left: 12px; top: 12px; padding: 4px 10px; border-radius: 999px; font-size: 11px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; background: rgba(15,15,18,.62); }
+.vig .dur { position: absolute; right: 12px; top: 12px; padding: 3px 8px; border-radius: 8px; font-size: 12px; font-weight: 800; background: rgba(15,15,18,.7); }
+.vig .barre { position: absolute; left: 0; bottom: 0; height: 4px; width: 0; background: linear-gradient(90deg, #C4B5FD, #FF8A5B); transition: width .9s ease; }
+.vig .lect { position: absolute; right: 14px; bottom: 12px; width: 36px; height: 36px; border-radius: 50%; background: #FF8A5B; box-shadow: 0 0 0 6px rgba(255,138,91,.25); }
+.vig .lect::before { content: ''; position: absolute; left: 14px; top: 11px; border-left: 11px solid #0F0F12; border-top: 7px solid transparent; border-bottom: 7px solid transparent; }
+.g1 { background: radial-gradient(60% 70% at 75% 25%, rgba(255,180,140,.9), transparent 60%), radial-gradient(90% 90% at 10% 100%, #5B3BEA, transparent 70%), linear-gradient(160deg, #3434E0, #1C1730); }
+.g2 { background: radial-gradient(60% 80% at 30% 30%, rgba(196,181,253,.9), transparent 60%), radial-gradient(90% 90% at 90% 100%, #FF8A5B, transparent 70%), linear-gradient(160deg, #8E4DE6, #1C1730); }
+.g3 { background: radial-gradient(70% 90% at 60% 20%, rgba(255,209,191,.9), transparent 60%), linear-gradient(160deg, #E0562A, #4A2BB8); }
+.g4 { background: radial-gradient(60% 70% at 40% 30%, rgba(140,142,255,.9), transparent 60%), linear-gradient(170deg, #17112C, #4A2BB8); }
+.g5 { background: linear-gradient(150deg, #2A2233, #6E3FD0 60%, #FF8A5B); }
+.g6 { background: radial-gradient(70% 80% at 70% 70%, rgba(255,171,150,.8), transparent 60%), linear-gradient(160deg, #1C1730, #5B3BEA); }
+.cadre { padding: 8px; border-radius: 24px; }
+.legende { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px; margin-top: 14px; }
+.client { display: block; margin-top: 14px; font-size: 12px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: var(--legende); }
+.client + .legende { margin-top: 8px; }
+.tag-b { padding: 5px 11px; border-radius: 999px; font-size: 13px; font-weight: 700; color: #2A2AB8; background: #fff; box-shadow: inset 0 0 0 1px rgba(52,52,224,.18); }
+.tag-o { padding: 5px 11px; border-radius: 999px; font-size: 13px; font-weight: 700; color: #9A3412; background: #fff; box-shadow: inset 0 0 0 1px rgba(224,86,42,.22); }
+.res { font-size: 14px; font-weight: 700; }
+.res::before { content: '→ '; color: #E0562A; }
+.lien { display: inline-flex; gap: 8px; margin-top: 10px; font-size: 15px; font-weight: 700; color: #4A2BB8; text-decoration: none; }
+.lien::after { content: '→'; transition: transform .25s; }
+.grille3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px 24px; margin-top: 36px; }
+
+/* A : toute la carte cliquable */
+.ex-a { display: block; color: inherit; text-decoration: none; }
+.ex-a:hover .vig, .ex-a:focus-visible .vig { transform: none; }
+.ex-a .vig { transition: transform .5s; }
+.ex-a:hover .vig .barre, .ex-a:focus-visible .vig .barre { width: 100%; }
+.ex-a:hover .lien::after, .ex-a:focus-visible .lien::after { transform: translateX(4px); }
+.ex-a:hover .cadre { box-shadow: inset 0 1px 0 #fff, inset 0 0 0 1px rgba(255,255,255,.6), 0 34px 70px -30px rgba(76,48,170,.5); }
+/* B : pastille sur l'image au survol */
+.ex-b { display: block; color: inherit; text-decoration: none; }
+.pastille-voir { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -40%); opacity: 0; padding: 10px 18px; border-radius: 999px; font-size: 14px; font-weight: 800; color: #0F0F12; background: rgba(255,255,255,.92); box-shadow: 0 12px 30px -12px rgba(0,0,0,.5); transition: opacity .25s, transform .25s; white-space: nowrap; }
+.ex-b:hover .pastille-voir, .ex-b:focus-visible .pastille-voir { opacity: 1; transform: translate(-50%, -50%); }
+.ex-b:hover .vig::after { content: ''; position: absolute; inset: 0; background: rgba(15,15,18,.25); }
+/* C : lecture dans la carte */
+.ex-c .lect { width: 54px; height: 54px; left: 50%; top: 50%; right: auto; bottom: auto; margin: -27px 0 0 -27px; box-shadow: 0 0 0 10px rgba(255,138,91,.25); }
+.ex-c .lect::before { left: 21px; top: 16px; border-left-width: 16px; border-top-width: 11px; border-bottom-width: 11px; }
+
+/* Offres : tableau */
+.tableau { position: relative; margin-top: 30px; padding: 0; border-radius: 26px; background: #fff; box-shadow: 0 1px 2px rgba(15,15,18,.05), 0 24px 50px -30px rgba(76,48,170,.3); overflow: hidden; }
+.tableau .lg { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr) minmax(0, 1fr); align-items: center; }
+.tableau .lg > * { padding: 12px 22px; }
+.tableau .lg + .lg { border-top: 1px solid rgba(15,15,18,.06); }
+.tableau .tete > * { padding: 22px; }
+.tableau .tete h3 { font-family: 'Bricolage Grotesque'; font-size: 21px; letter-spacing: -.03em; font-weight: 650; }
+.tableau .tete .px { margin-top: 6px; font-family: 'Bricolage Grotesque'; font-size: 30px; letter-spacing: -.04em; font-weight: 650; }
+.tableau .tete .px span { font: 500 14px 'Hanken Grotesk'; letter-spacing: 0; }
+.tableau .tete .sombre { padding-top: 44px; }
+.tableau .sombre { align-self: stretch; color: #FAF9F7; background: #1C1730; }
+.tableau .sombre .px { background: linear-gradient(95deg, #C4B5FD, #FFD1BF); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.tableau .grp > :first-child { font-size: 12px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: #4A2BB8; }
+.tableau .nom b { display: block; font-size: 15px; }
+.tableau .nom small { font-size: 13px; color: var(--legende); }
+.ok, .non { justify-self: center; }
+.ok { width: 24px; height: 24px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 800; color: #fff; background: linear-gradient(140deg, #E697BD, #A77BF0); }
+.non { font-size: 13px; color: var(--legende); }
+.lg .sombre.c { display: flex; justify-content: center; }
+.badge-t { position: absolute; top: 12px; right: 18px; padding: 4px 11px; border-radius: 999px; font-size: 11px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: #9A3412; background: #FFD1BF; }
+.replie { display: none; }
+details.comparer { margin-top: 22px; }
+details.comparer summary { display: inline-flex; align-items: center; gap: 10px; min-height: 46px; padding: 0 20px; border-radius: 999px; font-weight: 700; cursor: pointer; background: rgba(255,255,255,.85); box-shadow: inset 0 0 0 1px rgba(91,59,234,.2); list-style: none; }
+details.comparer summary::after { content: '+'; font-size: 18px; color: #5B3BEA; }
+details.comparer[open] summary::after { content: '−'; }
+.ajouts { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 26px; }
+.ajout { padding: 14px; border-radius: 26px; background: #fff; box-shadow: 0 1px 2px rgba(15,15,18,.05), 0 24px 50px -30px rgba(76,48,170,.3); }
+.ajout .vig { aspect-ratio: 16 / 9; }
+.ajout .in { padding: 16px 10px 8px; }
+.ajout h4 { margin-top: 8px; font-family: 'Bricolage Grotesque'; font-size: 23px; line-height: 1.15; letter-spacing: -.03em; font-weight: 650; }
+.ajout p { margin-top: 8px; font-size: 15px; line-height: 1.5; color: var(--texte); }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.chips span { padding: 5px 11px; border-radius: 999px; font-size: 13px; font-weight: 700; color: #9A3412; background: #FFF1E7; }
+.chips.v span { color: #4A2BB8; background: #EDE6FF; }
+
+/* Page Pourquoi */
+.hero-p { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 40px; align-items: center; }
+.pastille { display: inline-flex; align-items: center; gap: 8px; padding: 6px 13px; border-radius: 999px; font-size: 13px; font-weight: 700; color: #4A2BB8; background: rgba(255,255,255,.85); box-shadow: inset 0 0 0 1px rgba(91,59,234,.18); }
+.pastille::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: #FF8A5B; }
+h1.h1 { margin-top: 16px; font-family: 'Bricolage Grotesque'; font-size: 56px; line-height: 1.02; letter-spacing: -.05em; font-weight: 650; }
+.constat { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; margin-top: 30px; }
+.constat > div { padding: 22px; }
+.constat .avant { font-size: 13px; color: var(--legende); }
+.constat .mot { margin-top: 6px; font-family: 'Bricolage Grotesque'; font-size: 30px; letter-spacing: -.04em; font-weight: 650; }
+.constat p { margin-top: 8px; font-size: 15px; line-height: 1.5; color: var(--texte); }
+.sombre-bloc { margin-top: 0; padding: 40px; border-radius: 32px; color: #FAF9F7; background: radial-gradient(60% 80% at 80% 0%, rgba(110,63,208,.55), transparent 60%), linear-gradient(170deg, #17112C, #0F0F12); background-color: #0F0F12; }
+.sombre-bloc .titre-sec em { background: linear-gradient(95deg, #C4B5FD, #FFD1BF); -webkit-background-clip: text; background-clip: text; }
+/* Démultiplication : 1 contenu au centre, les vidéos autour */
+.demulti { display: grid; grid-template-columns: 1fr auto 1fr; gap: 18px 26px; align-items: center; margin-top: 34px; }
+.source { width: 230px; padding: 22px; border-radius: 22px; color: #0F0F12; background: #fff; text-align: center; box-shadow: 0 0 0 10px rgba(196,181,253,.14), 0 30px 60px -26px rgba(0,0,0,.6); }
+.source b { display: block; margin-top: 8px; font-family: 'Bricolage Grotesque'; font-size: 22px; letter-spacing: -.03em; }
+.source small { display: block; margin-top: 4px; font-size: 13px; color: var(--legende); }
+.doc { width: 58px; height: 72px; margin: 0 auto; border-radius: 8px; background: repeating-linear-gradient(180deg, #EDE6FF 0 6px, transparent 6px 12px) 10px 14px / 38px 44px no-repeat, #fff; box-shadow: inset 0 0 0 2px #C4B5FD; }
+.sorties { display: grid; gap: 12px; }
+.sortie { display: flex; align-items: center; gap: 12px; padding: 12px 14px; border-radius: 16px; background: rgba(255,255,255,.07); box-shadow: inset 0 0 0 1px rgba(255,255,255,.12); }
+.sortie .f { flex: 0 0 auto; border-radius: 6px; background: linear-gradient(150deg, #8E4DE6, #FF8A5B); }
+.sortie .f.h { width: 46px; height: 26px; } .sortie .f.v { width: 18px; height: 32px; } .sortie .f.c { width: 28px; height: 28px; }
+.sortie b { display: block; font-size: 15px; }
+.sortie small { font-size: 13px; color: #C9C3DE; }
+.droite .sortie { flex-direction: row; }
+.gauche .sortie { flex-direction: row-reverse; text-align: right; }
+.benefices { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; margin-top: 30px; }
+.benefices > div { padding: 22px; }
+.benefices .coche { width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; color: #fff; background: linear-gradient(140deg, #E697BD, #A77BF0); }
+.benefices h4 { margin-top: 12px; font-family: 'Bricolage Grotesque'; font-size: 19px; line-height: 1.2; letter-spacing: -.02em; font-weight: 650; }
+.benefices p { margin-top: 6px; font-size: 14px; line-height: 1.5; color: var(--texte); }
+.faq { display: grid; gap: 10px; margin-top: 26px; }
+.faq div { padding: 16px 20px; border-radius: 18px; background: #fff; box-shadow: inset 0 0 0 1px rgba(15,15,18,.07); font-weight: 700; }
+.faq div::before { content: ''; display: inline-block; width: 8px; height: 8px; margin-right: 12px; border-radius: 50%; background: #5B3BEA; vertical-align: middle; }
+.ressources { display: grid; grid-template-columns: 1.4fr 1fr; gap: 18px; margin-top: 26px; }
+.ressources .une { min-height: 220px; }
+.rub { display: grid; gap: 10px; }
+.rub div { padding: 14px 16px; border-radius: 18px; font-weight: 700; }
+.final { padding: 48px 32px; border-radius: 32px; text-align: center; color: #FAF9F7; background: radial-gradient(50% 70% at 50% 100%, rgba(255,138,91,.4), transparent 70%), linear-gradient(170deg, #17112C, #0F0F12); background-color: #0F0F12; }
+.final .titre-sec { margin-top: 0; }
+.final .titre-sec em { background: linear-gradient(95deg, #FFD1BF, #FF8A5B); -webkit-background-clip: text; background-clip: text; }
+.bouton-soleil { color: #0F0F12; background: linear-gradient(135deg, #FFD1BF, #FF8A5B); }
+.sec { margin-top: 64px; }
+.voir-plus { margin-top: 22px; text-align: center; }
+
+@container (max-width: 620px) {
+  .grille3 { grid-template-columns: 1fr; gap: 22px; }
+  .ecran { padding: 36px 16px 32px; } .titre-sec { font-size: 34px; } .formules { grid-template-columns: 1fr; gap: 16px; } .formule { padding: 22px; }
+  .tableau .lg { grid-template-columns: minmax(0, 1fr) 62px 62px; }
+  .tableau .lg > * { padding: 10px 12px; }
+  .tableau .tete > * { padding: 14px 10px; }
+  .tableau .tete h3 { font-size: 14px; } .tableau .tete .px, .tableau .tete .an { display: none; }
+  .badge-t { display: none; }
+  .prix-mob { display: grid !important; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 14px; }
+  .ajouts { grid-template-columns: 1fr; }
+  .hero-p { grid-template-columns: 1fr; gap: 24px; }
+  h1.h1 { font-size: 36px; }
+  .constat, .benefices { grid-template-columns: 1fr; }
+  .sombre-bloc { padding: 28px 16px; border-radius: 26px; }
+  .demulti { grid-template-columns: 1fr; }
+  .source { width: auto; order: -1; }
+  .gauche .sortie { flex-direction: row; text-align: left; }
+  .ressources { grid-template-columns: 1fr; }
+  .sous-titre { font-size: 24px; }
+  .final { padding: 36px 18px; }
+  .pastille-voir { opacity: 1; transform: none; left: auto; top: auto; right: 10px; bottom: 10px; padding: 6px 12px; font-size: 12px; }
+}
+.prix-mob { display: none; }
+
+.nl-form { display: flex; gap: 8px; margin-top: 16px; max-width: 460px; }
+.nl-form span.champ { flex: 1; display: flex; align-items: center; min-height: 48px; padding: 0 18px; border-radius: 999px; font-size: 15px; color: var(--legende); background: #fff; box-shadow: inset 0 0 0 1px rgba(15,15,18,.12); }
+.nl-form .bouton { white-space: nowrap; }
+.nl-mention { margin-top: 10px; font-size: 13px; color: var(--legende); }
+.nl-titre { font-family: 'Bricolage Grotesque'; font-size: 30px; line-height: 1.1; letter-spacing: -.04em; font-weight: 650; }
+.nl-texte { margin-top: 8px; font-size: 16px; line-height: 1.5; color: var(--texte); max-width: 52ch; }
+.lettre-picto { width: 72px; height: 72px; border-radius: 20px; display: flex; align-items: center; justify-content: center; font-size: 34px; background: linear-gradient(150deg, #EDE6FF, #FFD1BF); box-shadow: 0 16px 30px -18px rgba(91,59,234,.6); }
+.lettre-picto::before { content: ''; width: 36px; height: 26px; border-radius: 5px; background: linear-gradient(160deg, transparent 49%, #5B3BEA 50%, #5B3BEA 54%, transparent 55%) , linear-gradient(200deg, transparent 49%, #5B3BEA 50%, #5B3BEA 54%, transparent 55%), #fff; box-shadow: inset 0 0 0 2.5px #5B3BEA; }
+.coches-nl { display: flex; flex-wrap: wrap; gap: 6px 18px; margin-top: 12px; font-size: 14px; font-weight: 600; }
+.coches-nl span::before { content: '✓ '; color: #6F3FD6; font-weight: 800; }
+/* Blog */
+.blog-une { display: grid; grid-template-columns: 1.2fr 1fr; gap: 22px; align-items: center; padding: 10px; border-radius: 26px; }
+.blog-une .vig { aspect-ratio: 16/10; }
+.blog-grille { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 20px; margin-top: 24px; }
+.carte-art { padding: 8px 8px 16px; border-radius: 22px; }
+.carte-art .vig { aspect-ratio: 16/10; border-radius: 16px; }
+.carte-art h4 { margin: 12px 8px 0; font-family: 'Bricolage Grotesque'; font-size: 18px; line-height: 1.2; letter-spacing: -.02em; font-weight: 650; }
+.carte-art .meta { margin: 6px 8px 0; font-size: 13px; color: var(--legende); }
+.bandeau-nl { display: grid; grid-template-columns: auto 1fr auto; gap: 26px; align-items: center; margin-top: 24px; padding: 26px 30px; border-radius: 26px; }
+.bandeau-nl .nl-form { margin-top: 0; width: 420px; }
+.carte-nl { display: flex; flex-direction: column; justify-content: center; gap: 4px; padding: 26px 22px; border-radius: 22px; color: #FAF9F7; background: radial-gradient(60% 70% at 80% 0%, rgba(255,162,122,.45), transparent 60%), radial-gradient(70% 80% at 0% 100%, rgba(139,92,246,.6), transparent 70%), linear-gradient(160deg, #1C1730, #0F0F12); background-color: #0F0F12; }
+.carte-nl .nl-titre { font-size: 24px; color: #fff; }
+.carte-nl .nl-texte, .carte-nl .nl-mention { color: #C9C3DE; }
+.carte-nl .nl-form { flex-direction: column; }
+.carte-nl .nl-form span.champ { background: rgba(255,255,255,.1); box-shadow: inset 0 0 0 1px rgba(255,255,255,.2); color: #C9C3DE; }
+.carte-nl .bouton { justify-content: center; }
+.bande-nl { margin-top: 30px; padding: 40px; border-radius: 30px; text-align: center; color: #FAF9F7; background: radial-gradient(50% 80% at 50% 120%, rgba(255,138,91,.45), transparent 70%), linear-gradient(170deg, #17112C, #0F0F12); background-color: #0F0F12; }
+.bande-nl .nl-titre { font-size: 36px; color: #fff; }
+.bande-nl .nl-titre em { background: linear-gradient(95deg, #C4B5FD, #FFD1BF); -webkit-background-clip: text; background-clip: text; }
+.bande-nl .nl-texte { margin: 10px auto 0; color: #C9C3DE; }
+.bande-nl .nl-form { margin: 18px auto 0; }
+.bande-nl .nl-mention { color: #B6B0CC; }
+.bande-nl .coches-nl { justify-content: center; color: #E9E2FF; }
+.bande-nl .coches-nl span::before { color: #FFD1BF; }
+/* Article */
+.art { display: grid; grid-template-columns: minmax(0, 1fr) 280px; gap: 36px; }
+.art .txt p { font-size: 16px; line-height: 1.65; color: var(--texte); margin-top: 14px; }
+.art .txt h3 { margin-top: 26px; font-family: 'Bricolage Grotesque'; font-size: 24px; letter-spacing: -.03em; font-weight: 650; }
+.cote > div { padding: 18px; border-radius: 20px; margin-bottom: 14px; }
+.cote .label { font-size: 12px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: var(--legende); }
+.cote .petit-titre { margin-top: 6px; font-family: 'Bricolage Grotesque'; font-size: 18px; line-height: 1.2; font-weight: 650; }
+.cote .nl-form { flex-direction: column; margin-top: 12px; }
+.cote .bouton { justify-content: center; }
+.fin-nl { display: grid; grid-template-columns: auto 1fr; gap: 20px; align-items: center; margin-top: 30px; padding: 24px; border-radius: 24px; }
+/* Pied */
+.pied { padding: 34px 32px 26px; border-radius: 26px; color: #FAF9F7; background: linear-gradient(180deg, #0F0F12, #17112C); background-color: #0F0F12; }
+.pied .logo { font-family: 'Bricolage Grotesque'; font-size: 26px; font-weight: 800; letter-spacing: -.04em; }
+.pied .ligne-nl { display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: center; margin-top: 24px; padding: 22px 24px; border-radius: 20px; background: rgba(255,255,255,.05); box-shadow: inset 0 0 0 1px rgba(255,255,255,.12); }
+.pied .nl-titre { font-size: 22px; color: #fff; }
+.pied .nl-texte { color: #C9C3DE; font-size: 14px; }
+.pied .nl-form { margin-top: 0; width: 400px; }
+.pied .nl-form span.champ { background: rgba(255,255,255,.08); box-shadow: inset 0 0 0 1px rgba(255,255,255,.2); color: #C9C3DE; }
+.pied .bouton { color: #0F0F12; background: linear-gradient(135deg, #FFD1BF, #FF8A5B); }
+.pied .cols { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-top: 26px; font-size: 14px; color: #C9C3DE; }
+.pied .cols b { display: block; margin-bottom: 8px; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: #fff; }
+.pied .cols span { display: block; margin-top: 6px; }
+.art .txt p.nl-titre { margin-top: 0; font-size: 26px; color: var(--ink); } .art .txt p.nl-mention { margin-top: 10px; font-size: 13px; color: var(--legende); } .art .txt p.nl-texte { margin-top: 6px; }
+@container (max-width: 620px) {
+  .nl-form { flex-direction: column; max-width: none; }
+  .nl-form .bouton { justify-content: center; }
+  .blog-une, .blog-grille { grid-template-columns: 1fr; }
+  .bandeau-nl { grid-template-columns: 1fr; gap: 14px; padding: 22px 18px; }
+  .bandeau-nl .nl-form { width: auto; }
+  .lettre-picto { width: 56px; height: 56px; border-radius: 16px; }
+  .bande-nl { padding: 30px 18px; }
+  .bande-nl .nl-titre { font-size: 28px; }
+  .art { grid-template-columns: 1fr; }
+  .cote { display: none; }
+  .fin-nl { grid-template-columns: 1fr; }
+  .pied { padding: 26px 18px; }
+  .pied .ligne-nl { grid-template-columns: 1fr; }
+  .pied .nl-form { width: auto; }
+  .pied .cols { grid-template-columns: 1fr 1fr; }
+  .nl-titre { font-size: 24px; }
+}
+</style></head><body><main><div class="conteneur intro"><h1>Newsletter : où et comment proposer l'inscription.</h1><p>Le formulaire est votre formulaire HubSpot (bloc HTML), habillé par le thème. Nom proposé : « La lettre Rolling » (à valider). Chaque option est montrée sur ordinateur et sur mobile (390 px).</p></div><div class="conteneur intro" style="padding-top:80px"><h1><span style="display:inline-flex;align-items:center;justify-content:center;min-width:40px;height:36px;margin-right:10px;border-radius:12px;font-size:16px;color:#fff;background:#0F0F12">1</span>Dans le blog.</h1><p>Trois façons de placer l'appel dans la page Blog.</p></div><section class="conteneur option conseil"><h2><span class="lettre">A</span>Bandeau en verre sous l'article à la une <span class="etiquette">Conseil</span></h2><p class="desc">Visible tout de suite, sans être agressif : picto, promesse en une phrase, champ e-mail et bouton. Il reste dans la charte claire de la page.</p><div class="vues"><div><p class="vue-nom">Ordinateur</p><div class="ecran"><div class="repere"><span class="timecode">Blog</span><span>Nos articles</span></div><h3 class="titre-sec">Le blog de <em>l'agence vidéo.</em></h3><div style="margin-top:24px"><div class="blog-une verre"><div class="vig g4"><span class="tag">À la une</span><b>Comment transformer un module de formation en 5 vidéos</b></div><div><span class="label-v">Formation</span><h3 class="sous-titre" style="margin-top:8px">Comment transformer un module de formation en 5 vidéos</h3><p class="nl-texte">Les étapes, les formats et les pièges à éviter.</p></div></div></div><div class="bandeau-nl verre"><span class="lettre-picto" aria-hidden="true"></span><div><p class="nl-titre">La lettre <em>Rolling.</em></p><p class="nl-texte">Une fois par mois : une idée de vidéo à reprendre, des exemples de nos clients et nos prochains webinars en avant-première.</p></div><div><div class="nl-form"><span class="champ">Votre e-mail professionnel</span><a class="bouton" href="#">S'inscrire</a></div><p class="nl-mention">Une fois par mois. Désinscription en un clic.</p></div></div><div class="blog-grille"><div class="carte-art verre"><div class="vig g1"></div><h4>5 idées reçues sur la vidéo interne</h4><p class="meta">Communication interne · 4 min</p></div><div class="carte-art verre"><div class="vig g2"></div><h4>Sous-titres : ce qui change vraiment</h4><p class="meta">Communication interne · 4 min</p></div><div class="carte-art verre"><div class="vig g3"></div><h4>Le bon format pour LinkedIn en 2027</h4><p class="meta">Communication interne · 4 min</p></div></div></div></div><div><p class="vue-nom">Mobile</p><div class="telephone"><div class="ecran"><div class="repere"><span class="timecode">Blog</span><span>Nos articles</span></div><h3 class="titre-sec">Le blog de <em>l'agence vidéo.</em></h3><div style="margin-top:24px"><div class="blog-une verre"><div class="vig g4"><span class="tag">À la une</span><b>Comment transformer un module de formation en 5 vidéos</b></div><div><span class="label-v">Formation</span><h3 class="sous-titre" style="margin-top:8px">Comment transformer un module de formation en 5 vidéos</h3><p class="nl-texte">Les étapes, les formats et les pièges à éviter.</p></div></div></div><div class="bandeau-nl verre"><span class="lettre-picto" aria-hidden="true"></span><div><p class="nl-titre">La lettre <em>Rolling.</em></p><p class="nl-texte">Une fois par mois : une idée de vidéo à reprendre, des exemples de nos clients et nos prochains webinars en avant-première.</p></div><div><div class="nl-form"><span class="champ">Votre e-mail professionnel</span><a class="bouton" href="#">S'inscrire</a></div><p class="nl-mention">Une fois par mois. Désinscription en un clic.</p></div></div><div class="blog-grille"><div class="carte-art verre"><div class="vig g1"></div><h4>5 idées reçues sur la vidéo interne</h4><p class="meta">Communication interne · 4 min</p></div><div class="carte-art verre"><div class="vig g2"></div><h4>Sous-titres : ce qui change vraiment</h4><p class="meta">Communication interne · 4 min</p></div><div class="carte-art verre"><div class="vig g3"></div><h4>Le bon format pour LinkedIn en 2027</h4><p class="meta">Communication interne · 4 min</p></div></div></div></div></div></div></section><section class="conteneur option"><h2><span class="lettre">B</span>Une carte sombre glissée dans la grille</h2><p class="desc">L'appel prend la place d'une carte d'article (3e case) : on le voit en parcourant les articles. Plus discret, mais il peut passer pour une publicité.</p><div class="vues"><div><p class="vue-nom">Ordinateur</p><div class="ecran"><div class="repere"><span class="timecode">Blog</span><span>Nos articles</span></div><h3 class="titre-sec">Le blog de <em>l'agence vidéo.</em></h3><div style="margin-top:24px"><div class="blog-une verre"><div class="vig g4"><span class="tag">À la une</span><b>Comment transformer un module de formation en 5 vidéos</b></div><div><span class="label-v">Formation</span><h3 class="sous-titre" style="margin-top:8px">Comment transformer un module de formation en 5 vidéos</h3><p class="nl-texte">Les étapes, les formats et les pièges à éviter.</p></div></div></div><div class="blog-grille"><div class="carte-art verre"><div class="vig g1"></div><h4>5 idées reçues sur la vidéo interne</h4><p class="meta">Communication interne · 4 min</p></div><div class="carte-art verre"><div class="vig g2"></div><h4>Sous-titres : ce qui change vraiment</h4><p class="meta">Communication interne · 4 min</p></div><div class="carte-nl"><span class="lettre-picto" aria-hidden="true" style="margin-bottom:10px"></span><p class="nl-titre">La lettre Rolling.</p><p class="nl-texte">Une idée de vidéo par mois, et nos webinars en avant-première.</p><div class="nl-form"><span class="champ">Votre e-mail professionnel</span><a class="bouton" href="#">S'inscrire</a></div><p class="nl-mention">Une fois par mois. Désinscription en un clic.</p></div><div class="carte-art verre"><div class="vig g3"></div><h4>Le bon format pour LinkedIn en 2027</h4><p class="meta">Communication interne · 4 min</p></div><div class="carte-art verre"><div class="vig g5"></div><h4>Faire parler vos dirigeants en vidéo</h4><p class="meta">Communication interne · 4 min</p></div><div class="carte-art verre"><div class="vig g6"></div><h4>Une vidéo par mois : le bon rythme ?</h4><p class="meta">Communication interne · 4 min</p></div></div></div></div><div><p class="vue-nom">Mobile</p><div class="telephone"><div class="ecran"><div class="repere"><span class="timecode">Blog</span><span>Nos articles</span></div><h3 class="titre-sec">Le blog de <em>l'agence vidéo.</em></h3><div style="margin-top:24px"><div class="blog-une verre"><div class="vig g4"><span class="tag">À la une</span><b>Comment transformer un module de formation en 5 vidéos</b></div><div><span class="label-v">Formation</span><h3 class="sous-titre" style="margin-top:8px">Comment transformer un module de formation en 5 vidéos</h3><p class="nl-texte">Les étapes, les formats et les pièges à éviter.</p></div></div></div><div class="blog-grille"><div class="carte-art verre"><div class="vig g1"></div><h4>5 idées reçues sur la vidéo interne</h4><p class="meta">Communication interne · 4 min</p></div><div class="carte-art verre"><div class="vig g2"></div><h4>Sous-titres : ce qui change vraiment</h4><p class="meta">Communication interne · 4 min</p></div><div class="carte-nl"><span class="lettre-picto" aria-hidden="true" style="margin-bottom:10px"></span><p class="nl-titre">La lettre Rolling.</p><p class="nl-texte">Une idée de vidéo par mois, et nos webinars en avant-première.</p><div class="nl-form"><span class="champ">Votre e-mail professionnel</span><a class="bouton" href="#">S'inscrire</a></div><p class="nl-mention">Une fois par mois. Désinscription en un clic.</p></div><div class="carte-art verre"><div class="vig g3"></div><h4>Le bon format pour LinkedIn en 2027</h4><p class="meta">Communication interne · 4 min</p></div><div class="carte-art verre"><div class="vig g5"></div><h4>Faire parler vos dirigeants en vidéo</h4><p class="meta">Communication interne · 4 min</p></div><div class="carte-art verre"><div class="vig g6"></div><h4>Une vidéo par mois : le bon rythme ?</h4><p class="meta">Communication interne · 4 min</p></div></div></div></div></div></div></section><section class="conteneur option"><h2><span class="lettre">C</span>Grande bande sombre après les articles</h2><p class="desc">Plus d'espace pour convaincre (titre, phrase, 3 promesses), mais placée en bas : moins de personnes la voient.</p><div class="vues"><div><p class="vue-nom">Ordinateur</p><div class="ecran"><div class="repere"><span class="timecode">Blog</span><span>Nos articles</span></div><h3 class="titre-sec">Le blog de <em>l'agence vidéo.</em></h3><div style="margin-top:24px"><div class="blog-une verre"><div class="vig g4"><span class="tag">À la une</span><b>Comment transformer un module de formation en 5 vidéos</b></div><div><span class="label-v">Formation</span><h3 class="sous-titre" style="margin-top:8px">Comment transformer un module de formation en 5 vidéos</h3><p class="nl-texte">Les étapes, les formats et les pièges à éviter.</p></div></div></div><div class="blog-grille"><div class="carte-art verre"><div class="vig g1"></div><h4>5 idées reçues sur la vidéo interne</h4><p class="meta">Communication interne · 4 min</p></div><div class="carte-art verre"><div class="vig g2"></div><h4>Sous-titres : ce qui change vraiment</h4><p class="meta">Communication interne · 4 min</p></div><div class="carte-art verre"><div class="vig g3"></div><h4>Le bon format pour LinkedIn en 2027</h4><p class="meta">Communication interne · 4 min</p></div></div><div class="bande-nl"><p class="nl-titre">Une idée vidéo par mois, <em>dans votre boîte.</em></p><p class="nl-texte">Une fois par mois : une idée de vidéo à reprendre, des exemples de nos clients et nos prochains webinars en avant-première.</p><div class="nl-form"><span class="champ">Votre e-mail professionnel</span><a class="bouton" href="#">S'inscrire</a></div><div class="coches-nl"><span>Une fois par mois</span><span>Exemples réels</span><span>Désinscription en un clic</span></div></div></div></div><div><p class="vue-nom">Mobile</p><div class="telephone"><div class="ecran"><div class="repere"><span class="timecode">Blog</span><span>Nos articles</span></div><h3 class="titre-sec">Le blog de <em>l'agence vidéo.</em></h3><div style="margin-top:24px"><div class="blog-une verre"><div class="vig g4"><span class="tag">À la une</span><b>Comment transformer un module de formation en 5 vidéos</b></div><div><span class="label-v">Formation</span><h3 class="sous-titre" style="margin-top:8px">Comment transformer un module de formation en 5 vidéos</h3><p class="nl-texte">Les étapes, les formats et les pièges à éviter.</p></div></div></div><div class="blog-grille"><div class="carte-art verre"><div class="vig g1"></div><h4>5 idées reçues sur la vidéo interne</h4><p class="meta">Communication interne · 4 min</p></div><div class="carte-art verre"><div class="vig g2"></div><h4>Sous-titres : ce qui change vraiment</h4><p class="meta">Communication interne · 4 min</p></div><div class="carte-art verre"><div class="vig g3"></div><h4>Le bon format pour LinkedIn en 2027</h4><p class="meta">Communication interne · 4 min</p></div></div><div class="bande-nl"><p class="nl-titre">Une idée vidéo par mois, <em>dans votre boîte.</em></p><p class="nl-texte">Une fois par mois : une idée de vidéo à reprendre, des exemples de nos clients et nos prochains webinars en avant-première.</p><div class="nl-form"><span class="champ">Votre e-mail professionnel</span><a class="bouton" href="#">S'inscrire</a></div><div class="coches-nl"><span>Une fois par mois</span><span>Exemples réels</span><span>Désinscription en un clic</span></div></div></div></div></div></div></section><div class="conteneur intro" style="padding-top:80px"><h1><span style="display:inline-flex;align-items:center;justify-content:center;min-width:40px;height:36px;margin-right:10px;border-radius:12px;font-size:16px;color:#fff;background:#0F0F12">2</span>Dans les articles.</h1><p>Deux emplacements, ensemble ou séparés : à la fin de l'article (le meilleur moment, le lecteur a aimé) et dans la colonne de côté, sous le temps de lecture. En mobile, la colonne est masquée : seul l'encart de fin reste.</p></div><section class="conteneur option conseil"><h2><span class="lettre">D</span>Fin d'article + colonne de côté <span class="etiquette">Conseil</span></h2><p class="desc">Fin d'article : « Cet article vous a été utile ? » avant « Pour aller plus loin ». Colonne : petit encart qui suit la lecture, sous le temps de lecture.</p><div class="vues"><div><p class="vue-nom">Ordinateur</p><div class="ecran"><div class="art"><div class="txt"><h3 class="titre-sec" style="font-size:32px">Comment transformer un module de formation en 5 vidéos</h3><p>Vos modules de formation contiennent déjà tout : les messages, les étapes, les exemples. Il reste à les découper…</p><h3>1. Repérer les messages clés</h3><p>Une vidéo, une idée. Commencez par lister ce que vos équipes doivent retenir…</p><div class="fin-nl verre"><span class="lettre-picto" aria-hidden="true"></span><div><p class="nl-titre">Cet article vous a été utile&nbsp;?</p><p class="nl-texte">Recevez le prochain dans votre boîte, avec une idée de vidéo à reprendre. Une fois par mois.</p><div class="nl-form"><span class="champ">Votre e-mail professionnel</span><a class="bouton" href="#">S'inscrire</a></div><p class="nl-mention">Une fois par mois. Désinscription en un clic.</p></div></div></div><div class="cote"><div class="verre"><p class="label">Temps de lecture</p><p class="petit-titre">4 min</p></div><div class="verre"><p class="label">La lettre Rolling</p><p class="petit-titre">Une idée vidéo par mois.</p><div class="nl-form"><span class="champ">Votre e-mail professionnel</span><a class="bouton" href="#">S'inscrire</a></div></div></div></div></div></div><div><p class="vue-nom">Mobile</p><div class="telephone"><div class="ecran"><div class="art"><div class="txt"><h3 class="titre-sec" style="font-size:32px">Comment transformer un module de formation en 5 vidéos</h3><p>Vos modules de formation contiennent déjà tout : les messages, les étapes, les exemples. Il reste à les découper…</p><h3>1. Repérer les messages clés</h3><p>Une vidéo, une idée. Commencez par lister ce que vos équipes doivent retenir…</p><div class="fin-nl verre"><span class="lettre-picto" aria-hidden="true"></span><div><p class="nl-titre">Cet article vous a été utile&nbsp;?</p><p class="nl-texte">Recevez le prochain dans votre boîte, avec une idée de vidéo à reprendre. Une fois par mois.</p><div class="nl-form"><span class="champ">Votre e-mail professionnel</span><a class="bouton" href="#">S'inscrire</a></div><p class="nl-mention">Une fois par mois. Désinscription en un clic.</p></div></div></div><div class="cote"><div class="verre"><p class="label">Temps de lecture</p><p class="petit-titre">4 min</p></div><div class="verre"><p class="label">La lettre Rolling</p><p class="petit-titre">Une idée vidéo par mois.</p><div class="nl-form"><span class="champ">Votre e-mail professionnel</span><a class="bouton" href="#">S'inscrire</a></div></div></div></div></div></div></div></div></section><div class="conteneur intro" style="padding-top:80px"><h1><span style="display:inline-flex;align-items:center;justify-content:center;min-width:40px;height:36px;margin-right:10px;border-radius:12px;font-size:16px;color:#fff;background:#0F0F12">3</span>Dans le pied de page.</h1><p>Une ligne d'inscription au-dessus des colonnes, sur toutes les pages (sauf la landing, qui a son propre pied simplifié).</p></div><section class="conteneur option conseil"><h2><span class="lettre">E</span>Ligne d'inscription dans le pied de page <span class="etiquette">Conseil</span></h2><p class="desc">Présente partout, sans rien ajouter dans les pages. Réglage dans Personnaliser (code du formulaire HubSpot), rien ne s'affiche s'il est vide.</p><div class="vues"><div><p class="vue-nom">Ordinateur</p><div class="ecran"><div class="pied"><span class="logo">« rolling ▸▸</span><div class="ligne-nl"><div><p class="nl-titre">La lettre Rolling, une fois par mois.</p><p class="nl-texte">Idées de vidéos, exemples clients, prochains webinars.</p></div><div class="nl-form"><span class="champ">Votre e-mail professionnel</span><a class="bouton" href="#">S'inscrire</a></div></div><div class="cols"><div><b>L'agence</b><span>Qui sommes-nous</span><span>Réalisations</span></div><div><b>Nos vidéos</b><span>Motion design</span><span>Tournage</span></div><div><b>Ressources</b><span>Blog</span><span>Guides</span></div><div><b>Contact</b><span>Réserver un échange</span></div></div></div></div></div><div><p class="vue-nom">Mobile</p><div class="telephone"><div class="ecran"><div class="pied"><span class="logo">« rolling ▸▸</span><div class="ligne-nl"><div><p class="nl-titre">La lettre Rolling, une fois par mois.</p><p class="nl-texte">Idées de vidéos, exemples clients, prochains webinars.</p></div><div class="nl-form"><span class="champ">Votre e-mail professionnel</span><a class="bouton" href="#">S'inscrire</a></div></div><div class="cols"><div><b>L'agence</b><span>Qui sommes-nous</span><span>Réalisations</span></div><div><b>Nos vidéos</b><span>Motion design</span><span>Tournage</span></div><div><b>Ressources</b><span>Blog</span><span>Guides</span></div><div><b>Contact</b><span>Réserver un échange</span></div></div></div></div></div></div></div></section><div class="conteneur intro" style="padding-top:80px"><h1><span style="display:inline-flex;align-items:center;justify-content:center;min-width:40px;height:36px;margin-right:10px;border-radius:12px;font-size:16px;color:#fff;background:#0F0F12">4</span>Et ailleurs ?</h1><p>Mes recommandations pour le reste du site.</p></div><section class="conteneur option"><div class="ecran"><ul style="display:grid;gap:12px;font-size:15px;line-height:1.55;color:var(--texte)"><li><b style="color:var(--ink)">Pages Guides et REX, Webinars, Replays</b> : le même bandeau que le blog (option choisie), avant la FAQ. Les visiteurs de ces pages sont déjà intéressés par du contenu.</li><li><b style="color:var(--ink)">Bloc Ressources de l'accueil</b> : l'invitation « Me prévenir » (quand une rubrique est vide) devient l'inscription à la lettre, même formulaire.</li><li><b style="color:var(--ink)">Page 404</b> : une ligne discrète sous les boutons (« En attendant, recevez la lettre Rolling »). Facultatif.</li><li><b style="color:var(--ink)">Pas sur la landing ni sur Contact</b> : ces pages ont un seul but, réserver un échange. Un 2e appel détournerait l'attention.</li><li><b style="color:var(--ink)">Le formulaire</b> : c'est votre formulaire HubSpot (bloc HTML, comme le calendrier), le thème l'habille aux couleurs du site. Une seule liste HubSpot pour tout le site.</li></ul></div></section></main></body></html>

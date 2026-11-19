@@ -50,6 +50,29 @@ class Rolling_Widget_Contenu extends Rolling_Widget {
 	}
 
 	/**
+	 * Image d'affiche d'une vidéo Vimeo (oEmbed de Vimeo, gardée une semaine).
+	 *
+	 * @param string $src Adresse du lecteur Vimeo.
+	 * @return string
+	 */
+	public static function image_vimeo( $src ) {
+		$cle   = 'rl_vimeo_' . md5( $src );
+		$image = get_transient( $cle );
+		if ( false === $image ) {
+			$image = '';
+			if ( preg_match( '#vimeo\.com/(?:video/)?(\d+)(?:[/?](?:h=)?([0-9a-f]{6,}))?#', $src, $m ) ) {
+				$page    = 'https://vimeo.com/' . $m[1] . ( ! empty( $m[2] ) ? '/' . $m[2] : '' );
+				$donnees = _wp_oembed_get_object()->get_data( $page, array( 'width' => 1280 ) );
+				if ( $donnees && ! empty( $donnees->thumbnail_url ) ) {
+					$image = preg_replace( '#_\d+x\d+#', '_1280x720', (string) $donnees->thumbnail_url );
+				}
+			}
+			set_transient( $cle, $image, WEEK_IN_SECONDS );
+		}
+		return (string) $image;
+	}
+
+	/**
 	 * Compositions Rolling du texte : coches en verre (liste « Liste à coches »), chiffres en verre (« Chiffre clé »),
 	 * vidéos YouTube chargées au clic, tableaux accessibles au clavier quand ils défilent.
 	 *
@@ -59,7 +82,7 @@ class Rolling_Widget_Contenu extends Rolling_Widget {
 	 * @return string
 	 */
 	public static function enrichir( $html, $libelle_video, $libelle_tableau ) { // phpcs:disable WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase -- propriétés de DOMDocument.
-		if ( ! preg_match( '/is-style-coches|rl-chiffre-valeur|is-provider-youtube|wp-block-table/', $html ) || ! class_exists( 'DOMDocument' ) ) {
+		if ( ! preg_match( '/is-style-coches|rl-chiffre-valeur|is-provider-youtube|is-provider-vimeo|wp-block-table/', $html ) || ! class_exists( 'DOMDocument' ) ) {
 			return $html;
 		}
 
@@ -128,6 +151,21 @@ class Rolling_Widget_Contenu extends Rolling_Widget {
 			$bouton = Rolling_Dynamique::image_du_theme( 'bouton-lecture', 'thumbnail' );
 			$cadre  = '<div class="cadre-photo video-fiche" data-rl-video="' . esc_url( 'https://www.youtube.com/watch?v=' . $m[1] ) . '">'
 				. '<img class="image-couvrante" src="' . esc_url( 'https://i.ytimg.com/vi/' . $m[1] . '/hqdefault.jpg' ) . '" alt="" width="480" height="360" loading="lazy" />'
+				. '<button type="button" class="lecture-centre" aria-label="' . esc_attr( sprintf( $libelle_video, $titre ) ) . '">' . self::xhtml( $bouton ) . '</button></div>';
+			$iframe->parentNode->replaceChild( $fragment( $cadre ), $iframe );
+		}
+
+		// Vidéos Vimeo : affiche (image de Vimeo) + bouton ; au clic, lecteur sans titre, sans photo du compte ni logo (rolling.js).
+		foreach ( $xpath->query( '//figure[' . $classe( 'is-provider-vimeo' ) . ']//iframe' ) as $iframe ) {
+			$src = $iframe->getAttribute( 'src' );
+			if ( ! preg_match( '#vimeo\.com/(?:video/)?(\d+)#', $src ) ) {
+				continue;
+			}
+			$titre  = $iframe->getAttribute( 'title' );
+			$image  = self::image_vimeo( $src );
+			$bouton = Rolling_Dynamique::image_du_theme( 'bouton-lecture', 'thumbnail' );
+			$cadre  = '<div class="cadre-photo video-fiche" data-rl-video="' . esc_url( $src ) . '">'
+				. ( $image ? '<img class="image-couvrante" src="' . esc_url( $image ) . '" alt="" width="640" height="360" loading="lazy" />' : '' )
 				. '<button type="button" class="lecture-centre" aria-label="' . esc_attr( sprintf( $libelle_video, $titre ) ) . '">' . self::xhtml( $bouton ) . '</button></div>';
 			$iframe->parentNode->replaceChild( $fragment( $cadre ), $iframe );
 		}

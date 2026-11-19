@@ -11,5 +11,5 @@
  {"cle": "encart-appel", "titre": "Encart appel", "description": "Bandeau sombre avec « Réserver un échange »."},
  {"cle": "a-retenir", "titre": "À retenir", "description": "Encadré de conclusion."},
  {"cle": "faq", "titre": "FAQ", "description": "Questions qui s'ouvrent au clic."},
- {"cle": "auteur", "titre": "Auteur", "description": "Photo, nom, poste, présentation et lien LinkedIn."}
+ {"cle": "auteur", "titre": "Auteur", "description": "Photo, nom et poste de la rédactrice (Inès par défaut)."}
 ]

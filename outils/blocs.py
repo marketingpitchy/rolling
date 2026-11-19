@@ -1284,7 +1284,6 @@ fiche_article = F('Fiche article', None, COLONNE + ' align-items: stretch; paddi
                     P('Article · catégorie', DYN('rolling-terme', taxonomie='category'), ['tag-orange']),
                     P('Article · publié', DYN('rolling-article', info='publie'), ['texte-petit']),
                     P('Article · mis à jour', DYN('rolling-article', info='modifie'), ['texte-petit', 'si-mise-a-jour']),
-                    P('Article · lecture', DYN('rolling-article', info='lecture_c'), ['texte-petit']),
                 ]),
                 D('Article · image', ['cadre-photo', 'cadre-16-9', 'si-image'], 'margin-top: 28px;', enfants=[
                     I('Article · image · fichier', DYN('rolling-image', image='une'), cls=['image-couvrante'], taille='large'),

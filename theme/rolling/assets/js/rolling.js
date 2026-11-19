@@ -727,7 +727,9 @@
 				lecteur.focus();
 				return;
 			}
-			if ( yt ) {
+			if ( /vimeo\.com\//.test( url ) ) {
+				lecteur = lecteurLien( url, false, bouton.getAttribute( 'aria-label' ) );
+			} else if ( yt ) {
 				lecteur = document.createElement( 'iframe' );
 				lecteur.src = 'https://www.youtube-nocookie.com/embed/' + yt[ 1 ] + '?autoplay=1&rel=0';
 				lecteur.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';

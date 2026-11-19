@@ -740,6 +740,18 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
     document en haut, trait vertical à gauche. Autres : `bande-reassurance`, `grille-types`/`carte-type`/`vers-type`,
     `carte-temps`/`numero-temps`/`etiquette-qui`, `cas-client`/`apercu-cas`/`chiffres-cas`/`chiffre-cas`/`citation-cas`,
     `encart-prix`. Ressources = copie du bloc 14 avec timecode 00:07 (`trouver()`).
+- **0.7.1 (retours articles)** : vidéo Vimeo collée dans un article (bloc Intégrer / Vimeo) qui débordait sur le texte ⇒
+  `enrichir()` remplace les iframes `is-provider-vimeo` par le cadre `video-fiche` (affiche = vignette Vimeo par oEmbed,
+  `image_vimeo()`, transient 1 semaine ; lecture au clic par `lecteurLien` : title / byline / portrait / logo masqués) ;
+  `article-texte` : `.wp-block-embed__wrapper` en 16:9 avec iframe absolue (tout autre intégré). Composition « Auteur » =
+  **Inès, Rédactrice chez Rolling** (photo equipe-ines). Cartes « Pour aller plus loin » : visuel de date du webinar sans
+  image trop haut chez la cliente (non reproduit, affiche-petite non appliquée) ⇒ forcé par `carte-ressource > .webinar-affiche`
+  (4:3, flex none, padding 0 22px). Fiche article : temps de lecture retiré sous le titre (gardé dans la colonne).
+  **Maquette « Newsletter »** (`maquettes/newsletter/newsletter.html`, copie /workspace/maquette-newsletter.html, **à valider**) :
+  nom proposé « La lettre Rolling », formulaire HubSpot (bloc HTML) ; blog A bandeau en verre sous l'article à la une
+  (conseil), B carte sombre dans la grille, C grande bande sombre après les articles ; articles D fin d'article « Cet article
+  vous a été utile ? » + encart dans la colonne (conseil) ; pied de page E ligne d'inscription (Personnaliser, rien si vide) ;
+  ailleurs : Guides / Webinars / Replays (même bandeau), « Me prévenir » du bloc Ressources, 404 ; pas sur landing ni Contact.
 - **Chargement de page effet film** (demande avant la fin de la livraison 4) : maquette `maquettes/loading/maquette-loading.html`
   (copie /workspace/maquette-loading.html), 4 options : A amorce 3-2-1, B clap qui se ferme puis rideau, C ouverture
   cinéma (bandes noires + REC + timecode + règle avec la tête de lecture rouge des frises, plus de filet fin), D barre de lecture en haut sans écran. Conseil : C à l'arrivée (première page
