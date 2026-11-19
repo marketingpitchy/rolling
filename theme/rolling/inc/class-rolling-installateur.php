@@ -569,6 +569,15 @@ class Rolling_Installateur {
 				if ( $document ) {
 					$document->save( array( 'elements' => $contenu ) );
 				}
+				// Titre du bloc changé par le thème (ex. nouveau timecode) : repris, le modèle n'ayant pas été modifié.
+				if ( ! empty( $bloc['titre'] ) && get_the_title( $post_id ) !== $bloc['titre'] ) {
+					wp_update_post(
+						array(
+							'ID'         => $post_id,
+							'post_title' => $bloc['titre'],
+						)
+					);
+				}
 				if ( ! empty( $bloc['apercu'] ) ) {
 					update_post_meta( $post_id, '_rolling_apercu', sanitize_key( $bloc['apercu'] ) );
 				}

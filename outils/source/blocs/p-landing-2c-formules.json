@@ -1,0 +1,110 @@
+{
+ "cle": "p-landing-2c-formules",
+ "titre": "Rolling · Landing · 00:03 Nos formules",
+ "type": "e-flexbox",
+ "composition": {
+  "xml_structure": "<e-flexbox configuration-id=\"Landing · formules\"><e-flexbox configuration-id=\"Landing · formules · contenu\"><e-flexbox configuration-id=\"Landing · formules · en-tête\"><e-flexbox configuration-id=\"Landing · formules · repère\"><e-paragraph configuration-id=\"Landing · formules · timecode\"></e-paragraph><e-paragraph configuration-id=\"Landing · formules · sur-titre\"></e-paragraph></e-flexbox><e-heading configuration-id=\"Landing · formules · titre\"></e-heading></e-flexbox><e-flexbox configuration-id=\"Landing · formules · cartes\"><e-flexbox configuration-id=\"Landing · formule Création\"><e-heading configuration-id=\"Landing · formule Création · nom\"></e-heading><e-paragraph configuration-id=\"Landing · formule Création · prix\"></e-paragraph><e-paragraph configuration-id=\"Landing · formule Création · an\"></e-paragraph><e-paragraph configuration-id=\"Landing · formule Création · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Landing · formule Complet\"><e-heading configuration-id=\"Landing · formule Complet · nom\"></e-heading><e-paragraph configuration-id=\"Landing · formule Complet · prix\"></e-paragraph><e-paragraph configuration-id=\"Landing · formule Complet · an\"></e-paragraph><e-paragraph configuration-id=\"Landing · formule Complet · texte\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox></e-flexbox>",
+  "element_config": {
+   "Landing · formules": {
+    "_cssid": "landing-offres",
+    "tag": "section"
+   },
+   "Landing · formules · timecode": {
+    "paragraph": "00:03"
+   },
+   "Landing · formules · sur-titre": {
+    "paragraph": "Nos formules"
+   },
+   "Landing · formules · titre": {
+    "tag": "h2",
+    "title": "Un prix fixe, <em>en illimité.</em>"
+   },
+   "Landing · formule Création · nom": {
+    "tag": "h3",
+    "title": "Création illimitée"
+   },
+   "Landing · formule Création · prix": {
+    "paragraph": "1&nbsp;250&nbsp;€<span> / mois</span>"
+   },
+   "Landing · formule Création · an": {
+    "paragraph": "Soit 15&nbsp;000&nbsp;€ / an"
+   },
+   "Landing · formule Création · texte": {
+    "paragraph": "Tous vos contenus et vos projets, en vidéo."
+   },
+   "Landing · formule Complet · nom": {
+    "tag": "h3",
+    "title": "Création + Tournage"
+   },
+   "Landing · formule Complet · prix": {
+    "paragraph": "2&nbsp;080&nbsp;€<span> / mois</span>"
+   },
+   "Landing · formule Complet · an": {
+    "paragraph": "Soit 25&nbsp;000&nbsp;€ / an"
+   },
+   "Landing · formule Complet · texte": {
+    "paragraph": "Tout Création, plus le tournage et le motion fait main."
+   }
+  },
+  "classes": {
+   "Landing · formules": [
+    "section",
+    "section-suite"
+   ],
+   "Landing · formules · contenu": [
+    "conteneur"
+   ],
+   "Landing · formules · en-tête": [
+    "entete-section"
+   ],
+   "Landing · formules · repère": [
+    "sur-titre"
+   ],
+   "Landing · formules · timecode": [
+    "timecode"
+   ],
+   "Landing · formules · titre": [
+    "titre-md"
+   ],
+   "Landing · formules · cartes": [
+    "grille-2"
+   ],
+   "Landing · formule Création": [
+    "carte-pleine"
+   ],
+   "Landing · formule Création · nom": [
+    "titre-xs"
+   ],
+   "Landing · formule Création · prix": [
+    "offres-prix"
+   ],
+   "Landing · formule Création · an": [
+    "prix-annuel"
+   ],
+   "Landing · formule Création · texte": [
+    "texte-petit"
+   ],
+   "Landing · formule Complet": [
+    "carte-pleine",
+    "section-sombre",
+    "carte-prix-sombre"
+   ],
+   "Landing · formule Complet · nom": [
+    "titre-xs"
+   ],
+   "Landing · formule Complet · prix": [
+    "offres-prix"
+   ],
+   "Landing · formule Complet · an": [
+    "prix-annuel"
+   ],
+   "Landing · formule Complet · texte": [
+    "texte-petit"
+   ]
+  },
+  "style": {
+   "Landing · formules · contenu": "display: flex; flex-direction: column; gap: 0;"
+  }
+ },
+ "brut": {}
+}

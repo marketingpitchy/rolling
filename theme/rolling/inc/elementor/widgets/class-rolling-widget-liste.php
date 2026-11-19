@@ -82,7 +82,7 @@ class Rolling_Widget_Liste extends Rolling_Widget {
 			'newsletter_apres',
 			array(
 				'label'       => __( 'Encart newsletter après la carte n°', 'rolling' ),
-				'description' => __( '0 = pas d’encart. Modèle « Rolling · Encart newsletter » ; rien ne s’affiche si le formulaire n’est pas réglé (Personnaliser > Rolling : newsletter).', 'rolling' ),
+				'description' => __( '0 = pas d’encart ; un nombre plus grand que le nombre de cartes (ex. 99) = après la dernière carte. Modèle « Rolling · Encart newsletter » ; rien ne s’affiche si le formulaire n’est pas réglé (Personnaliser > Rolling : newsletter).', 'rolling' ),
 				'type'        => Controls_Manager::NUMBER,
 				'default'     => 0,
 				'min'         => 0,
@@ -173,6 +173,7 @@ class Rolling_Widget_Liste extends Rolling_Widget {
 		$this->texte( 'nom_metier', __( 'Filtres sur deux lignes : nom de la ligne des métiers', 'rolling' ), __( 'Métier', 'rolling' ) );
 		$this->texte( 'nom_format', __( 'Filtres sur deux lignes : nom de la ligne des formats', 'rolling' ), __( 'Format', 'rolling' ) );
 		$this->texte( 'texte_aucun', __( 'Filtres sans résultat : message', 'rolling' ), __( 'Aucune réalisation pour ces filtres.', 'rolling' ) );
+		$this->texte( 'texte_aucun_detail', __( 'Filtres sans résultat : phrase sous le message (facultative)', 'rolling' ), '' );
 		$this->texte( 'texte_tout_voir', __( 'Filtres sans résultat : bouton', 'rolling' ), __( 'Tout voir', 'rolling' ) );
 		$this->texte( 'nom_usage', __( 'Filtres sur deux lignes : nom de la ligne des cas d’usage', 'rolling' ), __( 'Cas d’usage', 'rolling' ) );
 		$this->add_control(
@@ -377,7 +378,14 @@ class Rolling_Widget_Liste extends Rolling_Widget {
 			} elseif ( array_filter( array_map( array( __CLASS__, 'filtre_demande' ), self::taxonomies_filtres( $r['filtres'] ) ) ) ) {
 				// Des filtres sont choisis mais aucun contenu ne correspond : le dire, et proposer de tout revoir.
 				$tout = remove_query_arg( array( 'metier', 'format', 'usage', 'theme', 'categorie', 'voir' ) );
-				echo '<div class="carte-verre carte-vide"><p class="titre-xs">' . esc_html( $r['texte_aucun'] ?? '' ) . '</p><a class="bouton-verre bouton-petit" href="' . esc_url( $tout ) . '">' . esc_html( $r['texte_tout_voir'] ?? '' ) . '</a></div>';
+				$detail = trim( (string) ( $r['texte_aucun_detail'] ?? '' ) );
+				if ( 'realisations' === $r['contenu'] && __( 'Aucune réalisation pour ces filtres.', 'rolling' ) === ( $r['texte_aucun'] ?? '' ) ) {
+					// Liste des réalisations laissée aux textes d'origine : la phrase validée en 0.7.5.
+					$r['texte_aucun']     = __( 'Encore en salle de montage.', 'rolling' );
+					$detail               = '' !== $detail ? $detail : __( 'Les vidéos de cette catégorie arrivent bientôt en ligne.', 'rolling' );
+					$r['texte_tout_voir'] = __( 'Tout voir', 'rolling' ) === ( $r['texte_tout_voir'] ?? '' ) ? __( 'Voir toutes les réalisations', 'rolling' ) : $r['texte_tout_voir'];
+				}
+				echo '<div class="carte-verre carte-vide"><p class="titre-xs">' . esc_html( $r['texte_aucun'] ?? '' ) . '</p>' . ( '' !== $detail ? '<p class="texte-petit">' . esc_html( $detail ) . '</p>' : '' ) . '<a class="bouton-verre bouton-petit" href="' . esc_url( $tout ) . '">' . esc_html( $r['texte_tout_voir'] ?? '' ) . '</a></div>';
 			}
 			return;
 		}
@@ -417,7 +425,7 @@ class Rolling_Widget_Liste extends Rolling_Widget {
 			if ( $mur || $macon ) {
 				echo '</div>';
 			}
-			if ( (int) ( $r['newsletter_apres'] ?? 0 ) === $rang + 1 ) {
+			if ( (int) ( $r['newsletter_apres'] ?? 0 ) > 0 && min( (int) $r['newsletter_apres'], count( $ids ) ) === $rang + 1 ) {
 				self::afficher_newsletter();
 			}
 			$pas = (int) ( $r['extraits'] ?? 0 );

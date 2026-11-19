@@ -232,5 +232,11 @@
   "rang": 0,
   "fichier": "final-verre-cannele.png",
   "marge": 40
+ },
+ {
+  "selecteur": "div:has(> .paper)",
+  "rang": 0,
+  "fichier": "storyboard-fait-main.png",
+  "marge": 0
  }
 ]

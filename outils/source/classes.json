@@ -508,7 +508,8 @@
     {
      "label": "chapitre",
      "description": "Grande carte en verre bleutée d'un chapitre « Pour qui » : photo et texte côte à côte (l'un sous l'autre sous 980 px).",
-     "css": "position: relative; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: stretch; gap: 0; padding: 16px; border-radius: 40px; background: radial-gradient(70% 50% at 18% 0%, rgba(255,255,255,0.95), rgba(255,255,255,0) 72%), linear-gradient(160deg, rgba(232,232,255,0.84) 0%, rgba(214,216,255,0.52) 60%, rgba(255,255,255,0.64) 100%); backdrop-filter: blur(28px) saturate(180%); box-shadow: inset 0 1px 0 #FFFFFF, 0 30px 70px -34px rgba(76,48,170,0.34); --rl-ombre-photo: rgba(52,52,224,0.6); &::before { position: relative; top: auto; right: auto; bottom: auto; left: auto; height: auto; opacity: 1; mix-blend-mode: normal; border: 0; content: ''; position: absolute; top: 0; right: 0; bottom: 0; left: 0; border-radius: inherit; padding: 1.2px; background: linear-gradient(140deg, #FFFFFF, rgba(255,255,255,0.35) 30%, rgba(196,181,253,0.4) 62%, rgba(255,209,191,0.9)); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; } @media(--tablet) { grid-template-columns: minmax(0, 1fr); } @media(--mobile) { padding: 10px; border-radius: 30px; }"
+     "css": "position: relative; display: grid; grid-template-columns: minmax(0, 0.86fr) minmax(0, 1.14fr); align-items: stretch; gap: 0; padding: 16px; border-radius: 40px; background: radial-gradient(70% 50% at 18% 0%, rgba(255,255,255,0.95), rgba(255,255,255,0) 72%), linear-gradient(160deg, rgba(232,232,255,0.84) 0%, rgba(214,216,255,0.52) 60%, rgba(255,255,255,0.64) 100%); backdrop-filter: blur(28px) saturate(180%); box-shadow: inset 0 1px 0 #FFFFFF, 0 30px 70px -34px rgba(76,48,170,0.34); --rl-ombre-photo: rgba(52,52,224,0.6); &::before { position: relative; top: auto; right: auto; bottom: auto; left: auto; height: auto; opacity: 1; mix-blend-mode: normal; border: 0; content: ''; position: absolute; top: 0; right: 0; bottom: 0; left: 0; border-radius: inherit; padding: 1.2px; background: linear-gradient(140deg, #FFFFFF, rgba(255,255,255,0.35) 30%, rgba(196,181,253,0.4) 62%, rgba(255,209,191,0.9)); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; } @media(--tablet) { grid-template-columns: minmax(0, 1fr); } @media(--mobile) { padding: 10px; border-radius: 30px; }",
+     "brut": "@media (min-width: 1025px) { &:has(> .colonne-chapitre:nth-last-child(2)) { grid-template-columns: minmax(0, 1.14fr) minmax(0, 0.86fr); } }"
     },
     {
      "label": "chapitre-peche",
@@ -518,13 +519,13 @@
     {
      "label": "chapitre-colle",
      "description": "À ajouter au premier chapitre : il reste collé en haut pendant que le suivant glisse par-dessus (grands écrans seulement, à partir de 1200 px).",
-     "css": "position: sticky; top: min(110px, calc(100vh - 800px)); z-index: 1; @media(--tablet) { position: relative; top: auto; }",
+     "css": "position: sticky; top: min(110px, calc(100vh - 660px)); z-index: 1; @media(--tablet) { position: relative; top: auto; }",
      "brut": "@media (max-width: 1199px) { position: relative; top: auto; }"
     },
     {
      "label": "colonne-chapitre",
      "description": "Colonne de texte d'un chapitre : étiquette, titre, constat, listes, boutons, centrés verticalement.",
-     "css": "position: relative; display: flex; flex-direction: column; justify-content: center; gap: 20px; padding: 34px 40px; @media(--tablet) { padding: 30px 20px 24px; } @media(--mobile) { padding: 24px 10px 18px; }"
+     "css": "position: relative; display: flex; flex-direction: column; justify-content: center; gap: 14px; padding: 26px 36px; @media(--tablet) { padding: 30px 20px 24px; } @media(--mobile) { padding: 24px 10px 18px; }"
     },
     {
      "label": "grand-bloc",
@@ -559,7 +560,7 @@
     {
      "label": "panneau",
      "description": "Panneau intérieur dans une carte (« Le constat »), rayon 18 px.",
-     "css": "display: flex; flex-direction: column; gap: 8px; padding: 18px 20px; border-radius: 18px; background: rgba(255,255,255,0.72); box-shadow: inset 0 1px 0 #FFFFFF, 0 10px 30px -20px rgba(76,48,170,0.35);"
+     "css": "display: flex; flex-direction: column; gap: 4px; padding: 14px 18px; border-radius: 18px; background: rgba(255,255,255,0.72); box-shadow: inset 0 1px 0 #FFFFFF, 0 10px 30px -20px rgba(76,48,170,0.35);"
     },
     {
      "label": "plaque-verre",
@@ -634,7 +635,7 @@
     {
      "label": "photo-chapitre",
      "description": "À ajouter à « cadre-photo » : grande photo d'un chapitre (560 px de haut, ombre colorée).",
-     "css": "min-height: 560px; --rl-rayon-photo: 30px; box-shadow: 0 24px 50px -30px var(--rl-ombre-photo, rgba(52,52,224,0.6)); @media(--tablet) { min-height: 420px; } @media(--mobile) { min-height: 340px; --rl-rayon-photo: 22px; }"
+     "css": "min-height: 540px; --rl-rayon-photo: 30px; box-shadow: 0 24px 50px -30px var(--rl-ombre-photo, rgba(52,52,224,0.6)); @media(--tablet) { min-height: 420px; } @media(--mobile) { min-height: 340px; --rl-rayon-photo: 22px; }"
     },
     {
      "label": "viseur",
@@ -2464,7 +2465,8 @@
     {
      "label": "bandeau-newsletter",
      "description": "Encart newsletter (avec carte-verre) : picto enveloppe, titre et texte, formulaire à droite (empilé en mobile).",
-     "css": "display: grid; grid-template-columns: 72px minmax(0, 1fr) minmax(0, 440px); gap: 14px 28px; align-items: center; padding: 26px 30px; &::after { position: relative; top: auto; right: auto; bottom: auto; left: auto; height: auto; width: auto; opacity: 1; mix-blend-mode: normal; border: 0; content: ''; grid-column: 1; grid-row: 1; width: 72px; height: 72px; border-radius: 20px; background: url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 26' fill='none' stroke='%235B3BEA' stroke-width='2.4' stroke-linejoin='round'%3E%3Crect x='1.5' y='1.5' width='33' height='23' rx='4' fill='%23FFFFFF'/%3E%3Cpath d='M2.5 3.5l15.5 11 15.5-11'/%3E%3C/svg%3E\") center / 36px 26px no-repeat, linear-gradient(150deg, #EDE6FF, #FFD1BF); box-shadow: 0 16px 30px -18px rgba(91,59,234,0.6); } @media(--tablet) { grid-template-columns: 72px minmax(0, 1fr); & > .inscription-newsletter { grid-column: 2; } } @media(--mobile) { grid-template-columns: minmax(0, 1fr); padding: 22px 18px; & > .inscription-newsletter { grid-column: 1; } &::after { order: -1; grid-row: auto; width: 56px; height: 56px; border-radius: 16px; } }"
+     "css": "display: grid; grid-template-columns: 72px minmax(0, 1fr) minmax(0, 440px); gap: 14px 28px; align-items: center; padding: 26px 30px; &::after { position: relative; top: auto; right: auto; bottom: auto; left: auto; height: auto; width: auto; opacity: 1; mix-blend-mode: normal; border: 0; content: ''; grid-column: 1; grid-row: 1; width: 72px; height: 72px; border-radius: 20px; background: url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 26' fill='none' stroke='%235B3BEA' stroke-width='2.4' stroke-linejoin='round'%3E%3Crect x='1.5' y='1.5' width='33' height='23' rx='4' fill='%23FFFFFF'/%3E%3Cpath d='M2.5 3.5l15.5 11 15.5-11'/%3E%3C/svg%3E\") center / 36px 26px no-repeat, linear-gradient(150deg, #EDE6FF, #FFD1BF); box-shadow: 0 16px 30px -18px rgba(91,59,234,0.6); } @media(--tablet) { grid-template-columns: 72px minmax(0, 1fr); & > .inscription-newsletter { grid-column: 2; } } @media(--mobile) { grid-template-columns: minmax(0, 1fr); padding: 22px 18px; & > .inscription-newsletter { grid-column: 1; } &::after { order: -1; grid-row: auto; width: 56px; height: 56px; border-radius: 16px; } }",
+     "brut": "&.newsletter-article { grid-template-columns: 72px minmax(0, 1fr); align-items: start; } &.newsletter-article > .inscription-newsletter { grid-column: 2; } &.newsletter-article::after { grid-row: 1 / span 2; } @media (max-width: 767px) { &.newsletter-article { grid-template-columns: minmax(0, 1fr); } &.newsletter-article > .inscription-newsletter { grid-column: 1; } &.newsletter-article::after { grid-row: auto; } }"
     },
     {
      "label": "newsletter-article",
@@ -2486,6 +2488,37 @@
      "label": "newsletter-colonne",
      "description": "Avec zone-newsletter : champ et bouton l'un sous l'autre (colonne de l'article).",
      "css": "& form { flex-direction: column; align-items: stretch; } & fieldset, & .hs-form-field { flex: none; width: 100%; } & .hs-button { width: 100%; }"
+    },
+    {
+     "label": "duo-equipe",
+     "description": "Deux cartes côte à côte (experts IA / créas) ; l'une sous l'autre sur tablette et mobile.",
+     "css": "display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; padding: 0; @media(--tablet) { grid-template-columns: minmax(0, 1fr); gap: 16px; }"
+    },
+    {
+     "label": "carte-equipe-ia",
+     "description": "Avec carte-verre : carte sombre (experts IA), textes clairs.",
+     "css": "color: #FAF9F7; background: radial-gradient(80% 40% at 90% 0%, rgba(91,59,234,0.35), rgba(91,59,234,0) 70%), linear-gradient(160deg, #1C1730 0%, #0F0F12 100%); background-color: #1C1730; box-shadow: 0 30px 70px -34px rgba(20,10,60,0.6); --rl-texte: #FAF9F7; --rl-paragraphe: #C9C3DE; --rl-legende: #C9C3DE; --rl-degrade: linear-gradient(95deg, #C9BBFF 0%, #EBB0F2 45%, #FFA27A 100%); --rl-fond-visage: #1C1730; --rl-plus-texte: #E9E2FF; --rl-plus-fond: #2A2244;"
+    },
+    {
+     "label": "visages-equipe",
+     "description": "Visages ronds qui se chevauchent (photos de l'équipe) + pastille « +N » en dernier.",
+     "css": "display: flex; flex-direction: row; align-items: center; padding: 0; & img { width: 54px; min-width: 54px; height: 54px; border-radius: 50%; object-fit: cover; box-shadow: 0 0 0 3px var(--rl-fond-visage, #FFFFFF); } & > * + * { margin-left: -12px; }"
+    },
+    {
+     "label": "plus-visage",
+     "description": "Pastille ronde « +N » au bout des visages.",
+     "css": "display: inline-flex; align-items: center; justify-content: center; width: 54px; height: 54px; border-radius: 50%; font-family: Hanken Grotesk; font-size: 14px; line-height: 1; font-weight: 800; color: var(--rl-plus-texte, #4A2BB8); background-color: var(--rl-plus-fond, #EDE6FF); box-shadow: 0 0 0 3px var(--rl-fond-visage, #FFFFFF);"
+    },
+    {
+     "label": "note-equipe",
+     "description": "Phrase manuscrite centrée sous les cartes de l'équipe (Caveat, orange foncé).",
+     "css": "display: block; margin: 26px auto 0; font-family: Caveat; font-size: 30px; line-height: 1.1; font-weight: 700; color: #A63C14; text-align: center; transform: rotate(-1.5deg); @media(--mobile) { font-size: 27px; }"
+    },
+    {
+     "label": "prix-annuel",
+     "description": "Pastille « Soit … € / an » sous un prix mensuel (couleurs claires dans une carte sombre).",
+     "css": "display: inline-flex; width: fit-content; padding: 4px 12px; border-radius: 999px; font-family: Hanken Grotesk; font-size: 14px; line-height: 1.4; font-weight: 800; color: #4A2BB8; background-color: #EDE6FF;",
+     "brut": ".section-sombre & { color: #FFD1BF; background-color: #2A2244; }"
     },
     {
      "label": "chiffre-jeu",

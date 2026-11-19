@@ -600,12 +600,12 @@
    "Pour qui · contenu": "display: flex; flex-direction: column; gap: 0;",
    "Marketing · image": "object-position: 42% 55%;",
    "Marketing · haut": "display: flex; flex-direction: row; align-items: center; justify-content: space-between; gap: 16px; padding: 0;",
-   "Marketing · picto": "height: 76px; margin: -10px -8px -10px 0;",
-   "Marketing · listes": "display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 22px; padding: 0;",
+   "Marketing · picto": "height: 60px; margin: -8px -6px -8px 0;",
+   "Marketing · listes": "display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); gap: 18px; padding: 0; @media(--mobile) { grid-template-columns: minmax(0, 1fr); }",
    "Chapitre · Interne": "margin-top: 28px; z-index: 2;",
    "Interne · haut": "display: flex; flex-direction: row; align-items: center; justify-content: space-between; gap: 16px; padding: 0;",
-   "Interne · picto": "height: 76px; margin: -10px -8px -10px 0;",
-   "Interne · listes": "display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 22px; padding: 0;",
+   "Interne · picto": "height: 60px; margin: -8px -6px -8px 0;",
+   "Interne · listes": "display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); gap: 18px; padding: 0; @media(--mobile) { grid-template-columns: minmax(0, 1fr); }",
    "Interne · image": "object-position: 56% 30%;"
   }
  },

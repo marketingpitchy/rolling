@@ -1,0 +1,307 @@
+{
+ "cle": "p-landing-2b-equipe",
+ "titre": "Rolling · Landing · 00:02 Notre équipe (experts IA et créas)",
+ "type": "e-flexbox",
+ "composition": {
+  "xml_structure": "<e-flexbox configuration-id=\"Landing · équipe\"><e-flexbox configuration-id=\"Landing · équipe · contenu\"><e-flexbox configuration-id=\"Landing · équipe · en-tête\"><e-flexbox configuration-id=\"Landing · équipe · repère\"><e-paragraph configuration-id=\"Landing · équipe · timecode\"></e-paragraph><e-paragraph configuration-id=\"Landing · équipe · sur-titre\"></e-paragraph></e-flexbox><e-heading configuration-id=\"Landing · équipe · titre\"></e-heading></e-flexbox><e-flexbox configuration-id=\"Landing · équipe · cartes\"><e-flexbox configuration-id=\"Landing · équipe · IA\"><e-flexbox configuration-id=\"Landing · équipe · IA · visages\"><e-image configuration-id=\"Landing · équipe · IA · Ronan\"></e-image><e-image configuration-id=\"Landing · équipe · IA · Marion\"></e-image><e-image configuration-id=\"Landing · équipe · IA · Inès\"></e-image><e-image configuration-id=\"Landing · équipe · IA · Hakim\"></e-image><e-paragraph configuration-id=\"Landing · équipe · IA · autres\"></e-paragraph></e-flexbox><e-paragraph configuration-id=\"Landing · équipe · IA · sur-titre\"></e-paragraph><e-heading configuration-id=\"Landing · équipe · IA · titre\"></e-heading><e-flexbox configuration-id=\"Landing · équipe · IA · liste\"><e-flexbox configuration-id=\"Landing · équipe · IA · liste · ligne 1\"><e-image configuration-id=\"Landing · équipe · IA · liste · coche 1\"></e-image><e-paragraph configuration-id=\"Landing · équipe · IA · liste · texte 1\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Landing · équipe · IA · liste · ligne 2\"><e-image configuration-id=\"Landing · équipe · IA · liste · coche 2\"></e-image><e-paragraph configuration-id=\"Landing · équipe · IA · liste · texte 2\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Landing · équipe · IA · liste · ligne 3\"><e-image configuration-id=\"Landing · équipe · IA · liste · coche 3\"></e-image><e-paragraph configuration-id=\"Landing · équipe · IA · liste · texte 3\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Landing · équipe · créas\"><e-flexbox configuration-id=\"Landing · équipe · créas · visages\"><e-image configuration-id=\"Landing · équipe · créas · Thomas\"></e-image><e-image configuration-id=\"Landing · équipe · créas · Sophie\"></e-image><e-image configuration-id=\"Landing · équipe · créas · Victor\"></e-image><e-image configuration-id=\"Landing · équipe · créas · Vincent\"></e-image><e-paragraph configuration-id=\"Landing · équipe · créas · autres\"></e-paragraph></e-flexbox><e-paragraph configuration-id=\"Landing · équipe · créas · sur-titre\"></e-paragraph><e-heading configuration-id=\"Landing · équipe · créas · titre\"></e-heading><e-flexbox configuration-id=\"Landing · équipe · créas · liste\"><e-flexbox configuration-id=\"Landing · équipe · créas · liste · ligne 1\"><e-image configuration-id=\"Landing · équipe · créas · liste · coche 1\"></e-image><e-paragraph configuration-id=\"Landing · équipe · créas · liste · texte 1\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Landing · équipe · créas · liste · ligne 2\"><e-image configuration-id=\"Landing · équipe · créas · liste · coche 2\"></e-image><e-paragraph configuration-id=\"Landing · équipe · créas · liste · texte 2\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Landing · équipe · créas · liste · ligne 3\"><e-image configuration-id=\"Landing · équipe · créas · liste · coche 3\"></e-image><e-paragraph configuration-id=\"Landing · équipe · créas · liste · texte 3\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox></e-flexbox><e-paragraph configuration-id=\"Landing · équipe · note\"></e-paragraph></e-flexbox></e-flexbox>",
+  "element_config": {
+   "Landing · équipe": {
+    "tag": "section"
+   },
+   "Landing · équipe · timecode": {
+    "paragraph": "00:02"
+   },
+   "Landing · équipe · sur-titre": {
+    "paragraph": "Notre équipe"
+   },
+   "Landing · équipe · titre": {
+    "tag": "h2",
+    "title": "Notre IA va vite. <em>Nos créas décident.</em>"
+   },
+   "Landing · équipe · IA · Ronan": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/equipe-ronan.jpg",
+      "alt": "Ronan, Directeur Technique"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "Landing · équipe · IA · Marion": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/equipe-marion-l.jpg",
+      "alt": "Marion, Développeuse Full-Stack"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "Landing · équipe · IA · Inès": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/equipe-ines.jpg",
+      "alt": "Inès, DevOps"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "Landing · équipe · IA · Hakim": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/equipe-hakim.jpg",
+      "alt": "Hakim, Développeur Back-End"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "Landing · équipe · IA · autres": {
+    "paragraph": "+1"
+   },
+   "Landing · équipe · IA · sur-titre": {
+    "paragraph": "Nos experts IA"
+   },
+   "Landing · équipe · IA · titre": {
+    "tag": "h3",
+    "title": "Notre IA Factory accélère."
+   },
+   "Landing · équipe · IA · liste · coche 1": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/coche-verre.png"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "Landing · équipe · IA · liste · texte 1": {
+    "paragraph": "Pistes de scénario et storyboards"
+   },
+   "Landing · équipe · IA · liste · coche 2": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/coche-verre.png"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "Landing · équipe · IA · liste · texte 2": {
+    "paragraph": "Voix off, sous-titres, traductions"
+   },
+   "Landing · équipe · IA · liste · coche 3": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/coche-verre.png"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "Landing · équipe · IA · liste · texte 3": {
+    "paragraph": "Déclinaisons de formats"
+   },
+   "Landing · équipe · créas · Thomas": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/equipe-thomas.jpg",
+      "alt": "Thomas, Directeur Artistique"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "Landing · équipe · créas · Sophie": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/equipe-sophie.jpg",
+      "alt": "Sophie, Chef de Projet"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "Landing · équipe · créas · Victor": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/equipe-victor.jpg",
+      "alt": "Victor, Motion Designer"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "Landing · équipe · créas · Vincent": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/equipe-vincent.jpg",
+      "alt": "Vincent, Cadreur"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "Landing · équipe · créas · autres": {
+    "paragraph": "+2"
+   },
+   "Landing · équipe · créas · sur-titre": {
+    "paragraph": "Notre réseau de créas"
+   },
+   "Landing · équipe · créas · titre": {
+    "tag": "h3",
+    "title": "Nos créas perfectionnent."
+   },
+   "Landing · équipe · créas · liste · coche 1": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/coche-verre.png"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "Landing · équipe · créas · liste · texte 1": {
+    "paragraph": "Un directeur artistique dédié"
+   },
+   "Landing · équipe · créas · liste · coche 2": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/coche-verre.png"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "Landing · équipe · créas · liste · texte 2": {
+    "paragraph": "Motion designers, monteurs, cadreurs"
+   },
+   "Landing · équipe · créas · liste · coche 3": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/coche-verre.png"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "Landing · équipe · créas · liste · texte 3": {
+    "paragraph": "Chaque vidéo validée à votre charte"
+   },
+   "Landing · équipe · note": {
+    "paragraph": "l'IA pour la vitesse, l'humain pour le goût"
+   }
+  },
+  "classes": {
+   "Landing · équipe": [
+    "section",
+    "section-suite"
+   ],
+   "Landing · équipe · contenu": [
+    "conteneur"
+   ],
+   "Landing · équipe · en-tête": [
+    "entete-section"
+   ],
+   "Landing · équipe · repère": [
+    "sur-titre"
+   ],
+   "Landing · équipe · timecode": [
+    "timecode"
+   ],
+   "Landing · équipe · titre": [
+    "titre-md"
+   ],
+   "Landing · équipe · cartes": [
+    "duo-equipe"
+   ],
+   "Landing · équipe · IA": [
+    "carte-verre",
+    "carte-equipe-ia"
+   ],
+   "Landing · équipe · IA · visages": [
+    "visages-equipe"
+   ],
+   "Landing · équipe · IA · autres": [
+    "plus-visage"
+   ],
+   "Landing · équipe · IA · sur-titre": [
+    "label"
+   ],
+   "Landing · équipe · IA · titre": [
+    "titre-xs"
+   ],
+   "Landing · équipe · IA · liste": [
+    "liste-coches"
+   ],
+   "Landing · équipe · IA · liste · ligne 1": [
+    "ligne-coche"
+   ],
+   "Landing · équipe · IA · liste · coche 1": [
+    "coche"
+   ],
+   "Landing · équipe · IA · liste · texte 1": [
+    "texte-petit"
+   ],
+   "Landing · équipe · IA · liste · ligne 2": [
+    "ligne-coche"
+   ],
+   "Landing · équipe · IA · liste · coche 2": [
+    "coche"
+   ],
+   "Landing · équipe · IA · liste · texte 2": [
+    "texte-petit"
+   ],
+   "Landing · équipe · IA · liste · ligne 3": [
+    "ligne-coche"
+   ],
+   "Landing · équipe · IA · liste · coche 3": [
+    "coche"
+   ],
+   "Landing · équipe · IA · liste · texte 3": [
+    "texte-petit"
+   ],
+   "Landing · équipe · créas": [
+    "carte-verre"
+   ],
+   "Landing · équipe · créas · visages": [
+    "visages-equipe"
+   ],
+   "Landing · équipe · créas · autres": [
+    "plus-visage"
+   ],
+   "Landing · équipe · créas · sur-titre": [
+    "label",
+    "label-orange"
+   ],
+   "Landing · équipe · créas · titre": [
+    "titre-xs"
+   ],
+   "Landing · équipe · créas · liste": [
+    "liste-coches"
+   ],
+   "Landing · équipe · créas · liste · ligne 1": [
+    "ligne-coche"
+   ],
+   "Landing · équipe · créas · liste · coche 1": [
+    "coche"
+   ],
+   "Landing · équipe · créas · liste · texte 1": [
+    "texte-petit"
+   ],
+   "Landing · équipe · créas · liste · ligne 2": [
+    "ligne-coche"
+   ],
+   "Landing · équipe · créas · liste · coche 2": [
+    "coche"
+   ],
+   "Landing · équipe · créas · liste · texte 2": [
+    "texte-petit"
+   ],
+   "Landing · équipe · créas · liste · ligne 3": [
+    "ligne-coche"
+   ],
+   "Landing · équipe · créas · liste · coche 3": [
+    "coche"
+   ],
+   "Landing · équipe · créas · liste · texte 3": [
+    "texte-petit"
+   ],
+   "Landing · équipe · note": [
+    "note-equipe"
+   ]
+  },
+  "style": {
+   "Landing · équipe · contenu": "display: flex; flex-direction: column; gap: 0;"
+  }
+ },
+ "brut": {}
+}

@@ -793,6 +793,23 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   appliquée) ⇒ mettre la grille 2 colonnes en `&.newsletter-article` dans bandeau-newsletter (indépendant de l'ordre).
   Médias : l'installateur n'écrit titre / texte alternatif **qu'à la création** d'une image de départ ; `rafraichir_media`
   change seulement le fichier ⇒ les alt / titres de la cliente sont gardés.
+- **0.7.5 (choix 1A en gardant tous les textes + empilement, 2, 3 phrase 1, 4-1, 5A, 6A, 7 cartes à jouer, 8)** :
+  accueil 00:02 = mêmes textes, encarts 765 / 822 px ⇒ 642 / 651 px (tiennent en 1366 × 768) : `chapitre` colonnes
+  0.86fr / 1.14fr (texte plus large ; brut `@media (min-width: 1025px)` + `:has(> .colonne-chapitre:nth-last-child(2))` pour
+  l'encart texte à gauche), `colonne-chapitre` gap 14 / padding 26 36, `panneau` 14 18, `photo-chapitre` 540, picto 60 px,
+  listes 1.35fr / 1fr, `chapitre-colle` top min(110px, 100vh − 660px) (empilement gardé). Storyboard « Sans IA » = image
+  `storyboard-fait-main.webp` (capturée dans la maquette d'origine, `div:has(> .paper)`, alt vide) dans `cadre-storyboard`
+  (Offres + 00:07 accueil). Filtres vides des réalisations : « Encore en salle de montage. » + réglage `texte_aucun_detail`
+  (anciens défauts gardés pour les autres listes ; la liste des réalisations restée aux textes d'origine prend la nouvelle
+  phrase au rendu). Blog : encart newsletter **après la dernière carte** (`newsletter_apres` = 99 : un nombre > nombre de
+  cartes = fin). Fin d'article : grille 2 colonnes portée aussi par `bandeau-newsletter` (`&.newsletter-article`, brut).
+  Landing : constat « Vos concurrents passent à la vidéo. / Et vos contenus, ils attendent quoi ? » ; nouvelle partie
+  `p-landing-2b-equipe` (`duo-equipe`, `carte-equipe-ia` sombre, `visages-equipe` + `plus-visage` +1 / +2, `note-equipe`) ;
+  `p-landing-2c-formules` (prix + `prix-annuel` « Soit 15 000 / 25 000 € / an », ancre `landing-offres` déplacée ici,
+  plus de prix dans la FAQ) ; bénéfices = `promesses-jeu` + `cartes-jeu` (chiffres en verre, textes d'origine, notes
+  « enfin vus / sans négo / non-stop / tout inclus ») ; ordre : hero, constat, équipe, formules, pourquoi Rolling, échange,
+  Née chez Pitchy, questions, final (timecodes 00:01 à 00:07). Installateur : met aussi à jour le **titre** d'un bloc non
+  modifié quand il change (ex. timecode).
 - **Chargement de page effet film** (demande avant la fin de la livraison 4) : maquette `maquettes/loading/maquette-loading.html`
   (copie /workspace/maquette-loading.html), 4 options : A amorce 3-2-1, B clap qui se ferme puis rideau, C ouverture
   cinéma (bandes noires + REC + timecode + règle avec la tête de lecture rouge des frises, plus de filet fin), D barre de lecture en haut sans écran. Conseil : C à l'arrivée (première page

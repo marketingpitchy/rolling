@@ -5,9 +5,11 @@
  "assemble": [
   "p-landing-1-hero",
   "p-landing-2-constat",
+  "p-landing-2b-equipe",
+  "p-landing-2c-formules",
   "p-landing-3-pourquoi",
-  "p-landing-4-preuve",
   "p-landing-5-action",
+  "p-landing-4-preuve",
   "p-landing-6-objections",
   "p-landing-7-final"
  ]

@@ -634,5 +634,11 @@
   "fichier": "picto-replays.webp",
   "alt": "",
   "titre": "Picto replays"
+ },
+ {
+  "cle": "storyboard-fait-main",
+  "fichier": "storyboard-fait-main.webp",
+  "alt": "",
+  "titre": "Illustration : storyboard dessiné à la main"
  }
 ]

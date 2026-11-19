@@ -400,14 +400,14 @@ def colonne_chapitre(nom, etiquette, picto, titre, couleur_label, constat, conte
     return [F(nom + ' · texte', ['colonne-chapitre'], enfants=[
         F(nom + ' · haut', None, 'display: flex; flex-direction: row; align-items: center; justify-content: space-between; gap: 16px; padding: 0;', enfants=[
             P(nom + ' · étiquette', etiquette, [etiquette_cls(couleur_label)]),
-            I(nom + ' · picto', picto, cls=['picto-verre'], style='height: 76px; margin: -10px -8px -10px 0;', taille='thumbnail'),
+            I(nom + ' · picto', picto, cls=['picto-verre'], style='height: 60px; margin: -8px -6px -8px 0;', taille='thumbnail'),
         ]),
         H(nom + ' · titre', titre, 'h3', ['titre-md']),
         F(nom + ' · constat', ['panneau'], enfants=[
             P(nom + ' · constat · label', 'Le constat', ['label', 'label-violet' if couleur_label == 'bleu' else 'label-orange']),
             P(nom + ' · constat · texte', constat, ['texte-fort']),
         ]),
-        F(nom + ' · listes', None, 'display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 22px; padding: 0;', enfants=[
+        F(nom + ' · listes', None, 'display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); gap: 18px; padding: 0; @media(--mobile) { grid-template-columns: minmax(0, 1fr); }', enfants=[
             F(nom + ' · contenus', ['pile'], enfants=[P(nom + ' · contenus · titre', 'À partir de vos contenus', ['label']), liste_coches(nom + ' · contenus · liste', contenus)]),
             F(nom + ' · projets', ['pile'], enfants=[P(nom + ' · projets · titre', 'Pour vos nouveaux projets', ['label']), liste_coches(nom + ' · projets · liste', projets)]),
         ]),
@@ -1497,7 +1497,7 @@ rea_haut = haut_page('Réalisations · haut', 'Réalisations', [], 'Nos réalisa
                      note='ce que nous faisons, en vrai', largeur='880px')
 rea_liste = section_liste('Réalisations · liste', [
     H('Réalisations · liste · titre masqué', 'Toutes nos réalisations vidéo', 'h2', ['texte-masque']),
-    W('Réalisations · cartes', 'rolling-liste', contenu='realisations', classe='mur-montage', extraits='2', filtres='trois', tous='Tous', plus='yes', plus_texte='Réalisations suivantes'),
+    W('Réalisations · cartes', 'rolling-liste', contenu='realisations', classe='mur-montage', extraits='2', filtres='trois', tous='Tous', texte_aucun='Encore en salle de montage.', texte_aucun_detail='Les vidéos de cette catégorie arrivent bientôt en ligne.', texte_tout_voir='Voir toutes les réalisations', plus='yes', plus_texte='Réalisations suivantes'),
 ], [appel_milieu('Réalisations · appel', 'Et avec vos contenus, <em>ça donnerait quoi&nbsp;?</em>', 'margin-top: 24px;')])
 
 tem_haut = haut_page('Témoignages · haut', 'Témoignages', ['pastille-orange'], 'Ce que nos clients disent <u>de notre accompagnement.</u>',
@@ -1509,7 +1509,7 @@ tem_liste = section_liste('Témoignages · liste', [
 blog_haut = haut_page('Blog · haut', 'Le blog', ['pastille-bleue'], 'Des conseils vidéo <em>pour vos équipes.</em>',
                       'Communication interne, RH, formation, marketing : nos méthodes pour que vos contenus soient enfin regardés.')
 blog_liste = section_liste('Blog · liste', [
-    W('Blog · cartes', 'rolling-liste', contenu='articles', classe='grille-3', filtres='category', tous='Tous les articles', texte_aucun='Aucun article dans cette catégorie.', nombre='10', premiere_une='yes', newsletter_apres='1', plus='yes', plus_texte='Articles suivants'),
+    W('Blog · cartes', 'rolling-liste', contenu='articles', classe='grille-3', filtres='category', tous='Tous les articles', texte_aucun='Aucun article dans cette catégorie.', nombre='10', premiere_une='yes', newsletter_apres='99', plus='yes', plus_texte='Articles suivants'),
 ])
 
 guides_haut = haut_page('Guides · haut', 'Ressources · Guides et REX', ['pastille-bleue'], 'Guides et REX, <em>à télécharger.</em>',
@@ -1658,7 +1658,7 @@ offres_ajout = F('Offres · Création + Tournage', ['section', 'section-suite'],
                 "Nos équipes se déplacent, un projet à la fois : vos collaborateurs, vos produits, vos événements passent à l'image.",
                 ['Interviews', 'Vidéos produit', "Rétrospectives d'événements", 'Témoignages'], 'chip-orange'),
             carte_ajout('Offres · fait main', D('Offres · fait main · visuel', ['cadre-storyboard'], enfants=[
-                P('Offres · fait main · annotation', 'storyboard · v1', ['note-main']),
+                I('Offres · fait main · dessin', 'storyboard-fait-main.webp', '', ['image-couvrante'], taille='large'),
             ]), 'Sans IA', ['label-violet'], 'Le motion sur-mesure, <em>100&nbsp;% fait main.</em>',
                 'Sans IA : nos motion designers dessinent chaque plan à la main, pour vos sujets les plus sensibles.',
                 ['Sans IA', 'Sur mesure', '100&nbsp;% fait main'], 'chip-neutre'),
@@ -2048,8 +2048,8 @@ landing_hero = F('Landing · hero', ['section', 'section-entete', 'entete-page',
 landing_douleur = F('Landing · constat', ['section', 'section-sombre', 'halos-nuit'], tag='section', enfants=[
     F('Landing · constat · contenu', ['conteneur'], COLONNE, enfants=[
         entete('Landing · constat', '00:01', 'Le constat', [
-            ('Vos contenus sont déjà écrits.', 'p', ['titre-lg', 'titre-eteint']),
-            ('Mais sont-ils <em>vraiment lus&nbsp;?</em>', 'h2', ['titre-lg']),
+            ('Vos concurrents passent à la vidéo.', 'p', ['titre-lg', 'titre-eteint']),
+            ('Et vos contenus, <em>ils attendent quoi&nbsp;?</em>', 'h2', ['titre-lg']),
         ]),
         F('Landing · constat · cartes', ['grille-4'], enfants=[
             F('Landing · constat · %s' % nom, ['carte-verre', 'carte-douleur'], enfants=[
@@ -2087,7 +2087,7 @@ def ligne_comparatif(n, critere, valeurs, nous):
 
 landing_produit = F('Landing · pourquoi Rolling', ['section', 'halo-doux'], tag='section', enfants=[
     F('Landing · produit · contenu', ['conteneur'], COLONNE, enfants=[
-        entete('Landing · produit', '00:02', 'Pourquoi Rolling', [("Pourquoi Rolling, plutôt <em>qu'une autre solution&nbsp;?</em>", 'h2', ['titre-lg'])],
+        entete('Landing · produit', '00:04', 'Pourquoi Rolling', [("Pourquoi Rolling, plutôt <em>qu'une autre solution&nbsp;?</em>", 'h2', ['titre-lg'])],
                intro="Un freelance, votre studio interne, une production en interne avec Canva ou une agence de pub : chacun a ses forces. Voici ce qui change avec une agence de vidéo à l'année."),
         F('Landing · comparatif', ['carte-pleine', 'comparatif'], enfants=[
             F('Comparatif · en-tête', ['comparatif-ligne', 'comparatif-entete'], enfants=[
@@ -2106,18 +2106,23 @@ landing_produit = F('Landing · pourquoi Rolling', ['section', 'halo-doux'], tag
                 ('Un prix fixe, en illimité.', 'Plus vous faites de vidéos, moins chacune vous coûte. Pas de devis à chaque projet.'),
             ], 1)
         ]),
-        H('Landing · bénéfices · titre', 'Ce que ça change pour nos clients', 'h3', ['label', 'label-violet'], 'margin: 64px 0 18px;'),
-        F('Landing · bénéfices', ['plaque-benefices'], enfants=[
-            F('Landing · bénéfice %d' % n, None, COLONNE, enfants=[
-                I('Landing · bénéfice %d · coche' % n, 'coche-verre.png', cls=['coche'], taille='thumbnail'),
-                H('Landing · bénéfice %d · titre' % n, titre, 'h4', ['titre-benefice']),
-                P('Landing · bénéfice %d · texte' % n, texte, ['texte-petit']),
-            ]) for n, (titre, texte) in enumerate([
-                ('Vos contenus enfin regardés', 'Vos emails, modules et événements deviennent des vidéos que vos équipes ont envie de voir.'),
-                ('Zéro devis', 'Une demande, une vidéo&nbsp;: pas de négociation à chaque projet.'),
-                ('Toujours une vidéo en cours', 'Nous enchaînons les projets, sans attente entre deux commandes.'),
-                ('Tous vos formats', '16:9, 9:16, carré, sous-titres et langues, sans surcoût.'),
-            ], 1)
+        F('Landing · bénéfices', ['promesses-jeu'], 'margin-top: 88px;', enfants=[
+            H('Landing · bénéfices · titre', 'Ce que ça change <em>pour nos clients.</em>', 'h3', ['titre-md']),
+            F('Landing · bénéfices · cartes', ['cartes-jeu'], enfants=[
+                F('Landing · bénéfice %d' % n, ['carte-verre', 'carte-jeu'], enfants=[
+                    I('Landing · bénéfice %d · chiffre' % n, 'chiffre-%d.webp' % n, cls=['chiffre-jeu'], taille='medium'),
+                    F('Landing · bénéfice %d · textes' % n, ['pile-serree'], enfants=[
+                        H('Landing · bénéfice %d · titre' % n, titre, 'h4', ['titre-xs']),
+                        P('Landing · bénéfice %d · texte' % n, texte, ['texte-petit']),
+                    ]),
+                    P('Landing · bénéfice %d · note' % n, note, ['note-jeu']),
+                ]) for n, (titre, texte, note) in enumerate([
+                    ('Vos contenus enfin regardés', 'Vos emails, modules et événements deviennent des vidéos que vos équipes ont envie de voir.', 'enfin vus'),
+                    ('Zéro devis', 'Une demande, une vidéo&nbsp;: pas de négociation à chaque projet.', 'sans négo'),
+                    ('Toujours une vidéo en cours', 'Nous enchaînons les projets, sans attente entre deux commandes.', 'non-stop'),
+                    ('Tous vos formats', '16:9, 9:16, carré, sous-titres et langues, sans surcoût.', 'tout inclus'),
+                ], 1)
+            ]),
         ]),
         F('Landing · appel', ['carte-verre', 'carte-appel'], 'margin-top: 28px;', enfants=[
             P('Landing · appel · texte', 'Et avec vos contenus, <em>ça donnerait quoi&nbsp;?</em>', ['titre-xs']),
@@ -2126,9 +2131,56 @@ landing_produit = F('Landing · pourquoi Rolling', ['section', 'halo-doux'], tag
     ]),
 ])
 
+def visages_equipe(prefixe, membres, plus):
+    return F(prefixe + ' · visages', ['visages-equipe'], enfants=[
+        I(prefixe + ' · ' + nom, 'equipe-' + cle + '.jpg', nom + ', ' + poste, None, taille='thumbnail') for cle, nom, poste in membres
+    ] + [P(prefixe + ' · autres', plus, ['plus-visage'])])
+
+
+landing_equipe = F('Landing · équipe', ['section', 'section-suite'], tag='section', enfants=[
+    F('Landing · équipe · contenu', ['conteneur'], COLONNE, enfants=[
+        entete('Landing · équipe', '00:02', 'Notre équipe', [('Notre IA va vite. <em>Nos créas décident.</em>', 'h2', ['titre-md'])]),
+        F('Landing · équipe · cartes', ['duo-equipe'], enfants=[
+            F('Landing · équipe · IA', ['carte-verre', 'carte-equipe-ia'], enfants=[
+                visages_equipe('Landing · équipe · IA', [('ronan', 'Ronan', 'Directeur Technique'), ('marion-l', 'Marion', 'Développeuse Full-Stack'), ('ines', 'Inès', 'DevOps'), ('hakim', 'Hakim', 'Développeur Back-End')], '+1'),
+                P('Landing · équipe · IA · sur-titre', 'Nos experts IA', ['label']),
+                H('Landing · équipe · IA · titre', 'Notre IA Factory accélère.', 'h3', ['titre-xs']),
+                liste_coches('Landing · équipe · IA · liste', ['Pistes de scénario et storyboards', 'Voix off, sous-titres, traductions', 'Déclinaisons de formats']),
+            ]),
+            F('Landing · équipe · créas', ['carte-verre'], enfants=[
+                visages_equipe('Landing · équipe · créas', [('thomas', 'Thomas', 'Directeur Artistique'), ('sophie', 'Sophie', 'Chef de Projet'), ('victor', 'Victor', 'Motion Designer'), ('vincent', 'Vincent', 'Cadreur')], '+2'),
+                P('Landing · équipe · créas · sur-titre', 'Notre réseau de créas', ['label', 'label-orange']),
+                H('Landing · équipe · créas · titre', 'Nos créas perfectionnent.', 'h3', ['titre-xs']),
+                liste_coches('Landing · équipe · créas · liste', ['Un directeur artistique dédié', 'Motion designers, monteurs, cadreurs', 'Chaque vidéo validée à votre charte']),
+            ]),
+        ]),
+        P('Landing · équipe · note', "l'IA pour la vitesse, l'humain pour le goût", ['note-equipe']),
+    ]),
+])
+
+landing_formules = F('Landing · formules', ['section', 'section-suite'], tag='section', ancre='landing-offres', enfants=[
+    F('Landing · formules · contenu', ['conteneur'], COLONNE, enfants=[
+        entete('Landing · formules', '00:03', 'Nos formules', [('Un prix fixe, <em>en illimité.</em>', 'h2', ['titre-md'])]),
+        F('Landing · formules · cartes', ['grille-2'], enfants=[
+            F('Landing · formule Création', ['carte-pleine'], enfants=[
+                H('Landing · formule Création · nom', 'Création illimitée', 'h3', ['titre-xs']),
+                P('Landing · formule Création · prix', '1&nbsp;250&nbsp;€<span> / mois</span>', ['offres-prix']),
+                P('Landing · formule Création · an', 'Soit 15&nbsp;000&nbsp;€ / an', ['prix-annuel']),
+                P('Landing · formule Création · texte', 'Tous vos contenus et vos projets, en vidéo.', ['texte-petit']),
+            ]),
+            F('Landing · formule Complet', ['carte-pleine', 'section-sombre', 'carte-prix-sombre'], enfants=[
+                H('Landing · formule Complet · nom', 'Création + Tournage', 'h3', ['titre-xs']),
+                P('Landing · formule Complet · prix', '2&nbsp;080&nbsp;€<span> / mois</span>', ['offres-prix']),
+                P('Landing · formule Complet · an', 'Soit 25&nbsp;000&nbsp;€ / an', ['prix-annuel']),
+                P('Landing · formule Complet · texte', 'Tout Création, plus le tournage et le motion fait main.', ['texte-petit']),
+            ]),
+        ]),
+    ]),
+])
+
 landing_preuve = F('Landing · preuve sociale', ['section', 'section-chaude'], tag='section', enfants=[
     F('Landing · preuve · contenu', ['conteneur'], COLONNE, enfants=[
-        entete('Landing · preuve', '00:03', 'Ils nous font confiance', [('Née chez <em>Pitchy.</em>', 'h2', ['titre-md'])]),
+        entete('Landing · preuve', '00:06', 'Ils nous font confiance', [('Née chez <em>Pitchy.</em>', 'h2', ['titre-md'])]),
         F('Landing · chiffres', ['plaque-libre', 'plaque-large'], 'margin-bottom: 28px;', enfants=[
             chiffre('Landing · ans', ['1', '3'], '13', 'ans de vidéo pour les entreprises'),
             chiffre('Landing · entreprises', ['plus', '5', '0', '0'], '+500', 'grandes entreprises équipées'),
@@ -2143,7 +2195,7 @@ landing_action = F('Landing · action', ['section', 'section-suite'], tag='secti
     F('Landing · action · contenu', ['conteneur'], COLONNE, enfants=[
         F('Landing · action · bloc', ['carte-verre', 'grand-bloc', 'landing-action'], enfants=[
             F('Landing · action · textes', None, COLONNE + ' padding: 0;', enfants=[
-                F('Landing · action · repère', ['sur-titre'], enfants=[P('Landing · action · timecode', '00:04', ['timecode']), P('Landing · action · sur-titre', 'Votre échange')]),
+                F('Landing · action · repère', ['sur-titre'], enfants=[P('Landing · action · timecode', '00:05', ['timecode']), P('Landing · action · sur-titre', 'Votre échange')]),
                 H('Landing · action · titre', 'Réservez 30 minutes. <em>Repartez avec 3 vidéos à produire.</em>', 'h2', ['titre-sm'], 'margin-top: 18px;'),
                 P('Landing · action · texte', 'Choisissez votre créneau : nous regardons ensemble vos contenus et vos projets, puis nous vous proposons vos 3 premières vidéos.', ['texte'], 'margin-top: 10px;'),
             ]),
@@ -2165,21 +2217,9 @@ QUESTIONS_LANDING = [
     ('Que devons-nous fournir&nbsp;?', "Vos contenus, vos idées de projets et votre charte graphique. Nous nous occupons de tout le reste, de la stratégie vidéo annuelle jusqu'à la livraison."),
 ]
 
-landing_objections = F('Landing · objections', ['section'], tag='section', ancre='landing-offres', enfants=[
+landing_objections = F('Landing · objections', ['section'], tag='section', enfants=[
     F('Landing · objections · contenu', ['conteneur', 'conteneur-etroit'], COLONNE, enfants=[
-        entete('Landing · objections', '00:05', 'Vos questions', [('Avant de dire <em>«&nbsp;trop beau pour être vrai&nbsp;»</em>', 'h2', ['titre-md'])]),
-        F('Landing · formules', ['grille-2'], 'margin-bottom: 28px;', enfants=[
-            F('Landing · formule Création', ['carte-pleine'], enfants=[
-                H('Landing · formule Création · nom', 'Création illimitée', 'h3', ['titre-xs']),
-                P('Landing · formule Création · prix', '1&nbsp;250&nbsp;€<span> / mois</span>', ['offres-prix']),
-                P('Landing · formule Création · texte', 'Tous vos contenus et vos projets, en vidéo.', ['texte-petit']),
-            ]),
-            F('Landing · formule Complet', ['carte-pleine', 'section-sombre', 'carte-prix-sombre'], enfants=[
-                H('Landing · formule Complet · nom', 'Création + Tournage', 'h3', ['titre-xs']),
-                P('Landing · formule Complet · prix', '2&nbsp;080&nbsp;€<span> / mois</span>', ['offres-prix']),
-                P('Landing · formule Complet · texte', 'Tout Création, plus le tournage et le motion fait main.', ['texte-petit']),
-            ]),
-        ]),
+        entete('Landing · objections', '00:07', 'Vos questions', [('Avant de dire <em>«&nbsp;trop beau pour être vrai&nbsp;»</em>', 'h2', ['titre-md'])]),
         F('Landing · questions', ['liste-questions'], enfants=[
             F('Landing · question %d' % n, ['carte-verre', 'carte-question'], enfants=[
                 H('Landing · question %d · titre' % n, q, 'h3', ['titre-question']),
@@ -2460,8 +2500,9 @@ PAGES = [
                   ('p-agence-3-convictions', '00:02 Nos convictions', agence_convictions), ('p-agence-4-equipe', "00:03 L'équipe", agence_equipe),
                   ('p-agence-5-lieu', '00:04 Où nous trouver', agence_lieu), ('p-agence-6-faq', '00:05 FAQ', FAQ_BLOCS['agence'])]),
     ('Landing', [('p-landing-1-hero', 'Hero et logos', landing_hero), ('p-landing-2-constat', '00:01 Le constat', landing_douleur),
-                 ('p-landing-3-pourquoi', '00:02 Pourquoi Rolling', landing_produit), ('p-landing-4-preuve', '00:03 Preuve sociale', landing_preuve),
-                 ('p-landing-5-action', '00:04 Votre échange', landing_action), ('p-landing-6-objections', '00:05 Vos questions', landing_objections),
+                 ('p-landing-2b-equipe', '00:02 Notre équipe (experts IA et créas)', landing_equipe), ('p-landing-2c-formules', '00:03 Nos formules', landing_formules),
+                 ('p-landing-3-pourquoi', '00:04 Pourquoi Rolling', landing_produit), ('p-landing-5-action', '00:05 Votre échange', landing_action),
+                 ('p-landing-4-preuve', '00:06 Née chez Pitchy (preuve sociale)', landing_preuve), ('p-landing-6-objections', '00:07 Vos questions', landing_objections),
                  ('p-landing-7-final', 'Appel final', landing_final)]),
     ('Contact', [('p-contact-1-echange', "L'échange et le calendrier", contact_haut), ('p-contact-2-formules', 'Rappel des formules', contact_offres), ('p-contact-3-faq', "FAQ de l'échange", contact_faq),
                  ('p-contact-4-showreel', '00:01 Le showreel et les citations', contact_showreel), ('p-contact-5-realisations', '00:02 Chiffres et dernières réalisations', contact_realisations)]),
