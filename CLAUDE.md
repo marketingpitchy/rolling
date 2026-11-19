@@ -701,6 +701,15 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   (`client-exemple`, `&:empty { display: none }` ; rappel en pointillés dans l'éditeur via `apercu_contextes`).
   Carte réalisation : lien « Voir la réalisation → » (`temoin-lien`, pas « En savoir plus » : texte de lien non
   descriptif pour Lighthouse / SEO).
+- **Maquette « Accueil v2 »** (`maquettes/accueil-v2/propositions.html`, copie /workspace/maquette-accueil-v2.html, **à valider**,
+  ordinateur + mobile) : 1 Avant / Après cliquable : A toute la carte + « Voir la réalisation → » (conseil), B pastille sur
+  l'image au survol, C bouton lecture dans la carte (lien vidéo en plus) ; lien de chaque exemple réglé dans Elementor.
+  2 **Page Offres mise de côté** : menu « Offres » ⇒ ancre #offres de l'accueil ; nouveau modèle 00:07 complet : A tout
+  visible (tableau, « Ce que Création + Tournage ajoute », promesses, bouton), B 2 cartes prix + tableau dépliable
+  « Comparer en détail » (conseil). 3 **Nouvelle page « Pourquoi la vidéo »** (/pourquoi-la-video/ proposé) : hero,
+  00:01 constat (Survolées / Pas finis / Oubliés, chiffre à sourcer), 00:02 « Un contenu, plusieurs vidéos » (section
+  sombre, 1 article au centre, 6 vidéos autour), 00:03 Avant / Après (3 exemples + Toutes nos réalisations), 00:04
+  bénéfices, 00:05 FAQ, 00:06 Ressources, appel final.
 - **Chargement de page effet film** (demande avant la fin de la livraison 4) : maquette `maquettes/loading/maquette-loading.html`
   (copie /workspace/maquette-loading.html), 4 options : A amorce 3-2-1, B clap qui se ferme puis rideau, C ouverture
   cinéma (bandes noires + REC + timecode + règle avec la tête de lecture rouge des frises, plus de filet fin), D barre de lecture en haut sans écran. Conseil : C à l'arrivée (première page
