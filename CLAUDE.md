@@ -710,6 +710,21 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   00:01 constat (Survolées / Pas finis / Oubliés, chiffre à sourcer), 00:02 « Un contenu, plusieurs vidéos » (section
   sombre, 1 article au centre, 6 vidéos autour), 00:03 Avant / Après (3 exemples + Toutes nos réalisations), 00:04
   bénéfices, 00:05 FAQ, 00:06 Ressources, appel final.
+- **Accueil v2, retours** : Avant / Après = A mais « trop de texte à côté » ; **Offres = A** (tout visible : tableau,
+  « Ce que Création + Tournage ajoute », promesses ; page Offres mise de côté, menu ⇒ #offres) ⇒ à intégrer avec le reste.
+  **Maquette tour 2** (`maquettes/accueil-v2/propositions-2.html`, copie /workspace/maquette-accueil-v2-tour2.html, **à valider**) :
+  Avant / Après A1 une ligne + flèche ronde, **A2 tout dans une carte en verre, client en pastille sur l'image (conseil)**,
+  A3 « Au départ ··· à l'arrivée » ; 00:02 avec flèches en pointillés animées (SVG `stroke-dasharray`) : **V1 éventail
+  (conseil)**, V2 chaîne contenu → équipe → vidéos, V3 arbre 1 contenu / 3 angles / 6 vidéos (mobile : vertical).
+  **Page réécrite « Du contenu à la vidéo »** (/du-contenu-a-la-video/) : la 1re version reprenait des textes existants
+  (« Ce que ça donne, concrètement. », « Et avec vos contenus, ça donnerait quoi ? », « 3 premières vidéos », constat
+  Survolés / Oubliés, bénéfices de la landing) ⇒ nouvel angle (comment un contenu devient une vidéo ; requêtes
+  « transformer un PowerPoint en vidéo », « contenu en vidéo » ; ne pas concurrencer l'accueil sur « agence vidéo ») :
+  hero + bande de réassurance (DA, confidentialité, Europe, sans devis), 00:01 types de contenus (PPT, article, rapport,
+  webinar, formation), 00:02 schéma, 00:03 méthode en 4 temps (qui fait quoi), 00:04 cas client réel [à fournir : capture
+  du document, vidéos, 2-3 chiffres, citation], 00:05 Avant / Après « D'autres contenus, déjà en vidéo. », encart
+  « Combien ça coûte ? Rien de plus » + Voir les formules, 00:06 FAQ, 00:07 Ressources, appel « Quel contenu
+  transformez-vous en premier ? ». **Toujours vérifier les doublons de textes avec blocs.py avant de proposer une page.**
 - **Chargement de page effet film** (demande avant la fin de la livraison 4) : maquette `maquettes/loading/maquette-loading.html`
   (copie /workspace/maquette-loading.html), 4 options : A amorce 3-2-1, B clap qui se ferme puis rideau, C ouverture
   cinéma (bandes noires + REC + timecode + règle avec la tête de lecture rouge des frises, plus de filet fin), D barre de lecture en haut sans écran. Conseil : C à l'arrivée (première page
