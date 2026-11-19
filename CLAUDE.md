@@ -779,6 +779,20 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   Playwright car `//js.hsforms.net` passe en http en local) : case de consentement stylée comme un champ (géante) + puce
   ⇒ `zone-newsletter` : liste sans puce, case 18 px, libellé en ligne, bouton à côté du champ (ordre : champ, bouton,
   consentement, mentions).
+- **Maquette « Retours 0.7.4 »** (`maquettes/retours-0-7/retours.html`, générée par `scratchpad/c067/gen-retours.py`, copie
+  /workspace/maquette-retours-074.html, **à valider**, « ne refais pas de thème avant validation ») : 1 accueil 00:02 (encarts
+  ≈ 810 px, trop hauts) : A encarts compacts ≈ 520 px (conseil : constat 1 phrase, une liste de 4 coches sur 2 colonnes),
+  B onglets, C encarts qui s'empilent ; 2 storyboard « Sans IA » = dessin de la maquette d'origine
+  (scratchpad/maquette/G2v11-polices.dc.html, lignes ~1055-1090) à capturer en image ; 3 filtres vides : 4 phrases (conseil
+  « Encore en salle de montage. ») ; landing : 4 H2 du constat FOMO (5 propositions, conseil « Vos concurrents passent à la
+  vidéo. Et vos contenus, ils attendent quoi ? »), 5 experts IA + créas (A deux cartes, conseil ; B chaîne ; C bande de
+  portraits avec badge), 6 prix à l'année (A « Soit 15 000 / 25 000 € / an » visibles, conseil ; B bascule), 7 bénéfices en
+  4 cartes, 8 ordre : hero, constat, équipe, formules, pourquoi Rolling, échange, Née chez Pitchy, FAQ, final.
+  À faire aussi dans la même version : encart newsletter du blog **après toutes les cartes** ; encart de fin d'article cassé
+  chez la cliente (non reproduit sur wp / wp2 : texte dans une colonne étroite = grille 3 colonnes de bandeau-newsletter
+  appliquée) ⇒ mettre la grille 2 colonnes en `&.newsletter-article` dans bandeau-newsletter (indépendant de l'ordre).
+  Médias : l'installateur n'écrit titre / texte alternatif **qu'à la création** d'une image de départ ; `rafraichir_media`
+  change seulement le fichier ⇒ les alt / titres de la cliente sont gardés.
 - **Chargement de page effet film** (demande avant la fin de la livraison 4) : maquette `maquettes/loading/maquette-loading.html`
   (copie /workspace/maquette-loading.html), 4 options : A amorce 3-2-1, B clap qui se ferme puis rideau, C ouverture
   cinéma (bandes noires + REC + timecode + règle avec la tête de lecture rouge des frises, plus de filet fin), D barre de lecture en haut sans écran. Conseil : C à l'arrivée (première page
