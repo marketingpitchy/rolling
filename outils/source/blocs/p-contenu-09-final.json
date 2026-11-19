@@ -1,0 +1,121 @@
+{
+ "cle": "p-contenu-09-final",
+ "titre": "Rolling · Du contenu à la vidéo · Appel final",
+ "type": "e-flexbox",
+ "composition": {
+  "xml_structure": "<e-flexbox configuration-id=\"Contenu · appel final\"><e-image configuration-id=\"Contenu · final · verre cannelé\"></e-image><e-flexbox configuration-id=\"Contenu · final · contenu\"><e-heading configuration-id=\"Contenu · final · titre\"></e-heading><e-paragraph configuration-id=\"Contenu · final · texte\"></e-paragraph><e-flexbox configuration-id=\"Contenu · final · bouton\"><e-button configuration-id=\"Contenu · final · réserver\"></e-button></e-flexbox><e-flexbox configuration-id=\"Contenu · final · badges\"><e-flexbox configuration-id=\"Contenu · final · badge · IA sécurisée\"><e-image configuration-id=\"Contenu · final · badge · IA sécurisée · icône\"></e-image><e-paragraph configuration-id=\"Contenu · final · badge · IA sécurisée · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Contenu · final · badge · Données hébergées en Europe\"><e-image configuration-id=\"Contenu · final · badge · Données hébergées en Europe · icône\"></e-image><e-paragraph configuration-id=\"Contenu · final · badge · Données hébergées en Europe · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Contenu · final · badge · Conforme RGPD\"><e-image configuration-id=\"Contenu · final · badge · Conforme RGPD · icône\"></e-image><e-paragraph configuration-id=\"Contenu · final · badge · Conforme RGPD · texte\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox></e-flexbox>",
+  "element_config": {
+   "Contenu · appel final": {
+    "_cssid": "contact",
+    "tag": "section"
+   },
+   "Contenu · final · verre cannelé": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/final-verre-cannele.webp"
+     },
+     "size": "medium_large"
+    }
+   },
+   "Contenu · final · titre": {
+    "tag": "h2",
+    "title": "Quel contenu transformez-vous<br><em>en premier&nbsp;?</em>"
+   },
+   "Contenu · final · texte": {
+    "paragraph": "Envoyez-nous un fichier avant l'échange : nous arrivons avec des idées de vidéos tirées de votre propre contenu."
+   },
+   "Contenu · final · réserver": {
+    "text": "Réserver un échange",
+    "link": {
+     "destination": "/contact/"
+    }
+   },
+   "Contenu · final · badge · IA sécurisée · icône": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/badge-securite.webp"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "Contenu · final · badge · IA sécurisée · texte": {
+    "paragraph": "IA sécurisée"
+   },
+   "Contenu · final · badge · Données hébergées en Europe · icône": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/badge-europe.webp"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "Contenu · final · badge · Données hébergées en Europe · texte": {
+    "paragraph": "Données hébergées en Europe"
+   },
+   "Contenu · final · badge · Conforme RGPD · icône": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/badge-rgpd.webp"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "Contenu · final · badge · Conforme RGPD · texte": {
+    "paragraph": "Conforme RGPD"
+   }
+  },
+  "classes": {
+   "Contenu · appel final": [
+    "section",
+    "section-sombre",
+    "section-finale",
+    "halo-centre",
+    "decors-final"
+   ],
+   "Contenu · final · verre cannelé": [
+    "decor-flottant"
+   ],
+   "Contenu · final · contenu": [
+    "conteneur"
+   ],
+   "Contenu · final · titre": [
+    "titre-lg",
+    "titre-souligne"
+   ],
+   "Contenu · final · texte": [
+    "texte-intro"
+   ],
+   "Contenu · final · réserver": [
+    "bouton-soleil"
+   ],
+   "Contenu · final · badges": [
+    "rangee"
+   ],
+   "Contenu · final · badge · IA sécurisée": [
+    "badge-securite"
+   ],
+   "Contenu · final · badge · IA sécurisée · icône": [
+    "icone-badge"
+   ],
+   "Contenu · final · badge · Données hébergées en Europe": [
+    "badge-securite"
+   ],
+   "Contenu · final · badge · Données hébergées en Europe · icône": [
+    "icone-badge"
+   ],
+   "Contenu · final · badge · Conforme RGPD": [
+    "badge-securite"
+   ],
+   "Contenu · final · badge · Conforme RGPD · icône": [
+    "icone-badge"
+   ]
+  },
+  "style": {
+   "Contenu · final · contenu": "display: flex; flex-direction: column; gap: 0; align-items: center; z-index: 1;",
+   "Contenu · final · texte": "margin-top: 34px; max-width: 600px;",
+   "Contenu · final · bouton": "display: flex; justify-content: center; margin-top: 38px; padding: 0;",
+   "Contenu · final · badges": "justify-content: center; margin-top: 34px;"
+  }
+ },
+ "brut": {}
+}

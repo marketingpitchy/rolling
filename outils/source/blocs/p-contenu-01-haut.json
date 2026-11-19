@@ -1,0 +1,196 @@
+{
+ "cle": "p-contenu-01-haut",
+ "titre": "Rolling · Du contenu à la vidéo · Haut de page",
+ "type": "e-flexbox",
+ "composition": {
+  "xml_structure": "<e-flexbox configuration-id=\"Contenu · haut\"><e-flexbox configuration-id=\"Contenu · haut · contenu\"><e-paragraph configuration-id=\"Contenu · fil d’Ariane\"></e-paragraph><e-flexbox configuration-id=\"Contenu · présentation\"><e-flexbox configuration-id=\"Contenu · textes\"><e-flexbox configuration-id=\"Contenu · pastille\"><e-paragraph configuration-id=\"Contenu · pastille · texte\"></e-paragraph></e-flexbox><e-heading configuration-id=\"Contenu · titre\"></e-heading><e-paragraph configuration-id=\"Contenu · introduction\"></e-paragraph><e-flexbox configuration-id=\"Contenu · boutons\"><e-button configuration-id=\"Contenu · réserver\"></e-button><e-button configuration-id=\"Contenu · formules\"></e-button></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Contenu · visuel\"><e-div-block configuration-id=\"Contenu · visuel · cadre\"><e-image configuration-id=\"Contenu · visuel · image\"></e-image><e-paragraph configuration-id=\"Contenu · visuel · bandeau\"></e-paragraph></e-div-block><e-paragraph configuration-id=\"Contenu · visuel · légende\"></e-paragraph></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Contenu · réassurance\"><e-flexbox configuration-id=\"Contenu · réassurance · Validé par un directeur artistique\"><e-image configuration-id=\"Contenu · réassurance · Validé par un directeur artistique · coche\"></e-image><e-paragraph configuration-id=\"Contenu · réassurance · Validé par un directeur artistique · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Contenu · réassurance · Contenus confidentiels protégés\"><e-image configuration-id=\"Contenu · réassurance · Contenus confidentiels protégés · coche\"></e-image><e-paragraph configuration-id=\"Contenu · réassurance · Contenus confidentiels protégés · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Contenu · réassurance · Données hébergées en Europe\"><e-image configuration-id=\"Contenu · réassurance · Données hébergées en Europe · coche\"></e-image><e-paragraph configuration-id=\"Contenu · réassurance · Données hébergées en Europe · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Contenu · réassurance · Inclus dans l'abonnement, sans devis\"><e-image configuration-id=\"Contenu · réassurance · Inclus dans l'abonnement, sans devis · coche\"></e-image><e-paragraph configuration-id=\"Contenu · réassurance · Inclus dans l'abonnement, sans devis · texte\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox></e-flexbox>",
+  "element_config": {
+   "Contenu · haut": {
+    "tag": "section"
+   },
+   "Contenu · fil d’Ariane": {
+    "paragraph": "⟦widget:rolling-ariane⟧"
+   },
+   "Contenu · pastille · texte": {
+    "paragraph": "Du contenu à la vidéo"
+   },
+   "Contenu · titre": {
+    "tag": "h1",
+    "title": "Transformez vos contenus <em>en vidéos.</em>"
+   },
+   "Contenu · introduction": {
+    "paragraph": "Un PowerPoint, un article, un rapport ou un webinar contient déjà tout ce qu'il faut. Notre <strong>agence vidéo</strong> en tire des vidéos courtes, une par message, prêtes pour chaque canal."
+   },
+   "Contenu · réserver": {
+    "text": "Réserver un échange",
+    "link": {
+     "destination": "/contact/"
+    }
+   },
+   "Contenu · formules": {
+    "text": "Voir les formules",
+    "link": {
+     "destination": "/#offres"
+    }
+   },
+   "Contenu · visuel · image": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/exemple-serie.webp",
+      "alt": "Un rapport devenu une série de vidéos courtes"
+     },
+     "size": "large"
+    }
+   },
+   "Contenu · visuel · bandeau": {
+    "paragraph": "Avant · après"
+   },
+   "Contenu · visuel · légende": {
+    "paragraph": "[Visuel à fournir : une page du document d’origine et la vidéo qui en est née]"
+   },
+   "Contenu · réassurance · Validé par un directeur artistique · coche": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/coche-verre.png"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "Contenu · réassurance · Validé par un directeur artistique · texte": {
+    "paragraph": "<strong>Validé par un directeur artistique</strong>"
+   },
+   "Contenu · réassurance · Contenus confidentiels protégés · coche": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/coche-verre.png"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "Contenu · réassurance · Contenus confidentiels protégés · texte": {
+    "paragraph": "<strong>Contenus confidentiels protégés</strong>"
+   },
+   "Contenu · réassurance · Données hébergées en Europe · coche": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/coche-verre.png"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "Contenu · réassurance · Données hébergées en Europe · texte": {
+    "paragraph": "<strong>Données hébergées en Europe</strong>"
+   },
+   "Contenu · réassurance · Inclus dans l'abonnement, sans devis · coche": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/coche-verre.png"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "Contenu · réassurance · Inclus dans l'abonnement, sans devis · texte": {
+    "paragraph": "<strong>Inclus dans l'abonnement, sans devis</strong>"
+   }
+  },
+  "classes": {
+   "Contenu · haut": [
+    "section",
+    "section-entete",
+    "entete-page",
+    "halos-haut"
+   ],
+   "Contenu · haut · contenu": [
+    "conteneur"
+   ],
+   "Contenu · présentation": [
+    "agence-hero"
+   ],
+   "Contenu · pastille": [
+    "pastille"
+   ],
+   "Contenu · titre": [
+    "titre-lg"
+   ],
+   "Contenu · introduction": [
+    "texte-intro"
+   ],
+   "Contenu · boutons": [
+    "rangee"
+   ],
+   "Contenu · réserver": [
+    "bouton-principal"
+   ],
+   "Contenu · formules": [
+    "bouton-verre"
+   ],
+   "Contenu · visuel": [
+    "carte-verre",
+    "agence-photo",
+    "flotte"
+   ],
+   "Contenu · visuel · cadre": [
+    "cadre-photo"
+   ],
+   "Contenu · visuel · image": [
+    "image-couvrante"
+   ],
+   "Contenu · visuel · bandeau": [
+    "bandeau-video"
+   ],
+   "Contenu · visuel · légende": [
+    "texte-petit"
+   ],
+   "Contenu · réassurance": [
+    "carte-verre",
+    "bande-reassurance"
+   ],
+   "Contenu · réassurance · Validé par un directeur artistique": [
+    "ligne-coche"
+   ],
+   "Contenu · réassurance · Validé par un directeur artistique · coche": [
+    "coche"
+   ],
+   "Contenu · réassurance · Validé par un directeur artistique · texte": [
+    "texte-petit"
+   ],
+   "Contenu · réassurance · Contenus confidentiels protégés": [
+    "ligne-coche"
+   ],
+   "Contenu · réassurance · Contenus confidentiels protégés · coche": [
+    "coche"
+   ],
+   "Contenu · réassurance · Contenus confidentiels protégés · texte": [
+    "texte-petit"
+   ],
+   "Contenu · réassurance · Données hébergées en Europe": [
+    "ligne-coche"
+   ],
+   "Contenu · réassurance · Données hébergées en Europe · coche": [
+    "coche"
+   ],
+   "Contenu · réassurance · Données hébergées en Europe · texte": [
+    "texte-petit"
+   ],
+   "Contenu · réassurance · Inclus dans l'abonnement, sans devis": [
+    "ligne-coche"
+   ],
+   "Contenu · réassurance · Inclus dans l'abonnement, sans devis · coche": [
+    "coche"
+   ],
+   "Contenu · réassurance · Inclus dans l'abonnement, sans devis · texte": [
+    "texte-petit"
+   ]
+  },
+  "style": {
+   "Contenu · haut · contenu": "display: flex; flex-direction: column; gap: 0;",
+   "Contenu · textes": "display: flex; flex-direction: column; gap: 0;",
+   "Contenu · titre": "margin-top: 22px;",
+   "Contenu · introduction": "margin-top: 22px; max-width: 600px;",
+   "Contenu · boutons": "margin-top: 34px;",
+   "Contenu · visuel · cadre": "aspect-ratio: 4 / 3;",
+   "Contenu · visuel · légende": "padding: 12px 6px 2px;"
+  }
+ },
+ "brut": {}
+}

@@ -69,6 +69,12 @@
       "titre": "Replays",
       "slug": "replays",
       "depuis": "0.3.0"
+    },
+    {
+      "cle": "contenu-video",
+      "titre": "Du contenu à la vidéo",
+      "slug": "du-contenu-a-la-video",
+      "depuis": "0.7.0"
     }
   ],
   "menus": [
@@ -76,7 +82,10 @@
       "nom": "Menu principal",
       "emplacement": "principal",
       "pages": [
-        "offres",
+        {
+          "titre": "Offres",
+          "lien": "/#offres"
+        },
         "realisations",
         "temoignages",
         {

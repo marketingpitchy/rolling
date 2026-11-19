@@ -725,6 +725,21 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   du document, vidéos, 2-3 chiffres, citation], 00:05 Avant / Après « D'autres contenus, déjà en vidéo. », encart
   « Combien ça coûte ? Rien de plus » + Voir les formules, 00:06 FAQ, 00:07 Ressources, appel « Quel contenu
   transformez-vous en premier ? ». **Toujours vérifier les doublons de textes avec blocs.py avant de proposer une page.**
+- **0.7.0 (choix : Avant / Après A2, schéma V1 avec « 1 document », page go, offres A)** :
+  - Avant / Après : `exemple()` = `carte-verre carte-exemple` (lien `/realisations/` à régler dans Elementor) > `cadre-exemple`
+    (barre au survol en ::after) + `pastille-client` (vide = masquée) ; `bas-exemple` = légende + `fleche-ronde` (texte « Voir
+    la réalisation » caché par text-indent, lu par Google ; flèche en ::after). Liste `EXEMPLES` partagée.
+  - **10-offre = offres complètes** (`bloc_offre_complete()` : copies profondes du tableau / prix mobile / cartes « ajoute »
+    de la page Offres + promesses `cartes-mini`) ; ancienne version courte = `10-offre-courte` (variante). Tous les liens
+    « Voir les offres » ⇒ `/#offres` ; menu principal d'une nouvelle installation : « Offres » = `/#offres` ;
+    `Rolling_Seo::offres_vers_accueil` : `/offres/` en 404 (page dépubliée) ⇒ 301 vers `/#offres`.
+  - **Page « Du contenu à la vidéo »** (`/du-contenu-a-la-video/`, créée une fois, `depuis 0.7.0`) : blocs `p-contenu-01…09`
+    + Page complète (sans 13-final : appel final propre « Quel contenu transformez-vous en premier ? ») ; schéma = classes
+    `schema-eventail`, `source-schema` (pointillés en ::before/::after), `branches-schema` + `branches-gauche|droite`,
+    `sortie-schema`, `texte-sortie` (+ `forme-verticale|carree`) ; pointillés animés `rl-tirets-h/v` (rolling.css) ; mobile :
+    document en haut, trait vertical à gauche. Autres : `bande-reassurance`, `grille-types`/`carte-type`/`vers-type`,
+    `carte-temps`/`numero-temps`/`etiquette-qui`, `cas-client`/`apercu-cas`/`chiffres-cas`/`chiffre-cas`/`citation-cas`,
+    `encart-prix`. Ressources = copie du bloc 14 avec timecode 00:07 (`trouver()`).
 - **Chargement de page effet film** (demande avant la fin de la livraison 4) : maquette `maquettes/loading/maquette-loading.html`
   (copie /workspace/maquette-loading.html), 4 options : A amorce 3-2-1, B clap qui se ferme puis rideau, C ouverture
   cinéma (bandes noires + REC + timecode + règle avec la tête de lecture rouge des frises, plus de filet fin), D barre de lecture en haut sans écran. Conseil : C à l'arrivée (première page

@@ -27,7 +27,7 @@
    "Bouton secondaire": {
     "text": "Voir les offres",
     "link": {
-     "destination": "/offres/"
+     "destination": "/#offres"
     }
    },
    "Visage 1": {

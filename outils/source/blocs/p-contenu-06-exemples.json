@@ -1,0 +1,256 @@
+{
+ "cle": "p-contenu-06-exemples",
+ "titre": "Rolling · Du contenu à la vidéo · 00:05 Avant → Après et prix",
+ "type": "e-flexbox",
+ "composition": {
+  "xml_structure": "<e-flexbox configuration-id=\"Contenu · exemples\"><e-flexbox configuration-id=\"Contenu · exemples · contenu\"><e-flexbox configuration-id=\"Contenu · exemples · en-tête\"><e-flexbox configuration-id=\"Contenu · exemples · repère\"><e-paragraph configuration-id=\"Contenu · exemples · timecode\"></e-paragraph><e-paragraph configuration-id=\"Contenu · exemples · sur-titre\"></e-paragraph></e-flexbox><e-heading configuration-id=\"Contenu · exemples · titre\"></e-heading></e-flexbox><e-flexbox configuration-id=\"Contenu · exemples · grille\"><e-flexbox configuration-id=\"Contenu · exemple 1\"><e-div-block configuration-id=\"Contenu · exemple 1 · image\"><e-image configuration-id=\"Contenu · exemple 1 · vignette\"></e-image><e-paragraph configuration-id=\"Contenu · exemple 1 · client\"></e-paragraph></e-div-block><e-flexbox configuration-id=\"Contenu · exemple 1 · bas\"><e-flexbox configuration-id=\"Contenu · exemple 1 · légende\"><e-paragraph configuration-id=\"Contenu · exemple 1 · avant\"></e-paragraph><e-paragraph configuration-id=\"Contenu · exemple 1 · après\"></e-paragraph></e-flexbox><e-paragraph configuration-id=\"Contenu · exemple 1 · voir\"></e-paragraph></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Contenu · exemple 2\"><e-div-block configuration-id=\"Contenu · exemple 2 · image\"><e-image configuration-id=\"Contenu · exemple 2 · vignette\"></e-image><e-paragraph configuration-id=\"Contenu · exemple 2 · client\"></e-paragraph></e-div-block><e-flexbox configuration-id=\"Contenu · exemple 2 · bas\"><e-flexbox configuration-id=\"Contenu · exemple 2 · légende\"><e-paragraph configuration-id=\"Contenu · exemple 2 · avant\"></e-paragraph><e-paragraph configuration-id=\"Contenu · exemple 2 · après\"></e-paragraph></e-flexbox><e-paragraph configuration-id=\"Contenu · exemple 2 · voir\"></e-paragraph></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Contenu · exemple 3\"><e-div-block configuration-id=\"Contenu · exemple 3 · image\"><e-image configuration-id=\"Contenu · exemple 3 · vignette\"></e-image><e-paragraph configuration-id=\"Contenu · exemple 3 · client\"></e-paragraph></e-div-block><e-flexbox configuration-id=\"Contenu · exemple 3 · bas\"><e-flexbox configuration-id=\"Contenu · exemple 3 · légende\"><e-paragraph configuration-id=\"Contenu · exemple 3 · avant\"></e-paragraph><e-paragraph configuration-id=\"Contenu · exemple 3 · après\"></e-paragraph></e-flexbox><e-paragraph configuration-id=\"Contenu · exemple 3 · voir\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Contenu · exemples · bouton\"><e-button configuration-id=\"Contenu · exemples · toutes\"></e-button></e-flexbox><e-flexbox configuration-id=\"Contenu · prix\"><e-flexbox configuration-id=\"Contenu · prix · textes\"><e-heading configuration-id=\"Contenu · prix · titre\"></e-heading><e-paragraph configuration-id=\"Contenu · prix · texte\"></e-paragraph></e-flexbox><e-button configuration-id=\"Contenu · prix · bouton\"></e-button></e-flexbox></e-flexbox></e-flexbox>",
+  "element_config": {
+   "Contenu · exemples": {
+    "tag": "section"
+   },
+   "Contenu · exemples · timecode": {
+    "paragraph": "00:05"
+   },
+   "Contenu · exemples · sur-titre": {
+    "paragraph": "Avant → Après"
+   },
+   "Contenu · exemples · titre": {
+    "tag": "h2",
+    "title": "D'autres contenus, <em>déjà en vidéo.</em>"
+   },
+   "Contenu · exemple 1": {
+    "link": {
+     "destination": "/realisations/"
+    }
+   },
+   "Contenu · exemple 1 · vignette": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/exemple-motion.webp",
+      "alt": "Exemple de vidéo en motion 2D : « 5 idées reçues sur le télétravail »"
+     },
+     "size": "medium_large"
+    }
+   },
+   "Contenu · exemple 1 · client": {
+    "paragraph": ""
+   },
+   "Contenu · exemple 1 · avant": {
+    "paragraph": "Article de blog"
+   },
+   "Contenu · exemple 1 · après": {
+    "paragraph": "vidéo de 90&nbsp;s"
+   },
+   "Contenu · exemple 1 · voir": {
+    "paragraph": "Voir la réalisation"
+   },
+   "Contenu · exemple 2": {
+    "link": {
+     "destination": "/realisations/"
+    }
+   },
+   "Contenu · exemple 2 · vignette": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/exemple-demo-produit.webp",
+      "alt": "Exemple de démo produit : « Composition naturelle. »"
+     },
+     "size": "medium_large"
+    }
+   },
+   "Contenu · exemple 2 · client": {
+    "paragraph": ""
+   },
+   "Contenu · exemple 2 · avant": {
+    "paragraph": "Page web produit"
+   },
+   "Contenu · exemple 2 · après": {
+    "paragraph": "démo vidéo"
+   },
+   "Contenu · exemple 2 · voir": {
+    "paragraph": "Voir la réalisation"
+   },
+   "Contenu · exemple 3": {
+    "link": {
+     "destination": "/realisations/"
+    }
+   },
+   "Contenu · exemple 3 · vignette": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/exemple-microlearning.webp",
+      "alt": "Exemple de microlearning vertical : « Le réflexe sécurité n°3 »"
+     },
+     "size": "medium_large"
+    }
+   },
+   "Contenu · exemple 3 · client": {
+    "paragraph": ""
+   },
+   "Contenu · exemple 3 · avant": {
+    "paragraph": "Module de formation"
+   },
+   "Contenu · exemple 3 · après": {
+    "paragraph": "microlearning 60&nbsp;s"
+   },
+   "Contenu · exemple 3 · voir": {
+    "paragraph": "Voir la réalisation"
+   },
+   "Contenu · exemples · toutes": {
+    "text": "Toutes nos réalisations",
+    "link": {
+     "destination": "/realisations/"
+    }
+   },
+   "Contenu · prix · titre": {
+    "tag": "h3",
+    "title": "Combien ça coûte&nbsp;?"
+   },
+   "Contenu · prix · texte": {
+    "paragraph": "Rien de plus. Transformer vos contenus en vidéos est le cœur de l'abonnement : à prix fixe, en illimité, sans devis à chaque projet."
+   },
+   "Contenu · prix · bouton": {
+    "text": "Voir les formules",
+    "link": {
+     "destination": "/#offres"
+    }
+   }
+  },
+  "classes": {
+   "Contenu · exemples": [
+    "section",
+    "section-suite"
+   ],
+   "Contenu · exemples · contenu": [
+    "conteneur"
+   ],
+   "Contenu · exemples · en-tête": [
+    "entete-section"
+   ],
+   "Contenu · exemples · repère": [
+    "sur-titre"
+   ],
+   "Contenu · exemples · timecode": [
+    "timecode"
+   ],
+   "Contenu · exemples · titre": [
+    "titre-md"
+   ],
+   "Contenu · exemples · grille": [
+    "grille-3"
+   ],
+   "Contenu · exemple 1": [
+    "carte-verre",
+    "carte-exemple"
+   ],
+   "Contenu · exemple 1 · image": [
+    "cadre-exemple"
+   ],
+   "Contenu · exemple 1 · vignette": [
+    "image-vignette"
+   ],
+   "Contenu · exemple 1 · client": [
+    "pastille-client"
+   ],
+   "Contenu · exemple 1 · bas": [
+    "bas-exemple"
+   ],
+   "Contenu · exemple 1 · légende": [
+    "rangee"
+   ],
+   "Contenu · exemple 1 · avant": [
+    "tag-bleu"
+   ],
+   "Contenu · exemple 1 · après": [
+    "fleche-resultat"
+   ],
+   "Contenu · exemple 1 · voir": [
+    "fleche-ronde"
+   ],
+   "Contenu · exemple 2": [
+    "carte-verre",
+    "carte-exemple"
+   ],
+   "Contenu · exemple 2 · image": [
+    "cadre-exemple"
+   ],
+   "Contenu · exemple 2 · vignette": [
+    "image-vignette"
+   ],
+   "Contenu · exemple 2 · client": [
+    "pastille-client"
+   ],
+   "Contenu · exemple 2 · bas": [
+    "bas-exemple"
+   ],
+   "Contenu · exemple 2 · légende": [
+    "rangee"
+   ],
+   "Contenu · exemple 2 · avant": [
+    "tag-bleu"
+   ],
+   "Contenu · exemple 2 · après": [
+    "fleche-resultat"
+   ],
+   "Contenu · exemple 2 · voir": [
+    "fleche-ronde"
+   ],
+   "Contenu · exemple 3": [
+    "carte-verre",
+    "carte-exemple"
+   ],
+   "Contenu · exemple 3 · image": [
+    "cadre-exemple"
+   ],
+   "Contenu · exemple 3 · vignette": [
+    "image-vignette"
+   ],
+   "Contenu · exemple 3 · client": [
+    "pastille-client"
+   ],
+   "Contenu · exemple 3 · bas": [
+    "bas-exemple"
+   ],
+   "Contenu · exemple 3 · légende": [
+    "rangee"
+   ],
+   "Contenu · exemple 3 · avant": [
+    "tag-orange"
+   ],
+   "Contenu · exemple 3 · après": [
+    "fleche-resultat"
+   ],
+   "Contenu · exemple 3 · voir": [
+    "fleche-ronde"
+   ],
+   "Contenu · exemples · bouton": [
+    "rangee"
+   ],
+   "Contenu · exemples · toutes": [
+    "bouton-verre"
+   ],
+   "Contenu · prix": [
+    "carte-verre",
+    "encart-prix"
+   ],
+   "Contenu · prix · titre": [
+    "titre-xs"
+   ],
+   "Contenu · prix · texte": [
+    "texte"
+   ],
+   "Contenu · prix · bouton": [
+    "bouton-verre"
+   ]
+  },
+  "style": {
+   "Contenu · exemples · contenu": "display: flex; flex-direction: column; gap: 0;",
+   "Contenu · exemples · grille": "margin-top: 40px;",
+   "Contenu · exemples · bouton": "justify-content: center; margin-top: 36px;",
+   "Contenu · prix": "margin-top: 64px;",
+   "Contenu · prix · textes": "display: flex; flex-direction: column; gap: 0; padding: 0; max-width: 640px;",
+   "Contenu · prix · texte": "margin-top: 6px;"
+  }
+ },
+ "brut": {}
+}

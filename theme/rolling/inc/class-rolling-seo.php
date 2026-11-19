@@ -39,6 +39,7 @@ class Rolling_Seo {
 
 		// Archives inutiles : redirigées (301).
 		add_action( 'template_redirect', array( __CLASS__, 'archives' ), 1 );
+		add_action( 'template_redirect', array( __CLASS__, 'offres_vers_accueil' ), 1 );
 	}
 
 	/**
@@ -268,6 +269,22 @@ class Rolling_Seo {
 		}
 
 		wp_safe_redirect( $blog, 301, 'Rolling' );
+		exit;
+	}
+
+	/**
+	 * Page Offres retirée (dépubliée ou supprimée) : /offres/ mène à la section des offres de l'accueil (#offres),
+	 * pour que les anciens liens et les résultats de recherche ne finissent pas sur la page 404.
+	 */
+	public static function offres_vers_accueil() {
+		if ( ! is_404() ) {
+			return;
+		}
+		$chemin = trim( (string) wp_parse_url( isset( $_SERVER['REQUEST_URI'] ) ? esc_url_raw( wp_unslash( $_SERVER['REQUEST_URI'] ) ) : '', PHP_URL_PATH ), '/' );
+		if ( 'offres' !== $chemin ) {
+			return;
+		}
+		wp_safe_redirect( home_url( '/#offres' ), 301, 'Rolling' );
 		exit;
 	}
 

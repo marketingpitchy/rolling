@@ -1,0 +1,147 @@
+{
+ "cle": "p-contenu-03-schema",
+ "titre": "Rolling · Du contenu à la vidéo · 00:02 Un document, plusieurs vidéos",
+ "type": "e-flexbox",
+ "composition": {
+  "xml_structure": "<e-flexbox configuration-id=\"Contenu · schéma\"><e-flexbox configuration-id=\"Contenu · schéma · contenu\"><e-flexbox configuration-id=\"Contenu · schéma · en-tête\"><e-flexbox configuration-id=\"Contenu · schéma · repère\"><e-paragraph configuration-id=\"Contenu · schéma · timecode\"></e-paragraph><e-paragraph configuration-id=\"Contenu · schéma · sur-titre\"></e-paragraph></e-flexbox><e-heading configuration-id=\"Contenu · schéma · titre\"></e-heading><e-paragraph configuration-id=\"Contenu · schéma · introduction\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Contenu · schéma · éventail\"><e-flexbox configuration-id=\"Schéma · vidéos à gauche\"><e-flexbox configuration-id=\"Schéma · vidéo 1\"><e-paragraph configuration-id=\"Schéma · vidéo 1 · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Schéma · vidéo 2\"><e-paragraph configuration-id=\"Schéma · vidéo 2 · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Schéma · vidéo 3\"><e-paragraph configuration-id=\"Schéma · vidéo 3 · texte\"></e-paragraph></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Schéma · document\"><e-image configuration-id=\"Schéma · document · picto\"></e-image><e-paragraph configuration-id=\"Schéma · document · titre\"></e-paragraph><e-paragraph configuration-id=\"Schéma · document · exemples\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Schéma · vidéos à droite\"><e-flexbox configuration-id=\"Schéma · vidéo 4\"><e-paragraph configuration-id=\"Schéma · vidéo 4 · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Schéma · vidéo 5\"><e-paragraph configuration-id=\"Schéma · vidéo 5 · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Schéma · vidéo 6\"><e-paragraph configuration-id=\"Schéma · vidéo 6 · texte\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox></e-flexbox></e-flexbox>",
+  "element_config": {
+   "Contenu · schéma": {
+    "tag": "section"
+   },
+   "Contenu · schéma · timecode": {
+    "paragraph": "00:02"
+   },
+   "Contenu · schéma · sur-titre": {
+    "paragraph": "Un contenu, plusieurs vidéos"
+   },
+   "Contenu · schéma · titre": {
+    "tag": "h2",
+    "title": "Partez d'un seul document. <em>Repartez avec une série.</em>"
+   },
+   "Contenu · schéma · introduction": {
+    "paragraph": "Un document suffit&nbsp;: nous en tirons plusieurs vidéos, chacune pensée pour son canal et son format."
+   },
+   "Schéma · vidéo 1 · texte": {
+    "paragraph": "<strong>Une vidéo de 90&nbsp;s</strong><br>pour votre site et LinkedIn"
+   },
+   "Schéma · vidéo 2 · texte": {
+    "paragraph": "<strong>3 formats courts 9:16</strong><br>stories, Reels, Shorts"
+   },
+   "Schéma · vidéo 3 · texte": {
+    "paragraph": "<strong>Un carré animé</strong><br>pour vos newsletters"
+   },
+   "Schéma · document · picto": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/picto-guides.webp"
+     },
+     "size": "medium"
+    }
+   },
+   "Schéma · document · titre": {
+    "paragraph": "<strong>1 document</strong>"
+   },
+   "Schéma · document · exemples": {
+    "paragraph": "un PPT, un article, un rapport, un webinar"
+   },
+   "Schéma · vidéo 4 · texte": {
+    "paragraph": "<strong>Une version anglaise</strong><br>sous-titres ou voix off"
+   },
+   "Schéma · vidéo 5 · texte": {
+    "paragraph": "<strong>Un microlearning</strong><br>pour votre LMS"
+   },
+   "Schéma · vidéo 6 · texte": {
+    "paragraph": "<strong>Un extrait pour vos salons</strong><br>en boucle, sans le son"
+   }
+  },
+  "classes": {
+   "Contenu · schéma": [
+    "section",
+    "section-sombre",
+    "halos-nuit"
+   ],
+   "Contenu · schéma · contenu": [
+    "conteneur"
+   ],
+   "Contenu · schéma · en-tête": [
+    "entete-section"
+   ],
+   "Contenu · schéma · repère": [
+    "sur-titre"
+   ],
+   "Contenu · schéma · timecode": [
+    "timecode"
+   ],
+   "Contenu · schéma · titre": [
+    "titre-md"
+   ],
+   "Contenu · schéma · introduction": [
+    "texte-intro"
+   ],
+   "Contenu · schéma · éventail": [
+    "schema-eventail"
+   ],
+   "Schéma · vidéos à gauche": [
+    "branches-schema",
+    "branches-gauche"
+   ],
+   "Schéma · vidéo 1": [
+    "sortie-schema"
+   ],
+   "Schéma · vidéo 1 · texte": [
+    "texte-sortie"
+   ],
+   "Schéma · vidéo 2": [
+    "sortie-schema"
+   ],
+   "Schéma · vidéo 2 · texte": [
+    "texte-sortie",
+    "forme-verticale"
+   ],
+   "Schéma · vidéo 3": [
+    "sortie-schema"
+   ],
+   "Schéma · vidéo 3 · texte": [
+    "texte-sortie",
+    "forme-carree"
+   ],
+   "Schéma · document": [
+    "source-schema"
+   ],
+   "Schéma · document · titre": [
+    "titre-xs"
+   ],
+   "Schéma · document · exemples": [
+    "texte-petit"
+   ],
+   "Schéma · vidéos à droite": [
+    "branches-schema",
+    "branches-droite"
+   ],
+   "Schéma · vidéo 4": [
+    "sortie-schema"
+   ],
+   "Schéma · vidéo 4 · texte": [
+    "texte-sortie"
+   ],
+   "Schéma · vidéo 5": [
+    "sortie-schema"
+   ],
+   "Schéma · vidéo 5 · texte": [
+    "texte-sortie",
+    "forme-verticale"
+   ],
+   "Schéma · vidéo 6": [
+    "sortie-schema"
+   ],
+   "Schéma · vidéo 6 · texte": [
+    "texte-sortie"
+   ]
+  },
+  "style": {
+   "Contenu · schéma · contenu": "display: flex; flex-direction: column; gap: 0;",
+   "Contenu · schéma · introduction": "max-width: 820px;"
+  }
+ },
+ "brut": {}
+}

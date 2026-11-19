@@ -2309,6 +2309,144 @@
      "css": "display: block; font-family: Hanken Grotesk; font-size: 12px; line-height: 1.3; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: var(--rl-legende, var(--legende)); &:empty { display: none; }"
     },
     {
+     "label": "carte-exemple",
+     "description": "Avant → Après : tout l'exemple dans une seule carte en verre cliquable (avec carte-verre) : image, légende, flèche. Se soulève au survol, une barre de lecture traverse l'image.",
+     "css": "gap: 0; padding: 8px 8px 16px; color: inherit; text-decoration: none; transition: transform 0.35s ease, box-shadow 0.35s ease; &:hover { transform: translateY(-4px); } &:hover .cadre-exemple::after { width: 100%; } &:hover .fleche-ronde { background-color: #5B3BEA; transform: translateX(3px); } &:hover .fleche-ronde::after { color: #FFFFFF; }"
+    },
+    {
+     "label": "cadre-exemple",
+     "description": "Image d'un exemple Avant → Après (arrondie, barre de lecture en bas au survol de la carte).",
+     "css": "position: relative; overflow: hidden; padding: 0; border-radius: 19px; &::after { position: relative; top: auto; right: auto; bottom: auto; left: auto; height: auto; width: auto; opacity: 1; mix-blend-mode: normal; border: 0; content: ''; position: absolute; left: 0; bottom: 0; top: auto; height: 4px; width: 0; background: linear-gradient(90deg, #C4B5FD, #FF8A5B); transition: width 0.9s ease; }"
+    },
+    {
+     "label": "pastille-client",
+     "description": "Nom du client en pastille sur l'image d'un exemple (facultatif : laissé vide, il ne s'affiche pas).",
+     "css": "position: absolute; z-index: 2; right: 12px; bottom: 14px; padding: 4px 10px; border-radius: 999px; font-family: Hanken Grotesk; font-size: 12px; line-height: 1.3; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: #FFFFFF; background-color: rgba(15,15,18,0.62); &:empty { display: none; }"
+    },
+    {
+     "label": "bas-exemple",
+     "description": "Bas d'une carte Avant → Après : légende à gauche, flèche ronde à droite.",
+     "css": "display: flex; flex-direction: row; align-items: center; justify-content: space-between; gap: 10px; padding: 14px 8px 0;"
+    },
+    {
+     "label": "fleche-ronde",
+     "description": "Flèche ronde d'un lien : le texte (ex. « Voir la réalisation ») reste lu par Google et les lecteurs d'écran, seule la flèche se voit.",
+     "css": "position: relative; flex-shrink: 0; width: 38px; height: 38px; border-radius: 50%; overflow: hidden; white-space: nowrap; text-indent: 120%; font-family: Hanken Grotesk; font-size: 15px; line-height: 38px; font-weight: 700; color: #4A2BB8; background-color: #FFFFFF; box-shadow: inset 0 0 0 1px rgba(91,59,234,0.22); transition: background-color 0.25s ease, transform 0.25s ease; &::after { content: '→'; position: absolute; top: 0; right: 0; bottom: 0; left: 0; display: flex; align-items: center; justify-content: center; text-indent: 0; font-size: 17px; font-weight: 800; color: #4A2BB8; }"
+    },
+    {
+     "label": "bande-reassurance",
+     "description": "Bande de réassurance (avec carte-verre) : 3 ou 4 points cochés sur une ligne (en colonne en mobile).",
+     "css": "flex-direction: row; flex-wrap: wrap; align-items: center; justify-content: center; gap: 10px 28px; margin-top: 44px; padding: 16px 22px; border-radius: 22px; & .coche { width: 22px; height: 22px; } & > .ligne-coche { width: auto; align-items: center; gap: 8px; } @media(--mobile) { flex-direction: column; align-items: flex-start; gap: 10px; }"
+    },
+    {
+     "label": "grille-types",
+     "description": "Grille des types de contenus : 5 colonnes (3 sous 1024 px, 1 en mobile).",
+     "css": "display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 14px; padding: 0; margin-top: 40px; @media(--tablet) { grid-template-columns: repeat(3, minmax(0, 1fr)); } @media(--mobile) { grid-template-columns: minmax(0, 1fr); }"
+    },
+    {
+     "label": "carte-type",
+     "description": "Carte d'un type de contenu (avec carte-verre) : « Au départ », le contenu, puis ce qu'il devient.",
+     "css": "gap: 6px; padding: 20px;"
+    },
+    {
+     "label": "vers-type",
+     "description": "Ce que devient le contenu, sous un trait en pointillés.",
+     "css": "position: relative; margin-top: 8px; padding-top: 14px; &::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: repeating-linear-gradient(90deg, #C4B5FD 0px, #C4B5FD 6px, rgba(0,0,0,0) 6px, rgba(0,0,0,0) 11px); }"
+    },
+    {
+     "label": "schema-eventail",
+     "description": "Schéma « un document, plusieurs vidéos » : 3 vidéos à gauche, le document au centre, 3 vidéos à droite, reliés par des flèches en pointillés. En mobile : le document en haut, les vidéos dessous.",
+     "css": "display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); column-gap: 80px; align-items: center; padding: 0; margin-top: 44px; @media(--mobile) { grid-template-columns: minmax(0, 1fr); row-gap: 14px; }"
+    },
+    {
+     "label": "source-schema",
+     "description": "Carte blanche du document de départ, au centre du schéma (flèches en pointillés de chaque côté).",
+     "css": "position: relative; display: flex; flex-direction: column; align-items: center; gap: 6px; width: 230px; padding: 22px; border-radius: 22px; text-align: center; color: #0F0F12; background-color: #FFFFFF; box-shadow: 0 0 0 10px rgba(196,181,253,0.14), 0 30px 60px -26px rgba(0,0,0,0.6); --rl-texte: #0F0F12; --rl-paragraphe: #4A4858; --rl-legende: #5F5C6C; & img { width: 64px; height: auto; } &::before, &::after { position: relative; top: auto; right: auto; bottom: auto; left: auto; height: auto; width: auto; opacity: 1; mix-blend-mode: normal; border: 0; content: ''; position: absolute; top: 50%; width: 40px; height: 2px; background: repeating-linear-gradient(90deg, #C4B5FD 0px, #C4B5FD 6px, rgba(0,0,0,0) 6px, rgba(0,0,0,0) 11px); animation: rl-tirets-h 1.2s linear infinite; } &::before { right: -40px; } &::after { left: -40px; } @media(--mobile) { width: auto; margin-bottom: 12px; }",
+     "brut": "@media (max-width: 767px) { order: -1; &::before { top: 100%; right: auto; left: 30px; width: 2px; height: 26px; background: repeating-linear-gradient(180deg, #C4B5FD 0px, #C4B5FD 6px, rgba(0,0,0,0) 6px, rgba(0,0,0,0) 11px); animation: rl-tirets-v 1.2s linear infinite; } &::after { display: none; } }"
+    },
+    {
+     "label": "branches-schema",
+     "description": "Colonne de vidéos du schéma (avec branches-gauche ou branches-droite) : un trait vertical en pointillés relie les vidéos.",
+     "css": "position: relative; display: flex; flex-direction: column; gap: 14px; padding: 0; &::before { position: relative; top: auto; right: auto; bottom: auto; left: auto; height: auto; width: auto; opacity: 1; mix-blend-mode: normal; border: 0; content: ''; position: absolute; top: 32px; bottom: 32px; width: 2px; background: repeating-linear-gradient(180deg, #C4B5FD 0px, #C4B5FD 6px, rgba(0,0,0,0) 6px, rgba(0,0,0,0) 11px); animation: rl-tirets-v 1.2s linear infinite; } & > .sortie-schema::before { position: relative; top: auto; right: auto; bottom: auto; left: auto; height: auto; width: auto; opacity: 1; mix-blend-mode: normal; border: 0; content: ''; position: absolute; top: 50%; width: 30px; height: 2px; background: repeating-linear-gradient(90deg, #C4B5FD 0px, #C4B5FD 6px, rgba(0,0,0,0) 6px, rgba(0,0,0,0) 11px); animation: rl-tirets-h 1.2s linear infinite; } & > .sortie-schema::after { position: relative; top: auto; right: auto; bottom: auto; left: auto; height: auto; width: auto; opacity: 1; mix-blend-mode: normal; border: 0; content: ''; position: absolute; top: calc(50% - 5px); width: 8px; height: 12px; background-color: #C4B5FD; }"
+    },
+    {
+     "label": "branches-droite",
+     "description": "Colonne de droite du schéma : flèches vers la droite.",
+     "css": "&::before { left: -40px; } & > .sortie-schema::before { left: -40px; } & > .sortie-schema::after { left: -10px; clip-path: polygon(0 0, 100% 50%, 0 100%); }",
+     "brut": "@media (max-width: 767px) { padding-left: 56px; &::before { left: 30px; top: -26px; } & > .sortie-schema::before { left: -26px; width: 16px; } }"
+    },
+    {
+     "label": "branches-gauche",
+     "description": "Colonne de gauche du schéma : flèches vers la gauche, textes alignés à droite.",
+     "css": "&::before { right: -40px; } & > .sortie-schema::before { right: -40px; } & > .sortie-schema::after { right: -10px; clip-path: polygon(100% 0, 0 50%, 100% 100%); } & .texte-sortie { padding-left: 0; padding-right: 60px; text-align: right; } & .texte-sortie::before { left: auto; right: 0; }",
+     "brut": "@media (max-width: 767px) { padding-left: 56px; &::before { right: auto; left: 30px; top: -26px; bottom: -14px; } & > .sortie-schema::before { right: auto; left: -26px; width: 16px; } & > .sortie-schema::after { right: auto; left: -10px; clip-path: polygon(0 0, 100% 50%, 0 100%); } & .texte-sortie { padding-left: 60px; padding-right: 0; text-align: left; } & .texte-sortie::before { left: 0; right: auto; } }"
+    },
+    {
+     "label": "sortie-schema",
+     "description": "Une vidéo du schéma (carte sombre translucide).",
+     "css": "position: relative; display: flex; align-items: center; min-height: 64px; padding: 12px 14px; border-radius: 16px; background: linear-gradient(rgba(255,255,255,0.07), rgba(255,255,255,0.07)), linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)); background-color: transparent; box-shadow: inset 0 0 0 1px rgba(255,255,255,0.13);"
+    },
+    {
+     "label": "texte-sortie",
+     "description": "Texte d'une vidéo du schéma : format en gras, usage dessous, petit visuel du format à côté (forme-verticale, forme-carree pour changer).",
+     "css": "position: relative; width: 100%; padding-left: 60px; font-family: Hanken Grotesk; font-size: 13px; line-height: 1.4; color: var(--rl-legende, #B6B0CC); & strong { font-size: 15px; font-weight: 700; color: var(--rl-texte, #FAF9F7); } &::before { content: ''; position: absolute; left: 0; top: 50%; width: 46px; height: 26px; margin-top: -13px; border-radius: 6px; background: linear-gradient(150deg, #8E4DE6, #FF8A5B); }"
+    },
+    {
+     "label": "forme-verticale",
+     "description": "Visuel de format vertical (9:16) d'une vidéo du schéma.",
+     "css": "&::before { width: 18px; height: 32px; margin-top: -16px; left: 14px; }"
+    },
+    {
+     "label": "forme-carree",
+     "description": "Visuel de format carré (1:1) d'une vidéo du schéma.",
+     "css": "&::before { width: 28px; height: 28px; margin-top: -14px; left: 9px; }"
+    },
+    {
+     "label": "carte-temps",
+     "description": "Étape de la méthode (avec carte-verre) : numéro, titre, texte, qui s'en occupe.",
+     "css": "gap: 8px; padding: 22px;"
+    },
+    {
+     "label": "numero-temps",
+     "description": "Numéro d'une étape (01, 02…).",
+     "css": "font-family: Bricolage Grotesque; font-size: 34px; line-height: 1; font-weight: 800; letter-spacing: -0.03em; color: #6F3FD6;"
+    },
+    {
+     "label": "etiquette-qui",
+     "description": "Petite étiquette « qui s'en occupe » d'une étape.",
+     "css": "display: inline-block; width: fit-content; margin-top: 4px; padding: 3px 10px; border-radius: 999px; font-family: Hanken Grotesk; font-size: 12px; line-height: 1.4; font-weight: 700; color: #4A2BB8; background-color: #EDE6FF;"
+    },
+    {
+     "label": "cas-client",
+     "description": "Cas client de A à Z (avec carte-verre) : document d'origine à gauche, vidéos, chiffres et citation à droite (une colonne sous 1024 px).",
+     "css": "display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr); gap: 28px; align-items: center; padding: 26px; border-radius: 30px; @media(--tablet) { grid-template-columns: minmax(0, 1fr); } @media(--mobile) { gap: 18px; padding: 16px; }"
+    },
+    {
+     "label": "apercu-cas",
+     "description": "Vignettes des vidéos d'un cas client (3 par ligne).",
+     "css": "display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; padding: 0; margin-top: 16px;"
+    },
+    {
+     "label": "chiffres-cas",
+     "description": "Rangée des chiffres d'un cas client.",
+     "css": "display: flex; flex-direction: row; flex-wrap: wrap; gap: 10px 26px; padding: 0; margin-top: 16px;"
+    },
+    {
+     "label": "chiffre-cas",
+     "description": "Un chiffre d'un cas client : valeur en gras (grande), libellé dessous.",
+     "css": "font-family: Hanken Grotesk; font-size: 13px; line-height: 1.4; color: var(--rl-legende, var(--legende)); & strong { display: block; font-family: Bricolage Grotesque; font-size: 26px; line-height: 1.1; font-weight: 700; letter-spacing: -0.03em; color: var(--rl-texte, var(--encre)); }"
+    },
+    {
+     "label": "citation-cas",
+     "description": "Citation courte d'un client, avec un trait lilas à gauche.",
+     "css": "margin-top: 16px; padding-left: 16px; border-left: 3px solid #C4B5FD; font-family: Bricolage Grotesque; font-size: 18px; line-height: 1.4; font-weight: 600; color: var(--rl-texte, var(--encre));"
+    },
+    {
+     "label": "encart-prix",
+     "description": "Encart « Combien ça coûte ? » (avec carte-verre) : texte à gauche, bouton à droite.",
+     "css": "flex-direction: row; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 18px; padding: 26px 30px; @media(--mobile) { padding: 20px; }"
+    },
+    {
      "label": "chiffre-jeu",
      "description": "Grand chiffre en verre d'une carte à jouer.",
      "css": "display: block; width: auto; height: 92px; max-width: 100%; object-fit: contain; object-position: left center; @media(--mobile) { width: 52px; height: 56px; object-position: center; }",

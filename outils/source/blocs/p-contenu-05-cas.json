@@ -1,0 +1,159 @@
+{
+ "cle": "p-contenu-05-cas",
+ "titre": "Rolling · Du contenu à la vidéo · 00:04 Un cas client",
+ "type": "e-flexbox",
+ "composition": {
+  "xml_structure": "<e-flexbox configuration-id=\"Contenu · cas client\"><e-flexbox configuration-id=\"Contenu · cas · contenu\"><e-flexbox configuration-id=\"Contenu · cas · en-tête\"><e-flexbox configuration-id=\"Contenu · cas · repère\"><e-paragraph configuration-id=\"Contenu · cas · timecode\"></e-paragraph><e-paragraph configuration-id=\"Contenu · cas · sur-titre\"></e-paragraph></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Contenu · cas · carte\"><e-div-block configuration-id=\"Contenu · cas · document\"><e-image configuration-id=\"Contenu · cas · document · image\"></e-image><e-paragraph configuration-id=\"Contenu · cas · document · bandeau\"></e-paragraph></e-div-block><e-flexbox configuration-id=\"Contenu · cas · textes\"><e-paragraph configuration-id=\"Contenu · cas · étiquette\"></e-paragraph><e-heading configuration-id=\"Contenu · cas · titre\"></e-heading><e-flexbox configuration-id=\"Contenu · cas · vidéos\"><e-div-block configuration-id=\"Contenu · cas · vidéo 1\"><e-image configuration-id=\"Contenu · cas · vidéo 1 · image\"></e-image></e-div-block><e-div-block configuration-id=\"Contenu · cas · vidéo 2\"><e-image configuration-id=\"Contenu · cas · vidéo 2 · image\"></e-image></e-div-block><e-div-block configuration-id=\"Contenu · cas · vidéo 3\"><e-image configuration-id=\"Contenu · cas · vidéo 3 · image\"></e-image></e-div-block></e-flexbox><e-flexbox configuration-id=\"Contenu · cas · chiffres\"><e-paragraph configuration-id=\"Contenu · cas · chiffre 1\"></e-paragraph><e-paragraph configuration-id=\"Contenu · cas · chiffre 2\"></e-paragraph><e-paragraph configuration-id=\"Contenu · cas · chiffre 3\"></e-paragraph></e-flexbox><e-paragraph configuration-id=\"Contenu · cas · citation\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox></e-flexbox>",
+  "element_config": {
+   "Contenu · cas client": {
+    "tag": "section"
+   },
+   "Contenu · cas · timecode": {
+    "paragraph": "00:04"
+   },
+   "Contenu · cas · sur-titre": {
+    "paragraph": "Un cas client"
+   },
+   "Contenu · cas · document · image": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/exemple-serie.webp",
+      "alt": "Le document d'origine"
+     },
+     "size": "large"
+    }
+   },
+   "Contenu · cas · document · bandeau": {
+    "paragraph": "Au départ : [document à fournir]"
+   },
+   "Contenu · cas · étiquette": {
+    "paragraph": "Un exemple réel, de A à Z"
+   },
+   "Contenu · cas · titre": {
+    "tag": "h2",
+    "title": "[Client] : un PPT de 40 pages, devenu <em>6 vidéos.</em>"
+   },
+   "Contenu · cas · vidéo 1 · image": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/exemple-motion.webp"
+     },
+     "size": "medium_large"
+    }
+   },
+   "Contenu · cas · vidéo 2 · image": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/exemple-linkedin.webp"
+     },
+     "size": "medium_large"
+    }
+   },
+   "Contenu · cas · vidéo 3 · image": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/exemple-interview.webp"
+     },
+     "size": "medium_large"
+    }
+   },
+   "Contenu · cas · chiffre 1": {
+    "paragraph": "<strong>[x]</strong>vidéos livrées"
+   },
+   "Contenu · cas · chiffre 2": {
+    "paragraph": "<strong>[x]&nbsp;%</strong>taux de visionnage"
+   },
+   "Contenu · cas · chiffre 3": {
+    "paragraph": "<strong>[x] jours</strong>du document à la 1re vidéo"
+   },
+   "Contenu · cas · citation": {
+    "paragraph": "« [Citation du client sur ce que la vidéo a changé.] »"
+   }
+  },
+  "classes": {
+   "Contenu · cas client": [
+    "section",
+    "section-suite"
+   ],
+   "Contenu · cas · contenu": [
+    "conteneur"
+   ],
+   "Contenu · cas · en-tête": [
+    "entete-section"
+   ],
+   "Contenu · cas · repère": [
+    "sur-titre"
+   ],
+   "Contenu · cas · timecode": [
+    "timecode"
+   ],
+   "Contenu · cas · carte": [
+    "carte-verre",
+    "cas-client"
+   ],
+   "Contenu · cas · document": [
+    "cadre-photo"
+   ],
+   "Contenu · cas · document · image": [
+    "image-couvrante"
+   ],
+   "Contenu · cas · document · bandeau": [
+    "bandeau-video"
+   ],
+   "Contenu · cas · étiquette": [
+    "label",
+    "label-violet"
+   ],
+   "Contenu · cas · titre": [
+    "titre-sm"
+   ],
+   "Contenu · cas · vidéos": [
+    "apercu-cas"
+   ],
+   "Contenu · cas · vidéo 1": [
+    "cadre-photo"
+   ],
+   "Contenu · cas · vidéo 1 · image": [
+    "image-couvrante"
+   ],
+   "Contenu · cas · vidéo 2": [
+    "cadre-photo"
+   ],
+   "Contenu · cas · vidéo 2 · image": [
+    "image-couvrante"
+   ],
+   "Contenu · cas · vidéo 3": [
+    "cadre-photo"
+   ],
+   "Contenu · cas · vidéo 3 · image": [
+    "image-couvrante"
+   ],
+   "Contenu · cas · chiffres": [
+    "chiffres-cas"
+   ],
+   "Contenu · cas · chiffre 1": [
+    "chiffre-cas"
+   ],
+   "Contenu · cas · chiffre 2": [
+    "chiffre-cas"
+   ],
+   "Contenu · cas · chiffre 3": [
+    "chiffre-cas"
+   ],
+   "Contenu · cas · citation": [
+    "citation-cas"
+   ]
+  },
+  "style": {
+   "Contenu · cas · contenu": "display: flex; flex-direction: column; gap: 0;",
+   "Contenu · cas · carte": "margin-top: 32px;",
+   "Contenu · cas · document": "aspect-ratio: 4 / 3;",
+   "Contenu · cas · textes": "display: flex; flex-direction: column; gap: 0;",
+   "Contenu · cas · titre": "margin-top: 8px;",
+   "Contenu · cas · vidéo 1": "aspect-ratio: 16 / 9;",
+   "Contenu · cas · vidéo 2": "aspect-ratio: 16 / 9;",
+   "Contenu · cas · vidéo 3": "aspect-ratio: 16 / 9;"
+  }
+ },
+ "brut": {}
+}

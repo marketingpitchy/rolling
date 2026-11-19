@@ -30,7 +30,7 @@
    "L'agence · offres": {
     "text": "Voir les offres",
     "link": {
-     "destination": "/offres/"
+     "destination": "/#offres"
     }
    },
    "L'agence · photo · image": {

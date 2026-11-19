@@ -177,7 +177,7 @@ def bloc_hero(maquette=False):
                 P('Chapô', "Vos clients, vos candidats, vos collaborateurs s'informent tous en vidéo. Mais vos équipes n'ont pas le temps d'en faire ? Notre <strong>agence vidéo</strong> s'en charge, à prix fixe, <u>en illimité.</u>", ['chapo'], 'margin-top: 26px; max-width: 620px;'),
                 F('Boutons', ['rangee'], 'margin-top: 40px;', enfants=[
                     B('Bouton principal', 'Réserver un échange', '/contact/', ['bouton-principal']),
-                    B('Bouton secondaire', 'Voir les offres', '/offres/', ['bouton-verre']),
+                    B('Bouton secondaire', 'Voir les offres', '/#offres', ['bouton-verre']),
                 ]),
                 F('Preuve', ['rangee'], 'margin-top: 24px;', enfants=[
                     F('Visages', ['visages'], enfants=[
@@ -284,7 +284,7 @@ def bloc_showreel(fichier=False):
             D('Showreel · cadre', ['carte-verre', 'carte-ecran', 'showreel-grandit'], enfants=[ecran]),
             F('Showreel · boutons', ['rangee', 'apparait-defile'], 'justify-content: center; margin-top: 28px;', enfants=[
                 B('Showreel · bouton principal', 'Réserver un échange', '/contact/', ['bouton-principal']),
-                B('Showreel · bouton secondaire', 'Voir les offres', '/offres/', ['bouton-verre']),
+                B('Showreel · bouton secondaire', 'Voir les offres', '/#offres', ['bouton-verre']),
             ]),
         ]),
     ])
@@ -445,32 +445,39 @@ methode = F('La méthode', ['section', 'section-lilas'], tag='section', ancre='m
 # 00:04 Avant → Après
 # --------------------------------------------------------------------------------------------
 
-def exemple(n, image, alt, depart, tag, resultat):
-    return F('Exemple %d' % n, None, 'display: flex; flex-direction: column; gap: 16px; padding: 0;', enfants=[
-        F('Exemple %d · vignette' % n, ['carte-verre', 'carte-vignette'], enfants=[
-            I('Exemple %d · image' % n, image, alt, ['image-vignette'], taille='medium_large'),
+def exemple(n, image, alt, depart, tag, resultat, prefixe='Exemple'):
+    """Exemple Avant → Après : toute la carte mène à la réalisation (lien à régler dans Elementor). Le nom du client
+    (pastille sur l'image) est facultatif : laissé vide, il ne s'affiche pas."""
+    nom = '%s %d' % (prefixe, n)
+    return F(nom, ['carte-verre', 'carte-exemple'], lien='/realisations/', enfants=[
+        D(nom + ' · image', ['cadre-exemple'], enfants=[
+            I(nom + ' · vignette', image, alt, ['image-vignette'], taille='medium_large'),
+            P(nom + ' · client', '', ['pastille-client']),
         ]),
-        F('Exemple %d · textes' % n, None, 'display: flex; flex-direction: column; gap: 8px; padding: 0;', enfants=[
-            P('Exemple %d · client' % n, '', ['client-exemple']),
-            F('Exemple %d · légende' % n, ['rangee'], enfants=[
-                P('Exemple %d · avant' % n, depart, [tag]),
-                P('Exemple %d · après' % n, resultat, ['fleche-resultat']),
+        F(nom + ' · bas', ['bas-exemple'], enfants=[
+            F(nom + ' · légende', ['rangee'], enfants=[
+                P(nom + ' · avant', depart, [tag]),
+                P(nom + ' · après', resultat, ['fleche-resultat']),
             ]),
+            P(nom + ' · voir', 'Voir la réalisation', ['fleche-ronde']),
         ]),
     ])
+
+
+EXEMPLES = [
+    ('exemple-motion.webp', 'Exemple de vidéo en motion 2D : « 5 idées reçues sur le télétravail »', 'Article de blog', 'tag-bleu', 'vidéo de 90&nbsp;s'),
+    ('exemple-demo-produit.webp', 'Exemple de démo produit : « Composition naturelle. »', 'Page web produit', 'tag-bleu', 'démo vidéo'),
+    ('exemple-microlearning.webp', 'Exemple de microlearning vertical : « Le réflexe sécurité n°3 »', 'Module de formation', 'tag-orange', 'microlearning 60&nbsp;s'),
+    ('exemple-linkedin.webp', "Exemple d'annonce LinkedIn : « Nous ouvrons à Lisbonne. »", 'Communiqué', 'tag-bleu', 'annonce vidéo LinkedIn'),
+    ('exemple-serie.webp', 'Exemple de série vidéo : « Rapport RSE, épisode par épisode »', 'Rapport PPT', 'tag-bleu', 'série de 6 épisodes'),
+    ('exemple-interview.webp', "Exemple d'interview métier : « 3 questions à Julien »", 'Séminaire &amp; équipes', 'tag-orange', 'interviews &amp; rétrospectives'),
+]
 
 
 exemples = F('Avant Après', ['section', 'halo-doux'], tag='section', ancre='exemples', enfants=[
     F('Exemples · contenu', ['conteneur'], COLONNE, enfants=[
         entete('Exemples', '00:04', 'Avant → Après', [('Ce que ça donne, <em>concrètement.</em>', 'h2', ['titre-lg'])]),
-        F('Exemples · grille', ['grille-3'], enfants=[
-            exemple(1, 'exemple-motion.webp', 'Exemple de vidéo en motion 2D : « 5 idées reçues sur le télétravail »', 'Article de blog', 'tag-bleu', 'vidéo de 90&nbsp;s'),
-            exemple(2, 'exemple-demo-produit.webp', 'Exemple de démo produit : « Composition naturelle. »', 'Page web produit', 'tag-bleu', 'démo vidéo'),
-            exemple(3, 'exemple-microlearning.webp', 'Exemple de microlearning vertical : « Le réflexe sécurité n°3 »', 'Module de formation', 'tag-orange', 'microlearning 60&nbsp;s'),
-            exemple(4, 'exemple-linkedin.webp', "Exemple d'annonce LinkedIn : « Nous ouvrons à Lisbonne. »", 'Communiqué', 'tag-bleu', 'annonce vidéo LinkedIn'),
-            exemple(5, 'exemple-serie.webp', 'Exemple de série vidéo : « Rapport RSE, épisode par épisode »', 'Rapport PPT', 'tag-bleu', 'série de 6 épisodes'),
-            exemple(6, 'exemple-interview.webp', "Exemple d'interview métier : « 3 questions à Julien »", 'Séminaire &amp; équipes', 'tag-orange', 'interviews &amp; rétrospectives'),
-        ]),
+        F('Exemples · grille', ['grille-3'], enfants=[exemple(n, *e) for n, e in enumerate(EXEMPLES, 1)]),
         F('Exemples · appel', ['rangee'], 'justify-content: center; margin-top: 64px; text-align: center;', enfants=[
             P('Exemples · question', 'Et avec vos contenus, <em>ça donnerait quoi&nbsp;?</em>', ['accroche']),
             B('Exemples · bouton', 'Réserver un échange', '/contact/', ['bouton-principal']),
@@ -690,7 +697,7 @@ offre = F("L'offre", ['section', 'halos-offre'], tag='section', ancre='offres', 
         ]),
         F('Offre · boutons', ['rangee'], 'justify-content: center; margin-top: 36px;', enfants=[
             B('Offre · bouton principal', 'Réserver un échange', '/contact/', ['bouton-principal']),
-            B('Offre · bouton secondaire', 'Voir les offres', '/offres/', ['bouton-verre']),
+            B('Offre · bouton secondaire', 'Voir les offres', '/#offres', ['bouton-verre']),
         ]),
     ]),
 ])
@@ -1385,7 +1392,7 @@ page_404 = F('Page 404', ['section', 'section-sombre', 'fond-grille', 'halo-cent
         P('404 · texte', 'Elle n’existe plus, ou elle a changé d’adresse. Reprenons depuis le début.', ['texte-intro'], 'margin-top: 22px; max-width: 560px;'),
         F('404 · boutons', ['rangee'], 'justify-content: center; margin-top: 34px;', enfants=[
             B('404 · accueil', 'Revenir à l’accueil', '/', ['bouton-principal']),
-            B('404 · offres', 'Voir les offres', '/offres/', ['bouton-verre']),
+            B('404 · offres', 'Voir les offres', '/#offres', ['bouton-verre']),
         ]),
         P('404 · liens', '<a href="/realisations/">Nos réalisations</a> <a href="/temoignages/">Les témoignages</a> <a href="/blog/">Le blog</a> <a href="/contact/">Contact</a>', ['liens-utiles'], 'margin-top: 40px;'),
     ]),
@@ -1620,6 +1627,46 @@ offres_ajout = F('Offres · Création + Tournage', ['section', 'section-suite'],
 ])
 
 
+
+def trouver(element, nom):
+    """Élément d'un arbre par son nom (Navigateur d'Elementor)."""
+    if element.nom == nom:
+        return element
+    for enfant in element.enfants:
+        trouve = trouver(enfant, nom)
+        if trouve:
+            return trouve
+    return None
+
+
+def bloc_offre_complete():
+    """00:07 de l'accueil avec les offres complètes (la page Offres est mise de côté) : tableau des 2 formules,
+    « Ce que Création + Tournage ajoute », promesses en petites cartes et appel."""
+    import copy
+    tableau = copy.deepcopy(trouver(offres_tableau, 'Offres · tableau'))
+    prix_mobile = copy.deepcopy(trouver(offres_tableau, 'Offres · prix mobile'))
+    ajouts = copy.deepcopy(trouver(offres_ajout, 'Offres · ajout · cartes'))
+    promesses = copy.deepcopy(trouver(offre, 'Offre · promesses'))
+    return F("L'offre", ['section', 'halos-offre'], tag='section', ancre='offres', enfants=[
+        F('Offre · contenu', ['conteneur'], COLONNE, enfants=[
+            entete('Offre', '00:07', "L'offre", [('Un prix fixe. <em>Des vidéos sans fin.</em>', 'h2', ['titre-lg'])],
+                   intro='Deux formules, un abonnement annuel, une qualité garantie. <strong>Et comme le prix est fixe, plus vous faites de vidéos, moins chacune vous coûte.</strong>'),
+            tableau,
+            prix_mobile,
+            H('Offre · ajout · titre', 'Ce que <em>Création + Tournage</em> ajoute.', 'h3', ['titre-md'], 'margin-top: 96px; margin-bottom: 32px;'),
+            ajouts,
+            promesses,
+            F('Offre · boutons', ['rangee'], 'justify-content: center; margin-top: 36px;', enfants=[
+                B('Offre · bouton principal', 'Réserver un échange', '/contact/', ['bouton-principal']),
+            ]),
+        ]),
+    ])
+
+
+offre_complete = bloc_offre_complete()
+BLOCS[[c for c, _, _ in BLOCS].index('10-offre')] = ('10-offre', "Rolling · 10 L'offre", offre_complete)
+BLOCS_VARIANTES.append(('10-offre-courte', "Rolling · 10 L'offre (version courte : 2 formules et promesses)", offre))
+
 def montage(prefixe, debut, fin, clips, quatre=False):
     """Frise de montage : clips = [(classe de couleur, nom du clip, titre, texte, pastille rouge ou None)]."""
     return F(prefixe + ' · frise', ['carte-verre', 'montage'], enfants=[
@@ -1731,7 +1778,7 @@ contact_offres = F('Contact · formules', ['section', 'section-suite'], tag='sec
             ]),
         ]),
         F('Contact · formules · bouton', ['rangee'], 'justify-content: center; margin-top: 28px;', enfants=[
-            B('Contact · formules · comparer', 'Comparer les formules', '/offres/', ['bouton-verre']),
+            B('Contact · formules · comparer', 'Comparer les formules', '/#offres', ['bouton-verre']),
         ]),
     ]),
 ])
@@ -1792,7 +1839,7 @@ agence_haut = F("L'agence · haut", ['section', 'section-entete', 'entete-page',
                 P("L'agence · introduction", "Depuis treize ans, nous accompagnons les grandes entreprises en vidéo. Certaines équipes veulent créer elles-mêmes&nbsp;: c'est Pitchy. D'autres veulent déléguer&nbsp;: c'est Rolling, une équipe qui produit pour vous, à prix fixe, en illimité.", ['texte-intro'], 'margin-top: 22px; max-width: 600px;'),
                 F("L'agence · boutons", ['rangee'], 'margin-top: 34px;', enfants=[
                     B("L'agence · réserver", 'Réserver un échange', '/contact/', ['bouton-principal']),
-                    B("L'agence · offres", 'Voir les offres', '/offres/', ['bouton-verre']),
+                    B("L'agence · offres", 'Voir les offres', '/#offres', ['bouton-verre']),
                 ]),
             ]),
             F("L'agence · photo", ['carte-verre', 'agence-photo', 'flotte'], enfants=[
@@ -2151,6 +2198,191 @@ NOMS_FAQ = {'rea': 'Réalisations', 'tem': 'Témoignages', 'blog': 'Blog', 'guid
 FAQ_BLOCS = {cle: bloc_faq(NOMS_FAQ[cle] + ' · FAQ', '00:05' if cle == 'agence' else None, 'Vos questions', titre, [(typo(q), typo(r)) for q, r in qs])
              for cle, (titre, qs) in FAQ_PAGES.items()}
 
+# --------------------------------------------------------------------------------------------
+# Page « Du contenu à la vidéo » (0.7.0) : comment un contenu devient une vidéo. Textes propres à cette page
+# (aucune phrase reprise de l'accueil, de la landing ni de Contact).
+# --------------------------------------------------------------------------------------------
+
+def ligne_reassurance(prefixe, texte):
+    return F(prefixe + ' · ' + texte, ['ligne-coche'], enfants=[
+        I(prefixe + ' · ' + texte + ' · coche', 'coche-verre.png', cls=['coche'], taille='thumbnail'),
+        P(prefixe + ' · ' + texte + ' · texte', '<strong>%s</strong>' % texte, ['texte-petit']),
+    ])
+
+
+contenu_haut = F('Contenu · haut', ['section', 'section-entete', 'entete-page', 'halos-haut'], tag='section', enfants=[
+    F('Contenu · haut · contenu', ['conteneur'], COLONNE, enfants=[
+        W('Contenu · fil d’Ariane', 'rolling-ariane'),
+        F('Contenu · présentation', ['agence-hero'], enfants=[
+            F('Contenu · textes', None, COLONNE, enfants=[
+                F('Contenu · pastille', ['pastille'], enfants=[P('Contenu · pastille · texte', 'Du contenu à la vidéo')]),
+                H('Contenu · titre', 'Transformez vos contenus <em>en vidéos.</em>', 'h1', ['titre-lg'], 'margin-top: 22px;'),
+                P('Contenu · introduction', "Un PowerPoint, un article, un rapport ou un webinar contient déjà tout ce qu'il faut. Notre <strong>agence vidéo</strong> en tire des vidéos courtes, une par message, prêtes pour chaque canal.", ['texte-intro'], 'margin-top: 22px; max-width: 600px;'),
+                F('Contenu · boutons', ['rangee'], 'margin-top: 34px;', enfants=[
+                    B('Contenu · réserver', 'Réserver un échange', '/contact/', ['bouton-principal']),
+                    B('Contenu · formules', 'Voir les formules', '/#offres', ['bouton-verre']),
+                ]),
+            ]),
+            F('Contenu · visuel', ['carte-verre', 'agence-photo', 'flotte'], enfants=[
+                D('Contenu · visuel · cadre', ['cadre-photo'], 'aspect-ratio: 4 / 3;', enfants=[
+                    I('Contenu · visuel · image', 'exemple-serie.webp', "Un rapport devenu une série de vidéos courtes", ['image-couvrante'], taille='large'),
+                    P('Contenu · visuel · bandeau', 'Avant · après', ['bandeau-video']),
+                ]),
+                P('Contenu · visuel · légende', '[Visuel à fournir : une page du document d’origine et la vidéo qui en est née]', ['texte-petit'], 'padding: 12px 6px 2px;'),
+            ]),
+        ]),
+        F('Contenu · réassurance', ['carte-verre', 'bande-reassurance'], enfants=[
+            ligne_reassurance('Contenu · réassurance', t) for t in
+            ('Validé par un directeur artistique', 'Contenus confidentiels protégés', 'Données hébergées en Europe', "Inclus dans l'abonnement, sans devis")
+        ]),
+    ]),
+])
+
+TYPES_CONTENUS = [
+    ('Un PowerPoint', '<strong>Une série de capsules</strong> de 60&nbsp;s, une idée par vidéo.'),
+    ('Un article', '<strong>Une vidéo de 90&nbsp;s</strong> et 3 formats courts pour les réseaux.'),
+    ('Un rapport annuel', '<strong>Des épisodes</strong> : un chiffre clé, une histoire.'),
+    ('Un webinar', '<strong>Les meilleurs extraits</strong>, sous-titrés, prêts à partager.'),
+    ('Un module de formation', '<strong>Du microlearning</strong> vertical, à suivre sur téléphone.'),
+]
+
+contenu_types = F('Contenu · types', ['section', 'section-suite'], tag='section', enfants=[
+    F('Contenu · types · contenu', ['conteneur'], COLONNE, enfants=[
+        entete_simple('Contenu · types', '00:01', 'Ce que nous transformons', 'Chaque type de contenu <em>a sa vidéo.</em>'),
+        F('Contenu · types · grille', ['grille-types'], enfants=[
+            F('Type %d' % n, ['carte-verre', 'carte-type'], enfants=[
+                P('Type %d · au départ' % n, 'Au départ', ['label']),
+                H('Type %d · contenu' % n, t, 'h3', ['titre-xs']),
+                P('Type %d · devient' % n, typo(v), ['texte-petit', 'vers-type']),
+            ]) for n, (t, v) in enumerate(TYPES_CONTENUS, 1)
+        ]),
+    ]),
+])
+
+
+def sortie(n, titre, usage, forme=None):
+    return F('Schéma · vidéo %d' % n, ['sortie-schema'], enfants=[
+        P('Schéma · vidéo %d · texte' % n, '<strong>%s</strong><br>%s' % (titre, usage), ['texte-sortie'] + ([forme] if forme else [])),
+    ])
+
+
+contenu_schema = F('Contenu · schéma', ['section', 'section-sombre', 'halos-nuit'], tag='section', enfants=[
+    F('Contenu · schéma · contenu', ['conteneur'], COLONNE, enfants=[
+        entete('Contenu · schéma', '00:02', 'Un contenu, plusieurs vidéos', [("Partez d'un seul document. <em>Repartez avec une série.</em>", 'h2', ['titre-md'])],
+               intro='Un document suffit&nbsp;: nous en tirons plusieurs vidéos, chacune pensée pour son canal et son format.'),
+        F('Contenu · schéma · éventail', ['schema-eventail'], enfants=[
+            F('Schéma · vidéos à gauche', ['branches-schema', 'branches-gauche'], enfants=[
+                sortie(1, 'Une vidéo de 90&nbsp;s', 'pour votre site et LinkedIn'),
+                sortie(2, '3 formats courts 9:16', 'stories, Reels, Shorts', 'forme-verticale'),
+                sortie(3, 'Un carré animé', 'pour vos newsletters', 'forme-carree'),
+            ]),
+            F('Schéma · document', ['source-schema'], enfants=[
+                I('Schéma · document · picto', 'picto-guides.webp', cls=None, taille='medium'),
+                P('Schéma · document · titre', '<strong>1 document</strong>', ['titre-xs']),
+                P('Schéma · document · exemples', 'un PPT, un article, un rapport, un webinar', ['texte-petit']),
+            ]),
+            F('Schéma · vidéos à droite', ['branches-schema', 'branches-droite'], enfants=[
+                sortie(4, 'Une version anglaise', 'sous-titres ou voix off'),
+                sortie(5, 'Un microlearning', 'pour votre LMS', 'forme-verticale'),
+                sortie(6, 'Un extrait pour vos salons', 'en boucle, sans le son'),
+            ]),
+        ]),
+    ]),
+])
+
+ETAPES_CONTENU = [
+    ('Vous partagez le contenu', "Le fichier tel qu'il est : PPT, PDF, lien d'article, enregistrement.", 'Vous · 5 minutes'),
+    ('Nous trouvons les messages', 'Votre directeur artistique repère ce qui mérite une vidéo, et pour quel public.', 'Notre équipe'),
+    ('Nous écrivons et produisons', 'Script, voix, motion, sous-titres : notre IA Factory accélère, nos créas décident.', 'Notre équipe'),
+    ('Vous validez, nous déclinons', 'Un tour de retours groupés, puis toutes les versions dont vous avez besoin.', 'Vous · un tour de retours'),
+]
+
+contenu_methode = F('Contenu · méthode', ['section', 'section-suite'], tag='section', enfants=[
+    F('Contenu · méthode · contenu', ['conteneur'], COLONNE, enfants=[
+        entete_simple('Contenu · méthode', '00:03', 'La méthode', 'Du fichier à la vidéo, <em>en quatre temps.</em>'),
+        F('Contenu · méthode · étapes', ['grille-4'], 'margin-top: 40px;', enfants=[
+            F('Temps %d' % n, ['carte-verre', 'carte-temps'], enfants=[
+                P('Temps %d · numéro' % n, '%02d' % n, ['numero-temps']),
+                H('Temps %d · titre' % n, t, 'h3', ['titre-xs']),
+                P('Temps %d · texte' % n, typo(x), ['texte-petit']),
+                P('Temps %d · qui' % n, q, ['etiquette-qui']),
+            ]) for n, (t, x, q) in enumerate(ETAPES_CONTENU, 1)
+        ]),
+    ]),
+])
+
+contenu_cas = F('Contenu · cas client', ['section', 'section-suite'], tag='section', enfants=[
+    F('Contenu · cas · contenu', ['conteneur'], COLONNE, enfants=[
+        entete_simple('Contenu · cas', '00:04', 'Un cas client'),
+        F('Contenu · cas · carte', ['carte-verre', 'cas-client'], 'margin-top: 32px;', enfants=[
+            D('Contenu · cas · document', ['cadre-photo'], 'aspect-ratio: 4 / 3;', enfants=[
+                I('Contenu · cas · document · image', 'exemple-serie.webp', "Le document d'origine", ['image-couvrante'], taille='large'),
+                P('Contenu · cas · document · bandeau', "Au départ : [document à fournir]", ['bandeau-video']),
+            ]),
+            F('Contenu · cas · textes', None, COLONNE, enfants=[
+                P('Contenu · cas · étiquette', 'Un exemple réel, de A à Z', ['label', 'label-violet']),
+                H('Contenu · cas · titre', '[Client] : un PPT de 40 pages, devenu <em>6 vidéos.</em>', 'h2', ['titre-sm'], 'margin-top: 8px;'),
+                F('Contenu · cas · vidéos', ['apercu-cas'], enfants=[
+                    D('Contenu · cas · vidéo %d' % n, ['cadre-photo'], 'aspect-ratio: 16 / 9;', enfants=[
+                        I('Contenu · cas · vidéo %d · image' % n, img, '', ['image-couvrante'], taille='medium_large'),
+                    ]) for n, img in enumerate(('exemple-motion.webp', 'exemple-linkedin.webp', 'exemple-interview.webp'), 1)
+                ]),
+                F('Contenu · cas · chiffres', ['chiffres-cas'], enfants=[
+                    P('Contenu · cas · chiffre %d' % n, '<strong>%s</strong>%s' % (v, l), ['chiffre-cas'])
+                    for n, (v, l) in enumerate((('[x]', 'vidéos livrées'), ('[x]&nbsp;%', 'taux de visionnage'), ('[x] jours', 'du document à la 1re vidéo')), 1)
+                ]),
+                P('Contenu · cas · citation', '« [Citation du client sur ce que la vidéo a changé.] »', ['citation-cas']),
+            ]),
+        ]),
+    ]),
+])
+
+contenu_exemples = F('Contenu · exemples', ['section', 'section-suite'], tag='section', enfants=[
+    F('Contenu · exemples · contenu', ['conteneur'], COLONNE, enfants=[
+        entete_simple('Contenu · exemples', '00:05', 'Avant → Après', "D'autres contenus, <em>déjà en vidéo.</em>"),
+        F('Contenu · exemples · grille', ['grille-3'], 'margin-top: 40px;', enfants=[exemple(n, *e, prefixe='Contenu · exemple') for n, e in enumerate(EXEMPLES[:3], 1)]),
+        F('Contenu · exemples · bouton', ['rangee'], 'justify-content: center; margin-top: 36px;', enfants=[
+            B('Contenu · exemples · toutes', 'Toutes nos réalisations', '/realisations/', ['bouton-verre']),
+        ]),
+        F('Contenu · prix', ['carte-verre', 'encart-prix'], 'margin-top: 64px;', enfants=[
+            F('Contenu · prix · textes', None, COLONNE + ' padding: 0; max-width: 640px;', enfants=[
+                H('Contenu · prix · titre', 'Combien ça coûte&nbsp;?', 'h3', ['titre-xs']),
+                P('Contenu · prix · texte', "Rien de plus. Transformer vos contenus en vidéos est le cœur de l'abonnement : à prix fixe, en illimité, sans devis à chaque projet.", ['texte'], 'margin-top: 6px;'),
+            ]),
+            B('Contenu · prix · bouton', 'Voir les formules', '/#offres', ['bouton-verre']),
+        ]),
+    ]),
+])
+
+QUESTIONS_CONTENU = [
+    ('Faut-il réécrire nos textes avant de vous les envoyer ?', "Non. Envoyez le contenu tel qu'il est : nous repérons les messages et écrivons les scripts."),
+    ('Combien de vidéos peut-on tirer d’un seul contenu ?', 'Souvent plusieurs : une par message clé, déclinée dans les formats de vos canaux. [À confirmer : exemple courant.]'),
+    ('Nos contenus confidentiels sont-ils protégés ?', "[À compléter : hébergement des données, outils d'IA utilisés, sécurité.]"),
+    ('Gardez-vous notre charte et notre ton ?', 'Oui : chaque vidéo suit votre charte graphique et le ton de vos contenus. Votre directeur artistique y veille du script à la livraison.'),
+    ('Peut-on partir d’un contenu en anglais ?', '[À confirmer : langues de départ et d’arrivée.]'),
+]
+contenu_faq = bloc_faq('Contenu · FAQ', '00:06', 'Vos questions', 'Transformer un contenu, <em>en pratique.</em>', [(typo(q), typo(r)) for q, r in QUESTIONS_CONTENU])
+
+
+def contenu_ressources():
+    import copy
+    bloc = copy.deepcopy(ressources)
+    trouver(bloc, 'Ressources · timecode').cfg['paragraph'] = '00:07'
+    return bloc
+
+
+contenu_final = F('Contenu · appel final', ['section', 'section-sombre', 'section-finale', 'halo-centre', 'decors-final'], tag='section', ancre='contact', enfants=[
+    I('Contenu · final · verre cannelé', 'final-verre-cannele.webp', cls=['decor-flottant'], taille='medium_large'),
+    F('Contenu · final · contenu', ['conteneur'], COLONNE + ' align-items: center; z-index: 1;', enfants=[
+        H('Contenu · final · titre', 'Quel contenu transformez-vous<br><em>en premier&nbsp;?</em>', 'h2', ['titre-lg', 'titre-souligne']),
+        P('Contenu · final · texte', "Envoyez-nous un fichier avant l'échange : nous arrivons avec des idées de vidéos tirées de votre propre contenu.", ['texte-intro'], 'margin-top: 34px; max-width: 600px;'),
+        F('Contenu · final · bouton', None, 'display: flex; justify-content: center; margin-top: 38px; padding: 0;', enfants=[
+            B('Contenu · final · réserver', 'Réserver un échange', '/contact/', ['bouton-soleil']),
+        ]),
+        badges('Contenu · final', 'justify-content: center; margin-top: 34px;'),
+    ]),
+])
+
 PAGES = [
     ('Réalisations', [('p-rea-1-haut', 'Haut de page', rea_haut), ('p-rea-2-liste', 'Liste', rea_liste), ('p-rea-3-faq', 'FAQ', FAQ_BLOCS['rea'])]),
     ('Témoignages', [('p-tem-1-haut', 'Haut de page', tem_haut), ('p-tem-2-liste', 'Liste', tem_liste), ('p-tem-3-faq', 'FAQ', FAQ_BLOCS['tem'])]),
@@ -2170,6 +2402,11 @@ PAGES = [
                  ('p-landing-7-final', 'Appel final', landing_final)]),
     ('Contact', [('p-contact-1-echange', "L'échange et le calendrier", contact_haut), ('p-contact-2-formules', 'Rappel des formules', contact_offres), ('p-contact-3-faq', "FAQ de l'échange", contact_faq),
                  ('p-contact-4-showreel', '00:01 Le showreel et les citations', contact_showreel), ('p-contact-5-realisations', '00:02 Chiffres et dernières réalisations', contact_realisations)]),
+    ('Du contenu à la vidéo', [('p-contenu-01-haut', 'Haut de page', contenu_haut), ('p-contenu-02-types', '00:01 Ce que nous transformons', contenu_types),
+                               ('p-contenu-03-schema', '00:02 Un document, plusieurs vidéos', contenu_schema), ('p-contenu-04-methode', '00:03 La méthode', contenu_methode),
+                               ('p-contenu-05-cas', '00:04 Un cas client', contenu_cas), ('p-contenu-06-exemples', '00:05 Avant → Après et prix', contenu_exemples),
+                               ('p-contenu-07-faq', '00:06 FAQ', contenu_faq), ('p-contenu-08-ressources', '00:07 Ressources', contenu_ressources()),
+                               ('p-contenu-09-final', 'Appel final', contenu_final)]),
 ]
 
 
@@ -2241,7 +2478,7 @@ if __name__ == '__main__':
             print(cle, len(composition['xml_structure']), 'caractères de XML')
         cle_pc = 'pc-' + cles_page[0].split('-')[1]
         with open(os.path.join(dossier, cle_pc + '.json'), 'w', encoding='utf8') as f:
-            json.dump({'cle': cle_pc, 'titre': 'Rolling · Page complète (%s)' % page, 'type': 'page', 'assemble': cles_page + ([] if page == 'Landing' else ['13-final'])}, f, ensure_ascii=False, indent=1)
+            json.dump({'cle': cle_pc, 'titre': 'Rolling · Page complète (%s)' % page, 'type': 'page', 'assemble': cles_page + ([] if page in ('Landing', 'Du contenu à la vidéo') else ['13-final'])}, f, ensure_ascii=False, indent=1)
         print(cle_pc, ':', len(cles_page) + 1, 'blocs')
     # « Page complète » : tous les blocs de l'accueil à la suite, dans un modèle de type page.
     with open(os.path.join(dossier, '99-page-complete.json'), 'w', encoding='utf8') as f:

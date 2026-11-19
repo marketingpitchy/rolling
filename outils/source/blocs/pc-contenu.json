@@ -1,0 +1,16 @@
+{
+ "cle": "pc-contenu",
+ "titre": "Rolling · Page complète (Du contenu à la vidéo)",
+ "type": "page",
+ "assemble": [
+  "p-contenu-01-haut",
+  "p-contenu-02-types",
+  "p-contenu-03-schema",
+  "p-contenu-04-methode",
+  "p-contenu-05-cas",
+  "p-contenu-06-exemples",
+  "p-contenu-07-faq",
+  "p-contenu-08-ressources",
+  "p-contenu-09-final"
+ ]
+}

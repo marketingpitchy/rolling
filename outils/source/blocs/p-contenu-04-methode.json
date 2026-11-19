@@ -1,0 +1,168 @@
+{
+ "cle": "p-contenu-04-methode",
+ "titre": "Rolling · Du contenu à la vidéo · 00:03 La méthode",
+ "type": "e-flexbox",
+ "composition": {
+  "xml_structure": "<e-flexbox configuration-id=\"Contenu · méthode\"><e-flexbox configuration-id=\"Contenu · méthode · contenu\"><e-flexbox configuration-id=\"Contenu · méthode · en-tête\"><e-flexbox configuration-id=\"Contenu · méthode · repère\"><e-paragraph configuration-id=\"Contenu · méthode · timecode\"></e-paragraph><e-paragraph configuration-id=\"Contenu · méthode · sur-titre\"></e-paragraph></e-flexbox><e-heading configuration-id=\"Contenu · méthode · titre\"></e-heading></e-flexbox><e-flexbox configuration-id=\"Contenu · méthode · étapes\"><e-flexbox configuration-id=\"Temps 1\"><e-paragraph configuration-id=\"Temps 1 · numéro\"></e-paragraph><e-heading configuration-id=\"Temps 1 · titre\"></e-heading><e-paragraph configuration-id=\"Temps 1 · texte\"></e-paragraph><e-paragraph configuration-id=\"Temps 1 · qui\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Temps 2\"><e-paragraph configuration-id=\"Temps 2 · numéro\"></e-paragraph><e-heading configuration-id=\"Temps 2 · titre\"></e-heading><e-paragraph configuration-id=\"Temps 2 · texte\"></e-paragraph><e-paragraph configuration-id=\"Temps 2 · qui\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Temps 3\"><e-paragraph configuration-id=\"Temps 3 · numéro\"></e-paragraph><e-heading configuration-id=\"Temps 3 · titre\"></e-heading><e-paragraph configuration-id=\"Temps 3 · texte\"></e-paragraph><e-paragraph configuration-id=\"Temps 3 · qui\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Temps 4\"><e-paragraph configuration-id=\"Temps 4 · numéro\"></e-paragraph><e-heading configuration-id=\"Temps 4 · titre\"></e-heading><e-paragraph configuration-id=\"Temps 4 · texte\"></e-paragraph><e-paragraph configuration-id=\"Temps 4 · qui\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox></e-flexbox>",
+  "element_config": {
+   "Contenu · méthode": {
+    "tag": "section"
+   },
+   "Contenu · méthode · timecode": {
+    "paragraph": "00:03"
+   },
+   "Contenu · méthode · sur-titre": {
+    "paragraph": "La méthode"
+   },
+   "Contenu · méthode · titre": {
+    "tag": "h2",
+    "title": "Du fichier à la vidéo, <em>en quatre temps.</em>"
+   },
+   "Temps 1 · numéro": {
+    "paragraph": "01"
+   },
+   "Temps 1 · titre": {
+    "tag": "h3",
+    "title": "Vous partagez le contenu"
+   },
+   "Temps 1 · texte": {
+    "paragraph": "Le fichier tel qu'il est&nbsp;: PPT, PDF, lien d'article, enregistrement."
+   },
+   "Temps 1 · qui": {
+    "paragraph": "Vous · 5 minutes"
+   },
+   "Temps 2 · numéro": {
+    "paragraph": "02"
+   },
+   "Temps 2 · titre": {
+    "tag": "h3",
+    "title": "Nous trouvons les messages"
+   },
+   "Temps 2 · texte": {
+    "paragraph": "Votre directeur artistique repère ce qui mérite une vidéo, et pour quel public."
+   },
+   "Temps 2 · qui": {
+    "paragraph": "Notre équipe"
+   },
+   "Temps 3 · numéro": {
+    "paragraph": "03"
+   },
+   "Temps 3 · titre": {
+    "tag": "h3",
+    "title": "Nous écrivons et produisons"
+   },
+   "Temps 3 · texte": {
+    "paragraph": "Script, voix, motion, sous-titres&nbsp;: notre IA Factory accélère, nos créas décident."
+   },
+   "Temps 3 · qui": {
+    "paragraph": "Notre équipe"
+   },
+   "Temps 4 · numéro": {
+    "paragraph": "04"
+   },
+   "Temps 4 · titre": {
+    "tag": "h3",
+    "title": "Vous validez, nous déclinons"
+   },
+   "Temps 4 · texte": {
+    "paragraph": "Un tour de retours groupés, puis toutes les versions dont vous avez besoin."
+   },
+   "Temps 4 · qui": {
+    "paragraph": "Vous · un tour de retours"
+   }
+  },
+  "classes": {
+   "Contenu · méthode": [
+    "section",
+    "section-suite"
+   ],
+   "Contenu · méthode · contenu": [
+    "conteneur"
+   ],
+   "Contenu · méthode · en-tête": [
+    "entete-section"
+   ],
+   "Contenu · méthode · repère": [
+    "sur-titre"
+   ],
+   "Contenu · méthode · timecode": [
+    "timecode"
+   ],
+   "Contenu · méthode · titre": [
+    "titre-md"
+   ],
+   "Contenu · méthode · étapes": [
+    "grille-4"
+   ],
+   "Temps 1": [
+    "carte-verre",
+    "carte-temps"
+   ],
+   "Temps 1 · numéro": [
+    "numero-temps"
+   ],
+   "Temps 1 · titre": [
+    "titre-xs"
+   ],
+   "Temps 1 · texte": [
+    "texte-petit"
+   ],
+   "Temps 1 · qui": [
+    "etiquette-qui"
+   ],
+   "Temps 2": [
+    "carte-verre",
+    "carte-temps"
+   ],
+   "Temps 2 · numéro": [
+    "numero-temps"
+   ],
+   "Temps 2 · titre": [
+    "titre-xs"
+   ],
+   "Temps 2 · texte": [
+    "texte-petit"
+   ],
+   "Temps 2 · qui": [
+    "etiquette-qui"
+   ],
+   "Temps 3": [
+    "carte-verre",
+    "carte-temps"
+   ],
+   "Temps 3 · numéro": [
+    "numero-temps"
+   ],
+   "Temps 3 · titre": [
+    "titre-xs"
+   ],
+   "Temps 3 · texte": [
+    "texte-petit"
+   ],
+   "Temps 3 · qui": [
+    "etiquette-qui"
+   ],
+   "Temps 4": [
+    "carte-verre",
+    "carte-temps"
+   ],
+   "Temps 4 · numéro": [
+    "numero-temps"
+   ],
+   "Temps 4 · titre": [
+    "titre-xs"
+   ],
+   "Temps 4 · texte": [
+    "texte-petit"
+   ],
+   "Temps 4 · qui": [
+    "etiquette-qui"
+   ]
+  },
+  "style": {
+   "Contenu · méthode · contenu": "display: flex; flex-direction: column; gap: 0;",
+   "Contenu · méthode · étapes": "margin-top: 40px;"
+  }
+ },
+ "brut": {}
+}

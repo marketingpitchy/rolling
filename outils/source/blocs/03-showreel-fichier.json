@@ -49,7 +49,7 @@
    "Showreel · bouton secondaire": {
     "text": "Voir les offres",
     "link": {
-     "destination": "/offres/"
+     "destination": "/#offres"
     }
    }
   },

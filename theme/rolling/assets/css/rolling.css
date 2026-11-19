@@ -220,3 +220,7 @@ html.rl-barre-joue .rl-barre-page { display: block; position: fixed; z-index: 10
 @keyframes rl-appel { 0% { box-shadow: 0 0 0 0 rgba(255, 209, 191, .65); } 80%, 100% { box-shadow: 0 0 0 10px rgba(255, 209, 191, 0); } }
 @keyframes rl-trace { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0 0 0 0); } }
 @media (prefers-reduced-motion: reduce) { .rl-curseur { display: none; } .rl-appel::after { animation: none; } }
+
+/* Flèches en pointillés qui avancent (schéma « un document, plusieurs vidéos ») */
+@keyframes rl-tirets-h { from { background-position: 0 0; } to { background-position: 11px 0; } }
+@keyframes rl-tirets-v { from { background-position: 0 0; } to { background-position: 0 11px; } }

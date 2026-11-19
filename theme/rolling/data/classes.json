@@ -8258,6 +8258,780 @@
             ]
         },
         {
+            "id": "g-82c0588",
+            "label": "carte-exemple",
+            "groupe": "Fiches et listes",
+            "description": "Avant → Après : tout l'exemple dans une seule carte en verre cliquable (avec carte-verre) : image, légende, flèche. Se soulève au survol, une barre de lecture traverse l'image.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": "hover"
+                    },
+                    "props": {
+                        "transform": {
+                            "$$type": "transform",
+                            "value": {
+                                "transform-functions": {
+                                    "$$type": "transform-functions",
+                                    "value": [
+                                        {
+                                            "$$type": "transform-move",
+                                            "value": {
+                                                "x": {
+                                                    "$$type": "size",
+                                                    "value": {
+                                                        "size": 0,
+                                                        "unit": "px"
+                                                    }
+                                                },
+                                                "y": {
+                                                    "$$type": "size",
+                                                    "value": {
+                                                        "size": -4,
+                                                        "unit": "px"
+                                                    }
+                                                },
+                                                "z": {
+                                                    "$$type": "size",
+                                                    "value": {
+                                                        "size": 0,
+                                                        "unit": "px"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    },
+                    "custom_css": null
+                },
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "color": {
+                            "$$type": "color",
+                            "value": "inherit"
+                        },
+                        "text-decoration": {
+                            "$$type": "string",
+                            "value": "none"
+                        },
+                        "padding": {
+                            "$$type": "dimensions",
+                            "value": {
+                                "block-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 8,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 8,
+                                        "unit": "px"
+                                    }
+                                },
+                                "block-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 16,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 8,
+                                        "unit": "px"
+                                    }
+                                }
+                            }
+                        },
+                        "transition": {
+                            "$$type": "transition",
+                            "value": [
+                                {
+                                    "$$type": "selection-size",
+                                    "value": {
+                                        "selection": {
+                                            "$$type": "key-value",
+                                            "value": {
+                                                "key": {
+                                                    "$$type": "string",
+                                                    "value": "transform"
+                                                },
+                                                "value": {
+                                                    "$$type": "string",
+                                                    "value": "transform"
+                                                }
+                                            }
+                                        },
+                                        "size": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 0.35,
+                                                "unit": "s"
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "$$type": "selection-size",
+                                    "value": {
+                                        "selection": {
+                                            "$$type": "key-value",
+                                            "value": {
+                                                "key": {
+                                                    "$$type": "string",
+                                                    "value": "box-shadow"
+                                                },
+                                                "value": {
+                                                    "$$type": "string",
+                                                    "value": "box-shadow"
+                                                }
+                                            }
+                                        },
+                                        "size": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 0.35,
+                                                "unit": "s"
+                                            }
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        "gap": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 0,
+                                "unit": "px"
+                            }
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "Jjpob3ZlciAuY2FkcmUtZXhlbXBsZTo6YWZ0ZXIgeyB3aWR0aDogMTAwJTsgfSAmOmhvdmVyIC5mbGVjaGUtcm9uZGUgeyBiYWNrZ3JvdW5kLWNvbG9yOiAjNUIzQkVBOyB0cmFuc2Zvcm06IHRyYW5zbGF0ZVgoM3B4KTsgfSAmOmhvdmVyIC5mbGVjaGUtcm9uZGU6OmFmdGVyIHsgY29sb3I6ICNGRkZGRkY7IH0="
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-4411639",
+            "label": "bande-reassurance",
+            "groupe": "Fiches et listes",
+            "description": "Bande de réassurance (avec carte-verre) : 3 ou 4 points cochés sur une ligne (en colonne en mobile).",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "mobile",
+                        "state": null
+                    },
+                    "props": {
+                        "flex-direction": {
+                            "$$type": "string",
+                            "value": "column"
+                        },
+                        "gap": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 10,
+                                "unit": "px"
+                            }
+                        },
+                        "align-items": {
+                            "$$type": "string",
+                            "value": "flex-start"
+                        }
+                    },
+                    "custom_css": null
+                },
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "padding": {
+                            "$$type": "dimensions",
+                            "value": {
+                                "block-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 16,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 22,
+                                        "unit": "px"
+                                    }
+                                },
+                                "block-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 16,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 22,
+                                        "unit": "px"
+                                    }
+                                }
+                            }
+                        },
+                        "margin": {
+                            "$$type": "dimensions",
+                            "value": {
+                                "block-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 44,
+                                        "unit": "px"
+                                    }
+                                }
+                            }
+                        },
+                        "border-radius": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 22,
+                                "unit": "px"
+                            }
+                        },
+                        "flex-direction": {
+                            "$$type": "string",
+                            "value": "row"
+                        },
+                        "flex-wrap": {
+                            "$$type": "string",
+                            "value": "wrap"
+                        },
+                        "justify-content": {
+                            "$$type": "string",
+                            "value": "center"
+                        },
+                        "align-items": {
+                            "$$type": "string",
+                            "value": "center"
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "Z2FwOiAxMHB4IDI4cHg7ICYgLmNvY2hlIHsgd2lkdGg6IDIycHg7IGhlaWdodDogMjJweDsgfSAmID4gLmxpZ25lLWNvY2hlIHsgd2lkdGg6IGF1dG87IGFsaWduLWl0ZW1zOiBjZW50ZXI7IGdhcDogOHB4OyB9"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-755885d",
+            "label": "carte-type",
+            "groupe": "Fiches et listes",
+            "description": "Carte d'un type de contenu (avec carte-verre) : « Au départ », le contenu, puis ce qu'il devient.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "padding": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 20,
+                                "unit": "px"
+                            }
+                        },
+                        "gap": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 6,
+                                "unit": "px"
+                            }
+                        }
+                    },
+                    "custom_css": null
+                }
+            ]
+        },
+        {
+            "id": "g-a14fb08",
+            "label": "source-schema",
+            "groupe": "Fiches et listes",
+            "description": "Carte blanche du document de départ, au centre du schéma (flèches en pointillés de chaque côté).",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "mobile",
+                        "state": null
+                    },
+                    "props": {
+                        "margin": {
+                            "$$type": "dimensions",
+                            "value": {
+                                "block-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 12,
+                                        "unit": "px"
+                                    }
+                                }
+                            }
+                        },
+                        "width": {
+                            "$$type": "size",
+                            "value": {
+                                "size": null,
+                                "unit": "auto"
+                            }
+                        }
+                    },
+                    "custom_css": null
+                },
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "width": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 230,
+                                "unit": "px"
+                            }
+                        },
+                        "position": {
+                            "$$type": "string",
+                            "value": "relative"
+                        },
+                        "color": {
+                            "$$type": "color",
+                            "value": "#0F0F12"
+                        },
+                        "text-align": {
+                            "$$type": "string",
+                            "value": "center"
+                        },
+                        "padding": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 22,
+                                "unit": "px"
+                            }
+                        },
+                        "border-radius": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 22,
+                                "unit": "px"
+                            }
+                        },
+                        "background": {
+                            "$$type": "background",
+                            "value": {
+                                "color": {
+                                    "$$type": "color",
+                                    "value": "#FFFFFF"
+                                }
+                            }
+                        },
+                        "box-shadow": {
+                            "$$type": "box-shadow",
+                            "value": [
+                                {
+                                    "$$type": "shadow",
+                                    "value": {
+                                        "hOffset": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 0,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "vOffset": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 0,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "blur": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 0,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "spread": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 10,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "color": {
+                                            "$$type": "color",
+                                            "value": "rgba(196,181,253,0.14)"
+                                        }
+                                    }
+                                },
+                                {
+                                    "$$type": "shadow",
+                                    "value": {
+                                        "hOffset": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 0,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "vOffset": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 30,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "blur": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 60,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "spread": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": -26,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "color": {
+                                            "$$type": "color",
+                                            "value": "rgba(0,0,0,0.6)"
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        "display": {
+                            "$$type": "string",
+                            "value": "flex"
+                        },
+                        "flex-direction": {
+                            "$$type": "string",
+                            "value": "column"
+                        },
+                        "gap": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 6,
+                                "unit": "px"
+                            }
+                        },
+                        "align-items": {
+                            "$$type": "string",
+                            "value": "center"
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "LS1ybC10ZXh0ZTogIzBGMEYxMjsgLS1ybC1wYXJhZ3JhcGhlOiAjNEE0ODU4OyAtLXJsLWxlZ2VuZGU6ICM1RjVDNkM7ICYgaW1nIHsgd2lkdGg6IDY0cHg7IGhlaWdodDogYXV0bzsgfSAmOjpiZWZvcmUsICY6OmFmdGVyIHsgcG9zaXRpb246IHJlbGF0aXZlOyB0b3A6IGF1dG87IHJpZ2h0OiBhdXRvOyBib3R0b206IGF1dG87IGxlZnQ6IGF1dG87IGhlaWdodDogYXV0bzsgd2lkdGg6IGF1dG87IG9wYWNpdHk6IDE7IG1peC1ibGVuZC1tb2RlOiBub3JtYWw7IGJvcmRlcjogMDsgY29udGVudDogJyc7IHBvc2l0aW9uOiBhYnNvbHV0ZTsgdG9wOiA1MCU7IHdpZHRoOiA0MHB4OyBoZWlnaHQ6IDJweDsgYmFja2dyb3VuZDogcmVwZWF0aW5nLWxpbmVhci1ncmFkaWVudCg5MGRlZywgI0M0QjVGRCAwcHgsICNDNEI1RkQgNnB4LCByZ2JhKDAsMCwwLDApIDZweCwgcmdiYSgwLDAsMCwwKSAxMXB4KTsgYW5pbWF0aW9uOiBybC10aXJldHMtaCAxLjJzIGxpbmVhciBpbmZpbml0ZTsgfSAmOjpiZWZvcmUgeyByaWdodDogLTQwcHg7IH0gJjo6YWZ0ZXIgeyBsZWZ0OiAtNDBweDsgfSBAbWVkaWEgKG1heC13aWR0aDogNzY3cHgpIHsgb3JkZXI6IC0xOyAmOjpiZWZvcmUgeyB0b3A6IDEwMCU7IHJpZ2h0OiBhdXRvOyBsZWZ0OiAzMHB4OyB3aWR0aDogMnB4OyBoZWlnaHQ6IDI2cHg7IGJhY2tncm91bmQ6IHJlcGVhdGluZy1saW5lYXItZ3JhZGllbnQoMTgwZGVnLCAjQzRCNUZEIDBweCwgI0M0QjVGRCA2cHgsIHJnYmEoMCwwLDAsMCkgNnB4LCByZ2JhKDAsMCwwLDApIDExcHgpOyBhbmltYXRpb246IHJsLXRpcmV0cy12IDEuMnMgbGluZWFyIGluZmluaXRlOyB9ICY6OmFmdGVyIHsgZGlzcGxheTogbm9uZTsgfSB9"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-dbf0642",
+            "label": "branches-droite",
+            "groupe": "Fiches et listes",
+            "description": "Colonne de droite du schéma : flèches vers la droite.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": [],
+                    "custom_css": {
+                        "raw": "Jjo6YmVmb3JlIHsgbGVmdDogLTQwcHg7IH0gJiA+IC5zb3J0aWUtc2NoZW1hOjpiZWZvcmUgeyBsZWZ0OiAtNDBweDsgfSAmID4gLnNvcnRpZS1zY2hlbWE6OmFmdGVyIHsgbGVmdDogLTEwcHg7IGNsaXAtcGF0aDogcG9seWdvbigwIDAsIDEwMCUgNTAlLCAwIDEwMCUpOyB9IEBtZWRpYSAobWF4LXdpZHRoOiA3NjdweCkgeyBwYWRkaW5nLWxlZnQ6IDU2cHg7ICY6OmJlZm9yZSB7IGxlZnQ6IDMwcHg7IHRvcDogLTI2cHg7IH0gJiA+IC5zb3J0aWUtc2NoZW1hOjpiZWZvcmUgeyBsZWZ0OiAtMjZweDsgd2lkdGg6IDE2cHg7IH0gfQ=="
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-2cbf1c1",
+            "label": "branches-gauche",
+            "groupe": "Fiches et listes",
+            "description": "Colonne de gauche du schéma : flèches vers la gauche, textes alignés à droite.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": [],
+                    "custom_css": {
+                        "raw": "Jjo6YmVmb3JlIHsgcmlnaHQ6IC00MHB4OyB9ICYgPiAuc29ydGllLXNjaGVtYTo6YmVmb3JlIHsgcmlnaHQ6IC00MHB4OyB9ICYgPiAuc29ydGllLXNjaGVtYTo6YWZ0ZXIgeyByaWdodDogLTEwcHg7IGNsaXAtcGF0aDogcG9seWdvbigxMDAlIDAsIDAgNTAlLCAxMDAlIDEwMCUpOyB9ICYgLnRleHRlLXNvcnRpZSB7IHBhZGRpbmctbGVmdDogMDsgcGFkZGluZy1yaWdodDogNjBweDsgdGV4dC1hbGlnbjogcmlnaHQ7IH0gJiAudGV4dGUtc29ydGllOjpiZWZvcmUgeyBsZWZ0OiBhdXRvOyByaWdodDogMDsgfSBAbWVkaWEgKG1heC13aWR0aDogNzY3cHgpIHsgcGFkZGluZy1sZWZ0OiA1NnB4OyAmOjpiZWZvcmUgeyByaWdodDogYXV0bzsgbGVmdDogMzBweDsgdG9wOiAtMjZweDsgYm90dG9tOiAtMTRweDsgfSAmID4gLnNvcnRpZS1zY2hlbWE6OmJlZm9yZSB7IHJpZ2h0OiBhdXRvOyBsZWZ0OiAtMjZweDsgd2lkdGg6IDE2cHg7IH0gJiA+IC5zb3J0aWUtc2NoZW1hOjphZnRlciB7IHJpZ2h0OiBhdXRvOyBsZWZ0OiAtMTBweDsgY2xpcC1wYXRoOiBwb2x5Z29uKDAgMCwgMTAwJSA1MCUsIDAgMTAwJSk7IH0gJiAudGV4dGUtc29ydGllIHsgcGFkZGluZy1sZWZ0OiA2MHB4OyBwYWRkaW5nLXJpZ2h0OiAwOyB0ZXh0LWFsaWduOiBsZWZ0OyB9ICYgLnRleHRlLXNvcnRpZTo6YmVmb3JlIHsgbGVmdDogMDsgcmlnaHQ6IGF1dG87IH0gfQ=="
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-1f63acd",
+            "label": "forme-verticale",
+            "groupe": "Fiches et listes",
+            "description": "Visuel de format vertical (9:16) d'une vidéo du schéma.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": [],
+                    "custom_css": {
+                        "raw": "Jjo6YmVmb3JlIHsgd2lkdGg6IDE4cHg7IGhlaWdodDogMzJweDsgbWFyZ2luLXRvcDogLTE2cHg7IGxlZnQ6IDE0cHg7IH0="
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-4a8f8a4",
+            "label": "forme-carree",
+            "groupe": "Fiches et listes",
+            "description": "Visuel de format carré (1:1) d'une vidéo du schéma.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": [],
+                    "custom_css": {
+                        "raw": "Jjo6YmVmb3JlIHsgd2lkdGg6IDI4cHg7IGhlaWdodDogMjhweDsgbWFyZ2luLXRvcDogLTE0cHg7IGxlZnQ6IDlweDsgfQ=="
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-38bfdde",
+            "label": "carte-temps",
+            "groupe": "Fiches et listes",
+            "description": "Étape de la méthode (avec carte-verre) : numéro, titre, texte, qui s'en occupe.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "padding": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 22,
+                                "unit": "px"
+                            }
+                        },
+                        "gap": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 8,
+                                "unit": "px"
+                            }
+                        }
+                    },
+                    "custom_css": null
+                }
+            ]
+        },
+        {
+            "id": "g-a21b8fc",
+            "label": "cas-client",
+            "groupe": "Fiches et listes",
+            "description": "Cas client de A à Z (avec carte-verre) : document d'origine à gauche, vidéos, chiffres et citation à droite (une colonne sous 1024 px).",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "tablet",
+                        "state": null
+                    },
+                    "props": {
+                        "grid-template-columns": {
+                            "$$type": "string",
+                            "value": "minmax(0, 1fr)"
+                        }
+                    },
+                    "custom_css": null
+                },
+                {
+                    "meta": {
+                        "breakpoint": "mobile",
+                        "state": null
+                    },
+                    "props": {
+                        "padding": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 16,
+                                "unit": "px"
+                            }
+                        },
+                        "gap": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 18,
+                                "unit": "px"
+                            }
+                        }
+                    },
+                    "custom_css": null
+                },
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "padding": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 26,
+                                "unit": "px"
+                            }
+                        },
+                        "border-radius": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 30,
+                                "unit": "px"
+                            }
+                        },
+                        "display": {
+                            "$$type": "string",
+                            "value": "grid"
+                        },
+                        "gap": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 28,
+                                "unit": "px"
+                            }
+                        },
+                        "grid-template-columns": {
+                            "$$type": "string",
+                            "value": "minmax(0, 1fr) minmax(0, 1.3fr)"
+                        },
+                        "align-items": {
+                            "$$type": "string",
+                            "value": "center"
+                        }
+                    },
+                    "custom_css": null
+                }
+            ]
+        },
+        {
+            "id": "g-db8b8cc",
+            "label": "encart-prix",
+            "groupe": "Fiches et listes",
+            "description": "Encart « Combien ça coûte ? » (avec carte-verre) : texte à gauche, bouton à droite.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "mobile",
+                        "state": null
+                    },
+                    "props": {
+                        "padding": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 20,
+                                "unit": "px"
+                            }
+                        }
+                    },
+                    "custom_css": null
+                },
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "padding": {
+                            "$$type": "dimensions",
+                            "value": {
+                                "block-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 26,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 30,
+                                        "unit": "px"
+                                    }
+                                },
+                                "block-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 26,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 30,
+                                        "unit": "px"
+                                    }
+                                }
+                            }
+                        },
+                        "flex-direction": {
+                            "$$type": "string",
+                            "value": "row"
+                        },
+                        "gap": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 18,
+                                "unit": "px"
+                            }
+                        },
+                        "flex-wrap": {
+                            "$$type": "string",
+                            "value": "wrap"
+                        },
+                        "justify-content": {
+                            "$$type": "string",
+                            "value": "space-between"
+                        },
+                        "align-items": {
+                            "$$type": "string",
+                            "value": "center"
+                        }
+                    },
+                    "custom_css": null
+                }
+            ]
+        },
+        {
             "id": "g-8ffa301",
             "label": "bande-ia",
             "groupe": "Fiches et listes",
@@ -34887,6 +35661,1330 @@
                     },
                     "custom_css": {
                         "raw": "Y29sb3I6IHZhcigtLXJsLWxlZ2VuZGUsIHZhcigtLWxlZ2VuZGUpKTsgJjplbXB0eSB7IGRpc3BsYXk6IG5vbmU7IH0="
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-5c76dcb",
+            "label": "cadre-exemple",
+            "groupe": "Fiches et listes",
+            "description": "Image d'un exemple Avant → Après (arrondie, barre de lecture en bas au survol de la carte).",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "overflow": {
+                            "$$type": "string",
+                            "value": "hidden"
+                        },
+                        "position": {
+                            "$$type": "string",
+                            "value": "relative"
+                        },
+                        "padding": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 0,
+                                "unit": "px"
+                            }
+                        },
+                        "border-radius": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 19,
+                                "unit": "px"
+                            }
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "Jjo6YWZ0ZXIgeyBwb3NpdGlvbjogcmVsYXRpdmU7IHRvcDogYXV0bzsgcmlnaHQ6IGF1dG87IGJvdHRvbTogYXV0bzsgbGVmdDogYXV0bzsgaGVpZ2h0OiBhdXRvOyB3aWR0aDogYXV0bzsgb3BhY2l0eTogMTsgbWl4LWJsZW5kLW1vZGU6IG5vcm1hbDsgYm9yZGVyOiAwOyBjb250ZW50OiAnJzsgcG9zaXRpb246IGFic29sdXRlOyBsZWZ0OiAwOyBib3R0b206IDA7IHRvcDogYXV0bzsgaGVpZ2h0OiA0cHg7IHdpZHRoOiAwOyBiYWNrZ3JvdW5kOiBsaW5lYXItZ3JhZGllbnQoOTBkZWcsICNDNEI1RkQsICNGRjhBNUIpOyB0cmFuc2l0aW9uOiB3aWR0aCAwLjlzIGVhc2U7IH0="
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-8a7ade6",
+            "label": "pastille-client",
+            "groupe": "Fiches et listes",
+            "description": "Nom du client en pastille sur l'image d'un exemple (facultatif : laissé vide, il ne s'affiche pas).",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "position": {
+                            "$$type": "string",
+                            "value": "absolute"
+                        },
+                        "inset-inline-end": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 12,
+                                "unit": "px"
+                            }
+                        },
+                        "inset-block-end": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 14,
+                                "unit": "px"
+                            }
+                        },
+                        "z-index": {
+                            "$$type": "number",
+                            "value": 2
+                        },
+                        "font-family": {
+                            "$$type": "font-family",
+                            "value": "Hanken Grotesk"
+                        },
+                        "font-weight": {
+                            "$$type": "string",
+                            "value": "800"
+                        },
+                        "font-size": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 12,
+                                "unit": "px"
+                            }
+                        },
+                        "color": {
+                            "$$type": "color",
+                            "value": "#FFFFFF"
+                        },
+                        "letter-spacing": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 0.12,
+                                "unit": "em"
+                            }
+                        },
+                        "line-height": {
+                            "$$type": "size",
+                            "value": {
+                                "size": "1.3",
+                                "unit": "custom"
+                            }
+                        },
+                        "text-transform": {
+                            "$$type": "string",
+                            "value": "uppercase"
+                        },
+                        "padding": {
+                            "$$type": "dimensions",
+                            "value": {
+                                "block-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 4,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 10,
+                                        "unit": "px"
+                                    }
+                                },
+                                "block-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 4,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 10,
+                                        "unit": "px"
+                                    }
+                                }
+                            }
+                        },
+                        "border-radius": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 999,
+                                "unit": "px"
+                            }
+                        },
+                        "background": {
+                            "$$type": "background",
+                            "value": {
+                                "color": {
+                                    "$$type": "color",
+                                    "value": "rgba(15,15,18,0.62)"
+                                }
+                            }
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "JjplbXB0eSB7IGRpc3BsYXk6IG5vbmU7IH0="
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-291b111",
+            "label": "bas-exemple",
+            "groupe": "Fiches et listes",
+            "description": "Bas d'une carte Avant → Après : légende à gauche, flèche ronde à droite.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "padding": {
+                            "$$type": "dimensions",
+                            "value": {
+                                "block-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 14,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 8,
+                                        "unit": "px"
+                                    }
+                                },
+                                "block-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 0,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 8,
+                                        "unit": "px"
+                                    }
+                                }
+                            }
+                        },
+                        "display": {
+                            "$$type": "string",
+                            "value": "flex"
+                        },
+                        "flex-direction": {
+                            "$$type": "string",
+                            "value": "row"
+                        },
+                        "gap": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 10,
+                                "unit": "px"
+                            }
+                        },
+                        "justify-content": {
+                            "$$type": "string",
+                            "value": "space-between"
+                        },
+                        "align-items": {
+                            "$$type": "string",
+                            "value": "center"
+                        }
+                    },
+                    "custom_css": null
+                }
+            ]
+        },
+        {
+            "id": "g-50cfc36",
+            "label": "fleche-ronde",
+            "groupe": "Fiches et listes",
+            "description": "Flèche ronde d'un lien : le texte (ex. « Voir la réalisation ») reste lu par Google et les lecteurs d'écran, seule la flèche se voit.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "width": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 38,
+                                "unit": "px"
+                            }
+                        },
+                        "height": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 38,
+                                "unit": "px"
+                            }
+                        },
+                        "overflow": {
+                            "$$type": "string",
+                            "value": "hidden"
+                        },
+                        "position": {
+                            "$$type": "string",
+                            "value": "relative"
+                        },
+                        "font-family": {
+                            "$$type": "font-family",
+                            "value": "Hanken Grotesk"
+                        },
+                        "font-weight": {
+                            "$$type": "string",
+                            "value": "700"
+                        },
+                        "font-size": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 15,
+                                "unit": "px"
+                            }
+                        },
+                        "color": {
+                            "$$type": "color",
+                            "value": "#4A2BB8"
+                        },
+                        "line-height": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 38,
+                                "unit": "px"
+                            }
+                        },
+                        "border-radius": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 50,
+                                "unit": "%"
+                            }
+                        },
+                        "background": {
+                            "$$type": "background",
+                            "value": {
+                                "color": {
+                                    "$$type": "color",
+                                    "value": "#FFFFFF"
+                                }
+                            }
+                        },
+                        "box-shadow": {
+                            "$$type": "box-shadow",
+                            "value": [
+                                {
+                                    "$$type": "shadow",
+                                    "value": {
+                                        "hOffset": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 0,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "vOffset": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 0,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "blur": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 0,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "spread": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 1,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "color": {
+                                            "$$type": "color",
+                                            "value": "rgba(91,59,234,0.22)"
+                                        },
+                                        "position": {
+                                            "$$type": "string",
+                                            "value": "inset"
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        "transition": {
+                            "$$type": "transition",
+                            "value": [
+                                {
+                                    "$$type": "selection-size",
+                                    "value": {
+                                        "selection": {
+                                            "$$type": "key-value",
+                                            "value": {
+                                                "key": {
+                                                    "$$type": "string",
+                                                    "value": "background-color"
+                                                },
+                                                "value": {
+                                                    "$$type": "string",
+                                                    "value": "background-color"
+                                                }
+                                            }
+                                        },
+                                        "size": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 0.25,
+                                                "unit": "s"
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "$$type": "selection-size",
+                                    "value": {
+                                        "selection": {
+                                            "$$type": "key-value",
+                                            "value": {
+                                                "key": {
+                                                    "$$type": "string",
+                                                    "value": "transform"
+                                                },
+                                                "value": {
+                                                    "$$type": "string",
+                                                    "value": "transform"
+                                                }
+                                            }
+                                        },
+                                        "size": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 0.25,
+                                                "unit": "s"
+                                            }
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        "flex": {
+                            "$$type": "flex",
+                            "value": {
+                                "flexShrink": {
+                                    "$$type": "number",
+                                    "value": 0
+                                }
+                            }
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "d2hpdGUtc3BhY2U6IG5vd3JhcDsgdGV4dC1pbmRlbnQ6IDEyMCU7ICY6OmFmdGVyIHsgY29udGVudDogJ+KGkic7IHBvc2l0aW9uOiBhYnNvbHV0ZTsgdG9wOiAwOyByaWdodDogMDsgYm90dG9tOiAwOyBsZWZ0OiAwOyBkaXNwbGF5OiBmbGV4OyBhbGlnbi1pdGVtczogY2VudGVyOyBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjsgdGV4dC1pbmRlbnQ6IDA7IGZvbnQtc2l6ZTogMTdweDsgZm9udC13ZWlnaHQ6IDgwMDsgY29sb3I6ICM0QTJCQjg7IH0="
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-04e23eb",
+            "label": "grille-types",
+            "groupe": "Fiches et listes",
+            "description": "Grille des types de contenus : 5 colonnes (3 sous 1024 px, 1 en mobile).",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "tablet",
+                        "state": null
+                    },
+                    "props": {
+                        "grid-template-columns": {
+                            "$$type": "string",
+                            "value": "repeat(3, minmax(0, 1fr))"
+                        }
+                    },
+                    "custom_css": null
+                },
+                {
+                    "meta": {
+                        "breakpoint": "mobile",
+                        "state": null
+                    },
+                    "props": {
+                        "grid-template-columns": {
+                            "$$type": "string",
+                            "value": "minmax(0, 1fr)"
+                        }
+                    },
+                    "custom_css": null
+                },
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "padding": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 0,
+                                "unit": "px"
+                            }
+                        },
+                        "margin": {
+                            "$$type": "dimensions",
+                            "value": {
+                                "block-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 40,
+                                        "unit": "px"
+                                    }
+                                }
+                            }
+                        },
+                        "display": {
+                            "$$type": "string",
+                            "value": "grid"
+                        },
+                        "gap": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 14,
+                                "unit": "px"
+                            }
+                        },
+                        "grid-template-columns": {
+                            "$$type": "string",
+                            "value": "repeat(5, minmax(0, 1fr))"
+                        }
+                    },
+                    "custom_css": null
+                }
+            ]
+        },
+        {
+            "id": "g-0b58d6c",
+            "label": "vers-type",
+            "groupe": "Fiches et listes",
+            "description": "Ce que devient le contenu, sous un trait en pointillés.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "position": {
+                            "$$type": "string",
+                            "value": "relative"
+                        },
+                        "padding": {
+                            "$$type": "dimensions",
+                            "value": {
+                                "block-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 14,
+                                        "unit": "px"
+                                    }
+                                }
+                            }
+                        },
+                        "margin": {
+                            "$$type": "dimensions",
+                            "value": {
+                                "block-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 8,
+                                        "unit": "px"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "Jjo6YmVmb3JlIHsgY29udGVudDogJyc7IHBvc2l0aW9uOiBhYnNvbHV0ZTsgdG9wOiAwOyBsZWZ0OiAwOyByaWdodDogMDsgaGVpZ2h0OiAycHg7IGJhY2tncm91bmQ6IHJlcGVhdGluZy1saW5lYXItZ3JhZGllbnQoOTBkZWcsICNDNEI1RkQgMHB4LCAjQzRCNUZEIDZweCwgcmdiYSgwLDAsMCwwKSA2cHgsIHJnYmEoMCwwLDAsMCkgMTFweCk7IH0="
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-9cd6870",
+            "label": "schema-eventail",
+            "groupe": "Fiches et listes",
+            "description": "Schéma « un document, plusieurs vidéos » : 3 vidéos à gauche, le document au centre, 3 vidéos à droite, reliés par des flèches en pointillés. En mobile : le document en haut, les vidéos dessous.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "mobile",
+                        "state": null
+                    },
+                    "props": {
+                        "grid-template-columns": {
+                            "$$type": "string",
+                            "value": "minmax(0, 1fr)"
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "cm93LWdhcDogMTRweDs="
+                    }
+                },
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "column-gap": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 80,
+                                "unit": "px"
+                            }
+                        },
+                        "padding": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 0,
+                                "unit": "px"
+                            }
+                        },
+                        "margin": {
+                            "$$type": "dimensions",
+                            "value": {
+                                "block-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 44,
+                                        "unit": "px"
+                                    }
+                                }
+                            }
+                        },
+                        "display": {
+                            "$$type": "string",
+                            "value": "grid"
+                        },
+                        "grid-template-columns": {
+                            "$$type": "string",
+                            "value": "minmax(0, 1fr) auto minmax(0, 1fr)"
+                        },
+                        "align-items": {
+                            "$$type": "string",
+                            "value": "center"
+                        }
+                    },
+                    "custom_css": null
+                }
+            ]
+        },
+        {
+            "id": "g-bc55fa0",
+            "label": "branches-schema",
+            "groupe": "Fiches et listes",
+            "description": "Colonne de vidéos du schéma (avec branches-gauche ou branches-droite) : un trait vertical en pointillés relie les vidéos.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "position": {
+                            "$$type": "string",
+                            "value": "relative"
+                        },
+                        "padding": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 0,
+                                "unit": "px"
+                            }
+                        },
+                        "display": {
+                            "$$type": "string",
+                            "value": "flex"
+                        },
+                        "flex-direction": {
+                            "$$type": "string",
+                            "value": "column"
+                        },
+                        "gap": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 14,
+                                "unit": "px"
+                            }
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "Jjo6YmVmb3JlIHsgcG9zaXRpb246IHJlbGF0aXZlOyB0b3A6IGF1dG87IHJpZ2h0OiBhdXRvOyBib3R0b206IGF1dG87IGxlZnQ6IGF1dG87IGhlaWdodDogYXV0bzsgd2lkdGg6IGF1dG87IG9wYWNpdHk6IDE7IG1peC1ibGVuZC1tb2RlOiBub3JtYWw7IGJvcmRlcjogMDsgY29udGVudDogJyc7IHBvc2l0aW9uOiBhYnNvbHV0ZTsgdG9wOiAzMnB4OyBib3R0b206IDMycHg7IHdpZHRoOiAycHg7IGJhY2tncm91bmQ6IHJlcGVhdGluZy1saW5lYXItZ3JhZGllbnQoMTgwZGVnLCAjQzRCNUZEIDBweCwgI0M0QjVGRCA2cHgsIHJnYmEoMCwwLDAsMCkgNnB4LCByZ2JhKDAsMCwwLDApIDExcHgpOyBhbmltYXRpb246IHJsLXRpcmV0cy12IDEuMnMgbGluZWFyIGluZmluaXRlOyB9ICYgPiAuc29ydGllLXNjaGVtYTo6YmVmb3JlIHsgcG9zaXRpb246IHJlbGF0aXZlOyB0b3A6IGF1dG87IHJpZ2h0OiBhdXRvOyBib3R0b206IGF1dG87IGxlZnQ6IGF1dG87IGhlaWdodDogYXV0bzsgd2lkdGg6IGF1dG87IG9wYWNpdHk6IDE7IG1peC1ibGVuZC1tb2RlOiBub3JtYWw7IGJvcmRlcjogMDsgY29udGVudDogJyc7IHBvc2l0aW9uOiBhYnNvbHV0ZTsgdG9wOiA1MCU7IHdpZHRoOiAzMHB4OyBoZWlnaHQ6IDJweDsgYmFja2dyb3VuZDogcmVwZWF0aW5nLWxpbmVhci1ncmFkaWVudCg5MGRlZywgI0M0QjVGRCAwcHgsICNDNEI1RkQgNnB4LCByZ2JhKDAsMCwwLDApIDZweCwgcmdiYSgwLDAsMCwwKSAxMXB4KTsgYW5pbWF0aW9uOiBybC10aXJldHMtaCAxLjJzIGxpbmVhciBpbmZpbml0ZTsgfSAmID4gLnNvcnRpZS1zY2hlbWE6OmFmdGVyIHsgcG9zaXRpb246IHJlbGF0aXZlOyB0b3A6IGF1dG87IHJpZ2h0OiBhdXRvOyBib3R0b206IGF1dG87IGxlZnQ6IGF1dG87IGhlaWdodDogYXV0bzsgd2lkdGg6IGF1dG87IG9wYWNpdHk6IDE7IG1peC1ibGVuZC1tb2RlOiBub3JtYWw7IGJvcmRlcjogMDsgY29udGVudDogJyc7IHBvc2l0aW9uOiBhYnNvbHV0ZTsgdG9wOiBjYWxjKDUwJSAtIDVweCk7IHdpZHRoOiA4cHg7IGhlaWdodDogMTJweDsgYmFja2dyb3VuZC1jb2xvcjogI0M0QjVGRDsgfQ=="
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-e6debb9",
+            "label": "sortie-schema",
+            "groupe": "Fiches et listes",
+            "description": "Une vidéo du schéma (carte sombre translucide).",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "min-height": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 64,
+                                "unit": "px"
+                            }
+                        },
+                        "position": {
+                            "$$type": "string",
+                            "value": "relative"
+                        },
+                        "padding": {
+                            "$$type": "dimensions",
+                            "value": {
+                                "block-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 12,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 14,
+                                        "unit": "px"
+                                    }
+                                },
+                                "block-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 12,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 14,
+                                        "unit": "px"
+                                    }
+                                }
+                            }
+                        },
+                        "border-radius": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 16,
+                                "unit": "px"
+                            }
+                        },
+                        "background": {
+                            "$$type": "background",
+                            "value": {
+                                "background-overlay": {
+                                    "$$type": "background-overlay",
+                                    "value": [
+                                        {
+                                            "$$type": "background-gradient-overlay",
+                                            "value": {
+                                                "type": {
+                                                    "$$type": "string",
+                                                    "value": "linear"
+                                                },
+                                                "stops": {
+                                                    "$$type": "gradient-color-stop",
+                                                    "value": [
+                                                        {
+                                                            "$$type": "color-stop",
+                                                            "value": {
+                                                                "color": {
+                                                                    "$$type": "color",
+                                                                    "value": "rgba(255,255,255,0.07)"
+                                                                },
+                                                                "offset": {
+                                                                    "$$type": "number",
+                                                                    "value": 0
+                                                                }
+                                                            }
+                                                        },
+                                                        {
+                                                            "$$type": "color-stop",
+                                                            "value": {
+                                                                "color": {
+                                                                    "$$type": "color",
+                                                                    "value": "rgba(255,255,255,0.07)"
+                                                                },
+                                                                "offset": {
+                                                                    "$$type": "number",
+                                                                    "value": 100
+                                                                }
+                                                            }
+                                                        }
+                                                    ]
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "$$type": "background-gradient-overlay",
+                                            "value": {
+                                                "type": {
+                                                    "$$type": "string",
+                                                    "value": "linear"
+                                                },
+                                                "stops": {
+                                                    "$$type": "gradient-color-stop",
+                                                    "value": [
+                                                        {
+                                                            "$$type": "color-stop",
+                                                            "value": {
+                                                                "color": {
+                                                                    "$$type": "color",
+                                                                    "value": "rgba(0,0,0,0)"
+                                                                },
+                                                                "offset": {
+                                                                    "$$type": "number",
+                                                                    "value": 0
+                                                                }
+                                                            }
+                                                        },
+                                                        {
+                                                            "$$type": "color-stop",
+                                                            "value": {
+                                                                "color": {
+                                                                    "$$type": "color",
+                                                                    "value": "rgba(0,0,0,0)"
+                                                                },
+                                                                "offset": {
+                                                                    "$$type": "number",
+                                                                    "value": 100
+                                                                }
+                                                            }
+                                                        }
+                                                    ]
+                                                }
+                                            }
+                                        }
+                                    ]
+                                },
+                                "color": {
+                                    "$$type": "color",
+                                    "value": "transparent"
+                                }
+                            }
+                        },
+                        "box-shadow": {
+                            "$$type": "box-shadow",
+                            "value": [
+                                {
+                                    "$$type": "shadow",
+                                    "value": {
+                                        "hOffset": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 0,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "vOffset": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 0,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "blur": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 0,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "spread": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 1,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "color": {
+                                            "$$type": "color",
+                                            "value": "rgba(255,255,255,0.13)"
+                                        },
+                                        "position": {
+                                            "$$type": "string",
+                                            "value": "inset"
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        "display": {
+                            "$$type": "string",
+                            "value": "flex"
+                        },
+                        "align-items": {
+                            "$$type": "string",
+                            "value": "center"
+                        }
+                    },
+                    "custom_css": null
+                }
+            ]
+        },
+        {
+            "id": "g-b2ad1d7",
+            "label": "texte-sortie",
+            "groupe": "Fiches et listes",
+            "description": "Texte d'une vidéo du schéma : format en gras, usage dessous, petit visuel du format à côté (forme-verticale, forme-carree pour changer).",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "width": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 100,
+                                "unit": "%"
+                            }
+                        },
+                        "position": {
+                            "$$type": "string",
+                            "value": "relative"
+                        },
+                        "font-family": {
+                            "$$type": "font-family",
+                            "value": "Hanken Grotesk"
+                        },
+                        "font-size": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 13,
+                                "unit": "px"
+                            }
+                        },
+                        "line-height": {
+                            "$$type": "size",
+                            "value": {
+                                "size": "1.4",
+                                "unit": "custom"
+                            }
+                        },
+                        "padding": {
+                            "$$type": "dimensions",
+                            "value": {
+                                "inline-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 60,
+                                        "unit": "px"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "Y29sb3I6IHZhcigtLXJsLWxlZ2VuZGUsICNCNkIwQ0MpOyAmIHN0cm9uZyB7IGZvbnQtc2l6ZTogMTVweDsgZm9udC13ZWlnaHQ6IDcwMDsgY29sb3I6IHZhcigtLXJsLXRleHRlLCAjRkFGOUY3KTsgfSAmOjpiZWZvcmUgeyBjb250ZW50OiAnJzsgcG9zaXRpb246IGFic29sdXRlOyBsZWZ0OiAwOyB0b3A6IDUwJTsgd2lkdGg6IDQ2cHg7IGhlaWdodDogMjZweDsgbWFyZ2luLXRvcDogLTEzcHg7IGJvcmRlci1yYWRpdXM6IDZweDsgYmFja2dyb3VuZDogbGluZWFyLWdyYWRpZW50KDE1MGRlZywgIzhFNERFNiwgI0ZGOEE1Qik7IH0="
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-bb3e7c4",
+            "label": "numero-temps",
+            "groupe": "Fiches et listes",
+            "description": "Numéro d'une étape (01, 02…).",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "font-family": {
+                            "$$type": "font-family",
+                            "value": "Bricolage Grotesque"
+                        },
+                        "font-weight": {
+                            "$$type": "string",
+                            "value": "800"
+                        },
+                        "font-size": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 34,
+                                "unit": "px"
+                            }
+                        },
+                        "color": {
+                            "$$type": "color",
+                            "value": "#6F3FD6"
+                        },
+                        "letter-spacing": {
+                            "$$type": "size",
+                            "value": {
+                                "size": -0.03,
+                                "unit": "em"
+                            }
+                        },
+                        "line-height": {
+                            "$$type": "size",
+                            "value": {
+                                "size": "1",
+                                "unit": "custom"
+                            }
+                        }
+                    },
+                    "custom_css": null
+                }
+            ]
+        },
+        {
+            "id": "g-e35f992",
+            "label": "etiquette-qui",
+            "groupe": "Fiches et listes",
+            "description": "Petite étiquette « qui s'en occupe » d'une étape.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "font-family": {
+                            "$$type": "font-family",
+                            "value": "Hanken Grotesk"
+                        },
+                        "font-weight": {
+                            "$$type": "string",
+                            "value": "700"
+                        },
+                        "font-size": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 12,
+                                "unit": "px"
+                            }
+                        },
+                        "color": {
+                            "$$type": "color",
+                            "value": "#4A2BB8"
+                        },
+                        "line-height": {
+                            "$$type": "size",
+                            "value": {
+                                "size": "1.4",
+                                "unit": "custom"
+                            }
+                        },
+                        "padding": {
+                            "$$type": "dimensions",
+                            "value": {
+                                "block-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 3,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 10,
+                                        "unit": "px"
+                                    }
+                                },
+                                "block-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 3,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 10,
+                                        "unit": "px"
+                                    }
+                                }
+                            }
+                        },
+                        "margin": {
+                            "$$type": "dimensions",
+                            "value": {
+                                "block-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 4,
+                                        "unit": "px"
+                                    }
+                                }
+                            }
+                        },
+                        "border-radius": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 999,
+                                "unit": "px"
+                            }
+                        },
+                        "background": {
+                            "$$type": "background",
+                            "value": {
+                                "color": {
+                                    "$$type": "color",
+                                    "value": "#EDE6FF"
+                                }
+                            }
+                        },
+                        "display": {
+                            "$$type": "string",
+                            "value": "inline-block"
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "d2lkdGg6IGZpdC1jb250ZW50Ow=="
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-50b8879",
+            "label": "apercu-cas",
+            "groupe": "Fiches et listes",
+            "description": "Vignettes des vidéos d'un cas client (3 par ligne).",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "padding": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 0,
+                                "unit": "px"
+                            }
+                        },
+                        "margin": {
+                            "$$type": "dimensions",
+                            "value": {
+                                "block-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 16,
+                                        "unit": "px"
+                                    }
+                                }
+                            }
+                        },
+                        "display": {
+                            "$$type": "string",
+                            "value": "grid"
+                        },
+                        "gap": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 8,
+                                "unit": "px"
+                            }
+                        },
+                        "grid-template-columns": {
+                            "$$type": "string",
+                            "value": "repeat(3, minmax(0, 1fr))"
+                        }
+                    },
+                    "custom_css": null
+                }
+            ]
+        },
+        {
+            "id": "g-7a32ea1",
+            "label": "chiffres-cas",
+            "groupe": "Fiches et listes",
+            "description": "Rangée des chiffres d'un cas client.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "padding": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 0,
+                                "unit": "px"
+                            }
+                        },
+                        "margin": {
+                            "$$type": "dimensions",
+                            "value": {
+                                "block-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 16,
+                                        "unit": "px"
+                                    }
+                                }
+                            }
+                        },
+                        "display": {
+                            "$$type": "string",
+                            "value": "flex"
+                        },
+                        "flex-direction": {
+                            "$$type": "string",
+                            "value": "row"
+                        },
+                        "flex-wrap": {
+                            "$$type": "string",
+                            "value": "wrap"
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "Z2FwOiAxMHB4IDI2cHg7"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-771e544",
+            "label": "chiffre-cas",
+            "groupe": "Fiches et listes",
+            "description": "Un chiffre d'un cas client : valeur en gras (grande), libellé dessous.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "font-family": {
+                            "$$type": "font-family",
+                            "value": "Hanken Grotesk"
+                        },
+                        "font-size": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 13,
+                                "unit": "px"
+                            }
+                        },
+                        "line-height": {
+                            "$$type": "size",
+                            "value": {
+                                "size": "1.4",
+                                "unit": "custom"
+                            }
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "Y29sb3I6IHZhcigtLXJsLWxlZ2VuZGUsIHZhcigtLWxlZ2VuZGUpKTsgJiBzdHJvbmcgeyBkaXNwbGF5OiBibG9jazsgZm9udC1mYW1pbHk6IEJyaWNvbGFnZSBHcm90ZXNxdWU7IGZvbnQtc2l6ZTogMjZweDsgbGluZS1oZWlnaHQ6IDEuMTsgZm9udC13ZWlnaHQ6IDcwMDsgbGV0dGVyLXNwYWNpbmc6IC0wLjAzZW07IGNvbG9yOiB2YXIoLS1ybC10ZXh0ZSwgdmFyKC0tZW5jcmUpKTsgfQ=="
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-0dfd41a",
+            "label": "citation-cas",
+            "groupe": "Fiches et listes",
+            "description": "Citation courte d'un client, avec un trait lilas à gauche.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "font-family": {
+                            "$$type": "font-family",
+                            "value": "Bricolage Grotesque"
+                        },
+                        "font-weight": {
+                            "$$type": "string",
+                            "value": "600"
+                        },
+                        "font-size": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 18,
+                                "unit": "px"
+                            }
+                        },
+                        "line-height": {
+                            "$$type": "size",
+                            "value": {
+                                "size": "1.4",
+                                "unit": "custom"
+                            }
+                        },
+                        "padding": {
+                            "$$type": "dimensions",
+                            "value": {
+                                "inline-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 16,
+                                        "unit": "px"
+                                    }
+                                }
+                            }
+                        },
+                        "margin": {
+                            "$$type": "dimensions",
+                            "value": {
+                                "block-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 16,
+                                        "unit": "px"
+                                    }
+                                }
+                            }
+                        },
+                        "border-width": {
+                            "$$type": "border-width-v2",
+                            "value": {
+                                "inline-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 3,
+                                        "unit": "px"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "Ym9yZGVyLWxlZnQtc3R5bGU6IHNvbGlkOyBib3JkZXItbGVmdC1jb2xvcjogI0M0QjVGRDsgY29sb3I6IHZhcigtLXJsLXRleHRlLCB2YXIoLS1lbmNyZSkpOw=="
                     }
                 }
             ]
