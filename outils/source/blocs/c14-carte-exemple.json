@@ -1,0 +1,87 @@
+{
+ "cle": "c14-carte-exemple",
+ "titre": "Rolling · Carte réalisation façon Avant → Après (page Contact)",
+ "type": "e-flexbox",
+ "apercu": "rolling_realisation",
+ "composition": {
+  "xml_structure": "<e-flexbox configuration-id=\"Carte réalisation (Avant → Après)\"><e-div-block configuration-id=\"Réalisation exemple · image\"><e-image configuration-id=\"Réalisation exemple · vignette\"></e-image><e-paragraph configuration-id=\"Réalisation exemple · client\"></e-paragraph></e-div-block><e-flexbox configuration-id=\"Réalisation exemple · bas\"><e-flexbox configuration-id=\"Réalisation exemple · légende\"><e-paragraph configuration-id=\"Réalisation exemple · avant (orange)\"></e-paragraph><e-paragraph configuration-id=\"Réalisation exemple · avant (bleu)\"></e-paragraph><e-paragraph configuration-id=\"Réalisation exemple · après\"></e-paragraph></e-flexbox><e-heading configuration-id=\"Réalisation exemple · titre\"></e-heading><e-paragraph configuration-id=\"Réalisation exemple · voir\"></e-paragraph></e-flexbox></e-flexbox>",
+  "element_config": {
+   "Carte réalisation (Avant → Après)": {
+    "link": {
+     "destination": "⟦rolling-lien|lien=fiche⟧"
+    }
+   },
+   "Réalisation exemple · vignette": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/dynamique/rolling-image/image=une.png"
+     },
+     "size": "medium_large"
+    }
+   },
+   "Réalisation exemple · client": {
+    "paragraph": "⟦rolling-champ|champ=client⟧"
+   },
+   "Réalisation exemple · avant (orange)": {
+    "paragraph": "⟦rolling-champ|champ=avant⟧"
+   },
+   "Réalisation exemple · avant (bleu)": {
+    "paragraph": "⟦rolling-champ|champ=avant⟧"
+   },
+   "Réalisation exemple · après": {
+    "paragraph": "⟦rolling-champ|champ=apres⟧"
+   },
+   "Réalisation exemple · titre": {
+    "tag": "h3",
+    "title": "⟦rolling-titre|forme=titre⟧"
+   },
+   "Réalisation exemple · voir": {
+    "paragraph": "Voir la réalisation"
+   }
+  },
+  "classes": {
+   "Carte réalisation (Avant → Après)": [
+    "carte-verre",
+    "carte-exemple"
+   ],
+   "Réalisation exemple · image": [
+    "cadre-exemple"
+   ],
+   "Réalisation exemple · vignette": [
+    "image-vignette"
+   ],
+   "Réalisation exemple · client": [
+    "pastille-client",
+    "si-client"
+   ],
+   "Réalisation exemple · bas": [
+    "bas-exemple"
+   ],
+   "Réalisation exemple · légende": [
+    "rangee",
+    "si-avant"
+   ],
+   "Réalisation exemple · avant (orange)": [
+    "tag-orange",
+    "sans-tonalite--bleu"
+   ],
+   "Réalisation exemple · avant (bleu)": [
+    "tag-bleu",
+    "si-tonalite--bleu"
+   ],
+   "Réalisation exemple · après": [
+    "fleche-resultat",
+    "si-apres"
+   ],
+   "Réalisation exemple · titre": [
+    "titre-xs",
+    "sans-avant"
+   ],
+   "Réalisation exemple · voir": [
+    "fleche-ronde"
+   ]
+  },
+  "style": {}
+ },
+ "brut": {}
+}

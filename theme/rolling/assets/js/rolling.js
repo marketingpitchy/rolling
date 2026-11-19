@@ -316,6 +316,11 @@
 			bande.appendChild( copie );
 		} );
 
+		// Portraits de l'équipe en mobile : vitesse fixe (environ 55 px par seconde) quel que soit le nombre de personnes.
+		if ( bande.matches( '.equipe-defilante, .defile-mobile' ) && window.matchMedia( '(max-width: 767px)' ).matches ) {
+			bande.style.animationDuration = Math.max( 8, Math.round( bande.scrollWidth / 2 / 55 ) ) + 's';
+		}
+
 		if ( bouton ) {
 			// Deux libellés dans le bouton (deux <span>) : « Arrêter… » puis « Relancer… ».
 			var libelles = bouton.querySelectorAll( 'span' );

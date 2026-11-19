@@ -941,6 +941,24 @@ carte_realisation = F('Carte réalisation', ['carte-liste'], tag='article', enfa
 ])
 
 
+# 0.7.4 : carte réalisation au format des Avant → Après de l'accueil (nom du client sur l'image, flèche vers la fiche).
+carte_exemple = F('Carte réalisation (Avant → Après)', ['carte-verre', 'carte-exemple'], lien=FICHE, enfants=[
+    D('Réalisation exemple · image', ['cadre-exemple'], enfants=[
+        I('Réalisation exemple · vignette', DYN('rolling-image', image='une'), cls=['image-vignette'], taille='medium_large'),
+        P('Réalisation exemple · client', DYN('rolling-champ', champ='client'), ['pastille-client', 'si-client']),
+    ]),
+    F('Réalisation exemple · bas', ['bas-exemple'], enfants=[
+        F('Réalisation exemple · légende', ['rangee', 'si-avant'], enfants=[
+            P('Réalisation exemple · avant (orange)', DYN('rolling-champ', champ='avant'), ['tag-orange', 'sans-tonalite--bleu']),
+            P('Réalisation exemple · avant (bleu)', DYN('rolling-champ', champ='avant'), ['tag-bleu', 'si-tonalite--bleu']),
+            P('Réalisation exemple · après', DYN('rolling-champ', champ='apres'), ['fleche-resultat', 'si-apres']),
+        ]),
+        H('Réalisation exemple · titre', DYN('rolling-titre', forme='titre'), 'h3', ['titre-xs', 'sans-avant']),
+        P('Réalisation exemple · voir', 'Voir la réalisation', ['fleche-ronde']),
+    ]),
+])
+
+
 def carte_temoignage(une=False):
     p = 'Témoin à la une' if une else 'Témoin'
     return F('Carte témoignage' + (' à la une' if une else ''), ['carte-verre', 'temoin'] + (['temoin-une'] if une else []), tag='article', enfants=[
@@ -1851,7 +1869,7 @@ contact_realisations = F('Contact · réalisations', ['section', 'section-suite'
             chiffre('Contact · plateforme', ['1'], '1', 'plateforme de production propriétaire'),
         ]),
         H('Contact · réalisations · titre masqué', 'Nos dernières réalisations', 'h3', ['texte-masque']),
-        W('Contact · réalisations · liste', 'rolling-liste', contenu='realisations', nombre='3', classe='grille-verre', extraits='0'),
+        W('Contact · réalisations · liste', 'rolling-liste', contenu='realisations', nombre='3', classe='grille-3', carte_theme='exemple', extraits='0'),
         F('Contact · réalisations · bouton', ['rangee'], 'justify-content: center; margin-top: 36px;', enfants=[
             B('Contact · réalisations · toutes', 'Voir toutes les réalisations', '/realisations/', ['bouton-principal']),
         ]),
@@ -2484,6 +2502,7 @@ MODELES_SITE = [
     ('c10-aucun-webinar', 'Rolling · Aucun webinar programmé', aucun_webinar, ''),
     ('c11-encart-article', 'Rolling · Encart au milieu des articles', encart_article, 'post'),
     ('c12-carte-bulle', 'Rolling · Bulle de citation (autour du showreel)', carte_bulle, 'rolling_temoignage'),
+    ('c14-carte-exemple', 'Rolling · Carte réalisation façon Avant → Après (page Contact)', carte_exemple, 'rolling_realisation'),
     ('c13-bandeau-newsletter', 'Rolling · Encart newsletter (glissé dans la liste du blog)', encart_newsletter, ''),
     ('f1-fiche-realisation', 'Rolling · Fiche réalisation', fiche_realisation, 'rolling_realisation'),
     ('f2-fiche-temoignage', 'Rolling · Fiche témoignage', fiche_temoignage, 'rolling_temoignage'),

@@ -111,7 +111,7 @@
     "title": "Nos dernières réalisations"
    },
    "Contact · réalisations · liste": {
-    "paragraph": "⟦widget:rolling-liste|contenu=realisations|nombre=3|classe=grille-verre|extraits=0⟧"
+    "paragraph": "⟦widget:rolling-liste|contenu=realisations|nombre=3|classe=grille-3|carte_theme=exemple|extraits=0⟧"
    },
    "Contact · réalisations · toutes": {
     "text": "Voir toutes les réalisations",

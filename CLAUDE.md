@@ -770,6 +770,15 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   **Mot-clé « content repurposing »** : H1, chapô (gras), question de FAQ ; adresse `/content-repurposing/` (installation.json)
   + 301 depuis `/du-contenu-a-la-video/` si la page existe (`Rolling_Seo::offres_vers_accueil`) ; title / description Yoast
   proposés. WordPress ne redirige pas l'ancien slug d'une page (seulement les articles).
+- **0.7.4** : Contact « déjà à l'œuvre » = cartes au format des Avant / Après de l'accueil : modèle `c14-carte-exemple`
+  (carte-exemple liée à la fiche, image à la une, nom du client en `pastille-client si-client`, légende avant / après, titre
+  h3 si pas de « Au départ » = repère `sans-avant`, flèche ronde) ; widget Liste `carte_theme=exemple`
+  (`c1-carte-realisation-exemple` ⇒ c14). Équipes qui défilent en mobile : rolling.js fixe la durée à ~55 px/s
+  (`.equipe-defilante, .defile-mobile`, ≤ 767 px ; 15-18 s au lieu de 40-50 s). Newsletter : formulaire HubSpot réel
+  reproduit (hôtes js.hsforms.net, forms.hsforms.com, forms-na1.hsforms.com ajoutés ; en test, v2.js servi par route
+  Playwright car `//js.hsforms.net` passe en http en local) : case de consentement stylée comme un champ (géante) + puce
+  ⇒ `zone-newsletter` : liste sans puce, case 18 px, libellé en ligne, bouton à côté du champ (ordre : champ, bouton,
+  consentement, mentions).
 - **Chargement de page effet film** (demande avant la fin de la livraison 4) : maquette `maquettes/loading/maquette-loading.html`
   (copie /workspace/maquette-loading.html), 4 options : A amorce 3-2-1, B clap qui se ferme puis rideau, C ouverture
   cinéma (bandes noires + REC + timecode + règle avec la tête de lecture rouge des frises, plus de filet fin), D barre de lecture en haut sans écran. Conseil : C à l'arrivée (première page
@@ -802,7 +811,8 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   Démarrer dockerd à la main (`dockerd &`) si le socket manque. Les conteneurs n'ont pas le proxy :
   télécharger sur l'hôte puis `docker compose cp`.
 - Environnement cloud « rolling » (personnel) : autorise api.wordpress.org, downloads.wordpress.org, wordpress.org,
-  meetings.hubspot.com, static.hsappstatic.net, api.hubspot.com, app.hubspot.com (calendrier de la cliente).
+  meetings.hubspot.com, static.hsappstatic.net, api.hubspot.com, app.hubspot.com (calendrier de la cliente),
+  js.hsforms.net, forms.hsforms.com, forms-na1.hsforms.com (formulaire newsletter).
 - Elementor Pro n'a pas de traduction sur wordpress.org : une partie de l'interface Pro reste en anglais (comme chez la cliente).
 
 ## Méthode imposée

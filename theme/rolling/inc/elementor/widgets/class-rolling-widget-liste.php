@@ -98,6 +98,7 @@ class Rolling_Widget_Liste extends Rolling_Widget {
 				'normale' => __( 'Normale', 'rolling' ),
 				'une'     => __( 'À la une (grande carte)', 'rolling' ),
 				'bulle'   => __( 'Bulle de citation (témoignages)', 'rolling' ),
+				'exemple' => __( 'Façon Avant → Après de l’accueil (réalisations)', 'rolling' ),
 			)
 		);
 		$this->choix( 'modele', __( 'Modèle de carte', 'rolling' ), self::modeles( __( 'Carte du thème', 'rolling' ) ), '0' );
@@ -198,11 +199,12 @@ class Rolling_Widget_Liste extends Rolling_Widget {
 		$suivi = get_option( Rolling_Installateur::OPTION_MODELES, array() );
 		$cle   = ( self::CONTENUS[ $contenu ][1] ?? '' ) . $suffixe;
 		$cles  = array(
-			'c2-carte-temoignage-une'   => 'c3-carte-temoignage-une',
-			'c6-carte-webinar-une'      => 'c7-carte-webinar-une',
-			'c4-carte-article-une'      => 'c9-carte-article-une',
-			'c6-carte-webinar-vide'     => 'c10-aucun-webinar',
-			'c2-carte-temoignage-bulle' => 'c12-carte-bulle',
+			'c2-carte-temoignage-une'      => 'c3-carte-temoignage-une',
+			'c6-carte-webinar-une'         => 'c7-carte-webinar-une',
+			'c4-carte-article-une'         => 'c9-carte-article-une',
+			'c6-carte-webinar-vide'        => 'c10-aucun-webinar',
+			'c2-carte-temoignage-bulle'    => 'c12-carte-bulle',
+			'c1-carte-realisation-exemple' => 'c14-carte-exemple',
 		);
 		$cle   = $cles[ $cle ] ?? $cle;
 
@@ -353,7 +355,7 @@ class Rolling_Widget_Liste extends Rolling_Widget {
 	protected function render() {
 		$r                   = $this->get_settings_for_display();
 		list( $ids, $reste ) = $this->contenus( $r );
-		$variante            = in_array( $r['carte_theme'] ?? '', array( 'une', 'bulle' ), true ) ? '-' . $r['carte_theme'] : '';
+		$variante            = in_array( $r['carte_theme'] ?? '', array( 'une', 'bulle', 'exemple' ), true ) ? '-' . $r['carte_theme'] : '';
 		$modele              = (int) $r['modele'] ? (int) $r['modele'] : self::modele_du_theme( $r['contenu'], $variante );
 		$modele              = $modele ? $modele : self::modele_du_theme( $r['contenu'] );
 		$modele_une          = (int) $r['modele_une'];
@@ -402,7 +404,7 @@ class Rolling_Widget_Liste extends Rolling_Widget {
 			setup_postdata( $post );
 			$carte = 0 === $rang && $modele_une ? $modele_une : $modele;
 			if ( $mur ) {
-				$case = 0 === $rang ? ' mur-large' : ( self::vertical( $id ) ? ' mur-haute' : '' );
+				$case   = 0 === $rang ? ' mur-large' : ( self::vertical( $id ) ? ' mur-haute' : '' );
 				$survol = (string) Rolling_Contenus::valeur( 'video', $id );
 				// Au survol (ordinateur), rolling.js lance cette vidéo sans le son dans la vignette.
 				echo '<div class="mur-case' . esc_attr( $case ) . '"' . ( '' !== $survol ? ' data-rl-survol="' . esc_url( $survol ) . '"' : '' ) . '>';
@@ -441,7 +443,7 @@ class Rolling_Widget_Liste extends Rolling_Widget {
 	 * Encart newsletter glissé dans la liste (toute la largeur de la grille), si le formulaire est réglé.
 	 */
 	private static function afficher_newsletter() {
-		$modele = Rolling_Dynamique::modele_fiche( 'newsletter' );
+		$modele  = Rolling_Dynamique::modele_fiche( 'newsletter' );
 		$editeur = \Elementor\Plugin::$instance->editor->is_edit_mode() || \Elementor\Plugin::$instance->preview->is_preview_mode();
 		if ( ! $modele || ( '' === Rolling_Widget_Newsletter::code() && ! $editeur ) ) {
 			return;
