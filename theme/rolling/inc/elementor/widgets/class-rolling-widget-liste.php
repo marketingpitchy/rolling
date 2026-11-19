@@ -78,6 +78,16 @@ class Rolling_Widget_Liste extends Rolling_Widget {
 				'min'         => 0,
 			)
 		);
+		$this->add_control(
+			'newsletter_apres',
+			array(
+				'label'       => __( 'Encart newsletter après la carte n°', 'rolling' ),
+				'description' => __( '0 = pas d’encart. Modèle « Rolling · Encart newsletter » ; rien ne s’affiche si le formulaire n’est pas réglé (Personnaliser > Rolling : newsletter).', 'rolling' ),
+				'type'        => Controls_Manager::NUMBER,
+				'default'     => 0,
+				'min'         => 0,
+			)
+		);
 		$this->texte( 'titre', __( 'Titre au-dessus (affiché seulement s’il y a des cartes)', 'rolling' ), '' );
 		$this->texte( 'titre_classe', __( 'Classes du titre', 'rolling' ), 'label label-violet' );
 		$this->texte( 'classe', __( 'Classe de la grille', 'rolling' ), 'grille-3' );
@@ -405,6 +415,9 @@ class Rolling_Widget_Liste extends Rolling_Widget {
 			if ( $mur || $macon ) {
 				echo '</div>';
 			}
+			if ( (int) ( $r['newsletter_apres'] ?? 0 ) === $rang + 1 ) {
+				self::afficher_newsletter();
+			}
 			$pas = (int) ( $r['extraits'] ?? 0 );
 			if ( $extraits && $pas > 0 && 0 === ( $rang + 1 ) % $pas ) {
 				self::afficher_extrait( array_shift( $extraits ), (string) ( $r['texte_extrait'] ?? '' ) );
@@ -422,6 +435,18 @@ class Rolling_Widget_Liste extends Rolling_Widget {
 			$page = isset( $_GET['voir'] ) ? max( 1, absint( $_GET['voir'] ) ) : 1; // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 			echo '<p class="liste-plus"><a class="bouton-verre bouton-petit" href="' . esc_url( add_query_arg( 'voir', $page + 1 ) ) . '">' . esc_html( $r['plus_texte'] ) . '</a></p>';
 		}
+	}
+
+	/**
+	 * Encart newsletter glissé dans la liste (toute la largeur de la grille), si le formulaire est réglé.
+	 */
+	private static function afficher_newsletter() {
+		$modele = Rolling_Dynamique::modele_fiche( 'newsletter' );
+		$editeur = \Elementor\Plugin::$instance->editor->is_edit_mode() || \Elementor\Plugin::$instance->preview->is_preview_mode();
+		if ( ! $modele || ( '' === Rolling_Widget_Newsletter::code() && ! $editeur ) ) {
+			return;
+		}
+		echo '<div class="rl-encart-liste">' . \Elementor\Plugin::$instance->frontend->get_builder_content_for_display( $modele, false ) . '</div>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- HTML produit par Elementor.
 	}
 
 	/**

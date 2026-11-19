@@ -2447,6 +2447,37 @@
      "css": "flex-direction: row; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 18px; padding: 26px 30px; @media(--mobile) { padding: 20px; }"
     },
     {
+     "label": "si-newsletter",
+     "description": "Repère sans style : le thème masque ce bloc tant que le formulaire de la newsletter n'est pas réglé (Personnaliser > Rolling : newsletter).",
+     "css": "--rl-repere: 1;"
+    },
+    {
+     "label": "bandeau-newsletter",
+     "description": "Encart newsletter (avec carte-verre) : picto enveloppe, titre et texte, formulaire à droite (empilé en mobile).",
+     "css": "display: grid; grid-template-columns: 72px minmax(0, 1fr) minmax(0, 440px); gap: 14px 28px; align-items: center; padding: 26px 30px; &::after { position: relative; top: auto; right: auto; bottom: auto; left: auto; height: auto; width: auto; opacity: 1; mix-blend-mode: normal; border: 0; content: ''; grid-column: 1; grid-row: 1; width: 72px; height: 72px; border-radius: 20px; background: url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 26' fill='none' stroke='%235B3BEA' stroke-width='2.4' stroke-linejoin='round'%3E%3Crect x='1.5' y='1.5' width='33' height='23' rx='4' fill='%23FFFFFF'/%3E%3Cpath d='M2.5 3.5l15.5 11 15.5-11'/%3E%3C/svg%3E\") center / 36px 26px no-repeat, linear-gradient(150deg, #EDE6FF, #FFD1BF); box-shadow: 0 16px 30px -18px rgba(91,59,234,0.6); } @media(--tablet) { grid-template-columns: 72px minmax(0, 1fr); & > .inscription-newsletter { grid-column: 2; } } @media(--mobile) { grid-template-columns: minmax(0, 1fr); padding: 22px 18px; & > .inscription-newsletter { grid-column: 1; } &::after { order: -1; grid-row: auto; width: 56px; height: 56px; border-radius: 16px; } }"
+    },
+    {
+     "label": "newsletter-article",
+     "description": "Avec bandeau-newsletter : version fin d'article (formulaire sous le texte).",
+     "css": "grid-template-columns: 72px minmax(0, 1fr); align-items: start; margin-top: 40px; & > .inscription-newsletter { grid-column: 2; } &::after { grid-row: 1 / span 2; }",
+     "brut": "@media (max-width: 767px) { grid-template-columns: minmax(0, 1fr); & > .inscription-newsletter { grid-column: 1; } &::after { grid-row: auto; } }"
+    },
+    {
+     "label": "inscription-newsletter",
+     "description": "Formulaire de la newsletter et sa mention (« Une fois par mois… »).",
+     "css": "display: flex; flex-direction: column; gap: 10px; padding: 0;"
+    },
+    {
+     "label": "zone-newsletter",
+     "description": "Formulaire HubSpot de la newsletter (écrit par le widget) : champ e-mail et bouton en pilules, aux couleurs du site.",
+     "css": "width: 100%; font-family: Hanken Grotesk; & form { display: flex; flex-direction: row; flex-wrap: wrap; align-items: flex-end; gap: 8px; margin: 0; } & fieldset { flex: 1 1 220px; min-width: 0; max-width: none !important; margin: 0; padding: 0; border: 0; } & .hs-form-field { flex: 1 1 220px; margin: 0; } & label { display: block; margin: 0 0 6px; font-size: 13px; font-weight: 600; color: var(--rl-legende, var(--legende)); } & .hs-input { width: 100% !important; min-height: 48px; padding: 0 18px; border: 0; border-radius: 999px; font-family: Hanken Grotesk; font-size: 15px; color: #0F0F12; background-color: #FFFFFF; box-shadow: inset 0 0 0 1px rgba(15,15,18,0.16); } & .hs-input:focus { outline: 3px solid #5B3BEA; outline-offset: 2px; } & .hs_submit .actions { margin: 0; padding: 0; } & .hs-button { min-height: 48px; padding: 0 24px; border: 0; border-radius: 999px; font-family: Hanken Grotesk; font-size: 15px; font-weight: 700; color: #FFFFFF; background-color: #0F0F12; cursor: pointer; } & .hs-button:hover { background-color: #5B3BEA; } & .hs-error-msgs { margin: 6px 0 0; padding: 0; list-style: none; font-size: 13px; color: #A63C14; } & .legal-consent-container, & .hs-richtext { flex-basis: 100%; font-size: 12px; line-height: 1.5; color: var(--rl-legende, var(--legende)); } & .submitted-message { font-size: 16px; font-weight: 600; color: var(--rl-texte, var(--encre)); } & iframe { width: 100%; border: 0; }"
+    },
+    {
+     "label": "newsletter-colonne",
+     "description": "Avec zone-newsletter : champ et bouton l'un sous l'autre (colonne de l'article).",
+     "css": "& form { flex-direction: column; align-items: stretch; } & fieldset, & .hs-form-field { flex: none; width: 100%; } & .hs-button { width: 100%; }"
+    },
+    {
      "label": "chiffre-jeu",
      "description": "Grand chiffre en verre d'une carte à jouer.",
      "css": "display: block; width: auto; height: 92px; max-width: 100%; object-fit: contain; object-position: left center; @media(--mobile) { width: 52px; height: 56px; object-position: center; }",

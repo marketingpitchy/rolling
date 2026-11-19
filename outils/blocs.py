@@ -300,6 +300,36 @@ showreel_fichier = bloc_showreel(True)
 COLONNE = 'display: flex; flex-direction: column; gap: 0;'
 
 
+NL_TITRE = 'La lettre <em>Rolling.</em>'
+NL_TEXTE = 'Une fois par mois : une idée de vidéo à reprendre, des exemples de nos clients et nos prochains webinars en avant-première.'
+NL_MENTION = 'Une fois par mois. Désinscription en un clic.'
+
+
+def bandeau_newsletter(prefixe, titre=NL_TITRE, texte=NL_TEXTE, cls=None, balise='h2'):
+    """Encart newsletter : masqué tant que le formulaire n'est pas réglé (Personnaliser > Rolling : newsletter)."""
+    return F(prefixe, ['carte-verre', 'bandeau-newsletter', 'si-newsletter'] + (cls or []), enfants=[
+        F(prefixe + ' · textes', None, COLONNE + ' padding: 0;', enfants=[
+            H(prefixe + ' · titre', titre, balise, ['titre-sm']),
+            P(prefixe + ' · texte', texte, ['texte'], 'margin-top: 8px;'),
+        ]),
+        F(prefixe + ' · inscription', ['inscription-newsletter'], enfants=[
+            W(prefixe + ' · formulaire', 'rolling-newsletter'),
+            P(prefixe + ' · mention', NL_MENTION, ['texte-petit']),
+        ]),
+    ])
+
+
+def section_newsletter(prefixe):
+    return F(prefixe, ['section', 'section-suite'], tag='section', enfants=[
+        F(prefixe + ' · contenu', ['conteneur'], COLONNE, enfants=[bandeau_newsletter(prefixe + ' · encart')]),
+    ])
+
+
+encart_newsletter = bandeau_newsletter('Encart newsletter')
+
+
+
+
 def entete(prefixe, timecode, surtitre, titres, intro=None, style=None):
     """Haut de section : timecode + sur-titre, titre(s), introduction. titres = [(texte, balise, classes)]."""
     enfants = [F(prefixe + ' · repère', ['sur-titre'], enfants=[
@@ -1289,6 +1319,8 @@ fiche_article = F('Fiche article', None, COLONNE + ' align-items: stretch; paddi
                     I('Article · image · fichier', DYN('rolling-image', image='une'), cls=['image-couvrante'], taille='large'),
                 ]),
                 W('Article · texte', 'rolling-contenu'),
+                bandeau_newsletter('Article · newsletter', 'Cet article vous a été <em>utile&nbsp;?</em>',
+                                   'Recevez le prochain dans votre boîte, avec une idée de vidéo à reprendre. Une fois par mois.', ['newsletter-article']),
                 F('Article · ressources', ['carte-verre', 'bloc-ressources-article', 'si-ressources'], enfants=[
                     P('Article · ressources · label', 'Pour aller plus loin', ['label', 'label-violet']),
                     H('Article · ressources · titre', 'Nos autres <em>ressources.</em>', 'h2', ['titre-xs']),
@@ -1335,6 +1367,11 @@ fiche_article = F('Fiche article', None, COLONNE + ' align-items: stretch; paddi
                         P('Article · lecture · durée', DYN('rolling-article', info='lecture'), ['titre-xs']),
                         P('Article · sommaire · libellé', 'Sommaire', ['label'], 'margin-top: 14px;'),
                         W('Article · sommaire', 'rolling-sommaire'),
+                    ]),
+                    F('Article · newsletter colonne', ['carte-verre', 'carte-outils', 'si-newsletter'], enfants=[
+                        P('Article · newsletter colonne · libellé', 'La lettre Rolling', ['label']),
+                        P('Article · newsletter colonne · titre', 'Une idée vidéo par mois.', ['titre-xs']),
+                        W('Article · newsletter colonne · formulaire', 'rolling-newsletter', classe='zone-newsletter newsletter-colonne'),
                     ]),
                     F('Article · partage et IA', ['carte-verre', 'carte-outils'], enfants=[
                         P('Article · partage · libellé', 'Partager l’article', ['label']),
@@ -1448,7 +1485,7 @@ tem_liste = section_liste('Témoignages · liste', [
 blog_haut = haut_page('Blog · haut', 'Le blog', ['pastille-bleue'], 'Des conseils vidéo <em>pour vos équipes.</em>',
                       'Communication interne, RH, formation, marketing : nos méthodes pour que vos contenus soient enfin regardés.')
 blog_liste = section_liste('Blog · liste', [
-    W('Blog · cartes', 'rolling-liste', contenu='articles', classe='grille-3', filtres='category', tous='Tous les articles', texte_aucun='Aucun article dans cette catégorie.', nombre='10', premiere_une='yes', plus='yes', plus_texte='Articles suivants'),
+    W('Blog · cartes', 'rolling-liste', contenu='articles', classe='grille-3', filtres='category', tous='Tous les articles', texte_aucun='Aucun article dans cette catégorie.', nombre='10', premiere_une='yes', newsletter_apres='1', plus='yes', plus_texte='Articles suivants'),
 ])
 
 guides_haut = haut_page('Guides · haut', 'Ressources · Guides et REX', ['pastille-bleue'], 'Guides et REX, <em>à télécharger.</em>',
@@ -2386,9 +2423,9 @@ PAGES = [
     ('Réalisations', [('p-rea-1-haut', 'Haut de page', rea_haut), ('p-rea-2-liste', 'Liste', rea_liste), ('p-rea-3-faq', 'FAQ', FAQ_BLOCS['rea'])]),
     ('Témoignages', [('p-tem-1-haut', 'Haut de page', tem_haut), ('p-tem-2-liste', 'Liste', tem_liste), ('p-tem-3-faq', 'FAQ', FAQ_BLOCS['tem'])]),
     ('Blog', [('p-blog-1-haut', 'Haut de page', blog_haut), ('p-blog-2-liste', 'Liste', blog_liste), ('p-blog-3-faq', 'FAQ', FAQ_BLOCS['blog'])]),
-    ('Guides', [('p-guides-1-haut', 'Haut de page', guides_haut), ('p-guides-2-liste', 'Liste', guides_liste), ('p-guides-3-faq', 'FAQ', FAQ_BLOCS['guides'])]),
-    ('Webinars', [('p-webinars-1-haut', 'Haut de page', webinars_haut), ('p-webinars-2-liste', 'Liste', webinars_liste), ('p-webinars-3-faq', 'FAQ', FAQ_BLOCS['webinars'])]),
-    ('Replays', [('p-replays-1-haut', 'Haut de page', replays_haut), ('p-replays-2-liste', 'Liste', replays_liste), ('p-replays-3-faq', 'FAQ', FAQ_BLOCS['replays'])]),
+    ('Guides', [('p-guides-1-haut', 'Haut de page', guides_haut), ('p-guides-2-liste', 'Liste', guides_liste), ('p-guides-25-newsletter', 'Newsletter', section_newsletter('Guides · newsletter')), ('p-guides-3-faq', 'FAQ', FAQ_BLOCS['guides'])]),
+    ('Webinars', [('p-webinars-1-haut', 'Haut de page', webinars_haut), ('p-webinars-2-liste', 'Liste', webinars_liste), ('p-webinars-25-newsletter', 'Newsletter', section_newsletter('Webinars · newsletter')), ('p-webinars-3-faq', 'FAQ', FAQ_BLOCS['webinars'])]),
+    ('Replays', [('p-replays-1-haut', 'Haut de page', replays_haut), ('p-replays-2-liste', 'Liste', replays_liste), ('p-replays-25-newsletter', 'Newsletter', section_newsletter('Replays · newsletter')), ('p-replays-3-faq', 'FAQ', FAQ_BLOCS['replays'])]),
     ('Offres', [('p-offres-1-haut', 'Haut de page', offres_haut), ('p-offres-2-formules', '00:01 Les formules', offres_tableau),
                 ('p-offres-3-tournage', '00:02 Création + Tournage', offres_ajout), ('p-offres-4-ensuite', '00:03 Et ensuite', offres_ensuite),
                 ('p-offres-5-faq', "00:04 FAQ de l'abonnement", offres_faq)]),
@@ -2438,6 +2475,7 @@ MODELES_SITE = [
     ('c10-aucun-webinar', 'Rolling · Aucun webinar programmé', aucun_webinar, ''),
     ('c11-encart-article', 'Rolling · Encart au milieu des articles', encart_article, 'post'),
     ('c12-carte-bulle', 'Rolling · Bulle de citation (autour du showreel)', carte_bulle, 'rolling_temoignage'),
+    ('c13-bandeau-newsletter', 'Rolling · Encart newsletter (glissé dans la liste du blog)', encart_newsletter, ''),
     ('f1-fiche-realisation', 'Rolling · Fiche réalisation', fiche_realisation, 'rolling_realisation'),
     ('f2-fiche-temoignage', 'Rolling · Fiche témoignage', fiche_temoignage, 'rolling_temoignage'),
     ('f3-fiche-article', 'Rolling · Article de blog', fiche_article, 'post'),

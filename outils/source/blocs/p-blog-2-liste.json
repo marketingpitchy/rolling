@@ -9,7 +9,7 @@
     "tag": "section"
    },
    "Blog · cartes": {
-    "paragraph": "⟦widget:rolling-liste|contenu=articles|classe=grille-3|filtres=category|tous=Tous les articles|texte_aucun=Aucun article dans cette catégorie.|nombre=10|premiere_une=yes|plus=yes|plus_texte=Articles suivants⟧"
+    "paragraph": "⟦widget:rolling-liste|contenu=articles|classe=grille-3|filtres=category|tous=Tous les articles|texte_aucun=Aucun article dans cette catégorie.|nombre=10|premiere_une=yes|newsletter_apres=1|plus=yes|plus_texte=Articles suivants⟧"
    }
   },
   "classes": {

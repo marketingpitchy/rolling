@@ -752,6 +752,14 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   (conseil), B carte sombre dans la grille, C grande bande sombre après les articles ; articles D fin d'article « Cet article
   vous a été utile ? » + encart dans la colonne (conseil) ; pied de page E ligne d'inscription (Personnaliser, rien si vide) ;
   ailleurs : Guides / Webinars / Replays (même bandeau), « Me prévenir » du bloc Ressources, 404 ; pas sur landing ni Contact.
+- **0.7.2 : newsletter « La lettre Rolling » (choix 1A, 2D, pages Ressources ; pied de page E non fait, la cliente hésite)** :
+  code HubSpot collé une fois dans Personnaliser > « Rolling : newsletter » (`rolling_newsletter_code`) ; widget
+  `rolling-newsletter` (classe `zone-newsletter` qui habille le formulaire HubSpot ; vide = rappel dans l'éditeur seulement) ;
+  repère `si-newsletter` (tout masqué tant que le code est vide). Blog : widget Liste réglage `newsletter_apres` (n° de carte,
+  1 dans le bloc) ⇒ modèle `c13-bandeau-newsletter` dans `div.rl-encart-liste` (pleine largeur). Guides / Webinars / Replays :
+  blocs `p-…-25-newsletter` avant la FAQ. Article (f3) : bandeau `newsletter-article` en fin de texte + carte de la colonne
+  (`newsletter-colonne`). Classes `bandeau-newsletter` (prioritaire), `newsletter-article` / `newsletter-colonne`
+  (très prioritaires : modificateurs d'une classe prioritaire), `inscription-newsletter`.
 - **Chargement de page effet film** (demande avant la fin de la livraison 4) : maquette `maquettes/loading/maquette-loading.html`
   (copie /workspace/maquette-loading.html), 4 options : A amorce 3-2-1, B clap qui se ferme puis rideau, C ouverture
   cinéma (bandes noires + REC + timecode + règle avec la tête de lecture rouge des frises, plus de filet fin), D barre de lecture en haut sans écran. Conseil : C à l'arrivée (première page

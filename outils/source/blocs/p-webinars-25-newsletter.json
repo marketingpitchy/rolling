@@ -1,0 +1,58 @@
+{
+ "cle": "p-webinars-25-newsletter",
+ "titre": "Rolling · Webinars · Newsletter",
+ "type": "e-flexbox",
+ "composition": {
+  "xml_structure": "<e-flexbox configuration-id=\"Webinars · newsletter\"><e-flexbox configuration-id=\"Webinars · newsletter · contenu\"><e-flexbox configuration-id=\"Webinars · newsletter · encart\"><e-flexbox configuration-id=\"Webinars · newsletter · encart · textes\"><e-heading configuration-id=\"Webinars · newsletter · encart · titre\"></e-heading><e-paragraph configuration-id=\"Webinars · newsletter · encart · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Webinars · newsletter · encart · inscription\"><e-paragraph configuration-id=\"Webinars · newsletter · encart · formulaire\"></e-paragraph><e-paragraph configuration-id=\"Webinars · newsletter · encart · mention\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox></e-flexbox>",
+  "element_config": {
+   "Webinars · newsletter": {
+    "tag": "section"
+   },
+   "Webinars · newsletter · encart · titre": {
+    "tag": "h2",
+    "title": "La lettre <em>Rolling.</em>"
+   },
+   "Webinars · newsletter · encart · texte": {
+    "paragraph": "Une fois par mois : une idée de vidéo à reprendre, des exemples de nos clients et nos prochains webinars en avant-première."
+   },
+   "Webinars · newsletter · encart · formulaire": {
+    "paragraph": "⟦widget:rolling-newsletter⟧"
+   },
+   "Webinars · newsletter · encart · mention": {
+    "paragraph": "Une fois par mois. Désinscription en un clic."
+   }
+  },
+  "classes": {
+   "Webinars · newsletter": [
+    "section",
+    "section-suite"
+   ],
+   "Webinars · newsletter · contenu": [
+    "conteneur"
+   ],
+   "Webinars · newsletter · encart": [
+    "carte-verre",
+    "bandeau-newsletter",
+    "si-newsletter"
+   ],
+   "Webinars · newsletter · encart · titre": [
+    "titre-sm"
+   ],
+   "Webinars · newsletter · encart · texte": [
+    "texte"
+   ],
+   "Webinars · newsletter · encart · inscription": [
+    "inscription-newsletter"
+   ],
+   "Webinars · newsletter · encart · mention": [
+    "texte-petit"
+   ]
+  },
+  "style": {
+   "Webinars · newsletter · contenu": "display: flex; flex-direction: column; gap: 0;",
+   "Webinars · newsletter · encart · textes": "display: flex; flex-direction: column; gap: 0; padding: 0;",
+   "Webinars · newsletter · encart · texte": "margin-top: 8px;"
+  }
+ },
+ "brut": {}
+}

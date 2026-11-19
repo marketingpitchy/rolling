@@ -36,6 +36,7 @@ class Rolling_Dynamique {
 		'404'                 => 'f4-page-404',
 		'texte'               => 'f5-page-texte',
 		'encart'              => 'c11-encart-article',
+		'newsletter'          => 'c13-bandeau-newsletter',
 	);
 
 	/**
@@ -255,7 +256,7 @@ class Rolling_Dynamique {
 		foreach ( glob( ROLLING_DIR . '/inc/elementor/widgets/class-rolling-widget-*.php' ) as $fichier ) {
 			require_once $fichier;
 		}
-		foreach ( array( 'Rolling_Widget_Liste', 'Rolling_Widget_Chiffres', 'Rolling_Widget_Coches', 'Rolling_Widget_Generique', 'Rolling_Widget_Compte_A_Rebours', 'Rolling_Widget_Video', 'Rolling_Widget_Transcription', 'Rolling_Widget_Logos', 'Rolling_Widget_Ariane', 'Rolling_Widget_Contenu', 'Rolling_Widget_Sommaire', 'Rolling_Widget_Partage', 'Rolling_Widget_Resumer', 'Rolling_Widget_Intervenants' ) as $classe ) {
+		foreach ( array( 'Rolling_Widget_Liste', 'Rolling_Widget_Chiffres', 'Rolling_Widget_Coches', 'Rolling_Widget_Generique', 'Rolling_Widget_Compte_A_Rebours', 'Rolling_Widget_Video', 'Rolling_Widget_Transcription', 'Rolling_Widget_Logos', 'Rolling_Widget_Ariane', 'Rolling_Widget_Contenu', 'Rolling_Widget_Sommaire', 'Rolling_Widget_Partage', 'Rolling_Widget_Resumer', 'Rolling_Widget_Intervenants', 'Rolling_Widget_Newsletter' ) as $classe ) {
 			$gestionnaire->register( new $classe() );
 		}
 	}
@@ -412,6 +413,16 @@ class Rolling_Dynamique {
 	}
 
 	/**
+	 * Code du formulaire de la newsletter : gardé tel quel pour un administrateur (scripts HubSpot), sinon filtré.
+	 *
+	 * @param string $code Code collé.
+	 * @return string
+	 */
+	public static function code_newsletter( $code ) {
+		return current_user_can( 'unfiltered_html' ) ? trim( (string) $code ) : wp_kses_post( (string) $code );
+	}
+
+	/**
 	 * Un champ du contenu courant est-il vide ?
 	 *
 	 * @param string $cle Clé du champ (tirets acceptés).
@@ -419,6 +430,10 @@ class Rolling_Dynamique {
 	 */
 	private static function champ_vide( $cle ) {
 		$cle = str_replace( '-', '_', $cle );
+		if ( 'newsletter' === $cle ) {
+			// « si-newsletter » : le formulaire de la newsletter est réglé dans le Personnalisateur.
+			return '' === trim( (string) get_theme_mod( 'rolling_newsletter_code', '' ) );
+		}
 		$id  = self::contenu_courant();
 
 		if ( 'contexte' === $cle && self::$contextes ) {
@@ -681,7 +696,7 @@ class Rolling_Dynamique {
 			return $ids;
 		}
 
-		$labels = array( 'filtres-liste', 'chip-filtre', 'rangee', 'liste-plus', 'bouton-verre', 'bouton-petit', 'plaque-libre', 'chiffre-verre', 'libelle-chiffre', 'texte-masque', 'liste-coches', 'ligne-coche', 'coche', 'texte', 'texte-petit', 'generique-liste', 'compte-rebours', 'cr-pilule', 'cr-point', 'cr-label', 'cr-temps', 'cr-direct', 'cr-fin', 'cadre-photo', 'video-fiche', 'image-couvrante', 'bandeau-video', 'duree', 'lecture-centre', 'transcription', 'masque-bords', 'logos-defilants', 'grille-6', 'carte-verre', 'tuile-logo', 'ariane', 'article-texte', 'sommaire', 'partage', 'partage-bouton', 'chip-neutre', 'resumer', 'label', 'label-violet', 'intervenants-webinar', 'avatars-initiales', 'carte-vide', 'titre-xs', 'plaque-large', 'temoins-courts', 'video-calque', 'video-calque-bouton', 'pastille-son' );
+		$labels = array( 'filtres-liste', 'chip-filtre', 'rangee', 'liste-plus', 'bouton-verre', 'bouton-petit', 'plaque-libre', 'chiffre-verre', 'libelle-chiffre', 'texte-masque', 'liste-coches', 'ligne-coche', 'coche', 'texte', 'texte-petit', 'generique-liste', 'compte-rebours', 'cr-pilule', 'cr-point', 'cr-label', 'cr-temps', 'cr-direct', 'cr-fin', 'cadre-photo', 'video-fiche', 'image-couvrante', 'bandeau-video', 'duree', 'lecture-centre', 'transcription', 'masque-bords', 'logos-defilants', 'grille-6', 'carte-verre', 'tuile-logo', 'ariane', 'article-texte', 'sommaire', 'partage', 'partage-bouton', 'chip-neutre', 'resumer', 'label', 'label-violet', 'intervenants-webinar', 'avatars-initiales', 'carte-vide', 'titre-xs', 'plaque-large', 'temoins-courts', 'video-calque', 'video-calque-bouton', 'pastille-son', 'zone-newsletter' );
 		if ( preg_match_all( '/"(?:titre_)?classe(?:_texte)?":"([^"]+)"/', $donnees, $trouves ) ) {
 			foreach ( $trouves[1] as $liste ) {
 				$labels = array_merge( $labels, preg_split( '/\s+/', $liste ) );
@@ -712,6 +727,9 @@ class Rolling_Dynamique {
 		$donnees = (string) get_post_meta( $document, '_elementor_data', true );
 		// Texte de l'article : l'encart du milieu (modèle choisi dans Personnaliser) est affiché dedans.
 		$ids = false !== strpos( $donnees, 'rolling-contenu' ) ? array( self::modele_fiche( 'encart' ) ) : array();
+		if ( false !== strpos( $donnees, 'newsletter_apres' ) ) {
+			$ids[] = self::modele_fiche( 'newsletter' );
+		}
 		if ( false === strpos( $donnees, 'rolling-liste' ) ) {
 			return array_filter( $ids );
 		}
@@ -760,6 +778,29 @@ class Rolling_Dynamique {
 	 * @param WP_Customize_Manager $wp_customize Gestionnaire.
 	 */
 	public static function personnaliser( $wp_customize ) {
+		$wp_customize->add_section(
+			'rolling_newsletter',
+			array(
+				'title'       => __( 'Rolling : newsletter', 'rolling' ),
+				'description' => __( 'Collez ici le code d’intégration de votre formulaire HubSpot (newsletter). Il est repris dans le blog, les pages Guides, Webinars, Replays et les articles. Vide : les encarts de la newsletter ne s’affichent pas.', 'rolling' ),
+				'priority'    => 33,
+			)
+		);
+		$wp_customize->add_setting(
+			'rolling_newsletter_code',
+			array(
+				'sanitize_callback' => array( __CLASS__, 'code_newsletter' ),
+				'transport'         => 'refresh',
+			)
+		);
+		$wp_customize->add_control(
+			'rolling_newsletter_code',
+			array(
+				'label'   => __( 'Code du formulaire HubSpot', 'rolling' ),
+				'section' => 'rolling_newsletter',
+				'type'    => 'textarea',
+			)
+		);
 		$wp_customize->add_section(
 			'rolling_modeles',
 			array(

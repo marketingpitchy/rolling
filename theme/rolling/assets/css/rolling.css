@@ -224,3 +224,7 @@ html.rl-barre-joue .rl-barre-page { display: block; position: fixed; z-index: 10
 /* Flèches en pointillés qui avancent (schéma « un document, plusieurs vidéos ») */
 @keyframes rl-tirets-h { from { background-position: 0 0; } to { background-position: 11px 0; } }
 @keyframes rl-tirets-v { from { background-position: 0 0; } to { background-position: 0 11px; } }
+
+/* Encart glissé dans une liste (newsletter du blog) : toute la largeur de la grille */
+.rl-liste > .rl-encart-liste { grid-column: 1 / -1; }
+.rl-encart-liste > .elementor { display: contents; }

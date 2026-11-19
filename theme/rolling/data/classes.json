@@ -2036,6 +2036,63 @@
             ]
         },
         {
+            "id": "g-d9cd52d",
+            "label": "newsletter-article",
+            "groupe": "Fiches et listes",
+            "description": "Avec bandeau-newsletter : version fin d'article (formulaire sous le texte).",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "margin": {
+                            "$$type": "dimensions",
+                            "value": {
+                                "block-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 40,
+                                        "unit": "px"
+                                    }
+                                }
+                            }
+                        },
+                        "grid-template-columns": {
+                            "$$type": "string",
+                            "value": "72px minmax(0, 1fr)"
+                        },
+                        "align-items": {
+                            "$$type": "string",
+                            "value": "start"
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "JiA+IC5pbnNjcmlwdGlvbi1uZXdzbGV0dGVyIHsgZ3JpZC1jb2x1bW46IDI7IH0gJjo6YWZ0ZXIgeyBncmlkLXJvdzogMSAvIHNwYW4gMjsgfSBAbWVkaWEgKG1heC13aWR0aDogNzY3cHgpIHsgZ3JpZC10ZW1wbGF0ZS1jb2x1bW5zOiBtaW5tYXgoMCwgMWZyKTsgJiA+IC5pbnNjcmlwdGlvbi1uZXdzbGV0dGVyIHsgZ3JpZC1jb2x1bW46IDE7IH0gJjo6YWZ0ZXIgeyBncmlkLXJvdzogYXV0bzsgfSB9"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-7007b41",
+            "label": "newsletter-colonne",
+            "groupe": "Fiches et listes",
+            "description": "Avec zone-newsletter : champ et bouton l'un sous l'autre (colonne de l'article).",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": [],
+                    "custom_css": {
+                        "raw": "JiBmb3JtIHsgZmxleC1kaXJlY3Rpb246IGNvbHVtbjsgYWxpZ24taXRlbXM6IHN0cmV0Y2g7IH0gJiBmaWVsZHNldCwgJiAuaHMtZm9ybS1maWVsZCB7IGZsZXg6IG5vbmU7IHdpZHRoOiAxMDAlOyB9ICYgLmhzLWJ1dHRvbiB7IHdpZHRoOiAxMDAlOyB9"
+                    }
+                }
+            ]
+        },
+        {
             "id": "g-e13f5b6",
             "label": "section-entete",
             "groupe": "Mise en page",
@@ -9028,6 +9085,133 @@
                         }
                     },
                     "custom_css": null
+                }
+            ]
+        },
+        {
+            "id": "g-dff8f0a",
+            "label": "bandeau-newsletter",
+            "groupe": "Fiches et listes",
+            "description": "Encart newsletter (avec carte-verre) : picto enveloppe, titre et texte, formulaire à droite (empilé en mobile).",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "tablet",
+                        "state": null
+                    },
+                    "props": {
+                        "grid-template-columns": {
+                            "$$type": "string",
+                            "value": "72px minmax(0, 1fr)"
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "JiA+IC5pbnNjcmlwdGlvbi1uZXdzbGV0dGVyIHsgZ3JpZC1jb2x1bW46IDI7IH0="
+                    }
+                },
+                {
+                    "meta": {
+                        "breakpoint": "mobile",
+                        "state": null
+                    },
+                    "props": {
+                        "padding": {
+                            "$$type": "dimensions",
+                            "value": {
+                                "block-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 22,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 18,
+                                        "unit": "px"
+                                    }
+                                },
+                                "block-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 22,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 18,
+                                        "unit": "px"
+                                    }
+                                }
+                            }
+                        },
+                        "grid-template-columns": {
+                            "$$type": "string",
+                            "value": "minmax(0, 1fr)"
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "JiA+IC5pbnNjcmlwdGlvbi1uZXdzbGV0dGVyIHsgZ3JpZC1jb2x1bW46IDE7IH0gJjo6YWZ0ZXIgeyBvcmRlcjogLTE7IGdyaWQtcm93OiBhdXRvOyB3aWR0aDogNTZweDsgaGVpZ2h0OiA1NnB4OyBib3JkZXItcmFkaXVzOiAxNnB4OyB9"
+                    }
+                },
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "padding": {
+                            "$$type": "dimensions",
+                            "value": {
+                                "block-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 26,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 30,
+                                        "unit": "px"
+                                    }
+                                },
+                                "block-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 26,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 30,
+                                        "unit": "px"
+                                    }
+                                }
+                            }
+                        },
+                        "display": {
+                            "$$type": "string",
+                            "value": "grid"
+                        },
+                        "grid-template-columns": {
+                            "$$type": "string",
+                            "value": "72px minmax(0, 1fr) minmax(0, 440px)"
+                        },
+                        "align-items": {
+                            "$$type": "string",
+                            "value": "center"
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "Z2FwOiAxNHB4IDI4cHg7ICY6OmFmdGVyIHsgcG9zaXRpb246IHJlbGF0aXZlOyB0b3A6IGF1dG87IHJpZ2h0OiBhdXRvOyBib3R0b206IGF1dG87IGxlZnQ6IGF1dG87IGhlaWdodDogYXV0bzsgd2lkdGg6IGF1dG87IG9wYWNpdHk6IDE7IG1peC1ibGVuZC1tb2RlOiBub3JtYWw7IGJvcmRlcjogMDsgY29udGVudDogJyc7IGdyaWQtY29sdW1uOiAxOyBncmlkLXJvdzogMTsgd2lkdGg6IDcycHg7IGhlaWdodDogNzJweDsgYm9yZGVyLXJhZGl1czogMjBweDsgYmFja2dyb3VuZDogdXJsKCJkYXRhOmltYWdlL3N2Zyt4bWwsJTNDc3ZnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zycgdmlld0JveD0nMCAwIDM2IDI2JyBmaWxsPSdub25lJyBzdHJva2U9JyUyMzVCM0JFQScgc3Ryb2tlLXdpZHRoPScyLjQnIHN0cm9rZS1saW5lam9pbj0ncm91bmQnJTNFJTNDcmVjdCB4PScxLjUnIHk9JzEuNScgd2lkdGg9JzMzJyBoZWlnaHQ9JzIzJyByeD0nNCcgZmlsbD0nJTIzRkZGRkZGJy8lM0UlM0NwYXRoIGQ9J00yLjUgMy41bDE1LjUgMTEgMTUuNS0xMScvJTNFJTNDL3N2ZyUzRSIpIGNlbnRlciAvIDM2cHggMjZweCBuby1yZXBlYXQsIGxpbmVhci1ncmFkaWVudCgxNTBkZWcsICNFREU2RkYsICNGRkQxQkYpOyBib3gtc2hhZG93OiAwIDE2cHggMzBweCAtMThweCByZ2JhKDkxLDU5LDIzNCwwLjYpOyB9"
+                    }
                 }
             ]
         },
@@ -36985,6 +37169,93 @@
                     },
                     "custom_css": {
                         "raw": "Ym9yZGVyLWxlZnQtc3R5bGU6IHNvbGlkOyBib3JkZXItbGVmdC1jb2xvcjogI0M0QjVGRDsgY29sb3I6IHZhcigtLXJsLXRleHRlLCB2YXIoLS1lbmNyZSkpOw=="
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-9a4d299",
+            "label": "si-newsletter",
+            "groupe": "Fiches et listes",
+            "description": "Repère sans style : le thème masque ce bloc tant que le formulaire de la newsletter n'est pas réglé (Personnaliser > Rolling : newsletter).",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": [],
+                    "custom_css": {
+                        "raw": "LS1ybC1yZXBlcmU6IDE7"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-6f68935",
+            "label": "inscription-newsletter",
+            "groupe": "Fiches et listes",
+            "description": "Formulaire de la newsletter et sa mention (« Une fois par mois… »).",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "padding": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 0,
+                                "unit": "px"
+                            }
+                        },
+                        "display": {
+                            "$$type": "string",
+                            "value": "flex"
+                        },
+                        "flex-direction": {
+                            "$$type": "string",
+                            "value": "column"
+                        },
+                        "gap": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 10,
+                                "unit": "px"
+                            }
+                        }
+                    },
+                    "custom_css": null
+                }
+            ]
+        },
+        {
+            "id": "g-3f9c285",
+            "label": "zone-newsletter",
+            "groupe": "Fiches et listes",
+            "description": "Formulaire HubSpot de la newsletter (écrit par le widget) : champ e-mail et bouton en pilules, aux couleurs du site.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "width": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 100,
+                                "unit": "%"
+                            }
+                        },
+                        "font-family": {
+                            "$$type": "font-family",
+                            "value": "Hanken Grotesk"
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "JiBmb3JtIHsgZGlzcGxheTogZmxleDsgZmxleC1kaXJlY3Rpb246IHJvdzsgZmxleC13cmFwOiB3cmFwOyBhbGlnbi1pdGVtczogZmxleC1lbmQ7IGdhcDogOHB4OyBtYXJnaW46IDA7IH0gJiBmaWVsZHNldCB7IGZsZXg6IDEgMSAyMjBweDsgbWluLXdpZHRoOiAwOyBtYXgtd2lkdGg6IG5vbmUgIWltcG9ydGFudDsgbWFyZ2luOiAwOyBwYWRkaW5nOiAwOyBib3JkZXI6IDA7IH0gJiAuaHMtZm9ybS1maWVsZCB7IGZsZXg6IDEgMSAyMjBweDsgbWFyZ2luOiAwOyB9ICYgbGFiZWwgeyBkaXNwbGF5OiBibG9jazsgbWFyZ2luOiAwIDAgNnB4OyBmb250LXNpemU6IDEzcHg7IGZvbnQtd2VpZ2h0OiA2MDA7IGNvbG9yOiB2YXIoLS1ybC1sZWdlbmRlLCB2YXIoLS1sZWdlbmRlKSk7IH0gJiAuaHMtaW5wdXQgeyB3aWR0aDogMTAwJSAhaW1wb3J0YW50OyBtaW4taGVpZ2h0OiA0OHB4OyBwYWRkaW5nOiAwIDE4cHg7IGJvcmRlcjogMDsgYm9yZGVyLXJhZGl1czogOTk5cHg7IGZvbnQtZmFtaWx5OiBIYW5rZW4gR3JvdGVzazsgZm9udC1zaXplOiAxNXB4OyBjb2xvcjogIzBGMEYxMjsgYmFja2dyb3VuZC1jb2xvcjogI0ZGRkZGRjsgYm94LXNoYWRvdzogaW5zZXQgMCAwIDAgMXB4IHJnYmEoMTUsMTUsMTgsMC4xNik7IH0gJiAuaHMtaW5wdXQ6Zm9jdXMgeyBvdXRsaW5lOiAzcHggc29saWQgIzVCM0JFQTsgb3V0bGluZS1vZmZzZXQ6IDJweDsgfSAmIC5oc19zdWJtaXQgLmFjdGlvbnMgeyBtYXJnaW46IDA7IHBhZGRpbmc6IDA7IH0gJiAuaHMtYnV0dG9uIHsgbWluLWhlaWdodDogNDhweDsgcGFkZGluZzogMCAyNHB4OyBib3JkZXI6IDA7IGJvcmRlci1yYWRpdXM6IDk5OXB4OyBmb250LWZhbWlseTogSGFua2VuIEdyb3Rlc2s7IGZvbnQtc2l6ZTogMTVweDsgZm9udC13ZWlnaHQ6IDcwMDsgY29sb3I6ICNGRkZGRkY7IGJhY2tncm91bmQtY29sb3I6ICMwRjBGMTI7IGN1cnNvcjogcG9pbnRlcjsgfSAmIC5ocy1idXR0b246aG92ZXIgeyBiYWNrZ3JvdW5kLWNvbG9yOiAjNUIzQkVBOyB9ICYgLmhzLWVycm9yLW1zZ3MgeyBtYXJnaW46IDZweCAwIDA7IHBhZGRpbmc6IDA7IGxpc3Qtc3R5bGU6IG5vbmU7IGZvbnQtc2l6ZTogMTNweDsgY29sb3I6ICNBNjNDMTQ7IH0gJiAubGVnYWwtY29uc2VudC1jb250YWluZXIsICYgLmhzLXJpY2h0ZXh0IHsgZmxleC1iYXNpczogMTAwJTsgZm9udC1zaXplOiAxMnB4OyBsaW5lLWhlaWdodDogMS41OyBjb2xvcjogdmFyKC0tcmwtbGVnZW5kZSwgdmFyKC0tbGVnZW5kZSkpOyB9ICYgLnN1Ym1pdHRlZC1tZXNzYWdlIHsgZm9udC1zaXplOiAxNnB4OyBmb250LXdlaWdodDogNjAwOyBjb2xvcjogdmFyKC0tcmwtdGV4dGUsIHZhcigtLWVuY3JlKSk7IH0gJiBpZnJhbWUgeyB3aWR0aDogMTAwJTsgYm9yZGVyOiAwOyB9"
                     }
                 }
             ]

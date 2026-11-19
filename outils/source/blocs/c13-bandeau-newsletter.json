@@ -1,0 +1,48 @@
+{
+ "cle": "c13-bandeau-newsletter",
+ "titre": "Rolling · Encart newsletter (glissé dans la liste du blog)",
+ "type": "e-flexbox",
+ "apercu": "",
+ "composition": {
+  "xml_structure": "<e-flexbox configuration-id=\"Encart newsletter\"><e-flexbox configuration-id=\"Encart newsletter · textes\"><e-heading configuration-id=\"Encart newsletter · titre\"></e-heading><e-paragraph configuration-id=\"Encart newsletter · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Encart newsletter · inscription\"><e-paragraph configuration-id=\"Encart newsletter · formulaire\"></e-paragraph><e-paragraph configuration-id=\"Encart newsletter · mention\"></e-paragraph></e-flexbox></e-flexbox>",
+  "element_config": {
+   "Encart newsletter · titre": {
+    "tag": "h2",
+    "title": "La lettre <em>Rolling.</em>"
+   },
+   "Encart newsletter · texte": {
+    "paragraph": "Une fois par mois : une idée de vidéo à reprendre, des exemples de nos clients et nos prochains webinars en avant-première."
+   },
+   "Encart newsletter · formulaire": {
+    "paragraph": "⟦widget:rolling-newsletter⟧"
+   },
+   "Encart newsletter · mention": {
+    "paragraph": "Une fois par mois. Désinscription en un clic."
+   }
+  },
+  "classes": {
+   "Encart newsletter": [
+    "carte-verre",
+    "bandeau-newsletter",
+    "si-newsletter"
+   ],
+   "Encart newsletter · titre": [
+    "titre-sm"
+   ],
+   "Encart newsletter · texte": [
+    "texte"
+   ],
+   "Encart newsletter · inscription": [
+    "inscription-newsletter"
+   ],
+   "Encart newsletter · mention": [
+    "texte-petit"
+   ]
+  },
+  "style": {
+   "Encart newsletter · textes": "display: flex; flex-direction: column; gap: 0; padding: 0;",
+   "Encart newsletter · texte": "margin-top: 8px;"
+  }
+ },
+ "brut": {}
+}

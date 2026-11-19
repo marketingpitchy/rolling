@@ -1,0 +1,58 @@
+{
+ "cle": "p-replays-25-newsletter",
+ "titre": "Rolling · Replays · Newsletter",
+ "type": "e-flexbox",
+ "composition": {
+  "xml_structure": "<e-flexbox configuration-id=\"Replays · newsletter\"><e-flexbox configuration-id=\"Replays · newsletter · contenu\"><e-flexbox configuration-id=\"Replays · newsletter · encart\"><e-flexbox configuration-id=\"Replays · newsletter · encart · textes\"><e-heading configuration-id=\"Replays · newsletter · encart · titre\"></e-heading><e-paragraph configuration-id=\"Replays · newsletter · encart · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Replays · newsletter · encart · inscription\"><e-paragraph configuration-id=\"Replays · newsletter · encart · formulaire\"></e-paragraph><e-paragraph configuration-id=\"Replays · newsletter · encart · mention\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox></e-flexbox>",
+  "element_config": {
+   "Replays · newsletter": {
+    "tag": "section"
+   },
+   "Replays · newsletter · encart · titre": {
+    "tag": "h2",
+    "title": "La lettre <em>Rolling.</em>"
+   },
+   "Replays · newsletter · encart · texte": {
+    "paragraph": "Une fois par mois : une idée de vidéo à reprendre, des exemples de nos clients et nos prochains webinars en avant-première."
+   },
+   "Replays · newsletter · encart · formulaire": {
+    "paragraph": "⟦widget:rolling-newsletter⟧"
+   },
+   "Replays · newsletter · encart · mention": {
+    "paragraph": "Une fois par mois. Désinscription en un clic."
+   }
+  },
+  "classes": {
+   "Replays · newsletter": [
+    "section",
+    "section-suite"
+   ],
+   "Replays · newsletter · contenu": [
+    "conteneur"
+   ],
+   "Replays · newsletter · encart": [
+    "carte-verre",
+    "bandeau-newsletter",
+    "si-newsletter"
+   ],
+   "Replays · newsletter · encart · titre": [
+    "titre-sm"
+   ],
+   "Replays · newsletter · encart · texte": [
+    "texte"
+   ],
+   "Replays · newsletter · encart · inscription": [
+    "inscription-newsletter"
+   ],
+   "Replays · newsletter · encart · mention": [
+    "texte-petit"
+   ]
+  },
+  "style": {
+   "Replays · newsletter · contenu": "display: flex; flex-direction: column; gap: 0;",
+   "Replays · newsletter · encart · textes": "display: flex; flex-direction: column; gap: 0; padding: 0;",
+   "Replays · newsletter · encart · texte": "margin-top: 8px;"
+  }
+ },
+ "brut": {}
+}

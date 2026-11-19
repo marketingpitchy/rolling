@@ -1,0 +1,58 @@
+{
+ "cle": "p-guides-25-newsletter",
+ "titre": "Rolling · Guides · Newsletter",
+ "type": "e-flexbox",
+ "composition": {
+  "xml_structure": "<e-flexbox configuration-id=\"Guides · newsletter\"><e-flexbox configuration-id=\"Guides · newsletter · contenu\"><e-flexbox configuration-id=\"Guides · newsletter · encart\"><e-flexbox configuration-id=\"Guides · newsletter · encart · textes\"><e-heading configuration-id=\"Guides · newsletter · encart · titre\"></e-heading><e-paragraph configuration-id=\"Guides · newsletter · encart · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Guides · newsletter · encart · inscription\"><e-paragraph configuration-id=\"Guides · newsletter · encart · formulaire\"></e-paragraph><e-paragraph configuration-id=\"Guides · newsletter · encart · mention\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox></e-flexbox>",
+  "element_config": {
+   "Guides · newsletter": {
+    "tag": "section"
+   },
+   "Guides · newsletter · encart · titre": {
+    "tag": "h2",
+    "title": "La lettre <em>Rolling.</em>"
+   },
+   "Guides · newsletter · encart · texte": {
+    "paragraph": "Une fois par mois : une idée de vidéo à reprendre, des exemples de nos clients et nos prochains webinars en avant-première."
+   },
+   "Guides · newsletter · encart · formulaire": {
+    "paragraph": "⟦widget:rolling-newsletter⟧"
+   },
+   "Guides · newsletter · encart · mention": {
+    "paragraph": "Une fois par mois. Désinscription en un clic."
+   }
+  },
+  "classes": {
+   "Guides · newsletter": [
+    "section",
+    "section-suite"
+   ],
+   "Guides · newsletter · contenu": [
+    "conteneur"
+   ],
+   "Guides · newsletter · encart": [
+    "carte-verre",
+    "bandeau-newsletter",
+    "si-newsletter"
+   ],
+   "Guides · newsletter · encart · titre": [
+    "titre-sm"
+   ],
+   "Guides · newsletter · encart · texte": [
+    "texte"
+   ],
+   "Guides · newsletter · encart · inscription": [
+    "inscription-newsletter"
+   ],
+   "Guides · newsletter · encart · mention": [
+    "texte-petit"
+   ]
+  },
+  "style": {
+   "Guides · newsletter · contenu": "display: flex; flex-direction: column; gap: 0;",
+   "Guides · newsletter · encart · textes": "display: flex; flex-direction: column; gap: 0; padding: 0;",
+   "Guides · newsletter · encart · texte": "margin-top: 8px;"
+  }
+ },
+ "brut": {}
+}
