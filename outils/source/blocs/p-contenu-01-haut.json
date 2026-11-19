@@ -3,7 +3,7 @@
  "titre": "Rolling · Du contenu à la vidéo · Haut de page",
  "type": "e-flexbox",
  "composition": {
-  "xml_structure": "<e-flexbox configuration-id=\"Contenu · haut\"><e-flexbox configuration-id=\"Contenu · haut · contenu\"><e-paragraph configuration-id=\"Contenu · fil d’Ariane\"></e-paragraph><e-flexbox configuration-id=\"Contenu · présentation\"><e-flexbox configuration-id=\"Contenu · textes\"><e-flexbox configuration-id=\"Contenu · pastille\"><e-paragraph configuration-id=\"Contenu · pastille · texte\"></e-paragraph></e-flexbox><e-heading configuration-id=\"Contenu · titre\"></e-heading><e-paragraph configuration-id=\"Contenu · introduction\"></e-paragraph><e-flexbox configuration-id=\"Contenu · boutons\"><e-button configuration-id=\"Contenu · réserver\"></e-button><e-button configuration-id=\"Contenu · formules\"></e-button></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Contenu · visuel\"><e-div-block configuration-id=\"Contenu · visuel · cadre\"><e-image configuration-id=\"Contenu · visuel · image\"></e-image><e-paragraph configuration-id=\"Contenu · visuel · bandeau\"></e-paragraph></e-div-block><e-paragraph configuration-id=\"Contenu · visuel · légende\"></e-paragraph></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Contenu · réassurance\"><e-flexbox configuration-id=\"Contenu · réassurance · Validé par un directeur artistique\"><e-image configuration-id=\"Contenu · réassurance · Validé par un directeur artistique · coche\"></e-image><e-paragraph configuration-id=\"Contenu · réassurance · Validé par un directeur artistique · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Contenu · réassurance · Contenus confidentiels protégés\"><e-image configuration-id=\"Contenu · réassurance · Contenus confidentiels protégés · coche\"></e-image><e-paragraph configuration-id=\"Contenu · réassurance · Contenus confidentiels protégés · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Contenu · réassurance · Données hébergées en Europe\"><e-image configuration-id=\"Contenu · réassurance · Données hébergées en Europe · coche\"></e-image><e-paragraph configuration-id=\"Contenu · réassurance · Données hébergées en Europe · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Contenu · réassurance · Inclus dans l'abonnement, sans devis\"><e-image configuration-id=\"Contenu · réassurance · Inclus dans l'abonnement, sans devis · coche\"></e-image><e-paragraph configuration-id=\"Contenu · réassurance · Inclus dans l'abonnement, sans devis · texte\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox></e-flexbox>",
+  "xml_structure": "<e-flexbox configuration-id=\"Contenu · haut\"><e-flexbox configuration-id=\"Contenu · haut · contenu\"><e-paragraph configuration-id=\"Contenu · fil d’Ariane\"></e-paragraph><e-flexbox configuration-id=\"Contenu · présentation\"><e-flexbox configuration-id=\"Contenu · textes\"><e-flexbox configuration-id=\"Contenu · pastille\"><e-paragraph configuration-id=\"Contenu · pastille · texte\"></e-paragraph></e-flexbox><e-heading configuration-id=\"Contenu · titre\"></e-heading><e-paragraph configuration-id=\"Contenu · introduction\"></e-paragraph><e-flexbox configuration-id=\"Contenu · boutons\"><e-button configuration-id=\"Contenu · réserver\"></e-button><e-button configuration-id=\"Contenu · formules\"></e-button></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Contenu · visuel\"><e-div-block configuration-id=\"Contenu · visuel · cadre\"><e-image configuration-id=\"Contenu · visuel · image\"></e-image><e-paragraph configuration-id=\"Contenu · visuel · vidéo muette\"></e-paragraph><e-paragraph configuration-id=\"Contenu · visuel · bandeau\"></e-paragraph></e-div-block><e-paragraph configuration-id=\"Contenu · visuel · légende\"></e-paragraph></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Contenu · réassurance\"><e-flexbox configuration-id=\"Contenu · réassurance · Validé par un directeur artistique\"><e-image configuration-id=\"Contenu · réassurance · Validé par un directeur artistique · coche\"></e-image><e-paragraph configuration-id=\"Contenu · réassurance · Validé par un directeur artistique · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Contenu · réassurance · Contenus confidentiels protégés\"><e-image configuration-id=\"Contenu · réassurance · Contenus confidentiels protégés · coche\"></e-image><e-paragraph configuration-id=\"Contenu · réassurance · Contenus confidentiels protégés · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Contenu · réassurance · Données hébergées en Europe\"><e-image configuration-id=\"Contenu · réassurance · Données hébergées en Europe · coche\"></e-image><e-paragraph configuration-id=\"Contenu · réassurance · Données hébergées en Europe · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Contenu · réassurance · Inclus dans l'abonnement, sans devis\"><e-image configuration-id=\"Contenu · réassurance · Inclus dans l'abonnement, sans devis · coche\"></e-image><e-paragraph configuration-id=\"Contenu · réassurance · Inclus dans l'abonnement, sans devis · texte\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox></e-flexbox>",
   "element_config": {
    "Contenu · haut": {
     "tag": "section"
@@ -16,10 +16,10 @@
    },
    "Contenu · titre": {
     "tag": "h1",
-    "title": "Transformez vos contenus <em>en vidéos.</em>"
+    "title": "Content repurposing&nbsp;: transformez vos contenus <em>en vidéos.</em>"
    },
    "Contenu · introduction": {
-    "paragraph": "Un PowerPoint, un article, un rapport ou un webinar contient déjà tout ce qu'il faut. Notre <strong>agence vidéo</strong> en tire des vidéos courtes, une par message, prêtes pour chaque canal."
+    "paragraph": "Un PowerPoint, un article, un rapport ou un webinar contient déjà tout ce qu'il faut. Le <strong>content repurposing</strong>, c'est en tirer des vidéos courtes, une par message, prêtes pour chaque canal. Notre agence vidéo s'en charge."
    },
    "Contenu · réserver": {
     "text": "Réserver un échange",
@@ -41,6 +41,9 @@
      },
      "size": "large"
     }
+   },
+   "Contenu · visuel · vidéo muette": {
+    "paragraph": "⟦widget:rolling-video|source=lien|mode=muet|titre=⟧"
    },
    "Contenu · visuel · bandeau": {
     "paragraph": "Avant · après"
@@ -130,7 +133,8 @@
     "flotte"
    ],
    "Contenu · visuel · cadre": [
-    "cadre-photo"
+    "cadre-photo",
+    "cadre-video-muette"
    ],
    "Contenu · visuel · image": [
     "image-couvrante"

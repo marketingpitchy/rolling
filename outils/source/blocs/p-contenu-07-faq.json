@@ -3,7 +3,7 @@
  "titre": "Rolling · Du contenu à la vidéo · 00:06 FAQ",
  "type": "e-flexbox",
  "composition": {
-  "xml_structure": "<e-flexbox configuration-id=\"Contenu · FAQ\"><e-flexbox configuration-id=\"Contenu · FAQ · contenu\"><e-flexbox configuration-id=\"Contenu · FAQ · en-tête\"><e-flexbox configuration-id=\"Contenu · FAQ · repère\"><e-paragraph configuration-id=\"Contenu · FAQ · timecode\"></e-paragraph><e-paragraph configuration-id=\"Contenu · FAQ · sur-titre\"></e-paragraph></e-flexbox><e-heading configuration-id=\"Contenu · FAQ · titre\"></e-heading></e-flexbox><e-flexbox configuration-id=\"Contenu · FAQ · questions\"><e-flexbox configuration-id=\"Contenu · FAQ · question 1\"><e-heading configuration-id=\"Contenu · FAQ · question 1 · titre\"></e-heading><e-paragraph configuration-id=\"Contenu · FAQ · question 1 · réponse\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Contenu · FAQ · question 2\"><e-heading configuration-id=\"Contenu · FAQ · question 2 · titre\"></e-heading><e-paragraph configuration-id=\"Contenu · FAQ · question 2 · réponse\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Contenu · FAQ · question 3\"><e-heading configuration-id=\"Contenu · FAQ · question 3 · titre\"></e-heading><e-paragraph configuration-id=\"Contenu · FAQ · question 3 · réponse\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Contenu · FAQ · question 4\"><e-heading configuration-id=\"Contenu · FAQ · question 4 · titre\"></e-heading><e-paragraph configuration-id=\"Contenu · FAQ · question 4 · réponse\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Contenu · FAQ · question 5\"><e-heading configuration-id=\"Contenu · FAQ · question 5 · titre\"></e-heading><e-paragraph configuration-id=\"Contenu · FAQ · question 5 · réponse\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox></e-flexbox>",
+  "xml_structure": "<e-flexbox configuration-id=\"Contenu · FAQ\"><e-flexbox configuration-id=\"Contenu · FAQ · contenu\"><e-flexbox configuration-id=\"Contenu · FAQ · en-tête\"><e-flexbox configuration-id=\"Contenu · FAQ · repère\"><e-paragraph configuration-id=\"Contenu · FAQ · timecode\"></e-paragraph><e-paragraph configuration-id=\"Contenu · FAQ · sur-titre\"></e-paragraph></e-flexbox><e-heading configuration-id=\"Contenu · FAQ · titre\"></e-heading></e-flexbox><e-flexbox configuration-id=\"Contenu · FAQ · questions\"><e-flexbox configuration-id=\"Contenu · FAQ · question 1\"><e-heading configuration-id=\"Contenu · FAQ · question 1 · titre\"></e-heading><e-paragraph configuration-id=\"Contenu · FAQ · question 1 · réponse\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Contenu · FAQ · question 2\"><e-heading configuration-id=\"Contenu · FAQ · question 2 · titre\"></e-heading><e-paragraph configuration-id=\"Contenu · FAQ · question 2 · réponse\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Contenu · FAQ · question 3\"><e-heading configuration-id=\"Contenu · FAQ · question 3 · titre\"></e-heading><e-paragraph configuration-id=\"Contenu · FAQ · question 3 · réponse\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Contenu · FAQ · question 4\"><e-heading configuration-id=\"Contenu · FAQ · question 4 · titre\"></e-heading><e-paragraph configuration-id=\"Contenu · FAQ · question 4 · réponse\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Contenu · FAQ · question 5\"><e-heading configuration-id=\"Contenu · FAQ · question 5 · titre\"></e-heading><e-paragraph configuration-id=\"Contenu · FAQ · question 5 · réponse\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Contenu · FAQ · question 6\"><e-heading configuration-id=\"Contenu · FAQ · question 6 · titre\"></e-heading><e-paragraph configuration-id=\"Contenu · FAQ · question 6 · réponse\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox></e-flexbox>",
   "element_config": {
    "Contenu · FAQ": {
     "tag": "section"
@@ -20,37 +20,44 @@
    },
    "Contenu · FAQ · question 1 · titre": {
     "tag": "h3",
-    "title": "Faut-il réécrire nos textes avant de vous les envoyer&nbsp;?"
+    "title": "Qu’est-ce que le content repurposing&nbsp;?"
    },
    "Contenu · FAQ · question 1 · réponse": {
-    "paragraph": "Non. Envoyez le contenu tel qu'il est&nbsp;: nous repérons les messages et écrivons les scripts."
+    "paragraph": "C'est réutiliser un contenu existant sous d'autres formes. Ici, nous transformons vos documents en vidéos courtes, adaptées à chaque canal, sans repartir de zéro."
    },
    "Contenu · FAQ · question 2 · titre": {
     "tag": "h3",
-    "title": "Combien de vidéos peut-on tirer d’un seul contenu&nbsp;?"
+    "title": "Faut-il réécrire nos textes avant de vous les envoyer&nbsp;?"
    },
    "Contenu · FAQ · question 2 · réponse": {
-    "paragraph": "Souvent plusieurs&nbsp;: une par message clé, déclinée dans les formats de vos canaux. [À confirmer&nbsp;: exemple courant.]"
+    "paragraph": "Non. Envoyez le contenu tel qu'il est&nbsp;: nous repérons les messages et écrivons les scripts."
    },
    "Contenu · FAQ · question 3 · titre": {
     "tag": "h3",
-    "title": "Nos contenus confidentiels sont-ils protégés&nbsp;?"
+    "title": "Combien de vidéos peut-on tirer d’un seul contenu&nbsp;?"
    },
    "Contenu · FAQ · question 3 · réponse": {
-    "paragraph": "[À compléter&nbsp;: hébergement des données, outils d'IA utilisés, sécurité.]"
+    "paragraph": "Souvent plusieurs&nbsp;: une par message clé, déclinée dans les formats de vos canaux. [À confirmer&nbsp;: exemple courant.]"
    },
    "Contenu · FAQ · question 4 · titre": {
     "tag": "h3",
-    "title": "Gardez-vous notre charte et notre ton&nbsp;?"
+    "title": "Nos contenus confidentiels sont-ils protégés&nbsp;?"
    },
    "Contenu · FAQ · question 4 · réponse": {
-    "paragraph": "Oui&nbsp;: chaque vidéo suit votre charte graphique et le ton de vos contenus. Votre directeur artistique y veille du script à la livraison."
+    "paragraph": "[À compléter&nbsp;: hébergement des données, outils d'IA utilisés, sécurité.]"
    },
    "Contenu · FAQ · question 5 · titre": {
     "tag": "h3",
-    "title": "Peut-on partir d’un contenu en anglais&nbsp;?"
+    "title": "Gardez-vous notre charte et notre ton&nbsp;?"
    },
    "Contenu · FAQ · question 5 · réponse": {
+    "paragraph": "Oui&nbsp;: chaque vidéo suit votre charte graphique et le ton de vos contenus. Votre directeur artistique y veille du script à la livraison."
+   },
+   "Contenu · FAQ · question 6 · titre": {
+    "tag": "h3",
+    "title": "Peut-on partir d’un contenu en anglais&nbsp;?"
+   },
+   "Contenu · FAQ · question 6 · réponse": {
     "paragraph": "[À confirmer&nbsp;: langues de départ et d’arrivée.]"
    }
   },
@@ -126,6 +133,16 @@
     "titre-question"
    ],
    "Contenu · FAQ · question 5 · réponse": [
+    "texte"
+   ],
+   "Contenu · FAQ · question 6": [
+    "carte-verre",
+    "carte-question"
+   ],
+   "Contenu · FAQ · question 6 · titre": [
+    "titre-question"
+   ],
+   "Contenu · FAQ · question 6 · réponse": [
     "texte"
    ]
   },

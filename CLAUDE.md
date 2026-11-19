@@ -760,6 +760,16 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   blocs `p-…-25-newsletter` avant la FAQ. Article (f3) : bandeau `newsletter-article` en fin de texte + carte de la colonne
   (`newsletter-colonne`). Classes `bandeau-newsletter` (prioritaire), `newsletter-article` / `newsletter-colonne`
   (très prioritaires : modificateurs d'une classe prioritaire), `inscription-newsletter`.
+- **0.7.3** : newsletter absente d'un article publié chez la cliente : sur wp2 l'encart apparaît dès que le code HubSpot est
+  collé (rien tant que Personnaliser > « Rolling : newsletter » est vide, voulu) ⇒ causes : code non collé ou modèle
+  d'article modifié (V2). Nom du client des Avant / Après : en A2 il est dans `pastille-client` (vide par défaut, invisible
+  dans l'éditeur) ⇒ rappel en pointillés dans l'éditeur (`apercu_contextes`). Widget Vidéo : mode `muet` (« Vidéo muette en
+  boucle, sans son ni bouton ») = `div.video-calque[data-rl-mode=muet][aria-hidden]`, `videoMuette()` dans rolling.js (fondu
+  sur l'image, pause hors écran pour un fichier, rien avec « réduire les animations ») ; classe `cadre-video-muette` (widget
+  en absolu sur l'image) ; page contenu : hero, 3 vidéos du cas client, 3 exemples (`exemple(video=True)`, `video_muette()`).
+  **Mot-clé « content repurposing »** : H1, chapô (gras), question de FAQ ; adresse `/content-repurposing/` (installation.json)
+  + 301 depuis `/du-contenu-a-la-video/` si la page existe (`Rolling_Seo::offres_vers_accueil`) ; title / description Yoast
+  proposés. WordPress ne redirige pas l'ancien slug d'une page (seulement les articles).
 - **Chargement de page effet film** (demande avant la fin de la livraison 4) : maquette `maquettes/loading/maquette-loading.html`
   (copie /workspace/maquette-loading.html), 4 options : A amorce 3-2-1, B clap qui se ferme puis rideau, C ouverture
   cinéma (bandes noires + REC + timecode + règle avec la tête de lecture rouge des frises, plus de filet fin), D barre de lecture en haut sans écran. Conseil : C à l'arrivée (première page

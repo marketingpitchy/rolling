@@ -475,13 +475,14 @@ methode = F('La méthode', ['section', 'section-lilas'], tag='section', ancre='m
 # 00:04 Avant → Après
 # --------------------------------------------------------------------------------------------
 
-def exemple(n, image, alt, depart, tag, resultat, prefixe='Exemple'):
+def exemple(n, image, alt, depart, tag, resultat, prefixe='Exemple', video=False):
     """Exemple Avant → Après : toute la carte mène à la réalisation (lien à régler dans Elementor). Le nom du client
     (pastille sur l'image) est facultatif : laissé vide, il ne s'affiche pas."""
     nom = '%s %d' % (prefixe, n)
     return F(nom, ['carte-verre', 'carte-exemple'], lien='/realisations/', enfants=[
-        D(nom + ' · image', ['cadre-exemple'], enfants=[
+        D(nom + ' · image', ['cadre-exemple'] + (['cadre-video-muette'] if video else []), enfants=[
             I(nom + ' · vignette', image, alt, ['image-vignette'], taille='medium_large'),
+        ] + ([video_muette(nom)] if video else []) + [
             P(nom + ' · client', '', ['pastille-client']),
         ]),
         F(nom + ' · bas', ['bas-exemple'], enfants=[
@@ -492,6 +493,11 @@ def exemple(n, image, alt, depart, tag, resultat, prefixe='Exemple'):
             P(nom + ' · voir', 'Voir la réalisation', ['fleche-ronde']),
         ]),
     ])
+
+
+def video_muette(nom):
+    """Vidéo muette en boucle posée sur l'image du cadre (facultative : sans lien, l'image reste)."""
+    return W(nom + ' · vidéo muette', 'rolling-video', source='lien', mode='muet', titre='')
 
 
 EXEMPLES = [
@@ -2252,16 +2258,17 @@ contenu_haut = F('Contenu · haut', ['section', 'section-entete', 'entete-page',
         F('Contenu · présentation', ['agence-hero'], enfants=[
             F('Contenu · textes', None, COLONNE, enfants=[
                 F('Contenu · pastille', ['pastille'], enfants=[P('Contenu · pastille · texte', 'Du contenu à la vidéo')]),
-                H('Contenu · titre', 'Transformez vos contenus <em>en vidéos.</em>', 'h1', ['titre-lg'], 'margin-top: 22px;'),
-                P('Contenu · introduction', "Un PowerPoint, un article, un rapport ou un webinar contient déjà tout ce qu'il faut. Notre <strong>agence vidéo</strong> en tire des vidéos courtes, une par message, prêtes pour chaque canal.", ['texte-intro'], 'margin-top: 22px; max-width: 600px;'),
+                H('Contenu · titre', 'Content repurposing&nbsp;: transformez vos contenus <em>en vidéos.</em>', 'h1', ['titre-lg'], 'margin-top: 22px;'),
+                P('Contenu · introduction', "Un PowerPoint, un article, un rapport ou un webinar contient déjà tout ce qu'il faut. Le <strong>content repurposing</strong>, c'est en tirer des vidéos courtes, une par message, prêtes pour chaque canal. Notre agence vidéo s'en charge.", ['texte-intro'], 'margin-top: 22px; max-width: 600px;'),
                 F('Contenu · boutons', ['rangee'], 'margin-top: 34px;', enfants=[
                     B('Contenu · réserver', 'Réserver un échange', '/contact/', ['bouton-principal']),
                     B('Contenu · formules', 'Voir les formules', '/#offres', ['bouton-verre']),
                 ]),
             ]),
             F('Contenu · visuel', ['carte-verre', 'agence-photo', 'flotte'], enfants=[
-                D('Contenu · visuel · cadre', ['cadre-photo'], 'aspect-ratio: 4 / 3;', enfants=[
+                D('Contenu · visuel · cadre', ['cadre-photo', 'cadre-video-muette'], 'aspect-ratio: 4 / 3;', enfants=[
                     I('Contenu · visuel · image', 'exemple-serie.webp', "Un rapport devenu une série de vidéos courtes", ['image-couvrante'], taille='large'),
+                    video_muette('Contenu · visuel'),
                     P('Contenu · visuel · bandeau', 'Avant · après', ['bandeau-video']),
                 ]),
                 P('Contenu · visuel · légende', '[Visuel à fournir : une page du document d’origine et la vidéo qui en est née]', ['texte-petit'], 'padding: 12px 6px 2px;'),
@@ -2359,8 +2366,9 @@ contenu_cas = F('Contenu · cas client', ['section', 'section-suite'], tag='sect
                 P('Contenu · cas · étiquette', 'Un exemple réel, de A à Z', ['label', 'label-violet']),
                 H('Contenu · cas · titre', '[Client] : un PPT de 40 pages, devenu <em>6 vidéos.</em>', 'h2', ['titre-sm'], 'margin-top: 8px;'),
                 F('Contenu · cas · vidéos', ['apercu-cas'], enfants=[
-                    D('Contenu · cas · vidéo %d' % n, ['cadre-photo'], 'aspect-ratio: 16 / 9;', enfants=[
+                    D('Contenu · cas · vidéo %d' % n, ['cadre-photo', 'cadre-video-muette'], 'aspect-ratio: 16 / 9;', enfants=[
                         I('Contenu · cas · vidéo %d · image' % n, img, '', ['image-couvrante'], taille='medium_large'),
+                        video_muette('Contenu · cas · vidéo %d' % n),
                     ]) for n, img in enumerate(('exemple-motion.webp', 'exemple-linkedin.webp', 'exemple-interview.webp'), 1)
                 ]),
                 F('Contenu · cas · chiffres', ['chiffres-cas'], enfants=[
@@ -2376,7 +2384,7 @@ contenu_cas = F('Contenu · cas client', ['section', 'section-suite'], tag='sect
 contenu_exemples = F('Contenu · exemples', ['section', 'section-suite'], tag='section', enfants=[
     F('Contenu · exemples · contenu', ['conteneur'], COLONNE, enfants=[
         entete_simple('Contenu · exemples', '00:05', 'Avant → Après', "D'autres contenus, <em>déjà en vidéo.</em>"),
-        F('Contenu · exemples · grille', ['grille-3'], 'margin-top: 40px;', enfants=[exemple(n, *e, prefixe='Contenu · exemple') for n, e in enumerate(EXEMPLES[:3], 1)]),
+        F('Contenu · exemples · grille', ['grille-3'], 'margin-top: 40px;', enfants=[exemple(n, *e, prefixe='Contenu · exemple', video=True) for n, e in enumerate(EXEMPLES[:3], 1)]),
         F('Contenu · exemples · bouton', ['rangee'], 'justify-content: center; margin-top: 36px;', enfants=[
             B('Contenu · exemples · toutes', 'Toutes nos réalisations', '/realisations/', ['bouton-verre']),
         ]),
@@ -2391,6 +2399,7 @@ contenu_exemples = F('Contenu · exemples', ['section', 'section-suite'], tag='s
 ])
 
 QUESTIONS_CONTENU = [
+    ('Qu’est-ce que le content repurposing ?', "C'est réutiliser un contenu existant sous d'autres formes. Ici, nous transformons vos documents en vidéos courtes, adaptées à chaque canal, sans repartir de zéro."),
     ('Faut-il réécrire nos textes avant de vous les envoyer ?', "Non. Envoyez le contenu tel qu'il est : nous repérons les messages et écrivons les scripts."),
     ('Combien de vidéos peut-on tirer d’un seul contenu ?', 'Souvent plusieurs : une par message clé, déclinée dans les formats de vos canaux. [À confirmer : exemple courant.]'),
     ('Nos contenus confidentiels sont-ils protégés ?', "[À compléter : hébergement des données, outils d'IA utilisés, sécurité.]"),

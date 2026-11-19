@@ -34555,6 +34555,24 @@
             ]
         },
         {
+            "id": "g-808f11b",
+            "label": "cadre-video-muette",
+            "groupe": "Fiches et listes",
+            "description": "Cadre d'image qui peut recevoir une vidéo muette en boucle (widget Vidéo, « Vidéo muette en boucle ») : la vidéo couvre l'image une fois prête ; sans lien, l'image reste.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": [],
+                    "custom_css": {
+                        "raw": "JiA+IC5lbGVtZW50b3Itd2lkZ2V0LXJvbGxpbmctdmlkZW8geyBwb3NpdGlvbjogYWJzb2x1dGU7IHRvcDogMDsgcmlnaHQ6IDA7IGJvdHRvbTogMDsgbGVmdDogMDsgei1pbmRleDogMDsgbWFyZ2luOiAwOyBwb2ludGVyLWV2ZW50czogbm9uZTsgfQ=="
+                    }
+                }
+            ]
+        },
+        {
             "id": "g-c0f84ea",
             "label": "pastille-son",
             "groupe": "Fiches et listes",

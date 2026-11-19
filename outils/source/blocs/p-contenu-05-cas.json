@@ -3,7 +3,7 @@
  "titre": "Rolling · Du contenu à la vidéo · 00:04 Un cas client",
  "type": "e-flexbox",
  "composition": {
-  "xml_structure": "<e-flexbox configuration-id=\"Contenu · cas client\"><e-flexbox configuration-id=\"Contenu · cas · contenu\"><e-flexbox configuration-id=\"Contenu · cas · en-tête\"><e-flexbox configuration-id=\"Contenu · cas · repère\"><e-paragraph configuration-id=\"Contenu · cas · timecode\"></e-paragraph><e-paragraph configuration-id=\"Contenu · cas · sur-titre\"></e-paragraph></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Contenu · cas · carte\"><e-div-block configuration-id=\"Contenu · cas · document\"><e-image configuration-id=\"Contenu · cas · document · image\"></e-image><e-paragraph configuration-id=\"Contenu · cas · document · bandeau\"></e-paragraph></e-div-block><e-flexbox configuration-id=\"Contenu · cas · textes\"><e-paragraph configuration-id=\"Contenu · cas · étiquette\"></e-paragraph><e-heading configuration-id=\"Contenu · cas · titre\"></e-heading><e-flexbox configuration-id=\"Contenu · cas · vidéos\"><e-div-block configuration-id=\"Contenu · cas · vidéo 1\"><e-image configuration-id=\"Contenu · cas · vidéo 1 · image\"></e-image></e-div-block><e-div-block configuration-id=\"Contenu · cas · vidéo 2\"><e-image configuration-id=\"Contenu · cas · vidéo 2 · image\"></e-image></e-div-block><e-div-block configuration-id=\"Contenu · cas · vidéo 3\"><e-image configuration-id=\"Contenu · cas · vidéo 3 · image\"></e-image></e-div-block></e-flexbox><e-flexbox configuration-id=\"Contenu · cas · chiffres\"><e-paragraph configuration-id=\"Contenu · cas · chiffre 1\"></e-paragraph><e-paragraph configuration-id=\"Contenu · cas · chiffre 2\"></e-paragraph><e-paragraph configuration-id=\"Contenu · cas · chiffre 3\"></e-paragraph></e-flexbox><e-paragraph configuration-id=\"Contenu · cas · citation\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox></e-flexbox>",
+  "xml_structure": "<e-flexbox configuration-id=\"Contenu · cas client\"><e-flexbox configuration-id=\"Contenu · cas · contenu\"><e-flexbox configuration-id=\"Contenu · cas · en-tête\"><e-flexbox configuration-id=\"Contenu · cas · repère\"><e-paragraph configuration-id=\"Contenu · cas · timecode\"></e-paragraph><e-paragraph configuration-id=\"Contenu · cas · sur-titre\"></e-paragraph></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Contenu · cas · carte\"><e-div-block configuration-id=\"Contenu · cas · document\"><e-image configuration-id=\"Contenu · cas · document · image\"></e-image><e-paragraph configuration-id=\"Contenu · cas · document · bandeau\"></e-paragraph></e-div-block><e-flexbox configuration-id=\"Contenu · cas · textes\"><e-paragraph configuration-id=\"Contenu · cas · étiquette\"></e-paragraph><e-heading configuration-id=\"Contenu · cas · titre\"></e-heading><e-flexbox configuration-id=\"Contenu · cas · vidéos\"><e-div-block configuration-id=\"Contenu · cas · vidéo 1\"><e-image configuration-id=\"Contenu · cas · vidéo 1 · image\"></e-image><e-paragraph configuration-id=\"Contenu · cas · vidéo 1 · vidéo muette\"></e-paragraph></e-div-block><e-div-block configuration-id=\"Contenu · cas · vidéo 2\"><e-image configuration-id=\"Contenu · cas · vidéo 2 · image\"></e-image><e-paragraph configuration-id=\"Contenu · cas · vidéo 2 · vidéo muette\"></e-paragraph></e-div-block><e-div-block configuration-id=\"Contenu · cas · vidéo 3\"><e-image configuration-id=\"Contenu · cas · vidéo 3 · image\"></e-image><e-paragraph configuration-id=\"Contenu · cas · vidéo 3 · vidéo muette\"></e-paragraph></e-div-block></e-flexbox><e-flexbox configuration-id=\"Contenu · cas · chiffres\"><e-paragraph configuration-id=\"Contenu · cas · chiffre 1\"></e-paragraph><e-paragraph configuration-id=\"Contenu · cas · chiffre 2\"></e-paragraph><e-paragraph configuration-id=\"Contenu · cas · chiffre 3\"></e-paragraph></e-flexbox><e-paragraph configuration-id=\"Contenu · cas · citation\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox></e-flexbox>",
   "element_config": {
    "Contenu · cas client": {
     "tag": "section"
@@ -41,6 +41,9 @@
      "size": "medium_large"
     }
    },
+   "Contenu · cas · vidéo 1 · vidéo muette": {
+    "paragraph": "⟦widget:rolling-video|source=lien|mode=muet|titre=⟧"
+   },
    "Contenu · cas · vidéo 2 · image": {
     "image": {
      "src": {
@@ -49,6 +52,9 @@
      "size": "medium_large"
     }
    },
+   "Contenu · cas · vidéo 2 · vidéo muette": {
+    "paragraph": "⟦widget:rolling-video|source=lien|mode=muet|titre=⟧"
+   },
    "Contenu · cas · vidéo 3 · image": {
     "image": {
      "src": {
@@ -56,6 +62,9 @@
      },
      "size": "medium_large"
     }
+   },
+   "Contenu · cas · vidéo 3 · vidéo muette": {
+    "paragraph": "⟦widget:rolling-video|source=lien|mode=muet|titre=⟧"
    },
    "Contenu · cas · chiffre 1": {
     "paragraph": "<strong>[x]</strong>vidéos livrées"
@@ -111,19 +120,22 @@
     "apercu-cas"
    ],
    "Contenu · cas · vidéo 1": [
-    "cadre-photo"
+    "cadre-photo",
+    "cadre-video-muette"
    ],
    "Contenu · cas · vidéo 1 · image": [
     "image-couvrante"
    ],
    "Contenu · cas · vidéo 2": [
-    "cadre-photo"
+    "cadre-photo",
+    "cadre-video-muette"
    ],
    "Contenu · cas · vidéo 2 · image": [
     "image-couvrante"
    ],
    "Contenu · cas · vidéo 3": [
-    "cadre-photo"
+    "cadre-photo",
+    "cadre-video-muette"
    ],
    "Contenu · cas · vidéo 3 · image": [
     "image-couvrante"

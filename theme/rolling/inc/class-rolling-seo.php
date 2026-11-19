@@ -281,11 +281,15 @@ class Rolling_Seo {
 			return;
 		}
 		$chemin = trim( (string) wp_parse_url( isset( $_SERVER['REQUEST_URI'] ) ? esc_url_raw( wp_unslash( $_SERVER['REQUEST_URI'] ) ) : '', PHP_URL_PATH ), '/' );
-		if ( 'offres' !== $chemin ) {
-			return;
+		if ( 'offres' === $chemin ) {
+			wp_safe_redirect( home_url( '/#offres' ), 301, 'Rolling' );
+			exit;
 		}
-		wp_safe_redirect( home_url( '/#offres' ), 301, 'Rolling' );
-		exit;
+		// 0.7.3 : la page « Du contenu à la vidéo » prend l'adresse /content-repurposing/ (mot-clé) ; l'ancienne y renvoie.
+		if ( 'du-contenu-a-la-video' === $chemin && get_page_by_path( 'content-repurposing' ) ) {
+			wp_safe_redirect( home_url( '/content-repurposing/' ), 301, 'Rolling' );
+			exit;
+		}
 	}
 
 	/**

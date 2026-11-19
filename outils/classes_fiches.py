@@ -389,6 +389,8 @@ CLASSES = [
      "& > .video-calque-fond { top: 50%; left: 50%; width: max(100cqw, 177.78cqh); height: max(100cqh, 56.25cqw); transform: translate(-50%, -50%); background: transparent; pointer-events: none; opacity: 0; transition: opacity 0.8s ease; } & > .video-calque-fond.pret { opacity: 1; } & > video.video-calque-fond { top: 0; left: 0; width: 100%; height: 100%; transform: none; object-fit: cover; }"),
     ('video-calque-bouton', "Bouton invisible qui couvre la vidéo : lance le lecteur avec le son.",
      "position: absolute; z-index: 1; top: 0; right: 0; bottom: 0; left: 0; width: 100%; height: 100%; padding: 0; border: 0; border-radius: inherit; background-color: transparent; cursor: pointer; &:focus-visible { outline: 3px solid #FFFFFF; outline-offset: -6px; }"),
+    ('cadre-video-muette', "Cadre d'image qui peut recevoir une vidéo muette en boucle (widget Vidéo, « Vidéo muette en boucle ») : la vidéo couvre l'image une fois prête ; sans lien, l'image reste.",
+     "& > .elementor-widget-rolling-video { position: absolute; top: 0; right: 0; bottom: 0; left: 0; z-index: 0; margin: 0; pointer-events: none; }"),
     ('pastille-son', "Pastille « Activer le son » sur un showreel qui tourne en boucle (visible pendant l'aperçu).",
      "position: absolute; left: 16px; bottom: 16px; display: none; align-items: center; gap: 8px; min-height: 40px; padding: 0 16px; border-radius: 999px; font-family: Hanken Grotesk; font-size: 14px; line-height: 1; font-weight: 700; color: #FFFFFF; background: rgba(15,15,18,0.78); background-color: #0F0F12; "
      "&::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: #FF3B30; box-shadow: 0 0 0 3px rgba(255,59,48,0.3); }"),

@@ -53,6 +53,7 @@ class Rolling_Widget_Video extends Rolling_Widget {
 			array(
 				'boucle' => __( 'Aperçu muet en boucle, puis le son au clic', 'rolling' ),
 				'clic'   => __( 'Image seulement, lecture au clic', 'rolling' ),
+				'muet'   => __( 'Vidéo muette en boucle, sans son ni bouton (à la place d’une image)', 'rolling' ),
 			)
 		);
 		$this->texte( 'son', __( 'Lien : texte du bouton son', 'rolling' ), __( 'Activer le son', 'rolling' ) );
@@ -152,8 +153,17 @@ class Rolling_Widget_Video extends Rolling_Widget {
 		$url = trim( (string) $r['lien'] );
 		if ( '' === $url ) {
 			if ( \Elementor\Plugin::$instance->editor->is_edit_mode() ) {
-				echo '<p class="bandeau-video" style="top:auto;bottom:14px">' . esc_html__( 'Vidéo : collez le lien dans les réglages du widget', 'rolling' ) . '</p>';
+				if ( 'muet' === $r['mode'] ) {
+					echo '<p class="bandeau-video" style="top:12px;right:12px;left:auto;bottom:auto">' . esc_html__( 'Vidéo (facultatif) : lien dans le widget', 'rolling' ) . '</p>';
+				} else {
+					echo '<p class="bandeau-video" style="top:auto;bottom:14px">' . esc_html__( 'Vidéo : collez le lien dans les réglages du widget', 'rolling' ) . '</p>';
+				}
 			}
+			return;
+		}
+		if ( 'muet' === $r['mode'] ) {
+			// Décor : la vidéo remplace l'image une fois prête (l'image reste avec « réduire les animations »). Ni son, ni bouton.
+			echo '<div class="video-calque" data-rl-video="' . esc_url( $url ) . '" data-rl-mode="muet" aria-hidden="true"></div>';
 			return;
 		}
 		$titre  = '' !== trim( (string) $r['titre'] ) ? $r['titre'] : __( 'Vidéo', 'rolling' );

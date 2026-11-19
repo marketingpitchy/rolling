@@ -630,6 +630,37 @@
 		return el;
 	}
 
+	/* Vidéo muette à la place d'une image (widget Vidéo, mode « muet ») : chargée quand le cadre est visible, en fondu
+	   sur l'image ; un fichier se met en pause hors de l'écran. Rien avec « réduire les animations ». */
+	function videoMuette( cadre ) {
+		if ( calme || ! ( 'IntersectionObserver' in window ) ) {
+			return;
+		}
+		var fond = null;
+		new IntersectionObserver( function ( entrees ) {
+			var visible = entrees[ 0 ].isIntersecting;
+			if ( visible && ! fond ) {
+				fond = lecteurLien( cadre.getAttribute( 'data-rl-video' ), true, '' );
+				fond.setAttribute( 'tabindex', '-1' );
+				fond.setAttribute( 'aria-hidden', 'true' );
+				fond.classList.add( 'video-calque-fond' );
+				fond.addEventListener( 'IFRAME' === fond.tagName ? 'load' : 'playing', function () {
+					setTimeout( function () { fond.classList.add( 'pret' ); }, 'IFRAME' === fond.tagName ? 700 : 0 );
+				} );
+				cadre.appendChild( fond );
+			} else if ( fond && 'VIDEO' === fond.tagName ) {
+				if ( visible ) {
+					var p = fond.play();
+					if ( p && p.catch ) {
+						p.catch( function () {} );
+					}
+				} else {
+					fond.pause();
+				}
+			}
+		}, { threshold: 0.2 } ).observe( cadre );
+	}
+
 	/* Miniatures YouTube en haute définition (maxresdefault) : si la vidéo n'en a pas (image grise de 120 px), on revient à hqdefault */
 	document.querySelectorAll( 'img[src*="i.ytimg.com"][src*="/maxresdefault."]' ).forEach( function ( img ) {
 		var repli = function () {
@@ -647,6 +678,10 @@
 
 	/* Vidéo d'une fiche : chargée seulement au clic (YouTube sans cookie, ou fichier de la médiathèque) */
 	document.querySelectorAll( '[data-rl-video]' ).forEach( function ( cadre ) {
+		if ( 'muet' === cadre.getAttribute( 'data-rl-mode' ) ) {
+			videoMuette( cadre );
+			return;
+		}
 		var bouton = cadre.querySelector( 'button' ), apercu = cadre.querySelector( 'video.apercu-video' );
 		if ( ! bouton || editeur ) {
 			return;
