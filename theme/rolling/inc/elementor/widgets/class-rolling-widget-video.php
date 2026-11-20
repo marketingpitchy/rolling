@@ -134,7 +134,7 @@ class Rolling_Widget_Video extends Rolling_Widget {
 			);
 		}
 		foreach ( $versions as $rang => $version ) {
-			$this->rendre_cadre( $r, $id, $version, $rang, $adapter, $haut, $fixe );
+			$this->rendre_cadre( $r, $id, $version, $rang, $adapter, $haut, $fixe, count( $versions ) > 1 );
 		}
 	}
 
@@ -153,7 +153,7 @@ class Rolling_Widget_Video extends Rolling_Widget {
 		}
 		echo '<div class="versions-video" role="group" aria-label="' . esc_attr( $nom ) . '">';
 		foreach ( $versions as $rang => $version ) {
-			$texte = Rolling_Contenus::libelle_format( $version['format'] ) . ( '' !== $version['nom'] ? ' · ' . $version['nom'] : '' );
+			$texte = self::texte_version( $version );
 			echo '<button type="button" data-rl-version="' . esc_attr( $rang ) . '" data-rl-forme="' . esc_attr( $version['format'] ) . '" aria-pressed="' . ( 0 === $rang ? 'true' : 'false' ) . '">' . esc_html( $texte ) . '</button>';
 		}
 		echo '</div>';
@@ -168,16 +168,17 @@ class Rolling_Widget_Video extends Rolling_Widget {
 	 * @param int   $rang    Rang (0 = principale ; les autres sont cachées jusqu'au choix d'une version).
 	 * @param bool  $adapter Cadre au format de la vidéo.
 	 * @param bool  $haut    Image chargée tout de suite.
-	 * @param bool  $fixe    Image fixe plutôt qu'aperçu animé.
+	 * @param bool  $fixe      Image fixe plutôt qu'aperçu animé.
+	 * @param bool  $plusieurs Plusieurs versions (l'étiquette est alors portée par les boutons de versions).
 	 */
-	private function rendre_cadre( $r, $id, $version, $rang, $adapter, $haut, $fixe ) {
+	private function rendre_cadre( $r, $id, $version, $rang, $adapter, $haut, $fixe, $plusieurs = false ) {
 		$video   = $version['lien'];
 		$titre   = get_the_title( $id );
 		$duree   = 0 === $rang ? (string) Rolling_Contenus::valeur( 'duree', $id ) : '';
 		$affiche = 0 === $rang && has_post_thumbnail( $id );
 		if ( $adapter ) {
-			// Fiche : l'étiquette dit le vrai format de la vidéo (et le nom de la version).
-			$etiquette = Rolling_Contenus::libelle_format( $version['format'] ) . ( '' !== $version['nom'] ? ' · ' . $version['nom'] : '' );
+			// Fiche : l'étiquette dit le vrai format de la vidéo ; avec plusieurs versions, les boutons au-dessus le disent déjà.
+			$etiquette = $plusieurs ? '' : self::texte_version( $version );
 		} else {
 			$etiquette = self::format_carte( $id, $version['format'] );
 		}
@@ -206,12 +207,11 @@ class Rolling_Widget_Video extends Rolling_Widget {
 		$youtube = self::id_youtube( $video );
 		$vimeo   = $video && false !== strpos( $video, 'vimeo.com' ) && class_exists( 'Rolling_Widget_Contenu' ) ? Rolling_Widget_Contenu::image_vimeo( $video ) : '';
 		if ( $affiche ) {
+			// Avec une image à la une : pas de miniature en plus (un fichier vidéo garde son aperçu muet par-dessus).
 			$youtube = '';
 			$vimeo   = '';
-			$video_a = '';
-		} else {
-			$video_a = $video;
 		}
+		$video_a = $video;
 		if ( $youtube ) {
 			// Sans image à la une : la miniature de la vidéo YouTube.
 			echo '<img class="image-couvrante" src="' . esc_url( 'https://i.ytimg.com/vi/' . $youtube . ( '9-16' === $version['format'] ? '/hqdefault.jpg' : '/maxresdefault.jpg' ) ) . '" width="1280" height="720" alt=""' . ( $haut && 0 === $rang ? '' : ' loading="lazy"' ) . '>';
@@ -233,6 +233,24 @@ class Rolling_Widget_Video extends Rolling_Widget {
 			echo '<button type="button" class="lecture-centre" aria-label="' . esc_attr( $nom_lecture ) . '">' . Rolling_Dynamique::image_du_theme( 'bouton-lecture', 'thumbnail' ) . '</button>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- image de wp_get_attachment_image().
 		}
 		echo '</div>';
+	}
+
+	/**
+	 * Texte d'une version : « 9:16 · Stories » ; le nom seul s'il donne déjà le format (« Format 9:16 ») ; le format seul sans nom.
+	 *
+	 * @param array $version Vidéo (lien, format, nom).
+	 * @return string
+	 */
+	public static function texte_version( $version ) {
+		$format = Rolling_Contenus::libelle_format( $version['format'] );
+		$nom    = trim( (string) $version['nom'] );
+		if ( '' === $nom ) {
+			return $format;
+		}
+		if ( preg_match( '/(?:^|\D)(16[-:]9|9[-:]16|1[-:]1|4[-:]5)(?:\D|$)/', $nom ) ) {
+			return $nom;
+		}
+		return $format . ' · ' . $nom;
 	}
 
 	/**

@@ -839,6 +839,10 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   `cadre-scene`, `ligne-info`, `libelle-info`, `valeur-info` ; infos montrées sous le lecteur dans l'éditeur (apercu_contextes).
   Étiquette des cartes : 1er format coché qui n'est pas un ratio, sinon format réel ; balise Terme met en 1er le format de la
   vidéo principale ; `vertical()` du mur lit la vidéo principale.
+- **0.7.9 (retours 0.7.8)** : vidéo de la fiche qui ne se lançait plus toute seule = en 0.7.8 l'aperçu muet d'un fichier n'était
+  plus posé quand la réalisation a une image à la une (avant 0.7.8, il jouait par-dessus) ⇒ rétabli. Plusieurs versions :
+  plus d'étiquette sur la vidéo (les boutons disent déjà le format) ; texte d'une version = `texte_version()` : nom seul s'il
+  contient déjà un format (« Format 9:16 »), sinon « 9:16 · Stories », format seul sans nom.
 - **Chargement de page effet film** (demande avant la fin de la livraison 4) : maquette `maquettes/loading/maquette-loading.html`
   (copie /workspace/maquette-loading.html), 4 options : A amorce 3-2-1, B clap qui se ferme puis rideau, C ouverture
   cinéma (bandes noires + REC + timecode + règle avec la tête de lecture rouge des frises, plus de filet fin), D barre de lecture en haut sans écran. Conseil : C à l'arrivée (première page
