@@ -50,7 +50,22 @@ class Rolling_Balise_Terme extends Tag {
 
 	/** Affichage. */
 	public function render() {
-		$termes = get_the_terms( $this->contenu(), (string) $this->get_settings( 'taxonomie' ) );
-		echo esc_html( $termes && ! is_wp_error( $termes ) ? $termes[0]->name : '' );
+		$taxonomie = (string) $this->get_settings( 'taxonomie' );
+		$termes    = get_the_terms( $this->contenu(), $taxonomie );
+		if ( ! $termes || is_wp_error( $termes ) ) {
+			return;
+		}
+		if ( 'rolling_format' === $taxonomie && count( $termes ) > 1 ) {
+			// Plusieurs formats cochés : celui de la vidéo principale passe devant (ex. « 9:16 » avant « 1:1 »).
+			$videos    = Rolling_Contenus::videos( $this->contenu() );
+			$principal = $videos ? $videos[0]['format'] : '';
+			usort(
+				$termes,
+				function ( $a, $b ) use ( $principal ) {
+					return (int) ( Rolling_Widget_Video::est_rapport( $b ) === $principal ) - (int) ( Rolling_Widget_Video::est_rapport( $a ) === $principal );
+				}
+			);
+		}
+		echo esc_html( $termes[0]->name );
 	}
 }

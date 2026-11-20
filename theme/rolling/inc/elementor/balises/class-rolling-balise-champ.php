@@ -50,6 +50,7 @@ class Rolling_Balise_Champ extends Tag {
 				}
 			}
 		}
+		$options['formats_videos'] = __( 'Formats des vidéos, calculé (Réalisation)', 'rolling' );
 
 		return $options;
 	}

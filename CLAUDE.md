@@ -827,6 +827,18 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   fond flou, 1:1 = lecteur 560 px + infos ; plusieurs vidéos = champ répétable « Les vidéos » (lien, format auto, nom de version ;
   1re = principale, le champ `video` actuel devient la 1re ligne) : M1 sélecteur de versions au-dessus du lecteur (conseil) /
   M2 principale + rangée « Toutes les versions ».
+- **0.7.8 (fiche réalisation : formats + plusieurs vidéos, choix 9:16 A, 1:1, M1)** : champ répétable `videos` (lien, format
+  auto | 16-9 | 9-16 | 1-1 | 4-5, nom de version ; colonnes « choix » = `<select>` dans les lignes) à la place de `video`
+  (repli : ancien `_rolling_video` = 1re ligne ; à l'enregistrement `_rolling_video` = lien de la 1re ligne, cartes / mur /
+  schéma inchangés). `Rolling_Contenus::videos()` / `format_lien()` : fichier = largeur × hauteur de la médiathèque, YouTube
+  /shorts/ = 9:16, Vimeo = oEmbed, transient `rl_format_<md5>` ; champ calculé `formats_videos` (balise Champ). Widget Vidéo :
+  `adapter=oui` (cadre au format de la vidéo, `data-rl-format`, une `video-fiche` par version, `hidden` sauf la 1re) et
+  `partie=versions` (`versions-video` : boutons `data-rl-version` + forme du format ; rien sous 2 vidéos) ; rolling.js bascule
+  les versions (arrête celle qui jouait) et corrige le format d'un fichier sur `loadedmetadata`. Fiche (f1) : `scene-video`
+  (grille ; 9:16 / 4:5 = lecteur 380 px + `infos-video` à droite ; 1:1 = 560 px ; 16:9 = lecteur seul ; mobile empilé),
+  `cadre-scene`, `ligne-info`, `libelle-info`, `valeur-info` ; infos montrées sous le lecteur dans l'éditeur (apercu_contextes).
+  Étiquette des cartes : 1er format coché qui n'est pas un ratio, sinon format réel ; balise Terme met en 1er le format de la
+  vidéo principale ; `vertical()` du mur lit la vidéo principale.
 - **Chargement de page effet film** (demande avant la fin de la livraison 4) : maquette `maquettes/loading/maquette-loading.html`
   (copie /workspace/maquette-loading.html), 4 options : A amorce 3-2-1, B clap qui se ferme puis rideau, C ouverture
   cinéma (bandes noires + REC + timecode + règle avec la tête de lecture rouge des frises, plus de filet fin), D barre de lecture en haut sans écran. Conseil : C à l'arrivée (première page

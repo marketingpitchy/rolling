@@ -377,7 +377,7 @@ class Rolling_Widget_Liste extends Rolling_Widget {
 				echo \Elementor\Plugin::$instance->frontend->get_builder_content_for_display( $vide, false ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- HTML produit par Elementor.
 			} elseif ( array_filter( array_map( array( __CLASS__, 'filtre_demande' ), self::taxonomies_filtres( $r['filtres'] ) ) ) ) {
 				// Des filtres sont choisis mais aucun contenu ne correspond : le dire, et proposer de tout revoir.
-				$tout = remove_query_arg( array( 'metier', 'format', 'usage', 'theme', 'categorie', 'voir' ) );
+				$tout   = remove_query_arg( array( 'metier', 'format', 'usage', 'theme', 'categorie', 'voir' ) );
 				$detail = trim( (string) ( $r['texte_aucun_detail'] ?? '' ) );
 				if ( 'realisations' === $r['contenu'] && __( 'Aucune réalisation pour ces filtres.', 'rolling' ) === ( $r['texte_aucun'] ?? '' ) ) {
 					// Liste des réalisations laissée aux textes d'origine : la phrase validée en 0.7.5.
@@ -563,12 +563,17 @@ class Rolling_Widget_Liste extends Rolling_Widget {
 	}
 
 	/**
-	 * Réalisation au format vertical (format vidéo dont l'identifiant contient « 9-16 », ex. « Format 9:16 »).
+	 * Réalisation au format vertical : vidéo principale en 9:16 (sinon, format vidéo coché dont l'identifiant contient « 9-16 »).
 	 *
 	 * @param int $id Réalisation.
 	 * @return bool
 	 */
 	private static function vertical( $id ) {
+		$videos = Rolling_Contenus::videos( $id );
+		if ( $videos ) {
+			// Format lu sur la vidéo principale.
+			return '9-16' === $videos[0]['format'];
+		}
 		$formats = get_the_terms( $id, 'rolling_format' );
 		foreach ( is_array( $formats ) ? $formats : array() as $format ) {
 			if ( false !== strpos( $format->slug, '9-16' ) ) {

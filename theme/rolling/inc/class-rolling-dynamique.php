@@ -165,7 +165,9 @@ class Rolling_Dynamique {
 		$css .= 'html.elementor-html .elementor .client-exemple:empty{display:block!important;min-height:16px;outline:1px dashed rgba(91,59,234,.35);outline-offset:3px}'
 			. 'html.elementor-html .elementor .client-exemple:empty::before{content:"Nom du client (facultatif)";opacity:.6;font-weight:600;letter-spacing:0;text-transform:none}'
 			. 'html.elementor-html .elementor .pastille-client:empty{display:block!important;min-width:150px;min-height:22px;outline:1px dashed rgba(255,255,255,.8);outline-offset:2px}'
-			. 'html.elementor-html .elementor .pastille-client:empty::before{content:"Nom du client (facultatif)";opacity:.85;letter-spacing:0;text-transform:none}';
+			. 'html.elementor-html .elementor .pastille-client:empty::before{content:"Nom du client (facultatif)";opacity:.85;letter-spacing:0;text-transform:none}'
+			// Infos à côté d'une vidéo verticale ou carrée : masquées pour une vidéo 16:9, montrées sous le lecteur dans l'éditeur.
+			. 'html.elementor-html .elementor .scene-video>.infos-video{display:flex;width:100%;outline:1px dashed rgba(91,59,234,.5);outline-offset:8px}';
 		wp_add_inline_style( 'rolling-editeur', $css );
 	}
 
@@ -436,7 +438,7 @@ class Rolling_Dynamique {
 			// « si-newsletter » : le formulaire de la newsletter est réglé dans le Personnalisateur.
 			return '' === trim( (string) get_theme_mod( 'rolling_newsletter_code', '' ) );
 		}
-		$id  = self::contenu_courant();
+		$id = self::contenu_courant();
 
 		if ( 'contexte' === $cle && self::$contextes ) {
 			// « si-contexte » : le conteneur « contexte-… » a trouvé un contenu publié.
@@ -698,7 +700,7 @@ class Rolling_Dynamique {
 			return $ids;
 		}
 
-		$labels = array( 'filtres-liste', 'chip-filtre', 'rangee', 'liste-plus', 'bouton-verre', 'bouton-petit', 'plaque-libre', 'chiffre-verre', 'libelle-chiffre', 'texte-masque', 'liste-coches', 'ligne-coche', 'coche', 'texte', 'texte-petit', 'generique-liste', 'compte-rebours', 'cr-pilule', 'cr-point', 'cr-label', 'cr-temps', 'cr-direct', 'cr-fin', 'cadre-photo', 'video-fiche', 'image-couvrante', 'bandeau-video', 'duree', 'lecture-centre', 'transcription', 'masque-bords', 'logos-defilants', 'grille-6', 'carte-verre', 'tuile-logo', 'ariane', 'article-texte', 'sommaire', 'partage', 'partage-bouton', 'chip-neutre', 'resumer', 'label', 'label-violet', 'intervenants-webinar', 'avatars-initiales', 'carte-vide', 'titre-xs', 'plaque-large', 'temoins-courts', 'video-calque', 'video-calque-bouton', 'pastille-son', 'zone-newsletter' );
+		$labels = array( 'filtres-liste', 'chip-filtre', 'rangee', 'liste-plus', 'bouton-verre', 'bouton-petit', 'plaque-libre', 'chiffre-verre', 'libelle-chiffre', 'texte-masque', 'liste-coches', 'ligne-coche', 'coche', 'texte', 'texte-petit', 'generique-liste', 'compte-rebours', 'cr-pilule', 'cr-point', 'cr-label', 'cr-temps', 'cr-direct', 'cr-fin', 'cadre-photo', 'video-fiche', 'image-couvrante', 'bandeau-video', 'duree', 'lecture-centre', 'transcription', 'masque-bords', 'logos-defilants', 'grille-6', 'carte-verre', 'tuile-logo', 'ariane', 'article-texte', 'sommaire', 'partage', 'partage-bouton', 'chip-neutre', 'resumer', 'label', 'label-violet', 'intervenants-webinar', 'avatars-initiales', 'carte-vide', 'titre-xs', 'plaque-large', 'temoins-courts', 'video-calque', 'video-calque-bouton', 'pastille-son', 'zone-newsletter', 'versions-video' );
 		if ( preg_match_all( '/"(?:titre_)?classe(?:_texte)?":"([^"]+)"/', $donnees, $trouves ) ) {
 			foreach ( $trouves[1] as $liste ) {
 				$labels = array_merge( $labels, preg_split( '/\s+/', $liste ) );

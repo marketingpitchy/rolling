@@ -26,12 +26,13 @@
 		var liste = bloc.querySelector( '.rolling-liste' ), nom = bloc.dataset.nom;
 		function renumeroter() {
 			liste.querySelectorAll( '.rolling-ligne' ).forEach( function ( ligne, i ) {
-				ligne.querySelectorAll( 'input' ).forEach( function ( champ ) { champ.name = nom + '[' + i + '][' + champ.dataset.colonne + ']'; } );
+				ligne.querySelectorAll( 'input, select' ).forEach( function ( champ ) { champ.name = nom + '[' + i + '][' + champ.dataset.colonne + ']'; } );
 			} );
 		}
 		bloc.querySelector( '[data-ajouter]' ).addEventListener( 'click', function () {
 			var modele = liste.querySelector( '.rolling-ligne' ), nouvelle = modele.cloneNode( true );
 			nouvelle.querySelectorAll( 'input' ).forEach( function ( champ ) { champ.value = ''; } );
+			nouvelle.querySelectorAll( 'select' ).forEach( function ( champ ) { champ.selectedIndex = 0; } );
 			liste.appendChild( nouvelle ); renumeroter();
 			nouvelle.querySelector( 'input' ).focus();
 		} );
@@ -39,7 +40,7 @@
 			var ligne = e.target.closest( '.rolling-ligne' );
 			if ( ! ligne ) { return; }
 			if ( e.target.closest( '[data-retirer-ligne]' ) ) {
-				if ( liste.children.length > 1 ) { ligne.remove(); } else { ligne.querySelectorAll( 'input' ).forEach( function ( c ) { c.value = ''; } ); }
+				if ( liste.children.length > 1 ) { ligne.remove(); } else { ligne.querySelectorAll( 'input' ).forEach( function ( c ) { c.value = ''; } ); ligne.querySelectorAll( 'select' ).forEach( function ( c ) { c.selectedIndex = 0; } ); }
 				renumeroter();
 			}
 			if ( e.target.closest( '[data-monter]' ) && ligne.previousElementSibling ) {

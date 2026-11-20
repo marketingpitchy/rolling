@@ -789,8 +789,72 @@
 			}
 			cadre.appendChild( lecteur );
 			cadre.classList.add( 'lit' );
+			cadre.rlBouton = bouton;
 			bouton.remove();
 			lecteur.focus();
+		} );
+	} );
+
+	/* Fiche réalisation : format d'un fichier vidéo lu sur le fichier (si le serveur ne le connaît pas), et boutons de versions */
+	function formatRapport( r ) {
+		return r < 0.7 ? '9-16' : ( r < 0.9 ? '4-5' : ( r <= 1.15 ? '1-1' : '16-9' ) );
+	}
+	document.querySelectorAll( '.video-fiche[data-rl-auto]' ).forEach( function ( cadre ) {
+		var sonde = document.createElement( 'video' );
+		sonde.preload = 'metadata';
+		sonde.muted = true;
+		sonde.addEventListener( 'loadedmetadata', function () {
+			if ( ! sonde.videoWidth || ! sonde.videoHeight ) {
+				return;
+			}
+			var format = formatRapport( sonde.videoWidth / sonde.videoHeight ), avant = cadre.getAttribute( 'data-rl-format' );
+			if ( format === avant ) {
+				return;
+			}
+			cadre.setAttribute( 'data-rl-format', format );
+			var etiquette = cadre.querySelector( '.bandeau-video' );
+			if ( etiquette ) {
+				etiquette.textContent = etiquette.textContent.replace( avant.replace( '-', ':' ), format.replace( '-', ':' ) );
+			}
+			document.querySelectorAll( '.versions-video [data-rl-version="' + cadre.getAttribute( 'data-rl-version' ) + '"]' ).forEach( function ( b ) {
+				b.setAttribute( 'data-rl-forme', format );
+				b.textContent = b.textContent.replace( avant.replace( '-', ':' ), format.replace( '-', ':' ) );
+			} );
+		} );
+		sonde.src = cadre.getAttribute( 'data-rl-video' );
+	} );
+	document.querySelectorAll( '.versions-video' ).forEach( function ( groupe ) {
+		var zone = groupe.parentElement;
+		while ( zone && ! zone.querySelector( '.video-fiche[data-rl-version]' ) ) {
+			zone = zone.parentElement;
+		}
+		if ( ! zone ) {
+			return;
+		}
+		groupe.addEventListener( 'click', function ( e ) {
+			var choix = e.target.closest( 'button[data-rl-version]' );
+			if ( ! choix ) {
+				return;
+			}
+			var rang = choix.getAttribute( 'data-rl-version' );
+			groupe.querySelectorAll( 'button[data-rl-version]' ).forEach( function ( b ) {
+				b.setAttribute( 'aria-pressed', b === choix ? 'true' : 'false' );
+			} );
+			zone.querySelectorAll( '.video-fiche[data-rl-version]' ).forEach( function ( cadre ) {
+				var montre = cadre.getAttribute( 'data-rl-version' ) === rang;
+				if ( ! montre && ! cadre.hidden ) {
+					// Version quittée : la lecture s'arrête et le bouton lecture revient.
+					cadre.querySelectorAll( 'video' ).forEach( function ( v ) { v.pause(); } );
+					if ( cadre.classList.contains( 'lit' ) ) {
+						cadre.querySelectorAll( 'iframe, video:not(.apercu-video)' ).forEach( function ( l ) { l.remove(); } );
+						cadre.classList.remove( 'lit' );
+						if ( cadre.rlBouton ) {
+							cadre.appendChild( cadre.rlBouton );
+						}
+					}
+				}
+				cadre.hidden = ! montre;
+			} );
 		} );
 	} );
 

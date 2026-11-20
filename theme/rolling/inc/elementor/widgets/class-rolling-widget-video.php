@@ -67,6 +67,23 @@ class Rolling_Widget_Video extends Rolling_Widget {
 			)
 		);
 		$this->choix(
+			'adapter',
+			__( 'Format du cadre', 'rolling' ),
+			array(
+				'non' => __( '16:9 (cartes, listes)', 'rolling' ),
+				'oui' => __( 'Celui de la vidéo (fiche réalisation)', 'rolling' ),
+			)
+		);
+		$this->choix(
+			'partie',
+			__( 'Afficher', 'rolling' ),
+			array(
+				'lecteur'  => __( 'Le lecteur', 'rolling' ),
+				'versions' => __( 'Les boutons de versions (s’il y a plusieurs vidéos)', 'rolling' ),
+			)
+		);
+		$this->texte( 'versions_nom', __( 'Boutons de versions : nom du groupe (lecteur d’écran)', 'rolling' ), __( 'Versions de la vidéo', 'rolling' ) );
+		$this->choix(
 			'priorite',
 			__( 'Chargement de l’image', 'rolling' ),
 			array(
@@ -93,19 +110,84 @@ class Rolling_Widget_Video extends Rolling_Widget {
 				return;
 			}
 		}
-		$haut  = 'bas' !== $r['priorite'];
-		$fixe  = 'image' === $r['apercu'];
-		$video = (string) Rolling_Contenus::valeur( 'video', $id );
-		if ( ! $video && ! has_post_thumbnail( $id ) ) {
+		$haut     = 'bas' !== $r['priorite'];
+		$fixe     = 'image' === $r['apercu'];
+		$adapter  = 'oui' === ( $r['adapter'] ?? 'non' );
+		$versions = Rolling_Contenus::videos( $id );
+		if ( ! $adapter ) {
+			$versions = array_slice( $versions, 0, 1 );
+		}
+		if ( 'versions' === ( $r['partie'] ?? 'lecteur' ) ) {
+			$this->rendre_versions( $versions, (string) ( $r['versions_nom'] ?? '' ) );
 			return;
 		}
-		$formats = get_the_terms( $id, 'rolling_format' );
-		$format  = $formats && ! is_wp_error( $formats ) ? $formats[0]->name : '';
-		$duree   = (string) Rolling_Contenus::valeur( 'duree', $id );
-		$titre   = get_the_title( $id );
+		if ( ! $versions && ! has_post_thumbnail( $id ) ) {
+			return;
+		}
+		if ( ! $versions ) {
+			$versions = array(
+				array(
+					'lien'   => '',
+					'format' => '16-9',
+					'nom'    => '',
+				),
+			);
+		}
+		foreach ( $versions as $rang => $version ) {
+			$this->rendre_cadre( $r, $id, $version, $rang, $adapter, $haut, $fixe );
+		}
+	}
 
-		echo '<div class="' . esc_attr( $r['classe'] ) . '"' . ( $video ? ' data-rl-video="' . esc_url( $video ) . '"' : '' ) . ( $fixe ? ' data-rl-apercu="fixe"' : '' ) . '>';
-		if ( has_post_thumbnail( $id ) ) {
+	/**
+	 * Boutons de versions (au-dessus du lecteur) : un par vidéo, avec la forme de son format.
+	 *
+	 * @param array  $versions Vidéos.
+	 * @param string $nom      Nom du groupe.
+	 */
+	private function rendre_versions( $versions, $nom ) {
+		if ( count( $versions ) < 2 ) {
+			if ( \Elementor\Plugin::$instance->editor->is_edit_mode() ) {
+				echo '<p class="texte-petit">' . esc_html__( 'Boutons de versions : ils apparaissent quand la réalisation a plusieurs vidéos.', 'rolling' ) . '</p>';
+			}
+			return;
+		}
+		echo '<div class="versions-video" role="group" aria-label="' . esc_attr( $nom ) . '">';
+		foreach ( $versions as $rang => $version ) {
+			$texte = Rolling_Contenus::libelle_format( $version['format'] ) . ( '' !== $version['nom'] ? ' · ' . $version['nom'] : '' );
+			echo '<button type="button" data-rl-version="' . esc_attr( $rang ) . '" data-rl-forme="' . esc_attr( $version['format'] ) . '" aria-pressed="' . ( 0 === $rang ? 'true' : 'false' ) . '">' . esc_html( $texte ) . '</button>';
+		}
+		echo '</div>';
+	}
+
+	/**
+	 * Cadre d'une vidéo : affiche, étiquette, durée, bouton lecture ; la vidéo se charge au clic.
+	 *
+	 * @param array $r       Réglages.
+	 * @param int   $id      Réalisation.
+	 * @param array $version Vidéo (lien, format, nom).
+	 * @param int   $rang    Rang (0 = principale ; les autres sont cachées jusqu'au choix d'une version).
+	 * @param bool  $adapter Cadre au format de la vidéo.
+	 * @param bool  $haut    Image chargée tout de suite.
+	 * @param bool  $fixe    Image fixe plutôt qu'aperçu animé.
+	 */
+	private function rendre_cadre( $r, $id, $version, $rang, $adapter, $haut, $fixe ) {
+		$video   = $version['lien'];
+		$titre   = get_the_title( $id );
+		$duree   = 0 === $rang ? (string) Rolling_Contenus::valeur( 'duree', $id ) : '';
+		$affiche = 0 === $rang && has_post_thumbnail( $id );
+		if ( $adapter ) {
+			// Fiche : l'étiquette dit le vrai format de la vidéo (et le nom de la version).
+			$etiquette = Rolling_Contenus::libelle_format( $version['format'] ) . ( '' !== $version['nom'] ? ' · ' . $version['nom'] : '' );
+		} else {
+			$etiquette = self::format_carte( $id, $version['format'] );
+		}
+
+		// Fichier au format automatique : rolling.js vérifie le format sur le fichier lui-même.
+		$fichier = $video && ! self::id_youtube( $video ) && false === strpos( $video, 'vimeo.com' );
+		echo '<div class="' . esc_attr( $r['classe'] ) . '"' . ( $video ? ' data-rl-video="' . esc_url( $video ) . '"' : '' ) . ( $fixe ? ' data-rl-apercu="fixe"' : '' )
+			. ( $adapter ? ' data-rl-format="' . esc_attr( $version['format'] ) . '" data-rl-version="' . esc_attr( $rang ) . '"' : '' )
+			. ( $adapter && $fichier && ! empty( $version['auto'] ) ? ' data-rl-auto="1"' : '' ) . ( $rang > 0 ? ' hidden' : '' ) . '>';
+		if ( $affiche ) {
 			echo get_the_post_thumbnail( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- HTML de WordPress.
 				$id,
 				$haut ? 'large' : 'medium_large',
@@ -122,24 +204,63 @@ class Rolling_Widget_Video extends Rolling_Widget {
 			);
 		}
 		$youtube = self::id_youtube( $video );
-		if ( $youtube && ! has_post_thumbnail( $id ) ) {
+		$vimeo   = $video && false !== strpos( $video, 'vimeo.com' ) && class_exists( 'Rolling_Widget_Contenu' ) ? Rolling_Widget_Contenu::image_vimeo( $video ) : '';
+		if ( $affiche ) {
+			$youtube = '';
+			$vimeo   = '';
+			$video_a = '';
+		} else {
+			$video_a = $video;
+		}
+		if ( $youtube ) {
 			// Sans image à la une : la miniature de la vidéo YouTube.
-			echo '<img class="image-couvrante" src="' . esc_url( 'https://i.ytimg.com/vi/' . $youtube . '/maxresdefault.jpg' ) . '" width="1280" height="720" alt=""' . ( $haut ? '' : ' loading="lazy"' ) . '>';
-		} elseif ( $video && ! $youtube ) {
+			echo '<img class="image-couvrante" src="' . esc_url( 'https://i.ytimg.com/vi/' . $youtube . ( '9-16' === $version['format'] ? '/hqdefault.jpg' : '/maxresdefault.jpg' ) ) . '" width="1280" height="720" alt=""' . ( $haut && 0 === $rang ? '' : ' loading="lazy"' ) . '>';
+		} elseif ( $vimeo ) {
+			echo '<img class="image-couvrante" src="' . esc_url( $vimeo ) . '" width="1280" height="720" alt=""' . ( $haut && 0 === $rang ? '' : ' loading="lazy"' ) . '>';
+		} elseif ( $video_a && false === strpos( $video_a, 'vimeo.com' ) ) {
 			// Fichier vidéo : aperçu muet en boucle (lancé par rolling.js quand il est à l'écran, jamais avec « réduire les
 			// animations », ni avec « Image fixe ») ; sans image à la une, sa première image sert d'affiche.
 			echo '<video class="image-couvrante apercu-video" src="' . esc_url( $video ) . ( $fixe ? '#t=2' : '#t=0.1' ) . '" muted loop playsinline preload="metadata" aria-hidden="true" tabindex="-1"></video>';
 		}
-		if ( $format ) {
-			echo '<span class="bandeau-video">' . esc_html( $format ) . '</span>';
+		if ( $etiquette ) {
+			echo '<span class="bandeau-video">' . esc_html( $etiquette ) . '</span>';
 		}
 		if ( $duree ) {
 			echo '<span class="duree">' . esc_html( $duree ) . '</span>';
 		}
 		if ( $video ) {
-			echo '<button type="button" class="lecture-centre" aria-label="' . esc_attr( sprintf( $r['libelle'], $titre ) ) . '">' . Rolling_Dynamique::image_du_theme( 'bouton-lecture', 'thumbnail' ) . '</button>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- image de wp_get_attachment_image().
+			$nom_lecture = sprintf( $r['libelle'], $titre . ( '' !== $version['nom'] ? ' (' . $version['nom'] . ')' : '' ) );
+			echo '<button type="button" class="lecture-centre" aria-label="' . esc_attr( $nom_lecture ) . '">' . Rolling_Dynamique::image_du_theme( 'bouton-lecture', 'thumbnail' ) . '</button>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- image de wp_get_attachment_image().
 		}
 		echo '</div>';
+	}
+
+	/**
+	 * Étiquette d'une carte : le 1er format vidéo coché qui n'est pas un format d'image (ex. « Motion design ») ;
+	 * sinon le vrai format de la vidéo.
+	 *
+	 * @param int    $id     Réalisation.
+	 * @param string $format Format de la vidéo principale.
+	 * @return string
+	 */
+	public static function format_carte( $id, $format ) {
+		$termes = get_the_terms( $id, 'rolling_format' );
+		foreach ( is_array( $termes ) ? $termes : array() as $terme ) {
+			if ( ! self::est_rapport( $terme ) ) {
+				return $terme->name;
+			}
+		}
+		return is_array( $termes ) && $termes ? Rolling_Contenus::libelle_format( $format ) : '';
+	}
+
+	/**
+	 * Le terme désigne-t-il un format d'image (« 9:16 », « Format 1:1 »…) ?
+	 *
+	 * @param WP_Term $terme Terme.
+	 * @return string Format (16-9, 9-16, 1-1, 4-5) ou chaîne vide.
+	 */
+	public static function est_rapport( $terme ) {
+		return preg_match( '/(?:^|\D)(16[-:]9|9[-:]16|1[-:]1|4[-:]5)(?:\D|$)/', $terme->slug . ' ' . $terme->name, $m ) ? str_replace( ':', '-', $m[1] ) : '';
 	}
 
 	/**

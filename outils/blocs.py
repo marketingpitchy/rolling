@@ -1165,8 +1165,31 @@ fiche_realisation = F('Fiche réalisation', None, COLONNE + ' align-items: stret
     ]),
     F('Fiche réalisation · vidéo', ['section', 'section-suite'], tag='section', enfants=[
         F('Fiche réalisation · vidéo · contenu', ['conteneur'], COLONNE, enfants=[
-            D('Fiche réalisation · cadre vidéo', ['vignette-video'], 'width: 100%; max-width: 1040px; margin: 0 auto;', enfants=[
-                W('Fiche réalisation · lecteur', 'rolling-video'),
+            W('Fiche réalisation · versions', 'rolling-video', partie='versions', adapter='oui'),
+            F('Fiche réalisation · scène vidéo', ['scene-video'], enfants=[
+                D('Fiche réalisation · cadre vidéo', ['vignette-video', 'cadre-scene'], enfants=[
+                    W('Fiche réalisation · lecteur', 'rolling-video', adapter='oui'),
+                ]),
+                F('Fiche réalisation · infos vidéo', ['infos-video'], enfants=[
+                    P('Fiche réalisation · infos · chapô', DYN('rolling-champ', champ='chapo'), ['texte-intro', 'si-chapo']),
+                    F('Fiche réalisation · infos · lignes', None, COLONNE + ' gap: 0; padding: 0;', enfants=[
+                        F('Fiche réalisation · infos · format', ['ligne-info'], enfants=[
+                            P('Fiche réalisation · infos · format · libellé', 'Format', ['libelle-info']),
+                            P('Fiche réalisation · infos · format · valeur', DYN('rolling-champ', champ='formats_videos'), ['valeur-info']),
+                        ]),
+                        F('Fiche réalisation · infos · durée', ['ligne-info', 'si-duree'], enfants=[
+                            P('Fiche réalisation · infos · durée · libellé', 'Durée', ['libelle-info']),
+                            P('Fiche réalisation · infos · durée · valeur', DYN('rolling-champ', champ='duree'), ['valeur-info']),
+                        ]),
+                        F('Fiche réalisation · infos · cas d’usage', ['ligne-info', 'si-usage'], enfants=[
+                            P('Fiche réalisation · infos · cas d’usage · libellé', 'Cas d’usage', ['libelle-info']),
+                            P('Fiche réalisation · infos · cas d’usage · valeur', DYN('rolling-terme', taxonomie='rolling_usage'), ['valeur-info']),
+                        ]),
+                    ]),
+                    F('Fiche réalisation · infos · action', ['rangee'], enfants=[
+                        B('Fiche réalisation · infos · bouton', 'Réserver un échange', '/contact/', ['bouton-principal']),
+                    ]),
+                ]),
             ]),
         ]),
     ]),

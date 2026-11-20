@@ -10,3 +10,4 @@
 .rolling-ligne input[data-colonne="valeur"], .rolling-ligne input[data-colonne="nom"], .rolling-ligne input[data-colonne="role"] { flex: 0 0 160px; }
 .rolling-ligne .button-link { min-width: 28px; min-height: 28px; font-size: 18px; text-decoration: none; }
 .rolling-relation { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 6px 18px; max-height: 260px; overflow: auto; padding: 8px; border: 1px solid #dcdcde; border-radius: 4px; }
+.rolling-ligne select { flex: 0 0 180px; }

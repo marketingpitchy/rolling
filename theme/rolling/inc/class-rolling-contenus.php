@@ -256,7 +256,25 @@ class Rolling_Contenus {
 					'duree'         => array( 'texte', __( 'Durée de la vidéo', 'rolling' ), __( 'Ex. : 2:04', 'rolling' ) ),
 				),
 				__( 'La vidéo', 'rolling' ) => array(
-					'video'         => array( 'lien', __( 'Lien de la vidéo', 'rolling' ), __( 'Lien YouTube ou lien d’un fichier de la médiathèque. L’image à la une sert d’affiche ; sans elle, la miniature YouTube ou la première image du fichier.', 'rolling' ) ),
+					'videos'        => array(
+						'lignes',
+						__( 'Les vidéos', 'rolling' ),
+						__( 'Une ligne par vidéo (YouTube, Vimeo ou fichier de la médiathèque). La 1re est la vidéo principale : elle sert sur les cartes et dans le mur des réalisations ; l’image à la une est son affiche. Format automatique : lu sur la vidéo (choisissez-le seulement s’il est faux). Avec plusieurs vidéos, des boutons de versions s’affichent au-dessus du lecteur (ex. « 9:16 · Stories »).', 'rolling' ),
+						array(
+							'lien'   => __( 'Lien de la vidéo', 'rolling' ),
+							'format' => array(
+								__( 'Format', 'rolling' ),
+								array(
+									'auto' => __( 'Format automatique', 'rolling' ),
+									'16-9' => __( '16:9 (horizontal)', 'rolling' ),
+									'9-16' => __( '9:16 (vertical)', 'rolling' ),
+									'1-1'  => __( '1:1 (carré)', 'rolling' ),
+									'4-5'  => __( '4:5', 'rolling' ),
+								),
+							),
+							'nom'    => __( 'Nom de la version (facultatif, ex. Stories)', 'rolling' ),
+						),
+					),
 					'transcription' => array( 'zone', __( 'Transcription (facultatif)', 'rolling' ), __( 'Laissez vide : la ligne « Lire la transcription » n’apparaît pas.', 'rolling' ) ),
 				),
 				__( 'Le récit', 'rolling' ) => array(
@@ -511,14 +529,118 @@ class Rolling_Contenus {
 	 */
 	public static function valeur( $cle, $post_id = null ) {
 		$post_id = $post_id ? $post_id : get_the_ID();
-		$valeur  = get_post_meta( $post_id, self::PREFIXE . $cle, true );
-		$def     = self::champ( get_post_type( $post_id ), $cle );
+		if ( 'formats_videos' === $cle ) {
+			// Champ calculé : les formats des vidéos de la réalisation (« 9:16, 1:1 »).
+			return implode( ', ', array_unique( array_map( array( __CLASS__, 'libelle_format' ), array_column( self::videos( $post_id ), 'format' ) ) ) );
+		}
+		$valeur = get_post_meta( $post_id, self::PREFIXE . $cle, true );
+		$def    = self::champ( get_post_type( $post_id ), $cle );
+
+		if ( 'videos' === $cle && ( ! is_array( $valeur ) || ! $valeur ) ) {
+			// Réalisation enregistrée avant 0.7.8 : son lien unique devient la 1re ligne.
+			$ancien = (string) get_post_meta( $post_id, self::PREFIXE . 'video', true );
+			return '' !== $ancien ? array(
+				array(
+					'lien'   => $ancien,
+					'format' => 'auto',
+					'nom'    => '',
+				),
+			) : array();
+		}
 
 		if ( $def && in_array( $def[0], array( 'lignes', 'relation' ), true ) ) {
 			return is_array( $valeur ) ? $valeur : array();
 		}
 
 		return $valeur;
+	}
+
+	/**
+	 * Vidéos d'une réalisation, format résolu (la 1re = la principale).
+	 *
+	 * @param int $id Réalisation.
+	 * @return array<int, array{lien: string, format: string, nom: string}>
+	 */
+	public static function videos( $id ) {
+		$liste = array();
+		foreach ( (array) self::valeur( 'videos', $id ) as $ligne ) {
+			$lien = trim( (string) ( $ligne['lien'] ?? '' ) );
+			if ( '' === $lien ) {
+				continue;
+			}
+			$force   = (string) ( $ligne['format'] ?? 'auto' );
+			$liste[] = array(
+				'lien'   => $lien,
+				'format' => in_array( $force, array( '16-9', '9-16', '1-1', '4-5' ), true ) ? $force : self::format_lien( $lien ),
+				'nom'    => trim( (string) ( $ligne['nom'] ?? '' ) ),
+				'auto'   => ! in_array( $force, array( '16-9', '9-16', '1-1', '4-5' ), true ),
+			);
+		}
+		return $liste;
+	}
+
+	/**
+	 * Format d'une vidéo lu sur la vidéo elle-même : dimensions d'un fichier de la médiathèque, lien YouTube « shorts »,
+	 * dimensions données par Vimeo. 16:9 si rien n'est connu (rolling.js corrige alors un fichier une fois chargé).
+	 *
+	 * @param string $lien Lien de la vidéo.
+	 * @return string 16-9, 9-16, 1-1 ou 4-5.
+	 */
+	public static function format_lien( $lien ) {
+		if ( false !== strpos( $lien, '/shorts/' ) ) {
+			return '9-16';
+		}
+		if ( preg_match( '~youtu\.?be~', $lien ) ) {
+			return '16-9';
+		}
+		$cle    = 'rl_format_' . md5( $lien );
+		$format = get_transient( $cle );
+		if ( false !== $format ) {
+			return (string) $format;
+		}
+		$largeur = 0;
+		$hauteur = 0;
+		if ( false !== strpos( $lien, 'vimeo.com' ) ) {
+			$donnees = _wp_oembed_get_object()->get_data( $lien );
+			if ( $donnees ) {
+				$largeur = (int) ( $donnees->width ?? 0 );
+				$hauteur = (int) ( $donnees->height ?? 0 );
+			}
+		} else {
+			$piece   = attachment_url_to_postid( strtok( $lien, '?#' ) );
+			$meta    = $piece ? wp_get_attachment_metadata( $piece ) : array();
+			$largeur = (int) ( $meta['width'] ?? 0 );
+			$hauteur = (int) ( $meta['height'] ?? 0 );
+		}
+		$format = $largeur && $hauteur ? self::format_rapport( $largeur / $hauteur ) : '16-9';
+		set_transient( $cle, $format, $largeur ? MONTH_IN_SECONDS : DAY_IN_SECONDS );
+		return $format;
+	}
+
+	/**
+	 * Format le plus proche d'un rapport largeur / hauteur.
+	 *
+	 * @param float $rapport Largeur / hauteur.
+	 * @return string
+	 */
+	public static function format_rapport( $rapport ) {
+		if ( $rapport < 0.7 ) {
+			return '9-16';
+		}
+		if ( $rapport < 0.9 ) {
+			return '4-5';
+		}
+		return $rapport <= 1.15 ? '1-1' : '16-9';
+	}
+
+	/**
+	 * Libellé d'un format (« 9:16 »).
+	 *
+	 * @param string $format Format.
+	 * @return string
+	 */
+	public static function libelle_format( $format ) {
+		return str_replace( '-', ':', (string) $format );
 	}
 
 	/**
@@ -655,10 +777,18 @@ class Rolling_Contenus {
 				$lignes = array();
 				foreach ( (array) $valeur as $ligne ) {
 					$propre = array();
-					foreach ( array_keys( $def[3] ) as $colonne ) {
-						$propre[ $colonne ] = sanitize_text_field( $ligne[ $colonne ] ?? '' );
+					$texte  = '';
+					foreach ( $def[3] as $colonne => $titre ) {
+						$brut = (string) ( $ligne[ $colonne ] ?? '' );
+						if ( is_array( $titre ) ) {
+							// Colonne à choix : une valeur de la liste, sinon la première.
+							$propre[ $colonne ] = isset( $titre[1][ $brut ] ) ? $brut : (string) array_key_first( $titre[1] );
+							continue;
+						}
+						$propre[ $colonne ] = 'lien' === $colonne ? esc_url_raw( $brut ) : sanitize_text_field( $brut );
+						$texte             .= $propre[ $colonne ];
 					}
-					if ( implode( '', $propre ) !== '' ) {
+					if ( '' !== $texte ) {
 						$lignes[] = $propre;
 					}
 				}
@@ -781,6 +911,14 @@ class Rolling_Contenus {
 				foreach ( $lignes as $i => $ligne ) {
 					echo '<li class="rolling-ligne">';
 					foreach ( $colonnes as $colonne => $titre ) {
+						if ( is_array( $titre ) ) {
+							echo '<select name="' . esc_attr( $nom . '[' . $i . '][' . $colonne . ']' ) . '" aria-label="' . esc_attr( $titre[0] ) . '" data-colonne="' . esc_attr( $colonne ) . '">';
+							foreach ( $titre[1] as $option => $texte ) {
+								echo '<option value="' . esc_attr( $option ) . '"' . selected( $ligne[ $colonne ] ?? '', $option, false ) . '>' . esc_html( $texte ) . '</option>';
+							}
+							echo '</select>';
+							continue;
+						}
 						echo '<input type="text" name="' . esc_attr( $nom . '[' . $i . '][' . $colonne . ']' ) . '" value="' . esc_attr( $ligne[ $colonne ] ?? '' ) . '" placeholder="' . esc_attr( $titre ) . '" aria-label="' . esc_attr( $titre ) . '" data-colonne="' . esc_attr( $colonne ) . '">';
 					}
 					echo '<button type="button" class="button-link rolling-monter" data-monter aria-label="' . esc_attr__( 'Monter', 'rolling' ) . '">↑</button>';
@@ -828,6 +966,16 @@ class Rolling_Contenus {
 				} else {
 					update_post_meta( $post_id, self::PREFIXE . $cle, $valeur );
 				}
+			}
+		}
+		if ( 'rolling_realisation' === $post->post_type ) {
+			// La vidéo principale reste dans l'ancien champ « video », lu par les cartes, le mur, le schéma et les témoignages.
+			$lignes = (array) get_post_meta( $post_id, self::PREFIXE . 'videos', true );
+			$lien   = (string) ( $lignes[0]['lien'] ?? '' );
+			if ( '' === $lien ) {
+				delete_post_meta( $post_id, self::PREFIXE . 'video' );
+			} else {
+				update_post_meta( $post_id, self::PREFIXE . 'video', $lien );
 			}
 		}
 	}
