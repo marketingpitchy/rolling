@@ -818,6 +818,15 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   client OK sur wp avec un .mp4) ; site de la cliente injoignable d'ici ⇒ deux causes probables corrigées dans rolling.js :
   widget posé sans `cadre-video-muette` (`videoMuette()` met le widget en absolu sur l'image) et liens Vimeo autres que
   vimeo.com/ID (manage/videos, channels, showcase…, regex élargie). Lien utilisé demandé à la cliente.
+- **0.7.7** : landing B = hero **« version maquette : grande photo »** (`98-landing-accueil` assemble `01-hero-maquette` à la
+  place de `01-hero`). **Maquette « Fiche réalisation : formats et plusieurs vidéos »** (`maquettes/fiche-formats/formats.html`,
+  générée par `scratchpad/c067/gen-formats.py`, copie /workspace/maquette-fiche-formats.html, **à valider**) : constat = cadre
+  `video-fiche` toujours 16:9 + étiquette = 1er terme `rolling_format` par ordre alphabétique (« 1:1 » avant « 9:16 ») ⇒ proposé :
+  format **lu sur la vidéo** (fichier : largeur × hauteur de la médiathèque ; YouTube shorts = 9:16 ; Vimeo : oEmbed) + réglage
+  de secours par vidéo ; fiche 16:9 = comme aujourd'hui, 9:16 A lecteur 380 px à gauche + infos à droite (conseil) / B centré sur
+  fond flou, 1:1 = lecteur 560 px + infos ; plusieurs vidéos = champ répétable « Les vidéos » (lien, format auto, nom de version ;
+  1re = principale, le champ `video` actuel devient la 1re ligne) : M1 sélecteur de versions au-dessus du lecteur (conseil) /
+  M2 principale + rangée « Toutes les versions ».
 - **Chargement de page effet film** (demande avant la fin de la livraison 4) : maquette `maquettes/loading/maquette-loading.html`
   (copie /workspace/maquette-loading.html), 4 options : A amorce 3-2-1, B clap qui se ferme puis rideau, C ouverture
   cinéma (bandes noires + REC + timecode + règle avec la tête de lecture rouge des frises, plus de filet fin), D barre de lecture en haut sans écran. Conseil : C à l'arrivée (première page
