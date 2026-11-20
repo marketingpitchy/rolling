@@ -1246,7 +1246,7 @@ fiche_realisation = F('Fiche réalisation', None, COLONNE + ' align-items: stret
     F('Fiche réalisation · autres', ['section', 'section-lilas'], tag='section', enfants=[
         F('Fiche réalisation · autres · contenu', ['conteneur'], COLONNE, enfants=[
             H('Fiche réalisation · autres · titre', "D'autres <em>réalisations.</em>", 'h2', ['titre-sm'], 'margin-bottom: 36px;'),
-            W('Fiche réalisation · autres · liste', 'rolling-liste', contenu='autres', nombre='3', classe='grille-3'),
+            W('Fiche réalisation · autres · liste', 'rolling-liste', contenu='autres', nombre='3', classe='grille-3', carte_theme='exemple'),
         ]),
     ]),
     final,
@@ -1326,7 +1326,7 @@ fiche_temoignage = F('Fiche témoignage', None, COLONNE + ' align-items: stretch
                 ]),
                 F('Fiche témoignage · vidéos', ['pile', 'si-autres-videos'], enfants=[
                     H('Fiche témoignage · vidéos · titre', 'Les autres vidéos.', 'h2', ['titre-sm']),
-                    W('Fiche témoignage · vidéos · liste', 'rolling-liste', contenu='liees_suite', nombre='6', classe='grille-2'),
+                    W('Fiche témoignage · vidéos · liste', 'rolling-liste', contenu='liees_suite', nombre='6', classe='grille-2', carte_theme='exemple'),
                 ]),
             ]),
         ]),

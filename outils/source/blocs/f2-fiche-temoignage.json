@@ -166,7 +166,7 @@
     "title": "Les autres vidéos."
    },
    "Fiche témoignage · vidéos · liste": {
-    "paragraph": "⟦widget:rolling-liste|contenu=liees_suite|nombre=6|classe=grille-2⟧"
+    "paragraph": "⟦widget:rolling-liste|contenu=liees_suite|nombre=6|classe=grille-2|carte_theme=exemple⟧"
    },
    "Appel final": {
     "_cssid": "contact",

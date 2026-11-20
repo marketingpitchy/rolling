@@ -199,7 +199,7 @@
     "title": "D'autres <em>réalisations.</em>"
    },
    "Fiche réalisation · autres · liste": {
-    "paragraph": "⟦widget:rolling-liste|contenu=autres|nombre=3|classe=grille-3⟧"
+    "paragraph": "⟦widget:rolling-liste|contenu=autres|nombre=3|classe=grille-3|carte_theme=exemple⟧"
    },
    "Appel final": {
     "_cssid": "contact",

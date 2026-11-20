@@ -859,6 +859,9 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   vidéo. », 6e type « Une page produit » (`grille-types` 3 colonnes, 2 sous 1024), intro du schéma, étapes 1 et 4, encart
   prix, FAQ (définition + « Par quels contenus commencer ? »), appel final « Vos contenus existent déjà. Faites-les voir. ».
   Sans « vidéotiser » (règle de rédaction).
+- **0.7.12** : fiche réalisation « D'autres réalisations » et fiche témoignage « Les autres vidéos » = cartes façon Avant → Après
+  (widget Liste `carte_theme='exemple'` ⇒ c14, comme l'accueil et Contact). Métas proposées pour la page content repurposing
+  (« Vos contenus en vidéo » chez la cliente).
 - **Chargement de page effet film** (demande avant la fin de la livraison 4) : maquette `maquettes/loading/maquette-loading.html`
   (copie /workspace/maquette-loading.html), 4 options : A amorce 3-2-1, B clap qui se ferme puis rideau, C ouverture
   cinéma (bandes noires + REC + timecode + règle avec la tête de lecture rouge des frises, plus de filet fin), D barre de lecture en haut sans écran. Conseil : C à l'arrivée (première page
