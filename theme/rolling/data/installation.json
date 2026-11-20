@@ -75,6 +75,13 @@
       "titre": "Du contenu à la vidéo",
       "slug": "content-repurposing",
       "depuis": "0.7.0"
+    },
+    {
+      "cle": "landing-accueil",
+      "titre": "Landing B (l'accueil)",
+      "slug": "agence-video-illimitee",
+      "modele": "modeles/landing.php",
+      "depuis": "0.7.6"
     }
   ],
   "menus": [

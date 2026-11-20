@@ -1,0 +1,24 @@
+{
+ "cle": "98-landing-accueil",
+ "titre": "Rolling · Page complète (landing B : l'accueil)",
+ "type": "page",
+ "assemble": [
+  "01-hero",
+  "02-logos",
+  "03-showreel",
+  "04-pourquoi",
+  "05-pour-qui",
+  "06-methode",
+  "07-exemples",
+  "08-ia",
+  "09-humain",
+  "10-offre",
+  "11-equipe",
+  "12-faq",
+  "14-ressources",
+  "13-final"
+ ],
+ "remplacer": {
+  "/#offres": "#offres"
+ }
+}

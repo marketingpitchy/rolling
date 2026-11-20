@@ -605,7 +605,8 @@
 
 	/* Lecteur d'un lien Vimeo, YouTube ou fichier. fond = aperçu muet en boucle, sans commandes ni titre. */
 	function lecteurLien( url, fond, titre ) {
-		var vimeo = url.match( /vimeo\.com\/(?:video\/)?(\d+)(?:\/([0-9a-f]+))?/ ), hash = url.match( /[?&]h=([0-9a-f]+)/ );
+		// Toutes les formes de lien Vimeo : vimeo.com/123, /123/abc, player.vimeo.com/video/123, /manage/videos/123, /channels/x/123, /showcase/x/video/123…
+		var vimeo = url.match( /vimeo\.com\/.*?videos?\/(\d{5,})(?:\/([0-9a-f]{6,}))?/i ) || url.match( /vimeo\.com\/(?:[a-z]+\/)*?(?:[\w-]+\/)??(\d{5,})(?:\/([0-9a-f]{6,}))?/i ), hash = url.match( /[?&]h=([0-9a-f]+)/ );
 		var yt = url.match( /(?:youtu\.be\/|v=|embed\/|shorts\/)([\w-]{11})/ ), el;
 		if ( vimeo ) {
 			var cle = vimeo[ 2 ] || ( hash ? hash[ 1 ] : '' );
@@ -638,6 +639,11 @@
 	/* Vidéo muette à la place d'une image (widget Vidéo, mode « muet ») : chargée quand le cadre est visible, en fondu
 	   sur l'image ; un fichier se met en pause hors de l'écran. Rien avec « réduire les animations ». */
 	function videoMuette( cadre ) {
+		// Widget posé dans un cadre sans la classe cadre-video-muette : il recouvre quand même l'image.
+		var hote = cadre.closest( '.elementor-widget' );
+		if ( hote && 'absolute' !== window.getComputedStyle( hote ).position ) {
+			hote.style.cssText += ';position:absolute;top:0;right:0;bottom:0;left:0;z-index:0;margin:0;pointer-events:none';
+		}
 		if ( calme || ! ( 'IntersectionObserver' in window ) ) {
 			return;
 		}

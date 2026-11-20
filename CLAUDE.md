@@ -810,6 +810,14 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   « enfin vus / sans négo / non-stop / tout inclus ») ; ordre : hero, constat, équipe, formules, pourquoi Rolling, échange,
   Née chez Pitchy, questions, final (timecodes 00:01 à 00:07). Installateur : met aussi à jour le **titre** d'un bloc non
   modifié quand il change (ex. timecode).
+- **0.7.6** : **landing B** (A/B test Google Ads) = page « Landing B (l'accueil) » `/agence-video-illimitee/` créée une fois
+  (installation.json, modèle `modeles/landing.php` = logo seul, `depuis 0.7.6`) + modèle « Rolling · Page complète
+  (landing B : l'accueil) » (`98-landing-accueil` : mêmes blocs que `99-page-complete`, clé `remplacer` gérée par
+  construire-blocs.php : `/#offres` ⇒ `#offres` pour rester sur la page) ; noindex par la cliente (Yoast).
+  Vidéos muettes de la page content repurposing « ne s'affichent pas » chez la cliente : **non reproduit** (hero et cas
+  client OK sur wp avec un .mp4) ; site de la cliente injoignable d'ici ⇒ deux causes probables corrigées dans rolling.js :
+  widget posé sans `cadre-video-muette` (`videoMuette()` met le widget en absolu sur l'image) et liens Vimeo autres que
+  vimeo.com/ID (manage/videos, channels, showcase…, regex élargie). Lien utilisé demandé à la cliente.
 - **Chargement de page effet film** (demande avant la fin de la livraison 4) : maquette `maquettes/loading/maquette-loading.html`
   (copie /workspace/maquette-loading.html), 4 options : A amorce 3-2-1, B clap qui se ferme puis rideau, C ouverture
   cinéma (bandes noires + REC + timecode + règle avec la tête de lecture rouge des frises, plus de filet fin), D barre de lecture en haut sans écran. Conseil : C à l'arrivée (première page

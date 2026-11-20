@@ -2590,8 +2590,13 @@ if __name__ == '__main__':
     with open(os.path.join(dossier, '99-page-complete.json'), 'w', encoding='utf8') as f:
         json.dump({'cle': '99-page-complete', 'titre': 'Rolling · Page complète (accueil)', 'type': 'page', 'assemble': cles}, f, ensure_ascii=False, indent=1)
     print('99-page-complete :', len(cles), 'blocs')
+    # Landing B (A/B test Google Ads) : l'accueil à l'identique, sur une page « Landing : logo seul » ; les liens vers
+    # les offres de l'accueil restent sur la page.
+    with open(os.path.join(dossier, '98-landing-accueil.json'), 'w', encoding='utf8') as f:
+        json.dump({'cle': '98-landing-accueil', 'titre': "Rolling · Page complète (landing B : l'accueil)", 'type': 'page', 'assemble': cles,
+                   'remplacer': {'/#offres': '#offres'}}, f, ensure_ascii=False, indent=1)
     # Blocs retirés de ce script : leurs fichiers (sources et thème) sont supprimés, l'installateur les retire du site.
-    produits = set(cles) | {m[0] for m in MODELES_SITE} | {m[0] for m in BLOCS_VARIANTES} | {'99-page-complete'}
+    produits = set(cles) | {m[0] for m in MODELES_SITE} | {m[0] for m in BLOCS_VARIANTES} | {'99-page-complete', '98-landing-accueil'}
     for page, sections in PAGES:
         produits |= {c for c, _, _ in sections} | {'pc-' + sections[0][0].split('-')[1]}
     for d in (dossier, os.path.join(ICI, '..', 'theme', 'rolling', 'data', 'blocs')):

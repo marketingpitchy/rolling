@@ -242,6 +242,14 @@ foreach ( glob( $source . '/*.json' ) as $fichier ) {
 			$construit = json_decode( (string) file_get_contents( $sortie . '/' . $cle . '.json' ), true );
 			$contenu   = array_merge( $contenu, $construit['contenu'] ?? array() );
 		}
+		// Liens à réécrire dans la copie (ex. landing B : « /#offres » ⇒ « #offres », pour rester sur la page).
+		if ( ! empty( $bloc['remplacer'] ) ) {
+			$texte = wp_json_encode( $contenu, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES );
+			foreach ( $bloc['remplacer'] as $de => $vers ) {
+				$texte = str_replace( '"' . $de . '"', '"' . $vers . '"', $texte );
+			}
+			$contenu = json_decode( $texte, true );
+		}
 
 		file_put_contents(
 			$sortie . '/' . $bloc['cle'] . '.json',
