@@ -184,7 +184,7 @@ class Rolling_Widget_Video extends Rolling_Widget {
 		}
 
 		// Fichier au format automatique : rolling.js vérifie le format sur le fichier lui-même.
-		$fichier = $video && ! self::id_youtube( $video ) && false === strpos( $video, 'vimeo.com' );
+		$fichier = $video && ! self::id_youtube( $video ) && ! Rolling_Contenus::est_vimeo( $video );
 		echo '<div class="' . esc_attr( $r['classe'] ) . '"' . ( $video ? ' data-rl-video="' . esc_url( $video ) . '"' : '' ) . ( $fixe ? ' data-rl-apercu="fixe"' : '' )
 			. ( $adapter ? ' data-rl-format="' . esc_attr( $version['format'] ) . '" data-rl-version="' . esc_attr( $rang ) . '"' : '' )
 			. ( $adapter && $fichier && ! empty( $version['auto'] ) ? ' data-rl-auto="1"' : '' ) . ( $rang > 0 ? ' hidden' : '' ) . '>';
@@ -205,7 +205,7 @@ class Rolling_Widget_Video extends Rolling_Widget {
 			);
 		}
 		$youtube = self::id_youtube( $video );
-		$vimeo   = $video && false !== strpos( $video, 'vimeo.com' ) && class_exists( 'Rolling_Widget_Contenu' ) ? Rolling_Widget_Contenu::image_vimeo( $video ) : '';
+		$vimeo   = $video && Rolling_Contenus::est_vimeo( $video ) && class_exists( 'Rolling_Widget_Contenu' ) ? Rolling_Widget_Contenu::image_vimeo( $video ) : '';
 		if ( $affiche ) {
 			// Avec une image à la une : pas de miniature en plus (un fichier vidéo garde son aperçu muet par-dessus).
 			$youtube = '';
@@ -217,7 +217,7 @@ class Rolling_Widget_Video extends Rolling_Widget {
 			echo '<img class="image-couvrante" src="' . esc_url( 'https://i.ytimg.com/vi/' . $youtube . ( '9-16' === $version['format'] ? '/hqdefault.jpg' : '/maxresdefault.jpg' ) ) . '" width="1280" height="720" alt=""' . ( $haut && 0 === $rang ? '' : ' loading="lazy"' ) . '>';
 		} elseif ( $vimeo ) {
 			echo '<img class="image-couvrante" src="' . esc_url( $vimeo ) . '" width="1280" height="720" alt=""' . ( $haut && 0 === $rang ? '' : ' loading="lazy"' ) . '>';
-		} elseif ( $video_a && false === strpos( $video_a, 'vimeo.com' ) ) {
+		} elseif ( $video_a && ! Rolling_Contenus::est_vimeo( $video_a ) ) {
 			// Fichier vidéo : aperçu muet en boucle (lancé par rolling.js quand il est à l'écran, jamais avec « réduire les
 			// animations », ni avec « Image fixe ») ; sans image à la une, sa première image sert d'affiche.
 			echo '<video class="image-couvrante apercu-video" src="' . esc_url( $video ) . ( $fixe ? '#t=2' : '#t=0.1' ) . '" muted loop playsinline preload="metadata" aria-hidden="true" tabindex="-1"></video>';

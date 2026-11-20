@@ -600,7 +600,7 @@ class Rolling_Contenus {
 		}
 		$largeur = 0;
 		$hauteur = 0;
-		if ( false !== strpos( $lien, 'vimeo.com' ) ) {
+		if ( self::est_vimeo( $lien ) ) {
 			$donnees = _wp_oembed_get_object()->get_data( $lien );
 			if ( $donnees ) {
 				$largeur = (int) ( $donnees->width ?? 0 );
@@ -615,6 +615,27 @@ class Rolling_Contenus {
 		$format = $largeur && $hauteur ? self::format_rapport( $largeur / $hauteur ) : '16-9';
 		set_transient( $cle, $format, $largeur ? MONTH_IN_SECONDS : DAY_IN_SECONDS );
 		return $format;
+	}
+
+	/**
+	 * Lien vers un fichier vidéo (.mp4, .webm, .mov…), y compris un fichier servi par Vimeo
+	 * (« player.vimeo.com/progressive_redirect/…/file.mp4 ») : lu comme un fichier, pas comme une page Vimeo.
+	 *
+	 * @param string $lien Lien.
+	 * @return bool
+	 */
+	public static function est_fichier_video( $lien ) {
+		return (bool) preg_match( '~\.(?:mp4|m4v|webm|mov|ogv)(?:[?#]|$)|/progressive_redirect/~i', (string) $lien );
+	}
+
+	/**
+	 * Lien vers une page ou un lecteur Vimeo (pas vers un fichier servi par Vimeo).
+	 *
+	 * @param string $lien Lien.
+	 * @return bool
+	 */
+	public static function est_vimeo( $lien ) {
+		return false !== strpos( (string) $lien, 'vimeo.com' ) && ! self::est_fichier_video( $lien );
 	}
 
 	/**

@@ -603,8 +603,16 @@
 		}
 	}
 
+	/* Lien vers un fichier vidéo, y compris un fichier servi par Vimeo (player.vimeo.com/progressive_redirect/…/file.mp4) */
+	function estFichier( url ) {
+		return /\.(?:mp4|m4v|webm|mov|ogv)(?:[?#]|$)|\/progressive_redirect\//i.test( url );
+	}
+
 	/* Lecteur d'un lien Vimeo, YouTube ou fichier. fond = aperçu muet en boucle, sans commandes ni titre. */
 	function lecteurLien( url, fond, titre ) {
+		if ( estFichier( url ) ) {
+			return lecteurFichier( url, fond );
+		}
 		// Toutes les formes de lien Vimeo : vimeo.com/123, /123/abc, player.vimeo.com/video/123, /manage/videos/123, /channels/x/123, /showcase/x/video/123…
 		var vimeo = url.match( /vimeo\.com\/.*?videos?\/(\d{5,})(?:\/([0-9a-f]{6,}))?/i ) || url.match( /vimeo\.com\/(?:[a-z]+\/)*?(?:[\w-]+\/)??(\d{5,})(?:\/([0-9a-f]{6,}))?/i ), hash = url.match( /[?&]h=([0-9a-f]+)/ );
 		var yt = url.match( /(?:youtu\.be\/|v=|embed\/|shorts\/)([\w-]{11})/ ), el;
@@ -618,21 +626,25 @@
 			el.src = 'https://www.youtube-nocookie.com/embed/' + yt[ 1 ] + '?rel=0&playsinline=1&' +
 				( fond ? 'autoplay=1&mute=1&loop=1&controls=0&disablekb=1&enablejsapi=1&playlist=' + yt[ 1 ] : 'autoplay=1' );
 		} else {
-			el = document.createElement( 'video' );
-			el.src = url;
-			el.playsInline = true;
-			el.autoplay = true;
-			if ( fond ) {
-				el.muted = true;
-				el.loop = true;
-			} else {
-				el.controls = true;
-			}
-			return el;
+			return lecteurFichier( url, fond );
 		}
 		el.allow = 'autoplay; fullscreen; picture-in-picture; encrypted-media';
 		el.allowFullscreen = true;
 		el.title = titre;
+		return el;
+	}
+
+	function lecteurFichier( url, fond ) {
+		var el = document.createElement( 'video' );
+		el.src = url;
+		el.playsInline = true;
+		el.autoplay = true;
+		if ( fond ) {
+			el.muted = true;
+			el.loop = true;
+		} else {
+			el.controls = true;
+		}
 		return el;
 	}
 
@@ -773,7 +785,7 @@
 				lecteur.focus();
 				return;
 			}
-			if ( /vimeo\.com\//.test( url ) ) {
+			if ( /vimeo\.com\//.test( url ) && ! estFichier( url ) ) {
 				lecteur = lecteurLien( url, false, bouton.getAttribute( 'aria-label' ) );
 			} else if ( yt ) {
 				lecteur = document.createElement( 'iframe' );

@@ -843,6 +843,12 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   plus posé quand la réalisation a une image à la une (avant 0.7.8, il jouait par-dessus) ⇒ rétabli. Plusieurs versions :
   plus d'étiquette sur la vidéo (les boutons disent déjà le format) ; texte d'une version = `texte_version()` : nom seul s'il
   contient déjà un format (« Format 9:16 »), sinon « 9:16 · Stories », format seul sans nom.
+- **0.7.10** : liens .mp4 servis par Vimeo (`player.vimeo.com/progressive_redirect/…/file.mp4…`, ceux de la cliente) pris
+  pour des pages Vimeo (test `vimeo.com` dans le lien) ⇒ pas d'aperçu muet sur la fiche, pas de détection du format, et dans
+  rolling.js `lecteurLien()` ouvrait le lecteur Vimeo (id tiré de l'adresse) au lieu de lire le fichier : cause probable du
+  showreel gris (0.6.11) et des vidéos muettes absentes (0.7.6). Corrigé : `Rolling_Contenus::est_fichier_video()` /
+  `est_vimeo()` (extension .mp4/.webm/.mov/.m4v/.ogv ou `/progressive_redirect/`), `estFichier()` + `lecteurFichier()`
+  dans rolling.js. Test : route Playwright qui sert un .mp4 local à l'adresse Vimeo (player.vimeo.com bloqué ici).
 - **Chargement de page effet film** (demande avant la fin de la livraison 4) : maquette `maquettes/loading/maquette-loading.html`
   (copie /workspace/maquette-loading.html), 4 options : A amorce 3-2-1, B clap qui se ferme puis rideau, C ouverture
   cinéma (bandes noires + REC + timecode + règle avec la tête de lecture rouge des frises, plus de filet fin), D barre de lecture en haut sans écran. Conseil : C à l'arrivée (première page
