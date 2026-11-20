@@ -2340,7 +2340,7 @@ contenu_haut = F('Contenu · haut', ['section', 'section-entete', 'entete-page',
             F('Contenu · textes', None, COLONNE, enfants=[
                 F('Contenu · pastille', ['pastille'], enfants=[P('Contenu · pastille · texte', 'Du contenu à la vidéo')]),
                 H('Contenu · titre', 'Content repurposing&nbsp;: transformez vos contenus <em>en vidéos.</em>', 'h1', ['titre-lg'], 'margin-top: 22px;'),
-                P('Contenu · introduction', "Un PowerPoint, un article, un rapport ou un webinar contient déjà tout ce qu'il faut. Le <strong>content repurposing</strong>, c'est en tirer des vidéos courtes, une par message, prêtes pour chaque canal. Notre agence vidéo s'en charge.", ['texte-intro'], 'margin-top: 22px; max-width: 600px;'),
+                P('Contenu · introduction', "Vos articles, présentations et modules de formation sont déjà écrits, mais de moins en moins lus. En vidéo, les mêmes messages sont enfin vus, par vos clients comme par vos équipes. C'est le principe du <strong>content repurposing</strong>&nbsp;: partir de ce que vous avez déjà, sans repartir de zéro.", ['texte-intro'], 'margin-top: 22px; max-width: 600px;'),
                 F('Contenu · boutons', ['rangee'], 'margin-top: 34px;', enfants=[
                     B('Contenu · réserver', 'Réserver un échange', '/contact/', ['bouton-principal']),
                     B('Contenu · formules', 'Voir les formules', '/#offres', ['bouton-verre']),
@@ -2365,6 +2365,7 @@ contenu_haut = F('Contenu · haut', ['section', 'section-entete', 'entete-page',
 TYPES_CONTENUS = [
     ('Un PowerPoint', '<strong>Une série de capsules</strong> de 60&nbsp;s, une idée par vidéo.'),
     ('Un article', '<strong>Une vidéo de 90&nbsp;s</strong> et 3 formats courts pour les réseaux.'),
+    ('Une page produit', '<strong>Une démo vidéo</strong> de 60&nbsp;s, pour votre site et vos salons.'),
     ('Un rapport annuel', '<strong>Des épisodes</strong> : un chiffre clé, une histoire.'),
     ('Un webinar', '<strong>Les meilleurs extraits</strong>, sous-titrés, prêts à partager.'),
     ('Un module de formation', '<strong>Du microlearning</strong> vertical, à suivre sur téléphone.'),
@@ -2372,7 +2373,7 @@ TYPES_CONTENUS = [
 
 contenu_types = F('Contenu · types', ['section', 'section-suite'], tag='section', enfants=[
     F('Contenu · types · contenu', ['conteneur'], COLONNE, enfants=[
-        entete_simple('Contenu · types', '00:01', 'Ce que nous transformons', 'Chaque type de contenu <em>a sa vidéo.</em>'),
+        entete_simple('Contenu · types', '00:01', 'Ce que nous transformons', 'Tout ce que vous avez déjà écrit <em>peut devenir vidéo.</em>'),
         F('Contenu · types · grille', ['grille-types'], enfants=[
             F('Type %d' % n, ['carte-verre', 'carte-type'], enfants=[
                 P('Type %d · au départ' % n, 'Au départ', ['label']),
@@ -2393,7 +2394,7 @@ def sortie(n, titre, usage, forme=None):
 contenu_schema = F('Contenu · schéma', ['section', 'section-sombre', 'halos-nuit'], tag='section', enfants=[
     F('Contenu · schéma · contenu', ['conteneur'], COLONNE, enfants=[
         entete('Contenu · schéma', '00:02', 'Un contenu, plusieurs vidéos', [("Partez d'un seul document. <em>Repartez avec une série.</em>", 'h2', ['titre-md'])],
-               intro='Un document suffit&nbsp;: nous en tirons plusieurs vidéos, chacune pensée pour son canal et son format.'),
+               intro="Un document suffit&nbsp;: nous en tirons plusieurs vidéos, chacune pensée pour son canal. De quoi faire vivre vos réseaux, votre site et votre intranet toute l'année."),
         F('Contenu · schéma · éventail', ['schema-eventail'], enfants=[
             F('Schéma · vidéos à gauche', ['branches-schema', 'branches-gauche'], enfants=[
                 sortie(1, 'Une vidéo de 90&nbsp;s', 'pour votre site et LinkedIn'),
@@ -2415,10 +2416,10 @@ contenu_schema = F('Contenu · schéma', ['section', 'section-sombre', 'halos-nu
 ])
 
 ETAPES_CONTENU = [
-    ('Vous partagez le contenu', "Le fichier tel qu'il est : PPT, PDF, lien d'article, enregistrement.", 'Vous · 5 minutes'),
+    ('Vous partagez vos contenus', "Les fichiers tels qu'ils sont : PPT, PDF, liens d'articles, enregistrements. Ensemble, nous choisissons ce qui passe en vidéo en premier.", 'Vous · 5 minutes'),
     ('Nous trouvons les messages', 'Votre directeur artistique repère ce qui mérite une vidéo, et pour quel public.', 'Notre équipe'),
     ('Nous écrivons et produisons', 'Script, voix, motion, sous-titres : notre IA Factory accélère, nos créas décident.', 'Notre équipe'),
-    ('Vous validez, nous déclinons', 'Un tour de retours groupés, puis toutes les versions dont vous avez besoin.', 'Vous · un tour de retours'),
+    ('Vous validez, nous déclinons', 'Un tour de retours groupés, puis toutes les versions utiles : 16:9, 9:16, 1:1, sous-titres, autres langues.', 'Vous · un tour de retours'),
 ]
 
 contenu_methode = F('Contenu · méthode', ['section', 'section-suite'], tag='section', enfants=[
@@ -2472,7 +2473,7 @@ contenu_exemples = F('Contenu · exemples', ['section', 'section-suite'], tag='s
         F('Contenu · prix', ['carte-verre', 'encart-prix'], 'margin-top: 64px;', enfants=[
             F('Contenu · prix · textes', None, COLONNE + ' padding: 0; max-width: 640px;', enfants=[
                 H('Contenu · prix · titre', 'Combien ça coûte&nbsp;?', 'h3', ['titre-xs']),
-                P('Contenu · prix · texte', "Rien de plus. Transformer vos contenus en vidéos est le cœur de l'abonnement : à prix fixe, en illimité, sans devis à chaque projet.", ['texte'], 'margin-top: 6px;'),
+                P('Contenu · prix · texte', "Rien de plus. Transformer vos contenus en vidéos est le cœur de l'abonnement : à prix fixe, en illimité, sans devis à chaque projet. Et vos nouveaux projets suivent le même chemin.", ['texte'], 'margin-top: 6px;'),
             ]),
             B('Contenu · prix · bouton', 'Voir les formules', '/#offres', ['bouton-verre']),
         ]),
@@ -2480,7 +2481,8 @@ contenu_exemples = F('Contenu · exemples', ['section', 'section-suite'], tag='s
 ])
 
 QUESTIONS_CONTENU = [
-    ('Qu’est-ce que le content repurposing ?', "C'est réutiliser un contenu existant sous d'autres formes. Ici, nous transformons vos documents en vidéos courtes, adaptées à chaque canal, sans repartir de zéro."),
+    ('Qu’est-ce que le content repurposing ?', "C'est transformer les contenus que vous avez déjà (articles, pages web, présentations, modules de formation) en vidéos à votre charte, pour qu'ils soient enfin vus, en interne comme en externe. Sans repartir de zéro."),
+    ('Par quels contenus commencer ?', "Par ceux qui portent vos messages clés et que personne ne lit assez : pages produit, études, livrets d'accueil, formations. Nous les choisissons ensemble lors du premier échange."),
     ('Faut-il réécrire nos textes avant de vous les envoyer ?', "Non. Envoyez le contenu tel qu'il est : nous repérons les messages et écrivons les scripts."),
     ('Combien de vidéos peut-on tirer d’un seul contenu ?', 'Souvent plusieurs : une par message clé, déclinée dans les formats de vos canaux. [À confirmer : exemple courant.]'),
     ('Nos contenus confidentiels sont-ils protégés ?', "[À compléter : hébergement des données, outils d'IA utilisés, sécurité.]"),
@@ -2500,8 +2502,8 @@ def contenu_ressources():
 contenu_final = F('Contenu · appel final', ['section', 'section-sombre', 'section-finale', 'halo-centre', 'decors-final'], tag='section', ancre='contact', enfants=[
     I('Contenu · final · verre cannelé', 'final-verre-cannele.webp', cls=['decor-flottant'], taille='medium_large'),
     F('Contenu · final · contenu', ['conteneur'], COLONNE + ' align-items: center; z-index: 1;', enfants=[
-        H('Contenu · final · titre', 'Quel contenu transformez-vous<br><em>en premier&nbsp;?</em>', 'h2', ['titre-lg', 'titre-souligne']),
-        P('Contenu · final · texte', "Envoyez-nous un fichier avant l'échange : nous arrivons avec des idées de vidéos tirées de votre propre contenu.", ['texte-intro'], 'margin-top: 34px; max-width: 600px;'),
+        H('Contenu · final · titre', 'Vos contenus existent déjà.<br><em>Faites-les voir.</em>', 'h2', ['titre-lg', 'titre-souligne']),
+        P('Contenu · final · texte', "En 30 minutes, nous passons vos contenus en revue et choisissons avec vous les trois premiers à transformer. Envoyez-nous un fichier avant : nous arrivons avec des idées.", ['texte-intro'], 'margin-top: 34px; max-width: 600px;'),
         F('Contenu · final · bouton', None, 'display: flex; justify-content: center; margin-top: 38px; padding: 0;', enfants=[
             B('Contenu · final · réserver', 'Réserver un échange', '/contact/', ['bouton-soleil']),
         ]),

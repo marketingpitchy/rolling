@@ -849,6 +849,16 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   showreel gris (0.6.11) et des vidéos muettes absentes (0.7.6). Corrigé : `Rolling_Contenus::est_fichier_video()` /
   `est_vimeo()` (extension .mp4/.webm/.mov/.m4v/.ogv ou `/progressive_redirect/`), `estFichier()` + `lecteurFichier()`
   dans rolling.js. Test : route Playwright qui sert un .mp4 local à l'adresse Vimeo (player.vimeo.com bloqué ici).
+- **0.7.11** : accueil 00:02 encarts 645 ⇒ 490 px sur ordinateur (≥ 1025 px) : brut de `colonne-chapitre` (h3 28-34 px,
+  étiquette 15 px, picto 44 px, constat 15 px, coches 20 px, listes 14 px, chips 13 px, marges réduites), `photo-chapitre`
+  min-height 420 (540 imposait la hauteur), `chapitre-colle` top min(110px, 100vh − 560px). Ancre `#offres` : rolling.js
+  (`ciblePrix` / `allerPrix`) fait arriver sur `.offres-mobile` (cartes de prix, mobile) sinon `.offres-tableau`, 24 px sous
+  l'en-tête, au clic et à l'arrivée par /#offres (marche sur les pages déjà construites). Page content repurposing : textes
+  repris des idées de la maquette « Glass 2 » de la cliente (patrimoine écrit, « enfin vus, en interne comme en externe »,
+  « Vos contenus existent déjà ») : chapô qui explique pourquoi, H2 00:01 « Tout ce que vous avez déjà écrit peut devenir
+  vidéo. », 6e type « Une page produit » (`grille-types` 3 colonnes, 2 sous 1024), intro du schéma, étapes 1 et 4, encart
+  prix, FAQ (définition + « Par quels contenus commencer ? »), appel final « Vos contenus existent déjà. Faites-les voir. ».
+  Sans « vidéotiser » (règle de rédaction).
 - **Chargement de page effet film** (demande avant la fin de la livraison 4) : maquette `maquettes/loading/maquette-loading.html`
   (copie /workspace/maquette-loading.html), 4 options : A amorce 3-2-1, B clap qui se ferme puis rideau, C ouverture
   cinéma (bandes noires + REC + timecode + règle avec la tête de lecture rouge des frises, plus de filet fin), D barre de lecture en haut sans écran. Conseil : C à l'arrivée (première page

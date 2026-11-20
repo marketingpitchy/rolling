@@ -519,13 +519,14 @@
     {
      "label": "chapitre-colle",
      "description": "À ajouter au premier chapitre : il reste collé en haut pendant que le suivant glisse par-dessus (grands écrans seulement, à partir de 1200 px).",
-     "css": "position: sticky; top: min(110px, calc(100vh - 660px)); z-index: 1; @media(--tablet) { position: relative; top: auto; }",
+     "css": "position: sticky; top: min(110px, calc(100vh - 560px)); z-index: 1; @media(--tablet) { position: relative; top: auto; }",
      "brut": "@media (max-width: 1199px) { position: relative; top: auto; }"
     },
     {
      "label": "colonne-chapitre",
      "description": "Colonne de texte d'un chapitre : étiquette, titre, constat, listes, boutons, centrés verticalement.",
-     "css": "position: relative; display: flex; flex-direction: column; justify-content: center; gap: 14px; padding: 26px 36px; @media(--tablet) { padding: 30px 20px 24px; } @media(--mobile) { padding: 24px 10px 18px; }"
+     "css": "position: relative; display: flex; flex-direction: column; justify-content: center; gap: 14px; padding: 26px 36px; @media(--tablet) { padding: 30px 20px 24px; } @media(--mobile) { padding: 24px 10px 18px; }",
+     "brut": "@media (min-width: 1025px) { & { gap: 10px; padding: 18px 30px; } & img.picto-verre { height: 44px; margin: -6px -4px -6px 0; } & [class*=\"etiquette-metier-\"] { font-size: 15px; padding-top: 7px; padding-bottom: 7px; } & h3 { font-size: clamp(28px, 2.4vw, 34px); } & .panneau { padding: 10px 14px; } & .texte-fort { font-size: 15px; line-height: 1.45; } & .liste-coches { gap: 6px; } & .ligne-coche { gap: 9px; } & .ligne-coche .coche { width: 20px; height: 20px; } & .ligne-coche .texte-petit { font-size: 14px; } & [class*=\"chip-\"] { font-size: 13px; padding-top: 6px; padding-bottom: 6px; } }"
     },
     {
      "label": "grand-bloc",
@@ -635,7 +636,8 @@
     {
      "label": "photo-chapitre",
      "description": "À ajouter à « cadre-photo » : grande photo d'un chapitre (560 px de haut, ombre colorée).",
-     "css": "min-height: 540px; --rl-rayon-photo: 30px; box-shadow: 0 24px 50px -30px var(--rl-ombre-photo, rgba(52,52,224,0.6)); @media(--tablet) { min-height: 420px; } @media(--mobile) { min-height: 340px; --rl-rayon-photo: 22px; }"
+     "css": "min-height: 540px; --rl-rayon-photo: 30px; box-shadow: 0 24px 50px -30px var(--rl-ombre-photo, rgba(52,52,224,0.6)); @media(--tablet) { min-height: 420px; } @media(--mobile) { min-height: 340px; --rl-rayon-photo: 22px; }",
+     "brut": "@media (min-width: 1025px) { & { min-height: 420px; } & .illustration-photo { width: 320px; } }"
     },
     {
      "label": "viseur",
@@ -2387,8 +2389,8 @@
     },
     {
      "label": "grille-types",
-     "description": "Grille des types de contenus : 5 colonnes (3 sous 1024 px, 1 en mobile).",
-     "css": "display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 14px; padding: 0; margin-top: 40px; @media(--tablet) { grid-template-columns: repeat(3, minmax(0, 1fr)); } @media(--mobile) { grid-template-columns: minmax(0, 1fr); }"
+     "description": "Grille des types de contenus : 3 colonnes (2 sous 1024 px, 1 en mobile).",
+     "css": "display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; padding: 0; margin-top: 40px; @media(--tablet) { grid-template-columns: repeat(2, minmax(0, 1fr)); } @media(--mobile) { grid-template-columns: minmax(0, 1fr); }"
     },
     {
      "label": "carte-type",

@@ -23,10 +23,10 @@
    },
    "Temps 1 · titre": {
     "tag": "h3",
-    "title": "Vous partagez le contenu"
+    "title": "Vous partagez vos contenus"
    },
    "Temps 1 · texte": {
-    "paragraph": "Le fichier tel qu'il est&nbsp;: PPT, PDF, lien d'article, enregistrement."
+    "paragraph": "Les fichiers tels qu'ils sont&nbsp;: PPT, PDF, liens d'articles, enregistrements. Ensemble, nous choisissons ce qui passe en vidéo en premier."
    },
    "Temps 1 · qui": {
     "paragraph": "Vous · 5 minutes"
@@ -65,7 +65,7 @@
     "title": "Vous validez, nous déclinons"
    },
    "Temps 4 · texte": {
-    "paragraph": "Un tour de retours groupés, puis toutes les versions dont vous avez besoin."
+    "paragraph": "Un tour de retours groupés, puis toutes les versions utiles&nbsp;: 16:9, 9:16, 1:1, sous-titres, autres langues."
    },
    "Temps 4 · qui": {
     "paragraph": "Vous · un tour de retours"

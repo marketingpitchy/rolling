@@ -3,7 +3,7 @@
  "titre": "Rolling · Du contenu à la vidéo · 00:01 Ce que nous transformons",
  "type": "e-flexbox",
  "composition": {
-  "xml_structure": "<e-flexbox configuration-id=\"Contenu · types\"><e-flexbox configuration-id=\"Contenu · types · contenu\"><e-flexbox configuration-id=\"Contenu · types · en-tête\"><e-flexbox configuration-id=\"Contenu · types · repère\"><e-paragraph configuration-id=\"Contenu · types · timecode\"></e-paragraph><e-paragraph configuration-id=\"Contenu · types · sur-titre\"></e-paragraph></e-flexbox><e-heading configuration-id=\"Contenu · types · titre\"></e-heading></e-flexbox><e-flexbox configuration-id=\"Contenu · types · grille\"><e-flexbox configuration-id=\"Type 1\"><e-paragraph configuration-id=\"Type 1 · au départ\"></e-paragraph><e-heading configuration-id=\"Type 1 · contenu\"></e-heading><e-paragraph configuration-id=\"Type 1 · devient\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Type 2\"><e-paragraph configuration-id=\"Type 2 · au départ\"></e-paragraph><e-heading configuration-id=\"Type 2 · contenu\"></e-heading><e-paragraph configuration-id=\"Type 2 · devient\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Type 3\"><e-paragraph configuration-id=\"Type 3 · au départ\"></e-paragraph><e-heading configuration-id=\"Type 3 · contenu\"></e-heading><e-paragraph configuration-id=\"Type 3 · devient\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Type 4\"><e-paragraph configuration-id=\"Type 4 · au départ\"></e-paragraph><e-heading configuration-id=\"Type 4 · contenu\"></e-heading><e-paragraph configuration-id=\"Type 4 · devient\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Type 5\"><e-paragraph configuration-id=\"Type 5 · au départ\"></e-paragraph><e-heading configuration-id=\"Type 5 · contenu\"></e-heading><e-paragraph configuration-id=\"Type 5 · devient\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox></e-flexbox>",
+  "xml_structure": "<e-flexbox configuration-id=\"Contenu · types\"><e-flexbox configuration-id=\"Contenu · types · contenu\"><e-flexbox configuration-id=\"Contenu · types · en-tête\"><e-flexbox configuration-id=\"Contenu · types · repère\"><e-paragraph configuration-id=\"Contenu · types · timecode\"></e-paragraph><e-paragraph configuration-id=\"Contenu · types · sur-titre\"></e-paragraph></e-flexbox><e-heading configuration-id=\"Contenu · types · titre\"></e-heading></e-flexbox><e-flexbox configuration-id=\"Contenu · types · grille\"><e-flexbox configuration-id=\"Type 1\"><e-paragraph configuration-id=\"Type 1 · au départ\"></e-paragraph><e-heading configuration-id=\"Type 1 · contenu\"></e-heading><e-paragraph configuration-id=\"Type 1 · devient\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Type 2\"><e-paragraph configuration-id=\"Type 2 · au départ\"></e-paragraph><e-heading configuration-id=\"Type 2 · contenu\"></e-heading><e-paragraph configuration-id=\"Type 2 · devient\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Type 3\"><e-paragraph configuration-id=\"Type 3 · au départ\"></e-paragraph><e-heading configuration-id=\"Type 3 · contenu\"></e-heading><e-paragraph configuration-id=\"Type 3 · devient\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Type 4\"><e-paragraph configuration-id=\"Type 4 · au départ\"></e-paragraph><e-heading configuration-id=\"Type 4 · contenu\"></e-heading><e-paragraph configuration-id=\"Type 4 · devient\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Type 5\"><e-paragraph configuration-id=\"Type 5 · au départ\"></e-paragraph><e-heading configuration-id=\"Type 5 · contenu\"></e-heading><e-paragraph configuration-id=\"Type 5 · devient\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Type 6\"><e-paragraph configuration-id=\"Type 6 · au départ\"></e-paragraph><e-heading configuration-id=\"Type 6 · contenu\"></e-heading><e-paragraph configuration-id=\"Type 6 · devient\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox></e-flexbox>",
   "element_config": {
    "Contenu · types": {
     "tag": "section"
@@ -16,7 +16,7 @@
    },
    "Contenu · types · titre": {
     "tag": "h2",
-    "title": "Chaque type de contenu <em>a sa vidéo.</em>"
+    "title": "Tout ce que vous avez déjà écrit <em>peut devenir vidéo.</em>"
    },
    "Type 1 · au départ": {
     "paragraph": "Au départ"
@@ -43,29 +43,39 @@
    },
    "Type 3 · contenu": {
     "tag": "h3",
-    "title": "Un rapport annuel"
+    "title": "Une page produit"
    },
    "Type 3 · devient": {
-    "paragraph": "<strong>Des épisodes</strong>&nbsp;: un chiffre clé, une histoire."
+    "paragraph": "<strong>Une démo vidéo</strong> de 60&nbsp;s, pour votre site et vos salons."
    },
    "Type 4 · au départ": {
     "paragraph": "Au départ"
    },
    "Type 4 · contenu": {
     "tag": "h3",
-    "title": "Un webinar"
+    "title": "Un rapport annuel"
    },
    "Type 4 · devient": {
-    "paragraph": "<strong>Les meilleurs extraits</strong>, sous-titrés, prêts à partager."
+    "paragraph": "<strong>Des épisodes</strong>&nbsp;: un chiffre clé, une histoire."
    },
    "Type 5 · au départ": {
     "paragraph": "Au départ"
    },
    "Type 5 · contenu": {
     "tag": "h3",
-    "title": "Un module de formation"
+    "title": "Un webinar"
    },
    "Type 5 · devient": {
+    "paragraph": "<strong>Les meilleurs extraits</strong>, sous-titrés, prêts à partager."
+   },
+   "Type 6 · au départ": {
+    "paragraph": "Au départ"
+   },
+   "Type 6 · contenu": {
+    "tag": "h3",
+    "title": "Un module de formation"
+   },
+   "Type 6 · devient": {
     "paragraph": "<strong>Du microlearning</strong> vertical, à suivre sur téléphone."
    }
   },
@@ -159,6 +169,20 @@
     "titre-xs"
    ],
    "Type 5 · devient": [
+    "texte-petit",
+    "vers-type"
+   ],
+   "Type 6": [
+    "carte-verre",
+    "carte-type"
+   ],
+   "Type 6 · au départ": [
+    "label"
+   ],
+   "Type 6 · contenu": [
+    "titre-xs"
+   ],
+   "Type 6 · devient": [
     "texte-petit",
     "vers-type"
    ]

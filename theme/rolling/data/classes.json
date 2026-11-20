@@ -3858,7 +3858,7 @@
                         "inset-block-start": {
                             "$$type": "size",
                             "value": {
-                                "size": "min(110px, calc(100vh - 660px))",
+                                "size": "min(110px, calc(100vh - 560px))",
                                 "unit": "custom"
                             }
                         },
@@ -4706,7 +4706,7 @@
                         }
                     },
                     "custom_css": {
-                        "raw": "LS1ybC1yYXlvbi1waG90bzogMzBweDsgYm94LXNoYWRvdzogMCAyNHB4IDUwcHggLTMwcHggdmFyKC0tcmwtb21icmUtcGhvdG8sIHJnYmEoNTIsNTIsMjI0LDAuNikpOw=="
+                        "raw": "LS1ybC1yYXlvbi1waG90bzogMzBweDsgYm94LXNoYWRvdzogMCAyNHB4IDUwcHggLTMwcHggdmFyKC0tcmwtb21icmUtcGhvdG8sIHJnYmEoNTIsNTIsMjI0LDAuNikpOyBAbWVkaWEgKG1pbi13aWR0aDogMTAyNXB4KSB7ICYgeyBtaW4taGVpZ2h0OiA0MjBweDsgfSAmIC5pbGx1c3RyYXRpb24tcGhvdG8geyB3aWR0aDogMzIwcHg7IH0gfQ=="
                     }
                 }
             ]
@@ -17451,7 +17451,9 @@
                             "value": "center"
                         }
                     },
-                    "custom_css": null
+                    "custom_css": {
+                        "raw": "QG1lZGlhIChtaW4td2lkdGg6IDEwMjVweCkgeyAmIHsgZ2FwOiAxMHB4OyBwYWRkaW5nOiAxOHB4IDMwcHg7IH0gJiBpbWcucGljdG8tdmVycmUgeyBoZWlnaHQ6IDQ0cHg7IG1hcmdpbjogLTZweCAtNHB4IC02cHggMDsgfSAmIFtjbGFzcyo9ImV0aXF1ZXR0ZS1tZXRpZXItIl0geyBmb250LXNpemU6IDE1cHg7IHBhZGRpbmctdG9wOiA3cHg7IHBhZGRpbmctYm90dG9tOiA3cHg7IH0gJiBoMyB7IGZvbnQtc2l6ZTogY2xhbXAoMjhweCwgMi40dncsIDM0cHgpOyB9ICYgLnBhbm5lYXUgeyBwYWRkaW5nOiAxMHB4IDE0cHg7IH0gJiAudGV4dGUtZm9ydCB7IGZvbnQtc2l6ZTogMTVweDsgbGluZS1oZWlnaHQ6IDEuNDU7IH0gJiAubGlzdGUtY29jaGVzIHsgZ2FwOiA2cHg7IH0gJiAubGlnbmUtY29jaGUgeyBnYXA6IDlweDsgfSAmIC5saWduZS1jb2NoZSAuY29jaGUgeyB3aWR0aDogMjBweDsgaGVpZ2h0OiAyMHB4OyB9ICYgLmxpZ25lLWNvY2hlIC50ZXh0ZS1wZXRpdCB7IGZvbnQtc2l6ZTogMTRweDsgfSAmIFtjbGFzcyo9ImNoaXAtIl0geyBmb250LXNpemU6IDEzcHg7IHBhZGRpbmctdG9wOiA2cHg7IHBhZGRpbmctYm90dG9tOiA2cHg7IH0gfQ=="
+                    }
                 }
             ]
         },
@@ -36792,7 +36794,7 @@
             "id": "g-04e23eb",
             "label": "grille-types",
             "groupe": "Fiches et listes",
-            "description": "Grille des types de contenus : 5 colonnes (3 sous 1024 px, 1 en mobile).",
+            "description": "Grille des types de contenus : 3 colonnes (2 sous 1024 px, 1 en mobile).",
             "variants": [
                 {
                     "meta": {
@@ -36802,7 +36804,7 @@
                     "props": {
                         "grid-template-columns": {
                             "$$type": "string",
-                            "value": "repeat(3, minmax(0, 1fr))"
+                            "value": "repeat(2, minmax(0, 1fr))"
                         }
                     },
                     "custom_css": null
@@ -36858,7 +36860,7 @@
                         },
                         "grid-template-columns": {
                             "$$type": "string",
-                            "value": "repeat(5, minmax(0, 1fr))"
+                            "value": "repeat(3, minmax(0, 1fr))"
                         }
                     },
                     "custom_css": null

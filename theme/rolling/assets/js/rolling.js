@@ -1035,6 +1035,45 @@
 		vue.observe( frise );
 	} );
 
+	/* Ancre vers les offres (#offres) : arriver pile sur les prix (tableau sur ordinateur, cartes de prix en mobile), sous l'en-tête */
+	function ciblePrix( id ) {
+		var section = id ? document.getElementById( id ) : null;
+		if ( ! section ) {
+			return null;
+		}
+		// Les cartes de prix du mobile d'abord (le tableau du mobile n'affiche pas les prix), sinon le tableau.
+		return [ '.offres-mobile', '.offres-tableau' ].map( function ( sel ) {
+			return [].slice.call( section.querySelectorAll( sel ) ).filter( function ( e ) {
+				return e.getBoundingClientRect().height > 0;
+			} )[ 0 ];
+		} ).filter( Boolean )[ 0 ] || null;
+	}
+	function allerPrix( cible, doux ) {
+		cible.style.scrollMarginTop = '24px';
+		cible.scrollIntoView( { block: 'start', behavior: doux && ! calme ? 'smooth' : 'auto' } );
+	}
+	document.addEventListener( 'click', function ( e ) {
+		var a = e.target.closest ? e.target.closest( 'a[href*="#"]' ) : null, cible;
+		if ( ! a || ! a.hash || a.origin + a.pathname !== window.location.origin + window.location.pathname ) {
+			return;
+		}
+		cible = ciblePrix( decodeURIComponent( a.hash.slice( 1 ) ) );
+		if ( cible ) {
+			e.preventDefault();
+			allerPrix( cible, true );
+			if ( window.history.pushState ) {
+				window.history.pushState( null, '', a.hash );
+			}
+		}
+	} );
+	if ( window.location.hash && ciblePrix( decodeURIComponent( window.location.hash.slice( 1 ) ) ) ) {
+		window.addEventListener( 'load', function () {
+			window.setTimeout( function () {
+				allerPrix( ciblePrix( decodeURIComponent( window.location.hash.slice( 1 ) ) ), false );
+			}, 60 );
+		} );
+	}
+
 	/* Lien « Copier le lien » (#rl-copier, élément Elementor) : partage du téléphone, sinon copie dans le presse-papiers */
 	document.addEventListener( 'click', function ( e ) {
 		var lien = e.target.closest ? e.target.closest( 'a[href$="#rl-copier"]' ) : null, url = window.location.href.split( '#' )[ 0 ];
