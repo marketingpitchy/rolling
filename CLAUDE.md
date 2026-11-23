@@ -898,6 +898,15 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
 - **0.7.16** : défilement des équipes jugé trop rapide ⇒ réglage **Personnaliser > « Rolling : défilement des équipes »**
   (`rolling_defile_ordi` défaut 40 px/s, `rolling_defile_mobile` défaut 60 px/s, 10 à 200, `vitesse_defile()`), passé à
   rolling.js par `window.rollingReglages` (inline avant `rolling`), lu par `glisser()`.
+- **Maquette « Landing v3 »** (`maquettes/landing-v3/landing.html`, générée par `scratchpad/c067/gen-landing-v3.py`, copie
+  /workspace/maquette-landing-v3.html, **à valider**) : 1 « Pour qui » de l'accueil + 1 à n réalisations choisies (widget Liste,
+  réglage « Réalisations choisies » à créer, sinon dernières du métier) : **A réalisation à la place de la photo (conseil, 1re en
+  grand + petites dessous)**, B chapitre tel quel + bande de cartes dessous, C colonne compacte à droite, D onglets Marketing /
+  Com interne ; placé en 00:02 après le constat (timecodes recalés). 2 prix = version courte (2 cartes + 4 coches + promesses) +
+  tableau complet : **A bouton « Comparer les formules en détail + » qui déplie le tableau (conseil)**, B « + Tout ce qui est
+  inclus » dans chaque carte ⇒ fenêtre, C début du tableau en fondu + « Voir tout ». 3 Pourquoi Rolling : 4 cartes d'abord, puis
+  phrase des autres solutions + comparatif, 3 atouts, appel. 4 cartes sans chiffres : **A note manuscrite en tête (conseil)**,
+  B coche en verre, C texte seul.
 - **Chargement de page effet film** (demande avant la fin de la livraison 4) : maquette `maquettes/loading/maquette-loading.html`
   (copie /workspace/maquette-loading.html), 4 options : A amorce 3-2-1, B clap qui se ferme puis rideau, C ouverture
   cinéma (bandes noires + REC + timecode + règle avec la tête de lecture rouge des frises, plus de filet fin), D barre de lecture en haut sans écran. Conseil : C à l'arrivée (première page
