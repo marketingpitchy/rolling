@@ -10511,16 +10511,24 @@
             "id": "g-b9a3efd",
             "label": "grille-equipe",
             "groupe": "Mise en page",
-            "description": "Portraits de l'équipe : ajoutez, dupliquez ou supprimez des personnes, elles restent centrées (2 par ligne sur mobile).",
+            "description": "Portraits de l'équipe sur une seule ligne qui défile (ordinateur et mobile), quel que soit le nombre de personnes : arrêt au survol, au toucher et au clavier, glisser au doigt. Si tout le monde tient dans la largeur, la rangée reste centrée et immobile. Plusieurs lignes avec « réduire les animations » sur ordinateur.",
             "variants": [
                 {
                     "meta": {
                         "breakpoint": "mobile",
                         "state": null
                     },
-                    "props": [],
+                    "props": {
+                        "gap": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 12,
+                                "unit": "px"
+                            }
+                        }
+                    },
                     "custom_css": {
-                        "raw": "Z2FwOiAyOHB4IDEycHg7ICYgPiAqIHsgZmxleDogMCAwIGNhbGMoNTAlIC0gNnB4KTsgbWF4LXdpZHRoOiBub25lOyB9"
+                        "raw": "JiA+ICogeyBmbGV4OiAwIDAgMTUwcHg7IH0="
                     }
                 },
                 {
@@ -10544,13 +10552,20 @@
                             "$$type": "string",
                             "value": "row"
                         },
+                        "gap": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 22,
+                                "unit": "px"
+                            }
+                        },
                         "flex-wrap": {
                             "$$type": "string",
-                            "value": "wrap"
+                            "value": "nowrap"
                         },
                         "justify-content": {
                             "$$type": "string",
-                            "value": "center"
+                            "value": "flex-start"
                         },
                         "align-items": {
                             "$$type": "string",
@@ -10558,7 +10573,7 @@
                         }
                     },
                     "custom_css": {
-                        "raw": "Z2FwOiAyOHB4IDIycHg7ICYgPiAqIHsgZmxleDogMSAxIDE2MHB4OyBtYXgtd2lkdGg6IDIyMHB4OyB9"
+                        "raw": "LS1ybC1kZWZpbGU6IDE7IHdpZHRoOiBtYXgtY29udGVudDsgJiA+ICogeyBmbGV4OiAwIDAgMTg2cHg7IG1heC13aWR0aDogbm9uZTsgfQ=="
                     }
                 }
             ]

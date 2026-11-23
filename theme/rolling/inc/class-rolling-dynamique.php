@@ -167,7 +167,9 @@ class Rolling_Dynamique {
 			. 'html.elementor-html .elementor .pastille-client:empty{display:block!important;min-width:150px;min-height:22px;outline:1px dashed rgba(255,255,255,.8);outline-offset:2px}'
 			. 'html.elementor-html .elementor .pastille-client:empty::before{content:"Nom du client (facultatif)";opacity:.85;letter-spacing:0;text-transform:none}'
 			// Infos à côté d'une vidéo verticale ou carrée : masquées pour une vidéo 16:9, montrées sous le lecteur dans l'éditeur.
-			. 'html.elementor-html .elementor .scene-video>.infos-video{display:flex;width:100%;outline:1px dashed rgba(91,59,234,.5);outline-offset:8px}';
+			. 'html.elementor-html .elementor .scene-video>.infos-video{display:flex;width:100%;outline:1px dashed rgba(91,59,234,.5);outline-offset:8px}'
+			// Portraits de l'équipe : une ligne qui défile sur le site ; dans l'éditeur, une ligne qu'on fait défiler pour atteindre tout le monde.
+			. 'html.elementor-html .elementor .grille-equipe,html.elementor-html .elementor .equipe-defilante{width:100%!important;overflow-x:auto;padding-bottom:14px}';
 		wp_add_inline_style( 'rolling-editeur', $css );
 	}
 

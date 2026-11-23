@@ -885,6 +885,11 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   des bords) si le parent n'est pas `masque-bords` ; rail avec marges négatives (ombres et levée au survol non coupées).
   « Réduire les animations » sur ordinateur = plusieurs lignes (`rl-defile-statique`). Chez la cliente : ajouter la classe
   `defile-partout` aux conteneurs de portraits existants (pages non touchées par la mise à jour).
+- **0.7.15** : la cliente voyait encore 4 + 1 experts dans l'éditeur (classe `defile-partout` pas ajoutée sur sa page) ⇒ plus
+  de classe à ajouter : **`grille-equipe` elle-même = rangée d'une ligne qui défile** (même CSS que defile-partout, `--rl-defile: 1`)
+  et rolling.js la traite comme une bande d'équipe (`glisser()`, ordinateur + mobile) ; `defile-partout` / `defile-mobile` gardées
+  (redondantes). Éditeur : `apercu_contextes` met `.grille-equipe` / `.equipe-defilante` à `width: 100%` + `overflow-x: auto`
+  (une ligne qu'on fait défiler pour atteindre tout le monde). Rangée qui tient dans la largeur = centrée, immobile.
 - **Chargement de page effet film** (demande avant la fin de la livraison 4) : maquette `maquettes/loading/maquette-loading.html`
   (copie /workspace/maquette-loading.html), 4 options : A amorce 3-2-1, B clap qui se ferme puis rideau, C ouverture
   cinéma (bandes noires + REC + timecode + règle avec la tête de lecture rouge des frises, plus de filet fin), D barre de lecture en haut sans écran. Conseil : C à l'arrivée (première page

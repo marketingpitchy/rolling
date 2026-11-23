@@ -96,8 +96,8 @@
     },
     {
      "label": "grille-equipe",
-     "description": "Portraits de l'équipe : ajoutez, dupliquez ou supprimez des personnes, elles restent centrées (2 par ligne sur mobile).",
-     "css": "display: flex; flex-direction: row; flex-wrap: wrap; justify-content: center; align-items: flex-start; gap: 28px 22px; padding: 0; & > * { flex: 1 1 160px; max-width: 220px; } @media(--mobile) { gap: 28px 12px; & > * { flex: 0 0 calc(50% - 6px); max-width: none; } }"
+     "description": "Portraits de l'équipe sur une seule ligne qui défile (ordinateur et mobile), quel que soit le nombre de personnes : arrêt au survol, au toucher et au clavier, glisser au doigt. Si tout le monde tient dans la largeur, la rangée reste centrée et immobile. Plusieurs lignes avec « réduire les animations » sur ordinateur.",
+     "css": "--rl-defile: 1; display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: flex-start; align-items: flex-start; gap: 22px; width: max-content; padding: 0; & > * { flex: 0 0 186px; max-width: none; } @media(--mobile) { gap: 12px; & > * { flex: 0 0 150px; } }"
     },
     {
      "label": "grille-6",

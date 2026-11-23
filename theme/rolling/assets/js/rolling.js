@@ -395,7 +395,7 @@
 		// Équipes : rangée qui défile par script (ordinateur et mobile ; defile-mobile : mobile seulement), qu'on fait glisser.
 		// « Réduire les animations » : plusieurs lignes sur ordinateur, rangée immobile qu'on fait glisser en mobile.
 		var mobile = window.matchMedia( '(max-width: 767px)' ).matches;
-		if ( bande.matches( '.equipe-defilante, .defile-partout' ) || ( mobile && bande.matches( '.defile-mobile' ) ) ) {
+		if ( bande.matches( '.equipe-defilante, .grille-equipe, .defile-partout' ) || ( mobile && bande.matches( '.defile-mobile' ) ) ) {
 			if ( calme && ! mobile ) {
 				bande.classList.add( 'rl-defile-statique' );
 			} else {
