@@ -3,7 +3,7 @@
  "titre": "Rolling · L'agence · 00:04 Où nous trouver",
  "type": "e-flexbox",
  "composition": {
-  "xml_structure": "<e-flexbox configuration-id=\"L'agence · où nous trouver\"><e-flexbox configuration-id=\"L'agence · lieu · contenu\"><e-flexbox configuration-id=\"L'agence · lieu · textes\"><e-flexbox configuration-id=\"L'agence · lieu · repère\"><e-paragraph configuration-id=\"L'agence · lieu · timecode\"></e-paragraph><e-paragraph configuration-id=\"L'agence · lieu · sur-titre\"></e-paragraph></e-flexbox><e-heading configuration-id=\"L'agence · lieu · titre\"></e-heading><e-paragraph configuration-id=\"L'agence · lieu · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"L'agence · confiance\"><e-paragraph configuration-id=\"L'agence · confiance · label\"></e-paragraph><e-flexbox configuration-id=\"L'agence · badges\"><e-flexbox configuration-id=\"L'agence · badge · IA sécurisée\"><e-image configuration-id=\"L'agence · badge · IA sécurisée · icône\"></e-image><e-paragraph configuration-id=\"L'agence · badge · IA sécurisée · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"L'agence · badge · Données hébergées en Europe\"><e-image configuration-id=\"L'agence · badge · Données hébergées en Europe · icône\"></e-image><e-paragraph configuration-id=\"L'agence · badge · Données hébergées en Europe · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"L'agence · badge · Conforme RGPD\"><e-image configuration-id=\"L'agence · badge · Conforme RGPD · icône\"></e-image><e-paragraph configuration-id=\"L'agence · badge · Conforme RGPD · texte\"></e-paragraph></e-flexbox></e-flexbox><e-paragraph configuration-id=\"L'agence · confiance · texte\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox>",
+  "xml_structure": "<e-flexbox configuration-id=\"L'agence · où nous trouver\"><e-flexbox configuration-id=\"L'agence · lieu · contenu\"><e-flexbox configuration-id=\"L'agence · lieu · textes\"><e-flexbox configuration-id=\"L'agence · lieu · repère\"><e-paragraph configuration-id=\"L'agence · lieu · timecode\"></e-paragraph><e-paragraph configuration-id=\"L'agence · lieu · sur-titre\"></e-paragraph></e-flexbox><e-heading configuration-id=\"L'agence · lieu · titre\"></e-heading><e-paragraph configuration-id=\"L'agence · lieu · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"L'agence · confiance\"><e-paragraph configuration-id=\"L'agence · confiance · label\"></e-paragraph><e-flexbox configuration-id=\"L'agence · badges\"><e-flexbox configuration-id=\"L'agence · badge · IA sécurisée\"><e-image configuration-id=\"L'agence · badge · IA sécurisée · icône\"></e-image><e-paragraph configuration-id=\"L'agence · badge · IA sécurisée · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"L'agence · badge · Données hébergées en Europe\"><e-image configuration-id=\"L'agence · badge · Données hébergées en Europe · icône\"></e-image><e-paragraph configuration-id=\"L'agence · badge · Données hébergées en Europe · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"L'agence · badge · Conforme RGPD\"><e-image configuration-id=\"L'agence · badge · Conforme RGPD · icône\"></e-image><e-paragraph configuration-id=\"L'agence · badge · Conforme RGPD · texte\"></e-paragraph></e-flexbox></e-flexbox><e-paragraph configuration-id=\"L'agence · confiance · texte\"></e-paragraph></e-flexbox></e-flexbox><e-flexbox configuration-id=\"L'agence · réseaux · conteneur\"><e-flexbox configuration-id=\"L'agence · réseaux\"><e-flexbox configuration-id=\"L'agence · LinkedIn\"><e-heading configuration-id=\"L'agence · LinkedIn · titre\"></e-heading><e-paragraph configuration-id=\"L'agence · LinkedIn · texte\"></e-paragraph><e-button configuration-id=\"L'agence · LinkedIn · lien\"></e-button></e-flexbox><e-flexbox configuration-id=\"L'agence · YouTube\"><e-heading configuration-id=\"L'agence · YouTube · titre\"></e-heading><e-paragraph configuration-id=\"L'agence · YouTube · texte\"></e-paragraph><e-button configuration-id=\"L'agence · YouTube · lien\"></e-button></e-flexbox></e-flexbox></e-flexbox></e-flexbox>",
   "element_config": {
    "L'agence · où nous trouver": {
     "tag": "section"
@@ -59,6 +59,34 @@
    },
    "L'agence · confiance · texte": {
     "paragraph": "[À compléter : où sont hébergées les données, quels outils d'IA, comment ils sont sécurisés.]"
+   },
+   "L'agence · LinkedIn · titre": {
+    "tag": "h3",
+    "title": "Les coulisses sur LinkedIn."
+   },
+   "L'agence · LinkedIn · texte": {
+    "paragraph": "Nos projets en cours, l’équipe et nos conseils vidéo."
+   },
+   "L'agence · LinkedIn · lien": {
+    "text": "Suivre Rolling sur LinkedIn",
+    "link": {
+     "destination": "⟦rolling-reseau|reseau=linkedin⟧",
+     "isTargetBlank": true
+    }
+   },
+   "L'agence · YouTube · titre": {
+    "tag": "h3",
+    "title": "Nos vidéos sur YouTube."
+   },
+   "L'agence · YouTube · texte": {
+    "paragraph": "Nos réalisations publiques et nos making-of, au même endroit."
+   },
+   "L'agence · YouTube · lien": {
+    "text": "Voir la chaîne YouTube",
+    "link": {
+     "destination": "⟦rolling-reseau|reseau=youtube⟧",
+     "isTargetBlank": true
+    }
    }
   },
   "classes": {
@@ -114,12 +142,52 @@
    ],
    "L'agence · confiance · texte": [
     "texte-petit"
+   ],
+   "L'agence · réseaux · conteneur": [
+    "conteneur",
+    "si-reseaux"
+   ],
+   "L'agence · réseaux": [
+    "cartes-reseaux"
+   ],
+   "L'agence · LinkedIn": [
+    "carte-verre",
+    "carte-reseau",
+    "reseau-linkedin",
+    "si-reseau--linkedin"
+   ],
+   "L'agence · LinkedIn · titre": [
+    "titre-xs",
+    "titre-reseau"
+   ],
+   "L'agence · LinkedIn · texte": [
+    "texte-petit"
+   ],
+   "L'agence · LinkedIn · lien": [
+    "temoin-lien"
+   ],
+   "L'agence · YouTube": [
+    "carte-verre",
+    "carte-reseau",
+    "reseau-youtube",
+    "si-reseau--youtube"
+   ],
+   "L'agence · YouTube · titre": [
+    "titre-xs",
+    "titre-reseau"
+   ],
+   "L'agence · YouTube · texte": [
+    "texte-petit"
+   ],
+   "L'agence · YouTube · lien": [
+    "temoin-lien"
    ]
   },
   "style": {
    "L'agence · lieu · textes": "display: flex; flex-direction: column; gap: 0;",
    "L'agence · lieu · titre": "margin-top: 22px;",
-   "L'agence · lieu · texte": "margin-top: 20px; max-width: 560px;"
+   "L'agence · lieu · texte": "margin-top: 20px; max-width: 560px;",
+   "L'agence · réseaux · conteneur": "display: flex; flex-direction: column; gap: 0;"
   }
  },
  "brut": {}

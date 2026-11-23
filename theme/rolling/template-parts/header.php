@@ -31,6 +31,13 @@ $rolling_fleche  = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" 
 				<?php if ( Rolling_Entete_Pied::texte( 'rolling_cta_texte' ) ) : ?>
 					<a class="rl-bouton" href="<?php echo esc_url( Rolling_Entete_Pied::lien_bouton() ); ?>"><?php echo esc_html( Rolling_Entete_Pied::texte( 'rolling_cta_texte' ) ); ?> <?php echo $rolling_fleche; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- SVG décoratif fixe. ?></a>
 				<?php endif; ?>
+				<?php if ( Rolling_Entete_Pied::reseaux() ) : ?>
+					<ul class="rl-menu__reseaux">
+						<?php foreach ( array_keys( Rolling_Entete_Pied::reseaux() ) as $rolling_cle ) : ?>
+							<li><?php echo Rolling_Entete_Pied::lien_reseau( $rolling_cle, 'rl-menu__pastille' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- HTML échappé dans lien_reseau(). ?></li>
+						<?php endforeach; ?>
+					</ul>
+				<?php endif; ?>
 			</nav>
 			<button class="rl-burger" type="button" aria-expanded="false" aria-controls="rl-navigation" aria-label="<?php echo esc_attr( Rolling_Entete_Pied::texte( 'rolling_libelle_menu_ouvrir' ) ); ?>" data-ouvrir="<?php echo esc_attr( Rolling_Entete_Pied::texte( 'rolling_libelle_menu_ouvrir' ) ); ?>" data-fermer="<?php echo esc_attr( Rolling_Entete_Pied::texte( 'rolling_libelle_menu_fermer' ) ); ?>">
 				<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"/></svg>

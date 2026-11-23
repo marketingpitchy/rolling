@@ -1,0 +1,73 @@
+{
+ "cle": "p-rea-25-youtube",
+ "titre": "Rolling · Réalisations · Bandeau YouTube",
+ "type": "e-flexbox",
+ "composition": {
+  "xml_structure": "<e-flexbox configuration-id=\"Réalisations · YouTube\"><e-flexbox configuration-id=\"Réalisations · YouTube · contenu\"><e-flexbox configuration-id=\"Réalisations · YouTube · bandeau\"><e-div-block configuration-id=\"Réalisations · YouTube · image\"><e-image configuration-id=\"Réalisations · YouTube · image · fichier\"></e-image></e-div-block><e-flexbox configuration-id=\"Réalisations · YouTube · textes\"><e-heading configuration-id=\"Réalisations · YouTube · titre\"></e-heading><e-paragraph configuration-id=\"Réalisations · YouTube · texte\"></e-paragraph></e-flexbox><e-button configuration-id=\"Réalisations · YouTube · bouton\"></e-button></e-flexbox></e-flexbox></e-flexbox>",
+  "element_config": {
+   "Réalisations · YouTube": {
+    "tag": "section"
+   },
+   "Réalisations · YouTube · image · fichier": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/hero-tournage.jpg"
+     },
+     "size": "medium_large"
+    }
+   },
+   "Réalisations · YouTube · titre": {
+    "tag": "h2",
+    "title": "Encore plus de vidéos <em>sur notre chaîne.</em>"
+   },
+   "Réalisations · YouTube · texte": {
+    "paragraph": "Making-of, extraits et nouvelles réalisations, sur YouTube."
+   },
+   "Réalisations · YouTube · bouton": {
+    "text": "Voir la chaîne YouTube",
+    "link": {
+     "destination": "⟦rolling-reseau|reseau=youtube⟧",
+     "isTargetBlank": true
+    }
+   }
+  },
+  "classes": {
+   "Réalisations · YouTube": [
+    "section",
+    "section-suite",
+    "si-reseau--youtube"
+   ],
+   "Réalisations · YouTube · contenu": [
+    "conteneur"
+   ],
+   "Réalisations · YouTube · bandeau": [
+    "carte-verre",
+    "bandeau-chaine",
+    "si-reseau--youtube"
+   ],
+   "Réalisations · YouTube · image": [
+    "cadre-chaine"
+   ],
+   "Réalisations · YouTube · image · fichier": [
+    "image-couvrante"
+   ],
+   "Réalisations · YouTube · textes": [
+    "pile-serree"
+   ],
+   "Réalisations · YouTube · titre": [
+    "titre-sm"
+   ],
+   "Réalisations · YouTube · texte": [
+    "texte-petit"
+   ],
+   "Réalisations · YouTube · bouton": [
+    "bouton-principal",
+    "bouton-youtube"
+   ]
+  },
+  "style": {
+   "Réalisations · YouTube · contenu": "display: flex; flex-direction: column; gap: 0;"
+  }
+ },
+ "brut": {}
+}

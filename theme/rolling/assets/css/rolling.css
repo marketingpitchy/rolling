@@ -101,6 +101,12 @@ body.elementor-editor-active #rl-ecran[data-rl-langue="fr"] #rl-version-fr, body
 .rl-bouton svg { flex-shrink: 0; }
 .rl-burger { display: none; align-items: center; justify-content: center; width: 48px; height: 48px; padding: 0; border: 0; border-radius: 50%; background: #0F0F12; color: #FFFFFF; cursor: pointer; }
 .rl-entete--logo-seul .rl-entete__barre { justify-content: center; max-width: 260px; padding: 8px 26px; }
+/* Réseaux dans le menu : à la fin du sous-menu choisi (ordinateur), pastilles en bas du menu ouvert (mobile) */
+.rl-menu .sub-menu .rl-menu__reseau--premier { margin-top: 6px; padding-top: 6px; border-top: 1px solid rgba(15,15,18,0.08); }
+.rl-menu .sub-menu a.rl-sous-menu__reseau { flex-direction: row; align-items: center; gap: 10px; }
+.rl-menu .sub-menu a.rl-sous-menu__reseau::after { content: '↗' / ''; margin-left: auto; font-weight: 600; color: #5F5C6C; }
+.rl-sous-menu__reseau svg, .rl-menu__pastille svg { flex-shrink: 0; }
+.rl-menu__reseaux { display: none; }
 @media (max-width: 980px) {
 	.rl-entete { padding: 14px 20px 0; }
 	.rl-burger { display: inline-flex; }
@@ -113,6 +119,10 @@ body.elementor-editor-active #rl-ecran[data-rl-langue="fr"] #rl-version-fr, body
 	.rl-menu__ouvrir { width: 100%; justify-content: space-between; min-height: 52px; padding: 0 16px; font-size: 17px; }
 	.rl-menu .sub-menu { position: static; width: auto; margin: 0; padding: 0 0 8px 12px; box-shadow: none; }
 	.rl-menu .sub-menu a { padding: 10px 16px; font-size: 16px; }
+	.rl-menu .rl-menu__reseau { display: none; }
+	.rl-menu__reseaux { display: flex; flex-wrap: wrap; gap: 8px; margin: 4px 0 0; padding: 12px 4px 4px; list-style: none; border-top: 1px solid rgba(15,15,18,0.08); }
+	.rl-menu__pastille { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 16px 0 12px; border-radius: 999px; font-size: 15px; font-weight: 700; color: #0F0F12; text-decoration: none; box-shadow: inset 0 0 0 1px rgba(15,15,18,0.12); }
+	.rl-menu__pastille:hover { color: #5B3BEA; }
 }
 @media (max-width: 782px) { .admin-bar .rl-entete { top: 46px; } }
 
@@ -130,10 +140,13 @@ body.elementor-editor-active #rl-ecran[data-rl-langue="fr"] #rl-version-fr, body
 .rl-pied__marque-bloc { display: flex; flex-direction: column; gap: 16px; max-width: 420px; }
 .rl-pied__logo img { display: block; width: auto; height: 32px; }
 .rl-pied .rl-pied__presentation { font-size: 16px; color: #C9C3DE; }
-.rl-pied__reseaux { display: flex; gap: 8px; }
-.rl-pied__reseaux:empty { display: none; }
-.rl-pied .rl-pied__reseau { justify-content: center; width: 44px; min-height: 44px; border-radius: 50%; background: rgba(255,255,255,0.07); box-shadow: inset 0 0 0 1px rgba(255,255,255,0.1); }
-.rl-pied .rl-pied__reseau:hover { background: rgba(255,255,255,0.14); }
+/* Bande « Suivez-nous » : réseaux remplis dans Personnaliser (rien si aucun lien) */
+.rl-pied__suivre { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px 24px; margin-bottom: 48px; padding: 22px 26px; border-radius: 26px; background: linear-gradient(rgba(255,255,255,0.05), rgba(255,255,255,0.05)), linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)); box-shadow: inset 0 1px 0 rgba(255,255,255,0.12), inset 0 0 0 1px rgba(255,255,255,0.08); }
+.rl-pied .rl-pied__suivre-titre { font-family: "Bricolage Grotesque", sans-serif; font-weight: 650; letter-spacing: -0.03em; font-size: 23px; line-height: 1.25; color: #FFFFFF; }
+.rl-pied__reseaux { display: flex; flex-wrap: wrap; gap: 10px; }
+.rl-pied .rl-pied__reseau { gap: 9px; min-height: 46px; padding: 0 18px 0 14px; border-radius: 999px; font-size: 15px; font-weight: 700; color: #FFFFFF; background: linear-gradient(rgba(255,255,255,0.07), rgba(255,255,255,0.07)), linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)); box-shadow: inset 0 1px 0 rgba(255,255,255,0.16), inset 0 0 0 1px rgba(255,255,255,0.12); }
+.rl-pied .rl-pied__reseau:hover { color: #FFFFFF; text-decoration: none; background: rgba(255,255,255,0.14); }
+.rl-pied__reseau svg { flex-shrink: 0; }
 .rl-pied__appel { display: flex; flex-direction: column; align-items: flex-start; gap: 16px; padding: 26px 28px; border-radius: 26px; background: linear-gradient(rgba(255,255,255,0.05), rgba(255,255,255,0.05)), linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)); box-shadow: inset 0 1px 0 rgba(255,255,255,0.12), inset 0 0 0 1px rgba(255,255,255,0.08); }
 .rl-pied .rl-pied__appel-titre { font-family: "Bricolage Grotesque", sans-serif; font-weight: 650; letter-spacing: -0.03em; font-size: 23px; line-height: 1.25; color: #FFFFFF; }
 .rl-pied .rl-pied__bouton { gap: 10px; min-height: 48px; padding: 0 22px; border-radius: 999px; font-size: 15px; font-weight: 700; color: #0F0F12; background: linear-gradient(100deg, #FFD1BF 0%, #FFA27A 45%, #FF8A5B 100%); background-color: #FFA27A; box-shadow: inset 0 1px 0 rgba(255,255,255,0.7), 0 18px 44px -14px rgba(255,138,91,0.75); }

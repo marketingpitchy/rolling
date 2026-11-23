@@ -247,7 +247,7 @@ class Rolling_Dynamique {
 			require_once $fichier;
 		}
 		$gestionnaire->register_group( self::GROUPE, array( 'title' => 'Rolling' ) );
-		foreach ( array( 'Rolling_Balise_Titre', 'Rolling_Balise_Champ', 'Rolling_Balise_Article', 'Rolling_Balise_Terme', 'Rolling_Balise_Webinar', 'Rolling_Balise_Image', 'Rolling_Balise_Lien', 'Rolling_Balise_Partage' ) as $classe ) {
+		foreach ( array( 'Rolling_Balise_Titre', 'Rolling_Balise_Champ', 'Rolling_Balise_Article', 'Rolling_Balise_Terme', 'Rolling_Balise_Webinar', 'Rolling_Balise_Image', 'Rolling_Balise_Lien', 'Rolling_Balise_Partage', 'Rolling_Balise_Reseau' ) as $classe ) {
 			$gestionnaire->register( new $classe() );
 		}
 	}
@@ -402,6 +402,16 @@ class Rolling_Dynamique {
 		$reste    = substr( $repere, $sans ? 5 : 3 );
 		$morceaux = explode( '--', $reste, 2 );
 
+		if ( isset( $morceaux[1] ) && 'reseau' === $morceaux[0] ) {
+			// « si-reseau--youtube » : le lien du réseau est rempli dans le Personnalisateur.
+			$rempli = '' !== (string) get_theme_mod( 'rolling_reseau_' . $morceaux[1], '' );
+			return $sans ? ! $rempli : $rempli;
+		}
+		if ( 'reseaux' === $reste ) {
+			// « si-reseaux » : au moins un réseau rempli.
+			$rempli = (bool) Rolling_Entete_Pied::reseaux();
+			return $sans ? ! $rempli : $rempli;
+		}
 		if ( isset( $morceaux[1] ) && 'type' === $morceaux[0] ) {
 			// « si-type--webinar » : type du contenu courant (article, guide, webinar, realisation, temoignage).
 			$type = (string) get_post_type( self::contenu_courant() );

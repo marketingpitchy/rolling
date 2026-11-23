@@ -9414,6 +9414,250 @@
             ]
         },
         {
+            "id": "g-d253167",
+            "label": "reseau-linkedin",
+            "groupe": "Fiches et listes",
+            "description": "Réseau Linkedin : pose l'icône et la couleur du réseau (avec lien-reseau, carte-reseau).",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": [],
+                    "custom_css": {
+                        "raw": "LS1ybC1jb3VsZXVyLXJlc2VhdTogIzBBNjZDMjsgLS1ybC1pY29uZTogdXJsKCJkYXRhOmltYWdlL3N2Zyt4bWwsJTNDc3ZnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zycgdmlld0JveD0nMCAwIDI0IDI0JyUzRSUzQ3BhdGggZD0nTTQuOTggMy41YTIuNSAyLjUgMCAxIDEgMCA1IDIuNSAyLjUgMCAwIDEgMC01ek0zIDloNHYxMkgzek05IDloMy44djEuN2guMDVjLjUzLTEgMS44NC0yLjA1IDMuNzgtMi4wNUMyMC42IDguNjUgMjEgMTEuMiAyMSAxNC41VjIxaC00di01LjhjMC0xLjQgMC0zLjItMS45NS0zLjJTMTIuOCAxMy41IDEyLjggMTUuMVYyMUg5eicgZmlsbD0nJTIzMDAwJy8lM0UlM0Mvc3ZnJTNFIik7IC0tcmwtaWNvbmUtYmxhbmM6IHVybCgiZGF0YTppbWFnZS9zdmcreG1sLCUzQ3N2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCAyNCAyNCclM0UlM0NwYXRoIGQ9J000Ljk4IDMuNWEyLjUgMi41IDAgMSAxIDAgNSAyLjUgMi41IDAgMCAxIDAtNXpNMyA5aDR2MTJIM3pNOSA5aDMuOHYxLjdoLjA1Yy41My0xIDEuODQtMi4wNSAzLjc4LTIuMDVDMjAuNiA4LjY1IDIxIDExLjIgMjEgMTQuNVYyMWgtNHYtNS44YzAtMS40IDAtMy4yLTEuOTUtMy4yUzEyLjggMTMuNSAxMi44IDE1LjFWMjFIOXonIGZpbGw9JyUyM2ZmZicvJTNFJTNDL3N2ZyUzRSIpOw=="
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-0d2d3a1",
+            "label": "reseau-youtube",
+            "groupe": "Fiches et listes",
+            "description": "Réseau Youtube : pose l'icône et la couleur du réseau (avec lien-reseau, carte-reseau).",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": [],
+                    "custom_css": {
+                        "raw": "LS1ybC1jb3VsZXVyLXJlc2VhdTogI0UxMDAyRDsgLS1ybC1pY29uZTogdXJsKCJkYXRhOmltYWdlL3N2Zyt4bWwsJTNDc3ZnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zycgdmlld0JveD0nMCAwIDI0IDI0JyUzRSUzQ3BhdGggZD0nTTIyIDguMmEzIDMgMCAwIDAtMi4xLTIuMUMxOCA1LjYgMTIgNS42IDEyIDUuNnMtNiAwLTcuOS41QTMgMyAwIDAgMCAyIDguMiAzMSAzMSAwIDAgMCAxLjYgMTJhMzEgMzEgMCAwIDAgLjQgMy44IDMgMyAwIDAgMCAyLjEgMi4xYzEuOS41IDcuOS41IDcuOS41czYgMCA3LjktLjVhMyAzIDAgMCAwIDIuMS0yLjEgMzEgMzEgMCAwIDAgLjQtMy44IDMxIDMxIDAgMCAwLS40LTMuOHpNMTAgMTVWOWw1LjIgM3onIGZpbGw9JyUyMzAwMCcvJTNFJTNDL3N2ZyUzRSIpOyAtLXJsLWljb25lLWJsYW5jOiB1cmwoImRhdGE6aW1hZ2Uvc3ZnK3htbCwlM0NzdmcgeG1sbnM9J2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJyB2aWV3Qm94PScwIDAgMjQgMjQnJTNFJTNDcGF0aCBkPSdNMjIgOC4yYTMgMyAwIDAgMC0yLjEtMi4xQzE4IDUuNiAxMiA1LjYgMTIgNS42cy02IDAtNy45LjVBMyAzIDAgMCAwIDIgOC4yIDMxIDMxIDAgMCAwIDEuNiAxMmEzMSAzMSAwIDAgMCAuNCAzLjggMyAzIDAgMCAwIDIuMSAyLjFjMS45LjUgNy45LjUgNy45LjVzNiAwIDcuOS0uNWEzIDMgMCAwIDAgMi4xLTIuMSAzMSAzMSAwIDAgMCAuNC0zLjggMzEgMzEgMCAwIDAtLjQtMy44ek0xMCAxNVY5bDUuMiAzeicgZmlsbD0nJTIzZmZmJy8lM0UlM0Mvc3ZnJTNFIik7"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-81bd22d",
+            "label": "reseau-instagram",
+            "groupe": "Fiches et listes",
+            "description": "Réseau Instagram : pose l'icône et la couleur du réseau (avec lien-reseau, carte-reseau).",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": [],
+                    "custom_css": {
+                        "raw": "LS1ybC1jb3VsZXVyLXJlc2VhdTogI0MxMzU4NDsgLS1ybC1pY29uZTogdXJsKCJkYXRhOmltYWdlL3N2Zyt4bWwsJTNDc3ZnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zycgdmlld0JveD0nMCAwIDI0IDI0JyUzRSUzQ3JlY3QgeD0nMycgeT0nMycgd2lkdGg9JzE4JyBoZWlnaHQ9JzE4JyByeD0nNScgZmlsbD0nbm9uZScgc3Ryb2tlPSclMjMwMDAnIHN0cm9rZS13aWR0aD0nMicvJTNFJTNDY2lyY2xlIGN4PScxMicgY3k9JzEyJyByPSc0JyBmaWxsPSdub25lJyBzdHJva2U9JyUyMzAwMCcgc3Ryb2tlLXdpZHRoPScyJy8lM0UlM0NjaXJjbGUgY3g9JzE3LjUnIGN5PSc2LjUnIHI9JzEuMicgZmlsbD0nJTIzMDAwJy8lM0UlM0Mvc3ZnJTNFIik7IC0tcmwtaWNvbmUtYmxhbmM6IHVybCgiZGF0YTppbWFnZS9zdmcreG1sLCUzQ3N2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCAyNCAyNCclM0UlM0NyZWN0IHg9JzMnIHk9JzMnIHdpZHRoPScxOCcgaGVpZ2h0PScxOCcgcng9JzUnIGZpbGw9J25vbmUnIHN0cm9rZT0nJTIzZmZmJyBzdHJva2Utd2lkdGg9JzInLyUzRSUzQ2NpcmNsZSBjeD0nMTInIGN5PScxMicgcj0nNCcgZmlsbD0nbm9uZScgc3Ryb2tlPSclMjNmZmYnIHN0cm9rZS13aWR0aD0nMicvJTNFJTNDY2lyY2xlIGN4PScxNy41JyBjeT0nNi41JyByPScxLjInIGZpbGw9JyUyM2ZmZicvJTNFJTNDL3N2ZyUzRSIpOw=="
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-a02a23c",
+            "label": "carte-suivre",
+            "groupe": "Fiches et listes",
+            "description": "Carte « Suivez Rolling » de la colonne des articles (avec carte-verre et carte-outils) : titre, phrase et boutons des réseaux, un par ligne.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "gap": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 10,
+                                "unit": "px"
+                            }
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "JiAubGllbi1yZXNlYXUgeyB3aWR0aDogMTAwJTsganVzdGlmeS1jb250ZW50OiBmbGV4LXN0YXJ0OyB9"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-78d3d0a",
+            "label": "bandeau-chaine",
+            "groupe": "Fiches et listes",
+            "description": "Bandeau « Voir la chaîne YouTube » (avec carte-verre) : image à gauche, textes, bouton à droite ; le bouton passe dessous en mobile.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "mobile",
+                        "state": null
+                    },
+                    "props": {
+                        "padding": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 14,
+                                "unit": "px"
+                            }
+                        },
+                        "gap": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 14,
+                                "unit": "px"
+                            }
+                        },
+                        "grid-template-columns": {
+                            "$$type": "string",
+                            "value": "110px minmax(0, 1fr)"
+                        }
+                    },
+                    "custom_css": null
+                },
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "padding": {
+                            "$$type": "dimensions",
+                            "value": {
+                                "block-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 18,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 26,
+                                        "unit": "px"
+                                    }
+                                },
+                                "block-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 18,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 18,
+                                        "unit": "px"
+                                    }
+                                }
+                            }
+                        },
+                        "display": {
+                            "$$type": "string",
+                            "value": "grid"
+                        },
+                        "gap": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 26,
+                                "unit": "px"
+                            }
+                        },
+                        "grid-template-columns": {
+                            "$$type": "string",
+                            "value": "200px minmax(0, 1fr) auto"
+                        },
+                        "align-items": {
+                            "$$type": "string",
+                            "value": "center"
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "QG1lZGlhIChtYXgtd2lkdGg6IDc2N3B4KSB7ICYgPiA6bGFzdC1jaGlsZCB7IGdyaWQtY29sdW1uOiAxIC8gLTE7IHdpZHRoOiAxMDAlOyBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjsgfSB9"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-5995a50",
+            "label": "bouton-youtube",
+            "groupe": "Fiches et listes",
+            "description": "Bouton « Voir la chaîne YouTube » (avec bouton-principal) : rouge YouTube, icône devant le texte.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "background": {
+                            "$$type": "background",
+                            "value": {
+                                "color": {
+                                    "$$type": "color",
+                                    "value": "#C4002A"
+                                }
+                            }
+                        },
+                        "gap": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 10,
+                                "unit": "px"
+                            }
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "Jjo6YmVmb3JlIHsgY29udGVudDogJyc7IGZsZXgtc2hyaW5rOiAwOyB3aWR0aDogMThweDsgaGVpZ2h0OiAxOHB4OyBiYWNrZ3JvdW5kLWNvbG9yOiBjdXJyZW50Q29sb3I7IC13ZWJraXQtbWFzazogdXJsKCJkYXRhOmltYWdlL3N2Zyt4bWwsJTNDc3ZnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zycgdmlld0JveD0nMCAwIDI0IDI0JyUzRSUzQ3BhdGggZD0nTTIyIDguMmEzIDMgMCAwIDAtMi4xLTIuMUMxOCA1LjYgMTIgNS42IDEyIDUuNnMtNiAwLTcuOS41QTMgMyAwIDAgMCAyIDguMiAzMSAzMSAwIDAgMCAxLjYgMTJhMzEgMzEgMCAwIDAgLjQgMy44IDMgMyAwIDAgMCAyLjEgMi4xYzEuOS41IDcuOS41IDcuOS41czYgMCA3LjktLjVhMyAzIDAgMCAwIDIuMS0yLjEgMzEgMzEgMCAwIDAgLjQtMy44IDMxIDMxIDAgMCAwLS40LTMuOHpNMTAgMTVWOWw1LjIgM3onIGZpbGw9JyUyMzAwMCcvJTNFJTNDL3N2ZyUzRSIpIGNlbnRlciAvIGNvbnRhaW4gbm8tcmVwZWF0OyBtYXNrOiB1cmwoImRhdGE6aW1hZ2Uvc3ZnK3htbCwlM0NzdmcgeG1sbnM9J2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJyB2aWV3Qm94PScwIDAgMjQgMjQnJTNFJTNDcGF0aCBkPSdNMjIgOC4yYTMgMyAwIDAgMC0yLjEtMi4xQzE4IDUuNiAxMiA1LjYgMTIgNS42cy02IDAtNy45LjVBMyAzIDAgMCAwIDIgOC4yIDMxIDMxIDAgMCAwIDEuNiAxMmEzMSAzMSAwIDAgMCAuNCAzLjggMyAzIDAgMCAwIDIuMSAyLjFjMS45LjUgNy45LjUgNy45LjVzNiAwIDcuOS0uNWEzIDMgMCAwIDAgMi4xLTIuMSAzMSAzMSAwIDAgMCAuNC0zLjggMzEgMzEgMCAwIDAtLjQtMy44ek0xMCAxNVY5bDUuMiAzeicgZmlsbD0nJTIzMDAwJy8lM0UlM0Mvc3ZnJTNFIikgY2VudGVyIC8gY29udGFpbiBuby1yZXBlYXQ7IH0="
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-cae9260",
+            "label": "carte-reseau",
+            "groupe": "Fiches et listes",
+            "description": "Carte d'un réseau (avec carte-verre et reseau-linkedin / reseau-youtube) : pictogramme coloré, titre, phrase, lien.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "padding": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 24,
+                                "unit": "px"
+                            }
+                        },
+                        "gap": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 10,
+                                "unit": "px"
+                            }
+                        }
+                    },
+                    "custom_css": null
+                }
+            ]
+        },
+        {
             "id": "g-b1932ff",
             "label": "zone-realisations",
             "groupe": "Fiches et listes",
@@ -38642,6 +38886,524 @@
                     },
                     "custom_css": {
                         "raw": "QG1lZGlhIChtYXgtd2lkdGg6IDc2N3B4KSB7IGdyaWQtY29sdW1uOiAxIC8gLTE7IGdyaWQtcm93OiAyOyB3aGl0ZS1zcGFjZTogbm93cmFwOyB9"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-34036a9",
+            "label": "si-reseau--linkedin",
+            "groupe": "Fiches et listes",
+            "description": "Repère sans style : le thème masque ce bloc tant que le lien Linkedin n'est pas rempli (Personnaliser > Rolling : en-tête et pied de page).",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": [],
+                    "custom_css": {
+                        "raw": "LS1ybC1yZXBlcmU6IDE7"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-4b303bb",
+            "label": "si-reseau--youtube",
+            "groupe": "Fiches et listes",
+            "description": "Repère sans style : le thème masque ce bloc tant que le lien Youtube n'est pas rempli (Personnaliser > Rolling : en-tête et pied de page).",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": [],
+                    "custom_css": {
+                        "raw": "LS1ybC1yZXBlcmU6IDE7"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-51e9e3c",
+            "label": "si-reseau--instagram",
+            "groupe": "Fiches et listes",
+            "description": "Repère sans style : le thème masque ce bloc tant que le lien Instagram n'est pas rempli (Personnaliser > Rolling : en-tête et pied de page).",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": [],
+                    "custom_css": {
+                        "raw": "LS1ybC1yZXBlcmU6IDE7"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-01362bc",
+            "label": "si-reseaux",
+            "groupe": "Fiches et listes",
+            "description": "Repère sans style : le thème masque ce bloc tant qu'aucun lien de réseau n'est rempli (Personnaliser > Rolling : en-tête et pied de page).",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": [],
+                    "custom_css": {
+                        "raw": "LS1ybC1yZXBlcmU6IDE7"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-c792891",
+            "label": "lien-reseau",
+            "groupe": "Fiches et listes",
+            "description": "Bouton vers un réseau (avec reseau-linkedin, reseau-youtube…) : pastille blanche, icône du réseau devant le texte.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": "hover"
+                    },
+                    "props": {
+                        "color": {
+                            "$$type": "color",
+                            "value": "#4A2BB8"
+                        },
+                        "transform": {
+                            "$$type": "transform",
+                            "value": {
+                                "transform-functions": {
+                                    "$$type": "transform-functions",
+                                    "value": [
+                                        {
+                                            "$$type": "transform-move",
+                                            "value": {
+                                                "x": {
+                                                    "$$type": "size",
+                                                    "value": {
+                                                        "size": 0,
+                                                        "unit": "px"
+                                                    }
+                                                },
+                                                "y": {
+                                                    "$$type": "size",
+                                                    "value": {
+                                                        "size": -1,
+                                                        "unit": "px"
+                                                    }
+                                                },
+                                                "z": {
+                                                    "$$type": "size",
+                                                    "value": {
+                                                        "size": 0,
+                                                        "unit": "px"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    },
+                    "custom_css": null
+                },
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "min-height": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 46,
+                                "unit": "px"
+                            }
+                        },
+                        "font-family": {
+                            "$$type": "font-family",
+                            "value": "Hanken Grotesk"
+                        },
+                        "font-weight": {
+                            "$$type": "string",
+                            "value": "700"
+                        },
+                        "font-size": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 15,
+                                "unit": "px"
+                            }
+                        },
+                        "color": {
+                            "$$type": "color",
+                            "value": "#0F0F12"
+                        },
+                        "line-height": {
+                            "$$type": "size",
+                            "value": {
+                                "size": "1.2",
+                                "unit": "custom"
+                            }
+                        },
+                        "text-decoration": {
+                            "$$type": "string",
+                            "value": "none"
+                        },
+                        "padding": {
+                            "$$type": "dimensions",
+                            "value": {
+                                "block-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 0,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 18,
+                                        "unit": "px"
+                                    }
+                                },
+                                "block-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 0,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 14,
+                                        "unit": "px"
+                                    }
+                                }
+                            }
+                        },
+                        "border-radius": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 999,
+                                "unit": "px"
+                            }
+                        },
+                        "background": {
+                            "$$type": "background",
+                            "value": {
+                                "color": {
+                                    "$$type": "color",
+                                    "value": "#FFFFFF"
+                                }
+                            }
+                        },
+                        "box-shadow": {
+                            "$$type": "box-shadow",
+                            "value": [
+                                {
+                                    "$$type": "shadow",
+                                    "value": {
+                                        "hOffset": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 0,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "vOffset": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 0,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "blur": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 0,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "spread": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 1,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "color": {
+                                            "$$type": "color",
+                                            "value": "rgba(15,15,18,0.1)"
+                                        },
+                                        "position": {
+                                            "$$type": "string",
+                                            "value": "inset"
+                                        }
+                                    }
+                                },
+                                {
+                                    "$$type": "shadow",
+                                    "value": {
+                                        "hOffset": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 0,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "vOffset": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 10,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "blur": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 24,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "spread": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": -18,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "color": {
+                                            "$$type": "color",
+                                            "value": "rgba(76,48,170,0.5)"
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        "transition": {
+                            "$$type": "transition",
+                            "value": [
+                                {
+                                    "$$type": "selection-size",
+                                    "value": {
+                                        "selection": {
+                                            "$$type": "key-value",
+                                            "value": {
+                                                "key": {
+                                                    "$$type": "string",
+                                                    "value": "color"
+                                                },
+                                                "value": {
+                                                    "$$type": "string",
+                                                    "value": "color"
+                                                }
+                                            }
+                                        },
+                                        "size": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 0.2,
+                                                "unit": "s"
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "$$type": "selection-size",
+                                    "value": {
+                                        "selection": {
+                                            "$$type": "key-value",
+                                            "value": {
+                                                "key": {
+                                                    "$$type": "string",
+                                                    "value": "transform"
+                                                },
+                                                "value": {
+                                                    "$$type": "string",
+                                                    "value": "transform"
+                                                }
+                                            }
+                                        },
+                                        "size": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 0.2,
+                                                "unit": "s"
+                                            }
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        "display": {
+                            "$$type": "string",
+                            "value": "inline-flex"
+                        },
+                        "gap": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 10,
+                                "unit": "px"
+                            }
+                        },
+                        "align-items": {
+                            "$$type": "string",
+                            "value": "center"
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "d2lkdGg6IGZpdC1jb250ZW50OyAmOjpiZWZvcmUgeyBjb250ZW50OiAnJzsgZmxleC1zaHJpbms6IDA7IHdpZHRoOiAxOHB4OyBoZWlnaHQ6IDE4cHg7IGJhY2tncm91bmQtY29sb3I6IGN1cnJlbnRDb2xvcjsgLXdlYmtpdC1tYXNrOiB2YXIoLS1ybC1pY29uZSkgY2VudGVyIC8gY29udGFpbiBuby1yZXBlYXQ7IG1hc2s6IHZhcigtLXJsLWljb25lKSBjZW50ZXIgLyBjb250YWluIG5vLXJlcGVhdDsgfQ=="
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-14b28aa",
+            "label": "cadre-chaine",
+            "groupe": "Fiches et listes",
+            "description": "Image du bandeau YouTube (16:9, arrondie) avec le bouton lecture rouge de YouTube par-dessus (décor).",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "overflow": {
+                            "$$type": "string",
+                            "value": "hidden"
+                        },
+                        "aspect-ratio": {
+                            "$$type": "string",
+                            "value": "16 / 9"
+                        },
+                        "position": {
+                            "$$type": "string",
+                            "value": "relative"
+                        },
+                        "padding": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 0,
+                                "unit": "px"
+                            }
+                        },
+                        "border-radius": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 16,
+                                "unit": "px"
+                            }
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "Jjo6YWZ0ZXIgeyBwb3NpdGlvbjogcmVsYXRpdmU7IHRvcDogYXV0bzsgcmlnaHQ6IGF1dG87IGJvdHRvbTogYXV0bzsgbGVmdDogYXV0bzsgaGVpZ2h0OiBhdXRvOyBvcGFjaXR5OiAxOyBtaXgtYmxlbmQtbW9kZTogbm9ybWFsOyBib3JkZXI6IDA7IC13ZWJraXQtbWFzazogbm9uZTsgbWFzazogbm9uZTsgcGFkZGluZzogMDsgY29udGVudDogJyc7IHBvc2l0aW9uOiBhYnNvbHV0ZTsgbGVmdDogNTAlOyB0b3A6IDUwJTsgd2lkdGg6IDQ2cHg7IGhlaWdodDogMzJweDsgbWFyZ2luOiAtMTZweCAwIDAgLTIzcHg7IGJvcmRlci1yYWRpdXM6IDlweDsgYmFja2dyb3VuZDogdXJsKCJkYXRhOmltYWdlL3N2Zyt4bWwsJTNDc3ZnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zycgdmlld0JveD0nMCAwIDI0IDI0JyUzRSUzQ3BhdGggZD0nTTkgN3YxMGw4LTV6JyBmaWxsPSclMjNmZmYnLyUzRSUzQy9zdmclM0UiKSBjZW50ZXIgLyAyMnB4IG5vLXJlcGVhdCwgbGluZWFyLWdyYWRpZW50KCNFMTAwMkQsICNFMTAwMkQpOyBwb2ludGVyLWV2ZW50czogbm9uZTsgfQ=="
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-c0a9940",
+            "label": "cartes-reseaux",
+            "groupe": "Fiches et listes",
+            "description": "Deux cartes de réseaux côte à côte (L'agence, « Où nous trouver ») ; l'une sous l'autre en mobile.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "mobile",
+                        "state": null
+                    },
+                    "props": {
+                        "margin": {
+                            "$$type": "dimensions",
+                            "value": {
+                                "block-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 32,
+                                        "unit": "px"
+                                    }
+                                }
+                            }
+                        },
+                        "grid-template-columns": {
+                            "$$type": "string",
+                            "value": "minmax(0, 1fr)"
+                        }
+                    },
+                    "custom_css": null
+                },
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "padding": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 0,
+                                "unit": "px"
+                            }
+                        },
+                        "margin": {
+                            "$$type": "dimensions",
+                            "value": {
+                                "block-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 44,
+                                        "unit": "px"
+                                    }
+                                }
+                            }
+                        },
+                        "display": {
+                            "$$type": "string",
+                            "value": "grid"
+                        },
+                        "gap": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 16,
+                                "unit": "px"
+                            }
+                        },
+                        "grid-template-columns": {
+                            "$$type": "string",
+                            "value": "repeat(2, minmax(0, 1fr))"
+                        }
+                    },
+                    "custom_css": null
+                }
+            ]
+        },
+        {
+            "id": "g-bad7c79",
+            "label": "titre-reseau",
+            "groupe": "Fiches et listes",
+            "description": "Titre d'une carte réseau : pictogramme carré aux couleurs du réseau au-dessus (posé par reseau-linkedin, reseau-youtube…).",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": [],
+                    "custom_css": {
+                        "raw": "LS1ybC10aXRyZS1yZXNlYXU6IDE7ICY6OmJlZm9yZSB7IGNvbnRlbnQ6ICcnOyBkaXNwbGF5OiBibG9jazsgd2lkdGg6IDQ4cHg7IGhlaWdodDogNDhweDsgbWFyZ2luLWJvdHRvbTogMTRweDsgYm9yZGVyLXJhZGl1czogMTRweDsgYmFja2dyb3VuZDogdmFyKC0tcmwtaWNvbmUtYmxhbmMpIGNlbnRlciAvIDI0cHggbm8tcmVwZWF0LCBsaW5lYXItZ3JhZGllbnQodmFyKC0tcmwtY291bGV1ci1yZXNlYXUsICM1QjNCRUEpLCB2YXIoLS1ybC1jb3VsZXVyLXJlc2VhdSwgIzVCM0JFQSkpOyB9"
                     }
                 }
             ]

@@ -15,11 +15,145 @@ class Rolling_Entete_Pied {
 	const MODELE_LANDING = 'modeles/landing.php';
 
 	/**
+	 * Réseaux : clé => [ nom, icône SVG (24 × 24) ].
+	 *
+	 * @var array
+	 */
+	const RESEAUX = array(
+		'linkedin'  => array( 'LinkedIn', '<path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.84-2.05 3.78-2.05C20.6 8.65 21 11.2 21 14.5V21h-4v-5.8c0-1.4 0-3.2-1.95-3.2S12.8 13.5 12.8 15.1V21H9z" fill="currentColor"/>' ),
+		'youtube'   => array( 'YouTube', '<path d="M22 8.2a3 3 0 0 0-2.1-2.1C18 5.6 12 5.6 12 5.6s-6 0-7.9.5A3 3 0 0 0 2 8.2 31 31 0 0 0 1.6 12a31 31 0 0 0 .4 3.8 3 3 0 0 0 2.1 2.1c1.9.5 7.9.5 7.9.5s6 0 7.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .4-3.8 31 31 0 0 0-.4-3.8zM10 15V9l5.2 3z" fill="currentColor"/>' ),
+		'instagram' => array( 'Instagram', '<rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/>' ),
+	);
+
+	/**
+	 * Réglages des réseaux avec leur valeur par défaut (affichée tant que la cliente n'a rien changé).
+	 *
+	 * @return array<string, string>
+	 */
+	public static function defauts() {
+		return array(
+			'rolling_suivre_titre'             => __( 'Suivez-nous.', 'rolling' ),
+			'rolling_suivre_texte'             => __( 'Les coulisses, nos nouvelles vidéos et nos conseils.', 'rolling' ),
+			'rolling_reseaux_sous_menu'        => __( 'Ressources', 'rolling' ),
+			'rolling_reseau_libelle_linkedin'  => __( 'Rolling sur LinkedIn', 'rolling' ),
+			'rolling_reseau_libelle_youtube'   => __( 'Nos vidéos sur YouTube', 'rolling' ),
+			'rolling_reseau_libelle_instagram' => __( 'Rolling sur Instagram', 'rolling' ),
+		);
+	}
+
+	/**
+	 * Réglage avec sa valeur par défaut.
+	 *
+	 * @param string $cle Clé.
+	 * @return string
+	 */
+	public static function reglage( $cle ) {
+		$defauts = self::defauts();
+
+		return (string) get_theme_mod( $cle, $defauts[ $cle ] ?? '' );
+	}
+
+	/**
+	 * Réseaux dont le lien est rempli (Personnaliser > Rolling : en-tête et pied de page).
+	 *
+	 * @return array<string, array{nom: string, lien: string, icone: string}>
+	 */
+	public static function reseaux() {
+		$liste = array();
+		foreach ( self::RESEAUX as $cle => $reseau ) {
+			$lien = (string) get_theme_mod( 'rolling_reseau_' . $cle, '' );
+			if ( '' !== $lien ) {
+				$liste[ $cle ] = array(
+					'nom'   => $reseau[0],
+					'lien'  => $lien,
+					'icone' => '<svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false">' . $reseau[1] . '</svg>',
+				);
+			}
+		}
+
+		return $liste;
+	}
+
+	/**
+	 * Lien vers un réseau : icône + texte, ouvre un nouvel onglet.
+	 *
+	 * @param string $cle    Réseau.
+	 * @param string $classe Classe du lien.
+	 * @param string $texte  Texte visible (vide = nom du réseau).
+	 * @return string HTML.
+	 */
+	public static function lien_reseau( $cle, $classe, $texte = '' ) {
+		$reseaux = self::reseaux();
+		if ( ! isset( $reseaux[ $cle ] ) ) {
+			return '';
+		}
+		$reseau = $reseaux[ $cle ];
+
+		return '<a class="' . esc_attr( $classe ) . '" href="' . esc_url( $reseau['lien'] ) . '" target="_blank" rel="noopener me">'
+			. $reseau['icone'] . '<span>' . esc_html( '' !== $texte ? $texte : $reseau['nom'] ) . '</span>'
+			. '<span class="screen-reader-text">' . esc_html__( '(nouvel onglet)', 'rolling' ) . '</span></a>';
+	}
+
+	/**
+	 * Menu principal : liens des réseaux ajoutés à la fin du sous-menu choisi (par défaut « Ressources »).
+	 *
+	 * @param array    $elements Éléments du menu.
+	 * @param stdClass $args     Réglages du menu.
+	 * @return array
+	 */
+	public static function reseaux_dans_le_menu( $elements, $args ) {
+		if ( empty( $args->theme_location ) || 'principal' !== $args->theme_location ) {
+			return $elements;
+		}
+		$titre   = strtolower( trim( self::reglage( 'rolling_reseaux_sous_menu' ) ) );
+		$reseaux = self::reseaux();
+		if ( '' === $titre || ! $reseaux ) {
+			return $elements;
+		}
+		$parent = 0;
+		foreach ( $elements as $element ) {
+			if ( ! (int) $element->menu_item_parent && strtolower( trim( wp_strip_all_tags( $element->title ) ) ) === $titre ) {
+				$parent = (int) $element->db_id;
+				break;
+			}
+		}
+		if ( ! $parent ) {
+			return $elements;
+		}
+		$rang = 0;
+		foreach ( $reseaux as $cle => $reseau ) {
+			$element                   = new stdClass();
+			$element->ID               = 990000 + $rang;
+			$element->db_id            = 990000 + $rang;
+			$element->menu_item_parent = (string) $parent;
+			$element->object_id        = 0;
+			$element->object           = 'custom';
+			$element->type             = 'custom';
+			$element->type_label       = '';
+			$element->title            = self::reglage( 'rolling_reseau_libelle_' . $cle );
+			$element->url              = $reseau['lien'];
+			$element->target           = '_blank';
+			$element->attr_title       = '';
+			$element->description      = '';
+			$element->xfn              = 'noopener me';
+			$element->current          = false;
+			$element->classes          = array( 'menu-item', 'rl-menu__reseau', 'rl-reseau--' . $cle, 0 === $rang ? 'rl-menu__reseau--premier' : '' );
+			$element->menu_order       = 9990 + $rang;
+			$element->post_parent      = 0;
+			$elements[]                = $element;
+			++$rang;
+		}
+
+		return $elements;
+	}
+
+	/**
 	 * Branche les crochets.
 	 */
 	public static function init() {
 		add_action( 'customize_register', array( __CLASS__, 'personnaliser' ) );
 		add_filter( 'walker_nav_menu_start_el', array( __CLASS__, 'element_de_menu' ), 10, 4 );
+		add_filter( 'wp_nav_menu_objects', array( __CLASS__, 'reseaux_dans_le_menu' ), 10, 2 );
 		add_filter( 'theme_page_templates', array( __CLASS__, 'modeles_de_page' ) );
 
 		// Les modèles « Elementor pleine largeur » et « Canevas » n'ont pas de zone <main> : on l'ajoute (accessibilité, lien d'évitement).
@@ -129,6 +263,11 @@ class Rolling_Entete_Pied {
 
 		if ( 0 === $depth && in_array( 'menu-item-has-children', (array) $item->classes, true ) ) {
 			return '<button type="button" class="rl-menu__ouvrir" aria-expanded="false" aria-controls="rl-sous-' . (int) $item->ID . '">' . esc_html( $item->title ) . ' <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6"/></svg></button>';
+		}
+
+		if ( in_array( 'rl-menu__reseau', (array) $item->classes, true ) ) {
+			$cle = str_replace( 'rl-reseau--', '', (string) current( preg_grep( '/^rl-reseau--/', (array) $item->classes ) ) );
+			return self::lien_reseau( $cle, 'rl-sous-menu__reseau', $item->title );
 		}
 
 		if ( $depth > 0 && trim( (string) $item->description ) ) {
@@ -250,9 +389,37 @@ class Rolling_Entete_Pied {
 				'rolling_reseau_' . $reseau,
 				array(
 					/* translators: %s : réseau social. */
-					'label'   => sprintf( __( 'Pied de page : lien %s (vide = pas d’icône)', 'rolling' ), $nom ),
+					'label'   => sprintf( __( 'Lien %s (vide = rien ne s’affiche : pied de page, menu, cartes et bandeaux)', 'rolling' ), $nom ),
 					'section' => 'rolling_entete_pied',
 					'type'    => 'url',
+				)
+			);
+		}
+
+		foreach ( self::defauts() as $cle => $defaut ) {
+			$wp_customize->add_setting(
+				$cle,
+				array(
+					'default'           => $defaut,
+					'sanitize_callback' => 'sanitize_text_field',
+				)
+			);
+		}
+		$libelles = array(
+			'rolling_suivre_titre'             => __( 'Pied de page : titre de la bande des réseaux', 'rolling' ),
+			'rolling_suivre_texte'             => __( 'Pied de page : phrase de la bande des réseaux', 'rolling' ),
+			'rolling_reseaux_sous_menu'        => __( 'Menu : liens des réseaux à la fin du sous-menu (nom de l’élément parent, vide = aucun)', 'rolling' ),
+			'rolling_reseau_libelle_linkedin'  => __( 'Menu : texte du lien LinkedIn', 'rolling' ),
+			'rolling_reseau_libelle_youtube'   => __( 'Menu : texte du lien YouTube', 'rolling' ),
+			'rolling_reseau_libelle_instagram' => __( 'Menu : texte du lien Instagram', 'rolling' ),
+		);
+		foreach ( $libelles as $cle => $libelle ) {
+			$wp_customize->add_control(
+				$cle,
+				array(
+					'label'   => $libelle,
+					'section' => 'rolling_entete_pied',
+					'type'    => 'text',
 				)
 			);
 		}

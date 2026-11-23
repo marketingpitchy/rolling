@@ -1152,6 +1152,20 @@ carte_replay = F('Carte replay', ['carte-liste'], tag='article', enfants=[
     B('Replay · bouton', 'Voir le replay', REPLAY, ['bouton-verre', 'bouton-petit']),
 ])
 
+def bandeau_chaine(p, style=None):
+    """Bandeau « Voir la chaîne YouTube » (lien rempli dans Personnaliser ; masqué tant qu'il est vide)."""
+    return F(p + ' · bandeau', ['carte-verre', 'bandeau-chaine', 'si-reseau--youtube'], style, enfants=[
+        D(p + ' · image', ['cadre-chaine'], enfants=[
+            I(p + ' · image · fichier', 'hero-tournage.jpg', cls=['image-couvrante'], taille='medium_large'),
+        ]),
+        F(p + ' · textes', ['pile-serree'], enfants=[
+            H(p + ' · titre', 'Encore plus de vidéos <em>sur notre chaîne.</em>', 'h2', ['titre-sm']),
+            P(p + ' · texte', 'Making-of, extraits et nouvelles réalisations, sur YouTube.', ['texte-petit']),
+        ]),
+        B(p + ' · bouton', 'Voir la chaîne YouTube', DYN('rolling-reseau', reseau='youtube'), ['bouton-principal', 'bouton-youtube'], onglet=True),
+    ])
+
+
 # Fiche réalisation : haut, vidéo, récit, générique (facultatif), autres réalisations, appel final.
 fiche_realisation = F('Fiche réalisation', None, COLONNE + ' align-items: stretch; padding: 0; width: 100%;', tag='article', enfants=[
     F('Fiche réalisation · haut', ['section', 'section-entete'], tag='section', enfants=[
@@ -1250,6 +1264,7 @@ fiche_realisation = F('Fiche réalisation', None, COLONNE + ' align-items: stret
         F('Fiche réalisation · autres · contenu', ['conteneur'], COLONNE, enfants=[
             H('Fiche réalisation · autres · titre', "D'autres <em>réalisations.</em>", 'h2', ['titre-sm'], 'margin-bottom: 36px;'),
             W('Fiche réalisation · autres · liste', 'rolling-liste', contenu='autres', nombre='3', classe='grille-3', carte_theme='exemple'),
+            bandeau_chaine('Fiche réalisation · YouTube', 'margin-top: 44px;'),
         ]),
     ]),
     final,
@@ -1444,6 +1459,12 @@ fiche_article = F('Fiche article', None, COLONNE + ' align-items: stretch; paddi
                             for cle, nom in [('chatgpt', 'ChatGPT'), ('claude', 'Claude'), ('perplexity', 'Perplexity'), ('lechat', 'Le Chat')]
                         ]),
                     ]),
+                    F('Article · suivre', ['carte-verre', 'carte-outils', 'carte-suivre', 'si-reseaux'], enfants=[
+                        P('Article · suivre · titre', 'Suivez Rolling.', ['titre-xs']),
+                        P('Article · suivre · texte', 'Nos coulisses et nos conseils vidéo.', ['texte-petit']),
+                        B('Article · suivre · LinkedIn', 'Suivre sur LinkedIn', DYN('rolling-reseau', reseau='linkedin'), ['lien-reseau', 'reseau-linkedin', 'si-reseau--linkedin'], onglet=True),
+                        B('Article · suivre · YouTube', 'S’abonner sur YouTube', DYN('rolling-reseau', reseau='youtube'), ['lien-reseau', 'reseau-youtube', 'si-reseau--youtube'], onglet=True),
+                    ]),
                     F('Article · guide', ['carte-verre', 'carte-outils', 'guide-cote', 'contexte-dernier-guide', 'si-contexte'], enfants=couvertures_guide('Article · guide', 'medium') + [
                         F('Article · guide · textes', ['pile-serree'], enfants=[
                             P('Article · guide · label', 'À télécharger', ['label']),
@@ -1525,6 +1546,10 @@ rea_liste = section_liste('Réalisations · liste', [
     H('Réalisations · liste · titre masqué', 'Toutes nos réalisations vidéo', 'h2', ['texte-masque']),
     W('Réalisations · cartes', 'rolling-liste', contenu='realisations', classe='mur-montage', extraits='2', filtres='trois', tous='Tous', texte_aucun='Encore en salle de montage.', texte_aucun_detail='Les vidéos de cette catégorie arrivent bientôt en ligne.', texte_tout_voir='Voir toutes les réalisations', plus='yes', plus_texte='Réalisations suivantes'),
 ], [appel_milieu('Réalisations · appel', 'Et avec vos contenus, <em>ça donnerait quoi&nbsp;?</em>', 'margin-top: 24px;')])
+
+rea_youtube = F('Réalisations · YouTube', ['section', 'section-suite', 'si-reseau--youtube'], tag='section', enfants=[
+    F('Réalisations · YouTube · contenu', ['conteneur'], COLONNE, enfants=[bandeau_chaine('Réalisations · YouTube')]),
+])
 
 tem_haut = haut_page('Témoignages · haut', 'Témoignages', ['pastille-orange'], 'Ce que nos clients disent <u>de notre accompagnement.</u>',
                      'Responsables RH, formation, communication interne ou marketing : ils nous ont confié leurs contenus. Leurs mots, tels quels.')
@@ -2032,6 +2057,20 @@ agence_lieu = F("L'agence · où nous trouver", ['section', 'section-lilas'], ta
             P("L'agence · confiance · label", 'Vos données, protégées', ['label', 'label-violet']),
             badges("L'agence", None, clair=True),
             P("L'agence · confiance · texte", "[À compléter : où sont hébergées les données, quels outils d'IA, comment ils sont sécurisés.]", ['texte-petit']),
+        ]),
+    ]),
+    F("L'agence · réseaux · conteneur", ['conteneur', 'si-reseaux'], COLONNE, enfants=[
+        F("L'agence · réseaux", ['cartes-reseaux'], enfants=[
+            F("L'agence · LinkedIn", ['carte-verre', 'carte-reseau', 'reseau-linkedin', 'si-reseau--linkedin'], enfants=[
+                H("L'agence · LinkedIn · titre", 'Les coulisses sur LinkedIn.', 'h3', ['titre-xs', 'titre-reseau']),
+                P("L'agence · LinkedIn · texte", 'Nos projets en cours, l’équipe et nos conseils vidéo.', ['texte-petit']),
+                B("L'agence · LinkedIn · lien", 'Suivre Rolling sur LinkedIn', DYN('rolling-reseau', reseau='linkedin'), ['temoin-lien'], onglet=True),
+            ]),
+            F("L'agence · YouTube", ['carte-verre', 'carte-reseau', 'reseau-youtube', 'si-reseau--youtube'], enfants=[
+                H("L'agence · YouTube · titre", 'Nos vidéos sur YouTube.', 'h3', ['titre-xs', 'titre-reseau']),
+                P("L'agence · YouTube · texte", 'Nos réalisations publiques et nos making-of, au même endroit.', ['texte-petit']),
+                B("L'agence · YouTube · lien", 'Voir la chaîne YouTube', DYN('rolling-reseau', reseau='youtube'), ['temoin-lien'], onglet=True),
+            ]),
         ]),
     ]),
 ])
@@ -2546,7 +2585,7 @@ contenu_final = F('Contenu · appel final', ['section', 'section-sombre', 'secti
 ])
 
 PAGES = [
-    ('Réalisations', [('p-rea-1-haut', 'Haut de page', rea_haut), ('p-rea-2-liste', 'Liste', rea_liste), ('p-rea-3-faq', 'FAQ', FAQ_BLOCS['rea'])]),
+    ('Réalisations', [('p-rea-1-haut', 'Haut de page', rea_haut), ('p-rea-2-liste', 'Liste', rea_liste), ('p-rea-25-youtube', 'Bandeau YouTube', rea_youtube), ('p-rea-3-faq', 'FAQ', FAQ_BLOCS['rea'])]),
     ('Témoignages', [('p-tem-1-haut', 'Haut de page', tem_haut), ('p-tem-2-liste', 'Liste', tem_liste), ('p-tem-3-faq', 'FAQ', FAQ_BLOCS['tem'])]),
     ('Blog', [('p-blog-1-haut', 'Haut de page', blog_haut), ('p-blog-2-liste', 'Liste', blog_liste), ('p-blog-3-faq', 'FAQ', FAQ_BLOCS['blog'])]),
     ('Guides', [('p-guides-1-haut', 'Haut de page', guides_haut), ('p-guides-2-liste', 'Liste', guides_liste), ('p-guides-25-newsletter', 'Newsletter', section_newsletter('Guides · newsletter')), ('p-guides-3-faq', 'FAQ', FAQ_BLOCS['guides'])]),

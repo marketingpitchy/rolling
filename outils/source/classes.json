@@ -2577,6 +2577,89 @@
      "brut": "@media (max-width: 767px) { grid-column: 1 / -1; grid-row: 2; white-space: nowrap; }"
     },
     {
+     "label": "si-reseau--linkedin",
+     "description": "Repère sans style : le thème masque ce bloc tant que le lien Linkedin n'est pas rempli (Personnaliser > Rolling : en-tête et pied de page).",
+     "css": "--rl-repere: 1;"
+    },
+    {
+     "label": "si-reseau--youtube",
+     "description": "Repère sans style : le thème masque ce bloc tant que le lien Youtube n'est pas rempli (Personnaliser > Rolling : en-tête et pied de page).",
+     "css": "--rl-repere: 1;"
+    },
+    {
+     "label": "si-reseau--instagram",
+     "description": "Repère sans style : le thème masque ce bloc tant que le lien Instagram n'est pas rempli (Personnaliser > Rolling : en-tête et pied de page).",
+     "css": "--rl-repere: 1;"
+    },
+    {
+     "label": "si-reseaux",
+     "description": "Repère sans style : le thème masque ce bloc tant qu'aucun lien de réseau n'est rempli (Personnaliser > Rolling : en-tête et pied de page).",
+     "css": "--rl-repere: 1;"
+    },
+    {
+     "label": "reseau-linkedin",
+     "description": "Réseau Linkedin : pose l'icône et la couleur du réseau (avec lien-reseau, carte-reseau).",
+     "css": "--rl-couleur-reseau: #0A66C2;",
+     "brut": "--rl-icone: url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.84-2.05 3.78-2.05C20.6 8.65 21 11.2 21 14.5V21h-4v-5.8c0-1.4 0-3.2-1.95-3.2S12.8 13.5 12.8 15.1V21H9z' fill='%23000'/%3E%3C/svg%3E\"); --rl-icone-blanc: url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.84-2.05 3.78-2.05C20.6 8.65 21 11.2 21 14.5V21h-4v-5.8c0-1.4 0-3.2-1.95-3.2S12.8 13.5 12.8 15.1V21H9z' fill='%23fff'/%3E%3C/svg%3E\");"
+    },
+    {
+     "label": "reseau-youtube",
+     "description": "Réseau Youtube : pose l'icône et la couleur du réseau (avec lien-reseau, carte-reseau).",
+     "css": "--rl-couleur-reseau: #E1002D;",
+     "brut": "--rl-icone: url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M22 8.2a3 3 0 0 0-2.1-2.1C18 5.6 12 5.6 12 5.6s-6 0-7.9.5A3 3 0 0 0 2 8.2 31 31 0 0 0 1.6 12a31 31 0 0 0 .4 3.8 3 3 0 0 0 2.1 2.1c1.9.5 7.9.5 7.9.5s6 0 7.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .4-3.8 31 31 0 0 0-.4-3.8zM10 15V9l5.2 3z' fill='%23000'/%3E%3C/svg%3E\"); --rl-icone-blanc: url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M22 8.2a3 3 0 0 0-2.1-2.1C18 5.6 12 5.6 12 5.6s-6 0-7.9.5A3 3 0 0 0 2 8.2 31 31 0 0 0 1.6 12a31 31 0 0 0 .4 3.8 3 3 0 0 0 2.1 2.1c1.9.5 7.9.5 7.9.5s6 0 7.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .4-3.8 31 31 0 0 0-.4-3.8zM10 15V9l5.2 3z' fill='%23fff'/%3E%3C/svg%3E\");"
+    },
+    {
+     "label": "reseau-instagram",
+     "description": "Réseau Instagram : pose l'icône et la couleur du réseau (avec lien-reseau, carte-reseau).",
+     "css": "--rl-couleur-reseau: #C13584;",
+     "brut": "--rl-icone: url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect x='3' y='3' width='18' height='18' rx='5' fill='none' stroke='%23000' stroke-width='2'/%3E%3Ccircle cx='12' cy='12' r='4' fill='none' stroke='%23000' stroke-width='2'/%3E%3Ccircle cx='17.5' cy='6.5' r='1.2' fill='%23000'/%3E%3C/svg%3E\"); --rl-icone-blanc: url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect x='3' y='3' width='18' height='18' rx='5' fill='none' stroke='%23fff' stroke-width='2'/%3E%3Ccircle cx='12' cy='12' r='4' fill='none' stroke='%23fff' stroke-width='2'/%3E%3Ccircle cx='17.5' cy='6.5' r='1.2' fill='%23fff'/%3E%3C/svg%3E\");"
+    },
+    {
+     "label": "lien-reseau",
+     "description": "Bouton vers un réseau (avec reseau-linkedin, reseau-youtube…) : pastille blanche, icône du réseau devant le texte.",
+     "css": "display: inline-flex; width: fit-content; align-items: center; gap: 10px; min-height: 46px; padding: 0 18px 0 14px; border-radius: 999px; font-family: Hanken Grotesk; font-size: 15px; line-height: 1.2; font-weight: 700; color: #0F0F12; background-color: #FFFFFF; box-shadow: inset 0 0 0 1px rgba(15,15,18,0.1), 0 10px 24px -18px rgba(76,48,170,0.5); text-decoration: none; transition: color 0.2s ease, transform 0.2s ease; &:hover { color: #4A2BB8; transform: translateY(-1px); }",
+     "brut": "&::before { content: ''; flex-shrink: 0; width: 18px; height: 18px; background-color: currentColor; -webkit-mask: var(--rl-icone) center / contain no-repeat; mask: var(--rl-icone) center / contain no-repeat; }"
+    },
+    {
+     "label": "carte-suivre",
+     "description": "Carte « Suivez Rolling » de la colonne des articles (avec carte-verre et carte-outils) : titre, phrase et boutons des réseaux, un par ligne.",
+     "css": "gap: 10px; & .lien-reseau { width: 100%; justify-content: flex-start; }"
+    },
+    {
+     "label": "bandeau-chaine",
+     "description": "Bandeau « Voir la chaîne YouTube » (avec carte-verre) : image à gauche, textes, bouton à droite ; le bouton passe dessous en mobile.",
+     "css": "display: grid; grid-template-columns: 200px minmax(0, 1fr) auto; align-items: center; gap: 26px; padding: 18px 26px 18px 18px; @media(--mobile) { grid-template-columns: 110px minmax(0, 1fr); gap: 14px; padding: 14px; }",
+     "brut": "@media (max-width: 767px) { & > :last-child { grid-column: 1 / -1; width: 100%; justify-content: center; } }"
+    },
+    {
+     "label": "cadre-chaine",
+     "description": "Image du bandeau YouTube (16:9, arrondie) avec le bouton lecture rouge de YouTube par-dessus (décor).",
+     "css": "position: relative; overflow: hidden; aspect-ratio: 16 / 9; padding: 0; border-radius: 16px;",
+     "brut": "&::after { position: relative; top: auto; right: auto; bottom: auto; left: auto; height: auto; opacity: 1; mix-blend-mode: normal; border: 0; -webkit-mask: none; mask: none; padding: 0; content: ''; position: absolute; left: 50%; top: 50%; width: 46px; height: 32px; margin: -16px 0 0 -23px; border-radius: 9px; background: url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M9 7v10l8-5z' fill='%23fff'/%3E%3C/svg%3E\") center / 22px no-repeat, linear-gradient(#E1002D, #E1002D); pointer-events: none; }"
+    },
+    {
+     "label": "bouton-youtube",
+     "description": "Bouton « Voir la chaîne YouTube » (avec bouton-principal) : rouge YouTube, icône devant le texte.",
+     "css": "gap: 10px; background-color: #C4002A;",
+     "brut": "&::before { content: ''; flex-shrink: 0; width: 18px; height: 18px; background-color: currentColor; -webkit-mask: url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M22 8.2a3 3 0 0 0-2.1-2.1C18 5.6 12 5.6 12 5.6s-6 0-7.9.5A3 3 0 0 0 2 8.2 31 31 0 0 0 1.6 12a31 31 0 0 0 .4 3.8 3 3 0 0 0 2.1 2.1c1.9.5 7.9.5 7.9.5s6 0 7.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .4-3.8 31 31 0 0 0-.4-3.8zM10 15V9l5.2 3z' fill='%23000'/%3E%3C/svg%3E\") center / contain no-repeat; mask: url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M22 8.2a3 3 0 0 0-2.1-2.1C18 5.6 12 5.6 12 5.6s-6 0-7.9.5A3 3 0 0 0 2 8.2 31 31 0 0 0 1.6 12a31 31 0 0 0 .4 3.8 3 3 0 0 0 2.1 2.1c1.9.5 7.9.5 7.9.5s6 0 7.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .4-3.8 31 31 0 0 0-.4-3.8zM10 15V9l5.2 3z' fill='%23000'/%3E%3C/svg%3E\") center / contain no-repeat; }"
+    },
+    {
+     "label": "cartes-reseaux",
+     "description": "Deux cartes de réseaux côte à côte (L'agence, « Où nous trouver ») ; l'une sous l'autre en mobile.",
+     "css": "display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-top: 44px; padding: 0; @media(--mobile) { grid-template-columns: minmax(0, 1fr); margin-top: 32px; }"
+    },
+    {
+     "label": "carte-reseau",
+     "description": "Carte d'un réseau (avec carte-verre et reseau-linkedin / reseau-youtube) : pictogramme coloré, titre, phrase, lien.",
+     "css": "gap: 10px; padding: 24px;"
+    },
+    {
+     "label": "titre-reseau",
+     "description": "Titre d'une carte réseau : pictogramme carré aux couleurs du réseau au-dessus (posé par reseau-linkedin, reseau-youtube…).",
+     "css": "--rl-titre-reseau: 1;",
+     "brut": "&::before { content: ''; display: block; width: 48px; height: 48px; margin-bottom: 14px; border-radius: 14px; background: var(--rl-icone-blanc) center / 24px no-repeat, linear-gradient(var(--rl-couleur-reseau, #5B3BEA), var(--rl-couleur-reseau, #5B3BEA)); }"
+    },
+    {
      "label": "carte-jeu-note",
      "description": "Carte à jouer sans chiffre (avec carte-verre et carte-jeu) : la note manuscrite en tête, en grand, puis le titre et la phrase. Notes orange et violettes en alternance.",
      "css": "justify-content: flex-start; min-height: 240px; gap: 14px; @media(--mobile) { display: flex; flex-direction: column; align-items: flex-start; min-height: 0; gap: 10px; }",

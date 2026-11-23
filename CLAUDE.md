@@ -938,6 +938,18 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   Réalisations (conseil)**, **D carte « Suivez Rolling » dans la colonne des articles (conseil)**, E 2 cartes dans « Où nous
   trouver » de L'agence, F liens sous Ressources (Apparence > Menus, liens personnalisés) + bas du menu mobile, G barre
   flottante (déconseillée).
+- **0.7.20 : réseaux = B, C, D, E, F** (pas A ni G). Liens remplis une fois dans Personnaliser > « Rolling : en-tête et pied de
+  page » (`rolling_reseau_linkedin|youtube|instagram` ; vide = rien nulle part). `Rolling_Entete_Pied::RESEAUX` (noms + icônes),
+  `reseaux()`, `lien_reseau()`, `reglage()` + `defauts()` (titre / phrase de la bande, nom du sous-menu, textes des liens du menu).
+  **B** : bande `rl-pied__suivre` (« Suivez-nous. », pastilles icône + nom) entre les colonnes et les badges ; plus d'icônes sous
+  le logo. **F** : `wp_nav_menu_objects` ajoute les réseaux à la fin du sous-menu dont le titre = `rolling_reseaux_sous_menu`
+  (« Ressources » par défaut ; éléments factices db_id 990000+, classe `rl-menu__reseau`, rendus par `element_de_menu`) ;
+  mobile ≤ 980 px : ces liens masqués, pastilles `rl-menu__reseaux` en bas du menu ouvert. Balise **`rolling-reseau`**
+  (lien du réseau) + repères `si-reseau--linkedin|youtube|instagram` et `si-reseaux` (`condition_remplie`). **C** : bloc
+  `p-rea-25-youtube` (`bandeau_chaine()` : `bandeau-chaine`, `cadre-chaine` avec bouton lecture rouge en ::after, `bouton-youtube`
+  #C4002A) sur la page Réalisations + sous « D'autres réalisations » de la fiche réalisation. **D** : carte `carte-suivre` dans la
+  colonne des articles (après Partager). **E** : `cartes-reseaux` > `carte-reseau` + `reseau-*` (variables d'icône en brut) +
+  `titre-reseau` (pictogramme carré en ::before **display: block** : le titre reste en block, pas de flex) dans « Où nous trouver ».
 - **Chargement de page effet film** (demande avant la fin de la livraison 4) : maquette `maquettes/loading/maquette-loading.html`
   (copie /workspace/maquette-loading.html), 4 options : A amorce 3-2-1, B clap qui se ferme puis rideau, C ouverture
   cinéma (bandes noires + REC + timecode + règle avec la tête de lecture rouge des frises, plus de filet fin), D barre de lecture en haut sans écran. Conseil : C à l'arrivée (première page

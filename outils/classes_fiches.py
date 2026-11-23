@@ -8,6 +8,23 @@ import os
 ICI = os.path.dirname(os.path.abspath(__file__))
 
 REPERE = "Repère sans style : le thème masque ce bloc quand le champ « %s » du contenu est vide."
+
+
+def svg_uri(dessin, couleur='#000'):
+    """Icône SVG 24 × 24 en adresse data:, utilisable dans url() (masque ou fond)."""
+    from urllib.parse import quote
+    svg = "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'>%s</svg>" % dessin.replace('currentColor', couleur)
+    return 'url("data:image/svg+xml,%s")' % quote(svg, safe="/:=' ")
+
+
+ICONES_RESEAUX = {
+    'linkedin': "<path d='M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.84-2.05 3.78-2.05C20.6 8.65 21 11.2 21 14.5V21h-4v-5.8c0-1.4 0-3.2-1.95-3.2S12.8 13.5 12.8 15.1V21H9z' fill='currentColor'/>",
+    'youtube': "<path d='M22 8.2a3 3 0 0 0-2.1-2.1C18 5.6 12 5.6 12 5.6s-6 0-7.9.5A3 3 0 0 0 2 8.2 31 31 0 0 0 1.6 12a31 31 0 0 0 .4 3.8 3 3 0 0 0 2.1 2.1c1.9.5 7.9.5 7.9.5s6 0 7.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .4-3.8 31 31 0 0 0-.4-3.8zM10 15V9l5.2 3z' fill='currentColor'/>",
+    'instagram': "<rect x='3' y='3' width='18' height='18' rx='5' fill='none' stroke='currentColor' stroke-width='2'/><circle cx='12' cy='12' r='4' fill='none' stroke='currentColor' stroke-width='2'/><circle cx='17.5' cy='6.5' r='1.2' fill='currentColor'/>",
+}
+COULEURS_RESEAUX = {'linkedin': '#0A66C2', 'youtube': '#E1002D', 'instagram': '#C13584'}
+LECTURE = "<path d='M9 7v10l8-5z' fill='#fff'/>"
+
 RAZ = "position: relative; top: auto; right: auto; bottom: auto; left: auto; height: auto; opacity: 1; mix-blend-mode: normal; border: 0; -webkit-mask: none; mask: none; padding: 0; "
 CLASSES = [
     # Repères des parties facultatives (aucun style : seulement lus par le thème).
@@ -543,6 +560,33 @@ CLASSES = [
      ".section-sombre & { color: #FFD1BF; background-color: #2A2244; }"),
     ('chiffre-jeu', "Grand chiffre en verre d'une carte à jouer.", "display: block; width: auto; height: 92px; max-width: 100%; object-fit: contain; object-position: left center; @media(--mobile) { width: 52px; height: 56px; object-position: center; }", "@media (max-width: 767px) { grid-column: 1; grid-row: 1; }"),
     ('note-jeu', "Note manuscrite en bas d'une carte à jouer (Caveat, orange foncé).", "display: block; font-family: Caveat; font-size: 28px; line-height: 1; font-weight: 700; color: #A63C14; transform: rotate(-3deg); transform-origin: left center; @media(--mobile) { font-size: 26px; }", "@media (max-width: 767px) { grid-column: 1 / -1; grid-row: 2; white-space: nowrap; }"),
+
+    # 0.7.20 : liens des réseaux (LinkedIn, YouTube, Instagram), remplis dans Personnaliser.
+    *[('si-reseau--' + r, "Repère sans style : le thème masque ce bloc tant que le lien %s n'est pas rempli (Personnaliser > Rolling : en-tête et pied de page)." % r.capitalize(), '--rl-repere: 1;') for r in ICONES_RESEAUX],
+    ('si-reseaux', "Repère sans style : le thème masque ce bloc tant qu'aucun lien de réseau n'est rempli (Personnaliser > Rolling : en-tête et pied de page).", '--rl-repere: 1;'),
+    *[('reseau-' + r, "Réseau %s : pose l'icône et la couleur du réseau (avec lien-reseau, carte-reseau)." % r.capitalize(),
+       "--rl-couleur-reseau: %s;" % COULEURS_RESEAUX[r], "--rl-icone: %s; --rl-icone-blanc: %s;" % (svg_uri(d), svg_uri(d, '#fff'))) for r, d in ICONES_RESEAUX.items()],
+    ('lien-reseau', "Bouton vers un réseau (avec reseau-linkedin, reseau-youtube…) : pastille blanche, icône du réseau devant le texte.",
+     "display: inline-flex; width: fit-content; align-items: center; gap: 10px; min-height: 46px; padding: 0 18px 0 14px; border-radius: 999px; font-family: Hanken Grotesk; font-size: 15px; line-height: 1.2; font-weight: 700; color: #0F0F12; background-color: #FFFFFF; box-shadow: inset 0 0 0 1px rgba(15,15,18,0.1), 0 10px 24px -18px rgba(76,48,170,0.5); text-decoration: none; transition: color 0.2s ease, transform 0.2s ease; &:hover { color: #4A2BB8; transform: translateY(-1px); }",
+     "&::before { content: ''; flex-shrink: 0; width: 18px; height: 18px; background-color: currentColor; -webkit-mask: var(--rl-icone) center / contain no-repeat; mask: var(--rl-icone) center / contain no-repeat; }"),
+    ('carte-suivre', "Carte « Suivez Rolling » de la colonne des articles (avec carte-verre et carte-outils) : titre, phrase et boutons des réseaux, un par ligne.",
+     "gap: 10px; & .lien-reseau { width: 100%; justify-content: flex-start; }"),
+    ('bandeau-chaine', "Bandeau « Voir la chaîne YouTube » (avec carte-verre) : image à gauche, textes, bouton à droite ; le bouton passe dessous en mobile.",
+     "display: grid; grid-template-columns: 200px minmax(0, 1fr) auto; align-items: center; gap: 26px; padding: 18px 26px 18px 18px; @media(--mobile) { grid-template-columns: 110px minmax(0, 1fr); gap: 14px; padding: 14px; }",
+     "@media (max-width: 767px) { & > :last-child { grid-column: 1 / -1; width: 100%; justify-content: center; } }"),
+    ('cadre-chaine', "Image du bandeau YouTube (16:9, arrondie) avec le bouton lecture rouge de YouTube par-dessus (décor).",
+     "position: relative; overflow: hidden; aspect-ratio: 16 / 9; padding: 0; border-radius: 16px;",
+     "&::after { " + RAZ + "content: ''; position: absolute; left: 50%; top: 50%; width: 46px; height: 32px; margin: -16px 0 0 -23px; border-radius: 9px; background: " + svg_uri(LECTURE) + " center / 22px no-repeat, linear-gradient(#E1002D, #E1002D); pointer-events: none; }"),
+    ('bouton-youtube', "Bouton « Voir la chaîne YouTube » (avec bouton-principal) : rouge YouTube, icône devant le texte.",
+     "gap: 10px; background-color: #C4002A;",
+     "&::before { content: ''; flex-shrink: 0; width: 18px; height: 18px; background-color: currentColor; -webkit-mask: " + svg_uri(ICONES_RESEAUX['youtube']) + " center / contain no-repeat; mask: " + svg_uri(ICONES_RESEAUX['youtube']) + " center / contain no-repeat; }"),
+    ('cartes-reseaux', "Deux cartes de réseaux côte à côte (L'agence, « Où nous trouver ») ; l'une sous l'autre en mobile.",
+     "display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-top: 44px; padding: 0; @media(--mobile) { grid-template-columns: minmax(0, 1fr); margin-top: 32px; }"),
+    ('carte-reseau', "Carte d'un réseau (avec carte-verre et reseau-linkedin / reseau-youtube) : pictogramme coloré, titre, phrase, lien.",
+     "gap: 10px; padding: 24px;"),
+    ('titre-reseau', "Titre d'une carte réseau : pictogramme carré aux couleurs du réseau au-dessus (posé par reseau-linkedin, reseau-youtube…).",
+     "--rl-titre-reseau: 1;",
+     "&::before { content: ''; display: block; width: 48px; height: 48px; margin-bottom: 14px; border-radius: 14px; background: var(--rl-icone-blanc) center / 24px no-repeat, linear-gradient(var(--rl-couleur-reseau, #5B3BEA), var(--rl-couleur-reseau, #5B3BEA)); }"),
 
     # 0.7.17 : landing, cartes à jouer sans chiffre (note manuscrite en tête).
     ('carte-jeu-note', "Carte à jouer sans chiffre (avec carte-verre et carte-jeu) : la note manuscrite en tête, en grand, puis le titre et la phrase. Notes orange et violettes en alternance.",

@@ -1,7 +1,7 @@
 <?php
 /**
- * Pied de page Rolling : logo, réseaux, encart « Réserver un échange », colonnes de liens (menu « Pied de page :
- * colonnes »), badges de confiance, avis clients facultatifs, mentions légales. Sur une landing : version simple.
+ * Pied de page Rolling : logo, encart « Réserver un échange », colonnes de liens (menu « Pied de page :
+ * colonnes »), bande « Suivez-nous » (réseaux), badges de confiance, avis clients facultatifs, mentions légales. Sur une landing : version simple.
  *
  * @package Rolling
  */
@@ -35,18 +35,13 @@ $rolling_menus = array(
 </footer>
 <?php else : ?>
 	<?php
-	$rolling_reseaux = array(
-		'linkedin'  => array( 'LinkedIn', '<path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.84-2.05 3.78-2.05C20.6 8.65 21 11.2 21 14.5V21h-4v-5.8c0-1.4 0-3.2-1.95-3.2S12.8 13.5 12.8 15.1V21H9z" fill="currentColor"/>' ),
-		'youtube'   => array( 'YouTube', '<path d="M22 8.2a3 3 0 0 0-2.1-2.1C18 5.6 12 5.6 12 5.6s-6 0-7.9.5A3 3 0 0 0 2 8.2 31 31 0 0 0 1.6 12a31 31 0 0 0 .4 3.8 3 3 0 0 0 2.1 2.1c1.9.5 7.9.5 7.9.5s6 0 7.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .4-3.8 31 31 0 0 0-.4-3.8zM10 15V9l5.2 3z" fill="currentColor"/>' ),
-		'instagram' => array( 'Instagram', '<rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/>' ),
-	);
-	$rolling_badges  = array(
+	$rolling_badges = array(
 		'rolling_badge_1' => '<rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/>',
 		'rolling_badge_2' => '<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/>',
 		'rolling_badge_3' => '<path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/>',
 	);
-	$rolling_fleche  = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg>';
-	$rolling_avis    = Rolling_Entete_Pied::avis();
+	$rolling_fleche = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg>';
+	$rolling_avis   = Rolling_Entete_Pied::avis();
 	?>
 <footer class="rl-pied">
 	<div class="rl-pied__conteneur">
@@ -56,16 +51,6 @@ $rolling_menus = array(
 				<?php if ( Rolling_Entete_Pied::texte( 'rolling_pied_presentation' ) ) : ?>
 					<p class="rl-pied__presentation"><?php echo esc_html( trim( Rolling_Entete_Pied::texte( 'rolling_pied_presentation' ) . ' ' . Rolling_Entete_Pied::texte( 'rolling_pied_marque' ) ) ); ?></p>
 				<?php endif; ?>
-				<ul class="rl-pied__reseaux">
-					<?php foreach ( $rolling_reseaux as $rolling_cle => $rolling_reseau ) : ?>
-						<?php if ( get_theme_mod( 'rolling_reseau_' . $rolling_cle ) ) : ?>
-							<li><a class="rl-pied__reseau" href="<?php echo esc_url( get_theme_mod( 'rolling_reseau_' . $rolling_cle ) ); ?>" target="_blank" rel="noopener me">
-								<svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><?php echo $rolling_reseau[1]; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- icône SVG fixe. ?></svg>
-								<span class="screen-reader-text"><?php echo esc_html( sprintf( /* translators: %s : réseau social. */ __( 'Rolling sur %s (nouvel onglet)', 'rolling' ), $rolling_reseau[0] ) ); ?></span>
-							</a></li>
-						<?php endif; ?>
-					<?php endforeach; ?>
-				</ul>
 			</div>
 			<?php if ( Rolling_Entete_Pied::texte( 'rolling_pied_appel' ) && Rolling_Entete_Pied::texte( 'rolling_cta_texte' ) ) : ?>
 				<div class="rl-pied__appel">
@@ -110,6 +95,22 @@ $rolling_menus = array(
 						</nav>
 					<?php endif; ?>
 				<?php endforeach; ?>
+			</div>
+		<?php endif; ?>
+
+		<?php if ( Rolling_Entete_Pied::reseaux() ) : ?>
+			<div class="rl-pied__suivre">
+				<div class="rl-pied__suivre-textes">
+					<p class="rl-pied__suivre-titre"><?php echo esc_html( Rolling_Entete_Pied::reglage( 'rolling_suivre_titre' ) ); ?></p>
+					<?php if ( Rolling_Entete_Pied::reglage( 'rolling_suivre_texte' ) ) : ?>
+						<p><?php echo esc_html( Rolling_Entete_Pied::reglage( 'rolling_suivre_texte' ) ); ?></p>
+					<?php endif; ?>
+				</div>
+				<ul class="rl-pied__reseaux">
+					<?php foreach ( array_keys( Rolling_Entete_Pied::reseaux() ) as $rolling_cle ) : ?>
+						<li><?php echo Rolling_Entete_Pied::lien_reseau( $rolling_cle, 'rl-pied__reseau' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- HTML échappé dans lien_reseau(). ?></li>
+					<?php endforeach; ?>
+				</ul>
 			</div>
 		<?php endif; ?>
 
