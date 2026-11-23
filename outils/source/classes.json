@@ -509,7 +509,7 @@
      "label": "chapitre",
      "description": "Grande carte en verre bleutée d'un chapitre « Pour qui » : photo et texte côte à côte (l'un sous l'autre sous 980 px).",
      "css": "position: relative; display: grid; grid-template-columns: minmax(0, 0.86fr) minmax(0, 1.14fr); align-items: stretch; gap: 0; padding: 16px; border-radius: 40px; background: radial-gradient(70% 50% at 18% 0%, rgba(255,255,255,0.95), rgba(255,255,255,0) 72%), linear-gradient(160deg, rgba(232,232,255,0.84) 0%, rgba(214,216,255,0.52) 60%, rgba(255,255,255,0.64) 100%); backdrop-filter: blur(28px) saturate(180%); box-shadow: inset 0 1px 0 #FFFFFF, 0 30px 70px -34px rgba(76,48,170,0.34); --rl-ombre-photo: rgba(52,52,224,0.6); &::before { position: relative; top: auto; right: auto; bottom: auto; left: auto; height: auto; opacity: 1; mix-blend-mode: normal; border: 0; content: ''; position: absolute; top: 0; right: 0; bottom: 0; left: 0; border-radius: inherit; padding: 1.2px; background: linear-gradient(140deg, #FFFFFF, rgba(255,255,255,0.35) 30%, rgba(196,181,253,0.4) 62%, rgba(255,209,191,0.9)); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; } @media(--tablet) { grid-template-columns: minmax(0, 1fr); } @media(--mobile) { padding: 10px; border-radius: 30px; }",
-     "brut": "@media (min-width: 1025px) { &:has(> .colonne-chapitre:nth-last-child(2)) { grid-template-columns: minmax(0, 1.14fr) minmax(0, 0.86fr); } }"
+     "brut": "@media (min-width: 1025px) { &:has(> .colonne-chapitre:nth-last-child(2)) { grid-template-columns: minmax(0, 1.14fr) minmax(0, 0.86fr); } } &:has(> .zone-realisations):not(:has(.carte-exemple)):not(:has(.elementor-element-overlay)) { grid-template-columns: minmax(0, 1fr); }"
     },
     {
      "label": "chapitre-peche",
@@ -2575,6 +2575,39 @@
      "description": "Note manuscrite en bas d'une carte à jouer (Caveat, orange foncé).",
      "css": "display: block; font-family: Caveat; font-size: 28px; line-height: 1; font-weight: 700; color: #A63C14; transform: rotate(-3deg); transform-origin: left center; @media(--mobile) { font-size: 26px; }",
      "brut": "@media (max-width: 767px) { grid-column: 1 / -1; grid-row: 2; white-space: nowrap; }"
+    },
+    {
+     "label": "carte-jeu-note",
+     "description": "Carte à jouer sans chiffre (avec carte-verre et carte-jeu) : la note manuscrite en tête, en grand, puis le titre et la phrase. Notes orange et violettes en alternance.",
+     "css": "justify-content: flex-start; min-height: 240px; gap: 14px; @media(--mobile) { display: flex; flex-direction: column; align-items: flex-start; min-height: 0; gap: 10px; }",
+     "brut": "&:nth-last-child(odd) .note-tete { color: #4A2BB8; } @media (max-width: 767px) { & > :not(.elementor-element-overlay) { grid-column: auto; grid-row: auto; } }"
+    },
+    {
+     "label": "note-tete",
+     "description": "Note manuscrite en tête d'une carte à jouer sans chiffre (Caveat, grande, légèrement inclinée).",
+     "css": "display: block; font-family: Caveat; font-size: 40px; line-height: 0.95; font-weight: 700; color: #A63C14; transform: rotate(-4deg); transform-origin: left center; @media(--mobile) { font-size: 34px; }"
+    },
+    {
+     "label": "zone-realisations",
+     "description": "Landing, « Pour qui » : zone des réalisations à la place de la photo (contient le widget Liste).",
+     "css": "display: flex; flex-direction: column; justify-content: center; padding: 6px; @media(--tablet) { padding: 4px 0 0; }",
+     "brut": "@media (max-width: 1024px) { order: 2; } &:not(:has(.carte-exemple)):not(:has(.elementor-element-overlay)) { display: none; }"
+    },
+    {
+     "label": "realisations-chapitre",
+     "description": "Liste de réalisations d'un « Pour qui » (classe de la grille du widget Liste, carte façon Avant → Après) : la première en grand, les suivantes en petites vignettes dessous, deux par ligne.",
+     "css": "display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; gap: 12px; padding: 0; & > div:first-of-type > * { grid-column: 1 / -1; } & > div:not(:first-of-type) .carte-exemple { padding: 6px 6px 10px; border-radius: 20px; } & > div:not(:first-of-type) .cadre-exemple, & > div:not(:first-of-type) .image-vignette { border-radius: 14px; } & > div:not(:first-of-type) .pastille-client, & > div:not(:first-of-type) [class*='tag-'] { display: none; } & > div:not(:first-of-type) .bas-exemple { padding: 10px 4px 0; gap: 8px; } & > div:not(:first-of-type) .fleche-resultat, & > div:not(:first-of-type) .titre-xs { font-size: 13px; line-height: 1.3; } & > div:not(:first-of-type) .fleche-ronde { width: 30px; height: 30px; line-height: 30px; } @media(--mobile) { gap: 10px; }"
+    },
+    {
+     "label": "tableau-depliable",
+     "description": "Landing : bouton « Comparer les formules en détail » + le tableau complet, replié au chargement de la page (rolling.js). Dans l'éditeur et sans script, le tableau reste visible.",
+     "css": "display: flex; flex-direction: column; align-items: center; gap: 0; margin-top: 30px; padding: 0; & > .offres-tableau { width: 100%; margin-top: 22px; } &.rl-replie > .offres-tableau { display: none; }",
+     "brut": "&.rl-deplie > .offres-tableau { animation: rl-deplie 0.45s ease both; }"
+    },
+    {
+     "label": "bouton-deplier",
+     "description": "Bouton qui ouvre / ferme une partie de la page (avec bouton-verre) : « + » rond violet qui devient « × » une fois ouvert.",
+     "css": "font-weight: 700; &::after { content: '+'; display: flex; align-items: center; justify-content: center; flex-shrink: 0; width: 26px; height: 26px; border-radius: 50%; font-size: 20px; line-height: 1; font-weight: 600; color: #FFFFFF; background-color: #5B3BEA; transition: transform 0.3s ease; } &[aria-expanded='true']::after { transform: rotate(45deg); }"
     },
     {
      "label": "equipe-bandes",

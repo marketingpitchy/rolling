@@ -1,6 +1,6 @@
 {
  "cle": "p-landing-6-objections",
- "titre": "Rolling · Landing · 00:07 Vos questions",
+ "titre": "Rolling · Landing · 00:08 Vos questions",
  "type": "e-flexbox",
  "composition": {
   "xml_structure": "<e-flexbox configuration-id=\"Landing · objections\"><e-flexbox configuration-id=\"Landing · objections · contenu\"><e-flexbox configuration-id=\"Landing · objections · en-tête\"><e-flexbox configuration-id=\"Landing · objections · repère\"><e-paragraph configuration-id=\"Landing · objections · timecode\"></e-paragraph><e-paragraph configuration-id=\"Landing · objections · sur-titre\"></e-paragraph></e-flexbox><e-heading configuration-id=\"Landing · objections · titre\"></e-heading></e-flexbox><e-flexbox configuration-id=\"Landing · questions\"><e-flexbox configuration-id=\"Landing · question 1\"><e-heading configuration-id=\"Landing · question 1 · titre\"></e-heading><e-paragraph configuration-id=\"Landing · question 1 · réponse\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Landing · question 2\"><e-heading configuration-id=\"Landing · question 2 · titre\"></e-heading><e-paragraph configuration-id=\"Landing · question 2 · réponse\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Landing · question 3\"><e-heading configuration-id=\"Landing · question 3 · titre\"></e-heading><e-paragraph configuration-id=\"Landing · question 3 · réponse\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Landing · question 4\"><e-heading configuration-id=\"Landing · question 4 · titre\"></e-heading><e-paragraph configuration-id=\"Landing · question 4 · réponse\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Landing · question 5\"><e-heading configuration-id=\"Landing · question 5 · titre\"></e-heading><e-paragraph configuration-id=\"Landing · question 5 · réponse\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Landing · question 6\"><e-heading configuration-id=\"Landing · question 6 · titre\"></e-heading><e-paragraph configuration-id=\"Landing · question 6 · réponse\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Landing · question 7\"><e-heading configuration-id=\"Landing · question 7 · titre\"></e-heading><e-paragraph configuration-id=\"Landing · question 7 · réponse\"></e-paragraph></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Landing · badges\"><e-flexbox configuration-id=\"Landing · badge · IA sécurisée\"><e-image configuration-id=\"Landing · badge · IA sécurisée · icône\"></e-image><e-paragraph configuration-id=\"Landing · badge · IA sécurisée · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Landing · badge · Données hébergées en Europe\"><e-image configuration-id=\"Landing · badge · Données hébergées en Europe · icône\"></e-image><e-paragraph configuration-id=\"Landing · badge · Données hébergées en Europe · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Landing · badge · Conforme RGPD\"><e-image configuration-id=\"Landing · badge · Conforme RGPD · icône\"></e-image><e-paragraph configuration-id=\"Landing · badge · Conforme RGPD · texte\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox></e-flexbox>",
@@ -9,7 +9,7 @@
     "tag": "section"
    },
    "Landing · objections · timecode": {
-    "paragraph": "00:07"
+    "paragraph": "00:08"
    },
    "Landing · objections · sur-titre": {
     "paragraph": "Vos questions"

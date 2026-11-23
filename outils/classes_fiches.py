@@ -544,6 +544,35 @@ CLASSES = [
     ('chiffre-jeu', "Grand chiffre en verre d'une carte à jouer.", "display: block; width: auto; height: 92px; max-width: 100%; object-fit: contain; object-position: left center; @media(--mobile) { width: 52px; height: 56px; object-position: center; }", "@media (max-width: 767px) { grid-column: 1; grid-row: 1; }"),
     ('note-jeu', "Note manuscrite en bas d'une carte à jouer (Caveat, orange foncé).", "display: block; font-family: Caveat; font-size: 28px; line-height: 1; font-weight: 700; color: #A63C14; transform: rotate(-3deg); transform-origin: left center; @media(--mobile) { font-size: 26px; }", "@media (max-width: 767px) { grid-column: 1 / -1; grid-row: 2; white-space: nowrap; }"),
 
+    # 0.7.17 : landing, cartes à jouer sans chiffre (note manuscrite en tête).
+    ('carte-jeu-note', "Carte à jouer sans chiffre (avec carte-verre et carte-jeu) : la note manuscrite en tête, en grand, puis le titre et la phrase. Notes orange et violettes en alternance.",
+     "justify-content: flex-start; min-height: 240px; gap: 14px; @media(--mobile) { display: flex; flex-direction: column; align-items: flex-start; min-height: 0; gap: 10px; }",
+     "&:nth-last-child(odd) .note-tete { color: #4A2BB8; } @media (max-width: 767px) { & > :not(.elementor-element-overlay) { grid-column: auto; grid-row: auto; } }"),
+    ('note-tete', "Note manuscrite en tête d'une carte à jouer sans chiffre (Caveat, grande, légèrement inclinée).",
+     "display: block; font-family: Caveat; font-size: 40px; line-height: 0.95; font-weight: 700; color: #A63C14; transform: rotate(-4deg); transform-origin: left center; @media(--mobile) { font-size: 34px; }"),
+
+    # 0.7.17 : landing, « Pour qui » avec les réalisations à côté du texte.
+    ('zone-realisations', "Landing, « Pour qui » : zone des réalisations à la place de la photo (contient le widget Liste).",
+     "display: flex; flex-direction: column; justify-content: center; padding: 6px; @media(--tablet) { padding: 4px 0 0; }",
+     "@media (max-width: 1024px) { order: 2; } &:not(:has(.carte-exemple)):not(:has(.elementor-element-overlay)) { display: none; }"),
+    ('realisations-chapitre', "Liste de réalisations d'un « Pour qui » (classe de la grille du widget Liste, carte façon Avant → Après) : la première en grand, les suivantes en petites vignettes dessous, deux par ligne.",
+     "display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; gap: 12px; padding: 0; "
+     "& > div:first-of-type > * { grid-column: 1 / -1; } "
+     "& > div:not(:first-of-type) .carte-exemple { padding: 6px 6px 10px; border-radius: 20px; } "
+     "& > div:not(:first-of-type) .cadre-exemple, & > div:not(:first-of-type) .image-vignette { border-radius: 14px; } "
+     "& > div:not(:first-of-type) .pastille-client, & > div:not(:first-of-type) [class*='tag-'] { display: none; } "
+     "& > div:not(:first-of-type) .bas-exemple { padding: 10px 4px 0; gap: 8px; } "
+     "& > div:not(:first-of-type) .fleche-resultat, & > div:not(:first-of-type) .titre-xs { font-size: 13px; line-height: 1.3; } "
+     "& > div:not(:first-of-type) .fleche-ronde { width: 30px; height: 30px; line-height: 30px; } "
+     "@media(--mobile) { gap: 10px; }"),
+
+    # 0.7.17 : landing, tableau des formules replié derrière un bouton.
+    ('tableau-depliable', "Landing : bouton « Comparer les formules en détail » + le tableau complet, replié au chargement de la page (rolling.js). Dans l'éditeur et sans script, le tableau reste visible.",
+     "display: flex; flex-direction: column; align-items: center; gap: 0; margin-top: 30px; padding: 0; & > .offres-tableau { width: 100%; margin-top: 22px; } &.rl-replie > .offres-tableau { display: none; }",
+     "&.rl-deplie > .offres-tableau { animation: rl-deplie 0.45s ease both; }"),
+    ('bouton-deplier', "Bouton qui ouvre / ferme une partie de la page (avec bouton-verre) : « + » rond violet qui devient « × » une fois ouvert.",
+     "font-weight: 700; &::after { content: '+'; display: flex; align-items: center; justify-content: center; flex-shrink: 0; width: 26px; height: 26px; border-radius: 50%; font-size: 20px; line-height: 1; font-weight: 600; color: #FFFFFF; background-color: #5B3BEA; transition: transform 0.3s ease; } &[aria-expanded='true']::after { transform: rotate(45deg); }"),
+
     # 0.6.0 : L'agence, créas en couleur, experts IA sur fond foncé.
     ('equipe-bandes', "Section en bandes (L'agence, 00:03) : créas sur fond pêche, fondu, experts IA sur fond foncé.", "position: relative; display: flex; flex-direction: column; padding: 0; overflow: clip; overflow-clip-margin: 24px; isolation: isolate;"),
     ('bande-creas', "Bande des créas : fond clair de la charte avec des touches orangées.",

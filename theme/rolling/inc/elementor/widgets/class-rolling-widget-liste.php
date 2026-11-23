@@ -69,6 +69,47 @@ class Rolling_Widget_Liste extends Rolling_Widget {
 			)
 		);
 		$this->add_control(
+			'choisies',
+			array(
+				'label'         => __( 'Réalisations choisies (facultatif)', 'rolling' ),
+				'description'   => __( 'Une ligne par réalisation, dans l’ordre voulu (glissez les lignes pour changer l’ordre). Vide : les dernières réalisations (du métier ci-dessous si réglé).', 'rolling' ),
+				'type'          => Controls_Manager::REPEATER,
+				'fields'        => array(
+					array(
+						'name'    => 'realisation',
+						'label'   => __( 'Réalisation', 'rolling' ),
+						'type'    => Controls_Manager::SELECT,
+						'options' => self::liste_realisations(),
+						'default' => '',
+					),
+				),
+				'default'       => array(),
+				'title_field'   => '{{{ ( window.rollingEditeur && rollingEditeur.realisations && rollingEditeur.realisations[ realisation ] ) || realisation }}}',
+				'prevent_empty' => false,
+				'condition'     => array( 'contenu' => 'realisations' ),
+			)
+		);
+		$metiers = array( '' => __( 'Tous', 'rolling' ) );
+		$termes  = taxonomy_exists( 'rolling_metier' ) ? get_terms(
+			array(
+				'taxonomy'   => 'rolling_metier',
+				'hide_empty' => false,
+			)
+		) : array();
+		foreach ( is_array( $termes ) ? $termes : array() as $terme ) {
+			$metiers[ $terme->slug ] = $terme->name;
+		}
+		$this->add_control(
+			'metier',
+			array(
+				'label'     => __( 'Seulement le métier', 'rolling' ),
+				'type'      => Controls_Manager::SELECT,
+				'options'   => $metiers,
+				'default'   => '',
+				'condition' => array( 'contenu' => 'realisations' ),
+			)
+		);
+		$this->add_control(
 			'decalage',
 			array(
 				'label'       => __( 'Ignorer les premiers', 'rolling' ),
@@ -190,6 +231,31 @@ class Rolling_Widget_Liste extends Rolling_Widget {
 	}
 
 	/**
+	 * Réalisations publiées (choix des listes « Réalisations choisies »).
+	 *
+	 * @return array « r<id> » => titre
+	 */
+	public static function liste_realisations() {
+		$choix = array( '' => __( 'Choisir…', 'rolling' ) );
+		if ( ! post_type_exists( 'rolling_realisation' ) ) {
+			return $choix;
+		}
+		foreach ( get_posts(
+			array(
+				'post_type'      => 'rolling_realisation',
+				'posts_per_page' => 300,
+				'orderby'        => 'title',
+				'order'          => 'ASC',
+			)
+		) as $realisation ) {
+			// Clé « r123 » : une clé numérique serait retriée par numéro dans l'éditeur (objet JavaScript).
+			$choix[ 'r' . $realisation->ID ] = get_the_title( $realisation );
+		}
+
+		return $choix;
+	}
+
+	/**
 	 * Modèle de carte du thème pour un contenu.
 	 *
 	 * @param string $contenu Contenu.
@@ -294,6 +360,26 @@ class Rolling_Widget_Liste extends Rolling_Widget {
 			$categories = wp_get_post_categories( $courant );
 			if ( $categories ) {
 				$args['category__in'] = $categories;
+			}
+		}
+
+		if ( 'realisations' === $r['contenu'] ) {
+			$choisies = array();
+			foreach ( (array) ( $r['choisies'] ?? array() ) as $ligne ) {
+				$id = absint( preg_replace( '/\D/', '', (string) ( $ligne['realisation'] ?? '' ) ) );
+				if ( $id && 'rolling_realisation' === get_post_type( $id ) && 'publish' === get_post_status( $id ) && ! in_array( $id, $choisies, true ) ) {
+					$choisies[] = $id;
+				}
+			}
+			if ( $choisies ) {
+				return array( array_slice( $choisies, $decalage, $total ), count( $choisies ) > $decalage + $total );
+			}
+			if ( ! empty( $r['metier'] ) ) {
+				$args['tax_query'][] = array( // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_tax_query
+					'taxonomy' => 'rolling_metier',
+					'field'    => 'slug',
+					'terms'    => sanitize_title( $r['metier'] ),
+				);
 			}
 		}
 

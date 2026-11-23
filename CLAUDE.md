@@ -907,6 +907,22 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   inclus » dans chaque carte ⇒ fenêtre, C début du tableau en fondu + « Voir tout ». 3 Pourquoi Rolling : 4 cartes d'abord, puis
   phrase des autres solutions + comparatif, 3 atouts, appel. 4 cartes sans chiffres : **A note manuscrite en tête (conseil)**,
   B coche en verre, C texte seul.
+- **0.7.17 (landing v3 : 1A, 2A sans les 4 promesses, 3, 4A)** : nouveau bloc `p-landing-2a-pour-qui` (00:02, textes du Pour qui
+  de l'accueil = `TEXTES_MARKETING` / `TEXTES_INTERNE`, bouton vers `#landing-rdv` ; `colonne_chapitre(..., lien=)`) : à la place de la
+  photo, `zone-realisations` > widget Liste `classe=realisations-chapitre carte_theme=exemple metier=…` (1re carte en grand, les
+  suivantes en petites, 2 par ligne, pastille / étiquette masquées) ; widget Liste : réglages **`choisies`** (répéteur, une ligne =
+  une réalisation, clés `r<id>` pour garder l'ordre alphabétique dans l'éditeur ; titres des lignes par `rollingEditeur.realisations`)
+  et **`metier`** (sinon dernières réalisations du métier). Sans réalisation : zone masquée et texte pleine largeur (site seulement ;
+  règle `chapitre` `&:has(> .zone-realisations):not(:has(.carte-exemple)):not(:has(.elementor-element-overlay))`).
+  **Leçon : un `:has()` ne peut pas contenir un autre `:has()`** (règle rejetée en silence par le navigateur ; `:not(:has())` passe).
+  Formules (00:04) = 2 cartes `formule()` de l'ancienne version courte + `tableau-depliable` (bouton `bouton-verre bouton-deplier`
+  « Comparer les formules en détail » lien `#rl-comparer` + copie du tableau de la page Offres, liens ⇒ `#landing-rdv`) : rolling.js
+  pose `rl-replie` (role=button, aria-expanded, aria-controls), clic / espace ⇒ `rl-deplie` (animation `rl-deplie`) ; sans script et
+  dans l'éditeur, tableau visible ; `ciblePrix` ignore les tableaux repliables. Pourquoi Rolling (00:05) : H2, cartes `carte-jeu
+  carte-jeu-note` (très prioritaire) avec `note-tete` (Caveat 40 px, violet sur les cartes impaires depuis la fin) et sans chiffre,
+  puis phrase (ancien intro) + comparatif, atouts, appel. Timecodes 00:03 à 00:08 recalés. **Leçon éditeur** : un paragraphe y est
+  enveloppé ⇒ pas de `> .classe-du-texte` dans les règles d'une carte (descendant). Chez la cliente : insérer le nouveau bloc
+  Pour qui, remplacer les blocs Formules et Pourquoi Rolling (la mise à jour ne touche pas aux pages).
 - **Chargement de page effet film** (demande avant la fin de la livraison 4) : maquette `maquettes/loading/maquette-loading.html`
   (copie /workspace/maquette-loading.html), 4 options : A amorce 3-2-1, B clap qui se ferme puis rideau, C ouverture
   cinéma (bandes noires + REC + timecode + règle avec la tête de lecture rouge des frises, plus de filet fin), D barre de lecture en haut sans écran. Conseil : C à l'arrivée (première page

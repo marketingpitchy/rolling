@@ -1132,6 +1132,34 @@
 		vue.observe( frise );
 	} );
 
+	/* Tableau des formules replié (landing) : le bouton « Comparer les formules en détail » (#rl-comparer) l'ouvre et le referme.
+	   Sans script (et dans l'éditeur), le tableau reste visible. */
+	document.querySelectorAll( '.tableau-depliable' ).forEach( function ( zone, n ) {
+		var bouton = zone.querySelector( 'a[href="#rl-comparer"]' );
+		var tableau = zone.querySelector( '.offres-tableau' );
+		if ( ! bouton || ! tableau ) {
+			return;
+		}
+		tableau.id = tableau.id || 'rl-tableau-' + ( n + 1 );
+		bouton.setAttribute( 'role', 'button' );
+		bouton.setAttribute( 'aria-expanded', 'false' );
+		bouton.setAttribute( 'aria-controls', tableau.id );
+		zone.classList.add( 'rl-replie' );
+		bouton.addEventListener( 'click', function ( e ) {
+			var ouvrir = zone.classList.contains( 'rl-replie' );
+			e.preventDefault();
+			zone.classList.toggle( 'rl-replie', ! ouvrir );
+			zone.classList.toggle( 'rl-deplie', ouvrir );
+			bouton.setAttribute( 'aria-expanded', ouvrir ? 'true' : 'false' );
+		} );
+		bouton.addEventListener( 'keydown', function ( e ) {
+			if ( ' ' === e.key ) {
+				e.preventDefault();
+				bouton.click();
+			}
+		} );
+	} );
+
 	/* Ancre vers les offres (#offres) : arriver pile sur les prix (tableau sur ordinateur, cartes de prix en mobile), sous l'en-tête */
 	function ciblePrix( id ) {
 		var section = id ? document.getElementById( id ) : null;
@@ -1141,7 +1169,7 @@
 		// Les cartes de prix du mobile d'abord (le tableau du mobile n'affiche pas les prix), sinon le tableau.
 		return [ '.offres-mobile', '.offres-tableau' ].map( function ( sel ) {
 			return [].slice.call( section.querySelectorAll( sel ) ).filter( function ( e ) {
-				return e.getBoundingClientRect().height > 0;
+				return e.getBoundingClientRect().height > 0 && ! e.closest( '.tableau-depliable' );
 			} )[ 0 ];
 		} ).filter( Boolean )[ 0 ] || null;
 	}

@@ -1,6 +1,6 @@
 {
  "cle": "p-landing-4-preuve",
- "titre": "Rolling · Landing · 00:06 Née chez Pitchy (preuve sociale)",
+ "titre": "Rolling · Landing · 00:07 Née chez Pitchy (preuve sociale)",
  "type": "e-flexbox",
  "composition": {
   "xml_structure": "<e-flexbox configuration-id=\"Landing · preuve sociale\"><e-flexbox configuration-id=\"Landing · preuve · contenu\"><e-flexbox configuration-id=\"Landing · preuve · en-tête\"><e-flexbox configuration-id=\"Landing · preuve · repère\"><e-paragraph configuration-id=\"Landing · preuve · timecode\"></e-paragraph><e-paragraph configuration-id=\"Landing · preuve · sur-titre\"></e-paragraph></e-flexbox><e-heading configuration-id=\"Landing · preuve · titre\"></e-heading></e-flexbox><e-flexbox configuration-id=\"Landing · chiffres\"><e-flexbox configuration-id=\"Chiffre · Landing · ans\"><e-flexbox configuration-id=\"Landing · ans · nombre\"><e-image configuration-id=\"Landing · ans · chiffre 1\"></e-image><e-image configuration-id=\"Landing · ans · chiffre 2\"></e-image><e-paragraph configuration-id=\"Landing · ans · valeur lue\"></e-paragraph></e-flexbox><e-paragraph configuration-id=\"Landing · ans · libellé\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Chiffre · Landing · entreprises\"><e-flexbox configuration-id=\"Landing · entreprises · nombre\"><e-image configuration-id=\"Landing · entreprises · chiffre 1\"></e-image><e-image configuration-id=\"Landing · entreprises · chiffre 2\"></e-image><e-image configuration-id=\"Landing · entreprises · chiffre 3\"></e-image><e-image configuration-id=\"Landing · entreprises · chiffre 4\"></e-image><e-paragraph configuration-id=\"Landing · entreprises · valeur lue\"></e-paragraph></e-flexbox><e-paragraph configuration-id=\"Landing · entreprises · libellé\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Chiffre · Landing · studio\"><e-flexbox configuration-id=\"Landing · studio · nombre\"><e-image configuration-id=\"Landing · studio · chiffre 1\"></e-image><e-paragraph configuration-id=\"Landing · studio · valeur lue\"></e-paragraph></e-flexbox><e-paragraph configuration-id=\"Landing · studio · libellé\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Chiffre · Landing · plateforme\"><e-flexbox configuration-id=\"Landing · plateforme · nombre\"><e-image configuration-id=\"Landing · plateforme · chiffre 1\"></e-image><e-paragraph configuration-id=\"Landing · plateforme · valeur lue\"></e-paragraph></e-flexbox><e-paragraph configuration-id=\"Landing · plateforme · libellé\"></e-paragraph></e-flexbox></e-flexbox><e-paragraph configuration-id=\"Landing · témoignages\"></e-paragraph></e-flexbox></e-flexbox>",
@@ -9,7 +9,7 @@
     "tag": "section"
    },
    "Landing · preuve · timecode": {
-    "paragraph": "00:06"
+    "paragraph": "00:07"
    },
    "Landing · preuve · sur-titre": {
     "paragraph": "Ils nous font confiance"

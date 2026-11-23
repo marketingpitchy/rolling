@@ -1,0 +1,554 @@
+{
+ "cle": "p-landing-2a-pour-qui",
+ "titre": "Rolling · Landing · 00:02 Pour qui (avec vos réalisations)",
+ "type": "e-flexbox",
+ "composition": {
+  "xml_structure": "<e-flexbox configuration-id=\"Landing · pour qui\"><e-flexbox configuration-id=\"Landing · pour qui · contenu\"><e-flexbox configuration-id=\"Landing · pour qui · en-tête\"><e-flexbox configuration-id=\"Landing · pour qui · repère\"><e-paragraph configuration-id=\"Landing · pour qui · timecode\"></e-paragraph><e-paragraph configuration-id=\"Landing · pour qui · sur-titre\"></e-paragraph></e-flexbox><e-heading configuration-id=\"Landing · pour qui · titre\"></e-heading></e-flexbox><e-flexbox configuration-id=\"Chapitre · Landing · Marketing\"><e-flexbox configuration-id=\"Landing · Marketing · texte\"><e-flexbox configuration-id=\"Landing · Marketing · haut\"><e-paragraph configuration-id=\"Landing · Marketing · étiquette\"></e-paragraph><e-image configuration-id=\"Landing · Marketing · picto\"></e-image></e-flexbox><e-heading configuration-id=\"Landing · Marketing · titre\"></e-heading><e-flexbox configuration-id=\"Landing · Marketing · constat\"><e-paragraph configuration-id=\"Landing · Marketing · constat · label\"></e-paragraph><e-paragraph configuration-id=\"Landing · Marketing · constat · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Landing · Marketing · listes\"><e-flexbox configuration-id=\"Landing · Marketing · contenus\"><e-paragraph configuration-id=\"Landing · Marketing · contenus · titre\"></e-paragraph><e-flexbox configuration-id=\"Landing · Marketing · contenus · liste\"><e-flexbox configuration-id=\"Landing · Marketing · contenus · liste · ligne 1\"><e-image configuration-id=\"Landing · Marketing · contenus · liste · coche 1\"></e-image><e-paragraph configuration-id=\"Landing · Marketing · contenus · liste · texte 1\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Landing · Marketing · contenus · liste · ligne 2\"><e-image configuration-id=\"Landing · Marketing · contenus · liste · coche 2\"></e-image><e-paragraph configuration-id=\"Landing · Marketing · contenus · liste · texte 2\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Landing · Marketing · contenus · liste · ligne 3\"><e-image configuration-id=\"Landing · Marketing · contenus · liste · coche 3\"></e-image><e-paragraph configuration-id=\"Landing · Marketing · contenus · liste · texte 3\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Landing · Marketing · projets\"><e-paragraph configuration-id=\"Landing · Marketing · projets · titre\"></e-paragraph><e-flexbox configuration-id=\"Landing · Marketing · projets · liste\"><e-flexbox configuration-id=\"Landing · Marketing · projets · liste · ligne 1\"><e-image configuration-id=\"Landing · Marketing · projets · liste · coche 1\"></e-image><e-paragraph configuration-id=\"Landing · Marketing · projets · liste · texte 1\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Landing · Marketing · projets · liste · ligne 2\"><e-image configuration-id=\"Landing · Marketing · projets · liste · coche 2\"></e-image><e-paragraph configuration-id=\"Landing · Marketing · projets · liste · texte 2\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Landing · Marketing · projets · liste · ligne 3\"><e-image configuration-id=\"Landing · Marketing · projets · liste · coche 3\"></e-image><e-paragraph configuration-id=\"Landing · Marketing · projets · liste · texte 3\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Landing · Marketing · canaux\"><e-paragraph configuration-id=\"Landing · Marketing · canal · SEO\"></e-paragraph><e-paragraph configuration-id=\"Landing · Marketing · canal · GEO / IA\"></e-paragraph><e-paragraph configuration-id=\"Landing · Marketing · canal · YouTube\"></e-paragraph><e-paragraph configuration-id=\"Landing · Marketing · canal · TikTok\"></e-paragraph><e-paragraph configuration-id=\"Landing · Marketing · canal · LinkedIn\"></e-paragraph></e-flexbox><e-button configuration-id=\"Landing · Marketing · bouton\"></e-button></e-flexbox><e-div-block configuration-id=\"Landing · Marketing · réalisations\"><e-paragraph configuration-id=\"Landing · Marketing · liste\"></e-paragraph></e-div-block></e-flexbox><e-flexbox configuration-id=\"Chapitre · Landing · Interne\"><e-div-block configuration-id=\"Landing · Interne · réalisations\"><e-paragraph configuration-id=\"Landing · Interne · liste\"></e-paragraph></e-div-block><e-flexbox configuration-id=\"Landing · Interne · texte\"><e-flexbox configuration-id=\"Landing · Interne · haut\"><e-paragraph configuration-id=\"Landing · Interne · étiquette\"></e-paragraph><e-image configuration-id=\"Landing · Interne · picto\"></e-image></e-flexbox><e-heading configuration-id=\"Landing · Interne · titre\"></e-heading><e-flexbox configuration-id=\"Landing · Interne · constat\"><e-paragraph configuration-id=\"Landing · Interne · constat · label\"></e-paragraph><e-paragraph configuration-id=\"Landing · Interne · constat · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Landing · Interne · listes\"><e-flexbox configuration-id=\"Landing · Interne · contenus\"><e-paragraph configuration-id=\"Landing · Interne · contenus · titre\"></e-paragraph><e-flexbox configuration-id=\"Landing · Interne · contenus · liste\"><e-flexbox configuration-id=\"Landing · Interne · contenus · liste · ligne 1\"><e-image configuration-id=\"Landing · Interne · contenus · liste · coche 1\"></e-image><e-paragraph configuration-id=\"Landing · Interne · contenus · liste · texte 1\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Landing · Interne · contenus · liste · ligne 2\"><e-image configuration-id=\"Landing · Interne · contenus · liste · coche 2\"></e-image><e-paragraph configuration-id=\"Landing · Interne · contenus · liste · texte 2\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Landing · Interne · contenus · liste · ligne 3\"><e-image configuration-id=\"Landing · Interne · contenus · liste · coche 3\"></e-image><e-paragraph configuration-id=\"Landing · Interne · contenus · liste · texte 3\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Landing · Interne · contenus · liste · ligne 4\"><e-image configuration-id=\"Landing · Interne · contenus · liste · coche 4\"></e-image><e-paragraph configuration-id=\"Landing · Interne · contenus · liste · texte 4\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Landing · Interne · projets\"><e-paragraph configuration-id=\"Landing · Interne · projets · titre\"></e-paragraph><e-flexbox configuration-id=\"Landing · Interne · projets · liste\"><e-flexbox configuration-id=\"Landing · Interne · projets · liste · ligne 1\"><e-image configuration-id=\"Landing · Interne · projets · liste · coche 1\"></e-image><e-paragraph configuration-id=\"Landing · Interne · projets · liste · texte 1\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Landing · Interne · projets · liste · ligne 2\"><e-image configuration-id=\"Landing · Interne · projets · liste · coche 2\"></e-image><e-paragraph configuration-id=\"Landing · Interne · projets · liste · texte 2\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Landing · Interne · projets · liste · ligne 3\"><e-image configuration-id=\"Landing · Interne · projets · liste · coche 3\"></e-image><e-paragraph configuration-id=\"Landing · Interne · projets · liste · texte 3\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox></e-flexbox><e-flexbox configuration-id=\"Landing · Interne · canaux\"><e-paragraph configuration-id=\"Landing · Interne · canal · Onboarding\"></e-paragraph><e-paragraph configuration-id=\"Landing · Interne · canal · Microlearning\"></e-paragraph><e-paragraph configuration-id=\"Landing · Interne · canal · Marque employeur\"></e-paragraph><e-paragraph configuration-id=\"Landing · Interne · canal · Actu interne\"></e-paragraph></e-flexbox><e-button configuration-id=\"Landing · Interne · bouton\"></e-button></e-flexbox></e-flexbox></e-flexbox></e-flexbox>",
+  "element_config": {
+   "Landing · pour qui": {
+    "tag": "section"
+   },
+   "Landing · pour qui · timecode": {
+    "paragraph": "00:02"
+   },
+   "Landing · pour qui · sur-titre": {
+    "paragraph": "Pour qui"
+   },
+   "Landing · pour qui · titre": {
+    "tag": "h2",
+    "title": "Ce que la vidéo <em>va vous apporter.</em>"
+   },
+   "Chapitre · Landing · Marketing": {
+    "tag": "article"
+   },
+   "Landing · Marketing · étiquette": {
+    "paragraph": "Marketing &amp; communication"
+   },
+   "Landing · Marketing · picto": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/picto-megaphone.png"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "Landing · Marketing · titre": {
+    "tag": "h3",
+    "title": "Soyez vus là où vos clients vous <b>cherchent.</b>"
+   },
+   "Landing · Marketing · constat · label": {
+    "paragraph": "Le constat"
+   },
+   "Landing · Marketing · constat · texte": {
+    "paragraph": "Google et les IA privilégient, dans leurs réponses, les marques qui ont des vidéos. Et YouTube ou TikTok sont devenus des moteurs de recherche à part entière."
+   },
+   "Landing · Marketing · contenus · titre": {
+    "paragraph": "À partir de vos contenus"
+   },
+   "Landing · Marketing · contenus · liste · coche 1": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/coche-verre.png"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "Landing · Marketing · contenus · liste · texte 1": {
+    "paragraph": "Vos pages produit, en démos vidéo"
+   },
+   "Landing · Marketing · contenus · liste · coche 2": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/coche-verre.png"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "Landing · Marketing · contenus · liste · texte 2": {
+    "paragraph": "Vos articles, en vidéos de 90&nbsp;s"
+   },
+   "Landing · Marketing · contenus · liste · coche 3": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/coche-verre.png"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "Landing · Marketing · contenus · liste · texte 3": {
+    "paragraph": "Votre étude annuelle, en série"
+   },
+   "Landing · Marketing · projets · titre": {
+    "paragraph": "Pour vos nouveaux projets"
+   },
+   "Landing · Marketing · projets · liste · coche 1": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/coche-verre.png"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "Landing · Marketing · projets · liste · texte 1": {
+    "paragraph": "Lancements produit"
+   },
+   "Landing · Marketing · projets · liste · coche 2": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/coche-verre.png"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "Landing · Marketing · projets · liste · texte 2": {
+    "paragraph": "Salons &amp; événements"
+   },
+   "Landing · Marketing · projets · liste · coche 3": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/coche-verre.png"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "Landing · Marketing · projets · liste · texte 3": {
+    "paragraph": "Campagnes LinkedIn"
+   },
+   "Landing · Marketing · canal · SEO": {
+    "paragraph": "SEO"
+   },
+   "Landing · Marketing · canal · GEO / IA": {
+    "paragraph": "GEO / IA"
+   },
+   "Landing · Marketing · canal · YouTube": {
+    "paragraph": "YouTube"
+   },
+   "Landing · Marketing · canal · TikTok": {
+    "paragraph": "TikTok"
+   },
+   "Landing · Marketing · canal · LinkedIn": {
+    "paragraph": "LinkedIn"
+   },
+   "Landing · Marketing · bouton": {
+    "text": "Parlons de vos vidéos marketing",
+    "link": {
+     "destination": "#landing-rdv"
+    }
+   },
+   "Landing · Marketing · liste": {
+    "paragraph": "⟦widget:rolling-liste|contenu=realisations|nombre=3|classe=realisations-chapitre|carte_theme=exemple|metier=marketing-communication|extraits=0|une_auto=⟧"
+   },
+   "Chapitre · Landing · Interne": {
+    "tag": "article"
+   },
+   "Landing · Interne · liste": {
+    "paragraph": "⟦widget:rolling-liste|contenu=realisations|nombre=3|classe=realisations-chapitre|carte_theme=exemple|metier=com-interne-rh-formation|extraits=0|une_auto=⟧"
+   },
+   "Landing · Interne · étiquette": {
+    "paragraph": "Com interne · RH · Formation"
+   },
+   "Landing · Interne · picto": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/picto-equipe.png"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "Landing · Interne · titre": {
+    "tag": "h3",
+    "title": "Soyez enfin <u>regardés.</u>"
+   },
+   "Landing · Interne · constat · label": {
+    "paragraph": "Le constat"
+   },
+   "Landing · Interne · constat · texte": {
+    "paragraph": "Livrets d'accueil, procédures, formations, notes internes&nbsp;: vous avez des centaines de pages que personne ne lit. Le fond est déjà là, il ne lui manque que la vidéo."
+   },
+   "Landing · Interne · contenus · titre": {
+    "paragraph": "À partir de vos contenus"
+   },
+   "Landing · Interne · contenus · liste · coche 1": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/coche-verre.png"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "Landing · Interne · contenus · liste · texte 1": {
+    "paragraph": "Votre livret d'accueil, en série d'onboarding"
+   },
+   "Landing · Interne · contenus · liste · coche 2": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/coche-verre.png"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "Landing · Interne · contenus · liste · texte 2": {
+    "paragraph": "Vos procédures, en tutoriels courts"
+   },
+   "Landing · Interne · contenus · liste · coche 3": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/coche-verre.png"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "Landing · Interne · contenus · liste · texte 3": {
+    "paragraph": "Vos formations, en microlearning de 60&nbsp;s"
+   },
+   "Landing · Interne · contenus · liste · coche 4": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/coche-verre.png"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "Landing · Interne · contenus · liste · texte 4": {
+    "paragraph": "Vos notes internes, en rendez-vous vidéo"
+   },
+   "Landing · Interne · projets · titre": {
+    "paragraph": "Pour vos nouveaux projets"
+   },
+   "Landing · Interne · projets · liste · coche 1": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/coche-verre.png"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "Landing · Interne · projets · liste · texte 1": {
+    "paragraph": "Séminaires &amp; conventions"
+   },
+   "Landing · Interne · projets · liste · coche 2": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/coche-verre.png"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "Landing · Interne · projets · liste · texte 2": {
+    "paragraph": "Témoignages collaborateurs"
+   },
+   "Landing · Interne · projets · liste · coche 3": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/coche-verre.png"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "Landing · Interne · projets · liste · texte 3": {
+    "paragraph": "Projets de transformation"
+   },
+   "Landing · Interne · canal · Onboarding": {
+    "paragraph": "Onboarding"
+   },
+   "Landing · Interne · canal · Microlearning": {
+    "paragraph": "Microlearning"
+   },
+   "Landing · Interne · canal · Marque employeur": {
+    "paragraph": "Marque employeur"
+   },
+   "Landing · Interne · canal · Actu interne": {
+    "paragraph": "Actu interne"
+   },
+   "Landing · Interne · bouton": {
+    "text": "Parlons de vos contenus internes",
+    "link": {
+     "destination": "#landing-rdv"
+    }
+   }
+  },
+  "classes": {
+   "Landing · pour qui": [
+    "section",
+    "halos-cotes"
+   ],
+   "Landing · pour qui · contenu": [
+    "conteneur"
+   ],
+   "Landing · pour qui · en-tête": [
+    "entete-section"
+   ],
+   "Landing · pour qui · repère": [
+    "sur-titre"
+   ],
+   "Landing · pour qui · timecode": [
+    "timecode"
+   ],
+   "Landing · pour qui · titre": [
+    "titre-md"
+   ],
+   "Chapitre · Landing · Marketing": [
+    "chapitre"
+   ],
+   "Landing · Marketing · texte": [
+    "colonne-chapitre"
+   ],
+   "Landing · Marketing · étiquette": [
+    "etiquette-metier-bleu"
+   ],
+   "Landing · Marketing · picto": [
+    "picto-verre"
+   ],
+   "Landing · Marketing · titre": [
+    "titre-md"
+   ],
+   "Landing · Marketing · constat": [
+    "panneau"
+   ],
+   "Landing · Marketing · constat · label": [
+    "label",
+    "label-violet"
+   ],
+   "Landing · Marketing · constat · texte": [
+    "texte-fort"
+   ],
+   "Landing · Marketing · contenus": [
+    "pile"
+   ],
+   "Landing · Marketing · contenus · titre": [
+    "label"
+   ],
+   "Landing · Marketing · contenus · liste": [
+    "liste-coches"
+   ],
+   "Landing · Marketing · contenus · liste · ligne 1": [
+    "ligne-coche"
+   ],
+   "Landing · Marketing · contenus · liste · coche 1": [
+    "coche"
+   ],
+   "Landing · Marketing · contenus · liste · texte 1": [
+    "texte-petit"
+   ],
+   "Landing · Marketing · contenus · liste · ligne 2": [
+    "ligne-coche"
+   ],
+   "Landing · Marketing · contenus · liste · coche 2": [
+    "coche"
+   ],
+   "Landing · Marketing · contenus · liste · texte 2": [
+    "texte-petit"
+   ],
+   "Landing · Marketing · contenus · liste · ligne 3": [
+    "ligne-coche"
+   ],
+   "Landing · Marketing · contenus · liste · coche 3": [
+    "coche"
+   ],
+   "Landing · Marketing · contenus · liste · texte 3": [
+    "texte-petit"
+   ],
+   "Landing · Marketing · projets": [
+    "pile"
+   ],
+   "Landing · Marketing · projets · titre": [
+    "label"
+   ],
+   "Landing · Marketing · projets · liste": [
+    "liste-coches"
+   ],
+   "Landing · Marketing · projets · liste · ligne 1": [
+    "ligne-coche"
+   ],
+   "Landing · Marketing · projets · liste · coche 1": [
+    "coche"
+   ],
+   "Landing · Marketing · projets · liste · texte 1": [
+    "texte-petit"
+   ],
+   "Landing · Marketing · projets · liste · ligne 2": [
+    "ligne-coche"
+   ],
+   "Landing · Marketing · projets · liste · coche 2": [
+    "coche"
+   ],
+   "Landing · Marketing · projets · liste · texte 2": [
+    "texte-petit"
+   ],
+   "Landing · Marketing · projets · liste · ligne 3": [
+    "ligne-coche"
+   ],
+   "Landing · Marketing · projets · liste · coche 3": [
+    "coche"
+   ],
+   "Landing · Marketing · projets · liste · texte 3": [
+    "texte-petit"
+   ],
+   "Landing · Marketing · canaux": [
+    "rangee"
+   ],
+   "Landing · Marketing · canal · SEO": [
+    "chip-bleu"
+   ],
+   "Landing · Marketing · canal · GEO / IA": [
+    "chip-bleu"
+   ],
+   "Landing · Marketing · canal · YouTube": [
+    "chip-bleu"
+   ],
+   "Landing · Marketing · canal · TikTok": [
+    "chip-bleu"
+   ],
+   "Landing · Marketing · canal · LinkedIn": [
+    "chip-bleu"
+   ],
+   "Landing · Marketing · bouton": [
+    "bouton-principal",
+    "bouton-petit"
+   ],
+   "Landing · Marketing · réalisations": [
+    "zone-realisations"
+   ],
+   "Chapitre · Landing · Interne": [
+    "chapitre",
+    "chapitre-peche"
+   ],
+   "Landing · Interne · réalisations": [
+    "zone-realisations"
+   ],
+   "Landing · Interne · texte": [
+    "colonne-chapitre"
+   ],
+   "Landing · Interne · étiquette": [
+    "etiquette-metier-orange"
+   ],
+   "Landing · Interne · picto": [
+    "picto-verre"
+   ],
+   "Landing · Interne · titre": [
+    "titre-md"
+   ],
+   "Landing · Interne · constat": [
+    "panneau"
+   ],
+   "Landing · Interne · constat · label": [
+    "label",
+    "label-orange"
+   ],
+   "Landing · Interne · constat · texte": [
+    "texte-fort"
+   ],
+   "Landing · Interne · contenus": [
+    "pile"
+   ],
+   "Landing · Interne · contenus · titre": [
+    "label"
+   ],
+   "Landing · Interne · contenus · liste": [
+    "liste-coches"
+   ],
+   "Landing · Interne · contenus · liste · ligne 1": [
+    "ligne-coche"
+   ],
+   "Landing · Interne · contenus · liste · coche 1": [
+    "coche"
+   ],
+   "Landing · Interne · contenus · liste · texte 1": [
+    "texte-petit"
+   ],
+   "Landing · Interne · contenus · liste · ligne 2": [
+    "ligne-coche"
+   ],
+   "Landing · Interne · contenus · liste · coche 2": [
+    "coche"
+   ],
+   "Landing · Interne · contenus · liste · texte 2": [
+    "texte-petit"
+   ],
+   "Landing · Interne · contenus · liste · ligne 3": [
+    "ligne-coche"
+   ],
+   "Landing · Interne · contenus · liste · coche 3": [
+    "coche"
+   ],
+   "Landing · Interne · contenus · liste · texte 3": [
+    "texte-petit"
+   ],
+   "Landing · Interne · contenus · liste · ligne 4": [
+    "ligne-coche"
+   ],
+   "Landing · Interne · contenus · liste · coche 4": [
+    "coche"
+   ],
+   "Landing · Interne · contenus · liste · texte 4": [
+    "texte-petit"
+   ],
+   "Landing · Interne · projets": [
+    "pile"
+   ],
+   "Landing · Interne · projets · titre": [
+    "label"
+   ],
+   "Landing · Interne · projets · liste": [
+    "liste-coches"
+   ],
+   "Landing · Interne · projets · liste · ligne 1": [
+    "ligne-coche"
+   ],
+   "Landing · Interne · projets · liste · coche 1": [
+    "coche"
+   ],
+   "Landing · Interne · projets · liste · texte 1": [
+    "texte-petit"
+   ],
+   "Landing · Interne · projets · liste · ligne 2": [
+    "ligne-coche"
+   ],
+   "Landing · Interne · projets · liste · coche 2": [
+    "coche"
+   ],
+   "Landing · Interne · projets · liste · texte 2": [
+    "texte-petit"
+   ],
+   "Landing · Interne · projets · liste · ligne 3": [
+    "ligne-coche"
+   ],
+   "Landing · Interne · projets · liste · coche 3": [
+    "coche"
+   ],
+   "Landing · Interne · projets · liste · texte 3": [
+    "texte-petit"
+   ],
+   "Landing · Interne · canaux": [
+    "rangee"
+   ],
+   "Landing · Interne · canal · Onboarding": [
+    "chip-orange"
+   ],
+   "Landing · Interne · canal · Microlearning": [
+    "chip-orange"
+   ],
+   "Landing · Interne · canal · Marque employeur": [
+    "chip-orange"
+   ],
+   "Landing · Interne · canal · Actu interne": [
+    "chip-orange"
+   ],
+   "Landing · Interne · bouton": [
+    "bouton-principal",
+    "bouton-petit"
+   ]
+  },
+  "style": {
+   "Landing · pour qui · contenu": "display: flex; flex-direction: column; gap: 0;",
+   "Landing · Marketing · haut": "display: flex; flex-direction: row; align-items: center; justify-content: space-between; gap: 16px; padding: 0;",
+   "Landing · Marketing · picto": "height: 60px; margin: -8px -6px -8px 0;",
+   "Landing · Marketing · listes": "display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); gap: 18px; padding: 0; @media(--mobile) { grid-template-columns: minmax(0, 1fr); }",
+   "Chapitre · Landing · Interne": "margin-top: 28px;",
+   "Landing · Interne · haut": "display: flex; flex-direction: row; align-items: center; justify-content: space-between; gap: 16px; padding: 0;",
+   "Landing · Interne · picto": "height: 60px; margin: -8px -6px -8px 0;",
+   "Landing · Interne · listes": "display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); gap: 18px; padding: 0; @media(--mobile) { grid-template-columns: minmax(0, 1fr); }"
+  }
+ },
+ "brut": {}
+}

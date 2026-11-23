@@ -92,7 +92,11 @@ class Rolling_Ressources {
 		$ids     = array_values( array_map( fn( $c ) => $c['id'], $classes['classes'] ?? array() ) );
 
 		wp_enqueue_script( 'rolling-editeur', ROLLING_URL . '/assets/js/rolling-editeur.js', array(), ROLLING_VERSION, true );
-		wp_add_inline_script( 'rolling-editeur', 'window.rollingEditeur = ' . wp_json_encode( array( 'classes' => $ids ) ) . ';', 'before' );
+		$donnees = array(
+			'classes'      => $ids,
+			'realisations' => class_exists( 'Rolling_Widget_Liste' ) ? Rolling_Widget_Liste::liste_realisations() : array(),
+		);
+		wp_add_inline_script( 'rolling-editeur', 'window.rollingEditeur = ' . wp_json_encode( $donnees ) . ';', 'before' );
 	}
 
 	/**

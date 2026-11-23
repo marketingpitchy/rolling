@@ -2093,6 +2093,78 @@
             ]
         },
         {
+            "id": "g-286a012",
+            "label": "carte-jeu-note",
+            "groupe": "Fiches et listes",
+            "description": "Carte à jouer sans chiffre (avec carte-verre et carte-jeu) : la note manuscrite en tête, en grand, puis le titre et la phrase. Notes orange et violettes en alternance.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "mobile",
+                        "state": null
+                    },
+                    "props": {
+                        "min-height": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 0,
+                                "unit": "px"
+                            }
+                        },
+                        "display": {
+                            "$$type": "string",
+                            "value": "flex"
+                        },
+                        "flex-direction": {
+                            "$$type": "string",
+                            "value": "column"
+                        },
+                        "gap": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 10,
+                                "unit": "px"
+                            }
+                        },
+                        "align-items": {
+                            "$$type": "string",
+                            "value": "flex-start"
+                        }
+                    },
+                    "custom_css": null
+                },
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "min-height": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 240,
+                                "unit": "px"
+                            }
+                        },
+                        "gap": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 14,
+                                "unit": "px"
+                            }
+                        },
+                        "justify-content": {
+                            "$$type": "string",
+                            "value": "flex-start"
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "JjpudGgtbGFzdC1jaGlsZChvZGQpIC5ub3RlLXRldGUgeyBjb2xvcjogIzRBMkJCODsgfSBAbWVkaWEgKG1heC13aWR0aDogNzY3cHgpIHsgJiA+IDpub3QoLmVsZW1lbnRvci1lbGVtZW50LW92ZXJsYXkpIHsgZ3JpZC1jb2x1bW46IGF1dG87IGdyaWQtcm93OiBhdXRvOyB9IH0="
+                    }
+                }
+            ]
+        },
+        {
             "id": "g-e13f5b6",
             "label": "section-entete",
             "groupe": "Mise en page",
@@ -9337,6 +9409,109 @@
                     },
                     "custom_css": {
                         "raw": "YmFja2dyb3VuZC1pbWFnZTogcmFkaWFsLWdyYWRpZW50KDgwJSA0MCUgYXQgOTAlIDAlLCByZ2JhKDkxLDU5LDIzNCwwLjM1KSwgcmdiYSg5MSw1OSwyMzQsMCkgNzAlKSwgbGluZWFyLWdyYWRpZW50KDE2MGRlZywgIzFDMTczMCAwJSwgIzBGMEYxMiAxMDAlKTsgLS1ybC10ZXh0ZTogI0ZBRjlGNzsgLS1ybC1wYXJhZ3JhcGhlOiAjQzlDM0RFOyAtLXJsLWxlZ2VuZGU6ICNDOUMzREU7IC0tcmwtZGVncmFkZTogbGluZWFyLWdyYWRpZW50KDk1ZGVnLCAjQzlCQkZGIDAlLCAjRUJCMEYyIDQ1JSwgI0ZGQTI3QSAxMDAlKTsgLS1ybC1mb25kLXZpc2FnZTogIzFDMTczMDsgLS1ybC1wbHVzLXRleHRlOiAjRTlFMkZGOyAtLXJsLXBsdXMtZm9uZDogIzJBMjI0NDs="
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-b1932ff",
+            "label": "zone-realisations",
+            "groupe": "Fiches et listes",
+            "description": "Landing, « Pour qui » : zone des réalisations à la place de la photo (contient le widget Liste).",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "tablet",
+                        "state": null
+                    },
+                    "props": {
+                        "padding": {
+                            "$$type": "dimensions",
+                            "value": {
+                                "block-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 4,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 0,
+                                        "unit": "px"
+                                    }
+                                },
+                                "block-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 0,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 0,
+                                        "unit": "px"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "custom_css": null
+                },
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "padding": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 6,
+                                "unit": "px"
+                            }
+                        },
+                        "display": {
+                            "$$type": "string",
+                            "value": "flex"
+                        },
+                        "flex-direction": {
+                            "$$type": "string",
+                            "value": "column"
+                        },
+                        "justify-content": {
+                            "$$type": "string",
+                            "value": "center"
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "QG1lZGlhIChtYXgtd2lkdGg6IDEwMjRweCkgeyBvcmRlcjogMjsgfSAmOm5vdCg6aGFzKC5jYXJ0ZS1leGVtcGxlKSk6bm90KDpoYXMoLmVsZW1lbnRvci1lbGVtZW50LW92ZXJsYXkpKSB7IGRpc3BsYXk6IG5vbmU7IH0="
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-6b6de62",
+            "label": "bouton-deplier",
+            "groupe": "Fiches et listes",
+            "description": "Bouton qui ouvre / ferme une partie de la page (avec bouton-verre) : « + » rond violet qui devient « × » une fois ouvert.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "font-weight": {
+                            "$$type": "string",
+                            "value": "700"
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "Jjo6YWZ0ZXIgeyBjb250ZW50OiAnKyc7IGRpc3BsYXk6IGZsZXg7IGFsaWduLWl0ZW1zOiBjZW50ZXI7IGp1c3RpZnktY29udGVudDogY2VudGVyOyBmbGV4LXNocmluazogMDsgd2lkdGg6IDI2cHg7IGhlaWdodDogMjZweDsgYm9yZGVyLXJhZGl1czogNTAlOyBmb250LXNpemU6IDIwcHg7IGxpbmUtaGVpZ2h0OiAxOyBmb250LXdlaWdodDogNjAwOyBjb2xvcjogI0ZGRkZGRjsgYmFja2dyb3VuZC1jb2xvcjogIzVCM0JFQTsgdHJhbnNpdGlvbjogdHJhbnNmb3JtIDAuM3MgZWFzZTsgfSAmW2FyaWEtZXhwYW5kZWQ9J3RydWUnXTo6YWZ0ZXIgeyB0cmFuc2Zvcm06IHJvdGF0ZSg0NWRlZyk7IH0="
                     }
                 }
             ]
@@ -17360,7 +17535,7 @@
                         }
                     },
                     "custom_css": {
-                        "raw": "YmFja2dyb3VuZC1pbWFnZTogcmFkaWFsLWdyYWRpZW50KDcwJSA1MCUgYXQgMTglIDAlLCByZ2JhKDI1NSwyNTUsMjU1LDAuOTUpLCByZ2JhKDI1NSwyNTUsMjU1LDApIDcyJSksIGxpbmVhci1ncmFkaWVudCgxNjBkZWcsIHJnYmEoMjMyLDIzMiwyNTUsMC44NCkgMCUsIHJnYmEoMjE0LDIxNiwyNTUsMC41MikgNjAlLCByZ2JhKDI1NSwyNTUsMjU1LDAuNjQpIDEwMCUpOyAtLXJsLW9tYnJlLXBob3RvOiByZ2JhKDUyLDUyLDIyNCwwLjYpOyAmOjpiZWZvcmUgeyBwb3NpdGlvbjogcmVsYXRpdmU7IHRvcDogYXV0bzsgcmlnaHQ6IGF1dG87IGJvdHRvbTogYXV0bzsgbGVmdDogYXV0bzsgaGVpZ2h0OiBhdXRvOyBvcGFjaXR5OiAxOyBtaXgtYmxlbmQtbW9kZTogbm9ybWFsOyBib3JkZXI6IDA7IGNvbnRlbnQ6ICcnOyBwb3NpdGlvbjogYWJzb2x1dGU7IHRvcDogMDsgcmlnaHQ6IDA7IGJvdHRvbTogMDsgbGVmdDogMDsgYm9yZGVyLXJhZGl1czogaW5oZXJpdDsgcGFkZGluZzogMS4ycHg7IGJhY2tncm91bmQ6IGxpbmVhci1ncmFkaWVudCgxNDBkZWcsICNGRkZGRkYsIHJnYmEoMjU1LDI1NSwyNTUsMC4zNSkgMzAlLCByZ2JhKDE5NiwxODEsMjUzLDAuNCkgNjIlLCByZ2JhKDI1NSwyMDksMTkxLDAuOSkpOyAtd2Via2l0LW1hc2s6IGxpbmVhci1ncmFkaWVudCgjMDAwIDAgMCkgY29udGVudC1ib3gsIGxpbmVhci1ncmFkaWVudCgjMDAwIDAgMCk7IC13ZWJraXQtbWFzay1jb21wb3NpdGU6IHhvcjsgbWFzay1jb21wb3NpdGU6IGV4Y2x1ZGU7IHBvaW50ZXItZXZlbnRzOiBub25lOyB9IEBtZWRpYSAobWluLXdpZHRoOiAxMDI1cHgpIHsgJjpoYXMoPiAuY29sb25uZS1jaGFwaXRyZTpudGgtbGFzdC1jaGlsZCgyKSkgeyBncmlkLXRlbXBsYXRlLWNvbHVtbnM6IG1pbm1heCgwLCAxLjE0ZnIpIG1pbm1heCgwLCAwLjg2ZnIpOyB9IH0="
+                        "raw": "YmFja2dyb3VuZC1pbWFnZTogcmFkaWFsLWdyYWRpZW50KDcwJSA1MCUgYXQgMTglIDAlLCByZ2JhKDI1NSwyNTUsMjU1LDAuOTUpLCByZ2JhKDI1NSwyNTUsMjU1LDApIDcyJSksIGxpbmVhci1ncmFkaWVudCgxNjBkZWcsIHJnYmEoMjMyLDIzMiwyNTUsMC44NCkgMCUsIHJnYmEoMjE0LDIxNiwyNTUsMC41MikgNjAlLCByZ2JhKDI1NSwyNTUsMjU1LDAuNjQpIDEwMCUpOyAtLXJsLW9tYnJlLXBob3RvOiByZ2JhKDUyLDUyLDIyNCwwLjYpOyAmOjpiZWZvcmUgeyBwb3NpdGlvbjogcmVsYXRpdmU7IHRvcDogYXV0bzsgcmlnaHQ6IGF1dG87IGJvdHRvbTogYXV0bzsgbGVmdDogYXV0bzsgaGVpZ2h0OiBhdXRvOyBvcGFjaXR5OiAxOyBtaXgtYmxlbmQtbW9kZTogbm9ybWFsOyBib3JkZXI6IDA7IGNvbnRlbnQ6ICcnOyBwb3NpdGlvbjogYWJzb2x1dGU7IHRvcDogMDsgcmlnaHQ6IDA7IGJvdHRvbTogMDsgbGVmdDogMDsgYm9yZGVyLXJhZGl1czogaW5oZXJpdDsgcGFkZGluZzogMS4ycHg7IGJhY2tncm91bmQ6IGxpbmVhci1ncmFkaWVudCgxNDBkZWcsICNGRkZGRkYsIHJnYmEoMjU1LDI1NSwyNTUsMC4zNSkgMzAlLCByZ2JhKDE5NiwxODEsMjUzLDAuNCkgNjIlLCByZ2JhKDI1NSwyMDksMTkxLDAuOSkpOyAtd2Via2l0LW1hc2s6IGxpbmVhci1ncmFkaWVudCgjMDAwIDAgMCkgY29udGVudC1ib3gsIGxpbmVhci1ncmFkaWVudCgjMDAwIDAgMCk7IC13ZWJraXQtbWFzay1jb21wb3NpdGU6IHhvcjsgbWFzay1jb21wb3NpdGU6IGV4Y2x1ZGU7IHBvaW50ZXItZXZlbnRzOiBub25lOyB9IEBtZWRpYSAobWluLXdpZHRoOiAxMDI1cHgpIHsgJjpoYXMoPiAuY29sb25uZS1jaGFwaXRyZTpudGgtbGFzdC1jaGlsZCgyKSkgeyBncmlkLXRlbXBsYXRlLWNvbHVtbnM6IG1pbm1heCgwLCAxLjE0ZnIpIG1pbm1heCgwLCAwLjg2ZnIpOyB9IH0gJjpoYXMoPiAuem9uZS1yZWFsaXNhdGlvbnMpOm5vdCg6aGFzKC5jYXJ0ZS1leGVtcGxlKSk6bm90KDpoYXMoLmVsZW1lbnRvci1lbGVtZW50LW92ZXJsYXkpKSB7IGdyaWQtdGVtcGxhdGUtY29sdW1uczogbWlubWF4KDAsIDFmcik7IH0="
                     }
                 }
             ]
@@ -38467,6 +38642,249 @@
                     },
                     "custom_css": {
                         "raw": "QG1lZGlhIChtYXgtd2lkdGg6IDc2N3B4KSB7IGdyaWQtY29sdW1uOiAxIC8gLTE7IGdyaWQtcm93OiAyOyB3aGl0ZS1zcGFjZTogbm93cmFwOyB9"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-0a7f63b",
+            "label": "note-tete",
+            "groupe": "Fiches et listes",
+            "description": "Note manuscrite en tête d'une carte à jouer sans chiffre (Caveat, grande, légèrement inclinée).",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "mobile",
+                        "state": null
+                    },
+                    "props": {
+                        "font-size": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 34,
+                                "unit": "px"
+                            }
+                        }
+                    },
+                    "custom_css": null
+                },
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "font-family": {
+                            "$$type": "font-family",
+                            "value": "Caveat"
+                        },
+                        "font-weight": {
+                            "$$type": "string",
+                            "value": "700"
+                        },
+                        "font-size": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 40,
+                                "unit": "px"
+                            }
+                        },
+                        "color": {
+                            "$$type": "color",
+                            "value": "#A63C14"
+                        },
+                        "line-height": {
+                            "$$type": "size",
+                            "value": {
+                                "size": "0.95",
+                                "unit": "custom"
+                            }
+                        },
+                        "transform": {
+                            "$$type": "transform",
+                            "value": {
+                                "transform-functions": {
+                                    "$$type": "transform-functions",
+                                    "value": [
+                                        {
+                                            "$$type": "transform-rotate",
+                                            "value": {
+                                                "x": {
+                                                    "$$type": "size",
+                                                    "value": {
+                                                        "size": 0,
+                                                        "unit": "deg"
+                                                    }
+                                                },
+                                                "y": {
+                                                    "$$type": "size",
+                                                    "value": {
+                                                        "size": 0,
+                                                        "unit": "deg"
+                                                    }
+                                                },
+                                                "z": {
+                                                    "$$type": "size",
+                                                    "value": {
+                                                        "size": -4,
+                                                        "unit": "deg"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    ]
+                                },
+                                "transform-origin": {
+                                    "$$type": "transform-origin",
+                                    "value": {
+                                        "x": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 0,
+                                                "unit": "%"
+                                            }
+                                        },
+                                        "y": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 50,
+                                                "unit": "%"
+                                            }
+                                        },
+                                        "z": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 0,
+                                                "unit": "px"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "display": {
+                            "$$type": "string",
+                            "value": "block"
+                        }
+                    },
+                    "custom_css": null
+                }
+            ]
+        },
+        {
+            "id": "g-52785ed",
+            "label": "realisations-chapitre",
+            "groupe": "Fiches et listes",
+            "description": "Liste de réalisations d'un « Pour qui » (classe de la grille du widget Liste, carte façon Avant → Après) : la première en grand, les suivantes en petites vignettes dessous, deux par ligne.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "mobile",
+                        "state": null
+                    },
+                    "props": {
+                        "gap": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 10,
+                                "unit": "px"
+                            }
+                        }
+                    },
+                    "custom_css": null
+                },
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "padding": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 0,
+                                "unit": "px"
+                            }
+                        },
+                        "display": {
+                            "$$type": "string",
+                            "value": "grid"
+                        },
+                        "gap": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 12,
+                                "unit": "px"
+                            }
+                        },
+                        "grid-template-columns": {
+                            "$$type": "string",
+                            "value": "repeat(2, minmax(0, 1fr))"
+                        },
+                        "align-items": {
+                            "$$type": "string",
+                            "value": "start"
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "JiA+IGRpdjpmaXJzdC1vZi10eXBlID4gKiB7IGdyaWQtY29sdW1uOiAxIC8gLTE7IH0gJiA+IGRpdjpub3QoOmZpcnN0LW9mLXR5cGUpIC5jYXJ0ZS1leGVtcGxlIHsgcGFkZGluZzogNnB4IDZweCAxMHB4OyBib3JkZXItcmFkaXVzOiAyMHB4OyB9ICYgPiBkaXY6bm90KDpmaXJzdC1vZi10eXBlKSAuY2FkcmUtZXhlbXBsZSwgJiA+IGRpdjpub3QoOmZpcnN0LW9mLXR5cGUpIC5pbWFnZS12aWduZXR0ZSB7IGJvcmRlci1yYWRpdXM6IDE0cHg7IH0gJiA+IGRpdjpub3QoOmZpcnN0LW9mLXR5cGUpIC5wYXN0aWxsZS1jbGllbnQsICYgPiBkaXY6bm90KDpmaXJzdC1vZi10eXBlKSBbY2xhc3MqPSd0YWctJ10geyBkaXNwbGF5OiBub25lOyB9ICYgPiBkaXY6bm90KDpmaXJzdC1vZi10eXBlKSAuYmFzLWV4ZW1wbGUgeyBwYWRkaW5nOiAxMHB4IDRweCAwOyBnYXA6IDhweDsgfSAmID4gZGl2Om5vdCg6Zmlyc3Qtb2YtdHlwZSkgLmZsZWNoZS1yZXN1bHRhdCwgJiA+IGRpdjpub3QoOmZpcnN0LW9mLXR5cGUpIC50aXRyZS14cyB7IGZvbnQtc2l6ZTogMTNweDsgbGluZS1oZWlnaHQ6IDEuMzsgfSAmID4gZGl2Om5vdCg6Zmlyc3Qtb2YtdHlwZSkgLmZsZWNoZS1yb25kZSB7IHdpZHRoOiAzMHB4OyBoZWlnaHQ6IDMwcHg7IGxpbmUtaGVpZ2h0OiAzMHB4OyB9"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-e537bb5",
+            "label": "tableau-depliable",
+            "groupe": "Fiches et listes",
+            "description": "Landing : bouton « Comparer les formules en détail » + le tableau complet, replié au chargement de la page (rolling.js). Dans l'éditeur et sans script, le tableau reste visible.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "padding": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 0,
+                                "unit": "px"
+                            }
+                        },
+                        "margin": {
+                            "$$type": "dimensions",
+                            "value": {
+                                "block-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 30,
+                                        "unit": "px"
+                                    }
+                                }
+                            }
+                        },
+                        "display": {
+                            "$$type": "string",
+                            "value": "flex"
+                        },
+                        "flex-direction": {
+                            "$$type": "string",
+                            "value": "column"
+                        },
+                        "gap": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 0,
+                                "unit": "px"
+                            }
+                        },
+                        "align-items": {
+                            "$$type": "string",
+                            "value": "center"
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "JiA+IC5vZmZyZXMtdGFibGVhdSB7IHdpZHRoOiAxMDAlOyBtYXJnaW4tdG9wOiAyMnB4OyB9ICYucmwtcmVwbGllID4gLm9mZnJlcy10YWJsZWF1IHsgZGlzcGxheTogbm9uZTsgfSAmLnJsLWRlcGxpZSA+IC5vZmZyZXMtdGFibGVhdSB7IGFuaW1hdGlvbjogcmwtZGVwbGllIDAuNDVzIGVhc2UgYm90aDsgfQ=="
                     }
                 }
             ]
