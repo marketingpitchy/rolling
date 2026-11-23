@@ -43,7 +43,7 @@ class Rolling_Balise_Partage extends Data_Tag {
 			'linkedin'   => array( __( 'Partager sur LinkedIn', 'rolling' ), 'https://www.linkedin.com/sharing/share-offsite/?url=%1$s' ),
 			'facebook'   => array( __( 'Partager sur Facebook', 'rolling' ), 'https://www.facebook.com/sharer/sharer.php?u=%1$s' ),
 			'x'          => array( __( 'Partager sur X', 'rolling' ), 'https://x.com/intent/post?url=%1$s&text=%2$s' ),
-			'whatsapp'   => array( __( 'Partager sur WhatsApp', 'rolling' ), 'https://wa.me/?text=%2$s%%20%1$s' ),
+			'whatsapp'   => array( __( 'Partager sur WhatsApp', 'rolling' ), 'https://api.whatsapp.com/send?text=%2$s%%20%1$s' ),
 			'email'      => array( __( 'Envoyer par e-mail', 'rolling' ), 'mailto:?subject=%2$s&body=%1$s' ),
 			'chatgpt'    => array( __( 'Résumer avec ChatGPT', 'rolling' ), 'https://chatgpt.com/?q=%3$s' ),
 			'claude'     => array( __( 'Résumer avec Claude', 'rolling' ), 'https://claude.ai/new?q=%3$s' ),

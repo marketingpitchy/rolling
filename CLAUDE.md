@@ -927,6 +927,10 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   au pixel entier ⇒ à 40 px/s, 1, 1, 0, 1… px par image. `glisser()` : partie entière en `scrollLeft` (le doigt garde la main),
   reste à virgule en `transform: translate3d()` sur la bande (remis à zéro au toucher et quand l'utilisateur fait défiler).
   Mesuré : 0,67 px par image à 40 px/s, 1 px à 60 px/s.
+- **0.7.19** : partage WhatsApp en erreur 429 chez la cliente (wa.me limite les requêtes, surtout depuis un ordinateur) ⇒
+  lien `https://api.whatsapp.com/send?text=` (adresse officielle vers laquelle wa.me redirige) dans la balise Partager
+  et l'ancien widget Partage ; texte toujours encodé (`rawurlencode`). Métas des 4 réalisations et 4 témoignages écrites
+  (hôtes agence-rolling.fr / www ajoutés à l'environnement « rolling » pour lire le site en ligne).
 - **Chargement de page effet film** (demande avant la fin de la livraison 4) : maquette `maquettes/loading/maquette-loading.html`
   (copie /workspace/maquette-loading.html), 4 options : A amorce 3-2-1, B clap qui se ferme puis rideau, C ouverture
   cinéma (bandes noires + REC + timecode + règle avec la tête de lecture rouge des frises, plus de filet fin), D barre de lecture en haut sans écran. Conseil : C à l'arrivée (première page

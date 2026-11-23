@@ -54,7 +54,7 @@ class Rolling_Widget_Partage extends Rolling_Widget {
 			'LinkedIn' => 'https://www.linkedin.com/sharing/share-offsite/?url=' . $url,
 			'Facebook' => 'https://www.facebook.com/sharer/sharer.php?u=' . $url,
 			'X'        => 'https://x.com/intent/post?url=' . $url . '&text=' . $titre,
-			'WhatsApp' => 'https://wa.me/?text=' . $titre . '%20' . $url,
+			'WhatsApp' => 'https://api.whatsapp.com/send?text=' . $titre . '%20' . $url,
 			'E-mail'   => 'mailto:?subject=' . $titre . '&body=' . $url,
 		);
 
