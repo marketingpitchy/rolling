@@ -327,6 +327,11 @@ def section_newsletter(prefixe):
 
 encart_newsletter = bandeau_newsletter('Encart newsletter')
 
+# Bandeau newsletter seul, à placer où l'on veut (Mes modèles) : section aérée, masquée tant que le formulaire n'est pas réglé.
+newsletter_seule = F('Newsletter', ['section', 'section-aeree', 'si-newsletter'], tag='section', enfants=[
+    F('Newsletter · contenu', ['conteneur'], COLONNE, enfants=[bandeau_newsletter('Newsletter · encart')]),
+])
+
 
 
 
@@ -908,6 +913,7 @@ BLOCS_VARIANTES = [
     ('01-hero-maquette', 'Rolling · 01 Hero (version maquette : grande photo)', hero_maquette),
     ('09-humain-defile', "Rolling · 09 Le meilleur de l'humain (version équipe qui défile)", humain_defile),
     ('03-showreel-fichier', 'Rolling · 03 Showreel (version fichier vidéo de la médiathèque)', showreel_fichier),
+    ('15-newsletter', 'Rolling · Newsletter (bandeau à placer où vous voulez)', newsletter_seule),
 ]
 
 # --------------------------------------------------------------------------------------------
@@ -1560,7 +1566,7 @@ tem_liste = section_liste('Témoignages · liste', [
 blog_haut = haut_page('Blog · haut', 'Le blog', ['pastille-bleue'], 'Des conseils vidéo <em>pour vos équipes.</em>',
                       'Communication interne, RH, formation, marketing : nos méthodes pour que vos contenus soient enfin regardés.')
 blog_liste = section_liste('Blog · liste', [
-    W('Blog · cartes', 'rolling-liste', contenu='articles', classe='grille-3', filtres='category', tous='Tous les articles', texte_aucun='Aucun article dans cette catégorie.', nombre='10', premiere_une='yes', newsletter_apres='99', plus='yes', plus_texte='Articles suivants'),
+    W('Blog · cartes', 'rolling-liste', contenu='articles', classe='grille-3', filtres='category', tous='Tous les articles', texte_aucun='Aucun article dans cette catégorie.', nombre='10', premiere_une='yes', plus='yes', plus_texte='Articles suivants'),
 ])
 
 guides_haut = haut_page('Guides · haut', 'Ressources · Guides et REX', ['pastille-bleue'], 'Guides et REX, <em>à télécharger.</em>',

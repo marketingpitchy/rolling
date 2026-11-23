@@ -561,6 +561,10 @@ CLASSES = [
     ('chiffre-jeu', "Grand chiffre en verre d'une carte à jouer.", "display: block; width: auto; height: 92px; max-width: 100%; object-fit: contain; object-position: left center; @media(--mobile) { width: 52px; height: 56px; object-position: center; }", "@media (max-width: 767px) { grid-column: 1; grid-row: 1; }"),
     ('note-jeu', "Note manuscrite en bas d'une carte à jouer (Caveat, orange foncé).", "display: block; font-family: Caveat; font-size: 28px; line-height: 1; font-weight: 700; color: #A63C14; transform: rotate(-3deg); transform-origin: left center; @media(--mobile) { font-size: 26px; }", "@media (max-width: 767px) { grid-column: 1 / -1; grid-row: 2; white-space: nowrap; }"),
 
+    # 0.7.21 : section plus courte, pour un bandeau seul (ex. newsletter) placé entre deux sections.
+    ('section-aeree', "Section courte (avec section) pour un bandeau seul entre deux sections : 72 px en haut et en bas (48 px en mobile).",
+     "padding: 72px 0; @media(--tablet) { padding: 56px 0; } @media(--mobile) { padding: 48px 0; }"),
+
     # 0.7.20 : liens des réseaux (LinkedIn, YouTube, Instagram), remplis dans Personnaliser.
     *[('si-reseau--' + r, "Repère sans style : le thème masque ce bloc tant que le lien %s n'est pas rempli (Personnaliser > Rolling : en-tête et pied de page)." % r.capitalize(), '--rl-repere: 1;') for r in ICONES_RESEAUX],
     ('si-reseaux', "Repère sans style : le thème masque ce bloc tant qu'aucun lien de réseau n'est rempli (Personnaliser > Rolling : en-tête et pied de page).", '--rl-repere: 1;'),
@@ -581,12 +585,12 @@ CLASSES = [
      "gap: 10px; background-color: #C4002A;",
      "&::before { content: ''; flex-shrink: 0; width: 18px; height: 18px; background-color: currentColor; -webkit-mask: " + svg_uri(ICONES_RESEAUX['youtube']) + " center / contain no-repeat; mask: " + svg_uri(ICONES_RESEAUX['youtube']) + " center / contain no-repeat; }"),
     ('cartes-reseaux', "Deux cartes de réseaux côte à côte (L'agence, « Où nous trouver ») ; l'une sous l'autre en mobile.",
-     "display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-top: 44px; padding: 0; @media(--mobile) { grid-template-columns: minmax(0, 1fr); margin-top: 32px; }"),
+     "display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-top: 36px; padding: 0; @media(--mobile) { grid-template-columns: minmax(0, 1fr); gap: 10px; margin-top: 28px; }"),
     ('carte-reseau', "Carte d'un réseau (avec carte-verre et reseau-linkedin / reseau-youtube) : pictogramme coloré, titre, phrase, lien.",
-     "gap: 10px; padding: 24px;"),
-    ('titre-reseau', "Titre d'une carte réseau : pictogramme carré aux couleurs du réseau au-dessus (posé par reseau-linkedin, reseau-youtube…).",
+     "gap: 6px; padding: 18px 22px; @media(--mobile) { padding: 16px 18px; }"),
+    ('titre-reseau', "Titre d'une carte réseau : petit pictogramme carré aux couleurs du réseau devant le titre (posé par reseau-linkedin, reseau-youtube…).",
      "--rl-titre-reseau: 1;",
-     "&::before { content: ''; display: block; width: 48px; height: 48px; margin-bottom: 14px; border-radius: 14px; background: var(--rl-icone-blanc) center / 24px no-repeat, linear-gradient(var(--rl-couleur-reseau, #5B3BEA), var(--rl-couleur-reseau, #5B3BEA)); }"),
+     "&::before { content: ''; display: inline-block; vertical-align: -8px; width: 32px; height: 32px; margin-right: 12px; border-radius: 10px; background: var(--rl-icone-blanc) center / 17px no-repeat, linear-gradient(var(--rl-couleur-reseau, #5B3BEA), var(--rl-couleur-reseau, #5B3BEA)); }"),
 
     # 0.7.17 : landing, cartes à jouer sans chiffre (note manuscrite en tête).
     ('carte-jeu-note', "Carte à jouer sans chiffre (avec carte-verre et carte-jeu) : la note manuscrite en tête, en grand, puis le titre et la phrase. Notes orange et violettes en alternance.",
