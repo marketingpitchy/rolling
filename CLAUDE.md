@@ -862,6 +862,14 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
 - **0.7.12** : fiche réalisation « D'autres réalisations » et fiche témoignage « Les autres vidéos » = cartes façon Avant → Après
   (widget Liste `carte_theme='exemple'` ⇒ c14, comme l'accueil et Contact). Métas proposées pour la page content repurposing
   (« Vos contenus en vidéo » chez la cliente).
+- **Maquette « Corrections mobile »** (`maquettes/corrections-mobile/corrections.html`, générée par `scratchpad/c067/gen-mobile.py`,
+  copie /workspace/maquette-corrections-mobile.html, **à valider**, « ne relance pas le thème avant ») : 1 générique de la fiche
+  réalisation : trait de gauche de `generique-filet` mal placé (le `::before` n'a pas la remise à zéro du `.e-con::before`,
+  aussi sur ordinateur) ⇒ correction simple ; 2 équipes qui défilent (accueil, L'agence) : 55 px/s trop lent et pas de glisser
+  au doigt ⇒ proposé : bande en défilement par script (`scrollLeft`, `overflow-x: auto`), arrêt au toucher, élan natif,
+  reprise 2 s après, sans fin ; vitesse au choix 80 / 100 (conseil) / 130 px/s ; « réduire les animations » = rangée immobile
+  qu'on fait glisser ; 3 « Le plus complet » (`offres-badge`) calé à droite en mobile (colonne sombre 84 px, étiquette 136 px)
+  ⇒ centré sur la colonne : A une ligne qui dépasse, B deux lignes dans la colonne (conseil) ; centré aussi sur ordinateur.
 - **Chargement de page effet film** (demande avant la fin de la livraison 4) : maquette `maquettes/loading/maquette-loading.html`
   (copie /workspace/maquette-loading.html), 4 options : A amorce 3-2-1, B clap qui se ferme puis rideau, C ouverture
   cinéma (bandes noires + REC + timecode + règle avec la tête de lecture rouge des frises, plus de filet fin), D barre de lecture en haut sans écran. Conseil : C à l'arrivée (première page

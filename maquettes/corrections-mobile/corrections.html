@@ -1,0 +1,113 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Rolling · corrections mobile</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet"><style>
+:root { --ink:#0F0F12; --texte:#4A4858; --legende:#5F5C6C; --violet:#5B3BEA; }
+* { box-sizing: border-box; }
+body { margin: 0; color: var(--ink); font-family: 'Hanken Grotesk', system-ui, sans-serif; background: #FAF9F7; }
+h1, h2, h3, p { margin: 0; }
+em { font-style: normal; padding: 0 .06em; margin: 0 -.06em; background: linear-gradient(95deg, #5B3BEA, #6F3FD6 42%, #C94A1E); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.conteneur { max-width: 1240px; margin: 0 auto; padding: 0 28px; }
+.intro { padding: 56px 0 8px; }
+.intro h1 { font-family: 'Bricolage Grotesque'; font-size: 32px; letter-spacing: -.035em; font-weight: 650; }
+.intro p, .desc { margin-top: 10px; max-width: 90ch; font-size: 15.5px; line-height: 1.55; color: var(--texte); }
+.desc b, .intro b { color: var(--ink); }
+.sommaire { margin-top: 18px; display: flex; flex-wrap: wrap; gap: 8px; }
+.sommaire a { padding: 6px 12px; border-radius: 999px; font-size: 14px; font-weight: 700; color: #4A2BB8; background: #EDE6FF; text-decoration: none; }
+.partie { margin-top: 88px; padding-top: 24px; border-top: 1px solid rgba(15,15,18,.1); }
+.partie > h2 { font-family: 'Bricolage Grotesque'; font-size: 30px; letter-spacing: -.035em; font-weight: 650; }
+.rangee { display: flex; flex-wrap: wrap; gap: 36px; align-items: flex-start; margin-top: 26px; }
+.vue-nom { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; font-size: 12px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: var(--legende); }
+.lettre { display: inline-flex; align-items: center; justify-content: center; min-width: 28px; height: 28px; padding: 0 8px; border-radius: 999px; font-size: 13px; letter-spacing: 0; color: #fff; background: #0F0F12; }
+.conseil .lettre { background: var(--violet); }
+.avant .lettre { background: #B9B5C6; }
+.tag { padding: 3px 9px; border-radius: 999px; font-size: 11px; letter-spacing: .08em; color: #4A2BB8; background: #EDE6FF; }
+.note { margin-top: 10px; max-width: 390px; font-size: 14px; line-height: 1.5; color: var(--texte); }
+.telephone { width: 390px; max-width: 100%; border-radius: 34px; padding: 10px; background: #0F0F12; }
+.ecran { position: relative; overflow: hidden; isolation: isolate; border-radius: 26px; padding: 34px 20px; background: #FAF9F7; }
+.ecran.chaud { background: radial-gradient(60% 50% at 0% 0%, #FFE7DA, transparent 70%), radial-gradient(60% 50% at 100% 100%, #EDE6FF, transparent 70%), #FAF9F7; }
+.label { font-size: 12px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: var(--legende); }
+.timecode { padding: 6px 13px; border-radius: 999px; font-size: 13px; font-weight: 800; color: #4A2BB8; background: #fff; box-shadow: inset 0 0 0 1px rgba(91,59,234,.2), 0 8px 18px -10px rgba(76,48,170,.4); }
+.titre { font-family: 'Bricolage Grotesque'; font-weight: 650; letter-spacing: -.05em; line-height: 1.02; }
+
+/* 1 · Générique */
+.filet { display: flex; align-items: center; justify-content: center; gap: 14px; }
+.filet::before, .filet::after { content: ''; flex: 1; max-width: 220px; height: 1px; background: rgba(91,59,234,.22); }
+.filet.casse { position: relative; }
+.filet.casse::before { position: absolute; top: -10px; left: -40px; width: 220px; flex: none; }
+.gen-titre { margin-top: 20px; text-align: center; font-size: 30px; }
+.gen-lignes { margin-top: 18px; display: grid; gap: 8px; text-align: center; font-size: 15px; color: var(--texte); }
+.gen-lignes b { display: block; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--legende); }
+
+/* 2 · Équipe qui défile */
+.masque { overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
+.bande { display: flex; gap: 12px; width: max-content; }
+.masque.css .bande { animation: defile var(--duree, 18s) linear infinite; }
+@keyframes defile { to { transform: translateX(-50%); } }
+.masque.js { overflow-x: auto; scrollbar-width: none; overscroll-behavior-x: contain; touch-action: pan-x pan-y; cursor: grab; }
+.masque.js::-webkit-scrollbar { display: none; }
+.masque.js.tient { cursor: grabbing; }
+.membre { flex: none; width: 150px; text-align: center; }
+.membre img { display: block; width: 150px; height: 150px; border-radius: 50%; object-fit: cover; border: 5px solid #fff; box-shadow: 0 14px 30px -18px rgba(76,48,170,.5); -webkit-user-drag: none; user-select: none; }
+.membre b { display: block; margin-top: 12px; font-size: 15px; }
+.membre span { display: block; margin-top: 2px; font-size: 13px; line-height: 1.35; color: var(--legende); }
+.vitesses { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+.vitesses button { padding: 6px 12px; border: 0; border-radius: 999px; font: 700 13px 'Hanken Grotesk'; color: #4A4858; background: #fff; box-shadow: inset 0 0 0 1px rgba(15,15,18,.14); cursor: pointer; }
+.vitesses button[aria-pressed="true"] { color: #fff; background: #0F0F12; box-shadow: none; }
+.etat { margin-top: 10px; font-size: 13px; color: var(--legende); min-height: 20px; }
+.doigt { display: inline-flex; align-items: center; gap: 8px; margin-top: 16px; padding: 7px 12px; border-radius: 999px; font-size: 13px; font-weight: 700; color: #4A2BB8; background: #EDE6FF; }
+
+/* 3 · Étiquette « Le plus complet » */
+.tableau { position: relative; margin-top: 22px; border-radius: 30px; padding: 22px 0 18px 18px; background: #fff; box-shadow: 0 30px 60px -36px rgba(76,48,170,.35); }
+.tableau .entete { display: grid; grid-template-columns: minmax(0, 1fr) 84px 84px; align-items: end; gap: 0; }
+.tableau h3 { grid-row: 1; font-family: 'Bricolage Grotesque'; font-size: 22px; letter-spacing: -.04em; font-weight: 650; line-height: 1.1; align-self: start; padding-right: 6px; }
+.tableau .col { text-align: center; font-family: 'Bricolage Grotesque'; font-weight: 650; font-size: 15px; letter-spacing: -.03em; line-height: 1.15; padding: 0 4px 16px; }
+.tableau .sombre { position: relative; align-self: stretch; display: flex; align-items: flex-end; justify-content: center; margin-top: -22px; padding-top: 120px; border-radius: 26px 26px 0 0; color: #fff; background: radial-gradient(70% 40% at 80% 0%, rgba(224,86,42,.55), transparent), #17112C; }
+.tableau .ligne { display: grid; grid-template-columns: minmax(0, 1fr) 84px 84px; align-items: center; border-top: 1px solid rgba(15,15,18,.08); }
+.tableau .ligne p { padding: 12px 6px 12px 0; font-size: 14px; }
+.tableau .ligne i { justify-self: center; width: 22px; height: 22px; border-radius: 50%; background: linear-gradient(140deg, #C4B5FD, #FF8A5B); }
+.tableau .ligne .cs { align-self: stretch; display: flex; align-items: center; justify-content: center; background: #17112C; }
+.badge { position: absolute; z-index: 2; padding: 6px 12px; border-radius: 999px; font-size: 12px; font-weight: 800; letter-spacing: .1em; line-height: 1.2; text-transform: uppercase; color: #0F0F12; background: #FFD1BF; white-space: nowrap; }
+.badge.actuel { top: -14px; right: 6px; }
+.badge.a { top: -14px; left: 50%; transform: translateX(-50%); }
+.badge.b { top: -26px; left: 50%; transform: translateX(-50%); width: 76px; padding: 6px 4px; white-space: normal; text-align: center; letter-spacing: .06em; border-radius: 14px; }
+.ecran.offre { padding: 30px 18px 22px; background: radial-gradient(60% 40% at 0% 0%, #E6DEFF, transparent 70%), #F6F3FF; }
+</style></head><body><main><div class="conteneur">
+<div class="intro"><h1>Corrections mobile : générique, équipe qui défile, « Le plus complet ».</h1>
+<p>Les trois défauts sont reproduits sur ma copie (capture « Aujourd'hui » à gauche de chaque partie). À droite, la correction proposée, en largeur de téléphone (390 px). Rien n'est encore dans le thème.</p>
+<nav class="sommaire" aria-label="Sommaire"><a href="#generique">1 · Fiche réalisation : générique</a><a href="#equipe">2 · Accueil et L'agence : équipe qui défile</a><a href="#complet">3 · Accueil : « Le plus complet »</a></nav></div>
+
+<section class="partie" id="generique"><h2>1 · Fiche réalisation : les traits autour de « 00:15 · Fin ».</h2>
+<p class="desc">Cause : le trait de gauche est un décor que l'éditeur Elementor place en haut à gauche de chaque conteneur ; le thème ne le remettait pas à sa place. Correction : <b>les deux traits de part et d'autre du timecode, sur la même ligne</b>, comme dans la maquette validée. Le défaut existait aussi sur ordinateur : la correction vaut pour toutes les tailles. Pas d'option, c'est une correction.</p>
+<div class="rangee"><div class="avant"><p class="vue-nom"><span class="lettre"></span>Aujourd'hui</p><div class="telephone"><div class="ecran "><div style="padding:40px 0 10px"><div class="filet casse"><span class="timecode">00:15</span><span class="label">Fin</span></div><h2 class="titre gen-titre">Le générique.</h2><div class="gen-lignes"><p><b>Client</b>Fnac Darty</p><p><b>Direction artistique</b>Thomas</p></div></div></div></div></div><div class="conseil"><p class="vue-nom"><span class="lettre">✓</span>Corrigé</p><div class="telephone"><div class="ecran "><div style="padding:40px 0 10px"><div class="filet"><span class="timecode">00:15</span><span class="label">Fin</span></div><h2 class="titre gen-titre">Le générique.</h2><div class="gen-lignes"><p><b>Client</b>Fnac Darty</p><p><b>Direction artistique</b>Thomas</p></div></div></div></div></div></div></section>
+
+<section class="partie" id="equipe"><h2>2 · Accueil et L'agence : l'équipe défile plus vite et se fait glisser au doigt.</h2>
+<p class="desc">Aujourd'hui, la bande avance à 55 px par seconde (une personne toutes les 3 secondes) et c'est une animation : le doigt ne peut pas la faire avancer. Proposé : la bande devient une <b>rangée qu'on peut faire glisser</b> ; elle avance seule, <b>s'arrête dès qu'on la touche</b>, suit le doigt (avec l'élan du téléphone), puis <b>repart seule 2 secondes après</b>. Sans fin dans les deux sens. Avec « réduire les animations » : elle ne bouge pas seule, mais se fait glisser au doigt (au lieu de passer sur plusieurs lignes). Sur ordinateur, rien ne change (arrêt au survol). Même chose pour toutes les bandes d'équipe : accueil (réseau de talents, experts IA) et L'agence (créas, experts IA).</p>
+<div class="rangee"><div class=""><p class="vue-nom"><span class="lettre"></span>Aujourd'hui · 55 px/s, pas de glisser</p><div class="telephone"><div class="ecran chaud"><div class="masque css" style="--duree:20s"><div class="bande"><div class="membre"><img src="{{m:equipe-thomas.jpg:320}}" alt="" draggable="false"><b>Thomas</b><span>Directeur Artistique</span></div><div class="membre"><img src="{{m:equipe-alex.jpg:320}}" alt="" draggable="false"><b>Alex</b><span>Responsable Équipe Motion Design</span></div><div class="membre"><img src="{{m:equipe-victor.jpg:320}}" alt="" draggable="false"><b>Victor</b><span>Motion Designer</span></div><div class="membre"><img src="{{m:equipe-vincent.jpg:320}}" alt="" draggable="false"><b>Vincent</b><span>Cadreur</span></div><div class="membre"><img src="{{m:equipe-sophie.jpg:320}}" alt="" draggable="false"><b>Sophie</b><span>Chef de Projet</span></div><div class="membre"><img src="{{m:equipe-marion-t.jpg:320}}" alt="" draggable="false"><b>Marion</b><span>Responsable Agence vidéo</span></div><div class="membre"><img src="{{m:equipe-thomas.jpg:320}}" alt="" draggable="false"><b>Thomas</b><span>Directeur Artistique</span></div><div class="membre"><img src="{{m:equipe-alex.jpg:320}}" alt="" draggable="false"><b>Alex</b><span>Responsable Équipe Motion Design</span></div><div class="membre"><img src="{{m:equipe-victor.jpg:320}}" alt="" draggable="false"><b>Victor</b><span>Motion Designer</span></div><div class="membre"><img src="{{m:equipe-vincent.jpg:320}}" alt="" draggable="false"><b>Vincent</b><span>Cadreur</span></div><div class="membre"><img src="{{m:equipe-sophie.jpg:320}}" alt="" draggable="false"><b>Sophie</b><span>Chef de Projet</span></div><div class="membre"><img src="{{m:equipe-marion-t.jpg:320}}" alt="" draggable="false"><b>Marion</b><span>Responsable Agence vidéo</span></div></div></div></div></div><p class="note">Essayez de la faire glisser : rien ne se passe.</p></div><div class=""><p class="vue-nom"><span class="lettre">✓</span>Proposé · glisser au doigt</p><div class="telephone"><div class="ecran chaud"><div class="masque js" id="defile"><div class="bande"><div class="membre"><img src="{{m:equipe-thomas.jpg:320}}" alt="" draggable="false"><b>Thomas</b><span>Directeur Artistique</span></div><div class="membre"><img src="{{m:equipe-alex.jpg:320}}" alt="" draggable="false"><b>Alex</b><span>Responsable Équipe Motion Design</span></div><div class="membre"><img src="{{m:equipe-victor.jpg:320}}" alt="" draggable="false"><b>Victor</b><span>Motion Designer</span></div><div class="membre"><img src="{{m:equipe-vincent.jpg:320}}" alt="" draggable="false"><b>Vincent</b><span>Cadreur</span></div><div class="membre"><img src="{{m:equipe-sophie.jpg:320}}" alt="" draggable="false"><b>Sophie</b><span>Chef de Projet</span></div><div class="membre"><img src="{{m:equipe-marion-t.jpg:320}}" alt="" draggable="false"><b>Marion</b><span>Responsable Agence vidéo</span></div><div class="membre"><img src="{{m:equipe-thomas.jpg:320}}" alt="" draggable="false"><b>Thomas</b><span>Directeur Artistique</span></div><div class="membre"><img src="{{m:equipe-alex.jpg:320}}" alt="" draggable="false"><b>Alex</b><span>Responsable Équipe Motion Design</span></div><div class="membre"><img src="{{m:equipe-victor.jpg:320}}" alt="" draggable="false"><b>Victor</b><span>Motion Designer</span></div><div class="membre"><img src="{{m:equipe-vincent.jpg:320}}" alt="" draggable="false"><b>Vincent</b><span>Cadreur</span></div><div class="membre"><img src="{{m:equipe-sophie.jpg:320}}" alt="" draggable="false"><b>Sophie</b><span>Chef de Projet</span></div><div class="membre"><img src="{{m:equipe-marion-t.jpg:320}}" alt="" draggable="false"><b>Marion</b><span>Responsable Agence vidéo</span></div></div></div><p class="doigt">Faites glisser avec le doigt (ou la souris)</p><div class="vitesses" role="group" aria-label="Vitesse"><button type="button" data-v="80">80 px/s</button><button type="button" data-v="100" aria-pressed="true">100 px/s (conseil)</button><button type="button" data-v="130">130 px/s</button></div><p class="etat" id="etat" aria-live="polite">Défile seule.</p></div></div><p class="note">Choisissez la vitesse : 100 px/s = une nouvelle personne environ toutes les 1,6 seconde, assez vite pour donner du rythme, assez lent pour lire le nom.</p></div></div></section>
+
+<section class="partie" id="complet"><h2>3 · Accueil, tableau des offres : « Le plus complet » au-dessus de la bonne colonne.</h2>
+<p class="desc">En mobile, la colonne sombre ne fait que 84 px de large et l'étiquette (136 px) est calée à droite : elle déborde vers la colonne « Création illimitée ». Deux corrections possibles, l'étiquette <b>centrée sur la colonne « Création + Tournage »</b> dans les deux cas. Le texte reste modifiable dans Elementor. Sur ordinateur et tablette, l'étiquette est aussi centrée sur sa colonne (aujourd'hui calée à gauche).</p>
+<div class="rangee"><div class=""><p class="vue-nom"><span class="lettre"></span>Aujourd'hui</p><div class="telephone"><div class="ecran offre"><div class="tableau"><div class="entete"><h3>Comparez <em>les formules</em></h3><p class="col">Création illimitée</p><p class="col sombre"><span class="badge actuel">Le plus complet</span>Création<br>+<br>Tournage</p></div><div class="ligne"><p>Vos écrits</p><i></i><span class="cs"><i></i></span></div><div class="ligne"><p>Vos vidéos</p><i></i><span class="cs"><i></i></span></div><div class="ligne"><p>Vos nouveaux projets</p><i></i><span class="cs"><i></i></span></div></div></div></div></div><div class=""><p class="vue-nom"><span class="lettre">A</span>Une ligne, centrée</p><div class="telephone"><div class="ecran offre"><div class="tableau"><div class="entete"><h3>Comparez <em>les formules</em></h3><p class="col">Création illimitée</p><p class="col sombre"><span class="badge a">Le plus complet</span>Création<br>+<br>Tournage</p></div><div class="ligne"><p>Vos écrits</p><i></i><span class="cs"><i></i></span></div><div class="ligne"><p>Vos vidéos</p><i></i><span class="cs"><i></i></span></div><div class="ligne"><p>Vos nouveaux projets</p><i></i><span class="cs"><i></i></span></div></div></div></div><p class="note">Lisible d'un coup d'œil ; dépasse un peu la colonne des deux côtés.</p></div><div class=""><p class="vue-nom"><span class="lettre">B</span>Deux lignes, dans la colonne</p><div class="telephone"><div class="ecran offre"><div class="tableau"><div class="entete"><h3>Comparez <em>les formules</em></h3><p class="col">Création illimitée</p><p class="col sombre"><span class="badge b">Le plus complet</span>Création<br>+<br>Tournage</p></div><div class="ligne"><p>Vos écrits</p><i></i><span class="cs"><i></i></span></div><div class="ligne"><p>Vos vidéos</p><i></i><span class="cs"><i></i></span></div><div class="ligne"><p>Vos nouveaux projets</p><i></i><span class="cs"><i></i></span></div></div></div></div><p class="note">Tient dans la largeur de la colonne, rien ne déborde. Conseil.</p></div></div></section>
+<div style="height:120px"></div></div></main>
+<script>
+(function () {
+  var zone = document.getElementById('defile'), etat = document.getElementById('etat'), vitesse = 100, tenu = false, reprise = 0, dernier = 0, x = 0;
+  var calme = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function moitie() { return zone.scrollWidth / 2; }
+  function boucle(t) {
+    var dt = dernier ? Math.min(64, t - dernier) : 0; dernier = t;
+    if (!tenu && !calme && t > reprise) { x = zone.scrollLeft + vitesse * dt / 1000; if (x >= moitie()) x -= moitie(); zone.scrollLeft = x; }
+    if (zone.scrollLeft < 1 && !tenu) zone.scrollLeft = moitie();
+    requestAnimationFrame(boucle);
+  }
+  function lacher() { tenu = false; zone.classList.remove('tient'); reprise = performance.now() + 2000; etat.textContent = 'Reprise dans 2 secondes…'; setTimeout(function () { if (!tenu) etat.textContent = 'Défile seule.'; }, 2000); }
+  zone.addEventListener('touchstart', function () { tenu = true; etat.textContent = 'Arrêtée : elle suit le doigt.'; }, { passive: true });
+  zone.addEventListener('touchend', lacher);
+  // Souris (pour essayer sur ordinateur) : glisser = faire défiler.
+  var depart = null;
+  zone.addEventListener('pointerdown', function (e) { if (e.pointerType !== 'mouse') return; depart = { x: e.clientX, s: zone.scrollLeft }; tenu = true; zone.classList.add('tient'); etat.textContent = 'Arrêtée : elle suit la souris.'; });
+  window.addEventListener('pointermove', function (e) { if (!depart) return; var s = depart.s - (e.clientX - depart.x); if (s < 0) s += moitie(); if (s >= moitie()) s -= moitie(); zone.scrollLeft = s; });
+  window.addEventListener('pointerup', function () { if (!depart) return; depart = null; lacher(); });
+  zone.addEventListener('scroll', function () { if (zone.scrollLeft >= moitie()) zone.scrollLeft -= moitie(); }, { passive: true });
+  document.querySelectorAll('.vitesses button').forEach(function (b) { b.addEventListener('click', function () { vitesse = +b.dataset.v; document.querySelectorAll('.vitesses button').forEach(function (o) { o.setAttribute('aria-pressed', o === b ? 'true' : 'false'); }); }); });
+  requestAnimationFrame(boucle);
+})();
+</script></body></html>
