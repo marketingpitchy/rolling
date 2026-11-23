@@ -923,6 +923,10 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   puis phrase (ancien intro) + comparatif, atouts, appel. Timecodes 00:03 à 00:08 recalés. **Leçon éditeur** : un paragraphe y est
   enveloppé ⇒ pas de `> .classe-du-texte` dans les règles d'une carte (descendant). Chez la cliente : insérer le nouveau bloc
   Pour qui, remplacer les blocs Formules et Pourquoi Rolling (la mise à jour ne touche pas aux pages).
+- **0.7.18** : défilement des équipes saccadé sur ordinateur (vidéo de la cliente, L'agence) : le navigateur arrondit `scrollLeft`
+  au pixel entier ⇒ à 40 px/s, 1, 1, 0, 1… px par image. `glisser()` : partie entière en `scrollLeft` (le doigt garde la main),
+  reste à virgule en `transform: translate3d()` sur la bande (remis à zéro au toucher et quand l'utilisateur fait défiler).
+  Mesuré : 0,67 px par image à 40 px/s, 1 px à 60 px/s.
 - **Chargement de page effet film** (demande avant la fin de la livraison 4) : maquette `maquettes/loading/maquette-loading.html`
   (copie /workspace/maquette-loading.html), 4 options : A amorce 3-2-1, B clap qui se ferme puis rideau, C ouverture
   cinéma (bandes noires + REC + timecode + règle avec la tête de lecture rouge des frises, plus de filet fin), D barre de lecture en haut sans écran. Conseil : C à l'arrivée (première page

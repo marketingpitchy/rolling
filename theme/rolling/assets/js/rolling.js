@@ -295,7 +295,7 @@
 		var rail = document.createElement( 'div' );
 		var reglages = window.rollingReglages || {};
 		var vitesse = window.matchMedia( '(max-width: 767px)' ).matches ? ( reglages.defileMobile || 60 ) : ( reglages.defileOrdi || 40 );
-		var tenu = false, reprise = 0, dernier = 0, pos = 0, visible = true;
+		var tenu = false, reprise = 0, dernier = 0, pos = 0, entier = 0, visible = true;
 		rail.className = 'rl-glisse';
 		rail.tabIndex = 0;
 		rail.setAttribute( 'role', 'group' );
@@ -331,7 +331,11 @@
 				if ( pos >= moitie() ) {
 					pos -= moitie();
 				}
-				rail.scrollLeft = pos;
+				// Le navigateur arrondit scrollLeft au pixel entier (à 40 px/s : 1, 1, 0, 1… px par image = à-coups).
+				// Partie entière en défilement natif (le doigt garde la main), reste à virgule en translation.
+				entier = Math.floor( pos );
+				rail.scrollLeft = entier;
+				bande.style.transform = 'translate3d(' + ( entier - pos ).toFixed( 3 ) + 'px, 0, 0)';
 			}
 			window.requestAnimationFrame( pas );
 		}
@@ -343,10 +347,13 @@
 			// Les déplacements faits par le script arrondissent la position : on ne la relit que si le doigt l'a changée.
 			if ( Math.abs( rail.scrollLeft - pos ) > 2 ) {
 				pos = rail.scrollLeft;
+				bande.style.transform = '';
 			}
 		}, { passive: true } );
 		rail.addEventListener( 'touchstart', function () {
 			tenu = true;
+			bande.style.transform = '';
+			pos = rail.scrollLeft;
 			if ( rail.scrollLeft < 40 ) {
 				rail.scrollLeft += moitie();
 				pos = rail.scrollLeft;
