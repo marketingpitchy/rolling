@@ -890,6 +890,11 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   et rolling.js la traite comme une bande d'équipe (`glisser()`, ordinateur + mobile) ; `defile-partout` / `defile-mobile` gardées
   (redondantes). Éditeur : `apercu_contextes` met `.grille-equipe` / `.equipe-defilante` à `width: 100%` + `overflow-x: auto`
   (une ligne qu'on fait défiler pour atteindre tout le monde). Rangée qui tient dans la largeur = centrée, immobile.
+- **Maquette « L'agence 00:03 sans dégradé »** (`maquettes/agence-equipe/equipe-sans-degrade.html`, générée par
+  `scratchpad/c067/gen-agence-equipe.py`, copie /workspace/maquette-agence-equipe.html, **à valider**) : la cliente ne veut plus
+  la bande `bande-fondu` (dégradé clair → foncé) dans les deux modules « L'équipe » (grille et défilement) ⇒ A deux bandes à
+  coupure nette, pastille à cheval sur la jonction ; **B section claire + experts IA dans une carte foncée arrondie (conseil,
+  comme `carte-equipe-ia` de la landing), pastille dans l'en-tête de la carte** ; C tout sur fond clair, filet + pastille.
 - **Chargement de page effet film** (demande avant la fin de la livraison 4) : maquette `maquettes/loading/maquette-loading.html`
   (copie /workspace/maquette-loading.html), 4 options : A amorce 3-2-1, B clap qui se ferme puis rideau, C ouverture
   cinéma (bandes noires + REC + timecode + règle avec la tête de lecture rouge des frises, plus de filet fin), D barre de lecture en haut sans écran. Conseil : C à l'arrivée (première page
