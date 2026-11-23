@@ -895,6 +895,9 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   la bande `bande-fondu` (dégradé clair → foncé) dans les deux modules « L'équipe » (grille et défilement) ⇒ A deux bandes à
   coupure nette, pastille à cheval sur la jonction ; **B section claire + experts IA dans une carte foncée arrondie (conseil,
   comme `carte-equipe-ia` de la landing), pastille dans l'en-tête de la carte** ; C tout sur fond clair, filet + pastille.
+- **0.7.16** : défilement des équipes jugé trop rapide ⇒ réglage **Personnaliser > « Rolling : défilement des équipes »**
+  (`rolling_defile_ordi` défaut 40 px/s, `rolling_defile_mobile` défaut 60 px/s, 10 à 200, `vitesse_defile()`), passé à
+  rolling.js par `window.rollingReglages` (inline avant `rolling`), lu par `glisser()`.
 - **Chargement de page effet film** (demande avant la fin de la livraison 4) : maquette `maquettes/loading/maquette-loading.html`
   (copie /workspace/maquette-loading.html), 4 options : A amorce 3-2-1, B clap qui se ferme puis rideau, C ouverture
   cinéma (bandes noires + REC + timecode + règle avec la tête de lecture rouge des frises, plus de filet fin), D barre de lecture en haut sans écran. Conseil : C à l'arrivée (première page

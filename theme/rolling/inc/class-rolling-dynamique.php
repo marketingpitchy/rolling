@@ -779,6 +779,16 @@ class Rolling_Dynamique {
 	}
 
 	/**
+	 * Vitesse du défilement des équipes : un nombre entre 10 et 200 (pixels par seconde).
+	 *
+	 * @param mixed $valeur Valeur saisie.
+	 * @return int
+	 */
+	public static function vitesse_defile( $valeur ) {
+		return max( 10, min( 200, absint( $valeur ) ) );
+	}
+
+	/**
 	 * Réglages : modèle de chaque fiche.
 	 *
 	 * @param WP_Customize_Manager $wp_customize Gestionnaire.
@@ -807,6 +817,40 @@ class Rolling_Dynamique {
 				'type'    => 'textarea',
 			)
 		);
+		$wp_customize->add_section(
+			'rolling_defilement',
+			array(
+				'title'       => __( 'Rolling : défilement des équipes', 'rolling' ),
+				'description' => __( 'Vitesse des bandes de portraits qui défilent (experts IA, créas, L’agence), en pixels par seconde. Plus le nombre est petit, plus elles vont lentement.', 'rolling' ),
+				'priority'    => 34,
+			)
+		);
+		foreach ( array(
+			'rolling_defile_ordi'   => array( __( 'Vitesse sur ordinateur (conseil : 30 à 60)', 'rolling' ), 40 ),
+			'rolling_defile_mobile' => array( __( 'Vitesse en mobile (conseil : 40 à 80)', 'rolling' ), 60 ),
+		) as $cle => $reglage ) {
+			$wp_customize->add_setting(
+				$cle,
+				array(
+					'default'           => $reglage[1],
+					'sanitize_callback' => array( __CLASS__, 'vitesse_defile' ),
+					'transport'         => 'refresh',
+				)
+			);
+			$wp_customize->add_control(
+				$cle,
+				array(
+					'label'       => $reglage[0],
+					'section'     => 'rolling_defilement',
+					'type'        => 'number',
+					'input_attrs' => array(
+						'min'  => 10,
+						'max'  => 200,
+						'step' => 5,
+					),
+				)
+			);
+		}
 		$wp_customize->add_section(
 			'rolling_modeles',
 			array(

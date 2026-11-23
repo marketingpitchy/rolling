@@ -64,6 +64,17 @@ class Rolling_Ressources {
 				'in_footer' => true,
 			)
 		);
+		// Vitesse des équipes qui défilent (Personnaliser > Rolling : défilement des équipes).
+		wp_add_inline_script(
+			'rolling',
+			'window.rollingReglages = ' . wp_json_encode(
+				array(
+					'defileOrdi'   => (int) get_theme_mod( 'rolling_defile_ordi', 40 ),
+					'defileMobile' => (int) get_theme_mod( 'rolling_defile_mobile', 60 ),
+				)
+			) . ';',
+			'before'
+		);
 	}
 
 	/**

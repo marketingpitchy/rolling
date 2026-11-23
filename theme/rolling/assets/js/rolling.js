@@ -288,12 +288,14 @@
 		} );
 	}
 
-	/* Équipe : la bande est posée dans un rail qu'on fait glisser (doigt, pavé tactile) ; elle avance seule (80 px/s),
+	/* Équipe : la bande est posée dans un rail qu'on fait glisser (doigt, pavé tactile) ; elle avance seule (vitesse de Personnaliser),
 	   s'arrête dès qu'on la touche, suit le doigt (avec l'élan du téléphone) et repart 2 secondes après. Sans fin :
 	   la bande contient deux fois les portraits. auto = false (« réduire les animations ») : rangée immobile, glissable. */
 	function glisser( bande, auto ) {
 		var rail = document.createElement( 'div' );
-		var vitesse = 80, tenu = false, reprise = 0, dernier = 0, pos = 0, visible = true;
+		var reglages = window.rollingReglages || {};
+		var vitesse = window.matchMedia( '(max-width: 767px)' ).matches ? ( reglages.defileMobile || 60 ) : ( reglages.defileOrdi || 40 );
+		var tenu = false, reprise = 0, dernier = 0, pos = 0, visible = true;
 		rail.className = 'rl-glisse';
 		rail.tabIndex = 0;
 		rail.setAttribute( 'role', 'group' );
