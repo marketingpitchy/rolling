@@ -9414,6 +9414,140 @@
             ]
         },
         {
+            "id": "g-47e7e16",
+            "label": "section-aeree",
+            "groupe": "Fiches et listes",
+            "description": "Section courte (avec section) pour un bandeau seul entre deux sections : 72 px en haut et en bas (48 px en mobile).",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "tablet",
+                        "state": null
+                    },
+                    "props": {
+                        "padding": {
+                            "$$type": "dimensions",
+                            "value": {
+                                "block-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 56,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 0,
+                                        "unit": "px"
+                                    }
+                                },
+                                "block-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 56,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 0,
+                                        "unit": "px"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "custom_css": null
+                },
+                {
+                    "meta": {
+                        "breakpoint": "mobile",
+                        "state": null
+                    },
+                    "props": {
+                        "padding": {
+                            "$$type": "dimensions",
+                            "value": {
+                                "block-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 48,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 0,
+                                        "unit": "px"
+                                    }
+                                },
+                                "block-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 48,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 0,
+                                        "unit": "px"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "custom_css": null
+                },
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "padding": {
+                            "$$type": "dimensions",
+                            "value": {
+                                "block-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 72,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 0,
+                                        "unit": "px"
+                                    }
+                                },
+                                "block-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 72,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 0,
+                                        "unit": "px"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "custom_css": null
+                }
+            ]
+        },
+        {
             "id": "g-d253167",
             "label": "reseau-linkedin",
             "groupe": "Fiches et listes",
@@ -9634,21 +9768,89 @@
             "variants": [
                 {
                     "meta": {
+                        "breakpoint": "mobile",
+                        "state": null
+                    },
+                    "props": {
+                        "padding": {
+                            "$$type": "dimensions",
+                            "value": {
+                                "block-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 16,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 18,
+                                        "unit": "px"
+                                    }
+                                },
+                                "block-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 16,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 18,
+                                        "unit": "px"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "custom_css": null
+                },
+                {
+                    "meta": {
                         "breakpoint": "desktop",
                         "state": null
                     },
                     "props": {
                         "padding": {
-                            "$$type": "size",
+                            "$$type": "dimensions",
                             "value": {
-                                "size": 24,
-                                "unit": "px"
+                                "block-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 18,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 22,
+                                        "unit": "px"
+                                    }
+                                },
+                                "block-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 18,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 22,
+                                        "unit": "px"
+                                    }
+                                }
                             }
                         },
                         "gap": {
                             "$$type": "size",
                             "value": {
-                                "size": 10,
+                                "size": 6,
                                 "unit": "px"
                             }
                         }
@@ -39332,10 +39534,17 @@
                                 "block-start": {
                                     "$$type": "size",
                                     "value": {
-                                        "size": 32,
+                                        "size": 28,
                                         "unit": "px"
                                     }
                                 }
+                            }
+                        },
+                        "gap": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 10,
+                                "unit": "px"
                             }
                         },
                         "grid-template-columns": {
@@ -39364,7 +39573,7 @@
                                 "block-start": {
                                     "$$type": "size",
                                     "value": {
-                                        "size": 44,
+                                        "size": 36,
                                         "unit": "px"
                                     }
                                 }
@@ -39377,7 +39586,7 @@
                         "gap": {
                             "$$type": "size",
                             "value": {
-                                "size": 16,
+                                "size": 14,
                                 "unit": "px"
                             }
                         },
@@ -39394,7 +39603,7 @@
             "id": "g-bad7c79",
             "label": "titre-reseau",
             "groupe": "Fiches et listes",
-            "description": "Titre d'une carte réseau : pictogramme carré aux couleurs du réseau au-dessus (posé par reseau-linkedin, reseau-youtube…).",
+            "description": "Titre d'une carte réseau : petit pictogramme carré aux couleurs du réseau devant le titre (posé par reseau-linkedin, reseau-youtube…).",
             "variants": [
                 {
                     "meta": {
@@ -39403,7 +39612,7 @@
                     },
                     "props": [],
                     "custom_css": {
-                        "raw": "LS1ybC10aXRyZS1yZXNlYXU6IDE7ICY6OmJlZm9yZSB7IGNvbnRlbnQ6ICcnOyBkaXNwbGF5OiBibG9jazsgd2lkdGg6IDQ4cHg7IGhlaWdodDogNDhweDsgbWFyZ2luLWJvdHRvbTogMTRweDsgYm9yZGVyLXJhZGl1czogMTRweDsgYmFja2dyb3VuZDogdmFyKC0tcmwtaWNvbmUtYmxhbmMpIGNlbnRlciAvIDI0cHggbm8tcmVwZWF0LCBsaW5lYXItZ3JhZGllbnQodmFyKC0tcmwtY291bGV1ci1yZXNlYXUsICM1QjNCRUEpLCB2YXIoLS1ybC1jb3VsZXVyLXJlc2VhdSwgIzVCM0JFQSkpOyB9"
+                        "raw": "LS1ybC10aXRyZS1yZXNlYXU6IDE7ICY6OmJlZm9yZSB7IGNvbnRlbnQ6ICcnOyBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7IHZlcnRpY2FsLWFsaWduOiAtOHB4OyB3aWR0aDogMzJweDsgaGVpZ2h0OiAzMnB4OyBtYXJnaW4tcmlnaHQ6IDEycHg7IGJvcmRlci1yYWRpdXM6IDEwcHg7IGJhY2tncm91bmQ6IHZhcigtLXJsLWljb25lLWJsYW5jKSBjZW50ZXIgLyAxN3B4IG5vLXJlcGVhdCwgbGluZWFyLWdyYWRpZW50KHZhcigtLXJsLWNvdWxldXItcmVzZWF1LCAjNUIzQkVBKSwgdmFyKC0tcmwtY291bGV1ci1yZXNlYXUsICM1QjNCRUEpKTsgfQ=="
                     }
                 }
             ]

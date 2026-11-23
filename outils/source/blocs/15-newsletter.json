@@ -1,0 +1,59 @@
+{
+ "cle": "15-newsletter",
+ "titre": "Rolling · Newsletter (bandeau à placer où vous voulez)",
+ "type": "e-flexbox",
+ "composition": {
+  "xml_structure": "<e-flexbox configuration-id=\"Newsletter\"><e-flexbox configuration-id=\"Newsletter · contenu\"><e-flexbox configuration-id=\"Newsletter · encart\"><e-flexbox configuration-id=\"Newsletter · encart · textes\"><e-heading configuration-id=\"Newsletter · encart · titre\"></e-heading><e-paragraph configuration-id=\"Newsletter · encart · texte\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"Newsletter · encart · inscription\"><e-paragraph configuration-id=\"Newsletter · encart · formulaire\"></e-paragraph><e-paragraph configuration-id=\"Newsletter · encart · mention\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox></e-flexbox>",
+  "element_config": {
+   "Newsletter": {
+    "tag": "section"
+   },
+   "Newsletter · encart · titre": {
+    "tag": "h2",
+    "title": "La lettre <em>Rolling.</em>"
+   },
+   "Newsletter · encart · texte": {
+    "paragraph": "Une fois par mois : une idée de vidéo à reprendre, des exemples de nos clients et nos prochains webinars en avant-première."
+   },
+   "Newsletter · encart · formulaire": {
+    "paragraph": "⟦widget:rolling-newsletter⟧"
+   },
+   "Newsletter · encart · mention": {
+    "paragraph": "Une fois par mois. Désinscription en un clic."
+   }
+  },
+  "classes": {
+   "Newsletter": [
+    "section",
+    "section-aeree",
+    "si-newsletter"
+   ],
+   "Newsletter · contenu": [
+    "conteneur"
+   ],
+   "Newsletter · encart": [
+    "carte-verre",
+    "bandeau-newsletter",
+    "si-newsletter"
+   ],
+   "Newsletter · encart · titre": [
+    "titre-sm"
+   ],
+   "Newsletter · encart · texte": [
+    "texte"
+   ],
+   "Newsletter · encart · inscription": [
+    "inscription-newsletter"
+   ],
+   "Newsletter · encart · mention": [
+    "texte-petit"
+   ]
+  },
+  "style": {
+   "Newsletter · contenu": "display: flex; flex-direction: column; gap: 0;",
+   "Newsletter · encart · textes": "display: flex; flex-direction: column; gap: 0; padding: 0;",
+   "Newsletter · encart · texte": "margin-top: 8px;"
+  }
+ },
+ "brut": {}
+}

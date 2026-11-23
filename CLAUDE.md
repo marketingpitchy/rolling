@@ -950,6 +950,10 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   #C4002A) sur la page Réalisations + sous « D'autres réalisations » de la fiche réalisation. **D** : carte `carte-suivre` dans la
   colonne des articles (après Partager). **E** : `cartes-reseaux` > `carte-reseau` + `reseau-*` (variables d'icône en brut) +
   `titre-reseau` (pictogramme carré en ::before **display: block** : le titre reste en block, pas de flex) dans « Où nous trouver ».
+- **0.7.21** : blog : bandeau newsletter retiré de la liste (`newsletter_apres` plus réglé dans le bloc ; chez la cliente, mettre
+  « Encart newsletter après la carte n° » à 0 dans sa liste) ⇒ bloc seul **`15-newsletter`** « Rolling · Newsletter (bandeau à
+  placer où vous voulez) » (BLOCS_VARIANTES, section `section-aeree` 72 / 56 / 48 px + `si-newsletter`). Cartes réseaux de
+  L'agence jugées trop grandes ⇒ pictogramme 32 px **devant** le titre (inline-block), padding 18 / 22, 135 px de haut.
 - **Chargement de page effet film** (demande avant la fin de la livraison 4) : maquette `maquettes/loading/maquette-loading.html`
   (copie /workspace/maquette-loading.html), 4 options : A amorce 3-2-1, B clap qui se ferme puis rideau, C ouverture
   cinéma (bandes noires + REC + timecode + règle avec la tête de lecture rouge des frises, plus de filet fin), D barre de lecture en haut sans écran. Conseil : C à l'arrivée (première page
