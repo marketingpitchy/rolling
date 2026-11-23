@@ -272,7 +272,23 @@
 		} );
 	}
 
-	/* Équipe en mobile : la bande est posée dans un rail qu'on fait glisser au doigt ; elle avance seule (80 px/s),
+	/* Une copie de chaque élément pour que la boucle soit continue ; elle est cachée aux lecteurs d'écran. */
+	function doubler( bande ) {
+		Array.prototype.slice.call( bande.children ).forEach( function ( enfant ) {
+			var copie = enfant.cloneNode( true );
+			copie.setAttribute( 'aria-hidden', 'true' );
+			copie.removeAttribute( 'id' );
+			copie.querySelectorAll( 'img' ).forEach( function ( img ) {
+				img.alt = '';
+			} );
+			copie.querySelectorAll( 'a, button' ).forEach( function ( l ) {
+				l.setAttribute( 'tabindex', '-1' );
+			} );
+			bande.appendChild( copie );
+		} );
+	}
+
+	/* Équipe : la bande est posée dans un rail qu'on fait glisser (doigt, pavé tactile) ; elle avance seule (80 px/s),
 	   s'arrête dès qu'on la touche, suit le doigt (avec l'élan du téléphone) et repart 2 secondes après. Sans fin :
 	   la bande contient deux fois les portraits. auto = false (« réduire les animations ») : rangée immobile, glissable. */
 	function glisser( bande, auto ) {
@@ -288,6 +304,15 @@
 		bande.style.animation = 'none';
 		if ( ! auto ) {
 			return;
+		}
+		// Tout le monde tient dans la largeur : rien ne défile, la rangée est centrée.
+		if ( bande.scrollWidth <= rail.clientWidth + 1 ) {
+			bande.style.margin = '0 auto';
+			return;
+		}
+		doubler( bande );
+		if ( ! rail.parentNode.classList.contains( 'masque-bords' ) ) {
+			rail.classList.add( 'rl-glisse-bords' );
 		}
 		function moitie() {
 			return bande.scrollWidth / 2;
@@ -327,6 +352,14 @@
 		}, { passive: true } );
 		rail.addEventListener( 'touchend', lacher );
 		rail.addEventListener( 'touchcancel', lacher );
+		// Ordinateur : arrêt au survol.
+		rail.addEventListener( 'mouseenter', function () {
+			tenu = true;
+		} );
+		rail.addEventListener( 'mouseleave', function () {
+			tenu = false;
+			reprise = window.performance.now() + 300;
+		} );
 		rail.addEventListener( 'focusin', function () {
 			tenu = true;
 		} );
@@ -359,11 +392,15 @@
 		zone.classList.add( 'rl-defile-zone' );
 		bande.id = bande.id || 'rl-defile-' + index;
 
-		// Équipes en mobile : rangée qu'on fait glisser au doigt (immobile avec « réduire les animations »).
-		var equipeMobile = bande.matches( '.equipe-defilante, .defile-mobile' ) && window.matchMedia( '(max-width: 767px)' ).matches;
-
-		if ( calme && equipeMobile ) {
-			glisser( bande, false );
+		// Équipes : rangée qui défile par script (ordinateur et mobile ; defile-mobile : mobile seulement), qu'on fait glisser.
+		// « Réduire les animations » : plusieurs lignes sur ordinateur, rangée immobile qu'on fait glisser en mobile.
+		var mobile = window.matchMedia( '(max-width: 767px)' ).matches;
+		if ( bande.matches( '.equipe-defilante, .defile-partout' ) || ( mobile && bande.matches( '.defile-mobile' ) ) ) {
+			if ( calme && ! mobile ) {
+				bande.classList.add( 'rl-defile-statique' );
+			} else {
+				glisser( bande, ! calme );
+			}
 			return;
 		}
 
@@ -377,25 +414,7 @@
 			return;
 		}
 
-		// Une copie pour que la boucle soit continue ; elle est cachée aux lecteurs d'écran.
-		Array.prototype.slice.call( bande.children ).forEach( function ( enfant ) {
-			var copie = enfant.cloneNode( true );
-			copie.setAttribute( 'aria-hidden', 'true' );
-			copie.removeAttribute( 'id' );
-			copie.querySelectorAll( 'img' ).forEach( function ( img ) {
-				img.alt = '';
-			} );
-			copie.querySelectorAll( 'a, button' ).forEach( function ( l ) {
-				l.setAttribute( 'tabindex', '-1' );
-			} );
-			bande.appendChild( copie );
-		} );
-
-		// Portraits de l'équipe en mobile : défilement par script (80 px par seconde), arrêt au toucher, glisser au doigt.
-		if ( equipeMobile ) {
-			glisser( bande, true );
-			return;
-		}
+		doubler( bande );
 
 		if ( bouton ) {
 			// Deux libellés dans le bouton (deux <span>) : « Arrêter… » puis « Relancer… ».

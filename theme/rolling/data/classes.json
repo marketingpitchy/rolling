@@ -6924,6 +6924,58 @@
             ]
         },
         {
+            "id": "g-2d2c3d4",
+            "label": "defile-partout",
+            "groupe": "Fiches et listes",
+            "description": "À ajouter à grille-equipe : les portraits défilent en bande sur ordinateur comme en mobile, quel que soit leur nombre (arrêt au survol, au toucher et au clavier ; glisser au doigt en mobile). Si tout le monde tient dans la largeur, rien ne bouge.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "mobile",
+                        "state": null
+                    },
+                    "props": {
+                        "gap": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 12,
+                                "unit": "px"
+                            }
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "JiA+ICogeyBmbGV4OiAwIDAgMTUwcHg7IH0="
+                    }
+                },
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "gap": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 22,
+                                "unit": "px"
+                            }
+                        },
+                        "flex-wrap": {
+                            "$$type": "string",
+                            "value": "nowrap"
+                        },
+                        "justify-content": {
+                            "$$type": "string",
+                            "value": "flex-start"
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "LS1ybC1kZWZpbGU6IDE7IHdpZHRoOiBtYXgtY29udGVudDsgJiA+ICogeyBmbGV4OiAwIDAgMTg2cHg7IG1heC13aWR0aDogbm9uZTsgfQ=="
+                    }
+                }
+            ]
+        },
+        {
             "id": "g-c3cb98f",
             "label": "cas-citation",
             "groupe": "Fiches et listes",

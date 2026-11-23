@@ -623,7 +623,7 @@ ia = F("Le meilleur de l'IA", ['section', 'section-sombre', 'fond-grille', 'halo
         ]),
         F('IA · experts', None, COLONNE + ' margin-top: 104px;', enfants=[
             H('Experts · titre', 'Nos experts <em>IA.</em>', 'h3', ['titre-sm']),
-            F('Experts · portraits', ['grille-equipe', 'defile-mobile'], 'margin-top: 36px;', enfants=[
+            F('Experts · portraits', ['grille-equipe', 'defile-partout'], 'margin-top: 36px;', enfants=[
                 membre('Experts', 'ronan', 'Ronan', 'Directeur Technique', True),
                 membre('Experts', 'marion-l', 'Marion', 'Développeuse Full-Stack', True),
                 membre('Experts', 'ines', 'Inès', 'DevOps', True),
@@ -649,7 +649,7 @@ def portraits_equipe(defile=False):
         membre('Équipe', 'marion-t', 'Marion', 'Responsable Agence vidéo'),
     ]
     if not defile:
-        return F('Équipe · portraits', ['grille-equipe'], 'margin-top: 36px;', enfants=membres)
+        return F('Équipe · portraits', ['grille-equipe', 'defile-partout'], 'margin-top: 36px;', enfants=membres)
     return F('Équipe · bande', ['masque-bords'], 'margin-top: 36px;', enfants=[
         F('Équipe · portraits', ['equipe-defilante'], enfants=membres),
     ])
@@ -1984,7 +1984,7 @@ agence_convictions = F("L'agence · convictions", ['section', 'section-chaude'],
 def grille_ou_bande(nom, membres, style, defile):
     """Portraits en grille centrée, ou en bande qui défile (masque-bords > equipe-defilante, comme les logos)."""
     if not defile:
-        return F(nom, ['grille-equipe'], style, enfants=membres)
+        return F(nom, ['grille-equipe', 'defile-partout'], style, enfants=membres)
     return F(nom + ' · bande', ['masque-bords'], style, enfants=[F(nom, ['equipe-defilante'], enfants=membres)])
 
 

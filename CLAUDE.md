@@ -877,6 +877,14 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   arrondit), arrêt au toucher / au focus, reprise 2 s après, boucle sur la moitié (bande doublée), pause hors écran ;
   « réduire les animations » = rail immobile glissable, sans copie. Ordinateur inchangé (animation CSS). `offres-badge` centré
   sur la bande sombre (`right: 139px` / mobile `50px` + brut `transform: translateX(50%)`), mobile sur deux lignes (76 px).
+- **0.7.14** : 7 experts IA et 9 créas chez la cliente ⇒ nouvelle classe modificatrice `defile-partout` (sur `grille-equipe`,
+  prioritaire : rangée nowrap, 186 px / 150 px en mobile, `--rl-defile: 1`) posée sur les grilles d'équipe des blocs (08-ia experts,
+  09 réseau de talents, L'agence version grille). rolling.js : toute bande d'équipe (`equipe-defilante`, `defile-partout`,
+  `defile-mobile` en mobile) passe par `glisser()` sur ordinateur aussi (arrêt au survol, reprise 0,3 s ; pavé tactile) ;
+  si tout tient dans la largeur : pas de copie, rangée centrée, immobile ; `doubler()` = copies ; `rl-glisse-bords` (fondu
+  des bords) si le parent n'est pas `masque-bords` ; rail avec marges négatives (ombres et levée au survol non coupées).
+  « Réduire les animations » sur ordinateur = plusieurs lignes (`rl-defile-statique`). Chez la cliente : ajouter la classe
+  `defile-partout` aux conteneurs de portraits existants (pages non touchées par la mise à jour).
 - **Chargement de page effet film** (demande avant la fin de la livraison 4) : maquette `maquettes/loading/maquette-loading.html`
   (copie /workspace/maquette-loading.html), 4 options : A amorce 3-2-1, B clap qui se ferme puis rideau, C ouverture
   cinéma (bandes noires + REC + timecode + règle avec la tête de lecture rouge des frises, plus de filet fin), D barre de lecture en haut sans écran. Conseil : C à l'arrivée (première page

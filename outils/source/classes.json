@@ -1469,6 +1469,11 @@
      "brut": "@media (max-width: 767px) { --rl-defile: 1; animation: rl-defile 40s linear infinite; }"
     },
     {
+     "label": "defile-partout",
+     "description": "À ajouter à grille-equipe : les portraits défilent en bande sur ordinateur comme en mobile, quel que soit leur nombre (arrêt au survol, au toucher et au clavier ; glisser au doigt en mobile). Si tout le monde tient dans la largeur, rien ne bouge.",
+     "css": "--rl-defile: 1; flex-wrap: nowrap; justify-content: flex-start; width: max-content; gap: 22px; & > * { flex: 0 0 186px; max-width: none; } @media(--mobile) { gap: 12px; & > * { flex: 0 0 150px; } }"
+    },
+    {
      "label": "cas-grille",
      "description": "Fiche témoignage : citation à gauche, récit à droite ; sans citation, le récit se centre.",
      "css": "display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr); gap: 56px; align-items: start; padding: 0; & > :only-child { grid-column: 1 / -1; width: 100%; max-width: 820px; justify-self: center; } @media(--tablet) { grid-template-columns: minmax(0, 1fr); gap: 40px; }"
