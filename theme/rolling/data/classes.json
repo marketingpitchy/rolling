@@ -26999,7 +26999,7 @@
                         }
                     },
                     "custom_css": {
-                        "raw": "Jjo6YmVmb3JlLCAmOjphZnRlciB7IGNvbnRlbnQ6ICcnOyBmbGV4OiAxOyBtYXgtd2lkdGg6IDIyMHB4OyBoZWlnaHQ6IDFweDsgYmFja2dyb3VuZDogcmdiYSg5MSw1OSwyMzQsMC4yMik7IH0="
+                        "raw": "Jjo6YmVmb3JlIHsgcG9zaXRpb246IHJlbGF0aXZlOyB0b3A6IGF1dG87IHJpZ2h0OiBhdXRvOyBib3R0b206IGF1dG87IGxlZnQ6IGF1dG87IGhlaWdodDogYXV0bzsgb3BhY2l0eTogMTsgbWl4LWJsZW5kLW1vZGU6IG5vcm1hbDsgYm9yZGVyOiAwOyAtd2Via2l0LW1hc2s6IG5vbmU7IG1hc2s6IG5vbmU7IHBhZGRpbmc6IDA7IHdpZHRoOiBhdXRvOyB9ICY6OmJlZm9yZSwgJjo6YWZ0ZXIgeyBjb250ZW50OiAnJzsgZmxleDogMTsgbWF4LXdpZHRoOiAyMjBweDsgaGVpZ2h0OiAxcHg7IGJhY2tncm91bmQ6IHJnYmEoOTEsNTksMjM0LDAuMjIpOyB9"
                     }
                 }
             ]
@@ -32325,7 +32325,7 @@
             "id": "g-8f87458",
             "label": "offres-badge",
             "groupe": "Fiches et listes",
-            "description": "« Le plus complet » posé sur le haut de la colonne sombre.",
+            "description": "« Le plus complet » centré sur le haut de la colonne sombre (sur deux lignes en mobile, dans la largeur de la colonne).",
             "variants": [
                 {
                     "meta": {
@@ -32333,11 +32333,32 @@
                         "state": null
                     },
                     "props": {
+                        "width": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 76,
+                                "unit": "px"
+                            }
+                        },
+                        "inset-block-start": {
+                            "$$type": "size",
+                            "value": {
+                                "size": -26,
+                                "unit": "px"
+                            }
+                        },
                         "inset-inline-end": {
                             "$$type": "size",
                             "value": {
-                                "size": 6,
+                                "size": 50,
                                 "unit": "px"
+                            }
+                        },
+                        "letter-spacing": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 0.06,
+                                "unit": "em"
                             }
                         },
                         "padding": {
@@ -32346,31 +32367,38 @@
                                 "block-start": {
                                     "$$type": "size",
                                     "value": {
-                                        "size": 5,
+                                        "size": 6,
                                         "unit": "px"
                                     }
                                 },
                                 "inline-end": {
                                     "$$type": "size",
                                     "value": {
-                                        "size": 10,
+                                        "size": 4,
                                         "unit": "px"
                                     }
                                 },
                                 "block-end": {
                                     "$$type": "size",
                                     "value": {
-                                        "size": 5,
+                                        "size": 6,
                                         "unit": "px"
                                     }
                                 },
                                 "inline-start": {
                                     "$$type": "size",
                                     "value": {
-                                        "size": 10,
+                                        "size": 4,
                                         "unit": "px"
                                     }
                                 }
+                            }
+                        },
+                        "border-radius": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 14,
+                                "unit": "px"
                             }
                         }
                     },
@@ -32396,7 +32424,7 @@
                         "inset-inline-end": {
                             "$$type": "size",
                             "value": {
-                                "size": 87,
+                                "size": 139,
                                 "unit": "px"
                             }
                         },
@@ -32436,6 +32464,10 @@
                                 "size": "1.2",
                                 "unit": "custom"
                             }
+                        },
+                        "text-align": {
+                            "$$type": "string",
+                            "value": "center"
                         },
                         "text-transform": {
                             "$$type": "string",
@@ -32492,7 +32524,7 @@
                         }
                     },
                     "custom_css": {
-                        "raw": "d2lkdGg6IGZpdC1jb250ZW50Ow=="
+                        "raw": "d2lkdGg6IGZpdC1jb250ZW50OyB0cmFuc2Zvcm06IHRyYW5zbGF0ZVgoNTAlKTs="
                     }
                 }
             ]

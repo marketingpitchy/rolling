@@ -272,6 +272,73 @@
 		} );
 	}
 
+	/* Équipe en mobile : la bande est posée dans un rail qu'on fait glisser au doigt ; elle avance seule (80 px/s),
+	   s'arrête dès qu'on la touche, suit le doigt (avec l'élan du téléphone) et repart 2 secondes après. Sans fin :
+	   la bande contient deux fois les portraits. auto = false (« réduire les animations ») : rangée immobile, glissable. */
+	function glisser( bande, auto ) {
+		var rail = document.createElement( 'div' );
+		var vitesse = 80, tenu = false, reprise = 0, dernier = 0, pos = 0, visible = true;
+		rail.className = 'rl-glisse';
+		rail.tabIndex = 0;
+		rail.setAttribute( 'role', 'group' );
+		rail.setAttribute( 'aria-label', 'Portraits de l’équipe (faire glisser pour voir la suite)' );
+		bande.parentNode.insertBefore( rail, bande );
+		rail.appendChild( bande );
+		bande.classList.remove( 'rl-defile-statique' );
+		bande.style.animation = 'none';
+		if ( ! auto ) {
+			return;
+		}
+		function moitie() {
+			return bande.scrollWidth / 2;
+		}
+		function lacher() {
+			tenu = false;
+			reprise = window.performance.now() + 2000;
+		}
+		function pas( t ) {
+			var dt = dernier ? Math.min( 64, t - dernier ) : 0;
+			dernier = t;
+			if ( ! tenu && visible && t > reprise && moitie() > rail.clientWidth ) {
+				pos += vitesse * dt / 1000;
+				if ( pos >= moitie() ) {
+					pos -= moitie();
+				}
+				rail.scrollLeft = pos;
+			}
+			window.requestAnimationFrame( pas );
+		}
+		rail.addEventListener( 'scroll', function () {
+			var m = moitie();
+			if ( rail.scrollLeft >= m ) {
+				rail.scrollLeft -= m;
+			}
+			// Les déplacements faits par le script arrondissent la position : on ne la relit que si le doigt l'a changée.
+			if ( Math.abs( rail.scrollLeft - pos ) > 2 ) {
+				pos = rail.scrollLeft;
+			}
+		}, { passive: true } );
+		rail.addEventListener( 'touchstart', function () {
+			tenu = true;
+			if ( rail.scrollLeft < 40 ) {
+				rail.scrollLeft += moitie();
+				pos = rail.scrollLeft;
+			}
+		}, { passive: true } );
+		rail.addEventListener( 'touchend', lacher );
+		rail.addEventListener( 'touchcancel', lacher );
+		rail.addEventListener( 'focusin', function () {
+			tenu = true;
+		} );
+		rail.addEventListener( 'focusout', lacher );
+		if ( 'IntersectionObserver' in window ) {
+			new IntersectionObserver( function ( entrees ) {
+				visible = entrees[ entrees.length - 1 ].isIntersecting;
+			} ).observe( rail );
+		}
+		window.requestAnimationFrame( pas );
+	}
+
 	/* Logos qui défilent : toute bande dont l'animation s'appelle rl-defile */
 	var conteneurs = document.querySelectorAll( '.e-flexbox-base, .e-div-block-base, .e-con, .rl-logos' );
 
@@ -291,6 +358,14 @@
 		bande.classList.add( 'rl-defile' );
 		zone.classList.add( 'rl-defile-zone' );
 		bande.id = bande.id || 'rl-defile-' + index;
+
+		// Équipes en mobile : rangée qu'on fait glisser au doigt (immobile avec « réduire les animations »).
+		var equipeMobile = bande.matches( '.equipe-defilante, .defile-mobile' ) && window.matchMedia( '(max-width: 767px)' ).matches;
+
+		if ( calme && equipeMobile ) {
+			glisser( bande, false );
+			return;
+		}
 
 		if ( calme ) {
 			bande.classList.add( 'rl-defile-statique' );
@@ -316,9 +391,10 @@
 			bande.appendChild( copie );
 		} );
 
-		// Portraits de l'équipe en mobile : vitesse fixe (environ 55 px par seconde) quel que soit le nombre de personnes.
-		if ( bande.matches( '.equipe-defilante, .defile-mobile' ) && window.matchMedia( '(max-width: 767px)' ).matches ) {
-			bande.style.animationDuration = Math.max( 8, Math.round( bande.scrollWidth / 2 / 55 ) ) + 's';
+		// Portraits de l'équipe en mobile : défilement par script (80 px par seconde), arrêt au toucher, glisser au doigt.
+		if ( equipeMobile ) {
+			glisser( bande, true );
+			return;
 		}
 
 		if ( bouton ) {

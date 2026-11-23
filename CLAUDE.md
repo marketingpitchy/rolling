@@ -870,6 +870,13 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   reprise 2 s après, sans fin ; vitesse au choix 80 / 100 (conseil) / 130 px/s ; « réduire les animations » = rangée immobile
   qu'on fait glisser ; 3 « Le plus complet » (`offres-badge`) calé à droite en mobile (colonne sombre 84 px, étiquette 136 px)
   ⇒ centré sur la colonne : A une ligne qui dépasse, B deux lignes dans la colonne (conseil) ; centré aussi sur ordinateur.
+- **0.7.13 (corrections mobile validées : 80 px/s, 3B)** : `generique-filet` (`::before` avec RAZ + `width: auto`) ; équipes en
+  mobile (`.equipe-defilante`, `.defile-mobile`, ≤ 767 px) : rolling.js `glisser()` pose la bande dans un rail `div.rl-glisse`
+  (rolling.css : overflow-x auto, barre masquée ; `tabindex=0`, `role=group` + aria-label pour axe), animation CSS coupée
+  (`style.animation = none`), défilement par `scrollLeft` à 80 px/s (rAF, position flottante gardée à part car le navigateur
+  arrondit), arrêt au toucher / au focus, reprise 2 s après, boucle sur la moitié (bande doublée), pause hors écran ;
+  « réduire les animations » = rail immobile glissable, sans copie. Ordinateur inchangé (animation CSS). `offres-badge` centré
+  sur la bande sombre (`right: 139px` / mobile `50px` + brut `transform: translateX(50%)`), mobile sur deux lignes (76 px).
 - **Chargement de page effet film** (demande avant la fin de la livraison 4) : maquette `maquettes/loading/maquette-loading.html`
   (copie /workspace/maquette-loading.html), 4 options : A amorce 3-2-1, B clap qui se ferme puis rideau, C ouverture
   cinéma (bandes noires + REC + timecode + règle avec la tête de lecture rouge des frises, plus de filet fin), D barre de lecture en haut sans écran. Conseil : C à l'arrivée (première page

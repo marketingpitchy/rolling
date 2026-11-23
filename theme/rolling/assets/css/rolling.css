@@ -57,6 +57,9 @@ body.elementor-editor-preview .montage::before, body.elementor-editor-preview .m
 /* Défilement des logos : copie ajoutée par le script, arrêt au survol et au clavier */
 .rl-defile-pause, .rl-defile-zone:hover .rl-defile, .rl-defile-zone:focus-within .rl-defile { animation-play-state: paused !important; }
 .rl-defile-zone { overflow-x: clip; }
+.rl-glisse { width: 100%; overflow-x: auto; overflow-y: hidden; scrollbar-width: none; overscroll-behavior-x: contain; -webkit-overflow-scrolling: touch; }
+.rl-glisse::-webkit-scrollbar { display: none; }
+.rl-glisse:focus-visible { outline: 3px solid #5B3BEA; outline-offset: 2px; border-radius: 12px; }
 .rl-defile-statique { flex-wrap: wrap !important; width: auto !important; justify-content: center; animation: none !important; }
 
 /* ---------------------------------------------------------------- */

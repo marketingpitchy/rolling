@@ -1547,7 +1547,7 @@
     {
      "label": "generique-filet",
      "description": "Filet du générique : timecode entre deux traits.",
-     "css": "display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 14px; padding: 0; &::before, &::after { content: ''; flex: 1; max-width: 220px; height: 1px; background: rgba(91,59,234,0.22); }"
+     "css": "display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 14px; padding: 0; &::before { position: relative; top: auto; right: auto; bottom: auto; left: auto; height: auto; opacity: 1; mix-blend-mode: normal; border: 0; -webkit-mask: none; mask: none; padding: 0; width: auto; } &::before, &::after { content: ''; flex: 1; max-width: 220px; height: 1px; background: rgba(91,59,234,0.22); }"
     },
     {
      "label": "generique-liste",
@@ -1986,8 +1986,9 @@
     },
     {
      "label": "offres-badge",
-     "description": "« Le plus complet » posé sur le haut de la colonne sombre.",
-     "css": "position: absolute; z-index: 3; top: -14px; right: 87px; width: fit-content; padding: 6px 14px; border-radius: 999px; font-family: Hanken Grotesk; font-size: 12px; line-height: 1.2; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: #0F0F12; background: #FFD1BF; @media(--mobile) { right: 6px; padding: 5px 10px; }"
+     "description": "« Le plus complet » centré sur le haut de la colonne sombre (sur deux lignes en mobile, dans la largeur de la colonne).",
+     "css": "position: absolute; z-index: 3; top: -14px; right: 139px; width: fit-content; padding: 6px 14px; border-radius: 999px; font-family: Hanken Grotesk; font-size: 12px; line-height: 1.2; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; text-align: center; color: #0F0F12; background: #FFD1BF; @media(--mobile) { top: -26px; right: 50px; width: 76px; padding: 6px 4px; letter-spacing: 0.06em; border-radius: 14px; }",
+     "brut": "transform: translateX(50%);"
     },
     {
      "label": "offres-ligne",
