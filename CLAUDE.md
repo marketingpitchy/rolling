@@ -931,6 +931,13 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   lien `https://api.whatsapp.com/send?text=` (adresse officielle vers laquelle wa.me redirige) dans la balise Partager
   et l'ancien widget Partage ; texte toujours encodé (`rawurlencode`). Métas des 4 réalisations et 4 témoignages écrites
   (hôtes agence-rolling.fr / www ajoutés à l'environnement « rolling » pour lire le site en ligne).
+- **Maquette « LinkedIn et YouTube »** (`maquettes/reseaux/reseaux.html`, générée par `scratchpad/c067/gen-reseaux.py`, copie
+  /workspace/maquette-reseaux.html, **à valider**) : le pied de page sait déjà afficher LinkedIn / YouTube / Instagram
+  (Personnaliser > « Rolling : en-tête et pied de page », `rolling_reseau_*`, vide = rien). A pied de page icône + nom (déjà
+  prêt), **B bande « Suivez-nous. » en bas du pied (conseil)**, **C bandeau « Voir la chaîne YouTube » à la fin du mur des
+  Réalisations (conseil)**, **D carte « Suivez Rolling » dans la colonne des articles (conseil)**, E 2 cartes dans « Où nous
+  trouver » de L'agence, F liens sous Ressources (Apparence > Menus, liens personnalisés) + bas du menu mobile, G barre
+  flottante (déconseillée).
 - **Chargement de page effet film** (demande avant la fin de la livraison 4) : maquette `maquettes/loading/maquette-loading.html`
   (copie /workspace/maquette-loading.html), 4 options : A amorce 3-2-1, B clap qui se ferme puis rideau, C ouverture
   cinéma (bandes noires + REC + timecode + règle avec la tête de lecture rouge des frises, plus de filet fin), D barre de lecture en haut sans écran. Conseil : C à l'arrivée (première page
