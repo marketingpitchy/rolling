@@ -1230,7 +1230,7 @@ fiche_realisation = F('Fiche réalisation', None, COLONNE + ' align-items: stret
                 H('Fiche réalisation · résultat · titre', 'Le résultat.', 'h2', ['titre-sm']),
                 P('Fiche réalisation · résultat · texte', DYN('rolling-champ', champ='resultat'), ['texte']),
             ]),
-            F('Fiche réalisation · citation du client', ['carte-verre', 'temoin', 'temoin-une', 'si-temoignage-lie', 'si-temoignage-citation'], enfants=[
+            F('Fiche réalisation · citation du client', ['carte-verre', 'temoin', 'temoin-une', 'citation-avec-interview', 'si-temoignage-lie', 'si-temoignage-citation'], enfants=[
                 P('Fiche réalisation · citation · texte', DYN('rolling-champ', champ='citation', source='temoignage'), ['temoin-citation']),
                 F('Fiche réalisation · citation · auteur', ['temoin-auteur'], enfants=[
                     I('Fiche réalisation · citation · portrait', DYN('rolling-image', image='portrait', source='temoignage'), cls=['portrait', 'portrait-petit', 'si-temoignage-portrait'], taille='thumbnail'),
@@ -1240,6 +1240,9 @@ fiche_realisation = F('Fiche réalisation', None, COLONNE + ' align-items: stret
                     ]),
                 ]),
                 B('Fiche réalisation · citation · lien', 'Lire le cas client', DYN('rolling-lien', lien='fiche', source='temoignage'), ['temoin-lien', 'si-temoignage-recit']),
+                D('Fiche réalisation · citation · interview', ['vignette-video', 'vignette-lecteur', 'vignette-interview', 'si-temoignage-interview'], enfants=[
+                    W('Fiche réalisation · citation · interview · lecteur', 'rolling-video', source='interview', apercu='image', priorite='bas'),
+                ]),
             ]),
             F('Fiche réalisation · REX', ['carte-verre', 'rex-ligne', 'contexte-rex', 'si-rex'], enfants=couvertures_rex('Fiche réalisation · REX', 'medium') + [
                 F('Fiche réalisation · REX · textes', ['pile-serree'], enfants=[
@@ -1301,8 +1304,20 @@ fiche_temoignage = F('Fiche témoignage', None, COLONNE + ' align-items: stretch
                     B('Fiche témoignage · appel · bouton', 'Réserver un échange', '/contact/', ['bouton-principal', 'bouton-petit']),
                 ]),
             ]),
-            D('Fiche témoignage · cadre vidéo', ['vignette-video', 'si-video-liee'], 'width: 100%; max-width: 1040px; margin: 48px auto 0;', enfants=[
-                W('Fiche témoignage · lecteur', 'rolling-video', source='realisation'),
+            F('Fiche témoignage · scène vidéo', ['scene-video', 'si-video-liee'], 'margin-top: 48px;', enfants=[
+                D('Fiche témoignage · cadre vidéo', ['vignette-video', 'cadre-scene'], enfants=[
+                    W('Fiche témoignage · lecteur', 'rolling-video', source='realisation', adapter='oui'),
+                ]),
+                F('Fiche témoignage · à côté de la vidéo', ['infos-video', 'si-video-cote', 'si-citation'], enfants=[
+                    P('Fiche témoignage · à côté · citation', DYN('rolling-champ', champ='citation'), ['temoin-citation', 'citation-cote', 'si-citation']),
+                    F('Fiche témoignage · à côté · auteur', ['temoin-auteur', 'si-auteur'], enfants=[
+                        I('Fiche témoignage · à côté · portrait', DYN('rolling-image', image='portrait'), cls=['portrait', 'portrait-petit', 'si-portrait'], taille='thumbnail'),
+                        F('Fiche témoignage · à côté · personne', ['pile-serree'], enfants=[
+                            P('Fiche témoignage · à côté · nom', DYN('rolling-champ', champ='auteur'), ['cas-info-valeur']),
+                            P('Fiche témoignage · à côté · poste', DYN('rolling-champ', champ='poste'), ['texte-petit', 'si-poste']),
+                        ]),
+                    ]),
+                ]),
             ]),
         ]),
     ]),
@@ -1314,7 +1329,7 @@ fiche_temoignage = F('Fiche témoignage', None, COLONNE + ' align-items: stretch
     ]),
     F('Fiche témoignage · cas', ['section', 'section-suite'], tag='section', enfants=[
         F('Fiche témoignage · cas · grille', ['conteneur', 'cas-grille'], enfants=[
-            F('Fiche témoignage · citation', ['carte-verre', 'temoin', 'cas-citation', 'si-citation'], enfants=[
+            F('Fiche témoignage · citation', ['carte-verre', 'temoin', 'cas-citation', 'si-citation', 'sans-video-cote'], enfants=[
                 P('Fiche témoignage · citation · texte', DYN('rolling-champ', champ='citation'), ['temoin-citation']),
                 F('Fiche témoignage · citation · auteur', ['temoin-auteur', 'si-auteur'], enfants=[
                     I('Fiche témoignage · citation · portrait', DYN('rolling-image', image='portrait'), cls=['portrait', 'portrait-petit', 'si-portrait'], taille='thumbnail'),
@@ -1349,7 +1364,8 @@ fiche_temoignage = F('Fiche témoignage', None, COLONNE + ' align-items: stretch
                     ]),
                 ]),
                 F('Fiche témoignage · vidéos', ['pile', 'si-autres-videos'], enfants=[
-                    H('Fiche témoignage · vidéos · titre', 'Les autres vidéos.', 'h2', ['titre-sm']),
+                    H('Fiche témoignage · vidéos · titre', 'Les autres vidéos.', 'h2', ['titre-sm', 'sans-interview']),
+                    H('Fiche témoignage · vidéos · titre (interview)', 'Les vidéos <em>réalisées ensemble.</em>', 'h2', ['titre-sm', 'si-interview']),
                     W('Fiche témoignage · vidéos · liste', 'rolling-liste', contenu='liees_suite', nombre='6', classe='grille-2', carte_theme='exemple'),
                 ]),
             ]),

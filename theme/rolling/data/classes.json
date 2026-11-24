@@ -2165,6 +2165,34 @@
             ]
         },
         {
+            "id": "g-eb7f688",
+            "label": "citation-avec-interview",
+            "groupe": "Fiches et listes",
+            "description": "Carte de citation (fiche réalisation) qui montre aussi l'interview du client (vignette-interview) : citation à gauche, interview à droite ; dessous en mobile.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "mobile",
+                        "state": null
+                    },
+                    "props": [],
+                    "custom_css": {
+                        "raw": "JjpoYXMoPiAudmlnbmV0dGUtaW50ZXJ2aWV3KSB7IGdyaWQtdGVtcGxhdGUtY29sdW1uczogbWlubWF4KDAsIDFmcik7IH0gJiA+IC52aWduZXR0ZS1pbnRlcnZpZXcgeyBncmlkLWNvbHVtbjogYXV0bzsgZ3JpZC1yb3c6IGF1dG87IG1hcmdpbi10b3A6IDhweDsgfQ=="
+                    }
+                },
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": [],
+                    "custom_css": {
+                        "raw": "JjpoYXMoPiAudmlnbmV0dGUtaW50ZXJ2aWV3KSB7IGRpc3BsYXk6IGdyaWQ7IGdyaWQtdGVtcGxhdGUtY29sdW1uczogbWlubWF4KDAsIDFmcikgMjgwcHg7IGNvbHVtbi1nYXA6IDMycHg7IGFsaWduLWl0ZW1zOiBzdGFydDsgfSAmID4gLnZpZ25ldHRlLWludGVydmlldyB7IGdyaWQtY29sdW1uOiAyOyBncmlkLXJvdzogMSAvIHNwYW4gMzsgYWxpZ24tc2VsZjogY2VudGVyOyB9"
+                    }
+                }
+            ]
+        },
+        {
             "id": "g-e13f5b6",
             "label": "section-entete",
             "groupe": "Mise en page",
@@ -6093,7 +6121,7 @@
                         }
                     },
                     "custom_css": {
-                        "raw": "Jjpob3ZlciAudGVtb2luLWxvZ28sICY6Zm9jdXMtd2l0aGluIC50ZW1vaW4tbG9nbyB7IGZpbHRlcjogbm9uZTsgb3BhY2l0eTogMTsgfQ=="
+                        "raw": "Jjpob3ZlciAudGVtb2luLWxvZ28sICY6Zm9jdXMtd2l0aGluIC50ZW1vaW4tbG9nbyB7IGZpbHRlcjogbm9uZTsgb3BhY2l0eTogMTsgfSAmOmhhcygudmlnbmV0dGUtdmlkZW8pOmhvdmVyIHsgdHJhbnNmb3JtOiBub25lOyB9"
                     }
                 }
             ]
@@ -7159,6 +7187,75 @@
                     "custom_css": {
                         "raw": "JiBpZnJhbWUsICYgdmlkZW8geyBwb3NpdGlvbjogYWJzb2x1dGU7IHRvcDogMDsgbGVmdDogMDsgd2lkdGg6IDEwMCU7IGhlaWdodDogMTAwJTsgYm9yZGVyOiAwOyB6LWluZGV4OiA0OyB9ICYgdmlkZW8uYXBlcmN1LXZpZGVvIHsgei1pbmRleDogMDsgb2JqZWN0LWZpdDogY292ZXI7IHBvaW50ZXItZXZlbnRzOiBub25lOyB9ICZbaGlkZGVuXSB7IGRpc3BsYXk6IG5vbmU7IH0gJltkYXRhLXJsLWZvcm1hdD0iOS0xNiJdIHsgYXNwZWN0LXJhdGlvOiA5IC8gMTY7IH0gJltkYXRhLXJsLWZvcm1hdD0iMS0xIl0geyBhc3BlY3QtcmF0aW86IDEgLyAxOyB9ICZbZGF0YS1ybC1mb3JtYXQ9IjQtNSJdIHsgYXNwZWN0LXJhdGlvOiA0IC8gNTsgfQ=="
                     }
+                }
+            ]
+        },
+        {
+            "id": "g-a2c53e6",
+            "label": "citation-cote",
+            "groupe": "Fiches et listes",
+            "description": "Citation posée à côté d'une interview verticale (fiche témoignage, avec temoin-citation) : plus grande.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "font-size": {
+                            "$$type": "size",
+                            "value": {
+                                "size": "clamp(20px, 1.9vw, 26px)",
+                                "unit": "custom"
+                            }
+                        },
+                        "line-height": {
+                            "$$type": "size",
+                            "value": {
+                                "size": "1.4",
+                                "unit": "custom"
+                            }
+                        }
+                    },
+                    "custom_css": null
+                }
+            ]
+        },
+        {
+            "id": "g-f4720fd",
+            "label": "vignette-interview",
+            "groupe": "Fiches et listes",
+            "description": "Interview du client en petit, dans la carte de citation de la fiche réalisation (avec vignette-video et vignette-lecteur).",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "width": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 100,
+                                "unit": "%"
+                            }
+                        },
+                        "padding": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 6,
+                                "unit": "px"
+                            }
+                        },
+                        "border-radius": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 22,
+                                "unit": "px"
+                            }
+                        }
+                    },
+                    "custom_css": null
                 }
             ]
         },
@@ -24076,6 +24173,60 @@
             ]
         },
         {
+            "id": "g-e543447",
+            "label": "si-interview",
+            "groupe": "Fiches et listes",
+            "description": "Repère sans style : le thème masque ce bloc quand le champ « interview » du contenu est vide.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": [],
+                    "custom_css": {
+                        "raw": "LS1ybC1yZXBlcmU6IDE7"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-b82a172",
+            "label": "si-temoignage-interview",
+            "groupe": "Fiches et listes",
+            "description": "Repère sans style : le thème masque ce bloc quand le champ « temoignage-interview » du contenu est vide.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": [],
+                    "custom_css": {
+                        "raw": "LS1ybC1yZXBlcmU6IDE7"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-03c80e0",
+            "label": "si-video-cote",
+            "groupe": "Fiches et listes",
+            "description": "Repère sans style : le thème masque ce bloc quand le champ « video-cote » du contenu est vide.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": [],
+                    "custom_css": {
+                        "raw": "LS1ybC1yZXBlcmU6IDE7"
+                    }
+                }
+            ]
+        },
+        {
             "id": "g-05e0355",
             "label": "si-metier",
             "groupe": "Fiches et listes",
@@ -24242,6 +24393,42 @@
             "label": "sans-citation",
             "groupe": "Fiches et listes",
             "description": "Repère sans style : affiché seulement quand le témoignage n'a pas de citation.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": [],
+                    "custom_css": {
+                        "raw": "LS1ybC1yZXBlcmU6IDE7"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-a446de4",
+            "label": "sans-interview",
+            "groupe": "Fiches et listes",
+            "description": "Repère sans style : affiché seulement quand le témoignage n'a pas d'interview du client.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": [],
+                    "custom_css": {
+                        "raw": "LS1ybC1yZXBlcmU6IDE7"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-88cf730",
+            "label": "sans-video-cote",
+            "groupe": "Fiches et listes",
+            "description": "Repère sans style : masqué quand la vidéo en grand de la fiche témoignage est verticale ou carrée (la citation est alors à côté du lecteur).",
             "variants": [
                 {
                     "meta": {
@@ -26782,7 +26969,7 @@
                         }
                     },
                     "custom_css": {
-                        "raw": "JiA+IC5jYWRyZS1zY2VuZSB7IHdpZHRoOiAxMDAlOyBtYXgtd2lkdGg6IDEwNDBweDsgfSAmID4gLmluZm9zLXZpZGVvIHsgZGlzcGxheTogbm9uZTsgfSAmOmhhcygudmlkZW8tZmljaGU6bm90KFtoaWRkZW5dKVtkYXRhLXJsLWZvcm1hdD0iOS0xNiJdKSwgJjpoYXMoLnZpZGVvLWZpY2hlOm5vdChbaGlkZGVuXSlbZGF0YS1ybC1mb3JtYXQ9IjQtNSJdKSwgJjpoYXMoLnZpZGVvLWZpY2hlOm5vdChbaGlkZGVuXSlbZGF0YS1ybC1mb3JtYXQ9IjEtMSJdKSB7IGdyaWQtdGVtcGxhdGUtY29sdW1uczogYXV0byBtaW5tYXgoMCwgNTIwcHgpOyBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjsganVzdGlmeS1pdGVtczogc3RyZXRjaDsgfSAmOmhhcygudmlkZW8tZmljaGU6bm90KFtoaWRkZW5dKVtkYXRhLXJsLWZvcm1hdD0iOS0xNiJdKSA+IC5jYWRyZS1zY2VuZSwgJjpoYXMoLnZpZGVvLWZpY2hlOm5vdChbaGlkZGVuXSlbZGF0YS1ybC1mb3JtYXQ9IjQtNSJdKSA+IC5jYWRyZS1zY2VuZSB7IHdpZHRoOiAzODBweDsgfSAmOmhhcygudmlkZW8tZmljaGU6bm90KFtoaWRkZW5dKVtkYXRhLXJsLWZvcm1hdD0iMS0xIl0pID4gLmNhZHJlLXNjZW5lIHsgd2lkdGg6IDU2MHB4OyB9ICY6aGFzKC52aWRlby1maWNoZTpub3QoW2hpZGRlbl0pW2RhdGEtcmwtZm9ybWF0PSI5LTE2Il0pID4gLmluZm9zLXZpZGVvLCAmOmhhcygudmlkZW8tZmljaGU6bm90KFtoaWRkZW5dKVtkYXRhLXJsLWZvcm1hdD0iNC01Il0pID4gLmluZm9zLXZpZGVvLCAmOmhhcygudmlkZW8tZmljaGU6bm90KFtoaWRkZW5dKVtkYXRhLXJsLWZvcm1hdD0iMS0xIl0pID4gLmluZm9zLXZpZGVvIHsgZGlzcGxheTogZmxleDsgfSBAbWVkaWEgKG1heC13aWR0aDogMTAyNHB4KSB7ICY6aGFzKC52aWRlby1maWNoZTpub3QoW2hpZGRlbl0pW2RhdGEtcmwtZm9ybWF0PSI5LTE2Il0pID4gLmNhZHJlLXNjZW5lLCAmOmhhcygudmlkZW8tZmljaGU6bm90KFtoaWRkZW5dKVtkYXRhLXJsLWZvcm1hdD0iNC01Il0pID4gLmNhZHJlLXNjZW5lIHsgd2lkdGg6IDMyMHB4OyB9ICY6aGFzKC52aWRlby1maWNoZTpub3QoW2hpZGRlbl0pW2RhdGEtcmwtZm9ybWF0PSIxLTEiXSkgPiAuY2FkcmUtc2NlbmUgeyB3aWR0aDogNDIwcHg7IH0gfSBAbWVkaWEgKG1heC13aWR0aDogNzY3cHgpIHsgJiwgJjpoYXMoLnZpZGVvLWZpY2hlOm5vdChbaGlkZGVuXSlbZGF0YS1ybC1mb3JtYXRdKSB7IGdyaWQtdGVtcGxhdGUtY29sdW1uczogbWlubWF4KDAsIDFmcik7IGp1c3RpZnktaXRlbXM6IGNlbnRlcjsgZ2FwOiAyNnB4OyB9ICY6aGFzKC52aWRlby1maWNoZTpub3QoW2hpZGRlbl0pW2RhdGEtcmwtZm9ybWF0PSI5LTE2Il0pID4gLmNhZHJlLXNjZW5lLCAmOmhhcygudmlkZW8tZmljaGU6bm90KFtoaWRkZW5dKVtkYXRhLXJsLWZvcm1hdD0iNC01Il0pID4gLmNhZHJlLXNjZW5lIHsgd2lkdGg6IG1pbigzMDBweCwgMTAwJSk7IH0gJjpoYXMoLnZpZGVvLWZpY2hlOm5vdChbaGlkZGVuXSlbZGF0YS1ybC1mb3JtYXQ9IjEtMSJdKSA+IC5jYWRyZS1zY2VuZSB7IHdpZHRoOiAxMDAlOyB9ICYgPiAuaW5mb3MtdmlkZW8geyBqdXN0aWZ5LXNlbGY6IHN0cmV0Y2g7IH0gfQ=="
+                        "raw": "JiA+IC5jYWRyZS1zY2VuZSB7IHdpZHRoOiAxMDAlOyBtYXgtd2lkdGg6IDEwNDBweDsgfSAmID4gLmluZm9zLXZpZGVvIHsgZGlzcGxheTogbm9uZTsgfSAmOmhhcygudmlkZW8tZmljaGU6bm90KFtoaWRkZW5dKVtkYXRhLXJsLWZvcm1hdD0iOS0xNiJdKSwgJjpoYXMoLnZpZGVvLWZpY2hlOm5vdChbaGlkZGVuXSlbZGF0YS1ybC1mb3JtYXQ9IjQtNSJdKSwgJjpoYXMoLnZpZGVvLWZpY2hlOm5vdChbaGlkZGVuXSlbZGF0YS1ybC1mb3JtYXQ9IjEtMSJdKSB7IGdyaWQtdGVtcGxhdGUtY29sdW1uczogYXV0byBtaW5tYXgoMCwgNTIwcHgpOyBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjsganVzdGlmeS1pdGVtczogc3RyZXRjaDsgfSAmOmhhcygudmlkZW8tZmljaGU6bm90KFtoaWRkZW5dKVtkYXRhLXJsLWZvcm1hdD0iOS0xNiJdKSA+IC5jYWRyZS1zY2VuZSwgJjpoYXMoLnZpZGVvLWZpY2hlOm5vdChbaGlkZGVuXSlbZGF0YS1ybC1mb3JtYXQ9IjQtNSJdKSA+IC5jYWRyZS1zY2VuZSB7IHdpZHRoOiAzODBweDsgfSAmOmhhcygudmlkZW8tZmljaGU6bm90KFtoaWRkZW5dKVtkYXRhLXJsLWZvcm1hdD0iMS0xIl0pID4gLmNhZHJlLXNjZW5lIHsgd2lkdGg6IDU2MHB4OyB9ICY6aGFzKC52aWRlby1maWNoZTpub3QoW2hpZGRlbl0pW2RhdGEtcmwtZm9ybWF0PSI5LTE2Il0pID4gLmluZm9zLXZpZGVvLCAmOmhhcygudmlkZW8tZmljaGU6bm90KFtoaWRkZW5dKVtkYXRhLXJsLWZvcm1hdD0iNC01Il0pID4gLmluZm9zLXZpZGVvLCAmOmhhcygudmlkZW8tZmljaGU6bm90KFtoaWRkZW5dKVtkYXRhLXJsLWZvcm1hdD0iMS0xIl0pID4gLmluZm9zLXZpZGVvIHsgZGlzcGxheTogZmxleDsgfSBAbWVkaWEgKG1heC13aWR0aDogMTAyNHB4KSB7ICY6aGFzKC52aWRlby1maWNoZTpub3QoW2hpZGRlbl0pW2RhdGEtcmwtZm9ybWF0PSI5LTE2Il0pID4gLmNhZHJlLXNjZW5lLCAmOmhhcygudmlkZW8tZmljaGU6bm90KFtoaWRkZW5dKVtkYXRhLXJsLWZvcm1hdD0iNC01Il0pID4gLmNhZHJlLXNjZW5lIHsgd2lkdGg6IDMyMHB4OyB9ICY6aGFzKC52aWRlby1maWNoZTpub3QoW2hpZGRlbl0pW2RhdGEtcmwtZm9ybWF0PSIxLTEiXSkgPiAuY2FkcmUtc2NlbmUgeyB3aWR0aDogNDIwcHg7IH0gfSBAbWVkaWEgKG1heC13aWR0aDogNzY3cHgpIHsgJiwgJjpoYXMoLnZpZGVvLWZpY2hlOm5vdChbaGlkZGVuXSlbZGF0YS1ybC1mb3JtYXRdKSB7IGdyaWQtdGVtcGxhdGUtY29sdW1uczogbWlubWF4KDAsIDFmcik7IGp1c3RpZnktaXRlbXM6IGNlbnRlcjsgZ2FwOiAyNnB4OyB9ICY6aGFzKC52aWRlby1maWNoZTpub3QoW2hpZGRlbl0pW2RhdGEtcmwtZm9ybWF0PSI5LTE2Il0pID4gLmNhZHJlLXNjZW5lLCAmOmhhcygudmlkZW8tZmljaGU6bm90KFtoaWRkZW5dKVtkYXRhLXJsLWZvcm1hdD0iNC01Il0pID4gLmNhZHJlLXNjZW5lIHsgd2lkdGg6IG1pbigzMDBweCwgMTAwJSk7IH0gJjpoYXMoLnZpZGVvLWZpY2hlOm5vdChbaGlkZGVuXSlbZGF0YS1ybC1mb3JtYXQ9IjEtMSJdKSA+IC5jYWRyZS1zY2VuZSB7IHdpZHRoOiAxMDAlOyB9ICYgPiAuaW5mb3MtdmlkZW8geyBqdXN0aWZ5LXNlbGY6IHN0cmV0Y2g7IH0gfSAmOm5vdCg6aGFzKD4gLmluZm9zLXZpZGVvKSk6aGFzKC52aWRlby1maWNoZTpub3QoW2hpZGRlbl0pW2RhdGEtcmwtZm9ybWF0XSkgeyBncmlkLXRlbXBsYXRlLWNvbHVtbnM6IG1pbm1heCgwLCAxZnIpOyBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjsganVzdGlmeS1pdGVtczogY2VudGVyOyB9"
                     }
                 }
             ]

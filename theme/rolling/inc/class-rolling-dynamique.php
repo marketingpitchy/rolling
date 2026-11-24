@@ -468,13 +468,20 @@ class Rolling_Dynamique {
 			return ! Rolling_Contenus::realisations_liees( $id );
 		}
 		if ( 'video_liee' === $cle ) {
-			// Témoignage : la première réalisation liée a une vidéo.
-			$liees = 'rolling_temoignage' === get_post_type( $id ) ? Rolling_Contenus::realisations_liees( $id ) : array();
-			return ! $liees || ! Rolling_Contenus::valeur( 'video', $liees[0] );
+			// Témoignage : il a une interview, ou sa première réalisation liée a une vidéo.
+			$cible = 'rolling_temoignage' === get_post_type( $id ) ? Rolling_Contenus::video_du_temoignage( $id ) : 0;
+			return ! $cible || ! Rolling_Contenus::videos( $cible );
+		}
+		if ( 'video_cote' === $cle ) {
+			// Témoignage : la vidéo en grand de la fiche est verticale, 4:5 ou carrée (la citation se met à côté).
+			$cible  = 'rolling_temoignage' === get_post_type( $id ) ? Rolling_Contenus::video_du_temoignage( $id ) : 0;
+			$videos = $cible ? Rolling_Contenus::videos( $cible ) : array();
+			return ! $videos || ! in_array( $videos[0]['format'], array( '9-16', '4-5', '1-1' ), true );
 		}
 		if ( 'autres_videos' === $cle ) {
-			// Témoignage : plus d'une réalisation liée (la première est en grand en haut de la fiche).
-			return count( Rolling_Contenus::realisations_liees( $id ) ) < 2;
+			// Témoignage : des réalisations liées en plus de la vidéo en grand (l'interview, sinon la 1re réalisation).
+			$liees = count( Rolling_Contenus::realisations_liees( $id ) );
+			return ( '' !== Rolling_Contenus::interview( $id ) ? $liees : $liees - 1 ) < 1;
 		}
 		if ( 'ressources' === $cle ) {
 			// Fin d'article : au moins une ressource à montrer (guide, prochain webinar, replay ou réalisation).

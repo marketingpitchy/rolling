@@ -308,6 +308,22 @@ class Rolling_Contenus {
 					'videos'   => array( 'relation', __( 'Réalisations liées', 'rolling' ), __( 'La carte « Voir la vidéo » mène à la première cochée, et la citation s’affiche sur sa fiche. Aucune : pas de lien vidéo.', 'rolling' ), 'rolling_realisation' ),
 					'a_la_une' => array( 'case', __( 'À la une sur la page Témoignages', 'rolling' ), __( 'Un seul témoignage à la une : le plus récent coché.', 'rolling' ) ),
 				),
+				__( 'L’interview du client (facultatif)', 'rolling' ) => array(
+					'interview'        => array( 'lien', __( 'Lien de l’interview', 'rolling' ), __( 'Vidéo où le client raconte le projet (YouTube, Vimeo ou fichier de la médiathèque). Elle passe avant la vidéo de la réalisation liée : sur la carte (avec la pastille « Interview ») et en grand sur la fiche. L’image à la une du témoignage sert d’affiche (sinon l’image de la vidéo). Vide : la carte montre la vidéo de la réalisation liée, comme avant.', 'rolling' ) ),
+					'interview_format' => array(
+						'choix',
+						__( 'Format de l’interview', 'rolling' ),
+						__( 'Automatique : lu sur la vidéo. Choisissez-le seulement s’il est faux. Verticale (9:16 ou 4:5) : la carte passe en 4:5 et, sur la fiche, la citation se met à côté du lecteur.', 'rolling' ),
+						array(
+							'auto' => __( 'Format automatique', 'rolling' ),
+							'16-9' => __( '16:9 (horizontal)', 'rolling' ),
+							'9-16' => __( '9:16 (vertical)', 'rolling' ),
+							'1-1'  => __( '1:1 (carré)', 'rolling' ),
+							'4-5'  => __( '4:5', 'rolling' ),
+						),
+					),
+					'interview_duree'  => array( 'texte', __( 'Durée de l’interview', 'rolling' ), __( 'Ex. : 1:42. Affichée sur la vignette et lue par Google.', 'rolling' ) ),
+				),
 				__( 'Le récit (facultatif) : rempli, il crée une page « cas client »', 'rolling' ) => array(
 					'titre_couleur'  => array( 'texte', __( 'Fin du titre en couleur', 'rolling' ), __( 'Recopiez la fin du titre à mettre en dégradé.', 'rolling' ) ),
 					'chapo'          => array( 'zone', __( 'Chapô', 'rolling' ), __( 'En deux phrases : qui ils sont, ce que nous avons fait ensemble.', 'rolling' ) ),
@@ -563,6 +579,23 @@ class Rolling_Contenus {
 	 */
 	public static function videos( $id ) {
 		$liste = array();
+		if ( 'rolling_temoignage' === get_post_type( $id ) ) {
+			// Témoignage : son interview (une seule vidéo) ; « videos » y désigne les réalisations liées.
+			$lien = self::interview( $id );
+			if ( '' === $lien ) {
+				return array();
+			}
+			$force = (string) self::valeur( 'interview_format', $id );
+			$fixe  = in_array( $force, array( '16-9', '9-16', '1-1', '4-5' ), true );
+			return array(
+				array(
+					'lien'   => $lien,
+					'format' => $fixe ? $force : self::format_lien( $lien ),
+					'nom'    => '',
+					'auto'   => ! $fixe,
+				),
+			);
+		}
 		foreach ( (array) self::valeur( 'videos', $id ) as $ligne ) {
 			$lien = trim( (string) ( $ligne['lien'] ?? '' ) );
 			if ( '' === $lien ) {
@@ -577,6 +610,31 @@ class Rolling_Contenus {
 			);
 		}
 		return $liste;
+	}
+
+	/**
+	 * Lien de l'interview d'un témoignage (vidéo où le client raconte le projet), ou chaîne vide.
+	 *
+	 * @param int $id Témoignage.
+	 * @return string
+	 */
+	public static function interview( $id ) {
+		return 'rolling_temoignage' === get_post_type( $id ) ? trim( (string) self::valeur( 'interview', $id ) ) : '';
+	}
+
+	/**
+	 * Contenu dont la vidéo s'affiche en grand pour un témoignage : lui-même s'il a une interview, sinon sa 1re
+	 * réalisation liée (0 si aucune).
+	 *
+	 * @param int $id Témoignage.
+	 * @return int
+	 */
+	public static function video_du_temoignage( $id ) {
+		if ( '' !== self::interview( $id ) ) {
+			return (int) $id;
+		}
+		$liees = 'rolling_temoignage' === get_post_type( $id ) ? self::realisations_liees( $id ) : array();
+		return $liees ? (int) $liees[0] : 0;
 	}
 
 	/**

@@ -209,26 +209,35 @@ class Rolling_Seo {
 	}
 
 	/**
-	 * Schéma de Yoast : ajoute la vidéo (VideoObject) sur la fiche d'une réalisation qui a une vidéo et une affiche.
+	 * Schéma de Yoast : ajoute la vidéo (VideoObject) sur la fiche d'une réalisation qui a une vidéo et une affiche,
+	 * et sur la fiche d'un témoignage qui a une interview.
 	 *
 	 * @param array  $graphe   Pièces du schéma.
 	 * @param object $contexte Contexte de Yoast.
 	 * @return array
 	 */
 	public static function video_yoast( $graphe, $contexte ) {
-		if ( ! is_singular( 'rolling_realisation' ) || ! is_array( $graphe ) ) {
+		if ( ! is_singular( array( 'rolling_realisation', 'rolling_temoignage' ) ) || ! is_array( $graphe ) ) {
 			return $graphe;
 		}
 
-		$id      = (int) get_queried_object_id();
-		$lien    = trim( (string) Rolling_Contenus::valeur( 'video', $id ) );
+		$id        = (int) get_queried_object_id();
+		$interview = is_singular( 'rolling_temoignage' );
+		// Témoignage : son interview (vidéo où le client raconte le projet).
+		$lien    = trim( (string) ( $interview ? Rolling_Contenus::interview( $id ) : Rolling_Contenus::valeur( 'video', $id ) ) );
 		$affiche = get_the_post_thumbnail_url( $id, 'large' );
+		if ( ! $affiche && $interview && preg_match( '~(?:youtube\.com/(?:watch\?v=|embed/|shorts/)|youtu\.be/)([\w-]{11})~', $lien, $y ) ) {
+			$affiche = 'https://i.ytimg.com/vi/' . $y[1] . '/hqdefault.jpg';
+		}
 		if ( '' === $lien || ! $affiche ) {
 			return $graphe;
 		}
 
 		$page  = isset( $contexte->canonical ) && $contexte->canonical ? $contexte->canonical : get_permalink( $id );
-		$texte = trim( wp_strip_all_tags( (string) Rolling_Contenus::valeur( 'chapo', $id ) ) );
+		$texte = trim( wp_strip_all_tags( (string) Rolling_Contenus::valeur( $interview ? 'citation' : 'chapo', $id ) ) );
+		if ( '' === $texte ) {
+			$texte = trim( wp_strip_all_tags( (string) Rolling_Contenus::valeur( 'chapo', $id ) ) );
+		}
 		$video = array(
 			'@type'            => 'VideoObject',
 			'@id'              => $page . '#video',
@@ -246,7 +255,7 @@ class Rolling_Seo {
 			$video['contentUrl'] = esc_url_raw( $lien );
 		}
 
-		if ( preg_match( '/^(?:(\d+):)?(\d{1,2}):(\d{2})$/', trim( (string) Rolling_Contenus::valeur( 'duree', $id ) ), $d ) ) {
+		if ( preg_match( '/^(?:(\d+):)?(\d{1,2}):(\d{2})$/', trim( (string) Rolling_Contenus::valeur( $interview ? 'interview_duree' : 'duree', $id ) ), $d ) ) {
 			$video['duration'] = 'PT' . ( $d[1] ? (int) $d[1] . 'H' : '' ) . (int) $d[2] . 'M' . (int) $d[3] . 'S';
 		}
 

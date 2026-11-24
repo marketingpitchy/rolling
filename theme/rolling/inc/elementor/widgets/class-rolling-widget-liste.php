@@ -26,7 +26,7 @@ class Rolling_Widget_Liste extends Rolling_Widget {
 		'realisations' => array( 'Réalisations', 'c1-carte-realisation' ),
 		'autres'       => array( 'Autres réalisations (sur une fiche réalisation)', 'c1-carte-realisation' ),
 		'liees'        => array( 'Vidéos du témoignage (sur une fiche témoignage)', 'c1-carte-realisation' ),
-		'liees_suite'  => array( 'Autres vidéos du témoignage (sans la première)', 'c1-carte-realisation' ),
+		'liees_suite'  => array( 'Autres vidéos du témoignage (sans celle en grand)', 'c1-carte-realisation' ),
 		'temoignages'  => array( 'Témoignages', 'c2-carte-temoignage' ),
 		'articles'     => array( 'Articles du blog', 'c4-carte-article' ),
 		'lire_aussi'   => array( 'À lire aussi (sur un article)', 'c4-carte-article' ),
@@ -332,7 +332,8 @@ class Rolling_Widget_Liste extends Rolling_Widget {
 
 		if ( in_array( $r['contenu'], array( 'liees', 'liees_suite' ), true ) ) {
 			$ids = Rolling_Contenus::realisations_liees( $courant );
-			$ids = 'liees_suite' === $r['contenu'] ? array_slice( $ids, 1 ) : $ids;
+			// « Sans la première » : celle-ci est déjà en grand sur la fiche, sauf si c'est l'interview du client qui y est.
+			$ids = 'liees_suite' === $r['contenu'] && '' === Rolling_Contenus::interview( $courant ) ? array_slice( $ids, 1 ) : $ids;
 			return array( array_slice( $ids, $decalage, $total ), false );
 		}
 

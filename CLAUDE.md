@@ -956,10 +956,23 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   L'agence jugées trop grandes ⇒ pictogramme 32 px **devant** le titre (inline-block), padding 18 / 22, 135 px de haut.
 - **Maquette « Vidéo du témoignage (interview du client) »** (`maquettes/temoignages-video/interview.html`, générée par
   `scratchpad/c067/gen-interview.py`, copie /workspace/maquette-interview-temoignage.html, **à valider**) : une vidéo où le client
-  raconte le projet n'est pas une réalisation ⇒ nouveau champ du témoignage « Vidéo du témoignage » (lien + format auto) ;
+  raconte le projet n'est pas une réalisation ⇒ nouveau champ du témoignage « Vidéo du témoignage » (lien + format auto) ; **validée (2A, 3A, 4)** ;
   carte A vignette en haut + pastille « Interview » (conseil) / B citation en plaque sur l'image ; fiche A interview en grand sous
   le bandeau du projet (conseil ; 9:16 = lecteur 340 px + citation à côté), réalisations liées en « Les vidéos réalisées
   ensemble. » / B interview dans l'en-tête ; fiche réalisation liée : « Voir l'interview » à côté de la citation ; VideoObject.
+- **0.7.22 : interview du client (choix carte 2A, fiche 3A, réalisation 4)** : témoignage, groupe « L'interview du client
+  (facultatif) » : `interview` (lien), `interview_format` (auto | 16-9 | 9-16 | 1-1 | 4-5), `interview_duree`.
+  `Rolling_Contenus::interview()`, `video_du_temoignage()` (interview, sinon 1re réalisation liée) ; `videos()` d'un témoignage =
+  son interview. Widget Vidéo : `source=realisation` sur un témoignage = interview d'abord ; nouvelle source `interview` (témoignage
+  ou témoignage lié d'une réalisation) ; pastille réglable `texte_interview` (« Interview ») + durée ; dans une carte, interview
+  verticale en 4:5 (`data-rl-format` sans adapter). Fiche témoignage : `scene-video` (lecteur `adapter=oui` + `infos-video
+  si-video-cote si-citation` = citation `citation-cote` + auteur à côté d'une vidéo verticale / carrée ; `cas-citation` reçoit
+  `sans-video-cote` pour ne pas doubler) ; scene-video sans infos = lecteur centré ; « Les vidéos réalisées ensemble. » (si-interview)
+  / « Les autres vidéos. » (sans-interview), `liees_suite` garde toutes les réalisations quand l'interview est en grand.
+  Fiche réalisation : `citation-avec-interview` (très prioritaire) + `vignette-interview` (si-temoignage-interview). Carte `temoin`
+  ne se soulève plus au survol si elle contient une vidéo (le bouton lecture ne bouge jamais). VideoObject de la fiche témoignage
+  (interview + image à la une, ou miniature YouTube ; description = citation). Chez la cliente : modèles Fiche témoignage /
+  réalisation mis à jour s'ils ne sont pas modifiés (sinon V2) ; cartes : rien à faire.
 - **Chargement de page effet film** (demande avant la fin de la livraison 4) : maquette `maquettes/loading/maquette-loading.html`
   (copie /workspace/maquette-loading.html), 4 options : A amorce 3-2-1, B clap qui se ferme puis rideau, C ouverture
   cinéma (bandes noires + REC + timecode + règle avec la tête de lecture rouge des frises, plus de filet fin), D barre de lecture en haut sans écran. Conseil : C à l'arrivée (première page

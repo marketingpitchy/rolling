@@ -41,7 +41,8 @@ class Rolling_Widget_Video extends Rolling_Widget {
 			__( 'Vidéo de', 'rolling' ),
 			array(
 				'courant'     => __( 'Contenu affiché', 'rolling' ),
-				'realisation' => __( 'Réalisation liée (sur un témoignage)', 'rolling' ),
+				'realisation' => __( 'Témoignage : son interview, sinon la réalisation liée', 'rolling' ),
+				'interview'   => __( 'Interview du client (témoignage, ou témoignage lié d’une réalisation)', 'rolling' ),
 				'lien'        => __( 'Lien ci-dessous (Vimeo, YouTube ou fichier)', 'rolling' ),
 			)
 		);
@@ -56,6 +57,7 @@ class Rolling_Widget_Video extends Rolling_Widget {
 				'muet'   => __( 'Vidéo muette en boucle, sans son ni bouton (à la place d’une image)', 'rolling' ),
 			)
 		);
+		$this->texte( 'texte_interview', __( 'Pastille d’une interview du client', 'rolling' ), __( 'Interview', 'rolling' ) );
 		$this->texte( 'son', __( 'Lien : texte du bouton son', 'rolling' ), __( 'Activer le son', 'rolling' ) );
 		$this->texte( 'son_off', __( 'Lien : texte du bouton pour couper le son', 'rolling' ), __( 'Couper le son', 'rolling' ) );
 		$this->choix(
@@ -103,10 +105,16 @@ class Rolling_Widget_Video extends Rolling_Widget {
 			return;
 		}
 		if ( 'realisation' === $r['source'] ) {
-			// Sur un témoignage : la première réalisation liée.
-			$liees = 'rolling_temoignage' === get_post_type( $id ) ? Rolling_Contenus::realisations_liees( $id ) : array();
-			$id    = $liees ? $liees[0] : 0;
+			// Sur un témoignage : son interview, sinon la première réalisation liée.
+			$id = 'rolling_temoignage' === get_post_type( $id ) ? Rolling_Contenus::video_du_temoignage( $id ) : 0;
 			if ( ! $id ) {
+				return;
+			}
+		}
+		if ( 'interview' === $r['source'] ) {
+			// L'interview du témoignage affiché, ou du témoignage lié à la réalisation affichée.
+			$id = 'rolling_realisation' === get_post_type( $id ) ? Rolling_Contenus::temoignage_lie( $id ) : $id;
+			if ( ! $id || '' === Rolling_Contenus::interview( $id ) ) {
 				return;
 			}
 		}
@@ -114,7 +122,7 @@ class Rolling_Widget_Video extends Rolling_Widget {
 		$fixe     = 'image' === $r['apercu'];
 		$adapter  = 'oui' === ( $r['adapter'] ?? 'non' );
 		$versions = Rolling_Contenus::videos( $id );
-		if ( ! $adapter ) {
+		if ( ! $adapter || 'courant' !== $r['source'] ) {
 			$versions = array_slice( $versions, 0, 1 );
 		}
 		if ( 'versions' === ( $r['partie'] ?? 'lecteur' ) ) {
@@ -172,11 +180,19 @@ class Rolling_Widget_Video extends Rolling_Widget {
 	 * @param bool  $plusieurs Plusieurs versions (l'étiquette est alors portée par les boutons de versions).
 	 */
 	private function rendre_cadre( $r, $id, $version, $rang, $adapter, $haut, $fixe, $plusieurs = false ) {
-		$video   = $version['lien'];
-		$titre   = get_the_title( $id );
-		$duree   = 0 === $rang ? (string) Rolling_Contenus::valeur( 'duree', $id ) : '';
-		$affiche = 0 === $rang && has_post_thumbnail( $id );
-		if ( $adapter ) {
+		$video     = $version['lien'];
+		$titre     = get_the_title( $id );
+		$interview = 'rolling_temoignage' === get_post_type( $id );
+		$duree     = 0 === $rang ? (string) Rolling_Contenus::valeur( $interview ? 'interview_duree' : 'duree', $id ) : '';
+		$affiche   = 0 === $rang && has_post_thumbnail( $id );
+		$format    = $adapter ? $version['format'] : '';
+		if ( $interview ) {
+			// Interview du client : pastille « Interview » ; dans une carte, une interview verticale passe en 4:5.
+			$etiquette = (string) ( $r['texte_interview'] ?? '' );
+			if ( ! $adapter && in_array( $version['format'], array( '9-16', '4-5', '1-1' ), true ) ) {
+				$format = '1-1' === $version['format'] ? '1-1' : '4-5';
+			}
+		} elseif ( $adapter && 'courant' === $r['source'] ) {
 			// Fiche : l'étiquette dit le vrai format de la vidéo ; avec plusieurs versions, les boutons au-dessus le disent déjà.
 			$etiquette = $plusieurs ? '' : self::texte_version( $version );
 		} else {
@@ -186,7 +202,7 @@ class Rolling_Widget_Video extends Rolling_Widget {
 		// Fichier au format automatique : rolling.js vérifie le format sur le fichier lui-même.
 		$fichier = $video && ! self::id_youtube( $video ) && ! Rolling_Contenus::est_vimeo( $video );
 		echo '<div class="' . esc_attr( $r['classe'] ) . '"' . ( $video ? ' data-rl-video="' . esc_url( $video ) . '"' : '' ) . ( $fixe ? ' data-rl-apercu="fixe"' : '' )
-			. ( $adapter ? ' data-rl-format="' . esc_attr( $version['format'] ) . '" data-rl-version="' . esc_attr( $rang ) . '"' : '' )
+			. ( $format ? ' data-rl-format="' . esc_attr( $format ) . '"' : '' ) . ( $adapter ? ' data-rl-version="' . esc_attr( $rang ) . '"' : '' )
 			. ( $adapter && $fichier && ! empty( $version['auto'] ) ? ' data-rl-auto="1"' : '' ) . ( $rang > 0 ? ' hidden' : '' ) . '>';
 		if ( $affiche ) {
 			echo get_the_post_thumbnail( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- HTML de WordPress.

@@ -1187,6 +1187,21 @@
      "css": "--rl-repere: 1;"
     },
     {
+     "label": "si-interview",
+     "description": "Repère sans style : le thème masque ce bloc quand le champ « interview » du contenu est vide.",
+     "css": "--rl-repere: 1;"
+    },
+    {
+     "label": "si-temoignage-interview",
+     "description": "Repère sans style : le thème masque ce bloc quand le champ « temoignage-interview » du contenu est vide.",
+     "css": "--rl-repere: 1;"
+    },
+    {
+     "label": "si-video-cote",
+     "description": "Repère sans style : le thème masque ce bloc quand le champ « video-cote » du contenu est vide.",
+     "css": "--rl-repere: 1;"
+    },
+    {
      "label": "si-metier",
      "description": "Repère sans style : le thème masque ce bloc quand le champ « metier » du contenu est vide.",
      "css": "--rl-repere: 1;"
@@ -1234,6 +1249,16 @@
     {
      "label": "sans-citation",
      "description": "Repère sans style : affiché seulement quand le témoignage n'a pas de citation.",
+     "css": "--rl-repere: 1;"
+    },
+    {
+     "label": "sans-interview",
+     "description": "Repère sans style : affiché seulement quand le témoignage n'a pas d'interview du client.",
+     "css": "--rl-repere: 1;"
+    },
+    {
+     "label": "sans-video-cote",
+     "description": "Repère sans style : masqué quand la vidéo en grand de la fiche témoignage est verticale ou carrée (la citation est alors à côté du lecteur).",
      "css": "--rl-repere: 1;"
     },
     {
@@ -1289,7 +1314,7 @@
     {
      "label": "temoin",
      "description": "Carte de témoignage (avec carte-verre) : logo, citation, personne, lien. Se soulève au survol, logo en couleur.",
-     "css": "gap: 14px; padding: 26px; transition: transform 0.45s cubic-bezier(0.2,0.8,0.2,1), box-shadow 0.45s ease; &:hover { transform: translateY(-6px); } &:hover .temoin-logo, &:focus-within .temoin-logo { filter: none; opacity: 1; }"
+     "css": "gap: 14px; padding: 26px; transition: transform 0.45s cubic-bezier(0.2,0.8,0.2,1), box-shadow 0.45s ease; &:hover { transform: translateY(-6px); } &:hover .temoin-logo, &:focus-within .temoin-logo { filter: none; opacity: 1; } &:has(.vignette-video):hover { transform: none; }"
     },
     {
      "label": "temoin-une",
@@ -1497,7 +1522,22 @@
      "label": "scene-video",
      "description": "Fiche réalisation : le lecteur (cadre-scene) et ses infos (infos-video). Vidéo horizontale : lecteur seul, en grand. Verticale ou 4:5 : lecteur de 380 px à gauche, infos à droite ; carrée : lecteur de 560 px. En mobile : lecteur centré, infos dessous.",
      "css": "display: grid; grid-template-columns: minmax(0, 1fr); justify-items: center; align-items: center; gap: 44px; padding: 0; & > .cadre-scene { width: 100%; max-width: 1040px; } & > .infos-video { display: none; }",
-     "brut": "&:has(.video-fiche:not([hidden])[data-rl-format=\"9-16\"]), &:has(.video-fiche:not([hidden])[data-rl-format=\"4-5\"]), &:has(.video-fiche:not([hidden])[data-rl-format=\"1-1\"]) { grid-template-columns: auto minmax(0, 520px); justify-content: center; justify-items: stretch; } &:has(.video-fiche:not([hidden])[data-rl-format=\"9-16\"]) > .cadre-scene, &:has(.video-fiche:not([hidden])[data-rl-format=\"4-5\"]) > .cadre-scene { width: 380px; } &:has(.video-fiche:not([hidden])[data-rl-format=\"1-1\"]) > .cadre-scene { width: 560px; } &:has(.video-fiche:not([hidden])[data-rl-format=\"9-16\"]) > .infos-video, &:has(.video-fiche:not([hidden])[data-rl-format=\"4-5\"]) > .infos-video, &:has(.video-fiche:not([hidden])[data-rl-format=\"1-1\"]) > .infos-video { display: flex; } @media (max-width: 1024px) { &:has(.video-fiche:not([hidden])[data-rl-format=\"9-16\"]) > .cadre-scene, &:has(.video-fiche:not([hidden])[data-rl-format=\"4-5\"]) > .cadre-scene { width: 320px; } &:has(.video-fiche:not([hidden])[data-rl-format=\"1-1\"]) > .cadre-scene { width: 420px; } } @media (max-width: 767px) { &, &:has(.video-fiche:not([hidden])[data-rl-format]) { grid-template-columns: minmax(0, 1fr); justify-items: center; gap: 26px; } &:has(.video-fiche:not([hidden])[data-rl-format=\"9-16\"]) > .cadre-scene, &:has(.video-fiche:not([hidden])[data-rl-format=\"4-5\"]) > .cadre-scene { width: min(300px, 100%); } &:has(.video-fiche:not([hidden])[data-rl-format=\"1-1\"]) > .cadre-scene { width: 100%; } & > .infos-video { justify-self: stretch; } }"
+     "brut": "&:has(.video-fiche:not([hidden])[data-rl-format=\"9-16\"]), &:has(.video-fiche:not([hidden])[data-rl-format=\"4-5\"]), &:has(.video-fiche:not([hidden])[data-rl-format=\"1-1\"]) { grid-template-columns: auto minmax(0, 520px); justify-content: center; justify-items: stretch; } &:has(.video-fiche:not([hidden])[data-rl-format=\"9-16\"]) > .cadre-scene, &:has(.video-fiche:not([hidden])[data-rl-format=\"4-5\"]) > .cadre-scene { width: 380px; } &:has(.video-fiche:not([hidden])[data-rl-format=\"1-1\"]) > .cadre-scene { width: 560px; } &:has(.video-fiche:not([hidden])[data-rl-format=\"9-16\"]) > .infos-video, &:has(.video-fiche:not([hidden])[data-rl-format=\"4-5\"]) > .infos-video, &:has(.video-fiche:not([hidden])[data-rl-format=\"1-1\"]) > .infos-video { display: flex; } @media (max-width: 1024px) { &:has(.video-fiche:not([hidden])[data-rl-format=\"9-16\"]) > .cadre-scene, &:has(.video-fiche:not([hidden])[data-rl-format=\"4-5\"]) > .cadre-scene { width: 320px; } &:has(.video-fiche:not([hidden])[data-rl-format=\"1-1\"]) > .cadre-scene { width: 420px; } } @media (max-width: 767px) { &, &:has(.video-fiche:not([hidden])[data-rl-format]) { grid-template-columns: minmax(0, 1fr); justify-items: center; gap: 26px; } &:has(.video-fiche:not([hidden])[data-rl-format=\"9-16\"]) > .cadre-scene, &:has(.video-fiche:not([hidden])[data-rl-format=\"4-5\"]) > .cadre-scene { width: min(300px, 100%); } &:has(.video-fiche:not([hidden])[data-rl-format=\"1-1\"]) > .cadre-scene { width: 100%; } & > .infos-video { justify-self: stretch; } } &:not(:has(> .infos-video)):has(.video-fiche:not([hidden])[data-rl-format]) { grid-template-columns: minmax(0, 1fr); justify-content: center; justify-items: center; }"
+    },
+    {
+     "label": "citation-cote",
+     "description": "Citation posée à côté d'une interview verticale (fiche témoignage, avec temoin-citation) : plus grande.",
+     "css": "font-size: clamp(20px, 1.9vw, 26px); line-height: 1.4;"
+    },
+    {
+     "label": "citation-avec-interview",
+     "description": "Carte de citation (fiche réalisation) qui montre aussi l'interview du client (vignette-interview) : citation à gauche, interview à droite ; dessous en mobile.",
+     "css": "&:has(> .vignette-interview) { display: grid; grid-template-columns: minmax(0, 1fr) 280px; column-gap: 32px; align-items: start; } & > .vignette-interview { grid-column: 2; grid-row: 1 / span 3; align-self: center; } @media(--mobile) { &:has(> .vignette-interview) { grid-template-columns: minmax(0, 1fr); } & > .vignette-interview { grid-column: auto; grid-row: auto; margin-top: 8px; } }"
+    },
+    {
+     "label": "vignette-interview",
+     "description": "Interview du client en petit, dans la carte de citation de la fiche réalisation (avec vignette-video et vignette-lecteur).",
+     "css": "width: 100%; padding: 6px; border-radius: 22px;"
     },
     {
      "label": "cadre-scene",
