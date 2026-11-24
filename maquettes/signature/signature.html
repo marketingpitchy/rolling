@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rolling · Signature e-mail</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; }
+body { margin: 0; color: #0F0F12; font-family: 'Hanken Grotesk', system-ui, sans-serif; background: #F1EFEC; }
+h1, h2, h3, p, ol, ul { margin: 0; }
+.page { max-width: 1240px; margin: 0 auto; padding: 0 24px 120px; }
+.intro { padding: 56px 0 8px; }
+h1, .option > h3, .partie { font-family: 'Bricolage Grotesque'; font-weight: 650; letter-spacing: -.035em; }
+h1 { font-size: 32px; }
+.intro p, .desc { margin-top: 10px; max-width: 92ch; font-size: 15.5px; line-height: 1.55; color: #4A4858; }
+.partie { margin-top: 72px; font-size: 14px; letter-spacing: .14em; text-transform: uppercase; color: #4A2BB8; }
+.formulaire { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px 18px; margin-top: 18px; padding: 22px; border-radius: 22px; background: #fff; box-shadow: 0 20px 40px -30px rgba(76,48,170,.4); }
+@media (max-width: 900px) { .formulaire { grid-template-columns: minmax(0, 1fr); } }
+.formulaire label { display: flex; flex-direction: column; gap: 6px; font-size: 13px; font-weight: 700; color: #4A4858; }
+.formulaire input { width: 100%; padding: 10px 12px; border: 1px solid #D6D2E3; border-radius: 10px; font: 500 15px 'Hanken Grotesk', sans-serif; color: #0F0F12; background: #FAF9F7; }
+.formulaire input:focus { outline: 3px solid #C4B5FD; border-color: #5B3BEA; }
+.formulaire small { font-weight: 500; color: #5F5C6C; }
+.option { margin-top: 40px; padding-top: 24px; border-top: 1px solid rgba(15,15,18,.12); }
+.option > h3 { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; font-size: 24px; }
+.lettre { display: inline-flex; align-items: center; justify-content: center; min-width: 32px; height: 32px; padding: 0 8px; border-radius: 999px; font-size: 15px; color: #fff; background: #0F0F12; }
+.conseil .lettre { background: #5B3BEA; }
+.etiquette { padding: 3px 10px; border-radius: 999px; font-family: 'Hanken Grotesk'; font-size: 12px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: #4A2BB8; background: #EDE6FF; }
+.vues { display: grid; grid-template-columns: minmax(0, 1fr) 390px; gap: 24px; align-items: start; margin-top: 18px; }
+@media (max-width: 1000px) { .vues { grid-template-columns: minmax(0, 1fr); } }
+.vue-nom { margin-bottom: 8px; font-size: 12px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: #5F5C6C; }
+/* Faux e-mail */
+.mail { border-radius: 16px; overflow: hidden; background: #fff; box-shadow: 0 20px 40px -30px rgba(15,15,18,.45); }
+.mail-tete { padding: 14px 20px; border-bottom: 1px solid #EEE; font: 13px Arial, sans-serif; color: #5F6368; }
+.mail-tete b { color: #202124; }
+.mail-corps { padding: 20px 20px 26px; font: 14px Arial, sans-serif; line-height: 1.5; color: #202124; overflow-x: auto; }
+.mail-corps .texte-mail { margin-bottom: 18px; }
+.mail-corps .tiret { margin-bottom: 12px; color: #9AA0A6; }
+.telephone { width: 390px; max-width: 100%; padding: 10px; border-radius: 34px; background: #0F0F12; }
+.telephone .mail { border-radius: 26px; }
+.telephone .mail-corps { padding: 16px 14px 22px; }
+.actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
+.actions button { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 18px; border: 0; border-radius: 999px; font: 700 14.5px 'Hanken Grotesk', sans-serif; color: #fff; background: #0F0F12; cursor: pointer; }
+.actions button.second { color: #0F0F12; background: #fff; box-shadow: inset 0 0 0 1px rgba(15,15,18,.18); }
+.actions button:focus-visible { outline: 3px solid #5B3BEA; outline-offset: 2px; }
+.copie { align-self: center; font-size: 13.5px; font-weight: 700; color: #1F6B3A; }
+.notes { margin-top: 18px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+@media (max-width: 900px) { .notes { grid-template-columns: minmax(0, 1fr); } }
+.note { padding: 18px 20px; border-radius: 18px; background: #fff; font-size: 14.5px; line-height: 1.55; color: #4A4858; }
+.note h3 { margin-bottom: 8px; font-family: 'Bricolage Grotesque'; font-size: 18px; font-weight: 650; letter-spacing: -.02em; color: #0F0F12; }
+.note ol { padding-left: 20px; } .note li + li { margin-top: 4px; }
+.note b { color: #0F0F12; }
+code { padding: 1px 6px; border-radius: 6px; font-size: 13px; background: #F1EFEC; }
+</style>
+</head>
+<body>
+<main class="page">
+<div class="intro">
+  <h1>Signature e-mail Rolling.</h1>
+  <p>Chaque collaborateur remplit ses informations ci-dessous, choisit une signature et clique sur « Copier la signature », puis la colle dans sa messagerie. Les signatures sont faites pour les messageries : tableaux simples, styles écrits dans le code, police Arial (les polices de la charte ne s'affichent pas dans Gmail ou Outlook), logo hébergé sur le site.</p>
+  <p><b>Mon conseil : A pour tout le monde, D pour les réponses.</b> A est sobre et lisible partout, même dans Outlook ; le lien « Réserver un échange » est le seul appel. B et C sont plus marquées (photo, bouton) : bien pour les commerciaux.</p>
+</div>
+
+<h2 class="partie">1 · Vos informations</h2>
+<form class="formulaire" onsubmit="return false" aria-label="Informations de la signature">
+  <label>Prénom et nom<input id="f-nom" value="Camille Martin" autocomplete="name"></label>
+  <label>Poste<input id="f-poste" value="Cheffe de projet vidéo"></label>
+  <label>Téléphone <small>(facultatif)</small><input id="f-tel" value="06 12 34 56 78" autocomplete="tel"></label>
+  <label>Profil LinkedIn <small>(facultatif)</small><input id="f-linkedin" value="" placeholder="https://www.linkedin.com/in/…"></label>
+  <label>Photo <small>(adresse de l'image, facultatif, signature B)</small><input id="f-photo" value="" placeholder="https://agence-rolling.fr/wp-content/uploads/…jpg"></label>
+  <label>Lien du bouton <small>(page de réservation)</small><input id="f-rdv" value="https://agence-rolling.fr/contact/"></label>
+  <label>Adresse du logo <small>(laisser tel quel)</small><input id="f-logo" value="https://agence-rolling.fr/wp-content/themes/rolling/assets/medias/logo-rolling.png"></label>
+  <label>Site<input id="f-site" value="agence-rolling.fr"></label>
+  <label>Phrase sous la signature<input id="f-phrase" value="Votre agence vidéo illimitée, née chez Pitchy."></label>
+</form>
+
+<h2 class="partie">2 · Les signatures</h2>
+<div id="options"></div>
+
+<h2 class="partie">3 · L'installer</h2>
+<div class="notes">
+  <div class="note"><h3>Gmail</h3><ol><li>Cliquez sur « Copier la signature » ci-dessus.</li><li>Gmail : roue dentée > <b>Voir tous les paramètres</b> > onglet <b>Général</b> > <b>Signature</b> > <b>Créer</b>.</li><li>Collez (Ctrl + V ou Cmd + V) dans la zone, puis <b>Enregistrer les modifications</b> en bas de page.</li><li>Choisissez-la dans « Paramètres par défaut des signatures » (nouveaux e-mails ; D pour les réponses).</li></ol></div>
+  <div class="note"><h3>Outlook (web et nouvel Outlook)</h3><ol><li>Cliquez sur « Copier la signature ».</li><li>Outlook : roue dentée > <b>Comptes</b> > <b>Signatures</b> > <b>Nouvelle signature</b>.</li><li>Collez, nommez-la « Rolling », puis <b>Enregistrer</b>.</li><li>Choisissez-la pour les nouveaux messages (et D pour les réponses / transferts).</li></ol></div>
+  <div class="note"><h3>Outlook sur ordinateur (Windows)</h3><ol><li>Cliquez sur « Copier la signature ».</li><li><b>Fichier</b> > <b>Options</b> > <b>Courrier</b> > <b>Signatures…</b> > <b>Nouveau</b>.</li><li>Collez dans la zone de modification, puis <b>OK</b>.</li><li>La photo ronde (B) y reste carrée : c'est une limite d'Outlook.</li></ol></div>
+  <div class="note"><h3>Apple Mail</h3><ol><li>Mail > <b>Réglages</b> > <b>Signatures</b> > <b>+</b>.</li><li>Décochez « Toujours utiliser ma police par défaut ».</li><li>Collez la signature dans la zone de droite.</li><li>iPhone : Réglages > Mail > Signature n'accepte que du texte : utilisez D, ou envoyez-vous un e-mail avec la signature et copiez-la depuis l'e-mail reçu.</li></ol></div>
+  <div class="note"><h3>Le logo</h3><p>Il est lu sur le site (<code>…/themes/rolling/assets/medias/logo-rolling.png</code>), il reste en place tant que le thème est installé. Pour plus de sûreté, importez-le dans <b>Médias</b> et collez sa nouvelle adresse dans « Adresse du logo ». Mode sombre : certaines messageries assombrissent le fond, le logo noir peut alors se lire moins bien (rien à faire côté signature).</p></div>
+  <div class="note"><h3>Pour toute l'équipe d'un coup</h3><p>Avec Google Workspace ou Microsoft 365, l'administrateur peut aussi poser la signature pour tout le monde (règles de signature de la console). Le bouton « Copier le code HTML » donne le code à coller dans ces outils ; il faut alors remplacer le nom, le poste et le téléphone par les variables de l'outil.</p></div>
+</div>
+</main>
+
+<script>
+const F = id => document.getElementById(id).value.trim();
+const esc = s => s.replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+const POLICE = "font-family:Arial,Helvetica,sans-serif;";
+const ENCRE = '#0F0F12', TEXTE = '#4A4858', LEGENDE = '#6B6878', VIOLET = '#5B3BEA', PECHE = '#FF8A5B';
+
+function d() {
+  const site = F('f-site').replace(/^https?:\/\//, '').replace(/\/$/, '');
+  return { nom: esc(F('f-nom') || 'Prénom Nom'), poste: esc(F('f-poste')), tel: esc(F('f-tel')), telLien: F('f-tel').replace(/[^\d+]/g, '').replace(/^0/, '+33'),
+    linkedin: esc(F('f-linkedin')), photo: esc(F('f-photo')), rdv: esc(F('f-rdv')), logo: esc(F('f-logo')), site: esc(site), phrase: esc(F('f-phrase')),
+    initiales: esc((F('f-nom') || 'P N').split(/\s+/).map(m => m[0] || '').join('').slice(0, 2).toUpperCase()) };
+}
+function liens(v, couleur) {
+  const morceaux = [];
+  if (v.tel) morceaux.push('<a href="tel:' + v.telLien + '" style="color:' + couleur + ';text-decoration:none;white-space:nowrap;">' + v.tel + '</a>');
+  morceaux.push('<a href="https://' + v.site + '" style="color:' + couleur + ';text-decoration:none;white-space:nowrap;">' + v.site + '</a>');
+  if (v.linkedin) morceaux.push('<a href="' + v.linkedin + '" style="color:' + couleur + ';text-decoration:none;white-space:nowrap;">LinkedIn</a>');
+  return morceaux.join('<span style="color:#B9B5C6;">&nbsp;&nbsp;·&nbsp;</span> ');
+}
+const SIGNATURES = {
+  A: v => '<table cellpadding="0" cellspacing="0" border="0" role="presentation" style="border-collapse:collapse;' + POLICE + '"><tr>'
+    + '<td valign="middle" style="padding:0 18px 0 0;"><a href="https://' + v.site + '"><img src="' + v.logo + '" width="118" height="23" alt="Rolling" style="display:block;border:0;width:118px;height:auto;"></a></td>'
+    + '<td valign="middle" style="padding:2px 0 2px 18px;border-left:2px solid ' + PECHE + ';">'
+    + '<div style="font-size:16px;line-height:20px;font-weight:bold;color:' + ENCRE + ';">' + v.nom + '</div>'
+    + (v.poste ? '<div style="font-size:13px;line-height:18px;color:' + TEXTE + ';">' + v.poste + '</div>' : '')
+    + '<div style="padding-top:6px;font-size:13px;line-height:18px;color:' + TEXTE + ';">' + liens(v, TEXTE) + '</div>'
+    + '<div style="padding-top:6px;font-size:13px;line-height:18px;"><a href="' + v.rdv + '" style="color:' + VIOLET + ';font-weight:bold;text-decoration:none;">Réserver un échange&nbsp;→</a></div>'
+    + '</td></tr>'
+    + (v.phrase ? '<tr><td colspan="2" style="padding-top:12px;font-size:12px;line-height:16px;color:' + LEGENDE + ';">' + v.phrase + '</td></tr>' : '')
+    + '</table>',
+  B: v => '<table cellpadding="0" cellspacing="0" border="0" role="presentation" style="border-collapse:collapse;' + POLICE + '"><tr>'
+    + '<td valign="top" style="padding:0 16px 0 0;">'
+    + (v.photo ? '<img src="' + v.photo + '" width="72" height="72" alt="" style="display:block;border:0;width:72px;height:72px;border-radius:50%;object-fit:cover;">'
+      : '<table cellpadding="0" cellspacing="0" border="0" role="presentation"><tr><td width="72" height="72" align="center" valign="middle" bgcolor="' + VIOLET + '" style="width:72px;height:72px;border-radius:36px;background:' + VIOLET + ';background-image:linear-gradient(135deg,' + VIOLET + ',#C94A1E);color:#FFFFFF;font-size:24px;font-weight:bold;' + POLICE + '">' + v.initiales + '</td></tr></table>')
+    + '</td>'
+    + '<td width="3" bgcolor="' + VIOLET + '" style="width:3px;background:' + VIOLET + ';background-image:linear-gradient(180deg,' + VIOLET + ',' + PECHE + ');border-radius:3px;font-size:0;line-height:0;">&nbsp;</td>'
+    + '<td valign="top" style="padding:0 0 0 16px;">'
+    + '<div style="font-size:17px;line-height:21px;font-weight:bold;color:' + ENCRE + ';">' + v.nom + '</div>'
+    + (v.poste ? '<div style="font-size:13px;line-height:18px;color:' + VIOLET + ';font-weight:bold;">' + v.poste + '</div>' : '')
+    + '<div style="padding-top:6px;font-size:13px;line-height:18px;color:' + TEXTE + ';">' + liens(v, TEXTE) + '</div>'
+    + '<div style="padding-top:10px;"><a href="https://' + v.site + '"><img src="' + v.logo + '" width="96" height="19" alt="Rolling" style="display:block;border:0;width:96px;height:auto;"></a></div>'
+    + '</td></tr></table>',
+  C: v => '<table cellpadding="0" cellspacing="0" border="0" role="presentation" style="border-collapse:collapse;' + POLICE + '">'
+    + '<tr><td style="padding-bottom:10px;"><a href="https://' + v.site + '"><img src="' + v.logo + '" width="110" height="22" alt="Rolling" style="display:block;border:0;width:110px;height:auto;"></a></td></tr>'
+    + '<tr><td><span style="font-size:16px;line-height:20px;font-weight:bold;color:' + ENCRE + ';">' + v.nom + '</span>'
+    + (v.poste ? '<span style="font-size:13px;color:' + TEXTE + ';">&nbsp;&nbsp;·&nbsp;&nbsp;' + v.poste + '</span>' : '') + '</td></tr>'
+    + '<tr><td style="padding-top:4px;font-size:13px;line-height:18px;color:' + TEXTE + ';">' + liens(v, TEXTE) + '</td></tr>'
+    + '<tr><td style="padding-top:12px;"><table cellpadding="0" cellspacing="0" border="0" role="presentation"><tr><td bgcolor="' + ENCRE + '" style="border-radius:999px;background:' + ENCRE + ';">'
+    + '<a href="' + v.rdv + '" style="display:inline-block;padding:9px 18px;font-size:13px;line-height:16px;font-weight:bold;color:#FFFFFF;text-decoration:none;border-radius:999px;' + POLICE + '">Réserver un échange&nbsp;→</a></td></tr></table></td></tr>'
+    + '<tr><td style="padding-top:12px;font-size:12px;line-height:17px;color:' + LEGENDE + ';">IA sécurisée&nbsp;&nbsp;·&nbsp;&nbsp;Hébergé en Europe&nbsp;&nbsp;·&nbsp;&nbsp;RGPD' + (v.phrase ? '<br>' + v.phrase : '') + '</td></tr>'
+    + '</table>',
+  D: v => '<table cellpadding="0" cellspacing="0" border="0" role="presentation" style="border-collapse:collapse;' + POLICE + '"><tr><td style="font-size:13px;line-height:18px;color:' + TEXTE + ';">'
+    + '<b style="color:' + ENCRE + ';white-space:nowrap;">' + v.nom + '</b>' + (v.poste ? '&nbsp;&nbsp;·&nbsp; <span style="white-space:nowrap;">' + v.poste + '</span>' : '')
+    + '&nbsp;&nbsp;·&nbsp; <a href="https://' + v.site + '" style="color:' + VIOLET + ';font-weight:bold;text-decoration:none;">Rolling</a>'
+    + (v.tel ? '&nbsp;&nbsp;·&nbsp; <a href="tel:' + v.telLien + '" style="color:' + TEXTE + ';text-decoration:none;white-space:nowrap;">' + v.tel + '</a>' : '')
+    + '</td></tr></table>',
+};
+const INFOS = {
+  A: ['Classique : logo, filet pêche, coordonnées.', 'Le logo à gauche, un filet pêche, le nom, le poste, les coordonnées et le lien « Réserver un échange ». Sobre, s\'affiche bien partout (Gmail, Outlook, Apple Mail, téléphone).', true],
+  B: ['Avec photo.', 'Photo ronde (ou les initiales sur un rond violet si pas de photo), barre violet → pêche, poste en violet, petit logo dessous. Plus chaleureux. Dans Outlook sur ordinateur, la photo reste carrée et la barre est violette unie.', false],
+  C: ['Avec bouton et badges.', 'Logo en haut, nom et poste sur une ligne, vrai bouton noir « Réserver un échange » (lisible même si les images sont bloquées), puis les badges de confiance en texte. La plus commerciale.', false],
+  D: ['Courte, pour les réponses.', 'Une seule ligne : nom, poste, Rolling, téléphone. À choisir pour les réponses et transferts (une grande signature répétée dans chaque réponse alourdit les échanges).', false],
+};
+
+function rendre() {
+  const v = d();
+  const zone = document.getElementById('options');
+  if (!zone.children.length) {
+    Object.keys(SIGNATURES).forEach(cle => {
+      const [titre, desc, conseil] = INFOS[cle];
+      const s = document.createElement('section');
+      s.className = 'option' + (conseil ? ' conseil' : '');
+      s.innerHTML = '<h3><span class="lettre">' + cle + '</span>' + titre + (conseil ? ' <span class="etiquette">conseil</span>' : '') + '</h3><p class="desc">' + desc + '</p>'
+        + '<div class="vues"><div><p class="vue-nom">Ordinateur</p>' + mail(cle, 'o') + '</div><div><p class="vue-nom">Téléphone</p><div class="telephone">' + mail(cle, 't') + '</div></div></div>'
+        + '<div class="actions"><button type="button" data-copier="' + cle + '">Copier la signature</button><button type="button" class="second" data-code="' + cle + '">Copier le code HTML</button><span class="copie" role="status" aria-live="polite"></span></div>';
+      zone.appendChild(s);
+    });
+  }
+  Object.keys(SIGNATURES).forEach(cle => {
+    document.querySelectorAll('[data-signature="' + cle + '"]').forEach(el => { el.innerHTML = SIGNATURES[cle](v); });
+  });
+}
+function mail(cle, ou) {
+  return '<div class="mail"><div class="mail-tete"><b>' + (ou === 'o' ? 'À : Sophie (Groupama)' : 'À : Sophie') + '</b><br>Objet : Vos premières vidéos</div><div class="mail-corps">'
+    + '<div class="texte-mail">Bonjour Sophie,<br>Comme convenu, voici le planning des trois premières vidéos.<br>Belle journée,</div>'
+    + '<div' + (ou === 'o' ? ' data-signature="' + cle + '"' : ' data-signature="' + cle + '"') + '></div></div></div>';
+}
+async function copier(cle, bouton) {
+  const html = SIGNATURES[cle](d());
+  const etat = bouton.parentNode.querySelector('.copie');
+  try {
+    await navigator.clipboard.write([new ClipboardItem({ 'text/html': new Blob([html], { type: 'text/html' }), 'text/plain': new Blob([bouton.parentNode.parentNode.querySelector('[data-signature]').innerText], { type: 'text/plain' }) })]);
+  } catch (e) {
+    // Repli : sélection de la signature affichée, puis copie classique.
+    const el = bouton.parentNode.parentNode.querySelector('[data-signature]');
+    const r = document.createRange(); r.selectNodeContents(el);
+    const sel = getSelection(); sel.removeAllRanges(); sel.addRange(r); document.execCommand('copy'); sel.removeAllRanges();
+  }
+  etat.textContent = 'Signature copiée : collez-la dans votre messagerie.';
+}
+async function code(cle, bouton) {
+  const html = SIGNATURES[cle](d());
+  const etat = bouton.parentNode.querySelector('.copie');
+  try { await navigator.clipboard.writeText(html); } catch (e) {
+    const t = document.createElement('textarea'); t.value = html; document.body.appendChild(t); t.select(); document.execCommand('copy'); t.remove();
+  }
+  etat.textContent = 'Code HTML copié.';
+}
+document.addEventListener('input', e => { if (e.target.closest('.formulaire')) rendre(); });
+document.addEventListener('click', e => {
+  const b = e.target.closest('[data-copier]'); if (b) copier(b.dataset.copier, b);
+  const c = e.target.closest('[data-code]'); if (c) code(c.dataset.code, c);
+});
+rendre();
+</script>
+</body>
+</html>

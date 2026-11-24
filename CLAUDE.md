@@ -985,6 +985,11 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   `.lit > &` masquée pendant la lecture, 13,5 px sur un lecteur `[data-rl-format]`) ; cartes c1 (mur, listes) et c14 (Avant → Après) :
   paragraphe « Extrait · sans son » modifiable ; widget Vidéo : réglages `sans_son_carte` (« Extrait · sans son ») et `sans_son_fiche`
   (« Extrait de réalisation · Présenté sans son », lecteur au format de la vidéo), rien pour une interview.
+- **Maquette « Signature e-mail »** (`maquettes/signature/signature.html`, copie /workspace/maquette-signature.html, **à valider**) :
+  générateur dans la page (nom, poste, téléphone, LinkedIn, photo, lien du bouton, adresse du logo = logo du thème sur
+  agence-rolling.fr) + « Copier la signature » (presse-papiers HTML) / « Copier le code HTML » ; tableaux, styles en ligne, Arial ;
+  A classique logo + filet pêche (conseil, pour tous), B photo ronde ou initiales + barre violet → pêche, C bouton noir +
+  badges en texte, D une ligne pour les réponses (conseil) ; marche à suivre Gmail, Outlook web / Windows, Apple Mail, iPhone.
 - **Chargement de page effet film** (demande avant la fin de la livraison 4) : maquette `maquettes/loading/maquette-loading.html`
   (copie /workspace/maquette-loading.html), 4 options : A amorce 3-2-1, B clap qui se ferme puis rideau, C ouverture
   cinéma (bandes noires + REC + timecode + règle avec la tête de lecture rouge des frises, plus de filet fin), D barre de lecture en haut sans écran. Conseil : C à l'arrivée (première page
