@@ -954,6 +954,12 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   « Encart newsletter après la carte n° » à 0 dans sa liste) ⇒ bloc seul **`15-newsletter`** « Rolling · Newsletter (bandeau à
   placer où vous voulez) » (BLOCS_VARIANTES, section `section-aeree` 72 / 56 / 48 px + `si-newsletter`). Cartes réseaux de
   L'agence jugées trop grandes ⇒ pictogramme 32 px **devant** le titre (inline-block), padding 18 / 22, 135 px de haut.
+- **Maquette « Vidéo du témoignage (interview du client) »** (`maquettes/temoignages-video/interview.html`, générée par
+  `scratchpad/c067/gen-interview.py`, copie /workspace/maquette-interview-temoignage.html, **à valider**) : une vidéo où le client
+  raconte le projet n'est pas une réalisation ⇒ nouveau champ du témoignage « Vidéo du témoignage » (lien + format auto) ;
+  carte A vignette en haut + pastille « Interview » (conseil) / B citation en plaque sur l'image ; fiche A interview en grand sous
+  le bandeau du projet (conseil ; 9:16 = lecteur 340 px + citation à côté), réalisations liées en « Les vidéos réalisées
+  ensemble. » / B interview dans l'en-tête ; fiche réalisation liée : « Voir l'interview » à côté de la citation ; VideoObject.
 - **Chargement de page effet film** (demande avant la fin de la livraison 4) : maquette `maquettes/loading/maquette-loading.html`
   (copie /workspace/maquette-loading.html), 4 options : A amorce 3-2-1, B clap qui se ferme puis rideau, C ouverture
   cinéma (bandes noires + REC + timecode + règle avec la tête de lecture rouge des frises, plus de filet fin), D barre de lecture en haut sans écran. Conseil : C à l'arrivée (première page
