@@ -1,0 +1,226 @@
+<!-- Générateur de signature Rolling : à coller dans un widget HTML d'Elementor (page non indexée). Styles limités à #rl-signature. -->
+<div id="rl-signature">
+  <p class="rls-pastille">Outil interne</p>
+  <h1>Votre signature e-mail <em>Rolling.</em></h1>
+  <p class="rls-chapo">Remplissez vos informations, copiez la signature, collez-la dans votre messagerie. Deux minutes, et tous nos e-mails se ressemblent.</p>
+
+  <div class="rls-grille">
+    <section class="rls-carte" aria-labelledby="rls-t-infos">
+      <h2 class="rls-etape" id="rls-t-infos"><b>1</b>Vos informations</h2>
+      <form class="rls-form" onsubmit="return false">
+        <label for="rls-nom">Prénom et nom</label><input type="text" id="rls-nom" autocomplete="name" placeholder="Camille Martin">
+        <label for="rls-poste">Poste</label><input type="text" id="rls-poste" placeholder="Cheffe de projet vidéo">
+        <label for="rls-tel">Téléphone <small>facultatif</small></label><input type="tel" id="rls-tel" autocomplete="tel" placeholder="06 12 34 56 78">
+        <label for="rls-linkedin">Profil LinkedIn <small>facultatif</small></label><input type="url" id="rls-linkedin" placeholder="https://www.linkedin.com/in/…">
+      </form>
+      <details>
+        <summary>Réglages communs (à ne changer que si besoin)</summary>
+        <form class="rls-form" onsubmit="return false">
+          <label for="rls-rdv">Lien « Réserver un échange »</label><input type="url" id="rls-rdv" value="https://agence-rolling.fr/contact/">
+          <label for="rls-site">Site</label><input type="text" id="rls-site" value="agence-rolling.fr">
+          <label for="rls-phrase">Phrase sous la signature <small>vide = pas de phrase</small></label><input type="text" id="rls-phrase" value="Votre agence vidéo illimitée, née chez Pitchy.">
+          <label for="rls-logo">Adresse du logo</label><input type="url" id="rls-logo" value="https://agence-rolling.fr/wp-content/themes/rolling/assets/medias/logo-rolling.png">
+        </form>
+      </details>
+    </section>
+
+    <section class="rls-carte" aria-labelledby="rls-t-apercu">
+      <h2 class="rls-etape" id="rls-t-apercu"><b>2</b>Votre signature</h2>
+      <div class="rls-mail">
+        <div class="rls-mail-tete"><b>À : Sophie</b><br>Objet : Vos premières vidéos</div>
+        <div class="rls-mail-corps">
+          <div class="rls-texte-mail">Bonjour Sophie,<br>Comme convenu, voici le planning des trois premières vidéos.<br>Belle journée,</div>
+          <div id="rls-signature"></div>
+        </div>
+      </div>
+      <div class="rls-actions">
+        <button type="button" id="rls-copier">Copier la signature</button>
+        <button type="button" class="rls-second" id="rls-code">Copier le code HTML</button>
+      </div>
+      <p class="rls-statut" id="rls-statut" role="status" aria-live="polite"></p>
+    </section>
+  </div>
+
+  <section class="rls-carte rls-installer" aria-labelledby="rls-t-installer">
+    <h2 class="rls-etape" id="rls-t-installer"><b>3</b>La coller dans votre messagerie</h2>
+    <div class="rls-onglets" role="tablist" aria-label="Messageries">
+      <button type="button" role="tab" id="rls-o-gmail" aria-controls="rls-p-gmail" aria-selected="true">Gmail</button>
+      <button type="button" role="tab" id="rls-o-outlook" aria-controls="rls-p-outlook" aria-selected="false" tabindex="-1">Outlook (web)</button>
+      <button type="button" role="tab" id="rls-o-windows" aria-controls="rls-p-windows" aria-selected="false" tabindex="-1">Outlook (Windows)</button>
+      <button type="button" role="tab" id="rls-o-apple" aria-controls="rls-p-apple" aria-selected="false" tabindex="-1">Apple Mail</button>
+      <button type="button" role="tab" id="rls-o-iphone" aria-controls="rls-p-iphone" aria-selected="false" tabindex="-1">iPhone</button>
+    </div>
+    <div class="rls-panneau" role="tabpanel" id="rls-p-gmail" aria-labelledby="rls-o-gmail">
+      <ol><li>Cliquez sur <b>Copier la signature</b>.</li><li>Dans Gmail : roue dentée en haut à droite &gt; <b>Voir tous les paramètres</b> &gt; onglet <b>Général</b> &gt; rubrique <b>Signature</b> &gt; <b>Créer</b>, nommez-la « Rolling ».</li><li>Cliquez dans la zone de texte et collez (Ctrl + V, ou Cmd + V sur Mac).</li><li>Sous « Paramètres par défaut des signatures », choisissez « Rolling » pour les nouveaux e-mails.</li><li>Tout en bas de la page : <b>Enregistrer les modifications</b>.</li></ol>
+    </div>
+    <div class="rls-panneau" role="tabpanel" id="rls-p-outlook" aria-labelledby="rls-o-outlook" hidden>
+      <ol><li>Cliquez sur <b>Copier la signature</b>.</li><li>Dans Outlook sur le web (ou le nouvel Outlook) : roue dentée &gt; <b>Comptes</b> &gt; <b>Signatures</b> &gt; <b>Nouvelle signature</b>, nommez-la « Rolling ».</li><li>Collez dans la zone de texte.</li><li>Choisissez « Rolling » pour les nouveaux messages, puis <b>Enregistrer</b>.</li></ol>
+    </div>
+    <div class="rls-panneau" role="tabpanel" id="rls-p-windows" aria-labelledby="rls-o-windows" hidden>
+      <ol><li>Cliquez sur <b>Copier la signature</b>.</li><li>Dans Outlook : <b>Fichier</b> &gt; <b>Options</b> &gt; <b>Courrier</b> &gt; <b>Signatures…</b> &gt; <b>Nouveau</b>, nommez-la « Rolling ».</li><li>Collez dans la zone « Modifier la signature ».</li><li>À droite, choisissez « Rolling » pour les nouveaux messages, puis <b>OK</b>.</li></ol>
+    </div>
+    <div class="rls-panneau" role="tabpanel" id="rls-p-apple" aria-labelledby="rls-o-apple" hidden>
+      <ol><li>Cliquez sur <b>Copier la signature</b>.</li><li>Dans Mail : menu <b>Mail</b> &gt; <b>Réglages</b> &gt; onglet <b>Signatures</b> &gt; bouton <b>+</b>, nommez-la « Rolling ».</li><li>Décochez « Toujours utiliser ma police par défaut ».</li><li>Collez dans la zone de droite. Le logo peut ne pas s'afficher dans les réglages : il apparaît dans les e-mails envoyés.</li></ol>
+    </div>
+    <div class="rls-panneau" role="tabpanel" id="rls-p-iphone" aria-labelledby="rls-o-iphone" hidden>
+      <ol><li>Ouvrez cette page sur votre iPhone, remplissez vos informations et cliquez sur <b>Copier la signature</b>.</li><li><b>Réglages</b> &gt; <b>Apps</b> &gt; <b>Mail</b> &gt; <b>Signature</b>, effacez le texte et collez.</li><li>Si la mise en page disparaît, secouez l'iPhone juste après avoir collé et touchez <b>Annuler</b> dans la fenêtre qui s'ouvre : la signature retrouve ses couleurs et son logo.</li></ol>
+    </div>
+  </section>
+
+  <div class="rls-aide">
+    <div><h3>Une signature, pas deux</h3><p>Supprimez votre ancienne signature, et vérifiez qu'elle n'est pas ajoutée deux fois dans les réponses.</p></div>
+    <div><h3>Le logo ne s'affiche pas ?</h3><p>Certaines messageries bloquent les images des expéditeurs inconnus : le destinataire voit le mot « Rolling » à la place, puis le logo une fois les images autorisées.</p></div>
+    <div><h3>Vos informations restent chez vous</h3><p>Rien n'est envoyé : elles sont gardées seulement dans ce navigateur, pour la prochaine fois.</p></div>
+  </div>
+</div>
+
+<style>
+#rl-signature { --rls-encre: #0F0F12; --rls-texte: #4A4858; --rls-legende: #5F5C6C; --rls-violet: #5B3BEA; --rls-violet-texte: #4A2BB8;
+  box-sizing: border-box; max-width: 1168px; margin: 0 auto; padding: 150px 24px 96px; color: var(--rls-encre); font-family: 'Hanken Grotesk', system-ui, -apple-system, 'Segoe UI', sans-serif; font-size: 16px; line-height: 1.5; text-align: left; }
+#rl-signature *, #rl-signature *::before, #rl-signature *::after { box-sizing: border-box; }
+#rl-signature h1, #rl-signature h2, #rl-signature h3, #rl-signature p, #rl-signature ol { margin: 0; }
+#rl-signature .rls-pastille { display: inline-block; padding: 5px 12px; border-radius: 999px; font-size: 12px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: var(--rls-violet-texte); background: #EDE6FF; }
+#rl-signature h1 { margin-top: 18px; font-family: 'Bricolage Grotesque', 'Hanken Grotesk', system-ui, sans-serif; font-size: clamp(32px, 4.4vw, 52px); font-weight: 650; line-height: 1.04; letter-spacing: -.05em; color: var(--rls-encre); text-wrap: balance; }
+#rl-signature h1 em { font-style: normal; padding: 0 .06em; margin: 0 -.06em; background: linear-gradient(95deg, #5B3BEA, #6F3FD6 42%, #C94A1E); -webkit-background-clip: text; background-clip: text; color: transparent; }
+#rl-signature .rls-chapo { margin-top: 14px; max-width: 62ch; font-size: 18px; line-height: 1.55; color: var(--rls-texte); }
+#rl-signature .rls-grille { display: grid; grid-template-columns: minmax(0, 400px) minmax(0, 1fr); gap: 28px; align-items: start; margin-top: 40px; }
+#rl-signature .rls-carte { min-width: 0; padding: 26px; border-radius: 26px; background: rgba(255,255,255,.82); border: 1px solid rgba(255,255,255,.95); box-shadow: 0 30px 60px -36px rgba(76,48,170,.45); }
+#rl-signature .rls-installer { margin-top: 28px; }
+#rl-signature .rls-etape { display: inline-flex; align-items: center; gap: 10px; font-family: 'Hanken Grotesk', system-ui, sans-serif; font-size: 12px; font-weight: 800; line-height: 1.3; letter-spacing: .14em; text-transform: uppercase; color: var(--rls-violet-texte); }
+#rl-signature .rls-etape b { display: inline-grid; place-items: center; width: 26px; height: 26px; border-radius: 50%; font-size: 13px; letter-spacing: 0; color: #FFFFFF; background: var(--rls-violet); }
+#rl-signature .rls-form { display: grid; gap: 6px; margin-top: 18px; }
+#rl-signature label { display: block; margin: 8px 0 0; font-size: 13.5px; font-weight: 700; line-height: 1.4; color: var(--rls-encre); vertical-align: baseline; }
+#rl-signature label:first-child { margin-top: 0; }
+#rl-signature label small { font-size: 12.5px; font-weight: 500; color: var(--rls-legende); }
+#rl-signature input { display: block; width: 100%; min-height: 46px; margin: 0; padding: 10px 14px; border: 1px solid #D6D2E3; border-radius: 12px; font: 500 15.5px 'Hanken Grotesk', system-ui, sans-serif; color: var(--rls-encre); background: #FFFFFF; box-shadow: none; }
+#rl-signature input:focus { outline: 3px solid #C4B5FD; outline-offset: 0; border-color: var(--rls-violet); }
+#rl-signature input::placeholder { color: #8A8698; }
+#rl-signature details { margin-top: 18px; padding-top: 12px; border-top: 1px solid rgba(15,15,18,.1); }
+#rl-signature summary { display: flex; align-items: center; min-height: 32px; cursor: pointer; font-size: 13.5px; font-weight: 700; color: var(--rls-violet-texte); }
+#rl-signature summary:focus-visible { outline: 3px solid var(--rls-violet); outline-offset: 2px; border-radius: 6px; }
+#rl-signature .rls-mail { margin-top: 18px; border-radius: 18px; overflow: hidden; background: #FFFFFF; box-shadow: 0 20px 40px -30px rgba(15,15,18,.4); }
+#rl-signature .rls-mail-tete { padding: 14px 20px; border-bottom: 1px solid #EEEEEE; font: 13px/1.5 Arial, sans-serif; color: #5F6368; }
+#rl-signature .rls-mail-tete b { color: #202124; }
+#rl-signature .rls-mail-corps { padding: 20px 20px 26px; font: 14px/1.5 Arial, sans-serif; color: #202124; overflow-x: auto; }
+#rl-signature .rls-texte-mail { margin-bottom: 18px; }
+/* L'aperçu ignore les styles de tableau du thème (fond rayé, largeur 100 %, alignement en haut) : seule compte la signature. */
+#rl-signature #rls-signature table { width: auto; margin: 0; border: 0; border-collapse: collapse; background: transparent; font-size: 14px; }
+#rl-signature #rls-signature td { background: transparent; vertical-align: middle; line-height: normal; }
+#rl-signature #rls-signature img { max-width: none; }
+#rl-signature .rls-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-top: 18px; }
+#rl-signature button { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 48px; margin: 0; padding: 0 22px; border: 0; border-radius: 999px; font: 700 15px/1.2 'Hanken Grotesk', system-ui, sans-serif; letter-spacing: 0; text-transform: none; color: #FFFFFF; background: var(--rls-encre); box-shadow: 0 14px 26px -16px rgba(15,15,18,.7); cursor: pointer; }
+#rl-signature button.rls-second { color: var(--rls-encre); background: #FFFFFF; box-shadow: inset 0 0 0 1px rgba(15,15,18,.18); }
+#rl-signature button:focus-visible { outline: 3px solid var(--rls-violet); outline-offset: 3px; }
+#rl-signature .rls-statut { min-height: 22px; margin-top: 10px; font-size: 14px; font-weight: 700; color: #1F6B3A; }
+#rl-signature .rls-statut.rls-erreur { color: #A63C14; }
+#rl-signature .rls-onglets { display: flex; flex-wrap: wrap; gap: 6px; width: fit-content; max-width: 100%; margin-top: 18px; padding: 5px; border-radius: 22px; background: #F1EEF8; }
+#rl-signature .rls-onglets button { min-height: 38px; padding: 0 16px; font-size: 14px; color: var(--rls-texte); background: transparent; box-shadow: none; }
+#rl-signature .rls-onglets button[aria-selected="true"] { color: var(--rls-encre); background: #FFFFFF; box-shadow: 0 6px 14px -10px rgba(15,15,18,.5); }
+#rl-signature .rls-panneau { max-width: 75ch; margin-top: 16px; font-size: 15px; line-height: 1.6; color: var(--rls-texte); }
+#rl-signature .rls-panneau[hidden] { display: none; }
+#rl-signature .rls-panneau ol { margin: 0; padding-left: 22px; list-style: decimal; }
+#rl-signature .rls-panneau li { margin: 0; }
+#rl-signature .rls-panneau li + li { margin-top: 6px; }
+#rl-signature .rls-panneau b { color: var(--rls-encre); }
+#rl-signature .rls-aide { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin-top: 22px; }
+#rl-signature .rls-aide > div { padding: 18px 20px; border-radius: 18px; background: rgba(255,255,255,.7); font-size: 14.5px; line-height: 1.55; color: var(--rls-texte); }
+#rl-signature .rls-aide h3 { margin-bottom: 6px; font-family: 'Bricolage Grotesque', 'Hanken Grotesk', system-ui, sans-serif; font-size: 17px; font-weight: 650; line-height: 1.3; letter-spacing: -.02em; color: var(--rls-encre); }
+@media (max-width: 900px) { #rl-signature .rls-grille, #rl-signature .rls-aide { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 480px) { #rl-signature { padding: 120px 16px 72px; } #rl-signature .rls-carte { padding: 20px 16px; } #rl-signature .rls-mail-corps { padding: 16px 14px 22px; } }
+</style>
+
+<script>
+(function () {
+  var racine = document.getElementById('rl-signature');
+  if (!racine || racine.rlPret) { return; }
+  racine.rlPret = true;
+  var CHAMPS = ['rls-nom', 'rls-poste', 'rls-tel', 'rls-linkedin', 'rls-rdv', 'rls-site', 'rls-phrase', 'rls-logo'];
+  var CLE = 'rolling-signature';
+  var ENCRE = '#0F0F12', TEXTE = '#4A4858', LEGENDE = '#6B6878', VIOLET = '#5B3BEA', PECHE = '#FF8A5B', SEP = '#B9B5C6';
+  var POLICE = 'font-family:Arial,Helvetica,sans-serif;';
+  function val(id) { return document.getElementById(id).value.trim(); }
+  function esc(s) { return s.replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+  function lien(url) { url = url.trim(); return url && !/^https?:\/\//i.test(url) ? 'https://' + url : url; }
+
+  function signature() {
+    var nom = esc(val('rls-nom') || 'Prénom Nom'), poste = esc(val('rls-poste')), tel = esc(val('rls-tel'));
+    var telLien = val('rls-tel').replace(/[^\d+]/g, '').replace(/^0/, '+33');
+    var linkedin = esc(lien(val('rls-linkedin'))), site = esc(val('rls-site').replace(/^https?:\/\//i, '').replace(/\/$/, ''));
+    var rdv = esc(lien(val('rls-rdv'))), logo = esc(lien(val('rls-logo'))), phrase = esc(val('rls-phrase'));
+    var s = 'color:' + TEXTE + ';text-decoration:none;white-space:nowrap;', morceaux = [];
+    if (tel) { morceaux.push('<a href="tel:' + telLien + '" style="' + s + '">' + tel + '</a>'); }
+    if (site) { morceaux.push('<a href="https://' + site + '" style="' + s + '">' + site + '</a>'); }
+    if (linkedin) { morceaux.push('<a href="' + linkedin + '" style="' + s + '">LinkedIn</a>'); }
+    var coordonnees = morceaux.join('<span style="color:' + SEP + ';">&nbsp;&nbsp;·&nbsp;</span> ');
+    return '<table cellpadding="0" cellspacing="0" border="0" role="presentation" style="border-collapse:collapse;' + POLICE + '"><tr>'
+      + '<td valign="middle" style="padding:0 18px 0 0;border:0;vertical-align:middle;"><a href="https://' + site + '"><img src="' + logo + '" width="118" alt="Rolling" style="display:block;border:0;width:118px;max-width:118px;height:auto;"></a></td>'
+      + '<td valign="middle" style="padding:2px 0 2px 18px;border:0;border-left:2px solid ' + PECHE + ';vertical-align:middle;">'
+      + '<div style="font-size:16px;line-height:20px;font-weight:bold;color:' + ENCRE + ';">' + nom + '</div>'
+      + (poste ? '<div style="font-size:13px;line-height:18px;color:' + TEXTE + ';">' + poste + '</div>' : '')
+      + (coordonnees ? '<div style="padding-top:6px;font-size:13px;line-height:18px;color:' + TEXTE + ';">' + coordonnees + '</div>' : '')
+      + (rdv ? '<div style="padding-top:6px;font-size:13px;line-height:18px;"><a href="' + rdv + '" style="color:' + VIOLET + ';font-weight:bold;text-decoration:none;">Réserver un échange&nbsp;→</a></div>' : '')
+      + '</td></tr>'
+      + (phrase ? '<tr><td colspan="2" style="padding:12px 0 0;border:0;font-size:12px;line-height:16px;color:' + LEGENDE + ';">' + phrase + '</td></tr>' : '')
+      + '</table>';
+  }
+
+  var zone = document.getElementById('rls-signature'), statut = document.getElementById('rls-statut');
+  function dire(texte, erreur) { statut.classList.toggle('rls-erreur', !!erreur); statut.textContent = texte; }
+  function rendre() {
+    zone.innerHTML = signature();
+    dire('');
+    try { var d = {}; CHAMPS.forEach(function (id) { d[id] = document.getElementById(id).value; }); localStorage.setItem(CLE, JSON.stringify(d)); } catch (e) {}
+  }
+  try {
+    var garde = JSON.parse(localStorage.getItem(CLE) || '{}');
+    CHAMPS.forEach(function (id) { if (typeof garde[id] === 'string') { document.getElementById(id).value = garde[id]; } });
+  } catch (e) {}
+  CHAMPS.forEach(function (id) { document.getElementById(id).addEventListener('input', rendre); });
+
+  function copieClassique(texte, html) {
+    var ok = false;
+    try {
+      if (html) {
+        var r = document.createRange(); r.selectNodeContents(zone);
+        var sel = window.getSelection(); sel.removeAllRanges(); sel.addRange(r);
+        ok = document.execCommand('copy'); sel.removeAllRanges();
+      } else {
+        var t = document.createElement('textarea'); t.value = texte; t.style.position = 'fixed'; t.style.opacity = '0';
+        document.body.appendChild(t); t.select(); ok = document.execCommand('copy'); t.remove();
+      }
+    } catch (e) {}
+    return ok;
+  }
+  document.getElementById('rls-copier').addEventListener('click', function () {
+    if (!val('rls-nom')) { dire('Indiquez d\'abord votre prénom et votre nom.', true); document.getElementById('rls-nom').focus(); return; }
+    var html = signature(), fini = function () { dire('Signature copiée. Collez-la dans votre messagerie (étape 3).'); };
+    if (navigator.clipboard && window.ClipboardItem) {
+      navigator.clipboard.write([new ClipboardItem({ 'text/html': new Blob([html], { type: 'text/html' }), 'text/plain': new Blob([zone.innerText], { type: 'text/plain' }) })])
+        .then(fini, function () { if (copieClassique('', true)) { fini(); } });
+    } else if (copieClassique('', true)) { fini(); }
+  });
+  document.getElementById('rls-code').addEventListener('click', function () {
+    var html = signature(), fini = function () { dire('Code HTML copié.'); };
+    if (navigator.clipboard) { navigator.clipboard.writeText(html).then(fini, function () { if (copieClassique(html, false)) { fini(); } }); }
+    else if (copieClassique(html, false)) { fini(); }
+  });
+
+  var onglets = Array.prototype.slice.call(racine.querySelectorAll('[role="tab"]'));
+  function choisir(o) {
+    onglets.forEach(function (x) {
+      var actif = x === o;
+      x.setAttribute('aria-selected', actif ? 'true' : 'false');
+      x.tabIndex = actif ? 0 : -1;
+      document.getElementById(x.getAttribute('aria-controls')).hidden = !actif;
+    });
+    o.focus();
+  }
+  onglets.forEach(function (o, i) {
+    o.addEventListener('click', function () { choisir(o); });
+    o.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') { e.preventDefault(); choisir(onglets[(i + (e.key === 'ArrowRight' ? 1 : onglets.length - 1)) % onglets.length]); }
+    });
+  });
+  rendre();
+})();
+</script>

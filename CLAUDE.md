@@ -1010,6 +1010,11 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   *.hubspot.com), sinon `load` + 2,5 s, sinon 15 s ; iframe déjà chargée (Performance API) ⇒ 1,5 s. Mesuré : 2 à 5 s avec
   meetings.hubspot.com/agenda-rolling. Automatique sur les pages existantes (classe mise à jour). Leçon : `space`/`repeat-x`
   peint aussi dans la marge (bouts de ronds) ⇒ motif sur toute la largeur.
+- **Générateur de signature pour une page WordPress** (choix de la cliente, page non indexée) : `maquettes/signature/signature-wordpress.html`
+  (copie /workspace/generateur-signature-a-coller.txt) = un seul widget HTML d'Elementor : `div#rl-signature` + `<style>` limité à
+  `#rl-signature` (bat Hello : boutons, champs, labels, styles de tableau neutralisés dans l'aperçu) + script ; ids `rls-…` ; sans
+  logo en tête (en-tête du site) ; padding-top 150 px sous l'en-tête collant. Testé sur wp (page Elementor pleine largeur, titre masqué) :
+  axe 0, 390 sans débordement, copie OK.
 - **Chargement de page effet film** (demande avant la fin de la livraison 4) : maquette `maquettes/loading/maquette-loading.html`
   (copie /workspace/maquette-loading.html), 4 options : A amorce 3-2-1, B clap qui se ferme puis rideau, C ouverture
   cinéma (bandes noires + REC + timecode + règle avec la tête de lecture rouge des frises, plus de filet fin), D barre de lecture en haut sans écran. Conseil : C à l'arrivée (première page
