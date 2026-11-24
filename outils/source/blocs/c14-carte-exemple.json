@@ -4,7 +4,7 @@
  "type": "e-flexbox",
  "apercu": "rolling_realisation",
  "composition": {
-  "xml_structure": "<e-flexbox configuration-id=\"Carte réalisation (Avant → Après)\"><e-div-block configuration-id=\"Réalisation exemple · image\"><e-image configuration-id=\"Réalisation exemple · vignette\"></e-image><e-paragraph configuration-id=\"Réalisation exemple · client\"></e-paragraph></e-div-block><e-flexbox configuration-id=\"Réalisation exemple · bas\"><e-flexbox configuration-id=\"Réalisation exemple · légende\"><e-paragraph configuration-id=\"Réalisation exemple · avant (orange)\"></e-paragraph><e-paragraph configuration-id=\"Réalisation exemple · avant (bleu)\"></e-paragraph><e-paragraph configuration-id=\"Réalisation exemple · après\"></e-paragraph></e-flexbox><e-heading configuration-id=\"Réalisation exemple · titre\"></e-heading><e-paragraph configuration-id=\"Réalisation exemple · voir\"></e-paragraph></e-flexbox></e-flexbox>",
+  "xml_structure": "<e-flexbox configuration-id=\"Carte réalisation (Avant → Après)\"><e-div-block configuration-id=\"Réalisation exemple · image\"><e-image configuration-id=\"Réalisation exemple · vignette\"></e-image><e-paragraph configuration-id=\"Réalisation exemple · client\"></e-paragraph><e-paragraph configuration-id=\"Réalisation exemple · sans son\"></e-paragraph></e-div-block><e-flexbox configuration-id=\"Réalisation exemple · bas\"><e-flexbox configuration-id=\"Réalisation exemple · légende\"><e-paragraph configuration-id=\"Réalisation exemple · avant (orange)\"></e-paragraph><e-paragraph configuration-id=\"Réalisation exemple · avant (bleu)\"></e-paragraph><e-paragraph configuration-id=\"Réalisation exemple · après\"></e-paragraph></e-flexbox><e-heading configuration-id=\"Réalisation exemple · titre\"></e-heading><e-paragraph configuration-id=\"Réalisation exemple · voir\"></e-paragraph></e-flexbox></e-flexbox>",
   "element_config": {
    "Carte réalisation (Avant → Après)": {
     "link": {
@@ -21,6 +21,9 @@
    },
    "Réalisation exemple · client": {
     "paragraph": "⟦rolling-champ|champ=client⟧"
+   },
+   "Réalisation exemple · sans son": {
+    "paragraph": "Extrait · sans son"
    },
    "Réalisation exemple · avant (orange)": {
     "paragraph": "⟦rolling-champ|champ=avant⟧"
@@ -53,6 +56,10 @@
    "Réalisation exemple · client": [
     "pastille-client",
     "si-client"
+   ],
+   "Réalisation exemple · sans son": [
+    "pastille-sans-son",
+    "si-sans-son"
    ],
    "Réalisation exemple · bas": [
     "bas-exemple"

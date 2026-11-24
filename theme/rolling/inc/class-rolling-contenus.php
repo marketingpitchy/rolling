@@ -275,6 +275,7 @@ class Rolling_Contenus {
 							'nom'    => __( 'Nom de la version (facultatif, ex. Stories)', 'rolling' ),
 						),
 					),
+					'sans_son'      => array( 'case', __( 'Extrait présenté sans son', 'rolling' ), __( 'Cochée : la mention « Extrait · sans son » s’affiche sur les cartes, et « Extrait de réalisation · Présenté sans son » sur la fiche (textes modifiables dans les modèles de cartes et dans le widget Vidéo). Elle disparaît quand la vidéo démarre.', 'rolling' ) ),
 					'transcription' => array( 'zone', __( 'Transcription (facultatif)', 'rolling' ), __( 'Laissez vide : la ligne « Lire la transcription » n’apparaît pas.', 'rolling' ) ),
 				),
 				__( 'Le récit', 'rolling' ) => array(

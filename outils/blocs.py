@@ -938,6 +938,7 @@ carte_realisation = F('Carte réalisation', ['carte-liste'], tag='article', enfa
             I('Réalisation · image', DYN('rolling-image', image='une'), cls=['image-couvrante'], taille='large'),
             P('Réalisation · format', DYN('rolling-terme', taxonomie='rolling_format'), ['bandeau-video', 'si-format']),
             P('Réalisation · durée', DYN('rolling-champ', champ='duree'), ['duree', 'si-duree']),
+            P('Réalisation · sans son', 'Extrait · sans son', ['pastille-sans-son', 'si-sans-son']),
             lecture('Réalisation · lecture'),
         ]),
     ]),
@@ -955,6 +956,7 @@ carte_exemple = F('Carte réalisation (Avant → Après)', ['carte-verre', 'cart
     D('Réalisation exemple · image', ['cadre-exemple'], enfants=[
         I('Réalisation exemple · vignette', DYN('rolling-image', image='une'), cls=['image-vignette'], taille='medium_large'),
         P('Réalisation exemple · client', DYN('rolling-champ', champ='client'), ['pastille-client', 'si-client']),
+        P('Réalisation exemple · sans son', 'Extrait · sans son', ['pastille-sans-son', 'si-sans-son']),
     ]),
     F('Réalisation exemple · bas', ['bas-exemple'], enfants=[
         F('Réalisation exemple · légende', ['rangee', 'si-avant'], enfants=[

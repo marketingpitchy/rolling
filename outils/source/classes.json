@@ -1202,6 +1202,11 @@
      "css": "--rl-repere: 1;"
     },
     {
+     "label": "si-sans-son",
+     "description": "Repère sans style : le thème masque ce bloc quand le champ « sans-son » du contenu est vide.",
+     "css": "--rl-repere: 1;"
+    },
+    {
      "label": "si-metier",
      "description": "Repère sans style : le thème masque ce bloc quand le champ « metier » du contenu est vide.",
      "css": "--rl-repere: 1;"
@@ -1538,6 +1543,12 @@
      "label": "vignette-interview",
      "description": "Interview du client en petit, dans la carte de citation de la fiche réalisation (avec vignette-video et vignette-lecteur).",
      "css": "width: 100%; padding: 6px; border-radius: 22px;"
+    },
+    {
+     "label": "pastille-sans-son",
+     "description": "Mention « Extrait · sans son » en bas à gauche d'une vignette ou du lecteur (haut-parleur barré en verre fumé) ; masquée quand la vidéo démarre.",
+     "css": "position: absolute; z-index: 3; left: var(--rl-marge-vignette, 12px); bottom: var(--rl-marge-vignette, 12px); display: inline-flex; align-items: center; gap: 7px; width: fit-content; max-width: calc(100% - 24px); margin: 0; padding: 6px 12px 6px 9px; border-radius: 999px; font-family: Hanken Grotesk; font-size: 12.5px; line-height: 1.25; font-weight: 700; color: #FFFFFF; background-color: rgba(15,10,36,0.74); backdrop-filter: blur(12px); pointer-events: none; @media(--mobile) { font-size: 12px; padding: 5px 10px 5px 8px; }",
+     "brut": "&::before { position: relative; top: auto; right: auto; bottom: auto; left: auto; height: auto; opacity: 1; mix-blend-mode: normal; border: 0; content: ''; flex: none; width: 16px; height: 16px; background-color: currentColor; -webkit-mask: url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M3 9.5v5h3.6L11 18.6V5.4L6.6 9.5z'/%3E%3Cpath d='M15.5 9.5l5 5M20.5 9.5l-5 5' stroke='%23000' stroke-width='2' stroke-linecap='round' fill='none'/%3E%3C/svg%3E\") center / contain no-repeat; mask: url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M3 9.5v5h3.6L11 18.6V5.4L6.6 9.5z'/%3E%3Cpath d='M15.5 9.5l5 5M20.5 9.5l-5 5' stroke='%23000' stroke-width='2' stroke-linecap='round' fill='none'/%3E%3C/svg%3E\") center / contain no-repeat; } .lit > & { display: none; } [data-rl-format] > & { font-size: 13.5px; }"
     },
     {
      "label": "cadre-scene",

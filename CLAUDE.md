@@ -978,7 +978,13 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   « Extrait présenté sans son » (texte réglable dans Personnaliser) ; 7 formulations (conseil « Extrait · sans son » sur les
   cartes, « Extrait de réalisation · Présenté sans son » sur la fiche) ; looks A pastille en bas à gauche de l'image (conseil),
   B ligne lilas sous la vidéo, C sous le bouton lecture, D icône seule + bulle, E A + rappel 4 s pendant la lecture, F étiquette
-  sous le titre. Aucun mouvement du bouton lecture au survol.
+  sous le titre. Aucun mouvement du bouton lecture au survol. **Validée : A, 1 sur les cartes, 2 sur les fiches.**
+- **0.7.23 : extrait sans son (choix A, formulation 1 sur les cartes, 2 sur les fiches)** : réalisation, case `sans_son`
+  (« Extrait présenté sans son », groupe « La vidéo », toutes les versions) + repère `si-sans-son` ; classe `pastille-sans-son`
+  (prioritaire : bas gauche, haut-parleur barré en `::before` masque SVG, fond uni translucide rgba(15,10,36,.74) pour Ally,
+  `.lit > &` masquée pendant la lecture, 13,5 px sur un lecteur `[data-rl-format]`) ; cartes c1 (mur, listes) et c14 (Avant → Après) :
+  paragraphe « Extrait · sans son » modifiable ; widget Vidéo : réglages `sans_son_carte` (« Extrait · sans son ») et `sans_son_fiche`
+  (« Extrait de réalisation · Présenté sans son », lecteur au format de la vidéo), rien pour une interview.
 - **Chargement de page effet film** (demande avant la fin de la livraison 4) : maquette `maquettes/loading/maquette-loading.html`
   (copie /workspace/maquette-loading.html), 4 options : A amorce 3-2-1, B clap qui se ferme puis rideau, C ouverture
   cinéma (bandes noires + REC + timecode + règle avec la tête de lecture rouge des frises, plus de filet fin), D barre de lecture en haut sans écran. Conseil : C à l'arrivée (première page

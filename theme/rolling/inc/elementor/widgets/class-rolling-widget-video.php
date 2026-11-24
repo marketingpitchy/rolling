@@ -58,6 +58,8 @@ class Rolling_Widget_Video extends Rolling_Widget {
 			)
 		);
 		$this->texte( 'texte_interview', __( 'Pastille d’une interview du client', 'rolling' ), __( 'Interview', 'rolling' ) );
+		$this->texte( 'sans_son_carte', __( 'Extrait sans son : mention sur une carte', 'rolling' ), __( 'Extrait · sans son', 'rolling' ) );
+		$this->texte( 'sans_son_fiche', __( 'Extrait sans son : mention sur la fiche (format de la vidéo)', 'rolling' ), __( 'Extrait de réalisation · Présenté sans son', 'rolling' ) );
 		$this->texte( 'son', __( 'Lien : texte du bouton son', 'rolling' ), __( 'Activer le son', 'rolling' ) );
 		$this->texte( 'son_off', __( 'Lien : texte du bouton pour couper le son', 'rolling' ), __( 'Couper le son', 'rolling' ) );
 		$this->choix(
@@ -243,6 +245,13 @@ class Rolling_Widget_Video extends Rolling_Widget {
 		}
 		if ( $duree ) {
 			echo '<span class="duree">' . esc_html( $duree ) . '</span>';
+		}
+		if ( ! $interview && Rolling_Contenus::valeur( 'sans_son', $id ) ) {
+			// Extrait présenté sans son (case de la réalisation) : mention en bas à gauche, retirée quand la vidéo démarre.
+			$muet = (string) ( $adapter ? ( $r['sans_son_fiche'] ?? '' ) : ( $r['sans_son_carte'] ?? '' ) );
+			if ( '' !== trim( $muet ) ) {
+				echo '<span class="pastille-sans-son">' . esc_html( $muet ) . '</span>';
+			}
 		}
 		if ( $video ) {
 			$nom_lecture = sprintf( $r['libelle'], $titre . ( '' !== $version['nom'] ? ' (' . $version['nom'] . ')' : '' ) );
