@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rolling · Chargement du calendrier</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; }
+body { margin: 0; color: #0F0F12; font-family: 'Hanken Grotesk', system-ui, sans-serif; background: #F1EFEC; }
+h1, h2, h3, p { margin: 0; }
+.page { max-width: 1240px; margin: 0 auto; padding: 0 24px 120px; }
+.intro { padding: 56px 0 8px; }
+h1, .option > h3 { font-family: 'Bricolage Grotesque'; font-weight: 650; letter-spacing: -.035em; }
+h1 { font-size: 32px; }
+.intro p, .desc { margin-top: 10px; max-width: 92ch; font-size: 15.5px; line-height: 1.55; color: #4A4858; }
+.option { margin-top: 56px; padding-top: 24px; border-top: 1px solid rgba(15,15,18,.12); }
+.option > h3 { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; font-size: 24px; }
+.lettre { display: inline-flex; align-items: center; justify-content: center; min-width: 32px; height: 32px; padding: 0 8px; border-radius: 999px; font-size: 15px; color: #fff; background: #0F0F12; }
+.conseil .lettre { background: #5B3BEA; }
+.etiquette { padding: 3px 10px; border-radius: 999px; font-family: 'Hanken Grotesk'; font-size: 12px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: #4A2BB8; background: #EDE6FF; }
+.vues { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; margin-top: 18px; }
+@media (max-width: 900px) { .vues { grid-template-columns: minmax(0, 1fr); } }
+.scene { position: relative; overflow: hidden; display: flex; justify-content: center; padding: 40px 16px; border-radius: 26px; background: radial-gradient(40% 50% at 90% 0%, rgba(196,181,253,.5), transparent 70%), radial-gradient(40% 50% at 0% 100%, rgba(255,162,122,.35), transparent 70%), #FAF9F7; }
+.vue-nom { margin-bottom: 8px; font-size: 12px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: #5F5C6C; }
+.rejouer { margin-top: 12px; min-height: 40px; padding: 0 16px; border: 0; border-radius: 999px; font: 700 14px 'Hanken Grotesk', sans-serif; color: #0F0F12; background: #fff; box-shadow: inset 0 0 0 1px rgba(15,15,18,.18); cursor: pointer; }
+.rejouer:focus-visible { outline: 3px solid #5B3BEA; outline-offset: 2px; }
+/* Cadre du calendrier (zone-calendrier) */
+.zone { position: relative; width: 100%; max-width: 440px; min-height: 600px; padding: 52px 10px 10px; border-radius: 26px; background: rgba(255,255,255,.72); border: 1px solid rgba(255,255,255,.95); box-shadow: 0 30px 60px -34px rgba(76,48,170,.45), inset 0 1px 0 #fff; }
+.timecode { position: absolute; top: 14px; right: 14px; display: inline-flex; align-items: center; gap: 7px; padding: 5px 11px; border-radius: 999px; font-size: 12px; font-weight: 800; letter-spacing: .12em; color: #fff; background: rgba(15,15,18,.78); }
+.timecode::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: #FF5A3C; }
+/* Faux calendrier HubSpot (chargé) */
+.hubspot { padding: 22px 20px; border-radius: 16px; background: #fff; box-shadow: 0 1px 4px rgba(0,0,0,.12); font: 14px Arial, sans-serif; color: #33475B; opacity: 0; transition: opacity .5s ease; }
+.zone.pret .hubspot { opacity: 1; }
+.hubspot h4 { margin: 0 0 4px; font-size: 16px; color: #33475B; }
+.hubspot .mois { margin: 18px 0 10px; display: flex; justify-content: space-between; font-weight: bold; }
+.hubspot .jours { display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; text-align: center; font-size: 13px; }
+.hubspot .jours span { padding: 8px 0; border-radius: 50%; }
+.hubspot .jours span.libre { color: #0091AE; font-weight: bold; background: #E5F8F6; }
+.hubspot .heures { display: grid; gap: 8px; margin-top: 18px; }
+.hubspot .heures span { padding: 10px; border: 1px solid #CBD6E2; border-radius: 6px; text-align: center; color: #0091AE; font-weight: bold; }
+/* Indicateurs de chargement : posés au-dessus du calendrier tant qu'il n'est pas prêt */
+.attente { position: absolute; inset: 52px 10px 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; border-radius: 16px; transition: opacity .4s ease, visibility .4s; }
+.zone.pret .attente { opacity: 0; visibility: hidden; }
+.texte-attente { font-size: 15px; font-weight: 700; color: #4A4858; text-align: center; }
+.texte-attente small { display: block; margin-top: 4px; font-size: 13px; font-weight: 500; color: #5F5C6C; }
+/* A : squelette */
+.att-a { justify-content: flex-start; padding: 22px 20px; background: #fff; box-shadow: 0 1px 4px rgba(0,0,0,.08); align-items: stretch; }
+.os { border-radius: 8px; background: linear-gradient(90deg, #EFEDF5 0%, #F8F7FB 40%, #EFEDF5 80%) 0 0 / 300% 100%; animation: rl-reflet 1.4s linear infinite; }
+.os-titre { width: 62%; height: 18px; } .os-sous { width: 40%; height: 12px; margin-top: 8px; }
+.os-mois { display: flex; justify-content: space-between; margin-top: 22px; } .os-mois .os { width: 30%; height: 14px; }
+.os-grille { display: grid; grid-template-columns: repeat(7, 1fr); gap: 10px; margin-top: 14px; } .os-grille .os { aspect-ratio: 1; border-radius: 50%; }
+.os-heure { height: 40px; margin-top: 10px; border-radius: 8px; }
+.att-a .texte-attente { margin-top: 18px; }
+@keyframes rl-reflet { to { background-position: -300% 0; } }
+/* B : règle de montage + tête de lecture */
+.regle { position: relative; width: 78%; height: 46px; border-radius: 10px; background: repeating-linear-gradient(90deg, rgba(15,15,18,.18) 0 1px, transparent 1px 12px) 0 100% / 100% 12px no-repeat, linear-gradient(90deg, #EDE6FF, #FFE6DA); }
+.regle::before { content: ''; position: absolute; top: 10px; left: 10px; right: 10px; height: 14px; border-radius: 4px; background: linear-gradient(90deg, #5B3BEA 0 30%, transparent 30% 34%, #923784 34% 62%, transparent 62% 66%, #FF8A5B 66%); opacity: .85; }
+.tete { position: absolute; top: -8px; bottom: -8px; left: 0; width: 2px; background: #E5322D; animation: rl-tete 2.2s cubic-bezier(.45,0,.55,1) infinite alternate; }
+.tete::before { content: ''; position: absolute; top: -4px; left: -6px; width: 14px; height: 12px; background: #E5322D; clip-path: polygon(0 0, 100% 0, 100% 60%, 50% 100%, 0 60%); }
+@keyframes rl-tete { to { left: calc(100% - 2px); } }
+/* C : points */
+.points { display: flex; gap: 10px; }
+.points span { width: 14px; height: 14px; border-radius: 50%; background: linear-gradient(135deg, #5B3BEA, #FF8A5B); animation: rl-point 1.2s ease-in-out infinite; }
+.points span:nth-child(2) { animation-delay: .15s; } .points span:nth-child(3) { animation-delay: .3s; }
+@keyframes rl-point { 0%, 100% { transform: scale(.6); opacity: .45; } 50% { transform: scale(1); opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .os, .tete, .points span { animation: none !important; } .tete { left: 50%; } }
+.notes { margin-top: 18px; display: grid; gap: 8px; max-width: 980px; }
+.notes div { padding: 12px 16px; border-radius: 14px; background: #fff; font-size: 14.5px; line-height: 1.5; color: #4A4858; }
+.notes b { color: #0F0F12; }
+</style>
+</head>
+<body>
+<main class="page">
+<div class="intro">
+  <h1>Calendrier HubSpot : montrer qu'il charge.</h1>
+  <p>Le calendrier vient de HubSpot et met parfois quelques secondes à apparaître. Pendant ce temps, le cadre reste vide et l'on peut croire à une panne. Proposition : un indicateur dans le cadre, qui s'efface en fondu dès que HubSpot a fini. Partout où il y a le calendrier (Contact, landing, landing B), sans rien à régler. Cliquez sur « Rejouer » pour voir le chargement puis l'arrivée du calendrier.</p>
+  <p><b>Mon conseil : A.</b> On voit tout de suite la forme d'un calendrier : le visiteur comprend ce qui arrive, et l'attente paraît plus courte.</p>
+  <div class="notes">
+    <div><b>Quand il s'efface</b> : dès que le calendrier HubSpot est chargé ; au plus tard après 15 secondes (s'il y a un souci côté HubSpot, l'indicateur ne reste pas pour toujours).</div>
+    <div><b>Texte</b> : « Chargement des disponibilités… » et dessous « Quelques secondes, nous ouvrons notre agenda. » (modifiables).</div>
+    <div><b>« Réduire les animations »</b> : l'indicateur reste, sans mouvement. Sans JavaScript : rien ne change par rapport à aujourd'hui.</div>
+  </div>
+</div>
+
+<section class="option conseil" data-option="a">
+  <h3><span class="lettre">A</span>Squelette du calendrier qui scintille. <span class="etiquette">conseil</span></h3>
+  <p class="desc">La silhouette du calendrier (titre, mois, jours, créneaux) en gris clair, avec un reflet qui passe. Elle a la taille de la carte HubSpot : rien ne saute quand le vrai calendrier arrive.</p>
+</section>
+<section class="option" data-option="b">
+  <h3><span class="lettre">B</span>Règle de montage et tête de lecture.</h3>
+  <p class="desc">Une mini-timeline avec trois clips et la tête de lecture rouge qui va et vient, comme la frise de L'agence. Plus « Rolling », mais on ne devine pas qu'un calendrier arrive.</p>
+</section>
+<section class="option" data-option="c">
+  <h3><span class="lettre">C</span>Trois points en dégradé.</h3>
+  <p class="desc">Le plus simple : trois points violet → pêche qui pulsent, et le texte dessous.</p>
+</section>
+</main>
+
+<script>
+var TEXTE = '<p class="texte-attente">Chargement des disponibilités…<small>Quelques secondes, nous ouvrons notre agenda.</small></p>';
+var ATTENTES = {
+  a: '<div class="attente att-a" role="status"><div class="os os-titre"></div><div class="os os-sous"></div><div class="os-mois"><div class="os"></div><div class="os"></div></div><div class="os-grille">' + '<div class="os"></div>'.repeat(28) + '</div><div class="os os-heure"></div><div class="os os-heure"></div>' + TEXTE + '</div>',
+  b: '<div class="attente" role="status"><div class="regle"><span class="tete"></span></div>' + TEXTE + '</div>',
+  c: '<div class="attente" role="status"><div class="points"><span></span><span></span><span></span></div>' + TEXTE + '</div>',
+};
+var HUBSPOT = '<div class="hubspot" aria-hidden="true"><h4>Réserver un échange de 30 minutes</h4><div>Rolling · Visioconférence</div><div class="mois"><span>‹</span><span>Décembre 2026</span><span>›</span></div><div class="jours">'
+  + ['L','M','M','J','V','S','D'].map(function (j) { return '<span>' + j + '</span>'; }).join('')
+  + Array.from({ length: 28 }, function (_, i) { return '<span class="' + ([1,2,3,8,9,10,15,16,17,22,23].indexOf(i) > -1 ? 'libre' : '') + '">' + (i + 1) + '</span>'; }).join('')
+  + '</div><div class="heures"><span>10:00</span><span>11:30</span><span>14:00</span></div></div>';
+function zone(cle) { return '<div class="zone"><span class="timecode">00:30:00</span>' + HUBSPOT + ATTENTES[cle] + '</div>'; }
+document.querySelectorAll('[data-option]').forEach(function (s) {
+  var cle = s.dataset.option;
+  var v = document.createElement('div'); v.className = 'vues';
+  v.innerHTML = '<div><p class="vue-nom">Pendant le chargement</p><div class="scene">' + zone(cle) + '</div></div>'
+    + '<div><p class="vue-nom">Démo : chargement puis calendrier</p><div class="scene" data-demo>' + zone(cle) + '</div><button type="button" class="rejouer">Rejouer</button></div>';
+  s.appendChild(v);
+  var demo = v.querySelector('[data-demo] .zone');
+  function jouer() { demo.classList.remove('pret'); setTimeout(function () { demo.classList.add('pret'); }, 3000); }
+  v.querySelector('.rejouer').addEventListener('click', jouer);
+  jouer();
+});
+</script>
+</body>
+</html>

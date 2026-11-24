@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Rolling · Générateur de signature</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root { --encre: #0F0F12; --texte: #4A4858; --legende: #5F5C6C; --violet: #5B3BEA; --peche: #FF8A5B; --fond: #FAF9F7; }
+* { box-sizing: border-box; }
+html { background: var(--fond); }
+body { margin: 0; color: var(--encre); font-family: 'Hanken Grotesk', system-ui, sans-serif; background: radial-gradient(40% 40% at 92% 0%, rgba(196,181,253,.45), transparent 70%), radial-gradient(36% 40% at 0% 100%, rgba(255,162,122,.28), transparent 70%), var(--fond); min-height: 100vh; }
+h1, h2, h3, p, ol { margin: 0; }
+a { color: inherit; }
+.page { max-width: 1120px; margin: 0 auto; padding: 32px 24px 96px; }
+.tete { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.tete img { height: 26px; width: auto; }
+.tete span { font-size: 13px; font-weight: 700; color: var(--legende); }
+h1 { margin-top: 48px; font-family: 'Bricolage Grotesque'; font-size: clamp(32px, 4.4vw, 52px); font-weight: 650; line-height: 1.04; letter-spacing: -.05em; }
+h1 em { font-style: normal; padding: 0 .06em; margin: 0 -.06em; background: linear-gradient(95deg, #5B3BEA, #6F3FD6 42%, #C94A1E); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.chapo { margin-top: 14px; max-width: 62ch; font-size: 18px; line-height: 1.55; color: var(--texte); }
+.grille { display: grid; grid-template-columns: minmax(0, 400px) minmax(0, 1fr); gap: 28px; align-items: start; margin-top: 40px; }
+@media (max-width: 900px) { .grille { grid-template-columns: minmax(0, 1fr); } }
+.carte { padding: 26px; border-radius: 26px; background: rgba(255,255,255,.78); border: 1px solid rgba(255,255,255,.95); box-shadow: 0 30px 60px -36px rgba(76,48,170,.45), inset 0 1px 0 #fff; }
+.etape { display: inline-flex; align-items: center; gap: 10px; font-size: 12px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: #4A2BB8; }
+.etape b { display: inline-grid; place-items: center; width: 26px; height: 26px; border-radius: 50%; font-size: 13px; letter-spacing: 0; color: #fff; background: var(--violet); }
+form { display: grid; gap: 14px; margin-top: 18px; }
+label { display: grid; gap: 6px; font-size: 13.5px; font-weight: 700; color: var(--encre); }
+label small { font-weight: 500; color: var(--legende); }
+input { width: 100%; min-height: 46px; padding: 10px 14px; border: 1px solid #D6D2E3; border-radius: 12px; font: 500 15.5px 'Hanken Grotesk', sans-serif; color: var(--encre); background: #fff; }
+input:focus { outline: 3px solid #C4B5FD; outline-offset: 0; border-color: var(--violet); }
+details { margin-top: 4px; border-top: 1px solid rgba(15,15,18,.08); padding-top: 12px; }
+summary { cursor: pointer; font-size: 13.5px; font-weight: 700; color: #4A2BB8; min-height: 32px; display: flex; align-items: center; }
+summary:focus-visible { outline: 3px solid var(--violet); outline-offset: 2px; border-radius: 6px; }
+details form { margin-top: 10px; }
+.mail { margin-top: 18px; border-radius: 18px; overflow: hidden; background: #fff; box-shadow: 0 1px 0 rgba(15,15,18,.06), 0 20px 40px -30px rgba(15,15,18,.4); }
+.mail-tete { padding: 14px 20px; border-bottom: 1px solid #EEE; font: 13px Arial, sans-serif; line-height: 1.5; color: #5F6368; }
+.mail-tete b { color: #202124; }
+.mail-corps { padding: 20px 20px 26px; font: 14px Arial, sans-serif; line-height: 1.5; color: #202124; overflow-x: auto; }
+.mail-corps .texte-mail { margin-bottom: 18px; }
+.actions { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-top: 18px; }
+button { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 48px; padding: 0 22px; border: 0; border-radius: 999px; font: 700 15px 'Hanken Grotesk', sans-serif; color: #fff; background: var(--encre); cursor: pointer; box-shadow: 0 14px 26px -16px rgba(15,15,18,.7); }
+button.second { color: var(--encre); background: #fff; box-shadow: inset 0 0 0 1px rgba(15,15,18,.18); }
+button:focus-visible { outline: 3px solid var(--violet); outline-offset: 3px; }
+.statut { min-height: 22px; margin-top: 10px; font-size: 14px; font-weight: 700; color: #1F6B3A; }
+.onglets { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 18px; padding: 5px; border-radius: 22px; background: #F1EEF8; width: fit-content; max-width: 100%; }
+.onglets button { min-height: 38px; padding: 0 16px; font-size: 14px; color: var(--texte); background: transparent; box-shadow: none; }
+.onglets button[aria-selected="true"] { color: var(--encre); background: #fff; box-shadow: 0 6px 14px -10px rgba(15,15,18,.5); }
+.panneau { margin-top: 16px; font-size: 15px; line-height: 1.6; color: var(--texte); }
+.panneau ol { padding-left: 22px; }
+.panneau li + li { margin-top: 6px; }
+.panneau b { color: var(--encre); }
+.panneau p { margin-top: 10px; }
+.aide { margin-top: 22px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+@media (max-width: 900px) { .aide { grid-template-columns: minmax(0, 1fr); } }
+.aide div { padding: 18px 20px; border-radius: 18px; background: rgba(255,255,255,.7); font-size: 14.5px; line-height: 1.55; color: var(--texte); }
+.aide h3 { margin-bottom: 6px; font-family: 'Bricolage Grotesque'; font-size: 17px; font-weight: 650; letter-spacing: -.02em; color: var(--encre); }
+.bas { margin-top: 48px; font-size: 13px; color: var(--legende); }
+@media (prefers-reduced-motion: no-preference) { button, input { transition: box-shadow .2s ease, background-color .2s ease; } }
+</style>
+</head>
+<body>
+<main class="page">
+  <header class="tete">
+    <img id="logo-tete" src="https://agence-rolling.fr/wp-content/themes/rolling/assets/medias/logo-rolling.png" alt="Rolling" width="133" height="26">
+    <span>Outil interne</span>
+  </header>
+
+  <h1>Votre signature e-mail <em>Rolling.</em></h1>
+  <p class="chapo">Remplissez vos informations, copiez la signature, collez-la dans votre messagerie. Deux minutes, et tous nos e-mails se ressemblent.</p>
+
+  <div class="grille">
+    <section class="carte" aria-labelledby="t-infos">
+      <h2 class="etape" id="t-infos"><b>1</b>Vos informations</h2>
+      <form id="formulaire" onsubmit="return false">
+        <label>Prénom et nom<input id="f-nom" autocomplete="name" placeholder="Camille Martin" required></label>
+        <label>Poste<input id="f-poste" placeholder="Cheffe de projet vidéo"></label>
+        <label>Téléphone <small>facultatif</small><input id="f-tel" autocomplete="tel" inputmode="tel" placeholder="06 12 34 56 78"></label>
+        <label>Profil LinkedIn <small>facultatif</small><input id="f-linkedin" inputmode="url" placeholder="https://www.linkedin.com/in/…"></label>
+      </form>
+      <details>
+        <summary>Réglages communs (à ne changer que si besoin)</summary>
+        <form onsubmit="return false">
+          <label>Lien « Réserver un échange »<input id="f-rdv" value="https://agence-rolling.fr/contact/"></label>
+          <label>Site<input id="f-site" value="agence-rolling.fr"></label>
+          <label>Phrase sous la signature <small>vide = pas de phrase</small><input id="f-phrase" value="Votre agence vidéo illimitée, née chez Pitchy."></label>
+          <label>Adresse du logo<input id="f-logo" value="https://agence-rolling.fr/wp-content/themes/rolling/assets/medias/logo-rolling.png"></label>
+        </form>
+      </details>
+    </section>
+
+    <section class="carte" aria-labelledby="t-apercu">
+      <h2 class="etape" id="t-apercu"><b>2</b>Votre signature</h2>
+      <div class="mail" aria-label="Aperçu d'un e-mail avec la signature">
+        <div class="mail-tete"><b>À : Sophie</b><br>Objet : Vos premières vidéos</div>
+        <div class="mail-corps">
+          <div class="texte-mail">Bonjour Sophie,<br>Comme convenu, voici le planning des trois premières vidéos.<br>Belle journée,</div>
+          <div id="signature"></div>
+        </div>
+      </div>
+      <div class="actions">
+        <button type="button" id="copier">Copier la signature</button>
+        <button type="button" class="second" id="code">Copier le code HTML</button>
+      </div>
+      <p class="statut" id="statut" role="status" aria-live="polite"></p>
+    </section>
+  </div>
+
+  <section class="carte" style="margin-top:28px" aria-labelledby="t-installer">
+    <h2 class="etape" id="t-installer"><b>3</b>La coller dans votre messagerie</h2>
+    <div class="onglets" role="tablist" aria-label="Messageries">
+      <button type="button" role="tab" id="o-gmail" aria-controls="p-gmail" aria-selected="true">Gmail</button>
+      <button type="button" role="tab" id="o-outlook" aria-controls="p-outlook" aria-selected="false" tabindex="-1">Outlook (web)</button>
+      <button type="button" role="tab" id="o-windows" aria-controls="p-windows" aria-selected="false" tabindex="-1">Outlook (Windows)</button>
+      <button type="button" role="tab" id="o-apple" aria-controls="p-apple" aria-selected="false" tabindex="-1">Apple Mail</button>
+      <button type="button" role="tab" id="o-iphone" aria-controls="p-iphone" aria-selected="false" tabindex="-1">iPhone</button>
+    </div>
+    <div class="panneau" role="tabpanel" id="p-gmail" aria-labelledby="o-gmail">
+      <ol><li>Cliquez sur <b>Copier la signature</b>.</li><li>Dans Gmail : roue dentée en haut à droite &gt; <b>Voir tous les paramètres</b> &gt; onglet <b>Général</b> &gt; rubrique <b>Signature</b> &gt; <b>Créer</b>, nommez-la « Rolling ».</li><li>Cliquez dans la zone de texte et collez (Ctrl + V, ou Cmd + V sur Mac).</li><li>Sous « Paramètres par défaut des signatures », choisissez « Rolling » pour les nouveaux e-mails.</li><li>Tout en bas de la page : <b>Enregistrer les modifications</b>.</li></ol>
+    </div>
+    <div class="panneau" role="tabpanel" id="p-outlook" aria-labelledby="o-outlook" hidden>
+      <ol><li>Cliquez sur <b>Copier la signature</b>.</li><li>Dans Outlook sur le web (ou le nouvel Outlook) : roue dentée &gt; <b>Comptes</b> &gt; <b>Signatures</b> &gt; <b>Nouvelle signature</b>, nommez-la « Rolling ».</li><li>Collez dans la zone de texte.</li><li>Choisissez « Rolling » pour les nouveaux messages, puis <b>Enregistrer</b>.</li></ol>
+    </div>
+    <div class="panneau" role="tabpanel" id="p-windows" aria-labelledby="o-windows" hidden>
+      <ol><li>Cliquez sur <b>Copier la signature</b>.</li><li>Dans Outlook : <b>Fichier</b> &gt; <b>Options</b> &gt; <b>Courrier</b> &gt; <b>Signatures…</b> &gt; <b>Nouveau</b>, nommez-la « Rolling ».</li><li>Collez dans la zone « Modifier la signature ».</li><li>À droite, choisissez « Rolling » pour les nouveaux messages, puis <b>OK</b>.</li></ol>
+    </div>
+    <div class="panneau" role="tabpanel" id="p-apple" aria-labelledby="o-apple" hidden>
+      <ol><li>Cliquez sur <b>Copier la signature</b>.</li><li>Dans Mail : menu <b>Mail</b> &gt; <b>Réglages</b> &gt; onglet <b>Signatures</b> &gt; bouton <b>+</b>, nommez-la « Rolling ».</li><li>Décochez « Toujours utiliser ma police par défaut ».</li><li>Collez dans la zone de droite. Le logo peut ne pas s'afficher dans les réglages : il apparaît dans les e-mails envoyés.</li></ol>
+    </div>
+    <div class="panneau" role="tabpanel" id="p-iphone" aria-labelledby="o-iphone" hidden>
+      <ol><li>Ouvrez cette page sur votre iPhone, remplissez vos informations et cliquez sur <b>Copier la signature</b>.</li><li><b>Réglages</b> &gt; <b>Apps</b> &gt; <b>Mail</b> &gt; <b>Signature</b>, effacez le texte et collez.</li><li>Si la mise en page disparaît, secouez l’iPhone juste après avoir collé et touchez <b>Annuler</b> dans la fenêtre qui s’ouvre : la signature retrouve ses couleurs et son logo.</li></ol>
+    </div>
+  </section>
+
+  <div class="aide">
+    <div><h3>Une signature, pas deux</h3>Supprimez votre ancienne signature, et vérifiez qu'elle n'est pas ajoutée deux fois dans les réponses.</div>
+    <div><h3>Le logo ne s'affiche pas ?</h3>Certaines messageries bloquent les images des expéditeurs inconnus : le destinataire voit le mot « Rolling » à la place, puis le logo une fois les images autorisées.</div>
+    <div><h3>Vos informations restent chez vous</h3>Rien n'est envoyé : elles sont gardées seulement dans ce navigateur, pour la prochaine fois.</div>
+  </div>
+  <p class="bas">Police Arial dans la signature : les polices de la charte ne s'affichent pas dans les messageries.</p>
+</main>
+
+<script>
+(function () {
+  var CHAMPS = ['f-nom', 'f-poste', 'f-tel', 'f-linkedin', 'f-rdv', 'f-site', 'f-phrase', 'f-logo'];
+  var CLE = 'rolling-signature';
+  var ENCRE = '#0F0F12', TEXTE = '#4A4858', LEGENDE = '#6B6878', VIOLET = '#5B3BEA', PECHE = '#FF8A5B', SEP = '#B9B5C6';
+  var POLICE = 'font-family:Arial,Helvetica,sans-serif;';
+
+  function val(id) { return document.getElementById(id).value.trim(); }
+  function esc(s) { return s.replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+  function lien(url) { url = url.trim(); return url && !/^https?:\/\//i.test(url) ? 'https://' + url : url; }
+
+  function signature() {
+    var nom = esc(val('f-nom') || 'Prénom Nom');
+    var poste = esc(val('f-poste'));
+    var tel = esc(val('f-tel'));
+    var telLien = val('f-tel').replace(/[^\d+]/g, '').replace(/^0/, '+33');
+    var linkedin = esc(lien(val('f-linkedin')));
+    var site = esc(val('f-site').replace(/^https?:\/\//i, '').replace(/\/$/, ''));
+    var rdv = esc(lien(val('f-rdv')));
+    var logo = esc(lien(val('f-logo')));
+    var phrase = esc(val('f-phrase'));
+    var s = 'color:' + TEXTE + ';text-decoration:none;white-space:nowrap;';
+    var morceaux = [];
+    if (tel) { morceaux.push('<a href="tel:' + telLien + '" style="' + s + '">' + tel + '</a>'); }
+    if (site) { morceaux.push('<a href="https://' + site + '" style="' + s + '">' + site + '</a>'); }
+    if (linkedin) { morceaux.push('<a href="' + linkedin + '" style="' + s + '">LinkedIn</a>'); }
+    var coordonnees = morceaux.join('<span style="color:' + SEP + ';">&nbsp;&nbsp;·&nbsp;</span> ');
+    return '<table cellpadding="0" cellspacing="0" border="0" role="presentation" style="border-collapse:collapse;' + POLICE + '"><tr>'
+      + '<td valign="middle" style="padding:0 18px 0 0;"><a href="https://' + site + '"><img src="' + logo + '" width="118" alt="Rolling" style="display:block;border:0;width:118px;height:auto;"></a></td>'
+      + '<td valign="middle" style="padding:2px 0 2px 18px;border-left:2px solid ' + PECHE + ';">'
+      + '<div style="font-size:16px;line-height:20px;font-weight:bold;color:' + ENCRE + ';">' + nom + '</div>'
+      + (poste ? '<div style="font-size:13px;line-height:18px;color:' + TEXTE + ';">' + poste + '</div>' : '')
+      + (coordonnees ? '<div style="padding-top:6px;font-size:13px;line-height:18px;color:' + TEXTE + ';">' + coordonnees + '</div>' : '')
+      + (rdv ? '<div style="padding-top:6px;font-size:13px;line-height:18px;"><a href="' + rdv + '" style="color:' + VIOLET + ';font-weight:bold;text-decoration:none;">Réserver un échange&nbsp;→</a></div>' : '')
+      + '</td></tr>'
+      + (phrase ? '<tr><td colspan="2" style="padding-top:12px;font-size:12px;line-height:16px;color:' + LEGENDE + ';">' + phrase + '</td></tr>' : '')
+      + '</table>';
+  }
+
+  var zone = document.getElementById('signature');
+  var statut = document.getElementById('statut');
+  function rendre() {
+    zone.innerHTML = signature();
+    statut.textContent = '';
+    try { var d = {}; CHAMPS.forEach(function (id) { d[id] = document.getElementById(id).value; }); localStorage.setItem(CLE, JSON.stringify(d)); } catch (e) {}
+  }
+  try {
+    var garde = JSON.parse(localStorage.getItem(CLE) || '{}');
+    CHAMPS.forEach(function (id) { if (typeof garde[id] === 'string') { document.getElementById(id).value = garde[id]; } });
+  } catch (e) {}
+  CHAMPS.forEach(function (id) { document.getElementById(id).addEventListener('input', rendre); });
+
+  function copieClassique(texte, html) {
+    if (html) {
+      var r = document.createRange(); r.selectNodeContents(zone);
+      var sel = getSelection(); sel.removeAllRanges(); sel.addRange(r);
+      var ok = document.execCommand('copy'); sel.removeAllRanges(); return ok;
+    }
+    var t = document.createElement('textarea'); t.value = texte; t.style.position = 'fixed'; t.style.opacity = '0';
+    document.body.appendChild(t); t.select(); var ok2 = document.execCommand('copy'); t.remove(); return ok2;
+  }
+  document.getElementById('copier').addEventListener('click', function () {
+    if (!val('f-nom')) { statut.style.color = '#A63C14'; statut.textContent = 'Indiquez d\'abord votre prénom et votre nom.'; document.getElementById('f-nom').focus(); return; }
+    var html = signature();
+    var fini = function () { statut.style.color = '#1F6B3A'; statut.textContent = 'Signature copiée. Collez-la dans votre messagerie (étape 3).'; };
+    if (navigator.clipboard && window.ClipboardItem) {
+      navigator.clipboard.write([new ClipboardItem({ 'text/html': new Blob([html], { type: 'text/html' }), 'text/plain': new Blob([zone.innerText], { type: 'text/plain' }) })])
+        .then(fini, function () { if (copieClassique('', true)) { fini(); } });
+    } else if (copieClassique('', true)) { fini(); }
+  });
+  document.getElementById('code').addEventListener('click', function () {
+    var html = signature();
+    var fini = function () { statut.style.color = '#1F6B3A'; statut.textContent = 'Code HTML copié.'; };
+    if (navigator.clipboard) { navigator.clipboard.writeText(html).then(fini, function () { if (copieClassique(html, false)) { fini(); } }); }
+    else if (copieClassique(html, false)) { fini(); }
+  });
+
+  // Onglets des messageries (flèches gauche / droite au clavier).
+  var onglets = Array.prototype.slice.call(document.querySelectorAll('[role="tab"]'));
+  function choisir(o) {
+    onglets.forEach(function (x) {
+      var actif = x === o;
+      x.setAttribute('aria-selected', actif ? 'true' : 'false');
+      x.tabIndex = actif ? 0 : -1;
+      document.getElementById(x.getAttribute('aria-controls')).hidden = !actif;
+    });
+    o.focus();
+  }
+  onglets.forEach(function (o, i) {
+    o.addEventListener('click', function () { choisir(o); });
+    o.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+        e.preventDefault();
+        choisir(onglets[(i + (e.key === 'ArrowRight' ? 1 : onglets.length - 1)) % onglets.length]);
+      }
+    });
+  });
+  rendre();
+})();
+</script>
+</body>
+</html>

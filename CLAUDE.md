@@ -990,6 +990,14 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   agence-rolling.fr) + « Copier la signature » (presse-papiers HTML) / « Copier le code HTML » ; tableaux, styles en ligne, Arial ;
   A classique logo + filet pêche (conseil, pour tous), B photo ronde ou initiales + barre violet → pêche, C bouton noir +
   badges en texte, D une ligne pour les réponses (conseil) ; marche à suivre Gmail, Outlook web / Windows, Apple Mail, iPhone.
+- **Générateur de signature (modèle A)** : `maquettes/signature/generateur-signature.html` (copie
+  /workspace/generateur-signature-rolling.html), page autonome noindex : champs (nom, poste, téléphone, LinkedIn + réglages
+  communs repliés), aperçu dans un faux e-mail, « Copier la signature » (HTML + texte) / « Copier le code HTML », onglets
+  Gmail / Outlook web / Windows / Apple Mail / iPhone, champs gardés dans le navigateur (localStorage). axe 0, 390 sans débordement.
+- **Maquette « Chargement du calendrier HubSpot »** (`maquettes/calendrier-chargement/chargement.html`, copie
+  /workspace/maquette-chargement-calendrier.html, **à valider**) : indicateur dans `zone-calendrier` jusqu'au chargement de
+  l'iframe HubSpot (15 s max) : A squelette du calendrier qui scintille (conseil), B règle de montage + tête de lecture,
+  C trois points ; texte « Chargement des disponibilités… / Quelques secondes, nous ouvrons notre agenda. ».
 - **Chargement de page effet film** (demande avant la fin de la livraison 4) : maquette `maquettes/loading/maquette-loading.html`
   (copie /workspace/maquette-loading.html), 4 options : A amorce 3-2-1, B clap qui se ferme puis rideau, C ouverture
   cinéma (bandes noires + REC + timecode + règle avec la tête de lecture rouge des frises, plus de filet fin), D barre de lecture en haut sans écran. Conseil : C à l'arrivée (première page
