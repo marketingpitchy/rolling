@@ -997,7 +997,19 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
 - **Maquette « Chargement du calendrier HubSpot »** (`maquettes/calendrier-chargement/chargement.html`, copie
   /workspace/maquette-chargement-calendrier.html, **à valider**) : indicateur dans `zone-calendrier` jusqu'au chargement de
   l'iframe HubSpot (15 s max) : A squelette du calendrier qui scintille (conseil), B règle de montage + tête de lecture,
-  C trois points ; texte « Chargement des disponibilités… / Quelques secondes, nous ouvrons notre agenda. ».
+  C trois points ; texte « Chargement des disponibilités… / Quelques secondes, nous ouvrons notre agenda. ». **A validé.**
+- **Générateur de signature publié en lien privé** : https://claude.ai/artifact/5ZPDTtuEtRKeubd1oGardr (source
+  `maquettes/signature/signature-artefact.html` : logos clair / sombre intégrés en data:, l'aperçu montre le logo intégré, la
+  signature copiée garde l'adresse du logo sur agence-rolling.fr ; mode sombre par jetons). Partage = menu Partager de la page.
+- **0.7.24 : chargement du calendrier HubSpot (option A validée)** : `zone-calendrier::after` (CSS brut de la classe) = carte
+  blanche + calendrier squelette (barres, 4 rangées de 7 ronds en `space no-repeat`, 2 créneaux) dessinés en 12 couches de fond
+  (origine padding-box, positions en px depuis le haut), reflet animé par `--rl-reflet` (@property + `@keyframes rl-reflet` dans
+  rolling.css), texte en `content` (« Chargement des disponibilités… / Quelques secondes, nous ouvrons notre agenda. »,
+  padding-top 414 px) ; visible seulement avec `.rl-cal-attente`. rolling.js (site seulement) : zone qui contient
+  `.meetings-iframe-container` ⇒ `rl-cal-attente` + `aria-busy`, retirés au 1er message de l'iframe HubSpot (origine
+  *.hubspot.com), sinon `load` + 2,5 s, sinon 15 s ; iframe déjà chargée (Performance API) ⇒ 1,5 s. Mesuré : 2 à 5 s avec
+  meetings.hubspot.com/agenda-rolling. Automatique sur les pages existantes (classe mise à jour). Leçon : `space`/`repeat-x`
+  peint aussi dans la marge (bouts de ronds) ⇒ motif sur toute la largeur.
 - **Chargement de page effet film** (demande avant la fin de la livraison 4) : maquette `maquettes/loading/maquette-loading.html`
   (copie /workspace/maquette-loading.html), 4 options : A amorce 3-2-1, B clap qui se ferme puis rideau, C ouverture
   cinéma (bandes noires + REC + timecode + règle avec la tête de lecture rouge des frises, plus de filet fin), D barre de lecture en haut sans écran. Conseil : C à l'arrivée (première page

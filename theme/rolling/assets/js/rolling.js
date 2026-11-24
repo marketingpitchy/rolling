@@ -1227,6 +1227,60 @@
 		}
 	} );
 
+	/* Calendrier HubSpot : le cadre (zone-calendrier) montre un calendrier squelette « Chargement des disponibilités… »
+	   jusqu'à ce que HubSpot ait fini (message de son calendrier, ou chargement de la page + 2,5 s), 15 s au plus. */
+	if ( ! editeur ) {
+		document.querySelectorAll( '.meetings-iframe-container, iframe[src*="meetings.hubspot.com"]' ).forEach( function ( hubspot ) {
+			var zone = hubspot.closest( '.zone-calendrier' );
+			if ( ! zone || zone.rlAttente ) {
+				return;
+			}
+			zone.rlAttente = true;
+			var fini = false;
+			var fin = function () {
+				if ( ! fini ) {
+					fini = true;
+					zone.classList.remove( 'rl-cal-attente' );
+					zone.removeAttribute( 'aria-busy' );
+				}
+			};
+			var dejaCharge = function ( cadre ) {
+				try {
+					return performance.getEntriesByName( cadre.src ).some( function ( e ) { return e.responseEnd > 0; } );
+				} catch ( e ) {
+					return false;
+				}
+			};
+			var suivre = function () {
+				zone.querySelectorAll( 'iframe' ).forEach( function ( cadre ) {
+					if ( cadre.rlSuivi ) {
+						return;
+					}
+					cadre.rlSuivi = true;
+					cadre.addEventListener( 'load', function () { setTimeout( fin, 2500 ); } );
+					if ( dejaCharge( cadre ) ) {
+						setTimeout( fin, 1500 );
+					}
+				} );
+			};
+			zone.classList.add( 'rl-cal-attente' );
+			zone.setAttribute( 'aria-busy', 'true' );
+			setTimeout( fin, 15000 );
+			suivre();
+			new MutationObserver( suivre ).observe( zone, { childList: true, subtree: true } );
+			// Le calendrier HubSpot prévient la page quand il s'est affiché (il envoie sa hauteur).
+			window.addEventListener( 'message', function ( e ) {
+				if ( /(^|\.)hubspot\.com$/.test( ( e.origin || '' ).replace( /^https?:\/\//, '' ) ) ) {
+					zone.querySelectorAll( 'iframe' ).forEach( function ( cadre ) {
+						if ( cadre.contentWindow === e.source ) {
+							setTimeout( fin, 300 );
+						}
+					} );
+				}
+			} );
+		} );
+	}
+
 	/* Les liens #rl-… ne changent jamais l'adresse */
 	document.addEventListener( 'click', function ( e ) {
 		var lien = e.target.closest ? e.target.closest( 'a[href*="#rl-"]' ) : null;

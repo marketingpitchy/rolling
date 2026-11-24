@@ -31,6 +31,9 @@ img, svg, video { max-width: 100%; }
 @property --rl-angle { syntax: "<angle>"; inherits: false; initial-value: 0deg; }
 @keyframes rl-anneau { to { --rl-angle: 360deg; } }
 @property --rl-s { syntax: "<integer>"; inherits: false; initial-value: 1; }
+/* Reflet du calendrier squelette (zone-calendrier, pendant le chargement de HubSpot) */
+@property --rl-reflet { syntax: "<percentage>"; inherits: false; initial-value: 100%; }
+@keyframes rl-reflet { from { --rl-reflet: 100%; } to { --rl-reflet: 0%; } }
 @keyframes rl-pointilles { from { background-position: center bottom, center 0; } to { background-position: center bottom, center 12px; } }
 @keyframes rl-plan-hero { 0% { opacity: 0; } 3%, 25% { opacity: 1; } 28%, 100% { opacity: 0; } }
 @keyframes rl-stories-hero { from { background-size: 0% 100%, auto; } to { background-size: 100% 100%, auto; } }
