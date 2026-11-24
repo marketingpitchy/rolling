@@ -973,6 +973,12 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   ne se soulève plus au survol si elle contient une vidéo (le bouton lecture ne bouge jamais). VideoObject de la fiche témoignage
   (interview + image à la une, ou miniature YouTube ; description = citation). Chez la cliente : modèles Fiche témoignage /
   réalisation mis à jour s'ils ne sont pas modifiés (sinon V2) ; cartes : rien à faire.
+- **Maquette « Extrait sans son »** (`maquettes/sans-son/sans-son.html`, générée par `scratchpad/c067/gen-sans-son.py`, copie
+  /workspace/maquette-sans-son.html, **à valider**) : certaines réalisations sont des extraits muets ⇒ case de la réalisation
+  « Extrait présenté sans son » (texte réglable dans Personnaliser) ; 7 formulations (conseil « Extrait · sans son » sur les
+  cartes, « Extrait de réalisation · Présenté sans son » sur la fiche) ; looks A pastille en bas à gauche de l'image (conseil),
+  B ligne lilas sous la vidéo, C sous le bouton lecture, D icône seule + bulle, E A + rappel 4 s pendant la lecture, F étiquette
+  sous le titre. Aucun mouvement du bouton lecture au survol.
 - **Chargement de page effet film** (demande avant la fin de la livraison 4) : maquette `maquettes/loading/maquette-loading.html`
   (copie /workspace/maquette-loading.html), 4 options : A amorce 3-2-1, B clap qui se ferme puis rideau, C ouverture
   cinéma (bandes noires + REC + timecode + règle avec la tête de lecture rouge des frises, plus de filet fin), D barre de lecture en haut sans écran. Conseil : C à l'arrivée (première page
