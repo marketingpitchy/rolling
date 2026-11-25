@@ -1043,6 +1043,13 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
 - **0.7.26** : code Giphy récent de la cliente (`<div style="padding-bottom:56%">` + iframe `width="100%" height="100%"`) :
   « 100% » était lu comme 100 px ⇒ cadre carré au départ ⇒ dimensions de l'iframe lues seulement si ce sont des pixels,
   sinon format du cadre en % (56 % ⇒ 1000 / 560). Testé avec son code exact (wp + mise à jour wp2).
+- **0.7.27** : WordPress 7 ouvre une composition insérée en mode « contenu seul » (bouton « Modifier la composition ») : le bloc
+  HTML de « Rolling : GIF » y était caché ⇒ composition = groupe `rl-gif-bloc` avec 2 paragraphes : `rl-gif-code` (« Collez ici le
+  code d'intégration Giphy ou le lien du GIF ») + `rl-gif-texte` (légende). Coller le code Giphy dans un paragraphe : Gutenberg le
+  change en bloc Intégrer + paragraphe « via GIPHY » (géré : une seule carte, légende reprise, crédit retiré, format lu sur
+  l'affiche) ; code resté en texte : id, titre (giphy.com/gifs/…) et format (padding-bottom %) lus dans le texte. LinkedIn de la
+  carte auteur : dans l'éditeur WordPress aussi, logo seul ; le texte du lien n'apparaît que sur la ligne sélectionnée
+  (`.is-selected`, règle `apres` de `feuille_editeur`) pour pouvoir cliquer dessus et modifier le lien (vérifié).
 - **Chargement de page effet film** (demande avant la fin de la livraison 4) : maquette `maquettes/loading/maquette-loading.html`
   (copie /workspace/maquette-loading.html), 4 options : A amorce 3-2-1, B clap qui se ferme puis rideau, C ouverture
   cinéma (bandes noires + REC + timecode + règle avec la tête de lecture rouge des frises, plus de filet fin), D barre de lecture en haut sans écran. Conseil : C à l'arrivée (première page

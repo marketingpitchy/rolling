@@ -255,6 +255,12 @@ class Rolling_Widget_Contenu extends Rolling_Widget {
 			if ( ! $infos ) {
 				continue;
 			}
+			// Code d'intégration collé comme du texte dans un paragraphe : titre (adresse giphy.com/gifs/…) et format (cadre en %).
+			$code_texte = 'p' === $noeud->nodeName && false !== strpos( $adresse, '<iframe' );
+			if ( $code_texte && '' === $infos[1] && preg_match( '#https?://giphy\.com/(?:gifs|stickers|clips)/[\w/-]+#', $adresse, $page ) ) {
+				$autre    = self::giphy( $page[0] );
+				$infos[1] = $autre ? $autre[1] : '';
+			}
 			// Unité à remplacer : le groupe de la composition, sinon la figure, le cadre du code Giphy ou le paragraphe.
 			$unite = $noeud;
 			$bloc  = $xpath->query( 'ancestor::*[' . $classe( 'rl-gif-bloc' ) . '][1]', $noeud )->item( 0 );
@@ -297,6 +303,13 @@ class Rolling_Widget_Contenu extends Rolling_Widget {
 			// Dimensions en pixels seulement (« 100% » du code Giphy récent n'est pas une taille).
 			$largeur = ctype_digit( trim( $noeud->getAttribute( 'width' ) ) ) ? (int) $noeud->getAttribute( 'width' ) : 0;
 			$hauteur = ctype_digit( trim( $noeud->getAttribute( 'height' ) ) ) ? (int) $noeud->getAttribute( 'height' ) : 0;
+			if ( $code_texte && preg_match( '/padding-bottom:\s*([\d.]+)%/', $adresse, $p ) && (float) $p[1] > 0 ) {
+				$largeur = 1000;
+				$hauteur = (int) round( 10 * (float) $p[1] );
+			} elseif ( $code_texte && preg_match( '/width="(\d+)"[^>]*height="(\d+)"/', $adresse, $p ) ) {
+				$largeur = (int) $p[1];
+				$hauteur = (int) $p[2];
+			}
 			if ( ( ! $largeur || ! $hauteur ) && 'div' === $noeud->parentNode->nodeName && preg_match( '/padding-bottom:\s*([\d.]+)%/', $noeud->parentNode->getAttribute( 'style' ), $p ) && (float) $p[1] > 0 ) {
 				$largeur = 1000;
 				$hauteur = (int) round( 10 * (float) $p[1] );

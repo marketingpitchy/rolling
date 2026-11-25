@@ -3,7 +3,7 @@
  {"cle": "etapes", "titre": "Étapes numérotées", "description": "Liste d'étapes avec numéros ronds."},
  {"cle": "liste-coches", "titre": "Liste à coches", "description": "Liste avec la coche en verre."},
  {"cle": "video", "titre": "Vidéo", "description": "Collez l'adresse YouTube : la vidéo se charge au clic, coins arrondis, légende dessous."},
- {"cle": "gif-giphy", "titre": "GIF", "description": "Collez le code d’intégration Giphy (ou le lien du GIF) : il s’affiche en carte, au bon format, avec un bouton pause et une légende facultative. Plus léger que le code Giphy seul."},
+ {"cle": "gif-giphy", "titre": "GIF", "description": "Collez le code d’intégration Giphy (ou le lien du GIF) dans la première ligne, la légende dans la seconde : le GIF s’affiche en carte, au bon format, avec un bouton pause."},
  {"cle": "chiffre-cle", "titre": "Chiffre clé", "description": "Un chiffre en verre (0-9, +, %, k, M), une phrase et la source."},
  {"cle": "tableau", "titre": "Tableau", "description": "Tableau au style Rolling (en-tête violet, lignes alternées)."},
  {"cle": "tableau-comparatif", "titre": "Tableau comparatif", "description": "Tableau dont la dernière colonne est mise en avant."},
@@ -12,5 +12,5 @@
  {"cle": "encart-appel", "titre": "Encart appel", "description": "Bandeau sombre avec « Réserver un échange »."},
  {"cle": "a-retenir", "titre": "À retenir", "description": "Encadré de conclusion."},
  {"cle": "faq", "titre": "FAQ", "description": "Questions qui s'ouvrent au clic."},
- {"cle": "auteur", "titre": "Auteur", "description": "Photo, nom et poste de la rédactrice (Inès par défaut), icône LinkedIn à côté du nom : remplacez le lien par celui du profil (lien laissé tel quel = rien ne s’affiche)."}
+ {"cle": "auteur", "titre": "Auteur", "description": "Photo, nom et poste de la rédactrice (Inès par défaut), logo LinkedIn à côté du nom : cliquez sur le logo pour mettre le lien du profil (lien laissé tel quel = rien ne s’affiche)."}
 ]

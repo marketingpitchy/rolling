@@ -143,5 +143,5 @@ body { --paragraphe: #4A4858; --encre: #0F0F12; --legende: #6E6B7B; --violet: #5
 .is-root-container .rl-gif-cadre { border-radius: 15px; }
 .is-root-container .rl-gif-legende { margin: 10px 4px 2px; }
 }
-/* Éditeur seulement : le lien LinkedIn de la carte « Écrit par » garde son texte, pour pouvoir le modifier. */
-.is-root-container .rl-auteur a[href*="linkedin.com"] { width: auto; gap: 6px; padding-right: 8px; font-size: 13px; line-height: 1; color: #0A66C2; }
+/* Éditeur seulement : le texte du lien LinkedIn de la carte « Écrit par » n'apparaît que sur la ligne sélectionnée, pour le modifier. */
+.is-root-container .rl-auteur .is-selected a[href*="linkedin.com"], .is-root-container .rl-auteur .has-child-selected a[href*="linkedin.com"] { width: auto; gap: 6px; padding-right: 8px; font-size: 13px; line-height: 1; color: #0A66C2; }
