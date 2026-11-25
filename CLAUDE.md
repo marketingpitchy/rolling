@@ -1024,6 +1024,22 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   A icône à côté du nom, B « Suivre Inès sur LinkedIn » (conseil), C bouton en haut à droite ; bonus Yoast (profil LinkedIn
   de l'utilisateur). Blog : 10 cartes aujourd'hui (1 à la une + 9, « Articles suivants » ⇒ ?voir=2), conseillé 13 dès ~20
   articles, pages numérotées au-delà de ~40. Hôtes giphy.com / media.giphy.com bloqués ici (à autoriser pour tester).
+- **0.7.25 (GIF : B + C, LinkedIn : A)** : widget « Texte de l'article » (`enrichir()` ⇒ `gifs()`, `giphy()`) remplace tout GIF
+  Giphy du texte (iframe giphy.com/embed + cadre en % + ligne « via GIPHY », lien seul sur sa ligne, adresse seule, bloc
+  Intégrer, image media/i.giphy.com ; un lien au milieu d'une phrase reste un lien) par `figure.rl-gif` (carte blanche) >
+  `rl-gif-cadre` (aspect-ratio) > `video.rl-gif-video` (media.giphy.com/media/ID/giphy.mp4, affiche giphy_s.gif, muette,
+  boucle, preload none, aria-label « GIF : légende / titre du slug ») + pastille `rl-gif-pastille` + bouton `rl-gif-bouton`
+  (aria-pressed, textes data-rl-pause / data-rl-lecture) + `rl-gif-legende` (légende + « via GIPHY »). Largeur : `--rl-ratio`
+  (posé par le PHP, corrigé par rolling.js) ⇒ hauteur max 560 px (440 en mobile), carte centrée. Bouton visible au survol /
+  clavier sur ordinateur (brut `@media (hover: hover)`), toujours sur tactile. rolling.js : lecture quand visible (30 %),
+  pause hors écran, « réduire les animations » = image fixe + bouton lecture, format lu sur l'affiche puis la vidéo ; rien
+  dans l'éditeur. Textes réglables dans le widget (`gif_pastille`, `gif_credit`, `gif_pause`, `gif_lecture`, `gif_nom`).
+  Composition « Rolling : GIF » (clé **`gif-giphy`** : `sanitize_file_name('gif')` = « unnamed-file.gif » !) = groupe
+  `rl-gif-bloc` (bloc HTML + paragraphe `rl-gif-texte` = légende). Auteur : composition = **nouvelle photo `auteur-ines`**
+  (Inès Rédactrice ≠ `equipe-ines` Inès DevOps de l'équipe) + lien `https://www.linkedin.com/in/` dans `rl-nom` ; tout lien
+  linkedin.com de `.rl-auteur` = icône « in » 32 px (texte en font-size 0, lu par les lecteurs d'écran) ; lien d'exemple sans
+  profil retiré au rendu ; dans l'éditeur WordPress le texte du lien reste visible (règle `apres` de `feuille_editeur`).
+  Testé wp + wp2 (route Playwright pour media.giphy.com) : axe 0, 1440 / 390, réduire les animations, blocs valides.
 - **Chargement de page effet film** (demande avant la fin de la livraison 4) : maquette `maquettes/loading/maquette-loading.html`
   (copie /workspace/maquette-loading.html), 4 options : A amorce 3-2-1, B clap qui se ferme puis rideau, C ouverture
   cinéma (bandes noires + REC + timecode + règle avec la tête de lecture rouge des frises, plus de filet fin), D barre de lecture en haut sans écran. Conseil : C à l'arrivée (première page

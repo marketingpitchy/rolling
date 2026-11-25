@@ -1227,6 +1227,76 @@
 		}
 	} );
 
+	/* GIF des articles (carte .rl-gif posée par le widget « Texte de l'article ») : la vidéo légère de Giphy tourne quand
+	   elle est visible, s'arrête hors de l'écran ; bouton pause / lecture ; avec « réduire les animations », elle reste
+	   sur son image fixe jusqu'au clic. Le cadre prend le format réel de la vidéo. Rien dans l'éditeur. */
+	if ( ! editeur ) {
+		document.querySelectorAll( '.rl-gif' ).forEach( function ( carte ) {
+			var video = carte.querySelector( '.rl-gif-video' );
+			var bouton = carte.querySelector( '.rl-gif-bouton' );
+			var cadre = carte.querySelector( '.rl-gif-cadre' );
+			if ( ! video || ! bouton || carte.rlGif ) {
+				return;
+			}
+			carte.rlGif = true;
+			var arrete = calme;
+			var visible = false;
+			var etat = function () {
+				var enPause = arrete || video.paused;
+				bouton.setAttribute( 'aria-pressed', enPause ? 'true' : 'false' );
+				bouton.setAttribute( 'aria-label', enPause ? bouton.getAttribute( 'data-rl-lecture' ) : bouton.getAttribute( 'data-rl-pause' ) );
+			};
+			var lire = function () {
+				var p = video.play();
+				if ( p && p.catch ) {
+					p.catch( function () {} );
+				}
+			};
+			video.muted = true;
+			video.addEventListener( 'loadedmetadata', function () {
+				if ( cadre && video.videoWidth && video.videoHeight ) {
+					cadre.style.aspectRatio = video.videoWidth + ' / ' + video.videoHeight;
+					carte.style.setProperty( '--rl-ratio', video.videoWidth / video.videoHeight );
+				}
+			} );
+			// Format connu avant la lecture (« réduire les animations », lien sans dimensions) : celui de l'image fixe.
+			if ( video.poster && cadre ) {
+				var fixe = new Image();
+				fixe.onload = function () {
+					if ( ! video.videoWidth && fixe.naturalWidth && fixe.naturalHeight ) {
+						cadre.style.aspectRatio = fixe.naturalWidth + ' / ' + fixe.naturalHeight;
+						carte.style.setProperty( '--rl-ratio', fixe.naturalWidth / fixe.naturalHeight );
+					}
+				};
+				fixe.src = video.poster;
+			}
+			video.addEventListener( 'play', etat );
+			video.addEventListener( 'pause', etat );
+			bouton.addEventListener( 'click', function () {
+				arrete = ! arrete;
+				if ( arrete ) {
+					video.pause();
+				} else {
+					lire();
+				}
+				etat();
+			} );
+			etat();
+			if ( 'IntersectionObserver' in window ) {
+				new IntersectionObserver( function ( entrees ) {
+					visible = entrees[ 0 ].isIntersecting;
+					if ( visible && ! arrete ) {
+						lire();
+					} else if ( ! visible && ! video.paused ) {
+						video.pause();
+					}
+				}, { threshold: 0.3 } ).observe( carte );
+			} else if ( ! arrete ) {
+				lire();
+			}
+		} );
+	}
+
 	/* Calendrier HubSpot : le cadre (zone-calendrier) montre un calendrier squelette « Chargement des disponibilités… »
 	   jusqu'à ce que HubSpot ait fini (message de son calendrier, ou chargement de la page + 2,5 s), 15 s au plus. */
 	if ( ! editeur ) {

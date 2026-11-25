@@ -37,6 +37,12 @@ class Rolling_Widget_Contenu extends Rolling_Widget {
 		/* translators: %s : titre de la vidéo. */
 		$this->texte( 'libelle_video', __( 'Bouton des vidéos (%s = titre)', 'rolling' ), __( 'Lire la vidéo : %s', 'rolling' ) );
 		$this->texte( 'libelle_tableau', __( 'Nom des tableaux sans légende (lecteurs d’écran)', 'rolling' ), __( 'Tableau', 'rolling' ) );
+		$this->texte( 'gif_pastille', __( 'GIF : pastille sur l’image', 'rolling' ), __( 'GIF', 'rolling' ) );
+		$this->texte( 'gif_credit', __( 'GIF : crédit sous l’image', 'rolling' ), __( 'via GIPHY', 'rolling' ) );
+		$this->texte( 'gif_pause', __( 'GIF : bouton pause (lecteurs d’écran)', 'rolling' ), __( 'Mettre le GIF en pause', 'rolling' ) );
+		$this->texte( 'gif_lecture', __( 'GIF : bouton lecture (lecteurs d’écran)', 'rolling' ), __( 'Lire le GIF', 'rolling' ) );
+		/* translators: %s : description du GIF. */
+		$this->texte( 'gif_nom', __( 'GIF : texte lu (%s = légende ou titre Giphy)', 'rolling' ), __( 'GIF : %s', 'rolling' ) );
 		$this->add_control(
 			'encart',
 			array(
@@ -79,10 +85,11 @@ class Rolling_Widget_Contenu extends Rolling_Widget {
 	 * @param string $html           Texte de l'article.
 	 * @param string $libelle_video  Nom du bouton lecture (%s = titre).
 	 * @param string $libelle_tableau Nom d'un tableau sans légende.
+	 * @param array  $gif            Textes des GIF (pastille, credit, pause, lecture, nom).
 	 * @return string
 	 */
-	public static function enrichir( $html, $libelle_video, $libelle_tableau ) { // phpcs:disable WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase -- propriétés de DOMDocument.
-		if ( ! preg_match( '/is-style-coches|rl-chiffre-valeur|is-provider-youtube|is-provider-vimeo|wp-block-table/', $html ) || ! class_exists( 'DOMDocument' ) ) {
+	public static function enrichir( $html, $libelle_video, $libelle_tableau, $gif = array() ) { // phpcs:disable WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase -- propriétés de DOMDocument.
+		if ( ! preg_match( '/is-style-coches|rl-chiffre-valeur|is-provider-youtube|is-provider-vimeo|wp-block-table|giphy\.com|rl-auteur/', $html ) || ! class_exists( 'DOMDocument' ) ) {
 			return $html;
 		}
 
@@ -170,6 +177,16 @@ class Rolling_Widget_Contenu extends Rolling_Widget {
 			$iframe->parentNode->replaceChild( $fragment( $cadre ), $iframe );
 		}
 
+		// GIF Giphy (code d'intégration, lien ou image) : vidéo légère de Giphy en boucle, dans une carte, avec pause.
+		self::gifs( $dom, $xpath, $fragment, $gif );
+
+		// Carte « Écrit par » : le lien LinkedIn d'exemple (sans profil) est retiré.
+		foreach ( $xpath->query( '//*[' . $classe( 'rl-auteur' ) . ']//a' ) as $lien ) {
+			if ( preg_match( '#^https?://(www\.)?linkedin\.com/in/?$#i', trim( $lien->getAttribute( 'href' ) ) ) ) {
+				$lien->parentNode->removeChild( $lien );
+			}
+		}
+
 		// Tableaux : la zone qui défile se prend au clavier.
 		foreach ( $xpath->query( '//figure[' . $classe( 'wp-block-table' ) . ']' ) as $tableau ) {
 			$legende = $xpath->query( './figcaption', $tableau );
@@ -185,6 +202,145 @@ class Rolling_Widget_Contenu extends Rolling_Widget {
 		}
 
 		return $sortie;
+	} // phpcs:enable
+
+	/**
+	 * Identifiant Giphy et titre lisible tirés d'une adresse (embed, page, média, image).
+	 *
+	 * @param string $adresse Adresse.
+	 * @return array [ id, titre ] ou tableau vide.
+	 */
+	public static function giphy( $adresse ) {
+		$adresse = trim( (string) $adresse );
+		if ( preg_match( '#giphy\.com/embed/([A-Za-z0-9]+)#', $adresse, $m )
+			|| preg_match( '#(?:media\d*|i)\.giphy\.com/(?:media/(?:v1\.[^/]+/)?)?([A-Za-z0-9]+)(?:/|\.gif|\.webp|\.mp4)#', $adresse, $m ) ) {
+			return array( $m[1], '' );
+		}
+		if ( preg_match( '#giphy\.com/(?:gifs|stickers|clips)/(?:[\w-]+/)?(?:([\w-]+)-)?([A-Za-z0-9]+)/?(?:[?\#].*)?$#', $adresse, $m ) ) {
+			return array( $m[2], ucfirst( str_replace( '-', ' ', (string) $m[1] ) ) );
+		}
+		return array();
+	}
+
+	/**
+	 * Remplace chaque GIF Giphy du texte par la carte GIF du thème (vidéo mp4 de Giphy, image fixe en attendant,
+	 * pastille, bouton pause, légende et crédit). Formes reconnues : iframe du code d'intégration (avec son cadre
+	 * et sa ligne « via GIPHY »), lien ou adresse seule (paragraphe, bloc Intégrer), image Giphy (bloc Image).
+	 * Composition « Rolling : GIF » : groupe .rl-gif-bloc, sa ligne .rl-gif-texte devient la légende.
+	 *
+	 * @param DOMDocument $dom      Document.
+	 * @param DOMXPath    $xpath    Requêtes.
+	 * @param callable    $fragment Fabrique de fragments.
+	 * @param array       $textes   Textes (pastille, credit, pause, lecture, nom).
+	 */
+	private static function gifs( $dom, $xpath, $fragment, $textes ) { // phpcs:disable WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase -- propriétés de DOMDocument.
+		$textes  = wp_parse_args(
+			array_filter( $textes, 'strlen' ),
+			array(
+				'pastille' => 'GIF',
+				'credit'   => 'via GIPHY',
+				'pause'    => 'Mettre le GIF en pause',
+				'lecture'  => 'Lire le GIF',
+				'nom'      => 'GIF : %s',
+			)
+		);
+		$classe  = function ( $nom ) {
+			return "contains(concat(' ', normalize-space(@class), ' '), ' " . $nom . " ')";
+		};
+		$trouves = array();
+		$noeuds  = $xpath->query( '//iframe[contains(@src, "giphy.com/embed/")] | //img[contains(@src, "giphy.com/")] | //a[contains(@href, "giphy.com/")] | //div[' . $classe( 'wp-block-embed__wrapper' ) . '][contains(., "giphy.com/")] | //p[contains(., "giphy.com/")][not(*)]' );
+		foreach ( $noeuds as $noeud ) {
+			$adresse = $noeud->getAttribute( 'src' ) ? $noeud->getAttribute( 'src' ) : ( $noeud->getAttribute( 'href' ) ? $noeud->getAttribute( 'href' ) : trim( $noeud->textContent ) );
+			$infos   = self::giphy( $adresse );
+			if ( ! $infos ) {
+				continue;
+			}
+			// Unité à remplacer : le groupe de la composition, sinon la figure, le cadre du code Giphy ou le paragraphe.
+			$unite = $noeud;
+			$bloc  = $xpath->query( 'ancestor::*[' . $classe( 'rl-gif-bloc' ) . '][1]', $noeud )->item( 0 );
+			if ( $bloc ) {
+				$unite = $bloc;
+			} else {
+				$parent = $xpath->query( 'ancestor::figure[1] | ancestor::p[1]', $noeud )->item( 0 );
+				if ( $parent ) {
+					$unite = $parent;
+				} elseif ( 'iframe' === $noeud->nodeName && 'div' === $noeud->parentNode->nodeName && 1 === $xpath->query( './*', $noeud->parentNode )->length ) {
+					$unite = $noeud->parentNode;
+				}
+			}
+			// Ligne « via GIPHY » du code d'intégration : elle donne le titre, puis elle part.
+			if ( 'a' === $noeud->nodeName && ! $bloc && $unite->previousSibling ) {
+				$avant = $unite->previousSibling;
+				while ( $avant && XML_TEXT_NODE === $avant->nodeType && '' === trim( $avant->textContent ) ) {
+					$avant = $avant->previousSibling;
+				}
+				if ( $avant && isset( $trouves[ spl_object_id( $avant ) ] ) ) {
+					if ( $infos[1] && '' === $trouves[ spl_object_id( $avant ) ]['titre'] ) {
+						$trouves[ spl_object_id( $avant ) ]['titre'] = $infos[1];
+					}
+					$trouves[ spl_object_id( $unite ) ] = array( 'supprimer' => $unite );
+					continue;
+				}
+			}
+			// Un lien Giphy au milieu d'une phrase reste un lien : seulement un lien seul sur sa ligne.
+			if ( 'a' === $noeud->nodeName && ! $bloc && 'p' === $unite->nodeName && trim( $unite->textContent ) !== trim( $noeud->textContent ) ) {
+				continue;
+			}
+			$cle = spl_object_id( $unite );
+			if ( isset( $trouves[ $cle ] ) ) {
+				if ( $infos[1] && empty( $trouves[ $cle ]['titre'] ) ) {
+					$trouves[ $cle ]['titre'] = $infos[1];
+				}
+				continue;
+			}
+			// Format : largeur / hauteur de l'iframe ou de l'image, sinon cadre Giphy en %, sinon 4:3 (corrigé par rolling.js).
+			$largeur = (int) $noeud->getAttribute( 'width' );
+			$hauteur = (int) $noeud->getAttribute( 'height' );
+			if ( ( ! $largeur || ! $hauteur ) && 'div' === $noeud->parentNode->nodeName && preg_match( '/padding-bottom:\s*([\d.]+)%/', $noeud->parentNode->getAttribute( 'style' ), $p ) && (float) $p[1] > 0 ) {
+				$largeur = 1000;
+				$hauteur = (int) round( 10 * (float) $p[1] );
+			}
+			$legende = '';
+			if ( $bloc ) {
+				$ligne   = $xpath->query( './/*[' . $classe( 'rl-gif-texte' ) . ']', $bloc )->item( 0 );
+				$legende = $ligne ? trim( $ligne->textContent ) : '';
+			} elseif ( 'figure' === $unite->nodeName ) {
+				$ligne   = $xpath->query( './figcaption', $unite )->item( 0 );
+				$legende = $ligne ? trim( $ligne->textContent ) : '';
+			}
+			$alt             = 'img' === $noeud->nodeName ? trim( $noeud->getAttribute( 'alt' ) ) : '';
+			$trouves[ $cle ] = array(
+				'unite'   => $unite,
+				'id'      => $infos[0],
+				'titre'   => $alt ? $alt : $infos[1],
+				'legende' => $legende,
+				'largeur' => $largeur > 0 && $hauteur > 0 ? $largeur : 4,
+				'hauteur' => $largeur > 0 && $hauteur > 0 ? $hauteur : 3,
+			);
+		}
+
+		foreach ( $trouves as $gif ) {
+			if ( isset( $gif['supprimer'] ) ) {
+				if ( $gif['supprimer']->parentNode ) {
+					$gif['supprimer']->parentNode->removeChild( $gif['supprimer'] );
+				}
+				continue;
+			}
+			if ( ! $gif['unite']->parentNode ) {
+				continue;
+			}
+			$base  = 'https://media.giphy.com/media/' . rawurlencode( $gif['id'] ) . '/';
+			$nom   = $gif['legende'] ? $gif['legende'] : ( $gif['titre'] ? $gif['titre'] : $textes['pastille'] );
+			$carte = '<figure class="rl-gif" data-rl-gif="" style="--rl-ratio: ' . round( $gif['largeur'] / $gif['hauteur'], 4 ) . '">'
+				. '<div class="rl-gif-cadre" style="aspect-ratio: ' . (int) $gif['largeur'] . ' / ' . (int) $gif['hauteur'] . '">'
+				. '<video class="rl-gif-video" src="' . esc_url( $base . 'giphy.mp4' ) . '" poster="' . esc_url( $base . 'giphy_s.gif' ) . '" muted="muted" loop="loop" playsinline="playsinline" preload="none" aria-label="' . esc_attr( sprintf( $textes['nom'], $nom ) ) . '"></video>'
+				. '<span class="rl-gif-pastille" aria-hidden="true">' . esc_html( $textes['pastille'] ) . '</span>'
+				. '<button type="button" class="rl-gif-bouton" aria-pressed="false" aria-label="' . esc_attr( $textes['pause'] ) . '" data-rl-pause="' . esc_attr( $textes['pause'] ) . '" data-rl-lecture="' . esc_attr( $textes['lecture'] ) . '"></button>'
+				. '</div>'
+				. '<figcaption class="rl-gif-legende">' . ( $gif['legende'] ? '<span>' . esc_html( $gif['legende'] ) . '</span>' : '' ) . '<span class="rl-gif-credit">' . esc_html( $textes['credit'] ) . '</span></figcaption>'
+				. '</figure>';
+			$gif['unite']->parentNode->replaceChild( $fragment( $carte ), $gif['unite'] );
+		}
 	} // phpcs:enable
 
 	/**
@@ -265,8 +421,12 @@ class Rolling_Widget_Contenu extends Rolling_Widget {
 
 	/** Affichage. */
 	protected function render() {
-		$r     = $this->get_settings_for_display();
-		$texte = self::enrichir( self::contenu_article(), (string) $r['libelle_video'], (string) $r['libelle_tableau'] );
+		$r   = $this->get_settings_for_display();
+		$gif = array();
+		foreach ( array( 'pastille', 'credit', 'pause', 'lecture', 'nom' ) as $cle ) {
+			$gif[ $cle ] = (string) ( $r[ 'gif_' . $cle ] ?? '' );
+		}
+		$texte = self::enrichir( self::contenu_article(), (string) $r['libelle_video'], (string) $r['libelle_tableau'], $gif );
 		if ( 'yes' === ( $r['encart'] ?? 'yes' ) ) {
 			$texte = self::encart_milieu( $texte );
 		}

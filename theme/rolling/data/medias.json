@@ -342,6 +342,12 @@
   "titre": "Portrait : Inès, DevOps"
  },
  {
+  "cle": "auteur-ines",
+  "fichier": "auteur-ines.jpg",
+  "alt": "Inès, Rédactrice chez Rolling",
+  "titre": "Portrait : Inès, Rédactrice chez Rolling"
+ },
+ {
   "cle": "equipe-hakim",
   "fichier": "equipe-hakim.jpg",
   "alt": "Hakim, Développeur Back-End",
