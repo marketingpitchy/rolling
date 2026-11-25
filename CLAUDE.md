@@ -1040,6 +1040,9 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   linkedin.com de `.rl-auteur` = icône « in » 32 px (texte en font-size 0, lu par les lecteurs d'écran) ; lien d'exemple sans
   profil retiré au rendu ; dans l'éditeur WordPress le texte du lien reste visible (règle `apres` de `feuille_editeur`).
   Testé wp + wp2 (route Playwright pour media.giphy.com) : axe 0, 1440 / 390, réduire les animations, blocs valides.
+- **0.7.26** : code Giphy récent de la cliente (`<div style="padding-bottom:56%">` + iframe `width="100%" height="100%"`) :
+  « 100% » était lu comme 100 px ⇒ cadre carré au départ ⇒ dimensions de l'iframe lues seulement si ce sont des pixels,
+  sinon format du cadre en % (56 % ⇒ 1000 / 560). Testé avec son code exact (wp + mise à jour wp2).
 - **Chargement de page effet film** (demande avant la fin de la livraison 4) : maquette `maquettes/loading/maquette-loading.html`
   (copie /workspace/maquette-loading.html), 4 options : A amorce 3-2-1, B clap qui se ferme puis rideau, C ouverture
   cinéma (bandes noires + REC + timecode + règle avec la tête de lecture rouge des frises, plus de filet fin), D barre de lecture en haut sans écran. Conseil : C à l'arrivée (première page

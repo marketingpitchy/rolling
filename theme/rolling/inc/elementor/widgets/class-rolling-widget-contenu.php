@@ -294,8 +294,9 @@ class Rolling_Widget_Contenu extends Rolling_Widget {
 				continue;
 			}
 			// Format : largeur / hauteur de l'iframe ou de l'image, sinon cadre Giphy en %, sinon 4:3 (corrigé par rolling.js).
-			$largeur = (int) $noeud->getAttribute( 'width' );
-			$hauteur = (int) $noeud->getAttribute( 'height' );
+			// Dimensions en pixels seulement (« 100% » du code Giphy récent n'est pas une taille).
+			$largeur = ctype_digit( trim( $noeud->getAttribute( 'width' ) ) ) ? (int) $noeud->getAttribute( 'width' ) : 0;
+			$hauteur = ctype_digit( trim( $noeud->getAttribute( 'height' ) ) ) ? (int) $noeud->getAttribute( 'height' ) : 0;
 			if ( ( ! $largeur || ! $hauteur ) && 'div' === $noeud->parentNode->nodeName && preg_match( '/padding-bottom:\s*([\d.]+)%/', $noeud->parentNode->getAttribute( 'style' ), $p ) && (float) $p[1] > 0 ) {
 				$largeur = 1000;
 				$hauteur = (int) round( 10 * (float) $p[1] );
