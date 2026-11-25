@@ -1015,6 +1015,15 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   `#rl-signature` (bat Hello : boutons, champs, labels, styles de tableau neutralisés dans l'aperçu) + script ; ids `rls-…` ; sans
   logo en tête (en-tête du site) ; padding-top 150 px sous l'en-tête collant. Testé sur wp (page Elementor pleine largeur, titre masqué) :
   axe 0, 390 sans débordement, copie OK.
+- **Maquette « GIF et auteur »** (`maquettes/gif-auteur/gif-auteur.html`, jetons `__GIF__` / `__GIF_FIXE__` / `__INES__` remplacés
+  à la copie /workspace/maquette-gif-auteur.html, **à valider**) : code d'intégration Giphy dans un bloc « HTML personnalisé » =
+  iframe (taille figée, lourd, cookies Giphy, pas de pause) ⇒ proposé : le thème remplace l'iframe giphy.com/embed/ID (ou un lien
+  giphy.com/gifs/…) par la vidéo mp4 de Giphy (media.giphy.com/media/ID/giphy.mp4) au format réel, bouton pause, alt tiré du
+  slug ou de la légende, « via GIPHY » ; looks A comme une image (conseil), B pastille « GIF », C carte blanche ; composition
+  « Rolling : GIF ». Auteur : lien LinkedIn dans la composition « Auteur » (tout lien linkedin.com de `.rl-auteur` stylé) :
+  A icône à côté du nom, B « Suivre Inès sur LinkedIn » (conseil), C bouton en haut à droite ; bonus Yoast (profil LinkedIn
+  de l'utilisateur). Blog : 10 cartes aujourd'hui (1 à la une + 9, « Articles suivants » ⇒ ?voir=2), conseillé 13 dès ~20
+  articles, pages numérotées au-delà de ~40. Hôtes giphy.com / media.giphy.com bloqués ici (à autoriser pour tester).
 - **Chargement de page effet film** (demande avant la fin de la livraison 4) : maquette `maquettes/loading/maquette-loading.html`
   (copie /workspace/maquette-loading.html), 4 options : A amorce 3-2-1, B clap qui se ferme puis rideau, C ouverture
   cinéma (bandes noires + REC + timecode + règle avec la tête de lecture rouge des frises, plus de filet fin), D barre de lecture en haut sans écran. Conseil : C à l'arrivée (première page

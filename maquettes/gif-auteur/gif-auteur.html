@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>GIF et auteur</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..700&family=Hanken+Grotesk:wght@400..800&family=Caveat:wght@700&display=swap" rel="stylesheet">
+<style>
+:root{--encre:#0F0F12;--para:#4A4858;--legende:#5F5C6C;--violet:#5B3BEA;--fond:#FAF9F7}
+*{box-sizing:border-box}
+body{margin:0;background:var(--fond);color:var(--encre);font-family:'Hanken Grotesk',sans-serif}
+main{max-width:1240px;margin:0 auto;padding:48px 28px 96px}
+h1{font:650 46px/1.05 'Bricolage Grotesque';letter-spacing:-.05em;margin:0 0 12px}
+.intro{font-size:18px;line-height:1.6;color:var(--para);max-width:820px;margin:0}
+.partie{margin-top:72px}
+.partie>h2{font:650 32px/1.1 'Bricolage Grotesque';letter-spacing:-.045em;margin:0 0 8px}
+.partie>p{font-size:16px;line-height:1.6;color:var(--para);max-width:860px;margin:0 0 8px}
+.tc{display:inline-block;font:700 12px/1 'Hanken Grotesk';letter-spacing:.16em;color:var(--violet);margin-bottom:10px}
+.constat{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:20px}
+.constat div{background:#fff;border-radius:18px;padding:18px;box-shadow:inset 0 0 0 1px rgba(15,15,18,.08);font-size:15px;line-height:1.5;color:var(--para)}
+.constat b{display:block;color:var(--encre);font:650 18px/1.2 'Bricolage Grotesque';letter-spacing:-.03em;margin-bottom:6px}
+.option{margin-top:40px;padding:28px;border-radius:26px;background:#fff;box-shadow:0 1px 2px rgba(15,15,18,.05),0 24px 50px -30px rgba(76,48,170,.3)}
+.option h3{font:650 24px/1.2 'Bricolage Grotesque';letter-spacing:-.04em;margin:0 0 4px}
+.option>p{margin:0 0 20px;font-size:15px;line-height:1.55;color:var(--para)}
+.conseil{display:inline-block;margin-left:8px;padding:4px 10px;border-radius:999px;background:#5B3BEA;color:#fff;font:700 12px/1.3 'Hanken Grotesk';letter-spacing:.06em;vertical-align:middle}
+.ecrans{display:grid;grid-template-columns:minmax(0,1fr) 390px;gap:28px;align-items:start}
+.ecran{border-radius:18px;background:var(--fond);box-shadow:inset 0 0 0 1px rgba(15,15,18,.08);padding:28px 32px}
+.ecran.mobile{padding:22px 16px}
+.etiq{font:700 12px/1 'Hanken Grotesk';letter-spacing:.14em;text-transform:uppercase;color:var(--legende);margin:0 0 14px}
+.art p{margin:0;font-size:18px;line-height:1.7;color:var(--para)}
+.mobile .art p{font-size:17px}
+.art figure{margin:28px 0}
+/* GIF A */
+.gif{position:relative;border-radius:22px;overflow:hidden;background:#EDE6FF}
+.gif img{display:block;width:100%;height:auto}
+.pause{position:absolute;right:12px;bottom:12px;width:40px;height:40px;border:0;border-radius:50%;background:rgba(15,10,36,.72);color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;backdrop-filter:blur(6px)}
+.pause::before,.pause::after{content:"";width:4px;height:14px;border-radius:2px;background:#fff;margin:0 2px}
+.pause.lecture::before{width:0;height:0;border-radius:0;background:none;border-style:solid;border-width:8px 0 8px 13px;border-color:transparent transparent transparent #fff;margin-left:4px}
+.pause.lecture::after{display:none}
+.pause:focus-visible{outline:3px solid #C4B5FD;outline-offset:3px}
+figcaption{display:flex;justify-content:space-between;gap:12px;margin-top:10px;font-size:14px;line-height:1.45;color:var(--legende)}
+figcaption .credit{flex:none;font-size:12px;letter-spacing:.04em}
+/* B */
+.pastille{position:absolute;left:12px;top:12px;padding:5px 9px;border-radius:999px;background:rgba(15,10,36,.72);color:#fff;font:800 12px/1 'Hanken Grotesk';letter-spacing:.1em}
+.B .pause{opacity:0;transition:opacity .2s}
+.B .gif:hover .pause,.B .pause:focus-visible{opacity:1}
+.mobile .B .pause,.B.mobile .pause{opacity:1}
+/* C */
+.carte-gif{padding:12px;border-radius:26px;background:#fff;box-shadow:0 1px 2px rgba(15,15,18,.05),0 24px 50px -30px rgba(76,48,170,.3)}
+.carte-gif .gif{border-radius:16px}
+.carte-gif figcaption{margin:12px 6px 2px}
+/* Saisie */
+.saisie{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:20px}
+.saisie div{background:#fff;border-radius:18px;padding:18px;box-shadow:inset 0 0 0 1px rgba(15,15,18,.08);font-size:15px;line-height:1.5;color:var(--para)}
+.saisie b{display:block;color:var(--encre);font:650 18px/1.2 'Bricolage Grotesque';letter-spacing:-.03em;margin-bottom:6px}
+code{font-size:12.5px;background:#F3F0FA;border-radius:6px;padding:2px 5px;color:#2A1A80;word-break:break-all}
+/* Auteur */
+.auteur{position:relative;padding:24px 24px 24px 116px;min-height:120px;border-radius:26px;background:#fff;box-shadow:inset 0 0 0 1px rgba(15,15,18,.08)}
+.auteur img{position:absolute;top:24px;left:24px;width:72px;height:72px;border-radius:50%;object-fit:cover;box-shadow:0 0 0 3px #fff,0 10px 20px -10px rgba(70,40,150,.5)}
+.auteur .label{margin:0;font:700 12px/1.3 'Hanken Grotesk';letter-spacing:.16em;text-transform:uppercase;color:var(--legende)}
+.auteur .nom{margin:4px 0 0;font:650 23px/1.2 'Bricolage Grotesque';letter-spacing:-.035em}
+.auteur .poste{margin:0;font-size:15px;line-height:1.55;color:var(--para)}
+.mobile .auteur{padding:108px 22px 22px}
+.mobile .auteur img{top:22px;left:22px}
+.in{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:5px;background:#0A66C2;color:#fff;font:800 13px/1 'Hanken Grotesk';letter-spacing:-.5px;flex:none}
+.LA .nom{display:flex;align-items:center;gap:10px}
+.LA .nom a{display:inline-flex;min-width:32px;min-height:32px;align-items:center;justify-content:center;border-radius:8px}
+.LA .nom a:hover .in{background:#5B3BEA}
+.LB .lien{display:inline-flex;align-items:center;gap:8px;min-height:32px;margin-top:6px;font-size:15px;font-weight:600;color:#4A2BB8;text-decoration:underline;text-underline-offset:3px}
+.LC .bouton{position:absolute;top:24px;right:24px;display:inline-flex;align-items:center;gap:8px;min-height:40px;padding:0 14px 0 9px;border-radius:999px;background:#fff;box-shadow:inset 0 0 0 1px rgba(15,15,18,.14);font:600 14px 'Hanken Grotesk';color:var(--encre);text-decoration:none}
+.LC .bouton:hover{background:#0A66C2;color:#fff;box-shadow:none}
+.LC .mobile .bouton{position:static;margin-top:12px}
+.note{font:700 27px/1.1 'Caveat';color:#B8400F;margin:16px 0 0}
+.reponse{margin-top:20px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.reponse div{background:#fff;border-radius:18px;padding:18px 20px;box-shadow:inset 0 0 0 1px rgba(15,15,18,.08)}
+.reponse b{display:block;font:650 34px/1 'Bricolage Grotesque';letter-spacing:-.05em;color:var(--violet);margin-bottom:6px}
+.reponse span{font-size:15px;line-height:1.5;color:var(--para)}
+@media (max-width:1000px){.ecrans{grid-template-columns:minmax(0,1fr)}.constat,.saisie,.reponse{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
+@media (max-width:640px){main{padding:32px 16px 64px}h1{font-size:34px}.constat,.saisie,.reponse{grid-template-columns:minmax(0,1fr)}.option{padding:18px}.ecran{padding:20px 16px}.LC .bouton{position:static;margin-top:12px}.auteur{padding:108px 22px 22px}.auteur img{top:22px;left:22px}}
+@media (prefers-reduced-motion:reduce){.gif img[data-anime]{content:url(__GIF_FIXE__)}}
+</style>
+</head>
+<body>
+<main>
+<span class="tc">MAQUETTE · À VALIDER</span>
+<h1>GIF dans les articles et LinkedIn de l'auteur.</h1>
+<p class="intro">Deux ajouts pour les articles : un vrai composant pour les GIF Giphy (au lieu du bloc HTML qui s'affiche mal), et un lien LinkedIn dans la carte « Écrit par ». En bas : la réponse sur le nombre d'articles du blog.</p>
+
+<section class="partie">
+<span class="tc">01</span>
+<h2>Pourquoi le code Giphy s'affiche mal.</h2>
+<p>Le code d'intégration Giphy colle une petite page Giphy dans l'article (une iframe), pas un GIF.</p>
+<div class="constat">
+<div><b>Taille figée</b>480 × 270 px ou un cadre en 56 % : le GIF ne prend pas la largeur du texte, ou garde des bandes vides s'il n'est pas en 16:9.</div>
+<div><b>Lourd</b>La page Giphy charge son lecteur, ses scripts et un GIF de plusieurs Mo. Ça ralentit l'article (et le score Google).</div>
+<div><b>Cookies Giphy</b>Le lecteur Giphy pose ses propres traceurs, hors de votre bandeau de cookies.</div>
+<div><b>Accessibilité</b>Pas de bouton pause, pas de texte pour les lecteurs d'écran, et le lien « via GIPHY » prend le style des liens de l'article.</div>
+</div>
+</section>
+
+<section class="partie">
+<span class="tc">02</span>
+<h2>Le composant GIF : trois looks.</h2>
+<p>Vous gardez votre habitude : coller le code Giphy dans un bloc « HTML personnalisé » (ou seulement le lien du GIF). Le thème le remplace par une vraie vidéo courte en boucle (la version légère du GIF fournie par Giphy), au bon format, avec un bouton pause. Les articles déjà publiés sont corrigés tout seuls.</p>
+
+<div class="option">
+<h3>A · Comme une image de l'article <span class="conseil">CONSEIL</span></h3>
+<p>Coins arrondis comme les images, format réel du GIF, bouton pause toujours visible en bas à droite. Légende facultative, crédit « via GIPHY » gardé, discret à droite.</p>
+<div class="ecrans">
+<div class="ecran"><p class="etiq">Ordinateur · colonne de l'article</p><div class="art">
+<p>Une vidéo de 90 secondes résume mieux un rapport annuel qu'un PDF de 40 pages. Et vos équipes la regardent jusqu'au bout.</p>
+<figure><div class="gif"><img data-anime src="__GIF__" alt="Personne qui applaudit, ravie" width="480" height="270"><button class="pause" type="button" aria-label="Mettre le GIF en pause"></button></div><figcaption><span>Vos équipes, quand la vidéo est livrée en 48 heures.</span><span class="credit">via GIPHY</span></figcaption></figure>
+<p>C'est tout l'intérêt du content repurposing : partir de ce qui existe déjà.</p>
+</div></div>
+<div class="ecran mobile"><p class="etiq">Mobile · 390 px</p><div class="art">
+<p>Une vidéo de 90 secondes résume mieux un rapport annuel qu'un PDF de 40 pages.</p>
+<figure><div class="gif"><img data-anime src="__GIF__" alt="Personne qui applaudit, ravie" width="480" height="270"><button class="pause" type="button" aria-label="Mettre le GIF en pause"></button></div><figcaption><span>Vos équipes, quand la vidéo est livrée en 48 heures.</span><span class="credit">via GIPHY</span></figcaption></figure>
+</div></div>
+</div>
+</div>
+
+<div class="option B">
+<h3>B · Avec une pastille « GIF »</h3>
+<p>Même cadre, pastille « GIF » en haut à gauche ; sur ordinateur, le bouton pause n'apparaît qu'au survol ou au clavier (toujours visible sur mobile).</p>
+<div class="ecrans">
+<div class="ecran"><p class="etiq">Ordinateur</p><div class="art">
+<figure style="margin-top:0"><div class="gif"><img data-anime src="__GIF__" alt="Personne qui applaudit, ravie" width="480" height="270"><span class="pastille">GIF</span><button class="pause" type="button" aria-label="Mettre le GIF en pause"></button></div><figcaption><span>Vos équipes, quand la vidéo est livrée en 48 heures.</span><span class="credit">via GIPHY</span></figcaption></figure>
+</div></div>
+<div class="ecran mobile"><p class="etiq">Mobile</p><div class="art">
+<figure style="margin-top:0"><div class="gif"><img data-anime src="__GIF__" alt="Personne qui applaudit, ravie" width="480" height="270"><span class="pastille">GIF</span><button class="pause" type="button" aria-label="Mettre le GIF en pause"></button></div><figcaption><span>Vos équipes, quand la vidéo est livrée en 48 heures.</span><span class="credit">via GIPHY</span></figcaption></figure>
+</div></div>
+</div>
+</div>
+
+<div class="option">
+<h3>C · Dans une carte blanche</h3>
+<p>Le GIF posé dans une carte (comme les encarts « Guide » des articles), légende dans la carte. Plus présent, à garder pour les GIF qui illustrent un propos.</p>
+<div class="ecrans">
+<div class="ecran"><p class="etiq">Ordinateur</p><div class="art">
+<figure class="carte-gif" style="margin-top:0"><div class="gif"><img data-anime src="__GIF__" alt="Personne qui applaudit, ravie" width="480" height="270"><button class="pause" type="button" aria-label="Mettre le GIF en pause"></button></div><figcaption><span>Vos équipes, quand la vidéo est livrée en 48 heures.</span><span class="credit">via GIPHY</span></figcaption></figure>
+</div></div>
+<div class="ecran mobile"><p class="etiq">Mobile</p><div class="art">
+<figure class="carte-gif" style="margin-top:0"><div class="gif"><img data-anime src="__GIF__" alt="Personne qui applaudit, ravie" width="480" height="270"><button class="pause" type="button" aria-label="Mettre le GIF en pause"></button></div><figcaption><span>Vos équipes, quand la vidéo est livrée en 48 heures.</span><span class="credit">via GIPHY</span></figcaption></figure>
+</div></div>
+</div>
+</div>
+
+<div class="saisie">
+<div><b>Comment l'ajouter</b>Bloc « HTML personnalisé » + code Giphy, comme aujourd'hui. Ou une composition « Rolling : GIF » (outil d'insertion, catégorie Rolling) avec une ligne pour le lien et une pour la légende.</div>
+<div><b>Texte pour Google et les lecteurs d'écran</b>Repris du titre du GIF chez Giphy (ex. <code>giphy.com/gifs/happy-applause-…</code> ⇒ « Happy applause »), remplaçable par la légende.</div>
+<div><b>« Réduire les animations »</b>Le GIF reste sur sa première image, avec un bouton lecture à la place du bouton pause. Rien ne bouge dans l'éditeur.</div>
+</div>
+</section>
+
+<section class="partie">
+<span class="tc">03</span>
+<h2>LinkedIn dans la carte « Écrit par ».</h2>
+<p>Dans la composition « Auteur », une ligne « LinkedIn » avec le lien du profil. Vide ou supprimée : rien ne s'affiche. Dans les articles déjà publiés : ajoutez un lien vers linkedin.com dans la carte, le thème lui donne ce style tout seul.</p>
+
+<div class="option LA">
+<h3>A · Icône à côté du nom</h3>
+<p>La plus discrète. Le lien est lu « Profil LinkedIn d'Inès » par les lecteurs d'écran.</p>
+<div class="ecrans">
+<div class="ecran"><p class="etiq">Ordinateur</p><div class="auteur"><img src="__INES__" alt=""><p class="label">Écrit par</p><p class="nom">Inès <a href="#" aria-label="Profil LinkedIn d'Inès"><span class="in" aria-hidden="true">in</span></a></p><p class="poste">Rédactrice chez Rolling</p></div></div>
+<div class="ecran mobile"><p class="etiq">Mobile</p><div class="auteur"><img src="__INES__" alt=""><p class="label">Écrit par</p><p class="nom">Inès <a href="#" aria-label="Profil LinkedIn d'Inès"><span class="in" aria-hidden="true">in</span></a></p><p class="poste">Rédactrice chez Rolling</p></div></div>
+</div>
+</div>
+
+<div class="option LB">
+<h3>B · Lien « Suivre Inès sur LinkedIn » <span class="conseil">CONSEIL</span></h3>
+<p>Clair, texte de lien explicite (bon pour l'accessibilité et le SEO), tient sur mobile sans rien changer.</p>
+<div class="ecrans">
+<div class="ecran"><p class="etiq">Ordinateur</p><div class="auteur"><img src="__INES__" alt=""><p class="label">Écrit par</p><p class="nom">Inès</p><p class="poste">Rédactrice chez Rolling</p><a class="lien" href="#"><span class="in" aria-hidden="true">in</span>Suivre Inès sur LinkedIn</a></div></div>
+<div class="ecran mobile"><p class="etiq">Mobile</p><div class="auteur"><img src="__INES__" alt=""><p class="label">Écrit par</p><p class="nom">Inès</p><p class="poste">Rédactrice chez Rolling</p><a class="lien" href="#"><span class="in" aria-hidden="true">in</span>Suivre Inès sur LinkedIn</a></div></div>
+</div>
+</div>
+
+<div class="option LC">
+<h3>C · Bouton en haut à droite</h3>
+<p>Bouton « LinkedIn » dans le coin de la carte (passe sous le poste en mobile), bleu LinkedIn au survol.</p>
+<div class="ecrans">
+<div class="ecran"><p class="etiq">Ordinateur</p><div class="auteur"><img src="__INES__" alt=""><p class="label">Écrit par</p><p class="nom">Inès</p><p class="poste">Rédactrice chez Rolling</p><a class="bouton" href="#" aria-label="Profil LinkedIn d'Inès"><span class="in" aria-hidden="true">in</span>LinkedIn</a></div></div>
+<div class="ecran mobile"><p class="etiq">Mobile</p><div class="auteur"><img src="__INES__" alt=""><p class="label">Écrit par</p><p class="nom">Inès</p><p class="poste">Rédactrice chez Rolling</p><a class="bouton" href="#" aria-label="Profil LinkedIn d'Inès"><span class="in" aria-hidden="true">in</span>LinkedIn</a></div></div>
+</div>
+</div>
+<p class="note">Bonus SEO : remplir aussi « Profil LinkedIn » dans Comptes > Profil (champ ajouté par Yoast) pour l'auteur WordPress de l'article.</p>
+</section>
+
+<section class="partie">
+<span class="tc">04</span>
+<h2>Combien d'articles sur la page Blog ?</h2>
+<div class="reponse">
+<div><b>10</b><span>Aujourd'hui : 1 article à la une + 9 en grille (3 rangées de 3). Au-delà, bouton « Articles suivants » qui ajoute 10 articles sous les premiers.</span></div>
+<div><b>13</b><span>Conseillé dès 20 articles environ : 1 à la une + 12 (4 rangées de 3). Réglage « Nombre de cartes » du widget Liste du blog.</span></div>
+<div><b>~40</b><span>Au-delà de 40 articles environ, de vraies pages numérotées (1, 2, 3…) seraient préférables au bouton pour Google. Pas utile avant.</span></div>
+</div>
+</section>
+</main>
+<script>
+document.querySelectorAll('.pause').forEach(function(b){
+  b.addEventListener('click',function(){
+    var img=b.parentNode.querySelector('img');var lit=!b.classList.contains('lecture');
+    if(lit){img.dataset.src=img.src;img.src='__GIF_FIXE__';b.classList.add('lecture');b.setAttribute('aria-label','Lire le GIF');}
+    else{img.src=img.dataset.src;b.classList.remove('lecture');b.setAttribute('aria-label','Mettre le GIF en pause');}
+  });
+});
+document.querySelectorAll('a[href="#"]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();});});
+</script>
+</body>
+</html>
