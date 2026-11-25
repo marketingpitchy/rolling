@@ -211,16 +211,9 @@ class Rolling_Widget_Contenu extends Rolling_Widget {
 	 * @return array [ id, titre ] ou tableau vide.
 	 */
 	public static function giphy( $adresse ) {
-		$adresse = trim( (string) $adresse );
-		if ( preg_match( '#giphy\.com/embed/([A-Za-z0-9]+)#', $adresse, $m )
-			|| preg_match( '#(?:media\d*|i)\.giphy\.com/(?:media/(?:v1\.[^/]+/)?)?([A-Za-z0-9]+)(?:/|\.gif|\.webp|\.mp4)#', $adresse, $m ) ) {
-			return array( $m[1], '' );
-		}
-		if ( preg_match( '#giphy\.com/(?:gifs|stickers|clips)/(?:[\w-]+/)?(?:([\w-]+)-)?([A-Za-z0-9]+)/?(?:[?\#].*)?$#', $adresse, $m ) ) {
-			return array( $m[2], ucfirst( str_replace( '-', ' ', (string) $m[1] ) ) );
-		}
-		return array();
+		return Rolling_Compositions::giphy_infos( $adresse );
 	}
+
 
 	/**
 	 * Remplace chaque GIF Giphy du texte par la carte GIF du thème (vidéo mp4 de Giphy, image fixe en attendant,

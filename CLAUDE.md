@@ -1050,6 +1050,12 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   l'affiche) ; code resté en texte : id, titre (giphy.com/gifs/…) et format (padding-bottom %) lus dans le texte. LinkedIn de la
   carte auteur : dans l'éditeur WordPress aussi, logo seul ; le texte du lien n'apparaît que sur la ligne sélectionnée
   (`.is-selected`, règle `apres` de `feuille_editeur`) pour pouvoir cliquer dessus et modifier le lien (vérifié).
+- **0.7.28** : bloc Intégrer avec une adresse Giphy = « Désolé, ce contenu ne peut pas être embarqué » dans l'éditeur ⇒
+  `Rolling_Compositions::giphy()` enregistre un gestionnaire d'intégration (`wp_embed_register_handler`, giphy.com/embed|gifs|
+  stickers|clips et media/i.giphy.com) qui rend `<img class="rl-giphy" src="media.giphy.com/media/ID/giphy.gif">` sans appel
+  réseau (le proxy oEmbed de l'éditeur s'en sert en repli ⇒ aperçu du GIF) ; sur le site, `gifs()` en fait la carte.
+  Lecteur d'adresse déplacé dans `Rolling_Compositions::giphy_infos()` (classe toujours chargée ; le widget n'existe qu'avec
+  Elementor). Logo LinkedIn centré : `.rl-nom:has(> a[href*=linkedin.com])` en flex centré, lien sans vertical-align décalé.
 - **Chargement de page effet film** (demande avant la fin de la livraison 4) : maquette `maquettes/loading/maquette-loading.html`
   (copie /workspace/maquette-loading.html), 4 options : A amorce 3-2-1, B clap qui se ferme puis rideau, C ouverture
   cinéma (bandes noires + REC + timecode + règle avec la tête de lecture rouge des frises, plus de filet fin), D barre de lecture en haut sans écran. Conseil : C à l'arrivée (première page

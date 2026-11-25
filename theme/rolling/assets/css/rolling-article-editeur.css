@@ -134,7 +134,8 @@ body { --paragraphe: #4A4858; --encre: #0F0F12; --legende: #6E6B7B; --violet: #5
 .is-root-container .rl-gif-bouton:focus-visible { outline: 3px solid #C4B5FD; outline-offset: 3px; }
 .is-root-container .rl-gif-legende { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 12px; margin: 12px 6px 2px; font-family: Hanken Grotesk; font-size: 14px; line-height: 1.45; font-style: normal; text-align: left; color: var(--rl-legende, var(--legende)); }
 .is-root-container .rl-gif-credit { flex: none; margin-left: auto; font-size: 12px; letter-spacing: 0.04em; }
-.is-root-container .rl-auteur a[href*="linkedin.com"] { display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; min-height: 0; margin: 0 0 0 6px; vertical-align: -6px; border-radius: 8px; overflow: hidden; font-size: 0; line-height: 0; color: transparent; text-decoration: none; }
+.is-root-container .rl-auteur .rl-nom:has(> a[href*="linkedin.com"]) { display: flex; flex-wrap: wrap; align-items: center; gap: 2px 8px; }
+.is-root-container .rl-auteur a[href*="linkedin.com"] { display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; min-height: 0; margin: 0; vertical-align: middle; border-radius: 8px; overflow: hidden; font-size: 0; line-height: 0; color: transparent; text-decoration: none; }
 .is-root-container .rl-auteur a[href*="linkedin.com"]::before { content: 'in'; display: flex; align-items: center; justify-content: center; flex: none; width: 22px; height: 22px; border-radius: 5px; background-color: #0A66C2; font-family: Hanken Grotesk; font-size: 13px; line-height: 1; font-weight: 800; letter-spacing: -0.5px; color: #FFFFFF; }
 .is-root-container .rl-auteur a[href*="linkedin.com"]:hover::before { background-color: #4A2BB8; }
 .is-root-container .rl-auteur a[href*="linkedin.com"]:focus-visible { outline: 3px solid #5B3BEA; outline-offset: 2px; }
