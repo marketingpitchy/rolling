@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Guides et REX, tour 2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Hanken+Grotesk:wght@400..800&family=Caveat:wght@700&display=swap" rel="stylesheet">
+<style>
+:root{--encre:#0F0F12;--para:#4A4858;--legende:#5F5C6C;--violet:#5B3BEA;--violet-f:#4A2BB8;--fond:#FAF9F7;--peche:#FF8A5B;--orange-f:#A63C14;--rex:#B8400F}
+*{box-sizing:border-box}
+body{margin:0;background:var(--fond);color:var(--encre);font-family:'Hanken Grotesk',sans-serif}
+main{max-width:1240px;margin:0 auto;padding:48px 28px 96px}
+h1{font:650 46px/1.05 'Bricolage Grotesque';letter-spacing:-.05em;margin:0 0 12px}
+.intro{font-size:18px;line-height:1.6;color:var(--para);max-width:880px;margin:0}
+.tc{display:inline-block;font:700 12px/1 'Hanken Grotesk';letter-spacing:.16em;color:var(--violet);margin-bottom:10px}
+.partie{margin-top:72px}
+.partie>h2{font:650 32px/1.1 'Bricolage Grotesque';letter-spacing:-.045em;margin:0 0 8px}
+.partie>p{font-size:16px;line-height:1.6;color:var(--para);max-width:900px;margin:0 0 8px}
+.option{margin-top:36px;padding:28px;border-radius:26px;background:#fff;box-shadow:0 1px 2px rgba(15,15,18,.05),0 24px 50px -30px rgba(76,48,170,.3)}
+.option h3{font:650 24px/1.2 'Bricolage Grotesque';letter-spacing:-.04em;margin:0 0 4px}
+.option>p{margin:0 0 22px;font-size:15px;line-height:1.55;color:var(--para);max-width:920px}
+.conseil{display:inline-block;margin-left:8px;padding:4px 10px;border-radius:999px;background:var(--violet);color:#fff;font:700 12px/1.3 'Hanken Grotesk';letter-spacing:.06em;vertical-align:middle}
+.ecrans{display:grid;grid-template-columns:minmax(0,1fr) 360px;gap:24px;align-items:start}
+.ecran{border-radius:18px;background:var(--fond);box-shadow:inset 0 0 0 1px rgba(15,15,18,.08);padding:26px 24px}
+.ecran.mobile{padding:20px 16px}
+.etiq{font:700 12px/1 'Hanken Grotesk';letter-spacing:.14em;text-transform:uppercase;color:var(--legende);margin:0 0 16px}
+.grille{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;align-items:stretch}
+.grille.trois{grid-template-columns:repeat(3,minmax(0,1fr))}
+.mobile .grille{grid-template-columns:minmax(0,1fr)}
+.meta{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:0}
+.puce{display:inline-flex;align-items:center;min-height:26px;padding:0 10px;border-radius:999px;background:#EDE6FF;color:var(--violet-f);font:700 12px/1 'Hanken Grotesk';box-shadow:inset 0 0 0 1px rgba(74,43,184,.18)}
+.puce.peche{background:#FFF1E7;color:var(--orange-f);box-shadow:inset 0 0 0 1px rgba(166,60,20,.2)}
+.info{font-size:13px;color:var(--legende)}
+.titre{margin:10px 0 6px;font:650 21px/1.22 'Bricolage Grotesque';letter-spacing:-.035em}
+.resume{margin:0;font-size:15px;line-height:1.55;color:var(--para)}
+.ico{width:18px;height:18px;flex:none}
+.cta{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:50px;padding:0 14px;white-space:nowrap;border-radius:999px;font:700 15px/1 'Hanken Grotesk';text-decoration:none;width:100%}
+.cta-violet{background:var(--violet);color:#fff;box-shadow:0 14px 30px -14px rgba(91,59,234,.7)}
+.cta-rex{background:var(--rex);color:#fff;box-shadow:0 14px 30px -14px rgba(184,64,15,.7)}
+.sous-cta{display:block;margin-top:8px;font-size:12.5px;color:var(--legende)}
+.lien-rex{display:inline-block;margin-top:10px;color:var(--orange-f);font-weight:700;font-size:14.5px;text-decoration:underline;text-underline-offset:3px}
+/* Guide A : document posé, couverture horizontale ou verticale */
+.livre{text-decoration:none;color:inherit;display:flex;flex-direction:column;border-radius:26px;background:#fff;box-shadow:0 1px 2px rgba(15,15,18,.05),0 24px 50px -30px rgba(76,48,170,.35);overflow:hidden}
+.livre .scene{position:relative;height:260px;display:flex;align-items:center;justify-content:center;background:radial-gradient(60% 70% at 30% 20%,#E4DAFF,transparent 70%),radial-gradient(50% 60% at 85% 90%,#F0E9FF,transparent 70%),#F3EEFF;overflow:hidden}
+.livre .couv{position:relative;border-radius:5px 11px 11px 5px;background-size:cover;background-position:center;transform:rotate(-5deg);box-shadow:-9px 0 0 -4px #fff,-13px 2px 0 -5px #E5DEF8,-17px 4px 0 -6px #fff,0 26px 40px -18px rgba(40,20,90,.55);transition:transform .35s}
+.livre .couv::before{content:"";position:absolute;inset:0 auto 0 0;width:12px;border-radius:5px 0 0 5px;background:linear-gradient(90deg,rgba(0,0,0,.25),rgba(255,255,255,.18) 60%,transparent)}
+.livre .couv.horizontale{width:66%;aspect-ratio:4/3}
+.livre .couv.verticale{height:70%;margin-top:26px;aspect-ratio:3/4;transform:rotate(-4deg)}
+.livre:hover .couv{transform:rotate(-1deg) translateY(-6px)}
+.livre .ruban{position:absolute;top:16px;left:16px;display:inline-flex;align-items:center;min-height:28px;padding:0 12px;border-radius:999px;background:var(--violet-f);color:#fff;font:800 12px/1 'Hanken Grotesk';letter-spacing:.08em;text-transform:uppercase}
+.livre .gratuit{position:absolute;top:14px;right:16px;font:700 27px/1 'Caveat';color:var(--violet-f);transform:rotate(6deg)}
+.livre .corps{display:flex;flex-direction:column;padding:20px 22px 22px;flex:1}
+.livre .resume{flex:1}
+.livre .cta{margin-top:18px}
+/* couverture verticale d'exemple (construite en CSS) */
+.couv-v{display:flex;flex-direction:column;justify-content:space-between;padding:14px 12px;background:linear-gradient(165deg,#2A1B5C,#5B3BEA 55%,#C94A1E);color:#fff}
+.couv-v small{font:800 8px/1 'Hanken Grotesk';letter-spacing:.14em;text-transform:uppercase;opacity:.85}
+.couv-v strong{font:700 17px/1.05 'Bricolage Grotesque';letter-spacing:-.03em}
+.couv-v em{font-style:normal;font-size:8.5px;opacity:.85}
+/* Guide B : pages qui s'écartent */
+.livre.feuillet .pile{position:relative;display:flex}
+.livre.feuillet .pile.horizontale{width:62%;aspect-ratio:4/3}
+.livre.feuillet .pile.verticale{height:68%;margin-top:26px;aspect-ratio:3/4}
+.livre.feuillet .pile::before,.livre.feuillet .pile::after{content:"";position:absolute;inset:0;border-radius:6px;background:repeating-linear-gradient(180deg,#fff 0 14px,#EEE9FB 14px 15px);background-color:#fff;box-shadow:0 14px 26px -14px rgba(40,20,90,.45);transition:transform .4s}
+.livre.feuillet .pile::before{transform:rotate(-8deg) translate(-6px,4px)}
+.livre.feuillet .pile::after{transform:rotate(4deg) translate(6px,2px)}
+.livre.feuillet .pile .couv{position:absolute;z-index:2;inset:0;width:100%;height:100%;aspect-ratio:auto;transform:rotate(-2deg);box-shadow:0 22px 34px -16px rgba(40,20,90,.55)}
+.livre.feuillet:hover .pile::before{transform:rotate(-16deg) translate(-26px,8px)}
+.livre.feuillet:hover .pile::after{transform:rotate(12deg) translate(26px,4px)}
+.livre.feuillet:hover .pile .couv{transform:rotate(0) translateY(-6px)}
+.livre .apercu{position:absolute;right:16px;bottom:12px;font:700 22px/1 'Caveat';color:var(--violet-f)}
+/* Guide C : sur tablette */
+.livre.tablette .appareil{position:relative;padding:8px;border-radius:18px;background:#1C1730;box-shadow:inset 0 0 0 1px rgba(255,255,255,.12),0 24px 40px -18px rgba(40,20,90,.6);transform:rotate(-3deg);transition:transform .35s}
+.livre.tablette .appareil.horizontale{width:70%}
+.livre.tablette .appareil.verticale{height:74%;margin-top:26px;border-radius:22px;padding:7px}
+.livre.tablette .ecran-tab{border-radius:11px;background-size:cover;background-position:center top}
+.livre.tablette .ecran-tab.horizontale{width:100%;aspect-ratio:4/3}
+.livre.tablette .ecran-tab.verticale{height:100%;aspect-ratio:9/16;border-radius:16px}
+.livre.tablette:hover .appareil{transform:rotate(0) translateY(-6px)}
+.livre .bulle{position:absolute;right:18%;bottom:14%;z-index:2;width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--violet);color:#fff;box-shadow:0 12px 24px -10px rgba(91,59,234,.8);transition:transform .3s}
+.livre.tablette:hover .bulle{transform:translateY(-4px) scale(1.06)}
+/* Guide D : coin corné */
+.livre.corne .scene{padding:54px 18px 18px}
+.livre.corne .plein{position:relative;overflow:hidden;border-radius:10px;background-size:cover;background-position:center top;box-shadow:0 18px 30px -18px rgba(40,20,90,.5)}
+.livre.corne .plein.horizontale{width:100%;height:100%}
+.livre.corne .plein.verticale{height:100%;aspect-ratio:3/4}
+.livre.corne .coin{position:absolute;right:0;bottom:0;width:64px;height:64px;border-radius:0 0 10px 0;background:linear-gradient(315deg,#F3EEFF 0 50%,#D9CCFF 50% 56%,#fff 56%);background-color:transparent;transition:width .3s,height .3s;display:flex;align-items:flex-end;justify-content:flex-end}
+.livre.corne .coin span{margin:0 8px 8px 0;font:800 11px/1 'Hanken Grotesk';letter-spacing:.08em;color:var(--violet-f);opacity:0;transition:opacity .3s}
+.livre.corne:hover .coin{width:92px;height:92px}
+.livre.corne:hover .coin span,.livre.corne:focus-visible .coin span{opacity:1}
+/* REX R4 : le pass client */
+.pass{display:flex;flex-direction:column;border-radius:26px;background:#FFF4EC;box-shadow:0 1px 2px rgba(15,15,18,.05),0 24px 50px -30px rgba(184,64,15,.35);overflow:hidden;color:inherit;text-decoration:none}
+.pass .haut{position:relative;display:grid;grid-template-columns:1fr auto;align-items:center;gap:12px;padding:22px 22px 26px;background:linear-gradient(135deg,#FFE3D3,#FFF4EC);background-color:#FFEBDF}
+.pass .haut::after{content:"";position:absolute;left:14px;right:14px;bottom:-1px;height:2px;background:radial-gradient(circle,#fff 2px,transparent 2.5px) 0 0/12px 2px repeat-x}
+.pass .logo{height:84px;border-radius:18px;background:#fff;display:flex;align-items:center;justify-content:center;padding:14px 18px;box-shadow:0 12px 26px -16px rgba(166,60,20,.45)}
+.pass .logo img{max-height:52px;max-width:100%}
+.pass .talon{writing-mode:vertical-rl;transform:rotate(180deg);font:800 12px/1 'Hanken Grotesk';letter-spacing:.16em;text-transform:uppercase;color:var(--orange-f)}
+.pass .corps{padding:20px 22px 22px;display:flex;flex-direction:column;flex:1;background:#fff}
+.pass .chiffre{display:flex;align-items:baseline;gap:10px;margin:0 0 4px}
+.pass .chiffre b{font:800 40px/1 'Bricolage Grotesque';letter-spacing:-.04em;color:var(--rex)}
+.pass .chiffre span{font-size:14px;color:var(--legende)}
+.pass .resume{flex:1}
+.pass .cta{margin-top:16px}
+/* REX R5 : le logo en vitrine */
+.vitrine{display:flex;flex-direction:column;border-radius:26px;background:#fff;box-shadow:0 1px 2px rgba(15,15,18,.05),0 24px 50px -30px rgba(184,64,15,.35);overflow:hidden;color:inherit;text-decoration:none}
+.vitrine .scene{position:relative;height:260px;display:flex;align-items:center;justify-content:center;background:radial-gradient(55% 65% at 75% 20%,#FFD8C4,transparent 70%),radial-gradient(50% 60% at 15% 90%,#FFE9DD,transparent 70%),#FFF4EC;overflow:hidden}
+.vitrine .doc{position:absolute;right:12%;top:20%;width:42%;aspect-ratio:3/4;border-radius:6px;background-size:cover;background-position:center;transform:rotate(8deg);box-shadow:0 18px 30px -16px rgba(120,40,10,.5);opacity:.95}
+.vitrine .tuile{position:relative;z-index:1;width:56%;height:120px;border-radius:24px;background:rgba(255,255,255,.88);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;padding:18px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.9),0 22px 40px -20px rgba(166,60,20,.5);transform:translateX(-14%)}
+.vitrine .tuile img{max-height:64px;max-width:100%}
+.vitrine .ruban{position:absolute;top:16px;left:16px;display:inline-flex;align-items:center;min-height:28px;padding:0 12px;border-radius:999px;background:var(--rex);color:#fff;font:800 12px/1 'Hanken Grotesk';letter-spacing:.08em;text-transform:uppercase}
+.vitrine .chiffre{position:absolute;left:16px;bottom:16px;z-index:2;display:inline-flex;align-items:center;gap:8px;min-height:34px;padding:0 14px;border-radius:999px;background:#fff;color:var(--encre);font-size:13.5px;box-shadow:0 10px 24px -14px rgba(166,60,20,.6)}
+.vitrine .chiffre b{font:800 17px/1 'Bricolage Grotesque';color:var(--rex)}
+.vitrine .corps{padding:20px 22px 22px;display:flex;flex-direction:column;flex:1}
+.vitrine .resume{flex:1}
+.vitrine .cta{margin-top:18px}
+/* REX R6 : duo client × Rolling */
+.duo{display:flex;flex-direction:column;border-radius:26px;background:#fff;box-shadow:0 1px 2px rgba(15,15,18,.05),0 24px 50px -30px rgba(184,64,15,.35);overflow:hidden;color:inherit;text-decoration:none;border-top:6px solid var(--peche)}
+.duo .haut{display:flex;align-items:center;justify-content:center;gap:16px;padding:30px 20px 24px;background:linear-gradient(180deg,#FFF1E7,#FFFFFF);background-color:#FFF6F0}
+.duo .haut img{max-height:44px;max-width:120px}
+.duo .fois{font:700 30px/1 'Caveat';color:var(--orange-f)}
+.duo .rolling{font:800 22px/1 'Bricolage Grotesque';letter-spacing:-.04em;color:var(--encre)}
+.duo .label{display:block;text-align:center;font:800 12px/1 'Hanken Grotesk';letter-spacing:.16em;text-transform:uppercase;color:var(--orange-f);margin-top:-6px;padding-bottom:16px;background:#fff}
+.duo .corps{padding:4px 22px 22px;display:flex;flex-direction:column;flex:1}
+.duo blockquote{margin:6px 0 10px;font:600 17px/1.45 'Bricolage Grotesque';letter-spacing:-.02em;color:var(--encre)}
+.duo .chiffres{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:4px 0 0}
+.duo .chiffres div{border-radius:14px;background:#FFF4EC;padding:10px 12px;font-size:12.5px;color:var(--legende)}
+.duo .chiffres b{display:block;font:800 22px/1.1 'Bricolage Grotesque';color:var(--rex)}
+.duo .cta{margin-top:16px}
+/* REX R7 : dossier client */
+.dossier{position:relative;padding-top:24px;color:inherit;text-decoration:none;display:flex;flex-direction:column}
+.dossier .onglet{position:absolute;top:0;left:22px;height:32px;padding:0 16px;display:flex;align-items:center;gap:8px;border-radius:12px 12px 0 0;background:#FFD8C4;color:var(--orange-f);font:800 12px/1 'Hanken Grotesk';letter-spacing:.1em;text-transform:uppercase}
+.dossier .chemise{position:relative;flex:1;display:flex;flex-direction:column;border-radius:0 24px 24px 24px;background:linear-gradient(170deg,#FFD8C4,#FFE9DD);background-color:#FFE1D0;padding:22px;box-shadow:0 24px 50px -30px rgba(184,64,15,.45)}
+.dossier .tampon{align-self:flex-start;transform:rotate(-4deg);background:#fff;border-radius:16px;padding:14px 18px;box-shadow:0 12px 24px -14px rgba(120,40,10,.5);display:flex;align-items:center}
+.dossier .tampon img{max-height:46px;max-width:150px}
+.dossier .manuscrit{position:absolute;top:24px;right:22px;font:700 30px/1 'Caveat';color:var(--orange-f);transform:rotate(5deg)}
+.dossier .feuille{margin-top:18px;flex:1;display:flex;flex-direction:column;background:#fff;border-radius:16px;padding:18px;box-shadow:0 1px 0 #F2E3DA,0 3px 0 -1px #fff,0 4px 0 -1px #F2E3DA}
+.dossier .resume{flex:1}
+.dossier .cta{margin-top:14px}
+.note{font:700 27px/1.15 'Caveat';color:#A63C14;margin:14px 0 0}
+.regles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:20px}
+.regles div{background:#fff;border-radius:18px;padding:18px;box-shadow:inset 0 0 0 1px rgba(15,15,18,.08);font-size:15px;line-height:1.5;color:var(--para)}
+.regles b{display:block;color:var(--encre);font:650 18px/1.2 'Bricolage Grotesque';letter-spacing:-.03em;margin-bottom:6px}
+@media (max-width:1100px){.grille.trois{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:1000px){.ecrans{grid-template-columns:minmax(0,1fr)}.regles{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:640px){main{padding:32px 16px 64px}h1{font-size:34px}.option{padding:16px}.ecran{padding:18px 14px}.grille,.grille.trois{grid-template-columns:minmax(0,1fr)}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<main>
+<span class="tc">MAQUETTE · TOUR 2 · À VALIDER</span>
+<h1>Guides en violet, REX en pêche.</h1>
+<p class="intro">Le look A est gardé pour les guides, et il s'adapte maintenant aux couvertures horizontales comme verticales. Les retours d'expérience passent au pêche, en clair, avec le logo du client en vedette : quatre nouvelles idées.</p>
+
+<section class="partie">
+<span class="tc">01</span>
+<h2>Guides : quatre looks, horizontal ou vertical.</h2>
+<p>Le thème lit la taille de l'image à la une : plus large que haute, le guide est posé en paysage ; plus haute que large, il est posé debout, comme un livre. La zone de l'image garde la même hauteur : les cartes restent alignées.</p>
+<div class="option">
+<h3>Guide A · Le document posé <span class="conseil">CONSEIL</span></h3>
+<p>Ruban violet « Guide PDF » (ou « Lexique », « Guide pratique » : le nom reste libre), mot manuscrit « gratuit ! », bouton violet plein.</p>
+<div class="ecrans">
+<div class="ecran"><p class="etiq">Ordinateur · horizontal, vertical, horizontal</p><div class="grille trois">
+<a class="livre" href="#" aria-label="Le guide de la vidéo d'entreprise, télécharger le guide"><div class="scene"><span class="ruban">Guide PDF</span><span class="gratuit" aria-hidden="true">gratuit !</span><div class="couv horizontale" style="background-image:url(__COUV2__)"></div></div>
+<div class="corps"><p class="meta"><span class="puce">Communication interne</span><span class="info">7 pages</span></p><h4 class="titre">Le guide de la vidéo d'entreprise</h4><p class="resume">Du vocabulaire au brief, tout pour réussir votre prochain film.</p><span class="cta cta-violet"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M6 11l6 6 6-6M5 20h14"/></svg>Télécharger le guide</span><span class="sous-cta">PDF gratuit · 7 pages</span></div></a>
+<a class="livre" href="#" aria-label="La vidéo verticale en 10 conseils, télécharger le guide"><div class="scene"><span class="ruban">Guide pratique</span><span class="gratuit" aria-hidden="true">gratuit !</span><div class="couv verticale couv-v" aria-hidden="true"><small>Rolling · guide</small><strong>La vidéo verticale en 10 conseils</strong><em>[exemple de guide vertical]</em></div></div>
+<div class="corps"><p class="meta"><span class="puce">Réseaux sociaux</span><span class="info">12 pages</span></p><h4 class="titre">La vidéo verticale en 10 conseils</h4><p class="resume">[Texte d'exemple] Formats, durées, sous-titres : ce qui marche sur mobile.</p><span class="cta cta-violet"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M6 11l6 6 6-6M5 20h14"/></svg>Télécharger le guide</span><span class="sous-cta">PDF gratuit · 12 pages</span></div></a>
+<a class="livre" href="#" aria-label="La recette d'un aftermovie réussi, télécharger le guide"><div class="scene"><span class="ruban">Guide PDF</span><span class="gratuit" aria-hidden="true">gratuit !</span><div class="couv horizontale" style="background-image:url(__COUV3__)"></div></div>
+<div class="corps"><p class="meta"><span class="puce">Marketing vidéo</span><span class="info">2 pages</span></p><h4 class="titre">La recette d'un aftermovie réussi</h4><p class="resume">Ingrédients et conseils pour un aftermovie qui transmet l'émotion.</p><span class="cta cta-violet"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M6 11l6 6 6-6M5 20h14"/></svg>Télécharger le guide</span><span class="sous-cta">PDF gratuit · 2 pages</span></div></a>
+</div></div>
+<div class="ecran mobile"><p class="etiq">Mobile · 360 px · vertical</p><div class="grille">
+<a class="livre" href="#" aria-label="La vidéo verticale en 10 conseils, télécharger le guide"><div class="scene"><span class="ruban">Guide pratique</span><span class="gratuit" aria-hidden="true">gratuit !</span><div class="couv verticale couv-v" aria-hidden="true"><small>Rolling · guide</small><strong>La vidéo verticale en 10 conseils</strong><em>[exemple]</em></div></div>
+<div class="corps"><p class="meta"><span class="puce">Réseaux sociaux</span><span class="info">12 pages</span></p><h4 class="titre">La vidéo verticale en 10 conseils</h4><span class="cta cta-violet"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M6 11l6 6 6-6M5 20h14"/></svg>Télécharger le guide</span><span class="sous-cta">PDF gratuit · 12 pages</span></div></a>
+</div></div>
+</div>
+</div>
+<div class="option">
+<h3>Guide B · Les pages qui s'écartent</h3>
+<p>Le guide est posé sur une petite pile de pages. Au survol, les pages s'écartent en éventail, comme si on feuilletait le document. Debout pour une couverture verticale, couché pour une horizontale.</p>
+<div class="ecrans">
+<div class="ecran"><p class="etiq">Ordinateur · horizontal, vertical, horizontal</p><div class="grille trois"><a class="livre feuillet" href="#" aria-label="Le guide de la vidéo d'entreprise, télécharger le guide"><div class="scene"><span class="ruban">Guide PDF</span><div class="pile horizontale"><div class="couv horizontale" style="background-image:url(__COUV2__)"></div></div><span class="apercu" aria-hidden="true">Survolez pour feuilleter</span></div><div class="corps"><p class="meta"><span class="puce">Communication interne</span><span class="info">7 pages</span></p><h4 class="titre">Le guide de la vidéo d'entreprise</h4><p class="resume">Du vocabulaire au brief, tout pour réussir votre prochain film.</p><span class="cta cta-violet"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M6 11l6 6 6-6M5 20h14"/></svg>Télécharger le guide</span><span class="sous-cta">PDF gratuit · 7 pages</span></div></a><a class="livre feuillet" href="#" aria-label="La vidéo verticale en 10 conseils, télécharger le guide"><div class="scene"><span class="ruban">Guide pratique</span><div class="pile verticale"><div class="couv verticale couv-v" aria-hidden="true"><small>Rolling · guide</small><strong>La vidéo verticale en 10 conseils</strong><em>[exemple]</em></div></div><span class="apercu" aria-hidden="true">Survolez pour feuilleter</span></div><div class="corps"><p class="meta"><span class="puce">Réseaux sociaux</span><span class="info">12 pages</span></p><h4 class="titre">La vidéo verticale en 10 conseils</h4><p class="resume">[Texte d'exemple] Formats, durées, sous-titres : ce qui marche sur mobile.</p><span class="cta cta-violet"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M6 11l6 6 6-6M5 20h14"/></svg>Télécharger le guide</span><span class="sous-cta">PDF gratuit · 12 pages</span></div></a><a class="livre feuillet" href="#" aria-label="La recette d'un aftermovie réussi, télécharger le guide"><div class="scene"><span class="ruban">Guide PDF</span><div class="pile horizontale"><div class="couv horizontale" style="background-image:url(__COUV3__)"></div></div><span class="apercu" aria-hidden="true">Survolez pour feuilleter</span></div><div class="corps"><p class="meta"><span class="puce">Marketing vidéo</span><span class="info">2 pages</span></p><h4 class="titre">La recette d'un aftermovie réussi</h4><p class="resume">Ingrédients et conseils pour un aftermovie qui transmet l'émotion.</p><span class="cta cta-violet"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M6 11l6 6 6-6M5 20h14"/></svg>Télécharger le guide</span><span class="sous-cta">PDF gratuit · 2 pages</span></div></a></div></div>
+<div class="ecran mobile"><p class="etiq">Mobile · 360 px · vertical</p><div class="grille"><a class="livre feuillet" href="#" aria-label="La vidéo verticale en 10 conseils, télécharger le guide"><div class="scene"><span class="ruban">Guide pratique</span><div class="pile verticale"><div class="couv verticale couv-v" aria-hidden="true"><small>Rolling · guide</small><strong>La vidéo verticale en 10 conseils</strong><em>[exemple]</em></div></div><span class="apercu" aria-hidden="true">Survolez pour feuilleter</span></div><div class="corps"><p class="meta"><span class="puce">Réseaux sociaux</span><span class="info">12 pages</span></p><h4 class="titre">La vidéo verticale en 10 conseils</h4><span class="cta cta-violet"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M6 11l6 6 6-6M5 20h14"/></svg>Télécharger le guide</span><span class="sous-cta">PDF gratuit · 12 pages</span></div></a></div></div>
+</div>
+</div>
+<div class="option">
+<h3>Guide C · Sur tablette</h3>
+<p>Le guide s'affiche dans une tablette (horizontale) ou un téléphone (vertical) : on comprend tout de suite que c'est un document numérique. Une bulle violette avec la flèche de téléchargement est posée sur le coin.</p>
+<div class="ecrans">
+<div class="ecran"><p class="etiq">Ordinateur · horizontal, vertical, horizontal</p><div class="grille trois"><a class="livre tablette" href="#" aria-label="Le guide de la vidéo d'entreprise, télécharger le guide"><div class="scene"><span class="ruban">Guide PDF</span><div class="appareil horizontale"><div class="ecran-tab horizontale" style="background-image:url(__COUV2__)"></div></div><span class="bulle" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M6 11l6 6 6-6M5 20h14"/></svg></span></div><div class="corps"><p class="meta"><span class="puce">Communication interne</span><span class="info">7 pages</span></p><h4 class="titre">Le guide de la vidéo d'entreprise</h4><p class="resume">Du vocabulaire au brief, tout pour réussir votre prochain film.</p><span class="cta cta-violet"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M6 11l6 6 6-6M5 20h14"/></svg>Télécharger le guide</span><span class="sous-cta">PDF gratuit · 7 pages</span></div></a><a class="livre tablette" href="#" aria-label="La vidéo verticale en 10 conseils, télécharger le guide"><div class="scene"><span class="ruban">Guide pratique</span><div class="appareil verticale"><div class="ecran-tab verticale couv-v" aria-hidden="true"><small>Rolling · guide</small><strong>La vidéo verticale en 10 conseils</strong><em>[exemple]</em></div></div><span class="bulle" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M6 11l6 6 6-6M5 20h14"/></svg></span></div><div class="corps"><p class="meta"><span class="puce">Réseaux sociaux</span><span class="info">12 pages</span></p><h4 class="titre">La vidéo verticale en 10 conseils</h4><p class="resume">[Texte d'exemple] Formats, durées, sous-titres : ce qui marche sur mobile.</p><span class="cta cta-violet"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M6 11l6 6 6-6M5 20h14"/></svg>Télécharger le guide</span><span class="sous-cta">PDF gratuit · 12 pages</span></div></a><a class="livre tablette" href="#" aria-label="La recette d'un aftermovie réussi, télécharger le guide"><div class="scene"><span class="ruban">Guide PDF</span><div class="appareil horizontale"><div class="ecran-tab horizontale" style="background-image:url(__COUV3__)"></div></div><span class="bulle" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M6 11l6 6 6-6M5 20h14"/></svg></span></div><div class="corps"><p class="meta"><span class="puce">Marketing vidéo</span><span class="info">2 pages</span></p><h4 class="titre">La recette d'un aftermovie réussi</h4><p class="resume">Ingrédients et conseils pour un aftermovie qui transmet l'émotion.</p><span class="cta cta-violet"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M6 11l6 6 6-6M5 20h14"/></svg>Télécharger le guide</span><span class="sous-cta">PDF gratuit · 2 pages</span></div></a></div></div>
+<div class="ecran mobile"><p class="etiq">Mobile · 360 px · vertical</p><div class="grille"><a class="livre tablette" href="#" aria-label="La vidéo verticale en 10 conseils, télécharger le guide"><div class="scene"><span class="ruban">Guide pratique</span><div class="appareil verticale"><div class="ecran-tab verticale couv-v" aria-hidden="true"><small>Rolling · guide</small><strong>La vidéo verticale en 10 conseils</strong><em>[exemple]</em></div></div><span class="bulle" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M6 11l6 6 6-6M5 20h14"/></svg></span></div><div class="corps"><p class="meta"><span class="puce">Réseaux sociaux</span><span class="info">12 pages</span></p><h4 class="titre">La vidéo verticale en 10 conseils</h4><span class="cta cta-violet"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M6 11l6 6 6-6M5 20h14"/></svg>Télécharger le guide</span><span class="sous-cta">PDF gratuit · 12 pages</span></div></a></div></div>
+</div>
+</div>
+<div class="option">
+<h3>Guide D · Le coin qui se corne</h3>
+<p>La couverture entière, posée à plat ; en bas à droite, un coin de page corné laisse voir « PDF ». Au survol, le coin se replie davantage. Le plus sobre des quatre.</p>
+<div class="ecrans">
+<div class="ecran"><p class="etiq">Ordinateur · horizontal, vertical, horizontal</p><div class="grille trois"><a class="livre corne" href="#" aria-label="Le guide de la vidéo d'entreprise, télécharger le guide"><div class="scene"><span class="ruban">Guide PDF</span><div class="plein horizontale" style="background-image:url(__COUV2__)"><span class="coin" aria-hidden="true"><span>PDF</span></span></div></div><div class="corps"><p class="meta"><span class="puce">Communication interne</span><span class="info">7 pages</span></p><h4 class="titre">Le guide de la vidéo d'entreprise</h4><p class="resume">Du vocabulaire au brief, tout pour réussir votre prochain film.</p><span class="cta cta-violet"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M6 11l6 6 6-6M5 20h14"/></svg>Télécharger le guide</span><span class="sous-cta">PDF gratuit · 7 pages</span></div></a><a class="livre corne" href="#" aria-label="La vidéo verticale en 10 conseils, télécharger le guide"><div class="scene"><span class="ruban">Guide pratique</span><div class="plein verticale couv-v" aria-hidden="true"><small>Rolling · guide</small><strong>La vidéo verticale en 10 conseils</strong><em>[exemple]</em><span class="coin" aria-hidden="true"><span>PDF</span></span></div></div><div class="corps"><p class="meta"><span class="puce">Réseaux sociaux</span><span class="info">12 pages</span></p><h4 class="titre">La vidéo verticale en 10 conseils</h4><p class="resume">[Texte d'exemple] Formats, durées, sous-titres : ce qui marche sur mobile.</p><span class="cta cta-violet"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M6 11l6 6 6-6M5 20h14"/></svg>Télécharger le guide</span><span class="sous-cta">PDF gratuit · 12 pages</span></div></a><a class="livre corne" href="#" aria-label="La recette d'un aftermovie réussi, télécharger le guide"><div class="scene"><span class="ruban">Guide PDF</span><div class="plein horizontale" style="background-image:url(__COUV3__)"><span class="coin" aria-hidden="true"><span>PDF</span></span></div></div><div class="corps"><p class="meta"><span class="puce">Marketing vidéo</span><span class="info">2 pages</span></p><h4 class="titre">La recette d'un aftermovie réussi</h4><p class="resume">Ingrédients et conseils pour un aftermovie qui transmet l'émotion.</p><span class="cta cta-violet"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M6 11l6 6 6-6M5 20h14"/></svg>Télécharger le guide</span><span class="sous-cta">PDF gratuit · 2 pages</span></div></a></div></div>
+<div class="ecran mobile"><p class="etiq">Mobile · 360 px · vertical</p><div class="grille"><a class="livre corne" href="#" aria-label="La vidéo verticale en 10 conseils, télécharger le guide"><div class="scene"><span class="ruban">Guide pratique</span><div class="plein verticale couv-v" aria-hidden="true"><small>Rolling · guide</small><strong>La vidéo verticale en 10 conseils</strong><em>[exemple]</em><span class="coin" aria-hidden="true"><span>PDF</span></span></div></div><div class="corps"><p class="meta"><span class="puce">Réseaux sociaux</span><span class="info">12 pages</span></p><h4 class="titre">La vidéo verticale en 10 conseils</h4><span class="cta cta-violet"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M6 11l6 6 6-6M5 20h14"/></svg>Télécharger le guide</span><span class="sous-cta">PDF gratuit · 12 pages</span></div></a></div></div>
+</div>
+</div>
+</section>
+
+<section class="partie">
+<span class="tc">02</span>
+<h2>Retours d'expérience : quatre idées en clair, logo en vedette.</h2>
+<p>Couleur pêche / orange pour tous les REX. Le logo, le chiffre clé et la citation viennent du témoignage lié. Chaque REX est montré à côté d'un guide pour voir la différence.</p>
+
+<div class="option">
+<h3>R4 · Le pass client</h3>
+<p>Comme un billet d'accès : grand logo du client sur une tuile blanche, talon vertical « Retour d'expérience », ligne pointillée de découpe, puis le chiffre clé, le titre et le bouton orange.</p>
+<div class="ecrans">
+<div class="ecran"><p class="etiq">Ordinateur</p><div class="grille">
+<a class="pass" href="#" aria-label="Retour d'expérience Club Med, télécharger le REX"><div class="haut"><span class="logo"><img src="__LOGO__" alt="Club Med"></span><span class="talon">Retour d'expérience</span></div>
+<div class="corps"><p class="chiffre"><b>+87&nbsp;%</b><span>de vidéos vues jusqu'au bout [exemple]</span></p><h4 class="titre">Comment Club Med a produit 40 vidéos d'onboarding en 6 mois</h4><p class="resume">[Texte d'exemple] Le contexte, la méthode et les résultats, en 6 pages.</p><span class="cta cta-rex"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M6 11l6 6 6-6M5 20h14"/></svg>Télécharger le REX</span></div></a>
+<a class="livre" href="#" aria-label="Le guide de la vidéo d'entreprise, télécharger le guide"><div class="scene"><span class="ruban">Guide PDF</span><div class="couv horizontale" style="background-image:url(__COUV2__)"></div><span class="gratuit" aria-hidden="true">gratuit !</span></div><div class="corps"><p class="meta"><span class="puce">Communication interne</span><span class="info">7 pages</span></p><h4 class="titre">Le guide de la vidéo d'entreprise</h4><p class="resume">Du vocabulaire au brief, tout pour réussir votre prochain film.</p><span class="cta cta-violet"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M6 11l6 6 6-6M5 20h14"/></svg>Télécharger le guide</span><span class="sous-cta">PDF gratuit · 7 pages</span></div></a>
+</div></div>
+<div class="ecran mobile"><p class="etiq">Mobile · 360 px</p><div class="grille">
+<a class="pass" href="#" aria-label="Retour d'expérience Club Med, télécharger le REX"><div class="haut"><span class="logo"><img src="__LOGO__" alt="Club Med"></span><span class="talon">REX</span></div>
+<div class="corps"><p class="chiffre"><b>+87&nbsp;%</b><span>de vidéos vues [exemple]</span></p><h4 class="titre">40 vidéos d'onboarding en 6 mois</h4><span class="cta cta-rex"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M6 11l6 6 6-6M5 20h14"/></svg>Télécharger le REX</span></div></a>
+</div></div>
+</div>
+</div>
+
+<div class="option">
+<h3>R5 · Le logo en vitrine <span class="conseil">CONSEIL</span></h3>
+<p>Même construction que la carte guide (image en haut, texte en bas) : les deux familles s'alignent bien dans la grille. En haut, sur un fond pêche, le logo du client en grand sur une tuile en verre, la couverture du REX glissée derrière, et une pastille avec le chiffre clé.</p>
+<div class="ecrans">
+<div class="ecran"><p class="etiq">Ordinateur</p><div class="grille">
+<a class="vitrine" href="#" aria-label="Retour d'expérience Club Med, télécharger le REX"><div class="scene"><span class="ruban">Retour d'expérience</span><div class="doc" style="background-image:url(__COUV1__)"></div><span class="tuile"><img src="__LOGO__" alt="Club Med"></span><span class="chiffre"><b>+87&nbsp;%</b>de vidéos vues [exemple]</span></div>
+<div class="corps"><p class="meta"><span class="puce peche">Onboarding</span><span class="info">6 pages</span></p><h4 class="titre">Comment Club Med a produit 40 vidéos d'onboarding en 6 mois</h4><p class="resume">[Texte d'exemple] Le contexte, la méthode et les résultats.</p><span class="cta cta-rex"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M6 11l6 6 6-6M5 20h14"/></svg>Télécharger le REX</span><span class="lien-rex">Lire le témoignage</span></div></a>
+<a class="livre" href="#" aria-label="Le guide de la vidéo d'entreprise, télécharger le guide"><div class="scene"><span class="ruban">Guide PDF</span><div class="couv horizontale" style="background-image:url(__COUV2__)"></div><span class="gratuit" aria-hidden="true">gratuit !</span></div><div class="corps"><p class="meta"><span class="puce">Communication interne</span><span class="info">7 pages</span></p><h4 class="titre">Le guide de la vidéo d'entreprise</h4><p class="resume">Du vocabulaire au brief, tout pour réussir votre prochain film.</p><span class="cta cta-violet"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M6 11l6 6 6-6M5 20h14"/></svg>Télécharger le guide</span><span class="sous-cta">PDF gratuit · 7 pages</span></div></a>
+</div></div>
+<div class="ecran mobile"><p class="etiq">Mobile · 360 px</p><div class="grille">
+<a class="vitrine" href="#" aria-label="Retour d'expérience Club Med, télécharger le REX"><div class="scene"><span class="ruban">Retour d'expérience</span><div class="doc" style="background-image:url(__COUV1__)"></div><span class="tuile"><img src="__LOGO__" alt="Club Med"></span><span class="chiffre"><b>+87&nbsp;%</b>de vidéos vues</span></div>
+<div class="corps"><h4 class="titre">40 vidéos d'onboarding en 6 mois</h4><span class="cta cta-rex"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M6 11l6 6 6-6M5 20h14"/></svg>Télécharger le REX</span></div></a>
+</div></div>
+</div>
+</div>
+
+<div class="option">
+<h3>R6 · Le duo client × Rolling</h3>
+<p>Comme une couverture d'étude de cas : « logo du client × Rolling » en tête, une courte citation, deux chiffres clés en pastilles, bouton orange. Filet pêche en haut de la carte.</p>
+<div class="ecrans">
+<div class="ecran"><p class="etiq">Ordinateur</p><div class="grille">
+<a class="duo" href="#" aria-label="Retour d'expérience Club Med, télécharger le REX"><div class="haut"><img src="__LOGO__" alt="Club Med"><span class="fois" aria-hidden="true">×</span><span class="rolling">rolling</span></div><span class="label">Retour d'expérience</span>
+<div class="corps"><blockquote>« La vidéo est devenue le premier réflexe de nos équipes RH. » [exemple]</blockquote><h4 class="titre" style="margin-top:0">40 vidéos d'onboarding en 6 mois</h4><div class="chiffres"><div><b>+87&nbsp;%</b>de vidéos vues</div><div><b>40</b>vidéos livrées</div></div><span class="cta cta-rex"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M6 11l6 6 6-6M5 20h14"/></svg>Télécharger le REX</span></div></a>
+<a class="livre" href="#" aria-label="Le guide de la vidéo d'entreprise, télécharger le guide"><div class="scene"><span class="ruban">Guide PDF</span><div class="couv horizontale" style="background-image:url(__COUV2__)"></div><span class="gratuit" aria-hidden="true">gratuit !</span></div><div class="corps"><p class="meta"><span class="puce">Communication interne</span><span class="info">7 pages</span></p><h4 class="titre">Le guide de la vidéo d'entreprise</h4><p class="resume">Du vocabulaire au brief, tout pour réussir votre prochain film.</p><span class="cta cta-violet"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M6 11l6 6 6-6M5 20h14"/></svg>Télécharger le guide</span><span class="sous-cta">PDF gratuit · 7 pages</span></div></a>
+</div></div>
+<div class="ecran mobile"><p class="etiq">Mobile · 360 px</p><div class="grille">
+<a class="duo" href="#" aria-label="Retour d'expérience Club Med, télécharger le REX"><div class="haut"><img src="__LOGO__" alt="Club Med"><span class="fois" aria-hidden="true">×</span><span class="rolling">rolling</span></div><span class="label">Retour d'expérience</span>
+<div class="corps"><h4 class="titre" style="margin-top:0">40 vidéos d'onboarding en 6 mois</h4><div class="chiffres"><div><b>+87&nbsp;%</b>de vidéos vues</div><div><b>40</b>vidéos livrées</div></div><span class="cta cta-rex"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M6 11l6 6 6-6M5 20h14"/></svg>Télécharger le REX</span></div></a>
+</div></div>
+</div>
+</div>
+
+<div class="option">
+<h3>R7 · Le dossier client</h3>
+<p>Une chemise cartonnée pêche avec un onglet « Dossier client », le logo collé dessus comme un autocollant, « cas réel » écrit à la main, et la fiche à l'intérieur.</p>
+<div class="ecrans">
+<div class="ecran"><p class="etiq">Ordinateur</p><div class="grille">
+<a class="dossier" href="#" aria-label="Retour d'expérience Club Med, télécharger le REX"><span class="onglet">Dossier client</span><div class="chemise"><span class="tampon"><img src="__LOGO__" alt="Club Med"></span><span class="manuscrit" aria-hidden="true">cas réel</span>
+<div class="feuille"><p class="meta"><span class="puce peche">Retour d'expérience</span><span class="info">6 pages</span></p><h4 class="titre">Comment Club Med a produit 40 vidéos d'onboarding en 6 mois</h4><p class="resume">[Texte d'exemple] Le contexte, la méthode et les résultats.</p><span class="cta cta-rex"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M6 11l6 6 6-6M5 20h14"/></svg>Télécharger le REX</span></div></div></a>
+<a class="livre" href="#" aria-label="Le guide de la vidéo d'entreprise, télécharger le guide"><div class="scene"><span class="ruban">Guide PDF</span><div class="couv horizontale" style="background-image:url(__COUV2__)"></div><span class="gratuit" aria-hidden="true">gratuit !</span></div><div class="corps"><p class="meta"><span class="puce">Communication interne</span><span class="info">7 pages</span></p><h4 class="titre">Le guide de la vidéo d'entreprise</h4><p class="resume">Du vocabulaire au brief, tout pour réussir votre prochain film.</p><span class="cta cta-violet"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M6 11l6 6 6-6M5 20h14"/></svg>Télécharger le guide</span><span class="sous-cta">PDF gratuit · 7 pages</span></div></a>
+</div></div>
+<div class="ecran mobile"><p class="etiq">Mobile · 360 px</p><div class="grille">
+<a class="dossier" href="#" aria-label="Retour d'expérience Club Med, télécharger le REX"><span class="onglet">Dossier client</span><div class="chemise"><span class="tampon"><img src="__LOGO__" alt="Club Med"></span><span class="manuscrit" aria-hidden="true">cas réel</span>
+<div class="feuille"><h4 class="titre" style="margin-top:0">40 vidéos d'onboarding en 6 mois</h4><span class="cta cta-rex"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M6 11l6 6 6-6M5 20h14"/></svg>Télécharger le REX</span></div></div></a>
+</div></div>
+</div>
+</div>
+</section>
+
+<section class="partie">
+<span class="tc">03</span>
+<h2>Ce qui ne change pas.</h2>
+<div class="regles">
+<div><b>Case à cocher</b>« C'est un retour d'expérience » dans la fiche du guide : carte REX, filtre « Retours d'expérience » rempli tout seul.</div>
+<div><b>Sans logo</b>Si le témoignage lié n'a pas de logo, le nom du client s'écrit en grand à la place.</div>
+<div><b>Sans chiffre clé</b>La pastille ou la ligne du chiffre disparaît, la carte reste propre.</div>
+</div>
+<p class="note">Conseil : guide A (violet) + R5, le logo en vitrine (pêche) : même construction, deux couleurs, le logo saute aux yeux.</p>
+</section>
+</main>
+<script>document.querySelectorAll('a[href="#"]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();});});</script>
+</body>
+</html>

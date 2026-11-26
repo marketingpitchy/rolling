@@ -1065,6 +1065,13 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   « Télécharger le REX » + « Lire le témoignage », conseil)**, R2 citation sous un clap rayé, R3 carte A en version pêche + logo
   dans le coin. Admin : case « C'est un retour d'expérience » dans la fiche du guide (remplace le thème ; anciens REX reconnus),
   témoignage lié, nom du document libre pour les guides.
+- **Guides et REX, retours** : couleurs différentes (guides violet, REX pêche) ; A aimé mais guides **horizontaux et verticaux** ;
+  logo du client mis en avant = bonne idée ; **pas de REX sombre** ⇒ maquette tour 2 `maquettes/guides-rex/guides-rex-2.html`
+  (copie /workspace/maquette-guides-rex-2.html, **à valider**) : orientation lue sur l'image à la une (zone d'image de hauteur
+  fixe) ; guides A document posé (conseil), B pages qui s'écartent en éventail au survol, C sur tablette / téléphone + bulle de
+  téléchargement, D coin corné « PDF » ; REX clairs : R4 pass client (talon vertical, pointillés), **R5 logo en vitrine (tuile en
+  verre sur fond pêche, couverture derrière, pastille chiffre clé ; même construction que la carte guide, conseil)**, R6 duo
+  « client × Rolling » + citation + 2 chiffres, R7 dossier client (chemise pêche, logo en autocollant, « cas réel »).
 - **Chargement de page effet film** (demande avant la fin de la livraison 4) : maquette `maquettes/loading/maquette-loading.html`
   (copie /workspace/maquette-loading.html), 4 options : A amorce 3-2-1, B clap qui se ferme puis rideau, C ouverture
   cinéma (bandes noires + REC + timecode + règle avec la tête de lecture rouge des frises, plus de filet fin), D barre de lecture en haut sans écran. Conseil : C à l'arrivée (première page
