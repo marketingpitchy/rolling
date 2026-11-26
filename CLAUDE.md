@@ -1095,6 +1095,12 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   **Choix : H1** (guides en fiche horizontale + REX photo). Saisie proposée (question de la cliente, à confirmer avant thème) :
   case « C'est un retour d'expérience », image à la une = photo du projet, nouveau champ « Logo du client » (+ nom du client
   pour l'alt), témoignage lié **facultatif** (lien « Lire le témoignage » seulement s'il y en a un ; logo du témoignage en repli).
+- **Guides et REX, tour 6 : « comme des vidéos »** (« hold that thought », dernière piste avant H1 ; `maquettes/guides-rex/guides-rex-6.html`,
+  générée par `scratchpad/gen-guides6.py` ; copie /workspace/maquette-guides-rex-6.html, **à valider**) : **A bande-annonce (conseil)** =
+  carte lecteur 16:9, barre de lecture découpée en chapitres (guide : nouveau champ facultatif « Chapitres » ; REX : contexte / besoin /
+  accompagnement / résultat), au survol tête de lecture + zoom lent + nom du chapitre en sous-titre, durée = temps de lecture ;
+  B story 9:16 (barres de stories, cadres : couverture puis gros plans ; REX : couverture, photo, logo), 4 par ligne, glisser en mobile ;
+  C viseur (coins, REC, timecode qui tourne) + bandeau d'incrustation titre (REX : logo du client). Si rien ne plaît : H1.
 - **Chargement de page effet film** (demande avant la fin de la livraison 4) : maquette `maquettes/loading/maquette-loading.html`
   (copie /workspace/maquette-loading.html), 4 options : A amorce 3-2-1, B clap qui se ferme puis rideau, C ouverture
   cinéma (bandes noires + REC + timecode + règle avec la tête de lecture rouge des frises, plus de filet fin), D barre de lecture en haut sans écran. Conseil : C à l'arrivée (première page
