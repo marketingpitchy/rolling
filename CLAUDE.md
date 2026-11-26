@@ -1079,6 +1079,14 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   le coin du document, devant ; image à la une horizontale ⇒ 1,414, verticale ⇒ 0,707). REX : dossier client intéressant mais
   sans couverture ⇒ **R7a couverture qui sort d'une chemise pêche + étiquette logo + « cas réel » (conseil)**, R7b dossier ouvert
   (logo à gauche, couverture à droite), R5 vitrine pour comparer ; chiffres clés du témoignage en pastilles.
+- **Guides et REX, tour 4** (`maquettes/guides-rex/guides-rex-4.html`, générée par `scratchpad/gen-guides4.py`, jetons `__LEX__`,
+  `__FREE__`, `__COUV2__`, `__REX__`, `__REXPHOTO__` (photo rognée du REX L'Oréal), `__LOGOR__`, `__CH4__`, `__CH2__` ; copie
+  /workspace/maquette-guides-rex-4.html, **à valider**) : retours « "gratuit" fait cheap », guides « vieux, pas moderne », REX « rien
+  ne va » ⇒ tout à plat, sans « gratuit », sans document penché. Guides : **G1 couverture nette sur un halo flou de ses propres
+  couleurs (conseil)**, G2 couverture en grand + panneau en verre dépoli (titre + bouton « Télécharger »), G3 fiche horizontale
+  2 par ligne avec timecode 00:01. REX (pêche, clairs) : **R1 le REX en miniature (conseil : « Retour d'expérience », Rolling ×
+  logo client, photo du projet en cadre de verre, titre avec mot en dégradé, 2 chiffres clés en verre)**, R2 le résultat d'abord
+  (grand chiffre en verre, logo sur étiquette blanche, couverture à droite), R3 la photo du projet + onglet Rolling × logo.
 - **Chargement de page effet film** (demande avant la fin de la livraison 4) : maquette `maquettes/loading/maquette-loading.html`
   (copie /workspace/maquette-loading.html), 4 options : A amorce 3-2-1, B clap qui se ferme puis rideau, C ouverture
   cinéma (bandes noires + REC + timecode + règle avec la tête de lecture rouge des frises, plus de filet fin), D barre de lecture en haut sans écran. Conseil : C à l'arrivée (première page
