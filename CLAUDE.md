@@ -1092,6 +1092,9 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   pour les deux, REX sans chiffres clés » ⇒ 2 par ligne, image à gauche (42 %), texte + bouton à droite ; guide = couverture sur halo
   flou de ses couleurs (G1 couché) ; REX sans chiffres : **H1 photo du projet pleine hauteur + onglet blanc Rolling × logo (conseil)**,
   H2 couverture du REX sur fond pêche + étiquette logo + Rolling × logo au-dessus du titre. Mobile empilé.
+  **Choix : H1** (guides en fiche horizontale + REX photo). Saisie proposée (question de la cliente, à confirmer avant thème) :
+  case « C'est un retour d'expérience », image à la une = photo du projet, nouveau champ « Logo du client » (+ nom du client
+  pour l'alt), témoignage lié **facultatif** (lien « Lire le témoignage » seulement s'il y en a un ; logo du témoignage en repli).
 - **Chargement de page effet film** (demande avant la fin de la livraison 4) : maquette `maquettes/loading/maquette-loading.html`
   (copie /workspace/maquette-loading.html), 4 options : A amorce 3-2-1, B clap qui se ferme puis rideau, C ouverture
   cinéma (bandes noires + REC + timecode + règle avec la tête de lecture rouge des frises, plus de filet fin), D barre de lecture en haut sans écran. Conseil : C à l'arrivée (première page
