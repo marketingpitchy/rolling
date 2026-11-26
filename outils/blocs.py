@@ -1043,27 +1043,56 @@ aucun_webinar = F('Aucun webinar', ['carte-verre', 'carte-vide'], enfants=[
 ])
 
 HUBSPOT = DYN('rolling-lien', lien='lien')
-carte_guide = F('Carte guide', ['carte-guide'], tag='article', enfants=[
-    F('Guide · vignette', ['vignette-lien', 'si-image'], 'padding: 0; border-radius: 22px;', enfants=[
-        D('Guide · cadre', ['cadre-photo', 'cadre-4-3'], enfants=[
-            I('Guide · image', DYN('rolling-image', image='une'), cls=['image-couvrante'], taille='medium_large'),
-            P('Guide · type', DYN('rolling-champ', champ='type_doc'), ['bandeau-video', 'si-type-doc']),
+TIMECODE_DOC = DYN('rolling-champ', champ='timecode')
+def ligne_pdf(p, cls=None):
+    """Ligne « PDF · 4 pages · 5 min de lecture » sous le bouton."""
+    return F(p + ' · infos du PDF', ['sous-doc'] + (cls or []), enfants=[
+        P(p + ' · PDF', 'PDF', ['info-doc']),
+        P(p + ' · pages', DYN('rolling-champ', champ='pages', avant='· ', apres=' pages'), ['info-doc', 'si-pages']),
+        P(p + ' · lecture', DYN('rolling-champ', champ='lecture', avant='· ', apres=' min de lecture'), ['info-doc', 'si-lecture']),
+    ])
+
+
+# Carte guide / REX « viseur » (0.7.29) : une seule carte pour les deux ; le thème garde la version qui convient
+# (repères « sans-retour-experience » / « si-retour-experience »). Boutons à la même hauteur : bouton en bas + une ligne dessous.
+carte_guide = F('Carte guide ou REX', ['enveloppe-doc'], enfants=[
+    F('Guide', ['carte-doc', 'sans-retour-experience'], tag='article', enfants=[
+        D('Guide · viseur', ['viseur-doc'], enfants=[
+            I('Guide · halo', DYN('rolling-image', image='une'), cls=['halo-doc', 'si-image'], taille='medium'),
+            I('Guide · couverture', DYN('rolling-image', image='une'), cls=['couverture-doc', 'si-image'], taille='medium_large'),
+            I('Guide · picto (sans image)', 'picto-guides.webp', cls=['picto-doc', 'sans-image'], taille='medium'),
+            P('Guide · timecode', TIMECODE_DOC, ['timecode-doc', 'si-lecture']),
+            P('Guide · étiquette', DYN('rolling-champ', champ='type_doc'), ['etiquette-doc', 'si-type-doc']),
+            P('Guide · étiquette par défaut', 'Guide', ['etiquette-doc', 'sans-type-doc']),
+        ]),
+        F('Guide · textes', ['corps-doc'], enfants=[
+            H('Guide · titre', DYN('rolling-article', info='titre'), 'h3', ['titre-doc'], lien=HUBSPOT),
+            P('Guide · résumé', DYN('rolling-champ', champ='resume'), ['resume-doc', 'si-resume']),
+            B('Guide · bouton', 'Télécharger le guide', HUBSPOT, ['bouton-doc']),
+            ligne_pdf('Guide'),
         ]),
     ]),
-    F('Guide · couverture logo', ['vignette-lien', 'sans-image', 'si-temoignage-logo'], 'padding: 0; border-radius: 22px;', enfants=[
-        D('Guide · fond du logo', ['couverture-logo'], enfants=[
-            I('Guide · logo du client', DYN('rolling-image', image='logo', source='temoignage'), cls=['logo-couverture'], taille='medium'),
-            P('Guide · type (couverture logo)', DYN('rolling-champ', champ='type_doc'), ['bandeau-video', 'si-type-doc']),
+    F('REX', ['carte-doc', 'carte-doc-rex', 'si-retour-experience'], tag='article', enfants=[
+        D('REX · viseur', ['viseur-doc', 'viseur-rex'], enfants=[
+            I('REX · photo du projet', DYN('rolling-image', image='une'), cls=['photo-doc', 'si-image'], taille='medium_large'),
+            I('REX · logo (sans photo)', DYN('rolling-image', image='logo'), cls=['logo-doc', 'sans-image', 'si-logo'], taille='medium'),
+            P('REX · timecode', TIMECODE_DOC, ['timecode-doc', 'si-lecture']),
+            P('REX · étiquette', 'Retour d’expérience', ['etiquette-doc', 'etiquette-doc-rex']),
+        ]),
+        F('REX · textes', ['corps-doc'], enfants=[
+            F('REX · Rolling × client', ['cobrand-doc'], enfants=[
+                I('REX · logo Rolling', 'logo-rolling.png', 'Rolling', cls=['logo-rolling-doc'], taille='medium'),
+                P('REX · croix', '×', ['croix-doc']),
+                I('REX · logo du client', DYN('rolling-image', image='logo'), cls=['logo-client-doc', 'si-logo'], taille='medium'),
+                P('REX · nom du client', DYN('rolling-champ', champ='client'), ['client-doc', 'sans-logo', 'si-client']),
+            ]),
+            H('REX · titre', DYN('rolling-article', info='titre'), 'h3', ['titre-doc'], lien=HUBSPOT),
+            P('REX · résumé', DYN('rolling-champ', champ='resume'), ['resume-doc', 'si-resume']),
+            B('REX · bouton', 'Télécharger le REX', HUBSPOT, ['bouton-doc', 'bouton-doc-rex']),
+            B('REX · lien témoignage', 'Lire le témoignage', DYN('rolling-lien', lien='fiche', source='temoignage'), ['lien-doc', 'si-temoignage-recit']),
+            ligne_pdf('REX', ['sans-temoignage-recit']),
         ]),
     ]),
-    F('Guide · infos', ['rangee'], enfants=[
-        P('Guide · thème', DYN('rolling-terme', taxonomie='rolling_theme'), ['tag-orange', 'si-theme']),
-        P('Guide · pages', DYN('rolling-champ', champ='pages', apres=' pages'), ['texte-petit', 'si-pages']),
-    ]),
-    H('Guide · titre', DYN('rolling-article', info='titre'), 'h3', ['titre-xs', 'lien-titre'], lien=HUBSPOT),
-    P('Guide · résumé', DYN('rolling-champ', champ='resume'), ['texte-petit', 'si-resume']),
-    B('Guide · bouton', 'Télécharger', HUBSPOT, ['bouton-verre', 'bouton-petit']),
-    B('Guide · lien témoignage', 'Lire le témoignage', DYN('rolling-lien', lien='fiche', source='temoignage'), ['temoin-lien', 'si-temoignage-recit']),
 ])
 
 def couvertures_rex(p, taille):
@@ -2658,7 +2687,7 @@ MODELES_SITE = [
     ('c2-carte-temoignage', 'Rolling · Carte témoignage', carte_temoignage(), 'rolling_temoignage'),
     ('c3-carte-temoignage-une', 'Rolling · Carte témoignage à la une', carte_temoignage(True), 'rolling_temoignage'),
     ('c4-carte-article', 'Rolling · Carte article', carte_article, 'post'),
-    ('c5-carte-guide', 'Rolling · Carte guide', carte_guide, 'rolling_guide'),
+    ('c5-carte-guide', 'Rolling · Carte guide et REX', carte_guide, 'rolling_guide'),
     ('c6-carte-webinar', 'Rolling · Carte webinar', carte_webinar, 'rolling_webinar'),
     ('c7-carte-webinar-une', 'Rolling · Carte prochain webinar', carte_webinar_une, 'rolling_webinar'),
     ('c8-carte-replay', 'Rolling · Carte replay', carte_replay, 'rolling_webinar'),

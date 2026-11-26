@@ -48,6 +48,9 @@ body { --paragraphe: #4A4858; --encre: #0F0F12; --legende: #6E6B7B; --violet: #5
 .is-root-container .is-style-etapes { counter-reset: rl-etape; display: grid; gap: 14px; margin: 22px 0 0; padding: 0; list-style: none; }
 .is-root-container .is-style-etapes > li { counter-increment: rl-etape; position: relative; padding-left: 48px; min-height: 34px; }
 .is-root-container .is-style-etapes > li::before { content: counter(rl-etape); position: absolute; top: 0; left: 0; width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: Bricolage Grotesque; font-weight: 650; font-size: 16px; line-height: 1; color: #FFFFFF; background: linear-gradient(140deg, #5B3BEA, #8E4DE6); }
+.is-root-container .rl-introduction { margin: 32px 0 0; padding: 26px 28px; border-radius: 26px; background: linear-gradient(120deg, rgba(237,230,255,0.95), rgba(255,241,231,0.9)); }
+.is-root-container .rl-introduction > p:not(.rl-label), .is-root-container .rl-introduction .wp-block-group__inner-container > p:not(.rl-label) { margin: 10px 0 0; font-family: Hanken Grotesk; font-size: 18px; line-height: 1.65; color: var(--rl-texte, var(--encre)); }
+.is-root-container .rl-introduction > p:not(.rl-label) + p, .is-root-container .rl-introduction .wp-block-group__inner-container > p:not(.rl-label) + p { margin-top: 10px; }
 .is-root-container .rl-en-bref, .is-root-container .rl-a-retenir { margin: 32px 0 0; padding: 28px; border-radius: 26px; background: linear-gradient(120deg, rgba(237,230,255,0.95), rgba(255,241,231,0.9)); }
 .is-root-container .rl-a-retenir { background: linear-gradient(120deg, rgba(255,241,231,0.95), rgba(255,224,206,0.7)); }
 .is-root-container .rl-label { margin: 0; font-family: Hanken Grotesk; font-size: 12px; line-height: 1.3; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #5B3BEA; }
@@ -111,7 +114,8 @@ body { --paragraphe: #4A4858; --encre: #0F0F12; --legende: #6E6B7B; --violet: #5
 .is-root-container .wp-block-table td { padding: 11px 10px; }
 .is-root-container .wp-block-table th:first-child, .is-root-container .wp-block-table td:first-child { padding-left: 14px; }
 .is-root-container .ligne-coche { font-size: 17px; }
-.is-root-container .rl-en-bref, .is-root-container .rl-a-retenir { padding: 22px; }
+.is-root-container .rl-en-bref, .is-root-container .rl-a-retenir, .is-root-container .rl-introduction { padding: 22px; }
+.is-root-container .rl-introduction > p:not(.rl-label), .is-root-container .rl-introduction .wp-block-group__inner-container > p:not(.rl-label) { font-size: 17px; }
 .is-root-container .rl-avis { padding: 96px 22px 22px; }
 .is-root-container .rl-avis .rl-portrait { top: 22px; left: 22px; }
 .is-root-container .rl-chiffre-cle { padding: 22px; }

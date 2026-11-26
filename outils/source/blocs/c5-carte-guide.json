@@ -1,15 +1,23 @@
 {
  "cle": "c5-carte-guide",
- "titre": "Rolling · Carte guide",
+ "titre": "Rolling · Carte guide et REX",
  "type": "e-flexbox",
  "apercu": "rolling_guide",
  "composition": {
-  "xml_structure": "<e-flexbox configuration-id=\"Carte guide\"><e-flexbox configuration-id=\"Guide · vignette\"><e-div-block configuration-id=\"Guide · cadre\"><e-image configuration-id=\"Guide · image\"></e-image><e-paragraph configuration-id=\"Guide · type\"></e-paragraph></e-div-block></e-flexbox><e-flexbox configuration-id=\"Guide · couverture logo\"><e-div-block configuration-id=\"Guide · fond du logo\"><e-image configuration-id=\"Guide · logo du client\"></e-image><e-paragraph configuration-id=\"Guide · type (couverture logo)\"></e-paragraph></e-div-block></e-flexbox><e-flexbox configuration-id=\"Guide · infos\"><e-paragraph configuration-id=\"Guide · thème\"></e-paragraph><e-paragraph configuration-id=\"Guide · pages\"></e-paragraph></e-flexbox><e-heading configuration-id=\"Guide · titre\"></e-heading><e-paragraph configuration-id=\"Guide · résumé\"></e-paragraph><e-button configuration-id=\"Guide · bouton\"></e-button><e-button configuration-id=\"Guide · lien témoignage\"></e-button></e-flexbox>",
+  "xml_structure": "<e-flexbox configuration-id=\"Carte guide ou REX\"><e-flexbox configuration-id=\"Guide\"><e-div-block configuration-id=\"Guide · viseur\"><e-image configuration-id=\"Guide · halo\"></e-image><e-image configuration-id=\"Guide · couverture\"></e-image><e-image configuration-id=\"Guide · picto (sans image)\"></e-image><e-paragraph configuration-id=\"Guide · timecode\"></e-paragraph><e-paragraph configuration-id=\"Guide · étiquette\"></e-paragraph><e-paragraph configuration-id=\"Guide · étiquette par défaut\"></e-paragraph></e-div-block><e-flexbox configuration-id=\"Guide · textes\"><e-heading configuration-id=\"Guide · titre\"></e-heading><e-paragraph configuration-id=\"Guide · résumé\"></e-paragraph><e-button configuration-id=\"Guide · bouton\"></e-button><e-flexbox configuration-id=\"Guide · infos du PDF\"><e-paragraph configuration-id=\"Guide · PDF\"></e-paragraph><e-paragraph configuration-id=\"Guide · pages\"></e-paragraph><e-paragraph configuration-id=\"Guide · lecture\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox><e-flexbox configuration-id=\"REX\"><e-div-block configuration-id=\"REX · viseur\"><e-image configuration-id=\"REX · photo du projet\"></e-image><e-image configuration-id=\"REX · logo (sans photo)\"></e-image><e-paragraph configuration-id=\"REX · timecode\"></e-paragraph><e-paragraph configuration-id=\"REX · étiquette\"></e-paragraph></e-div-block><e-flexbox configuration-id=\"REX · textes\"><e-flexbox configuration-id=\"REX · Rolling × client\"><e-image configuration-id=\"REX · logo Rolling\"></e-image><e-paragraph configuration-id=\"REX · croix\"></e-paragraph><e-image configuration-id=\"REX · logo du client\"></e-image><e-paragraph configuration-id=\"REX · nom du client\"></e-paragraph></e-flexbox><e-heading configuration-id=\"REX · titre\"></e-heading><e-paragraph configuration-id=\"REX · résumé\"></e-paragraph><e-button configuration-id=\"REX · bouton\"></e-button><e-button configuration-id=\"REX · lien témoignage\"></e-button><e-flexbox configuration-id=\"REX · infos du PDF\"><e-paragraph configuration-id=\"REX · PDF\"></e-paragraph><e-paragraph configuration-id=\"REX · pages\"></e-paragraph><e-paragraph configuration-id=\"REX · lecture\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox></e-flexbox>",
   "element_config": {
-   "Carte guide": {
+   "Guide": {
     "tag": "article"
    },
-   "Guide · image": {
+   "Guide · halo": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/dynamique/rolling-image/image=une.png"
+     },
+     "size": "medium"
+    }
+   },
+   "Guide · couverture": {
     "image": {
      "src": {
       "url": "https://media.rolling.invalid/dynamique/rolling-image/image=une.png"
@@ -17,25 +25,22 @@
      "size": "medium_large"
     }
    },
-   "Guide · type": {
-    "paragraph": "⟦rolling-champ|champ=type_doc⟧"
-   },
-   "Guide · logo du client": {
+   "Guide · picto (sans image)": {
     "image": {
      "src": {
-      "url": "https://media.rolling.invalid/dynamique/rolling-image/image=logo&source=temoignage.png"
+      "url": "https://media.rolling.invalid/picto-guides.webp"
      },
      "size": "medium"
     }
    },
-   "Guide · type (couverture logo)": {
+   "Guide · timecode": {
+    "paragraph": "⟦rolling-champ|champ=timecode⟧"
+   },
+   "Guide · étiquette": {
     "paragraph": "⟦rolling-champ|champ=type_doc⟧"
    },
-   "Guide · thème": {
-    "paragraph": "⟦rolling-terme|taxonomie=rolling_theme⟧"
-   },
-   "Guide · pages": {
-    "paragraph": "⟦rolling-champ|champ=pages|apres= pages⟧"
+   "Guide · étiquette par défaut": {
+    "paragraph": "Guide"
    },
    "Guide · titre": {
     "tag": "h3",
@@ -48,84 +53,241 @@
     "paragraph": "⟦rolling-champ|champ=resume⟧"
    },
    "Guide · bouton": {
-    "text": "Télécharger",
+    "text": "Télécharger le guide",
     "link": {
      "destination": "⟦rolling-lien|lien=lien⟧"
     }
    },
-   "Guide · lien témoignage": {
+   "Guide · PDF": {
+    "paragraph": "PDF"
+   },
+   "Guide · pages": {
+    "paragraph": "⟦rolling-champ|champ=pages|avant=· |apres= pages⟧"
+   },
+   "Guide · lecture": {
+    "paragraph": "⟦rolling-champ|champ=lecture|avant=· |apres= min de lecture⟧"
+   },
+   "REX": {
+    "tag": "article"
+   },
+   "REX · photo du projet": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/dynamique/rolling-image/image=une.png"
+     },
+     "size": "medium_large"
+    }
+   },
+   "REX · logo (sans photo)": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/dynamique/rolling-image/image=logo.png"
+     },
+     "size": "medium"
+    }
+   },
+   "REX · timecode": {
+    "paragraph": "⟦rolling-champ|champ=timecode⟧"
+   },
+   "REX · étiquette": {
+    "paragraph": "Retour d’expérience"
+   },
+   "REX · logo Rolling": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/logo-rolling.png",
+      "alt": "Rolling"
+     },
+     "size": "medium"
+    }
+   },
+   "REX · croix": {
+    "paragraph": "×"
+   },
+   "REX · logo du client": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/dynamique/rolling-image/image=logo.png"
+     },
+     "size": "medium"
+    }
+   },
+   "REX · nom du client": {
+    "paragraph": "⟦rolling-champ|champ=client⟧"
+   },
+   "REX · titre": {
+    "tag": "h3",
+    "title": "⟦rolling-article|info=titre⟧",
+    "link": {
+     "destination": "⟦rolling-lien|lien=lien⟧"
+    }
+   },
+   "REX · résumé": {
+    "paragraph": "⟦rolling-champ|champ=resume⟧"
+   },
+   "REX · bouton": {
+    "text": "Télécharger le REX",
+    "link": {
+     "destination": "⟦rolling-lien|lien=lien⟧"
+    }
+   },
+   "REX · lien témoignage": {
     "text": "Lire le témoignage",
     "link": {
      "destination": "⟦rolling-lien|lien=fiche|source=temoignage⟧"
     }
+   },
+   "REX · PDF": {
+    "paragraph": "PDF"
+   },
+   "REX · pages": {
+    "paragraph": "⟦rolling-champ|champ=pages|avant=· |apres= pages⟧"
+   },
+   "REX · lecture": {
+    "paragraph": "⟦rolling-champ|champ=lecture|avant=· |apres= min de lecture⟧"
    }
   },
   "classes": {
-   "Carte guide": [
-    "carte-guide"
+   "Carte guide ou REX": [
+    "enveloppe-doc"
    ],
-   "Guide · vignette": [
-    "vignette-lien",
+   "Guide": [
+    "carte-doc",
+    "sans-retour-experience"
+   ],
+   "Guide · viseur": [
+    "viseur-doc"
+   ],
+   "Guide · halo": [
+    "halo-doc",
     "si-image"
    ],
-   "Guide · cadre": [
-    "cadre-photo",
-    "cadre-4-3"
+   "Guide · couverture": [
+    "couverture-doc",
+    "si-image"
    ],
-   "Guide · image": [
-    "image-couvrante"
+   "Guide · picto (sans image)": [
+    "picto-doc",
+    "sans-image"
    ],
-   "Guide · type": [
-    "bandeau-video",
+   "Guide · timecode": [
+    "timecode-doc",
+    "si-lecture"
+   ],
+   "Guide · étiquette": [
+    "etiquette-doc",
     "si-type-doc"
    ],
-   "Guide · couverture logo": [
-    "vignette-lien",
-    "sans-image",
-    "si-temoignage-logo"
+   "Guide · étiquette par défaut": [
+    "etiquette-doc",
+    "sans-type-doc"
    ],
-   "Guide · fond du logo": [
-    "couverture-logo"
-   ],
-   "Guide · logo du client": [
-    "logo-couverture"
-   ],
-   "Guide · type (couverture logo)": [
-    "bandeau-video",
-    "si-type-doc"
-   ],
-   "Guide · infos": [
-    "rangee"
-   ],
-   "Guide · thème": [
-    "tag-orange",
-    "si-theme"
-   ],
-   "Guide · pages": [
-    "texte-petit",
-    "si-pages"
+   "Guide · textes": [
+    "corps-doc"
    ],
    "Guide · titre": [
-    "titre-xs",
-    "lien-titre"
+    "titre-doc"
    ],
    "Guide · résumé": [
-    "texte-petit",
+    "resume-doc",
     "si-resume"
    ],
    "Guide · bouton": [
-    "bouton-verre",
-    "bouton-petit"
+    "bouton-doc"
    ],
-   "Guide · lien témoignage": [
-    "temoin-lien",
+   "Guide · infos du PDF": [
+    "sous-doc"
+   ],
+   "Guide · PDF": [
+    "info-doc"
+   ],
+   "Guide · pages": [
+    "info-doc",
+    "si-pages"
+   ],
+   "Guide · lecture": [
+    "info-doc",
+    "si-lecture"
+   ],
+   "REX": [
+    "carte-doc",
+    "carte-doc-rex",
+    "si-retour-experience"
+   ],
+   "REX · viseur": [
+    "viseur-doc",
+    "viseur-rex"
+   ],
+   "REX · photo du projet": [
+    "photo-doc",
+    "si-image"
+   ],
+   "REX · logo (sans photo)": [
+    "logo-doc",
+    "sans-image",
+    "si-logo"
+   ],
+   "REX · timecode": [
+    "timecode-doc",
+    "si-lecture"
+   ],
+   "REX · étiquette": [
+    "etiquette-doc",
+    "etiquette-doc-rex"
+   ],
+   "REX · textes": [
+    "corps-doc"
+   ],
+   "REX · Rolling × client": [
+    "cobrand-doc"
+   ],
+   "REX · logo Rolling": [
+    "logo-rolling-doc"
+   ],
+   "REX · croix": [
+    "croix-doc"
+   ],
+   "REX · logo du client": [
+    "logo-client-doc",
+    "si-logo"
+   ],
+   "REX · nom du client": [
+    "client-doc",
+    "sans-logo",
+    "si-client"
+   ],
+   "REX · titre": [
+    "titre-doc"
+   ],
+   "REX · résumé": [
+    "resume-doc",
+    "si-resume"
+   ],
+   "REX · bouton": [
+    "bouton-doc",
+    "bouton-doc-rex"
+   ],
+   "REX · lien témoignage": [
+    "lien-doc",
     "si-temoignage-recit"
+   ],
+   "REX · infos du PDF": [
+    "sous-doc",
+    "sans-temoignage-recit"
+   ],
+   "REX · PDF": [
+    "info-doc"
+   ],
+   "REX · pages": [
+    "info-doc",
+    "si-pages"
+   ],
+   "REX · lecture": [
+    "info-doc",
+    "si-lecture"
    ]
   },
-  "style": {
-   "Guide · vignette": "padding: 0; border-radius: 22px;",
-   "Guide · couverture logo": "padding: 0; border-radius: 22px;"
-  }
+  "style": {}
  },
  "brut": {}
 }

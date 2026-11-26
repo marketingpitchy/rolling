@@ -497,6 +497,10 @@ class Rolling_Dynamique {
 			// conteneur, donc dans son contexte « contexte-rex » : le contenu courant est alors le guide lui-même.
 			return 'rolling_guide' === get_post_type( $id ) ? false : ! Rolling_Contenus::rex( $id );
 		}
+		if ( 'retour_experience' === $cle ) {
+			// Guide : c'est un retour d'expérience (case cochée, ou thème « Retours d'expérience »).
+			return '' === Rolling_Contenus::valeur( 'retour_experience', $id );
+		}
 		if ( 'recit' === $cle ) {
 			return ! Rolling_Contenus::a_recit( $id );
 		}

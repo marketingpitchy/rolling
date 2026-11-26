@@ -7865,6 +7865,156 @@
             ]
         },
         {
+            "id": "g-cfc9201",
+            "label": "carte-doc-rex",
+            "groupe": "Fiches et listes",
+            "description": "À ajouter à « carte-doc » : version retour d'expérience, fond clair pêche et lilas.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "background": {
+                            "$$type": "background",
+                            "value": {
+                                "color": {
+                                    "$$type": "color",
+                                    "value": "#FFFBF8"
+                                }
+                            }
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "YmFja2dyb3VuZC1pbWFnZTogcmFkaWFsLWdyYWRpZW50KDgwJSA1MCUgYXQgMTAwJSAwJSwgI0ZGRTNEMywgcmdiYSgyNTUsMjI3LDIxMSwwKSA3MCUpLCByYWRpYWwtZ3JhZGllbnQoNzAlIDQ1JSBhdCAwJSAxMDAlLCAjRURFNkZGLCByZ2JhKDIzNywyMzAsMjU1LDApIDcwJSk7"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-f24fa1b",
+            "label": "viseur-rex",
+            "groupe": "Fiches et listes",
+            "description": "À ajouter à « viseur-doc » : fond pêche (visible quand le REX n'a pas de photo).",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "background": {
+                            "$$type": "background",
+                            "value": {
+                                "color": {
+                                    "$$type": "color",
+                                    "value": "#FFEDE2"
+                                }
+                            }
+                        }
+                    },
+                    "custom_css": null
+                }
+            ]
+        },
+        {
+            "id": "g-4718904",
+            "label": "etiquette-doc-rex",
+            "groupe": "Fiches et listes",
+            "description": "À ajouter à « etiquette-doc » : étiquette pêche foncé du retour d'expérience.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "background": {
+                            "$$type": "background",
+                            "value": {
+                                "color": {
+                                    "$$type": "color",
+                                    "value": "#B8400F"
+                                }
+                            }
+                        }
+                    },
+                    "custom_css": null
+                }
+            ]
+        },
+        {
+            "id": "g-0c64e3b",
+            "label": "bouton-doc-rex",
+            "groupe": "Fiches et listes",
+            "description": "À ajouter à « bouton-doc » : bouton pêche foncé du retour d'expérience.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "background": {
+                            "$$type": "background",
+                            "value": {
+                                "color": {
+                                    "$$type": "color",
+                                    "value": "#B8400F"
+                                }
+                            }
+                        },
+                        "box-shadow": {
+                            "$$type": "box-shadow",
+                            "value": [
+                                {
+                                    "$$type": "shadow",
+                                    "value": {
+                                        "hOffset": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 0,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "vOffset": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 14,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "blur": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 28,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "spread": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": -14,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "color": {
+                                            "$$type": "color",
+                                            "value": "rgba(184,64,15,0.7)"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "Jjpob3ZlciB7IGJhY2tncm91bmQtY29sb3I6ICM5QTM0MTI7IH0="
+                    }
+                }
+            ]
+        },
+        {
             "id": "g-b964e35",
             "label": "carte-outils",
             "groupe": "Fiches et listes",
@@ -30394,6 +30544,1965 @@
             ]
         },
         {
+            "id": "g-7832086",
+            "label": "si-retour-experience",
+            "groupe": "Fiches et listes",
+            "description": "Repère sans style : affiché seulement quand le guide est un retour d'expérience (case cochée ou thème « Retours d'expérience »).",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": [],
+                    "custom_css": {
+                        "raw": "LS1ybC1yZXBlcmU6IDE7"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-3d71ebf",
+            "label": "sans-retour-experience",
+            "groupe": "Fiches et listes",
+            "description": "Repère sans style : affiché seulement quand le guide n'est pas un retour d'expérience.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": [],
+                    "custom_css": {
+                        "raw": "LS1ybC1yZXBlcmU6IDE7"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-47f0ea2",
+            "label": "sans-logo",
+            "groupe": "Fiches et listes",
+            "description": "Repère sans style : affiché seulement quand il n'y a pas de logo du client.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": [],
+                    "custom_css": {
+                        "raw": "LS1ybC1yZXBlcmU6IDE7"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-cd9a35a",
+            "label": "sans-type-doc",
+            "groupe": "Fiches et listes",
+            "description": "Repère sans style : affiché seulement quand le champ « Type de document » est vide.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": [],
+                    "custom_css": {
+                        "raw": "LS1ybC1yZXBlcmU6IDE7"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-0e90cd8",
+            "label": "sans-temoignage-recit",
+            "groupe": "Fiches et listes",
+            "description": "Repère sans style : affiché quand il n'y a pas de témoignage lié avec un récit (pas de lien « Lire le témoignage »).",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": [],
+                    "custom_css": {
+                        "raw": "LS1ybC1yZXBlcmU6IDE7"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-ef1175d",
+            "label": "si-lecture",
+            "groupe": "Fiches et listes",
+            "description": "Repère sans style : le thème masque ce bloc quand le champ « lecture » du contenu est vide.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": [],
+                    "custom_css": {
+                        "raw": "LS1ybC1yZXBlcmU6IDE7"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-9607298",
+            "label": "enveloppe-doc",
+            "groupe": "Fiches et listes",
+            "description": "Enveloppe du modèle de carte guide / REX : sans boîte (la carte affichée est la seule case de la grille).",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "display": {
+                            "$$type": "string",
+                            "value": "contents"
+                        }
+                    },
+                    "custom_css": null
+                }
+            ]
+        },
+        {
+            "id": "g-e27187e",
+            "label": "carte-doc",
+            "groupe": "Fiches et listes",
+            "description": "Carte d'un guide ou d'un REX : viseur en haut, textes dessous, bouton toujours en bas (alignés sur une même ligne de cartes).",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "height": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 100,
+                                "unit": "%"
+                            }
+                        },
+                        "overflow": {
+                            "$$type": "string",
+                            "value": "hidden"
+                        },
+                        "padding": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 0,
+                                "unit": "px"
+                            }
+                        },
+                        "border-radius": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 24,
+                                "unit": "px"
+                            }
+                        },
+                        "background": {
+                            "$$type": "background",
+                            "value": {
+                                "color": {
+                                    "$$type": "color",
+                                    "value": "#FFFFFF"
+                                }
+                            }
+                        },
+                        "box-shadow": {
+                            "$$type": "box-shadow",
+                            "value": [
+                                {
+                                    "$$type": "shadow",
+                                    "value": {
+                                        "hOffset": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 0,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "vOffset": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 1,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "blur": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 2,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "spread": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 0,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "color": {
+                                            "$$type": "color",
+                                            "value": "rgba(15,15,18,0.05)"
+                                        }
+                                    }
+                                },
+                                {
+                                    "$$type": "shadow",
+                                    "value": {
+                                        "hOffset": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 0,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "vOffset": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 26,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "blur": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 50,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "spread": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": -32,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "color": {
+                                            "$$type": "color",
+                                            "value": "rgba(76,48,170,0.4)"
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        "display": {
+                            "$$type": "string",
+                            "value": "flex"
+                        },
+                        "flex-direction": {
+                            "$$type": "string",
+                            "value": "column"
+                        },
+                        "gap": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 0,
+                                "unit": "px"
+                            }
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "dHJhbnNpdGlvbjogdHJhbnNmb3JtIDAuMzVzIGN1YmljLWJlemllcigwLjIsMC43LDAuMiwxKSwgYm94LXNoYWRvdyAwLjM1czsgJjpob3ZlciB7IHRyYW5zZm9ybTogdHJhbnNsYXRlWSgtNHB4KTsgYm94LXNoYWRvdzogMCAxcHggMnB4IHJnYmEoMTUsMTUsMTgsMC4wNSksIDAgMzRweCA2MHB4IC0zMHB4IHJnYmEoNzYsNDgsMTcwLDAuNSk7IH0gJjpob3ZlciAuY291dmVydHVyZS1kb2MgeyB0cmFuc2Zvcm06IHRyYW5zbGF0ZVkoLTZweCk7IH0gJjpob3ZlciAucGhvdG8tZG9jIHsgdHJhbnNmb3JtOiBzY2FsZSgxLjA0KTsgfQ=="
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-83dadc8",
+            "label": "viseur-doc",
+            "groupe": "Fiches et listes",
+            "description": "Image de la carte guide / REX cadrée comme dans un viseur de caméra : coins blancs, REC (point fixe) ; timecode et étiquette posés dessus.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "overflow": {
+                            "$$type": "string",
+                            "value": "hidden"
+                        },
+                        "aspect-ratio": {
+                            "$$type": "string",
+                            "value": "4 / 3"
+                        },
+                        "position": {
+                            "$$type": "string",
+                            "value": "relative"
+                        },
+                        "padding": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 0,
+                                "unit": "px"
+                            }
+                        },
+                        "background": {
+                            "$$type": "background",
+                            "value": {
+                                "color": {
+                                    "$$type": "color",
+                                    "value": "#EEE8FF"
+                                }
+                            }
+                        },
+                        "display": {
+                            "$$type": "string",
+                            "value": "flex"
+                        },
+                        "justify-content": {
+                            "$$type": "string",
+                            "value": "center"
+                        },
+                        "align-items": {
+                            "$$type": "string",
+                            "value": "center"
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "aXNvbGF0aW9uOiBpc29sYXRlOyBjb250YWluZXItdHlwZTogc2l6ZTsgJjo6YmVmb3JlIHsgcG9zaXRpb246IHJlbGF0aXZlOyB0b3A6IGF1dG87IHJpZ2h0OiBhdXRvOyBib3R0b206IGF1dG87IGxlZnQ6IGF1dG87IGhlaWdodDogYXV0bzsgb3BhY2l0eTogMTsgbWl4LWJsZW5kLW1vZGU6IG5vcm1hbDsgYm9yZGVyOiAwOyAtd2Via2l0LW1hc2s6IG5vbmU7IG1hc2s6IG5vbmU7IHBhZGRpbmc6IDA7IGNvbnRlbnQ6ICcnOyBwb3NpdGlvbjogYWJzb2x1dGU7IHotaW5kZXg6IDM7IHRvcDogMTRweDsgcmlnaHQ6IDE0cHg7IGJvdHRvbTogMTRweDsgbGVmdDogMTRweDsgd2lkdGg6IGF1dG87IHBvaW50ZXItZXZlbnRzOiBub25lOyBvcGFjaXR5OiAwLjk7IGJhY2tncm91bmQ6IGxpbmVhci1ncmFkaWVudCgjZmZmLCAjZmZmKSAwIDAgLyAyMnB4IDJweCBuby1yZXBlYXQsIGxpbmVhci1ncmFkaWVudCgjZmZmLCAjZmZmKSAwIDAgLyAycHggMjJweCBuby1yZXBlYXQsIGxpbmVhci1ncmFkaWVudCgjZmZmLCAjZmZmKSAxMDAlIDAgLyAyMnB4IDJweCBuby1yZXBlYXQsIGxpbmVhci1ncmFkaWVudCgjZmZmLCAjZmZmKSAxMDAlIDAgLyAycHggMjJweCBuby1yZXBlYXQsIGxpbmVhci1ncmFkaWVudCgjZmZmLCAjZmZmKSAwIDEwMCUgLyAyMnB4IDJweCBuby1yZXBlYXQsIGxpbmVhci1ncmFkaWVudCgjZmZmLCAjZmZmKSAwIDEwMCUgLyAycHggMjJweCBuby1yZXBlYXQsIGxpbmVhci1ncmFkaWVudCgjZmZmLCAjZmZmKSAxMDAlIDEwMCUgLyAyMnB4IDJweCBuby1yZXBlYXQsIGxpbmVhci1ncmFkaWVudCgjZmZmLCAjZmZmKSAxMDAlIDEwMCUgLyAycHggMjJweCBuby1yZXBlYXQ7IH0gJjo6YWZ0ZXIgeyBwb3NpdGlvbjogcmVsYXRpdmU7IHRvcDogYXV0bzsgcmlnaHQ6IGF1dG87IGJvdHRvbTogYXV0bzsgbGVmdDogYXV0bzsgaGVpZ2h0OiBhdXRvOyBvcGFjaXR5OiAxOyBtaXgtYmxlbmQtbW9kZTogbm9ybWFsOyBib3JkZXI6IDA7IC13ZWJraXQtbWFzazogbm9uZTsgbWFzazogbm9uZTsgcGFkZGluZzogMDsgY29udGVudDogJ1JFQyc7IHBvc2l0aW9uOiBhYnNvbHV0ZTsgei1pbmRleDogMzsgdG9wOiAyNHB4OyBsZWZ0OiAyNnB4OyB3aWR0aDogYXV0bzsgcGFkZGluZzogNXB4IDhweCA1cHggMjBweDsgYm9yZGVyLXJhZGl1czogNnB4OyBiYWNrZ3JvdW5kOiByYWRpYWwtZ3JhZGllbnQoY2lyY2xlIGF0IDExcHggNTAlLCAjRkYzQjMwIDMuNXB4LCByZ2JhKDI1NSw1OSw0OCwwKSA0cHgpLCBsaW5lYXItZ3JhZGllbnQocmdiYSgxNSwxMCwzNiwwLjY2KSwgcmdiYSgxNSwxMCwzNiwwLjY2KSk7IGZvbnQtZmFtaWx5OiBIYW5rZW4gR3JvdGVzazsgZm9udC1zaXplOiAxMnB4OyBsaW5lLWhlaWdodDogMTsgZm9udC13ZWlnaHQ6IDcwMDsgbGV0dGVyLXNwYWNpbmc6IDAuMDZlbTsgY29sb3I6ICNGRkZGRkY7IH0gQG1lZGlhIChtYXgtd2lkdGg6IDc2N3B4KSB7ICY6OmFmdGVyIHsgdG9wOiAyMnB4OyBsZWZ0OiAyNHB4OyB9IH0="
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-0919ed9",
+            "label": "halo-doc",
+            "groupe": "Fiches et listes",
+            "description": "Image floue derrière la couverture du guide : le fond prend les couleurs du document.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "object-fit": {
+                            "$$type": "string",
+                            "value": "cover"
+                        },
+                        "position": {
+                            "$$type": "string",
+                            "value": "absolute"
+                        },
+                        "inset-block-start": {
+                            "$$type": "size",
+                            "value": {
+                                "size": -40,
+                                "unit": "px"
+                            }
+                        },
+                        "inset-inline-start": {
+                            "$$type": "size",
+                            "value": {
+                                "size": -40,
+                                "unit": "px"
+                            }
+                        },
+                        "z-index": {
+                            "$$type": "number",
+                            "value": 0
+                        },
+                        "opacity": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 75,
+                                "unit": "%"
+                            }
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "d2lkdGg6IGNhbGMoMTAwJSArIDgwcHgpOyBoZWlnaHQ6IGNhbGMoMTAwJSArIDgwcHgpOyBtYXgtd2lkdGg6IG5vbmU7IGZpbHRlcjogYmx1cigzMHB4KSBzYXR1cmF0ZSgxLjUpOw=="
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-b194b68",
+            "label": "couverture-doc",
+            "groupe": "Fiches et listes",
+            "description": "Couverture du guide, nette et droite, sur son halo (horizontale ou verticale : elle garde ses proportions).",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "position": {
+                            "$$type": "string",
+                            "value": "relative"
+                        },
+                        "z-index": {
+                            "$$type": "number",
+                            "value": 1
+                        },
+                        "border-radius": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 6,
+                                "unit": "px"
+                            }
+                        },
+                        "box-shadow": {
+                            "$$type": "box-shadow",
+                            "value": [
+                                {
+                                    "$$type": "shadow",
+                                    "value": {
+                                        "hOffset": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 0,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "vOffset": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 0,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "blur": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 0,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "spread": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 1,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "color": {
+                                            "$$type": "color",
+                                            "value": "rgba(255,255,255,0.8)"
+                                        }
+                                    }
+                                },
+                                {
+                                    "$$type": "shadow",
+                                    "value": {
+                                        "hOffset": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 0,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "vOffset": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 18,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "blur": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 34,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "spread": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": -16,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "color": {
+                                            "$$type": "color",
+                                            "value": "rgba(20,10,60,0.55)"
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        "display": {
+                            "$$type": "string",
+                            "value": "block"
+                        },
+                        "width": {
+                            "$$type": "size",
+                            "value": {
+                                "size": null,
+                                "unit": "auto"
+                            }
+                        },
+                        "height": {
+                            "$$type": "size",
+                            "value": {
+                                "size": null,
+                                "unit": "auto"
+                            }
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "bWF4LXdpZHRoOiA2NGNxdzsgbWF4LWhlaWdodDogNjhjcWg7IG1hcmdpbi10b3A6IC00Y3FoOyB0cmFuc2l0aW9uOiB0cmFuc2Zvcm0gMC40NXMgY3ViaWMtYmV6aWVyKDAuMiwwLjcsMC4yLDEpOw=="
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-29a3d6f",
+            "label": "photo-doc",
+            "groupe": "Fiches et listes",
+            "description": "Photo du projet qui remplit le viseur du REX (zoom léger au survol).",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "width": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 100,
+                                "unit": "%"
+                            }
+                        },
+                        "height": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 100,
+                                "unit": "%"
+                            }
+                        },
+                        "object-fit": {
+                            "$$type": "string",
+                            "value": "cover"
+                        },
+                        "position": {
+                            "$$type": "string",
+                            "value": "absolute"
+                        },
+                        "inset-block-start": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 0,
+                                "unit": "px"
+                            }
+                        },
+                        "inset-inline-start": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 0,
+                                "unit": "px"
+                            }
+                        },
+                        "z-index": {
+                            "$$type": "number",
+                            "value": 0
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "bWF4LXdpZHRoOiBub25lOyB0cmFuc2l0aW9uOiB0cmFuc2Zvcm0gMC44cyBjdWJpYy1iZXppZXIoMC4yLDAuNywwLjIsMSk7"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-ce115a2",
+            "label": "picto-doc",
+            "groupe": "Fiches et listes",
+            "description": "Pictogramme du guide quand il n'a pas d'image à la une.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "width": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 104,
+                                "unit": "px"
+                            }
+                        },
+                        "position": {
+                            "$$type": "string",
+                            "value": "relative"
+                        },
+                        "z-index": {
+                            "$$type": "number",
+                            "value": 1
+                        },
+                        "display": {
+                            "$$type": "string",
+                            "value": "block"
+                        },
+                        "height": {
+                            "$$type": "size",
+                            "value": {
+                                "size": null,
+                                "unit": "auto"
+                            }
+                        }
+                    },
+                    "custom_css": null
+                }
+            ]
+        },
+        {
+            "id": "g-b68be62",
+            "label": "logo-doc",
+            "groupe": "Fiches et listes",
+            "description": "Logo du client en grand dans le viseur d'un REX sans photo.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "object-fit": {
+                            "$$type": "string",
+                            "value": "contain"
+                        },
+                        "position": {
+                            "$$type": "string",
+                            "value": "relative"
+                        },
+                        "z-index": {
+                            "$$type": "number",
+                            "value": 1
+                        },
+                        "padding": {
+                            "$$type": "dimensions",
+                            "value": {
+                                "block-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 18,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 24,
+                                        "unit": "px"
+                                    }
+                                },
+                                "block-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 18,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 24,
+                                        "unit": "px"
+                                    }
+                                }
+                            }
+                        },
+                        "border-radius": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 16,
+                                "unit": "px"
+                            }
+                        },
+                        "background": {
+                            "$$type": "background",
+                            "value": {
+                                "color": {
+                                    "$$type": "color",
+                                    "value": "#FFFFFF"
+                                }
+                            }
+                        },
+                        "box-shadow": {
+                            "$$type": "box-shadow",
+                            "value": [
+                                {
+                                    "$$type": "shadow",
+                                    "value": {
+                                        "hOffset": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 0,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "vOffset": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 18,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "blur": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 34,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "spread": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": -18,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "color": {
+                                            "$$type": "color",
+                                            "value": "rgba(120,60,40,0.5)"
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        "display": {
+                            "$$type": "string",
+                            "value": "block"
+                        },
+                        "width": {
+                            "$$type": "size",
+                            "value": {
+                                "size": null,
+                                "unit": "auto"
+                            }
+                        },
+                        "height": {
+                            "$$type": "size",
+                            "value": {
+                                "size": null,
+                                "unit": "auto"
+                            }
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "bWF4LXdpZHRoOiA1MmNxdzsgbWF4LWhlaWdodDogMzZjcWg7"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-7c98e24",
+            "label": "timecode-doc",
+            "groupe": "Fiches et listes",
+            "description": "Timecode figé du viseur (temps de lecture du document), en haut à droite.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "position": {
+                            "$$type": "string",
+                            "value": "absolute"
+                        },
+                        "inset-block-start": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 24,
+                                "unit": "px"
+                            }
+                        },
+                        "inset-inline-end": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 26,
+                                "unit": "px"
+                            }
+                        },
+                        "z-index": {
+                            "$$type": "number",
+                            "value": 3
+                        },
+                        "font-family": {
+                            "$$type": "font-family",
+                            "value": "Hanken Grotesk"
+                        },
+                        "font-weight": {
+                            "$$type": "string",
+                            "value": "700"
+                        },
+                        "font-size": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 12,
+                                "unit": "px"
+                            }
+                        },
+                        "color": {
+                            "$$type": "color",
+                            "value": "#FFFFFF"
+                        },
+                        "letter-spacing": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 0.06,
+                                "unit": "em"
+                            }
+                        },
+                        "line-height": {
+                            "$$type": "size",
+                            "value": {
+                                "size": "1",
+                                "unit": "custom"
+                            }
+                        },
+                        "padding": {
+                            "$$type": "dimensions",
+                            "value": {
+                                "block-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 5,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 8,
+                                        "unit": "px"
+                                    }
+                                },
+                                "block-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 5,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 8,
+                                        "unit": "px"
+                                    }
+                                }
+                            }
+                        },
+                        "margin": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 0,
+                                "unit": "px"
+                            }
+                        },
+                        "border-radius": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 6,
+                                "unit": "px"
+                            }
+                        },
+                        "background": {
+                            "$$type": "background",
+                            "value": {
+                                "color": {
+                                    "$$type": "color",
+                                    "value": "rgba(15,10,36,0.66)"
+                                }
+                            }
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "Zm9udC12YXJpYW50LW51bWVyaWM6IHRhYnVsYXItbnVtczsgQG1lZGlhIChtYXgtd2lkdGg6IDc2N3B4KSB7IHRvcDogMjJweDsgcmlnaHQ6IDI0cHg7IH0="
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-3542f22",
+            "label": "etiquette-doc",
+            "groupe": "Fiches et listes",
+            "description": "Étiquette du type de document, en bas à gauche du viseur (violette pour un guide).",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "position": {
+                            "$$type": "string",
+                            "value": "absolute"
+                        },
+                        "inset-block-end": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 24,
+                                "unit": "px"
+                            }
+                        },
+                        "inset-inline-start": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 26,
+                                "unit": "px"
+                            }
+                        },
+                        "z-index": {
+                            "$$type": "number",
+                            "value": 3
+                        },
+                        "font-family": {
+                            "$$type": "font-family",
+                            "value": "Hanken Grotesk"
+                        },
+                        "font-weight": {
+                            "$$type": "string",
+                            "value": "700"
+                        },
+                        "font-size": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 12.5,
+                                "unit": "px"
+                            }
+                        },
+                        "color": {
+                            "$$type": "color",
+                            "value": "#FFFFFF"
+                        },
+                        "line-height": {
+                            "$$type": "size",
+                            "value": {
+                                "size": "1",
+                                "unit": "custom"
+                            }
+                        },
+                        "padding": {
+                            "$$type": "dimensions",
+                            "value": {
+                                "block-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 7,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 12,
+                                        "unit": "px"
+                                    }
+                                },
+                                "block-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 7,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 12,
+                                        "unit": "px"
+                                    }
+                                }
+                            }
+                        },
+                        "margin": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 0,
+                                "unit": "px"
+                            }
+                        },
+                        "border-radius": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 999,
+                                "unit": "px"
+                            }
+                        },
+                        "background": {
+                            "$$type": "background",
+                            "value": {
+                                "color": {
+                                    "$$type": "color",
+                                    "value": "#5B3BEA"
+                                }
+                            }
+                        },
+                        "box-shadow": {
+                            "$$type": "box-shadow",
+                            "value": [
+                                {
+                                    "$$type": "shadow",
+                                    "value": {
+                                        "hOffset": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 0,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "vOffset": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 10,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "blur": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 22,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "spread": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": -12,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "color": {
+                                            "$$type": "color",
+                                            "value": "rgba(40,20,110,0.7)"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "QG1lZGlhIChtYXgtd2lkdGg6IDc2N3B4KSB7IGxlZnQ6IDI0cHg7IGJvdHRvbTogMjJweDsgfQ=="
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-4572e49",
+            "label": "corps-doc",
+            "groupe": "Fiches et listes",
+            "description": "Textes de la carte guide / REX, sous le viseur ; le bouton est poussé en bas.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "padding": {
+                            "$$type": "dimensions",
+                            "value": {
+                                "block-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 20,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 22,
+                                        "unit": "px"
+                                    }
+                                },
+                                "block-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 20,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 22,
+                                        "unit": "px"
+                                    }
+                                }
+                            }
+                        },
+                        "display": {
+                            "$$type": "string",
+                            "value": "flex"
+                        },
+                        "flex-direction": {
+                            "$$type": "string",
+                            "value": "column"
+                        },
+                        "gap": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 0,
+                                "unit": "px"
+                            }
+                        },
+                        "flex": {
+                            "$$type": "flex",
+                            "value": {
+                                "flexGrow": {
+                                    "$$type": "number",
+                                    "value": 1
+                                },
+                                "flexShrink": {
+                                    "$$type": "number",
+                                    "value": 1
+                                },
+                                "flexBasis": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": "auto",
+                                        "unit": "custom"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "custom_css": null
+                }
+            ]
+        },
+        {
+            "id": "g-c6967d7",
+            "label": "cobrand-doc",
+            "groupe": "Fiches et listes",
+            "description": "Ligne « Rolling × logo du client » au-dessus du titre d'un REX.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "min-height": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 26,
+                                "unit": "px"
+                            }
+                        },
+                        "padding": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 0,
+                                "unit": "px"
+                            }
+                        },
+                        "margin": {
+                            "$$type": "dimensions",
+                            "value": {
+                                "block-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 0,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 0,
+                                        "unit": "px"
+                                    }
+                                },
+                                "block-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 10,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 0,
+                                        "unit": "px"
+                                    }
+                                }
+                            }
+                        },
+                        "display": {
+                            "$$type": "string",
+                            "value": "flex"
+                        },
+                        "flex-direction": {
+                            "$$type": "string",
+                            "value": "row"
+                        },
+                        "gap": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 8,
+                                "unit": "px"
+                            }
+                        },
+                        "flex-wrap": {
+                            "$$type": "string",
+                            "value": "wrap"
+                        },
+                        "align-items": {
+                            "$$type": "string",
+                            "value": "center"
+                        }
+                    },
+                    "custom_css": null
+                }
+            ]
+        },
+        {
+            "id": "g-4179330",
+            "label": "logo-rolling-doc",
+            "groupe": "Fiches et listes",
+            "description": "Logo Rolling de la ligne « Rolling × client ».",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "height": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 16,
+                                "unit": "px"
+                            }
+                        },
+                        "display": {
+                            "$$type": "string",
+                            "value": "block"
+                        },
+                        "width": {
+                            "$$type": "size",
+                            "value": {
+                                "size": null,
+                                "unit": "auto"
+                            }
+                        }
+                    },
+                    "custom_css": null
+                }
+            ]
+        },
+        {
+            "id": "g-4d443bb",
+            "label": "croix-doc",
+            "groupe": "Fiches et listes",
+            "description": "Signe « × » entre les deux logos.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "font-family": {
+                            "$$type": "font-family",
+                            "value": "Hanken Grotesk"
+                        },
+                        "font-size": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 15,
+                                "unit": "px"
+                            }
+                        },
+                        "line-height": {
+                            "$$type": "size",
+                            "value": {
+                                "size": "1",
+                                "unit": "custom"
+                            }
+                        },
+                        "margin": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 0,
+                                "unit": "px"
+                            }
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "Y29sb3I6IHZhcigtLXJsLWxlZ2VuZGUsIHZhcigtLWxlZ2VuZGUpKTs="
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-3c1e258",
+            "label": "logo-client-doc",
+            "groupe": "Fiches et listes",
+            "description": "Logo du client dans la ligne « Rolling × client ».",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "height": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 24,
+                                "unit": "px"
+                            }
+                        },
+                        "max-width": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 130,
+                                "unit": "px"
+                            }
+                        },
+                        "object-fit": {
+                            "$$type": "string",
+                            "value": "contain"
+                        },
+                        "display": {
+                            "$$type": "string",
+                            "value": "block"
+                        },
+                        "width": {
+                            "$$type": "size",
+                            "value": {
+                                "size": null,
+                                "unit": "auto"
+                            }
+                        }
+                    },
+                    "custom_css": null
+                }
+            ]
+        },
+        {
+            "id": "g-59279e5",
+            "label": "client-doc",
+            "groupe": "Fiches et listes",
+            "description": "Nom du client (quand il n'y a pas de logo).",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "font-family": {
+                            "$$type": "font-family",
+                            "value": "Hanken Grotesk"
+                        },
+                        "font-weight": {
+                            "$$type": "string",
+                            "value": "600"
+                        },
+                        "font-size": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 16,
+                                "unit": "px"
+                            }
+                        },
+                        "letter-spacing": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 0.04,
+                                "unit": "em"
+                            }
+                        },
+                        "line-height": {
+                            "$$type": "size",
+                            "value": {
+                                "size": "1.2",
+                                "unit": "custom"
+                            }
+                        },
+                        "margin": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 0,
+                                "unit": "px"
+                            }
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "Y29sb3I6IHZhcigtLXJsLXRleHRlLCB2YXIoLS1lbmNyZSkpOw=="
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-21980bf",
+            "label": "titre-doc",
+            "groupe": "Fiches et listes",
+            "description": "Titre de la carte guide / REX (21 px).",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "font-family": {
+                            "$$type": "font-family",
+                            "value": "Bricolage Grotesque"
+                        },
+                        "font-size": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 21,
+                                "unit": "px"
+                            }
+                        },
+                        "letter-spacing": {
+                            "$$type": "size",
+                            "value": {
+                                "size": -0.035,
+                                "unit": "em"
+                            }
+                        },
+                        "line-height": {
+                            "$$type": "size",
+                            "value": {
+                                "size": "1.22",
+                                "unit": "custom"
+                            }
+                        },
+                        "margin": {
+                            "$$type": "dimensions",
+                            "value": {
+                                "block-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 0,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 0,
+                                        "unit": "px"
+                                    }
+                                },
+                                "block-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 8,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 0,
+                                        "unit": "px"
+                                    }
+                                }
+                            }
+                        },
+                        "display": {
+                            "$$type": "string",
+                            "value": "block"
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "Zm9udC13ZWlnaHQ6IDY1MDsgY29sb3I6IHZhcigtLXJsLXRleHRlLCB2YXIoLS1lbmNyZSkpOyAmIGEgeyBjb2xvcjogaW5oZXJpdDsgdGV4dC1kZWNvcmF0aW9uOiBub25lOyB9ICYgYTpob3ZlciB7IHRleHQtZGVjb3JhdGlvbjogdW5kZXJsaW5lOyB9"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-c29034b",
+            "label": "resume-doc",
+            "groupe": "Fiches et listes",
+            "description": "Résumé de la carte guide / REX (2 lignes au plus).",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "overflow": {
+                            "$$type": "string",
+                            "value": "hidden"
+                        },
+                        "font-family": {
+                            "$$type": "font-family",
+                            "value": "Hanken Grotesk"
+                        },
+                        "font-size": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 15,
+                                "unit": "px"
+                            }
+                        },
+                        "line-height": {
+                            "$$type": "size",
+                            "value": {
+                                "size": "1.55",
+                                "unit": "custom"
+                            }
+                        },
+                        "margin": {
+                            "$$type": "dimensions",
+                            "value": {
+                                "block-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 0,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 0,
+                                        "unit": "px"
+                                    }
+                                },
+                                "block-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 20,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 0,
+                                        "unit": "px"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "Y29sb3I6IHZhcigtLXJsLXBhcmFncmFwaGUsIHZhcigtLXBhcmFncmFwaGUpKTsgZGlzcGxheTogLXdlYmtpdC1ib3g7IC13ZWJraXQtbGluZS1jbGFtcDogMjsgLXdlYmtpdC1ib3gtb3JpZW50OiB2ZXJ0aWNhbDs="
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-fccee29",
+            "label": "bouton-doc",
+            "groupe": "Fiches et listes",
+            "description": "Bouton plein « Télécharger » de la carte guide / REX, sur toute la largeur, toujours en bas de la carte.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "width": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 100,
+                                "unit": "%"
+                            }
+                        },
+                        "min-height": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 50,
+                                "unit": "px"
+                            }
+                        },
+                        "font-family": {
+                            "$$type": "font-family",
+                            "value": "Hanken Grotesk"
+                        },
+                        "font-weight": {
+                            "$$type": "string",
+                            "value": "700"
+                        },
+                        "font-size": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 15,
+                                "unit": "px"
+                            }
+                        },
+                        "color": {
+                            "$$type": "color",
+                            "value": "#FFFFFF"
+                        },
+                        "line-height": {
+                            "$$type": "size",
+                            "value": {
+                                "size": "1.2",
+                                "unit": "custom"
+                            }
+                        },
+                        "text-align": {
+                            "$$type": "string",
+                            "value": "center"
+                        },
+                        "padding": {
+                            "$$type": "dimensions",
+                            "value": {
+                                "block-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 0,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 20,
+                                        "unit": "px"
+                                    }
+                                },
+                                "block-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 0,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 20,
+                                        "unit": "px"
+                                    }
+                                }
+                            }
+                        },
+                        "border-radius": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 999,
+                                "unit": "px"
+                            }
+                        },
+                        "background": {
+                            "$$type": "background",
+                            "value": {
+                                "color": {
+                                    "$$type": "color",
+                                    "value": "#5B3BEA"
+                                }
+                            }
+                        },
+                        "box-shadow": {
+                            "$$type": "box-shadow",
+                            "value": [
+                                {
+                                    "$$type": "shadow",
+                                    "value": {
+                                        "hOffset": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 0,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "vOffset": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 14,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "blur": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": 28,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "spread": {
+                                            "$$type": "size",
+                                            "value": {
+                                                "size": -14,
+                                                "unit": "px"
+                                            }
+                                        },
+                                        "color": {
+                                            "$$type": "color",
+                                            "value": "rgba(91,59,234,0.75)"
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        "display": {
+                            "$$type": "string",
+                            "value": "flex"
+                        },
+                        "gap": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 10,
+                                "unit": "px"
+                            }
+                        },
+                        "justify-content": {
+                            "$$type": "string",
+                            "value": "center"
+                        },
+                        "align-items": {
+                            "$$type": "string",
+                            "value": "center"
+                        },
+                        "margin": {
+                            "$$type": "dimensions",
+                            "value": {
+                                "block-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": null,
+                                        "unit": "auto"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "Jjo6YmVmb3JlIHsgY29udGVudDogJyc7IGZsZXg6IG5vbmU7IHdpZHRoOiAxOHB4OyBoZWlnaHQ6IDE4cHg7IGJhY2tncm91bmQtY29sb3I6IGN1cnJlbnRDb2xvcjsgLXdlYmtpdC1tYXNrOiB1cmwoImRhdGE6aW1hZ2Uvc3ZnK3htbCwlM0NzdmcgeG1sbnM9J2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJyB2aWV3Qm94PScwIDAgMjQgMjQnJTNFJTNDcGF0aCBkPSdNMTIgNHYxMk02IDExbDYgNiA2LTZNNSAyMGgxNCcgZmlsbD0nbm9uZScgc3Ryb2tlPSclMjMwMDAnIHN0cm9rZS13aWR0aD0nMi40JyBzdHJva2UtbGluZWNhcD0ncm91bmQnIHN0cm9rZS1saW5lam9pbj0ncm91bmQnLyUzRSUzQy9zdmclM0UiKSBjZW50ZXIgLyBjb250YWluIG5vLXJlcGVhdDsgbWFzazogdXJsKCJkYXRhOmltYWdlL3N2Zyt4bWwsJTNDc3ZnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zycgdmlld0JveD0nMCAwIDI0IDI0JyUzRSUzQ3BhdGggZD0nTTEyIDR2MTJNNiAxMWw2IDYgNi02TTUgMjBoMTQnIGZpbGw9J25vbmUnIHN0cm9rZT0nJTIzMDAwJyBzdHJva2Utd2lkdGg9JzIuNCcgc3Ryb2tlLWxpbmVjYXA9J3JvdW5kJyBzdHJva2UtbGluZWpvaW49J3JvdW5kJy8lM0UlM0Mvc3ZnJTNFIikgY2VudGVyIC8gY29udGFpbiBuby1yZXBlYXQ7IH0gJjpob3ZlciB7IGJhY2tncm91bmQtY29sb3I6ICM0QTJCQjg7IGNvbG9yOiAjRkZGRkZGOyB9"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-13db605",
+            "label": "sous-doc",
+            "groupe": "Fiches et listes",
+            "description": "Ligne discrète sous le bouton (infos du PDF), centrée.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "min-height": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 22,
+                                "unit": "px"
+                            }
+                        },
+                        "padding": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 0,
+                                "unit": "px"
+                            }
+                        },
+                        "margin": {
+                            "$$type": "dimensions",
+                            "value": {
+                                "block-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 10,
+                                        "unit": "px"
+                                    }
+                                }
+                            }
+                        },
+                        "display": {
+                            "$$type": "string",
+                            "value": "flex"
+                        },
+                        "flex-direction": {
+                            "$$type": "string",
+                            "value": "row"
+                        },
+                        "flex-wrap": {
+                            "$$type": "string",
+                            "value": "wrap"
+                        },
+                        "justify-content": {
+                            "$$type": "string",
+                            "value": "center"
+                        },
+                        "align-items": {
+                            "$$type": "string",
+                            "value": "center"
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "Z2FwOiAwIDRweDs="
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-79a8eb4",
+            "label": "info-doc",
+            "groupe": "Fiches et listes",
+            "description": "Petit texte de la ligne sous le bouton (PDF · pages · temps de lecture).",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "font-family": {
+                            "$$type": "font-family",
+                            "value": "Hanken Grotesk"
+                        },
+                        "font-size": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 13,
+                                "unit": "px"
+                            }
+                        },
+                        "line-height": {
+                            "$$type": "size",
+                            "value": {
+                                "size": "1.4",
+                                "unit": "custom"
+                            }
+                        },
+                        "margin": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 0,
+                                "unit": "px"
+                            }
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "Y29sb3I6IHZhcigtLXJsLWxlZ2VuZGUsIHZhcigtLWxlZ2VuZGUpKTs="
+                    }
+                }
+            ]
+        },
+        {
+            "id": "g-1301a43",
+            "label": "lien-doc",
+            "groupe": "Fiches et listes",
+            "description": "Lien « Lire le témoignage » sous le bouton d'un REX, à la même place que la ligne d'infos d'un guide.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "width": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 100,
+                                "unit": "%"
+                            }
+                        },
+                        "min-height": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 22,
+                                "unit": "px"
+                            }
+                        },
+                        "font-family": {
+                            "$$type": "font-family",
+                            "value": "Hanken Grotesk"
+                        },
+                        "font-weight": {
+                            "$$type": "string",
+                            "value": "700"
+                        },
+                        "font-size": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 14,
+                                "unit": "px"
+                            }
+                        },
+                        "color": {
+                            "$$type": "color",
+                            "value": "#A63C14"
+                        },
+                        "line-height": {
+                            "$$type": "size",
+                            "value": {
+                                "size": "1.4",
+                                "unit": "custom"
+                            }
+                        },
+                        "text-decoration": {
+                            "$$type": "string",
+                            "value": "underline"
+                        },
+                        "padding": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 0,
+                                "unit": "px"
+                            }
+                        },
+                        "margin": {
+                            "$$type": "dimensions",
+                            "value": {
+                                "block-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 10,
+                                        "unit": "px"
+                                    }
+                                }
+                            }
+                        },
+                        "background": {
+                            "$$type": "background",
+                            "value": {
+                                "color": {
+                                    "$$type": "color",
+                                    "value": "transparent"
+                                }
+                            }
+                        },
+                        "display": {
+                            "$$type": "string",
+                            "value": "flex"
+                        },
+                        "justify-content": {
+                            "$$type": "string",
+                            "value": "center"
+                        },
+                        "align-items": {
+                            "$$type": "string",
+                            "value": "center"
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "dGV4dC11bmRlcmxpbmUtb2Zmc2V0OiAzcHg7ICY6aG92ZXIgeyBjb2xvcjogIzdBMkMwRTsgfQ=="
+                    }
+                }
+            ]
+        },
+        {
             "id": "g-5074f75",
             "label": "filtres-liste",
             "groupe": "Fiches et listes",
@@ -31217,7 +33326,7 @@
                     },
                     "props": [],
                     "custom_css": {
-                        "raw": "JiA+IHAsICYgLmVsZW1lbnRvci13aWRnZXQtdGV4dC1lZGl0b3IgPiBwLCAmIC5lbGVtZW50b3Itd2lkZ2V0LXRleHQtZWRpdG9yID4gLmVsZW1lbnRvci13aWRnZXQtY29udGFpbmVyID4gcCwgJiAuZWxlbWVudG9yLXRleHQtZWRpdG9yID4gcCwgJiA+IHVsLCAmIC5lbGVtZW50b3Itd2lkZ2V0LXRleHQtZWRpdG9yID4gdWwsICYgLmVsZW1lbnRvci13aWRnZXQtdGV4dC1lZGl0b3IgPiAuZWxlbWVudG9yLXdpZGdldC1jb250YWluZXIgPiB1bCwgJiAuZWxlbWVudG9yLXRleHQtZWRpdG9yID4gdWwsICYgPiBvbCwgJiAuZWxlbWVudG9yLXdpZGdldC10ZXh0LWVkaXRvciA+IG9sLCAmIC5lbGVtZW50b3Itd2lkZ2V0LXRleHQtZWRpdG9yID4gLmVsZW1lbnRvci13aWRnZXQtY29udGFpbmVyID4gb2wsICYgLmVsZW1lbnRvci10ZXh0LWVkaXRvciA+IG9sIHsgZm9udC1zaXplOiAxN3B4OyB9ICYgLndwLWJsb2NrLXRhYmxlIHRhYmxlIHsgbWluLXdpZHRoOiAwOyBmb250LXNpemU6IDE0cHg7IH0gJiAud3AtYmxvY2stdGFibGUgdGggeyBwYWRkaW5nOiAxMXB4IDEwcHg7IGZvbnQtc2l6ZTogMTRweDsgfSAmIC53cC1ibG9jay10YWJsZSB0ZCB7IHBhZGRpbmc6IDExcHggMTBweDsgfSAmIC53cC1ibG9jay10YWJsZSB0aDpmaXJzdC1jaGlsZCwgJiAud3AtYmxvY2stdGFibGUgdGQ6Zmlyc3QtY2hpbGQgeyBwYWRkaW5nLWxlZnQ6IDE0cHg7IH0gJiAubGlnbmUtY29jaGUgeyBmb250LXNpemU6IDE3cHg7IH0gJiAucmwtZW4tYnJlZiwgJiAucmwtYS1yZXRlbmlyIHsgcGFkZGluZzogMjJweDsgfSAmIC5ybC1hdmlzIHsgcGFkZGluZzogOTZweCAyMnB4IDIycHg7IH0gJiAucmwtYXZpcyAucmwtcG9ydHJhaXQgeyB0b3A6IDIycHg7IGxlZnQ6IDIycHg7IH0gJiAucmwtY2hpZmZyZS1jbGUgeyBwYWRkaW5nOiAyMnB4OyB9ICYgLnJsLWNoaWZmcmUtdGV4dGUgeyBmb250LXNpemU6IDE5cHg7IH0gJiAucmwtZW5jYXJ0LWd1aWRlIHsgZ3JpZC10ZW1wbGF0ZS1jb2x1bW5zOiBtaW5tYXgoMCwgMWZyKTsgcm93LWdhcDogMTJweDsgfSAmIC5ybC1lbmNhcnQtZ3VpZGUgLndwLWJsb2NrLWltYWdlIHsgZ3JpZC1yb3c6IGF1dG87IH0gJiAucmwtZW5jYXJ0LWd1aWRlID4gOm5vdCgud3AtYmxvY2staW1hZ2UpLCAmIC5ybC1lbmNhcnQtZ3VpZGUgLndwLWJsb2NrLWdyb3VwX19pbm5lci1jb250YWluZXIgPiA6bm90KC53cC1ibG9jay1pbWFnZSkgeyBncmlkLWNvbHVtbjogMTsgfSAmIC5ybC1lbmNhcnQtYXBwZWwgeyBwYWRkaW5nOiAyMnB4OyB9ICYgLnJsLWF1dGV1ciB7IHBhZGRpbmc6IDEwOHB4IDIycHggMjJweDsgfSAmIC5ybC1hdXRldXIgLnJsLXBvcnRyYWl0IHsgdG9wOiAyMnB4OyBsZWZ0OiAyMnB4OyB9ICYgLnJsLWdpZiB7IHdpZHRoOiBtaW4oMTAwJSwgY2FsYyg0NDBweCAqIHZhcigtLXJsLXJhdGlvLCAxLjc4KSArIDE2cHgpKTsgcGFkZGluZzogOHB4OyBib3JkZXItcmFkaXVzOiAyMnB4OyB9ICYgLnJsLWdpZi1jYWRyZSB7IGJvcmRlci1yYWRpdXM6IDE1cHg7IH0gJiAucmwtZ2lmLWxlZ2VuZGUgeyBtYXJnaW46IDEwcHggNHB4IDJweDsgfQ=="
+                        "raw": "JiA+IHAsICYgLmVsZW1lbnRvci13aWRnZXQtdGV4dC1lZGl0b3IgPiBwLCAmIC5lbGVtZW50b3Itd2lkZ2V0LXRleHQtZWRpdG9yID4gLmVsZW1lbnRvci13aWRnZXQtY29udGFpbmVyID4gcCwgJiAuZWxlbWVudG9yLXRleHQtZWRpdG9yID4gcCwgJiA+IHVsLCAmIC5lbGVtZW50b3Itd2lkZ2V0LXRleHQtZWRpdG9yID4gdWwsICYgLmVsZW1lbnRvci13aWRnZXQtdGV4dC1lZGl0b3IgPiAuZWxlbWVudG9yLXdpZGdldC1jb250YWluZXIgPiB1bCwgJiAuZWxlbWVudG9yLXRleHQtZWRpdG9yID4gdWwsICYgPiBvbCwgJiAuZWxlbWVudG9yLXdpZGdldC10ZXh0LWVkaXRvciA+IG9sLCAmIC5lbGVtZW50b3Itd2lkZ2V0LXRleHQtZWRpdG9yID4gLmVsZW1lbnRvci13aWRnZXQtY29udGFpbmVyID4gb2wsICYgLmVsZW1lbnRvci10ZXh0LWVkaXRvciA+IG9sIHsgZm9udC1zaXplOiAxN3B4OyB9ICYgLndwLWJsb2NrLXRhYmxlIHRhYmxlIHsgbWluLXdpZHRoOiAwOyBmb250LXNpemU6IDE0cHg7IH0gJiAud3AtYmxvY2stdGFibGUgdGggeyBwYWRkaW5nOiAxMXB4IDEwcHg7IGZvbnQtc2l6ZTogMTRweDsgfSAmIC53cC1ibG9jay10YWJsZSB0ZCB7IHBhZGRpbmc6IDExcHggMTBweDsgfSAmIC53cC1ibG9jay10YWJsZSB0aDpmaXJzdC1jaGlsZCwgJiAud3AtYmxvY2stdGFibGUgdGQ6Zmlyc3QtY2hpbGQgeyBwYWRkaW5nLWxlZnQ6IDE0cHg7IH0gJiAubGlnbmUtY29jaGUgeyBmb250LXNpemU6IDE3cHg7IH0gJiAucmwtZW4tYnJlZiwgJiAucmwtYS1yZXRlbmlyLCAmIC5ybC1pbnRyb2R1Y3Rpb24geyBwYWRkaW5nOiAyMnB4OyB9ICYgLnJsLWludHJvZHVjdGlvbiA+IHA6bm90KC5ybC1sYWJlbCksICYgLnJsLWludHJvZHVjdGlvbiAud3AtYmxvY2stZ3JvdXBfX2lubmVyLWNvbnRhaW5lciA+IHA6bm90KC5ybC1sYWJlbCkgeyBmb250LXNpemU6IDE3cHg7IH0gJiAucmwtYXZpcyB7IHBhZGRpbmc6IDk2cHggMjJweCAyMnB4OyB9ICYgLnJsLWF2aXMgLnJsLXBvcnRyYWl0IHsgdG9wOiAyMnB4OyBsZWZ0OiAyMnB4OyB9ICYgLnJsLWNoaWZmcmUtY2xlIHsgcGFkZGluZzogMjJweDsgfSAmIC5ybC1jaGlmZnJlLXRleHRlIHsgZm9udC1zaXplOiAxOXB4OyB9ICYgLnJsLWVuY2FydC1ndWlkZSB7IGdyaWQtdGVtcGxhdGUtY29sdW1uczogbWlubWF4KDAsIDFmcik7IHJvdy1nYXA6IDEycHg7IH0gJiAucmwtZW5jYXJ0LWd1aWRlIC53cC1ibG9jay1pbWFnZSB7IGdyaWQtcm93OiBhdXRvOyB9ICYgLnJsLWVuY2FydC1ndWlkZSA+IDpub3QoLndwLWJsb2NrLWltYWdlKSwgJiAucmwtZW5jYXJ0LWd1aWRlIC53cC1ibG9jay1ncm91cF9faW5uZXItY29udGFpbmVyID4gOm5vdCgud3AtYmxvY2staW1hZ2UpIHsgZ3JpZC1jb2x1bW46IDE7IH0gJiAucmwtZW5jYXJ0LWFwcGVsIHsgcGFkZGluZzogMjJweDsgfSAmIC5ybC1hdXRldXIgeyBwYWRkaW5nOiAxMDhweCAyMnB4IDIycHg7IH0gJiAucmwtYXV0ZXVyIC5ybC1wb3J0cmFpdCB7IHRvcDogMjJweDsgbGVmdDogMjJweDsgfSAmIC5ybC1naWYgeyB3aWR0aDogbWluKDEwMCUsIGNhbGMoNDQwcHggKiB2YXIoLS1ybC1yYXRpbywgMS43OCkgKyAxNnB4KSk7IHBhZGRpbmc6IDhweDsgYm9yZGVyLXJhZGl1czogMjJweDsgfSAmIC5ybC1naWYtY2FkcmUgeyBib3JkZXItcmFkaXVzOiAxNXB4OyB9ICYgLnJsLWdpZi1sZWdlbmRlIHsgbWFyZ2luOiAxMHB4IDRweCAycHg7IH0="
                     }
                 },
                 {
@@ -31244,7 +33353,7 @@
                         }
                     },
                     "custom_css": {
-                        "raw": "JiAuZS1jb246bm90KC5ybC1lbmNhcnQtbWlsaWV1IC5lLWNvbikgeyBwYWRkaW5nOiAwOyB9ICYgLmVsZW1lbnRvci13aWRnZXQtdGV4dC1lZGl0b3IgeyBtYXJnaW46IDA7IH0gJiA+IHAsICYgLmVsZW1lbnRvci13aWRnZXQtdGV4dC1lZGl0b3IgPiBwLCAmIC5lbGVtZW50b3Itd2lkZ2V0LXRleHQtZWRpdG9yID4gLmVsZW1lbnRvci13aWRnZXQtY29udGFpbmVyID4gcCwgJiAuZWxlbWVudG9yLXRleHQtZWRpdG9yID4gcCwgJiA+IHVsLCAmIC5lbGVtZW50b3Itd2lkZ2V0LXRleHQtZWRpdG9yID4gdWwsICYgLmVsZW1lbnRvci13aWRnZXQtdGV4dC1lZGl0b3IgPiAuZWxlbWVudG9yLXdpZGdldC1jb250YWluZXIgPiB1bCwgJiAuZWxlbWVudG9yLXRleHQtZWRpdG9yID4gdWwsICYgPiBvbCwgJiAuZWxlbWVudG9yLXdpZGdldC10ZXh0LWVkaXRvciA+IG9sLCAmIC5lbGVtZW50b3Itd2lkZ2V0LXRleHQtZWRpdG9yID4gLmVsZW1lbnRvci13aWRnZXQtY29udGFpbmVyID4gb2wsICYgLmVsZW1lbnRvci10ZXh0LWVkaXRvciA+IG9sIHsgbWFyZ2luOiAyMHB4IDAgMDsgZm9udC1mYW1pbHk6IEhhbmtlbiBHcm90ZXNrOyBmb250LXNpemU6IDE4cHg7IGxpbmUtaGVpZ2h0OiAxLjc7IGNvbG9yOiB2YXIoLS1ybC1wYXJhZ3JhcGhlLCB2YXIoLS1wYXJhZ3JhcGhlKSk7IH0gJiBzdHJvbmcgeyBjb2xvcjogdmFyKC0tcmwtdGV4dGUsIHZhcigtLWVuY3JlKSk7IH0gJiBhOm5vdCgucmwtZW5jYXJ0LW1pbGlldSBhKSB7IGNvbG9yOiAjNUIzQkVBOyB0ZXh0LWRlY29yYXRpb246IHVuZGVybGluZTsgfSAmID4gaDIsICYgLmVsZW1lbnRvci13aWRnZXQtdGV4dC1lZGl0b3IgPiBoMiwgJiAuZWxlbWVudG9yLXdpZGdldC10ZXh0LWVkaXRvciA+IC5lbGVtZW50b3Itd2lkZ2V0LWNvbnRhaW5lciA+IGgyLCAmIC5lbGVtZW50b3ItdGV4dC1lZGl0b3IgPiBoMiB7IG1hcmdpbjogNTJweCAwIDA7IGZvbnQtZmFtaWx5OiBCcmljb2xhZ2UgR3JvdGVzcXVlOyBmb250LXdlaWdodDogNjUwOyBmb250LXNpemU6IGNsYW1wKDI2cHgsIDIuNnZ3LCAzNHB4KTsgbGluZS1oZWlnaHQ6IDEuMTU7IGxldHRlci1zcGFjaW5nOiAtMC4wNGVtOyBjb2xvcjogdmFyKC0tcmwtdGV4dGUsIHZhcigtLWVuY3JlKSk7IHNjcm9sbC1tYXJnaW4tdG9wOiAxMTBweDsgfSAmID4gaDMsICYgLmVsZW1lbnRvci13aWRnZXQtdGV4dC1lZGl0b3IgPiBoMywgJiAuZWxlbWVudG9yLXdpZGdldC10ZXh0LWVkaXRvciA+IC5lbGVtZW50b3Itd2lkZ2V0LWNvbnRhaW5lciA+IGgzLCAmIC5lbGVtZW50b3ItdGV4dC1lZGl0b3IgPiBoMyB7IG1hcmdpbjogMzJweCAwIDA7IGZvbnQtZmFtaWx5OiBCcmljb2xhZ2UgR3JvdGVzcXVlOyBmb250LXdlaWdodDogNjUwOyBmb250LXNpemU6IDIzcHg7IGxldHRlci1zcGFjaW5nOiAtMC4wMzVlbTsgY29sb3I6IHZhcigtLXJsLXRleHRlLCB2YXIoLS1lbmNyZSkpOyB9ICYgaW1nOm5vdCgucmwtZW5jYXJ0LW1pbGlldSBpbWcpIHsgbWF4LXdpZHRoOiAxMDAlOyBoZWlnaHQ6IGF1dG87IGJvcmRlci1yYWRpdXM6IDIycHg7IH0gJiBmaWd1cmUgeyBtYXJnaW46IDMycHggMDsgfSAmIC53cC1ibG9jay1lbWJlZF9fd3JhcHBlciB7IHBvc2l0aW9uOiByZWxhdGl2ZTsgd2lkdGg6IDEwMCU7IGFzcGVjdC1yYXRpbzogMTYgLyA5OyBvdmVyZmxvdzogaGlkZGVuOyBib3JkZXItcmFkaXVzOiAyMnB4OyB9ICYgLndwLWJsb2NrLWVtYmVkX193cmFwcGVyOjpiZWZvcmUgeyBkaXNwbGF5OiBub25lOyB9ICYgLndwLWJsb2NrLWVtYmVkX193cmFwcGVyIGlmcmFtZSB7IHBvc2l0aW9uOiBhYnNvbHV0ZTsgdG9wOiAwOyBsZWZ0OiAwOyB3aWR0aDogMTAwJTsgaGVpZ2h0OiAxMDAlOyBib3JkZXI6IDA7IH0gJiAud3AtYmxvY2stZW1iZWQgLnZpZGVvLWZpY2hlIHsgYXNwZWN0LXJhdGlvOiAxNiAvIDk7IH0gJiBibG9ja3F1b3RlIHsgbWFyZ2luOiAyOHB4IDA7IHBhZGRpbmc6IDIwcHggMjRweDsgYm9yZGVyLWxlZnQ6IDNweCBzb2xpZCAjNUIzQkVBOyBib3JkZXItcmFkaXVzOiAwIDE4cHggMThweCAwOyBiYWNrZ3JvdW5kOiAjRURFNkZGOyBmb250LWZhbWlseTogQnJpY29sYWdlIEdyb3Rlc3F1ZTsgZm9udC1zaXplOiAyMHB4OyBsaW5lLWhlaWdodDogMS41OyBmb250LXdlaWdodDogNjAwOyB9ICYgLmNvY2hlLCAmIC5jaGlmZnJlLXZlcnJlIGltZywgJiAubGVjdHVyZS1jZW50cmUgaW1nIHsgYm9yZGVyLXJhZGl1czogMDsgfSAmIC53cC1ibG9jay10YWJsZSB7IG1hcmdpbjogMzJweCAwIDA7IG92ZXJmbG93LXg6IGF1dG87IGJvcmRlci1yYWRpdXM6IDE4cHg7IGJhY2tncm91bmQ6ICNGRkZGRkY7IGJveC1zaGFkb3c6IGluc2V0IDAgMCAwIDFweCByZ2JhKDE1LDE1LDE4LDAuMDgpLCAwIDE4cHggNDBweCAtMjhweCByZ2JhKDcwLDQwLDE1MCwwLjQ1KTsgfSAmIC53cC1ibG9jay10YWJsZTpmb2N1cy12aXNpYmxlIHsgb3V0bGluZTogM3B4IHNvbGlkICM1QjNCRUE7IG91dGxpbmUtb2Zmc2V0OiAzcHg7IH0gJiAud3AtYmxvY2stdGFibGUgdGFibGUgeyB3aWR0aDogMTAwJTsgbWluLXdpZHRoOiA1NDBweDsgbWFyZ2luOiAwOyBib3JkZXI6IDA7IGJvcmRlci1jb2xsYXBzZTogY29sbGFwc2U7IGZvbnQtZmFtaWx5OiBIYW5rZW4gR3JvdGVzazsgZm9udC1zaXplOiAxNnB4OyBsaW5lLWhlaWdodDogMS40NTsgdGV4dC1hbGlnbjogbGVmdDsgfSAmIC53cC1ibG9jay10YWJsZSB0aGVhZCB7IGJvcmRlcjogMDsgfSAmIC53cC1ibG9jay10YWJsZSB0aCB7IHBhZGRpbmc6IDE0cHggMThweDsgYm9yZGVyOiAwOyBiYWNrZ3JvdW5kOiAjNUIzQkVBOyBjb2xvcjogI0ZGRkZGRjsgZm9udC1mYW1pbHk6IEJyaWNvbGFnZSBHcm90ZXNxdWU7IGZvbnQtd2VpZ2h0OiA2NTA7IGZvbnQtc2l6ZTogMTZweDsgbGV0dGVyLXNwYWNpbmc6IC0wLjAyZW07IHZlcnRpY2FsLWFsaWduOiBib3R0b207IHRleHQtYWxpZ246IGxlZnQ7IH0gJiAud3AtYmxvY2stdGFibGUgdGQgeyBwYWRkaW5nOiAxNHB4IDE4cHg7IGJvcmRlcjogMDsgYm9yZGVyLXRvcDogMXB4IHNvbGlkIHJnYmEoMTUsMTUsMTgsMC4wNyk7IGNvbG9yOiB2YXIoLS1ybC1wYXJhZ3JhcGhlLCB2YXIoLS1wYXJhZ3JhcGhlKSk7IHZlcnRpY2FsLWFsaWduOiB0b3A7IH0gJiAud3AtYmxvY2stdGFibGUgdGJvZHkgdHI6bnRoLWNoaWxkKGV2ZW4pIHRkIHsgYmFja2dyb3VuZDogI0ZBRjlGNzsgfSAmIC53cC1ibG9jay10YWJsZSB0ZDpmaXJzdC1jaGlsZCB7IGNvbG9yOiB2YXIoLS1ybC10ZXh0ZSwgdmFyKC0tZW5jcmUpKTsgZm9udC13ZWlnaHQ6IDYwMDsgfSAmIC53cC1ibG9jay10YWJsZSBmaWdjYXB0aW9uIHsgbWFyZ2luOiAwOyBwYWRkaW5nOiAxMnB4IDE4cHggMTRweDsgYm9yZGVyLXRvcDogMXB4IHNvbGlkIHJnYmEoMTUsMTUsMTgsMC4wNyk7IGZvbnQtc2l6ZTogMTRweDsgdGV4dC1hbGlnbjogbGVmdDsgY29sb3I6IHZhcigtLXJsLWxlZ2VuZGUsIHZhcigtLWxlZ2VuZGUpKTsgfSAmIC53cC1ibG9jay10YWJsZS5pcy1zdHlsZS1jb21wYXJhdGlmIHRoIHsgYmFja2dyb3VuZDogI0YzRjBGQTsgY29sb3I6IHZhcigtLXJsLXRleHRlLCB2YXIoLS1lbmNyZSkpOyB9ICYgLndwLWJsb2NrLXRhYmxlLmlzLXN0eWxlLWNvbXBhcmF0aWYgdGg6bGFzdC1jaGlsZCB7IGJhY2tncm91bmQ6ICM1QjNCRUE7IGNvbG9yOiAjRkZGRkZGOyB9ICYgLndwLWJsb2NrLXRhYmxlLmlzLXN0eWxlLWNvbXBhcmF0aWYgdGQ6bGFzdC1jaGlsZCB7IGJhY2tncm91bmQ6ICNFREU2RkY7IGNvbG9yOiAjMkExQTgwOyBmb250LXdlaWdodDogNjAwOyB9ICYgLndwLWJsb2NrLXRhYmxlLmlzLXN0eWxlLWNvbXBhcmF0aWYgdGJvZHkgdHI6bnRoLWNoaWxkKGV2ZW4pIHRkOmxhc3QtY2hpbGQgeyBiYWNrZ3JvdW5kOiAjRTREQUZGOyB9ICYgLmxpc3RlLWNvY2hlcyB7IG1hcmdpbjogMThweCAwIDA7IHBhZGRpbmc6IDA7IGxpc3Qtc3R5bGU6IG5vbmU7IH0gJiAubGlnbmUtY29jaGUgeyBmb250LWZhbWlseTogSGFua2VuIEdyb3Rlc2s7IGZvbnQtc2l6ZTogMThweDsgbGluZS1oZWlnaHQ6IDEuNjsgY29sb3I6IHZhcigtLXJsLXBhcmFncmFwaGUsIHZhcigtLXBhcmFncmFwaGUpKTsgfSAmIC5pcy1zdHlsZS1ldGFwZXMgeyBjb3VudGVyLXJlc2V0OiBybC1ldGFwZTsgZGlzcGxheTogZ3JpZDsgZ2FwOiAxNHB4OyBtYXJnaW46IDIycHggMCAwOyBwYWRkaW5nOiAwOyBsaXN0LXN0eWxlOiBub25lOyB9ICYgLmlzLXN0eWxlLWV0YXBlcyA+IGxpIHsgY291bnRlci1pbmNyZW1lbnQ6IHJsLWV0YXBlOyBwb3NpdGlvbjogcmVsYXRpdmU7IHBhZGRpbmctbGVmdDogNDhweDsgbWluLWhlaWdodDogMzRweDsgfSAmIC5pcy1zdHlsZS1ldGFwZXMgPiBsaTo6YmVmb3JlIHsgY29udGVudDogY291bnRlcihybC1ldGFwZSk7IHBvc2l0aW9uOiBhYnNvbHV0ZTsgdG9wOiAwOyBsZWZ0OiAwOyB3aWR0aDogMzRweDsgaGVpZ2h0OiAzNHB4OyBib3JkZXItcmFkaXVzOiA1MCU7IGRpc3BsYXk6IGZsZXg7IGFsaWduLWl0ZW1zOiBjZW50ZXI7IGp1c3RpZnktY29udGVudDogY2VudGVyOyBmb250LWZhbWlseTogQnJpY29sYWdlIEdyb3Rlc3F1ZTsgZm9udC13ZWlnaHQ6IDY1MDsgZm9udC1zaXplOiAxNnB4OyBsaW5lLWhlaWdodDogMTsgY29sb3I6ICNGRkZGRkY7IGJhY2tncm91bmQ6IGxpbmVhci1ncmFkaWVudCgxNDBkZWcsICM1QjNCRUEsICM4RTRERTYpOyB9ICYgLnJsLWVuLWJyZWYsICYgLnJsLWEtcmV0ZW5pciB7IG1hcmdpbjogMzJweCAwIDA7IHBhZGRpbmc6IDI4cHg7IGJvcmRlci1yYWRpdXM6IDI2cHg7IGJhY2tncm91bmQ6IGxpbmVhci1ncmFkaWVudCgxMjBkZWcsIHJnYmEoMjM3LDIzMCwyNTUsMC45NSksIHJnYmEoMjU1LDI0MSwyMzEsMC45KSk7IH0gJiAucmwtYS1yZXRlbmlyIHsgYmFja2dyb3VuZDogbGluZWFyLWdyYWRpZW50KDEyMGRlZywgcmdiYSgyNTUsMjQxLDIzMSwwLjk1KSwgcmdiYSgyNTUsMjI0LDIwNiwwLjcpKTsgfSAmIC5ybC1sYWJlbCB7IG1hcmdpbjogMDsgZm9udC1mYW1pbHk6IEhhbmtlbiBHcm90ZXNrOyBmb250LXNpemU6IDEycHg7IGxpbmUtaGVpZ2h0OiAxLjM7IGZvbnQtd2VpZ2h0OiA3MDA7IGxldHRlci1zcGFjaW5nOiAwLjE2ZW07IHRleHQtdHJhbnNmb3JtOiB1cHBlcmNhc2U7IGNvbG9yOiAjNUIzQkVBOyB9ICYgLnJsLWEtcmV0ZW5pciBoMiwgJiAucmwtZW5jYXJ0LWd1aWRlIGgzIHsgbWFyZ2luOiAwOyBmb250LWZhbWlseTogQnJpY29sYWdlIEdyb3Rlc3F1ZTsgZm9udC13ZWlnaHQ6IDY1MDsgZm9udC1zaXplOiAyM3B4OyBsaW5lLWhlaWdodDogMS4yOyBsZXR0ZXItc3BhY2luZzogLTAuMDM1ZW07IGNvbG9yOiB2YXIoLS1ybC10ZXh0ZSwgdmFyKC0tZW5jcmUpKTsgfSAmIC5ybC1lbi1icmVmIC5saXN0ZS1jb2NoZXMsICYgLnJsLWEtcmV0ZW5pciAubGlzdGUtY29jaGVzIHsgbWFyZ2luLXRvcDogMTRweDsgfSAmIC5ybC1lbi1icmVmIC5saWduZS1jb2NoZSwgJiAucmwtYS1yZXRlbmlyIC5saWduZS1jb2NoZSB7IGZvbnQtc2l6ZTogMTdweDsgfSAmIC5ybC1hdmlzIHsgcG9zaXRpb246IHJlbGF0aXZlOyBtYXJnaW46IDIycHggMCAwOyBwYWRkaW5nOiAyOHB4IDI4cHggMjhweCAxMDJweDsgYm9yZGVyLXJhZGl1czogMjZweDsgYmFja2dyb3VuZDogI0ZGRkZGRjsgYm94LXNoYWRvdzogMCAxcHggMnB4IHJnYmEoMTUsMTUsMTgsMC4wNSksIDAgMjRweCA1MHB4IC0zMHB4IHJnYmEoNzYsNDgsMTcwLDAuMyk7IH0gJiAucmwtYXZpcyAucmwtcG9ydHJhaXQgeyBwb3NpdGlvbjogYWJzb2x1dGU7IHRvcDogMjhweDsgbGVmdDogMjhweDsgd2lkdGg6IDU2cHg7IGhlaWdodDogNTZweDsgbWFyZ2luOiAwOyB9ICYgLnJsLWF2aXMgLnJsLXBvcnRyYWl0IGltZywgJiAucmwtYXV0ZXVyIC5ybC1wb3J0cmFpdCBpbWcgeyB3aWR0aDogMTAwJTsgaGVpZ2h0OiAxMDAlOyBvYmplY3QtZml0OiBjb3ZlcjsgYm9yZGVyLXJhZGl1czogNTAlOyBib3gtc2hhZG93OiAwIDAgMCAzcHggI0ZGRkZGRiwgMCAxMHB4IDIwcHggLTEwcHggcmdiYSg3MCw0MCwxNTAsMC41KTsgfSAmIC5ybC1hdmlzIHAgeyBtYXJnaW46IDA7IGZvbnQtZmFtaWx5OiBIYW5rZW4gR3JvdGVzazsgZm9udC1zaXplOiAxN3B4OyBsaW5lLWhlaWdodDogMS42NTsgY29sb3I6IHZhcigtLXJsLXBhcmFncmFwaGUsIHZhcigtLXBhcmFncmFwaGUpKTsgfSAmIC5ybC1hdmlzIHAgKyBwIHsgbWFyZ2luLXRvcDogOHB4OyBmb250LXNpemU6IDE1cHg7IH0gJiAucmwtYXZpcyBzdHJvbmcsICYgLnJsLWF1dGV1ciBzdHJvbmcgeyBjb2xvcjogdmFyKC0tcmwtdGV4dGUsIHZhcigtLWVuY3JlKSk7IH0gJiAucmwtY2hpZmZyZS1jbGUgeyBkaXNwbGF5OiBmbGV4OyBmbGV4LWRpcmVjdGlvbjogcm93OyBmbGV4LXdyYXA6IHdyYXA7IGFsaWduLWl0ZW1zOiBjZW50ZXI7IGNvbHVtbi1nYXA6IDI0cHg7IHJvdy1nYXA6IDZweDsgbWFyZ2luOiAzMnB4IDAgMDsgcGFkZGluZzogMjRweCAyOHB4OyBib3JkZXItcmFkaXVzOiAyNnB4OyBiYWNrZ3JvdW5kOiBsaW5lYXItZ3JhZGllbnQoMTIwZGVnLCByZ2JhKDIzNywyMzAsMjU1LDAuOSksIHJnYmEoMjU1LDI0MSwyMzEsMC44NSkpOyB9ICYgLnJsLWNoaWZmcmUtY2xlID4gKiwgJiAucmwtY2hpZmZyZS1jbGUgPiAud3AtYmxvY2stZ3JvdXBfX2lubmVyLWNvbnRhaW5lciA+ICogeyBtYXJnaW46IDA7IH0gJiAucmwtY2hpZmZyZS1jbGUgLndwLWJsb2NrLWdyb3VwX19pbm5lci1jb250YWluZXIgeyBkaXNwbGF5OiBjb250ZW50czsgfSAmIC5ybC1jaGlmZnJlLXZhbGV1ciB7IGZsZXgtc2hyaW5rOiAwOyBtYXJnaW46IDA7IH0gJiAucmwtY2hpZmZyZS12YWxldXIgLmNoaWZmcmUtdmVycmUgaW1nIHsgaGVpZ2h0OiA2NHB4OyB9ICYgLnJsLWNoaWZmcmUtdGV4dGUgeyBmbGV4OiAxIDEgMjYwcHg7IGZvbnQtZmFtaWx5OiBCcmljb2xhZ2UgR3JvdGVzcXVlOyBmb250LXdlaWdodDogNjUwOyBmb250LXNpemU6IDIxcHg7IGxpbmUtaGVpZ2h0OiAxLjM7IGxldHRlci1zcGFjaW5nOiAtMC4wMmVtOyBjb2xvcjogdmFyKC0tcmwtdGV4dGUsIHZhcigtLWVuY3JlKSk7IH0gJiAucmwtc291cmNlIHsgZmxleDogMSAxIDEwMCU7IHBhZGRpbmctbGVmdDogMDsgZm9udC1mYW1pbHk6IEhhbmtlbiBHcm90ZXNrOyBmb250LXNpemU6IDE1cHg7IGNvbG9yOiB2YXIoLS1ybC1sZWdlbmRlLCB2YXIoLS1sZWdlbmRlKSk7IH0gJiAucmwtZW5jYXJ0LWd1aWRlIHsgZGlzcGxheTogZ3JpZDsgZ3JpZC10ZW1wbGF0ZS1jb2x1bW5zOiAxODBweCBtaW5tYXgoMCwgMWZyKTsgY29sdW1uLWdhcDogMjJweDsgYWxpZ24taXRlbXM6IGNlbnRlcjsgbWFyZ2luOiAzMnB4IDAgMDsgcGFkZGluZzogMTZweDsgYm9yZGVyLXJhZGl1czogMjZweDsgYmFja2dyb3VuZDogI0ZGRkZGRjsgYm94LXNoYWRvdzogMCAxcHggMnB4IHJnYmEoMTUsMTUsMTgsMC4wNSksIDAgMjRweCA1MHB4IC0zMHB4IHJnYmEoNzYsNDgsMTcwLDAuMyk7IH0gJiAucmwtZW5jYXJ0LWd1aWRlIC53cC1ibG9jay1ncm91cF9faW5uZXItY29udGFpbmVyIHsgZGlzcGxheTogY29udGVudHM7IH0gJiAucmwtZW5jYXJ0LWd1aWRlIC53cC1ibG9jay1pbWFnZSB7IGdyaWQtcm93OiAxIC8gc3BhbiA0OyBtYXJnaW46IDA7IGFzcGVjdC1yYXRpbzogNCAvIDM7IG92ZXJmbG93OiBoaWRkZW47IGJvcmRlci1yYWRpdXM6IDE4cHg7IH0gJiAucmwtZW5jYXJ0LWd1aWRlIC53cC1ibG9jay1pbWFnZSBpbWcgeyB3aWR0aDogMTAwJTsgaGVpZ2h0OiAxMDAlOyBvYmplY3QtZml0OiBjb3ZlcjsgYm9yZGVyLXJhZGl1czogMDsgfSAmIC5ybC1lbmNhcnQtZ3VpZGUgPiA6bm90KC53cC1ibG9jay1pbWFnZSksICYgLnJsLWVuY2FydC1ndWlkZSAud3AtYmxvY2stZ3JvdXBfX2lubmVyLWNvbnRhaW5lciA+IDpub3QoLndwLWJsb2NrLWltYWdlKSB7IGdyaWQtY29sdW1uOiAyOyBtYXJnaW46IDA7IH0gJiAucmwtZW5jYXJ0LWd1aWRlIGgzIHsgbWFyZ2luOiA2cHggMCAxMnB4OyBmb250LXNpemU6IDIycHg7IH0gJiAucmwtZW5jYXJ0LWFwcGVsIHsgZGlzcGxheTogZmxleDsgZmxleC1kaXJlY3Rpb246IHJvdzsgZmxleC13cmFwOiB3cmFwOyBhbGlnbi1pdGVtczogY2VudGVyOyBqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWJldHdlZW47IGNvbHVtbi1nYXA6IDIycHg7IHJvdy1nYXA6IDE0cHg7IG1hcmdpbjogMzJweCAwIDA7IHBhZGRpbmc6IDI0cHggMjhweDsgYm9yZGVyLXJhZGl1czogMjZweDsgYmFja2dyb3VuZDogbGluZWFyLWdyYWRpZW50KDE2MGRlZywgIzFDMTczMCwgIzBGMEYxMik7IH0gJiAucmwtZW5jYXJ0LWFwcGVsIC53cC1ibG9jay1ncm91cF9faW5uZXItY29udGFpbmVyIHsgZGlzcGxheTogY29udGVudHM7IH0gJiAucmwtZW5jYXJ0LWFwcGVsIHAgeyBmbGV4OiAxIDEgMzIwcHg7IG1hcmdpbjogMDsgZm9udC1mYW1pbHk6IEhhbmtlbiBHcm90ZXNrOyBmb250LXNpemU6IDE1cHg7IGxpbmUtaGVpZ2h0OiAxLjU7IGNvbG9yOiAjQzlDM0RFOyB9ICYgLnJsLWVuY2FydC1hcHBlbCBwIHN0cm9uZyB7IGRpc3BsYXk6IGJsb2NrOyBtYXJnaW4tYm90dG9tOiA2cHg7IGZvbnQtZmFtaWx5OiBCcmljb2xhZ2UgR3JvdGVzcXVlOyBmb250LXdlaWdodDogNjUwOyBmb250LXNpemU6IDIzcHg7IGxpbmUtaGVpZ2h0OiAxLjI7IGxldHRlci1zcGFjaW5nOiAtMC4wMzVlbTsgY29sb3I6ICNGRkZGRkY7IH0gJiAud3AtYmxvY2stYnV0dG9ucyB7IGRpc3BsYXk6IGZsZXg7IGZsZXgtd3JhcDogd3JhcDsgZ2FwOiAxMnB4OyBtYXJnaW46IDA7IH0gJiAud3AtYmxvY2stYnV0dG9uX19saW5rIHsgZGlzcGxheTogaW5saW5lLWZsZXg7IGFsaWduLWl0ZW1zOiBjZW50ZXI7IGp1c3RpZnktY29udGVudDogY2VudGVyOyBnYXA6IDEwcHg7IG1pbi1oZWlnaHQ6IDQ4cHg7IHBhZGRpbmc6IDAgMjJweDsgYm9yZGVyOiAwOyBib3JkZXItcmFkaXVzOiA5OTlweDsgZm9udC1mYW1pbHk6IEhhbmtlbiBHcm90ZXNrOyBmb250LXNpemU6IDE1cHg7IGxpbmUtaGVpZ2h0OiAxOyBmb250LXdlaWdodDogNjAwOyB0ZXh0LWRlY29yYXRpb246IG5vbmU7IGNvbG9yOiAjMEYwRjEyOyBiYWNrZ3JvdW5kOiAjRkZGRkZGOyBib3gtc2hhZG93OiBpbnNldCAwIDFweCAwICNGRkZGRkYsIGluc2V0IDAgMCAwIDFweCByZ2JhKDE1LDE1LDE4LDAuMSksIDAgMTBweCAyNHB4IC0xNHB4IHJnYmEoNzAsNDAsMTUwLDAuNDUpOyB9ICYgLndwLWJsb2NrLWJ1dHRvbl9fbGluazpob3ZlciB7IGNvbG9yOiAjRkZGRkZGOyBiYWNrZ3JvdW5kOiAjNUIzQkVBOyB9ICYgLnJsLWVuY2FydC1hcHBlbCAud3AtYmxvY2stYnV0dG9uX19saW5rIHsgY29sb3I6ICMwRjBGMTI7IGJhY2tncm91bmQ6IGxpbmVhci1ncmFkaWVudCgxMzVkZWcsICNGRkQxQkYsICNGRjhBNUIpOyBib3gtc2hhZG93OiAwIDEycHggMjhweCAtMTRweCByZ2JhKDI1NSwxMzgsOTEsMC44KTsgfSAmIC5ybC1lbmNhcnQtYXBwZWwgLndwLWJsb2NrLWJ1dHRvbl9fbGluazpob3ZlciB7IGNvbG9yOiAjMEYwRjEyOyBiYWNrZ3JvdW5kOiAjRkZGRkZGOyB9ICYgLnJsLWZhcSB7IGRpc3BsYXk6IGdyaWQ7IGdhcDogMTBweDsgbWFyZ2luOiAyMnB4IDAgMDsgfSAmIC5ybC1mYXEgLndwLWJsb2NrLWdyb3VwX19pbm5lci1jb250YWluZXIgeyBkaXNwbGF5OiBncmlkOyBnYXA6IDEwcHg7IH0gJiAud3AtYmxvY2stZGV0YWlscyB7IG1hcmdpbjogMDsgYm9yZGVyLXJhZGl1czogMThweDsgYmFja2dyb3VuZDogI0ZGRkZGRjsgYm94LXNoYWRvdzogaW5zZXQgMCAwIDAgMXB4IHJnYmEoMTUsMTUsMTgsMC4wOCk7IH0gJiAud3AtYmxvY2stZGV0YWlscyBzdW1tYXJ5IHsgbGlzdC1zdHlsZTogbm9uZTsgZGlzcGxheTogZmxleDsganVzdGlmeS1jb250ZW50OiBzcGFjZS1iZXR3ZWVuOyBhbGlnbi1pdGVtczogY2VudGVyOyBnYXA6IDE2cHg7IG1pbi1oZWlnaHQ6IDU2cHg7IHBhZGRpbmc6IDE0cHggMjBweDsgY3Vyc29yOiBwb2ludGVyOyBmb250LWZhbWlseTogQnJpY29sYWdlIEdyb3Rlc3F1ZTsgZm9udC13ZWlnaHQ6IDY1MDsgZm9udC1zaXplOiAxOHB4OyBsaW5lLWhlaWdodDogMS4zOyBsZXR0ZXItc3BhY2luZzogLTAuMDJlbTsgY29sb3I6IHZhcigtLXJsLXRleHRlLCB2YXIoLS1lbmNyZSkpOyB9ICYgLndwLWJsb2NrLWRldGFpbHMgc3VtbWFyeTo6LXdlYmtpdC1kZXRhaWxzLW1hcmtlciB7IGRpc3BsYXk6IG5vbmU7IH0gJiAud3AtYmxvY2stZGV0YWlscyBzdW1tYXJ5OjphZnRlciB7IGNvbnRlbnQ6ICcrJzsgZmxleC1zaHJpbms6IDA7IHdpZHRoOiAzMHB4OyBoZWlnaHQ6IDMwcHg7IGJvcmRlci1yYWRpdXM6IDUwJTsgZGlzcGxheTogaW5saW5lLWZsZXg7IGFsaWduLWl0ZW1zOiBjZW50ZXI7IGp1c3RpZnktY29udGVudDogY2VudGVyOyBmb250LXNpemU6IDIwcHg7IGxpbmUtaGVpZ2h0OiAxOyBjb2xvcjogI0ZGRkZGRjsgYmFja2dyb3VuZDogbGluZWFyLWdyYWRpZW50KDE0MGRlZywgIzVCM0JFQSwgIzhFNERFNik7IH0gJiAud3AtYmxvY2stZGV0YWlsc1tvcGVuXSBzdW1tYXJ5OjphZnRlciB7IGNvbnRlbnQ6ICfiiJInOyB9ICYgLndwLWJsb2NrLWRldGFpbHMgPiA6bm90KHN1bW1hcnkpIHsgbWFyZ2luOiAwOyBwYWRkaW5nOiAwIDIwcHggMThweDsgZm9udC1mYW1pbHk6IEhhbmtlbiBHcm90ZXNrOyBmb250LXNpemU6IDE3cHg7IGxpbmUtaGVpZ2h0OiAxLjY1OyBjb2xvcjogdmFyKC0tcmwtcGFyYWdyYXBoZSwgdmFyKC0tcGFyYWdyYXBoZSkpOyB9ICYgLndwLWJsb2NrLWRldGFpbHMgPiB1bCwgJiAud3AtYmxvY2stZGV0YWlscyA+IG9sIHsgcGFkZGluZy1sZWZ0OiA0NnB4OyB9ICYgLndwLWJsb2NrLWRldGFpbHMgbGkgKyBsaSB7IG1hcmdpbi10b3A6IDRweDsgfSAmIC5ybC1hdXRldXIgeyBwb3NpdGlvbjogcmVsYXRpdmU7IG1hcmdpbjogNDBweCAwIDA7IHBhZGRpbmc6IDI0cHggMjRweCAyNHB4IDExNnB4OyBtaW4taGVpZ2h0OiAxMjBweDsgYm9yZGVyLXJhZGl1czogMjZweDsgYmFja2dyb3VuZDogI0ZGRkZGRjsgYm94LXNoYWRvdzogaW5zZXQgMCAwIDAgMXB4IHJnYmEoMTUsMTUsMTgsMC4wOCk7IH0gJiAucmwtYXV0ZXVyIC5ybC1wb3J0cmFpdCB7IHBvc2l0aW9uOiBhYnNvbHV0ZTsgdG9wOiAyNHB4OyBsZWZ0OiAyNHB4OyB3aWR0aDogNzJweDsgaGVpZ2h0OiA3MnB4OyBtYXJnaW46IDA7IH0gJiAucmwtYXV0ZXVyIHAgeyBtYXJnaW46IDA7IGZvbnQtZmFtaWx5OiBIYW5rZW4gR3JvdGVzazsgZm9udC1zaXplOiAxNXB4OyBsaW5lLWhlaWdodDogMS41NTsgY29sb3I6IHZhcigtLXJsLXBhcmFncmFwaGUsIHZhcigtLXBhcmFncmFwaGUpKTsgfSAmIC5ybC1hdXRldXIgLnJsLWxhYmVsIHsgY29sb3I6IHZhcigtLXJsLWxlZ2VuZGUsIHZhcigtLWxlZ2VuZGUpKTsgfSAmIC5ybC1hdXRldXIgLnJsLW5vbSB7IG1hcmdpbi10b3A6IDRweDsgZm9udC1mYW1pbHk6IEJyaWNvbGFnZSBHcm90ZXNxdWU7IGZvbnQtd2VpZ2h0OiA2NTA7IGZvbnQtc2l6ZTogMjNweDsgbGluZS1oZWlnaHQ6IDEuMjsgbGV0dGVyLXNwYWNpbmc6IC0wLjAzNWVtOyBjb2xvcjogdmFyKC0tcmwtdGV4dGUsIHZhcigtLWVuY3JlKSk7IH0gJiAucmwtYXV0ZXVyIC5ybC1iaW8geyBtYXJnaW4tdG9wOiA4cHg7IH0gJiAucmwtYXV0ZXVyIGEgeyBkaXNwbGF5OiBpbmxpbmUtZmxleDsgbWluLWhlaWdodDogMzJweDsgYWxpZ24taXRlbXM6IGNlbnRlcjsgbWFyZ2luLXRvcDogNnB4OyBmb250LXdlaWdodDogNjAwOyB9ICYgLndwLWJsb2NrLWVtYmVkLCAmIC53cC1ibG9jay12aWRlbyB7IG1hcmdpbjogMzJweCAwIDA7IH0gJiAud3AtYmxvY2stZW1iZWRfX3dyYXBwZXI6OmJlZm9yZSB7IGRpc3BsYXk6IG5vbmU7IH0gJiAud3AtYmxvY2stZW1iZWQgLnZpZGVvLWZpY2hlIHsgLS1ybC1yYXlvbi1waG90bzogMjJweDsgfSAmIC53cC1ibG9jay1lbWJlZCBpZnJhbWUgeyB3aWR0aDogMTAwJTsgaGVpZ2h0OiBhdXRvOyBhc3BlY3QtcmF0aW86IDE2IC8gOTsgYm9yZGVyOiAwOyBib3JkZXItcmFkaXVzOiAyMnB4OyB9ICYgLndwLWJsb2NrLXZpZGVvIHZpZGVvIHsgd2lkdGg6IDEwMCU7IGJvcmRlci1yYWRpdXM6IDIycHg7IH0gJiAud3AtYmxvY2stZW1iZWQgZmlnY2FwdGlvbiwgJiAud3AtYmxvY2stdmlkZW8gZmlnY2FwdGlvbiwgJiAud3AtYmxvY2staW1hZ2UgZmlnY2FwdGlvbiB7IG1hcmdpbjogMTBweCAwIDA7IGZvbnQtc2l6ZTogMTRweDsgZm9udC1zdHlsZTogbm9ybWFsOyB0ZXh0LWFsaWduOiBsZWZ0OyBjb2xvcjogdmFyKC0tcmwtbGVnZW5kZSwgdmFyKC0tbGVnZW5kZSkpOyB9ICYgLnJsLWdpZiB7IHdpZHRoOiBtaW4oMTAwJSwgY2FsYyg1NjBweCAqIHZhcigtLXJsLXJhdGlvLCAxLjc4KSArIDI0cHgpKTsgbWFyZ2luOiAzMnB4IGF1dG8gMDsgcGFkZGluZzogMTJweDsgYm9yZGVyLXJhZGl1czogMjZweDsgYmFja2dyb3VuZC1jb2xvcjogI0ZGRkZGRjsgYm94LXNoYWRvdzogMCAxcHggMnB4IHJnYmEoMTUsMTUsMTgsMC4wNSksIDAgMjRweCA1MHB4IC0zMHB4IHJnYmEoNzYsNDgsMTcwLDAuMyk7IH0gJiAucmwtZ2lmLWNhZHJlIHsgcG9zaXRpb246IHJlbGF0aXZlOyBvdmVyZmxvdzogaGlkZGVuOyBib3JkZXItcmFkaXVzOiAxNnB4OyBiYWNrZ3JvdW5kLWNvbG9yOiAjRURFNkZGOyB9ICYgLnJsLWdpZi12aWRlbyB7IGRpc3BsYXk6IGJsb2NrOyB3aWR0aDogMTAwJTsgaGVpZ2h0OiAxMDAlOyBvYmplY3QtZml0OiBjb3ZlcjsgfSAmIC5ybC1naWYtcGFzdGlsbGUgeyBwb3NpdGlvbjogYWJzb2x1dGU7IHRvcDogMTJweDsgbGVmdDogMTJweDsgcGFkZGluZzogNXB4IDlweDsgYm9yZGVyLXJhZGl1czogOTk5cHg7IGJhY2tncm91bmQtY29sb3I6IHJnYmEoMTUsMTAsMzYsMC43NCk7IGZvbnQtZmFtaWx5OiBIYW5rZW4gR3JvdGVzazsgZm9udC1zaXplOiAxMnB4OyBsaW5lLWhlaWdodDogMTsgZm9udC13ZWlnaHQ6IDgwMDsgbGV0dGVyLXNwYWNpbmc6IDAuMWVtOyBjb2xvcjogI0ZGRkZGRjsgfSAmIC5ybC1naWYtYm91dG9uIHsgcG9zaXRpb246IGFic29sdXRlOyByaWdodDogMTJweDsgYm90dG9tOiAxMnB4OyBkaXNwbGF5OiBmbGV4OyBhbGlnbi1pdGVtczogY2VudGVyOyBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjsgZ2FwOiA0cHg7IHdpZHRoOiA0MHB4OyBoZWlnaHQ6IDQwcHg7IG1pbi1oZWlnaHQ6IDA7IG1hcmdpbjogMDsgcGFkZGluZzogMDsgYm9yZGVyOiAwOyBib3JkZXItcmFkaXVzOiA1MCU7IGJhY2tncm91bmQtY29sb3I6IHJnYmEoMTUsMTAsMzYsMC43NCk7IGN1cnNvcjogcG9pbnRlcjsgdHJhbnNpdGlvbjogb3BhY2l0eSAwLjJzIGVhc2U7IH0gJiAucmwtZ2lmLWJvdXRvbjo6YmVmb3JlLCAmIC5ybC1naWYtYm91dG9uOjphZnRlciB7IGNvbnRlbnQ6ICcnOyBkaXNwbGF5OiBibG9jazsgd2lkdGg6IDRweDsgaGVpZ2h0OiAxNHB4OyBib3JkZXItcmFkaXVzOiAycHg7IGJhY2tncm91bmQtY29sb3I6ICNGRkZGRkY7IH0gJiAucmwtZ2lmLWJvdXRvblthcmlhLXByZXNzZWQ9InRydWUiXTo6YmVmb3JlIHsgd2lkdGg6IDA7IGhlaWdodDogMDsgbWFyZ2luLWxlZnQ6IDRweDsgYm9yZGVyLXJhZGl1czogMDsgYmFja2dyb3VuZC1jb2xvcjogdHJhbnNwYXJlbnQ7IGJvcmRlci1zdHlsZTogc29saWQ7IGJvcmRlci13aWR0aDogOHB4IDAgOHB4IDEzcHg7IGJvcmRlci1jb2xvcjogdHJhbnNwYXJlbnQgdHJhbnNwYXJlbnQgdHJhbnNwYXJlbnQgI0ZGRkZGRjsgfSAmIC5ybC1naWYtYm91dG9uW2FyaWEtcHJlc3NlZD0idHJ1ZSJdOjphZnRlciB7IGRpc3BsYXk6IG5vbmU7IH0gJiAucmwtZ2lmLWJvdXRvbjpmb2N1cy12aXNpYmxlIHsgb3V0bGluZTogM3B4IHNvbGlkICNDNEI1RkQ7IG91dGxpbmUtb2Zmc2V0OiAzcHg7IH0gJiAucmwtZ2lmLWxlZ2VuZGUgeyBkaXNwbGF5OiBmbGV4OyBmbGV4LXdyYXA6IHdyYXA7IGp1c3RpZnktY29udGVudDogc3BhY2UtYmV0d2VlbjsgZ2FwOiA0cHggMTJweDsgbWFyZ2luOiAxMnB4IDZweCAycHg7IGZvbnQtZmFtaWx5OiBIYW5rZW4gR3JvdGVzazsgZm9udC1zaXplOiAxNHB4OyBsaW5lLWhlaWdodDogMS40NTsgZm9udC1zdHlsZTogbm9ybWFsOyB0ZXh0LWFsaWduOiBsZWZ0OyBjb2xvcjogdmFyKC0tcmwtbGVnZW5kZSwgdmFyKC0tbGVnZW5kZSkpOyB9ICYgLnJsLWdpZi1jcmVkaXQgeyBmbGV4OiBub25lOyBtYXJnaW4tbGVmdDogYXV0bzsgZm9udC1zaXplOiAxMnB4OyBsZXR0ZXItc3BhY2luZzogMC4wNGVtOyB9ICYgLnJsLWF1dGV1ciAucmwtbm9tOmhhcyg+IGFbaHJlZio9ImxpbmtlZGluLmNvbSJdKSB7IGRpc3BsYXk6IGZsZXg7IGZsZXgtd3JhcDogd3JhcDsgYWxpZ24taXRlbXM6IGNlbnRlcjsgZ2FwOiAycHggOHB4OyB9ICYgLnJsLWF1dGV1ciBhW2hyZWYqPSJsaW5rZWRpbi5jb20iXSB7IGRpc3BsYXk6IGlubGluZS1mbGV4OyBhbGlnbi1pdGVtczogY2VudGVyOyBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjsgd2lkdGg6IDMycHg7IGhlaWdodDogMzJweDsgbWluLWhlaWdodDogMDsgbWFyZ2luOiAwOyB2ZXJ0aWNhbC1hbGlnbjogbWlkZGxlOyBib3JkZXItcmFkaXVzOiA4cHg7IG92ZXJmbG93OiBoaWRkZW47IGZvbnQtc2l6ZTogMDsgbGluZS1oZWlnaHQ6IDA7IGNvbG9yOiB0cmFuc3BhcmVudDsgdGV4dC1kZWNvcmF0aW9uOiBub25lOyB9ICYgLnJsLWF1dGV1ciBhW2hyZWYqPSJsaW5rZWRpbi5jb20iXTo6YmVmb3JlIHsgY29udGVudDogJ2luJzsgZGlzcGxheTogZmxleDsgYWxpZ24taXRlbXM6IGNlbnRlcjsganVzdGlmeS1jb250ZW50OiBjZW50ZXI7IGZsZXg6IG5vbmU7IHdpZHRoOiAyMnB4OyBoZWlnaHQ6IDIycHg7IGJvcmRlci1yYWRpdXM6IDVweDsgYmFja2dyb3VuZC1jb2xvcjogIzBBNjZDMjsgZm9udC1mYW1pbHk6IEhhbmtlbiBHcm90ZXNrOyBmb250LXNpemU6IDEzcHg7IGxpbmUtaGVpZ2h0OiAxOyBmb250LXdlaWdodDogODAwOyBsZXR0ZXItc3BhY2luZzogLTAuNXB4OyBjb2xvcjogI0ZGRkZGRjsgfSAmIC5ybC1hdXRldXIgYVtocmVmKj0ibGlua2VkaW4uY29tIl06aG92ZXI6OmJlZm9yZSB7IGJhY2tncm91bmQtY29sb3I6ICM0QTJCQjg7IH0gJiAucmwtYXV0ZXVyIGFbaHJlZio9ImxpbmtlZGluLmNvbSJdOmZvY3VzLXZpc2libGUgeyBvdXRsaW5lOiAzcHggc29saWQgIzVCM0JFQTsgb3V0bGluZS1vZmZzZXQ6IDJweDsgfSBAbWVkaWEgKGhvdmVyOiBob3ZlcikgYW5kIChwb2ludGVyOiBmaW5lKSB7ICYgLnJsLWdpZi1ib3V0b24geyBvcGFjaXR5OiAwOyB9ICYgLnJsLWdpZjpob3ZlciAucmwtZ2lmLWJvdXRvbiwgJiAucmwtZ2lmLWJvdXRvbjpmb2N1cy12aXNpYmxlLCAmIC5ybC1naWYtYm91dG9uW2FyaWEtcHJlc3NlZD0idHJ1ZSJdIHsgb3BhY2l0eTogMTsgfSB9"
+                        "raw": "JiAuZS1jb246bm90KC5ybC1lbmNhcnQtbWlsaWV1IC5lLWNvbikgeyBwYWRkaW5nOiAwOyB9ICYgLmVsZW1lbnRvci13aWRnZXQtdGV4dC1lZGl0b3IgeyBtYXJnaW46IDA7IH0gJiA+IHAsICYgLmVsZW1lbnRvci13aWRnZXQtdGV4dC1lZGl0b3IgPiBwLCAmIC5lbGVtZW50b3Itd2lkZ2V0LXRleHQtZWRpdG9yID4gLmVsZW1lbnRvci13aWRnZXQtY29udGFpbmVyID4gcCwgJiAuZWxlbWVudG9yLXRleHQtZWRpdG9yID4gcCwgJiA+IHVsLCAmIC5lbGVtZW50b3Itd2lkZ2V0LXRleHQtZWRpdG9yID4gdWwsICYgLmVsZW1lbnRvci13aWRnZXQtdGV4dC1lZGl0b3IgPiAuZWxlbWVudG9yLXdpZGdldC1jb250YWluZXIgPiB1bCwgJiAuZWxlbWVudG9yLXRleHQtZWRpdG9yID4gdWwsICYgPiBvbCwgJiAuZWxlbWVudG9yLXdpZGdldC10ZXh0LWVkaXRvciA+IG9sLCAmIC5lbGVtZW50b3Itd2lkZ2V0LXRleHQtZWRpdG9yID4gLmVsZW1lbnRvci13aWRnZXQtY29udGFpbmVyID4gb2wsICYgLmVsZW1lbnRvci10ZXh0LWVkaXRvciA+IG9sIHsgbWFyZ2luOiAyMHB4IDAgMDsgZm9udC1mYW1pbHk6IEhhbmtlbiBHcm90ZXNrOyBmb250LXNpemU6IDE4cHg7IGxpbmUtaGVpZ2h0OiAxLjc7IGNvbG9yOiB2YXIoLS1ybC1wYXJhZ3JhcGhlLCB2YXIoLS1wYXJhZ3JhcGhlKSk7IH0gJiBzdHJvbmcgeyBjb2xvcjogdmFyKC0tcmwtdGV4dGUsIHZhcigtLWVuY3JlKSk7IH0gJiBhOm5vdCgucmwtZW5jYXJ0LW1pbGlldSBhKSB7IGNvbG9yOiAjNUIzQkVBOyB0ZXh0LWRlY29yYXRpb246IHVuZGVybGluZTsgfSAmID4gaDIsICYgLmVsZW1lbnRvci13aWRnZXQtdGV4dC1lZGl0b3IgPiBoMiwgJiAuZWxlbWVudG9yLXdpZGdldC10ZXh0LWVkaXRvciA+IC5lbGVtZW50b3Itd2lkZ2V0LWNvbnRhaW5lciA+IGgyLCAmIC5lbGVtZW50b3ItdGV4dC1lZGl0b3IgPiBoMiB7IG1hcmdpbjogNTJweCAwIDA7IGZvbnQtZmFtaWx5OiBCcmljb2xhZ2UgR3JvdGVzcXVlOyBmb250LXdlaWdodDogNjUwOyBmb250LXNpemU6IGNsYW1wKDI2cHgsIDIuNnZ3LCAzNHB4KTsgbGluZS1oZWlnaHQ6IDEuMTU7IGxldHRlci1zcGFjaW5nOiAtMC4wNGVtOyBjb2xvcjogdmFyKC0tcmwtdGV4dGUsIHZhcigtLWVuY3JlKSk7IHNjcm9sbC1tYXJnaW4tdG9wOiAxMTBweDsgfSAmID4gaDMsICYgLmVsZW1lbnRvci13aWRnZXQtdGV4dC1lZGl0b3IgPiBoMywgJiAuZWxlbWVudG9yLXdpZGdldC10ZXh0LWVkaXRvciA+IC5lbGVtZW50b3Itd2lkZ2V0LWNvbnRhaW5lciA+IGgzLCAmIC5lbGVtZW50b3ItdGV4dC1lZGl0b3IgPiBoMyB7IG1hcmdpbjogMzJweCAwIDA7IGZvbnQtZmFtaWx5OiBCcmljb2xhZ2UgR3JvdGVzcXVlOyBmb250LXdlaWdodDogNjUwOyBmb250LXNpemU6IDIzcHg7IGxldHRlci1zcGFjaW5nOiAtMC4wMzVlbTsgY29sb3I6IHZhcigtLXJsLXRleHRlLCB2YXIoLS1lbmNyZSkpOyB9ICYgaW1nOm5vdCgucmwtZW5jYXJ0LW1pbGlldSBpbWcpIHsgbWF4LXdpZHRoOiAxMDAlOyBoZWlnaHQ6IGF1dG87IGJvcmRlci1yYWRpdXM6IDIycHg7IH0gJiBmaWd1cmUgeyBtYXJnaW46IDMycHggMDsgfSAmIC53cC1ibG9jay1lbWJlZF9fd3JhcHBlciB7IHBvc2l0aW9uOiByZWxhdGl2ZTsgd2lkdGg6IDEwMCU7IGFzcGVjdC1yYXRpbzogMTYgLyA5OyBvdmVyZmxvdzogaGlkZGVuOyBib3JkZXItcmFkaXVzOiAyMnB4OyB9ICYgLndwLWJsb2NrLWVtYmVkX193cmFwcGVyOjpiZWZvcmUgeyBkaXNwbGF5OiBub25lOyB9ICYgLndwLWJsb2NrLWVtYmVkX193cmFwcGVyIGlmcmFtZSB7IHBvc2l0aW9uOiBhYnNvbHV0ZTsgdG9wOiAwOyBsZWZ0OiAwOyB3aWR0aDogMTAwJTsgaGVpZ2h0OiAxMDAlOyBib3JkZXI6IDA7IH0gJiAud3AtYmxvY2stZW1iZWQgLnZpZGVvLWZpY2hlIHsgYXNwZWN0LXJhdGlvOiAxNiAvIDk7IH0gJiBibG9ja3F1b3RlIHsgbWFyZ2luOiAyOHB4IDA7IHBhZGRpbmc6IDIwcHggMjRweDsgYm9yZGVyLWxlZnQ6IDNweCBzb2xpZCAjNUIzQkVBOyBib3JkZXItcmFkaXVzOiAwIDE4cHggMThweCAwOyBiYWNrZ3JvdW5kOiAjRURFNkZGOyBmb250LWZhbWlseTogQnJpY29sYWdlIEdyb3Rlc3F1ZTsgZm9udC1zaXplOiAyMHB4OyBsaW5lLWhlaWdodDogMS41OyBmb250LXdlaWdodDogNjAwOyB9ICYgLmNvY2hlLCAmIC5jaGlmZnJlLXZlcnJlIGltZywgJiAubGVjdHVyZS1jZW50cmUgaW1nIHsgYm9yZGVyLXJhZGl1czogMDsgfSAmIC53cC1ibG9jay10YWJsZSB7IG1hcmdpbjogMzJweCAwIDA7IG92ZXJmbG93LXg6IGF1dG87IGJvcmRlci1yYWRpdXM6IDE4cHg7IGJhY2tncm91bmQ6ICNGRkZGRkY7IGJveC1zaGFkb3c6IGluc2V0IDAgMCAwIDFweCByZ2JhKDE1LDE1LDE4LDAuMDgpLCAwIDE4cHggNDBweCAtMjhweCByZ2JhKDcwLDQwLDE1MCwwLjQ1KTsgfSAmIC53cC1ibG9jay10YWJsZTpmb2N1cy12aXNpYmxlIHsgb3V0bGluZTogM3B4IHNvbGlkICM1QjNCRUE7IG91dGxpbmUtb2Zmc2V0OiAzcHg7IH0gJiAud3AtYmxvY2stdGFibGUgdGFibGUgeyB3aWR0aDogMTAwJTsgbWluLXdpZHRoOiA1NDBweDsgbWFyZ2luOiAwOyBib3JkZXI6IDA7IGJvcmRlci1jb2xsYXBzZTogY29sbGFwc2U7IGZvbnQtZmFtaWx5OiBIYW5rZW4gR3JvdGVzazsgZm9udC1zaXplOiAxNnB4OyBsaW5lLWhlaWdodDogMS40NTsgdGV4dC1hbGlnbjogbGVmdDsgfSAmIC53cC1ibG9jay10YWJsZSB0aGVhZCB7IGJvcmRlcjogMDsgfSAmIC53cC1ibG9jay10YWJsZSB0aCB7IHBhZGRpbmc6IDE0cHggMThweDsgYm9yZGVyOiAwOyBiYWNrZ3JvdW5kOiAjNUIzQkVBOyBjb2xvcjogI0ZGRkZGRjsgZm9udC1mYW1pbHk6IEJyaWNvbGFnZSBHcm90ZXNxdWU7IGZvbnQtd2VpZ2h0OiA2NTA7IGZvbnQtc2l6ZTogMTZweDsgbGV0dGVyLXNwYWNpbmc6IC0wLjAyZW07IHZlcnRpY2FsLWFsaWduOiBib3R0b207IHRleHQtYWxpZ246IGxlZnQ7IH0gJiAud3AtYmxvY2stdGFibGUgdGQgeyBwYWRkaW5nOiAxNHB4IDE4cHg7IGJvcmRlcjogMDsgYm9yZGVyLXRvcDogMXB4IHNvbGlkIHJnYmEoMTUsMTUsMTgsMC4wNyk7IGNvbG9yOiB2YXIoLS1ybC1wYXJhZ3JhcGhlLCB2YXIoLS1wYXJhZ3JhcGhlKSk7IHZlcnRpY2FsLWFsaWduOiB0b3A7IH0gJiAud3AtYmxvY2stdGFibGUgdGJvZHkgdHI6bnRoLWNoaWxkKGV2ZW4pIHRkIHsgYmFja2dyb3VuZDogI0ZBRjlGNzsgfSAmIC53cC1ibG9jay10YWJsZSB0ZDpmaXJzdC1jaGlsZCB7IGNvbG9yOiB2YXIoLS1ybC10ZXh0ZSwgdmFyKC0tZW5jcmUpKTsgZm9udC13ZWlnaHQ6IDYwMDsgfSAmIC53cC1ibG9jay10YWJsZSBmaWdjYXB0aW9uIHsgbWFyZ2luOiAwOyBwYWRkaW5nOiAxMnB4IDE4cHggMTRweDsgYm9yZGVyLXRvcDogMXB4IHNvbGlkIHJnYmEoMTUsMTUsMTgsMC4wNyk7IGZvbnQtc2l6ZTogMTRweDsgdGV4dC1hbGlnbjogbGVmdDsgY29sb3I6IHZhcigtLXJsLWxlZ2VuZGUsIHZhcigtLWxlZ2VuZGUpKTsgfSAmIC53cC1ibG9jay10YWJsZS5pcy1zdHlsZS1jb21wYXJhdGlmIHRoIHsgYmFja2dyb3VuZDogI0YzRjBGQTsgY29sb3I6IHZhcigtLXJsLXRleHRlLCB2YXIoLS1lbmNyZSkpOyB9ICYgLndwLWJsb2NrLXRhYmxlLmlzLXN0eWxlLWNvbXBhcmF0aWYgdGg6bGFzdC1jaGlsZCB7IGJhY2tncm91bmQ6ICM1QjNCRUE7IGNvbG9yOiAjRkZGRkZGOyB9ICYgLndwLWJsb2NrLXRhYmxlLmlzLXN0eWxlLWNvbXBhcmF0aWYgdGQ6bGFzdC1jaGlsZCB7IGJhY2tncm91bmQ6ICNFREU2RkY7IGNvbG9yOiAjMkExQTgwOyBmb250LXdlaWdodDogNjAwOyB9ICYgLndwLWJsb2NrLXRhYmxlLmlzLXN0eWxlLWNvbXBhcmF0aWYgdGJvZHkgdHI6bnRoLWNoaWxkKGV2ZW4pIHRkOmxhc3QtY2hpbGQgeyBiYWNrZ3JvdW5kOiAjRTREQUZGOyB9ICYgLmxpc3RlLWNvY2hlcyB7IG1hcmdpbjogMThweCAwIDA7IHBhZGRpbmc6IDA7IGxpc3Qtc3R5bGU6IG5vbmU7IH0gJiAubGlnbmUtY29jaGUgeyBmb250LWZhbWlseTogSGFua2VuIEdyb3Rlc2s7IGZvbnQtc2l6ZTogMThweDsgbGluZS1oZWlnaHQ6IDEuNjsgY29sb3I6IHZhcigtLXJsLXBhcmFncmFwaGUsIHZhcigtLXBhcmFncmFwaGUpKTsgfSAmIC5pcy1zdHlsZS1ldGFwZXMgeyBjb3VudGVyLXJlc2V0OiBybC1ldGFwZTsgZGlzcGxheTogZ3JpZDsgZ2FwOiAxNHB4OyBtYXJnaW46IDIycHggMCAwOyBwYWRkaW5nOiAwOyBsaXN0LXN0eWxlOiBub25lOyB9ICYgLmlzLXN0eWxlLWV0YXBlcyA+IGxpIHsgY291bnRlci1pbmNyZW1lbnQ6IHJsLWV0YXBlOyBwb3NpdGlvbjogcmVsYXRpdmU7IHBhZGRpbmctbGVmdDogNDhweDsgbWluLWhlaWdodDogMzRweDsgfSAmIC5pcy1zdHlsZS1ldGFwZXMgPiBsaTo6YmVmb3JlIHsgY29udGVudDogY291bnRlcihybC1ldGFwZSk7IHBvc2l0aW9uOiBhYnNvbHV0ZTsgdG9wOiAwOyBsZWZ0OiAwOyB3aWR0aDogMzRweDsgaGVpZ2h0OiAzNHB4OyBib3JkZXItcmFkaXVzOiA1MCU7IGRpc3BsYXk6IGZsZXg7IGFsaWduLWl0ZW1zOiBjZW50ZXI7IGp1c3RpZnktY29udGVudDogY2VudGVyOyBmb250LWZhbWlseTogQnJpY29sYWdlIEdyb3Rlc3F1ZTsgZm9udC13ZWlnaHQ6IDY1MDsgZm9udC1zaXplOiAxNnB4OyBsaW5lLWhlaWdodDogMTsgY29sb3I6ICNGRkZGRkY7IGJhY2tncm91bmQ6IGxpbmVhci1ncmFkaWVudCgxNDBkZWcsICM1QjNCRUEsICM4RTRERTYpOyB9ICYgLnJsLWludHJvZHVjdGlvbiB7IG1hcmdpbjogMzJweCAwIDA7IHBhZGRpbmc6IDI2cHggMjhweDsgYm9yZGVyLXJhZGl1czogMjZweDsgYmFja2dyb3VuZDogbGluZWFyLWdyYWRpZW50KDEyMGRlZywgcmdiYSgyMzcsMjMwLDI1NSwwLjk1KSwgcmdiYSgyNTUsMjQxLDIzMSwwLjkpKTsgfSAmIC5ybC1pbnRyb2R1Y3Rpb24gPiBwOm5vdCgucmwtbGFiZWwpLCAmIC5ybC1pbnRyb2R1Y3Rpb24gLndwLWJsb2NrLWdyb3VwX19pbm5lci1jb250YWluZXIgPiBwOm5vdCgucmwtbGFiZWwpIHsgbWFyZ2luOiAxMHB4IDAgMDsgZm9udC1mYW1pbHk6IEhhbmtlbiBHcm90ZXNrOyBmb250LXNpemU6IDE4cHg7IGxpbmUtaGVpZ2h0OiAxLjY1OyBjb2xvcjogdmFyKC0tcmwtdGV4dGUsIHZhcigtLWVuY3JlKSk7IH0gJiAucmwtaW50cm9kdWN0aW9uID4gcDpub3QoLnJsLWxhYmVsKSArIHAsICYgLnJsLWludHJvZHVjdGlvbiAud3AtYmxvY2stZ3JvdXBfX2lubmVyLWNvbnRhaW5lciA+IHA6bm90KC5ybC1sYWJlbCkgKyBwIHsgbWFyZ2luLXRvcDogMTBweDsgfSAmIC5ybC1lbi1icmVmLCAmIC5ybC1hLXJldGVuaXIgeyBtYXJnaW46IDMycHggMCAwOyBwYWRkaW5nOiAyOHB4OyBib3JkZXItcmFkaXVzOiAyNnB4OyBiYWNrZ3JvdW5kOiBsaW5lYXItZ3JhZGllbnQoMTIwZGVnLCByZ2JhKDIzNywyMzAsMjU1LDAuOTUpLCByZ2JhKDI1NSwyNDEsMjMxLDAuOSkpOyB9ICYgLnJsLWEtcmV0ZW5pciB7IGJhY2tncm91bmQ6IGxpbmVhci1ncmFkaWVudCgxMjBkZWcsIHJnYmEoMjU1LDI0MSwyMzEsMC45NSksIHJnYmEoMjU1LDIyNCwyMDYsMC43KSk7IH0gJiAucmwtbGFiZWwgeyBtYXJnaW46IDA7IGZvbnQtZmFtaWx5OiBIYW5rZW4gR3JvdGVzazsgZm9udC1zaXplOiAxMnB4OyBsaW5lLWhlaWdodDogMS4zOyBmb250LXdlaWdodDogNzAwOyBsZXR0ZXItc3BhY2luZzogMC4xNmVtOyB0ZXh0LXRyYW5zZm9ybTogdXBwZXJjYXNlOyBjb2xvcjogIzVCM0JFQTsgfSAmIC5ybC1hLXJldGVuaXIgaDIsICYgLnJsLWVuY2FydC1ndWlkZSBoMyB7IG1hcmdpbjogMDsgZm9udC1mYW1pbHk6IEJyaWNvbGFnZSBHcm90ZXNxdWU7IGZvbnQtd2VpZ2h0OiA2NTA7IGZvbnQtc2l6ZTogMjNweDsgbGluZS1oZWlnaHQ6IDEuMjsgbGV0dGVyLXNwYWNpbmc6IC0wLjAzNWVtOyBjb2xvcjogdmFyKC0tcmwtdGV4dGUsIHZhcigtLWVuY3JlKSk7IH0gJiAucmwtZW4tYnJlZiAubGlzdGUtY29jaGVzLCAmIC5ybC1hLXJldGVuaXIgLmxpc3RlLWNvY2hlcyB7IG1hcmdpbi10b3A6IDE0cHg7IH0gJiAucmwtZW4tYnJlZiAubGlnbmUtY29jaGUsICYgLnJsLWEtcmV0ZW5pciAubGlnbmUtY29jaGUgeyBmb250LXNpemU6IDE3cHg7IH0gJiAucmwtYXZpcyB7IHBvc2l0aW9uOiByZWxhdGl2ZTsgbWFyZ2luOiAyMnB4IDAgMDsgcGFkZGluZzogMjhweCAyOHB4IDI4cHggMTAycHg7IGJvcmRlci1yYWRpdXM6IDI2cHg7IGJhY2tncm91bmQ6ICNGRkZGRkY7IGJveC1zaGFkb3c6IDAgMXB4IDJweCByZ2JhKDE1LDE1LDE4LDAuMDUpLCAwIDI0cHggNTBweCAtMzBweCByZ2JhKDc2LDQ4LDE3MCwwLjMpOyB9ICYgLnJsLWF2aXMgLnJsLXBvcnRyYWl0IHsgcG9zaXRpb246IGFic29sdXRlOyB0b3A6IDI4cHg7IGxlZnQ6IDI4cHg7IHdpZHRoOiA1NnB4OyBoZWlnaHQ6IDU2cHg7IG1hcmdpbjogMDsgfSAmIC5ybC1hdmlzIC5ybC1wb3J0cmFpdCBpbWcsICYgLnJsLWF1dGV1ciAucmwtcG9ydHJhaXQgaW1nIHsgd2lkdGg6IDEwMCU7IGhlaWdodDogMTAwJTsgb2JqZWN0LWZpdDogY292ZXI7IGJvcmRlci1yYWRpdXM6IDUwJTsgYm94LXNoYWRvdzogMCAwIDAgM3B4ICNGRkZGRkYsIDAgMTBweCAyMHB4IC0xMHB4IHJnYmEoNzAsNDAsMTUwLDAuNSk7IH0gJiAucmwtYXZpcyBwIHsgbWFyZ2luOiAwOyBmb250LWZhbWlseTogSGFua2VuIEdyb3Rlc2s7IGZvbnQtc2l6ZTogMTdweDsgbGluZS1oZWlnaHQ6IDEuNjU7IGNvbG9yOiB2YXIoLS1ybC1wYXJhZ3JhcGhlLCB2YXIoLS1wYXJhZ3JhcGhlKSk7IH0gJiAucmwtYXZpcyBwICsgcCB7IG1hcmdpbi10b3A6IDhweDsgZm9udC1zaXplOiAxNXB4OyB9ICYgLnJsLWF2aXMgc3Ryb25nLCAmIC5ybC1hdXRldXIgc3Ryb25nIHsgY29sb3I6IHZhcigtLXJsLXRleHRlLCB2YXIoLS1lbmNyZSkpOyB9ICYgLnJsLWNoaWZmcmUtY2xlIHsgZGlzcGxheTogZmxleDsgZmxleC1kaXJlY3Rpb246IHJvdzsgZmxleC13cmFwOiB3cmFwOyBhbGlnbi1pdGVtczogY2VudGVyOyBjb2x1bW4tZ2FwOiAyNHB4OyByb3ctZ2FwOiA2cHg7IG1hcmdpbjogMzJweCAwIDA7IHBhZGRpbmc6IDI0cHggMjhweDsgYm9yZGVyLXJhZGl1czogMjZweDsgYmFja2dyb3VuZDogbGluZWFyLWdyYWRpZW50KDEyMGRlZywgcmdiYSgyMzcsMjMwLDI1NSwwLjkpLCByZ2JhKDI1NSwyNDEsMjMxLDAuODUpKTsgfSAmIC5ybC1jaGlmZnJlLWNsZSA+ICosICYgLnJsLWNoaWZmcmUtY2xlID4gLndwLWJsb2NrLWdyb3VwX19pbm5lci1jb250YWluZXIgPiAqIHsgbWFyZ2luOiAwOyB9ICYgLnJsLWNoaWZmcmUtY2xlIC53cC1ibG9jay1ncm91cF9faW5uZXItY29udGFpbmVyIHsgZGlzcGxheTogY29udGVudHM7IH0gJiAucmwtY2hpZmZyZS12YWxldXIgeyBmbGV4LXNocmluazogMDsgbWFyZ2luOiAwOyB9ICYgLnJsLWNoaWZmcmUtdmFsZXVyIC5jaGlmZnJlLXZlcnJlIGltZyB7IGhlaWdodDogNjRweDsgfSAmIC5ybC1jaGlmZnJlLXRleHRlIHsgZmxleDogMSAxIDI2MHB4OyBmb250LWZhbWlseTogQnJpY29sYWdlIEdyb3Rlc3F1ZTsgZm9udC13ZWlnaHQ6IDY1MDsgZm9udC1zaXplOiAyMXB4OyBsaW5lLWhlaWdodDogMS4zOyBsZXR0ZXItc3BhY2luZzogLTAuMDJlbTsgY29sb3I6IHZhcigtLXJsLXRleHRlLCB2YXIoLS1lbmNyZSkpOyB9ICYgLnJsLXNvdXJjZSB7IGZsZXg6IDEgMSAxMDAlOyBwYWRkaW5nLWxlZnQ6IDA7IGZvbnQtZmFtaWx5OiBIYW5rZW4gR3JvdGVzazsgZm9udC1zaXplOiAxNXB4OyBjb2xvcjogdmFyKC0tcmwtbGVnZW5kZSwgdmFyKC0tbGVnZW5kZSkpOyB9ICYgLnJsLWVuY2FydC1ndWlkZSB7IGRpc3BsYXk6IGdyaWQ7IGdyaWQtdGVtcGxhdGUtY29sdW1uczogMTgwcHggbWlubWF4KDAsIDFmcik7IGNvbHVtbi1nYXA6IDIycHg7IGFsaWduLWl0ZW1zOiBjZW50ZXI7IG1hcmdpbjogMzJweCAwIDA7IHBhZGRpbmc6IDE2cHg7IGJvcmRlci1yYWRpdXM6IDI2cHg7IGJhY2tncm91bmQ6ICNGRkZGRkY7IGJveC1zaGFkb3c6IDAgMXB4IDJweCByZ2JhKDE1LDE1LDE4LDAuMDUpLCAwIDI0cHggNTBweCAtMzBweCByZ2JhKDc2LDQ4LDE3MCwwLjMpOyB9ICYgLnJsLWVuY2FydC1ndWlkZSAud3AtYmxvY2stZ3JvdXBfX2lubmVyLWNvbnRhaW5lciB7IGRpc3BsYXk6IGNvbnRlbnRzOyB9ICYgLnJsLWVuY2FydC1ndWlkZSAud3AtYmxvY2staW1hZ2UgeyBncmlkLXJvdzogMSAvIHNwYW4gNDsgbWFyZ2luOiAwOyBhc3BlY3QtcmF0aW86IDQgLyAzOyBvdmVyZmxvdzogaGlkZGVuOyBib3JkZXItcmFkaXVzOiAxOHB4OyB9ICYgLnJsLWVuY2FydC1ndWlkZSAud3AtYmxvY2staW1hZ2UgaW1nIHsgd2lkdGg6IDEwMCU7IGhlaWdodDogMTAwJTsgb2JqZWN0LWZpdDogY292ZXI7IGJvcmRlci1yYWRpdXM6IDA7IH0gJiAucmwtZW5jYXJ0LWd1aWRlID4gOm5vdCgud3AtYmxvY2staW1hZ2UpLCAmIC5ybC1lbmNhcnQtZ3VpZGUgLndwLWJsb2NrLWdyb3VwX19pbm5lci1jb250YWluZXIgPiA6bm90KC53cC1ibG9jay1pbWFnZSkgeyBncmlkLWNvbHVtbjogMjsgbWFyZ2luOiAwOyB9ICYgLnJsLWVuY2FydC1ndWlkZSBoMyB7IG1hcmdpbjogNnB4IDAgMTJweDsgZm9udC1zaXplOiAyMnB4OyB9ICYgLnJsLWVuY2FydC1hcHBlbCB7IGRpc3BsYXk6IGZsZXg7IGZsZXgtZGlyZWN0aW9uOiByb3c7IGZsZXgtd3JhcDogd3JhcDsgYWxpZ24taXRlbXM6IGNlbnRlcjsganVzdGlmeS1jb250ZW50OiBzcGFjZS1iZXR3ZWVuOyBjb2x1bW4tZ2FwOiAyMnB4OyByb3ctZ2FwOiAxNHB4OyBtYXJnaW46IDMycHggMCAwOyBwYWRkaW5nOiAyNHB4IDI4cHg7IGJvcmRlci1yYWRpdXM6IDI2cHg7IGJhY2tncm91bmQ6IGxpbmVhci1ncmFkaWVudCgxNjBkZWcsICMxQzE3MzAsICMwRjBGMTIpOyB9ICYgLnJsLWVuY2FydC1hcHBlbCAud3AtYmxvY2stZ3JvdXBfX2lubmVyLWNvbnRhaW5lciB7IGRpc3BsYXk6IGNvbnRlbnRzOyB9ICYgLnJsLWVuY2FydC1hcHBlbCBwIHsgZmxleDogMSAxIDMyMHB4OyBtYXJnaW46IDA7IGZvbnQtZmFtaWx5OiBIYW5rZW4gR3JvdGVzazsgZm9udC1zaXplOiAxNXB4OyBsaW5lLWhlaWdodDogMS41OyBjb2xvcjogI0M5QzNERTsgfSAmIC5ybC1lbmNhcnQtYXBwZWwgcCBzdHJvbmcgeyBkaXNwbGF5OiBibG9jazsgbWFyZ2luLWJvdHRvbTogNnB4OyBmb250LWZhbWlseTogQnJpY29sYWdlIEdyb3Rlc3F1ZTsgZm9udC13ZWlnaHQ6IDY1MDsgZm9udC1zaXplOiAyM3B4OyBsaW5lLWhlaWdodDogMS4yOyBsZXR0ZXItc3BhY2luZzogLTAuMDM1ZW07IGNvbG9yOiAjRkZGRkZGOyB9ICYgLndwLWJsb2NrLWJ1dHRvbnMgeyBkaXNwbGF5OiBmbGV4OyBmbGV4LXdyYXA6IHdyYXA7IGdhcDogMTJweDsgbWFyZ2luOiAwOyB9ICYgLndwLWJsb2NrLWJ1dHRvbl9fbGluayB7IGRpc3BsYXk6IGlubGluZS1mbGV4OyBhbGlnbi1pdGVtczogY2VudGVyOyBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjsgZ2FwOiAxMHB4OyBtaW4taGVpZ2h0OiA0OHB4OyBwYWRkaW5nOiAwIDIycHg7IGJvcmRlcjogMDsgYm9yZGVyLXJhZGl1czogOTk5cHg7IGZvbnQtZmFtaWx5OiBIYW5rZW4gR3JvdGVzazsgZm9udC1zaXplOiAxNXB4OyBsaW5lLWhlaWdodDogMTsgZm9udC13ZWlnaHQ6IDYwMDsgdGV4dC1kZWNvcmF0aW9uOiBub25lOyBjb2xvcjogIzBGMEYxMjsgYmFja2dyb3VuZDogI0ZGRkZGRjsgYm94LXNoYWRvdzogaW5zZXQgMCAxcHggMCAjRkZGRkZGLCBpbnNldCAwIDAgMCAxcHggcmdiYSgxNSwxNSwxOCwwLjEpLCAwIDEwcHggMjRweCAtMTRweCByZ2JhKDcwLDQwLDE1MCwwLjQ1KTsgfSAmIC53cC1ibG9jay1idXR0b25fX2xpbms6aG92ZXIgeyBjb2xvcjogI0ZGRkZGRjsgYmFja2dyb3VuZDogIzVCM0JFQTsgfSAmIC5ybC1lbmNhcnQtYXBwZWwgLndwLWJsb2NrLWJ1dHRvbl9fbGluayB7IGNvbG9yOiAjMEYwRjEyOyBiYWNrZ3JvdW5kOiBsaW5lYXItZ3JhZGllbnQoMTM1ZGVnLCAjRkZEMUJGLCAjRkY4QTVCKTsgYm94LXNoYWRvdzogMCAxMnB4IDI4cHggLTE0cHggcmdiYSgyNTUsMTM4LDkxLDAuOCk7IH0gJiAucmwtZW5jYXJ0LWFwcGVsIC53cC1ibG9jay1idXR0b25fX2xpbms6aG92ZXIgeyBjb2xvcjogIzBGMEYxMjsgYmFja2dyb3VuZDogI0ZGRkZGRjsgfSAmIC5ybC1mYXEgeyBkaXNwbGF5OiBncmlkOyBnYXA6IDEwcHg7IG1hcmdpbjogMjJweCAwIDA7IH0gJiAucmwtZmFxIC53cC1ibG9jay1ncm91cF9faW5uZXItY29udGFpbmVyIHsgZGlzcGxheTogZ3JpZDsgZ2FwOiAxMHB4OyB9ICYgLndwLWJsb2NrLWRldGFpbHMgeyBtYXJnaW46IDA7IGJvcmRlci1yYWRpdXM6IDE4cHg7IGJhY2tncm91bmQ6ICNGRkZGRkY7IGJveC1zaGFkb3c6IGluc2V0IDAgMCAwIDFweCByZ2JhKDE1LDE1LDE4LDAuMDgpOyB9ICYgLndwLWJsb2NrLWRldGFpbHMgc3VtbWFyeSB7IGxpc3Qtc3R5bGU6IG5vbmU7IGRpc3BsYXk6IGZsZXg7IGp1c3RpZnktY29udGVudDogc3BhY2UtYmV0d2VlbjsgYWxpZ24taXRlbXM6IGNlbnRlcjsgZ2FwOiAxNnB4OyBtaW4taGVpZ2h0OiA1NnB4OyBwYWRkaW5nOiAxNHB4IDIwcHg7IGN1cnNvcjogcG9pbnRlcjsgZm9udC1mYW1pbHk6IEJyaWNvbGFnZSBHcm90ZXNxdWU7IGZvbnQtd2VpZ2h0OiA2NTA7IGZvbnQtc2l6ZTogMThweDsgbGluZS1oZWlnaHQ6IDEuMzsgbGV0dGVyLXNwYWNpbmc6IC0wLjAyZW07IGNvbG9yOiB2YXIoLS1ybC10ZXh0ZSwgdmFyKC0tZW5jcmUpKTsgfSAmIC53cC1ibG9jay1kZXRhaWxzIHN1bW1hcnk6Oi13ZWJraXQtZGV0YWlscy1tYXJrZXIgeyBkaXNwbGF5OiBub25lOyB9ICYgLndwLWJsb2NrLWRldGFpbHMgc3VtbWFyeTo6YWZ0ZXIgeyBjb250ZW50OiAnKyc7IGZsZXgtc2hyaW5rOiAwOyB3aWR0aDogMzBweDsgaGVpZ2h0OiAzMHB4OyBib3JkZXItcmFkaXVzOiA1MCU7IGRpc3BsYXk6IGlubGluZS1mbGV4OyBhbGlnbi1pdGVtczogY2VudGVyOyBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjsgZm9udC1zaXplOiAyMHB4OyBsaW5lLWhlaWdodDogMTsgY29sb3I6ICNGRkZGRkY7IGJhY2tncm91bmQ6IGxpbmVhci1ncmFkaWVudCgxNDBkZWcsICM1QjNCRUEsICM4RTRERTYpOyB9ICYgLndwLWJsb2NrLWRldGFpbHNbb3Blbl0gc3VtbWFyeTo6YWZ0ZXIgeyBjb250ZW50OiAn4oiSJzsgfSAmIC53cC1ibG9jay1kZXRhaWxzID4gOm5vdChzdW1tYXJ5KSB7IG1hcmdpbjogMDsgcGFkZGluZzogMCAyMHB4IDE4cHg7IGZvbnQtZmFtaWx5OiBIYW5rZW4gR3JvdGVzazsgZm9udC1zaXplOiAxN3B4OyBsaW5lLWhlaWdodDogMS42NTsgY29sb3I6IHZhcigtLXJsLXBhcmFncmFwaGUsIHZhcigtLXBhcmFncmFwaGUpKTsgfSAmIC53cC1ibG9jay1kZXRhaWxzID4gdWwsICYgLndwLWJsb2NrLWRldGFpbHMgPiBvbCB7IHBhZGRpbmctbGVmdDogNDZweDsgfSAmIC53cC1ibG9jay1kZXRhaWxzIGxpICsgbGkgeyBtYXJnaW4tdG9wOiA0cHg7IH0gJiAucmwtYXV0ZXVyIHsgcG9zaXRpb246IHJlbGF0aXZlOyBtYXJnaW46IDQwcHggMCAwOyBwYWRkaW5nOiAyNHB4IDI0cHggMjRweCAxMTZweDsgbWluLWhlaWdodDogMTIwcHg7IGJvcmRlci1yYWRpdXM6IDI2cHg7IGJhY2tncm91bmQ6ICNGRkZGRkY7IGJveC1zaGFkb3c6IGluc2V0IDAgMCAwIDFweCByZ2JhKDE1LDE1LDE4LDAuMDgpOyB9ICYgLnJsLWF1dGV1ciAucmwtcG9ydHJhaXQgeyBwb3NpdGlvbjogYWJzb2x1dGU7IHRvcDogMjRweDsgbGVmdDogMjRweDsgd2lkdGg6IDcycHg7IGhlaWdodDogNzJweDsgbWFyZ2luOiAwOyB9ICYgLnJsLWF1dGV1ciBwIHsgbWFyZ2luOiAwOyBmb250LWZhbWlseTogSGFua2VuIEdyb3Rlc2s7IGZvbnQtc2l6ZTogMTVweDsgbGluZS1oZWlnaHQ6IDEuNTU7IGNvbG9yOiB2YXIoLS1ybC1wYXJhZ3JhcGhlLCB2YXIoLS1wYXJhZ3JhcGhlKSk7IH0gJiAucmwtYXV0ZXVyIC5ybC1sYWJlbCB7IGNvbG9yOiB2YXIoLS1ybC1sZWdlbmRlLCB2YXIoLS1sZWdlbmRlKSk7IH0gJiAucmwtYXV0ZXVyIC5ybC1ub20geyBtYXJnaW4tdG9wOiA0cHg7IGZvbnQtZmFtaWx5OiBCcmljb2xhZ2UgR3JvdGVzcXVlOyBmb250LXdlaWdodDogNjUwOyBmb250LXNpemU6IDIzcHg7IGxpbmUtaGVpZ2h0OiAxLjI7IGxldHRlci1zcGFjaW5nOiAtMC4wMzVlbTsgY29sb3I6IHZhcigtLXJsLXRleHRlLCB2YXIoLS1lbmNyZSkpOyB9ICYgLnJsLWF1dGV1ciAucmwtYmlvIHsgbWFyZ2luLXRvcDogOHB4OyB9ICYgLnJsLWF1dGV1ciBhIHsgZGlzcGxheTogaW5saW5lLWZsZXg7IG1pbi1oZWlnaHQ6IDMycHg7IGFsaWduLWl0ZW1zOiBjZW50ZXI7IG1hcmdpbi10b3A6IDZweDsgZm9udC13ZWlnaHQ6IDYwMDsgfSAmIC53cC1ibG9jay1lbWJlZCwgJiAud3AtYmxvY2stdmlkZW8geyBtYXJnaW46IDMycHggMCAwOyB9ICYgLndwLWJsb2NrLWVtYmVkX193cmFwcGVyOjpiZWZvcmUgeyBkaXNwbGF5OiBub25lOyB9ICYgLndwLWJsb2NrLWVtYmVkIC52aWRlby1maWNoZSB7IC0tcmwtcmF5b24tcGhvdG86IDIycHg7IH0gJiAud3AtYmxvY2stZW1iZWQgaWZyYW1lIHsgd2lkdGg6IDEwMCU7IGhlaWdodDogYXV0bzsgYXNwZWN0LXJhdGlvOiAxNiAvIDk7IGJvcmRlcjogMDsgYm9yZGVyLXJhZGl1czogMjJweDsgfSAmIC53cC1ibG9jay12aWRlbyB2aWRlbyB7IHdpZHRoOiAxMDAlOyBib3JkZXItcmFkaXVzOiAyMnB4OyB9ICYgLndwLWJsb2NrLWVtYmVkIGZpZ2NhcHRpb24sICYgLndwLWJsb2NrLXZpZGVvIGZpZ2NhcHRpb24sICYgLndwLWJsb2NrLWltYWdlIGZpZ2NhcHRpb24geyBtYXJnaW46IDEwcHggMCAwOyBmb250LXNpemU6IDE0cHg7IGZvbnQtc3R5bGU6IG5vcm1hbDsgdGV4dC1hbGlnbjogbGVmdDsgY29sb3I6IHZhcigtLXJsLWxlZ2VuZGUsIHZhcigtLWxlZ2VuZGUpKTsgfSAmIC5ybC1naWYgeyB3aWR0aDogbWluKDEwMCUsIGNhbGMoNTYwcHggKiB2YXIoLS1ybC1yYXRpbywgMS43OCkgKyAyNHB4KSk7IG1hcmdpbjogMzJweCBhdXRvIDA7IHBhZGRpbmc6IDEycHg7IGJvcmRlci1yYWRpdXM6IDI2cHg7IGJhY2tncm91bmQtY29sb3I6ICNGRkZGRkY7IGJveC1zaGFkb3c6IDAgMXB4IDJweCByZ2JhKDE1LDE1LDE4LDAuMDUpLCAwIDI0cHggNTBweCAtMzBweCByZ2JhKDc2LDQ4LDE3MCwwLjMpOyB9ICYgLnJsLWdpZi1jYWRyZSB7IHBvc2l0aW9uOiByZWxhdGl2ZTsgb3ZlcmZsb3c6IGhpZGRlbjsgYm9yZGVyLXJhZGl1czogMTZweDsgYmFja2dyb3VuZC1jb2xvcjogI0VERTZGRjsgfSAmIC5ybC1naWYtdmlkZW8geyBkaXNwbGF5OiBibG9jazsgd2lkdGg6IDEwMCU7IGhlaWdodDogMTAwJTsgb2JqZWN0LWZpdDogY292ZXI7IH0gJiAucmwtZ2lmLXBhc3RpbGxlIHsgcG9zaXRpb246IGFic29sdXRlOyB0b3A6IDEycHg7IGxlZnQ6IDEycHg7IHBhZGRpbmc6IDVweCA5cHg7IGJvcmRlci1yYWRpdXM6IDk5OXB4OyBiYWNrZ3JvdW5kLWNvbG9yOiByZ2JhKDE1LDEwLDM2LDAuNzQpOyBmb250LWZhbWlseTogSGFua2VuIEdyb3Rlc2s7IGZvbnQtc2l6ZTogMTJweDsgbGluZS1oZWlnaHQ6IDE7IGZvbnQtd2VpZ2h0OiA4MDA7IGxldHRlci1zcGFjaW5nOiAwLjFlbTsgY29sb3I6ICNGRkZGRkY7IH0gJiAucmwtZ2lmLWJvdXRvbiB7IHBvc2l0aW9uOiBhYnNvbHV0ZTsgcmlnaHQ6IDEycHg7IGJvdHRvbTogMTJweDsgZGlzcGxheTogZmxleDsgYWxpZ24taXRlbXM6IGNlbnRlcjsganVzdGlmeS1jb250ZW50OiBjZW50ZXI7IGdhcDogNHB4OyB3aWR0aDogNDBweDsgaGVpZ2h0OiA0MHB4OyBtaW4taGVpZ2h0OiAwOyBtYXJnaW46IDA7IHBhZGRpbmc6IDA7IGJvcmRlcjogMDsgYm9yZGVyLXJhZGl1czogNTAlOyBiYWNrZ3JvdW5kLWNvbG9yOiByZ2JhKDE1LDEwLDM2LDAuNzQpOyBjdXJzb3I6IHBvaW50ZXI7IHRyYW5zaXRpb246IG9wYWNpdHkgMC4ycyBlYXNlOyB9ICYgLnJsLWdpZi1ib3V0b246OmJlZm9yZSwgJiAucmwtZ2lmLWJvdXRvbjo6YWZ0ZXIgeyBjb250ZW50OiAnJzsgZGlzcGxheTogYmxvY2s7IHdpZHRoOiA0cHg7IGhlaWdodDogMTRweDsgYm9yZGVyLXJhZGl1czogMnB4OyBiYWNrZ3JvdW5kLWNvbG9yOiAjRkZGRkZGOyB9ICYgLnJsLWdpZi1ib3V0b25bYXJpYS1wcmVzc2VkPSJ0cnVlIl06OmJlZm9yZSB7IHdpZHRoOiAwOyBoZWlnaHQ6IDA7IG1hcmdpbi1sZWZ0OiA0cHg7IGJvcmRlci1yYWRpdXM6IDA7IGJhY2tncm91bmQtY29sb3I6IHRyYW5zcGFyZW50OyBib3JkZXItc3R5bGU6IHNvbGlkOyBib3JkZXItd2lkdGg6IDhweCAwIDhweCAxM3B4OyBib3JkZXItY29sb3I6IHRyYW5zcGFyZW50IHRyYW5zcGFyZW50IHRyYW5zcGFyZW50ICNGRkZGRkY7IH0gJiAucmwtZ2lmLWJvdXRvblthcmlhLXByZXNzZWQ9InRydWUiXTo6YWZ0ZXIgeyBkaXNwbGF5OiBub25lOyB9ICYgLnJsLWdpZi1ib3V0b246Zm9jdXMtdmlzaWJsZSB7IG91dGxpbmU6IDNweCBzb2xpZCAjQzRCNUZEOyBvdXRsaW5lLW9mZnNldDogM3B4OyB9ICYgLnJsLWdpZi1sZWdlbmRlIHsgZGlzcGxheTogZmxleDsgZmxleC13cmFwOiB3cmFwOyBqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWJldHdlZW47IGdhcDogNHB4IDEycHg7IG1hcmdpbjogMTJweCA2cHggMnB4OyBmb250LWZhbWlseTogSGFua2VuIEdyb3Rlc2s7IGZvbnQtc2l6ZTogMTRweDsgbGluZS1oZWlnaHQ6IDEuNDU7IGZvbnQtc3R5bGU6IG5vcm1hbDsgdGV4dC1hbGlnbjogbGVmdDsgY29sb3I6IHZhcigtLXJsLWxlZ2VuZGUsIHZhcigtLWxlZ2VuZGUpKTsgfSAmIC5ybC1naWYtY3JlZGl0IHsgZmxleDogbm9uZTsgbWFyZ2luLWxlZnQ6IGF1dG87IGZvbnQtc2l6ZTogMTJweDsgbGV0dGVyLXNwYWNpbmc6IDAuMDRlbTsgfSAmIC5ybC1hdXRldXIgLnJsLW5vbTpoYXMoPiBhW2hyZWYqPSJsaW5rZWRpbi5jb20iXSkgeyBkaXNwbGF5OiBmbGV4OyBmbGV4LXdyYXA6IHdyYXA7IGFsaWduLWl0ZW1zOiBjZW50ZXI7IGdhcDogMnB4IDhweDsgfSAmIC5ybC1hdXRldXIgYVtocmVmKj0ibGlua2VkaW4uY29tIl0geyBkaXNwbGF5OiBpbmxpbmUtZmxleDsgYWxpZ24taXRlbXM6IGNlbnRlcjsganVzdGlmeS1jb250ZW50OiBjZW50ZXI7IHdpZHRoOiAzMnB4OyBoZWlnaHQ6IDMycHg7IG1pbi1oZWlnaHQ6IDA7IG1hcmdpbjogMDsgdmVydGljYWwtYWxpZ246IG1pZGRsZTsgYm9yZGVyLXJhZGl1czogOHB4OyBvdmVyZmxvdzogaGlkZGVuOyBmb250LXNpemU6IDA7IGxpbmUtaGVpZ2h0OiAwOyBjb2xvcjogdHJhbnNwYXJlbnQ7IHRleHQtZGVjb3JhdGlvbjogbm9uZTsgfSAmIC5ybC1hdXRldXIgYVtocmVmKj0ibGlua2VkaW4uY29tIl06OmJlZm9yZSB7IGNvbnRlbnQ6ICdpbic7IGRpc3BsYXk6IGZsZXg7IGFsaWduLWl0ZW1zOiBjZW50ZXI7IGp1c3RpZnktY29udGVudDogY2VudGVyOyBmbGV4OiBub25lOyB3aWR0aDogMjJweDsgaGVpZ2h0OiAyMnB4OyBib3JkZXItcmFkaXVzOiA1cHg7IGJhY2tncm91bmQtY29sb3I6ICMwQTY2QzI7IGZvbnQtZmFtaWx5OiBIYW5rZW4gR3JvdGVzazsgZm9udC1zaXplOiAxM3B4OyBsaW5lLWhlaWdodDogMTsgZm9udC13ZWlnaHQ6IDgwMDsgbGV0dGVyLXNwYWNpbmc6IC0wLjVweDsgY29sb3I6ICNGRkZGRkY7IH0gJiAucmwtYXV0ZXVyIGFbaHJlZio9ImxpbmtlZGluLmNvbSJdOmhvdmVyOjpiZWZvcmUgeyBiYWNrZ3JvdW5kLWNvbG9yOiAjNEEyQkI4OyB9ICYgLnJsLWF1dGV1ciBhW2hyZWYqPSJsaW5rZWRpbi5jb20iXTpmb2N1cy12aXNpYmxlIHsgb3V0bGluZTogM3B4IHNvbGlkICM1QjNCRUE7IG91dGxpbmUtb2Zmc2V0OiAycHg7IH0gQG1lZGlhIChob3ZlcjogaG92ZXIpIGFuZCAocG9pbnRlcjogZmluZSkgeyAmIC5ybC1naWYtYm91dG9uIHsgb3BhY2l0eTogMDsgfSAmIC5ybC1naWY6aG92ZXIgLnJsLWdpZi1ib3V0b24sICYgLnJsLWdpZi1ib3V0b246Zm9jdXMtdmlzaWJsZSwgJiAucmwtZ2lmLWJvdXRvblthcmlhLXByZXNzZWQ9InRydWUiXSB7IG9wYWNpdHk6IDE7IH0gfQ=="
                     }
                 }
             ]

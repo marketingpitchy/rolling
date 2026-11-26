@@ -1105,6 +1105,22 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   /workspace/maquette-guides-rex-7.html, **à valider**) : plus de texte sur l'image sauf l'étiquette du type (violet guide, pêche
   REX), titre et résumé une seule fois sous l'image, timecode **figé** = temps de lecture, point REC fixe, boutons à la même hauteur
   (même structure : bouton en bas + une ligne dessous : infos PDF / « Lire le témoignage ») ; REX : « Rolling × logo » au-dessus du titre.
+- **0.7.29 : carte guide / REX « viseur » (tour 7 validé, « go ») + composition « Introduction »** : modèle `c5-carte-guide`
+  (« Rolling · Carte guide et REX ») = `enveloppe-doc` (display contents) > 2 articles `carte-doc` : guide (`sans-retour-experience`) et
+  REX (`carte-doc-rex si-retour-experience`) ; `viseur-doc` (4:3, `container-type: size`, coins en ::before, « REC » point fixe en ::after)
+  avec `halo-doc` (même image floue) + `couverture-doc` (max 64cqw / 68cqh : horizontale ou verticale sans réglage) ou `picto-doc` ;
+  REX : `photo-doc`, sinon `logo-doc` ; `timecode-doc` (champ calculé `timecode` = temps de lecture, `si-lecture`), `etiquette-doc`
+  (type_doc, sinon « Guide » ; REX `etiquette-doc-rex`) ; `corps-doc` : `cobrand-doc` (logo Rolling × `logo-client-doc` ou `client-doc`),
+  `titre-doc`, `resume-doc` (2 lignes), `bouton-doc` (+ `bouton-doc-rex`, `margin-top: auto` ⇒ boutons alignés), dessous `sous-doc` /
+  `info-doc` (« PDF · n pages · n min de lecture ») ou `lien-doc` « Lire le témoignage » (`si-temoignage-recit`, sinon la ligne PDF).
+  Guide : champs `lecture` (minutes, sinon pages × 0,8 + 2), boîte « Retour d'expérience (REX) » : `rex` (case ; à l'enregistrement coche
+  aussi le thème `retours-experience`), `logo`, `client`, `temoignage` (facultatif). `Rolling_Contenus::valeur_guide()` : calculés
+  `retour_experience` (case ou thème : anciens REX reconnus), `logo` / `client` (guide sinon témoignage lié), `lecture`, `timecode` ;
+  repère `si-retour-experience` (champ_vide). **Leçon : `.rl-intro` est l'écran de chargement (rolling.css)** ⇒ encart d'article
+  = composition `intro` (« Rolling : Introduction », groupe `rl-introduction` : label « L'essentiel » + texte libre, fond d'« En bref »).
+  Hover : règles `&:hover .couverture-doc` portées par la carte (un `.parent &` dans le CSS d'une classe devient `.parent .elementor .x`).
+  Testé : wp (Guides 1440 / 390, boutons alignés, axe 0, éditeur Elementor après ~30 s de chargement des classes), mise à jour 0.7.28 → 0.7.29
+  sur wp2 (4.4.1), PHPCS 0 erreur, composition valide dans l'éditeur WordPress.
 - **Chargement de page effet film** (demande avant la fin de la livraison 4) : maquette `maquettes/loading/maquette-loading.html`
   (copie /workspace/maquette-loading.html), 4 options : A amorce 3-2-1, B clap qui se ferme puis rideau, C ouverture
   cinéma (bandes noires + REC + timecode + règle avec la tête de lecture rouge des frises, plus de filet fin), D barre de lecture en haut sans écran. Conseil : C à l'arrivée (première page

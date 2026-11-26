@@ -368,12 +368,18 @@ class Rolling_Contenus {
 				),
 			),
 			'rolling_guide'       => array(
-				__( 'Le guide', 'rolling' ) => array(
-					'resume'     => array( 'zone', __( 'Résumé', 'rolling' ), __( 'Une phrase sous le titre.', 'rolling' ) ),
-					'type_doc'   => array( 'texte', __( 'Type', 'rolling' ), __( 'Ex. : Guide PDF, Check-list, Modèle, Retour d’expérience. Affiché sur l’image de la carte.', 'rolling' ) ),
-					'pages'      => array( 'nombre', __( 'Nombre de pages', 'rolling' ), '' ),
-					'lien'       => array( 'lien', __( 'Lien de la page HubSpot', 'rolling' ), __( 'Le bouton « Télécharger » ouvre ce lien.', 'rolling' ) ),
-					'temoignage' => array( 'relation', __( 'Témoignage lié (retour d’expérience)', 'rolling' ), __( 'Pour un retour d’expérience (thème « Retours d’expérience ») : cochez le témoignage du client. Un encart « Télécharger le retour d’expérience » s’affiche alors sur sa fiche témoignage et sur la fiche de la réalisation liée ; sans image à la une, la carte montre le logo du client.', 'rolling' ), 'rolling_temoignage' ),
+				__( 'Le guide', 'rolling' )                => array(
+					'resume'   => array( 'zone', __( 'Résumé', 'rolling' ), __( 'Une ou deux phrases sous le titre.', 'rolling' ) ),
+					'type_doc' => array( 'texte', __( 'Type de document', 'rolling' ), __( 'Ex. : Lexique, Comparatif, Guide pratique, Check-list. Affiché en étiquette violette sur l’image de la carte (vide : « Guide »).', 'rolling' ) ),
+					'pages'    => array( 'nombre', __( 'Nombre de pages', 'rolling' ), '' ),
+					'lecture'  => array( 'nombre', __( 'Temps de lecture (minutes)', 'rolling' ), __( 'Facultatif : calculé d’après le nombre de pages s’il est vide. Affiché sous le bouton et dans le timecode de la carte (ex. : 5 ⇒ 00:05:00:00).', 'rolling' ) ),
+					'lien'     => array( 'lien', __( 'Lien de la page HubSpot', 'rolling' ), __( 'Le bouton « Télécharger » ouvre ce lien.', 'rolling' ) ),
+				),
+				__( 'Retour d’expérience (REX)', 'rolling' ) => array(
+					'rex'        => array( 'case', __( 'C’est un retour d’expérience', 'rolling' ), __( 'Cochée : la carte passe en version REX (pêche) : photo du projet en image à la une, « Rolling × logo du client » au-dessus du titre, bouton « Télécharger le REX ». Le thème « Retours d’expérience » est aussi coché pour le filtre de la page.', 'rolling' ) ),
+					'logo'       => array( 'image', __( 'Logo du client', 'rolling' ), __( 'Vide : le logo du témoignage lié.', 'rolling' ) ),
+					'client'     => array( 'texte', __( 'Nom du client', 'rolling' ), __( 'Ex. : L’Oréal. Affiché à la place du logo s’il n’y en a pas. Vide : le client du témoignage lié.', 'rolling' ) ),
+					'temoignage' => array( 'relation', __( 'Témoignage lié (facultatif)', 'rolling' ), __( 'Cochez le témoignage du client : le lien « Lire le témoignage » s’affiche sous le bouton (si le témoignage a un récit), et un encart « Télécharger le retour d’expérience » apparaît sur sa fiche et sur celle de la réalisation liée.', 'rolling' ), 'rolling_temoignage' ),
 				),
 			),
 			'rolling_webinar'     => array(
@@ -538,6 +544,44 @@ class Rolling_Contenus {
 	}
 
 	/**
+	 * Valeurs calculées d'un guide (null : valeur enregistrée telle quelle).
+	 *
+	 * Retour d'expérience : case cochée ou thème « Retours d'expérience » (REX créés avant 0.7.29). Logo et nom du
+	 * client : ceux du guide, sinon ceux du témoignage lié. Temps de lecture : saisi, sinon calculé d'après les pages.
+	 *
+	 * @param string $cle   Clé du champ.
+	 * @param int    $guide Guide.
+	 * @return mixed|null
+	 */
+	private static function valeur_guide( $cle, $guide ) {
+		switch ( $cle ) {
+			case 'retour_experience':
+				return ( get_post_meta( $guide, self::PREFIXE . 'rex', true ) || has_term( 'retours-experience', 'rolling_theme', $guide ) ) ? '1' : '';
+			case 'logo':
+			case 'client':
+				$propre = get_post_meta( $guide, self::PREFIXE . $cle, true );
+				if ( '' !== (string) $propre ) {
+					return $propre;
+				}
+				$temoignage = self::temoignage_lie( $guide );
+				return $temoignage ? get_post_meta( $temoignage, self::PREFIXE . $cle, true ) : '';
+			case 'lecture':
+				$minutes = (int) get_post_meta( $guide, self::PREFIXE . 'lecture', true );
+				$pages   = (int) get_post_meta( $guide, self::PREFIXE . 'pages', true );
+				if ( ! $minutes && $pages ) {
+					$minutes = max( 2, (int) round( $pages * 0.8 + 2 ) );
+				}
+				return $minutes ? (string) $minutes : '';
+			case 'timecode':
+				// Timecode figé du viseur de la carte : le temps de lecture (« 00:05:00:00 »).
+				$minutes = (int) self::valeur_guide( 'lecture', $guide );
+				return sprintf( '%02d:%02d:00:00', intdiv( $minutes, 60 ), $minutes % 60 );
+		}
+
+		return null;
+	}
+
+	/**
 	 * Valeur d'un champ (lignes : tableau de lignes).
 	 *
 	 * @param string   $cle     Clé du champ.
@@ -546,6 +590,12 @@ class Rolling_Contenus {
 	 */
 	public static function valeur( $cle, $post_id = null ) {
 		$post_id = $post_id ? $post_id : get_the_ID();
+		if ( 'rolling_guide' === get_post_type( $post_id ) ) {
+			$guide = self::valeur_guide( $cle, $post_id );
+			if ( null !== $guide ) {
+				return $guide;
+			}
+		}
 		if ( 'formats_videos' === $cle ) {
 			// Champ calculé : les formats des vidéos de la réalisation (« 9:16, 1:1 »).
 			return implode( ', ', array_unique( array_map( array( __CLASS__, 'libelle_format' ), array_column( self::videos( $post_id ), 'format' ) ) ) );
@@ -1047,6 +1097,10 @@ class Rolling_Contenus {
 					update_post_meta( $post_id, self::PREFIXE . $cle, $valeur );
 				}
 			}
+		}
+		if ( 'rolling_guide' === $post->post_type && get_post_meta( $post_id, self::PREFIXE . 'rex', true ) && term_exists( 'retours-experience', 'rolling_theme' ) ) {
+			// Un REX coché apparaît aussi dans le filtre « Retours d'expérience » de la page Guides.
+			wp_set_object_terms( $post_id, 'retours-experience', 'rolling_theme', true );
 		}
 		if ( 'rolling_realisation' === $post->post_type ) {
 			// La vidéo principale reste dans l'ancien champ « video », lu par les cartes, le mur, le schéma et les témoignages.
