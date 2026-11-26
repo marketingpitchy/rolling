@@ -1101,6 +1101,10 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   accompagnement / résultat), au survol tête de lecture + zoom lent + nom du chapitre en sous-titre, durée = temps de lecture ;
   B story 9:16 (barres de stories, cadres : couverture puis gros plans ; REX : couverture, photo, logo), 4 par ligne, glisser en mobile ;
   C viseur (coins, REC, timecode qui tourne) + bandeau d'incrustation titre (REX : logo du client). Si rien ne plaît : H1.
+  **Retour : C intéressant** ⇒ tour 7 (`maquettes/guides-rex/guides-rex-7.html`, `scratchpad/gen-guides7.py`, copie
+  /workspace/maquette-guides-rex-7.html, **à valider**) : plus de texte sur l'image sauf l'étiquette du type (violet guide, pêche
+  REX), titre et résumé une seule fois sous l'image, timecode **figé** = temps de lecture, point REC fixe, boutons à la même hauteur
+  (même structure : bouton en bas + une ligne dessous : infos PDF / « Lire le témoignage ») ; REX : « Rolling × logo » au-dessus du titre.
 - **Chargement de page effet film** (demande avant la fin de la livraison 4) : maquette `maquettes/loading/maquette-loading.html`
   (copie /workspace/maquette-loading.html), 4 options : A amorce 3-2-1, B clap qui se ferme puis rideau, C ouverture
   cinéma (bandes noires + REC + timecode + règle avec la tête de lecture rouge des frises, plus de filet fin), D barre de lecture en haut sans écran. Conseil : C à l'arrivée (première page
