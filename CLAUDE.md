@@ -1128,6 +1128,9 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   titre saisis dans Elementor ; barre de lecture découpée ; saut = currentTime / postMessage Vimeo / YouTube seekTo) (conseil)** ;
   C frise de « Notre histoire » = timeline de la vidéo (moniteur de montage au-dessus, clic sur un clip = y aller, tête de lecture
   qui suit) ; D carte de la citation des fondateurs : leur photo devient leur vidéo (lecture dans la carte), citation gardée en texte.
+  Retour : **B pas mal**, chapitres **facultatifs** (rien saisi = lecteur seul, barre de lecture simple, pas de rangée vide) :
+  maquette mise à jour (B avec / sans chapitre). Vidéo YouTube lMHtcOnVpZQ illisible ici (youtube.com ajouté à l'environnement,
+  lecture toujours refusée) ⇒ transcription ou moments clés demandés à la cliente.
 - **Chargement de page effet film** (demande avant la fin de la livraison 4) : maquette `maquettes/loading/maquette-loading.html`
   (copie /workspace/maquette-loading.html), 4 options : A amorce 3-2-1, B clap qui se ferme puis rideau, C ouverture
   cinéma (bandes noires + REC + timecode + règle avec la tête de lecture rouge des frises, plus de filet fin), D barre de lecture en haut sans écran. Conseil : C à l'arrivée (première page
