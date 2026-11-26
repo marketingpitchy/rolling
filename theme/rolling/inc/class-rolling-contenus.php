@@ -24,6 +24,8 @@ class Rolling_Contenus {
 		add_action( 'init', array( __CLASS__, 'enregistrer' ) );
 		add_action( 'add_meta_boxes', array( __CLASS__, 'boites' ) );
 		add_action( 'save_post', array( __CLASS__, 'sauver' ), 10, 2 );
+		add_action( 'transition_post_status', array( __CLASS__, 'contenu_change' ), 10, 3 );
+		add_action( 'before_delete_post', array( __CLASS__, 'contenu_supprime' ), 10, 2 );
 		add_action( 'admin_enqueue_scripts', array( __CLASS__, 'scripts_admin' ) );
 		add_filter( 'enter_title_here', array( __CLASS__, 'aide_titre' ), 10, 2 );
 		add_action( 'template_redirect', array( __CLASS__, 'temoignage_sans_recit' ) );
@@ -32,6 +34,47 @@ class Rolling_Contenus {
 			add_filter( 'manage_' . $type . '_posts_columns', array( __CLASS__, 'colonnes' ) );
 			add_action( 'manage_' . $type . '_posts_custom_column', array( __CLASS__, 'colonne' ), 10, 2 );
 		}
+	}
+
+	/**
+	 * Suppression définitive d'un contenu publié : comme contenu_change().
+	 *
+	 * @param int     $id   Identifiant.
+	 * @param WP_Post $post Contenu.
+	 */
+	public static function contenu_supprime( $id, $post ) { // phpcs:ignore Generic.CodeAnalysis.UnusedFunctionParameter.FoundBeforeLastUsed -- Signature du crochet.
+		if ( $post instanceof WP_Post ) {
+			self::contenu_change( 'trash', $post->post_status, $post );
+		}
+	}
+
+	/**
+	 * Un contenu publié change (ajout, modification, mise à la corbeille) : les pages qui le listent (Guides, Blog,
+	 * Réalisations, accueil…) sont dans le cache de pages (WP Super Cache), qui ne vide que la page du contenu et l'accueil.
+	 * Le cache des pages est donc vidé, une seule fois, en fin de requête (après l'enregistrement des champs).
+	 *
+	 * @param string  $nouveau Nouveau statut.
+	 * @param string  $ancien  Ancien statut.
+	 * @param WP_Post $post    Contenu.
+	 */
+	public static function contenu_change( $nouveau, $ancien, $post ) {
+		static $prevu = false;
+		if ( $prevu || ( 'publish' !== $nouveau && 'publish' !== $ancien ) || wp_is_post_revision( $post ) || wp_is_post_autosave( $post ) ) {
+			return;
+		}
+		// Contenus des listes, articles, et modèles Elementor (cartes, fiches) qui s'affichent dans les listes.
+		if ( ! in_array( $post->post_type, array_merge( array_keys( self::types() ), array( 'post', 'elementor_library' ) ), true ) ) {
+			return;
+		}
+		$prevu = true;
+		add_action(
+			'shutdown',
+			function () {
+				if ( function_exists( 'wp_cache_clear_cache' ) ) {
+					wp_cache_clear_cache();
+				}
+			}
+		);
 	}
 
 	/**

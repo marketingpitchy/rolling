@@ -1142,6 +1142,13 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   debut)` : Vimeo `#t=24s`, YouTube `start=` + `enablejsapi=1&origin=`, fichier `currentTime`) ou saut si ça joue (Vimeo
   `setCurrentTime`, YouTube `seekTo`) ; avancée par `timeupdate` (fichier, Vimeo `addEventListener`) ou `infoDelivery` (YouTube
   `listening`). Testé avec un .mp4 de 90 s (wp + mise à jour wp2, axe 0, 1440 / 390, éditeur) ; Vimeo / YouTube bloqués ici.
+- **0.7.31** : nouveau guide absent de la page Guides tant que la cliente ne réinsérait pas la Liste = **cache de WP Super Cache**
+  (reproduit sur wp avec WPSC 3.x « Mise en cache activée » : à la publication d'un contenu, WPSC ne vide que sa page et l'accueil ;
+  réinsérer la Liste enregistrait la page Guides, donc vidait son cache). Le cache des éléments d'Elementor n'y est pour rien
+  (widget Liste `is_dynamic_content` ⇒ rendu à chaque fois via le shortcode `elementor-element`). Correctif :
+  `Rolling_Contenus::contenu_change` (`transition_post_status`, publication / modification / corbeille d'un contenu Rolling, d'un
+  article ou d'un modèle Elementor) + `contenu_supprime` (`before_delete_post`) ⇒ `wp_cache_clear_cache()` une fois, au `shutdown`.
+  WP Super Cache installé sur wp (zip dans scratchpad/plugins/wpsc).
 - **Chargement de page effet film** (demande avant la fin de la livraison 4) : maquette `maquettes/loading/maquette-loading.html`
   (copie /workspace/maquette-loading.html), 4 options : A amorce 3-2-1, B clap qui se ferme puis rideau, C ouverture
   cinéma (bandes noires + REC + timecode + règle avec la tête de lecture rouge des frises, plus de filet fin), D barre de lecture en haut sans écran. Conseil : C à l'arrivée (première page
