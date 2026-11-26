@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Guides et REX, tour 5</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Hanken+Grotesk:wght@400..800&display=swap" rel="stylesheet">
+<style>
+:root{--encre:#0F0F12;--para:#4A4858;--legende:#5F5C6C;--violet:#5B3BEA;--violet-f:#4A2BB8;--fond:#FAF9F7;--peche:#FF8A5B;--orange-f:#A63C14;--rex:#B8400F}
+*{box-sizing:border-box}
+body{margin:0;background:var(--fond);color:var(--encre);font-family:'Hanken Grotesk',sans-serif}
+main{max-width:1344px;margin:0 auto;padding:48px 16px 96px}
+h1{font:650 46px/1.05 'Bricolage Grotesque';letter-spacing:-.05em;margin:0 0 12px}
+.intro{font-size:18px;line-height:1.6;color:var(--para);max-width:900px;margin:0}
+.intro b{color:var(--encre)}
+.tc{display:inline-block;font:700 12px/1 'Hanken Grotesk';letter-spacing:.16em;color:var(--violet);margin-bottom:10px}
+.partie{margin-top:72px}
+.partie>h2{font:650 32px/1.1 'Bricolage Grotesque';letter-spacing:-.045em;margin:0 0 8px}
+.partie>p{font-size:16px;line-height:1.6;color:var(--para);max-width:920px;margin:0 0 8px}
+.option{margin-top:36px;padding:28px 20px 20px;border-radius:26px;background:#fff;box-shadow:0 1px 2px rgba(15,15,18,.05),0 24px 50px -30px rgba(76,48,170,.3)}
+.option h3{font:650 24px/1.2 'Bricolage Grotesque';letter-spacing:-.04em;margin:0 0 4px 8px}
+.option>p{margin:0 0 22px 8px;font-size:15px;line-height:1.55;color:var(--para);max-width:940px}
+.conseil{display:inline-block;margin-left:8px;padding:4px 10px;border-radius:999px;background:var(--violet);color:#fff;font:700 12px/1.3 'Hanken Grotesk';letter-spacing:.06em;vertical-align:middle}
+.ecran{border-radius:18px;background:var(--fond);box-shadow:inset 0 0 0 1px rgba(15,15,18,.08);padding:28px 16px 32px;overflow:hidden}
+.ecran+.ecran{margin-top:20px}
+.ecran.mobile{width:392px;max-width:100%;padding:20px 16px}
+.etiq{font:700 12px/1 'Hanken Grotesk';letter-spacing:.14em;text-transform:uppercase;color:var(--legende);margin:0 0 18px}
+.grille{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;align-items:stretch}
+.grille.deux{grid-template-columns:repeat(2,minmax(0,1fr))}
+.mobile .grille,.mobile .grille.deux{grid-template-columns:minmax(0,1fr);gap:20px}
+.ico{width:18px;height:18px;flex:none}
+.ico-p{width:14px;height:14px;flex:none}
+/* Cartes */
+.carte{position:relative;display:flex;flex-direction:column;min-width:0;border-radius:24px;background:#fff;overflow:hidden;text-decoration:none;color:inherit;
+ box-shadow:0 1px 2px rgba(15,15,18,.05),0 26px 50px -32px rgba(76,48,170,.4);transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s}
+a.carte:hover,a.carte:focus-visible{transform:translateY(-4px);box-shadow:0 1px 2px rgba(15,15,18,.05),0 34px 60px -30px rgba(76,48,170,.5)}
+a.carte:focus-visible,.carte a:focus-visible{outline:3px solid var(--violet);outline-offset:3px}
+.corps{display:flex;flex-direction:column;flex:1;padding:20px 22px 22px}
+.titre{margin:0 0 8px;font:650 21px/1.22 'Bricolage Grotesque';letter-spacing:-.035em}
+.titre.grand{font-size:25px}
+.resume{margin:0;font-size:15px;line-height:1.55;color:var(--para)}
+.meta{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 12px}
+.puce{display:inline-flex;align-items:center;min-height:26px;padding:0 10px;border-radius:999px;background:#FFF1E7;color:var(--orange-f);font:700 12px/1 'Hanken Grotesk';box-shadow:inset 0 0 0 1px rgba(166,60,20,.2)}
+.puce.plein{background:var(--rex);color:#fff;box-shadow:none}
+.info{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--legende)}
+.cta{display:flex;align-items:center;justify-content:center;gap:10px;min-height:50px;margin-top:auto;padding:0 20px;border-radius:999px;font:700 15px/1.2 'Hanken Grotesk';text-decoration:none;width:100%}
+.corps .resume+.cta,.corps .titre+.cta{margin-top:20px}
+.cta.auto{width:auto;align-self:flex-start;margin-top:22px}
+.cta-violet{background:var(--violet);color:#fff;box-shadow:0 14px 28px -14px rgba(91,59,234,.75)}
+a.carte:hover .cta-violet{background:var(--violet-f)}
+.cta-rex{background:var(--rex);color:#fff;box-shadow:0 14px 28px -14px rgba(184,64,15,.7)}
+.cta-rex:hover{background:#9A3412}
+.actions{margin-top:auto;padding-top:20px}
+.lien-rex{display:block;margin-top:12px;text-align:center;color:var(--orange-f);font-weight:700;font-size:14.5px;text-decoration:underline;text-underline-offset:3px}
+.verre-pill{position:absolute;z-index:2;display:inline-flex;align-items:center;gap:6px;min-height:28px;padding:0 12px;border-radius:999px;
+ background:rgba(255,255,255,.86);-webkit-backdrop-filter:blur(12px) saturate(1.4);backdrop-filter:blur(12px) saturate(1.4);
+ box-shadow:inset 0 0 0 1px rgba(255,255,255,.9),0 6px 16px -8px rgba(40,20,110,.35);font:700 12px/1 'Hanken Grotesk';color:var(--encre)}
+.degrade{background:linear-gradient(90deg,#5B3BEA,#7A45E0,#C94A1E);-webkit-background-clip:text;background-clip:text;color:transparent;
+ padding-inline:.06em;margin-inline:-.06em;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+/* G1 halo de la couverture */
+.g1-scene{position:relative;height:280px;display:grid;place-items:center;overflow:hidden;background:#EEE8FF;isolation:isolate}
+.g1-scene::before{content:"";position:absolute;inset:-40px;z-index:-1;background:var(--img) center/cover;filter:blur(34px) saturate(1.5);opacity:.75;transform:scale(1.15)}
+.g1-scene::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(255,255,255,0) 55%,rgba(255,255,255,.35))}
+.g1-couv{display:block;border-radius:8px;object-fit:cover;box-shadow:0 0 0 1px rgba(255,255,255,.75),0 22px 40px -18px rgba(30,15,90,.55);transition:transform .45s cubic-bezier(.2,.7,.2,1)}
+.g1-couv.h{width:76%;height:auto;aspect-ratio:1.414}
+.g1-couv.v{height:232px;width:auto;aspect-ratio:.707}
+a.g1:hover .g1-couv,a.g1:focus-visible .g1-couv{transform:translateY(-6px) scale(1.02)}
+.g1-type{top:14px;left:14px;color:var(--violet-f)}
+.g1-format{bottom:14px;right:14px}
+/* G2 couverture + verre */
+.g2{background:linear-gradient(160deg,#EFE9FF,#FFF1E7)}
+.g2-image{height:300px;background-size:cover;background-position:center top;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.g2-image.h{background-size:contain;background-repeat:no-repeat;background-position:center 18px;height:300px}
+a.g2:hover .g2-image{transform:scale(1.04)}
+.g2-verre{position:relative;display:flex;flex-direction:column;flex:1;margin:-70px 12px 12px;padding:18px 18px 16px;border-radius:18px;
+ background:rgba(255,255,255,.84);-webkit-backdrop-filter:blur(18px) saturate(1.4);backdrop-filter:blur(18px) saturate(1.4);
+ box-shadow:inset 0 0 0 1px rgba(255,255,255,.95),0 18px 36px -22px rgba(40,20,110,.45)}
+.g2-type{align-self:flex-start;margin-bottom:10px;font:700 12px/1 'Hanken Grotesk';letter-spacing:.12em;text-transform:uppercase;color:var(--violet-f)}
+.g2 .resume{font-size:14.5px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.g2-bas{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:auto;padding-top:16px}
+.cta-mini{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 18px;border-radius:999px;background:var(--violet);color:#fff;font:700 14.5px/1 'Hanken Grotesk';box-shadow:0 12px 24px -12px rgba(91,59,234,.75)}
+a.g2:hover .cta-mini{background:var(--violet-f)}
+/* G3 fiche horizontale */
+.g3{flex-direction:row}
+.g3-visuel{flex:0 0 44%;display:grid;place-items:center;padding:26px;background:radial-gradient(70% 60% at 20% 15%,#E4DAFF,transparent 70%),radial-gradient(60% 60% at 90% 90%,#FFDCCB,transparent 70%),#F4F0FF}
+.g3-couv{display:block;border-radius:8px;object-fit:cover;box-shadow:0 0 0 1px rgba(255,255,255,.8),0 20px 36px -18px rgba(30,15,90,.5);transition:transform .45s cubic-bezier(.2,.7,.2,1)}
+.g3-couv.h{width:100%;aspect-ratio:1.414}
+.g3-couv.v{height:250px;width:auto;aspect-ratio:.707}
+a.g3:hover .g3-couv{transform:translateY(-5px)}
+.g3-corps{display:flex;flex-direction:column;flex:1;min-width:0;padding:26px 28px}
+.g3-haut{display:flex;align-items:center;gap:10px;margin:0 0 12px}
+.tc-pill{display:inline-flex;align-items:center;height:26px;padding:0 10px;border-radius:999px;background:#EDE6FF;color:var(--violet-f);font:700 13px/1 'Hanken Grotesk'}
+.g3-type{display:inline-flex;align-items:center;gap:10px;font:700 12px/1 'Hanken Grotesk';letter-spacing:.16em;text-transform:uppercase;color:var(--legende)}
+.g3-type::before{content:"";width:22px;height:1px;background:currentColor}
+.g3-infos{display:flex;align-items:center;gap:6px;margin:14px 0 0;font-size:13px;color:var(--legende)}
+.mobile .g3{flex-direction:column}
+.mobile .g3-visuel{flex:none;height:230px;padding:22px}
+.mobile .g3-couv.h{width:100%;max-width:262px;height:auto}
+.mobile .g3-couv.v{height:186px;width:auto}
+.mobile .g3-corps{padding:20px 20px 22px}
+.mobile .titre.grand{font-size:22px}
+.mobile .cta.auto{width:100%}
+/* REX communs */
+.rex{background:radial-gradient(80% 50% at 100% 0%,#FFE3D3,transparent 70%),radial-gradient(70% 45% at 0% 100%,#EDE6FF,transparent 70%),#FFFBF8}
+.logo-client{font:500 17px/1 'Hanken Grotesk';letter-spacing:.06em;color:var(--encre)}
+.cobrand{display:inline-flex;align-items:center;gap:8px}
+.cobrand img{display:block;height:18px;width:auto}
+.cobrand .x{font-size:15px;color:var(--legende)}
+/* R1 le REX en miniature */
+.r1-haut{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;padding:18px 20px 14px}
+.pill-temoin{white-space:nowrap;display:inline-flex;align-items:center;gap:7px;min-height:28px;padding:0 12px;border-radius:999px;background:#fff;color:var(--violet-f);font:700 12px/1 'Hanken Grotesk';box-shadow:0 6px 16px -8px rgba(76,48,170,.35)}
+.pill-temoin i{width:8px;height:8px;border-radius:50%;background:#E0562A}
+.r1-photo{margin:0 14px;padding:6px;border-radius:20px;background:rgba(255,255,255,.55);box-shadow:inset 0 0 0 1px rgba(255,255,255,.95),0 18px 34px -22px rgba(120,60,40,.5)}
+.r1-photo img{display:block;width:100%;aspect-ratio:2.1;object-fit:cover;border-radius:14px}
+.r1-chiffres{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+.tuile{display:flex;flex-direction:column;align-items:center;gap:6px;padding:12px 8px 12px;border-radius:16px;background:rgba(255,255,255,.7);box-shadow:inset 0 0 0 1px rgba(255,255,255,.95),0 10px 22px -16px rgba(76,48,170,.4);text-align:center}
+.tuile img{height:50px;width:auto}
+.tuile span{font-size:13px;line-height:1.3;color:var(--para)}
+/* R2 le résultat d'abord */
+.r2-scene{position:relative;height:280px;overflow:hidden;background:radial-gradient(70% 70% at 15% 20%,#FFE1CF,transparent 70%),radial-gradient(60% 60% at 90% 85%,#E7DDFF,transparent 70%),#FFF5EE}
+.r2-logo{position:absolute;top:18px;left:18px;display:inline-flex;align-items:center;min-height:40px;padding:0 16px;border-radius:12px;background:#fff;box-shadow:0 10px 24px -14px rgba(120,60,40,.45)}
+.r2-chiffre{position:absolute;left:22px;bottom:22px;display:flex;align-items:flex-end;gap:12px}
+.r2-chiffre img{height:118px;width:auto}
+.r2-chiffre p{margin:0 0 10px;font:650 17px/1.2 'Bricolage Grotesque';letter-spacing:-.03em;color:var(--encre)}
+.r2-couv{position:absolute;right:22px;top:58px;width:118px;aspect-ratio:.707;object-fit:cover;object-position:top;border-radius:8px;box-shadow:0 0 0 1px rgba(255,255,255,.85),0 22px 40px -18px rgba(90,40,20,.5);transition:transform .45s cubic-bezier(.2,.7,.2,1)}
+.mobile .r2-couv{width:88px;top:70px}
+.mobile .r2-chiffre img{height:96px}
+.mobile .r2-chiffre p{font-size:16px;max-width:150px}
+.r2:hover .r2-couv{transform:translateY(-6px)}
+/* R3 la photo du projet */
+.r3-photo{position:relative;margin:12px 12px 0}
+.r3-photo>img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:16px}
+.r3-type{position:absolute;top:12px;left:12px;display:inline-flex;align-items:center;min-height:28px;padding:0 12px;border-radius:999px;background:var(--rex);color:#fff;font:700 12px/1 'Hanken Grotesk'}
+.r3-barre{position:absolute;left:14px;bottom:-20px;display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border-radius:14px;background:#fff;box-shadow:0 14px 30px -16px rgba(120,60,40,.5)}
+.r3 .corps{padding-top:34px}
+.r3-chips{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 0}
+.r3-chips span{display:inline-flex;align-items:baseline;gap:5px;padding:7px 12px;border-radius:12px;background:#fff;box-shadow:inset 0 0 0 1px rgba(166,60,20,.18);font-size:13.5px;color:var(--para)}
+.r3-chips b{font:700 18px/1 'Bricolage Grotesque';color:var(--orange-f)}
+/* Admin */
+.admin{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:18px}
+.admin div{padding:20px;border-radius:18px;background:#fff;box-shadow:inset 0 0 0 1px rgba(15,15,18,.08)}
+.admin h3{margin:0 0 6px;font:650 18px/1.2 'Bricolage Grotesque';letter-spacing:-.03em}
+.admin p{margin:0;font-size:14.5px;line-height:1.55;color:var(--para)}
+@media (max-width:900px){.grille,.grille.deux,.admin{grid-template-columns:minmax(0,1fr)}.g3{flex-direction:column}.g3-visuel{flex:none}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+
+.puce.violet{background:#EDE6FF;color:var(--violet-f);box-shadow:inset 0 0 0 1px rgba(74,43,184,.18)}
+.hz{display:grid;grid-template-columns:42% minmax(0,1fr)}
+.hz-visuel{position:relative;min-height:280px;display:grid;place-items:center;overflow:hidden;isolation:isolate}
+.halo{background:#EEE8FF}
+.halo::before{content:"";position:absolute;inset:-40px;z-index:-1;background:var(--img) center/cover;filter:blur(34px) saturate(1.5);opacity:.75;transform:scale(1.15)}
+.hz-couv{display:block;border-radius:8px;object-fit:cover;object-position:top;box-shadow:0 0 0 1px rgba(255,255,255,.8),0 20px 36px -18px rgba(30,15,90,.5);transition:transform .45s cubic-bezier(.2,.7,.2,1)}
+.hz-couv.h{width:84%;height:auto;aspect-ratio:1.414}
+.hz-couv.v{height:226px;width:auto;aspect-ratio:.707}
+a.hz:hover .hz-couv,a.hz:focus-visible .hz-couv,.hz-rex:hover .hz-couv{transform:translateY(-5px)}
+.hz-corps{display:flex;flex-direction:column;min-width:0;padding:24px 26px}
+.hz .meta{margin-bottom:10px}
+.hz .titre{font-size:22px}
+.hz-bas{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;margin-top:auto;padding-top:18px}
+.hz-bas .cta{width:auto;margin:0;min-height:48px}
+.hz-bas .lien-rex{margin:0}
+/* REX : photo */
+.rex-photo{place-items:stretch}
+.hz-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.onglet-co{position:absolute;left:14px;bottom:14px;display:inline-flex;align-items:center;min-height:42px;padding:0 14px;border-radius:12px;background:#fff;box-shadow:0 14px 30px -16px rgba(60,20,10,.6)}
+/* REX : couverture sur halo pêche */
+.rex-halo{background:radial-gradient(70% 70% at 15% 15%,#FFDCC8,transparent 70%),radial-gradient(60% 60% at 90% 90%,#E7DDFF,transparent 70%),#FFF3EB}
+.tuile-logo{position:absolute;top:14px;left:14px;z-index:2;display:inline-flex;align-items:center;min-height:38px;padding:0 14px;border-radius:12px;background:#fff;box-shadow:0 10px 24px -14px rgba(120,60,40,.5)}
+.hz-co{margin:0 0 10px}
+/* Mobile */
+.mobile .hz{grid-template-columns:minmax(0,1fr)}
+.mobile .hz-visuel{min-height:210px}
+.mobile .hz-couv.h{width:auto;height:170px}
+.mobile .hz-couv.v{height:176px}
+.mobile .hz-corps{padding:20px}
+.mobile .hz-bas .cta{width:100%}
+.mobile .hz-bas{justify-content:center}
+@media (max-width:900px){.hz{grid-template-columns:minmax(0,1fr)}}
+</style>
+</head>
+<body>
+<main>
+<header><span class="tc">MAQUETTE · TOUR 5</span><h1>Guides et REX, en fiches horizontales.</h1><p class="intro">Les deux en format horizontal, <b>2 par ligne</b> : image à gauche, texte et bouton à droite. Les REX n'ont <b>plus de chiffres clés</b> : la carte est aussi haute qu'un guide. Guides en violet, REX en pêche, mélangés dans la même grille comme sur la page. Deux façons de montrer le REX ; la version mobile est dessous.</p></header>
+<section class="partie"><span class="tc">00:01 · LA GRILLE</span><h2>Deux propositions.</h2><p>Guide : sa couverture, droite et nette, sur un fond flou fait de ses propres couleurs (le G1 du tour 4, couché). Elle s'adapte aux couvertures horizontales et verticales.</p>
+<section class="option"><h3>H1 · Le REX avec la photo du projet <span class="conseil">Conseil</span></h3><p>L'image du REX est une photo du tournage, en pleine hauteur, avec un onglet blanc Rolling × logo du client posé dessus. Le REX se reconnaît tout de suite à côté des guides : photo d'un côté, document de l'autre.</p><div class="ecran"><p class="etiq">Ordinateur · largeur réelle (2 par ligne)</p><div class="grille deux"><a class="carte hz hz-guide" href="#" aria-label="Le lexique de la vidéo, télécharger le guide"><div class="hz-visuel halo" style="--img:url(__LEX__)"><img class="hz-couv h" src="__LEX__" alt=""></div><div class="hz-corps"><p class="meta"><span class="puce violet">Lexique</span></p><h4 class="titre">Le lexique de la vidéo</h4><p class="resume">Brief, rushes, étalonnage : les mots de la vidéo expliqués simplement, étape par étape.</p><div class="hz-bas"><span class="cta cta-violet"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M6 11l6 6 6-6M5 20h14"/></svg>Télécharger le guide</span><span class="info"><svg class="ico-p" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/></svg>PDF · 4 pages</span></div></div></a><article class="carte rex hz hz-rex" aria-label="Retour d'expérience L'Oréal"><div class="hz-visuel rex-photo"><img class="hz-photo" src="__REXPHOTO__" alt=""><div class="onglet-co"><span class="cobrand"><img src="__LOGOR__" alt="Rolling" width="92" height="18"><span class="x" aria-hidden="true">×</span><span class="logo-client" role="img" aria-label="L'Oréal">L'ORÉAL</span></span></div></div><div class="hz-corps"><p class="meta"><span class="puce peche plein">Retour d'expérience</span><span class="puce peche">Com interne · RH · Formation</span></p><h4 class="titre">4 capsules vidéo pour 4 marques, livrées en 2 semaines pour un <span class="degrade">Live interne.</span></h4><p class="resume">Quatre capsules courtes, fidèles à chaque marque, pour rythmer un Live interne.</p><div class="hz-bas"><a class="cta cta-rex" href="#" aria-label="Télécharger le REX L'Oréal"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M6 11l6 6 6-6M5 20h14"/></svg>Télécharger le REX</a><a class="lien-rex" href="#">Lire le témoignage</a></div></div></article><a class="carte hz hz-guide" href="#" aria-label="Freelance ou agence vidéo : que choisir ?, télécharger le guide"><div class="hz-visuel halo" style="--img:url(__FREE__)"><img class="hz-couv v" src="__FREE__" alt=""></div><div class="hz-corps"><p class="meta"><span class="puce violet">Comparatif</span></p><h4 class="titre">Freelance ou agence vidéo : que choisir ?</h4><p class="resume">Coûts, délais, qualité, suivi : les vrais critères pour choisir le bon partenaire vidéo.</p><div class="hz-bas"><span class="cta cta-violet"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M6 11l6 6 6-6M5 20h14"/></svg>Télécharger le guide</span><span class="info"><svg class="ico-p" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/></svg>PDF · 12 pages</span></div></div></a><a class="carte hz hz-guide" href="#" aria-label="Le guide de la vidéo d'entreprise, télécharger le guide"><div class="hz-visuel halo" style="--img:url(__COUV2__)"><img class="hz-couv h" src="__COUV2__" alt=""></div><div class="hz-corps"><p class="meta"><span class="puce violet">Guide pratique</span></p><h4 class="titre">Le guide de la vidéo d'entreprise</h4><p class="resume">Du vocabulaire au brief, tout ce qu'il faut savoir pour réussir votre prochain film.</p><div class="hz-bas"><span class="cta cta-violet"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M6 11l6 6 6-6M5 20h14"/></svg>Télécharger le guide</span><span class="info"><svg class="ico-p" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/></svg>PDF · 18 pages</span></div></div></a></div></div><div class="ecran mobile"><p class="etiq">Mobile · 360 px</p><div class="grille"><article class="carte rex hz hz-rex" aria-label="Retour d'expérience L'Oréal"><div class="hz-visuel rex-photo"><img class="hz-photo" src="__REXPHOTO__" alt=""><div class="onglet-co"><span class="cobrand"><img src="__LOGOR__" alt="Rolling" width="92" height="18"><span class="x" aria-hidden="true">×</span><span class="logo-client" role="img" aria-label="L'Oréal">L'ORÉAL</span></span></div></div><div class="hz-corps"><p class="meta"><span class="puce peche plein">Retour d'expérience</span><span class="puce peche">Com interne · RH · Formation</span></p><h4 class="titre">4 capsules vidéo pour 4 marques, livrées en 2 semaines pour un <span class="degrade">Live interne.</span></h4><p class="resume">Quatre capsules courtes, fidèles à chaque marque, pour rythmer un Live interne.</p><div class="hz-bas"><a class="cta cta-rex" href="#" aria-label="Télécharger le REX L'Oréal"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M6 11l6 6 6-6M5 20h14"/></svg>Télécharger le REX</a><a class="lien-rex" href="#">Lire le témoignage</a></div></div></article><a class="carte hz hz-guide" href="#" aria-label="Freelance ou agence vidéo : que choisir ?, télécharger le guide"><div class="hz-visuel halo" style="--img:url(__FREE__)"><img class="hz-couv v" src="__FREE__" alt=""></div><div class="hz-corps"><p class="meta"><span class="puce violet">Comparatif</span></p><h4 class="titre">Freelance ou agence vidéo : que choisir ?</h4><p class="resume">Coûts, délais, qualité, suivi : les vrais critères pour choisir le bon partenaire vidéo.</p><div class="hz-bas"><span class="cta cta-violet"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M6 11l6 6 6-6M5 20h14"/></svg>Télécharger le guide</span><span class="info"><svg class="ico-p" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/></svg>PDF · 12 pages</span></div></div></a></div></div></section>
+<section class="option"><h3>H2 · Le REX avec sa couverture</h3><p>Même construction que les guides : la couverture du REX sur un fond pêche, le logo du client sur une étiquette blanche, Rolling × logo rappelé au-dessus du titre. Plus homogène ; il faut juste une image à la une = la couverture du REX.</p><div class="ecran"><p class="etiq">Ordinateur · largeur réelle (2 par ligne)</p><div class="grille deux"><a class="carte hz hz-guide" href="#" aria-label="Le lexique de la vidéo, télécharger le guide"><div class="hz-visuel halo" style="--img:url(__LEX__)"><img class="hz-couv h" src="__LEX__" alt=""></div><div class="hz-corps"><p class="meta"><span class="puce violet">Lexique</span></p><h4 class="titre">Le lexique de la vidéo</h4><p class="resume">Brief, rushes, étalonnage : les mots de la vidéo expliqués simplement, étape par étape.</p><div class="hz-bas"><span class="cta cta-violet"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M6 11l6 6 6-6M5 20h14"/></svg>Télécharger le guide</span><span class="info"><svg class="ico-p" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/></svg>PDF · 4 pages</span></div></div></a><article class="carte rex hz hz-rex" aria-label="Retour d'expérience L'Oréal"><div class="hz-visuel rex-halo"><span class="tuile-logo"><span class="logo-client" role="img" aria-label="L'Oréal">L'ORÉAL</span></span><img class="hz-couv v" src="__REX__" alt=""></div><div class="hz-corps"><p class="meta"><span class="puce peche plein">Retour d'expérience</span><span class="puce peche">Com interne · RH · Formation</span></p><p class="hz-co"><span class="cobrand"><img src="__LOGOR__" alt="Rolling" width="92" height="18"><span class="x" aria-hidden="true">×</span><span class="logo-client" role="img" aria-label="L'Oréal">L'ORÉAL</span></span></p><h4 class="titre">4 capsules vidéo pour 4 marques, livrées en 2 semaines pour un <span class="degrade">Live interne.</span></h4><p class="resume">Quatre capsules courtes, fidèles à chaque marque, pour rythmer un Live interne.</p><div class="hz-bas"><a class="cta cta-rex" href="#" aria-label="Télécharger le REX L'Oréal"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M6 11l6 6 6-6M5 20h14"/></svg>Télécharger le REX</a><a class="lien-rex" href="#">Lire le témoignage</a></div></div></article><a class="carte hz hz-guide" href="#" aria-label="Freelance ou agence vidéo : que choisir ?, télécharger le guide"><div class="hz-visuel halo" style="--img:url(__FREE__)"><img class="hz-couv v" src="__FREE__" alt=""></div><div class="hz-corps"><p class="meta"><span class="puce violet">Comparatif</span></p><h4 class="titre">Freelance ou agence vidéo : que choisir ?</h4><p class="resume">Coûts, délais, qualité, suivi : les vrais critères pour choisir le bon partenaire vidéo.</p><div class="hz-bas"><span class="cta cta-violet"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M6 11l6 6 6-6M5 20h14"/></svg>Télécharger le guide</span><span class="info"><svg class="ico-p" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/></svg>PDF · 12 pages</span></div></div></a><a class="carte hz hz-guide" href="#" aria-label="Le guide de la vidéo d'entreprise, télécharger le guide"><div class="hz-visuel halo" style="--img:url(__COUV2__)"><img class="hz-couv h" src="__COUV2__" alt=""></div><div class="hz-corps"><p class="meta"><span class="puce violet">Guide pratique</span></p><h4 class="titre">Le guide de la vidéo d'entreprise</h4><p class="resume">Du vocabulaire au brief, tout ce qu'il faut savoir pour réussir votre prochain film.</p><div class="hz-bas"><span class="cta cta-violet"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M6 11l6 6 6-6M5 20h14"/></svg>Télécharger le guide</span><span class="info"><svg class="ico-p" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/></svg>PDF · 18 pages</span></div></div></a></div></div><div class="ecran mobile"><p class="etiq">Mobile · 360 px</p><div class="grille"><article class="carte rex hz hz-rex" aria-label="Retour d'expérience L'Oréal"><div class="hz-visuel rex-halo"><span class="tuile-logo"><span class="logo-client" role="img" aria-label="L'Oréal">L'ORÉAL</span></span><img class="hz-couv v" src="__REX__" alt=""></div><div class="hz-corps"><p class="meta"><span class="puce peche plein">Retour d'expérience</span><span class="puce peche">Com interne · RH · Formation</span></p><p class="hz-co"><span class="cobrand"><img src="__LOGOR__" alt="Rolling" width="92" height="18"><span class="x" aria-hidden="true">×</span><span class="logo-client" role="img" aria-label="L'Oréal">L'ORÉAL</span></span></p><h4 class="titre">4 capsules vidéo pour 4 marques, livrées en 2 semaines pour un <span class="degrade">Live interne.</span></h4><p class="resume">Quatre capsules courtes, fidèles à chaque marque, pour rythmer un Live interne.</p><div class="hz-bas"><a class="cta cta-rex" href="#" aria-label="Télécharger le REX L'Oréal"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M6 11l6 6 6-6M5 20h14"/></svg>Télécharger le REX</a><a class="lien-rex" href="#">Lire le témoignage</a></div></div></article><a class="carte hz hz-guide" href="#" aria-label="Freelance ou agence vidéo : que choisir ?, télécharger le guide"><div class="hz-visuel halo" style="--img:url(__FREE__)"><img class="hz-couv v" src="__FREE__" alt=""></div><div class="hz-corps"><p class="meta"><span class="puce violet">Comparatif</span></p><h4 class="titre">Freelance ou agence vidéo : que choisir ?</h4><p class="resume">Coûts, délais, qualité, suivi : les vrais critères pour choisir le bon partenaire vidéo.</p><div class="hz-bas"><span class="cta cta-violet"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M6 11l6 6 6-6M5 20h14"/></svg>Télécharger le guide</span><span class="info"><svg class="ico-p" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/></svg>PDF · 12 pages</span></div></div></a></div></div></section>
+</section>
+</main>
+</body>
+</html>

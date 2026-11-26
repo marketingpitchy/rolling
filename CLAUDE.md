@@ -1087,6 +1087,11 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   2 par ligne avec timecode 00:01. REX (pêche, clairs) : **R1 le REX en miniature (conseil : « Retour d'expérience », Rolling ×
   logo client, photo du projet en cadre de verre, titre avec mot en dégradé, 2 chiffres clés en verre)**, R2 le résultat d'abord
   (grand chiffre en verre, logo sur étiquette blanche, couverture à droite), R3 la photo du projet + onglet Rolling × logo.
+- **Guides et REX, tour 5 : fiches horizontales** (`maquettes/guides-rex/guides-rex-5.html`, générée par `scratchpad/gen-guides5.py`
+  qui reprend les fonctions de gen-guides4.py ; copie /workspace/maquette-guides-rex-5.html, **à valider**) : demande « à l'horizontal
+  pour les deux, REX sans chiffres clés » ⇒ 2 par ligne, image à gauche (42 %), texte + bouton à droite ; guide = couverture sur halo
+  flou de ses couleurs (G1 couché) ; REX sans chiffres : **H1 photo du projet pleine hauteur + onglet blanc Rolling × logo (conseil)**,
+  H2 couverture du REX sur fond pêche + étiquette logo + Rolling × logo au-dessus du titre. Mobile empilé.
 - **Chargement de page effet film** (demande avant la fin de la livraison 4) : maquette `maquettes/loading/maquette-loading.html`
   (copie /workspace/maquette-loading.html), 4 options : A amorce 3-2-1, B clap qui se ferme puis rideau, C ouverture
   cinéma (bandes noires + REC + timecode + règle avec la tête de lecture rouge des frises, plus de filet fin), D barre de lecture en haut sans écran. Conseil : C à l'arrivée (première page
