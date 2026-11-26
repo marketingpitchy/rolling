@@ -4,6 +4,7 @@
  "type": "page",
  "assemble": [
   "p-agence-1-haut",
+  "p-agence-15-video",
   "p-agence-2-histoire",
   "p-agence-3-convictions",
   "p-agence-4-equipe",

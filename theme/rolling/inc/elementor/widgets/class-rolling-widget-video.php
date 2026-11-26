@@ -82,10 +82,13 @@ class Rolling_Widget_Video extends Rolling_Widget {
 			'partie',
 			__( 'Afficher', 'rolling' ),
 			array(
-				'lecteur'  => __( 'Le lecteur', 'rolling' ),
-				'versions' => __( 'Les boutons de versions (s’il y a plusieurs vidéos)', 'rolling' ),
+				'lecteur'   => __( 'Le lecteur', 'rolling' ),
+				'versions'  => __( 'Les boutons de versions (s’il y a plusieurs vidéos)', 'rolling' ),
+				'chapitres' => __( 'Les chapitres (sous le lecteur ; rien s’ils sont vides)', 'rolling' ),
 			)
 		);
+		$this->texte( 'chapitres', __( 'Chapitres (facultatifs) : une ligne par chapitre, ex. « 0:24 Notre méthode »', 'rolling' ), '', Controls_Manager::TEXTAREA );
+		$this->texte( 'chapitres_nom', __( 'Chapitres : nom du groupe (lecteur d’écran)', 'rolling' ), __( 'Chapitres de la vidéo', 'rolling' ) );
 		$this->texte( 'versions_nom', __( 'Boutons de versions : nom du groupe (lecteur d’écran)', 'rolling' ), __( 'Versions de la vidéo', 'rolling' ) );
 		$this->choix(
 			'priorite',
@@ -100,7 +103,11 @@ class Rolling_Widget_Video extends Rolling_Widget {
 
 	/** Affichage. */
 	protected function render() {
-		$r  = $this->get_settings_for_display();
+		$r = $this->get_settings_for_display();
+		if ( 'chapitres' === ( $r['partie'] ?? 'lecteur' ) ) {
+			$this->rendre_chapitres( $r );
+			return;
+		}
 		$id = $this->contenu();
 		if ( 'lien' === $r['source'] ) {
 			$this->rendre_lien( $r );
@@ -339,6 +346,58 @@ class Rolling_Widget_Video extends Rolling_Widget {
 			echo '<span class="pastille-son" data-rl-son-on="' . esc_attr( $r['son'] ) . '" data-rl-son-off="' . esc_attr( '' !== trim( (string) ( $r['son_off'] ?? '' ) ) ? $r['son_off'] : __( 'Couper le son', 'rolling' ) ) . '">' . esc_html( $r['son'] ) . '</span>';
 		}
 		echo '</button></div>';
+	}
+
+	/**
+	 * Chapitres sous le lecteur (facultatifs) : un bouton par chapitre ; rolling.js relie les boutons au lecteur de la
+	 * même section (clic = aller au chapitre, barre de chaque chapitre qui avance pendant la lecture). Vide = rien.
+	 *
+	 * @param array $r Réglages.
+	 */
+	private function rendre_chapitres( $r ) {
+		$chapitres = self::lire_chapitres( (string) ( $r['chapitres'] ?? '' ) );
+		if ( ! $chapitres ) {
+			if ( \Elementor\Plugin::$instance->editor->is_edit_mode() ) {
+				echo '<p class="texte-petit" style="margin:16px 0 0;padding:10px 14px;border:1px dashed rgba(91,59,234,.5);border-radius:12px;text-align:center">' . esc_html__( 'Chapitres (facultatifs) : une ligne par chapitre dans les réglages de ce widget, ex. « 0:24 Notre méthode ». Vide = rien sur le site.', 'rolling' ) . '</p>';
+			}
+			return;
+		}
+		$nom = '' !== trim( (string) ( $r['chapitres_nom'] ?? '' ) ) ? $r['chapitres_nom'] : __( 'Chapitres de la vidéo', 'rolling' );
+		echo '<div class="chapitres-video" role="group" aria-label="' . esc_attr( $nom ) . '" data-rl-chapitres>';
+		foreach ( $chapitres as $rang => $chapitre ) {
+			echo '<button type="button" data-rl-temps="' . esc_attr( $chapitre['secondes'] ) . '"' . ( 0 === $rang ? ' aria-current="true"' : '' ) . '>'
+				. '<span class="chapitre-temps">' . esc_html( $chapitre['temps'] ) . '</span><span class="chapitre-nom">' . esc_html( $chapitre['titre'] ) . '</span></button>';
+		}
+		echo '</div>';
+	}
+
+	/**
+	 * Lit les chapitres saisis : « 0:24 Notre méthode », « 00:24 - Notre méthode », « 1:02:03 Titre ».
+	 *
+	 * @param string $texte Une ligne par chapitre.
+	 * @return array Liste de [ secondes, temps, titre ], triée par temps.
+	 */
+	public static function lire_chapitres( $texte ) {
+		$chapitres = array();
+		foreach ( preg_split( '/\R/u', $texte ) as $ligne ) {
+			if ( ! preg_match( '/^\s*(?:(\d+):)?(\d{1,2}):(\d{2})\s*[-–—·:|]?\s*(.+?)\s*$/u', $ligne, $m ) ) {
+				continue;
+			}
+			$h           = (int) $m[1];
+			$secondes    = $h * 3600 + (int) $m[2] * 60 + (int) $m[3];
+			$chapitres[] = array(
+				'secondes' => $secondes,
+				'temps'    => $h ? sprintf( '%d:%02d:%02d', $h, (int) $m[2], (int) $m[3] ) : sprintf( '%02d:%02d', (int) $m[2], (int) $m[3] ),
+				'titre'    => $m[4],
+			);
+		}
+		usort(
+			$chapitres,
+			function ( $a, $b ) {
+				return $a['secondes'] - $b['secondes'];
+			}
+		);
+		return $chapitres;
 	}
 
 	/**

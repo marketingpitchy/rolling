@@ -1131,6 +1131,17 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   Retour : **B pas mal**, chapitres **facultatifs** (rien saisi = lecteur seul, barre de lecture simple, pas de rangée vide) :
   maquette mise à jour (B avec / sans chapitre). Vidéo YouTube lMHtcOnVpZQ illisible ici (youtube.com ajouté à l'environnement,
   lecture toujours refusée) ⇒ transcription ou moments clés demandés à la cliente.
+- **0.7.30 : L'agence, option B « go »** : bloc `p-agence-15-video` « Rolling · L'agence · 00:00 La vidéo de présentation (chapitres
+  facultatifs) » (après le haut de page, dans la Page complète ; entête 00:00 « Rolling, en 90 secondes. », cadre `carte-verre carte-ecran`
+  > `cadre-photo cadre-16-9 cadre-showreel` : affiche + widget Vidéo `source=lien mode=clic` + bandeau + durée + lecture). Widget Vidéo :
+  `partie=chapitres` + `chapitres` (zone de texte, une ligne « 0:24 Notre méthode », h:mm:ss accepté, `lire_chapitres()` trie) +
+  `chapitres_nom` ; vide = rien sur le site, rappel en pointillés dans l'éditeur. HTML `div.chapitres-video[role=group][data-rl-chapitres]`
+  > `button[data-rl-temps]` (`aria-current` = chapitre en cours) > `span.chapitre-temps` + `span.chapitre-nom` ; classe `chapitres-video`
+  (barre par bouton en ::before / ::after `--rl-avance`, mobile = rangée à glisser) ajoutée à `classes_des_widgets` (sinon pas de CSS).
+  rolling.js : relie les chapitres au `.video-calque` de la même `section` ; clic = lecture au bon moment (`lecteurLien(url, fond, titre,
+  debut)` : Vimeo `#t=24s`, YouTube `start=` + `enablejsapi=1&origin=`, fichier `currentTime`) ou saut si ça joue (Vimeo
+  `setCurrentTime`, YouTube `seekTo`) ; avancée par `timeupdate` (fichier, Vimeo `addEventListener`) ou `infoDelivery` (YouTube
+  `listening`). Testé avec un .mp4 de 90 s (wp + mise à jour wp2, axe 0, 1440 / 390, éditeur) ; Vimeo / YouTube bloqués ici.
 - **Chargement de page effet film** (demande avant la fin de la livraison 4) : maquette `maquettes/loading/maquette-loading.html`
   (copie /workspace/maquette-loading.html), 4 options : A amorce 3-2-1, B clap qui se ferme puis rideau, C ouverture
   cinéma (bandes noires + REC + timecode + règle avec la tête de lecture rouge des frises, plus de filet fin), D barre de lecture en haut sans écran. Conseil : C à l'arrivée (première page

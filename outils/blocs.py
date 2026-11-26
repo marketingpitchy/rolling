@@ -2017,6 +2017,26 @@ agence_haut = F("L'agence · haut", ['section', 'section-entete', 'entete-page',
     ]),
 ])
 
+agence_video = F("L'agence · vidéo", ['section', 'section-suite'], tag='section', enfants=[
+    F("L'agence · vidéo · contenu", ['conteneur'], COLONNE, enfants=[
+        entete("L'agence · vidéo", '00:00', 'En 90 secondes', [('Rolling, <em>en 90 secondes.</em>', 'h2', ['titre-md'])],
+               intro='Qui nous sommes, comment nous travaillons, qui va produire vos vidéos.'),
+        F("L'agence · vidéo · scène", None, 'display: flex; flex-direction: column; align-items: stretch; gap: 0; width: 100%; padding: 0;', enfants=[
+            D("L'agence · vidéo · cadre", ['carte-verre', 'carte-ecran'], enfants=[
+                D("L'agence · vidéo · écran", ['cadre-photo', 'cadre-16-9', 'cadre-showreel'], enfants=[
+                    I("L'agence · vidéo · affiche", 'hero-interview.jpg', '', ['image-couvrante'], taille='large'),
+                    W("L'agence · vidéo · lecteur", 'rolling-video', source='lien', mode='clic', titre='Rolling en 90 secondes', libelle='Lire la vidéo : %s'),
+                    P("L'agence · vidéo · bandeau", 'Notre présentation', ['bandeau-video']),
+                    P("L'agence · vidéo · durée", '1:30', ['duree']),
+                    I("L'agence · vidéo · lecture", 'bouton-lecture.png', cls=['lecture-centre'], taille='thumbnail'),
+                ]),
+            ]),
+            # Chapitres facultatifs : vide = rien sur le site (rappel dans l'éditeur seulement).
+            W("L'agence · vidéo · chapitres", 'rolling-video', partie='chapitres', chapitres=''),
+        ]),
+    ]),
+])
+
 agence_histoire = F("L'agence · histoire", ['section', 'section-suite'], tag='section', enfants=[
     F("L'agence · histoire · contenu", ['conteneur'], COLONNE, enfants=[
         entete_simple("L'agence · histoire", '00:01', 'Notre histoire', "Cette fois, <em>c'est nous qui produisons.</em>"),
@@ -2647,7 +2667,7 @@ PAGES = [
     ('Offres', [('p-offres-1-haut', 'Haut de page', offres_haut), ('p-offres-2-formules', '00:01 Les formules', offres_tableau),
                 ('p-offres-3-tournage', '00:02 Création + Tournage', offres_ajout), ('p-offres-4-ensuite', '00:03 Et ensuite', offres_ensuite),
                 ('p-offres-5-faq', "00:04 FAQ de l'abonnement", offres_faq)]),
-    ("L'agence", [('p-agence-1-haut', 'Haut de page', agence_haut), ('p-agence-2-histoire', '00:01 Notre histoire', agence_histoire),
+    ("L'agence", [('p-agence-1-haut', 'Haut de page', agence_haut), ('p-agence-15-video', '00:00 La vidéo de présentation (chapitres facultatifs)', agence_video), ('p-agence-2-histoire', '00:01 Notre histoire', agence_histoire),
                   ('p-agence-3-convictions', '00:02 Nos convictions', agence_convictions), ('p-agence-4-equipe', "00:03 L'équipe", agence_equipe),
                   ('p-agence-5-lieu', '00:04 Où nous trouver', agence_lieu), ('p-agence-6-faq', '00:05 FAQ', FAQ_BLOCS['agence'])]),
     ('Landing', [('p-landing-1-hero', 'Hero et logos', landing_hero), ('p-landing-2-constat', '00:01 Le constat', landing_douleur),

@@ -27695,6 +27695,95 @@
             ]
         },
         {
+            "id": "g-f6caf5e",
+            "label": "chapitres-video",
+            "groupe": "Fiches et listes",
+            "description": "Chapitres sous un lecteur (écrits par le widget Vidéo, « Les chapitres », facultatifs) : un bouton par chapitre (temps + titre), une barre qui avance en haut de chacun, le chapitre en cours en violet. En mobile, rangée à faire glisser.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "width": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 100,
+                                "unit": "%"
+                            }
+                        },
+                        "padding": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 0,
+                                "unit": "px"
+                            }
+                        },
+                        "margin": {
+                            "$$type": "dimensions",
+                            "value": {
+                                "block-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 18,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 0,
+                                        "unit": "px"
+                                    }
+                                },
+                                "block-end": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 0,
+                                        "unit": "px"
+                                    }
+                                },
+                                "inline-start": {
+                                    "$$type": "size",
+                                    "value": {
+                                        "size": 0,
+                                        "unit": "px"
+                                    }
+                                }
+                            }
+                        },
+                        "display": {
+                            "$$type": "string",
+                            "value": "flex"
+                        },
+                        "flex-direction": {
+                            "$$type": "string",
+                            "value": "row"
+                        },
+                        "gap": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 10,
+                                "unit": "px"
+                            }
+                        },
+                        "flex-wrap": {
+                            "$$type": "string",
+                            "value": "nowrap"
+                        },
+                        "justify-content": {
+                            "$$type": "string",
+                            "value": "center"
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "JiBidXR0b24geyBwb3NpdGlvbjogcmVsYXRpdmU7IGZsZXg6IDEgMSAwOyBtaW4td2lkdGg6IDA7IGRpc3BsYXk6IGZsZXg7IGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47IGFsaWduLWl0ZW1zOiBmbGV4LXN0YXJ0OyBnYXA6IDdweDsgbWFyZ2luOiAwOyBwYWRkaW5nOiAyMnB4IDE2cHggMTVweDsgYm9yZGVyOiAwOyBib3JkZXItcmFkaXVzOiAxNnB4OyB0ZXh0LWFsaWduOiBsZWZ0OyBiYWNrZ3JvdW5kLWNvbG9yOiAjRkZGRkZGOyBib3gtc2hhZG93OiBpbnNldCAwIDAgMCAxcHggcmdiYSgxNSwxNSwxOCwwLjA4KSwgMCAxMnB4IDI2cHggLTIwcHggcmdiYSg3Niw0OCwxNzAsMC41KTsgY3Vyc29yOiBwb2ludGVyOyB0cmFuc2l0aW9uOiBiYWNrZ3JvdW5kLWNvbG9yIDAuMnMgZWFzZSwgYm94LXNoYWRvdyAwLjJzIGVhc2U7IH0gJiBidXR0b246OmJlZm9yZSB7IGNvbnRlbnQ6ICcnOyBwb3NpdGlvbjogYWJzb2x1dGU7IGxlZnQ6IDE2cHg7IHJpZ2h0OiAxNnB4OyB0b3A6IDEwcHg7IGhlaWdodDogNHB4OyBib3JkZXItcmFkaXVzOiAycHg7IGJhY2tncm91bmQ6IHJnYmEoOTEsNTksMjM0LDAuMTYpOyB9ICYgYnV0dG9uOjphZnRlciB7IGNvbnRlbnQ6ICcnOyBwb3NpdGlvbjogYWJzb2x1dGU7IGxlZnQ6IDE2cHg7IHRvcDogMTBweDsgaGVpZ2h0OiA0cHg7IHdpZHRoOiBjYWxjKCgxMDAlIC0gMzJweCkgKiB2YXIoLS1ybC1hdmFuY2UsIDApKTsgYm9yZGVyLXJhZGl1czogMnB4OyBiYWNrZ3JvdW5kOiAjNUIzQkVBOyB9ICYgLmNoYXBpdHJlLXRlbXBzIHsgZGlzcGxheTogYmxvY2s7IGZvbnQtZmFtaWx5OiBIYW5rZW4gR3JvdGVzazsgZm9udC1zaXplOiAxMnB4OyBsaW5lLWhlaWdodDogMTsgZm9udC13ZWlnaHQ6IDcwMDsgbGV0dGVyLXNwYWNpbmc6IDAuMDZlbTsgY29sb3I6ICM0QTJCQjg7IH0gJiAuY2hhcGl0cmUtbm9tIHsgZGlzcGxheTogYmxvY2s7IGZvbnQtZmFtaWx5OiBCcmljb2xhZ2UgR3JvdGVzcXVlOyBmb250LXNpemU6IDE2cHg7IGxpbmUtaGVpZ2h0OiAxLjI7IGZvbnQtd2VpZ2h0OiA2NTA7IGxldHRlci1zcGFjaW5nOiAtMC4wMmVtOyBjb2xvcjogIzBGMEYxMjsgfSAmIGJ1dHRvblthcmlhLWN1cnJlbnQ9InRydWUiXSB7IGJhY2tncm91bmQtY29sb3I6ICM1QjNCRUE7IGJveC1zaGFkb3c6IDAgMTRweCAyOHB4IC0xNHB4IHJnYmEoOTEsNTksMjM0LDAuNyk7IH0gJiBidXR0b25bYXJpYS1jdXJyZW50PSJ0cnVlIl0gLmNoYXBpdHJlLXRlbXBzLCAmIGJ1dHRvblthcmlhLWN1cnJlbnQ9InRydWUiXSAuY2hhcGl0cmUtbm9tIHsgY29sb3I6ICNGRkZGRkY7IH0gJiBidXR0b25bYXJpYS1jdXJyZW50PSJ0cnVlIl06OmJlZm9yZSB7IGJhY2tncm91bmQ6IHJnYmEoMjU1LDI1NSwyNTUsMC4zMik7IH0gJiBidXR0b25bYXJpYS1jdXJyZW50PSJ0cnVlIl06OmFmdGVyIHsgYmFja2dyb3VuZDogI0ZGRkZGRjsgfSAmIGJ1dHRvbjpob3ZlciB7IGJveC1zaGFkb3c6IGluc2V0IDAgMCAwIDFweCAjNUIzQkVBLCAwIDEycHggMjZweCAtMjBweCByZ2JhKDc2LDQ4LDE3MCwwLjUpOyB9ICYgYnV0dG9uOmZvY3VzLXZpc2libGUgeyBvdXRsaW5lOiAzcHggc29saWQgIzVCM0JFQTsgb3V0bGluZS1vZmZzZXQ6IDJweDsgfSBAbWVkaWEgKG1heC13aWR0aDogNzY3cHgpIHsganVzdGlmeS1jb250ZW50OiBmbGV4LXN0YXJ0OyBvdmVyZmxvdy14OiBhdXRvOyBzY3JvbGwtc25hcC10eXBlOiB4IG1hbmRhdG9yeTsgc2Nyb2xsYmFyLXdpZHRoOiBub25lOyBwYWRkaW5nOiA0cHggMnB4IDIycHg7IG1hcmdpbi1ib3R0b206IC0xMnB4OyAmIGJ1dHRvbiB7IGZsZXg6IDAgMCA2OCU7IHNjcm9sbC1zbmFwLWFsaWduOiBzdGFydDsgfSB9"
+                    }
+                }
+            ]
+        },
+        {
             "id": "g-5426d14",
             "label": "vignette-lecteur",
             "groupe": "Fiches et listes",

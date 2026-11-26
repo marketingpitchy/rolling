@@ -1,0 +1,105 @@
+{
+ "cle": "p-agence-15-video",
+ "titre": "Rolling · L'agence · 00:00 La vidéo de présentation (chapitres facultatifs)",
+ "type": "e-flexbox",
+ "composition": {
+  "xml_structure": "<e-flexbox configuration-id=\"L'agence · vidéo\"><e-flexbox configuration-id=\"L'agence · vidéo · contenu\"><e-flexbox configuration-id=\"L'agence · vidéo · en-tête\"><e-flexbox configuration-id=\"L'agence · vidéo · repère\"><e-paragraph configuration-id=\"L'agence · vidéo · timecode\"></e-paragraph><e-paragraph configuration-id=\"L'agence · vidéo · sur-titre\"></e-paragraph></e-flexbox><e-heading configuration-id=\"L'agence · vidéo · titre\"></e-heading><e-paragraph configuration-id=\"L'agence · vidéo · introduction\"></e-paragraph></e-flexbox><e-flexbox configuration-id=\"L'agence · vidéo · scène\"><e-div-block configuration-id=\"L'agence · vidéo · cadre\"><e-div-block configuration-id=\"L'agence · vidéo · écran\"><e-image configuration-id=\"L'agence · vidéo · affiche\"></e-image><e-paragraph configuration-id=\"L'agence · vidéo · lecteur\"></e-paragraph><e-paragraph configuration-id=\"L'agence · vidéo · bandeau\"></e-paragraph><e-paragraph configuration-id=\"L'agence · vidéo · durée\"></e-paragraph><e-image configuration-id=\"L'agence · vidéo · lecture\"></e-image></e-div-block></e-div-block><e-paragraph configuration-id=\"L'agence · vidéo · chapitres\"></e-paragraph></e-flexbox></e-flexbox></e-flexbox>",
+  "element_config": {
+   "L'agence · vidéo": {
+    "tag": "section"
+   },
+   "L'agence · vidéo · timecode": {
+    "paragraph": "00:00"
+   },
+   "L'agence · vidéo · sur-titre": {
+    "paragraph": "En 90 secondes"
+   },
+   "L'agence · vidéo · titre": {
+    "tag": "h2",
+    "title": "Rolling, <em>en 90 secondes.</em>"
+   },
+   "L'agence · vidéo · introduction": {
+    "paragraph": "Qui nous sommes, comment nous travaillons, qui va produire vos vidéos."
+   },
+   "L'agence · vidéo · affiche": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/hero-interview.jpg"
+     },
+     "size": "large"
+    }
+   },
+   "L'agence · vidéo · lecteur": {
+    "paragraph": "⟦widget:rolling-video|source=lien|mode=clic|titre=Rolling en 90 secondes|libelle=Lire la vidéo : %s⟧"
+   },
+   "L'agence · vidéo · bandeau": {
+    "paragraph": "Notre présentation"
+   },
+   "L'agence · vidéo · durée": {
+    "paragraph": "1:30"
+   },
+   "L'agence · vidéo · lecture": {
+    "image": {
+     "src": {
+      "url": "https://media.rolling.invalid/bouton-lecture.png"
+     },
+     "size": "thumbnail"
+    }
+   },
+   "L'agence · vidéo · chapitres": {
+    "paragraph": "⟦widget:rolling-video|partie=chapitres|chapitres=⟧"
+   }
+  },
+  "classes": {
+   "L'agence · vidéo": [
+    "section",
+    "section-suite"
+   ],
+   "L'agence · vidéo · contenu": [
+    "conteneur"
+   ],
+   "L'agence · vidéo · en-tête": [
+    "entete-section"
+   ],
+   "L'agence · vidéo · repère": [
+    "sur-titre"
+   ],
+   "L'agence · vidéo · timecode": [
+    "timecode"
+   ],
+   "L'agence · vidéo · titre": [
+    "titre-md"
+   ],
+   "L'agence · vidéo · introduction": [
+    "texte-intro"
+   ],
+   "L'agence · vidéo · cadre": [
+    "carte-verre",
+    "carte-ecran"
+   ],
+   "L'agence · vidéo · écran": [
+    "cadre-photo",
+    "cadre-16-9",
+    "cadre-showreel"
+   ],
+   "L'agence · vidéo · affiche": [
+    "image-couvrante"
+   ],
+   "L'agence · vidéo · bandeau": [
+    "bandeau-video"
+   ],
+   "L'agence · vidéo · durée": [
+    "duree"
+   ],
+   "L'agence · vidéo · lecture": [
+    "lecture-centre"
+   ]
+  },
+  "style": {
+   "L'agence · vidéo · contenu": "display: flex; flex-direction: column; gap: 0;",
+   "L'agence · vidéo · introduction": "max-width: 820px;",
+   "L'agence · vidéo · scène": "display: flex; flex-direction: column; align-items: stretch; gap: 0; width: 100%; padding: 0;"
+  }
+ },
+ "brut": {}
+}

@@ -713,9 +713,10 @@
 	}
 
 	/* Lecteur d'un lien Vimeo, YouTube ou fichier. fond = aperçu muet en boucle, sans commandes ni titre. */
-	function lecteurLien( url, fond, titre ) {
+	function lecteurLien( url, fond, titre, debut ) {
+		debut = Math.max( 0, Math.floor( debut || 0 ) );
 		if ( estFichier( url ) ) {
-			return lecteurFichier( url, fond );
+			return lecteurFichier( url, fond, debut );
 		}
 		// Toutes les formes de lien Vimeo : vimeo.com/123, /123/abc, player.vimeo.com/video/123, /manage/videos/123, /channels/x/123, /showcase/x/video/123…
 		var vimeo = url.match( /vimeo\.com\/.*?videos?\/(\d{5,})(?:\/([0-9a-f]{6,}))?/i ) || url.match( /vimeo\.com\/(?:[a-z]+\/)*?(?:[\w-]+\/)??(\d{5,})(?:\/([0-9a-f]{6,}))?/i ), hash = url.match( /[?&]h=([0-9a-f]+)/ );
@@ -724,13 +725,14 @@
 			var cle = vimeo[ 2 ] || ( hash ? hash[ 1 ] : '' );
 			el = document.createElement( 'iframe' );
 			el.src = 'https://player.vimeo.com/video/' + vimeo[ 1 ] + '?' + ( cle ? 'h=' + cle + '&' : '' ) + 'dnt=1&title=0&byline=0&portrait=0&badge=0&vimeo_logo=0&' +
-				( fond ? 'background=1&muted=1&loop=1&autopause=0' : 'autoplay=1' );
+				( fond ? 'background=1&muted=1&loop=1&autopause=0' : 'autoplay=1' ) + ( debut ? '#t=' + debut + 's' : '' );
 		} else if ( yt ) {
 			el = document.createElement( 'iframe' );
 			el.src = 'https://www.youtube-nocookie.com/embed/' + yt[ 1 ] + '?rel=0&playsinline=1&' +
-				( fond ? 'autoplay=1&mute=1&loop=1&controls=0&disablekb=1&enablejsapi=1&playlist=' + yt[ 1 ] : 'autoplay=1' );
+				( fond ? 'autoplay=1&mute=1&loop=1&controls=0&disablekb=1&playlist=' + yt[ 1 ] : 'autoplay=1' ) +
+				'&enablejsapi=1&origin=' + encodeURIComponent( window.location.origin ) + ( debut ? '&start=' + debut : '' );
 		} else {
-			return lecteurFichier( url, fond );
+			return lecteurFichier( url, fond, debut );
 		}
 		el.allow = 'autoplay; fullscreen; picture-in-picture; encrypted-media';
 		el.allowFullscreen = true;
@@ -738,9 +740,12 @@
 		return el;
 	}
 
-	function lecteurFichier( url, fond ) {
+	function lecteurFichier( url, fond, debut ) {
 		var el = document.createElement( 'video' );
 		el.src = url;
+		if ( debut ) {
+			el.addEventListener( 'loadedmetadata', function () { el.currentTime = debut; }, { once: true } );
+		}
 		el.playsInline = true;
 		el.autoplay = true;
 		if ( fond ) {
@@ -880,7 +885,7 @@
 			}
 			if ( calque ) {
 				cadre.querySelectorAll( '.video-calque-fond' ).forEach( function ( f ) { f.remove(); } );
-				lecteur = lecteurLien( url, false, bouton.getAttribute( 'aria-label' ) );
+				lecteur = lecteurLien( url, false, bouton.getAttribute( 'aria-label' ), cadre.rlDebut );
 				cadre.appendChild( lecteur );
 				cadre.classList.add( 'lit' );
 				hote.classList.remove( 'rl-boucle' );
@@ -910,6 +915,135 @@
 			lecteur.focus();
 		} );
 	} );
+
+	/* Chapitres sous un lecteur par lien (widget Vidéo, « Les chapitres ») : un clic = aller au chapitre (la vidéo se lance
+	   au bon moment si elle ne tournait pas) ; pendant la lecture, la barre de chaque chapitre avance et le chapitre en
+	   cours est en violet. Fichier : currentTime ; Vimeo et YouTube : messages du lecteur (postMessage). */
+	if ( ! editeur ) {
+		document.querySelectorAll( '.chapitres-video[data-rl-chapitres]' ).forEach( function ( nav ) {
+			var zone = nav.closest( 'section' ) || document, cadre = zone.querySelector( '.video-calque[data-rl-video]:not([data-rl-mode="muet"])' );
+			if ( ! cadre ) {
+				return;
+			}
+			var boutons = Array.prototype.slice.call( nav.querySelectorAll( 'button[data-rl-temps]' ) );
+			var temps = boutons.map( function ( b ) { return parseFloat( b.getAttribute( 'data-rl-temps' ) ) || 0; } ), duree = 0;
+			var lecteur = function () { return cadre.querySelector( 'iframe, video' ); };
+			var vimeo = function ( l ) { return l.src.indexOf( 'player.vimeo.com' ) !== -1 && ! estFichier( l.src ); };
+			var envoyer = function ( l, message ) {
+				if ( l.contentWindow ) {
+					l.contentWindow.postMessage( JSON.stringify( message ), vimeo( l ) ? 'https://player.vimeo.com' : '*' );
+				}
+			};
+			var peindre = function ( t ) {
+				var k = 0;
+				temps.forEach( function ( d, i ) { if ( t >= d ) { k = i; } } );
+				boutons.forEach( function ( b, i ) {
+					var a = temps[ i ], z = i + 1 < temps.length ? temps[ i + 1 ] : duree, v = 0;
+					if ( z > a ) {
+						v = Math.min( 1, Math.max( 0, ( t - a ) / ( z - a ) ) );
+					}
+					b.style.setProperty( '--rl-avance', v.toFixed( 4 ) );
+					if ( i === k ) {
+						b.setAttribute( 'aria-current', 'true' );
+					} else {
+						b.removeAttribute( 'aria-current' );
+					}
+				} );
+			};
+			var brancher = function ( l ) {
+				if ( ! l || l.rlChapitres ) {
+					return;
+				}
+				l.rlChapitres = true;
+				if ( 'VIDEO' === l.tagName ) {
+					l.addEventListener( 'timeupdate', function () {
+						duree = l.duration || duree;
+						peindre( l.currentTime );
+					} );
+					return;
+				}
+				// Vimeo : s'abonner à « timeupdate » ; YouTube : demander les infos de lecture (répété jusqu'à la réponse).
+				var essais = 0, ecouter = function () {
+					if ( ! l.isConnected || l.rlRepond || essais++ > 20 ) {
+						return;
+					}
+					if ( vimeo( l ) ) {
+						envoyer( l, { method: 'addEventListener', value: 'timeupdate' } );
+					} else {
+						envoyer( l, { event: 'listening', id: 1, channel: 'widget' } );
+					}
+					setTimeout( ecouter, 500 );
+				};
+				l.addEventListener( 'load', function () { essais = 0; ecouter(); } );
+				ecouter();
+			};
+			var allerA = function ( l, t ) {
+				if ( 'VIDEO' === l.tagName ) {
+					l.currentTime = t;
+					var p = l.play();
+					if ( p && p.catch ) {
+						p.catch( function () {} );
+					}
+				} else if ( vimeo( l ) ) {
+					envoyer( l, { method: 'setCurrentTime', value: t } );
+					envoyer( l, { method: 'play' } );
+				} else {
+					envoyer( l, { event: 'command', func: 'seekTo', args: [ t, true ] } );
+					envoyer( l, { event: 'command', func: 'playVideo', args: [] } );
+				}
+			};
+			window.addEventListener( 'message', function ( e ) {
+				var l = lecteur(), d;
+				if ( ! l || 'IFRAME' !== l.tagName || e.source !== l.contentWindow ) {
+					return;
+				}
+				try {
+					d = 'string' === typeof e.data ? JSON.parse( e.data ) : e.data;
+				} catch ( x ) {
+					return;
+				}
+				if ( ! d ) {
+					return;
+				}
+				if ( 'ready' === d.event && vimeo( l ) ) {
+					envoyer( l, { method: 'addEventListener', value: 'timeupdate' } );
+				} else if ( 'timeupdate' === d.event && d.data ) {
+					l.rlRepond = true;
+					duree = d.data.duration || duree;
+					peindre( d.data.seconds || 0 );
+				} else if ( ( 'infoDelivery' === d.event || 'initialDelivery' === d.event ) && d.info ) {
+					l.rlRepond = true;
+					duree = d.info.duration || duree;
+					if ( 'number' === typeof d.info.currentTime ) {
+						peindre( d.info.currentTime );
+					}
+				}
+			} );
+			// Lecteur créé plus tard (aperçu en boucle, ou clic sur le bouton lecture).
+			new MutationObserver( function () { brancher( lecteur() ); } ).observe( cadre, { childList: true } );
+			brancher( lecteur() );
+			boutons.forEach( function ( b, i ) {
+				b.addEventListener( 'click', function () {
+					var t = temps[ i ], l = lecteur(), bouton = cadre.querySelector( '.video-calque-bouton' );
+					peindre( t );
+					if ( l && cadre.classList.contains( 'lit' ) ) {
+						allerA( l, t );
+					} else if ( l && l.classList.contains( 'pret' ) && bouton ) {
+						// Aperçu muet en boucle : on saute au chapitre et on active le son.
+						allerA( l, t );
+						if ( 'true' !== bouton.getAttribute( 'aria-pressed' ) ) {
+							bouton.click();
+						}
+					} else if ( bouton ) {
+						cadre.rlDebut = t;
+						bouton.click();
+						brancher( lecteur() );
+						b.focus();
+					}
+				} );
+			} );
+		} );
+	}
 
 	/* Fiche réalisation : format d'un fichier vidéo lu sur le fichier (si le serveur ne le connaît pas), et boutons de versions */
 	function formatRapport( r ) {
