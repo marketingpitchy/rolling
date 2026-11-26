@@ -1072,6 +1072,13 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   téléchargement, D coin corné « PDF » ; REX clairs : R4 pass client (talon vertical, pointillés), **R5 logo en vitrine (tuile en
   verre sur fond pêche, couverture derrière, pastille chiffre clé ; même construction que la carte guide, conseil)**, R6 duo
   « client × Rolling » + citation + 2 chiffres, R7 dossier client (chemise pêche, logo en autocollant, « cas réel »).
+- **Guides et REX, tour 3** (`maquettes/guides-rex/guides-rex-3.html`, générée en Python, jetons `__LEX__` / `__FREE__` /
+  `__REX__` / `__COUV2__` = vrais documents de la cliente dans scratchpad/guides : lexique horizontal, « Freelance vs agence »
+  vertical, REX L'Oréal ; copie /workspace/maquette-guides-rex-3.html, **à valider**) : guide A retenu, corrigé (cartes à la
+  largeur réelle, bouton plein sur toute la largeur + « PDF gratuit · X pages » dessous, « gratuit ! » = pastille ronde posée sur
+  le coin du document, devant ; image à la une horizontale ⇒ 1,414, verticale ⇒ 0,707). REX : dossier client intéressant mais
+  sans couverture ⇒ **R7a couverture qui sort d'une chemise pêche + étiquette logo + « cas réel » (conseil)**, R7b dossier ouvert
+  (logo à gauche, couverture à droite), R5 vitrine pour comparer ; chiffres clés du témoignage en pastilles.
 - **Chargement de page effet film** (demande avant la fin de la livraison 4) : maquette `maquettes/loading/maquette-loading.html`
   (copie /workspace/maquette-loading.html), 4 options : A amorce 3-2-1, B clap qui se ferme puis rideau, C ouverture
   cinéma (bandes noires + REC + timecode + règle avec la tête de lecture rouge des frises, plus de filet fin), D barre de lecture en haut sans écran. Conseil : C à l'arrivée (première page
