@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Guides et REX</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Hanken+Grotesk:wght@400..800&family=Caveat:wght@700&display=swap" rel="stylesheet">
+<style>
+:root{--encre:#0F0F12;--para:#4A4858;--legende:#5F5C6C;--violet:#5B3BEA;--violet-f:#4A2BB8;--fond:#FAF9F7;--peche:#FF8A5B;--orange-f:#A63C14}
+*{box-sizing:border-box}
+body{margin:0;background:var(--fond);color:var(--encre);font-family:'Hanken Grotesk',sans-serif}
+main{max-width:1240px;margin:0 auto;padding:48px 28px 96px}
+h1{font:650 46px/1.05 'Bricolage Grotesque';letter-spacing:-.05em;margin:0 0 12px}
+.intro{font-size:18px;line-height:1.6;color:var(--para);max-width:860px;margin:0}
+.tc{display:inline-block;font:700 12px/1 'Hanken Grotesk';letter-spacing:.16em;color:var(--violet);margin-bottom:10px}
+.partie{margin-top:72px}
+.partie>h2{font:650 32px/1.1 'Bricolage Grotesque';letter-spacing:-.045em;margin:0 0 8px}
+.partie>p{font-size:16px;line-height:1.6;color:var(--para);max-width:880px;margin:0 0 8px}
+.option{margin-top:36px;padding:28px;border-radius:26px;background:#fff;box-shadow:0 1px 2px rgba(15,15,18,.05),0 24px 50px -30px rgba(76,48,170,.3)}
+.option h3{font:650 24px/1.2 'Bricolage Grotesque';letter-spacing:-.04em;margin:0 0 4px}
+.option>p{margin:0 0 22px;font-size:15px;line-height:1.55;color:var(--para);max-width:900px}
+.conseil{display:inline-block;margin-left:8px;padding:4px 10px;border-radius:999px;background:var(--violet);color:#fff;font:700 12px/1.3 'Hanken Grotesk';letter-spacing:.06em;vertical-align:middle}
+.ecrans{display:grid;grid-template-columns:minmax(0,1fr) 360px;gap:24px;align-items:start}
+.ecran{border-radius:18px;background:var(--fond);box-shadow:inset 0 0 0 1px rgba(15,15,18,.08);padding:26px 24px}
+.ecran.mobile{padding:20px 16px}
+.etiq{font:700 12px/1 'Hanken Grotesk';letter-spacing:.14em;text-transform:uppercase;color:var(--legende);margin:0 0 16px}
+.grille{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.mobile .grille{grid-template-columns:minmax(0,1fr)}
+.constat{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:20px}
+.constat div{background:#fff;border-radius:18px;padding:18px;box-shadow:inset 0 0 0 1px rgba(15,15,18,.08);font-size:15px;line-height:1.5;color:var(--para)}
+.constat b{display:block;color:var(--encre);font:650 18px/1.2 'Bricolage Grotesque';letter-spacing:-.03em;margin-bottom:6px}
+/* éléments communs */
+.meta{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:0}
+.puce{display:inline-flex;align-items:center;min-height:26px;padding:0 10px;border-radius:999px;background:#FFF1E7;color:var(--orange-f);font:700 12px/1 'Hanken Grotesk';box-shadow:inset 0 0 0 1px rgba(166,60,20,.18)}
+.puce.violette{background:#EDE6FF;color:var(--violet-f);box-shadow:inset 0 0 0 1px rgba(74,43,184,.18)}
+.info{font-size:13px;color:var(--legende)}
+.titre{margin:10px 0 6px;font:650 22px/1.2 'Bricolage Grotesque';letter-spacing:-.035em}
+.resume{margin:0;font-size:15px;line-height:1.55;color:var(--para)}
+.ico{width:18px;height:18px;flex:none}
+.cta{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:50px;padding:0 22px;border-radius:999px;font:700 15px/1 'Hanken Grotesk';text-decoration:none;cursor:pointer}
+.cta-violet{background:var(--violet);color:#fff;box-shadow:0 14px 30px -14px rgba(91,59,234,.7)}
+.cta-violet:hover{background:var(--violet-f)}
+.cta-noir{background:var(--encre);color:#fff}
+.cta-soleil{background:linear-gradient(135deg,#FFD1BF,#FF8A5B);background-color:#FFB08C;color:var(--encre);box-shadow:0 14px 30px -14px rgba(255,138,91,.8)}
+.cta:focus-visible{outline:3px solid var(--violet);outline-offset:3px}
+.cta .ico{transition:transform .25s}
+.cta:hover .ico{transform:translateY(2px)}
+.sous-cta{display:block;margin-top:8px;font-size:12.5px;color:var(--legende)}
+/* A : le livre posé */
+.livre{text-decoration:none;color:inherit;display:flex;flex-direction:column;border-radius:26px;background:#fff;box-shadow:0 1px 2px rgba(15,15,18,.05),0 24px 50px -30px rgba(76,48,170,.35);overflow:hidden}
+.livre .scene{position:relative;height:250px;display:flex;align-items:center;justify-content:center;background:radial-gradient(60% 70% at 30% 20%,#EDE6FF,transparent 70%),radial-gradient(50% 60% at 85% 90%,#FFE1D2,transparent 70%),#F6F2FF;overflow:hidden}
+.livre .couv{position:relative;width:62%;aspect-ratio:4/3;border-radius:6px 12px 12px 6px;background-size:cover;background-position:center;transform:rotate(-5deg);box-shadow:-10px 0 0 -4px #fff,-14px 2px 0 -5px #E9E4F7,-18px 4px 0 -6px #fff,0 26px 40px -18px rgba(40,20,90,.55);transition:transform .35s}
+.livre .couv::before{content:"";position:absolute;inset:0 auto 0 0;width:12px;border-radius:6px 0 0 6px;background:linear-gradient(90deg,rgba(0,0,0,.25),rgba(255,255,255,.18) 60%,transparent)}
+.livre:hover .couv{transform:rotate(-2deg) translateY(-6px)}
+.livre .ruban{position:absolute;top:16px;left:16px;display:inline-flex;align-items:center;gap:6px;min-height:28px;padding:0 12px;border-radius:999px;background:rgba(15,10,36,.78);color:#fff;font:800 12px/1 'Hanken Grotesk';letter-spacing:.08em;text-transform:uppercase}
+.livre .gratuit{position:absolute;top:14px;right:16px;font:700 27px/1 'Caveat';color:#A63C14;transform:rotate(6deg)}
+.livre .corps{display:flex;flex-direction:column;gap:0;padding:20px 22px 22px;flex:1}
+.livre .resume{flex:1}
+.livre .cta{margin-top:18px;width:100%}
+/* B : la pochette */
+.pochette{position:relative;padding-top:22px}
+.pochette .onglet{position:absolute;top:0;left:22px;height:30px;padding:0 16px;display:flex;align-items:center;border-radius:12px 12px 0 0;background:#EDE6FF;color:var(--violet-f);font:700 12px/1 'Hanken Grotesk';letter-spacing:.06em;text-transform:uppercase}
+.pochette .dos{position:relative;border-radius:0 22px 22px 22px;background:linear-gradient(160deg,#EDE6FF,#FFF1E7);background-color:#F3EDFF;padding:18px 18px 0;overflow:hidden}
+.pochette .doc{position:relative;height:200px;border-radius:10px 10px 0 0;background-size:cover;background-position:top center;box-shadow:0 -8px 30px -12px rgba(40,20,90,.45);transform:translateY(30px);transition:transform .35s}
+.pochette:hover .doc{transform:translateY(8px)}
+.pochette .face{position:relative;margin-top:-30px;border-radius:18px 18px 22px 22px;background:#fff;padding:20px 22px 22px;box-shadow:0 -14px 30px -20px rgba(40,20,90,.35)}
+.pochette .bas{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:16px}
+.pochette .fleche-bas{display:inline-flex;width:50px;height:50px;border-radius:50%;align-items:center;justify-content:center;background:var(--encre);color:#fff}
+/* C : couverture pleine */
+.affiche{position:relative;border-radius:26px;overflow:hidden;min-height:430px;display:flex;flex-direction:column;justify-content:flex-end;background-size:cover;background-position:center top;box-shadow:0 24px 50px -30px rgba(40,20,90,.45)}
+.affiche::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,10,36,0) 30%,rgba(15,10,36,.55) 62%,rgba(15,10,36,.86))}
+.affiche .plaque{position:relative;margin:12px;padding:18px;border-radius:20px;background-color:rgba(22,14,52,.72);backdrop-filter:blur(10px);color:#fff;box-shadow:inset 0 0 0 1px rgba(255,255,255,.18)}
+.affiche .titre{color:#fff;margin-top:10px}
+.affiche .resume{color:#E4DFF2;font-size:14.5px}
+.affiche .info{color:#D9D3EC}
+.affiche .puce{background:rgba(255,241,231,.95)}
+.affiche .cta{margin-top:14px;width:100%}
+/* REX R1 : fiche client sombre */
+.rex1{position:relative;display:flex;flex-direction:column;border-radius:26px;overflow:hidden;background:linear-gradient(160deg,#1C1730,#0F0F12);background-color:#16122A;color:#FAF9F7;box-shadow:0 24px 50px -30px rgba(40,20,90,.6)}
+.rex1::after{content:"";position:absolute;right:-60px;top:-60px;width:220px;height:220px;border-radius:50%;background:radial-gradient(closest-side,rgba(255,138,91,.45),transparent);pointer-events:none}
+.rex1 .haut{position:relative;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:20px 22px 0}
+.rex1 .marque{display:inline-flex;align-items:center;gap:8px;font:800 12px/1 'Hanken Grotesk';letter-spacing:.12em;text-transform:uppercase;color:#FFD1BF}
+.rex1 .marque::before{content:"";width:8px;height:8px;border-radius:50%;background:#FF8A5B;box-shadow:0 0 0 4px rgba(255,138,91,.25)}
+.rex1 .logo{height:56px;padding:10px 14px;border-radius:14px;background:#fff;display:flex;align-items:center}
+.rex1 .logo img{max-height:36px;max-width:110px;display:block}
+.rex1 .chiffre{position:relative;padding:26px 22px 6px;display:flex;align-items:baseline;gap:12px}
+.rex1 .chiffre b{font:800 64px/0.9 'Bricolage Grotesque';letter-spacing:-.04em;background:linear-gradient(120deg,#FFAB96,#E697BD 50%,#A77BF0);-webkit-background-clip:text;background-clip:text;color:transparent;padding:0 .06em;margin:0 -.06em}
+.rex1 .chiffre span{font-size:15px;line-height:1.35;color:#C9C3DE;max-width:170px}
+.rex1 .corps{position:relative;padding:8px 22px 22px;display:flex;flex-direction:column;flex:1}
+.rex1 .titre{color:#FAF9F7}
+.rex1 .resume{color:#C9C3DE;flex:1}
+.rex1 .boutons{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:18px}
+.rex1 .lien{color:#FFD1BF;font-weight:700;font-size:14.5px;text-decoration:underline;text-underline-offset:3px}
+/* REX R2 : citation + clap */
+.rex2{position:relative;border-radius:26px;background:#fff;overflow:hidden;box-shadow:0 1px 2px rgba(15,15,18,.05),0 24px 50px -30px rgba(76,48,170,.35);display:flex;flex-direction:column}
+.rex2 .bande{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px 18px;background:repeating-linear-gradient(-55deg,#0F0F12 0 18px,#FAF9F7 18px 36px);background-color:#0F0F12}
+.rex2 .bande span{background:#0F0F12;color:#fff;padding:6px 10px;border-radius:8px;font:800 12px/1 'Hanken Grotesk';letter-spacing:.1em;text-transform:uppercase}
+.rex2 .bande .tc2{font-family:ui-monospace,Menlo,monospace;letter-spacing:.06em}
+.rex2 .corps{padding:22px;display:flex;flex-direction:column;flex:1}
+.rex2 blockquote{margin:0;padding:0 0 0 18px;border-left:3px solid var(--peche);font:600 19px/1.4 'Bricolage Grotesque';letter-spacing:-.02em;color:var(--encre)}
+.rex2 .qui{display:flex;align-items:center;gap:12px;margin:14px 0 4px}
+.rex2 .qui img{height:28px;max-width:90px}
+.rex2 .qui span{font-size:13.5px;color:var(--legende)}
+.rex2 .titre{font-size:19px}
+.rex2 .resume{flex:1}
+.rex2 .cta{margin-top:16px;width:100%}
+/* REX R3 : même carte que le guide, accent pêche */
+.livre.rex3 .scene{background:radial-gradient(60% 70% at 70% 20%,#FFE1D2,transparent 70%),radial-gradient(50% 60% at 10% 90%,#EDE6FF,transparent 70%),#FFF4EC}
+.livre.rex3 .ruban{background:#A63C14}
+.livre.rex3 .logo-coin{position:absolute;right:16px;bottom:16px;height:48px;padding:8px 12px;border-radius:12px;background:#fff;box-shadow:0 10px 24px -12px rgba(40,20,90,.45);display:flex;align-items:center}
+.livre.rex3 .logo-coin img{max-height:30px;max-width:96px}
+/* Admin */
+.admin{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px;align-items:start}
+.metabox{border:1px solid #C3C4C7;background:#fff;font:13px/1.5 -apple-system,'Segoe UI',Roboto,sans-serif;color:#1D2327}
+.metabox .mb-titre{font-weight:600;margin:0;padding:10px 12px;border-bottom:1px solid #C3C4C7;font-size:14px}
+.metabox .ligne{padding:12px;border-bottom:1px solid #F0F0F1}
+.metabox label{display:flex;gap:8px;align-items:flex-start;font-weight:600}
+.metabox input[type=checkbox]{margin-top:2px}
+.metabox .aide{display:block;font-weight:400;color:#646970;margin-top:2px}
+.metabox .case{display:inline-flex;width:16px;height:16px;flex:none;margin-top:2px;align-items:center;justify-content:center;border-radius:3px;background:#2271B1;color:#fff;font-size:11px}
+.metabox .champ{display:block;width:100%;margin-top:6px;padding:6px 8px;border:1px solid #8C8F94;border-radius:4px;font-weight:400}
+.metabox select{width:100%;margin-top:6px;padding:6px;border:1px solid #8C8F94;border-radius:4px;font:inherit}
+.liste-auto{margin:0;padding:0;list-style:none;display:grid;gap:10px}
+.liste-auto li{background:#fff;border-radius:16px;padding:14px 16px;box-shadow:inset 0 0 0 1px rgba(15,15,18,.08);font-size:15px;line-height:1.5;color:var(--para)}
+.liste-auto b{color:var(--encre)}
+.note{font:700 27px/1.15 'Caveat';color:#A63C14;margin:14px 0 0}
+@media (max-width:1000px){.ecrans{grid-template-columns:minmax(0,1fr)}.admin{grid-template-columns:minmax(0,1fr)}.constat{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:640px){main{padding:32px 16px 64px}h1{font-size:34px}.option{padding:16px}.ecran{padding:18px 14px}.grille{grid-template-columns:minmax(0,1fr)}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<main>
+<span class="tc">MAQUETTE · À VALIDER</span>
+<h1>Page Guides et REX : cartes plus engageantes.</h1>
+<p class="intro">Deux looks différents pour les guides et les retours d'expérience, un bouton « Télécharger » qui se voit enfin, et une case à cocher pour dire « ceci est un REX ». Les couvertures sont vos vrais guides ; le REX est un [exemple].</p>
+
+<section class="partie">
+<span class="tc">01</span>
+<h2>Ce qui ne va pas aujourd'hui.</h2>
+<div class="constat">
+<div><b>Le bouton se perd</b>Bouton blanc sur fond blanc : « Télécharger » ressemble à une étiquette, pas à une action.</div>
+<div><b>Guides et REX se confondent</b>Même carte pour un guide et pour un retour d'expérience : impossible de les distinguer d'un coup d'œil.</div>
+<div><b>Peu d'envie</b>La couverture est rognée en vignette ; rien ne dit « c'est gratuit, c'est un PDF, c'est pour vous ».</div>
+</div>
+</section>
+
+<section class="partie">
+<span class="tc">02</span>
+<h2>Les guides : trois looks.</h2>
+<p>Pour tous : un vrai bouton plein « Télécharger le guide » avec une flèche vers le bas, la mention « PDF gratuit · X pages » sous le bouton, la carte entière cliquable.</p>
+
+<div class="option">
+<h3>A · Le guide posé sur la table <span class="conseil">CONSEIL</span></h3>
+<p>La couverture devient un vrai document : légèrement inclinée, avec l'épaisseur des pages et une ombre. Au survol, il se redresse et se soulève. Mot manuscrit « gratuit ! » en Caveat. Bouton violet plein sur toute la largeur.</p>
+<div class="ecrans">
+<div class="ecran"><p class="etiq">Ordinateur</p><div class="grille">
+<a class="livre" href="#" aria-label="Le guide de la vidéo d'entreprise, télécharger le guide"><div class="scene"><span class="ruban">Guide PDF</span><span class="gratuit" aria-hidden="true">gratuit !</span><div class="couv" style="background-image:url(__COUV2__)"></div></div>
+<div class="corps"><p class="meta"><span class="puce">Communication interne</span><span class="info">7 pages</span></p><h4 class="titre">Le guide de la vidéo d'entreprise</h4><p class="resume">Du vocabulaire au brief, tout ce qu'il faut savoir pour réussir votre prochain film.</p><span class="cta cta-violet"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M6 11l6 6 6-6M5 20h14"/></svg>Télécharger le guide</span><span class="sous-cta">PDF gratuit · 7 pages</span></div></a>
+<a class="livre" href="#" aria-label="La recette d'un aftermovie réussi, télécharger le guide"><div class="scene"><span class="ruban">Guide PDF</span><span class="gratuit" aria-hidden="true">gratuit !</span><div class="couv" style="background-image:url(__COUV3__)"></div></div>
+<div class="corps"><p class="meta"><span class="puce">Marketing vidéo</span><span class="info">2 pages</span></p><h4 class="titre">La recette d'un aftermovie réussi</h4><p class="resume">Ingrédients, conseils, comment bien réaliser un aftermovie et retransmettre les émotions d'un événement.</p><span class="cta cta-violet"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M6 11l6 6 6-6M5 20h14"/></svg>Télécharger le guide</span><span class="sous-cta">PDF gratuit · 2 pages</span></div></a>
+</div></div>
+<div class="ecran mobile"><p class="etiq">Mobile · 360 px</p><div class="grille">
+<a class="livre" href="#" aria-label="Le lexique vidéo, télécharger le guide"><div class="scene"><span class="ruban">Lexique</span><span class="gratuit" aria-hidden="true">gratuit !</span><div class="couv" style="background-image:url(__COUV1__)"></div></div>
+<div class="corps"><p class="meta"><span class="puce">Production vidéo</span><span class="info">2 pages</span></p><h4 class="titre">Le lexique vidéo</h4><p class="resume">Tout le vocabulaire de la production vidéo, du brief jusqu'à la livraison.</p><span class="cta cta-violet"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M6 11l6 6 6-6M5 20h14"/></svg>Télécharger le guide</span><span class="sous-cta">PDF gratuit · 2 pages</span></div></a>
+</div></div>
+</div>
+</div>
+
+<div class="option">
+<h3>B · La pochette qui s'ouvre</h3>
+<p>Chaque guide est rangé dans une pochette avec un onglet (le thème). Au survol, le document sort de la pochette. Bouton rond noir avec flèche vers le bas, à droite du titre.</p>
+<div class="ecrans">
+<div class="ecran"><p class="etiq">Ordinateur</p><div class="grille">
+<a class="pochette" href="#" style="text-decoration:none;color:inherit" aria-label="Le guide de la vidéo d'entreprise, télécharger le guide"><span class="onglet">Communication interne</span><div class="dos"><div class="doc" style="background-image:url(__COUV2__)"></div></div>
+<div class="face"><p class="meta"><span class="puce violette">Guide PDF</span><span class="info">7 pages · gratuit</span></p><div class="bas"><h4 class="titre" style="margin:0">Le guide de la vidéo d'entreprise</h4><span class="fleche-bas"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M6 11l6 6 6-6M5 20h14"/></svg></span></div><p class="resume" style="margin-top:8px">Du vocabulaire au brief, tout ce qu'il faut savoir pour réussir votre prochain film.</p></div></a>
+<a class="pochette" href="#" style="text-decoration:none;color:inherit" aria-label="La recette d'un aftermovie réussi, télécharger le guide"><span class="onglet">Marketing vidéo</span><div class="dos"><div class="doc" style="background-image:url(__COUV3__)"></div></div>
+<div class="face"><p class="meta"><span class="puce violette">Guide PDF</span><span class="info">2 pages · gratuit</span></p><div class="bas"><h4 class="titre" style="margin:0">La recette d'un aftermovie réussi</h4><span class="fleche-bas"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M6 11l6 6 6-6M5 20h14"/></svg></span></div><p class="resume" style="margin-top:8px">Ingrédients, conseils, comment bien réaliser un aftermovie.</p></div></a>
+</div></div>
+<div class="ecran mobile"><p class="etiq">Mobile · 360 px</p><div class="grille">
+<a class="pochette" href="#" style="text-decoration:none;color:inherit" aria-label="Le lexique vidéo, télécharger le guide"><span class="onglet">Production vidéo</span><div class="dos"><div class="doc" style="background-image:url(__COUV1__)"></div></div>
+<div class="face"><p class="meta"><span class="puce violette">Lexique</span><span class="info">2 pages · gratuit</span></p><div class="bas"><h4 class="titre" style="margin:0">Le lexique vidéo</h4><span class="fleche-bas"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M6 11l6 6 6-6M5 20h14"/></svg></span></div></div></a>
+</div></div>
+</div>
+</div>
+
+<div class="option">
+<h3>C · La couverture en grand</h3>
+<p>La couverture prend toute la carte (format portrait), une plaque en verre fumé en bas porte le titre et un bouton pêche « Télécharger gratuitement ». Très visuel, mais le résumé est plus court.</p>
+<div class="ecrans">
+<div class="ecran"><p class="etiq">Ordinateur</p><div class="grille">
+<a class="affiche" href="#" style="background-image:url(__COUV2__);text-decoration:none" aria-label="Le guide de la vidéo d'entreprise, télécharger gratuitement"><div class="plaque"><p class="meta"><span class="puce">Communication interne</span><span class="info">PDF · 7 pages</span></p><h4 class="titre">Le guide de la vidéo d'entreprise</h4><p class="resume">Du vocabulaire au brief, tout pour réussir votre prochain film.</p><span class="cta cta-soleil"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M6 11l6 6 6-6M5 20h14"/></svg>Télécharger gratuitement</span></div></a>
+<a class="affiche" href="#" style="background-image:url(__COUV3__);text-decoration:none" aria-label="La recette d'un aftermovie réussi, télécharger gratuitement"><div class="plaque"><p class="meta"><span class="puce">Marketing vidéo</span><span class="info">PDF · 2 pages</span></p><h4 class="titre">La recette d'un aftermovie réussi</h4><p class="resume">Ingrédients et conseils pour un aftermovie qui transmet l'émotion.</p><span class="cta cta-soleil"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M6 11l6 6 6-6M5 20h14"/></svg>Télécharger gratuitement</span></div></a>
+</div></div>
+<div class="ecran mobile"><p class="etiq">Mobile · 360 px</p><div class="grille">
+<a class="affiche" href="#" style="background-image:url(__COUV1__);text-decoration:none;min-height:380px" aria-label="Le lexique vidéo, télécharger gratuitement"><div class="plaque"><p class="meta"><span class="puce">Production vidéo</span><span class="info">PDF · 2 pages</span></p><h4 class="titre">Le lexique vidéo</h4><span class="cta cta-soleil"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M6 11l6 6 6-6M5 20h14"/></svg>Télécharger gratuitement</span></div></a>
+</div></div>
+</div>
+</div>
+</section>
+
+<section class="partie">
+<span class="tc">03</span>
+<h2>Les retours d'expérience : trois looks.</h2>
+<p>Montrés à côté d'un guide (look A) pour voir la différence dans la même grille. Le logo, le chiffre et la citation viennent tout seuls du témoignage lié : rien à ressaisir.</p>
+
+<div class="option">
+<h3>R1 · La fiche client sombre <span class="conseil">CONSEIL</span></h3>
+<p>Carte foncée (comme les sections sombres du site) : logo du client, « Retour d'expérience », le 1er chiffre clé du témoignage en grand, titre, bouton pêche « Télécharger le REX » + lien « Lire le témoignage ». Impossible de la confondre avec un guide.</p>
+<div class="ecrans">
+<div class="ecran"><p class="etiq">Ordinateur · REX à côté d'un guide</p><div class="grille">
+<article class="rex1"><div class="haut"><span class="marque">Retour d'expérience</span><span class="logo"><img src="__LOGO__" alt="Club Med"></span></div>
+<div class="chiffre"><b>+87&nbsp;%</b><span>de vidéos vues jusqu'au bout [exemple]</span></div>
+<div class="corps"><h4 class="titre">Comment Club Med a produit 40 vidéos d'onboarding en 6 mois</h4><p class="resume">[Texte d'exemple] Le contexte, la méthode et les résultats, en 6 pages.</p><div class="boutons"><a class="cta cta-soleil" href="#"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M6 11l6 6 6-6M5 20h14"/></svg>Télécharger le REX</a><a class="lien" href="#">Lire le témoignage</a></div></div></article>
+<a class="livre" href="#" aria-label="Le guide de la vidéo d'entreprise, télécharger le guide"><div class="scene"><span class="ruban">Guide PDF</span><span class="gratuit" aria-hidden="true">gratuit !</span><div class="couv" style="background-image:url(__COUV2__)"></div></div>
+<div class="corps"><p class="meta"><span class="puce">Communication interne</span><span class="info">7 pages</span></p><h4 class="titre">Le guide de la vidéo d'entreprise</h4><p class="resume">Du vocabulaire au brief, tout ce qu'il faut savoir pour réussir votre prochain film.</p><span class="cta cta-violet"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M6 11l6 6 6-6M5 20h14"/></svg>Télécharger le guide</span><span class="sous-cta">PDF gratuit · 7 pages</span></div></a>
+</div></div>
+<div class="ecran mobile"><p class="etiq">Mobile · 360 px</p><div class="grille">
+<article class="rex1"><div class="haut"><span class="marque">Retour d'expérience</span><span class="logo"><img src="__LOGO__" alt="Club Med"></span></div>
+<div class="chiffre"><b>+87&nbsp;%</b><span>de vidéos vues jusqu'au bout [exemple]</span></div>
+<div class="corps"><h4 class="titre">Comment Club Med a produit 40 vidéos d'onboarding en 6 mois</h4><div class="boutons"><a class="cta cta-soleil" href="#" style="width:100%"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M6 11l6 6 6-6M5 20h14"/></svg>Télécharger le REX</a><a class="lien" href="#">Lire le témoignage</a></div></div></article>
+</div></div>
+</div>
+</div>
+
+<div class="option">
+<h3>R2 · La citation sous un clap</h3>
+<p>Bande de clap rayée en haut (« REX » + nom du client), puis la citation du client en grand, son logo, le titre et le bouton. Le REX se lit comme une parole de client.</p>
+<div class="ecrans">
+<div class="ecran"><p class="etiq">Ordinateur · REX à côté d'un guide</p><div class="grille">
+<article class="rex2"><div class="bande"><span>REX · Club Med</span><span class="tc2">SCÈNE 01</span></div>
+<div class="corps"><blockquote>« En six mois, la vidéo est devenue le premier réflexe de nos équipes RH. » [exemple]</blockquote><div class="qui"><img src="__LOGO__" alt="Club Med"><span>Directrice de la formation [exemple]</span></div><h4 class="titre">Comment Club Med a produit 40 vidéos d'onboarding en 6 mois</h4><a class="cta cta-noir" href="#"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M6 11l6 6 6-6M5 20h14"/></svg>Télécharger le retour d'expérience</a></div></article>
+<a class="livre" href="#" aria-label="La recette d'un aftermovie réussi, télécharger le guide"><div class="scene"><span class="ruban">Guide PDF</span><span class="gratuit" aria-hidden="true">gratuit !</span><div class="couv" style="background-image:url(__COUV3__)"></div></div>
+<div class="corps"><p class="meta"><span class="puce">Marketing vidéo</span><span class="info">2 pages</span></p><h4 class="titre">La recette d'un aftermovie réussi</h4><p class="resume">Ingrédients, conseils, comment bien réaliser un aftermovie.</p><span class="cta cta-violet"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M6 11l6 6 6-6M5 20h14"/></svg>Télécharger le guide</span><span class="sous-cta">PDF gratuit · 2 pages</span></div></a>
+</div></div>
+<div class="ecran mobile"><p class="etiq">Mobile · 360 px</p><div class="grille">
+<article class="rex2"><div class="bande"><span>REX · Club Med</span><span class="tc2">SCÈNE 01</span></div>
+<div class="corps"><blockquote>« En six mois, la vidéo est devenue le premier réflexe de nos équipes RH. » [exemple]</blockquote><div class="qui"><img src="__LOGO__" alt="Club Med"></div><h4 class="titre">40 vidéos d'onboarding en 6 mois</h4><a class="cta cta-noir" href="#"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M6 11l6 6 6-6M5 20h14"/></svg>Télécharger le REX</a></div></article>
+</div></div>
+</div>
+</div>
+
+<div class="option">
+<h3>R3 · Le même document, version pêche</h3>
+<p>Même carte que le guide A, mais tout l'accent passe au pêche / orange : ruban « Retour d'expérience », logo du client posé dans le coin de la couverture, bouton orange foncé. Plus discret que R1.</p>
+<div class="ecrans">
+<div class="ecran"><p class="etiq">Ordinateur · REX à côté d'un guide</p><div class="grille">
+<a class="livre rex3" href="#" aria-label="Retour d'expérience Club Med, télécharger le REX"><div class="scene"><span class="ruban">Retour d'expérience</span><div class="couv" style="background-image:url(__COUV2__)"></div><span class="logo-coin"><img src="__LOGO__" alt=""></span></div>
+<div class="corps"><p class="meta"><span class="puce">Onboarding</span><span class="info">6 pages</span></p><h4 class="titre">Comment Club Med a produit 40 vidéos d'onboarding en 6 mois</h4><p class="resume">[Texte d'exemple] Le contexte, la méthode et les résultats.</p><span class="cta" style="background:#A63C14;color:#fff;width:100%;margin-top:18px"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M6 11l6 6 6-6M5 20h14"/></svg>Télécharger le REX</span></div></a>
+<a class="livre" href="#" aria-label="Le guide de la vidéo d'entreprise, télécharger le guide"><div class="scene"><span class="ruban">Guide PDF</span><span class="gratuit" aria-hidden="true">gratuit !</span><div class="couv" style="background-image:url(__COUV2__)"></div></div>
+<div class="corps"><p class="meta"><span class="puce">Communication interne</span><span class="info">7 pages</span></p><h4 class="titre">Le guide de la vidéo d'entreprise</h4><p class="resume">Du vocabulaire au brief, tout ce qu'il faut savoir.</p><span class="cta cta-violet"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M6 11l6 6 6-6M5 20h14"/></svg>Télécharger le guide</span><span class="sous-cta">PDF gratuit · 7 pages</span></div></a>
+</div></div>
+<div class="ecran mobile"><p class="etiq">Mobile · 360 px</p><div class="grille">
+<a class="livre rex3" href="#" aria-label="Retour d'expérience Club Med, télécharger le REX"><div class="scene"><span class="ruban">Retour d'expérience</span><div class="couv" style="background-image:url(__COUV2__)"></div><span class="logo-coin"><img src="__LOGO__" alt=""></span></div>
+<div class="corps"><h4 class="titre">40 vidéos d'onboarding en 6 mois</h4><span class="cta" style="background:#A63C14;color:#fff;width:100%;margin-top:14px"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M6 11l6 6 6-6M5 20h14"/></svg>Télécharger le REX</span></div></a>
+</div></div>
+</div>
+</div>
+</section>
+
+<section class="partie">
+<span class="tc">04</span>
+<h2>Dans l'administration : une case à cocher.</h2>
+<p>Plus besoin de choisir le thème « Retours d'expérience » : une case dans la fiche du guide suffit. Le nom du guide reste libre (« Lexique », « Guide pratique »…).</p>
+<div class="admin">
+<div class="metabox" role="img" aria-label="Aperçu de l'encadré dans l'administration">
+<div class="mb-titre">Rolling : le guide</div>
+<div class="ligne"><label><span class="case" aria-hidden="true">✓</span>C'est un retour d'expérience<span class="aide"></span></label><span class="aide">La carte prend le look « Retour d'expérience » et le guide apparaît dans le filtre du même nom.</span></div>
+<div class="ligne"><label style="display:block">Témoignage lié<span class="champ">Club Med : onboarding ▾</span></label><span class="aide">Logo, chiffre clé et citation sont repris de ce témoignage.</span></div>
+<div class="ligne"><label style="display:block">Nom du document (bande)<span class="champ">Guide PDF</span></label><span class="aide">Libre pour les guides ; « Retour d'expérience » pour un REX.</span></div>
+</div>
+<ul class="liste-auto">
+<li><b>Look automatique</b> : case cochée = carte REX, sinon carte guide.</li>
+<li><b>Filtre « Retours d'expérience »</b> de la page Guides et REX : rempli tout seul par la case.</li>
+<li><b>REX déjà créés</b> (thème « Retours d'expérience ») : reconnus comme REX sans rien refaire.</li>
+<li><b>Bouton</b> : « Télécharger le guide » / « Télécharger le REX », textes modifiables dans Elementor (modèles de cartes).</li>
+</ul>
+</div>
+<p class="note">Conseil : A pour les guides + R1 pour les REX (les deux familles se distinguent au premier coup d'œil).</p>
+</section>
+</main>
+<script>document.querySelectorAll('a[href="#"]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();});});</script>
+</body>
+</html>

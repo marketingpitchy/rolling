@@ -1056,6 +1056,15 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   réseau (le proxy oEmbed de l'éditeur s'en sert en repli ⇒ aperçu du GIF) ; sur le site, `gifs()` en fait la carte.
   Lecteur d'adresse déplacé dans `Rolling_Compositions::giphy_infos()` (classe toujours chargée ; le widget n'existe qu'avec
   Elementor). Logo LinkedIn centré : `.rl-nom:has(> a[href*=linkedin.com])` en flex centré, lien sans vertical-align décalé.
+- **Maquette « Guides et REX »** (`maquettes/guides-rex/guides-rex.html`, jetons `__COUV1..3__` = couvertures des guides de la
+  cliente rognées de sa capture (scratchpad/guides) et `__LOGO__`, copie /workspace/maquette-guides-rex.html, **à valider**) :
+  bouton « Télécharger » blanc sur blanc invisible + guides et REX identiques ⇒ guides : **A document posé incliné (épaisseur
+  des pages, se redresse au survol, « gratuit ! » Caveat, bouton violet plein « Télécharger le guide » + « PDF gratuit · X pages »,
+  conseil)**, B pochette avec onglet (document qui sort au survol, bouton rond noir), C couverture pleine + plaque fumée + bouton
+  pêche ; REX : **R1 fiche client sombre (logo, « Retour d'expérience », 1er chiffre clé du témoignage lié en grand, bouton pêche
+  « Télécharger le REX » + « Lire le témoignage », conseil)**, R2 citation sous un clap rayé, R3 carte A en version pêche + logo
+  dans le coin. Admin : case « C'est un retour d'expérience » dans la fiche du guide (remplace le thème ; anciens REX reconnus),
+  témoignage lié, nom du document libre pour les guides.
 - **Chargement de page effet film** (demande avant la fin de la livraison 4) : maquette `maquettes/loading/maquette-loading.html`
   (copie /workspace/maquette-loading.html), 4 options : A amorce 3-2-1, B clap qui se ferme puis rideau, C ouverture
   cinéma (bandes noires + REC + timecode + règle avec la tête de lecture rouge des frises, plus de filet fin), D barre de lecture en haut sans écran. Conseil : C à l'arrivée (première page
