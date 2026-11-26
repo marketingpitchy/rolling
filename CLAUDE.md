@@ -1121,6 +1121,13 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   Hover : règles `&:hover .couverture-doc` portées par la carte (un `.parent &` dans le CSS d'une classe devient `.parent .elementor .x`).
   Testé : wp (Guides 1440 / 390, boutons alignés, axe 0, éditeur Elementor après ~30 s de chargement des classes), mise à jour 0.7.28 → 0.7.29
   sur wp2 (4.4.1), PHPCS 0 erreur, composition valide dans l'éditeur WordPress.
+- **Maquette « L'agence : la vidéo de présentation »** (`maquettes/agence-video/agence-video.html`, générée par
+  `scratchpad/gen-agence-video.py`, jetons `__TOURNAGE__` / `__INTERVIEW__` / `__FONDATEURS__` ; copie /workspace/maquette-agence-video.html,
+  **à valider**) : vidéo par lien (widget Vidéo) ; A dans le haut de page à la place de la photo Backstage (16:9, aperçu muet en boucle,
+  son au clic sur place) ; **B partie « Rolling, en 90 secondes. » sous le haut de page, grand lecteur + chapitres cliquables (temps +
+  titre saisis dans Elementor ; barre de lecture découpée ; saut = currentTime / postMessage Vimeo / YouTube seekTo) (conseil)** ;
+  C frise de « Notre histoire » = timeline de la vidéo (moniteur de montage au-dessus, clic sur un clip = y aller, tête de lecture
+  qui suit) ; D carte de la citation des fondateurs : leur photo devient leur vidéo (lecture dans la carte), citation gardée en texte.
 - **Chargement de page effet film** (demande avant la fin de la livraison 4) : maquette `maquettes/loading/maquette-loading.html`
   (copie /workspace/maquette-loading.html), 4 options : A amorce 3-2-1, B clap qui se ferme puis rideau, C ouverture
   cinéma (bandes noires + REC + timecode + règle avec la tête de lecture rouge des frises, plus de filet fin), D barre de lecture en haut sans écran. Conseil : C à l'arrivée (première page

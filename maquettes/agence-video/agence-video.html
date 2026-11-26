@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>L'agence, vidéo de présentation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Hanken+Grotesk:wght@400..800&display=swap" rel="stylesheet">
+<style>
+:root{--encre:#0F0F12;--para:#4A4858;--legende:#5F5C6C;--violet:#5B3BEA;--violet-f:#4A2BB8;--fond:#FAF9F7;--peche:#FF8A5B;--orange-f:#A63C14;--rex:#B8400F}
+*{box-sizing:border-box}
+body{margin:0;background:var(--fond);color:var(--encre);font-family:'Hanken Grotesk',sans-serif}
+main{max-width:1344px;margin:0 auto;padding:48px 16px 96px}
+h1{font:650 46px/1.05 'Bricolage Grotesque';letter-spacing:-.05em;margin:0 0 12px}
+.intro{font-size:18px;line-height:1.6;color:var(--para);max-width:900px;margin:0}
+.intro b{color:var(--encre)}
+.tc{display:inline-block;font:700 12px/1 'Hanken Grotesk';letter-spacing:.16em;color:var(--violet);margin-bottom:10px}
+.partie{margin-top:72px}
+.partie>h2{font:650 32px/1.1 'Bricolage Grotesque';letter-spacing:-.045em;margin:0 0 8px}
+.partie>p{font-size:16px;line-height:1.6;color:var(--para);max-width:920px;margin:0 0 8px}
+.option{margin-top:36px;padding:28px 20px 20px;border-radius:26px;background:#fff;box-shadow:0 1px 2px rgba(15,15,18,.05),0 24px 50px -30px rgba(76,48,170,.3)}
+.option h3{font:650 24px/1.2 'Bricolage Grotesque';letter-spacing:-.04em;margin:0 0 4px 8px}
+.option>p{margin:0 0 22px 8px;font-size:15px;line-height:1.55;color:var(--para);max-width:940px}
+.conseil{display:inline-block;margin-left:8px;padding:4px 10px;border-radius:999px;background:var(--violet);color:#fff;font:700 12px/1.3 'Hanken Grotesk';letter-spacing:.06em;vertical-align:middle}
+.ecran{border-radius:18px;background:var(--fond);box-shadow:inset 0 0 0 1px rgba(15,15,18,.08);padding:28px 16px 32px;overflow:hidden}
+.ecran+.ecran{margin-top:20px}
+.ecran.mobile{width:392px;max-width:100%;padding:20px 16px}
+.etiq{font:700 12px/1 'Hanken Grotesk';letter-spacing:.14em;text-transform:uppercase;color:var(--legende);margin:0 0 18px}
+.grille{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;align-items:stretch}
+.grille.deux{grid-template-columns:repeat(2,minmax(0,1fr))}
+.mobile .grille,.mobile .grille.deux{grid-template-columns:minmax(0,1fr);gap:20px}
+.ico{width:18px;height:18px;flex:none}
+.ico-p{width:14px;height:14px;flex:none}
+/* Cartes */
+.carte{position:relative;display:flex;flex-direction:column;min-width:0;border-radius:24px;background:#fff;overflow:hidden;text-decoration:none;color:inherit;
+ box-shadow:0 1px 2px rgba(15,15,18,.05),0 26px 50px -32px rgba(76,48,170,.4);transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s}
+a.carte:hover,a.carte:focus-visible{transform:translateY(-4px);box-shadow:0 1px 2px rgba(15,15,18,.05),0 34px 60px -30px rgba(76,48,170,.5)}
+a.carte:focus-visible,.carte a:focus-visible{outline:3px solid var(--violet);outline-offset:3px}
+.corps{display:flex;flex-direction:column;flex:1;padding:20px 22px 22px}
+.titre{margin:0 0 8px;font:650 21px/1.22 'Bricolage Grotesque';letter-spacing:-.035em}
+.titre.grand{font-size:25px}
+.resume{margin:0;font-size:15px;line-height:1.55;color:var(--para)}
+.meta{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 12px}
+.puce{display:inline-flex;align-items:center;min-height:26px;padding:0 10px;border-radius:999px;background:#FFF1E7;color:var(--orange-f);font:700 12px/1 'Hanken Grotesk';box-shadow:inset 0 0 0 1px rgba(166,60,20,.2)}
+.puce.plein{background:var(--rex);color:#fff;box-shadow:none}
+.info{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--legende)}
+.cta{display:flex;align-items:center;justify-content:center;gap:10px;min-height:50px;margin-top:auto;padding:0 20px;border-radius:999px;font:700 15px/1.2 'Hanken Grotesk';text-decoration:none;width:100%}
+.corps .resume+.cta,.corps .titre+.cta{margin-top:20px}
+.cta.auto{width:auto;align-self:flex-start;margin-top:22px}
+.cta-violet{background:var(--violet);color:#fff;box-shadow:0 14px 28px -14px rgba(91,59,234,.75)}
+a.carte:hover .cta-violet{background:var(--violet-f)}
+.cta-rex{background:var(--rex);color:#fff;box-shadow:0 14px 28px -14px rgba(184,64,15,.7)}
+.cta-rex:hover{background:#9A3412}
+.actions{margin-top:auto;padding-top:20px}
+.lien-rex{display:block;margin-top:12px;text-align:center;color:var(--orange-f);font-weight:700;font-size:14.5px;text-decoration:underline;text-underline-offset:3px}
+.verre-pill{position:absolute;z-index:2;display:inline-flex;align-items:center;gap:6px;min-height:28px;padding:0 12px;border-radius:999px;
+ background:rgba(255,255,255,.86);-webkit-backdrop-filter:blur(12px) saturate(1.4);backdrop-filter:blur(12px) saturate(1.4);
+ box-shadow:inset 0 0 0 1px rgba(255,255,255,.9),0 6px 16px -8px rgba(40,20,110,.35);font:700 12px/1 'Hanken Grotesk';color:var(--encre)}
+.degrade{background:linear-gradient(90deg,#5B3BEA,#7A45E0,#C94A1E);-webkit-background-clip:text;background-clip:text;color:transparent;
+ padding-inline:.06em;margin-inline:-.06em;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+/* G1 halo de la couverture */
+.g1-scene{position:relative;height:280px;display:grid;place-items:center;overflow:hidden;background:#EEE8FF;isolation:isolate}
+.g1-scene::before{content:"";position:absolute;inset:-40px;z-index:-1;background:var(--img) center/cover;filter:blur(34px) saturate(1.5);opacity:.75;transform:scale(1.15)}
+.g1-scene::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(255,255,255,0) 55%,rgba(255,255,255,.35))}
+.g1-couv{display:block;border-radius:8px;object-fit:cover;box-shadow:0 0 0 1px rgba(255,255,255,.75),0 22px 40px -18px rgba(30,15,90,.55);transition:transform .45s cubic-bezier(.2,.7,.2,1)}
+.g1-couv.h{width:76%;height:auto;aspect-ratio:1.414}
+.g1-couv.v{height:232px;width:auto;aspect-ratio:.707}
+a.g1:hover .g1-couv,a.g1:focus-visible .g1-couv{transform:translateY(-6px) scale(1.02)}
+.g1-type{top:14px;left:14px;color:var(--violet-f)}
+.g1-format{bottom:14px;right:14px}
+/* G2 couverture + verre */
+.g2{background:linear-gradient(160deg,#EFE9FF,#FFF1E7)}
+.g2-image{height:300px;background-size:cover;background-position:center top;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.g2-image.h{background-size:contain;background-repeat:no-repeat;background-position:center 18px;height:300px}
+a.g2:hover .g2-image{transform:scale(1.04)}
+.g2-verre{position:relative;display:flex;flex-direction:column;flex:1;margin:-70px 12px 12px;padding:18px 18px 16px;border-radius:18px;
+ background:rgba(255,255,255,.84);-webkit-backdrop-filter:blur(18px) saturate(1.4);backdrop-filter:blur(18px) saturate(1.4);
+ box-shadow:inset 0 0 0 1px rgba(255,255,255,.95),0 18px 36px -22px rgba(40,20,110,.45)}
+.g2-type{align-self:flex-start;margin-bottom:10px;font:700 12px/1 'Hanken Grotesk';letter-spacing:.12em;text-transform:uppercase;color:var(--violet-f)}
+.g2 .resume{font-size:14.5px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.g2-bas{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:auto;padding-top:16px}
+.cta-mini{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 18px;border-radius:999px;background:var(--violet);color:#fff;font:700 14.5px/1 'Hanken Grotesk';box-shadow:0 12px 24px -12px rgba(91,59,234,.75)}
+a.g2:hover .cta-mini{background:var(--violet-f)}
+/* G3 fiche horizontale */
+.g3{flex-direction:row}
+.g3-visuel{flex:0 0 44%;display:grid;place-items:center;padding:26px;background:radial-gradient(70% 60% at 20% 15%,#E4DAFF,transparent 70%),radial-gradient(60% 60% at 90% 90%,#FFDCCB,transparent 70%),#F4F0FF}
+.g3-couv{display:block;border-radius:8px;object-fit:cover;box-shadow:0 0 0 1px rgba(255,255,255,.8),0 20px 36px -18px rgba(30,15,90,.5);transition:transform .45s cubic-bezier(.2,.7,.2,1)}
+.g3-couv.h{width:100%;aspect-ratio:1.414}
+.g3-couv.v{height:250px;width:auto;aspect-ratio:.707}
+a.g3:hover .g3-couv{transform:translateY(-5px)}
+.g3-corps{display:flex;flex-direction:column;flex:1;min-width:0;padding:26px 28px}
+.g3-haut{display:flex;align-items:center;gap:10px;margin:0 0 12px}
+.tc-pill{display:inline-flex;align-items:center;height:26px;padding:0 10px;border-radius:999px;background:#EDE6FF;color:var(--violet-f);font:700 13px/1 'Hanken Grotesk'}
+.g3-type{display:inline-flex;align-items:center;gap:10px;font:700 12px/1 'Hanken Grotesk';letter-spacing:.16em;text-transform:uppercase;color:var(--legende)}
+.g3-type::before{content:"";width:22px;height:1px;background:currentColor}
+.g3-infos{display:flex;align-items:center;gap:6px;margin:14px 0 0;font-size:13px;color:var(--legende)}
+.mobile .g3{flex-direction:column}
+.mobile .g3-visuel{flex:none;height:230px;padding:22px}
+.mobile .g3-couv.h{width:100%;max-width:262px;height:auto}
+.mobile .g3-couv.v{height:186px;width:auto}
+.mobile .g3-corps{padding:20px 20px 22px}
+.mobile .titre.grand{font-size:22px}
+.mobile .cta.auto{width:100%}
+/* REX communs */
+.rex{background:radial-gradient(80% 50% at 100% 0%,#FFE3D3,transparent 70%),radial-gradient(70% 45% at 0% 100%,#EDE6FF,transparent 70%),#FFFBF8}
+.logo-client{font:500 17px/1 'Hanken Grotesk';letter-spacing:.06em;color:var(--encre)}
+.cobrand{display:inline-flex;align-items:center;gap:8px}
+.cobrand img{display:block;height:18px;width:auto}
+.cobrand .x{font-size:15px;color:var(--legende)}
+/* R1 le REX en miniature */
+.r1-haut{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;padding:18px 20px 14px}
+.pill-temoin{white-space:nowrap;display:inline-flex;align-items:center;gap:7px;min-height:28px;padding:0 12px;border-radius:999px;background:#fff;color:var(--violet-f);font:700 12px/1 'Hanken Grotesk';box-shadow:0 6px 16px -8px rgba(76,48,170,.35)}
+.pill-temoin i{width:8px;height:8px;border-radius:50%;background:#E0562A}
+.r1-photo{margin:0 14px;padding:6px;border-radius:20px;background:rgba(255,255,255,.55);box-shadow:inset 0 0 0 1px rgba(255,255,255,.95),0 18px 34px -22px rgba(120,60,40,.5)}
+.r1-photo img{display:block;width:100%;aspect-ratio:2.1;object-fit:cover;border-radius:14px}
+.r1-chiffres{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+.tuile{display:flex;flex-direction:column;align-items:center;gap:6px;padding:12px 8px 12px;border-radius:16px;background:rgba(255,255,255,.7);box-shadow:inset 0 0 0 1px rgba(255,255,255,.95),0 10px 22px -16px rgba(76,48,170,.4);text-align:center}
+.tuile img{height:50px;width:auto}
+.tuile span{font-size:13px;line-height:1.3;color:var(--para)}
+/* R2 le résultat d'abord */
+.r2-scene{position:relative;height:280px;overflow:hidden;background:radial-gradient(70% 70% at 15% 20%,#FFE1CF,transparent 70%),radial-gradient(60% 60% at 90% 85%,#E7DDFF,transparent 70%),#FFF5EE}
+.r2-logo{position:absolute;top:18px;left:18px;display:inline-flex;align-items:center;min-height:40px;padding:0 16px;border-radius:12px;background:#fff;box-shadow:0 10px 24px -14px rgba(120,60,40,.45)}
+.r2-chiffre{position:absolute;left:22px;bottom:22px;display:flex;align-items:flex-end;gap:12px}
+.r2-chiffre img{height:118px;width:auto}
+.r2-chiffre p{margin:0 0 10px;font:650 17px/1.2 'Bricolage Grotesque';letter-spacing:-.03em;color:var(--encre)}
+.r2-couv{position:absolute;right:22px;top:58px;width:118px;aspect-ratio:.707;object-fit:cover;object-position:top;border-radius:8px;box-shadow:0 0 0 1px rgba(255,255,255,.85),0 22px 40px -18px rgba(90,40,20,.5);transition:transform .45s cubic-bezier(.2,.7,.2,1)}
+.mobile .r2-couv{width:88px;top:70px}
+.mobile .r2-chiffre img{height:96px}
+.mobile .r2-chiffre p{font-size:16px;max-width:150px}
+.r2:hover .r2-couv{transform:translateY(-6px)}
+/* R3 la photo du projet */
+.r3-photo{position:relative;margin:12px 12px 0}
+.r3-photo>img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:16px}
+.r3-type{position:absolute;top:12px;left:12px;display:inline-flex;align-items:center;min-height:28px;padding:0 12px;border-radius:999px;background:var(--rex);color:#fff;font:700 12px/1 'Hanken Grotesk'}
+.r3-barre{position:absolute;left:14px;bottom:-20px;display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border-radius:14px;background:#fff;box-shadow:0 14px 30px -16px rgba(120,60,40,.5)}
+.r3 .corps{padding-top:34px}
+.r3-chips{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 0}
+.r3-chips span{display:inline-flex;align-items:baseline;gap:5px;padding:7px 12px;border-radius:12px;background:#fff;box-shadow:inset 0 0 0 1px rgba(166,60,20,.18);font-size:13.5px;color:var(--para)}
+.r3-chips b{font:700 18px/1 'Bricolage Grotesque';color:var(--orange-f)}
+/* Admin */
+.admin{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:18px}
+.admin div{padding:20px;border-radius:18px;background:#fff;box-shadow:inset 0 0 0 1px rgba(15,15,18,.08)}
+.admin h3{margin:0 0 6px;font:650 18px/1.2 'Bricolage Grotesque';letter-spacing:-.03em}
+.admin p{margin:0;font-size:14.5px;line-height:1.55;color:var(--para)}
+@media (max-width:900px){.grille,.grille.deux,.admin{grid-template-columns:minmax(0,1fr)}.g3{flex-direction:column}.g3-visuel{flex:none}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+
+.grille > *{grid-column:1/-1}
+em{font-style:normal;background:linear-gradient(90deg,#5B3BEA,#7A45E0,#C94A1E);-webkit-background-clip:text;background-clip:text;color:transparent;padding-inline:.06em;margin-inline:-.06em;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.ecran{background:radial-gradient(50% 60% at 90% 0%,#FFE6D8,transparent 70%),radial-gradient(50% 60% at 0% 100%,#ECE5FF,transparent 70%),#FAF9F7}
+.pastille{display:inline-flex;align-items:center;min-height:30px;padding:0 14px;border-radius:999px;background:#fff;box-shadow:0 6px 16px -10px rgba(76,48,170,.4);font:700 13px/1 'Hanken Grotesk';color:var(--violet-f)}
+.h1{margin:18px 0 0;font:650 52px/1.04 'Bricolage Grotesque';letter-spacing:-.05em}
+.h2{margin:8px 0 0;font:650 40px/1.08 'Bricolage Grotesque';letter-spacing:-.05em}
+.intro-p,.chapo-b{margin:18px 0 0;font-size:17px;line-height:1.6;color:var(--para);max-width:560px}
+.boutons{display:flex;flex-wrap:wrap;gap:12px;margin:26px 0 0}
+.btn-noir,.btn-verre{display:inline-flex;align-items:center;min-height:52px;padding:0 24px;border-radius:999px;font:600 15px/1 'Hanken Grotesk'}
+.btn-noir{background:#0F0F12;color:#fff}.btn-verre{background:rgba(255,255,255,.75);box-shadow:inset 0 0 0 1px rgba(15,15,18,.1)}
+.tc-eyebrow{display:inline-flex;align-items:center;gap:10px;font:700 12px/1 'Hanken Grotesk';letter-spacing:.16em;text-transform:uppercase;color:var(--legende)}
+.tc-eyebrow::before{content:"";width:30px;height:1px;background:currentColor}
+/* Lecteur */
+.cadre{position:relative;padding:8px;border-radius:26px;background:rgba(255,255,255,.62);box-shadow:inset 0 0 0 1px rgba(255,255,255,.95),0 30px 60px -34px rgba(60,30,140,.55)}
+.ecran-v{position:relative;aspect-ratio:16/9;overflow:hidden;border-radius:19px;background-size:cover;background-position:center;background-color:#1B1530}
+.ecran-v::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(12,8,30,.32),rgba(12,8,30,0) 30%,rgba(12,8,30,0) 62%,rgba(12,8,30,.6));pointer-events:none}
+.kb{animation:kb 16s ease-in-out infinite alternate}
+@keyframes kb{from{background-size:108%;background-position:40% 45%}to{background-size:122%;background-position:58% 52%}}
+.tag-v{position:absolute;z-index:2;top:14px;left:14px;padding:6px 11px;border-radius:999px;background:rgba(15,10,36,.68);color:#fff;font:700 12px/1 'Hanken Grotesk'}
+.pastille-son{position:absolute;z-index:2;left:14px;bottom:14px;display:inline-flex;align-items:center;gap:8px;min-height:40px;padding:0 15px;border:0;border-radius:999px;background:rgba(255,255,255,.9);color:var(--encre);font:700 13.5px/1 'Hanken Grotesk';cursor:pointer;box-shadow:0 10px 24px -12px rgba(0,0,0,.5)}
+.pastille-son[aria-pressed=true]{background:#5B3BEA;color:#fff}
+.ico-s{width:18px;height:18px}
+.lecture{position:absolute;z-index:2;left:50%;top:50%;width:76px;height:76px;margin:-38px 0 0 -38px;border:0;border-radius:50%;background:rgba(255,255,255,.24);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);box-shadow:inset 0 0 0 1px rgba(255,255,255,.7),0 16px 30px -14px rgba(0,0,0,.6);cursor:pointer}
+.lecture::before{content:"";position:absolute;left:30px;top:23px;border-style:solid;border-width:15px 0 15px 22px;border-color:transparent transparent transparent #fff}
+.lit .lecture::before{left:27px;top:25px;width:7px;height:26px;border:0;background:#fff;box-shadow:13px 0 0 #fff}
+.sous-v{position:absolute;z-index:2;left:16px;bottom:28px;color:#fff;font:700 15px/1.2 'Hanken Grotesk';text-shadow:0 1px 6px rgba(0,0,0,.5)}
+.barre-chap{position:absolute;z-index:2;left:16px;right:16px;bottom:14px;display:flex;gap:4px}
+.barre-chap .seg{flex:1;height:5px;border-radius:3px;background:rgba(255,255,255,.4);overflow:hidden}
+.barre-chap .seg i{display:block;width:0;height:100%;background:#C4B5FD}
+/* A */
+.hero-a{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:48px;align-items:center}
+.cadre-hero{animation:flotte 7s ease-in-out infinite}
+@keyframes flotte{50%{transform:translateY(-8px)}}
+.mobile .hero-a{grid-template-columns:minmax(0,1fr);gap:26px}
+.mobile .h1{font-size:34px}.mobile .h2{font-size:28px}
+/* B */
+.section-b{text-align:center}.section-b .chapo-b{margin-inline:auto}
+.cadre-cine{max-width:980px;margin:34px auto 0}
+.chapitres{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin:18px auto 0;max-width:980px}
+.chap{flex:1 1 0;display:flex;flex-direction:column;align-items:flex-start;gap:6px;min-width:150px;padding:14px 16px;border:0;border-radius:16px;background:rgba(255,255,255,.7);box-shadow:inset 0 0 0 1px rgba(255,255,255,.95),0 12px 26px -20px rgba(76,48,170,.5);cursor:pointer;text-align:left}
+.chap-tc{font:700 12px/1 'Hanken Grotesk';letter-spacing:.06em;color:var(--violet-f)}
+.chap-nom{font:650 16px/1.2 'Bricolage Grotesque';letter-spacing:-.02em;color:var(--encre)}
+.chap.on{background:#5B3BEA;box-shadow:0 14px 28px -14px rgba(91,59,234,.7)}.chap.on .chap-tc,.chap.on .chap-nom{color:#fff}
+.mobile .chapitres{flex-wrap:nowrap;overflow-x:auto;justify-content:flex-start;padding-bottom:6px;scroll-snap-type:x mandatory}
+.mobile .chap{flex:0 0 66%;scroll-snap-align:start}
+/* C */
+.moniteur{margin-top:30px;padding:10px;border-radius:26px;background:#17112C;box-shadow:0 30px 60px -30px rgba(23,17,44,.8)}
+.moniteur-haut{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:6px 8px 12px;color:#C9C3DE;font:700 12px/1 'Hanken Grotesk';letter-spacing:.08em;text-transform:uppercase}
+.rec-fixe{display:inline-flex;align-items:center;gap:6px;color:#fff}.rec-fixe::before{content:"";width:8px;height:8px;border-radius:50%;background:#FF3B30}
+.tc-mon{font-variant-numeric:tabular-nums;color:#fff}
+.cadre-mon{padding:0;background:none;box-shadow:none}.cadre-mon .ecran-v{border-radius:16px}
+.timeline{margin-top:14px;padding:14px 16px 16px;border-radius:20px;background:#fff;box-shadow:inset 0 0 0 1px rgba(15,15,18,.08)}
+.regle{position:relative;height:18px;margin-left:44px;font:700 11.5px/1 'Hanken Grotesk';color:var(--legende);font-variant-numeric:tabular-nums}
+.regle span{position:absolute;top:0;transform:translateX(-50%)}.regle span:first-child{transform:none}.regle span:last-child{transform:translateX(-100%)}
+.piste{display:flex;align-items:center;gap:10px;margin-top:6px}
+.piste-nom{flex:none;width:34px;font:800 12px/1 'Hanken Grotesk';color:var(--legende)}
+.piste-zone{position:relative;flex:1;height:54px}
+.clip{position:absolute;top:0;height:100%;display:flex;align-items:flex-end;padding:0 10px 8px;border:0;border-radius:10px;color:#fff;font:700 12.5px/1.2 'Hanken Grotesk';text-align:left;cursor:pointer;overflow:hidden;box-shadow:inset 0 0 0 2px rgba(255,255,255,.7)}
+.clip.c1{background:linear-gradient(140deg,#5B3BEA,#7A45E0);background-color:#5B3BEA}.clip.c2{background:linear-gradient(140deg,#6E3FD0,#923784);background-color:#6E3FD0}.clip.c3{background:linear-gradient(140deg,#B8400F,#C94A1E);background-color:#B8400F}
+.clip.on{box-shadow:inset 0 0 0 3px #fff,0 0 0 2px #0F0F12}
+.tete{position:absolute;top:-30px;bottom:-6px;left:0;width:2px;background:#FF3B30;pointer-events:none;transition:left .5s cubic-bezier(.2,.7,.2,1)}
+.tete::before{content:"";position:absolute;top:0;left:-7px;width:16px;height:14px;background:#FF3B30;clip-path:polygon(0 0,100% 0,100% 60%,50% 100%,0 60%)}
+.textes-c{display:grid;grid-template-columns:34fr 24fr 32fr;gap:16px;margin:16px 0 0 44px}
+.textes-c b{font:650 16px/1.25 'Bricolage Grotesque';letter-spacing:-.02em}.textes-c p{margin:6px 0 0;font-size:14px;line-height:1.5;color:var(--para)}
+.mobile .regle{display:none}.mobile .piste-zone{height:auto;display:flex;flex-direction:column;gap:8px}
+.mobile .clip{position:relative;left:auto!important;width:100%!important;height:46px;align-items:center}
+.mobile .piste-nom,.mobile .tete{display:none}.mobile .textes-c{grid-template-columns:minmax(0,1fr);margin-left:0}
+.mobile .clip.on::after{content:"▶ En lecture";margin-left:auto;font-size:11.5px;opacity:.95}
+/* D */
+.carte-fond{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:40px;align-items:center;padding:16px 44px 16px 16px;border-radius:30px;background:rgba(255,255,255,.72);box-shadow:inset 0 0 0 1px rgba(255,255,255,.95),0 30px 60px -36px rgba(76,48,170,.45)}
+.cadre-fond .ecran-v{aspect-ratio:4/3}
+.citation-d{margin:0;font:600 20px/1.5 'Bricolage Grotesque';letter-spacing:-.02em;color:var(--encre)}
+.noms{margin:18px 0 0;font-size:14.5px;line-height:1.5;color:var(--para)}.noms b{color:var(--encre)}
+.lien-ecouter{display:inline-flex;align-items:center;gap:8px;margin-top:20px;min-height:46px;padding:0 18px;border-radius:999px;background:#0F0F12;color:#fff;font:700 14.5px/1 'Hanken Grotesk'}
+.mobile .carte-fond{grid-template-columns:minmax(0,1fr);padding:12px 12px 24px;gap:20px}.mobile .fond-texte{padding:0 10px}.mobile .citation-d{font-size:17px}
+@media (max-width:900px){.hero-a,.carte-fond{grid-template-columns:minmax(0,1fr)}}
+@media (prefers-reduced-motion:reduce){.kb,.cadre-hero{animation:none}.tete{transition:none}}
+</style>
+</head>
+<body>
+<main>
+<header><span class="tc">MAQUETTE</span><h1>L'agence : la vidéo de présentation.</h1><p class="intro">Quatre façons de montrer la vidéo de présentation sur la page L'agence. La vidéo se colle par son lien (Vimeo, YouTube ou fichier .mp4), comme le showreel. Les images sont provisoires. Cliquez sur les lecteurs et les chapitres : la lecture est simulée. Rien ne bouge avec « réduire les animations ».</p></header>
+<section class="partie"><span class="tc">00:01 · LES PROPOSITIONS</span><h2>Où et comment.</h2><p>Le bon choix dépend surtout du contenu de la vidéo : présentation générale (A, B), histoire de l'agence (C), ou les fondateurs face caméra (D).</p>
+<section class="option"><h3>A · Dans le haut de page, à la place de la photo</h3><p>La vidéo remplace la photo « Backstage » à côté du titre. Elle tourne sans le son, en boucle, dès l'arrivée (comme le showreel de l'accueil) ; un clic active le son sur place. Le plus visible, et rien de nouveau à apprendre pour vous : c'est le widget Vidéo déjà utilisé.</p><div class="ecran"><p class="etiq">Ordinateur</p><div class="grille"><div class="hero-a"><div class="hero-texte"><span class="pastille">Lancée en novembre 2026</span><h4 class="h1">Rolling, l'agence vidéo<br><em>née chez Pitchy.</em></h4><p class="intro-p">Depuis treize ans, nous accompagnons les grandes entreprises en vidéo. Certaines équipes veulent créer elles-mêmes : c'est Pitchy. D'autres veulent déléguer : c'est Rolling.</p><p class="boutons"><span class="btn-noir">Réserver un échange →</span><span class="btn-verre">Voir les offres</span></p></div><div class="cadre cadre-hero"><div class="ecran-v kb" style="background-image:url(__TOURNAGE__)"><span class="tag-v">Notre présentation · 1:30</span><span class="sous-v" aria-hidden="true"></span><button type="button" class="pastille-son"><svg class="ico-s" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg><span>Activer le son</span></button></div></div></div></div></div><div class="ecran mobile"><p class="etiq">Mobile · 360 px</p><div><div class="hero-a"><div class="hero-texte"><span class="pastille">Lancée en novembre 2026</span><h4 class="h1">Rolling, l'agence vidéo<br><em>née chez Pitchy.</em></h4><p class="intro-p">Depuis treize ans, nous accompagnons les grandes entreprises en vidéo. Certaines équipes veulent créer elles-mêmes : c'est Pitchy. D'autres veulent déléguer : c'est Rolling.</p><p class="boutons"><span class="btn-noir">Réserver un échange →</span><span class="btn-verre">Voir les offres</span></p></div><div class="cadre cadre-hero"><div class="ecran-v kb" style="background-image:url(__TOURNAGE__)"><span class="tag-v">Notre présentation · 1:30</span><span class="sous-v" aria-hidden="true"></span><button type="button" class="pastille-son"><svg class="ico-s" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg><span>Activer le son</span></button></div></div></div></div></div></section>
+<section class="option"><h3>B · Une partie « Rolling, en 90 secondes. » avec chapitres <span class="conseil">Conseil</span></h3><p>Juste sous le haut de page, un grand lecteur. Sous la vidéo, des chapitres cliquables (Qui nous sommes, Notre méthode, L'équipe, Où nous trouver) : un clic et la vidéo saute au bon moment ; la barre de lecture est découpée de la même façon. Le visiteur pressé va droit à ce qui l'intéresse. Chapitres saisis dans Elementor (un temps + un titre par ligne).</p><div class="ecran"><p class="etiq">Ordinateur</p><div class="grille"><div class="section-b"><span class="tc-eyebrow">00:00 · En 90 secondes</span><h4 class="h2">Rolling, <em>en 90 secondes.</em></h4><p class="chapo-b">Qui nous sommes, comment nous travaillons, qui va produire vos vidéos. Cliquez sur un chapitre pour y aller directement.</p><div class="cadre cadre-cine" data-chap="[0, 24, 51, 75]"><div class="ecran-v " style="background-image:url(__INTERVIEW__)"><span class="tag-v">1:30</span><span class="sous-v" aria-hidden="true"></span><button type="button" class="lecture" aria-label="Lire la vidéo de présentation"></button><div class="barre-chap" aria-hidden="true"><span class="seg"><i></i></span><span class="seg"><i></i></span><span class="seg"><i></i></span><span class="seg"><i></i></span></div></div></div><div class="chapitres" role="group" aria-label="Chapitres de la vidéo"><button type="button" class="chap on" data-t="0"><span class="chap-tc">00:00</span><span class="chap-nom">Qui nous sommes</span></button><button type="button" class="chap" data-t="24"><span class="chap-tc">00:24</span><span class="chap-nom">Notre méthode</span></button><button type="button" class="chap" data-t="51"><span class="chap-tc">00:51</span><span class="chap-nom">L'équipe</span></button><button type="button" class="chap" data-t="75"><span class="chap-tc">01:15</span><span class="chap-nom">Où nous trouver</span></button></div></div></div></div><div class="ecran mobile"><p class="etiq">Mobile · 360 px (chapitres à faire glisser)</p><div class="grille"><div class="section-b"><span class="tc-eyebrow">00:00 · En 90 secondes</span><h4 class="h2">Rolling, <em>en 90 secondes.</em></h4><p class="chapo-b">Qui nous sommes, comment nous travaillons, qui va produire vos vidéos. Cliquez sur un chapitre pour y aller directement.</p><div class="cadre cadre-cine" data-chap="[0, 24, 51, 75]"><div class="ecran-v " style="background-image:url(__INTERVIEW__)"><span class="tag-v">1:30</span><span class="sous-v" aria-hidden="true"></span><button type="button" class="lecture" aria-label="Lire la vidéo de présentation"></button><div class="barre-chap" aria-hidden="true"><span class="seg"><i></i></span><span class="seg"><i></i></span><span class="seg"><i></i></span><span class="seg"><i></i></span></div></div></div><div class="chapitres" role="group" aria-label="Chapitres de la vidéo"><button type="button" class="chap on" data-t="0"><span class="chap-tc">00:00</span><span class="chap-nom">Qui nous sommes</span></button><button type="button" class="chap" data-t="24"><span class="chap-tc">00:24</span><span class="chap-nom">Notre méthode</span></button><button type="button" class="chap" data-t="51"><span class="chap-tc">00:51</span><span class="chap-nom">L'équipe</span></button><button type="button" class="chap" data-t="75"><span class="chap-tc">01:15</span><span class="chap-nom">Où nous trouver</span></button></div></div></div></div></section>
+<section class="option"><h3>C · La frise de « Notre histoire » devient la timeline de la vidéo</h3><p>Un écran de contrôle façon logiciel de montage au-dessus de la frise : chaque clip de la frise (Pitchy, Vos demandes, Rolling) est un moment de la vidéo. Cliquer sur un clip y emmène, la tête de lecture rouge suit la vidéo. Très « agence vidéo », idéal si la vidéo raconte l'histoire.</p><div class="ecran"><p class="etiq">Ordinateur</p><div class="grille"><div class="section-c"><span class="tc-eyebrow">00:01 · Notre histoire</span><h4 class="h2">Cette fois, <em>c'est nous qui produisons.</em></h4><div class="moniteur"><div class="moniteur-haut"><span class="rec-fixe">REC</span><span>Programme · Rolling, notre histoire</span><span class="tc-mon">00:00:00:00</span></div><div class="cadre cadre-mon" id="mon"><div class="ecran-v " style="background-image:url(__TOURNAGE__)"><span class="tag-v">Notre histoire · 1:30</span><span class="sous-v" aria-hidden="true"></span><button type="button" class="lecture" aria-label="Lire la vidéo de présentation"></button></div></div></div><div class="timeline" data-cible="mon"><div class="regle"><span style="left:0.00%">00:00</span><span style="left:16.67%">00:15</span><span style="left:33.33%">00:30</span><span style="left:50.00%">00:45</span><span style="left:66.67%">01:00</span><span style="left:83.33%">01:15</span><span style="left:100.00%">01:30</span></div><div class="piste"><span class="piste-nom">V1</span><div class="piste-zone"><button type="button" class="clip c1" data-t="0" style="left:0.00%;width:37.78%"><span>Pitchy · depuis 13 ans</span></button><button type="button" class="clip c2" data-t="34" style="left:37.78%;width:26.67%"><span>Vos demandes</span></button><button type="button" class="clip c3" data-t="58" style="left:64.44%;width:35.56%"><span>Rolling · novembre 2026</span></button><span class="tete" aria-hidden="true"></span></div></div></div><div class="textes-c"><div><b>Pitchy équipe les entreprises.</b><p>+500 grandes entreprises créent leurs vidéos avec la plateforme Pitchy.</p></div><div><b>« Et si vous le faisiez pour nous ? »</b><p>Beaucoup de clients nous demandaient de produire pour eux.</p></div><div><b>Rolling est lancée.</b><p>Nos créas, notre studio et notre IA Factory produisent pour vous.</p></div></div></div></div></div><div class="ecran mobile"><p class="etiq">Mobile · 360 px</p><div class="grille"><div class="section-c"><span class="tc-eyebrow">00:01 · Notre histoire</span><h4 class="h2">Cette fois, <em>c'est nous qui produisons.</em></h4><div class="moniteur"><div class="moniteur-haut"><span class="rec-fixe">REC</span><span>Programme · Rolling, notre histoire</span><span class="tc-mon">00:00:00:00</span></div><div class="cadre cadre-mon" id="mon"><div class="ecran-v " style="background-image:url(__TOURNAGE__)"><span class="tag-v">Notre histoire · 1:30</span><span class="sous-v" aria-hidden="true"></span><button type="button" class="lecture" aria-label="Lire la vidéo de présentation"></button></div></div></div><div class="timeline" data-cible="mon"><div class="regle"><span style="left:0.00%">00:00</span><span style="left:16.67%">00:15</span><span style="left:33.33%">00:30</span><span style="left:50.00%">00:45</span><span style="left:66.67%">01:00</span><span style="left:83.33%">01:15</span><span style="left:100.00%">01:30</span></div><div class="piste"><span class="piste-nom">V1</span><div class="piste-zone"><button type="button" class="clip c1" data-t="0" style="left:0.00%;width:37.78%"><span>Pitchy · depuis 13 ans</span></button><button type="button" class="clip c2" data-t="34" style="left:37.78%;width:26.67%"><span>Vos demandes</span></button><button type="button" class="clip c3" data-t="58" style="left:64.44%;width:35.56%"><span>Rolling · novembre 2026</span></button><span class="tete" aria-hidden="true"></span></div></div></div><div class="textes-c"><div><b>Pitchy équipe les entreprises.</b><p>+500 grandes entreprises créent leurs vidéos avec la plateforme Pitchy.</p></div><div><b>« Et si vous le faisiez pour nous ? »</b><p>Beaucoup de clients nous demandaient de produire pour eux.</p></div><div><b>Rolling est lancée.</b><p>Nos créas, notre studio et notre IA Factory produisent pour vous.</p></div></div></div></div></div></section>
+<section class="option"><h3>D · Le mot des fondateurs, en vidéo</h3><p>Dans la carte de la citation, la photo de Lionel et Benjamin devient leur vidéo (lecture dans la carte). La citation reste écrite à côté : Google la lit, et ceux qui ne lancent pas la vidéo l'ont quand même. Idéal si la vidéo est un face caméra des fondateurs.</p><div class="ecran"><p class="etiq">Ordinateur</p><div class="grille"><div class="section-d"><div class="carte-fond"><div class="cadre cadre-fond"><div class="ecran-v " style="background-image:url(__FONDATEURS__)"><span class="tag-v">Le mot des fondateurs · 0:45</span><span class="sous-v" aria-hidden="true"></span><button type="button" class="lecture" aria-label="Lire la vidéo de présentation"></button></div></div><div class="fond-texte"><p class="citation-d">« Treize ans aux côtés de milliers d’entreprises sur leurs enjeux vidéo nous ont appris une chose : tout le monde a compris que c’était devenu vital, mais trop nombreux sont ceux encore qui manquent de temps. Rolling, c’est notre réponse. »</p><p class="noms"><b>Lionel Chouraqui et Benjamin Chouraqui</b><br>Fondateurs et dirigeants de Pitchy et de Rolling</p><span class="lien-ecouter"><svg class="ico-s" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg>Écouter Lionel et Benjamin</span></div></div></div></div></div><div class="ecran mobile"><p class="etiq">Mobile · 360 px</p><div class="grille"><div class="section-d"><div class="carte-fond"><div class="cadre cadre-fond"><div class="ecran-v " style="background-image:url(__FONDATEURS__)"><span class="tag-v">Le mot des fondateurs · 0:45</span><span class="sous-v" aria-hidden="true"></span><button type="button" class="lecture" aria-label="Lire la vidéo de présentation"></button></div></div><div class="fond-texte"><p class="citation-d">« Treize ans aux côtés de milliers d’entreprises sur leurs enjeux vidéo nous ont appris une chose : tout le monde a compris que c’était devenu vital, mais trop nombreux sont ceux encore qui manquent de temps. Rolling, c’est notre réponse. »</p><p class="noms"><b>Lionel Chouraqui et Benjamin Chouraqui</b><br>Fondateurs et dirigeants de Pitchy et de Rolling</p><span class="lien-ecouter"><svg class="ico-s" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg>Écouter Lionel et Benjamin</span></div></div></div></div></div></section>
+</section>
+</main>
+<script>
+(function(){
+ var calme = matchMedia('(prefers-reduced-motion: reduce)').matches;
+ function fmt(s){ s=Math.max(0,Math.floor(s)); return ('0'+Math.floor(s/60)).slice(-2)+':'+('0'+s%60).slice(-2); }
+ /* Son sur place (A) */
+ document.querySelectorAll('.pastille-son').forEach(function(b){ b.setAttribute('aria-pressed','false'); b.addEventListener('click',function(){ var on=b.getAttribute('aria-pressed')!=='true'; b.setAttribute('aria-pressed',on); b.querySelector('span').textContent= on?'Couper le son':'Activer le son'; }); });
+ /* Lecteurs simulés : lecture / pause, chapitres, timeline. */
+ document.querySelectorAll('.cadre').forEach(function(c){
+  var bouton=c.querySelector('.lecture'); if(!bouton) return;
+  var chap=c.dataset.chap?JSON.parse(c.dataset.chap):null, segs=c.querySelectorAll('.seg i'), sous=c.querySelector('.sous-v');
+  var section=c.closest('.section-b, .section-c, .section-d'), t=0, raf=0, t0=0, D=90;
+  var boutonsChap=section?section.querySelectorAll('.chap'):[], clips=section?section.querySelectorAll('.clip'):[], tete=section?section.querySelector('.tete'):null, tcm=section?section.querySelector('.tc-mon'):null;
+  var noms=[].map.call(boutonsChap,function(x){return x.querySelector('.chap-nom').textContent;});
+  var bornes=chap||[].map.call(clips,function(x){return +x.dataset.t;});
+  function peindre(){
+   var k=0; bornes.forEach(function(b,i){ if(t>=b) k=i; });
+   if(segs.length) segs.forEach(function(s,i){ var a=bornes[i], z=i+1<bornes.length?bornes[i+1]:D; s.style.width=(t>=z?100:t<=a?0:(t-a)/(z-a)*100)+'%'; });
+   boutonsChap.forEach(function(x,i){ x.classList.toggle('on',i===k); x.setAttribute('aria-pressed',i===k); });
+   clips.forEach(function(x,i){ x.classList.toggle('on',i===k); });
+   if(tete) tete.style.left=(t/D*100)+'%';
+   if(tcm) tcm.textContent='00:'+fmt(t)+':00';
+   if(sous) sous.textContent=noms.length?(fmt(bornes[k])+' · '+noms[k]):(c.classList.contains('lit')?fmt(t)+' / '+fmt(D):'');
+  }
+  function pas(n){ if(!t0) t0=n; t=Math.min(D,t+(n-t0)/1000); t0=n; peindre(); if(t<D) raf=requestAnimationFrame(pas); else stop(); }
+  function jouer(){ c.classList.add('lit'); bouton.setAttribute('aria-label','Mettre en pause'); t0=0; if(!calme) raf=requestAnimationFrame(pas); else peindre(); }
+  function stop(){ cancelAnimationFrame(raf); raf=0; c.classList.remove('lit'); bouton.setAttribute('aria-label','Lire la vidéo de présentation'); }
+  bouton.addEventListener('click',function(){ c.classList.contains('lit')?stop():jouer(); });
+  boutonsChap.forEach(function(x){ x.addEventListener('click',function(){ t=+x.dataset.t; peindre(); if(!c.classList.contains('lit')) jouer(); }); });
+  clips.forEach(function(x){ x.addEventListener('click',function(){ t=+x.dataset.t; peindre(); if(!c.classList.contains('lit')) jouer(); }); });
+  peindre();
+ });
+})();
+</script>
+</body>
+</html>
