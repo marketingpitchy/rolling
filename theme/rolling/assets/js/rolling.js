@@ -114,7 +114,7 @@
 	var navsFiltres = 0;
 	function ongletsFiltres( nav ) {
 		var rangees = nav.querySelectorAll( ':scope > ul' ), onglets, ouvert = 0, n = navsFiltres++;
-		if ( nav.classList.contains( 'rl-onglets' ) || rangees.length < 2 ) {
+		if ( nav.classList.contains( 'rl-onglets' ) || nav.classList.contains( 'filtres-type' ) || rangees.length < 2 ) {
 			return;
 		}
 		onglets = document.createElement( 'div' );

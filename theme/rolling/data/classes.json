@@ -8015,6 +8015,157 @@
             ]
         },
         {
+            "id": "g-89cb1cf",
+            "label": "filtres-type",
+            "groupe": "Fiches et listes",
+            "description": "Filtres de la page Guides et REX (avec filtres-liste, écrits par le widget Liste) : d'abord un interrupteur en verre « Tout · Guides · REX » avec le nombre de documents (le type choisi prend sa couleur : violet pour les guides, orange foncé pour les REX), puis, une fois un type choisi, les thèmes de ce type qui glissent dessous.",
+            "variants": [
+                {
+                    "meta": {
+                        "breakpoint": "mobile",
+                        "state": null
+                    },
+                    "props": [],
+                    "custom_css": {
+                        "raw": "JiAuY2hpcC10eXBlIHsgcGFkZGluZzogMCAxNHB4OyB9ICYgLnRoZW1lcy10eXBlIHsgZmxleC13cmFwOiBub3dyYXA7IG92ZXJmbG93LXg6IGF1dG87IHNjcm9sbGJhci13aWR0aDogbm9uZTsgcGFkZGluZy1ib3R0b206IDRweDsgfSAmIC50aGVtZXMtdHlwZSBsaSB7IGZsZXgtc2hyaW5rOiAwOyB9"
+                    }
+                },
+                {
+                    "meta": {
+                        "breakpoint": "desktop",
+                        "state": null
+                    },
+                    "props": {
+                        "width": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 100,
+                                "unit": "%"
+                            }
+                        },
+                        "padding": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 0,
+                                "unit": "px"
+                            }
+                        },
+                        "border-radius": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 0,
+                                "unit": "px"
+                            }
+                        },
+                        "background": {
+                            "$$type": "background",
+                            "value": {
+                                "background-overlay": {
+                                    "$$type": "background-overlay",
+                                    "value": [
+                                        {
+                                            "$$type": "background-gradient-overlay",
+                                            "value": {
+                                                "type": {
+                                                    "$$type": "string",
+                                                    "value": "linear"
+                                                },
+                                                "stops": {
+                                                    "$$type": "gradient-color-stop",
+                                                    "value": [
+                                                        {
+                                                            "$$type": "color-stop",
+                                                            "value": {
+                                                                "color": {
+                                                                    "$$type": "color",
+                                                                    "value": "rgba(0,0,0,0)"
+                                                                },
+                                                                "offset": {
+                                                                    "$$type": "number",
+                                                                    "value": 0
+                                                                }
+                                                            }
+                                                        },
+                                                        {
+                                                            "$$type": "color-stop",
+                                                            "value": {
+                                                                "color": {
+                                                                    "$$type": "color",
+                                                                    "value": "rgba(0,0,0,0)"
+                                                                },
+                                                                "offset": {
+                                                                    "$$type": "number",
+                                                                    "value": 100
+                                                                }
+                                                            }
+                                                        }
+                                                    ]
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "$$type": "background-gradient-overlay",
+                                            "value": {
+                                                "type": {
+                                                    "$$type": "string",
+                                                    "value": "linear"
+                                                },
+                                                "stops": {
+                                                    "$$type": "gradient-color-stop",
+                                                    "value": [
+                                                        {
+                                                            "$$type": "color-stop",
+                                                            "value": {
+                                                                "color": {
+                                                                    "$$type": "color",
+                                                                    "value": "rgba(0,0,0,0)"
+                                                                },
+                                                                "offset": {
+                                                                    "$$type": "number",
+                                                                    "value": 0
+                                                                }
+                                                            }
+                                                        },
+                                                        {
+                                                            "$$type": "color-stop",
+                                                            "value": {
+                                                                "color": {
+                                                                    "$$type": "color",
+                                                                    "value": "rgba(0,0,0,0)"
+                                                                },
+                                                                "offset": {
+                                                                    "$$type": "number",
+                                                                    "value": 100
+                                                                }
+                                                            }
+                                                        }
+                                                    ]
+                                                }
+                                            }
+                                        }
+                                    ]
+                                },
+                                "color": {
+                                    "$$type": "color",
+                                    "value": "transparent"
+                                }
+                            }
+                        },
+                        "gap": {
+                            "$$type": "size",
+                            "value": {
+                                "size": 16,
+                                "unit": "px"
+                            }
+                        }
+                    },
+                    "custom_css": {
+                        "raw": "YmFja2Ryb3AtZmlsdGVyOiBub25lOyBib3gtc2hhZG93OiBub25lOyAmIC5pbnRlcnJ1cHRldXItdHlwZSB7IGRpc3BsYXk6IGlubGluZS1mbGV4OyBmbGV4LXdyYXA6IG5vd3JhcDsgZ2FwOiA0cHg7IHdpZHRoOiBmaXQtY29udGVudDsgbWF4LXdpZHRoOiAxMDAlOyBwYWRkaW5nOiA1cHg7IGJvcmRlci1yYWRpdXM6IDk5OXB4OyBiYWNrZ3JvdW5kOiBsaW5lYXItZ3JhZGllbnQoMTY1ZGVnLCByZ2JhKDI1NSwyNTUsMjU1LDAuODgpLCByZ2JhKDI1NSwyNTUsMjU1LDAuNTIpKTsgYmFja2dyb3VuZC1jb2xvcjogdHJhbnNwYXJlbnQ7IGJveC1zaGFkb3c6IGluc2V0IDAgMXB4IDAgI0ZGRkZGRiwgaW5zZXQgMCAwIDAgMXB4IHJnYmEoOTEsNTksMjM0LDAuMTQpLCAwIDIwcHggNDBweCAtMjZweCByZ2JhKDc2LDQ4LDE3MCwwLjUpOyB9ICYgLmNoaXAtdHlwZSB7IGRpc3BsYXk6IGlubGluZS1mbGV4OyBhbGlnbi1pdGVtczogY2VudGVyOyBnYXA6IDhweDsgbWluLWhlaWdodDogNDZweDsgcGFkZGluZzogMCAyMHB4OyBib3JkZXItcmFkaXVzOiA5OTlweDsgZm9udC1mYW1pbHk6IEhhbmtlbiBHcm90ZXNrOyBmb250LXNpemU6IDE1cHg7IGxpbmUtaGVpZ2h0OiAxOyBmb250LXdlaWdodDogNzAwOyBjb2xvcjogIzRBNDg1ODsgdGV4dC1kZWNvcmF0aW9uOiBub25lOyB3aGl0ZS1zcGFjZTogbm93cmFwOyBiYWNrZ3JvdW5kLWNvbG9yOiB0cmFuc3BhcmVudDsgdHJhbnNpdGlvbjogYmFja2dyb3VuZC1jb2xvciAwLjI1cyBlYXNlLCBjb2xvciAwLjI1cyBlYXNlOyB9ICYgLmNoaXAtdHlwZTpob3ZlciB7IGNvbG9yOiAjNEEyQkI4OyB9ICYgLmNoaXAtdHlwZTpmb2N1cy12aXNpYmxlIHsgb3V0bGluZTogM3B4IHNvbGlkICM1QjNCRUE7IG91dGxpbmUtb2Zmc2V0OiAycHg7IH0gJiAubmItdHlwZSB7IGRpc3BsYXk6IGlubGluZS1ncmlkOyBwbGFjZS1pdGVtczogY2VudGVyOyBtaW4td2lkdGg6IDI0cHg7IGhlaWdodDogMjRweDsgcGFkZGluZzogMCA2cHg7IGJvcmRlci1yYWRpdXM6IDk5OXB4OyBmb250LXNpemU6IDEyLjVweDsgY29sb3I6ICM0QTJCQjg7IGJhY2tncm91bmQtY29sb3I6IHJnYmEoOTEsNTksMjM0LDAuMSk7IH0gJiAuY2hpcC10eXBlW2FyaWEtY3VycmVudF0geyBjb2xvcjogI0ZGRkZGRjsgYmFja2dyb3VuZC1jb2xvcjogIzBGMEYxMjsgfSAmIC5jaGlwLXR5cGVbZGF0YS10eXBlPWd1aWRlc11bYXJpYS1jdXJyZW50XSB7IGJhY2tncm91bmQtY29sb3I6ICM1QjNCRUE7IH0gJiAuY2hpcC10eXBlW2RhdGEtdHlwZT1yZXhdW2FyaWEtY3VycmVudF0geyBiYWNrZ3JvdW5kLWNvbG9yOiAjQjg0MDBGOyB9ICYgLmNoaXAtdHlwZVthcmlhLWN1cnJlbnRdIC5uYi10eXBlIHsgY29sb3I6ICNGRkZGRkY7IGJhY2tncm91bmQtY29sb3I6IHJnYmEoMjU1LDI1NSwyNTUsMC4yKTsgfSAmIC50aGVtZXMtdHlwZSB7IGRpc3BsYXk6IGZsZXg7IGZsZXgtd3JhcDogd3JhcDsgZ2FwOiA4cHg7IHBhZGRpbmc6IDA7IH0gJiAudGhlbWVzLXR5cGUgeyBhbmltYXRpb246IHJsLWRlcGxpZSAwLjQ1cyBlYXNlIGJvdGg7IH0="
+                    }
+                }
+            ]
+        },
+        {
             "id": "g-b964e35",
             "label": "carte-outils",
             "groupe": "Fiches et listes",

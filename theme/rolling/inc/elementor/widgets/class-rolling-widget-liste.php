@@ -204,13 +204,19 @@ class Rolling_Widget_Liste extends Rolling_Widget {
 					'usage'          => __( 'Métiers et cas d’usage', 'rolling' ),
 					'trois'          => __( 'Métiers, cas d’usage et formats vidéo', 'rolling' ),
 					'rolling_usage'  => __( 'Cas d’usage', 'rolling' ),
-					'rolling_theme'  => __( 'Thèmes', 'rolling' ),
+					'rolling_theme'  => __( 'Thèmes (guides : Guides ou REX d’abord, s’il y a des REX)', 'rolling' ),
+					'type_theme'     => __( 'Guides ou REX, puis leurs thèmes', 'rolling' ),
 					'category'       => __( 'Catégories du blog', 'rolling' ),
 				),
 				'default' => '',
 			)
 		);
 		$this->texte( 'tous', __( 'Filtres : premier bouton', 'rolling' ), __( 'Tout voir', 'rolling' ) );
+		$this->texte( 'tout_type', __( 'Guides ou REX : bouton « tout »', 'rolling' ), __( 'Tout', 'rolling' ) );
+		$this->texte( 'nom_guides', __( 'Guides ou REX : bouton des guides', 'rolling' ), __( 'Guides', 'rolling' ) );
+		$this->texte( 'nom_rex', __( 'Guides ou REX : bouton des REX', 'rolling' ), __( 'REX', 'rolling' ) );
+		$this->texte( 'tous_guides', __( 'Guides ou REX : premier thème des guides', 'rolling' ), __( 'Tous les guides', 'rolling' ) );
+		$this->texte( 'tous_rex', __( 'Guides ou REX : premier thème des REX', 'rolling' ), __( 'Tous les REX', 'rolling' ) );
 		$this->texte( 'nom_metier', __( 'Filtres sur deux lignes : nom de la ligne des métiers', 'rolling' ), __( 'Métier', 'rolling' ) );
 		$this->texte( 'nom_format', __( 'Filtres sur deux lignes : nom de la ligne des formats', 'rolling' ), __( 'Format', 'rolling' ) );
 		$this->texte( 'texte_aucun', __( 'Filtres sans résultat : message', 'rolling' ), __( 'Aucune réalisation pour ces filtres.', 'rolling' ) );
@@ -286,9 +292,10 @@ class Rolling_Widget_Liste extends Rolling_Widget {
 	 */
 	private static function taxonomies_filtres( $choix ) {
 		$groupes = array(
-			'both'  => array( 'rolling_metier', 'rolling_format' ),
-			'usage' => array( 'rolling_metier', 'rolling_usage' ),
-			'trois' => array( 'rolling_metier', 'rolling_usage', 'rolling_format' ),
+			'both'       => array( 'rolling_metier', 'rolling_format' ),
+			'usage'      => array( 'rolling_metier', 'rolling_usage' ),
+			'trois'      => array( 'rolling_metier', 'rolling_usage', 'rolling_format' ),
+			'type_theme' => array( 'rolling_theme' ),
 		);
 
 		return $groupes[ $choix ] ?? array_filter( array( $choix ) );
@@ -310,6 +317,53 @@ class Rolling_Widget_Liste extends Rolling_Widget {
 		);
 		// Lecture seule d'un filtre de liste public : pas de jeton nécessaire.
 		return isset( $_GET[ $parametres[ $taxonomie ] ] ) ? sanitize_title( wp_unslash( $_GET[ $parametres[ $taxonomie ] ] ) ) : ''; // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+	}
+
+	/**
+	 * Type demandé dans l'adresse (?type=guides ou ?type=rex), page Guides et REX.
+	 *
+	 * @return string
+	 */
+	private static function type_demande() {
+		// Lecture seule d'un filtre de liste public : pas de jeton nécessaire.
+		$type = isset( $_GET['type'] ) ? sanitize_key( wp_unslash( $_GET['type'] ) ) : ''; // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+
+		return in_array( $type, array( 'guides', 'rex' ), true ) ? $type : '';
+	}
+
+	/**
+	 * Guides publiés d'un type : « guides » (pas un REX), « rex » (retour d'expérience), '' (tous).
+	 *
+	 * @param string $type Type.
+	 * @return int[]
+	 */
+	private static function guides_du_type( $type ) {
+		static $cache = null;
+		if ( null === $cache ) {
+			$cache = array(
+				''       => array(),
+				'guides' => array(),
+				'rex'    => array(),
+			);
+			foreach ( array_filter( self::contenus_publies( 'guides' ) ) as $id ) {
+				$rex             = (string) Rolling_Contenus::valeur( 'retour_experience', $id );
+				$cache['']       = array_merge( $cache[''], array( $id ) );
+				$cle             = '' === $rex ? 'guides' : 'rex';
+				$cache[ $cle ][] = $id;
+			}
+		}
+
+		return $cache[ $type ] ?? array();
+	}
+
+	/**
+	 * Liste de guides filtrée d'abord par type (Guides ou REX), puis par thème : seulement s'il existe des REX.
+	 *
+	 * @param array $r Réglages.
+	 * @return bool
+	 */
+	private static function filtre_par_type( $r ) {
+		return 'guides' === $r['contenu'] && in_array( $r['filtres'], array( 'rolling_theme', 'type_theme' ), true ) && self::guides_du_type( 'rex' );
 	}
 
 	/**
@@ -382,6 +436,11 @@ class Rolling_Widget_Liste extends Rolling_Widget {
 					'terms'    => sanitize_title( $r['metier'] ),
 				);
 			}
+		}
+
+		if ( self::filtre_par_type( $r ) && self::type_demande() ) {
+			$du_type          = self::guides_du_type( self::type_demande() );
+			$args['post__in'] = $du_type ? $du_type : array( 0 );
 		}
 
 		$filtres = self::taxonomies_filtres( $r['filtres'] );
@@ -464,7 +523,7 @@ class Rolling_Widget_Liste extends Rolling_Widget {
 				echo \Elementor\Plugin::$instance->frontend->get_builder_content_for_display( $vide, false ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- HTML produit par Elementor.
 			} elseif ( array_filter( array_map( array( __CLASS__, 'filtre_demande' ), self::taxonomies_filtres( $r['filtres'] ) ) ) ) {
 				// Des filtres sont choisis mais aucun contenu ne correspond : le dire, et proposer de tout revoir.
-				$tout   = remove_query_arg( array( 'metier', 'format', 'usage', 'theme', 'categorie', 'voir' ) );
+				$tout   = remove_query_arg( array( 'metier', 'format', 'usage', 'theme', 'categorie', 'type', 'voir' ) );
 				$detail = trim( (string) ( $r['texte_aucun_detail'] ?? '' ) );
 				if ( 'realisations' === $r['contenu'] && __( 'Aucune réalisation pour ces filtres.', 'rolling' ) === ( $r['texte_aucun'] ?? '' ) ) {
 					// Liste des réalisations laissée aux textes d'origine : la phrase validée en 0.7.5.
@@ -677,6 +736,10 @@ class Rolling_Widget_Liste extends Rolling_Widget {
 	 * @param array $r Réglages.
 	 */
 	private function afficher_filtres( $r ) {
+		if ( self::filtre_par_type( $r ) ) {
+			$this->afficher_filtres_type( $r );
+			return;
+		}
 		$taxonomies = self::taxonomies_filtres( $r['filtres'] );
 		if ( ! $taxonomies ) {
 			return;
@@ -729,6 +792,62 @@ class Rolling_Widget_Liste extends Rolling_Widget {
 				echo '<li><a class="chip-filtre" href="' . esc_url( $lien ) . '"' . ( $actif === $terme->slug ? ' aria-current="page"' : '' ) . '>' . esc_html( $terme->name ) . '</a></li>';
 			}
 			echo '</ul>';
+		}
+		echo '</nav>';
+	}
+
+	/**
+	 * Page Guides et REX : d'abord le type (Tout · Guides · REX, avec le nombre de documents), puis, une fois un type
+	 * choisi, seulement les thèmes de ce type (le thème « Retours d'expérience », qui marque les anciens REX, n'y est pas).
+	 *
+	 * @param array $r Réglages.
+	 */
+	private function afficher_filtres_type( $r ) {
+		$type  = self::type_demande();
+		$theme = self::filtre_demande( 'rolling_theme' );
+		$base  = remove_query_arg( array( 'type', 'theme', 'voir' ) );
+		$texte = function ( $cle, $defaut ) use ( $r ) {
+			return '' !== trim( (string) ( $r[ $cle ] ?? '' ) ) ? $r[ $cle ] : $defaut;
+		};
+
+		/* translators: %s : contenu de la liste. */
+		echo '<nav class="filtres-liste filtres-type" aria-label="' . esc_attr( sprintf( __( 'Filtrer : %s', 'rolling' ), self::CONTENUS[ $r['contenu'] ][0] ?? '' ) ) . '">';
+		echo '<ul class="interrupteur-type">';
+		foreach ( array(
+			''       => $texte( 'tout_type', __( 'Tout', 'rolling' ) ),
+			'guides' => $texte( 'nom_guides', __( 'Guides', 'rolling' ) ),
+			'rex'    => $texte( 'nom_rex', __( 'REX', 'rolling' ) ),
+		) as $cle => $nom ) {
+			$nombre = count( self::guides_du_type( $cle ) );
+			if ( '' !== $cle && ! $nombre ) {
+				continue;
+			}
+			$lien = '' === $cle ? $base : add_query_arg( 'type', $cle, $base );
+			echo '<li><a class="chip-type" data-type="' . esc_attr( '' === $cle ? 'tout' : $cle ) . '" href="' . esc_url( $lien ) . '"' . ( $type === $cle ? ' aria-current="page"' : '' ) . '>'
+				. esc_html( $nom ) . ' <span class="nb-type">' . esc_html( $nombre ) . '</span></a></li>';
+		}
+		echo '</ul>';
+
+		if ( $type ) {
+			$marque = get_term_by( 'slug', 'retours-experience', 'rolling_theme' );
+			$termes = get_terms(
+				array(
+					'taxonomy'   => 'rolling_theme',
+					'hide_empty' => true,
+					'object_ids' => self::guides_du_type( $type ),
+					'exclude'    => $marque ? array( (int) $marque->term_id ) : array(),
+				)
+			);
+			if ( ! is_wp_error( $termes ) && $termes ) {
+				$ici = add_query_arg( 'type', $type, $base );
+				echo '<ul class="themes-type">';
+				echo '<li><a class="chip-filtre" href="' . esc_url( $ici ) . '"' . ( '' === $theme ? ' aria-current="page"' : '' ) . '>'
+					. esc_html( 'rex' === $type ? $texte( 'tous_rex', __( 'Tous les REX', 'rolling' ) ) : $texte( 'tous_guides', __( 'Tous les guides', 'rolling' ) ) ) . '</a></li>';
+				foreach ( $termes as $terme ) {
+					echo '<li><a class="chip-filtre" href="' . esc_url( add_query_arg( 'theme', $terme->slug, $ici ) ) . '"' . ( $theme === $terme->slug ? ' aria-current="page"' : '' ) . '>' . esc_html( $terme->name ) . '</a></li>';
+				}
+				echo '</ul>';
+			}
 		}
 		echo '</nav>';
 	}

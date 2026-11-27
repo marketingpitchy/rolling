@@ -1163,6 +1163,15 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   l'admin (case REX + thèmes existent). A interrupteur en verre « Tout · Guides · REX » avec nombres ; **B deux portes (conseil :
   cartes en verre + picto + phrase qui explique « REX », coche, l'autre s'atténue, « Voir tous les documents »)** ; C onglets comme
   la page Réalisations + panneau des thèmes.
+- **0.7.33 : filtres Guides et REX = A (interrupteur) validé** : widget Liste, guides avec filtre « Thèmes » (`rolling_theme`) ou
+  nouveau « Guides ou REX, puis leurs thèmes » (`type_theme`) ⇒ si au moins un REX publié : `afficher_filtres_type()` =
+  `nav.filtres-liste.filtres-type` > `ul.interrupteur-type` (`a.chip-type[data-type=tout|guides|rex]` + `span.nb-type`, aria-current)
+  puis, si `?type=guides|rex`, `ul.themes-type` (« Tous les guides / Tous les REX » + thèmes utilisés par ce type, sans le terme
+  `retours-experience`) ; requête : `post__in` = `guides_du_type()` (cache statique, `valeur('retour_experience')`). Textes réglables
+  (`tout_type`, `nom_guides`, `nom_rex`, `tous_guides`, `tous_rex`). Classe `filtres-type` (prioritaire, déclarée dans
+  `classes_des_widgets`) : fond de filtres-liste retiré par 2 couches transparentes (`background: none` est jeté par le convertisseur),
+  interrupteur en verre, guides violet / REX #B8400F, thèmes en `rl-deplie` ; rolling.js : pas d'onglets sur `.filtres-type`.
+  Rien à faire chez la cliente si sa liste a le filtre « Thèmes » (automatique). WP Fastest Cache ne met pas en cache les adresses avec ?type=.
 - **Chargement de page effet film** (demande avant la fin de la livraison 4) : maquette `maquettes/loading/maquette-loading.html`
   (copie /workspace/maquette-loading.html), 4 options : A amorce 3-2-1, B clap qui se ferme puis rideau, C ouverture
   cinéma (bandes noires + REC + timecode + règle avec la tête de lecture rouge des frises, plus de filet fin), D barre de lecture en haut sans écran. Conseil : C à l'arrivée (première page
