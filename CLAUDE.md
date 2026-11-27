@@ -1157,6 +1157,12 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   `contenu_change` et par `Rolling_Installateur::vider_caches`. wp2 = Elementor 4.4.2 + WP Fastest Cache (zips scratchpad/plugins/el442, wpfc).
   Leçon test : fichier du thème copié à la main par `docker compose cp` = propriétaire root ⇒ la mise à jour par zip échoue
   (« certains fichiers n'ont pas pu être copiés ») : `chown -R www-data:` avant.
+- **Maquette « Guides et REX : le type d'abord, puis le thème »** (`maquettes/guides-rex/filtres-type.html`, générée par
+  `scratchpad/gen-guides8.py` (reprend gen-guides7), copie /workspace/maquette-guides-rex-filtres.html, **à valider**) : choisir
+  Guides ou REX, puis seuls les thèmes de ce type apparaissent (« Tous les guides / Tous les REX » en premier) ; rien de neuf dans
+  l'admin (case REX + thèmes existent). A interrupteur en verre « Tout · Guides · REX » avec nombres ; **B deux portes (conseil :
+  cartes en verre + picto + phrase qui explique « REX », coche, l'autre s'atténue, « Voir tous les documents »)** ; C onglets comme
+  la page Réalisations + panneau des thèmes.
 - **Chargement de page effet film** (demande avant la fin de la livraison 4) : maquette `maquettes/loading/maquette-loading.html`
   (copie /workspace/maquette-loading.html), 4 options : A amorce 3-2-1, B clap qui se ferme puis rideau, C ouverture
   cinéma (bandes noires + REC + timecode + règle avec la tête de lecture rouge des frises, plus de filet fin), D barre de lecture en haut sans écran. Conseil : C à l'arrivée (première page
