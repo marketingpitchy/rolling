@@ -1149,6 +1149,14 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
   `Rolling_Contenus::contenu_change` (`transition_post_status`, publication / modification / corbeille d'un contenu Rolling, d'un
   article ou d'un modèle Elementor) + `contenu_supprime` (`before_delete_post`) ⇒ `wp_cache_clear_cache()` une fois, au `shutdown`.
   WP Super Cache installé sur wp (zip dans scratchpad/plugins/wpsc).
+- **0.7.32** : toujours pas d'affichage chez la cliente en 0.7.31 ⇒ son site utilise **WP Fastest Cache** (commentaire
+  « WP Fastest Cache file was created… » dans la page en ligne ; pas WP Super Cache) et **Elementor 4.4.2**. Reproduit sur wp2
+  (4.4.2 + WPFC, qui exige le cache des éléments d'Elementor sur « Inactif » : `elementor_element_cache_ttl` = disable).
+  `Rolling_Contenus::vider_cache_pages()` (WP Super Cache `wp_cache_clear_cache`, WP Fastest Cache `wpfc_clear_all_cache`,
+  WP Rocket `rocket_clean_domain`, W3TC `w3tc_flush_all`, LiteSpeed `litespeed_purge_all`) appelé au `shutdown` par
+  `contenu_change` et par `Rolling_Installateur::vider_caches`. wp2 = Elementor 4.4.2 + WP Fastest Cache (zips scratchpad/plugins/el442, wpfc).
+  Leçon test : fichier du thème copié à la main par `docker compose cp` = propriétaire root ⇒ la mise à jour par zip échoue
+  (« certains fichiers n'ont pas pu être copiés ») : `chown -R www-data:` avant.
 - **Chargement de page effet film** (demande avant la fin de la livraison 4) : maquette `maquettes/loading/maquette-loading.html`
   (copie /workspace/maquette-loading.html), 4 options : A amorce 3-2-1, B clap qui se ferme puis rideau, C ouverture
   cinéma (bandes noires + REC + timecode + règle avec la tête de lecture rouge des frises, plus de filet fin), D barre de lecture en haut sans écran. Conseil : C à l'arrivée (première page
@@ -1173,7 +1181,7 @@ Mémoire du projet. À relire en début de session et à tenir à jour à chaque
 
 ## Environnement de la cliente
 
-- WordPress 7.1.4, Elementor 4.3.6, Elementor Pro (One) : oui. Administration en français.
+- WordPress 7.1.4, **Elementor 4.4.2** (27/11), Elementor Pro (One) : oui. Cache : **WP Fastest Cache**. Administration en français.
 - Site : agence-rolling.fr. Langue : fr (anglais plus tard : prévoir hreflang).
 - Copie de test (scratchpad/wp, docker compose : mariadb 11.4, wordpress:7.1.4-php8.3-apache,
   wordpress:cli-2.12.0-php8.3) : WordPress 7.1.4 fr_FR, Hello Elementor 3.5.2, Elementor 4.3.6, Elementor Pro 4.3.3

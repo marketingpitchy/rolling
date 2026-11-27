@@ -1096,16 +1096,14 @@ class Rolling_Installateur {
 	// Caches et rapport.
 
 	/**
-	 * Vide le cache d'Elementor et celui de WP Super Cache.
+	 * Vide le cache d'Elementor et celui des pages (WP Super Cache, WP Fastest Cache…).
 	 */
 	public static function vider_caches() {
 		if ( isset( Plugin::$instance->files_manager ) ) {
 			Plugin::$instance->files_manager->clear_cache();
 		}
 
-		if ( function_exists( 'wp_cache_clear_cache' ) ) {
-			wp_cache_clear_cache();
-		}
+		Rolling_Contenus::vider_cache_pages();
 	}
 
 	/**

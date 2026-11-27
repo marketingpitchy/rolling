@@ -50,7 +50,7 @@ class Rolling_Contenus {
 
 	/**
 	 * Un contenu publié change (ajout, modification, mise à la corbeille) : les pages qui le listent (Guides, Blog,
-	 * Réalisations, accueil…) sont dans le cache de pages (WP Super Cache), qui ne vide que la page du contenu et l'accueil.
+	 * Réalisations, accueil…) sont dans le cache de pages (WP Super Cache, WP Fastest Cache…), qui ne vide que la page du contenu et l'accueil.
 	 * Le cache des pages est donc vidé, une seule fois, en fin de requête (après l'enregistrement des champs).
 	 *
 	 * @param string  $nouveau Nouveau statut.
@@ -67,14 +67,27 @@ class Rolling_Contenus {
 			return;
 		}
 		$prevu = true;
-		add_action(
-			'shutdown',
-			function () {
-				if ( function_exists( 'wp_cache_clear_cache' ) ) {
-					wp_cache_clear_cache();
-				}
-			}
-		);
+		add_action( 'shutdown', array( __CLASS__, 'vider_cache_pages' ) );
+	}
+
+	/**
+	 * Vide le cache des pages des extensions de cache courantes (celle qui est installée) : WP Super Cache,
+	 * WP Fastest Cache, WP Rocket, W3 Total Cache, LiteSpeed Cache.
+	 */
+	public static function vider_cache_pages() {
+		if ( function_exists( 'wp_cache_clear_cache' ) ) {
+			wp_cache_clear_cache();
+		}
+		if ( function_exists( 'wpfc_clear_all_cache' ) ) {
+			wpfc_clear_all_cache();
+		}
+		if ( function_exists( 'rocket_clean_domain' ) ) {
+			rocket_clean_domain();
+		}
+		if ( function_exists( 'w3tc_flush_all' ) ) {
+			w3tc_flush_all();
+		}
+		do_action( 'litespeed_purge_all' ); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound -- Crochet de LiteSpeed Cache.
 	}
 
 	/**
